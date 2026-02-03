@@ -26,3 +26,9 @@
 ## Testing & Validation
 
 - Loop Governance — Adversarial & Deception Stress Matrix (reference)
+
+## PAI
+
+- PAI Consumption Contract (procedure)
+- PAI Retrieval Policy (procedure)
+- PAI Context Budgeting (constraint)
