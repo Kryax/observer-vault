@@ -18,3 +18,7 @@
 - Disharmony Detection (procedure)
 - Creative Loop Invocation (procedure)
 - State Externalisation Rule (constraint)
+
+## Execution Governance
+
+- Council ⇄ Builder Escalation Loop (procedure)
