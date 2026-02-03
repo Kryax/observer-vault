@@ -32,3 +32,9 @@
 - PAI Consumption Contract (procedure)
 - PAI Retrieval Policy (procedure)
 - PAI Context Budgeting (constraint)
+
+## Execution
+
+- Work Packet Template (procedure)
+- Builder Receipt Pack (procedure)
+- Operational Test — Micro Run (reference)
