@@ -22,3 +22,7 @@
 ## Execution Governance
 
 - Council ⇄ Builder Escalation Loop (procedure)
+
+## Testing & Validation
+
+- Loop Governance — Adversarial & Deception Stress Matrix (reference)
