@@ -38,3 +38,5 @@
 - Work Packet Template (procedure)
 - Builder Receipt Pack (procedure)
 - Operational Test — Micro Run (reference)
+
+- Operational Test — Deliberate Failure Run (reference)
