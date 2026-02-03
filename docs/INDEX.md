@@ -10,3 +10,11 @@
 - council_loops/
 - tooling/
 - receipts_protocol/
+
+## Cognitive Governance
+
+- Whole → Part Ordering (constraint)
+- Creative Harmony Loop (constraint)
+- Disharmony Detection (procedure)
+- Creative Loop Invocation (procedure)
+- State Externalisation Rule (constraint)
