@@ -8,65 +8,59 @@ source: claude_conversation
 confidence: provisional
 mode: design
 created: 2026-02-28T16:00:00+11:00
-modified: 2026-02-28T17:00:00+11:00
+modified: 2026-02-28T18:00:00+11:00
 cssclasses: [status-draft]
 motifs: [observer-control-plane, json-rpc, multi-engine-dispatch]
 refs:
   - 01-Projects/observer-council/architecture/Technical_Design_Specification_v2.md
   - 01-Projects/control-plane/decisions/001-tds-v2-open-questions.md
+  - 01-Projects/control-plane/architecture/control-plane-prd.md
 ---
 
 # PROJECT_STATE.md — Observer Control Plane
 
 **Last updated:** 2026-02-28
 **Updated by:** Claude (Opus 4.6) + Adam
-**Phase:** Pre-build — decisions complete, awaiting PRD
+**Phase:** PRD complete — ready to build
 
 ---
 
 ## Current State
 
-All TDS v2 open questions (Q1-Q8) resolved. Key architectural decisions recorded in `decisions/001-tds-v2-open-questions.md`. PRD generation is unblocked.
+PRD generated and reviewed. All architectural decisions recorded. Ready for build execution.
 
-## Key Decisions Made
+## Key Artifacts
+
+- `architecture/control-plane-prd.md` — **THE PRD** (40KB, 8 slices, ISC exit criteria, wiring table)
+- `decisions/001-tds-v2-open-questions.md` — All Q1-Q8 decisions resolved
+- `CLAUDE.md` — Project coordination file for Atlas
+- `../observer-council/architecture/Technical_Design_Specification_v2.md` — Source spec (reference only, PRD is self-contained)
+
+## Key Decisions
 
 - **Single-host is canonical deployment model** — two-VM is optional hardening only
 - **Minimal Phase 1 scope** — HTTP-only, Mode 1 dispatch, curl scripts, no WebSocket
-- **Bubblewrap elevated** — from distant Phase 2 to late Phase 1 / early Phase 2
+- **Atlas/PAI is the headless core** — dispatch is an imported library, not a separate service
+- **Bubblewrap elevated** — late Phase 1 / early Phase 2
 - **Start permissive on approvals** — tighten based on real usage
-- **age for secrets** — simple, single binary
+- **S4 owns src/approval/** — separated from S2's src/policy/ for clean parallel builds
+- **S5 has explicit wiring table** — 11 methods mapped to component call sequences
 
-## What Exists
+## Build Order
 
-- `CLAUDE.md` — Customised project coordination file
-- `decisions/001-tds-v2-open-questions.md` — All Q1-Q8 decisions recorded
-- `architecture/` — Empty, awaiting PRD
-- `milestones/` — Empty
-- `src/` — Empty, awaiting build
-- TDS v2 at `../observer-council/architecture/Technical_Design_Specification_v2.md`
-
-## What Doesn't Exist Yet
-
-- PRD with parallelisable build slices (next step)
-- The `observer-system/` monorepo
-- Any source code
-
-## Blockers
-
-None. PRD generation is unblocked.
+```
+S0 (shared types) → S1+S2+S3+S6+S7 (parallel) → S4 (approval) → S5 (server integration)
+```
 
 ## Next Steps
 
-1. Generate PRD from TDS v2 (incorporating Q1-Q8 decisions, especially single-host simplification)
-2. Create `observer-system/` monorepo in workspace
-3. Build S0 (shared types) as foundation
-4. Fan-out build of parallel group (S1-S3, S6-S7)
+1. Fresh Atlas context
+2. Point Atlas at CLAUDE.md and the PRD
+3. Build S0 first (shared types — foundation for everything)
+4. Fan-out parallel build of S1, S2, S3, S6, S7
+5. S4 after S1+S2+S3 complete
+6. S5 integration last
 
-## Notes for PRD Generation
+## Blockers
 
-The TDS v2 needs significant simplification in the PRD because:
-- All cross-VM sections become optional hardening appendix
-- Router simplifies to localhost communication
-- No Tailscale requirement for default deployment
-- systemd setup is one service set, not two
-- Security guarantees come from application-level mechanisms (sanitizedEnv, bubblewrap) not VM boundaries
+None. Build is unblocked.

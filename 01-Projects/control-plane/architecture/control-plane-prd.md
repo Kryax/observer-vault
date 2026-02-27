@@ -89,12 +89,7 @@ These are non-negotiable. Violation of any constraint is a build failure.
 observer-system/
   packages/
     shared/                   # S0: Types, Zod schemas, error codes, ID generation
-      src/
-        types.ts              # All TypeScript interfaces and enums
-        schemas.ts            # Zod runtime schemas
-        errors.ts             # ObserverErrorCode enum + error factory
-        ids.ts                # Prefixed nanoid generation
-        index.ts              # Barrel export
+      src/                    # types.ts, schemas.ts, errors.ts, ids.ts, index.ts
       package.json
     control-plane/            # S1-S5, S7: JSON-RPC server + all control plane logic
       src/
@@ -112,21 +107,12 @@ observer-system/
       data/                   # Runtime data (audit logs, SQLite DBs)
       package.json
     dispatch/                 # S6: Backend executor (imported as library)
-      src/
-        executor.ts           # Child process spawning + kill chain
-        sanitize.ts           # sanitizedEnv() + output sanitizer
-        health-check.ts       # Backend health check runner
-        config.ts             # Backend config loader
-        index.ts              # Public API
+      src/                    # executor.ts, sanitize.ts, health-check.ts, config.ts, index.ts
       config/
         execution-backends.yaml
       package.json
-  scripts/                    # Operational scripts
-    health-check.sh
-    smoke-test.sh
-    recent-activity.sh
-    rebuild-audit-index.sh
-    provision-secrets.sh
+  scripts/                    # health-check.sh, smoke-test.sh, recent-activity.sh,
+                              # rebuild-audit-index.sh, provision-secrets.sh
   RUNBOOK.md
   package.json                # Root workspace config
   tsconfig.json               # Shared TypeScript config
@@ -578,9 +564,9 @@ MUST pass:
 1. `createSession()` returns a Session with valid `ses_` ID and `active` status
 2. `createThread()` within a session returns Thread with valid `thr_` ID and `open` status
 3. Invalid state transitions throw errors (e.g., cannot submit turn to `completed` thread)
-4. SQLite persistence survives simulated restart — create session, recreate store from same DB file, session loads
-5. Idle session cleanup closes sessions with `last_active_at` older than configured timeout (72h default)
-6. Cleanup skips sessions with active work (in-flight threads in `processing`/`executing`/`awaiting_approval`)
+4. SQLite survives restart — create session, recreate store from same DB, session loads
+5. Idle cleanup closes sessions older than configured timeout (72h default)
+6. Cleanup skips sessions with in-flight threads (`processing`/`executing`/`awaiting_approval`)
 
 SHOULD verify:
 1. Startup recovery transitions threads in `processing`/`executing` state to `interrupted`
@@ -600,25 +586,26 @@ SHOULD verify:
 **Package:** `packages/control-plane/src/policy/`
 **Dependencies:** S0
 **Build group:** Parallel Group 1
+**File boundary:** Only `policy-enforcer.ts`, `condition-evaluator.ts`, `config-loader.ts`. Do NOT create approval files — S4 owns `src/approval/`.
 
 **What to build:**
 - `policy-enforcer.ts` — Loads YAML rules, evaluates conditions, returns decisions.
 - `condition-evaluator.ts` — Recursive `and`/`or`/`not` composition. Pure functions.
 - `config-loader.ts` — Validates policy rules from `control-plane.yaml` against Zod schema.
 
-**What NOT to build:** No runtime rule modification API. No approval logic (S4). No request routing (S5). In-memory sliding window for rate limits.
+**What NOT to build:** No runtime rule modification. No approval logic (S4 owns `src/approval/`). No request routing (S5). In-memory sliding window for rate limits.
 
 **ISC Exit Criteria:**
 
 MUST pass:
-1. Correctly evaluates all condition types: `method_match`, `client_type_match`, `intent_contains`, `rate_check`, `and`, `or`, `not`
-2. First matching rule by priority determines decision (lower priority number = evaluated first)
-3. Default deny when no rules match — returns `{ action: "deny", reason: "No matching policy rule", rule_id: "default" }`
-4. Config validation rejects invalid rules with clear error messages at startup (duplicate IDs, duplicate priorities, unknown condition types)
+1. Evaluates all condition types: `method_match`, `client_type_match`, `intent_contains`, `rate_check`, `and`, `or`, `not`
+2. First match by priority wins (lower number = evaluated first)
+3. Default deny when no rules match — `{ action: "deny", rule_id: "default" }`
+4. Config rejects invalid rules at startup (duplicate IDs/priorities, unknown condition types)
 
 SHOULD verify:
 1. All evaluations produce audit-ready decision records (rule_id, action, reason)
-2. `intent_contains` uses structural matching on `intent_type`, not keyword matching on message content (NNF-8)
+2. `intent_contains` matches on `intent_type`, not keyword matching on content (NNF-8)
 
 **Security:**
 - Policy rules loaded from human-edited config only. No API to modify rules at runtime. (Inv. 2)
@@ -649,10 +636,10 @@ SHOULD verify:
 MUST pass:
 1. Events written to JSONL with `fsync` — file survives simulated crash (write, kill process, read back)
 2. SQLite index matches JSONL content — query by `session_id` returns same events as JSONL grep
-3. Credential sanitizer redacts known patterns: `sk-[a-zA-Z0-9]{20,}`, `AIza[a-zA-Z0-9_-]{35}`, `ghp_[a-zA-Z0-9]{36}`, JWTs, sensitive file paths
+3. Credential sanitizer redacts: `sk-*`, `AIza*`, `ghp_*`, JWTs, sensitive file paths (see audit config for full pattern list)
 4. Rotation triggers at configured size threshold. Archived files have permissions `0400`
-5. `rebuild()` recreates SQLite index from JSONL files (full rebuild script)
-6. Audit write failure blocks the calling request (circuit breaker: 5 consecutive failures → CRITICAL health status)
+5. `rebuild()` recreates SQLite index from JSONL files
+6. Audit write failure blocks request (circuit breaker: 5 failures → CRITICAL health)
 
 SHOULD verify:
 1. `health.status` and `session.close` are exempt from audit-write-must-succeed requirement
@@ -671,13 +658,14 @@ SHOULD verify:
 **Package:** `packages/control-plane/src/approval/`
 **Dependencies:** S1, S2, S3
 **Build group:** Sequential (after Parallel Group 1)
+**File boundary:** Only `approval-gateway.ts`, `approval-store.ts`, `timeout-scheduler.ts`. Do NOT modify `src/policy/` — S2 owns that.
 
 **What to build:**
 - `approval-gateway.ts` — Approval lifecycle: create, respond, expire. Timeout = denied (fail-safe).
 - `approval-store.ts` — SQLite persistence for pending approvals. Survives restart.
 - `timeout-scheduler.ts` — Checks expiry, marks expired as denied.
 
-**What NOT to build:** No WebSocket push (Phase 2). No Telegram response handling (Phase 2). No delegation or multi-approver flows.
+**What NOT to build:** No WebSocket push (Phase 2). No Telegram response handling (Phase 2). No delegation or multi-approver.
 
 **ISC Exit Criteria:**
 
@@ -706,14 +694,30 @@ SHOULD verify:
 **Build group:** Sequential (last — integration layer)
 
 **What to build:**
-- `server.ts` — jayson HTTP server on `127.0.0.1:9000`. 1MB request limit. Graceful SIGTERM shutdown.
-- `router.ts` — Method → handler routing. Pipeline: parse → auth → policy → route → respond.
-- `auth.ts` — Bearer tokens from `/run/secrets/observer/client-tokens/`. `crypto.timingSafeEqual()`. Rate limit: 10/min per IP, lockout at 50.
-- `handlers/` — One per JSON-RPC method. `turn.submit` calls `dispatch.execute()` directly (library import).
-- `config-validator.ts` — Validates YAML against Zod. `--validate-config` CLI flag.
-- `startup.ts` — Validate config → load secrets → init stores → start health monitor → bind → assert localhost.
+- `server.ts` — jayson HTTP on `127.0.0.1:9000`. 1MB limit. Graceful SIGTERM.
+- `router.ts` — Pipeline: parse → auth → policy → route → respond.
+- `auth.ts` — Bearer tokens, `timingSafeEqual()`, rate limit 10/min per IP.
+- `handlers/` — One per method (see wiring table below).
+- `config-validator.ts` — `--validate-config` CLI flag.
+- `startup.ts` — Config → secrets → stores → health monitor → bind → assert localhost.
 
 **What NOT to build:** No WebSocket (Phase 2). No cross-VM client/router. No Tailscale. No real-time push.
+
+**Method → Component Wiring (handler call sequences):**
+
+| Method | Components called (in order) |
+|--------|------------------------------|
+| `session.create` | `auth` → `policy.evaluate()` → `sessionMgr.createSession()` → `audit.log()` |
+| `session.close` | `auth` → `sessionMgr.closeSession()` → `audit.log()` |
+| `session.resume` | `auth` → `sessionMgr.resumeSession()` → `approval.getPendingApprovals()` → `audit.log()` |
+| `thread.create` | `auth` → `policy.evaluate()` → `sessionMgr.createThread()` → `audit.log()` |
+| `thread.status` | `auth` → `sessionMgr.getThread()` → `approval.getPendingApprovals()` |
+| `thread.cancel` | `auth` → `policy.evaluate()` → `sessionMgr.cancelThread()` → `audit.log()` |
+| `turn.submit` | `auth` → `policy.evaluate()` → `sessionMgr.createTurn()` → if execution intent: `dispatch.execute()` → `sessionMgr.completeTurn()` → `audit.log()` |
+| `approval.respond` | `auth` → `approval.submitDecision()` → `audit.log()` |
+| `health.status` | if authed: `health.getStatus()` full; else: liveness only |
+| `audit.query` | `auth` → `audit.query()` |
+| `admin.revoke_token` | `auth` (CLI-only) → remove token file → `audit.log()` |
 
 **ISC Exit Criteria:**
 
@@ -736,7 +740,7 @@ SHOULD verify:
 - Auth rate limit: 10/min per IP, lockout at 50 (NNF-7). Request size limit 1MB (T8).
 - Raw headers never logged. Error messages are hardcoded strings — never raw backend output.
 
-**Tests:** Full request pipeline integration, auth flow (valid/invalid/missing/rate-limited), config validation, graceful shutdown, localhost assertion, per-handler unit tests.
+**Tests:** Full pipeline integration, auth flow, config validation, graceful shutdown, localhost assertion.
 
 ---
 
@@ -758,12 +762,12 @@ SHOULD verify:
 **ISC Exit Criteria:**
 
 MUST pass:
-1. `sanitizedEnv()` returns ONLY allowed env vars (PATH, HOME, TERM, LANG, USER, XDG_*) — never `process.env`, never any `*_KEY`, `*_TOKEN`, `*_SECRET` vars
-2. End-to-end: dispatch to a test script that prints `env` — verify no credential variables in child process environment
-3. All `spawn()` calls use array args — grep codebase for `shell: true` returns zero matches
-4. Timeout triggers SIGTERM → 10s grace → SIGKILL. Partial output from killed process marked `status: "timeout"`
-5. `validateArgs()` rejects strings containing credential patterns (`sk-`, `AIza`, `ghp_`) and high-entropy strings (Shannon entropy > 4.5)
-6. `sanitizeOutput()` redacts known credential patterns from stdout/stderr before storage
+1. `sanitizedEnv()` returns ONLY allowed vars (PATH, HOME, TERM, LANG, USER, XDG_*) — never `process.env`, never `*_KEY`/`*_TOKEN`/`*_SECRET`
+2. End-to-end: dispatch to test script printing `env` — zero credential vars in child environment
+3. All `spawn()` use array args — `grep -r "shell: true"` returns zero matches
+4. Timeout: SIGTERM → 10s → SIGKILL. Partial output marked `status: "timeout"`
+5. `validateArgs()` rejects credential patterns and high-entropy strings (Shannon > 4.5)
+6. `sanitizeOutput()` redacts credential patterns from stdout/stderr before storage
 
 SHOULD verify:
 1. Process group kill (`-pid`) cleans up child processes spawned by the backend CLI tool
@@ -774,7 +778,7 @@ SHOULD verify:
 - `validateArgs()` blocks credential patterns (T2). `sanitizeOutput()` blocks persistence (T3).
 - stdio `['pipe','pipe','pipe']`. Working dir validated against allowlist, symlinks resolved (T18).
 
-**Tests:** `sanitizedEnv()` (allowed/excluded vars), `validateArgs()` (credentials rejected, normal allowed), `sanitizeOutput()` (patterns redacted). Integration: dispatch to test backend, verify env. Kill chain: timeout → SIGTERM → SIGKILL sequence.
+**Tests:** `sanitizedEnv()` (allowed/excluded vars), `validateArgs()` (reject/allow), `sanitizeOutput()` (redact). Integration: dispatch to test backend, verify env. Kill chain: timeout → SIGTERM → SIGKILL.
 
 ---
 
@@ -793,9 +797,9 @@ SHOULD verify:
 **ISC Exit Criteria:**
 
 MUST pass:
-1. Reports correct health status for all configured backends (runs health check command, parses version output)
-2. Detects status transitions (healthy → degraded) and emits `HealthChange` events
-3. Version mismatch against `pinned_version` semver range sets backend to `degraded`
+1. Reports correct health for all backends (runs check command, parses version)
+2. Detects transitions (healthy → degraded) and emits `HealthChange`
+3. Version mismatch vs `pinned_version` semver sets backend `degraded`
 4. `health.status` unauthenticated returns only `{ status, uptime_seconds }` — no topology, no backend details
 
 SHOULD verify:
@@ -973,11 +977,11 @@ sensitivity:
 
 | Script | Purpose |
 |--------|---------|
-| `health-check.sh` | Calls `health.status` (authed), formats output. Exit 0 if healthy, 1 if degraded, 2 if unhealthy. |
-| `smoke-test.sh` | Post-deployment verification: health check → auth test → session lifecycle → thread creation → session close → audit check → credential leak check on audit JSONL. Exit 0 = all pass. |
-| `recent-activity.sh` | Calls `audit.query` for last 24h, formats as human-readable table. |
-| `rebuild-audit-index.sh` | Drops and rebuilds SQLite index from JSONL files. Used when SQLite is corrupted. |
-| `provision-secrets.sh` | Decrypts age-encrypted secrets to `/run/secrets/observer/` tmpfs. Run as root before server start. |
+| `health-check.sh` | `health.status` (authed). Exit 0=healthy, 1=degraded, 2=unhealthy. |
+| `smoke-test.sh` | Post-deployment: health → auth → session lifecycle → audit check → credential leak check. Exit 0 = pass. |
+| `recent-activity.sh` | `audit.query` last 24h, human-readable table. |
+| `rebuild-audit-index.sh` | Rebuilds SQLite index from JSONL. For corruption recovery. |
+| `provision-secrets.sh` | Decrypts age secrets to `/run/secrets/observer/` tmpfs. Run as root. |
 
 ### 8.2 RUNBOOK.md Requirements
 
