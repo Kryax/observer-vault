@@ -156,8 +156,8 @@ describe("execute — env backend (credential isolation)", () => {
 
   beforeEach(() => {
     // Inject test credential vars into process.env
-    process.env.OPENAI_API_KEY = "sk-TESTKEY123456789012345678901234";
-    process.env.GITHUB_TOKEN = "ghp_TESTTOKEN1234567890123456789012345678";
+    process.env.OPENAI_API_KEY = "sk-TESTFAKE0000000000000000000000";
+    process.env.GITHUB_TOKEN = "ghp_TESTFAKE0000000000000000000000000000";
     process.env.AWS_SECRET_ACCESS_KEY = "wJalrXUtnFEMI/K7MDENG/bPxRfiCY";
     process.env.DB_PASSWORD = "super-secret-password";
     process.env.MY_SECRET = "classified-info";
@@ -184,9 +184,9 @@ describe("execute — env backend (credential isolation)", () => {
 
     // Credentials MUST NOT appear in child env
     expect(envOutput).not.toContain("OPENAI_API_KEY");
-    expect(envOutput).not.toContain("sk-TESTKEY");
+    expect(envOutput).not.toContain("sk-TESTFAKE");
     expect(envOutput).not.toContain("GITHUB_TOKEN");
-    expect(envOutput).not.toContain("ghp_TESTTOKEN");
+    expect(envOutput).not.toContain("ghp_TESTFAKE");
     expect(envOutput).not.toContain("AWS_SECRET_ACCESS_KEY");
     expect(envOutput).not.toContain("DB_PASSWORD");
     expect(envOutput).not.toContain("MY_SECRET");
@@ -336,7 +336,7 @@ describe("execute — argument validation", () => {
     const result = await execute(config, {
       dispatchId: "dsp_test000002",
       backendName: "cred-test",
-      prompt: "sk-abcdefghijklmnopqrstuvwxyz1234",
+      prompt: "sk-TESTFAKE0000000000000000000000",
       workingDirectory: "/tmp",
     });
 

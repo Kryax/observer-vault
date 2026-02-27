@@ -49,21 +49,22 @@ function makeEventWithTimestamp(ts: string, overrides?: Partial<AuditEvent>): Au
 describe("CredentialSanitizer", () => {
   describe("Layer 1: Regex pattern matching", () => {
     it("should redact OpenAI API keys (sk-...)", () => {
-      const input = "Using key sk-abc123def456ghi789jkl012mno345";
+      // Test fixture: obviously fake key that still matches sk-[a-zA-Z0-9]{20,}
+      const input = "Using key sk-TESTFAKE00000000000000000000";
       const result = sanitizeString(input);
-      expect(result).not.toContain("sk-abc123");
+      expect(result).not.toContain("sk-TESTFAKE");
       expect(result).toContain("[REDACTED]");
     });
 
     it("should redact Google API keys (AIza...)", () => {
-      const input = "Google key: AIzaSyA1234567890abcdefghijklmnopqrstuv";
+      const input = "Google key: AIzaSyTESTFAKE0000000000000000000000000";
       const result = sanitizeString(input);
-      expect(result).not.toContain("AIzaSyA");
+      expect(result).not.toContain("AIzaSyTEST");
       expect(result).toContain("[REDACTED]");
     });
 
     it("should redact GitHub PATs (ghp_...)", () => {
-      const input = "Token: ghp_abcdefghijklmnopqrstuvwxyz0123456789";
+      const input = "Token: ghp_TESTFAKE0000000000000000000000000000";
       const result = sanitizeString(input);
       expect(result).not.toContain("ghp_");
       expect(result).toContain("[REDACTED]");
@@ -71,9 +72,9 @@ describe("CredentialSanitizer", () => {
 
     it("should redact JWT tokens (eyJ...)", () => {
       const input =
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.dozjgNryP4J3jVmNHl0w5N_XgL0n3I9PlFUP0THsR8U";
+        "Bearer eyJTESTFAKEabc123.TESTFAKEdef456789.TESTFAKE0ghi7890123";
       const result = sanitizeString(input);
-      expect(result).not.toContain("eyJhbGci");
+      expect(result).not.toContain("eyJTESTFAKE");
       expect(result).toContain("[REDACTED]");
     });
 
@@ -127,10 +128,10 @@ describe("CredentialSanitizer", () => {
 
     it("should handle multiple credentials in one string", () => {
       const input =
-        "Keys: sk-abcdefghijklmnopqrst123 and ghp_abcdefghijklmnopqrstuvwxyz0123456789";
+        "Keys: sk-TESTFAKE000000000000000 and ghp_TESTFAKE0000000000000000000000000000";
       const result = sanitizeString(input);
-      expect(result).not.toContain("sk-abcdefghijklmnopqrst");
-      expect(result).not.toContain("ghp_abcdefghijklmnopqrst");
+      expect(result).not.toContain("sk-TESTFAKE");
+      expect(result).not.toContain("ghp_TESTFAKE");
       // Should have two [REDACTED] markers
       const count = (result.match(/\[REDACTED\]/g) ?? []).length;
       expect(count).toBeGreaterThanOrEqual(2);
@@ -167,10 +168,10 @@ describe("CredentialSanitizer", () => {
   describe("sanitizeDetails", () => {
     it("should deep-sanitize all string values in a record", () => {
       const details = {
-        api_key: "sk-abcdefghijklmnopqrst123456",
+        api_key: "sk-TESTFAKE00000000000000000",
         message: "Normal text",
         nested: {
-          token: "ghp_abcdefghijklmnopqrstuvwxyz0123456789",
+          token: "ghp_TESTFAKE0000000000000000000000000000",
         },
       };
       const result = sanitizeDetails(details);
@@ -180,16 +181,16 @@ describe("CredentialSanitizer", () => {
     });
 
     it("should not mutate the original object", () => {
-      const original = { key: "sk-abcdefghijklmnopqrst123456" };
+      const original = { key: "sk-TESTFAKE00000000000000000" };
       sanitizeDetails(original);
-      expect(original.key).toBe("sk-abcdefghijklmnopqrst123456");
+      expect(original.key).toBe("sk-TESTFAKE00000000000000000");
     });
   });
 
   describe("sanitizeEvent", () => {
     it("should sanitize event details and preserve other fields", () => {
       const event = makeEvent({
-        details: { api_key: "sk-abcdefghijklmnopqrst123456" },
+        details: { api_key: "sk-TESTFAKE00000000000000000" },
       });
       const result = sanitizeEvent(event);
       expect(result.event_id).toBe(event.event_id);
@@ -543,7 +544,7 @@ describe("AuditLoggerImpl", () => {
   it("should sanitize credentials before writing", () => {
     const event = makeEvent({
       details: {
-        api_key: "sk-abcdefghijklmnopqrst123456",
+        api_key: "sk-TESTFAKE00000000000000000",
         message: "Normal text",
       },
     });

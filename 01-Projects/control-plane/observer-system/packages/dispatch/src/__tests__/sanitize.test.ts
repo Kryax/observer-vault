@@ -38,7 +38,7 @@ describe("sanitizedEnv", () => {
     process.env.TERM = "xterm-256color";
     process.env.LANG = "en_US.UTF-8";
     process.env.USER = "testuser";
-    process.env.OPENAI_API_KEY = "sk-test123";
+    process.env.OPENAI_API_KEY = "TESTFAKE_openai";
     process.env.AWS_SECRET_ACCESS_KEY = "wJalrXUtnFEMI/K7MDENG";
 
     const env = sanitizedEnv();
@@ -66,8 +66,8 @@ describe("sanitizedEnv", () => {
 
   it("NEVER includes *_KEY variables", () => {
     process.env.PATH = "/usr/bin";
-    process.env.OPENAI_API_KEY = "sk-test123456789012345678";
-    process.env.GOOGLE_API_KEY = "AIzaSyTest1234567890";
+    process.env.OPENAI_API_KEY = "TESTFAKE_value_openai";
+    process.env.GOOGLE_API_KEY = "TESTFAKE_value_google";
     process.env.SSH_KEY = "/path/to/key";
     process.env.ENCRYPTION_KEY = "supersecret";
 
@@ -82,7 +82,7 @@ describe("sanitizedEnv", () => {
 
   it("NEVER includes *_TOKEN variables", () => {
     process.env.PATH = "/usr/bin";
-    process.env.GITHUB_TOKEN = "ghp_test123456789";
+    process.env.GITHUB_TOKEN = "TESTFAKE_value_github";
     process.env.SLACK_TOKEN = "xoxb-test-token";
     process.env.AUTH_TOKEN = "bearer-abc123";
 
@@ -160,7 +160,7 @@ describe("sanitizedEnv", () => {
 
   it("blocks credential-named extraVars", () => {
     const env = sanitizedEnv({
-      OPENAI_API_KEY: "sk-test",
+      OPENAI_API_KEY: "TESTFAKE",
       MY_TOKEN: "abc",
       NORMAL_VAR: "ok",
     });
@@ -224,7 +224,7 @@ describe("validateArgs", () => {
   // Credential pattern tests
   it("rejects OpenAI API keys (sk-...)", () => {
     expect(() =>
-      validateArgs(["--key", "sk-abcdefghijklmnopqrstuvwxyz1234"]),
+      validateArgs(["--key", "sk-TESTFAKE0000000000000000000000"]),
     ).toThrow(/credential pattern/i);
   });
 
@@ -232,7 +232,7 @@ describe("validateArgs", () => {
     expect(() =>
       validateArgs([
         "--key",
-        "AIzaSyABCDEFGHIJKLMNOPQRSTUVWXYZ123456_",
+        "AIzaSyTESTFAKE0000000000000000000000000",
       ]),
     ).toThrow(/credential pattern/i);
   });
@@ -240,7 +240,7 @@ describe("validateArgs", () => {
   it("rejects GitHub personal access tokens (ghp_...)", () => {
     expect(() =>
       validateArgs([
-        "ghp_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijkl",
+        "ghp_TESTFAKE0000000000000000000000000000",
       ]),
     ).toThrow(/credential pattern/i);
   });
@@ -248,20 +248,20 @@ describe("validateArgs", () => {
   it("rejects GitHub OAuth tokens (gho_...)", () => {
     expect(() =>
       validateArgs([
-        "gho_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijkl",
+        "gho_TESTFAKE0000000000000000000000000000",
       ]),
     ).toThrow(/credential pattern/i);
   });
 
   it("rejects AWS access key IDs (AKIA...)", () => {
-    expect(() => validateArgs(["AKIAIOSFODNN7EXAMPLE"])).toThrow(
+    expect(() => validateArgs(["AKIATESTFAKE00000000"])).toThrow(
       /credential pattern/i,
     );
   });
 
   it("rejects Slack tokens (xoxb-...)", () => {
     expect(() =>
-      validateArgs(["xoxb-123456789012-1234567890123-abc"]),
+      validateArgs(["xoxb-TESTFAKE0000000000000000"]),
     ).toThrow(/credential pattern/i);
   });
 
@@ -289,7 +289,7 @@ describe("validateArgs", () => {
       validateArgs([
         "safe",
         "also-safe",
-        "sk-abcdefghijklmnopqrstuvwxyz1234",
+        "sk-TESTFAKE0000000000000000000000",
       ]),
     ).toThrow(/index 2/);
   });
@@ -297,7 +297,7 @@ describe("validateArgs", () => {
   it("rejects credentials embedded in longer strings", () => {
     expect(() =>
       validateArgs([
-        "prefix_sk-abcdefghijklmnopqrstuvwxyz1234_suffix",
+        "prefix_sk-TESTFAKE0000000000000000000000_suffix",
       ]),
     ).toThrow(/credential pattern/i);
   });
@@ -322,15 +322,15 @@ describe("sanitizeOutput", () => {
 
   it("redacts OpenAI API keys in output", () => {
     const output =
-      "Using key sk-abcdefghijklmnopqrstuvwxyz1234 for authentication";
+      "Using key sk-TESTFAKE0000000000000000000000 for authentication";
     const result = sanitizeOutput(output);
     expect(result.text).toContain("[REDACTED]");
-    expect(result.text).not.toContain("sk-abcdef");
+    expect(result.text).not.toContain("sk-TESTFAKE");
   });
 
   it("redacts GitHub tokens in output", () => {
     const output =
-      "Token: ghp_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijkl";
+      "Token: ghp_TESTFAKE0000000000000000000000000000";
     const result = sanitizeOutput(output);
     expect(result.text).toContain("[REDACTED]");
     expect(result.text).not.toContain("ghp_");
@@ -338,28 +338,28 @@ describe("sanitizeOutput", () => {
 
   it("redacts Google API keys in output", () => {
     const output =
-      "key=AIzaSyABCDEFGHIJKLMNOPQRSTUVWXYZ123456_";
+      "key=AIzaSyTESTFAKE0000000000000000000000000";
     const result = sanitizeOutput(output);
     expect(result.text).toContain("[REDACTED]");
     expect(result.text).not.toContain("AIzaSy");
   });
 
   it("redacts AWS access key IDs in output", () => {
-    const output = "AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE";
+    const output = "AWS_ACCESS_KEY_ID=AKIATESTFAKE00000000";
     const result = sanitizeOutput(output);
     expect(result.text).toContain("[REDACTED]");
-    expect(result.text).not.toContain("AKIAIOSFODNN7EXAMPLE");
+    expect(result.text).not.toContain("AKIATESTFAKE00000000");
   });
 
   it("redacts multiple credentials in the same output", () => {
     const output = [
-      "Key1: sk-abcdefghijklmnopqrstuvwxyz1234",
-      "Key2: ghp_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijkl",
+      "Key1: sk-TESTFAKE0000000000000000000000",
+      "Key2: ghp_TESTFAKE0000000000000000000000000000",
       "Normal: just regular text",
     ].join("\n");
 
     const result = sanitizeOutput(output);
-    expect(result.text).not.toContain("sk-abcdef");
+    expect(result.text).not.toContain("sk-TESTFAKE");
     expect(result.text).not.toContain("ghp_");
     expect(result.text).toContain("Normal: just regular text");
   });
@@ -392,10 +392,10 @@ describe("sanitizeOutput", () => {
 
   it("both strips ANSI and redacts credentials", () => {
     const output =
-      "\x1b[33mWarning:\x1b[0m Using key sk-abcdefghijklmnopqrstuvwxyz1234";
+      "\x1b[33mWarning:\x1b[0m Using key sk-TESTFAKE0000000000000000000000";
     const result = sanitizeOutput(output);
     expect(result.text).not.toContain("\x1b");
-    expect(result.text).not.toContain("sk-abcdef");
+    expect(result.text).not.toContain("sk-TESTFAKE");
     expect(result.text).toContain("Warning:");
     expect(result.text).toContain("[REDACTED]");
   });
