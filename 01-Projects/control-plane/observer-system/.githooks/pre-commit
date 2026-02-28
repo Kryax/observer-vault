@@ -1,0 +1,136 @@
+#!/usr/bin/env bash
+# Observer Control Plane - Pre-commit credential scanner (S4)
+# Scans staged files for credential patterns, shell:true usage,
+# and hardcoded non-localhost IP addresses.
+# Lines containing TESTFAKE (case-insensitive) are exempt.
+set -euo pipefail
+
+VIOLATIONS=""
+VIOLATION_COUNT=0
+
+# Get staged files (added, copied, modified, renamed)
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACMR 2>/dev/null || true)
+
+if [ -z "$STAGED_FILES" ]; then
+  exit 0
+fi
+
+add_violation() {
+  local file="$1"
+  local line_num="$2"
+  local pattern="$3"
+  local line_content="$4"
+  VIOLATIONS="${VIOLATIONS}  ${file}:${line_num} - ${pattern}\n    ${line_content}\n"
+  VIOLATION_COUNT=$((VIOLATION_COUNT + 1))
+}
+
+for file in $STAGED_FILES; do
+  # Skip files that no longer exist (deleted between staging and commit)
+  if ! git show ":${file}" > /dev/null 2>&1; then
+    continue
+  fi
+
+  # Skip binary files by checking git's diff attribute
+  if git show ":${file}" | file --mime - 2>/dev/null | grep -q 'charset=binary'; then
+    continue
+  fi
+
+  # Determine if this is a TypeScript or JavaScript file
+  IS_TS_JS=false
+  case "$file" in
+    *.ts|*.tsx|*.js|*.jsx|*.mjs|*.cjs|*.mts|*.cts)
+      IS_TS_JS=true
+      ;;
+  esac
+
+  LINE_NUM=0
+  while IFS= read -r line; do
+    LINE_NUM=$((LINE_NUM + 1))
+
+    # TESTFAKE bypass: skip lines containing TESTFAKE (case-insensitive)
+    if echo "$line" | grep -qi 'TESTFAKE'; then
+      continue
+    fi
+
+    # Pattern 1: ANTHROPIC_API_KEY with a value assignment
+    if echo "$line" | grep -qE 'ANTHROPIC_API_KEY\s*[:=]'; then
+      add_violation "$file" "$LINE_NUM" "ANTHROPIC_API_KEY detected" "$line"
+    fi
+
+    # Pattern 2: OPENAI_API_KEY with a value assignment
+    if echo "$line" | grep -qE 'OPENAI_API_KEY\s*[:=]'; then
+      add_violation "$file" "$LINE_NUM" "OPENAI_API_KEY detected" "$line"
+    fi
+
+    # Pattern 3: GEMINI_API_KEY with a value assignment
+    if echo "$line" | grep -qE 'GEMINI_API_KEY\s*[:=]'; then
+      add_violation "$file" "$LINE_NUM" "GEMINI_API_KEY detected" "$line"
+    fi
+
+    # Pattern 4: sk- prefix (OpenAI-style secret keys)
+    if echo "$line" | grep -qE 'sk-[A-Za-z0-9]{20,}'; then
+      add_violation "$file" "$LINE_NUM" "Secret key prefix (sk-) detected" "$line"
+    fi
+
+    # Pattern 5: gsk_ prefix (Groq-style keys)
+    if echo "$line" | grep -qE 'gsk_[A-Za-z0-9]{20,}'; then
+      add_violation "$file" "$LINE_NUM" "Secret key prefix (gsk_) detected" "$line"
+    fi
+
+    # Pattern 6: AIza prefix (Google API keys)
+    if echo "$line" | grep -qE 'AIza[A-Za-z0-9]{20,}'; then
+      add_violation "$file" "$LINE_NUM" "Google API key prefix (AIza) detected" "$line"
+    fi
+
+    # Pattern 7: Private key headers
+    if echo "$line" | grep -qE '\-\-\-\-\-BEGIN [A-Z ]* ?PRIVATE KEY\-\-\-\-\-'; then
+      add_violation "$file" "$LINE_NUM" "Private key header detected" "$line"
+    fi
+
+    # Pattern 8: Hardcoded passwords
+    if echo "$line" | grep -qEi 'password\s*[:=]\s*["'"'"'][^"'"'"']+["'"'"']'; then
+      add_violation "$file" "$LINE_NUM" "Hardcoded password detected" "$line"
+    fi
+
+    # Pattern 9: shell: true (TypeScript/JavaScript files only)
+    if [ "$IS_TS_JS" = true ]; then
+      if echo "$line" | grep -qE 'shell:\s*true'; then
+        add_violation "$file" "$LINE_NUM" "shell: true is prohibited (use array args)" "$line"
+      fi
+    fi
+
+    # Pattern 10: Hardcoded IP addresses other than 127.0.0.1
+    if echo "$line" | grep -qE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'; then
+      # Extract the IP and check it's not 127.0.0.1 or 0.0.0.0 (common in comments about what NOT to do)
+      MATCHED_IPS=$(echo "$line" | grep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' || true)
+      for ip in $MATCHED_IPS; do
+        if [ "$ip" != "127.0.0.1" ] && [ "$ip" != "0.0.0.0" ]; then
+          # Skip version-like patterns (e.g., 1.2.3, semver in package.json)
+          # Only flag if it looks like a real IP (each octet 0-255)
+          IFS='.' read -r o1 o2 o3 o4 <<< "$ip"
+          if [ "$o1" -le 255 ] && [ "$o2" -le 255 ] && [ "$o3" -le 255 ] && [ "$o4" -le 255 ] 2>/dev/null; then
+            add_violation "$file" "$LINE_NUM" "Hardcoded IP address ($ip) detected - use 127.0.0.1 only" "$line"
+          fi
+        fi
+      done
+    fi
+
+  done < <(git show ":${file}" 2>/dev/null || true)
+done
+
+if [ "$VIOLATION_COUNT" -gt 0 ]; then
+  echo ""
+  echo "=========================================="
+  echo " OBSERVER PRE-COMMIT: VIOLATIONS DETECTED"
+  echo "=========================================="
+  echo ""
+  echo "Found ${VIOLATION_COUNT} violation(s) in staged files:"
+  echo ""
+  echo -e "$VIOLATIONS"
+  echo "To bypass (emergencies only): git commit --no-verify"
+  echo "Lines containing TESTFAKE are automatically exempt."
+  echo ""
+  exit 1
+fi
+
+exit 0

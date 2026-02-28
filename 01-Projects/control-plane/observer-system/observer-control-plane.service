@@ -1,0 +1,32 @@
+[Unit]
+Description=Observer Control Plane
+After=network.target
+
+[Service]
+Type=simple
+User=observer
+Group=observer
+WorkingDirectory=/opt/observer-system
+ExecStartPre=/opt/observer-system/scripts/provision-secrets.sh
+ExecStart=/usr/bin/node packages/control-plane/src/server/server.js
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=observer-cp
+
+# Security hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/observer-system/data /run/observer-secrets
+PrivateTmp=true
+
+# Environment
+Environment=NODE_ENV=production
+Environment=OBSERVER_CONFIG=/opt/observer-system/control-plane.yaml
+Environment=OBSERVER_BACKENDS=/opt/observer-system/execution-backends.yaml
+Environment=OBSERVER_SECRETS_DIR=/run/observer-secrets
+
+[Install]
+WantedBy=multi-user.target
