@@ -1,0 +1,129 @@
+# =============================================================================
+# Observer Control Plane — Execution Backends Configuration (Example)
+# =============================================================================
+#
+# Copy this file to execution-backends.yaml and edit for your environment.
+# All paths and values shown are generic examples — no real credentials.
+# The control plane reads this file at startup (restart-to-reload; no hot-reload).
+#
+# Schema version: 1
+# Spec reference: TDS v2 §3.6 (Dispatch Configuration)
+# =============================================================================
+
+# --- Routing Mode -----------------------------------------------------------
+# How the control plane selects a backend for each request.
+# Phase 1 supports "specify" only — the client names the backend explicitly.
+# Future phases may add "auto" (policy-based) or "round-robin".
+routing_mode: "specify"                        # "specify" | future: "auto"
+
+# --- Default Backend ---------------------------------------------------------
+# Backend used when the client omits an explicit backend in thread.create.
+# Must match one of the keys under `backends:` below.
+default_backend: "claude-code"                 # must exist in backends map
+
+# --- Dispatch Defaults -------------------------------------------------------
+# Global timeout and retry settings applied to every backend unless the
+# backend entry overrides them.
+dispatch:
+  default_timeout_seconds: 300                 # 5 min global ceiling per dispatch
+  max_retries: 1                               # retry once on transient failure
+  retry_delay_seconds: 5                       # pause between retries
+  output_max_bytes: 10485760                   # 10 MiB cap on captured stdout
+  health_check_timeout_seconds: 10             # global health-check ceiling
+
+# --- Backends ----------------------------------------------------------------
+# Each key is the canonical backend identifier used in JSON-RPC requests
+# (thread.create → params.backend).
+#
+# Required fields per backend:
+#   command          — executable name or absolute path (no shell expansion)
+#   args_template    — argument vector; {prompt} is replaced at dispatch time
+#   enabled          — false disables the backend without removing config
+#   timeout_seconds  — per-backend override of dispatch.default_timeout_seconds
+#
+# Optional fields:
+#   health_check     — lightweight probe run by health.status
+#   env              — extra environment variables (NEVER put secrets here)
+#   working_dir      — cwd for the spawned process
+#   description      — human-readable note (not used at runtime)
+# =============================================================================
+backends:
+
+  # ---------------------------------------------------------------------------
+  # Claude Code — Anthropic's CLI agent
+  # ---------------------------------------------------------------------------
+  claude-code:
+    command: "claude"                          # executable on $PATH
+    args_template:                             # argument vector for dispatch
+      - "--print"                              # non-interactive output mode
+      - "--dangerously-skip-permissions"       # headless; no TTY prompts
+      - "{prompt}"                             # replaced with sanitised prompt
+    enabled: true                              # backend is active
+    timeout_seconds: 300                       # 5 min (matches global default)
+    health_check:
+      command: "claude"                        # probe binary
+      args: ["--version"]                      # fast, side-effect-free check
+      timeout_seconds: 5                       # probe must complete in 5 s
+    description: "Anthropic Claude Code CLI"   # human-readable label
+
+  # ---------------------------------------------------------------------------
+  # Gemini CLI — Google DeepMind CLI agent
+  # ---------------------------------------------------------------------------
+  gemini-cli:
+    command: "gemini"                          # executable on $PATH
+    args_template:                             # argument vector for dispatch
+      - "--prompt"                             # pass prompt as flag value
+      - "{prompt}"                             # replaced with sanitised prompt
+    enabled: true                              # backend is active
+    timeout_seconds: 300                       # 5 min ceiling
+    health_check:
+      command: "gemini"                        # probe binary
+      args: ["--version"]                      # fast, side-effect-free check
+      timeout_seconds: 5                       # probe must complete in 5 s
+    description: "Google Gemini CLI agent"     # human-readable label
+
+  # ---------------------------------------------------------------------------
+  # Ollama — local/self-hosted LLM runner
+  # ---------------------------------------------------------------------------
+  ollama:
+    command: "ollama"                          # executable on $PATH
+    args_template:                             # argument vector for dispatch
+      - "run"                                  # subcommand to execute a model
+      - "llama3"                               # model name (change as needed)
+      - "{prompt}"                             # replaced with sanitised prompt
+    enabled: false                             # disabled by default; enable when Ollama is installed
+    timeout_seconds: 120                       # 2 min (local inference is faster)
+    health_check:
+      command: "ollama"                        # probe binary
+      args: ["list"]                           # lists installed models; confirms daemon is up
+      timeout_seconds: 5                       # probe must complete in 5 s
+    description: "Local Ollama LLM runner"     # human-readable label
+
+# --- Sensitivity Tiers -------------------------------------------------------
+# Maps data-sensitivity classifications to the set of backends permitted to
+# handle prompts at that level.  The control plane enforces this at dispatch
+# time — a request tagged "confidential" will be rejected if routed to a
+# backend not listed under the confidential tier.
+#
+# Tier definitions (from TDS v2 §5.3):
+#   public        — no sensitive data; any backend is acceptable
+#   internal      — org-internal data; cloud backends permitted
+#   confidential  — secrets, credentials, PII; local-only backends required
+# =============================================================================
+sensitivity:
+
+  public:                                      # lowest sensitivity
+    allowed_backends:                          # all backends may handle public data
+      - "claude-code"                          # cloud backend OK for public
+      - "gemini-cli"                           # cloud backend OK for public
+      - "ollama"                               # local backend always OK
+
+  internal:                                    # mid-tier sensitivity
+    allowed_backends:                          # cloud backends still acceptable
+      - "claude-code"                          # cloud backend OK for internal
+      - "gemini-cli"                           # cloud backend OK for internal
+      - "ollama"                               # local backend always OK
+
+  confidential:                                # highest sensitivity
+    allowed_backends:                          # ONLY local backends permitted
+      - "ollama"                               # local-only; data never leaves the machine
