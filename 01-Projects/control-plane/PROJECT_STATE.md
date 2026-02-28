@@ -8,36 +8,37 @@ source: atlas_write
 confidence: confirmed
 mode: build
 created: 2026-02-28T16:00:00+11:00
-modified: 2026-02-28T20:00:00+11:00
+modified: 2026-02-28T22:28:00+11:00
 cssclasses: [status-draft]
 motifs: [observer-control-plane, json-rpc, multi-engine-dispatch]
 refs:
   - 01-Projects/observer-council/architecture/Technical_Design_Specification_v2.md
   - 01-Projects/control-plane/decisions/001-tds-v2-open-questions.md
   - 01-Projects/control-plane/architecture/control-plane-prd.md
-  - 01-Projects/control-plane/milestones/001-phase1-build-complete.md
+  - 01-Projects/control-plane/milestones/001-control-plane-build.md
 ---
 
 # PROJECT_STATE.md -- Observer Control Plane
 
 **Last updated:** 2026-02-28
 **Updated by:** Claude (Opus 4.6) + Adam
-**Phase:** Phase 1 build complete -- pending merge to master
+**Phase:** Built, merged to master, awaiting infrastructure wiring
 
 ---
 
 ## Current State
 
-Phase 1 build is complete. All 8 slices (S0-S7) implemented across 3 packages. 427 tests passing. Smoke test green (9/9 checks). Committed at `f046dac` on branch `claude/zealous-satoshi`. Awaiting merge to master.
+Phase 1 build is complete and merged to master. All 8 slices (S0-S7) implemented across 3 packages. 427 tests passing. Smoke test green (9/9 checks). Merged to master at `e915fe2` on 2026-02-28. Awaiting infrastructure wiring (systemd, Tailscale, deployment).
 
 ## Build Summary
 
 | Metric | Value |
 |--------|-------|
-| Commit | `f046dac` |
-| Branch | `claude/zealous-satoshi` |
-| Files | 57 |
-| Lines of code | 16,636 |
+| Build commit | `f046dac` |
+| Merge commit | `e915fe2` |
+| Branch | `claude/zealous-satoshi` (merged to master) |
+| Files | 64 |
+| Lines of code | 16,754 |
 | Tests passing | 427 |
 | Smoke test | 9/9 |
 | Packages | 3 |
@@ -47,7 +48,7 @@ Phase 1 build is complete. All 8 slices (S0-S7) implemented across 3 packages. 4
 
 - `architecture/control-plane-prd.md` -- **THE PRD** (40KB, 8 slices, ISC exit criteria, wiring table)
 - `decisions/001-tds-v2-open-questions.md` -- All Q1-Q8 decisions resolved
-- `milestones/001-phase1-build-complete.md` -- Build receipt with full details
+- `milestones/001-control-plane-build.md` -- Build receipt with full details
 - `observer-system/` -- **THE MONOREPO** (3 packages, 427 tests)
 - `CLAUDE.md` -- Project coordination file for Atlas
 - `../observer-council/architecture/Technical_Design_Specification_v2.md` -- Source spec (reference only, PRD is self-contained)
@@ -96,14 +97,15 @@ observer-system/
 - Audit writes block requests (circuit breaker pattern)
 - Default-deny policy enforcement
 - Approval timeout = denied
+- Credential redaction in audit output
 
 ## Next Steps
 
-1. **Merge to master** -- branch `claude/zealous-satoshi` ready for merge
+1. **Infrastructure wiring** -- systemd units, Tailscale networking, deployment scripts
 2. **End-to-end integration testing** -- validate full request lifecycle across packages
 3. **Real backend testing** -- test dispatch against actual CLI backends (Claude Code, Gemini CLI)
 4. **Phase 2 planning** -- bubblewrap sandboxing, WebSocket transport, Telegram client, TruffleHog
 
 ## Blockers
 
-None. Build is complete and ready for merge.
+None. Build is complete and merged to master.
