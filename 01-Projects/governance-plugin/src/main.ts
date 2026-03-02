@@ -24,6 +24,7 @@ import {
   DEFAULT_SETTINGS,
   type ObserverGovernanceSettings,
 } from './settings';
+import { ObserverRpcClient } from './rpc-client';
 
 // ---------------------------------------------------------------------------
 // Plugin
@@ -33,9 +34,17 @@ export default class ObserverGovernancePlugin extends Plugin {
   settings: ObserverGovernanceSettings = DEFAULT_SETTINGS;
   private statusBarEl: HTMLElement | null = null;
   private lastValidation: ValidationResult = { errors: [], warnings: [] };
+  rpcClient: ObserverRpcClient | null = null;
 
   async onload(): Promise<void> {
     await this.loadSettings();
+
+    // Observer Control Plane RPC client (disabled by default)
+    this.rpcClient = new ObserverRpcClient({
+      endpoint: this.settings.rpcEndpoint,
+      token: this.settings.rpcToken,
+      enabled: this.settings.rpcEnabled,
+    });
 
     // Status bar indicator (PRD 10.1)
     this.statusBarEl = this.addStatusBarItem();
@@ -143,6 +152,15 @@ export default class ObserverGovernancePlugin extends Plugin {
 
   async saveSettings(): Promise<void> {
     await this.saveData(this.settings);
+
+    // Keep the RPC client in sync with latest settings
+    if (this.rpcClient) {
+      this.rpcClient.updateConfig({
+        endpoint: this.settings.rpcEndpoint,
+        token: this.settings.rpcToken,
+        enabled: this.settings.rpcEnabled,
+      });
+    }
   }
 
   // -----------------------------------------------------------------------
@@ -324,6 +342,19 @@ export default class ObserverGovernancePlugin extends Plugin {
 
     new Notice(`OG: Promoted ${file.basename} from ${from} to ${to}`);
 
+    // Notify Observer Control Plane (best-effort, non-blocking)
+    if (this.rpcClient) {
+      this.rpcClient.notifyPromotion({
+        file: file.path,
+        from,
+        to,
+        by: 'adam',
+        rationale,
+      }).catch(() => {
+        // Swallowed intentionally -- ObserverRpcClient already logs warnings
+      });
+    }
+
     // Auto-refresh priming on canonical promotion (PRD 3.2.8)
     if (to === 'canonical' && this.settings.autoRefreshPrimingOnPromotion) {
       await this.refreshPrimingDocument();
@@ -372,6 +403,19 @@ export default class ObserverGovernancePlugin extends Plugin {
         }, auditPath);
 
         new Notice(`OG: Demoted ${file.basename} to inbox`);
+
+        // Notify Observer Control Plane (best-effort, non-blocking)
+        if (this.rpcClient) {
+          this.rpcClient.notifyDemotion({
+            file: file.path,
+            from: currentStatus,
+            to: 'inbox',
+            by: 'adam',
+            rationale,
+          }).catch(() => {
+            // Swallowed intentionally -- ObserverRpcClient already logs warnings
+          });
+        }
       },
     ).open();
   }

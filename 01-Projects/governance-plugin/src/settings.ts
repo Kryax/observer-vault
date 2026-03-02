@@ -26,6 +26,12 @@ export interface ObserverGovernanceSettings {
 	auditLogPath: string;
 	/** Folder paths to skip during validation */
 	excludedFolders: string[];
+	/** Observer Control Plane JSON-RPC endpoint URL */
+	rpcEndpoint: string;
+	/** Bearer token for control plane authentication */
+	rpcToken: string;
+	/** Enable communication with the Observer Control Plane */
+	rpcEnabled: boolean;
 }
 
 export const DEFAULT_SETTINGS: ObserverGovernanceSettings = {
@@ -35,6 +41,9 @@ export const DEFAULT_SETTINGS: ObserverGovernanceSettings = {
 	autoRefreshPrimingOnPromotion: false,
 	auditLogPath: "audit.jsonl",
 	excludedFolders: ["_templates", ".obsidian"],
+	rpcEndpoint: "http://127.0.0.1:9000",
+	rpcToken: "",
+	rpcEnabled: false,
 };
 
 export class ObserverGovernanceSettingTab extends PluginSettingTab {
@@ -143,6 +152,54 @@ export class ObserverGovernanceSettingTab extends PluginSettingTab {
 							.split(",")
 							.map((folder) => folder.trim())
 							.filter((folder) => folder.length > 0);
+						await this.plugin.saveSettings();
+					}),
+			);
+
+		// --- Observer Control Plane ---
+
+		containerEl.createEl("h2", { text: "Observer Control Plane" });
+
+		new Setting(containerEl)
+			.setName("Enable control plane")
+			.setDesc(
+				"Send governance events (promotions, demotions) to the Observer Control Plane via JSON-RPC.",
+			)
+			.addToggle((toggle) =>
+				toggle
+					.setValue(this.plugin.settings.rpcEnabled)
+					.onChange(async (value) => {
+						this.plugin.settings.rpcEnabled = value;
+						await this.plugin.saveSettings();
+					}),
+			);
+
+		new Setting(containerEl)
+			.setName("RPC endpoint")
+			.setDesc(
+				"URL of the Observer Control Plane JSON-RPC endpoint.",
+			)
+			.addText((text) =>
+				text
+					.setPlaceholder("http://127.0.0.1:9000")
+					.setValue(this.plugin.settings.rpcEndpoint)
+					.onChange(async (value) => {
+						this.plugin.settings.rpcEndpoint = value.trim();
+						await this.plugin.saveSettings();
+					}),
+			);
+
+		new Setting(containerEl)
+			.setName("Bearer token")
+			.setDesc(
+				"Authentication token for the control plane. Leave empty if no auth is required.",
+			)
+			.addText((text) =>
+				text
+					.setPlaceholder("your-secret-token")
+					.setValue(this.plugin.settings.rpcToken)
+					.onChange(async (value) => {
+						this.plugin.settings.rpcToken = value.trim();
 						await this.plugin.saveSettings();
 					}),
 			);
