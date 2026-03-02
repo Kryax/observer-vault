@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "observer-control-plane": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "/opt/observer-system/scripts/mcp-bridge.mjs"
+      ],
+      "env": {
+        "OBSERVER_CP_HOST": "127.0.0.1",
+        "OBSERVER_CP_PORT": "9000",
+        "OBSERVER_SECRETS_DIR": "/run/observer-secrets"
+      }
+    }
+  }
+}

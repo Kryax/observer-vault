@@ -23,7 +23,7 @@ __export(main_exports, {
   default: () => ObserverGovernancePlugin
 });
 module.exports = __toCommonJS(main_exports);
-var import_obsidian4 = require("obsidian");
+var import_obsidian5 = require("obsidian");
 
 // src/schema.ts
 var SCHEMA = {
@@ -733,7 +733,10 @@ var DEFAULT_SETTINGS = {
   autoSyncCssClasses: true,
   autoRefreshPrimingOnPromotion: false,
   auditLogPath: "audit.jsonl",
-  excludedFolders: ["_templates", ".obsidian"]
+  excludedFolders: ["_templates", ".obsidian"],
+  rpcEndpoint: "http://127.0.0.1:9000",
+  rpcToken: "",
+  rpcEnabled: false
 };
 var ObserverGovernanceSettingTab = class extends import_obsidian3.PluginSettingTab {
   constructor(app, plugin) {
@@ -792,19 +795,205 @@ var ObserverGovernanceSettingTab = class extends import_obsidian3.PluginSettingT
         await this.plugin.saveSettings();
       })
     );
+    containerEl.createEl("h2", { text: "Observer Control Plane" });
+    new import_obsidian3.Setting(containerEl).setName("Enable control plane").setDesc(
+      "Send governance events (promotions, demotions) to the Observer Control Plane via JSON-RPC."
+    ).addToggle(
+      (toggle) => toggle.setValue(this.plugin.settings.rpcEnabled).onChange(async (value) => {
+        this.plugin.settings.rpcEnabled = value;
+        await this.plugin.saveSettings();
+      })
+    );
+    new import_obsidian3.Setting(containerEl).setName("RPC endpoint").setDesc(
+      "URL of the Observer Control Plane JSON-RPC endpoint."
+    ).addText(
+      (text) => text.setPlaceholder("http://127.0.0.1:9000").setValue(this.plugin.settings.rpcEndpoint).onChange(async (value) => {
+        this.plugin.settings.rpcEndpoint = value.trim();
+        await this.plugin.saveSettings();
+      })
+    );
+    new import_obsidian3.Setting(containerEl).setName("Bearer token").setDesc(
+      "Authentication token for the control plane. Leave empty if no auth is required."
+    ).addText(
+      (text) => text.setPlaceholder("your-secret-token").setValue(this.plugin.settings.rpcToken).onChange(async (value) => {
+        this.plugin.settings.rpcToken = value.trim();
+        await this.plugin.saveSettings();
+      })
+    );
+  }
+};
+
+// src/rpc-client.ts
+var import_obsidian4 = require("obsidian");
+var ObserverRpcClient = class {
+  constructor(config) {
+    this.nextId = 1;
+    this.config = config;
+  }
+  /** Update configuration (e.g. after settings change). */
+  updateConfig(config) {
+    this.config = config;
+  }
+  /** Whether the client is enabled and has a configured endpoint. */
+  get enabled() {
+    return this.config.enabled && this.config.endpoint.length > 0;
+  }
+  /**
+   * Send a JSON-RPC 2.0 call to the control plane.
+   *
+   * Returns the `result` field on success, or null on any failure.
+   * Never throws -- all errors are caught and logged to console.
+   */
+  async call(method, params) {
+    if (!this.enabled) {
+      return null;
+    }
+    const id = this.nextId++;
+    const body = {
+      jsonrpc: "2.0",
+      id,
+      method,
+      params
+    };
+    const headers = {
+      "Content-Type": "application/json"
+    };
+    if (this.config.token.length > 0) {
+      headers["Authorization"] = `Bearer ${this.config.token}`;
+    }
+    let response;
+    try {
+      response = await (0, import_obsidian4.requestUrl)({
+        url: this.config.endpoint,
+        method: "POST",
+        headers,
+        body: JSON.stringify(body),
+        throw: false
+      });
+    } catch (err) {
+      console.warn(
+        `[OG-RPC] Connection failed for ${method}: ${err instanceof Error ? err.message : String(err)}`
+      );
+      return null;
+    }
+    if (response.status < 200 || response.status >= 300) {
+      if (response.status === 401 || response.status === 403) {
+        console.warn(`[OG-RPC] Authentication failed (${response.status}) for ${method}`);
+      } else {
+        console.warn(`[OG-RPC] HTTP ${response.status} for ${method}`);
+      }
+      return null;
+    }
+    let rpcResponse;
+    try {
+      rpcResponse = response.json;
+    } catch (err) {
+      console.warn(`[OG-RPC] Invalid JSON response for ${method}`);
+      return null;
+    }
+    if (rpcResponse.error) {
+      console.warn(
+        `[OG-RPC] RPC error for ${method}: [${rpcResponse.error.code}] ${rpcResponse.error.message}`
+      );
+      return null;
+    }
+    return rpcResponse.result ?? null;
+  }
+  /**
+   * Convenience: notify the control plane of a governance event.
+   *
+   * Creates a session, logs the event, and closes the session.
+   * All best-effort -- failures are logged but never thrown.
+   */
+  async notifyPromotion(event) {
+    if (!this.enabled)
+      return;
+    try {
+      const sessionResult = await this.call("session.create", {
+        backend: "obsidian-governance",
+        description: `Document promotion: ${event.file} (${event.from} -> ${event.to})`
+      });
+      const sessionId = sessionResult && typeof sessionResult === "object" && "id" in sessionResult ? sessionResult.id : null;
+      await this.call("audit.log", {
+        session_id: sessionId,
+        event_type: "document.promote",
+        source: "obsidian-governance",
+        payload: {
+          file: event.file,
+          from: event.from,
+          to: event.to,
+          by: event.by,
+          rationale: event.rationale,
+          timestamp: (/* @__PURE__ */ new Date()).toISOString()
+        }
+      });
+      if (sessionId) {
+        await this.call("session.close", {
+          id: sessionId,
+          status: "completed"
+        });
+      }
+    } catch (err) {
+      console.warn(
+        `[OG-RPC] Failed to notify promotion: ${err instanceof Error ? err.message : String(err)}`
+      );
+    }
+  }
+  /**
+   * Convenience: notify the control plane of a governance demotion event.
+   */
+  async notifyDemotion(event) {
+    if (!this.enabled)
+      return;
+    try {
+      const sessionResult = await this.call("session.create", {
+        backend: "obsidian-governance",
+        description: `Document demotion: ${event.file} (${event.from} -> ${event.to})`
+      });
+      const sessionId = sessionResult && typeof sessionResult === "object" && "id" in sessionResult ? sessionResult.id : null;
+      await this.call("audit.log", {
+        session_id: sessionId,
+        event_type: "document.demote",
+        source: "obsidian-governance",
+        payload: {
+          file: event.file,
+          from: event.from,
+          to: event.to,
+          by: event.by,
+          rationale: event.rationale,
+          timestamp: (/* @__PURE__ */ new Date()).toISOString()
+        }
+      });
+      if (sessionId) {
+        await this.call("session.close", {
+          id: sessionId,
+          status: "completed"
+        });
+      }
+    } catch (err) {
+      console.warn(
+        `[OG-RPC] Failed to notify demotion: ${err instanceof Error ? err.message : String(err)}`
+      );
+    }
   }
 };
 
 // src/main.ts
-var ObserverGovernancePlugin = class extends import_obsidian4.Plugin {
+var ObserverGovernancePlugin = class extends import_obsidian5.Plugin {
   constructor() {
     super(...arguments);
     this.settings = DEFAULT_SETTINGS;
     this.statusBarEl = null;
     this.lastValidation = { errors: [], warnings: [] };
+    this.rpcClient = null;
   }
   async onload() {
     await this.loadSettings();
+    this.rpcClient = new ObserverRpcClient({
+      endpoint: this.settings.rpcEndpoint,
+      token: this.settings.rpcToken,
+      enabled: this.settings.rpcEnabled
+    });
     this.statusBarEl = this.addStatusBarItem();
     this.statusBarEl.addClass("og-status-bar");
     this.statusBarEl.setText("OG: \u2713");
@@ -814,7 +1003,7 @@ var ObserverGovernancePlugin = class extends import_obsidian4.Plugin {
     this.addSettingTab(new ObserverGovernanceSettingTab(this.app, this));
     this.registerEvent(
       this.app.vault.on("modify", (file) => {
-        if (file instanceof import_obsidian4.TFile && file.extension === "md") {
+        if (file instanceof import_obsidian5.TFile && file.extension === "md") {
           this.onFileModify(file);
         }
       })
@@ -897,6 +1086,13 @@ var ObserverGovernancePlugin = class extends import_obsidian4.Plugin {
   }
   async saveSettings() {
     await this.saveData(this.settings);
+    if (this.rpcClient) {
+      this.rpcClient.updateConfig({
+        endpoint: this.settings.rpcEndpoint,
+        token: this.settings.rpcToken,
+        enabled: this.settings.rpcEnabled
+      });
+    }
   }
   // -----------------------------------------------------------------------
   // File modify handler (PRD 4.1)
@@ -912,7 +1108,7 @@ var ObserverGovernancePlugin = class extends import_obsidian4.Plugin {
       this.updateStatusBar(result);
       this.lastValidation = result;
       if (result.errors.length > 0 && this.settings.showNoticeOnError) {
-        new import_obsidian4.Notice(
+        new import_obsidian5.Notice(
           `OG: ${result.errors.length} validation error${result.errors.length > 1 ? "s" : ""} in ${file.name}`
         );
       }
@@ -983,22 +1179,22 @@ var ObserverGovernancePlugin = class extends import_obsidian4.Plugin {
   async promoteDocument(file) {
     const frontmatter = this.app.metadataCache.getFileCache(file)?.frontmatter;
     if (!frontmatter) {
-      new import_obsidian4.Notice("OG: No frontmatter found in this document.");
+      new import_obsidian5.Notice("OG: No frontmatter found in this document.");
       return;
     }
     const currentStatus = frontmatter.status;
     if (!currentStatus || !SCHEMA.enums.status.includes(currentStatus)) {
-      new import_obsidian4.Notice("OG: Document has no valid status field.");
+      new import_obsidian5.Notice("OG: Document has no valid status field.");
       return;
     }
     const nextStatuses = getNextStatuses(currentStatus);
     if (nextStatuses.length === 0) {
-      new import_obsidian4.Notice(`OG: No valid promotion target from "${currentStatus}".`);
+      new import_obsidian5.Notice(`OG: No valid promotion target from "${currentStatus}".`);
       return;
     }
     const validation = validateFrontmatter(frontmatter);
     if (validation.errors.length > 0) {
-      new import_obsidian4.Notice(
+      new import_obsidian5.Notice(
         `OG: Cannot promote \u2014 ${validation.errors.length} validation error(s). Fix them first.`
       );
       this.showValidationReport(file);
@@ -1040,7 +1236,17 @@ var ObserverGovernancePlugin = class extends import_obsidian4.Plugin {
       by: "adam",
       rationale
     }, auditPath);
-    new import_obsidian4.Notice(`OG: Promoted ${file.basename} from ${from} to ${to}`);
+    new import_obsidian5.Notice(`OG: Promoted ${file.basename} from ${from} to ${to}`);
+    if (this.rpcClient) {
+      this.rpcClient.notifyPromotion({
+        file: file.path,
+        from,
+        to,
+        by: "adam",
+        rationale
+      }).catch(() => {
+      });
+    }
     if (to === "canonical" && this.settings.autoRefreshPrimingOnPromotion) {
       await this.refreshPrimingDocument();
     }
@@ -1051,12 +1257,12 @@ var ObserverGovernancePlugin = class extends import_obsidian4.Plugin {
   async demoteDocument(file) {
     const frontmatter = this.app.metadataCache.getFileCache(file)?.frontmatter;
     if (!frontmatter) {
-      new import_obsidian4.Notice("OG: No frontmatter found in this document.");
+      new import_obsidian5.Notice("OG: No frontmatter found in this document.");
       return;
     }
     const currentStatus = frontmatter.status;
     if (!currentStatus || currentStatus === "inbox") {
-      new import_obsidian4.Notice("OG: Document is already inbox status or has no status.");
+      new import_obsidian5.Notice("OG: Document is already inbox status or has no status.");
       return;
     }
     new DemotionModal(
@@ -1080,7 +1286,17 @@ var ObserverGovernancePlugin = class extends import_obsidian4.Plugin {
           by: "adam",
           rationale
         }, auditPath);
-        new import_obsidian4.Notice(`OG: Demoted ${file.basename} to inbox`);
+        new import_obsidian5.Notice(`OG: Demoted ${file.basename} to inbox`);
+        if (this.rpcClient) {
+          this.rpcClient.notifyDemotion({
+            file: file.path,
+            from: currentStatus,
+            to: "inbox",
+            by: "adam",
+            rationale
+          }).catch(() => {
+          });
+        }
       }
     ).open();
   }
@@ -1090,12 +1306,12 @@ var ObserverGovernancePlugin = class extends import_obsidian4.Plugin {
   showValidationReport(file) {
     const targetFile = file || this.app.workspace.getActiveFile();
     if (!targetFile) {
-      new import_obsidian4.Notice("OG: No active file to validate.");
+      new import_obsidian5.Notice("OG: No active file to validate.");
       return;
     }
     const frontmatter = this.app.metadataCache.getFileCache(targetFile)?.frontmatter;
     if (!frontmatter) {
-      new import_obsidian4.Notice("OG: No frontmatter found.");
+      new import_obsidian5.Notice("OG: No frontmatter found.");
       return;
     }
     const result = validateFrontmatter(frontmatter);
@@ -1122,7 +1338,7 @@ var ObserverGovernancePlugin = class extends import_obsidian4.Plugin {
         totalWarnings += result.warnings.length;
       }
     }
-    new import_obsidian4.Notice(
+    new import_obsidian5.Notice(
       `OG: Validated ${files.length} files. ${filesWithIssues} with issues (${totalErrors} errors, ${totalWarnings} warnings).`
     );
   }
@@ -1138,11 +1354,11 @@ var ObserverGovernancePlugin = class extends import_obsidian4.Plugin {
         canonical_count: result.canonicalCount,
         project_count: result.projectCount
       }, auditPath);
-      new import_obsidian4.Notice(
+      new import_obsidian5.Notice(
         `OG: Priming refreshed. ${result.canonicalCount} canonical docs, ${result.projectCount} projects.`
       );
     } catch (err) {
-      new import_obsidian4.Notice(`OG: Failed to refresh priming: ${String(err)}`);
+      new import_obsidian5.Notice(`OG: Failed to refresh priming: ${String(err)}`);
     }
   }
   // -----------------------------------------------------------------------
@@ -1160,9 +1376,9 @@ var ObserverGovernancePlugin = class extends import_obsidian4.Plugin {
         version: SCHEMA.meta_version,
         doc_count: docCount
       }, auditPath);
-      new import_obsidian4.Notice("OG: Atlas manifest regenerated.");
+      new import_obsidian5.Notice("OG: Atlas manifest regenerated.");
     } catch (err) {
-      new import_obsidian4.Notice(`OG: Failed to regenerate manifest: ${String(err)}`);
+      new import_obsidian5.Notice(`OG: Failed to regenerate manifest: ${String(err)}`);
     }
   }
   // -----------------------------------------------------------------------
@@ -1172,11 +1388,11 @@ var ObserverGovernancePlugin = class extends import_obsidian4.Plugin {
     const auditPath = getAuditPath(this.settings);
     const exists = await this.app.vault.adapter.exists(auditPath);
     if (!exists) {
-      new import_obsidian4.Notice("OG: No audit log found yet.");
+      new import_obsidian5.Notice("OG: No audit log found yet.");
       return;
     }
     const abstractFile = this.app.vault.getAbstractFileByPath(auditPath);
-    if (abstractFile instanceof import_obsidian4.TFile) {
+    if (abstractFile instanceof import_obsidian5.TFile) {
       await this.app.workspace.openLinkText(auditPath, "", false);
     } else {
       await this.app.workspace.openLinkText(auditPath, "", false);
@@ -1191,7 +1407,7 @@ var ObserverGovernancePlugin = class extends import_obsidian4.Plugin {
     );
   }
 };
-var ValidationReportModal = class extends import_obsidian4.Modal {
+var ValidationReportModal = class extends import_obsidian5.Modal {
   constructor(app, documentName, result) {
     super(app);
     this.documentName = documentName;
