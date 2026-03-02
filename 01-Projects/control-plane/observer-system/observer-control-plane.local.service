@@ -1,0 +1,32 @@
+[Unit]
+Description=Observer Control Plane
+After=network.target
+
+[Service]
+Type=simple
+User=adam
+Group=adam
+WorkingDirectory=/opt/observer-system
+ExecStartPre=/opt/observer-system/scripts/provision-secrets.sh
+ExecStart=/usr/bin/node packages/control-plane/dist/main.js
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=observer-cp
+
+# Security hardening (relaxed for NFS/ZFS mount)
+NoNewPrivileges=true
+PrivateTmp=true
+
+# Environment
+Environment=NODE_ENV=production
+Environment=OBSERVER_CONFIG=/opt/observer-system/control-plane.yaml
+Environment=OBSERVER_BACKENDS=/opt/observer-system/execution-backends.yaml
+Environment=OBSERVER_SECRETS_DIR=/run/observer-secrets
+Environment=OBSERVER_AGE_IDENTITY=/opt/observer-system/secrets/identity.txt
+Environment=OBSERVER_SECRETS_ENCRYPTED=/opt/observer-system/secrets
+Environment=OBSERVER_SECRETS_OWNER=adam:adam
+
+[Install]
+WantedBy=multi-user.target

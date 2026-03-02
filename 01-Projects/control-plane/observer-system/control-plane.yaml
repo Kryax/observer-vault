@@ -1,0 +1,342 @@
+# =============================================================================
+# Observer Control Plane — Example Configuration
+# =============================================================================
+#
+# Copy this file to control-plane.yaml and edit for your deployment.
+# Config is restart-to-reload — changes take effect on next server start.
+# No hot-reload by design: running config always matches file on disk.
+#
+# All paths are relative to the working directory unless absolute.
+# Do NOT commit control-plane.yaml to version control (it may contain paths
+# specific to your deployment). This example file is safe to commit.
+#
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# Server — HTTP JSON-RPC listener settings
+# -----------------------------------------------------------------------------
+server:
+  # Bind address for the JSON-RPC server.
+  # MUST be 127.0.0.1 — binding to 0.0.0.0 is rejected at startup.
+  # External access is handled via Tailscale, not by exposing the port.
+  host: "127.0.0.1"
+
+  # TCP port for HTTP JSON-RPC transport.
+  # Default 9000 is the canonical Observer control plane port.
+  http_port: 9000
+
+  # Maximum allowed JSON-RPC request body size in bytes.
+  # Requests exceeding this limit are rejected with a 413 error.
+  # 1 MiB (1048576 bytes) is sufficient for most operations.
+  max_request_size_bytes: 1048576
+
+  # Seconds to wait for in-flight requests to complete during graceful shutdown.
+  # After this timeout, remaining connections are forcibly closed.
+  shutdown_timeout_seconds: 30
+
+  # Minimum log level for pino structured logging.
+  # Valid values: trace, debug, info, warn, error, fatal
+  log_level: "info"
+
+
+# -----------------------------------------------------------------------------
+# Sessions — Client session lifecycle management
+# -----------------------------------------------------------------------------
+sessions:
+  # Hours of inactivity before a session is automatically expired.
+  # Expired sessions cannot be resumed; the client must create a new one.
+  idle_timeout_hours: 24
+
+  # Maximum number of sessions that can be active simultaneously.
+  # New session.create requests are rejected when this limit is reached.
+  max_concurrent: 10
+
+  # Maximum number of work threads allowed per session.
+  # Prevents a single session from monopolising dispatch resources.
+  max_threads_per_session: 5
+
+
+# -----------------------------------------------------------------------------
+# Auth — Bearer token authentication
+# -----------------------------------------------------------------------------
+auth:
+  # Directory containing bearer token files for client authentication.
+  # Each file contains one token. Filename is used as the token identifier.
+  # Tokens are loaded at startup; add new tokens and restart to activate.
+  # Use age-encrypted storage and mount to tmpfs at runtime for production.
+  token_dir: "./secrets/tokens"
+
+
+# -----------------------------------------------------------------------------
+# Rate Limits — Global request throttling
+# -----------------------------------------------------------------------------
+rate_limits:
+  # Maximum JSON-RPC requests per minute across all sessions.
+  # Exceeding this limit returns a rate_limit error with retry_after.
+  requests_per_minute: 60
+
+  # Maximum turn.submit calls per hour across all sessions.
+  # Turns are the primary cost driver (each triggers backend dispatch).
+  turns_per_hour: 120
+
+
+# -----------------------------------------------------------------------------
+# Approvals — Human-in-the-loop decision tiers
+# -----------------------------------------------------------------------------
+# Five tiers from least restrictive to most restrictive.
+# Each tier defines how long to wait and which channels can respond.
+# Approval timeout always results in denial (fail safe, not fail open).
+#
+# Valid approval_channels: "cli", "telegram"
+# Valid tiers: auto_approve, notify, approve, escalate, block
+# -----------------------------------------------------------------------------
+approvals:
+  # auto_approve: Action proceeds without human intervention.
+  # Used for low-risk, routine operations (e.g., health checks, read queries).
+  auto_approve:
+    # Seconds before auto-approval is applied. Effectively immediate.
+    timeout_seconds: 0
+    # No channels needed — action is approved automatically.
+    approval_channels: []
+
+  # notify: Action proceeds, but the human is informed.
+  # Used for low-risk operations where awareness is sufficient.
+  notify:
+    # Seconds to wait. Notification is fire-and-forget; action proceeds.
+    timeout_seconds: 0
+    # Channels that receive the notification.
+    approval_channels:
+      - "cli"
+
+  # approve: Action requires explicit human approval before proceeding.
+  # Used for medium-risk operations (e.g., file modifications, code generation).
+  approve:
+    # Seconds to wait for a human response before denying the request.
+    timeout_seconds: 300
+    # Channels where the approval prompt is presented.
+    approval_channels:
+      - "cli"
+      - "telegram"
+
+  # escalate: High-risk action requiring approval from a privileged channel.
+  # Used for operations with significant impact (e.g., deployment, deletions).
+  escalate:
+    # Seconds to wait. Longer timeout for high-stakes decisions.
+    timeout_seconds: 600
+    # Telegram is restricted to CLI-only for escalate tier (NNF-2).
+    approval_channels:
+      - "cli"
+
+  # block: Action is unconditionally denied. No approval path exists.
+  # Used for operations that must never be performed by the system.
+  block:
+    # Timeout is irrelevant — action is always denied.
+    timeout_seconds: 0
+    # No channels — denial is immediate and automatic.
+    approval_channels: []
+
+
+# -----------------------------------------------------------------------------
+# Policies — Rule-based access control engine
+# -----------------------------------------------------------------------------
+# Rules are evaluated in priority order (lower number = evaluated first).
+# First matching rule wins. If no rule matches, default_action applies.
+#
+# Condition types:
+#   method_match       — matches on JSON-RPC method name(s)
+#   client_type_match  — matches on client type (cli, telegram, gui)
+#   intent_contains    — matches on keywords in the thread intent
+#   rate_check         — matches when request rate exceeds threshold
+#   and                — all sub-conditions must match
+#   or                 — any sub-condition must match
+#   not                — inverts a sub-condition
+#
+# Action types:
+#   allow              — permit the request
+#   deny               — reject the request (optional: deny_reason)
+#   require_approval   — route to approval gateway (requires: tier)
+#   rate_limit         — reject with backoff (requires: retry_after_seconds)
+#
+# CRITICAL: default_action MUST be "deny". The config loader rejects any
+# other value. This is a security invariant — default deny, explicit allow.
+# -----------------------------------------------------------------------------
+policies:
+  # Fallback action when no rule matches. MUST be "deny".
+  default_action: "deny"
+
+  rules:
+    # Rule 1: Allow health checks from any client without auth.
+    # Health endpoints are always accessible for monitoring.
+    - id: "allow-health"
+      description: "Allow health.status from any client"
+      condition:
+        type: method_match
+        methods:
+          - "health.status"
+      action: "allow"
+      priority: 10
+
+    # Rule 2: Allow CLI clients to perform session and thread operations.
+    # CLI is the most trusted client type in Phase 1.
+    - id: "allow-cli-session-ops"
+      description: "Allow CLI clients to manage sessions and threads"
+      condition:
+        type: client_type_match
+        client_types:
+          - "cli"
+      action: "allow"
+      priority: 20
+
+    # Rule 3: Require approval for intents containing dangerous keywords.
+    # Catches operations that could modify infrastructure or delete data.
+    - id: "approve-dangerous-intents"
+      description: "Require escalation for intents mentioning destructive actions"
+      condition:
+        type: intent_contains
+        keywords:
+          - "delete"
+          - "destroy"
+          - "drop"
+          - "production"
+          - "deploy"
+      action: "require_approval"
+      tier: "escalate"
+      approval_description: "Intent contains potentially destructive keywords"
+      priority: 30
+
+    # Rule 4: Rate-limit requests exceeding 30 per minute.
+    # Provides per-rule rate limiting on top of the global rate_limits section.
+    - id: "rate-limit-burst"
+      description: "Rate-limit clients exceeding 30 requests per minute"
+      condition:
+        type: rate_check
+        max_per_minute: 30
+      action: "rate_limit"
+      retry_after_seconds: 10
+      priority: 40
+
+    # Rule 5: Compound condition — block Telegram from admin methods.
+    # Demonstrates "and" with nested "method_match" + "client_type_match".
+    # Telegram should never invoke admin operations (NNF-2).
+    - id: "block-telegram-admin"
+      description: "Block Telegram clients from admin and audit methods"
+      condition:
+        type: and
+        conditions:
+          - type: client_type_match
+            client_types:
+              - "telegram"
+          - type: or
+            conditions:
+              - type: method_match
+                methods:
+                  - "admin.revoke_token"
+              - type: method_match
+                methods:
+                  - "audit.query"
+      action: "deny"
+      deny_reason: "Admin and audit methods are not available via Telegram"
+      priority: 50
+
+    # Rule 6: Compound condition — allow non-Telegram clients to query audit.
+    # Demonstrates "not" to invert a condition.
+    - id: "allow-non-telegram-audit"
+      description: "Allow any non-Telegram client to query the audit trail"
+      condition:
+        type: and
+        conditions:
+          - type: not
+            condition:
+              type: client_type_match
+              client_types:
+                - "telegram"
+          - type: method_match
+            methods:
+              - "audit.query"
+      action: "allow"
+      priority: 60
+
+
+# -----------------------------------------------------------------------------
+# Dispatch — Backend execution environment
+# -----------------------------------------------------------------------------
+dispatch:
+  # Base directory for backend working directories.
+  # Each dispatch creates a subdirectory under this path.
+  # Must exist and be writable by the control plane process.
+  working_directory: "./workdir"
+
+  # Allowed base directories for file operations.
+  # Backends are restricted to these paths. Attempts to access paths
+  # outside these directories are rejected by the dispatch layer.
+  # Use absolute paths in production deployments.
+  allowed_base_dirs:
+    - "./workdir"
+    - "./data"
+
+
+# -----------------------------------------------------------------------------
+# Health — Backend and audit health monitoring
+# -----------------------------------------------------------------------------
+health:
+  # Seconds between backend availability checks.
+  # Lower values detect failures faster but increase background load.
+  backend_check_interval_seconds: 30
+
+  # Seconds between audit subsystem health checks.
+  # Verifies the audit JSONL writer and SQLite index are operational.
+  audit_check_interval_seconds: 60
+
+
+# -----------------------------------------------------------------------------
+# Audit — Append-only audit trail configuration
+# -----------------------------------------------------------------------------
+# The audit trail is structurally append-only (NNF-4).
+# Primary storage is JSONL files; SQLite provides a queryable index.
+# If audit writes fail, all requests except health.status and session.close
+# are blocked (circuit breaker pattern).
+# -----------------------------------------------------------------------------
+audit:
+  # Directory for JSONL audit log files.
+  # New files are created when the current file exceeds jsonl_max_size_mb.
+  # Must exist and be writable. Back up this directory regularly.
+  jsonl_dir: "./data/audit"
+
+  # Maximum size of a single JSONL audit file in megabytes.
+  # When exceeded, the current file is closed and a new one is started.
+  jsonl_max_size_mb: 100
+
+  # Path to the SQLite database used for audit trail indexing.
+  # Provides fast queries over the append-only JSONL files.
+  # Must be writable. Parent directory must exist.
+  index_database_path: "./data/audit/index.db"
+
+  # Regex patterns for credential redaction in audit output.
+  # Any match in request/response data is replaced with [REDACTED].
+  # These patterns run against every audit event before writing.
+  # Add patterns for any credentials your backends might encounter.
+  sanitize_patterns:
+    # AWS access key IDs (starts with AKIA)
+    - "AKIA[0-9A-Z]{16}"
+    # Generic API key pattern (common key=value formats)
+    - "(?i)(api[_-]?key|token|secret|password|credential)\\s*[:=]\\s*\\S+"
+    # Bearer tokens in authorization headers
+    - "Bearer\\s+[A-Za-z0-9\\-._~+/]+=*"
+    # GitHub personal access tokens
+    - "ghp_[A-Za-z0-9]{36}"
+    # Base64-encoded secrets (long base64 strings that look like keys)
+    - "[A-Za-z0-9+/]{40,}={0,2}"
+
+
+# -----------------------------------------------------------------------------
+# Vault — Obsidian vault integration for queryable document access
+# -----------------------------------------------------------------------------
+# The vault connector provides read-only access to the Obsidian vault
+# through vault.query and vault.status JSON-RPC methods.
+# If not configured, vault methods return a clear error (not a crash).
+# Can also be set via the OBSERVER_VAULT_PATH environment variable.
+# -----------------------------------------------------------------------------
+vault:
+  # Absolute path to the Obsidian vault root directory.
+  path: /mnt/zfs-host/backup/projects/observer-vault

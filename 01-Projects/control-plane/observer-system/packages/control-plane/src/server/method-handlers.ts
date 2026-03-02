@@ -17,6 +17,7 @@ import type {
   HealthStatus,
   PolicyRequest,
   Session,
+  VaultConnector,
 } from "@observer/shared";
 import {
   generateId,
@@ -31,6 +32,7 @@ import {
   ApprovalRespondParamsSchema,
   AuditQueryParamsSchema,
   AdminRevokeTokenParamsSchema,
+  VaultQueryParamsSchema,
 } from "@observer/shared";
 import type { JsonRpcError } from "@observer/shared";
 import type { TokenAuthenticator } from "./auth.js";
@@ -61,6 +63,8 @@ export interface MethodHandlerDeps {
   };
   tokenAuth: TokenAuthenticator;
   logger: Logger;
+  /** Optional — vault methods return an error if not configured */
+  vaultConnector?: VaultConnector;
 }
 
 // ---------------------------------------------------------------------------
@@ -154,6 +158,7 @@ export function createMethodHandlers(deps: MethodHandlerDeps): MethodMap {
     healthMonitor,
     tokenAuth,
     logger,
+    vaultConnector,
   } = deps;
 
   const methods: MethodMap = {};
@@ -610,6 +615,64 @@ export function createMethodHandlers(deps: MethodHandlerDeps): MethodMap {
       revoked,
       active_tokens: tokenAuth.activeTokenCount(),
     });
+  };
+
+  // -----------------------------------------------------------------------
+  // vault.query  (requires auth, audit logged)
+  // -----------------------------------------------------------------------
+  methods["vault.query"] = (args, callback) => {
+    if (!vaultConnector) {
+      return callback({
+        code: ObserverErrorCode.ConfigInvalid,
+        message: "Vault not configured — set vault.path in control-plane.yaml or OBSERVER_VAULT_PATH env var",
+      });
+    }
+
+    const parsed = VaultQueryParamsSchema.safeParse(args ?? {});
+    if (!parsed.success) {
+      return callback({
+        code: ObserverErrorCode.InvalidParams,
+        message: `Invalid params: ${parsed.error.message}`,
+      });
+    }
+
+    const auditErr = tryAuditLog(
+      auditLogger,
+      createAuditEvent("system", "vault.query", null, null, {
+        path_prefix: parsed.data.path_prefix ?? null,
+        status_filter: parsed.data.status_filter ?? null,
+        limit: parsed.data.limit ?? null,
+        offset: parsed.data.offset ?? null,
+      }),
+      logger,
+    );
+    if (auditErr) return callback(auditErr);
+
+    vaultConnector
+      .query(parsed.data)
+      .then((result) => {
+        callback(null, result);
+      })
+      .catch((err) => callback(toJsonRpcError(err)));
+  };
+
+  // -----------------------------------------------------------------------
+  // vault.status  (requires auth, no audit needed)
+  // -----------------------------------------------------------------------
+  methods["vault.status"] = (_args, callback) => {
+    if (!vaultConnector) {
+      return callback({
+        code: ObserverErrorCode.ConfigInvalid,
+        message: "Vault not configured — set vault.path in control-plane.yaml or OBSERVER_VAULT_PATH env var",
+      });
+    }
+
+    vaultConnector
+      .getStatus()
+      .then((result) => {
+        callback(null, result);
+      })
+      .catch((err) => callback(toJsonRpcError(err)));
   };
 
   return methods;

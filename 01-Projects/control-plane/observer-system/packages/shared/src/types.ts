@@ -312,6 +312,42 @@ export interface HealthChange {
   details: string;
 }
 
+// --- 4.12 Vault Types ---
+
+export interface VaultQueryParams {
+  path_prefix?: string;
+  status_filter?: string;
+  limit?: number;
+  offset?: number;
+}
+
+export interface VaultDocument {
+  path: string;
+  title: string;
+  status?: string;
+  modified_at: string;
+  size_bytes: number;
+  tags?: string[];
+}
+
+export interface VaultQueryResult {
+  total_count: number;
+  documents: VaultDocument[];
+  has_more: boolean;
+}
+
+export interface VaultStatusResult {
+  healthy: boolean;
+  document_count: number;
+  vault_path: string;
+  last_scan?: string;
+}
+
+export interface VaultConnector {
+  query(params: VaultQueryParams): Promise<VaultQueryResult>;
+  getStatus(): Promise<VaultStatusResult>;
+}
+
 // --- 4.8 Error Types ---
 
 export enum ObserverErrorCode {

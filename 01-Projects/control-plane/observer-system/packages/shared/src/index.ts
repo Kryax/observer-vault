@@ -53,6 +53,12 @@ export type {
   AuditQueryParams,
   AdminRevokeTokenParams,
   AdminRevokeTokenResult,
+  // Vault types
+  VaultQueryParams,
+  VaultDocument,
+  VaultQueryResult,
+  VaultStatusResult,
+  VaultConnector,
   // Service interfaces
   SessionManager,
   PolicyEnforcer,
@@ -118,6 +124,7 @@ export {
   AuditQueryParamsSchema,
   AdminRevokeTokenParamsSchema,
   AdminRevokeTokenResultSchema,
+  VaultQueryParamsSchema,
 } from "./schemas.js";
 
 // Errors

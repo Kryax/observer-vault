@@ -43,6 +43,7 @@ import type {
   AuditQueryParams,
   AdminRevokeTokenParams,
   AdminRevokeTokenResult,
+  VaultQueryParams,
 } from "./types.js";
 
 // --- 4.1 Enum Schemas ---
@@ -559,3 +560,12 @@ export const AdminRevokeTokenResultSchema = z.object({
   revoked: z.boolean(),
   active_tokens: z.number().int().nonnegative(),
 }) satisfies z.ZodType<AdminRevokeTokenResult>;
+
+// --- Vault Schemas ---
+
+export const VaultQueryParamsSchema = z.object({
+  path_prefix: z.string().optional(),
+  status_filter: z.string().optional(),
+  limit: z.number().int().positive().max(500).optional(),
+  offset: z.number().int().nonnegative().optional(),
+}) satisfies z.ZodType<VaultQueryParams>;

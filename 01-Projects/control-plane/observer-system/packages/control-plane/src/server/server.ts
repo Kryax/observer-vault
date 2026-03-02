@@ -26,6 +26,7 @@ import type {
   AuditLogger,
   AuditStore,
   HealthStatus,
+  VaultConnector,
 } from "@observer/shared";
 import { ObserverErrorCode } from "@observer/shared";
 
@@ -45,6 +46,8 @@ export interface ServerDependencies {
     getStatus(): HealthStatus;
     getLivenessStatus(): { status: string; uptime_seconds: number };
   };
+  /** Optional — vault query methods are unavailable if not provided */
+  vaultConnector?: VaultConnector;
 }
 
 export interface ServerConfig {
