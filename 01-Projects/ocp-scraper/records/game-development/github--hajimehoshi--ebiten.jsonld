@@ -1,0 +1,288 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/hajimehoshi--ebiten",
+  "meta": {
+    "title": "Ebitengine (v2)",
+    "description": "A dead simple 2D game engine for Go",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T10:29:56.709Z",
+    "dateModified": "2026-03-03T10:29:56.709Z",
+    "keywords": [
+      "ebiten",
+      "ebitengine",
+      "game",
+      "game-2d",
+      "game-development",
+      "game-engine",
+      "game-engine-2d",
+      "game-library",
+      "gamedev",
+      "go",
+      "golang",
+      "golang-library"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "[![Go Reference](https://pkg.go.dev/badge/github.com/hajimehoshi/ebiten/v2.svg)](https://pkg.go.dev/github.com/hajimehoshi/ebiten/v2)\n[![Build Status](https://github.com/hajimehoshi/ebiten/actions/workflows/test.yml/badge.svg)](https://github.com/hajimehoshi/ebiten/actions?query=workflow%3Atest)",
+    "context": "[![Go Reference](https://pkg.go.dev/badge/github.com/hajimehoshi/ebiten/v2.svg)](https://pkg.go.dev/github.com/hajimehoshi/ebiten/v2)\n[![Build Status](https://github.com/hajimehoshi/ebiten/actions/workflows/test.yml/badge.svg)](https://github.com/hajimehoshi/ebiten/actions?query=workflow%3Atest)\n\n**A dead simple 2D game engine for Go**\n\nEbitengine (formerly known as Ebiten) is an open source game engine for the Go programming language. Ebitengine's simple API allows you to quickly and easily develop 2D games that can be deployed across multiple platforms.\n\n* [Website (ebitengine.org)](https://ebitengine.org)\n* [API Reference](https://pkg.go.dev/github.com/hajimehoshi/ebiten/v2)\n* [Cheat Sheet](https://ebitengine.org/en/documents/cheatsheet.html)\n* [Awesome Ebitengine](https://github.com/sedyh/awesome-ebitengine)\n\n![Overview](https://ebitengine.org/images/overview2.png)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "game-development",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "12993 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "762 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T10:29:56.709Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/hajimehoshi/ebiten",
+        "description": "GitHub repository: hajimehoshi/ebiten"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://ebitengine.org",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "github.com/ebitengine/debugui",
+        "version": "v0.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/ebitengine/debugui"
+      },
+      {
+        "name": "github.com/ebitengine/gomobile",
+        "version": "v0.0.0-20260211053922-3d992dae95d1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/ebitengine/gomobile"
+      },
+      {
+        "name": "github.com/ebitengine/hideconsole",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/ebitengine/hideconsole"
+      },
+      {
+        "name": "github.com/ebitengine/oto/v3",
+        "version": "v3.5.0-alpha.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/ebitengine/oto/v3"
+      },
+      {
+        "name": "github.com/ebitengine/purego",
+        "version": "v0.11.0-alpha",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/ebitengine/purego"
+      },
+      {
+        "name": "github.com/gen2brain/mpeg",
+        "version": "v0.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gen2brain/mpeg"
+      },
+      {
+        "name": "github.com/go-text/typesetting",
+        "version": "v0.3.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-text/typesetting"
+      },
+      {
+        "name": "github.com/hajimehoshi/bitmapfont/v4",
+        "version": "v4.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hajimehoshi/bitmapfont/v4"
+      },
+      {
+        "name": "github.com/hajimehoshi/go-mp3",
+        "version": "v0.3.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hajimehoshi/go-mp3"
+      },
+      {
+        "name": "github.com/jakecoffman/cp/v2",
+        "version": "v2.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jakecoffman/cp/v2"
+      },
+      {
+        "name": "github.com/jezek/xgb",
+        "version": "v1.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jezek/xgb"
+      },
+      {
+        "name": "github.com/jfreymuth/oggvorbis",
+        "version": "v1.0.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jfreymuth/oggvorbis"
+      },
+      {
+        "name": "github.com/kazzmir/opus-go",
+        "version": "v1.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/kazzmir/opus-go"
+      },
+      {
+        "name": "github.com/kisielk/errcheck",
+        "version": "v1.10.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/kisielk/errcheck"
+      },
+      {
+        "name": "golang.org/x/image",
+        "version": "v0.36.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/image"
+      },
+      {
+        "name": "golang.org/x/sync",
+        "version": "v0.19.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/sync"
+      },
+      {
+        "name": "golang.org/x/sys",
+        "version": "v0.41.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/sys"
+      },
+      {
+        "name": "golang.org/x/text",
+        "version": "v0.34.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/text"
+      },
+      {
+        "name": "golang.org/x/tools",
+        "version": "v0.42.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/tools"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "hajimehoshi",
+        "type": "human",
+        "uri": "https://github.com/hajimehoshi"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 14517,
+      "validation_diversity": 0.69,
+      "context_breadth": 0.69,
+      "temporal_stability": 1,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.7
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.769
+  }
+}

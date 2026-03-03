@@ -1,0 +1,279 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/trane-project--trane",
+  "meta": {
+    "title": "Trane",
+    "description": "An automated practice system for mastering complex skills",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T10:27:31.504Z",
+    "dateModified": "2026-03-03T10:27:31.504Z",
+    "keywords": [
+      "hierarchical-learning",
+      "mastery-based-learning",
+      "spaced-repetition"
+    ],
+    "license": "AGPL-3.0"
+  },
+  "problemSolved": {
+    "statement": "[![Github Checks Status](https://img.shields.io/github/checks-status/trane-project/trane/master)](https://github.com/trane-project/trane/actions?query=branch%3Amaster)\n[![Coverage Status](https://img.shields.io/coverallsCoverage/github/trane-project/trane)](https://coveralls.io/github/trane-project/trane?branch=master)\n[![docs.rs](https://img.shields.io/docsrs/trane)](https://docs.rs/trane)\n[![Latest Version](https://img.shields.io/crates/v/trane)](https://crates.io/crates/trane)\n[![Stars](https://img.shields.io/github/stars/trane-project/trane?style=social)](https://github.com/trane-project/trane/stargazers)",
+    "context": "[![Github Checks Status](https://img.shields.io/github/checks-status/trane-project/trane/master)](https://github.com/trane-project/trane/actions?query=branch%3Amaster)\n[![Coverage Status](https://img.shields.io/coverallsCoverage/github/trane-project/trane)](https://coveralls.io/github/trane-project/trane?branch=master)\n[![docs.rs](https://img.shields.io/docsrs/trane)](https://docs.rs/trane)\n[![Latest Version](https://img.shields.io/crates/v/trane)](https://crates.io/crates/trane)\n[![Stars](https://img.shields.io/github/stars/trane-project/trane?style=social)](https://github.com/trane-project/trane/stargazers)\n\n---\n\nIf you are interested in supporting the development of Trane, the best way to do so is by buying or\nsubscribing to [*Pictures Are For Babies*](https://picturesareforbabies.com), a literacy software\ntutor built on top of Trane, or by telling someone who is in search of research-based literacy\neducation about it. The Lite version of *Pictures Are For Babies* is free, contains the first 200\nlessons, and is a professional-level tool for early detection, prevention, and remediation of\nreading difficulties.\n\n---\n\nTrane is an automated practice system for the acquisition of arbitrary, complex, and highly\nhierarchical skills. That's quite a mouthful, so let's break it down.\n\n- **Practice system**: Deliberate practice is at the heart of the acquisition of new skills. Trane\n  calls itself a practice system because it is designed to guide student's progress through\n  arbitrary skills. Trane shows the student an exercise they can practice and then asks them to\n  score it based on their mastery of the skill tested by the exercise.\n- **Automated**: Knowing what to practice, when to reinforce what has already been practiced, and\n  when to move on to the next step is as important as establishing a consistent practice. Trane's\n  main feature is to automate this process by providing students with an infinite stream of\n  exercises. Internally, Trane uses the student feedback to determine which exercises are most\n  appropriate for the current moment.\n- **Arbitrary**: Although originally envisioned for practicing Jazz improvisation, Trane is not\n  limited to a specific domain. Trane primarily works via plain-text files that are easily sharable\n  and extendable. This allows student to create their own materials, to use materials created by\n  others, and to seamlessly combine them. \n- **Complex and hierarchical skills**: Consider the job of a master improviser, such as the namesake\n  of this software, John Coltrane. Through years of practice, Coltrane developed mastery over a\n  large set of interconnected skills. A few examples include the breathing control to play the fiery\n  stream of notes that characterize his style, the aural training to recognize and play in any key,\n  and the fine motor skills to play the intricate lines of his solos. All these skills came together\n  to create his unique and spiritually powerful sound. Trane is designed to allow students to easily\n  express these complex relationships and to take advantage of them to guide the student's practice.\n  This is the feature that is at the core of Trane and the main difference between it and similar\n  software, such as Anki, which already make use of some of the same learning principles.\n\nTrane is based on multiple proven principles of skill acquisition, like spaced repetition, mastery\nlearning, interleaving, and chunking. For example, Trane makes sure that not too many very easy or\nhard exercises are shown to a student to avoid both extremes of frustration and boredom. Trane makes\nsure to periodically reinforce skills that have already been practiced and to include new skills\nautomatically when the skills that they depend on have been sufficiently mastered.\n\nIf you are familiar with the experience of traversing the skill tree of a video game by grinding and\nbecoming better at the game, Trane aims to provide a way to help students complete a similar\nprocess, but applied to arbitrary skills, specified in plain-text files that are easy to share and\naugment.\n\nTrane is named after John Coltrane, whose nickname Trane was often used in wordplay with the word\ntrain (as in the vehicle) to describe the overwhelming power of his playing. It is used here as a\nplay on its homophone (as in \"*trane* a new skill\").",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:rust"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "833 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "16 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T10:27:31.504Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/trane-project/trane",
+        "description": "GitHub repository: trane-project/trane"
+      }
+    ],
+    "language": "Rust"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "anyhow",
+        "version": "1.0.99",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/anyhow"
+      },
+      {
+        "name": "bincode",
+        "version": "2.0.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/bincode"
+      },
+      {
+        "name": "chrono",
+        "version": "0.4.41",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/chrono"
+      },
+      {
+        "name": "derive_builder",
+        "version": "0.20.2",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/derive_builder"
+      },
+      {
+        "name": "indoc",
+        "version": "2.0.6",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/indoc"
+      },
+      {
+        "name": "parking_lot",
+        "version": "0.12.4",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/parking_lot"
+      },
+      {
+        "name": "r2d2",
+        "version": "0.8.10",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/r2d2"
+      },
+      {
+        "name": "r2d2_sqlite",
+        "version": "0.31.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/r2d2_sqlite"
+      },
+      {
+        "name": "rand",
+        "version": "0.9.2",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/rand"
+      },
+      {
+        "name": "rayon",
+        "version": "1.11.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/rayon"
+      },
+      {
+        "name": "rusqlite",
+        "version": "0.37.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/rusqlite"
+      },
+      {
+        "name": "rusqlite_migration",
+        "version": "2.3.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/rusqlite_migration"
+      },
+      {
+        "name": "serde",
+        "version": "1.0.219",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/serde"
+      },
+      {
+        "name": "serde_json",
+        "version": "1.0.143",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/serde_json"
+      },
+      {
+        "name": "strum",
+        "version": "0.27.2",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/strum"
+      },
+      {
+        "name": "tantivy",
+        "version": "0.25.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tantivy"
+      },
+      {
+        "name": "tempfile",
+        "version": "3.21.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tempfile"
+      },
+      {
+        "name": "thiserror",
+        "version": "2.0.16",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/thiserror"
+      },
+      {
+        "name": "ustr",
+        "version": "1.1.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/ustr"
+      },
+      {
+        "name": "walkdir",
+        "version": "2.5.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/walkdir"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "trane-project",
+        "type": "human",
+        "uri": "https://github.com/trane-project"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 865,
+      "validation_diversity": 0.16,
+      "context_breadth": 0.24,
+      "temporal_stability": 0.98,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.4
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.357
+  }
+}

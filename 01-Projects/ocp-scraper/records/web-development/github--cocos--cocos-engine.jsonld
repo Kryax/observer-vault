@@ -1,0 +1,214 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/cocos--cocos-engine",
+  "meta": {
+    "title": "Engine for Cocos Creator",
+    "description": "Cocos simplifies game creation and distribution with Cocos Creator, a free, open-source, cross-platform game engine. Empowering millions of developers to create high-performance, engaging 2D/3D games and instant web entertainment.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T10:31:11.924Z",
+    "dateModified": "2026-03-03T10:31:11.924Z",
+    "keywords": [
+      "3d",
+      "cocos",
+      "cocoscreator",
+      "engine",
+      "game-development",
+      "game-engine",
+      "gamedev",
+      "metal",
+      "mit-license",
+      "open-source",
+      "vulkan",
+      "webgl",
+      "webgl2",
+      "webgpu"
+    ],
+    "license": "NOASSERTION"
+  },
+  "problemSolved": {
+    "statement": "**Cocos Creator is the new generation of game development tool in Cocos family, it brings a complete set of 3D and 2D features while providing an intuitive, low cost and collaboration friendly workflow to game developers.** Cocos Engine is the runtime framework for Cocos Creator editor.",
+    "context": "**Cocos Creator is the new generation of game development tool in Cocos family, it brings a complete set of 3D and 2D features while providing an intuitive, low cost and collaboration friendly workflow to game developers.** Cocos Engine is the runtime framework for Cocos Creator editor.\n\n![image](./ui.png)\n\nCocos Creator inherited many good qualities and cool features from its previous versions, such as high performance low level C++ implementation, intuitive editor, cross-platform support. It supports native platforms, web platforms and rapidly expanding instant gaming platforms, including Windows, Mac, iOS, Android, HarmonyOS, Web, Facebook Instant Games, WeChat Mini Game and TikTok Mini Games.\n\nFurthermore, Cocos Creator has pushed the engine technology to a whole new level for high performance with scalability on various platforms, full extensibility and easy development.\n\n1. **Modern Graphics**: The GFX implementation is designed to adapt to the modern graphics APIs, it uses Vulkan on Windows and Android, Metal on Mac OS and iOS, and WebGL on Web platforms.\n2. **High Performance**: The runtime engine is built with half C++ and half TypeScript, low-level infrastructure, native platform adaptation, renderer, and scene management are all written in C++ to ensure high runtime performance. We continue to move heavy lifting work to native as much as possible.\n3. **Customizable Render Pipeline**: The render pipeline is designed to be fully customizable, it has supported the builtin forward and deferred render pipeline across all platforms. Developers can customize their render pipeline following the same approach.\n4. **Extensible Surface Shader**: The material system is built on Coco's effect format which uses GLSL 300, the shader programs will be converted to a suitable runtime format automatically. The surface shader permits to fully customize the surface material while ensuring a universal lighting model.\n5. **Physically Based Rendering (PBR)**: The standard effect adopts physically based rendering, along with the physically based camera and the lighting based on physical metrics, developers can easily achieve realistic and seamless rendering results across different environments.\n6. **Easy TypeScript API**: The user-level API set is provided in TypeScript, along with the powerful VSCode editor, development with Cocos Creator is incredibly efficient.\n\nBesides all these highlights, Cocos Creator also provides a built-in animation system, physics system, particle system, terrain editing support, complex UI system, instant preview, etc.\n\n![image](https://user-images.githubusercontent.com/1503156/111037166-f27c7600-845d-11eb-988f-4c2c8b5c7321.png)\n\nThis open-source repository is the runtime engine of Cocos Creator, the engine is naturally integrated within Cocos Creator, designed to only be the essential runtime library and not to be used independently.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "machine-learning",
+    "game-development",
+    "lang:c++"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "9426 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "2090 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T10:31:11.924Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/cocos/cocos-engine",
+        "description": "GitHub repository: cocos/cocos-engine"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://www.cocos.com/en/creator",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "C++"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "@babel/plugin-proposal-class-properties",
+        "version": "^7.18.6",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@babel/plugin-proposal-class-properties"
+      },
+      {
+        "name": "@cocos/box2d",
+        "version": "1.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@cocos/box2d"
+      },
+      {
+        "name": "@cocos/cannon",
+        "version": "1.2.8",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@cocos/cannon"
+      },
+      {
+        "name": "@cocos/ccbuild",
+        "version": "^2.3.16",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@cocos/ccbuild"
+      },
+      {
+        "name": "@cocos/dragonbones-js",
+        "version": "^1.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@cocos/dragonbones-js"
+      },
+      {
+        "name": "@types/jest",
+        "version": "^24.9.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@types/jest"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "cocos",
+        "type": "human",
+        "uri": "https://github.com/cocos"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 13606,
+      "validation_diversity": 0.78,
+      "context_breadth": 0.7,
+      "temporal_stability": 0.88,
+      "test_coverage": 0,
+      "documentation_quality": 0.6
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.42
+  }
+}

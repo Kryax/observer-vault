@@ -1,0 +1,202 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/dealfluence--adeu",
+  "meta": {
+    "title": "Adeu: Native Track Changes for AI",
+    "description": "Agentic DOCX Redlining Engine. Enables LLMs to read Word documents and inject native Track Changes (w:ins, w:del) and Comments without breaking formatting. Includes Model Context Protocol (MCP) Server.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T10:27:25.733Z",
+    "dateModified": "2026-03-03T10:27:25.733Z",
+    "keywords": [
+      "agentic-ai",
+      "docx",
+      "legal-tech",
+      "llm",
+      "mcp",
+      "python",
+      "redlining",
+      "track-changes",
+      "word-processing"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "**Adeu bridges the gap between LLM text generation and Microsoft Word.**",
+    "context": "**Adeu bridges the gap between LLM text generation and Microsoft Word.**\n\nLLMs speak Markdown; Lawyers speak \"Track Changes.\" Adeu allows AI agents to propose edits to `.docx` files without breaking formatting, numbering, or complex layouts.\n\nIt treats the DOCX file as a **Virtual DOM**:\n1.  **Ingest:** Extracts a lightweight, token-efficient text representation for the AI.\n2.  **Diff:** Calculates changes based on the AI's edits.\n3.  **Reconcile:** Surgically injects native XML `w:ins` (insertions) and `w:del` (deletions) back into the original document.\n\n---",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "44 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "7 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T10:27:25.733Z"
+  },
+  "implementation": {
+    "type": "service",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/dealfluence/adeu",
+        "description": "GitHub repository: dealfluence/adeu"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "python-docx",
+        "version": ">=1.1.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/python-docx/"
+      },
+      {
+        "name": "structlog",
+        "version": ">=24.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/structlog/"
+      },
+      {
+        "name": "pydantic",
+        "version": ">=2.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pydantic/"
+      },
+      {
+        "name": "lxml",
+        "version": ">=5.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/lxml/"
+      },
+      {
+        "name": "diff-match-patch",
+        "version": ">=20230430",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/diff-match-patch/"
+      },
+      {
+        "name": "mcp",
+        "version": ">=1.2.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/mcp/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "dealfluence",
+        "type": "human",
+        "uri": "https://github.com/dealfluence"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 58,
+      "validation_diversity": 0.1,
+      "context_breadth": 0.44,
+      "temporal_stability": 0.82,
+      "test_coverage": 0,
+      "documentation_quality": 0.65
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.167
+  }
+}

@@ -1,0 +1,316 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/shaankhosla--repeater",
+  "meta": {
+    "title": "repeater",
+    "description": "Spaced repetition, in your terminal",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T10:29:59.028Z",
+    "dateModified": "2026-03-03T10:29:59.028Z",
+    "keywords": [
+      "cli",
+      "rust",
+      "spaced-repetition",
+      "tui"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "<p align=\"center\">\n  <a href=\"https://github.com/shaankhosla/repeater/actions/workflows/ci.yaml\">\n    <img alt=\"CI Status\" src=\"https://img.shields.io/github/actions/workflow/status/shaankhosla/repeater/ci.yaml?branch=main&label=CI&logo=github\" />\n  </a>\n  <a href=\"https://shaankhosla.github.io/repeater/\">\n    <img alt=\"Documentation\" src=\"https://img.shields.io/badge/docs-GitHub%20Pages-blue?logo=github\" />\n  </a>\n  <a href=\"https://github.com/shaankhosla/repeater/releases\">\n    <img alt=\"Latest Release\" src=\"https://img.shields.io/github/v/release/shaankhosla/repeater?display_name=tag&sort=semver&logo=github\" />\n  </a>\n  <a href=\"LICENSE\">\n    <img alt=\"License\" src=\"https://img.shields.io/github/license/shaankhosla/repeater?color=informational\" />\n  </a>\n</p>",
+    "context": "<p align=\"center\">\n  <a href=\"https://github.com/shaankhosla/repeater/actions/workflows/ci.yaml\">\n    <img alt=\"CI Status\" src=\"https://img.shields.io/github/actions/workflow/status/shaankhosla/repeater/ci.yaml?branch=main&label=CI&logo=github\" />\n  </a>\n  <a href=\"https://shaankhosla.github.io/repeater/\">\n    <img alt=\"Documentation\" src=\"https://img.shields.io/badge/docs-GitHub%20Pages-blue?logo=github\" />\n  </a>\n  <a href=\"https://github.com/shaankhosla/repeater/releases\">\n    <img alt=\"Latest Release\" src=\"https://img.shields.io/github/v/release/shaankhosla/repeater?display_name=tag&sort=semver&logo=github\" />\n  </a>\n  <a href=\"LICENSE\">\n    <img alt=\"License\" src=\"https://img.shields.io/github/license/shaankhosla/repeater?color=informational\" />\n  </a>\n</p>\n\n`repeater` is a command-line flashcard program that uses [spaced repetition](https://en.wikipedia.org/wiki/Spaced_repetition) to boost your memory retention. It’s like a lightweight, text-based Anki you run in your terminal. Your decks are kept in Markdown, progress is tracked in SQLite, and reviews are scheduled with Free Spaced Repetition Scheduler (FSRS), a state-of-the-art algorithm targeting 90% recall.\n\n\n> *\"Just tested this out and it's amazing! The ability to simply use the same file to take your notes (e.g., in class) and as your flashcards source file is a serious game-changer. I love how minimalist it is, too.\"*  \n> — Reddit user\n\n<img src=\"check_example.png\" alt=\"Checking card progress\" />\n\n> [!NOTE]\n> You can find the main documentation, including installation guides, at [https://shaankhosla.github.io/repeater/](https://shaankhosla.github.io/repeater/).",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "developer-tools",
+    "lang:rust"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "364 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "16 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T10:29:59.028Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/shaankhosla/repeater",
+        "description": "GitHub repository: shaankhosla/repeater"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://shaankhosla.github.io/repeater/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Rust"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "clap",
+        "version": "4.5.58",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/clap"
+      },
+      {
+        "name": "ratatui",
+        "version": "0.30.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/ratatui"
+      },
+      {
+        "name": "crossterm",
+        "version": "0.29",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/crossterm"
+      },
+      {
+        "name": "anyhow",
+        "version": "1.0.101",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/anyhow"
+      },
+      {
+        "name": "sqlx",
+        "version": "0.8",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/sqlx"
+      },
+      {
+        "name": "directories",
+        "version": "6.0.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/directories"
+      },
+      {
+        "name": "tokio",
+        "version": "1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tokio"
+      },
+      {
+        "name": "blake3",
+        "version": "1.8.3",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/blake3"
+      },
+      {
+        "name": "chrono",
+        "version": "0.4.43",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/chrono"
+      },
+      {
+        "name": "futures",
+        "version": "0.3.31",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/futures"
+      },
+      {
+        "name": "ignore",
+        "version": "0.4.25",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/ignore"
+      },
+      {
+        "name": "html-escape",
+        "version": "0.2",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/html-escape"
+      },
+      {
+        "name": "once_cell",
+        "version": "1.20",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/once_cell"
+      },
+      {
+        "name": "pulldown-cmark",
+        "version": "0.13.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/pulldown-cmark"
+      },
+      {
+        "name": "regex",
+        "version": "1.12",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/regex"
+      },
+      {
+        "name": "zip",
+        "version": "0.6",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/zip"
+      },
+      {
+        "name": "tempfile",
+        "version": "3",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tempfile"
+      },
+      {
+        "name": "serde_json",
+        "version": "1.0.149",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/serde_json"
+      },
+      {
+        "name": "serde",
+        "version": "1.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/serde"
+      },
+      {
+        "name": "async-openai",
+        "version": "0.32.4",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/async-openai"
+      },
+      {
+        "name": "reqwest",
+        "version": "0.13",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/reqwest"
+      },
+      {
+        "name": "open",
+        "version": "5",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/open"
+      },
+      {
+        "name": "dialoguer",
+        "version": "0.12.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/dialoguer"
+      },
+      {
+        "name": "fsrs",
+        "version": "5.2.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/fsrs"
+      },
+      {
+        "name": "rand",
+        "version": "0.10",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/rand"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "shaankhosla",
+        "type": "human",
+        "uri": "https://github.com/shaankhosla"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 396,
+      "validation_diversity": 0.3,
+      "context_breadth": 0.28,
+      "temporal_stability": 0.83,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.85
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.441
+  }
+}

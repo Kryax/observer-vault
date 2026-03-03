@@ -1,0 +1,175 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/opengene--fastp",
+  "meta": {
+    "title": "fastp",
+    "description": "An ultra-fast all-in-one FASTQ preprocessor (QC/adapters/trimming/filtering/splitting/merging...)",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T10:27:37.039Z",
+    "dateModified": "2026-03-03T10:27:37.039Z",
+    "keywords": [
+      "adapter",
+      "bioinformatics",
+      "duplication",
+      "fastq",
+      "filter",
+      "filtering",
+      "illumina",
+      "merging",
+      "ngs",
+      "overlap",
+      "polyg",
+      "preprocessing",
+      "qc",
+      "quality",
+      "quality-control",
+      "sequencing",
+      "splitting",
+      "trimming",
+      "umi"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "A tool designed to provide ultrafast all-in-one preprocessing and quality control for FastQ data.",
+    "context": "A tool designed to provide ultrafast all-in-one preprocessing and quality control for FastQ data.     \n\nThis tool is designed for processing short reads (i.e. Illumina NovaSeq, MGI), if you are looking for tools to process long reads (i.e. Nanopore, PacBio, Cyclone), please use [fastplong](https://github.com/OpenGene/fastplong).  \n\nfastp supports batch processing of multiple FASTQ files in a folder, see - [batch processing](#batch-processing)  \n\nIf you use fastp in your work, you can cite fastp as:  *Shifu Chen. fastp 1.0: An ultra-fast all-round tool for FASTQ data quality control and preprocessing. iMeta 4.5 (2025): e70078*\n\n\n- [features](#features)\n- [simple usage](#simple-usage)\n- [examples of report](#examples-of-report)\n- [get fastp](#get-fastp)\n  - [install with Bioconda](#install-with-bioconda)\n  - [or download the latest prebuilt binary for Linux users](#or-download-the-latest-prebuilt-binary-for-linux-users)\n  - [or compile from source](#or-compile-from-source)\n    - [Step 1: install isa-l](#step-1-install-isa-l)\n    - [step 2: install libdeflate](#step-2-install-libdeflate)\n    - [Step 3: download and build fastp](#step-3-download-and-build-fastp)\n- [input and output](#input-and-output)\n  - [output to STDOUT](#output-to-stdout)\n  - [input from STDIN](#input-from-stdin)\n  - [store the unpaired reads for PE data](#store-the-unpaired-reads-for-pe-data)\n  - [store the reads that fail the filters](#store-the-reads-that-fail-the-filters)\n  - [process only part of the data](#process-only-part-of-the-data)\n  - [do not overwrite exiting files](#do-not-overwrite-exiting-files)\n  - [split the output to multiple files for parallel processing](#split-the-output-to-multiple-files-for-parallel-processing)\n  - [merge PE reads](#merge-pe-reads)\n- [filtering](#filtering)\n  - [quality filter](#quality-filter)\n  - [length filter](#length-filter)\n  - [low complexity filter](#low-complexity-filter)\n  - [Other filter](#other-filter)\n- [adapters](#adapters)\n- [per read cutting by quality score](#per-read-cutting-by-quality-score)\n- [base correction for PE data](#base-correction-for-pe-data)\n- [global trimming](#global-trimming)\n- [polyG tail trimming](#polyg-tail-trimming)\n- [polyX tail trimming](#polyx-tail-trimming)\n- [unique molecular identifier (UMI) processing](#unique-molecular-identifier-umi-processing)\n  - [UMI example](#umi-example)\n- [output splitting](#output-splitting)\n  - [splitting by limiting file number](#splitting-by-limiting-file-number)\n  - [splitting by limiting the lines of each file](#splitting-by-limiting-the-lines-of-each-file)\n- [overrepresented sequence analysis](#overrepresented-sequence-analysis)\n- [merge paired-end reads](#merge-paired-end-reads)\n- [duplication rate and deduplication](#duplication-rate-and-deduplication)\n  - [duplication rate evaluation](#duplication-rate-evaluation)\n  - [deduplication](#deduplication)\n- [batch processing](#batch-processing)\n- [all options](#all-options)\n- [citations](#citations)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:c++"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "2296 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "373 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T10:27:37.039Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/OpenGene/fastp",
+        "description": "GitHub repository: OpenGene/fastp"
+      }
+    ],
+    "solutionApproach": "See usage section in README",
+    "language": "C++"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "OpenGene",
+        "type": "human",
+        "uri": "https://github.com/OpenGene"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 3042,
+      "validation_diversity": 0.53,
+      "context_breadth": 0.66,
+      "temporal_stability": 0.76,
+      "test_coverage": 0.17,
+      "documentation_quality": 0.75
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.59
+  }
+}

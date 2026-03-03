@@ -1,0 +1,208 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/satashili--ailaw1",
+  "meta": {
+    "title": "Smart Contract Review Assistant",
+    "description": "A professional AI-powered contract analysis tool that provides intelligent legal review from multiple perspectives. This web application helps users analyze contracts from Party A's, Party B's, or a neutral standpoint, offering comprehensive risk assessment and modification suggestions.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T10:27:30.699Z",
+    "dateModified": "2026-03-03T10:27:30.699Z",
+    "keywords": [
+      "ai-powered",
+      "contract-analysis",
+      "legal-tech"
+    ]
+  },
+  "problemSolved": {
+    "statement": "![Project Logo](./images/logo.png)",
+    "context": "![Project Logo](./images/logo.png)\n\nA professional web application that provides intelligent contract analysis from different perspectives using AI technology. This tool helps users analyze contracts from Party A's perspective, Party B's perspective, or a neutral standpoint.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "machine-learning",
+    "lang:javascript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "16 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "4 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T10:27:30.699Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/satashili/ailaw1",
+        "description": "GitHub repository: satashili/ailaw1"
+      }
+    ],
+    "language": "JavaScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "bcryptjs",
+        "version": "^2.4.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/bcryptjs"
+      },
+      {
+        "name": "cors",
+        "version": "^2.8.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/cors"
+      },
+      {
+        "name": "dotenv",
+        "version": "^16.4.7",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/dotenv"
+      },
+      {
+        "name": "express",
+        "version": "^4.21.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/express"
+      },
+      {
+        "name": "jsonwebtoken",
+        "version": "^9.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/jsonwebtoken"
+      },
+      {
+        "name": "mammoth",
+        "version": "^1.9.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/mammoth"
+      },
+      {
+        "name": "mongoose",
+        "version": "^8.9.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/mongoose"
+      },
+      {
+        "name": "openai",
+        "version": "^4.78.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/openai"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "satashili",
+        "type": "human",
+        "uri": "https://github.com/satashili"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 24,
+      "validation_diversity": 0.16,
+      "context_breadth": 0.18,
+      "temporal_stability": 0.64,
+      "test_coverage": 0,
+      "documentation_quality": 0.6
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.147
+  }
+}

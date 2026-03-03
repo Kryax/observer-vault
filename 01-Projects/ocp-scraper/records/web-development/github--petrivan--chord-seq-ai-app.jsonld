@@ -1,0 +1,349 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/petrivan--chord-seq-ai-app",
+  "meta": {
+    "title": "Table of Contents",
+    "description": "AI-powered chord progression suggester built with Next.js for composers and music enthusiasts.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T10:27:32.374Z",
+    "dateModified": "2026-03-03T10:27:32.374Z",
+    "keywords": [
+      "ai",
+      "chord-generator",
+      "music-composition",
+      "music-production",
+      "nextjs14",
+      "web-app"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "The ChordSeqAI Web App is a dynamic and user-friendly interface for interactions with deep learning models. This Next.js application enables users to compose beautiful chord progressions by suggesting the next chord.",
+    "context": "1. [Introduction](#introduction)\n2. [Getting Started](#getting-started)\n   - 2.1. [Prerequisites](#prerequisites)\n   - 2.2. [Installation](#installation)\n   - 2.3. [Running the App](#running-the-app)\n3. [Support](#support)\n4. [Usage](#usage)\n   - 4.1. [Adding and Deleting Chords](#adding-and-deleting-chords)\n   - 4.2. [Suggestions](#suggestions)\n   - 4.3. [Timeline Controls](#timeline-controls)\n   - 4.4. [Specifying Duration](#specifying-duration)\n   - 4.5. [Customizing Signature](#customizing-signature)\n   - 4.6. [Playback](#playback)\n   - 4.7. [Selecting Models and Styles](#selecting-models-and-styles)\n   - 4.8. [Transpose, Import, Export](#transpose-import-export)\n   - 4.9. [Chord Variants](#chord-variants)\n5. [FAQ](#faq)\n6. [Web Stack](#web-stack)\n7. [License](#license)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "machine-learning",
+    "lang:typescript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "212 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "28 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T10:27:32.374Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/PetrIvan/chord-seq-ai-app",
+        "description": "GitHub repository: PetrIvan/chord-seq-ai-app"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://chordseqai.com",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "TypeScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "@mdx-js/loader",
+        "version": "^3.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@mdx-js/loader"
+      },
+      {
+        "name": "@mdx-js/react",
+        "version": "^3.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@mdx-js/react"
+      },
+      {
+        "name": "@next/mdx",
+        "version": "^14.2.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@next/mdx"
+      },
+      {
+        "name": "@tonejs/midi",
+        "version": "^2.0.28",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@tonejs/midi"
+      },
+      {
+        "name": "@use-gesture/react",
+        "version": "^10.3.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@use-gesture/react"
+      },
+      {
+        "name": "framer-motion",
+        "version": "^11.3.30",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/framer-motion"
+      },
+      {
+        "name": "fuse.js",
+        "version": "^7.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/fuse.js"
+      },
+      {
+        "name": "gray-matter",
+        "version": "^4.0.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/gray-matter"
+      },
+      {
+        "name": "lodash",
+        "version": "^4.17.23",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/lodash"
+      },
+      {
+        "name": "midi-writer-js",
+        "version": "^3.1.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/midi-writer-js"
+      },
+      {
+        "name": "next",
+        "version": "^16.1.6",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/next"
+      },
+      {
+        "name": "next-mdx-remote",
+        "version": "^5.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/next-mdx-remote"
+      },
+      {
+        "name": "next-pwa",
+        "version": "^5.6.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/next-pwa"
+      },
+      {
+        "name": "nextjs-toploader",
+        "version": "^3.6.15",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/nextjs-toploader"
+      },
+      {
+        "name": "onnxruntime-web",
+        "version": "^1.18.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/onnxruntime-web"
+      },
+      {
+        "name": "path",
+        "version": "^0.12.7",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/path"
+      },
+      {
+        "name": "plaiceholder",
+        "version": "^3.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/plaiceholder"
+      },
+      {
+        "name": "react",
+        "version": "^18.3.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react"
+      },
+      {
+        "name": "react-device-detect",
+        "version": "^2.2.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-device-detect"
+      },
+      {
+        "name": "react-dom",
+        "version": "^18.3.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-dom"
+      },
+      {
+        "name": "react-responsive",
+        "version": "^10.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-responsive"
+      },
+      {
+        "name": "rehype-highlight",
+        "version": "^7.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/rehype-highlight"
+      },
+      {
+        "name": "rehype-parse",
+        "version": "^9.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/rehype-parse"
+      },
+      {
+        "name": "rehype-slug",
+        "version": "^6.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/rehype-slug"
+      },
+      {
+        "name": "remark",
+        "version": "^15.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark"
+      },
+      {
+        "name": "remark-gfm",
+        "version": "^4.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-gfm"
+      },
+      {
+        "name": "sharp",
+        "version": "^0.33.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/sharp"
+      },
+      {
+        "name": "strip-markdown",
+        "version": "^6.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/strip-markdown"
+      },
+      {
+        "name": "tone",
+        "version": "^15.0.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/tone"
+      },
+      {
+        "name": "zustand",
+        "version": "^4.5.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/zustand"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "PetrIvan",
+        "type": "human",
+        "uri": "https://github.com/PetrIvan"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 268,
+      "validation_diversity": 0.1,
+      "context_breadth": 0.38,
+      "temporal_stability": 0.96,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.6
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.33
+  }
+}

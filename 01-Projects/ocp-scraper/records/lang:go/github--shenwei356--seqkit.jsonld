@@ -1,0 +1,356 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/shenwei356--seqkit",
+  "meta": {
+    "title": "SeqKit - a cross-platform and ultrafast toolkit for FASTA/Q file manipulation",
+    "description": "A cross-platform and ultrafast toolkit for FASTA/Q file manipulation",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T10:30:02.811Z",
+    "dateModified": "2026-03-03T10:30:02.811Z",
+    "keywords": [
+      "bioinformatics",
+      "cross-platform",
+      "fasta",
+      "fastq",
+      "golang",
+      "manipulation",
+      "sequence",
+      "tool",
+      "toolkit"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "- [**Try SeqKit in your browser**](https://sandbox.bio/tutorials/seqkit-intro) (Tutorials and Exercises provided by [sandbox.bio](https://sandbox.bio/tutorials/seqkit-intro))\n- **Documents:** [http://bioinf.shenwei.me/seqkit](http://bioinf.shenwei.me/seqkit)\n([**Usage**](http://bioinf.shenwei.me/seqkit/usage/),\n[**FAQs**](http://bioinf.shenwei.me/seqkit/faq/),\n[**Tutorial**](http://bioinf.shenwei.me/seqkit/tutorial/),\nand \n[**Benchmark**](http://bioinf.shenwei.me/seqkit/benchmark/))\n- **Source code:** [https://github.com/shenwei356/seqkit](https://github.com/shenwei356/seqkit)\n[![GitHub stars](https://img.shields.io/github/stars/shenwei356/seqkit.svg?style=social&label=Star&?maxAge=2592000)](https://github.com/shenwei356/seqkit)\n[![license](https://img.shields.io/github/license/shenwei356/seqkit.svg?maxAge=2592000)](https://github.com/shenwei356/seqkit/blob/master/LICENSE)\n- **Latest version:** [![Latest Version](https://img.shields.io/github/release/shenwei356/seqkit.svg?style=flat?maxAge=86400)](https://github.com/shenwei356/seqkit/releases)\n[![Github Releases](https://img.shields.io/github/downloads/shenwei356/seqkit/latest/total.svg?maxAge=3600)](http://bioinf.shenwei.me/seqkit/download/)\n[![Cross-platform](https://img.shields.io/badge/platform-any-ec2eb4.svg?style=flat)](http://bioinf.shenwei.me/seqkit/download/)\n[![Anaconda Cloud](https://anaconda.org/bioconda/seqkit/badges/version.svg)](https://anaconda.org/bioconda/seqkit)\n- **[Please cite](#citation):** [![doi](https://img.shields.io/badge/doi-10.1002%2Fimt2.191-blue.svg?style=flat)](https://doi.org/10.1002/imt2.191) [![Citation Badge](https://api.juleskreuer.eu/citation-badge.php?doi=10.1002/imt2.191)](https://doi.org/10.1002/imt2.191)\n- **Others**: [![check in Biotreasury](https://img.shields.io/badge/Biotreasury-collected-brightgreen)](https://biotreasury.rjmart.cn/#/tool?id=10081)",
+    "context": "- [**Try SeqKit in your browser**](https://sandbox.bio/tutorials/seqkit-intro) (Tutorials and Exercises provided by [sandbox.bio](https://sandbox.bio/tutorials/seqkit-intro))\n- **Documents:** [http://bioinf.shenwei.me/seqkit](http://bioinf.shenwei.me/seqkit)\n([**Usage**](http://bioinf.shenwei.me/seqkit/usage/),\n[**FAQs**](http://bioinf.shenwei.me/seqkit/faq/),\n[**Tutorial**](http://bioinf.shenwei.me/seqkit/tutorial/),\nand \n[**Benchmark**](http://bioinf.shenwei.me/seqkit/benchmark/))\n- **Source code:** [https://github.com/shenwei356/seqkit](https://github.com/shenwei356/seqkit)\n[![GitHub stars](https://img.shields.io/github/stars/shenwei356/seqkit.svg?style=social&label=Star&?maxAge=2592000)](https://github.com/shenwei356/seqkit)\n[![license](https://img.shields.io/github/license/shenwei356/seqkit.svg?maxAge=2592000)](https://github.com/shenwei356/seqkit/blob/master/LICENSE)\n- **Latest version:** [![Latest Version](https://img.shields.io/github/release/shenwei356/seqkit.svg?style=flat?maxAge=86400)](https://github.com/shenwei356/seqkit/releases)\n[![Github Releases](https://img.shields.io/github/downloads/shenwei356/seqkit/latest/total.svg?maxAge=3600)](http://bioinf.shenwei.me/seqkit/download/)\n[![Cross-platform](https://img.shields.io/badge/platform-any-ec2eb4.svg?style=flat)](http://bioinf.shenwei.me/seqkit/download/)\n[![Anaconda Cloud](https://anaconda.org/bioconda/seqkit/badges/version.svg)](https://anaconda.org/bioconda/seqkit)\n- **[Please cite](#citation):** [![doi](https://img.shields.io/badge/doi-10.1002%2Fimt2.191-blue.svg?style=flat)](https://doi.org/10.1002/imt2.191) [![Citation Badge](https://api.juleskreuer.eu/citation-badge.php?doi=10.1002/imt2.191)](https://doi.org/10.1002/imt2.191)\n- **Others**: [![check in Biotreasury](https://img.shields.io/badge/Biotreasury-collected-brightgreen)](https://biotreasury.rjmart.cn/#/tool?id=10081)  \n\n\n<a href=\"https://doi.org/10.1002/imt2.191\"><img src=\"seqkit2.jpg\" alt=\"Subcommands of SeqKit2\" width=\"700\"/></a>",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "1521 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "176 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T10:30:02.811Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/shenwei356/seqkit",
+        "description": "GitHub repository: shenwei356/seqkit"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://bioinf.shenwei.me/seqkit",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "github.com/biogo/biogo",
+        "version": "v1.0.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/biogo/biogo"
+      },
+      {
+        "name": "github.com/biogo/hts",
+        "version": "v1.4.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/biogo/hts"
+      },
+      {
+        "name": "github.com/botond-sipos/thist",
+        "version": "v1.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/botond-sipos/thist"
+      },
+      {
+        "name": "github.com/cespare/xxhash/v2",
+        "version": "v2.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/cespare/xxhash/v2"
+      },
+      {
+        "name": "github.com/cznic/sortutil",
+        "version": "v0.0.0-20181122101858-f5f958428db8",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/cznic/sortutil"
+      },
+      {
+        "name": "github.com/dsnet/compress",
+        "version": "v0.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/dsnet/compress"
+      },
+      {
+        "name": "github.com/dustin/go-humanize",
+        "version": "v1.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/dustin/go-humanize"
+      },
+      {
+        "name": "github.com/elliotwutingfeng/asciiset",
+        "version": "v0.0.0-20230602022725-51bbb787efab",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/elliotwutingfeng/asciiset"
+      },
+      {
+        "name": "github.com/fsnotify/fsnotify",
+        "version": "v1.5.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/fsnotify/fsnotify"
+      },
+      {
+        "name": "github.com/google/uuid",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/uuid"
+      },
+      {
+        "name": "github.com/iafan/cwalk",
+        "version": "v0.0.0-20210125030640-586a8832a711",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/iafan/cwalk"
+      },
+      {
+        "name": "github.com/klauspost/compress",
+        "version": "v1.18.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/klauspost/compress"
+      },
+      {
+        "name": "github.com/klauspost/pgzip",
+        "version": "v1.2.6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/klauspost/pgzip"
+      },
+      {
+        "name": "github.com/logrusorgru/aurora",
+        "version": "v2.0.3+incompatible",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/logrusorgru/aurora"
+      },
+      {
+        "name": "github.com/mattn/go-colorable",
+        "version": "v0.1.13",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mattn/go-colorable"
+      },
+      {
+        "name": "github.com/mattn/go-isatty",
+        "version": "v0.0.16",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mattn/go-isatty"
+      },
+      {
+        "name": "github.com/mitchellh/go-homedir",
+        "version": "v1.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mitchellh/go-homedir"
+      },
+      {
+        "name": "github.com/pierrec/lz4/v4",
+        "version": "v4.1.25",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/pierrec/lz4/v4"
+      },
+      {
+        "name": "github.com/pkg/errors",
+        "version": "v0.9.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/pkg/errors"
+      },
+      {
+        "name": "github.com/shenwei356/bio",
+        "version": "v0.13.9",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/shenwei356/bio"
+      },
+      {
+        "name": "github.com/shenwei356/breader",
+        "version": "v0.3.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/shenwei356/breader"
+      },
+      {
+        "name": "github.com/shenwei356/bwt",
+        "version": "v0.6.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/shenwei356/bwt"
+      },
+      {
+        "name": "github.com/shenwei356/go-logging",
+        "version": "v0.0.0-20171012171522-c6b9702d88ba",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/shenwei356/go-logging"
+      },
+      {
+        "name": "github.com/shenwei356/stable",
+        "version": "v0.1.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/shenwei356/stable"
+      },
+      {
+        "name": "github.com/shenwei356/util",
+        "version": "v0.5.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/shenwei356/util"
+      },
+      {
+        "name": "github.com/shenwei356/xopen",
+        "version": "v0.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/shenwei356/xopen"
+      },
+      {
+        "name": "github.com/smallfish/simpleyaml",
+        "version": "v0.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/smallfish/simpleyaml"
+      },
+      {
+        "name": "github.com/spf13/cobra",
+        "version": "v1.8.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/cobra"
+      },
+      {
+        "name": "github.com/twotwotwo/sorts",
+        "version": "v0.0.0-20160814051341-bf5c1f2b8553",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/twotwotwo/sorts"
+      },
+      {
+        "name": "github.com/ulikunitz/xz",
+        "version": "v0.5.15",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/ulikunitz/xz"
+      },
+      {
+        "name": "github.com/vbauerster/mpb/v5",
+        "version": "v5.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/vbauerster/mpb/v5"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "shenwei356",
+        "type": "human",
+        "uri": "https://github.com/shenwei356"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 1873,
+      "validation_diversity": 0.44,
+      "context_breadth": 0.58,
+      "temporal_stability": 1,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.7
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.611
+  }
+}

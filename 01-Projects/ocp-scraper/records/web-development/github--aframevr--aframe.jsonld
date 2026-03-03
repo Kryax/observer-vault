@@ -1,0 +1,231 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/aframevr--aframe",
+  "meta": {
+    "title": "Or yarn add aframe",
+    "description": ":a: Web framework for building virtual reality experiences.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T10:27:33.671Z",
+    "dateModified": "2026-03-03T10:27:33.671Z",
+    "keywords": [
+      "3d",
+      "aframe",
+      "augmented-reality",
+      "daydream",
+      "ecs",
+      "game-development",
+      "game-engine",
+      "gamedev",
+      "html",
+      "metaverse",
+      "oculus",
+      "rift",
+      "threejs",
+      "virtual-reality",
+      "virtualreality",
+      "vive",
+      "vr",
+      "webgl",
+      "webvr",
+      "webxr"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": ":eyeglasses: **Virtual Reality Made Simple**: A-Frame handles the 3D and WebXR\nboilerplate required to get running across platforms including mobile, desktop, and all headsets (compatible with a WebXR capable browser) just by dropping in `<a-scene>`.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "machine-learning",
+    "game-development",
+    "lang:javascript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "17482 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "4330 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T10:27:33.671Z"
+  },
+  "implementation": {
+    "type": "framework",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/aframevr/aframe",
+        "description": "GitHub repository: aframevr/aframe"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://aframe.io/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "JavaScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "buffer",
+        "version": "^6.0.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/buffer"
+      },
+      {
+        "name": "debug",
+        "version": "^4.3.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/debug"
+      },
+      {
+        "name": "deep-assign",
+        "version": "^2.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/deep-assign"
+      },
+      {
+        "name": "load-bmfont",
+        "version": "^1.2.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/load-bmfont"
+      },
+      {
+        "name": "stats-gl",
+        "version": "^3.6.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/stats-gl"
+      },
+      {
+        "name": "super-animejs",
+        "version": "^3.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/super-animejs"
+      },
+      {
+        "name": "three",
+        "version": "npm:super-three@0.181.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/three"
+      },
+      {
+        "name": "three-bmfont-text",
+        "version": "dmarcos/three-bmfont-text#8f38cb02a07321d2369d1234e9b9087c284543ed",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/three-bmfont-text"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "aframevr",
+        "type": "human",
+        "uri": "https://github.com/aframevr"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 26142,
+      "validation_diversity": 0.88,
+      "context_breadth": 0.7,
+      "temporal_stability": 1,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.6
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.794
+  }
+}

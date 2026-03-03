@@ -1,0 +1,166 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/open-spaced-repetition--fsrs4anki-helper",
+  "meta": {
+    "title": "FSRS Helper",
+    "description": "An Anki add-on that supports Postpone & Advance & Load Balance & Easy Days & Disperse Siblings & Flatten",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T10:31:08.049Z",
+    "dateModified": "2026-03-03T10:31:08.049Z",
+    "keywords": [
+      "add-on",
+      "anki",
+      "anki-addon",
+      "fsrs",
+      "spaced-repetition",
+      "spaced-repetition-algorithm"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "| Feature name      | How does it work?                                            | When should I use it?                                        |\n| ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |\n| Reschedule        | Calculates stability, difficulty, and the optimum interval from the entire review history for each card using FSRS parameters. Then, it changes the due dates of cards. | When you update the parameters or desired retention of FSRS. Rescheduling with the Helper does not add to the size of your collection, unlike Anki's built-in \"Reschedule cards on change.\" |\n| Advance           | Decreases the intervals of undue cards based on current and requested R, and interval length to minimize damage to long-term learning. | When you want to review your material ahead of time, for example, before a test. |\n| Postpone          | Increases the intervals of cards that are due today based on current and requested R, and interval length in a way that minimizes damage to long-term learning. | When you are dealing with a large number of reviews after taking a break from Anki or after rescheduling. |\n| Schedule a Break  | Redistributes cards due during an upcoming break period (including overdue cards and cards due today) across follow-up days. Uses a cost function to minimize deviation from original due dates. | When you know you'll be away from Anki for a period (e.g., vacation, busy work period) and want to proactively redistribute reviews. |\n| Load Balancing    | After the optimal interval is calculated, it is adjusted by a random amount to make the distribution of reviews over time more uniform. | Always. This feature makes your workload (reviews per day) more consistent. |\n| Easy Days         | After the optimal interval is calculated, it is slightly adjusted to change the due date. | If you want to spend less time on Anki on some days of the week, for example, Sundays. |\n| Disperse Siblings | Siblings are cards generated from the same note. Their intervals are adjusted to spread them further apart from each other. | Always. This feature alleviates the interference; disabling it will only decrease the efficiency of spaced repetition. |\n| Flatten           |  If the number of future due cards exceeds the limit, the cards are postponed. | When you want to spread your backlog to the future. |",
+    "context": "[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)\n\nFSRS Helper is an Anki add-on that supports [FSRS](https://github.com/open-spaced-repetition/fsrs4anki) algorithm. It has the following main features:\n\n- **Reschedule** cards based on their entire review histories.\n- **Postpone** a selected number of due cards.\n- **Advance** a selected number of undue cards.\n- **Schedule a Break** to redistribute cards due during an upcoming period when you'll be away from Anki.\n- **Balance** the load during rescheduling (based on fuzz).\n- Less Anki on **Easy Days** (such as weekends) during rescheduling (based on load balance).\n- **Disperse** Siblings (cards with the same note) to avoid interference & reminder.\n- **Flatten** future due cards to a selected number of reviews per day.\n- **Remedy Hard Misuse** to correct historical Hard button misuse by converting Hard reviews to Again.\n- **Reset** to clear custom data or manual rescheduling records.\n- **Steps Stats** quantify your short-term memory performance and recommend learning steps.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "299 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "28 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T10:31:08.049Z"
+  },
+  "implementation": {
+    "type": "algorithm",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/open-spaced-repetition/fsrs4anki-helper",
+        "description": "GitHub repository: open-spaced-repetition/fsrs4anki-helper"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://ankiweb.net/shared/info/759844606",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "open-spaced-repetition",
+        "type": "human",
+        "uri": "https://github.com/open-spaced-repetition"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 355,
+      "validation_diversity": 0.42,
+      "context_breadth": 0.38,
+      "temporal_stability": 0.86,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.7
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.487
+  }
+}

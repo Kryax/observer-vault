@@ -1,0 +1,173 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/kitao--pyxel",
+  "meta": {
+    "title": "<img src=\"docs/images/pyxel_logo_152x64.png\">",
+    "description": "A retro game engine for Python",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T10:27:36.434Z",
+    "dateModified": "2026-03-03T10:27:36.434Z",
+    "keywords": [
+      "game",
+      "game-development",
+      "game-engine",
+      "gamedev",
+      "graphics",
+      "html",
+      "opengl",
+      "pico-8",
+      "pixel-art",
+      "python",
+      "pyxel",
+      "rust",
+      "tic-80",
+      "webgl"
+    ],
+    "license": "NOASSERTION"
+  },
+  "problemSolved": {
+    "statement": "[![Downloads](https://static.pepy.tech/personalized-badge/pyxel?period=total&units=international_system&left_color=grey&right_color=blue&left_text=PyPI%20downloads)](https://pypi.org/project/pyxel/)\n[![GitHub Repo stars](https://img.shields.io/github/stars/kitao/pyxel?style=social)](https://github.com/kitao/pyxel)\n[![GitHub forks](https://img.shields.io/github/forks/kitao/pyxel?style=social)](https://github.com/kitao/pyxel)\n[![GitHub Sponsors](https://img.shields.io/github/sponsors/kitao?label=Sponsor%20me&logo=github%20sponsors&style=social)](https://github.com/sponsors/kitao)",
+    "context": "[![Downloads](https://static.pepy.tech/personalized-badge/pyxel?period=total&units=international_system&left_color=grey&right_color=blue&left_text=PyPI%20downloads)](https://pypi.org/project/pyxel/)\n[![GitHub Repo stars](https://img.shields.io/github/stars/kitao/pyxel?style=social)](https://github.com/kitao/pyxel)\n[![GitHub forks](https://img.shields.io/github/forks/kitao/pyxel?style=social)](https://github.com/kitao/pyxel)\n[![GitHub Sponsors](https://img.shields.io/github/sponsors/kitao?label=Sponsor%20me&logo=github%20sponsors&style=social)](https://github.com/sponsors/kitao)\n\n[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/H2H27VDKD)\n\n[ [English](README.md) | [中文](docs/README.cn.md) | [Deutsch](docs/README.de.md) | [Español](docs/README.es.md) | [Français](docs/README.fr.md) | [Italiano](docs/README.it.md) | [日本語](docs/README.ja.md) | [한국어](docs/README.ko.md) | [Português](docs/README.pt.md) | [Русский](docs/README.ru.md) | [Türkçe](docs/README.tr.md) | [Українська](docs/README.uk.md) ]\n\n**Pyxel** (/ˈpɪksəl/) is a retro game engine for Python.\n\nWith simple specifications inspired by retro gaming consoles, such as displaying only 16 colors and supporting 4 sound channels, you can easily enjoy making pixel-art-style games.\n\n[<img src=\"docs/images/pyxel_thanks.png\" width=\"460\">](https://github.com/kitao/pyxel/wiki/Pyxel-User-Examples) [<img src=\"docs/images/pyxel_book.png\" width=\"180\">](https://gihyo.jp/book/2025/978-4-297-14657-3)\n\nThe development of Pyxel is driven by user feedback. Please give Pyxel a star on GitHub!\n\n<p>\n<a href=\"https://kitao.github.io/pyxel/wasm/showcase/examples/10-platformer.html\">\n<img src=\"docs/images/10_platformer.gif\" width=\"290\">\n</a>\n<a href=\"https://kitao.github.io/pyxel/wasm/showcase/apps/30sec-of-daylight.html\">\n<img src=\"docs/images/30sec_of_daylight.gif\" width=\"350\">\n</a>\n<a href=\"https://kitao.github.io/pyxel/wasm/showcase/examples/02-jump-game.html\">\n<img src=\"docs/images/02_jump_game.gif\" width=\"330\">\n</a>\n<a href=\"https://kitao.github.io/pyxel/wasm/showcase/apps/megaball.html\">\n<img src=\"docs/images/megaball.gif\" width=\"310\">\n</a>\n<a href=\"https://kitao.github.io/pyxel/wasm/showcase/tools/image-editor.html\">\n<img src=\"docs/images/image_tilemap_editor.gif\" width=\"320\">\n</a>\n<a href=\"https://kitao.github.io/pyxel/wasm/showcase/tools/sound-editor.html\">\n<img src=\"docs/images/sound_music_editor.gif\" width=\"320\">\n</a>\n</p>\n\nPyxel's specifications and APIs are inspired by [PICO-8](https://www.lexaloffle.com/pico-8.php) and [TIC-80](https://tic80.com/).\n\nPyxel is open source under the [MIT License](LICENSE) and free to use. Let's start making retro games with Pyxel!",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "machine-learning",
+    "game-development",
+    "graphics",
+    "lang:rust"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "17170 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "910 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T10:27:36.434Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/kitao/pyxel",
+        "description": "GitHub repository: kitao/pyxel"
+      }
+    ],
+    "language": "Rust"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "kitao",
+        "type": "human",
+        "uri": "https://github.com/kitao"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 18990,
+      "validation_diversity": 0.61,
+      "context_breadth": 0.7,
+      "temporal_stability": 1,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.5
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.736
+  }
+}

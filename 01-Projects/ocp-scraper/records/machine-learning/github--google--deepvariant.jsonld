@@ -1,0 +1,168 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/google--deepvariant",
+  "meta": {
+    "title": "deepvariant",
+    "description": "DeepVariant is an analysis pipeline that uses a deep neural network to call genetic variants from next-generation DNA sequencing data.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T10:27:25.477Z",
+    "dateModified": "2026-03-03T10:27:25.477Z",
+    "keywords": [
+      "bioinformatics",
+      "deep-learning",
+      "deep-neural-network",
+      "deepvariant",
+      "dna",
+      "genome",
+      "genomics",
+      "machine-learning",
+      "ngs",
+      "science",
+      "sequencing",
+      "tensorflow"
+    ],
+    "license": "BSD-3-Clause"
+  },
+  "problemSolved": {
+    "statement": "*   **High accuracy** - DeepVariant won 2020\n    [PrecisionFDA Truth Challenge V2](https://precision.fda.gov/challenges/10/results)\n    for All Benchmark Regions for ONT, PacBio, and Multiple Technologies\n    categories, and 2016\n    [PrecisionFDA Truth Challenge](https://precision.fda.gov/challenges/truth/results)\n    for best SNP Performance. DeepVariant maintains high accuracy across data\n    from different sequencing technologies, prep methods, and species. For\n    [lower coverage](https://google.github.io/deepvariant/posts/2019-09-10-twenty-is-the-new-thirty-comparing-current-and-historical-wgs-accuracy-across-coverage/),\n    using DeepVariant makes an especially great difference. See\n    [metrics](docs/metrics.md) for the latest accuracy numbers on each of the\n    sequencing types.\n*   **Flexibility** - Out-of-the-box use for\n    [PCR-positive](https://ai.googleblog.com/2018/04/deepvariant-accuracy-improvements-for.html)\n    samples and\n    [low quality sequencing runs](https://blog.dnanexus.com/2018-01-16-evaluating-the-performance-of-ngs-pipelines-on-noisy-wgs-data/),\n    and easy adjustments for\n    [different sequencing technologies](https://google.github.io/deepvariant/posts/2019-01-14-highly-accurate-snp-and-indel-calling-on-pacbio-ccs-with-deepvariant/)\n    and\n    [non-human species](https://google.github.io/deepvariant/posts/2018-12-05-improved-non-human-variant-calling-using-species-specific-deepvariant-models/).\n*   **Ease of use** - No filtering is needed beyond setting your preferred\n    minimum quality threshold.\n*   **Cost effectiveness** - With a single non-preemptible n1-standard-16\n    machine on Google Cloud, it costs ~$11.8 to call a 30x whole genome and\n    ~$0.89 to call an exome. With preemptible pricing, the cost is $2.84 for a\n    30x whole genome and $0.21 for whole exome (not considering preemption).\n*   **Speed** - See [metrics](docs/metrics.md) for the runtime of all supported\n    datatypes on a 96-core CPU-only machine</sup>. Multiple options for\n    acceleration exist.\n*   **Usage options** - DeepVariant can be run via Docker or binaries, using\n    both on-premise hardware or in the cloud, with support for hardware\n    accelerators like GPUs and TPUs.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "data-management",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "3636 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "773 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T10:27:25.477Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/google/deepvariant",
+        "description": "GitHub repository: google/deepvariant"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "google",
+        "type": "human",
+        "uri": "https://github.com/google"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 5182,
+      "validation_diversity": 0.54,
+      "context_breadth": 0.69,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.47,
+      "documentation_quality": 0.5
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.67
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/adobe-research--deepafx-st",
+  "meta": {
+    "title": "DeepAFx-ST",
+    "description": "DeepAFx-ST - Style transfer of audio effects with differentiable signal processing. Please see https://csteinmetz1.github.io/DeepAFx-ST/",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T10:27:28.585Z",
+    "dateModified": "2026-03-03T10:27:28.585Z",
+    "keywords": [
+      "adaptive-presets",
+      "afx",
+      "ai",
+      "audio",
+      "audio-processing",
+      "audio-production",
+      "compressor",
+      "deeplearning",
+      "drc",
+      "effects",
+      "eq",
+      "music-production",
+      "styletransfer"
+    ],
+    "license": "NOASSERTION"
+  },
+  "problemSolved": {
+    "statement": "Style transfer of audio effects with differentiable signal processing",
+    "context": "Style transfer of audio effects with differentiable signal processing\n\n\n[![Demo](https://img.shields.io/badge/Web-Demo-blue)](https://csteinmetz1.github.io/DeepAFx-ST)\n[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](TBD)\n[![arXiv](https://img.shields.io/badge/arXiv-2207.08759-b31b1b.svg)](https://arxiv.org/abs/2207.08759)\n\n<!-- <img width=\"700px\" src=\"docs/new-generic-style-transfer-headline.svg\"> -->\n \n[Christian J. Steinmetz](http://Christiansteinmetz.com)<sup>1*</sup>, [Nicholas J. Bryan](https://ccrma.stanford.edu/~njb/)<sup>2</sup>, and [Joshua D. Reiss](http://www.eecs.qmul.ac.uk/~josh/)<sup>1</sup>\n\n<sup>1</sup> Centre for Digital Music, Queen Mary University of London<br>\n<sup>2</sup> Adobe Research <br>\n<sup>*</sup>Work performed in-part while an intern at Adobe Research.\n\n\n[![Demo Video](docs/deepafx-st-headline.png)](https://youtu.be/IZp455wiMk4)\n    \n\n</div>\n\n\n<!-- START doctoc generated TOC please keep comment here to allow auto update -->\n<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->\n<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->\n\n- [Abstract](#abstract)\n- [Install & Usage](#install--usage)\n- [Inference](#inference)\n- [Training](#training)\n- [Style evaluation](#style-evaluation)\n- [License](#license)\n\n<!-- END doctoc generated TOC please keep comment here to allow auto update -->",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "media",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "405 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "51 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T10:27:28.585Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/adobe-research/DeepAFx-ST",
+        "description": "GitHub repository: adobe-research/DeepAFx-ST"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "adobe-research",
+        "type": "human",
+        "uri": "https://github.com/adobe-research"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 507,
+      "validation_diversity": 0.1,
+      "context_breadth": 0.57,
+      "temporal_stability": 0.62,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.5
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.332
+  }
+}

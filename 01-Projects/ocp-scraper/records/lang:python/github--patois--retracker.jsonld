@@ -1,0 +1,170 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/patois--retracker",
+  "meta": {
+    "title": "RETracker",
+    "description": "Reverse Engineering Framework for the Polyend Tracker",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T10:27:40.036Z",
+    "dateModified": "2026-03-03T10:27:40.036Z",
+    "keywords": [
+      "custom-firmware",
+      "disassembler",
+      "firmware",
+      "hack",
+      "impulse-tracker",
+      "mod",
+      "mod-tracker",
+      "modification",
+      "music-production",
+      "polyend",
+      "polyend-tracker",
+      "reverse-engineering",
+      "teensy",
+      "teensy36",
+      "teensyduino",
+      "tracker"
+    ]
+  },
+  "problemSolved": {
+    "statement": "`RETracker` is a reverse engineering framework for the [Polyend Tracker](https://polyend.com/tracker/) written in Python.\r\nIt is based on unofficial patches that are applied to the vendor's stock firmware.\r\nThese patches introduce a custom USB handler by replacing the Tracker's existing but unused USB RAWHID handler. \r\n\r\n[Watch a video of a text scroller on the Tracker's pads](https://vimeo.com/688140736)\r\n\r\nThe `RETracker's` custom USB handler introduces new, non-official features to the `Polyend Tracker` that can be controlled from a computer via USB. One of these new features is a custom and working unidirectional file transfer functionality, since the Polyend Tracker's official file transfer functionality was broken and hence has been [removed by Polyend with the introduction of firmware v1.4.0](https://github.com/polyend/TrackerBetaTesting/releases/tag/1.4.0).\r\n\r\n\r\n![RETracker screenshot](rsrc/retracker.png)\r\n\r\nOnce patched, the firmware's new features comprise the following:\r\n* Reading/dumping of memory\r\n* Writing/patching of memory\r\n* Execution of custom code/redirection of control flow\r\n* Writing files to the tracker's SD card\r\n\r\nThese features are a solid base for adding further functions dynamically to the `Polyend Tracker`, by assembling position-independend code on the host, transferring it to the Tracker and having the new USB handler execute the freshly implanted code. There are a few intial [demos](polyp/) available that can be transferred dynamically to the device.\r\n\r\nAdding to that, the memory reading/writing functions allow the USB host to inspect the `Tracker's` memory by creating hex-dumps or by disassembling code in ARM or Thumb mode.\r\n\r\nFinally, the new file transfer function allows arbitrary files, such as firmware updates or `NES` roms to be copied to the Tracker, without having to go through the intended process of swapping the SD card between the `Tracker` and a computer. Currently the only direction supported is *from* the USB host *to* the `Tracker's` SD card, however.\r\n\r\nHAPPY HACKING!",
+    "context": "`RETracker` is a reverse engineering framework for the [Polyend Tracker](https://polyend.com/tracker/) written in Python.\r\nIt is based on unofficial patches that are applied to the vendor's stock firmware.\r\nThese patches introduce a custom USB handler by replacing the Tracker's existing but unused USB RAWHID handler. \r\n\r\n[Watch a video of a text scroller on the Tracker's pads](https://vimeo.com/688140736)\r\n\r\nThe `RETracker's` custom USB handler introduces new, non-official features to the `Polyend Tracker` that can be controlled from a computer via USB. One of these new features is a custom and working unidirectional file transfer functionality, since the Polyend Tracker's official file transfer functionality was broken and hence has been [removed by Polyend with the introduction of firmware v1.4.0](https://github.com/polyend/TrackerBetaTesting/releases/tag/1.4.0).\r\n\r\n\r\n![RETracker screenshot](rsrc/retracker.png)\r\n\r\nOnce patched, the firmware's new features comprise the following:\r\n* Reading/dumping of memory\r\n* Writing/patching of memory\r\n* Execution of custom code/redirection of control flow\r\n* Writing files to the tracker's SD card\r\n\r\nThese features are a solid base for adding further functions dynamically to the `Polyend Tracker`, by assembling position-independend code on the host, transferring it to the Tracker and having the new USB handler execute the freshly implanted code. There are a few intial [demos](polyp/) available that can be transferred dynamically to the device.\r\n\r\nAdding to that, the memory reading/writing functions allow the USB host to inspect the `Tracker's` memory by creating hex-dumps or by disassembling code in ARM or Thumb mode.\r\n\r\nFinally, the new file transfer function allows arbitrary files, such as firmware updates or `NES` roms to be copied to the Tracker, without having to go through the intended process of swapping the SD card between the `Tracker` and a computer. Currently the only direction supported is *from* the USB host *to* the `Tracker's` SD card, however.\r\n\r\nHAPPY HACKING!",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "121 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "22 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T10:27:40.036Z"
+  },
+  "implementation": {
+    "type": "framework",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/patois/RETracker",
+        "description": "GitHub repository: patois/RETracker"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "patois",
+        "type": "human",
+        "uri": "https://github.com/patois"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 165,
+      "validation_diversity": 0,
+      "context_breadth": 0.53,
+      "temporal_stability": 0.71,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.5
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.079
+  }
+}

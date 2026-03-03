@@ -1,0 +1,293 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/scverse--scanpy",
+  "meta": {
+    "title": "Scanpy – Single-Cell Analysis in Python",
+    "description": "Single-cell analysis in Python. Scales to >100M cells.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T10:27:34.256Z",
+    "dateModified": "2026-03-03T10:27:34.256Z",
+    "keywords": [
+      "anndata",
+      "bioinformatics",
+      "data-science",
+      "machine-learning",
+      "python",
+      "scanpy",
+      "scverse",
+      "transcriptomics",
+      "visualize-data"
+    ],
+    "license": "BSD-3-Clause"
+  },
+  "problemSolved": {
+    "statement": "Scanpy is a scalable toolkit for analyzing single-cell gene expression data built jointly with [anndata][].\nIt includes preprocessing, visualization, clustering, trajectory inference and differential expression testing.\nThe Python-based implementation efficiently deals with datasets of more than one million cells.\nFor datasets too large to fit into memory, [many scanpy functions][] are now compatible with [dask][] (**warning: experimental**).",
+    "context": "Scanpy is a scalable toolkit for analyzing single-cell gene expression data built jointly with [anndata][].\nIt includes preprocessing, visualization, clustering, trajectory inference and differential expression testing.\nThe Python-based implementation efficiently deals with datasets of more than one million cells.\nFor datasets too large to fit into memory, [many scanpy functions][] are now compatible with [dask][] (**warning: experimental**).\n\nDiscuss usage on the scverse [Discourse][]. Read the [documentation][].\nIf you'd like to contribute by opening an issue or creating a pull request, please take a look at our [contribution guide][].\n\n[anndata]: https://anndata.readthedocs.io\n[dask]: https://docs.dask.org/en/stable/\n[discourse]: https://discourse.scverse.org/\n[documentation]: https://scanpy.readthedocs.io\n[many scanpy functions]: https://github.com/scverse/scanpy/issues/2578\n\n[//]: # (numfocus-fiscal-sponsor-attribution)\n\nscanpy is part of the scverse® project ([website](https://scverse.org), [governance](https://scverse.org/about/roles)) and is fiscally sponsored by [NumFOCUS](https://numfocus.org/).\nIf you like scverse® and want to support our mission, please consider making a tax-deductible [donation](https://numfocus.org/donate-to-scverse) to help the project pay for developer time, professional services, travel, workshops, and a variety of other needs.\n\n<div align=\"center\">\n<a href=\"https://numfocus.org/project/scverse\">\n  <img\n    src=\"https://raw.githubusercontent.com/numfocus/templates/master/images/numfocus-logo.png\"\n    width=\"200\"\n  >\n</a>\n</div>",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "data-management",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "2360 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "717 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T10:27:34.256Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/scverse/scanpy",
+        "description": "GitHub repository: scverse/scanpy"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://scanpy.readthedocs.io",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "anndata",
+        "version": ">=0.10.8",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/anndata/"
+      },
+      {
+        "name": "fast-array-utils",
+        "version": ">=1.2.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/fast-array-utils/"
+      },
+      {
+        "name": "h5py",
+        "version": ">=3.11",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/h5py/"
+      },
+      {
+        "name": "joblib",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/joblib/"
+      },
+      {
+        "name": "matplotlib",
+        "version": ">=3.9",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/matplotlib/"
+      },
+      {
+        "name": "natsort",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/natsort/"
+      },
+      {
+        "name": "networkx",
+        "version": ">=2.8.8",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/networkx/"
+      },
+      {
+        "name": "numba",
+        "version": ">=0.60",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numba/"
+      },
+      {
+        "name": "numpy",
+        "version": ">=2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numpy/"
+      },
+      {
+        "name": "packaging",
+        "version": ">=25",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/packaging/"
+      },
+      {
+        "name": "pandas",
+        "version": ">=2.2.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pandas/"
+      },
+      {
+        "name": "patsy",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/patsy/"
+      },
+      {
+        "name": "pynndescent",
+        "version": ">=0.5.13",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pynndescent/"
+      },
+      {
+        "name": "scikit-learn",
+        "version": ">=1.4.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scikit-learn/"
+      },
+      {
+        "name": "scipy",
+        "version": ">=1.13",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scipy/"
+      },
+      {
+        "name": "seaborn",
+        "version": ">=0.13.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/seaborn/"
+      },
+      {
+        "name": "session-info2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/session-info2/"
+      },
+      {
+        "name": "statsmodels",
+        "version": ">=0.14.5",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/statsmodels/"
+      },
+      {
+        "name": "tqdm",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tqdm/"
+      },
+      {
+        "name": "typing-extensions",
+        "version": "; python_version<'3.13'",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/typing-extensions/"
+      },
+      {
+        "name": "umap-learn",
+        "version": ">=0.5.7",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/umap-learn/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "scverse",
+        "type": "human",
+        "uri": "https://github.com/scverse"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 3794,
+      "validation_diversity": 0.75,
+      "context_breadth": 0.65,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.17,
+      "documentation_quality": 0.45
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.65
+  }
+}
