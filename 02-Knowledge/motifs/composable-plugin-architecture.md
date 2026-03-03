@@ -1,12 +1,16 @@
 ---
 name: "Composable Plugin Architecture"
-tier: 1
-status: provisional
+tier: 2
+status: canonical
 confidence: 0.9
 source: "triangulated"
 domain_count: 7
 created: 2026-03-03
-updated: 2026-03-03
+updated: 2026-03-04
+promoted: 2026-03-04
+promotion_justification: "7 domains, 0.9 confidence, alien-domain triangulation (game engines, music production, bioinformatics). All 5 validation protocol conditions satisfied."
+cssclasses:
+  - status-canonical
 ---
 
 # Composable Plugin Architecture
@@ -62,6 +66,28 @@ A minimal core with interface-defined extension points where independently autho
 - **Expression:** Nextflow pipelines are composed of process modules with defined I/O channel interfaces. Each process is independently authored and handles domain-specific logic (alignment, variant calling, annotation); the Nextflow core handles execution, scheduling, and caching. You can swap one aligner process for another without touching the pipeline core. GATK's walker framework defines a tool interface where each tool (HaplotypeCaller, Mutect2) is an independently authored plugin conforming to the walker contract — the engine provides traversal, tools provide analysis. Note: pipeline stages have LESS formal interface contracts than audio plugins (VST) or game plugins (Bevy Plugin trait), making this a moderate rather than strong instance.
 - **Discovery date:** 2026-03-03
 - **Source:** bottom-up (OCP scraper, alien domain triad run — bioinformatics: nextflow-io/nextflow 3.3k★, broadinstitute/gatk 1.9k★)
+
+## Validation Protocol (Tier 2)
+
+All five conditions satisfied:
+
+1. **Domain-independent description:** YES — "A minimal core with interface-defined extension points where independently authored plugins compose to create system behavior" uses no domain-specific vocabulary.
+2. **Cross-domain recurrence:** YES — 7 unrelated domains: Browser Extensions, Authentication, CLI Frameworks, Web Frameworks, Game Engines, Music Production, Bioinformatics.
+3. **Predictive power:** YES — Knowing this motif in a new domain immediately suggests: define a minimal core, create explicit extension points with interface contracts, and make composition (not modification) the primary means of adding functionality. In any new system, ask: "can the core be genuinely minimal with plugins that compose?"
+4. **Adversarial survival:** YES — This is not merely "separation of concerns" or "having an API." The structural claim is specific: (a) the core is genuinely minimal, (b) plugins conform to a shared interface, (c) plugins are independently authored and loaded, and (d) composition is the primary growth mechanism. Systems where "plugins" require intimate core knowledge or where the core contains most functionality fail this test.
+5. **Clean failure:** YES — See Falsification Conditions section.
+
+## Counterexamples / Non-instances
+
+Systems or domains where composable plugin architecture plausibly *could* apply but structurally does not:
+
+### Non-instance 1: Monolithic Game Engines (e.g., early Unity internals)
+
+Unity's renderer, physics, and input systems are tightly integrated into the core engine — they are not independently authored plugins conforming to a shared interface. While Unity SUPPORTS user-authored plugins (Asset Store packages, custom MonoBehaviours), the core itself is monolithic: removing the renderer doesn't leave a meaningful minimal core. The plugin capability is bolted on top of a monolith, not the foundational architecture. Contrast with Bevy, where even the renderer IS a plugin. The structural difference: in Unity, the core contains most behavior; in a composable plugin architecture, the core contains almost none.
+
+### Non-instance 2: Single-purpose CLI Tools (e.g., curl, jq, ripgrep)
+
+These tools do one thing exceptionally well but have no plugin architecture. Adding new capabilities means modifying source code, not composing independently authored plugins. There are no extension points, no interface contracts for third-party extensions, and no independent authoring. The tool IS the functionality, not a host for composed functionality. This is the "do one thing well" Unix philosophy — a valid architecture, but structurally opposite to composable plugin architecture.
 
 ## Relationships
 

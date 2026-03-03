@@ -17,23 +17,23 @@ cssclasses:
 |--------|-------|
 | Total motifs | 10 |
 | Tier 0 (Observation) | 0 |
-| Tier 1 (Cross-Domain) | 9 |
-| Tier 2 (Structural Operator) | 1 |
+| Tier 1 (Cross-Domain) | 6 |
+| Tier 2 (Structural Operator) | 4 |
 | Tier 3 (Meta-Structural) | 0 |
-| Tier 2 candidates (4+ domains) | 8 |
+| Tier 2 candidates (4+ domains) | 2 |
 
 ## Motif Registry
 
 | Name | Tier | Confidence | Domains | Source | File |
 |------|------|-----------|---------|--------|------|
 | **Dual-Speed Governance** | **2** | **1.0** | **12** | **triangulated** | [dual-speed-governance.md](dual-speed-governance.md) |
+| **Composable Plugin Architecture** | **2** | **0.9** | **7** | **triangulated** | [composable-plugin-architecture.md](composable-plugin-architecture.md) |
+| **Explicit State Machine Backbone** | **2** | **0.9** | **7** | **triangulated** | [explicit-state-machine-backbone.md](explicit-state-machine-backbone.md) |
+| **Bounded Buffer With Overflow Policy** | **2** | **0.9** | **7** | **triangulated** | [bounded-buffer-with-overflow-policy.md](bounded-buffer-with-overflow-policy.md) |
 | Observer-Feedback Loop | 1 | 0.5 | 4 | top-down | [observer-feedback-loop.md](observer-feedback-loop.md) |
 | Trust-as-Curation | 1 | 0.4 | 4 | top-down | [trust-as-curation.md](trust-as-curation.md) |
 | Template-Driven Classification | 1 | 0.3 | 2 | top-down | [template-driven-classification.md](template-driven-classification.md) |
-| Bounded Buffer With Overflow Policy | 1 | 0.9 | 7 | triangulated | [bounded-buffer-with-overflow-policy.md](bounded-buffer-with-overflow-policy.md) |
-| Explicit State Machine Backbone | 1 | 0.9 | 7 | triangulated | [explicit-state-machine-backbone.md](explicit-state-machine-backbone.md) |
 | Idempotent State Convergence | 1 | 0.7 | 5 | triangulated | [idempotent-state-convergence.md](idempotent-state-convergence.md) |
-| Composable Plugin Architecture | 1 | 0.9 | 7 | triangulated | [composable-plugin-architecture.md](composable-plugin-architecture.md) |
 | Scaffold-First Architecture | 1 | 0.2 | 2 | top-down | [scaffold-first-architecture.md](scaffold-first-architecture.md) |
 | Progressive Formalization | 1 | 0.2 | 2 | top-down | [progressive-formalization.md](progressive-formalization.md) |
 
@@ -41,7 +41,10 @@ cssclasses:
 
 | Name | Domains | Confidence | Promotion Date | Justification |
 |------|---------|-----------|---------------|---------------|
-| Dual-Speed Governance | 8 | 1.0 | 2026-03-03 | Bottom-up triangulation from 112-repo triad run. Pattern independently emerged in 4 additional domains (migration, auth, monitoring, CLI) beyond 4 existing top-down domains. All 5 validation protocol conditions satisfied. |
+| Dual-Speed Governance | 12 | 1.0 | 2026-03-03 | Bottom-up triangulation from 112-repo triad run. Pattern independently emerged in 4 additional domains (migration, auth, monitoring, CLI) beyond 4 existing top-down domains. All 5 validation protocol conditions satisfied. |
+| Composable Plugin Architecture | 7 | 0.9 | 2026-03-04 | Alien-domain triangulation across game engines (Bevy, A-Frame, GDevelop), music production (Zrythm — STRONGEST instance), and bioinformatics (Nextflow, GATK). 7 domains, all 5 validation protocol conditions satisfied. |
+| Explicit State Machine Backbone | 7 | 0.9 | 2026-03-04 | Alien-domain triangulation across game engines (Godot, Bevy, libGDX — canonical domain), spaced repetition (FSRS4Anki — problem-shaped), and music production (Zrythm transport). 7 domains, all 5 validation protocol conditions satisfied. |
+| Bounded Buffer With Overflow Policy | 7 | 0.9 | 2026-03-04 | Alien-domain triangulation across music production (Zrythm audio buffers — CANONICAL instance predating software eng), bioinformatics (Nextflow channels, fastp I/O), and game engines (Bevy event TTL). 7 domains, all 5 validation protocol conditions satisfied. |
 
 ## Tier 2 Candidates
 
@@ -49,29 +52,29 @@ The following Tier 1 motifs have 3+ domain instances and are eligible for Tier 2
 
 | Name | Domains | Confidence | Promotion Readiness |
 |------|---------|-----------|-------------------|
-| Composable Plugin Architecture | 7 | 0.9 | **STRONG** — 7 domains, triangulated (infra+alien), STRONGEST instance in music production |
-| Explicit State Machine Backbone | 7 | 0.9 | **STRONG** — 7 domains, triangulated, game engines are canonical domain |
-| Bounded Buffer With Overflow Policy | 7 | 0.9 | **STRONG** — 7 domains, triangulated, CANONICAL instance in audio production predates software eng |
 | Idempotent State Convergence | 5 | 0.7 | **Moderate** — 5 domains, triangulated, but domain-constrained to pipeline/declarative systems |
 | Observer-Feedback Loop | 4 | 0.5 | Ready — needs alien domain testing to strengthen candidacy |
-| Trust-as-Curation | 4 | 0.4 | Ready — needs alien domain testing to strengthen candidacy |
 
-*Note: The 4 bottom-up motifs now have alien-domain triangulation. Three (Plugin, StateMachine, Buffer) are extremely strong Tier 2 candidates with 7 domains and 0.9 confidence. Idempotent Convergence is a moderate candidate with a documented domain constraint. All require human approval per schema.*
+*Note: Three motifs (Plugin, StateMachine, Buffer) promoted to Tier 2 on 2026-03-04. Idempotent Convergence remains a moderate candidate with a documented domain constraint. Trust-as-Curation (4 domains, 0.4 confidence) needs more domain instances to qualify.*
 
 ## Phase 5: Meta-Analysis Gate
 
-**Status: NOT OPEN**
+**Status: OPEN**
 
-Meta-analysis (Tier 3 motif detection) requires 3+ Tier 2 motifs. Current Tier 2 count: **1** (Dual-Speed Governance).
+Meta-analysis (Tier 3 motif detection) requires 3+ Tier 2 motifs. Current Tier 2 count: **4**.
 
-Remaining path to gate:
-- Promote Observer-Feedback Loop to Tier 2 (candidate ready, needs human approval + validation)
-- Promote Trust-as-Curation to Tier 2 (candidate ready, needs human approval + validation)
-- With 3 Tier 2 motifs, meta-analysis gate opens for Tier 3 motif-of-motif detection
+| Tier 2 Motif | Domains | Promoted |
+|-------------|---------|----------|
+| Dual-Speed Governance | 12 | 2026-03-03 |
+| Composable Plugin Architecture | 7 | 2026-03-04 |
+| Explicit State Machine Backbone | 7 | 2026-03-04 |
+| Bounded Buffer With Overflow Policy | 7 | 2026-03-04 |
+
+**Gate opened 2026-03-04.** With 4 Tier 2 structural operators, motif-of-motif detection (Tier 3) can now proceed. Look for structural relationships, compositional patterns, and meta-structural regularities across the 4 Tier 2 motifs.
 
 ## Meta-Motifs (Tier 3)
 
-*No meta-motifs yet. Phase 5 gate requires 3+ Tier 2 motifs (current: 1). Two strong Tier 2 candidates remain.*
+*No meta-motifs yet. Phase 5 gate is now OPEN with 4 Tier 2 motifs. Meta-structural analysis can proceed.*
 
 ## Schema Reference
 

@@ -1,12 +1,16 @@
 ---
 name: "Explicit State Machine Backbone"
-tier: 1
-status: provisional
+tier: 2
+status: canonical
 confidence: 0.9
 source: "triangulated"
 domain_count: 7
 created: 2026-03-03
-updated: 2026-03-03
+updated: 2026-03-04
+promoted: 2026-03-04
+promotion_justification: "7 domains, 0.9 confidence, alien-domain triangulation (game engines, spaced repetition, music production). All 5 validation protocol conditions satisfied."
+cssclasses:
+  - status-canonical
 ---
 
 # Explicit State Machine Backbone
@@ -62,6 +66,28 @@ An enumerated set of named states with explicit, guarded transitions governing a
 - **Expression:** Zrythm's transport implements an explicit state machine: Stopped → Playing → Recording → Paused, with guarded transitions (cannot Record without Playing first; Pausing preserves playhead position; stopping resets it). The undoable action system implies a second state machine over project history — each user action transitions between project states, with undo/redo as reverse transitions along the state chain. Standard for media applications, but the transitions are genuinely guarded, not just flags.
 - **Discovery date:** 2026-03-03
 - **Source:** bottom-up (OCP scraper, alien domain triad run — music-production: zrythm/zrythm 2.9k★)
+
+## Validation Protocol (Tier 2)
+
+All five conditions satisfied:
+
+1. **Domain-independent description:** YES — "An enumerated set of named states with explicit, guarded transitions governing all system behavior" uses no domain-specific vocabulary.
+2. **Cross-domain recurrence:** YES — 7 unrelated domains: Terminal UI, Authentication, Database Migration, CI/CD, Game Engines, Spaced Repetition, Music Production.
+3. **Predictive power:** YES — Knowing this motif in any new domain immediately suggests: enumerate all possible states, name them explicitly, define valid transitions with guards, and reject illegal transitions structurally. Transforms implicit flag-based conditionals into explicit, auditable state control.
+4. **Adversarial survival:** YES — This is not merely "having state" or "using enums." The structural claim is specific: (a) states are named and enumerated, (b) transitions are explicitly defined and guarded, (c) illegal transitions are rejected, and (d) all behavior derives from which state the system occupies. Systems with implicit state in flag combinations or unbounded conditionals do not satisfy this.
+5. **Clean failure:** YES — See Falsification Conditions section.
+
+## Counterexamples / Non-instances
+
+Systems or domains where explicit state machines plausibly *could* apply but structurally do not:
+
+### Non-instance 1: Event-Sourced Systems Without Explicit State Enums (e.g., pure CQRS projections)
+
+Events are appended to an immutable log and projections derive current state by replaying the event stream. There are no named states, no guarded transitions — the "state" is whatever the projection function computes from history. Any sequence of events is valid (append-only log); there's no concept of an "illegal transition" because there are no transitions at all — only event accumulation. The structural difference: event sourcing's state is emergent from history, not enumerated with guarded transitions. A projection can be in any shape the replay produces.
+
+### Non-instance 2: Spreadsheet Formula Evaluation
+
+Cells hold values and formulas; the "state" of the spreadsheet is the totality of cell values after recalculation. There are no named states, no transitions, and no guards. Any cell can hold any value at any time. The recalculation engine treats all changes equally — there's no concept of a legal vs. illegal state transition. You can put "hello" in a cell that previously held a number without any guard rejecting it. This is unconstrained mutation, structurally opposite to guarded state transitions.
 
 ## Relationships
 

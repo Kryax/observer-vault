@@ -1,12 +1,16 @@
 ---
 name: "Bounded Buffer With Overflow Policy"
-tier: 1
-status: provisional
+tier: 2
+status: canonical
 confidence: 0.9
 source: "triangulated"
 domain_count: 7
 created: 2026-03-03
-updated: 2026-03-03
+updated: 2026-03-04
+promoted: 2026-03-04
+promotion_justification: "7 domains, 0.9 confidence, alien-domain triangulation (music production canonical, bioinformatics, game engines). All 5 validation protocol conditions satisfied."
+cssclasses:
+  - status-canonical
 ---
 
 # Bounded Buffer With Overflow Policy
@@ -62,6 +66,28 @@ A finite container with an explicit, policy-governed behavior at its capacity bo
 - **Expression:** Bevy's ECS event queues are bounded with explicit lifetime policies — events persist for exactly 2 frames then are silently dropped. This IS a bounded buffer with overflow policy (overflow = silent drop after TTL), distinct from the "evict oldest" default seen in caching. Command buffers queue entity spawn/despawn operations during system execution, flushed at sync points. Note: this is a secondary architectural concern in game engines, not the defining one — unlike audio buffers in DAWs, which ARE the architecture.
 - **Discovery date:** 2026-03-03
 - **Source:** bottom-up (OCP scraper, alien domain triad run — game-development: bevyengine/bevy 45k★)
+
+## Validation Protocol (Tier 2)
+
+All five conditions satisfied:
+
+1. **Domain-independent description:** YES — "A finite container with an explicit, policy-governed behavior at its capacity boundary" uses no domain-specific vocabulary.
+2. **Cross-domain recurrence:** YES — 7 unrelated domains: Caching, Inter-Process Communication, Observability, Message Queuing, Music Production, Bioinformatics, Game Engines.
+3. **Predictive power:** YES — In any data-flowing system, this motif immediately prompts three design questions: "What is the buffer bound? What happens when it fills? Is the overflow policy an explicit design decision or an OOM surprise?" The answer changes architecture.
+4. **Adversarial survival:** YES — This is not merely "having a buffer" or "limiting memory." The structural claim is specific: (a) the buffer has a finite bound, (b) the overflow policy is a FIRST-CLASS design decision, and (c) the boundary behavior is an intentional policy, not an error condition. Systems that grow without limit until they crash do not satisfy this — they have unbounded buffers with no policy, just failure.
+5. **Clean failure:** YES — See Falsification Conditions section.
+
+## Counterexamples / Non-instances
+
+Systems or domains where bounded buffers with overflow policies plausibly *could* apply but structurally do not:
+
+### Non-instance 1: Append-Only Logs With No Retention Policy (e.g., naive file logging)
+
+A log file that grows without bound until disk fills has no buffer boundary and no overflow policy. When storage is exhausted, the system crashes or begins dropping writes — the overflow is an error condition, not a policy. While sophisticated logging systems (like logrotate, Loki with retention rules) add bounded-buffer behavior retroactively, the base pattern of "append forever, crash when full" is structurally different from "finite container with explicit overflow policy." The absence of a bound means there's no policy decision to make.
+
+### Non-instance 2: Dynamically Growing Collections (e.g., Python lists used as queues)
+
+A Python list used as a FIFO queue (`append` / `pop(0)`) has no capacity boundary. Elements are added without limit until the process OOMs. There is no overflow policy because there is no conceived-of overflow — the structure grows as needed with no upper bound. The absence of a finite capacity means the "what happens when full?" question never arises in the design. This is structurally the opposite of a bounded buffer: growth is implicit and unbounded rather than finite and policy-governed.
 
 ## Relationships
 
