@@ -1,0 +1,167 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/michaco--cachemanager",
+  "meta": {
+    "title": "CacheManager",
+    "description": "CacheManager is an open source caching abstraction layer for .NET written in C#. It supports various cache providers and implements many advanced features.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T07:03:47.299Z",
+    "dateModified": "2026-03-03T07:03:47.299Z",
+    "keywords": [
+      "c-sharp",
+      "cache",
+      "cachemanager",
+      "caching",
+      "dotnet",
+      "dotnet-core",
+      "memcached",
+      "redis"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "* One common interface for handling different caching technologies: `ICache<T>`\n* Configurable by\n\t* Code with many different paths and a fluent configuration builder\n\t* Microsoft.Extensions.Configuration\n\t* App/Web.config\n\t* See [configuration docs][configuration]\n* Support for different cache providers\n    * **MemoryCache** (System.Runtime.Caching)\n\t* **MemoryCache** based on Microsoft.Extensions.Caching.Memory\n    * **Redis** using [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis)\n* **Serialization** can now be configured.\nSerialization is only needed in distributed caches. If no additional serialization package is installed and configured, Binary serialization will be used (if available)\nThe following are the currently available serialization options:\n\t* Binary (build in if the full CLR is being used)\n\t* **Json** based on the popular Newtonsoft.Json library\n\t* **Json** with Gzip compression\n    * **Bond** based on Microsoft.Bond supporting all three available variants\n    * **DataContract** based on System.Runtime.Serialization library supporting binary, Json & Json with Gzip compression\n\t* **Protocol Buffer** Google's protobuf. The package uses Mark's [protobuf-net](https://github.com/mgravell/protobuf-net) implementation.\n* **Update values with lock or transaction** for distributed caches. \nThe interfaced provides a simple update method which internally ensures you work with the latest version.\nAnd CacheManager handles version conflicts for you.\n* **Logging** using Microsoft.Extensions.Logging.\n* **Strongly typed** cache interface.\n* **Multiple layers**\nBy having multiple cache handles managed by CacheManager, you can easily implement layered caches. For example, an in process cache in front of your distributed cache, to make read access faster.\nCacheManager will synchronize those layers for you. \n    * `Put` and `Add` operations will always be executed on all cache handles registered on the manager.\n    * On `Get`, there are different configuration options defined by `CacheUpdateMode`, if the item was available in one cache handle:\n        * None: No update across the cache handles on Get\n        * Up: Updates the handles \"above\"\n        * All: Updates/Adds the item to all handles\n* **Expiration**: It is possible to configure the expiration per cache handle within the manager or per cache item.\nThe following are the supported expiration modes:\n    * Sliding expiration: On cache hit, the cache item expiration timeout will be extended by the configured amount.\n    * Absolute expiration: The cache item will expire after the configured timeout.\n    * Since 1.0.0, evictions triggered by the cache vendor can trigger events and updates\n* **Cache Regions**: Even if some cache systems do not support or implement cache regions, the CacheManager implements the mechanism.\nThis can be used to for example group elements and remove all of them at once.\n* **Statistics**: Counters for all kind of cache actions.\n* **Event System**: CacheManager triggers events for common cache actions:\nOnGet, OnAdd, OnPut, OnRemove, OnClear, OnClearRegion\n   * Events also get triggered by the backplane (if enabled) when multiple instances are sharing the same cache.\n   * New `OnRemoveByHandle` events triggered by actual expiration or memory pressure eviction by the cache vendor\n   * Events also get triggered through the backplane and via Redis keyspace events (if configured)\n* **Cache clients synchronization** \n    * Implemented with the Redis pub/sub feature",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:c#"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "2415 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "458 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T07:03:47.299Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/MichaCo/CacheManager",
+        "description": "GitHub repository: MichaCo/CacheManager"
+      },
+      {
+        "type": "documentation",
+        "uri": "http://cachemanager.michaco.net",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "C#"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "MichaCo",
+        "type": "human",
+        "uri": "https://github.com/MichaCo"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 3331,
+      "validation_diversity": 0.39,
+      "context_breadth": 0.59,
+      "temporal_stability": 1,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.6
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.598
+  }
+}

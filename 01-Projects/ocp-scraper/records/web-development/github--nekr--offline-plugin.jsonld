@@ -76,84 +76,109 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/hazelcast--hazelcast",
+  "@id": "ocp:github/nekr--offline-plugin",
   "meta": {
-    "title": "Hazelcast",
-    "description": "Hazelcast is a unified real-time data platform combining stream processing with a fast data store, allowing customers to act instantly on data-in-motion for real-time insights.",
+    "title": "offline-plugin",
+    "description": "Offline plugin  (ServiceWorker, AppCache) for webpack (https://webpack.js.org/)",
     "version": "1.0.0",
-    "dateCreated": "2026-03-03T07:03:31.609Z",
-    "dateModified": "2026-03-03T07:03:31.609Z",
+    "dateCreated": "2026-03-03T07:03:39.214Z",
+    "dateModified": "2026-03-03T07:03:39.214Z",
     "keywords": [
-      "big-data",
+      "appcache",
+      "application-cache",
       "caching",
-      "data-in-motion",
-      "data-insights",
-      "distributed",
-      "distributed-computing",
-      "distributed-systems",
-      "hacktoberfest",
-      "hazelcast",
-      "in-memory",
-      "java",
-      "low-latency",
-      "real-time",
-      "scalability",
-      "stream-processing"
+      "javascript",
+      "offline",
+      "offline-first",
+      "plugin",
+      "progressive-web-app",
+      "pwa",
+      "service-worker",
+      "service-workers",
+      "serviceworker",
+      "storage",
+      "webpack",
+      "webpack-plugin"
     ],
-    "license": "NOASSERTION"
+    "license": "MIT"
   },
   "problemSolved": {
-    "statement": "The world’s leading companies trust Hazelcast to modernize applications and take instant action on data in motion to create new revenue streams, mitigate risk, and operate more efficiently. Businesses use Hazelcast’s unified **real-time data platform** to process **streaming** data, enrich it with historical context and take instant action with standard or **ML/AI-driven automation** - before it is stored in a database or data lake.",
-    "context": "[![Slack](https://img.shields.io/badge/slack-chat-green.svg)](https://slack.hazelcast.com/) \n[![javadoc](https://javadoc.io/badge2/com.hazelcast/hazelcast/latest/javadoc.svg)](https://javadoc.io/doc/com.hazelcast/hazelcast/latest)\n[![Docker pulls](https://img.shields.io/docker/pulls/hazelcast/hazelcast)](https://hub.docker.com/r/hazelcast/hazelcast)\n\n----",
+    "statement": "Offline plugin  (ServiceWorker, AppCache) for webpack (https://webpack.js.org/)",
     "cynefinDomain": "complex"
   },
   "domains": [
-    "data-management",
-    "lang:java"
+    "web-development",
+    "lang:javascript"
   ],
   "validation": {
     "method": "community-consensus",
     "evidence": [
       {
         "type": "github-stars",
-        "description": "6589 GitHub stars indicating community adoption"
+        "description": "4515 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "1872 forks indicating reuse"
+        "description": "291 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-03T07:03:31.609Z"
+    "validationDate": "2026-03-03T07:03:39.214Z"
   },
   "implementation": {
-    "type": "library",
+    "type": "service",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/hazelcast/hazelcast",
-        "description": "GitHub repository: hazelcast/hazelcast"
-      },
-      {
-        "type": "documentation",
-        "uri": "https://www.hazelcast.com",
-        "description": "Project homepage"
+        "uri": "https://github.com/NekR/offline-plugin",
+        "description": "GitHub repository: NekR/offline-plugin"
       }
     ],
-    "language": "Java"
+    "language": "JavaScript"
   },
   "composability": {
     "inputs": [],
     "outputs": [],
-    "dependencies": [],
+    "dependencies": [
+      {
+        "name": "deep-extend",
+        "version": "^0.5.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/deep-extend"
+      },
+      {
+        "name": "ejs",
+        "version": "^2.3.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/ejs"
+      },
+      {
+        "name": "loader-utils",
+        "version": "0.2.x",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/loader-utils"
+      },
+      {
+        "name": "minimatch",
+        "version": "^3.0.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/minimatch"
+      },
+      {
+        "name": "slash",
+        "version": "^1.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/slash"
+      }
+    ],
     "composableWith": []
   },
   "provenance": {
     "authors": [
       {
-        "name": "hazelcast",
+        "name": "NekR",
         "type": "human",
-        "uri": "https://github.com/hazelcast"
+        "uri": "https://github.com/NekR"
       }
     ],
     "sourceType": "scraped",
@@ -161,16 +186,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 10333,
-      "validation_diversity": 0.9,
-      "context_breadth": 0.7,
-      "temporal_stability": 0.88,
-      "test_coverage": 0.2,
-      "documentation_quality": 0.7
+      "validation_count": 5097,
+      "validation_diversity": 0.6,
+      "context_breadth": 0.65,
+      "temporal_stability": 0.64,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.2
     },
-    "confidence": "tested",
+    "confidence": "provisional",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.746
+    "trustScore": 0.604
   }
 }

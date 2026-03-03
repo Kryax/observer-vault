@@ -76,71 +76,61 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/hazelcast--hazelcast",
+  "@id": "ocp:github/isaacs--node-lru-cache",
   "meta": {
-    "title": "Hazelcast",
-    "description": "Hazelcast is a unified real-time data platform combining stream processing with a fast data store, allowing customers to act instantly on data-in-motion for real-time insights.",
+    "title": "lru-cache",
+    "description": "A fast cache that automatically deletes the least recently used items",
     "version": "1.0.0",
-    "dateCreated": "2026-03-03T07:03:31.609Z",
-    "dateModified": "2026-03-03T07:03:31.609Z",
+    "dateCreated": "2026-03-03T07:03:35.408Z",
+    "dateModified": "2026-03-03T07:03:35.408Z",
     "keywords": [
-      "big-data",
+      "cache",
       "caching",
-      "data-in-motion",
-      "data-insights",
-      "distributed",
-      "distributed-computing",
-      "distributed-systems",
-      "hacktoberfest",
-      "hazelcast",
-      "in-memory",
-      "java",
-      "low-latency",
-      "real-time",
-      "scalability",
-      "stream-processing"
+      "lru",
+      "lru-cache",
+      "lrucache"
     ],
-    "license": "NOASSERTION"
+    "license": "BlueOak-1.0.0"
   },
   "problemSolved": {
-    "statement": "The world’s leading companies trust Hazelcast to modernize applications and take instant action on data in motion to create new revenue streams, mitigate risk, and operate more efficiently. Businesses use Hazelcast’s unified **real-time data platform** to process **streaming** data, enrich it with historical context and take instant action with standard or **ML/AI-driven automation** - before it is stored in a database or data lake.",
-    "context": "[![Slack](https://img.shields.io/badge/slack-chat-green.svg)](https://slack.hazelcast.com/) \n[![javadoc](https://javadoc.io/badge2/com.hazelcast/hazelcast/latest/javadoc.svg)](https://javadoc.io/doc/com.hazelcast/hazelcast/latest)\n[![Docker pulls](https://img.shields.io/docker/pulls/hazelcast/hazelcast)](https://hub.docker.com/r/hazelcast/hazelcast)\n\n----",
+    "statement": "A cache object that deletes the least-recently-used items.",
+    "context": "A cache object that deletes the least-recently-used items.\n\nSpecify a max number of the most recently used items that you\nwant to keep, and this cache will keep that many of the most\nrecently accessed items.\n\nThis is not primarily a TTL cache, and does not make strong TTL\nguarantees. There is no preemptive pruning of expired items by\ndefault, but you _may_ set a TTL on the cache or on a single\n`set`. If you do so, it will treat expired items as missing, and\ndelete them when fetched. If you are more interested in TTL\ncaching than LRU caching, check out\n[@isaacs/ttlcache](http://npm.im/@isaacs/ttlcache).\n\nAs of version 7, this is one of the most performant LRU\nimplementations available in JavaScript, and supports a wide\ndiversity of use cases. However, note that using some of the\nfeatures will necessarily impact performance, by causing the\ncache to have to do more work. See the \"Performance\" section\nbelow.",
     "cynefinDomain": "complex"
   },
   "domains": [
-    "data-management",
-    "lang:java"
+    "lang:typescript"
   ],
   "validation": {
     "method": "community-consensus",
     "evidence": [
       {
         "type": "github-stars",
-        "description": "6589 GitHub stars indicating community adoption"
+        "description": "5837 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "1872 forks indicating reuse"
+        "description": "367 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-03T07:03:31.609Z"
+    "validationDate": "2026-03-03T07:03:35.408Z"
   },
   "implementation": {
     "type": "library",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/hazelcast/hazelcast",
-        "description": "GitHub repository: hazelcast/hazelcast"
+        "uri": "https://github.com/isaacs/node-lru-cache",
+        "description": "GitHub repository: isaacs/node-lru-cache"
       },
       {
         "type": "documentation",
-        "uri": "https://www.hazelcast.com",
+        "uri": "http://isaacs.github.io/node-lru-cache/",
         "description": "Project homepage"
       }
     ],
-    "language": "Java"
+    "solutionApproach": "See usage section in README",
+    "language": "TypeScript"
   },
   "composability": {
     "inputs": [],
@@ -151,9 +141,9 @@
   "provenance": {
     "authors": [
       {
-        "name": "hazelcast",
+        "name": "isaacs",
         "type": "human",
-        "uri": "https://github.com/hazelcast"
+        "uri": "https://github.com/isaacs"
       }
     ],
     "sourceType": "scraped",
@@ -161,16 +151,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 10333,
-      "validation_diversity": 0.9,
-      "context_breadth": 0.7,
-      "temporal_stability": 0.88,
-      "test_coverage": 0.2,
-      "documentation_quality": 0.7
+      "validation_count": 6571,
+      "validation_diversity": 0.59,
+      "context_breadth": 0.46,
+      "temporal_stability": 1,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.9
     },
-    "confidence": "tested",
+    "confidence": "provisional",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.746
+    "trustScore": 0.67
   }
 }

@@ -76,71 +76,65 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/hazelcast--hazelcast",
+  "@id": "ocp:github/jiangwenyuan--nuster",
   "meta": {
-    "title": "Hazelcast",
-    "description": "Hazelcast is a unified real-time data platform combining stream processing with a fast data store, allowing customers to act instantly on data-in-motion for real-time insights.",
+    "title": "nuster",
+    "description": "A high performance HTTP proxy cache server and RESTful NoSQL cache server based on HAProxy",
     "version": "1.0.0",
-    "dateCreated": "2026-03-03T07:03:31.609Z",
-    "dateModified": "2026-03-03T07:03:31.609Z",
+    "dateCreated": "2026-03-03T07:04:04.896Z",
+    "dateModified": "2026-03-03T07:04:04.896Z",
     "keywords": [
-      "big-data",
+      "cache",
       "caching",
-      "data-in-motion",
-      "data-insights",
-      "distributed",
-      "distributed-computing",
-      "distributed-systems",
-      "hacktoberfest",
-      "hazelcast",
-      "in-memory",
-      "java",
-      "low-latency",
-      "real-time",
-      "scalability",
-      "stream-processing"
+      "haproxy",
+      "high-performance",
+      "http",
+      "http-cache",
+      "http2",
+      "https",
+      "key-value",
+      "load-balancer",
+      "nosql",
+      "nuster",
+      "proxy",
+      "restful",
+      "reverse-proxy"
     ],
     "license": "NOASSERTION"
   },
   "problemSolved": {
-    "statement": "The world’s leading companies trust Hazelcast to modernize applications and take instant action on data in motion to create new revenue streams, mitigate risk, and operate more efficiently. Businesses use Hazelcast’s unified **real-time data platform** to process **streaming** data, enrich it with historical context and take instant action with standard or **ML/AI-driven automation** - before it is stored in a database or data lake.",
-    "context": "[![Slack](https://img.shields.io/badge/slack-chat-green.svg)](https://slack.hazelcast.com/) \n[![javadoc](https://javadoc.io/badge2/com.hazelcast/hazelcast/latest/javadoc.svg)](https://javadoc.io/doc/com.hazelcast/hazelcast/latest)\n[![Docker pulls](https://img.shields.io/docker/pulls/hazelcast/hazelcast)](https://hub.docker.com/r/hazelcast/hazelcast)\n\n----",
+    "statement": "nuster is a high-performance HTTP proxy cache server and RESTful NoSQL cache server based on HAProxy.\nIt is 100% compatible with HAProxy and takes full advantage of the ACL functionality of HAProxy to provide fine-grained caching policy based on the content of request, response or server status.",
+    "context": "[Wiki](https://github.com/jiangwenyuan/nuster/wiki) | [English](README.md) | [中文](README-CN.md) | [日本語](README-JP.md)\n\nA high-performance HTTP proxy cache server and RESTful NoSQL cache server based on HAProxy.",
     "cynefinDomain": "complex"
   },
   "domains": [
-    "data-management",
-    "lang:java"
+    "lang:c"
   ],
   "validation": {
     "method": "community-consensus",
     "evidence": [
       {
         "type": "github-stars",
-        "description": "6589 GitHub stars indicating community adoption"
+        "description": "1910 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "1872 forks indicating reuse"
+        "description": "154 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-03T07:03:31.609Z"
+    "validationDate": "2026-03-03T07:04:04.896Z"
   },
   "implementation": {
-    "type": "library",
+    "type": "service",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/hazelcast/hazelcast",
-        "description": "GitHub repository: hazelcast/hazelcast"
-      },
-      {
-        "type": "documentation",
-        "uri": "https://www.hazelcast.com",
-        "description": "Project homepage"
+        "uri": "https://github.com/jiangwenyuan/nuster",
+        "description": "GitHub repository: jiangwenyuan/nuster"
       }
     ],
-    "language": "Java"
+    "language": "C"
   },
   "composability": {
     "inputs": [],
@@ -151,9 +145,9 @@
   "provenance": {
     "authors": [
       {
-        "name": "hazelcast",
+        "name": "jiangwenyuan",
         "type": "human",
-        "uri": "https://github.com/hazelcast"
+        "uri": "https://github.com/jiangwenyuan"
       }
     ],
     "sourceType": "scraped",
@@ -161,16 +155,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 10333,
-      "validation_diversity": 0.9,
-      "context_breadth": 0.7,
-      "temporal_stability": 0.88,
-      "test_coverage": 0.2,
-      "documentation_quality": 0.7
+      "validation_count": 2218,
+      "validation_diversity": 0.78,
+      "context_breadth": 0.62,
+      "temporal_stability": 0.64,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.5
     },
-    "confidence": "tested",
+    "confidence": "provisional",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.746
+    "trustScore": 0.661
   }
 }
