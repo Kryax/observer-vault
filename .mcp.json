@@ -11,6 +11,16 @@
         "OBSERVER_CP_PORT": "9000",
         "OBSERVER_SECRETS_DIR": "/run/observer-secrets"
       }
+    },
+    "ocp-scraper": {
+      "type": "stdio",
+      "command": "bun",
+      "args": [
+        "/mnt/zfs-host/backup/projects/observer-vault/01-Projects/ocp-scraper/src/mcp/server.ts"
+      ],
+      "env": {
+        "GITHUB_TOKEN_FILE": "/home/adam/.github_token"
+      }
     }
   }
 }
