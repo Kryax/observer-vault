@@ -20,20 +20,20 @@ cssclasses:
 | Tier 1 (Cross-Domain) | 9 |
 | Tier 2 (Structural Operator) | 1 |
 | Tier 3 (Meta-Structural) | 0 |
-| Tier 2 candidates (4+ domains) | 6 |
+| Tier 2 candidates (4+ domains) | 8 |
 
 ## Motif Registry
 
 | Name | Tier | Confidence | Domains | Source | File |
 |------|------|-----------|---------|--------|------|
-| **Dual-Speed Governance** | **2** | **1.0** | **8** | **triangulated** | [dual-speed-governance.md](dual-speed-governance.md) |
+| **Dual-Speed Governance** | **2** | **1.0** | **12** | **triangulated** | [dual-speed-governance.md](dual-speed-governance.md) |
 | Observer-Feedback Loop | 1 | 0.5 | 4 | top-down | [observer-feedback-loop.md](observer-feedback-loop.md) |
 | Trust-as-Curation | 1 | 0.4 | 4 | top-down | [trust-as-curation.md](trust-as-curation.md) |
 | Template-Driven Classification | 1 | 0.3 | 2 | top-down | [template-driven-classification.md](template-driven-classification.md) |
-| Bounded Buffer With Overflow Policy | 1 | 0.4 | 4 | bottom-up | [bounded-buffer-with-overflow-policy.md](bounded-buffer-with-overflow-policy.md) |
-| Explicit State Machine Backbone | 1 | 0.4 | 4 | bottom-up | [explicit-state-machine-backbone.md](explicit-state-machine-backbone.md) |
-| Idempotent State Convergence | 1 | 0.4 | 4 | bottom-up | [idempotent-state-convergence.md](idempotent-state-convergence.md) |
-| Composable Plugin Architecture | 1 | 0.4 | 4 | bottom-up | [composable-plugin-architecture.md](composable-plugin-architecture.md) |
+| Bounded Buffer With Overflow Policy | 1 | 0.9 | 7 | triangulated | [bounded-buffer-with-overflow-policy.md](bounded-buffer-with-overflow-policy.md) |
+| Explicit State Machine Backbone | 1 | 0.9 | 7 | triangulated | [explicit-state-machine-backbone.md](explicit-state-machine-backbone.md) |
+| Idempotent State Convergence | 1 | 0.7 | 5 | triangulated | [idempotent-state-convergence.md](idempotent-state-convergence.md) |
+| Composable Plugin Architecture | 1 | 0.9 | 7 | triangulated | [composable-plugin-architecture.md](composable-plugin-architecture.md) |
 | Scaffold-First Architecture | 1 | 0.2 | 2 | top-down | [scaffold-first-architecture.md](scaffold-first-architecture.md) |
 | Progressive Formalization | 1 | 0.2 | 2 | top-down | [progressive-formalization.md](progressive-formalization.md) |
 
@@ -49,10 +49,14 @@ The following Tier 1 motifs have 3+ domain instances and are eligible for Tier 2
 
 | Name | Domains | Confidence | Promotion Readiness |
 |------|---------|-----------|-------------------|
-| Observer-Feedback Loop | 4 | 0.5 | Ready — strongest remaining candidate, highest confidence |
-| Trust-as-Curation | 4 | 0.4 | Ready — clean instances across 4 domains |
+| Composable Plugin Architecture | 7 | 0.9 | **STRONG** — 7 domains, triangulated (infra+alien), STRONGEST instance in music production |
+| Explicit State Machine Backbone | 7 | 0.9 | **STRONG** — 7 domains, triangulated, game engines are canonical domain |
+| Bounded Buffer With Overflow Policy | 7 | 0.9 | **STRONG** — 7 domains, triangulated, CANONICAL instance in audio production predates software eng |
+| Idempotent State Convergence | 5 | 0.7 | **Moderate** — 5 domains, triangulated, but domain-constrained to pipeline/declarative systems |
+| Observer-Feedback Loop | 4 | 0.5 | Ready — needs alien domain testing to strengthen candidacy |
+| Trust-as-Curation | 4 | 0.4 | Ready — needs alien domain testing to strengthen candidacy |
 
-*Note: The 4 new bottom-up motifs now have 4 domains each and are technically eligible for Tier 2, but need triangulation (top-down confirmation) before Tier 2 candidacy is strong. Schema requires 3+ domains, validation protocol, AND human approval.*
+*Note: The 4 bottom-up motifs now have alien-domain triangulation. Three (Plugin, StateMachine, Buffer) are extremely strong Tier 2 candidates with 7 domains and 0.9 confidence. Idempotent Convergence is a moderate candidate with a documented domain constraint. All require human approval per schema.*
 
 ## Phase 5: Meta-Analysis Gate
 

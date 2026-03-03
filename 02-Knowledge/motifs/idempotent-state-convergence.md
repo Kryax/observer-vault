@@ -2,9 +2,9 @@
 name: "Idempotent State Convergence"
 tier: 1
 status: provisional
-confidence: 0.4
-source: "bottom-up"
-domain_count: 4
+confidence: 0.7
+source: "triangulated"
+domain_count: 5
 created: 2026-03-03
 updated: 2026-03-03
 ---
@@ -45,6 +45,22 @@ Repeatedly applicable operations that converge actual state toward declared desi
 - **Discovery date:** 2026-03-03
 - **Source:** bottom-up (OCP scraper, 112-repo triad run — web-development: pocketbase/pocketbase, nhost/nhost)
 
+### Instance 5: Bioinformatics Pipeline Resumption (Bottom-Up — Nextflow, ColabFold)
+- **Domain:** Bioinformatics / Computational Biology
+- **Expression:** Nextflow's `-resume` flag is textbook idempotent convergence. Re-running a pipeline with the same inputs converges to the same outputs — already-completed tasks are detected via cached results and skipped (safe no-op). The pipeline declares a desired state (all tasks completed successfully) and converges toward it through repeated application. ColabFold caches intermediate protein structure predictions, making re-prediction idempotent. This is essential for reproducible science — you MUST be able to re-run and get the same result. The convergence gap (incomplete vs. complete pipeline) is observable via task status.
+- **Discovery date:** 2026-03-03
+- **Source:** bottom-up (OCP scraper, alien domain triad run — bioinformatics: nextflow-io/nextflow 3.3k★, sokrypton/ColabFold 2.6k★)
+
+### Non-instances from Alien Domain Testing
+
+**Game Engines:** Real-time simulation with player input is inherently non-deterministic and non-convergent. Each frame produces NEW state based on player input, not convergence toward a declared desired state. Game ticks accumulate side effects by design — the opposite of idempotent convergence.
+
+**Music Production:** Rendering a project is deterministic (same project → same audio output), but this is deterministic computation, not convergence. There's no "desired state" that the system converges toward through repeated operations. You render once and get the output.
+
+**Spaced Repetition:** Each review CHANGES the card state — re-running the same review produces DIFFERENT scheduling results because the card's stability and difficulty parameters update. The operation is intentionally non-idempotent.
+
+**Domain Constraint Note:** This motif appears to be structurally constrained to pipeline/declarative-state systems (infrastructure, CI/CD, bioinformatics). Interactive/real-time domains do not exhibit this pattern because their operations intentionally mutate state rather than converge toward declared desired state.
+
 ## Relationships
 
 | Related Motif | Relationship | Description |
@@ -54,7 +70,24 @@ Repeatedly applicable operations that converge actual state toward declared desi
 
 ## Discovery Context
 
-Identified through bottom-up analysis of the 112-repo OCP scraper corpus during the triad run (2026-03-03). The pattern appeared independently in container orchestration (Kubernetes controller model, observable via kube-state-metrics), database migration tools (golang-migrate, goose, dbmate all implementing idempotent schema convergence), monitoring systems (OneUptime's declarative monitoring, Grafana's provisioning), and Backend-as-a-Service platforms (PocketBase, Nhost). In each case, the system's reliability comes from making operations safely repeatable rather than carefully sequenced.
+**Bottom-up (2026-03-03, first triad run):** Identified across 112-repo OCP corpus in container orchestration (Kubernetes), database migration (golang-migrate, goose, dbmate), monitoring (OneUptime, Grafana), and BaaS (PocketBase, Nhost).
+
+**Bottom-up (2026-03-03, alien domain triad run):** Confirmed in 1 alien domain — bioinformatics (Nextflow -resume, ColabFold caching). Explicitly tested and found NOT present in game engines (non-deterministic), music production (deterministic but not convergent), and spaced repetition (intentionally non-idempotent). These honest non-instances reveal the motif is domain-constrained to pipeline/declarative-state systems.
+
+**Triangulation confirmed:** Bottom-up from infrastructure + bottom-up from bioinformatics.
+
+## Confidence Score Arithmetic
+
+| Step | Event | Change | Running Total |
+|------|-------|--------|---------------|
+| 1 | Instance 1 (Container Orchestration) | Start at 0.1 | 0.1 |
+| 2 | Instance 2 (DB Migration) | +0.1 | 0.2 |
+| 3 | Instance 3 (Monitoring) | +0.1 | 0.3 |
+| 4 | Instance 4 (BaaS) | +0.1 | 0.4 |
+| 5 | Instance 5 (Bioinformatics, alien) | +0.1 | 0.5 |
+| 6 | Triangulation confirmed (infra + alien) | +0.2 | 0.7 |
+
+**Final: 0.7.** Lower than siblings due to fewer alien confirmations (1 vs 3) and documented domain constraint.
 
 ## Falsification Conditions
 

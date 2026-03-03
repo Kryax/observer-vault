@@ -2,9 +2,9 @@
 name: "Explicit State Machine Backbone"
 tier: 1
 status: provisional
-confidence: 0.4
-source: "bottom-up"
-domain_count: 4
+confidence: 0.9
+source: "triangulated"
+domain_count: 7
 created: 2026-03-03
 updated: 2026-03-03
 ---
@@ -45,6 +45,24 @@ An enumerated set of named states with explicit, guarded transitions governing a
 - **Discovery date:** 2026-03-03
 - **Source:** bottom-up (OCP scraper, 112-repo triad run — machine-learning: dagger/dagger)
 
+### Instance 5: Game Engine State Systems (Bottom-Up — Godot, Bevy, libGDX)
+- **Domain:** Game Engine Architecture
+- **Expression:** Game engines use explicit state machines as THE primary architectural pattern. Godot provides first-class `AnimationStateMachine` nodes with named states, blend transitions, and transition rules. Bevy's `States` derive macro creates explicit state enums with type-level transition guards — `OnEnter(GameState::Playing)`, `OnExit(GameState::Paused)` — where invalid transitions are compile-time errors. libGDX enforces application lifecycle states (create → resize → render → pause → resume → dispose) with guarded transitions. In each case, the state machine is not incidental — game correctness depends on explicit state enumeration.
+- **Discovery date:** 2026-03-03
+- **Source:** bottom-up (OCP scraper, alien domain triad run — game-development: godotengine/godot 107k★, bevyengine/bevy 45k★, libgdx/libgdx 25k★)
+
+### Instance 6: Spaced Repetition Card Lifecycle (Bottom-Up — FSRS4Anki)
+- **Domain:** Spaced Repetition / Cognitive Science
+- **Expression:** FSRS4Anki models card memory as an explicit state machine: New → Learning → Review → Relearning. Transitions are guarded by answer ratings (Again → Relearning, Good → Review, Easy → skip Learning). A New card CANNOT jump directly to Review — it must transition through Learning. The scheduling algorithm IS the transition function — given the current state and a rating input, it deterministically produces the next state and interval. The state machine maps directly to cognitive science models of memory acquisition stages, making this a problem-shaped rather than engineer-shaped use of the motif.
+- **Discovery date:** 2026-03-03
+- **Source:** bottom-up (OCP scraper, alien domain triad run — spaced-repetition: open-spaced-repetition/fsrs4anki 3.8k★)
+
+### Instance 7: DAW Transport State Machine (Bottom-Up — Zrythm)
+- **Domain:** Music Production / Audio Engineering
+- **Expression:** Zrythm's transport implements an explicit state machine: Stopped → Playing → Recording → Paused, with guarded transitions (cannot Record without Playing first; Pausing preserves playhead position; stopping resets it). The undoable action system implies a second state machine over project history — each user action transitions between project states, with undo/redo as reverse transitions along the state chain. Standard for media applications, but the transitions are genuinely guarded, not just flags.
+- **Discovery date:** 2026-03-03
+- **Source:** bottom-up (OCP scraper, alien domain triad run — music-production: zrythm/zrythm 2.9k★)
+
 ## Relationships
 
 | Related Motif | Relationship | Description |
@@ -54,7 +72,26 @@ An enumerated set of named states with explicit, guarded transitions governing a
 
 ## Discovery Context
 
-Identified through bottom-up analysis of the 112-repo OCP scraper corpus during the triad run (2026-03-03). The pattern appeared independently in terminal UI frameworks (Bubbletea's Elm architecture), authentication systems (Authelia's login flow, CAS ticket lifecycle), database migration tools (Flyway's migration states), and CI/CD pipeline execution (Dagger's step lifecycle). In each case, the system's correctness depends on making the state machine explicit rather than implicit in conditional logic.
+**Bottom-up (2026-03-03, first triad run):** Identified across 112-repo OCP corpus in terminal UI (Bubbletea), authentication (Authelia, CAS), database migration (Flyway), and CI/CD (Dagger).
+
+**Bottom-up (2026-03-03, alien domain triad run):** Confirmed across 3 alien domains. Game engines (Godot AnimationStateMachine, Bevy States — state machines are THE primary architectural pattern in game development), spaced repetition (FSRS4Anki card lifecycle — problem-shaped, maps to cognitive science), and music production (Zrythm transport — standard but genuinely guarded).
+
+**Triangulation confirmed:** Bottom-up from infrastructure + bottom-up from alien domains with zero overlap.
+
+## Confidence Score Arithmetic
+
+| Step | Event | Change | Running Total |
+|------|-------|--------|---------------|
+| 1 | Instance 1 (Terminal UI) | Start at 0.1 | 0.1 |
+| 2 | Instance 2 (Auth) | +0.1 | 0.2 |
+| 3 | Instance 3 (DB Migration) | +0.1 | 0.3 |
+| 4 | Instance 4 (CI/CD) | +0.1 | 0.4 |
+| 5 | Instance 5 (Game Engines, alien) | +0.1 | 0.5 |
+| 6 | Instance 6 (Spaced Repetition, alien) | +0.1 | 0.6 |
+| 7 | Instance 7 (Music Production, alien) | +0.1 | 0.7 |
+| 8 | Triangulation confirmed (infra + alien) | +0.2 | 0.9 |
+
+**Final: 0.9.**
 
 ## Falsification Conditions
 
