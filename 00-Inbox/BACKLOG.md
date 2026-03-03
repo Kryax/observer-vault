@@ -21,7 +21,9 @@ vault_safety: This is a living operational document. It tracks pending work item
 
 - [ ] **Promote Observer-Feedback Loop to Tier 2** — 4 domains, 0.5 confidence, strongest remaining candidate. Needs validation protocol pass + human approval.
 - [ ] **Promote Trust-as-Curation to Tier 2** — 4 domains, 0.4 confidence. Needs validation protocol pass + human approval.
-- [ ] **Phase 5 meta-analysis gate** — Requires 3 Tier 2 motifs. Currently 1. Two promotions away.
+- [ ] **Promote Plugin/StateMachine/Buffer to Tier 2** — All three at 7 domains, 0.9 confidence, alien-domain triangulation confirmed. Awaiting human approval. Promoting all three opens Phase 5 gate with 4 Tier 2 motifs.
+- [ ] **Verify 6 unverified repos** — A-Frame, GDevelop, libGDX, GATK, ColabFold, fastp cited in triad run without ocp_inspect verification. Quick check: do they exist in the 203-record corpus? If not, downgrade affected instances.
+- [ ] **Phase 5 meta-analysis gate** — Requires 3 Tier 2 motifs. Currently 1. Three strong candidates ready (Plugin, StateMachine, Buffer). Promoting them opens gate with 4 Tier 2 motifs.
 - [x] **Diversity scrape for triangulation** — DONE 2026-03-03. 91 repos scraped across bioinformatics, spaced repetition, game engines, legal tech, music production. 203 total in index.
 - [ ] **Idempotent State Convergence definition tightening** — GPT flagged: distinguish between idempotent operations (apply config) and deterministic evaluation (same input → same decision). Scope motif to reconciliation/apply operations specifically.
 - [ ] **Template-Driven Classification scope assessment** — No bottom-up confirmation. May be cognitive infrastructure motif, not universal. Assess whether it should be reclassified or left provisional.
@@ -32,6 +34,14 @@ vault_safety: This is a living operational document. It tracks pending work item
 - [ ] **Test MCP tools from Atlas in real build context** — Verify Atlas naturally reaches for ocp_search/ocp_gaps during unprompted build tasks.
 - [ ] **Scraper baseline receipt pattern** — Run ocp_status before and after each scrape for measurable delta. (Source: GPT advisory)
 - [ ] **Fix grep/xargs missing in Atlas execution environment** — Verification step hit `command not found` for standard tools. Pipeline reliability issue.
+
+## Strategic / Architecture
+
+- [ ] **Motifs as design constraints for future builds** — The motif library should actively inform architecture decisions, not just catalogue patterns. Dual-Speed Governance → action layer should separate slow governance (human approval, policy authoring) from fast execution (agent runs, scraping). Composable Plugin Architecture → new capabilities should wire in via standard interfaces, not bespoke integration. Explicit State Machine Backbone → build pipelines should have named states with guarded transitions. Bounded Buffer → systems under load need explicit overflow policies. Every new PRD should reference applicable motifs as design constraints and explain how the design honours or deliberately departs from them. This is how motifs stop being academic and start producing operational advantage.
+
+- [ ] **Motif Action Layer (future project)** — GPT proposed architecture: motif threshold events → Telegram notifications → human approval → PRD generation → execution loop. Components: event detector, event log, notifier, archive, PRD escalator. Staged rollout: Stage 0 manual, Stage 1 scheduled+notify, Stage 2 approval→PRD, Stage 3 inward audits. MVP = "Motif Promotion Notifier" — only triggers on tier changes and confidence threshold crossings. Not immediate — do after Tier 2 promotions and Phase 5 gate are resolved. (Source: GPT advisory, 2026-03-03)
+
+- [ ] **Inward triad: point cognitive architecture at own pipeline** — GPT suggested running the triad against Observer's own build artifacts (PRDs, receipts, gate outputs, failure logs) to find where the pipeline breaks under load, creates hidden work, or drifts. The OIL pre-commit timeout is literally Bounded Buffer showing up in governance. Treat own pipeline as a domain in the motif library. (Source: GPT advisory, 2026-03-03)
 
 ## Creative Architecture
 
