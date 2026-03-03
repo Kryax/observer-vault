@@ -1,0 +1,178 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/nullobject--bokeh",
+  "meta": {
+    "title": "Bokeh",
+    "description": "Bokeh is a simple, scalable and blazing-fast task queue built on Node.js and ZeroMQ.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:43:41.603Z",
+    "dateModified": "2026-03-03T08:43:41.603Z",
+    "keywords": [
+      "javascript",
+      "message",
+      "queue",
+      "zeromq"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "[![Build Status](https://travis-ci.com/nullobject/bokeh.svg?branch=master)](https://travis-ci.com/nullobject/bokeh)",
+    "context": "[![Build Status](https://travis-ci.com/nullobject/bokeh.svg?branch=master)](https://travis-ci.com/nullobject/bokeh)\n\nbokeh (pronounced boh-kay) is a simple, scalable and blazing-fast task queue built on [Node.js](http://nodejs.org) and [ZeroMQ](http://zeromq.org). It allows you to offload tasks from your main application process and distribute them among a pool of workers. Workers can be running on the same host as your application, or scaled out onto multiple machines for greater processing power.\n\nWhen you want a worker to run a task, just submit it to the broker using the client API. A task is simply any class in your application which responds to the `run` method.\n\nBokeh consists of three components:\n\n1. The client library which your application uses to submit tasks to the broker.\n2. The broker process which manages the pool of workers.\n3. The worker processes which are responsible for running tasks.\n\n![](https://raw.githubusercontent.com/nullobject/bokeh/master/logo.png)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:javascript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "77 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "11 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:43:41.603Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/nullobject/bokeh",
+        "description": "GitHub repository: nullobject/bokeh"
+      }
+    ],
+    "language": "JavaScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "async",
+        "version": "^2.6.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/async"
+      },
+      {
+        "name": "uuid",
+        "version": "^3.3.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/uuid"
+      },
+      {
+        "name": "zeromq",
+        "version": "^5.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/zeromq"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "nullobject",
+        "type": "human",
+        "uri": "https://github.com/nullobject"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 99,
+      "validation_diversity": 0,
+      "context_breadth": 0.26,
+      "temporal_stability": 0.64,
+      "test_coverage": 0,
+      "documentation_quality": 0.5
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.037
+  }
+}

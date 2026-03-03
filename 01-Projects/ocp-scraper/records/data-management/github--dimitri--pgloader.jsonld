@@ -1,0 +1,174 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/dimitri--pgloader",
+  "meta": {
+    "title": "PGLoader",
+    "description": "Migrate to PostgreSQL in a single command!",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:43:36.670Z",
+    "dateModified": "2026-03-03T08:43:36.670Z",
+    "keywords": [
+      "clozure-cl",
+      "common-lisp",
+      "csv",
+      "database",
+      "dbase",
+      "ixf",
+      "migration",
+      "mssql",
+      "mysql",
+      "pgloader",
+      "postgresql",
+      "sbcl",
+      "sqlite"
+    ],
+    "license": "NOASSERTION"
+  },
+  "problemSolved": {
+    "statement": "[![Build Status](https://travis-ci.org/dimitri/pgloader.svg?branch=master)](https://travis-ci.org/dimitri/pgloader)\n[![Join the chat at https://gitter.im/dimitri/pgloader](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dimitri/pgloader?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)\n[![Read The Docs Status](https://readthedocs.org/projects/pgloader/badge/?version=latest&style=plastic)](http://pgloader.readthedocs.io/en/latest/)",
+    "context": "[![Build Status](https://travis-ci.org/dimitri/pgloader.svg?branch=master)](https://travis-ci.org/dimitri/pgloader)\n[![Join the chat at https://gitter.im/dimitri/pgloader](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dimitri/pgloader?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)\n[![Read The Docs Status](https://readthedocs.org/projects/pgloader/badge/?version=latest&style=plastic)](http://pgloader.readthedocs.io/en/latest/)\n\npgloader is a data loading tool for PostgreSQL, using the `COPY` command.\n\nIts main advantage over just using `COPY` or `\\copy`, and over using a\n*Foreign Data Wrapper*, is its transaction behaviour, where *pgloader*\nwill keep a separate file of rejected data, but continue trying to\n`copy` good data in your database.\n\nThe default PostgreSQL behaviour is transactional, which means that\n*any* erroneous line in the input data (file or remote database) will\nstop the entire bulk load for the table.\n\npgloader also implements data reformatting, a typical example of that\nbeing the transformation of MySQL datestamps `0000-00-00` and\n`0000-00-00 00:00:00` to PostgreSQL `NULL` value (because our calendar\nnever had a *year zero*).",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "data-management",
+    "lang:common lisp"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "6315 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "601 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:43:36.670Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/dimitri/pgloader",
+        "description": "GitHub repository: dimitri/pgloader"
+      },
+      {
+        "type": "documentation",
+        "uri": "http://pgloader.io",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Common Lisp"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "dimitri",
+        "type": "human",
+        "uri": "https://github.com/dimitri"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 7517,
+      "validation_diversity": 0.68,
+      "context_breadth": 0.68,
+      "temporal_stability": 0.66,
+      "test_coverage": 0,
+      "documentation_quality": 0.5
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.38
+  }
+}

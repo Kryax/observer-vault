@@ -1,0 +1,201 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/mindfold-ai--trellis",
+  "meta": {
+    "title": "1. Install globally",
+    "description": "All-in-one AI framework & toolkit",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:44:53.954Z",
+    "dateModified": "2026-03-03T08:44:53.954Z",
+    "keywords": [
+      "ai-agent",
+      "ai-coding",
+      "claude-code",
+      "cli",
+      "codex",
+      "cursor",
+      "developer-tools",
+      "typescript",
+      "workflow"
+    ],
+    "license": "AGPL-3.0"
+  },
+  "problemSolved": {
+    "statement": "| Feature | Problem Solved |\n| --- | --- |\n| **Auto-Injection** | Required specs and workflows auto-inject into every conversation. Write once, apply forever |\n| **Auto-updated Spec Library** | Best practices live in auto-updated spec files. The more you use it, the better it gets |\n| **Parallel Sessions** | Run multiple agents in tandem - each in its own worktree |\n| **Team Sync** | Share specs across your team. One person's best practice benefits everyone |\n| **Session Persistence** | Work traces persist in your repo. AI remembers project context across sessions |",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "developer-tools",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "3023 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "150 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:44:53.954Z"
+  },
+  "implementation": {
+    "type": "framework",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/mindfold-ai/Trellis",
+        "description": "GitHub repository: mindfold-ai/Trellis"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://trytrellis.app",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "chalk",
+        "version": "^5.3.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/chalk"
+      },
+      {
+        "name": "commander",
+        "version": "^12.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/commander"
+      },
+      {
+        "name": "figlet",
+        "version": "^1.9.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/figlet"
+      },
+      {
+        "name": "giget",
+        "version": "^3.1.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/giget"
+      },
+      {
+        "name": "inquirer",
+        "version": "^9.3.7",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/inquirer"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "mindfold-ai",
+        "type": "human",
+        "uri": "https://github.com/mindfold-ai"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 3323,
+      "validation_diversity": 0.28,
+      "context_breadth": 0.58,
+      "temporal_stability": 0.79,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.6
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.5
+  }
+}

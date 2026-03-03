@@ -1,0 +1,853 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/openobserve--openobserve",
+  "meta": {
+    "title": "openobserve",
+    "description": "OpenObserve is an open-source observability platform for logs, metrics, traces, and frontend monitoring. A cost-effective alternative to Datadog, Splunk, and Elasticsearch with 140x lower storage costs and single binary deployment.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:43:31.551Z",
+    "dateModified": "2026-03-03T08:43:31.551Z",
+    "keywords": [
+      "analytics",
+      "apm",
+      "datadog",
+      "elasticsearch",
+      "grafana",
+      "jaeger",
+      "kibana",
+      "log-analytics",
+      "log-management",
+      "log-search",
+      "logs",
+      "metrics",
+      "monitoring",
+      "observability",
+      "openobserve",
+      "opentelemetry",
+      "prometheus",
+      "rust-lang",
+      "splunk",
+      "traces"
+    ],
+    "license": "AGPL-3.0"
+  },
+  "problemSolved": {
+    "statement": "[![OpenObserve Introduction](./screenshots/o2_intro.webp)](https://www.youtube.com/watch?v=4VwuC1tpRP4)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "frontend",
+    "data-management",
+    "lang:typescript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "18054 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "742 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:43:31.551Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/openobserve/openobserve",
+        "description": "GitHub repository: openobserve/openobserve"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://openobserve.ai",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "TypeScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "axum",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/axum"
+      },
+      {
+        "name": "axum-extra",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/axum-extra"
+      },
+      {
+        "name": "axum-server",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/axum-server"
+      },
+      {
+        "name": "tower",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tower"
+      },
+      {
+        "name": "tower-http",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tower-http"
+      },
+      {
+        "name": "http",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/http"
+      },
+      {
+        "name": "http-body",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/http-body"
+      },
+      {
+        "name": "http-body-util",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/http-body-util"
+      },
+      {
+        "name": "hyper",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/hyper"
+      },
+      {
+        "name": "hyper-util",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/hyper-util"
+      },
+      {
+        "name": "mime_guess",
+        "version": "2.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/mime_guess"
+      },
+      {
+        "name": "ahash",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/ahash"
+      },
+      {
+        "name": "anyhow",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/anyhow"
+      },
+      {
+        "name": "argon2",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/argon2"
+      },
+      {
+        "name": "async-trait",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/async-trait"
+      },
+      {
+        "name": "async-recursion",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/async-recursion"
+      },
+      {
+        "name": "aws-sdk-sns",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/aws-sdk-sns"
+      },
+      {
+        "name": "base64",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/base64"
+      },
+      {
+        "name": "bitflags",
+        "version": "2.9",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/bitflags"
+      },
+      {
+        "name": "bitvec",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/bitvec"
+      },
+      {
+        "name": "blake3",
+        "version": "1.8",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/blake3"
+      },
+      {
+        "name": "bytes",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/bytes"
+      },
+      {
+        "name": "byteorder",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/byteorder"
+      },
+      {
+        "name": "chrono",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/chrono"
+      },
+      {
+        "name": "clap",
+        "version": "4.5",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/clap"
+      },
+      {
+        "name": "cloudevents-sdk",
+        "version": "0.9",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/cloudevents-sdk"
+      },
+      {
+        "name": "cron",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/cron"
+      },
+      {
+        "name": "csv",
+        "version": "1.3",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/csv"
+      },
+      {
+        "name": "dashmap",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/dashmap"
+      },
+      {
+        "name": "datafusion",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/datafusion"
+      },
+      {
+        "name": "datafusion-proto",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/datafusion-proto"
+      },
+      {
+        "name": "datafusion-functions-aggregate-common",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/datafusion-functions-aggregate-common"
+      },
+      {
+        "name": "datafusion-functions-json",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/datafusion-functions-json"
+      },
+      {
+        "name": "arrow",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/arrow"
+      },
+      {
+        "name": "arrow-flight",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/arrow-flight"
+      },
+      {
+        "name": "arrow-json",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/arrow-json"
+      },
+      {
+        "name": "arrow-schema",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/arrow-schema"
+      },
+      {
+        "name": "parquet",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/parquet"
+      },
+      {
+        "name": "object_store",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/object_store"
+      },
+      {
+        "name": "env_logger",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/env_logger"
+      },
+      {
+        "name": "faststr",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/faststr"
+      },
+      {
+        "name": "flate2",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/flate2"
+      },
+      {
+        "name": "futures",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/futures"
+      },
+      {
+        "name": "hashlink",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/hashlink"
+      },
+      {
+        "name": "hashbrown",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/hashbrown"
+      },
+      {
+        "name": "hex",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/hex"
+      },
+      {
+        "name": "http-auth-basic",
+        "version": "0.3",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/http-auth-basic"
+      },
+      {
+        "name": "itertools",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/itertools"
+      },
+      {
+        "name": "jsonwebtoken",
+        "version": "10.3",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/jsonwebtoken"
+      },
+      {
+        "name": "log",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/log"
+      },
+      {
+        "name": "maxminddb",
+        "version": "0.27",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/maxminddb"
+      },
+      {
+        "name": "md5",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/md5"
+      },
+      {
+        "name": "memchr",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/memchr"
+      },
+      {
+        "name": "once_cell",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/once_cell"
+      },
+      {
+        "name": "opentelemetry",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/opentelemetry"
+      },
+      {
+        "name": "opentelemetry_sdk",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/opentelemetry_sdk"
+      },
+      {
+        "name": "opentelemetry-otlp",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/opentelemetry-otlp"
+      },
+      {
+        "name": "opentelemetry-proto",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/opentelemetry-proto"
+      },
+      {
+        "name": "parking_lot",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/parking_lot"
+      },
+      {
+        "name": "prometheus",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/prometheus"
+      },
+      {
+        "name": "promql-parser",
+        "version": "0.6",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/promql-parser"
+      },
+      {
+        "name": "prost",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/prost"
+      },
+      {
+        "name": "prost-wkt-types",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/prost-wkt-types"
+      },
+      {
+        "name": "proto",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/proto"
+      },
+      {
+        "name": "prettytable-rs",
+        "version": "0.10.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/prettytable-rs"
+      },
+      {
+        "name": "rand",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/rand"
+      },
+      {
+        "name": "rayon",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/rayon"
+      },
+      {
+        "name": "regex",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/regex"
+      },
+      {
+        "name": "regex-syntax",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/regex-syntax"
+      },
+      {
+        "name": "reqwest",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/reqwest"
+      },
+      {
+        "name": "rquickjs",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/rquickjs"
+      },
+      {
+        "name": "rust-embed-for-web",
+        "version": "11.3",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/rust-embed-for-web"
+      },
+      {
+        "name": "rustls",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/rustls"
+      },
+      {
+        "name": "rustls-pemfile",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/rustls-pemfile"
+      },
+      {
+        "name": "rustls-native-certs",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/rustls-native-certs"
+      },
+      {
+        "name": "webpki-roots",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/webpki-roots"
+      },
+      {
+        "name": "sea-orm",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/sea-orm"
+      },
+      {
+        "name": "segment",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/segment"
+      },
+      {
+        "name": "serde",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/serde"
+      },
+      {
+        "name": "serde_json",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/serde_json"
+      },
+      {
+        "name": "sha256",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/sha256"
+      },
+      {
+        "name": "snafu",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/snafu"
+      },
+      {
+        "name": "snap",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/snap"
+      },
+      {
+        "name": "sqlparser",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/sqlparser"
+      },
+      {
+        "name": "sqlx",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/sqlx"
+      },
+      {
+        "name": "strum",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/strum"
+      },
+      {
+        "name": "svix-ksuid",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/svix-ksuid"
+      },
+      {
+        "name": "thiserror",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/thiserror"
+      },
+      {
+        "name": "time",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/time"
+      },
+      {
+        "name": "tempfile",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tempfile"
+      },
+      {
+        "name": "tiktoken-rs",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tiktoken-rs"
+      },
+      {
+        "name": "tokio",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tokio"
+      },
+      {
+        "name": "tonic",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tonic"
+      },
+      {
+        "name": "tonic-prost",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tonic-prost"
+      },
+      {
+        "name": "tracing",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tracing"
+      },
+      {
+        "name": "tracing-appender",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tracing-appender"
+      },
+      {
+        "name": "tracing-opentelemetry",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tracing-opentelemetry"
+      },
+      {
+        "name": "tracing-subscriber",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tracing-subscriber"
+      },
+      {
+        "name": "uaparser",
+        "version": "0.6.4",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/uaparser"
+      },
+      {
+        "name": "url",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/url"
+      },
+      {
+        "name": "utoipa",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/utoipa"
+      },
+      {
+        "name": "utoipa-axum",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/utoipa-axum"
+      },
+      {
+        "name": "utoipa-swagger-ui",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/utoipa-swagger-ui"
+      },
+      {
+        "name": "version-compare",
+        "version": "0.2.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/version-compare"
+      },
+      {
+        "name": "vector-enrichment",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/vector-enrichment"
+      },
+      {
+        "name": "x509-parser",
+        "version": "0.18.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/x509-parser"
+      },
+      {
+        "name": "vrl",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/vrl"
+      },
+      {
+        "name": "zstd",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/zstd"
+      },
+      {
+        "name": "config",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/config"
+      },
+      {
+        "name": "infra",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/infra"
+      },
+      {
+        "name": "ingester",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/ingester"
+      },
+      {
+        "name": "wal",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/wal"
+      },
+      {
+        "name": "report_server",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/report_server"
+      },
+      {
+        "name": "chromiumoxide",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/chromiumoxide"
+      },
+      {
+        "name": "lettre",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/lettre"
+      },
+      {
+        "name": "tantivy",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tantivy"
+      },
+      {
+        "name": "tantivy-fst",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tantivy-fst"
+      },
+      {
+        "name": "zip",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/zip"
+      },
+      {
+        "name": "futures-util",
+        "version": "0.3.31",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/futures-util"
+      },
+      {
+        "name": "tokio-util",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tokio-util"
+      },
+      {
+        "name": "tokio-stream",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tokio-stream"
+      },
+      {
+        "name": "mime",
+        "version": "0.3.17",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/mime"
+      },
+      {
+        "name": "pin-project-lite",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/pin-project-lite"
+      },
+      {
+        "name": "futures-core",
+        "version": "0.3.31",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/futures-core"
+      },
+      {
+        "name": "derive_more",
+        "version": "2.0.2",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/derive_more"
+      },
+      {
+        "name": "brotli",
+        "version": "8.0.2",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/brotli"
+      },
+      {
+        "name": "tokio-rustls",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tokio-rustls"
+      },
+      {
+        "name": "roaring",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/roaring"
+      },
+      {
+        "name": "flight",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/flight"
+      },
+      {
+        "name": "async-stream",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/async-stream"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "openobserve",
+        "type": "human",
+        "uri": "https://github.com/openobserve"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 19538,
+      "validation_diversity": 0.67,
+      "context_breadth": 0.69,
+      "temporal_stability": 0.97,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.5
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.753
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/kriasoft--node-sqlite",
+  "meta": {
+    "title": "SQLite Client for Node.js Apps",
+    "description": "SQLite client wrapper around sqlite3 for Node.js applications with SQL-based migrations API written in Typescript",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:44:58.964Z",
+    "dateModified": "2026-03-03T08:44:58.964Z",
+    "keywords": [
+      "async",
+      "database",
+      "db",
+      "es7-async",
+      "migrate",
+      "migration",
+      "migrations",
+      "nodejs",
+      "sql",
+      "sqlite",
+      "typescript"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "[![NPM version](https://img.shields.io/npm/v/sqlite.svg?style=flat-square)](https://www.npmjs.com/package/sqlite)\n[![CircleCI](https://circleci.com/gh/kriasoft/node-sqlite.svg?style=svg)](https://circleci.com/gh/kriasoft/node-sqlite) \n![built with typescript](https://camo.githubusercontent.com/92e9f7b1209bab9e3e9cd8cdf62f072a624da461/68747470733a2f2f666c61742e62616467656e2e6e65742f62616467652f4275696c74253230576974682f547970655363726970742f626c7565) \n[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)",
+    "context": "[![NPM version](https://img.shields.io/npm/v/sqlite.svg?style=flat-square)](https://www.npmjs.com/package/sqlite)\n[![CircleCI](https://circleci.com/gh/kriasoft/node-sqlite.svg?style=svg)](https://circleci.com/gh/kriasoft/node-sqlite) \n![built with typescript](https://camo.githubusercontent.com/92e9f7b1209bab9e3e9cd8cdf62f072a624da461/68747470733a2f2f666c61742e62616467656e2e6e65742f62616467652f4275696c74253230576974682f547970655363726970742f626c7565) \n[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)\n\n> A wrapper library written in Typescript with **ZERO** dependencies that adds ES6 promises \n> and SQL-based migrations API to [sqlite3](https://github.com/mapbox/node-sqlite3/) ([docs](https://github.com/mapbox/node-sqlite3/wiki)).\n\n**note** v4 of `sqlite` has breaking changes compared to v3! Please see `CHANGELOG.md` for more details.\n\n<!-- TOC -->\n\n- [Installation](#installation)\n  - [Install `sqlite3`](#install-sqlite3)\n  - [Install `sqlite`](#install-sqlite)\n- [Usage](#usage)\n  - [Opening the database](#opening-the-database)\n    - [Without caching](#without-caching)\n    - [With caching](#with-caching)\n    - [Enable verbose / debug mode](#enable-verbose--debug-mode)\n    - [Tracing SQL errors](#tracing-sql-errors)\n    - [With a custom driver](#with-a-custom-driver)\n    - [Opening multiple databases](#opening-multiple-databases)\n    - [`open` config params](#open-config-params)\n  - [Examples](#examples)\n    - [Creating a table and inserting data](#creating-a-table-and-inserting-data)\n    - [Getting a single row](#getting-a-single-row)\n    - [Getting many rows](#getting-many-rows)\n    - [Inserting rows](#inserting-rows)\n    - [Updating rows](#updating-rows)\n    - [Prepared statement](#prepared-statement)\n    - [`each()`](#each)\n    - [Get the driver instance](#get-the-driver-instance)\n    - [Closing the database](#closing-the-database)\n  - [ES6 tagged template strings](#es6-tagged-template-strings)\n  - [Migrations](#migrations)\n- [Typescript tricks](#typescript-tricks)\n  - [Import interfaces from sqlite](#import-interfaces-from-sqlite)\n  - [Specify typings for a specific database driver](#specify-typings-for-a-specific-database-driver)\n  - [Use generics to get better typings on your rows](#use-generics-to-get-better-typings-on-your-rows)\n    - [Get example](#get-example)\n    - [All example](#all-example)\n- [API Documentation](#api-documentation)\n- [Management Tools](#management-tools)\n- [Alternative SQLite libraries](#alternative-sqlite-libraries)\n- [References](#references)\n- [License](#license)\n\n<!-- TOC END -->",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "backend",
+    "data-management",
+    "developer-tools",
+    "lang:typescript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "930 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "93 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:44:58.964Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/kriasoft/node-sqlite",
+        "description": "GitHub repository: kriasoft/node-sqlite"
+      }
+    ],
+    "language": "TypeScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "kriasoft",
+        "type": "human",
+        "uri": "https://github.com/kriasoft"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 1116,
+      "validation_diversity": 0.54,
+      "context_breadth": 0.6,
+      "temporal_stability": 0.72,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.5
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.612
+  }
+}

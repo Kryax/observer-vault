@@ -1,0 +1,2750 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/grafana--grafana",
+  "meta": {
+    "title": "grafana",
+    "description": "The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and many more. ",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:43:04.213Z",
+    "dateModified": "2026-03-03T08:43:04.213Z",
+    "keywords": [
+      "alerting",
+      "analytics",
+      "business-intelligence",
+      "dashboard",
+      "data-visualization",
+      "elasticsearch",
+      "go",
+      "grafana",
+      "hacktoberfest",
+      "influxdb",
+      "metrics",
+      "monitoring",
+      "mysql",
+      "postgres",
+      "prometheus"
+    ],
+    "license": "AGPL-3.0"
+  },
+  "problemSolved": {
+    "statement": "The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elasticsearch, InfluxDB, Postgres and many more. ",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "data-management",
+    "lang:typescript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "72439 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "13499 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:43:04.213Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/grafana/grafana",
+        "description": "GitHub repository: grafana/grafana"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://grafana.com",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "TypeScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "@bsull/augurs",
+        "version": "^0.10.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@bsull/augurs"
+      },
+      {
+        "name": "@emotion/css",
+        "version": "11.13.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@emotion/css"
+      },
+      {
+        "name": "@emotion/react",
+        "version": "11.14.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@emotion/react"
+      },
+      {
+        "name": "@fingerprintjs/fingerprintjs",
+        "version": "^3.4.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@fingerprintjs/fingerprintjs"
+      },
+      {
+        "name": "@floating-ui/react",
+        "version": "0.27.16",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@floating-ui/react"
+      },
+      {
+        "name": "@formatjs/intl-durationformat",
+        "version": "^0.7.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@formatjs/intl-durationformat"
+      },
+      {
+        "name": "@glideapps/glide-data-grid",
+        "version": "^6.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@glideapps/glide-data-grid"
+      },
+      {
+        "name": "@grafana/alerting",
+        "version": "workspace:*",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/alerting"
+      },
+      {
+        "name": "@grafana/api-clients",
+        "version": "workspace:*",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/api-clients"
+      },
+      {
+        "name": "@grafana/assistant",
+        "version": "0.1.13",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/assistant"
+      },
+      {
+        "name": "@grafana/aws-sdk",
+        "version": "^0.10.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/aws-sdk"
+      },
+      {
+        "name": "@grafana/azure-sdk",
+        "version": "0.0.8",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/azure-sdk"
+      },
+      {
+        "name": "@grafana/data",
+        "version": "workspace:*",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/data"
+      },
+      {
+        "name": "@grafana/e2e-selectors",
+        "version": "workspace:*",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/e2e-selectors"
+      },
+      {
+        "name": "@grafana/faro-core",
+        "version": "^2.2.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/faro-core"
+      },
+      {
+        "name": "@grafana/faro-instrumentation-replay",
+        "version": "^2.2.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/faro-instrumentation-replay"
+      },
+      {
+        "name": "@grafana/faro-web-sdk",
+        "version": "^2.2.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/faro-web-sdk"
+      },
+      {
+        "name": "@grafana/faro-web-tracing",
+        "version": "^2.2.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/faro-web-tracing"
+      },
+      {
+        "name": "@grafana/flamegraph",
+        "version": "workspace:*",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/flamegraph"
+      },
+      {
+        "name": "@grafana/google-sdk",
+        "version": "0.3.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/google-sdk"
+      },
+      {
+        "name": "@grafana/i18n",
+        "version": "workspace:*",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/i18n"
+      },
+      {
+        "name": "@grafana/lezer-logql",
+        "version": "0.2.9",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/lezer-logql"
+      },
+      {
+        "name": "@grafana/llm",
+        "version": "1.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/llm"
+      },
+      {
+        "name": "@grafana/monaco-logql",
+        "version": "^0.0.8",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/monaco-logql"
+      },
+      {
+        "name": "@grafana/o11y-ds-frontend",
+        "version": "workspace:*",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/o11y-ds-frontend"
+      },
+      {
+        "name": "@grafana/plugin-ui",
+        "version": "^0.13.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/plugin-ui"
+      },
+      {
+        "name": "@grafana/prometheus",
+        "version": "workspace:*",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/prometheus"
+      },
+      {
+        "name": "@grafana/runtime",
+        "version": "workspace:*",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/runtime"
+      },
+      {
+        "name": "@grafana/scenes",
+        "version": "7.0.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/scenes"
+      },
+      {
+        "name": "@grafana/scenes-react",
+        "version": "7.0.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/scenes-react"
+      },
+      {
+        "name": "@grafana/schema",
+        "version": "workspace:*",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/schema"
+      },
+      {
+        "name": "@grafana/sql",
+        "version": "workspace:*",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/sql"
+      },
+      {
+        "name": "@grafana/ui",
+        "version": "workspace:*",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@grafana/ui"
+      },
+      {
+        "name": "@hello-pangea/dnd",
+        "version": "18.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@hello-pangea/dnd"
+      },
+      {
+        "name": "@kusto/monaco-kusto",
+        "version": "^10.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@kusto/monaco-kusto"
+      },
+      {
+        "name": "@leeoniya/ufuzzy",
+        "version": "1.0.19",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@leeoniya/ufuzzy"
+      },
+      {
+        "name": "@lezer/common",
+        "version": "1.3.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@lezer/common"
+      },
+      {
+        "name": "@lezer/highlight",
+        "version": "1.2.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@lezer/highlight"
+      },
+      {
+        "name": "@lezer/lr",
+        "version": "1.4.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@lezer/lr"
+      },
+      {
+        "name": "@locker/near-membrane-dom",
+        "version": "0.14.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@locker/near-membrane-dom"
+      },
+      {
+        "name": "@locker/near-membrane-shared",
+        "version": "0.14.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@locker/near-membrane-shared"
+      },
+      {
+        "name": "@locker/near-membrane-shared-dom",
+        "version": "0.14.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@locker/near-membrane-shared-dom"
+      },
+      {
+        "name": "@msagl/core",
+        "version": "^1.1.19",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@msagl/core"
+      },
+      {
+        "name": "@msagl/parser",
+        "version": "^1.1.19",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@msagl/parser"
+      },
+      {
+        "name": "@openfeature/ofrep-web-provider",
+        "version": "^0.3.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@openfeature/ofrep-web-provider"
+      },
+      {
+        "name": "@openfeature/react-sdk",
+        "version": "^1.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@openfeature/react-sdk"
+      },
+      {
+        "name": "@openfeature/web-sdk",
+        "version": "^1.6.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@openfeature/web-sdk"
+      },
+      {
+        "name": "@opentelemetry/api",
+        "version": "1.9.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@opentelemetry/api"
+      },
+      {
+        "name": "@opentelemetry/exporter-collector",
+        "version": "0.25.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@opentelemetry/exporter-collector"
+      },
+      {
+        "name": "@opentelemetry/semantic-conventions",
+        "version": "1.38.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@opentelemetry/semantic-conventions"
+      },
+      {
+        "name": "@popperjs/core",
+        "version": "2.11.8",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@popperjs/core"
+      },
+      {
+        "name": "@rc-component/slider",
+        "version": "1.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@rc-component/slider"
+      },
+      {
+        "name": "@rc-component/tree",
+        "version": "1.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@rc-component/tree"
+      },
+      {
+        "name": "@react-aria/dialog",
+        "version": "3.5.31",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@react-aria/dialog"
+      },
+      {
+        "name": "@react-aria/focus",
+        "version": "3.21.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@react-aria/focus"
+      },
+      {
+        "name": "@react-aria/overlays",
+        "version": "3.30.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@react-aria/overlays"
+      },
+      {
+        "name": "@react-aria/utils",
+        "version": "3.31.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@react-aria/utils"
+      },
+      {
+        "name": "@react-awesome-query-builder/ui",
+        "version": "6.6.15",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@react-awesome-query-builder/ui"
+      },
+      {
+        "name": "@reduxjs/toolkit",
+        "version": "2.10.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@reduxjs/toolkit"
+      },
+      {
+        "name": "@visx/event",
+        "version": "3.12.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@visx/event"
+      },
+      {
+        "name": "@visx/gradient",
+        "version": "3.12.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@visx/gradient"
+      },
+      {
+        "name": "@visx/group",
+        "version": "3.12.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@visx/group"
+      },
+      {
+        "name": "@visx/shape",
+        "version": "3.12.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@visx/shape"
+      },
+      {
+        "name": "@visx/tooltip",
+        "version": "3.12.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@visx/tooltip"
+      },
+      {
+        "name": "@welldone-software/why-did-you-render",
+        "version": "8.0.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@welldone-software/why-did-you-render"
+      },
+      {
+        "name": "ansicolor",
+        "version": "2.0.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/ansicolor"
+      },
+      {
+        "name": "baron",
+        "version": "3.0.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/baron"
+      },
+      {
+        "name": "brace",
+        "version": "0.11.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/brace"
+      },
+      {
+        "name": "centrifuge",
+        "version": "5.5.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/centrifuge"
+      },
+      {
+        "name": "classnames",
+        "version": "2.5.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/classnames"
+      },
+      {
+        "name": "combokeys",
+        "version": "^3.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/combokeys"
+      },
+      {
+        "name": "comlink",
+        "version": "4.4.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/comlink"
+      },
+      {
+        "name": "common-tags",
+        "version": "1.8.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/common-tags"
+      },
+      {
+        "name": "croner",
+        "version": "^9.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/croner"
+      },
+      {
+        "name": "d3",
+        "version": "7.9.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/d3"
+      },
+      {
+        "name": "d3-force",
+        "version": "3.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/d3-force"
+      },
+      {
+        "name": "d3-scale-chromatic",
+        "version": "3.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/d3-scale-chromatic"
+      },
+      {
+        "name": "dangerously-set-html-content",
+        "version": "1.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/dangerously-set-html-content"
+      },
+      {
+        "name": "date-fns",
+        "version": "4.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/date-fns"
+      },
+      {
+        "name": "debounce-promise",
+        "version": "3.1.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/debounce-promise"
+      },
+      {
+        "name": "diff",
+        "version": "^8.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/diff"
+      },
+      {
+        "name": "downsample",
+        "version": "1.4.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/downsample"
+      },
+      {
+        "name": "fast-deep-equal",
+        "version": "^3.1.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/fast-deep-equal"
+      },
+      {
+        "name": "fast-json-patch",
+        "version": "3.1.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/fast-json-patch"
+      },
+      {
+        "name": "file-saver",
+        "version": "2.0.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/file-saver"
+      },
+      {
+        "name": "history",
+        "version": "4.10.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/history"
+      },
+      {
+        "name": "i18next",
+        "version": "^25.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/i18next"
+      },
+      {
+        "name": "i18next-browser-languagedetector",
+        "version": "^8.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/i18next-browser-languagedetector"
+      },
+      {
+        "name": "i18next-pseudo",
+        "version": "^2.2.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/i18next-pseudo"
+      },
+      {
+        "name": "immer",
+        "version": "10.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/immer"
+      },
+      {
+        "name": "immutable",
+        "version": "5.1.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/immutable"
+      },
+      {
+        "name": "infinite-viewer",
+        "version": "^0.29.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/infinite-viewer"
+      },
+      {
+        "name": "ix",
+        "version": "^7.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/ix"
+      },
+      {
+        "name": "jquery",
+        "version": "3.7.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/jquery"
+      },
+      {
+        "name": "js-yaml",
+        "version": "^4.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/js-yaml"
+      },
+      {
+        "name": "json-markup",
+        "version": "^1.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/json-markup"
+      },
+      {
+        "name": "json-source-map",
+        "version": "0.6.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/json-source-map"
+      },
+      {
+        "name": "jsurl",
+        "version": "^0.1.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/jsurl"
+      },
+      {
+        "name": "kbar",
+        "version": "0.1.0-beta.48",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/kbar"
+      },
+      {
+        "name": "leven",
+        "version": "^4.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/leven"
+      },
+      {
+        "name": "lodash",
+        "version": "^4.17.23",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/lodash"
+      },
+      {
+        "name": "logfmt",
+        "version": "^1.3.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/logfmt"
+      },
+      {
+        "name": "lossless-json",
+        "version": "^4.1.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/lossless-json"
+      },
+      {
+        "name": "lru-cache",
+        "version": "11.2.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/lru-cache"
+      },
+      {
+        "name": "lru-memoize",
+        "version": "^1.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/lru-memoize"
+      },
+      {
+        "name": "lucene",
+        "version": "^2.1.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/lucene"
+      },
+      {
+        "name": "marked",
+        "version": "16.3.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/marked"
+      },
+      {
+        "name": "memoize-one",
+        "version": "6.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/memoize-one"
+      },
+      {
+        "name": "micro-memoize",
+        "version": "^4.1.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/micro-memoize"
+      },
+      {
+        "name": "ml-regression-polynomial",
+        "version": "^3.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/ml-regression-polynomial"
+      },
+      {
+        "name": "ml-regression-simple-linear",
+        "version": "^3.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/ml-regression-simple-linear"
+      },
+      {
+        "name": "moment",
+        "version": "2.30.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/moment"
+      },
+      {
+        "name": "moment-timezone",
+        "version": "0.5.47",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/moment-timezone"
+      },
+      {
+        "name": "monaco-editor",
+        "version": "0.34.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/monaco-editor"
+      },
+      {
+        "name": "moveable",
+        "version": "0.53.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/moveable"
+      },
+      {
+        "name": "nanoid",
+        "version": "^5.0.9",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/nanoid"
+      },
+      {
+        "name": "node-forge",
+        "version": "^1.3.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/node-forge"
+      },
+      {
+        "name": "ol",
+        "version": "10.7.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/ol"
+      },
+      {
+        "name": "ol-ext",
+        "version": "4.0.36",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/ol-ext"
+      },
+      {
+        "name": "ol-mapbox-style",
+        "version": "^13.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/ol-mapbox-style"
+      },
+      {
+        "name": "pluralize",
+        "version": "^8.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/pluralize"
+      },
+      {
+        "name": "prismjs",
+        "version": "1.30.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/prismjs"
+      },
+      {
+        "name": "re-resizable",
+        "version": "6.11.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/re-resizable"
+      },
+      {
+        "name": "react",
+        "version": "18.3.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react"
+      },
+      {
+        "name": "react-19",
+        "version": "npm:react@^19.2.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-19"
+      },
+      {
+        "name": "react-diff-viewer-continued",
+        "version": "^3.4.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-diff-viewer-continued"
+      },
+      {
+        "name": "react-dom",
+        "version": "18.3.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-dom"
+      },
+      {
+        "name": "react-dom-19",
+        "version": "npm:react-dom@^19.2.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-dom-19"
+      },
+      {
+        "name": "react-draggable",
+        "version": "4.5.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-draggable"
+      },
+      {
+        "name": "react-dropzone",
+        "version": "^14.2.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-dropzone"
+      },
+      {
+        "name": "react-grid-layout",
+        "version": "patch:react-grid-layout@npm%3A1.4.4#~/.yarn/patches/react-grid-layout-npm-1.4.4-4024c5395b.patch",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-grid-layout"
+      },
+      {
+        "name": "react-highlight-words",
+        "version": "0.21.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-highlight-words"
+      },
+      {
+        "name": "react-hook-form",
+        "version": "^7.49.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-hook-form"
+      },
+      {
+        "name": "react-i18next",
+        "version": "^15.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-i18next"
+      },
+      {
+        "name": "react-inlinesvg",
+        "version": "4.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-inlinesvg"
+      },
+      {
+        "name": "react-loading-skeleton",
+        "version": "3.5.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-loading-skeleton"
+      },
+      {
+        "name": "react-moveable",
+        "version": "0.56.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-moveable"
+      },
+      {
+        "name": "react-redux",
+        "version": "9.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-redux"
+      },
+      {
+        "name": "react-resizable",
+        "version": "3.0.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-resizable"
+      },
+      {
+        "name": "react-responsive-carousel",
+        "version": "^3.2.23",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-responsive-carousel"
+      },
+      {
+        "name": "react-router",
+        "version": "5.3.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-router"
+      },
+      {
+        "name": "react-router-dom",
+        "version": "5.3.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-router-dom"
+      },
+      {
+        "name": "react-router-dom-v5-compat",
+        "version": "^6.26.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-router-dom-v5-compat"
+      },
+      {
+        "name": "react-select",
+        "version": "5.10.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-select"
+      },
+      {
+        "name": "react-split-pane",
+        "version": "0.1.92",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-split-pane"
+      },
+      {
+        "name": "react-table",
+        "version": "7.8.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-table"
+      },
+      {
+        "name": "react-transition-group",
+        "version": "4.4.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-transition-group"
+      },
+      {
+        "name": "react-use",
+        "version": "17.6.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-use"
+      },
+      {
+        "name": "react-virtual",
+        "version": "2.10.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-virtual"
+      },
+      {
+        "name": "react-virtualized-auto-sizer",
+        "version": "1.0.26",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-virtualized-auto-sizer"
+      },
+      {
+        "name": "react-window",
+        "version": "1.8.11",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-window"
+      },
+      {
+        "name": "react-window-infinite-loader",
+        "version": "1.0.10",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-window-infinite-loader"
+      },
+      {
+        "name": "reduce-reducers",
+        "version": "^1.0.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/reduce-reducers"
+      },
+      {
+        "name": "redux",
+        "version": "5.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/redux"
+      },
+      {
+        "name": "redux-thunk",
+        "version": "3.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/redux-thunk"
+      },
+      {
+        "name": "regenerator-runtime",
+        "version": "0.14.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/regenerator-runtime"
+      },
+      {
+        "name": "reselect",
+        "version": "5.1.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/reselect"
+      },
+      {
+        "name": "rxjs",
+        "version": "7.8.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/rxjs"
+      },
+      {
+        "name": "selecto",
+        "version": "1.26.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/selecto"
+      },
+      {
+        "name": "semver",
+        "version": "7.7.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/semver"
+      },
+      {
+        "name": "slate",
+        "version": "0.47.9",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/slate"
+      },
+      {
+        "name": "slate-plain-serializer",
+        "version": "0.7.13",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/slate-plain-serializer"
+      },
+      {
+        "name": "slate-react",
+        "version": "0.22.10",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/slate-react"
+      },
+      {
+        "name": "swagger-ui-react",
+        "version": "5.31.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/swagger-ui-react"
+      },
+      {
+        "name": "symbol-observable",
+        "version": "4.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/symbol-observable"
+      },
+      {
+        "name": "systemjs",
+        "version": "6.15.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/systemjs"
+      },
+      {
+        "name": "tslib",
+        "version": "2.8.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/tslib"
+      },
+      {
+        "name": "tween-functions",
+        "version": "^1.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/tween-functions"
+      },
+      {
+        "name": "type-fest",
+        "version": "^4.18.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/type-fest"
+      },
+      {
+        "name": "uplot",
+        "version": "1.6.32",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/uplot"
+      },
+      {
+        "name": "uuid",
+        "version": "11.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/uuid"
+      },
+      {
+        "name": "vis-data",
+        "version": "^8.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/vis-data"
+      },
+      {
+        "name": "vis-network",
+        "version": "10.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/vis-network"
+      },
+      {
+        "name": "whatwg-fetch",
+        "version": "3.6.20",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/whatwg-fetch"
+      },
+      {
+        "name": "buf.build/gen/go/parca-dev/parca/connectrpc/go",
+        "version": "v1.18.1-20250703125925-3f0fcf4bff96.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/buf.build/gen/go/parca-dev/parca/connectrpc/go"
+      },
+      {
+        "name": "buf.build/gen/go/parca-dev/parca/protocolbuffers/go",
+        "version": "v1.36.2-20250703125925-3f0fcf4bff96.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/buf.build/gen/go/parca-dev/parca/protocolbuffers/go"
+      },
+      {
+        "name": "cloud.google.com/go/kms",
+        "version": "v1.25.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/cloud.google.com/go/kms"
+      },
+      {
+        "name": "cloud.google.com/go/storage",
+        "version": "v1.56.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/cloud.google.com/go/storage"
+      },
+      {
+        "name": "connectrpc.com/connect",
+        "version": "v1.19.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/connectrpc.com/connect"
+      },
+      {
+        "name": "dario.cat/mergo",
+        "version": "v1.0.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/dario.cat/mergo"
+      },
+      {
+        "name": "filippo.io/age",
+        "version": "v1.2.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/filippo.io/age"
+      },
+      {
+        "name": "github.com/1NCE-GmbH/grpc-go-pool",
+        "version": "v0.0.0-20231117122434-2a5bb974daa2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/1NCE-GmbH/grpc-go-pool"
+      },
+      {
+        "name": "github.com/Azure/azure-sdk-for-go",
+        "version": "v68.0.0+incompatible",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Azure/azure-sdk-for-go"
+      },
+      {
+        "name": "github.com/Azure/azure-sdk-for-go/sdk/azcore",
+        "version": "v1.20.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azcore"
+      },
+      {
+        "name": "github.com/Azure/azure-sdk-for-go/sdk/azidentity",
+        "version": "v1.13.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity"
+      },
+      {
+        "name": "github.com/Azure/azure-sdk-for-go/sdk/keyvault/azkeys",
+        "version": "v0.10.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/keyvault/azkeys"
+      },
+      {
+        "name": "github.com/Azure/azure-storage-blob-go",
+        "version": "v0.15.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Azure/azure-storage-blob-go"
+      },
+      {
+        "name": "github.com/Azure/go-autorest/autorest",
+        "version": "v0.11.29",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Azure/go-autorest/autorest"
+      },
+      {
+        "name": "github.com/Azure/go-autorest/autorest/adal",
+        "version": "v0.9.24",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Azure/go-autorest/autorest/adal"
+      },
+      {
+        "name": "github.com/Bose/minisentinel",
+        "version": "v0.0.0-20200130220412-917c5a9223bb",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Bose/minisentinel"
+      },
+      {
+        "name": "github.com/BurntSushi/toml",
+        "version": "v1.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/BurntSushi/toml"
+      },
+      {
+        "name": "github.com/DATA-DOG/go-sqlmock",
+        "version": "v1.5.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/DATA-DOG/go-sqlmock"
+      },
+      {
+        "name": "github.com/Masterminds/semver",
+        "version": "v1.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Masterminds/semver"
+      },
+      {
+        "name": "github.com/Masterminds/semver/v3",
+        "version": "v3.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Masterminds/semver/v3"
+      },
+      {
+        "name": "github.com/Masterminds/sprig/v3",
+        "version": "v3.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Masterminds/sprig/v3"
+      },
+      {
+        "name": "github.com/VividCortex/mysqlerr",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/VividCortex/mysqlerr"
+      },
+      {
+        "name": "github.com/alicebob/miniredis/v2",
+        "version": "v2.34.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/alicebob/miniredis/v2"
+      },
+      {
+        "name": "github.com/andybalholm/brotli",
+        "version": "v1.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/andybalholm/brotli"
+      },
+      {
+        "name": "github.com/apache/arrow-go/v18",
+        "version": "v18.5.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/apache/arrow-go/v18"
+      },
+      {
+        "name": "github.com/armon/go-radix",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/armon/go-radix"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go",
+        "version": "v1.55.7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2",
+        "version": "v1.41.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/credentials",
+        "version": "v1.19.7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/credentials"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+        "version": "v1.45.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/cloudwatch"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs",
+        "version": "v1.51.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/cloudwatchlogs"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/service/ec2",
+        "version": "v1.225.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/ec2"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/service/oam",
+        "version": "v1.18.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/oam"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/service/resourcegroupstaggingapi",
+        "version": "v1.26.6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/resourcegroupstaggingapi"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/service/secretsmanager",
+        "version": "v1.40.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/secretsmanager"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/service/sts",
+        "version": "v1.41.6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/sts"
+      },
+      {
+        "name": "github.com/aws/smithy-go",
+        "version": "v1.24.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/smithy-go"
+      },
+      {
+        "name": "github.com/beevik/etree",
+        "version": "v1.4.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/beevik/etree"
+      },
+      {
+        "name": "github.com/benbjohnson/clock",
+        "version": "v1.3.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/benbjohnson/clock"
+      },
+      {
+        "name": "github.com/blevesearch/bleve/v2",
+        "version": "v2.5.7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/blevesearch/bleve/v2"
+      },
+      {
+        "name": "github.com/blevesearch/bleve_index_api",
+        "version": "v1.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/blevesearch/bleve_index_api"
+      },
+      {
+        "name": "github.com/bradfitz/gomemcache",
+        "version": "v0.0.0-20250403215159-8d39553ac7cf",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/bradfitz/gomemcache"
+      },
+      {
+        "name": "github.com/bwmarrin/snowflake",
+        "version": "v0.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/bwmarrin/snowflake"
+      },
+      {
+        "name": "github.com/centrifugal/centrifuge",
+        "version": "v0.38.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/centrifugal/centrifuge"
+      },
+      {
+        "name": "github.com/crewjam/saml",
+        "version": "v0.4.14",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/crewjam/saml"
+      },
+      {
+        "name": "github.com/dgraph-io/badger/v4",
+        "version": "v4.9.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/dgraph-io/badger/v4"
+      },
+      {
+        "name": "github.com/dlmiddlecote/sqlstats",
+        "version": "v1.0.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/dlmiddlecote/sqlstats"
+      },
+      {
+        "name": "github.com/docker/go-connections",
+        "version": "v0.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/docker/go-connections"
+      },
+      {
+        "name": "github.com/dolthub/go-mysql-server",
+        "version": "v0.19.1-0.20250410182021-5632d67cd46e",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/dolthub/go-mysql-server"
+      },
+      {
+        "name": "github.com/dolthub/vitess",
+        "version": "v0.0.0-20250930230441-70c2c6a98e33",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/dolthub/vitess"
+      },
+      {
+        "name": "github.com/dustin/go-humanize",
+        "version": "v1.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/dustin/go-humanize"
+      },
+      {
+        "name": "github.com/emicklei/go-restful/v3",
+        "version": "v3.13.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/emicklei/go-restful/v3"
+      },
+      {
+        "name": "github.com/fatih/color",
+        "version": "v1.18.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/fatih/color"
+      },
+      {
+        "name": "github.com/fullstorydev/grpchan",
+        "version": "v1.1.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/fullstorydev/grpchan"
+      },
+      {
+        "name": "github.com/gchaincl/sqlhooks",
+        "version": "v1.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gchaincl/sqlhooks"
+      },
+      {
+        "name": "github.com/getkin/kin-openapi",
+        "version": "v0.133.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/getkin/kin-openapi"
+      },
+      {
+        "name": "github.com/go-jose/go-jose/v4",
+        "version": "v4.1.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-jose/go-jose/v4"
+      },
+      {
+        "name": "github.com/go-kit/log",
+        "version": "v0.2.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-kit/log"
+      },
+      {
+        "name": "github.com/go-ldap/ldap/v3",
+        "version": "v3.4.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-ldap/ldap/v3"
+      },
+      {
+        "name": "github.com/go-logfmt/logfmt",
+        "version": "v0.6.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-logfmt/logfmt"
+      },
+      {
+        "name": "github.com/go-openapi/loads",
+        "version": "v0.23.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-openapi/loads"
+      },
+      {
+        "name": "github.com/go-openapi/runtime",
+        "version": "v0.28.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-openapi/runtime"
+      },
+      {
+        "name": "github.com/go-openapi/strfmt",
+        "version": "v0.25.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-openapi/strfmt"
+      },
+      {
+        "name": "github.com/go-sourcemap/sourcemap",
+        "version": "v2.1.4+incompatible",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-sourcemap/sourcemap"
+      },
+      {
+        "name": "github.com/go-sql-driver/mysql",
+        "version": "v1.9.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-sql-driver/mysql"
+      },
+      {
+        "name": "github.com/go-stack/stack",
+        "version": "v1.8.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-stack/stack"
+      },
+      {
+        "name": "github.com/gobwas/glob",
+        "version": "v0.2.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gobwas/glob"
+      },
+      {
+        "name": "github.com/gogo/protobuf",
+        "version": "v1.3.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gogo/protobuf"
+      },
+      {
+        "name": "github.com/golang-jwt/jwt/v4",
+        "version": "v4.5.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/golang-jwt/jwt/v4"
+      },
+      {
+        "name": "github.com/golang-migrate/migrate/v4",
+        "version": "v4.7.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/golang-migrate/migrate/v4"
+      },
+      {
+        "name": "github.com/golang/mock",
+        "version": "v1.7.0-rc.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/golang/mock"
+      },
+      {
+        "name": "github.com/golang/protobuf",
+        "version": "v1.5.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/golang/protobuf"
+      },
+      {
+        "name": "github.com/golang/snappy",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/golang/snappy"
+      },
+      {
+        "name": "github.com/google/go-cmp",
+        "version": "v0.7.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/go-cmp"
+      },
+      {
+        "name": "github.com/google/go-github/v82",
+        "version": "v82.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/go-github/v82"
+      },
+      {
+        "name": "github.com/google/uuid",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/uuid"
+      },
+      {
+        "name": "github.com/google/wire",
+        "version": "v0.7.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/wire"
+      },
+      {
+        "name": "github.com/googleapis/gax-go/v2",
+        "version": "v2.15.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/googleapis/gax-go/v2"
+      },
+      {
+        "name": "github.com/gorilla/mux",
+        "version": "v1.8.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gorilla/mux"
+      },
+      {
+        "name": "github.com/gorilla/websocket",
+        "version": "v1.5.4-0.20250319132907-e064f32e3674",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gorilla/websocket"
+      },
+      {
+        "name": "github.com/grafana/alerting",
+        "version": "v0.0.0-20260227101159-7334f7d59bdd",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/alerting"
+      },
+      {
+        "name": "github.com/grafana/authlib",
+        "version": "v0.0.0-20260226130908-b01d89f85c4d",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/authlib"
+      },
+      {
+        "name": "github.com/grafana/authlib/types",
+        "version": "v0.0.0-20260226130908-b01d89f85c4d",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/authlib/types"
+      },
+      {
+        "name": "github.com/grafana/dataplane/examples",
+        "version": "v0.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/dataplane/examples"
+      },
+      {
+        "name": "github.com/grafana/dataplane/sdata",
+        "version": "v0.0.9",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/dataplane/sdata"
+      },
+      {
+        "name": "github.com/grafana/dskit",
+        "version": "v0.0.0-20260108123158-1a1acfb6ef2e",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/dskit"
+      },
+      {
+        "name": "github.com/grafana/e2e",
+        "version": "v0.1.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/e2e"
+      },
+      {
+        "name": "github.com/grafana/gofpdf",
+        "version": "v0.0.0-20250307124105-3b9c5d35577f",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/gofpdf"
+      },
+      {
+        "name": "github.com/grafana/gomemcache",
+        "version": "v0.0.0-20251127154401-74f93547077b",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/gomemcache"
+      },
+      {
+        "name": "github.com/grafana/grafana-api-golang-client",
+        "version": "v0.27.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana-api-golang-client"
+      },
+      {
+        "name": "github.com/grafana/grafana-app-sdk",
+        "version": "v0.51.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana-app-sdk"
+      },
+      {
+        "name": "github.com/grafana/grafana-app-sdk/logging",
+        "version": "v0.51.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana-app-sdk/logging"
+      },
+      {
+        "name": "github.com/grafana/grafana-aws-sdk",
+        "version": "v1.4.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana-aws-sdk"
+      },
+      {
+        "name": "github.com/grafana/grafana-azure-sdk-go/v2",
+        "version": "v2.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana-azure-sdk-go/v2"
+      },
+      {
+        "name": "github.com/grafana/grafana-cloud-migration-snapshot",
+        "version": "v1.10.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana-cloud-migration-snapshot"
+      },
+      {
+        "name": "github.com/grafana/grafana-google-sdk-go",
+        "version": "v0.4.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana-google-sdk-go"
+      },
+      {
+        "name": "github.com/grafana/grafana-openapi-client-go",
+        "version": "v0.0.0-20231213163343-bd475d63fb79",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana-openapi-client-go"
+      },
+      {
+        "name": "github.com/grafana/grafana-plugin-sdk-go",
+        "version": "v0.290.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana-plugin-sdk-go"
+      },
+      {
+        "name": "github.com/grafana/loki/pkg/push",
+        "version": "v0.0.0-20250823105456-332df2b20000",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/loki/pkg/push"
+      },
+      {
+        "name": "github.com/grafana/loki/v3",
+        "version": "v3.2.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/loki/v3"
+      },
+      {
+        "name": "github.com/grafana/otel-profiling-go",
+        "version": "v0.5.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/otel-profiling-go"
+      },
+      {
+        "name": "github.com/grafana/pyroscope-go/godeltaprof",
+        "version": "v0.1.9",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/pyroscope-go/godeltaprof"
+      },
+      {
+        "name": "github.com/grafana/pyroscope/api",
+        "version": "v1.2.1-0.20251118081820-ace37f973a0f",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/pyroscope/api"
+      },
+      {
+        "name": "github.com/grafana/tempo",
+        "version": "v1.5.1-0.20250529124718-87c2dc380cec",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/tempo"
+      },
+      {
+        "name": "github.com/grpc-ecosystem/go-grpc-middleware",
+        "version": "v1.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grpc-ecosystem/go-grpc-middleware"
+      },
+      {
+        "name": "github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus",
+        "version": "v1.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus"
+      },
+      {
+        "name": "github.com/grpc-ecosystem/go-grpc-middleware/v2",
+        "version": "v2.3.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grpc-ecosystem/go-grpc-middleware/v2"
+      },
+      {
+        "name": "github.com/grpc-ecosystem/grpc-gateway/v2",
+        "version": "v2.27.8",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grpc-ecosystem/grpc-gateway/v2"
+      },
+      {
+        "name": "github.com/hashicorp/go-hclog",
+        "version": "v1.6.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/go-hclog"
+      },
+      {
+        "name": "github.com/hashicorp/go-multierror",
+        "version": "v1.1.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/go-multierror"
+      },
+      {
+        "name": "github.com/hashicorp/go-plugin",
+        "version": "v1.7.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/go-plugin"
+      },
+      {
+        "name": "github.com/hashicorp/go-version",
+        "version": "v1.7.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/go-version"
+      },
+      {
+        "name": "github.com/hashicorp/golang-lru/v2",
+        "version": "v2.0.7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/golang-lru/v2"
+      },
+      {
+        "name": "github.com/hashicorp/hcl/v2",
+        "version": "v2.24.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/hcl/v2"
+      },
+      {
+        "name": "github.com/huandu/xstrings",
+        "version": "v1.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/huandu/xstrings"
+      },
+      {
+        "name": "github.com/influxdata/influxdb-client-go/v2",
+        "version": "v2.13.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/influxdata/influxdb-client-go/v2"
+      },
+      {
+        "name": "github.com/influxdata/influxql",
+        "version": "v1.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/influxdata/influxql"
+      },
+      {
+        "name": "github.com/influxdata/line-protocol",
+        "version": "v0.0.0-20210922203350-b1ad95c89adf",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/influxdata/line-protocol"
+      },
+      {
+        "name": "github.com/jackc/pgx/v5",
+        "version": "v5.8.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jackc/pgx/v5"
+      },
+      {
+        "name": "github.com/jmespath-community/go-jmespath",
+        "version": "v1.1.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jmespath-community/go-jmespath"
+      },
+      {
+        "name": "github.com/jmoiron/sqlx",
+        "version": "v1.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jmoiron/sqlx"
+      },
+      {
+        "name": "github.com/json-iterator/go",
+        "version": "v1.1.12",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/json-iterator/go"
+      },
+      {
+        "name": "github.com/klauspost/pgzip",
+        "version": "v1.2.6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/klauspost/pgzip"
+      },
+      {
+        "name": "github.com/lib/pq",
+        "version": "v1.10.9",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/lib/pq"
+      },
+      {
+        "name": "github.com/m3db/prometheus_remote_client_golang",
+        "version": "v0.4.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/m3db/prometheus_remote_client_golang"
+      },
+      {
+        "name": "github.com/madflojo/testcerts",
+        "version": "v1.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/madflojo/testcerts"
+      },
+      {
+        "name": "github.com/mattn/go-isatty",
+        "version": "v0.0.20",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mattn/go-isatty"
+      },
+      {
+        "name": "github.com/matttproud/golang_protobuf_extensions",
+        "version": "v1.0.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/matttproud/golang_protobuf_extensions"
+      },
+      {
+        "name": "github.com/microsoft/go-mssqldb",
+        "version": "v1.9.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/microsoft/go-mssqldb"
+      },
+      {
+        "name": "github.com/migueleliasweb/go-github-mock",
+        "version": "v1.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/migueleliasweb/go-github-mock"
+      },
+      {
+        "name": "github.com/mitchellh/mapstructure",
+        "version": "v1.5.1-0.20231216201459-8508981c8b6c",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mitchellh/mapstructure"
+      },
+      {
+        "name": "github.com/mocktools/go-smtp-mock/v2",
+        "version": "v2.5.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mocktools/go-smtp-mock/v2"
+      },
+      {
+        "name": "github.com/modern-go/reflect2",
+        "version": "v1.0.3-0.20250322232337-35a7c28c31ee",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/modern-go/reflect2"
+      },
+      {
+        "name": "github.com/mwitkow/go-conntrack",
+        "version": "v0.0.0-20190716064945-2f068394615f",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mwitkow/go-conntrack"
+      },
+      {
+        "name": "github.com/olekukonko/tablewriter",
+        "version": "v1.1.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/olekukonko/tablewriter"
+      },
+      {
+        "name": "github.com/open-feature/go-sdk",
+        "version": "v1.17.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-feature/go-sdk"
+      },
+      {
+        "name": "github.com/open-feature/go-sdk-contrib/providers/go-feature-flag",
+        "version": "v0.2.6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-feature/go-sdk-contrib/providers/go-feature-flag"
+      },
+      {
+        "name": "github.com/open-feature/go-sdk-contrib/providers/ofrep",
+        "version": "v0.1.7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-feature/go-sdk-contrib/providers/ofrep"
+      },
+      {
+        "name": "github.com/openfga/api/proto",
+        "version": "v0.0.0-20260122164422-25e22cb1875b",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/openfga/api/proto"
+      },
+      {
+        "name": "github.com/openfga/language/pkg/go",
+        "version": "v0.2.0-beta.2.0.20251027165255-0f8f255e5f6c",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/openfga/language/pkg/go"
+      },
+      {
+        "name": "github.com/openfga/openfga",
+        "version": "v1.11.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/openfga/openfga"
+      },
+      {
+        "name": "github.com/opentracing-contrib/go-grpc",
+        "version": "v0.1.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/opentracing-contrib/go-grpc"
+      },
+      {
+        "name": "github.com/opentracing/opentracing-go",
+        "version": "v1.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/opentracing/opentracing-go"
+      },
+      {
+        "name": "github.com/openzipkin/zipkin-go",
+        "version": "v0.4.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/openzipkin/zipkin-go"
+      },
+      {
+        "name": "github.com/patrickmn/go-cache",
+        "version": "v2.1.0+incompatible",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/patrickmn/go-cache"
+      },
+      {
+        "name": "github.com/phpdave11/gofpdi",
+        "version": "v1.0.14",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/phpdave11/gofpdi"
+      },
+      {
+        "name": "github.com/pressly/goose/v3",
+        "version": "v3.26.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/pressly/goose/v3"
+      },
+      {
+        "name": "github.com/prometheus/alertmanager",
+        "version": "v0.28.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/alertmanager"
+      },
+      {
+        "name": "github.com/prometheus/client_golang",
+        "version": "v1.23.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/client_golang"
+      },
+      {
+        "name": "github.com/prometheus/client_model",
+        "version": "v0.6.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/client_model"
+      },
+      {
+        "name": "github.com/prometheus/common",
+        "version": "v0.67.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/common"
+      },
+      {
+        "name": "github.com/prometheus/prometheus",
+        "version": "v0.303.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/prometheus"
+      },
+      {
+        "name": "github.com/prometheus/sigv4",
+        "version": "v0.1.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/sigv4"
+      },
+      {
+        "name": "github.com/puzpuzpuz/xsync/v4",
+        "version": "v4.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/puzpuzpuz/xsync/v4"
+      },
+      {
+        "name": "github.com/redis/go-redis/v9",
+        "version": "v9.14.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/redis/go-redis/v9"
+      },
+      {
+        "name": "github.com/robfig/cron/v3",
+        "version": "v3.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/robfig/cron/v3"
+      },
+      {
+        "name": "github.com/rs/cors",
+        "version": "v1.11.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/rs/cors"
+      },
+      {
+        "name": "github.com/russellhaering/goxmldsig",
+        "version": "v1.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/russellhaering/goxmldsig"
+      },
+      {
+        "name": "github.com/shopspring/decimal",
+        "version": "v1.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/shopspring/decimal"
+      },
+      {
+        "name": "github.com/spf13/cobra",
+        "version": "v1.10.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/cobra"
+      },
+      {
+        "name": "github.com/spf13/pflag",
+        "version": "v1.0.10",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/pflag"
+      },
+      {
+        "name": "github.com/spyzhov/ajson",
+        "version": "v0.9.6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spyzhov/ajson"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.11.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      },
+      {
+        "name": "github.com/testcontainers/testcontainers-go",
+        "version": "v0.40.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/testcontainers/testcontainers-go"
+      },
+      {
+        "name": "github.com/thomaspoignant/go-feature-flag",
+        "version": "v1.42.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/thomaspoignant/go-feature-flag"
+      },
+      {
+        "name": "github.com/tjhop/slog-gokit",
+        "version": "v0.1.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/tjhop/slog-gokit"
+      },
+      {
+        "name": "github.com/ua-parser/uap-go",
+        "version": "v0.0.0-20250213224047-9c035f085b90",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/ua-parser/uap-go"
+      },
+      {
+        "name": "github.com/urfave/cli/v2",
+        "version": "v2.27.7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/urfave/cli/v2"
+      },
+      {
+        "name": "github.com/urfave/cli/v3",
+        "version": "v3.6.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/urfave/cli/v3"
+      },
+      {
+        "name": "github.com/wk8/go-ordered-map",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/wk8/go-ordered-map"
+      },
+      {
+        "name": "github.com/xlab/treeprint",
+        "version": "v1.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/xlab/treeprint"
+      },
+      {
+        "name": "github.com/youmark/pkcs8",
+        "version": "v0.0.0-20240726163527-a2c0da244d78",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/youmark/pkcs8"
+      },
+      {
+        "name": "github.com/yudai/gojsondiff",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/yudai/gojsondiff"
+      },
+      {
+        "name": "go.etcd.io/bbolt",
+        "version": "v1.4.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.etcd.io/bbolt"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/pdata",
+        "version": "v1.44.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/pdata"
+      },
+      {
+        "name": "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc",
+        "version": "v0.65.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
+      },
+      {
+        "name": "go.opentelemetry.io/contrib/instrumentation/net/http/httptrace/otelhttptrace",
+        "version": "v0.65.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/contrib/instrumentation/net/http/httptrace/otelhttptrace"
+      },
+      {
+        "name": "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp",
+        "version": "v0.65.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
+      },
+      {
+        "name": "go.opentelemetry.io/contrib/propagators/jaeger",
+        "version": "v1.40.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/contrib/propagators/jaeger"
+      },
+      {
+        "name": "go.opentelemetry.io/contrib/samplers/jaegerremote",
+        "version": "v0.34.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/contrib/samplers/jaegerremote"
+      },
+      {
+        "name": "go.opentelemetry.io/otel",
+        "version": "v1.40.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/exporters/jaeger",
+        "version": "v1.17.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/exporters/jaeger"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/exporters/otlp/otlptrace",
+        "version": "v1.40.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/exporters/otlp/otlptrace"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc",
+        "version": "v1.40.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/sdk",
+        "version": "v1.40.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/sdk"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/trace",
+        "version": "v1.40.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/trace"
+      },
+      {
+        "name": "go.uber.org/atomic",
+        "version": "v1.11.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.uber.org/atomic"
+      },
+      {
+        "name": "go.uber.org/goleak",
+        "version": "v1.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.uber.org/goleak"
+      },
+      {
+        "name": "go.uber.org/mock",
+        "version": "v0.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.uber.org/mock"
+      },
+      {
+        "name": "go.uber.org/multierr",
+        "version": "v1.11.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.uber.org/multierr"
+      },
+      {
+        "name": "go.uber.org/zap",
+        "version": "v1.27.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.uber.org/zap"
+      },
+      {
+        "name": "go.yaml.in/yaml/v3",
+        "version": "v3.0.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.yaml.in/yaml/v3"
+      },
+      {
+        "name": "gocloud.dev",
+        "version": "v0.44.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gocloud.dev"
+      },
+      {
+        "name": "gocloud.dev/secrets/hashivault",
+        "version": "v0.44.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gocloud.dev/secrets/hashivault"
+      },
+      {
+        "name": "golang.org/x/exp",
+        "version": "v0.0.0-20260112195511-716be5621a96",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/exp"
+      },
+      {
+        "name": "golang.org/x/net",
+        "version": "v0.51.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/net"
+      },
+      {
+        "name": "golang.org/x/oauth2",
+        "version": "v0.35.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/oauth2"
+      },
+      {
+        "name": "golang.org/x/sync",
+        "version": "v0.19.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/sync"
+      },
+      {
+        "name": "golang.org/x/text",
+        "version": "v0.34.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/text"
+      },
+      {
+        "name": "golang.org/x/time",
+        "version": "v0.14.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/time"
+      },
+      {
+        "name": "gonum.org/v1/gonum",
+        "version": "v0.17.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gonum.org/v1/gonum"
+      },
+      {
+        "name": "google.golang.org/api",
+        "version": "v0.256.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/api"
+      },
+      {
+        "name": "google.golang.org/grpc",
+        "version": "v1.79.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/grpc"
+      },
+      {
+        "name": "google.golang.org/protobuf",
+        "version": "v1.36.11",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/protobuf"
+      },
+      {
+        "name": "gopkg.in/ini.v1",
+        "version": "v1.67.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gopkg.in/ini.v1"
+      },
+      {
+        "name": "gopkg.in/mail.v2",
+        "version": "v2.3.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gopkg.in/mail.v2"
+      },
+      {
+        "name": "k8s.io/api",
+        "version": "v0.35.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/api"
+      },
+      {
+        "name": "k8s.io/apiextensions-apiserver",
+        "version": "v0.35.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/apiextensions-apiserver"
+      },
+      {
+        "name": "k8s.io/apimachinery",
+        "version": "v0.35.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/apimachinery"
+      },
+      {
+        "name": "k8s.io/apiserver",
+        "version": "v0.35.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/apiserver"
+      },
+      {
+        "name": "k8s.io/client-go",
+        "version": "v0.35.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/client-go"
+      },
+      {
+        "name": "k8s.io/component-base",
+        "version": "v0.35.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/component-base"
+      },
+      {
+        "name": "k8s.io/klog/v2",
+        "version": "v2.130.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/klog/v2"
+      },
+      {
+        "name": "k8s.io/kube-aggregator",
+        "version": "v0.35.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/kube-aggregator"
+      },
+      {
+        "name": "k8s.io/kube-openapi",
+        "version": "v0.0.0-20260127142750-a19766b6e2d4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/kube-openapi"
+      },
+      {
+        "name": "k8s.io/utils",
+        "version": "v0.0.0-20251002143259-bc988d571ff4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/utils"
+      },
+      {
+        "name": "modernc.org/sqlite",
+        "version": "v1.44.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/modernc.org/sqlite"
+      },
+      {
+        "name": "pgregory.net/rapid",
+        "version": "v1.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/pgregory.net/rapid"
+      },
+      {
+        "name": "sigs.k8s.io/randfill",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/sigs.k8s.io/randfill"
+      },
+      {
+        "name": "sigs.k8s.io/structured-merge-diff/v6",
+        "version": "v6.3.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/sigs.k8s.io/structured-merge-diff/v6"
+      },
+      {
+        "name": "xorm.io/builder",
+        "version": "v0.3.13",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/xorm.io/builder"
+      },
+      {
+        "name": "github.com/grafana/grafana/apps/advisor",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/apps/advisor"
+      },
+      {
+        "name": "github.com/grafana/grafana/apps/alerting/alertenrichment",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/apps/alerting/alertenrichment"
+      },
+      {
+        "name": "github.com/grafana/grafana/apps/alerting/historian",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/apps/alerting/historian"
+      },
+      {
+        "name": "github.com/grafana/grafana/apps/alerting/notifications",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/apps/alerting/notifications"
+      },
+      {
+        "name": "github.com/grafana/grafana/apps/alerting/rules",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/apps/alerting/rules"
+      },
+      {
+        "name": "github.com/grafana/grafana/apps/annotation",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/apps/annotation"
+      },
+      {
+        "name": "github.com/grafana/grafana/apps/collections",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/apps/collections"
+      },
+      {
+        "name": "github.com/grafana/grafana/apps/correlations",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/apps/correlations"
+      },
+      {
+        "name": "github.com/grafana/grafana/apps/dashboard",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/apps/dashboard"
+      },
+      {
+        "name": "github.com/grafana/grafana/apps/dashvalidator",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/apps/dashvalidator"
+      },
+      {
+        "name": "github.com/grafana/grafana/apps/example",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/apps/example"
+      },
+      {
+        "name": "github.com/grafana/grafana/apps/folder",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/apps/folder"
+      },
+      {
+        "name": "github.com/grafana/grafana/apps/iam",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/apps/iam"
+      },
+      {
+        "name": "github.com/grafana/grafana/apps/live",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/apps/live"
+      },
+      {
+        "name": "github.com/grafana/grafana/apps/logsdrilldown",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/apps/logsdrilldown"
+      },
+      {
+        "name": "github.com/grafana/grafana/apps/playlist",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/apps/playlist"
+      },
+      {
+        "name": "github.com/grafana/grafana/apps/plugins",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/apps/plugins"
+      },
+      {
+        "name": "github.com/grafana/grafana/apps/preferences",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/apps/preferences"
+      },
+      {
+        "name": "github.com/grafana/grafana/apps/provisioning",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/apps/provisioning"
+      },
+      {
+        "name": "github.com/grafana/grafana/apps/quotas",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/apps/quotas"
+      },
+      {
+        "name": "github.com/grafana/grafana/apps/scope",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/apps/scope"
+      },
+      {
+        "name": "github.com/grafana/grafana/apps/secret",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/apps/secret"
+      },
+      {
+        "name": "github.com/grafana/grafana/apps/shorturl",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/apps/shorturl"
+      },
+      {
+        "name": "github.com/grafana/grafana/pkg/aggregator",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/pkg/aggregator"
+      },
+      {
+        "name": "github.com/grafana/grafana/pkg/apimachinery",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/pkg/apimachinery"
+      },
+      {
+        "name": "github.com/grafana/grafana/pkg/apiserver",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/pkg/apiserver"
+      },
+      {
+        "name": "github.com/grafana/grafana/pkg/plugins",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/pkg/plugins"
+      },
+      {
+        "name": "//",
+        "version": "This",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev///"
+      },
+      {
+        "name": "//",
+        "version": "For",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev///"
+      },
+      {
+        "name": "//",
+        "version": "Check",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev///"
+      },
+      {
+        "name": "github.com/grafana/grafana/pkg/promlib",
+        "version": "v0.0.8",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/pkg/promlib"
+      },
+      {
+        "name": "github.com/grafana/grafana/pkg/semconv",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/pkg/semconv"
+      },
+      {
+        "name": "github.com/grafana/grafana/pkg/storage/unified/resource/kv",
+        "version": "v0.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/grafana/pkg/storage/unified/resource/kv"
+      },
+      {
+        "name": "github.com/cenkalti/backoff/v4",
+        "version": "v4.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/cenkalti/backoff/v4"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "grafana",
+        "type": "human",
+        "uri": "https://github.com/grafana"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 99437,
+      "validation_diversity": 1,
+      "context_breadth": 0.7,
+      "temporal_stability": 0.94,
+      "test_coverage": 0.2,
+      "documentation_quality": 0.23
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.774
+  }
+}

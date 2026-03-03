@@ -1,0 +1,393 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/golang-migrate--migrate",
+  "meta": {
+    "title": "migrate",
+    "description": "Database migrations. CLI and Golang library.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:42:59.019Z",
+    "dateModified": "2026-03-03T08:42:59.019Z",
+    "keywords": [
+      "aws-s3",
+      "cassandra",
+      "database",
+      "databases",
+      "go",
+      "golang",
+      "google-cloud-spanner",
+      "google-cloud-storage",
+      "hacktoberfest",
+      "mariadb",
+      "migration",
+      "migrations",
+      "mongodb",
+      "mysql",
+      "neo4j",
+      "postgres",
+      "spanner",
+      "sql",
+      "sqlite"
+    ],
+    "license": "NOASSERTION"
+  },
+  "problemSolved": {
+    "statement": "__Database migrations written in Go. Use as [CLI](#cli-usage) or import as [library](#use-in-your-go-project).__",
+    "context": "__Database migrations written in Go. Use as [CLI](#cli-usage) or import as [library](#use-in-your-go-project).__\n\n* Migrate reads migrations from [sources](#migration-sources)\n   and applies them in correct order to a [database](#databases).\n* Drivers are \"dumb\", migrate glues everything together and makes sure the logic is bulletproof.\n   (Keeps the drivers lightweight, too.)\n* Database drivers don't assume things or try to correct user input. When in doubt, fail.\n\nForked from [mattes/migrate](https://github.com/mattes/migrate)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "data-management",
+    "developer-tools",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "18170 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "1550 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:42:59.019Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/golang-migrate/migrate",
+        "description": "GitHub repository: golang-migrate/migrate"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "cloud.google.com/go/spanner",
+        "version": "v1.85.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/cloud.google.com/go/spanner"
+      },
+      {
+        "name": "cloud.google.com/go/storage",
+        "version": "v1.56.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/cloud.google.com/go/storage"
+      },
+      {
+        "name": "github.com/Azure/go-autorest/autorest/adal",
+        "version": "v0.9.16",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Azure/go-autorest/autorest/adal"
+      },
+      {
+        "name": "github.com/ClickHouse/clickhouse-go",
+        "version": "v1.4.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/ClickHouse/clickhouse-go"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go",
+        "version": "v1.49.6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go"
+      },
+      {
+        "name": "github.com/cenkalti/backoff/v4",
+        "version": "v4.1.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/cenkalti/backoff/v4"
+      },
+      {
+        "name": "github.com/cockroachdb/cockroach-go/v2",
+        "version": "v2.1.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/cockroachdb/cockroach-go/v2"
+      },
+      {
+        "name": "github.com/dhui/dktest",
+        "version": "v0.4.6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/dhui/dktest"
+      },
+      {
+        "name": "github.com/docker/docker",
+        "version": "v28.3.3+incompatible",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/docker/docker"
+      },
+      {
+        "name": "github.com/fsouza/fake-gcs-server",
+        "version": "v1.17.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/fsouza/fake-gcs-server"
+      },
+      {
+        "name": "github.com/go-sql-driver/mysql",
+        "version": "v1.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-sql-driver/mysql"
+      },
+      {
+        "name": "github.com/gobuffalo/here",
+        "version": "v0.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gobuffalo/here"
+      },
+      {
+        "name": "github.com/gocql/gocql",
+        "version": "v0.0.0-20210515062232-b7ef815b4556",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gocql/gocql"
+      },
+      {
+        "name": "github.com/google/go-github/v39",
+        "version": "v39.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/go-github/v39"
+      },
+      {
+        "name": "github.com/jackc/pgconn",
+        "version": "v1.14.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jackc/pgconn"
+      },
+      {
+        "name": "github.com/jackc/pgerrcode",
+        "version": "v0.0.0-20220416144525-469b46aa5efa",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jackc/pgerrcode"
+      },
+      {
+        "name": "github.com/jackc/pgx/v4",
+        "version": "v4.18.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jackc/pgx/v4"
+      },
+      {
+        "name": "github.com/jackc/pgx/v5",
+        "version": "v5.7.6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jackc/pgx/v5"
+      },
+      {
+        "name": "github.com/ktrysmt/go-bitbucket",
+        "version": "v0.6.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/ktrysmt/go-bitbucket"
+      },
+      {
+        "name": "github.com/lib/pq",
+        "version": "v1.10.9",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/lib/pq"
+      },
+      {
+        "name": "github.com/markbates/pkger",
+        "version": "v0.15.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/markbates/pkger"
+      },
+      {
+        "name": "github.com/mattn/go-sqlite3",
+        "version": "v1.14.22",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mattn/go-sqlite3"
+      },
+      {
+        "name": "github.com/microsoft/go-mssqldb",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/microsoft/go-mssqldb"
+      },
+      {
+        "name": "github.com/mutecomm/go-sqlcipher/v4",
+        "version": "v4.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mutecomm/go-sqlcipher/v4"
+      },
+      {
+        "name": "github.com/nakagami/firebirdsql",
+        "version": "v0.0.0-20190310045651-3c02a58cfed8",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/nakagami/firebirdsql"
+      },
+      {
+        "name": "github.com/neo4j/neo4j-go-driver",
+        "version": "v1.8.1-0.20200803113522-b626aa943eba",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/neo4j/neo4j-go-driver"
+      },
+      {
+        "name": "github.com/snowflakedb/gosnowflake",
+        "version": "v1.6.19",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/snowflakedb/gosnowflake"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.10.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      },
+      {
+        "name": "github.com/xanzy/go-gitlab",
+        "version": "v0.15.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/xanzy/go-gitlab"
+      },
+      {
+        "name": "go.mongodb.org/mongo-driver",
+        "version": "v1.7.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.mongodb.org/mongo-driver"
+      },
+      {
+        "name": "golang.org/x/oauth2",
+        "version": "v0.30.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/oauth2"
+      },
+      {
+        "name": "golang.org/x/tools/godoc",
+        "version": "v0.1.0-deprecated",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/tools/godoc"
+      },
+      {
+        "name": "google.golang.org/api",
+        "version": "v0.247.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/api"
+      },
+      {
+        "name": "modernc.org/ql",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/modernc.org/ql"
+      },
+      {
+        "name": "modernc.org/sqlite",
+        "version": "v1.18.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/modernc.org/sqlite"
+      },
+      {
+        "name": "github.com/rqlite/gorqlite",
+        "version": "v0.0.0-20230708021416-2acd02b70b79",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/rqlite/gorqlite"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "golang-migrate",
+        "type": "human",
+        "uri": "https://github.com/golang-migrate"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 21270,
+      "validation_diversity": 0.81,
+      "context_breadth": 0.7,
+      "temporal_stability": 1,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.5
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.803
+  }
+}

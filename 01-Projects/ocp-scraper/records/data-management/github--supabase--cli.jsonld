@@ -1,0 +1,538 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/supabase--cli",
+  "meta": {
+    "title": "Supabase CLI",
+    "description": "Supabase CLI. Manage postgres migrations, run Supabase locally, deploy edge functions. Postgres backups. Generating types from your database schema.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:44:39.541Z",
+    "dateModified": "2026-03-03T08:44:39.541Z",
+    "keywords": [
+      "cli",
+      "database",
+      "database-management",
+      "dbms",
+      "environment",
+      "local",
+      "postgres",
+      "postgresql",
+      "supabase"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "[![Coverage Status](https://coveralls.io/repos/github/supabase/cli/badge.svg?branch=develop)](https://coveralls.io/github/supabase/cli?branch=develop) [![Bitbucket Pipelines](https://img.shields.io/bitbucket/pipelines/supabase-cli/setup-cli/master?style=flat-square&label=Bitbucket%20Canary)](https://bitbucket.org/supabase-cli/setup-cli/pipelines) [![Gitlab Pipeline Status](https://img.shields.io/gitlab/pipeline-status/sweatybridge%2Fsetup-cli?label=Gitlab%20Canary)\n](https://gitlab.com/sweatybridge/setup-cli/-/pipelines)",
+    "context": "[![Coverage Status](https://coveralls.io/repos/github/supabase/cli/badge.svg?branch=develop)](https://coveralls.io/github/supabase/cli?branch=develop) [![Bitbucket Pipelines](https://img.shields.io/bitbucket/pipelines/supabase-cli/setup-cli/master?style=flat-square&label=Bitbucket%20Canary)](https://bitbucket.org/supabase-cli/setup-cli/pipelines) [![Gitlab Pipeline Status](https://img.shields.io/gitlab/pipeline-status/sweatybridge%2Fsetup-cli?label=Gitlab%20Canary)\n](https://gitlab.com/sweatybridge/setup-cli/-/pipelines)\n\n[Supabase](https://supabase.io) is an open source Firebase alternative. We're building the features of Firebase using enterprise-grade open source tools.\n\nThis repository contains all the functionality for Supabase CLI.\n\n- [x] Running Supabase locally\n- [x] Managing database migrations\n- [x] Creating and deploying Supabase Functions\n- [x] Generating types directly from your database schema\n- [x] Making authenticated HTTP requests to [Management API](https://supabase.com/docs/reference/api/introduction)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "data-management",
+    "developer-tools",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "1601 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "376 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:44:39.541Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/supabase/cli",
+        "description": "GitHub repository: supabase/cli"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://supabase.com/docs/reference/cli/about",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "bin-links",
+        "version": "^6.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/bin-links"
+      },
+      {
+        "name": "https-proxy-agent",
+        "version": "^7.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/https-proxy-agent"
+      },
+      {
+        "name": "node-fetch",
+        "version": "^3.3.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/node-fetch"
+      },
+      {
+        "name": "tar",
+        "version": "7.5.9",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/tar"
+      },
+      {
+        "name": "github.com/BurntSushi/toml",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/BurntSushi/toml"
+      },
+      {
+        "name": "github.com/Netflix/go-env",
+        "version": "v0.1.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Netflix/go-env"
+      },
+      {
+        "name": "github.com/andybalholm/brotli",
+        "version": "v1.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/andybalholm/brotli"
+      },
+      {
+        "name": "github.com/cenkalti/backoff/v4",
+        "version": "v4.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/cenkalti/backoff/v4"
+      },
+      {
+        "name": "github.com/charmbracelet/bubbles",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/charmbracelet/bubbles"
+      },
+      {
+        "name": "github.com/charmbracelet/bubbletea",
+        "version": "v1.3.10",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/charmbracelet/bubbletea"
+      },
+      {
+        "name": "github.com/charmbracelet/glamour",
+        "version": "v0.10.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/charmbracelet/glamour"
+      },
+      {
+        "name": "github.com/charmbracelet/lipgloss",
+        "version": "v1.1.1-0.20250404203927-76690c660834",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/charmbracelet/lipgloss"
+      },
+      {
+        "name": "github.com/compose-spec/compose-go/v2",
+        "version": "v2.9.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/compose-spec/compose-go/v2"
+      },
+      {
+        "name": "github.com/containerd/errdefs",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/containerd/errdefs"
+      },
+      {
+        "name": "github.com/containers/common",
+        "version": "v0.64.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/containers/common"
+      },
+      {
+        "name": "github.com/docker/cli",
+        "version": "v28.5.2+incompatible",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/docker/cli"
+      },
+      {
+        "name": "github.com/docker/compose/v2",
+        "version": "v2.40.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/docker/compose/v2"
+      },
+      {
+        "name": "github.com/docker/docker",
+        "version": "v28.5.2+incompatible",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/docker/docker"
+      },
+      {
+        "name": "github.com/docker/go-connections",
+        "version": "v0.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/docker/go-connections"
+      },
+      {
+        "name": "github.com/docker/go-units",
+        "version": "v0.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/docker/go-units"
+      },
+      {
+        "name": "github.com/fsnotify/fsnotify",
+        "version": "v1.9.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/fsnotify/fsnotify"
+      },
+      {
+        "name": "github.com/getsentry/sentry-go",
+        "version": "v0.43.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/getsentry/sentry-go"
+      },
+      {
+        "name": "github.com/go-errors/errors",
+        "version": "v1.5.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-errors/errors"
+      },
+      {
+        "name": "github.com/go-git/go-git/v5",
+        "version": "v5.17.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-git/go-git/v5"
+      },
+      {
+        "name": "github.com/go-playground/validator/v10",
+        "version": "v10.30.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-playground/validator/v10"
+      },
+      {
+        "name": "github.com/go-viper/mapstructure/v2",
+        "version": "v2.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-viper/mapstructure/v2"
+      },
+      {
+        "name": "github.com/go-xmlfmt/xmlfmt",
+        "version": "v1.1.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-xmlfmt/xmlfmt"
+      },
+      {
+        "name": "github.com/golang-jwt/jwt/v5",
+        "version": "v5.3.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/golang-jwt/jwt/v5"
+      },
+      {
+        "name": "github.com/google/go-github/v62",
+        "version": "v62.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/go-github/v62"
+      },
+      {
+        "name": "github.com/google/go-querystring",
+        "version": "v1.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/go-querystring"
+      },
+      {
+        "name": "github.com/google/jsonschema-go",
+        "version": "v0.4.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/jsonschema-go"
+      },
+      {
+        "name": "github.com/google/uuid",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/uuid"
+      },
+      {
+        "name": "github.com/h2non/gock",
+        "version": "v1.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/h2non/gock"
+      },
+      {
+        "name": "github.com/jackc/pgconn",
+        "version": "v1.14.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jackc/pgconn"
+      },
+      {
+        "name": "github.com/jackc/pgerrcode",
+        "version": "v0.0.0-20240316143900-6e2875d9b438",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jackc/pgerrcode"
+      },
+      {
+        "name": "github.com/jackc/pgproto3/v2",
+        "version": "v2.3.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jackc/pgproto3/v2"
+      },
+      {
+        "name": "github.com/jackc/pgx/v4",
+        "version": "v4.18.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jackc/pgx/v4"
+      },
+      {
+        "name": "github.com/joho/godotenv",
+        "version": "v1.5.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/joho/godotenv"
+      },
+      {
+        "name": "github.com/mithrandie/csvq-driver",
+        "version": "v1.7.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mithrandie/csvq-driver"
+      },
+      {
+        "name": "github.com/muesli/reflow",
+        "version": "v0.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/muesli/reflow"
+      },
+      {
+        "name": "github.com/multigres/multigres",
+        "version": "v0.0.0-20260126223308-f5a52171bbc4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/multigres/multigres"
+      },
+      {
+        "name": "github.com/oapi-codegen/nullable",
+        "version": "v1.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/oapi-codegen/nullable"
+      },
+      {
+        "name": "github.com/olekukonko/tablewriter",
+        "version": "v1.1.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/olekukonko/tablewriter"
+      },
+      {
+        "name": "github.com/slack-go/slack",
+        "version": "v0.18.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/slack-go/slack"
+      },
+      {
+        "name": "github.com/spf13/afero",
+        "version": "v1.15.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/afero"
+      },
+      {
+        "name": "github.com/spf13/cobra",
+        "version": "v1.10.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/cobra"
+      },
+      {
+        "name": "github.com/spf13/pflag",
+        "version": "v1.0.10",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/pflag"
+      },
+      {
+        "name": "github.com/spf13/viper",
+        "version": "v1.21.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/viper"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.11.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      },
+      {
+        "name": "github.com/stripe/pg-schema-diff",
+        "version": "v1.0.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stripe/pg-schema-diff"
+      },
+      {
+        "name": "github.com/supabase/cli/pkg",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/supabase/cli/pkg"
+      },
+      {
+        "name": "github.com/tidwall/jsonc",
+        "version": "v0.3.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/tidwall/jsonc"
+      },
+      {
+        "name": "github.com/withfig/autocomplete-tools/packages/cobra",
+        "version": "v1.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/withfig/autocomplete-tools/packages/cobra"
+      },
+      {
+        "name": "github.com/zalando/go-keyring",
+        "version": "v0.2.6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/zalando/go-keyring"
+      },
+      {
+        "name": "go.opentelemetry.io/otel",
+        "version": "v1.40.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel"
+      },
+      {
+        "name": "golang.org/x/mod",
+        "version": "v0.33.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/mod"
+      },
+      {
+        "name": "golang.org/x/net",
+        "version": "v0.51.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/net"
+      },
+      {
+        "name": "golang.org/x/oauth2",
+        "version": "v0.35.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/oauth2"
+      },
+      {
+        "name": "golang.org/x/term",
+        "version": "v0.40.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/term"
+      },
+      {
+        "name": "google.golang.org/grpc",
+        "version": "v1.79.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/grpc"
+      },
+      {
+        "name": "gopkg.in/yaml.v3",
+        "version": "v3.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gopkg.in/yaml.v3"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "supabase",
+        "type": "human",
+        "uri": "https://github.com/supabase"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 2353,
+      "validation_diversity": 0.73,
+      "context_breadth": 0.62,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.2,
+      "documentation_quality": 0.58
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.648
+  }
+}

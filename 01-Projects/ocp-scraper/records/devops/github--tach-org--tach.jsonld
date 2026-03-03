@@ -1,0 +1,398 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/tach-org--tach",
+  "meta": {
+    "title": "Tach",
+    "description": "A Python tool to visualize + enforce dependencies, using modular architecture 🌎 Open source 🐍 Installable via pip 🔧 Able to be adopted incrementally - ⚡ Implemented with no runtime impact ♾️ Interoperable with your existing systems 🦀 Written in rust",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:45:01.696Z",
+    "dateModified": "2026-03-03T08:45:01.696Z",
+    "keywords": [
+      "ci",
+      "cli",
+      "code-quality",
+      "config",
+      "dependency-management",
+      "developer-tools",
+      "devops",
+      "framework",
+      "library",
+      "monorepo",
+      "open-source",
+      "package",
+      "productivity",
+      "programming",
+      "python",
+      "rust",
+      "static-code-analysis",
+      "terminal"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "[![downloads](https://static.pepy.tech/badge/tach/month)](https://pepy.tech/project/tach)\n[![version](https://img.shields.io/pypi/v/tach.svg)](https://pypi.Python.org/pypi/tach)\n[![license](https://img.shields.io/pypi/l/tach.svg)](https://pypi.Python.org/pypi/tach)\n[![python](https://img.shields.io/pypi/pyversions/tach.svg)](https://pypi.Python.org/pypi/tach)\n[![ci](https://github.com/gauge-sh/tach/actions/workflows/ci.yml/badge.svg)](https://github.com/gauge-sh/tach/actions/workflows/ci.yml)\n[![basedpyright - checked](https://img.shields.io/badge/basedpyright-checked-ffc000)](https://docs.basedpyright.com)\n[![ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)",
+    "context": "[![downloads](https://static.pepy.tech/badge/tach/month)](https://pepy.tech/project/tach)\n[![version](https://img.shields.io/pypi/v/tach.svg)](https://pypi.Python.org/pypi/tach)\n[![license](https://img.shields.io/pypi/l/tach.svg)](https://pypi.Python.org/pypi/tach)\n[![python](https://img.shields.io/pypi/pyversions/tach.svg)](https://pypi.Python.org/pypi/tach)\n[![ci](https://github.com/gauge-sh/tach/actions/workflows/ci.yml/badge.svg)](https://github.com/gauge-sh/tach/actions/workflows/ci.yml)\n[![basedpyright - checked](https://img.shields.io/badge/basedpyright-checked-ffc000)](https://docs.basedpyright.com)\n[![ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)\n\nTach is a Python tool to enforce dependencies and interfaces, written in Rust.\n\nTach is inspired by the [modular monolith](https://www.milanjovanovic.tech/blog/what-is-a-modular-monolith) architecture.\n\n[Docs](https://docs.gauge.sh)\n\n<div align=\"center\">\n    <img src=\"docs/assets/light_logo.png\" alt=\"gauge-logo\" width=\"30%\"  style=\"border-radius: 50%; padding-bottom: 20px\"/>\n</div>\n\nhttps://github.com/user-attachments/assets/11eec4a1-f80a-4f13-9ff3-91a9760133b6\n\n\n\nTach can enforce:\n\n- 📋 Imports only come from [declared dependencies](https://docs.gauge.sh/usage/configuration#modules)\n- 🤝 Cross-module calls use the [public interface](https://docs.gauge.sh/usage/configuration#interfaces)\n- ⛓️‍💥 [No cycles](https://docs.gauge.sh/usage/configuration) in the dependency graph\n\n\nTach is:\n\n- 🌎 Open source\n- 🐍 Installable via pip\n- 🔧 Able to be adopted incrementally\n- ⚡ Implemented with no runtime impact\n- ♾️ Interoperable with your existing systems",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "devops",
+    "developer-tools",
+    "lang:rust"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "2658 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "81 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:45:01.696Z"
+  },
+  "implementation": {
+    "type": "framework",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/tach-org/tach",
+        "description": "GitHub repository: tach-org/tach"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://docs.gauge.sh/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Rust"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "pyo3",
+        "version": "0.27.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/pyo3"
+      },
+      {
+        "name": "regex",
+        "version": "1.11.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/regex"
+      },
+      {
+        "name": "once_cell",
+        "version": "1.21.3",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/once_cell"
+      },
+      {
+        "name": "ruff_python_ast",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/ruff_python_ast"
+      },
+      {
+        "name": "ruff_python_parser",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/ruff_python_parser"
+      },
+      {
+        "name": "ruff_linter",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/ruff_linter"
+      },
+      {
+        "name": "ruff_source_file",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/ruff_source_file"
+      },
+      {
+        "name": "ruff_text_size",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/ruff_text_size"
+      },
+      {
+        "name": "cached",
+        "version": "0.54.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/cached"
+      },
+      {
+        "name": "globset",
+        "version": "0.4.15",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/globset"
+      },
+      {
+        "name": "toml",
+        "version": "0.8.19",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/toml"
+      },
+      {
+        "name": "thiserror",
+        "version": "2.0.7",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/thiserror"
+      },
+      {
+        "name": "serde",
+        "version": "1.0.216",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/serde"
+      },
+      {
+        "name": "glob",
+        "version": "0.3.2",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/glob"
+      },
+      {
+        "name": "petgraph",
+        "version": "0.7.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/petgraph"
+      },
+      {
+        "name": "serde_json",
+        "version": "1.0.134",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/serde_json"
+      },
+      {
+        "name": "tempfile",
+        "version": "3.17.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tempfile"
+      },
+      {
+        "name": "lsp-server",
+        "version": "0.7.7",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/lsp-server"
+      },
+      {
+        "name": "lsp-types",
+        "version": "0.97.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/lsp-types"
+      },
+      {
+        "name": "crossbeam-channel",
+        "version": "0.5.14",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/crossbeam-channel"
+      },
+      {
+        "name": "ctrlc",
+        "version": "3.4.5",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/ctrlc"
+      },
+      {
+        "name": "rayon",
+        "version": "1.10.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/rayon"
+      },
+      {
+        "name": "parking_lot",
+        "version": "0.12.3",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/parking_lot"
+      },
+      {
+        "name": "itertools",
+        "version": "0.14.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/itertools"
+      },
+      {
+        "name": "toml_edit",
+        "version": "0.22.24",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/toml_edit"
+      },
+      {
+        "name": "console",
+        "version": "0.15.11",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/console"
+      },
+      {
+        "name": "ignore",
+        "version": "0.4.23",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/ignore"
+      },
+      {
+        "name": "dashmap",
+        "version": "6.1.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/dashmap"
+      },
+      {
+        "name": "pyyaml",
+        "version": "~=6.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyyaml/"
+      },
+      {
+        "name": "tomli",
+        "version": ">=1.2.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tomli/"
+      },
+      {
+        "name": "tomli-w",
+        "version": "~=1.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tomli-w/"
+      },
+      {
+        "name": "rich",
+        "version": ">=13.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/rich/"
+      },
+      {
+        "name": "prompt-toolkit",
+        "version": "~=3.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/prompt-toolkit/"
+      },
+      {
+        "name": "GitPython",
+        "version": "~=3.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/GitPython/"
+      },
+      {
+        "name": "networkx",
+        "version": ">=2.6,<4.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/networkx/"
+      },
+      {
+        "name": "pydot",
+        "version": ">=2,<5",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pydot/"
+      },
+      {
+        "name": "stdlib-list",
+        "version": ">=0.10.0; python_version < '3.10'",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/stdlib-list/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "tach-org",
+        "type": "human",
+        "uri": "https://github.com/tach-org"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 2820,
+      "validation_diversity": 0.48,
+      "context_breadth": 0.59,
+      "temporal_stability": 0.95,
+      "test_coverage": 0.67,
+      "documentation_quality": 0.58
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.647
+  }
+}

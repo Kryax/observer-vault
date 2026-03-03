@@ -1,0 +1,179 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/mikeroyal--self-hosting-guide",
+  "meta": {
+    "title": "Table of Contents",
+    "description": "Self-Hosting Guide. Learn all about  locally hosting (on premises & private web servers) and managing software applications by yourself or your organization. Including Cloud, LLMs, WireGuard, Automation, Home Assistant, and Networking.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:43:42.286Z",
+    "dateModified": "2026-03-03T08:43:42.286Z",
+    "keywords": [
+      "authentication",
+      "awesome",
+      "awesome-list",
+      "decentralized",
+      "docker-compose",
+      "home-assistant",
+      "home-automation",
+      "linux",
+      "oauth",
+      "observability",
+      "open-source",
+      "privacy",
+      "raspberry-pi",
+      "reverse-proxy",
+      "search",
+      "self-hosted",
+      "self-hosting",
+      "selfhosted",
+      "ssh",
+      "wireguard"
+    ]
+  },
+  "problemSolved": {
+    "statement": "[Back to the Top](#table-of-contents)",
+    "context": "1. [Getting Started with Self-Hosting](https://github.com/mikeroyal/Self-Hosting-Guide#getting-started-with-self-hosting)\n \n    - [Tools for Self-Hosting](https://github.com/mikeroyal/Self-Hosting-Guide#tools-for-self-hosting)\n       * [Containers](https://github.com/mikeroyal/Self-Hosting-Guide#containers)\n       * [CI/CD](https://github.com/mikeroyal/Self-Hosting-Guide#cicd)\n       * [Development](https://github.com/mikeroyal/Self-Hosting-Guide#development)\n       * [Web servers](#web-servers)\n       * [Large language models (LLMs)](#llms)\n       * [ChatGPT Chatbots](#chatgpt)\n       * [Automation](#automation)\n       * [Configuration Management](#Configuration-Management)\n       * [Cloud Storage](#cloud-storage)\n       * [Cloud](https://github.com/mikeroyal/Self-Hosting-Guide#Cloud)\n        * [Linode](#Linode)\n\t* [Nextcloud](#Nextcloud)\n\t* [DigitalOcean](#DigitalOcean)\n        * [Back4app Web Deployment](#back4app-web-deployment)\n\t* [MinIO Object Storage](#MinIO-Object-Storage)\n       * [Databases](#Databases)\n         - [SQL](#SQL)\n         - [NoSQL](#NoSQL)\n       * [Remote Access](https://github.com/mikeroyal/Self-Hosting-Guide#Remote-Access)\n       * [Virtualization](https://github.com/mikeroyal/Self-Hosting-Guide#Virtualization)\n       * [Password Management](https://github.com/mikeroyal/Self-Hosting-Guide#password-management)\n       * [SSH](#ssh)\n       * [VPN](#vpn)\n       * [LDAP(Lightweight Directory Access Protocol)](#ldap)\n       * [Log Management](#log-management)\n       * [DNS](#dns)\n       * [Network Tools](https://github.com/mikeroyal/Self-Hosting-Guide#network-tools)\n       * [Service Discovery](#service-discovery)\n       * [Security](#security)\n       * [Troubleshooting](#troubleshooting)\n       * [Monitoring](https://github.com/mikeroyal/Self-Hosting-Guide#monitoring)\n       * [Dashboards](#Dashboards)\n       * [Analytics](#Analytics)\n       * [Search](#Search)\n       * [Notifications](#Notifications)\n       * [RSS](#RSS)\n       * [Websites/Blogs](#WebsitesBlogs)\n       * [Social](#Social)\n       * [Nostr](#nostr)\n       * [iMessage](#imessage)\n       * [Communications](https://github.com/mikeroyal/Self-Hosting-Guide#communications)\n       * [Business Management](https://github.com/mikeroyal/Self-Hosting-Guide#business-management)\n       * [Collaboration & Synchronization](https://github.com/mikeroyal/Self-Hosting-Guide#Collaboration--Synchronization)\n       * [Encryption](#Encryption)\n       * [Backups](https://github.com/mikeroyal/Self-Hosting-Guide#backups)\n       * [Snapshots Management/System Recovery](snapshots-managementsystem-recovery)\n       * [Archiving](#archiving)\n       * [Home Server](https://github.com/mikeroyal/Self-Hosting-Guide#home-server)\n       * [Media Server](https://github.com/mikeroyal/Self-Hosting-Guide#media-server)\n       * [Smart Home Automation](#Smart-Home-Automation)\n       * [Voice Assistants](#Voice-Assistants)\n       * [Video Surveillance](#Video-Surveillance)\n       * [Text-To-Speech Synthesis (TTS)](#Text-To-Speech-Synthesis-TTS)\n       * [Video and Audio Processing](#Video-and-Audio-Processing)\n       * [Podcasting](#Podcasting)\n       * [Audiobooks](#Audiobooks)\n       * [Health](#Health)\n       * [Gardening](#gardening)\n       * [Maps](https://github.com/mikeroyal/Self-Hosting-Guide#maps)\n       * [Bookmarks](#Bookmarks)\n       * [Photos](https://github.com/mikeroyal/Self-Hosting-Guide#photos)\n       * [Pastebins](#pastebins)\n       * [Note-Taking](#Note-Taking)\n       * [Time Monitoring](#time-monitoring)\n       * [Wikis](#wikis)\n       * [Gaming](https://github.com/mikeroyal/Self-Hosting-Guide#gaming)\n       * [Foundations/Projects](https://github.com/mikeroyal/Self-Hosting-Guide#foundationsprojects)\n    \n    - [System Hardware](#System-Hardware)\n    - [Operating Systems](#Operating-Systems)\n    - [Storage](https://github.com/mikeroyal/Self-Hosting-Guide#storage)\n    - [File systems](https://github.com/mikeroyal/Self-Hosting-Guide#file-systems)\n    - [Books](https://github.com/mikeroyal/Self-Hosting-Guide#books)\n    - [Podcasts](https://github.com/mikeroyal/Self-Hosting-Guide#podcasts)\n    - [YouTube Channels](https://github.com/mikeroyal/Self-Hosting-Guide#youtube-channels)\n    - [Tutorials & Resources](https://github.com/mikeroyal/Self-Hosting-Guide#tutorials--resources)\n    - [Useful Subreddits to Follow](https://github.com/mikeroyal/Self-Hosting-Guide#subreddits)\n\n2. [WireGuard](https://github.com/mikeroyal/Self-Hosting-Guide#wireguard)\n     * [What is WireGuard?](#what-is-wireguard)\n     * [What is Tailscale?](#what-is-tailscale)\n     * [What is Netmaker?](#what-is-netmaker)\n     * [WireGuard Tools](#wireguard-tools)\n     * [Setting up WireGuard with PiVPN](#setting-up-wireguard-with-pivpn)\n     * [Setting up WireGuard on Unraid](#setting-up-wireguard-on-unraid)\n     * [Setting up WireGuard on pfSense](#setting-up-wireguard-on-pfsense)\n     * [Setting up WireGuard on OpenWRT](#setting-up-wireguard-on-openwrt)\n     * [Setting up WireGuard on Home Assistant](#setting-up-wireguard-on-home-assistant)\n\n3. [Nextcloud](https://github.com/mikeroyal/Self-Hosting-Guide#nextcloud)\n\n4. [Raspberry Pi](https://github.com/mikeroyal/Self-Hosting-Guide#raspberry-pi)\n     \n    * [Models of Raspberry Pi boards](#models-of-raspberry-pi-boards)\n\n    * [Raspberry Pi Learning Resources](#raspberry-pi-learning-resources)\n\n    * [Raspberry Pi Operating Systems](#raspberry-pi-operating-systems)\n\n    * [Raspberry Pi Tools](#raspberry-pi-tools)\n    \n      - [Getting Started with Home Assistant(HA)](#Home-Assistant)\n      - [Getting Started with Homebridge](#Homebridge)\n      - [Getting Started with ESPHome](#ESPHome)\n      - [Turning Raspberry Pi into a Router](#Turning-Raspberry-Pi-into-a-Router)\n      - [Setting up Watchdog Time (WDT) on Raspberry Pi](#setting-watchdog-timer-wdt-on-raspberry-pi)\n\n    * [Raspberry Pi Upgrades](#raspberry-pi-upgrades)\n    \n\n5. [Grafana](https://github.com/mikeroyal/Self-Hosting-Guide#Grafana)\n\n6. [Networking](https://github.com/mikeroyal/Self-Hosting-Guide#networking)\n\n7. [Docker](https://github.com/mikeroyal/Self-Hosting-Guide#docker)\n\n8. [Kubernetes](https://github.com/mikeroyal/Self-Hosting-Guide#kubernetes)\n\n9. [Ansible](https://github.com/mikeroyal/Self-Hosting-Guide#ansible)\n\n10. [Databases](https://github.com/mikeroyal/Self-Hosting-Guide#databases)\n\n11. [Telco 5G](https://github.com/mikeroyal/Self-Hosting-Guide#telco-5g)\n\n12. [Open Source Security](https://github.com/mikeroyal/Self-Hosting-Guide#open-source-security)\n\n13. [Differential Privacy](https://github.com/mikeroyal/Self-Hosting-Guide#differential-privacy)\n\n14. [Machine Learning](https://github.com/mikeroyal/Self-Hosting-Guide#machine-learning)\n\n15. [IoT Protocols](https://github.com/mikeroyal/Self-Hosting-Guide#iot-protocols)\n\n16. [Operating systems (OS)](https://github.com/mikeroyal/Self-Hosting-Guide#operating-systems)\n\n17. [Middleware](https://github.com/mikeroyal/Self-Hosting-Guide#middleware)\n\n18. [Node Flow editors](https://github.com/mikeroyal/Self-Hosting-Guide#node-flow-editors)\n\n19. [Toolkits](https://github.com/mikeroyal/Self-Hosting-Guide#toolkits)\n\n20. [Data visualization](https://github.com/mikeroyal/Self-Hosting-Guide#data-visualization)\n \n21. [Search](https://github.com/mikeroyal/Self-Hosting-Guide#search)\n\n22. [Hardware](https://github.com/mikeroyal/Self-Hosting-Guide#hardware)\n\n23. [In-memory data grids](https://github.com/mikeroyal/Self-Hosting-Guide#in-memory-data-grids)\n\n24. [Home automation](https://github.com/mikeroyal/Self-Hosting-Guide#home-automation)\n\n25. [Robotics](https://github.com/mikeroyal/Self-Hosting-Guide#robotics)\n\n26. [Mesh networks](https://github.com/mikeroyal/Self-Hosting-Guide#mesh-networks)\n\n27. [Blockchain Development](https://github.com/mikeroyal/Self-Hosting-Guide#blockchain-development)\n\n28. [Node.js Development](https://github.com/mikeroyal/Self-Hosting-Guide#nodejs-development)\n\n29. [C/C++ Development](https://github.com/mikeroyal/Self-Hosting-Guide#cc-development)\n\n30. [Java Development](https://github.com/mikeroyal/Self-Hosting-Guide#java-development)\n\n31. [Python Development](https://github.com/mikeroyal/Self-Hosting-Guide#python-development)\n\n32. [Rust Development](https://github.com/mikeroyal/Self-Hosting-Guide#rust-development)\n\n33. [Swift Development](https://github.com/mikeroyal/Self-Hosting-Guide#swift-development)\n\n34. [XML Development](https://github.com/mikeroyal/Self-Hosting-Guide#xml-development)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "devops",
+    "containerization",
+    "automation",
+    "networking",
+    "lang:dockerfile"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "18814 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "925 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:43:42.286Z"
+  },
+  "implementation": {
+    "type": "service",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/mikeroyal/Self-Hosting-Guide",
+        "description": "GitHub repository: mikeroyal/Self-Hosting-Guide"
+      }
+    ],
+    "language": "Dockerfile"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "mikeroyal",
+        "type": "human",
+        "uri": "https://github.com/mikeroyal"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 20664,
+      "validation_diversity": 0.44,
+      "context_breadth": 0.7,
+      "temporal_stability": 0.71,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.5
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.614
+  }
+}

@@ -2,9 +2,9 @@
 name: "Dual-Speed Governance"
 tier: 1
 status: provisional
-confidence: 0.3
+confidence: 0.4
 source: "top-down"
-domain_count: 3
+domain_count: 4
 created: 2026-03-03
 updated: 2026-03-03
 ---
@@ -37,6 +37,12 @@ Fast operational cycles governed by slow constitutional cycles, where the slow c
 - **Domain:** Industry/Policy
 - **Expression:** Retraining program governance where individual program adjustments happen quickly (adaptive control function), but the overarching policy framework changes slowly through deliberate review cycles. Fast operational adaptation within slow policy evolution.
 - **Discovery date:** 2026-03-02
+- **Source:** top-down
+
+### Instance 4: Knowledge Architecture / Metacognition (Motif Library Tier Governance)
+- **Domain:** Knowledge Architecture / Metacognition
+- **Expression:** The motif library's tier system embodies dual-speed governance. Fast cycle: Tier 0 and Tier 1 entries are auto-created at session speed — every reflection session can deposit new observations and auto-promote cross-domain patterns without friction. Slow cycle: Tier 2+ promotions require human review, validation protocol (5 conditions), and explicit approval. The governance frame (what counts as a structural operator) evolves slowly and deliberately; knowledge within that frame grows quickly through reflection.
+- **Discovery date:** 2026-03-03
 - **Source:** top-down
 
 ## Relationships

@@ -1,0 +1,179 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/traceloop--openllmetry",
+  "meta": {
+    "title": "openllmetry",
+    "description": "Open-source observability for your GenAI or LLM application, based on OpenTelemetry",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:44:59.377Z",
+    "dateModified": "2026-03-03T08:44:59.377Z",
+    "keywords": [
+      "artifical-intelligence",
+      "datascience",
+      "generative-ai",
+      "good-first-issue",
+      "good-first-issues",
+      "help-wanted",
+      "llm",
+      "llmops",
+      "metrics",
+      "ml",
+      "model-monitoring",
+      "monitoring",
+      "observability",
+      "open-source",
+      "open-telemetry",
+      "opentelemetry",
+      "opentelemetry-python",
+      "python"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "- The primary purpose is to detect exceptions within instrumentations. Since LLM providers frequently update their APIs, this helps us quickly identify and fix any breaking changes.\n- We only collect anonymous data, with no personally identifiable information. You can view exactly what data we collect in our [Privacy documentation](https://www.traceloop.com/docs/openllmetry/privacy/telemetry).\n- Telemetry is only collected in the SDK. If you use the instrumentations directly without the SDK, no telemetry is collected.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "data-management",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "6877 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "893 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:44:59.377Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/traceloop/openllmetry",
+        "description": "GitHub repository: traceloop/openllmetry"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://www.traceloop.com/openllmetry",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "traceloop",
+        "type": "human",
+        "uri": "https://github.com/traceloop"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 8663,
+      "validation_diversity": 0.67,
+      "context_breadth": 0.7,
+      "temporal_stability": 0.9,
+      "test_coverage": 0.17,
+      "documentation_quality": 0.75
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.672
+  }
+}

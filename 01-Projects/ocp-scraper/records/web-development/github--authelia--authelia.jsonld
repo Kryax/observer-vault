@@ -1,0 +1,472 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/authelia--authelia",
+  "meta": {
+    "title": "authelia",
+    "description": "The Single Sign-On Multi-Factor portal for web apps, now OpenID Certified™",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:43:02.142Z",
+    "dateModified": "2026-03-03T08:43:02.142Z",
+    "keywords": [
+      "2fa",
+      "authentication",
+      "docker",
+      "golang",
+      "kubernetes",
+      "ldap",
+      "mfa",
+      "multifactor",
+      "oauth2",
+      "openid-connect",
+      "passkeys",
+      "push-notifications",
+      "security",
+      "sso",
+      "sso-authentication",
+      "totp",
+      "two-factor",
+      "two-factor-authentication",
+      "webauthn",
+      "yubikey"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "This is a list of the key features of Authelia:",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "security",
+    "devops",
+    "containerization",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "27016 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "1349 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:43:02.142Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/authelia/authelia",
+        "description": "GitHub repository: authelia/authelia"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://www.authelia.com",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "authelia.com/provider/oauth2",
+        "version": "v0.2.19",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/authelia.com/provider/oauth2"
+      },
+      {
+        "name": "github.com/Gurpartap/logrus-stack",
+        "version": "v0.0.0-20170710170904-89c00d8a28f4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Gurpartap/logrus-stack"
+      },
+      {
+        "name": "github.com/asaskevich/govalidator",
+        "version": "v0.0.0-20230301143203-a9d515a09cc2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/asaskevich/govalidator"
+      },
+      {
+        "name": "github.com/authelia/jsonschema",
+        "version": "v0.1.7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/authelia/jsonschema"
+      },
+      {
+        "name": "github.com/authelia/otp",
+        "version": "v1.0.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/authelia/otp"
+      },
+      {
+        "name": "github.com/duosecurity/duo_api_golang",
+        "version": "v0.0.0-20250430191550-ac36954387e7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/duosecurity/duo_api_golang"
+      },
+      {
+        "name": "github.com/fasthttp/router",
+        "version": "v1.5.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/fasthttp/router"
+      },
+      {
+        "name": "github.com/fasthttp/session/v2",
+        "version": "v2.5.9",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/fasthttp/session/v2"
+      },
+      {
+        "name": "github.com/fsnotify/fsnotify",
+        "version": "v1.9.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/fsnotify/fsnotify"
+      },
+      {
+        "name": "github.com/go-asn1-ber/asn1-ber",
+        "version": "v1.5.8-0.20250403174932-29230038a667",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-asn1-ber/asn1-ber"
+      },
+      {
+        "name": "github.com/go-crypt/crypt",
+        "version": "v0.4.9",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-crypt/crypt"
+      },
+      {
+        "name": "github.com/go-jose/go-jose/v4",
+        "version": "v4.1.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-jose/go-jose/v4"
+      },
+      {
+        "name": "github.com/go-ldap/ldap/v3",
+        "version": "v3.4.12",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-ldap/ldap/v3"
+      },
+      {
+        "name": "github.com/go-rod/rod",
+        "version": "v0.116.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-rod/rod"
+      },
+      {
+        "name": "github.com/go-sql-driver/mysql",
+        "version": "v1.9.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-sql-driver/mysql"
+      },
+      {
+        "name": "github.com/go-viper/mapstructure/v2",
+        "version": "v2.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-viper/mapstructure/v2"
+      },
+      {
+        "name": "github.com/go-webauthn/webauthn",
+        "version": "v0.15.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-webauthn/webauthn"
+      },
+      {
+        "name": "github.com/golang-jwt/jwt/v5",
+        "version": "v5.3.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/golang-jwt/jwt/v5"
+      },
+      {
+        "name": "github.com/google/cel-go",
+        "version": "v0.27.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/cel-go"
+      },
+      {
+        "name": "github.com/google/uuid",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/uuid"
+      },
+      {
+        "name": "github.com/hashicorp/go-retryablehttp",
+        "version": "v0.7.8",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/go-retryablehttp"
+      },
+      {
+        "name": "github.com/jackc/pgx/v5",
+        "version": "v5.8.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jackc/pgx/v5"
+      },
+      {
+        "name": "github.com/jmoiron/sqlx",
+        "version": "v1.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jmoiron/sqlx"
+      },
+      {
+        "name": "github.com/knadh/koanf/parsers/yaml",
+        "version": "v1.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/knadh/koanf/parsers/yaml"
+      },
+      {
+        "name": "github.com/knadh/koanf/providers/confmap",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/knadh/koanf/providers/confmap"
+      },
+      {
+        "name": "github.com/knadh/koanf/providers/env/v2",
+        "version": "v2.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/knadh/koanf/providers/env/v2"
+      },
+      {
+        "name": "github.com/knadh/koanf/providers/posflag",
+        "version": "v1.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/knadh/koanf/providers/posflag"
+      },
+      {
+        "name": "github.com/knadh/koanf/providers/rawbytes",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/knadh/koanf/providers/rawbytes"
+      },
+      {
+        "name": "github.com/knadh/koanf/v2",
+        "version": "v2.3.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/knadh/koanf/v2"
+      },
+      {
+        "name": "github.com/mattn/go-sqlite3",
+        "version": "v1.14.34",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mattn/go-sqlite3"
+      },
+      {
+        "name": "github.com/mohae/deepcopy",
+        "version": "v0.0.0-20170929034955-c48cc78d4826",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mohae/deepcopy"
+      },
+      {
+        "name": "github.com/otiai10/copy",
+        "version": "v1.14.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/otiai10/copy"
+      },
+      {
+        "name": "github.com/prometheus/client_golang",
+        "version": "v1.23.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/client_golang"
+      },
+      {
+        "name": "github.com/sirupsen/logrus",
+        "version": "v1.9.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/sirupsen/logrus"
+      },
+      {
+        "name": "github.com/spf13/cobra",
+        "version": "v1.10.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/cobra"
+      },
+      {
+        "name": "github.com/spf13/pflag",
+        "version": "v1.0.10",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/pflag"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.11.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      },
+      {
+        "name": "github.com/trustelem/zxcvbn",
+        "version": "v1.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/trustelem/zxcvbn"
+      },
+      {
+        "name": "github.com/valyala/fasthttp",
+        "version": "v1.69.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/valyala/fasthttp"
+      },
+      {
+        "name": "github.com/weppos/publicsuffix-go",
+        "version": "v0.50.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/weppos/publicsuffix-go"
+      },
+      {
+        "name": "github.com/wneessen/go-mail",
+        "version": "v0.7.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/wneessen/go-mail"
+      },
+      {
+        "name": "go.uber.org/mock",
+        "version": "v0.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.uber.org/mock"
+      },
+      {
+        "name": "go.yaml.in/yaml/v4",
+        "version": "v4.0.0-rc.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.yaml.in/yaml/v4"
+      },
+      {
+        "name": "golang.org/x/net",
+        "version": "v0.50.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/net"
+      },
+      {
+        "name": "golang.org/x/sync",
+        "version": "v0.19.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/sync"
+      },
+      {
+        "name": "golang.org/x/term",
+        "version": "v0.40.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/term"
+      },
+      {
+        "name": "golang.org/x/text",
+        "version": "v0.34.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/text"
+      },
+      {
+        "name": "golang.org/x/time",
+        "version": "v0.14.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/time"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "authelia",
+        "type": "human",
+        "uri": "https://github.com/authelia"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 29714,
+      "validation_diversity": 0.81,
+      "context_breadth": 0.7,
+      "temporal_stability": 1,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.5
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.81
+  }
+}

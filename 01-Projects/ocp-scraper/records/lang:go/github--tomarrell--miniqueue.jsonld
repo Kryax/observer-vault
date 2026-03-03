@@ -1,0 +1,210 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/tomarrell--miniqueue",
+  "meta": {
+    "title": "miniqueue",
+    "description": "A simple, single binary, message queue. Supports HTTP/2 and Redis Protocol.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:43:30.734Z",
+    "dateModified": "2026-03-03T08:43:30.734Z",
+    "keywords": [
+      "broker",
+      "golang",
+      "hacktoberfest",
+      "message",
+      "queue"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "![Tests](https://github.com/tomarrell/miniqueue/workflows/Tests/badge.svg)\n[![Go Report Card](https://goreportcard.com/badge/github.com/tomarrell/miniqueue)](https://goreportcard.com/report/github.com/tomarrell/miniqueue)\n![GitHub release (latest by date)](https://img.shields.io/github/v/release/tomarrell/miniqueue)",
+    "context": "![Tests](https://github.com/tomarrell/miniqueue/workflows/Tests/badge.svg)\n[![Go Report Card](https://goreportcard.com/badge/github.com/tomarrell/miniqueue)](https://goreportcard.com/report/github.com/tomarrell/miniqueue)\n![GitHub release (latest by date)](https://img.shields.io/github/v/release/tomarrell/miniqueue)\n\nA stupid simple, single binary message queue using HTTP/2 or Redis Protocol.\n\nMost messaging workloads don't require enormous amounts of data, endless\nfeatures or infinite scaling. Instead, they'd probably be better off with\nsomething dead simple.\n\nminiqueue is just that. A ridiculously simple, high performance queue. You can\npublish bytes to topics and be sure that your consumers will receive what you\npublished, nothing more.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "208 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "9 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:43:30.734Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/tomarrell/miniqueue",
+        "description": "GitHub repository: tomarrell/miniqueue"
+      }
+    ],
+    "solutionApproach": "See usage section in README",
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "github.com/golang/mock",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/golang/mock"
+      },
+      {
+        "name": "github.com/gorilla/mux",
+        "version": "v1.8.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gorilla/mux"
+      },
+      {
+        "name": "github.com/rs/xid",
+        "version": "v1.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/rs/xid"
+      },
+      {
+        "name": "github.com/rs/zerolog",
+        "version": "v1.28.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/rs/zerolog"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.6.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      },
+      {
+        "name": "github.com/syndtr/goleveldb",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/syndtr/goleveldb"
+      },
+      {
+        "name": "github.com/tidwall/redcon",
+        "version": "v1.6.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/tidwall/redcon"
+      },
+      {
+        "name": "golang.org/x/net",
+        "version": "v0.0.0-20210405180319-a5a99cb37ef4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/net"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "tomarrell",
+        "type": "human",
+        "uri": "https://github.com/tomarrell"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 226,
+      "validation_diversity": 0,
+      "context_breadth": 0.3,
+      "temporal_stability": 0.64,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.75
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.076
+  }
+}

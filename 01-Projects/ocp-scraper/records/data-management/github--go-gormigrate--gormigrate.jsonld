@@ -1,0 +1,176 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/go-gormigrate--gormigrate",
+  "meta": {
+    "title": "Gormigrate",
+    "description": "Minimalistic database migration helper for Gorm ORM",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:44:52.134Z",
+    "dateModified": "2026-03-03T08:44:52.134Z",
+    "keywords": [
+      "database",
+      "db",
+      "go",
+      "gorm",
+      "migrations",
+      "schema",
+      "schema-migrations"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "[![Latest Release](https://img.shields.io/github/release/go-gormigrate/gormigrate.svg)](https://github.com/go-gormigrate/gormigrate/releases)\n[![Go Reference](https://pkg.go.dev/badge/github.com/go-gormigrate/gormigrate/v2.svg)](https://pkg.go.dev/github.com/go-gormigrate/gormigrate/v2)\n[![Go Report Card](https://goreportcard.com/badge/github.com/go-gormigrate/gormigrate/v2)](https://goreportcard.com/report/github.com/go-gormigrate/gormigrate/v2)\n[![CI | Lint](https://github.com/go-gormigrate/gormigrate/actions/workflows/lint.yml/badge.svg)](https://github.com/go-gormigrate/gormigrate/actions)\n[![CI | Test](https://github.com/go-gormigrate/gormigrate/actions/workflows/integration-test.yml/badge.svg)](https://github.com/go-gormigrate/gormigrate/actions)",
+    "context": "[![Latest Release](https://img.shields.io/github/release/go-gormigrate/gormigrate.svg)](https://github.com/go-gormigrate/gormigrate/releases)\n[![Go Reference](https://pkg.go.dev/badge/github.com/go-gormigrate/gormigrate/v2.svg)](https://pkg.go.dev/github.com/go-gormigrate/gormigrate/v2)\n[![Go Report Card](https://goreportcard.com/badge/github.com/go-gormigrate/gormigrate/v2)](https://goreportcard.com/report/github.com/go-gormigrate/gormigrate/v2)\n[![CI | Lint](https://github.com/go-gormigrate/gormigrate/actions/workflows/lint.yml/badge.svg)](https://github.com/go-gormigrate/gormigrate/actions)\n[![CI | Test](https://github.com/go-gormigrate/gormigrate/actions/workflows/integration-test.yml/badge.svg)](https://github.com/go-gormigrate/gormigrate/actions)\n\nGormigrate is a minimalistic migration helper for [Gorm](http://gorm.io).\nGorm already has useful [migrate functions](https://gorm.io/docs/migration.html), just misses\nproper schema versioning and migration rollback support.\n\n> IMPORTANT: If you need support to Gorm v1 (which uses\n> `github.com/jinzhu/gorm` as its import path), please import Gormigrate by\n> using the `gopkg.in/gormigrate.v1` import path.\n>\n> The current Gorm version (v2) is supported by using the\n> `github.com/go-gormigrate/gormigrate/v2` import path as described in the\n> documentation below.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "data-management",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "1150 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "103 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:44:52.134Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/go-gormigrate/gormigrate",
+        "description": "GitHub repository: go-gormigrate/gormigrate"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://pkg.go.dev/github.com/go-gormigrate/gormigrate/v2",
+        "description": "Project homepage"
+      }
+    ],
+    "solutionApproach": "See usage section in README",
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "gorm.io/gorm",
+        "version": "v1.26.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gorm.io/gorm"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "go-gormigrate",
+        "type": "human",
+        "uri": "https://github.com/go-gormigrate"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 1356,
+      "validation_diversity": 0.45,
+      "context_breadth": 0.48,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.75
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.58
+  }
+}

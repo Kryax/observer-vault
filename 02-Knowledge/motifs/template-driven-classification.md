@@ -38,6 +38,7 @@ Items are classified by matching against structural templates encoding problem/s
 | Related Motif | Relationship | Description |
 |---------------|-------------|-------------|
 | Observer-Feedback Loop | composition | Template classification creates a frame; usage patterns feed back to reshape templates |
+| Scaffold-First Architecture | complement | Templates are a specific type of scaffold — structural shapes that content must match. Scaffold-First is the construction principle; templates are the classification application. |
 
 ## Discovery Context
 

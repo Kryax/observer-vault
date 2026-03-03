@@ -1,0 +1,430 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/coroot--coroot",
+  "meta": {
+    "title": "coroot",
+    "description": "Coroot is an open-source observability and APM tool with AI-powered Root Cause Analysis. It combines metrics, logs, traces, continuous profiling, and SLO-based alerting with predefined dashboards and inspections.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:44:52.227Z",
+    "dateModified": "2026-03-03T08:44:52.227Z",
+    "keywords": [
+      "ai",
+      "alerting",
+      "apm",
+      "dashboard",
+      "database-monitoring",
+      "distributed-tracing",
+      "ebpf",
+      "metrics",
+      "microservice",
+      "monitoring",
+      "observability",
+      "prometheus",
+      "service-map",
+      "slo",
+      "sre",
+      "tracing"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "* Easily understand the status of your services, even when dealing with hundreds of them\n* Gain insight into application logs without the need to manually inspect each one\n* SLOs (Service Level Objectives) tracking",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "data-management",
+    "machine-learning",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "7450 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "349 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:44:52.227Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/coroot/coroot",
+        "description": "GitHub repository: coroot/coroot"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://coroot.com",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "github.com/ClickHouse/ch-go",
+        "version": "v0.62.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/ClickHouse/ch-go"
+      },
+      {
+        "name": "github.com/ClickHouse/clickhouse-go/v2",
+        "version": "v2.8.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/ClickHouse/clickhouse-go/v2"
+      },
+      {
+        "name": "github.com/DataDog/golz4",
+        "version": "v1.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/DataDog/golz4"
+      },
+      {
+        "name": "github.com/PagerDuty/go-pagerduty",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/PagerDuty/go-pagerduty"
+      },
+      {
+        "name": "github.com/atc0005/go-teams-notify/v2",
+        "version": "v2.13.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/atc0005/go-teams-notify/v2"
+      },
+      {
+        "name": "github.com/buger/jsonparser",
+        "version": "v1.1.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/buger/jsonparser"
+      },
+      {
+        "name": "github.com/coroot/logparser",
+        "version": "v1.1.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/coroot/logparser"
+      },
+      {
+        "name": "github.com/dustin/go-humanize",
+        "version": "v1.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/dustin/go-humanize"
+      },
+      {
+        "name": "github.com/gogo/protobuf",
+        "version": "v1.3.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gogo/protobuf"
+      },
+      {
+        "name": "github.com/golang/snappy",
+        "version": "v0.0.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/golang/snappy"
+      },
+      {
+        "name": "github.com/google/pprof",
+        "version": "v0.0.0-20240711041743-f6c9dda6c6da",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/pprof"
+      },
+      {
+        "name": "github.com/google/uuid",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/uuid"
+      },
+      {
+        "name": "github.com/gorilla/mux",
+        "version": "v1.8.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gorilla/mux"
+      },
+      {
+        "name": "github.com/grafana/pyroscope-go/godeltaprof",
+        "version": "v0.1.8",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grafana/pyroscope-go/godeltaprof"
+      },
+      {
+        "name": "github.com/hako/durafmt",
+        "version": "v0.0.0-20210608085754-5c1018a4e16b",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hako/durafmt"
+      },
+      {
+        "name": "github.com/jpillora/backoff",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jpillora/backoff"
+      },
+      {
+        "name": "github.com/klauspost/compress",
+        "version": "v1.17.10",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/klauspost/compress"
+      },
+      {
+        "name": "github.com/lib/pq",
+        "version": "v1.10.7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/lib/pq"
+      },
+      {
+        "name": "github.com/matoous/go-nanoid",
+        "version": "v1.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/matoous/go-nanoid"
+      },
+      {
+        "name": "github.com/mattn/go-sqlite3",
+        "version": "v1.14.15",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mattn/go-sqlite3"
+      },
+      {
+        "name": "github.com/opsgenie/opsgenie-go-sdk-v2",
+        "version": "v1.2.14",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/opsgenie/opsgenie-go-sdk-v2"
+      },
+      {
+        "name": "github.com/prometheus/client_golang",
+        "version": "v1.20.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/client_golang"
+      },
+      {
+        "name": "github.com/prometheus/common",
+        "version": "v0.60.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/common"
+      },
+      {
+        "name": "github.com/prometheus/prometheus",
+        "version": "v0.300.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/prometheus"
+      },
+      {
+        "name": "github.com/sirupsen/logrus",
+        "version": "v1.9.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/sirupsen/logrus"
+      },
+      {
+        "name": "github.com/slack-go/slack",
+        "version": "v0.11.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/slack-go/slack"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.9.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      },
+      {
+        "name": "github.com/vmihailenco/msgpack/v5",
+        "version": "v5.4.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/vmihailenco/msgpack/v5"
+      },
+      {
+        "name": "github.com/xhit/go-str2duration/v2",
+        "version": "v2.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/xhit/go-str2duration/v2"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/semconv",
+        "version": "v0.110.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/semconv"
+      },
+      {
+        "name": "go.opentelemetry.io/proto/otlp",
+        "version": "v1.3.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/proto/otlp"
+      },
+      {
+        "name": "golang.org/x/crypto",
+        "version": "v0.36.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/crypto"
+      },
+      {
+        "name": "golang.org/x/exp",
+        "version": "v0.0.0-20240119083558-1b970713d09a",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/exp"
+      },
+      {
+        "name": "golang.org/x/net",
+        "version": "v0.38.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/net"
+      },
+      {
+        "name": "golang.org/x/term",
+        "version": "v0.30.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/term"
+      },
+      {
+        "name": "gonum.org/v1/gonum",
+        "version": "v0.12.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gonum.org/v1/gonum"
+      },
+      {
+        "name": "google.golang.org/grpc",
+        "version": "v1.67.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/grpc"
+      },
+      {
+        "name": "google.golang.org/protobuf",
+        "version": "v1.34.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/protobuf"
+      },
+      {
+        "name": "gopkg.in/alecthomas/kingpin.v2",
+        "version": "v2.2.6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gopkg.in/alecthomas/kingpin.v2"
+      },
+      {
+        "name": "gopkg.in/yaml.v3",
+        "version": "v3.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gopkg.in/yaml.v3"
+      },
+      {
+        "name": "inet.af/netaddr",
+        "version": "v0.0.0-20230525184311-b8eac61e914a",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/inet.af/netaddr"
+      },
+      {
+        "name": "k8s.io/klog",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/klog"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "coroot",
+        "type": "human",
+        "uri": "https://github.com/coroot"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 8148,
+      "validation_diversity": 0.49,
+      "context_breadth": 0.65,
+      "temporal_stability": 0.98,
+      "test_coverage": 0.67,
+      "documentation_quality": 0.5
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.682
+  }
+}

@@ -1,0 +1,650 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/casdoor--casdoor",
+  "meta": {
+    "title": "casdoor",
+    "description": "An open-source AI-first Identity and Access Management (IAM) /AI MCP gateway and auth server with web UI supporting MCP, A2A, OAuth 2.1, OIDC, SAML, CAS, LDAP, SCIM, WebAuthn, TOTP, MFA, Face ID, Google Workspace, Azure AD",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:44:42.839Z",
+    "dateModified": "2026-03-03T08:44:42.839Z",
+    "keywords": [
+      "ai-gateway",
+      "auth",
+      "authentication",
+      "authn",
+      "casdoor",
+      "faceid",
+      "iam",
+      "ldap",
+      "llm-gateway",
+      "mcp-gateway",
+      "mfa",
+      "oauth",
+      "oidc",
+      "radius",
+      "saml",
+      "scim",
+      "single-sign-on",
+      "sso",
+      "totp",
+      "webauthn"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "An open-source AI-first Identity and Access Management (IAM) /AI MCP gateway and auth server with web UI supporting MCP, A2A, OAuth 2.1, OIDC, SAML, CAS, LDAP, SCIM, WebAuthn, TOTP, MFA, Face ID, Google Workspace, Azure AD",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "machine-learning",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "13098 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "1584 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:44:42.839Z"
+  },
+  "implementation": {
+    "type": "service",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/casdoor/casdoor",
+        "description": "GitHub repository: casdoor/casdoor"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://casdoor.org",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "github.com/Masterminds/squirrel",
+        "version": "v1.5.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Masterminds/squirrel"
+      },
+      {
+        "name": "github.com/NdoleStudio/lemonsqueezy-go",
+        "version": "v1.2.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/NdoleStudio/lemonsqueezy-go"
+      },
+      {
+        "name": "github.com/PaddleHQ/paddle-go-sdk",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/PaddleHQ/paddle-go-sdk"
+      },
+      {
+        "name": "github.com/adyen/adyen-go-api-library/v11",
+        "version": "v11.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/adyen/adyen-go-api-library/v11"
+      },
+      {
+        "name": "github.com/alexedwards/argon2id",
+        "version": "v0.0.0-20211130144151-3585854a6387",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/alexedwards/argon2id"
+      },
+      {
+        "name": "github.com/alibabacloud-go/cloudauth-20190307/v3",
+        "version": "v3.9.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/alibabacloud-go/cloudauth-20190307/v3"
+      },
+      {
+        "name": "github.com/alibabacloud-go/darabonba-openapi/v2",
+        "version": "v2.1.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/alibabacloud-go/darabonba-openapi/v2"
+      },
+      {
+        "name": "github.com/alibabacloud-go/facebody-20191230/v5",
+        "version": "v5.1.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/alibabacloud-go/facebody-20191230/v5"
+      },
+      {
+        "name": "github.com/alibabacloud-go/openapi-util",
+        "version": "v0.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/alibabacloud-go/openapi-util"
+      },
+      {
+        "name": "github.com/alibabacloud-go/tea",
+        "version": "v1.3.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/alibabacloud-go/tea"
+      },
+      {
+        "name": "github.com/alibabacloud-go/tea-utils/v2",
+        "version": "v2.0.7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/alibabacloud-go/tea-utils/v2"
+      },
+      {
+        "name": "github.com/aliyun/alibaba-cloud-sdk-go",
+        "version": "v1.63.107",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aliyun/alibaba-cloud-sdk-go"
+      },
+      {
+        "name": "github.com/aliyun/aliyun-oss-go-sdk",
+        "version": "v2.2.2+incompatible",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aliyun/aliyun-oss-go-sdk"
+      },
+      {
+        "name": "github.com/aliyun/credentials-go",
+        "version": "v1.3.10",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aliyun/credentials-go"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go",
+        "version": "v1.45.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/service/s3",
+        "version": "v1.95.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/s3"
+      },
+      {
+        "name": "github.com/beego/beego/v2",
+        "version": "v2.3.8",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/beego/beego/v2"
+      },
+      {
+        "name": "github.com/beevik/etree",
+        "version": "v1.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/beevik/etree"
+      },
+      {
+        "name": "github.com/casbin/casbin/v2",
+        "version": "v2.77.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/casbin/casbin/v2"
+      },
+      {
+        "name": "github.com/casbin/lego/v4",
+        "version": "v4.5.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/casbin/lego/v4"
+      },
+      {
+        "name": "github.com/casdoor/go-sms-sender",
+        "version": "v0.25.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/casdoor/go-sms-sender"
+      },
+      {
+        "name": "github.com/casdoor/gomail/v2",
+        "version": "v2.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/casdoor/gomail/v2"
+      },
+      {
+        "name": "github.com/casdoor/ldapserver",
+        "version": "v1.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/casdoor/ldapserver"
+      },
+      {
+        "name": "github.com/casdoor/notify2",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/casdoor/notify2"
+      },
+      {
+        "name": "github.com/casdoor/oss",
+        "version": "v1.8.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/casdoor/oss"
+      },
+      {
+        "name": "github.com/casdoor/xorm-adapter/v3",
+        "version": "v3.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/casdoor/xorm-adapter/v3"
+      },
+      {
+        "name": "github.com/casvisor/casvisor-go-sdk",
+        "version": "v1.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/casvisor/casvisor-go-sdk"
+      },
+      {
+        "name": "github.com/dchest/captcha",
+        "version": "v0.0.0-20200903113550-03f5f0333e1f",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/dchest/captcha"
+      },
+      {
+        "name": "github.com/elimity-com/scim",
+        "version": "v0.0.0-20230426070224-941a5eac92f3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/elimity-com/scim"
+      },
+      {
+        "name": "github.com/fogleman/gg",
+        "version": "v1.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/fogleman/gg"
+      },
+      {
+        "name": "github.com/go-asn1-ber/asn1-ber",
+        "version": "v1.5.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-asn1-ber/asn1-ber"
+      },
+      {
+        "name": "github.com/go-git/go-git/v5",
+        "version": "v5.16.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-git/go-git/v5"
+      },
+      {
+        "name": "github.com/go-jose/go-jose/v4",
+        "version": "v4.1.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-jose/go-jose/v4"
+      },
+      {
+        "name": "github.com/go-ldap/ldap/v3",
+        "version": "v3.4.6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-ldap/ldap/v3"
+      },
+      {
+        "name": "github.com/go-mysql-org/go-mysql",
+        "version": "v1.7.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-mysql-org/go-mysql"
+      },
+      {
+        "name": "github.com/go-pay/gopay",
+        "version": "v1.5.115",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-pay/gopay"
+      },
+      {
+        "name": "github.com/go-pay/util",
+        "version": "v0.0.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-pay/util"
+      },
+      {
+        "name": "github.com/go-sql-driver/mysql",
+        "version": "v1.8.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-sql-driver/mysql"
+      },
+      {
+        "name": "github.com/go-telegram-bot-api/telegram-bot-api",
+        "version": "v4.6.4+incompatible",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-telegram-bot-api/telegram-bot-api"
+      },
+      {
+        "name": "github.com/go-webauthn/webauthn",
+        "version": "v0.10.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-webauthn/webauthn"
+      },
+      {
+        "name": "github.com/golang-jwt/jwt/v5",
+        "version": "v5.2.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/golang-jwt/jwt/v5"
+      },
+      {
+        "name": "github.com/google/uuid",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/uuid"
+      },
+      {
+        "name": "github.com/json-iterator/go",
+        "version": "v1.1.12",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/json-iterator/go"
+      },
+      {
+        "name": "github.com/lestrrat-go/jwx",
+        "version": "v1.2.29",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/lestrrat-go/jwx"
+      },
+      {
+        "name": "github.com/lib/pq",
+        "version": "v1.10.9",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/lib/pq"
+      },
+      {
+        "name": "github.com/likexian/whois",
+        "version": "v1.15.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/likexian/whois"
+      },
+      {
+        "name": "github.com/likexian/whois-parser",
+        "version": "v1.24.9",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/likexian/whois-parser"
+      },
+      {
+        "name": "github.com/lor00x/goldap",
+        "version": "v0.0.0-20180618054307-a546dffdd1a3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/lor00x/goldap"
+      },
+      {
+        "name": "github.com/markbates/goth",
+        "version": "v1.82.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/markbates/goth"
+      },
+      {
+        "name": "github.com/microsoft/go-mssqldb",
+        "version": "v1.9.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/microsoft/go-mssqldb"
+      },
+      {
+        "name": "github.com/mitchellh/mapstructure",
+        "version": "v1.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mitchellh/mapstructure"
+      },
+      {
+        "name": "github.com/nyaruka/phonenumbers",
+        "version": "v1.2.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/nyaruka/phonenumbers"
+      },
+      {
+        "name": "github.com/polarsource/polar-go",
+        "version": "v0.12.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/polarsource/polar-go"
+      },
+      {
+        "name": "github.com/pquerna/otp",
+        "version": "v1.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/pquerna/otp"
+      },
+      {
+        "name": "github.com/prometheus/client_golang",
+        "version": "v1.19.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/client_golang"
+      },
+      {
+        "name": "github.com/prometheus/client_model",
+        "version": "v0.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/client_model"
+      },
+      {
+        "name": "github.com/qiangmzsx/string-adapter/v2",
+        "version": "v2.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/qiangmzsx/string-adapter/v2"
+      },
+      {
+        "name": "github.com/robfig/cron/v3",
+        "version": "v3.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/robfig/cron/v3"
+      },
+      {
+        "name": "github.com/russellhaering/gosaml2",
+        "version": "v0.9.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/russellhaering/gosaml2"
+      },
+      {
+        "name": "github.com/russellhaering/goxmldsig",
+        "version": "v1.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/russellhaering/goxmldsig"
+      },
+      {
+        "name": "github.com/sendgrid/sendgrid-go",
+        "version": "v3.16.0+incompatible",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/sendgrid/sendgrid-go"
+      },
+      {
+        "name": "github.com/shirou/gopsutil/v4",
+        "version": "v4.25.9",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/shirou/gopsutil/v4"
+      },
+      {
+        "name": "github.com/siddontang/go-log",
+        "version": "v0.0.0-20190221022429-1e957dd83bed",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/siddontang/go-log"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.11.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      },
+      {
+        "name": "github.com/stripe/stripe-go/v74",
+        "version": "v74.29.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stripe/stripe-go/v74"
+      },
+      {
+        "name": "github.com/tealeg/xlsx",
+        "version": "v1.0.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/tealeg/xlsx"
+      },
+      {
+        "name": "github.com/thanhpk/randstr",
+        "version": "v1.0.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/thanhpk/randstr"
+      },
+      {
+        "name": "github.com/xorm-io/builder",
+        "version": "v0.3.13",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/xorm-io/builder"
+      },
+      {
+        "name": "github.com/xorm-io/core",
+        "version": "v0.7.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/xorm-io/core"
+      },
+      {
+        "name": "github.com/xorm-io/xorm",
+        "version": "v1.1.6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/xorm-io/xorm"
+      },
+      {
+        "name": "golang.org/x/crypto",
+        "version": "v0.40.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/crypto"
+      },
+      {
+        "name": "golang.org/x/net",
+        "version": "v0.41.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/net"
+      },
+      {
+        "name": "golang.org/x/oauth2",
+        "version": "v0.27.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/oauth2"
+      },
+      {
+        "name": "golang.org/x/text",
+        "version": "v0.27.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/text"
+      },
+      {
+        "name": "google.golang.org/api",
+        "version": "v0.215.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/api"
+      },
+      {
+        "name": "layeh.com/radius",
+        "version": "v0.0.0-20231213012653-1006025d24f8",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/layeh.com/radius"
+      },
+      {
+        "name": "maunium.net/go/mautrix",
+        "version": "v0.22.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/maunium.net/go/mautrix"
+      },
+      {
+        "name": "modernc.org/sqlite",
+        "version": "v1.18.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/modernc.org/sqlite"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "casdoor",
+        "type": "human",
+        "uri": "https://github.com/casdoor"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 16266,
+      "validation_diversity": 0.81,
+      "context_breadth": 0.7,
+      "temporal_stability": 1,
+      "test_coverage": 0.67,
+      "documentation_quality": 0.3
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.801
+  }
+}

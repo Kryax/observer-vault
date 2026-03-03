@@ -1,0 +1,237 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/tsedio--tsed",
+  "meta": {
+    "title": "tsed",
+    "description": " :triangular_ruler:  Ts.ED is a Node.js and TypeScript framework on top of Express to write your application with TypeScript (or ES6). It provides a lot of decorators and guideline to make your code more readable and less error-prone. ⭐️ Star to support our work! ",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:44:50.300Z",
+    "dateModified": "2026-03-03T08:44:50.300Z",
+    "keywords": [
+      "cli",
+      "contribution",
+      "decorators",
+      "dependency-injection",
+      "express",
+      "hacktoberfest",
+      "ioc",
+      "koa",
+      "lifecycle-hooks",
+      "middleware",
+      "multer",
+      "nodejs",
+      "nodejs-api",
+      "nodejs-framework",
+      "open-source",
+      "rest-api",
+      "socket-io",
+      "swagger",
+      "typescript",
+      "typescript-framework"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "- Use our CLI to create a new project: https://tsed.dev/introduction/getting-started.html#installation\n- Support TypeORM, Mongoose, GraphQL, Socket.io, Swagger-ui, Passport.js, etc...\n- Define class as Controller,\n- Define class as Service (IoC),\n- Define class as Middleware and MiddlewareError,\n- Define class as Json Mapper (POJ to Model and Model to POJ),\n- Define root path for an entire controller and versioning your Rest API,\n- Define as sub-route path for a method,\n- Define routes on GET, POST, PUT, DELETE and HEAD verbs,\n- Define middlewares on routes,\n- Define required parameters,\n- Inject data from query string, path parameters, entire body, cookies, session or header,\n- Inject Request, Response, Next object from Express request,\n- Template (View),\n- Testing.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "backend",
+    "developer-tools",
+    "lang:typescript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "3076 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "293 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:44:50.300Z"
+  },
+  "implementation": {
+    "type": "framework",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/tsedio/tsed",
+        "description": "GitHub repository: tsedio/tsed"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://tsed.dev",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "TypeScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "@tsed/logger",
+        "version": "^8.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@tsed/logger"
+      },
+      {
+        "name": "ajv",
+        "version": "8.17.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/ajv"
+      },
+      {
+        "name": "axios",
+        "version": "1.12.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/axios"
+      },
+      {
+        "name": "change-case",
+        "version": "5.4.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/change-case"
+      },
+      {
+        "name": "globby",
+        "version": "14.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/globby"
+      },
+      {
+        "name": "lerna",
+        "version": "8.1.8",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/lerna"
+      },
+      {
+        "name": "rimraf",
+        "version": "6.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/rimraf"
+      },
+      {
+        "name": "rxjs",
+        "version": "^7.8.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/rxjs"
+      },
+      {
+        "name": "uuid",
+        "version": "10.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/uuid"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "tsedio",
+        "type": "human",
+        "uri": "https://github.com/tsedio"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 3662,
+      "validation_diversity": 0.75,
+      "context_breadth": 0.65,
+      "temporal_stability": 1,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.6
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.744
+  }
+}

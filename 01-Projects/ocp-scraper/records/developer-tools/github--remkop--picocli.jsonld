@@ -1,0 +1,181 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/remkop--picocli",
+  "meta": {
+    "title": "picocli - a mighty tiny command line interface",
+    "description": "Picocli is a modern framework for building powerful, user-friendly, GraalVM-enabled command line apps with ease. It supports colors, autocompletion, subcommands, and more.  In 1 source file so apps can include as source & avoid adding a dependency. Written in Java, usable from Groovy, Kotlin, Scala, etc. ",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:44:39.120Z",
+    "dateModified": "2026-03-03T08:44:39.120Z",
+    "keywords": [
+      "annotations",
+      "ansi",
+      "ansi-colors",
+      "argument-parsing",
+      "autocomplete",
+      "bash-completion",
+      "cli",
+      "cli-framework",
+      "command-line",
+      "command-line-parser",
+      "commandline",
+      "completion",
+      "executable",
+      "git",
+      "graalvm",
+      "java",
+      "native-image",
+      "options-parsing",
+      "parser",
+      "subcommands"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "Picocli aims to be the easiest-to-use way to create rich command line applications that can run on and off the JVM.\nConsidering picocli? Check [what happy users say](https://github.com/remkop/picocli/wiki/Feedback-from-Users) about picocli.",
+    "context": "Picocli aims to be the easiest-to-use way to create rich command line applications that can run on and off the JVM.\nConsidering picocli? Check [what happy users say](https://github.com/remkop/picocli/wiki/Feedback-from-Users) about picocli.\n\nPicocli is a modern library and framework, written in Java, that contains both an annotations API and a programmatic API. It features usage help with [ANSI colors and styles](https://picocli.info/#_ansi_colors_and_styles), [TAB autocompletion](https://picocli.info/autocomplete.html) and nested subcommands.\nIn a single file, so you can include it _in source form_.\nThis lets users run picocli-based applications without requiring picocli as an external dependency.\n\nPicocli-based applications can be ahead-of-time compiled to a <img src=\"https://www.graalvm.org/resources/img/logo-colored.svg\" alt=\"GraalVM\">\n[native image](https://picocli.info/#_graalvm_native_image), with extremely fast startup time and lower memory requirements,\nwhich can be distributed as a single executable file.\nPicocli comes with an [annotation processor](https://picocli.info/#_annotation_processor) that automatically Graal-enables your jar during compilation.\n\nPicocli applications can be very compact with no boilerplate code: your command (or subcommand) can be executed with a [single line of code](#example \"(example below)\").\nSimply implement `Runnable` or `Callable`, or put the business logic of your command in a `@Command`-annotated method.\n\n<a id=\"picocli_demo\"></a>\n![Picocli Demo help message with ANSI colors](docs/images/picocli.Demo.png?raw=true)\n\nPicocli makes it easy to follow [Command Line Interface Guidelines](https://clig.dev/#guidelines).\n\nHow it works: annotate your class and picocli initializes it from the command line arguments,\nconverting the input to strongly typed data. Supports git-like [subcommands](https://picocli.info/#_subcommands)\n(and nested [sub-subcommands](https://picocli.info/#_nested_sub_subcommands)),\nany option prefix style, POSIX-style [grouped short options](https://picocli.info/#_short_posix_options),\ncustom [type converters](https://picocli.info/#_custom_type_converters),\n[password options](https://picocli.info/#_interactive_password_options) and more.\n\nPicocli distinguishes between [named options](https://picocli.info/#_options) and\n[positional parameters](https://picocli.info/#_positional_parameters) and allows _both_ to be\n[strongly typed](https://picocli.info/#_strongly_typed_everything).\n[Multi-valued fields](https://picocli.info/#_multiple_values) can specify\nan exact number of parameters or a [range](https://picocli.info/#_arity) (e.g., `0..*`, `1..2`).\nSupports [Map options](https://picocli.info/#_maps) like `-Dkey1=val1 -Dkey2=val2`, where both key and value can be strongly typed.\nParser [tracing](https://picocli.info/#_tracing) facilitates troubleshooting.\nCommand-line [argument files](https://picocli.info/#AtFiles) (@-files) allow applications to handle very long command lines.\n\nGenerates polished and easily tailored [usage help](https://picocli.info/#_usage_help)\nand  [version help](https://picocli.info/#_version_help),\nusing [ANSI colors](https://picocli.info/#_ansi_colors_and_styles) where possible.\nRequires at minimum Java 5, but is designed to facilitate the use of Java 8 lambdas. Tested on all [Java versions between 5 and 18-ea](https://github.com/remkop/picocli/actions/workflows/ci.yml) (inclusive).\n\nPicocli-based command line applications can have [TAB autocompletion](https://picocli.info/autocomplete.html),\ninteractively showing users what options and subcommands are available.\nWhen an option has [`completionCandidates`](https://picocli.info/#_completion_candidates_variable) or has an `enum` type, autocompletion can also suggest option values.\nPicocli can generate completion scripts for bash and zsh, and offers [`picocli-shell-jline2`](picocli-shell-jline2/README.md) and [`picocli-shell-jline3`](picocli-shell-jline3/README.md) modules with JLine `Completer` implementations for building interactive shell applications.\n\nUnique features in picocli include support for [negatable options](https://picocli.info/#_negatable_options),\nadvanced [quoted values](https://picocli.info/#_quoted_values),\nand [argument groups](https://picocli.info/#_argument_groups).\nArgument groups can be used to create mutually [exclusive](https://picocli.info/#_mutually_exclusive_options) options,\nmutually [dependent](https://picocli.info/#_mutually_dependent_options) options,\noption [sections](https://picocli.info/#_option_sections_in_usage_help) in the usage help message\nand [repeating composite arguments](https://picocli.info/#_repeating_composite_argument_groups) like\n`([-a=<a> -b=<b> -c=<c>] (-x | -y | -z))...`.\nFor advanced use cases, applications can access the picocli command object model with the\n[`@Spec` annotation](https://picocli.info/#spec-annotation), and\nimplement [custom parameter processing](https://picocli.info/#_custom_parameter_processing) for option parameters if the built-in logic is insufficient.\n\n\nPicocli-based applications can easily [integrate](https://picocli.info/#_dependency_injection) with Dependency Injection containers.\nThe [Micronaut](https://micronaut.io/) microservices framework has [built-in support](https://docs.micronaut.io/latest/guide/index.html#commandLineApps) for picocli.\n[Quarkus](https://quarkus.io/) has a [Command Mode with Picocli](https://quarkus.io/guides/picocli) extension for facilitating the creation of picocli-based CLI applications with Quarkus.\nPicocli ships with a [`picocli-spring-boot-starter` module](https://github.com/remkop/picocli/tree/main/picocli-spring-boot-starter)\nthat includes a `PicocliSpringFactory` and Spring Boot auto-configuration to use Spring dependency injection in your picocli command line application.\nThe user manual has examples of integrating with [Guice](https://picocli.info/#_guice_example), [Spring Boot](https://picocli.info/#_spring_boot_example), [Micronaut](https://picocli.info/#_micronaut_example), [Quarkus](https://picocli.info/#_quarkus_example) and with containers that comply to [CDI 2.0 specification](https://picocli.info/#_cdi_2_0_jsr_365) (JSR 365).",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "developer-tools",
+    "lang:java"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "5317 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "450 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:44:39.120Z"
+  },
+  "implementation": {
+    "type": "framework",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/remkop/picocli",
+        "description": "GitHub repository: remkop/picocli"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://picocli.info",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Java"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "remkop",
+        "type": "human",
+        "uri": "https://github.com/remkop"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 6217,
+      "validation_diversity": 0.72,
+      "context_breadth": 0.67,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.6
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.741
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/teamhanko--hanko",
+  "meta": {
+    "title": "About Hanko",
+    "description": "Modern authentication, on your terms. Open source alternative to Auth0, Clerk, WorkOS, Stytch.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:44:59.047Z",
+    "dateModified": "2026-03-03T08:44:59.047Z",
+    "keywords": [
+      "2fa",
+      "authentication",
+      "ciam",
+      "fido2",
+      "iam",
+      "jwt",
+      "mfa",
+      "oauth",
+      "passkeys",
+      "passwordless",
+      "saml",
+      "sso",
+      "user-management",
+      "webauthn"
+    ],
+    "license": "NOASSERTION"
+  },
+  "problemSolved": {
+    "statement": "Hanko is an open source authentication and user management solution that is easy to integrate, framework-agnostic, and built on privacy-first principles like data minimalism and phishing resistance.",
+    "context": "Hanko is an open source authentication and user management solution that is easy to integrate, framework-agnostic, and built on privacy-first principles like data minimalism and phishing resistance.\n\n- Supports all modern authentication methods: passwords, MFA, passkeys, social logins, and SAML SSO\n- Flexible configuration options, including passkey-only, OAuth-only, and user-deletable passwords\n- Easy integration with **Hanko Elements** web components\n- A robust API that handles all authentication and onboarding flow states, enabling fast, reliable custom frontend implementations\n- API-first, lightweight, cloud-native\n\nAvailable for self-hosting and as a fully managed service on [Hanko Cloud](https://www.hanko.io).",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "machine-learning",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "8850 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "1011 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:44:59.047Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/teamhanko/hanko",
+        "description": "GitHub repository: teamhanko/hanko"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://www.hanko.io",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "teamhanko",
+        "type": "human",
+        "uri": "https://github.com/teamhanko"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 10872,
+      "validation_diversity": 0.58,
+      "context_breadth": 0.7,
+      "temporal_stability": 0.99,
+      "test_coverage": 0.67,
+      "documentation_quality": 0.6
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.741
+  }
+}

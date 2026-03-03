@@ -1,0 +1,206 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/textualize--textual",
+  "meta": {
+    "title": "Textual",
+    "description": "The lean application framework for Python.  Build sophisticated user interfaces with a simple Python API. Run your apps in the terminal and a web browser.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:43:36.191Z",
+    "dateModified": "2026-03-03T08:43:36.191Z",
+    "keywords": [
+      "cli",
+      "framework",
+      "python",
+      "rich",
+      "terminal",
+      "tui"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "<img align=\"right\" width=\"250\" alt=\"clock\" src=\"https://github.com/user-attachments/assets/63e839c3-5b8e-478d-b78e-cf7647eb85e8\" />",
+    "context": "<img align=\"right\" width=\"250\" alt=\"clock\" src=\"https://github.com/user-attachments/assets/63e839c3-5b8e-478d-b78e-cf7647eb85e8\" />\n\nBuild cross-platform user interfaces with a simple Python API. Run your apps in the terminal *or* a web browser.\n\nTextual's API combines modern Python with the best of developments from the web world, for a lean app development experience.\nDe-coupled components and an advanced [testing](https://textual.textualize.io/guide/testing/) framework ensure you can maintain your app for the long-term.\n\nWant some more examples? See the [examples](https://github.com/Textualize/textual/tree/main/examples) directory.\n\n```python\n\"\"\"\nAn App to show the current time.\n\"\"\"\n\nfrom datetime import datetime\n\nfrom textual.app import App, ComposeResult\nfrom textual.widgets import Digits\n\n\nclass ClockApp(App):\n    CSS = \"\"\"\n    Screen { align: center middle; }\n    Digits { width: auto; }\n    \"\"\"\n\n    def compose(self) -> ComposeResult:\n        yield Digits(\"\")\n\n    def on_ready(self) -> None:\n        self.update_clock()\n        self.set_interval(1, self.update_clock)\n\n    def update_clock(self) -> None:\n        clock = datetime.now().time()\n        self.query_one(Digits).update(f\"{clock:%T}\")\n\n\nif __name__ == \"__main__\":\n    app = ClockApp()\n    app.run()\n```\n\n> [!TIP]\n> Textual is an asynchronous framework under the hood. Which means you can integrate your apps with async libraries &mdash; if you want to.\n> If you don't want or need to use async, Textual won't force it on you. \n\n\n\n<img src=\"https://img.spacergif.org/spacer.gif\" width=\"1\" height=\"64\"/>",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "backend",
+    "developer-tools",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "34574 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "1111 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:43:36.191Z"
+  },
+  "implementation": {
+    "type": "framework",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/Textualize/textual",
+        "description": "GitHub repository: Textualize/textual"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://textual.textualize.io/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "markdown-it-py",
+        "version": ">=2.1.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/markdown-it-py/"
+      },
+      {
+        "name": "mdit-py-plugins",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/mdit-py-plugins/"
+      },
+      {
+        "name": "rich",
+        "version": ">=14.2.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/rich/"
+      },
+      {
+        "name": "typing-extensions",
+        "version": "^4.4.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/typing-extensions/"
+      },
+      {
+        "name": "platformdirs",
+        "version": ">=3.6.0,<5",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/platformdirs/"
+      },
+      {
+        "name": "pygments",
+        "version": "^2.19.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pygments/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Textualize",
+        "type": "human",
+        "uri": "https://github.com/Textualize"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 36796,
+      "validation_diversity": 0.76,
+      "context_breadth": 0.54,
+      "temporal_stability": 1,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.73
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.734
+  }
+}

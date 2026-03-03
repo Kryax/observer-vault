@@ -1,0 +1,191 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/open-telemetry--opentelemetry-collector",
+  "meta": {
+    "title": "<img src=\"https://opentelemetry.io/img/logos/opentelemetry-logo-nav.png\" alt=\"OpenTelemetry Icon\" width=\"45\" height=\"\"> OpenTelemetry Collector",
+    "description": "OpenTelemetry Collector",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:45:01.515Z",
+    "dateModified": "2026-03-03T08:45:01.515Z",
+    "keywords": [
+      "metrics",
+      "monitoring",
+      "observability",
+      "open-telemetry",
+      "opentelemetry",
+      "telemetry"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "The OpenTelemetry Collector offers a vendor-agnostic implementation on how to\nreceive, process and export telemetry data. In addition, it removes the need\nto run, operate and maintain multiple agents/collectors in order to support\nopen-source telemetry data formats (e.g. Jaeger, Prometheus, etc.) to\nmultiple open-source or commercial back-ends.",
+    "context": "The OpenTelemetry Collector offers a vendor-agnostic implementation on how to\nreceive, process and export telemetry data. In addition, it removes the need\nto run, operate and maintain multiple agents/collectors in order to support\nopen-source telemetry data formats (e.g. Jaeger, Prometheus, etc.) to\nmultiple open-source or commercial back-ends.\n\nObjectives:\n\n- Usable: Reasonable default configuration, supports popular protocols, runs and collects out of the box.\n- Performant: Highly stable and performant under varying loads and configurations.\n- Observable: An exemplar of an observable service.\n- Extensible: Customizable without touching the core code.\n- Unified: Single codebase, deployable as an agent or collector with support for traces, metrics and logs.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "6660 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "1903 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:45:01.515Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/open-telemetry/opentelemetry-collector",
+        "description": "GitHub repository: open-telemetry/opentelemetry-collector"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://opentelemetry.io",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.11.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      },
+      {
+        "name": "google.golang.org/genproto/googleapis/rpc",
+        "version": "v0.0.0-20251202230838-ff82c1b0f217",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/genproto/googleapis/rpc"
+      },
+      {
+        "name": "google.golang.org/grpc",
+        "version": "v1.79.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/grpc"
+      },
+      {
+        "name": "google.golang.org/protobuf",
+        "version": "v1.36.11",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/protobuf"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "open-telemetry",
+        "type": "human",
+        "uri": "https://github.com/open-telemetry"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 10466,
+      "validation_diversity": 0.92,
+      "context_breadth": 0.54,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.2,
+      "documentation_quality": 0.6
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.707
+  }
+}

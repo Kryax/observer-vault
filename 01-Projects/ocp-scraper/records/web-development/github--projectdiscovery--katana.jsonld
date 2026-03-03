@@ -1,0 +1,364 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/projectdiscovery--katana",
+  "meta": {
+    "title": "Features",
+    "description": "A next-generation crawling and spidering framework.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:43:39.810Z",
+    "dateModified": "2026-03-03T08:43:39.810Z",
+    "keywords": [
+      "cli",
+      "crawler",
+      "gocrawler",
+      "hacktoberfest",
+      "headless",
+      "spider-framework",
+      "web-spider"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "![image](https://user-images.githubusercontent.com/8293321/199371558-daba03b6-bf9c-4883-8506-76497c6c3a44.png)",
+    "context": "![image](https://user-images.githubusercontent.com/8293321/199371558-daba03b6-bf9c-4883-8506-76497c6c3a44.png)\n\n - Fast And fully configurable web crawling\n - **Standard** and **Headless** mode\n - **JavaScript** parsing / crawling\n - Customizable **automatic form filling**\n - **Scope control** - Preconfigured field / Regex \n - **Customizable output** - Preconfigured fields\n - INPUT - **STDIN**, **URL** and **LIST**\n - OUTPUT - **STDOUT**, **FILE** and **JSON**",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "developer-tools",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "15623 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "957 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:43:39.810Z"
+  },
+  "implementation": {
+    "type": "framework",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/projectdiscovery/katana",
+        "description": "GitHub repository: projectdiscovery/katana"
+      }
+    ],
+    "solutionApproach": "See usage section in README",
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "github.com/BishopFox/jsluice",
+        "version": "v0.0.0-20240110145140-0ddfab153e06",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/BishopFox/jsluice"
+      },
+      {
+        "name": "github.com/PuerkitoBio/goquery",
+        "version": "v1.11.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/PuerkitoBio/goquery"
+      },
+      {
+        "name": "github.com/adrianbrad/queue",
+        "version": "v1.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/adrianbrad/queue"
+      },
+      {
+        "name": "github.com/dominikbraun/graph",
+        "version": "v0.23.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/dominikbraun/graph"
+      },
+      {
+        "name": "github.com/go-rod/rod",
+        "version": "v0.116.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-rod/rod"
+      },
+      {
+        "name": "github.com/hashicorp/golang-lru/v2",
+        "version": "v2.0.7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/golang-lru/v2"
+      },
+      {
+        "name": "github.com/json-iterator/go",
+        "version": "v1.1.12",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/json-iterator/go"
+      },
+      {
+        "name": "github.com/lmittmann/tint",
+        "version": "v1.0.6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/lmittmann/tint"
+      },
+      {
+        "name": "github.com/logrusorgru/aurora",
+        "version": "v2.0.3+incompatible",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/logrusorgru/aurora"
+      },
+      {
+        "name": "github.com/lukasbob/srcset",
+        "version": "v0.0.0-20190730101422-86b742e617f3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/lukasbob/srcset"
+      },
+      {
+        "name": "github.com/mfonda/simhash",
+        "version": "v0.0.0-20151007195837-79f94a1100d6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mfonda/simhash"
+      },
+      {
+        "name": "github.com/mitchellh/mapstructure",
+        "version": "v1.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mitchellh/mapstructure"
+      },
+      {
+        "name": "github.com/pkg/errors",
+        "version": "v0.9.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/pkg/errors"
+      },
+      {
+        "name": "github.com/projectdiscovery/dsl",
+        "version": "v0.8.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/projectdiscovery/dsl"
+      },
+      {
+        "name": "github.com/projectdiscovery/fastdialer",
+        "version": "v0.5.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/projectdiscovery/fastdialer"
+      },
+      {
+        "name": "github.com/projectdiscovery/goflags",
+        "version": "v0.1.74",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/projectdiscovery/goflags"
+      },
+      {
+        "name": "github.com/projectdiscovery/gologger",
+        "version": "v1.1.67",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/projectdiscovery/gologger"
+      },
+      {
+        "name": "github.com/projectdiscovery/hmap",
+        "version": "v0.0.99",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/projectdiscovery/hmap"
+      },
+      {
+        "name": "github.com/projectdiscovery/mapcidr",
+        "version": "v1.1.97",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/projectdiscovery/mapcidr"
+      },
+      {
+        "name": "github.com/projectdiscovery/ratelimit",
+        "version": "v0.0.82",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/projectdiscovery/ratelimit"
+      },
+      {
+        "name": "github.com/projectdiscovery/retryablehttp-go",
+        "version": "v1.3.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/projectdiscovery/retryablehttp-go"
+      },
+      {
+        "name": "github.com/projectdiscovery/utils",
+        "version": "v0.8.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/projectdiscovery/utils"
+      },
+      {
+        "name": "github.com/projectdiscovery/wappalyzergo",
+        "version": "v0.2.62",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/projectdiscovery/wappalyzergo"
+      },
+      {
+        "name": "github.com/remeh/sizedwaitgroup",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/remeh/sizedwaitgroup"
+      },
+      {
+        "name": "github.com/rs/xid",
+        "version": "v1.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/rs/xid"
+      },
+      {
+        "name": "github.com/stoewer/go-strcase",
+        "version": "v1.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stoewer/go-strcase"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.11.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      },
+      {
+        "name": "github.com/valyala/fasttemplate",
+        "version": "v1.2.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/valyala/fasttemplate"
+      },
+      {
+        "name": "go.uber.org/multierr",
+        "version": "v1.11.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.uber.org/multierr"
+      },
+      {
+        "name": "golang.org/x/net",
+        "version": "v0.50.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/net"
+      },
+      {
+        "name": "gopkg.in/yaml.v3",
+        "version": "v3.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gopkg.in/yaml.v3"
+      },
+      {
+        "name": "github.com/projectdiscovery/networkpolicy",
+        "version": "v0.1.33",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/projectdiscovery/networkpolicy"
+      },
+      {
+        "name": "gopkg.in/yaml.v2",
+        "version": "v2.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gopkg.in/yaml.v2"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "projectdiscovery",
+        "type": "human",
+        "uri": "https://github.com/projectdiscovery"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 17537,
+      "validation_diversity": 0.59,
+      "context_breadth": 0.58,
+      "temporal_stability": 1,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.8
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.717
+  }
+}

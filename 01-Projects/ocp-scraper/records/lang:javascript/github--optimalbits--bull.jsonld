@@ -1,0 +1,206 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/optimalbits--bull",
+  "meta": {
+    "title": "bull",
+    "description": "Premium Queue package for handling distributed jobs and messages in NodeJS.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:42:55.482Z",
+    "dateModified": "2026-03-03T08:42:55.482Z",
+    "keywords": [
+      "job",
+      "job-queue",
+      "message",
+      "message-queue",
+      "nodejs",
+      "priority",
+      "queue",
+      "rate-limiter",
+      "scheduler"
+    ],
+    "license": "NOASSERTION"
+  },
+  "problemSolved": {
+    "statement": "- [x] Minimal CPU usage due to a polling-free design.\n- [x] Robust design based on Redis.\n- [x] Delayed jobs.\n- [x] Schedule and repeat jobs according to a cron specification.\n- [x] Rate limiter for jobs.\n- [x] Retries.\n- [x] Priority.\n- [x] Concurrency.\n- [x] Pause/resume—globally or locally.\n- [x] Multiple job types per queue.\n- [x] Threaded (sandboxed) processing functions.\n- [x] Automatic recovery from process crashes.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:javascript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "16238 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "1428 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:42:55.482Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/OptimalBits/bull",
+        "description": "GitHub repository: OptimalBits/bull"
+      }
+    ],
+    "language": "JavaScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "cron-parser",
+        "version": "^4.9.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/cron-parser"
+      },
+      {
+        "name": "get-port",
+        "version": "^5.1.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/get-port"
+      },
+      {
+        "name": "ioredis",
+        "version": "^5.3.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/ioredis"
+      },
+      {
+        "name": "lodash",
+        "version": "^4.17.21",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/lodash"
+      },
+      {
+        "name": "msgpackr",
+        "version": "^1.11.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/msgpackr"
+      },
+      {
+        "name": "semver",
+        "version": "^7.5.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/semver"
+      },
+      {
+        "name": "uuid",
+        "version": "^8.3.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/uuid"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "OptimalBits",
+        "type": "human",
+        "uri": "https://github.com/OptimalBits"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 19094,
+      "validation_diversity": 0.8,
+      "context_breadth": 0.66,
+      "temporal_stability": 1,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.65
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.76
+  }
+}

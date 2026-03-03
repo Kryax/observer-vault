@@ -2,9 +2,9 @@
 name: "Observer-Feedback Loop"
 tier: 1
 status: provisional
-confidence: 0.4
+confidence: 0.5
 source: "top-down"
-domain_count: 3
+domain_count: 4
 created: 2026-03-03
 updated: 2026-03-03
 ---
@@ -39,12 +39,19 @@ The thing being observed feeds back into the observer's frame of reference, caus
 - **Discovery date:** 2026-03-03
 - **Source:** top-down
 
+### Instance 4: Creative Methodology / Metacognition (Self-Constructing Reflect Skill)
+- **Domain:** Creative Methodology / Metacognition
+- **Expression:** The Reflect skill was built using the creative methodology it formalises. Its own construction was an instance of observation-feedback: the act of building the reflection system changed understanding of what reflection is, which changed the system being built. The skill's design fed back into the designer's frame of reference, producing self-referential closure — the system literally built its own capacity for self-awareness.
+- **Discovery date:** 2026-03-03
+- **Source:** top-down
+
 ## Relationships
 
 | Related Motif | Relationship | Description |
 |---------------|-------------|-------------|
 | Dual-Speed Governance | complement | Observer-Feedback operates at fast speed; governance constrains how feedback changes the frame |
 | Template-Driven Classification | composition | Templates are a specific instance of the observer's frame; feedback loop is the mechanism by which templates evolve |
+| Progressive Formalization | composition | Each formalization stage is an observation event — formalizing reveals new structure, feeding back into understanding. Progressive Formalization is this loop operating across formalization stages. |
 
 ## Discovery Context
 

@@ -1,0 +1,226 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/dthree--vorpal",
+  "meta": {
+    "title": "Vorpal",
+    "description": "Node's framework for interactive CLIs",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:43:51.732Z",
+    "dateModified": "2026-03-03T08:43:51.732Z",
+    "keywords": [
+      "cli",
+      "interactive",
+      "node",
+      "shell"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "Inspired by and based on [commander.js](https://www.npmjs.com/package/commander), Vorpal is a framework for building immersive CLI applications built on an interactive prompt provided by [inquirer.js](https://www.npmjs.com/package/inquirer). Vorpal launches Node into an isolated CLI environment and provides a suite of API commands and functionality including:\r\n\r\n* [x] Simple, powerful command creation\r\n* [x] Supports optional, required and variadic arguments and options\r\n* [x] Piped commands\r\n* [x] Persistent command history\r\n* [x] Built-in help\r\n* [x] Built-in tabbed auto-completion\r\n* [x] Command-specific auto-completion\r\n* [x] Customizable prompts\r\n* [x] Extensive terminal control\r\n* [x] Custom event listeners\r\n* [x] And more\r\n\r\nVorpal supports [community extensions](https://github.com/vorpaljs/awesome-vorpaljs), which empower it to do awesome things such as [piping commands to less](https://github.com/vorpaljs/vorpal-less), [importing commands live](https://github.com/vorpaljs/vorpal-use) or supporting a [built-in REPL](https://github.com/vorpaljs/vorpal-repl).\r\n\r\nMade with :heart: by [dthree](https://github.com/dthree).",
+    "context": "[![Build Status](https://travis-ci.org/dthree/vorpal.svg)](https://travis-ci.org/dthree/vorpal/)\r\n<a href=\"https://www.npmjs.com/package/vorpal\">\r\n  <img src=\"https://img.shields.io/npm/dt/vorpal.svg\" alt=\"NPM Downloads\" />\r\n</a>\r\n[![Package Quality](http://npm.packagequality.com/shield/vorpal.svg)](http://packagequality.com/#?package=vorpal)\r\n<a href=\"https://www.npmjs.com/package/vorpal\">\r\n  <img src=\"https://img.shields.io/npm/v/vorpal.svg\" alt=\"NPM Version\" />\r\n</a>\r\n[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)\r\n\r\n> Conquer the command-line.\r\n\r\n```text\r\n              (O)\r\n              <M\r\n   o          <M\r\n  /| ......  /:M\\------------------------------------------------,,,,,,\r\n(O)[ vorpal ]::@+}==========================================------------>\r\n  \\| ^^^^^^  \\:W/------------------------------------------------''''''\r\n   o          <W\r\n              <W\r\n              (O)\r\n```\r\n\r\nVorpal is Node's first framework for building interactive CLI applications. With a simple and powerful API, Vorpal opens the door to a new breed of rich, immersive CLI environments like [cash](https://github.com/dthree/cash) and [wat](https://github.com/dthree/wat).",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "developer-tools",
+    "lang:javascript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "5639 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "279 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:43:51.732Z"
+  },
+  "implementation": {
+    "type": "framework",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/dthree/vorpal",
+        "description": "GitHub repository: dthree/vorpal"
+      },
+      {
+        "type": "documentation",
+        "uri": "http://vorpal.js.org",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "JavaScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "babel-polyfill",
+        "version": "^6.3.14",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/babel-polyfill"
+      },
+      {
+        "name": "chalk",
+        "version": "^1.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/chalk"
+      },
+      {
+        "name": "in-publish",
+        "version": "^2.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/in-publish"
+      },
+      {
+        "name": "inquirer",
+        "version": "0.11.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/inquirer"
+      },
+      {
+        "name": "lodash",
+        "version": "^4.5.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/lodash"
+      },
+      {
+        "name": "log-update",
+        "version": "^1.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/log-update"
+      },
+      {
+        "name": "minimist",
+        "version": "^1.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/minimist"
+      },
+      {
+        "name": "node-localstorage",
+        "version": "^0.6.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/node-localstorage"
+      },
+      {
+        "name": "strip-ansi",
+        "version": "^3.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/strip-ansi"
+      },
+      {
+        "name": "wrap-ansi",
+        "version": "^2.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/wrap-ansi"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "dthree",
+        "type": "human",
+        "uri": "https://github.com/dthree"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 6197,
+      "validation_diversity": 0.51,
+      "context_breadth": 0.4,
+      "temporal_stability": 0.64,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.6
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.555
+  }
+}

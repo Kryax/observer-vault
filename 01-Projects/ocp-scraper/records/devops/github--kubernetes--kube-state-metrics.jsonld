@@ -1,0 +1,321 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/kubernetes--kube-state-metrics",
+  "meta": {
+    "title": "Overview",
+    "description": "Add-on agent to generate and expose cluster-level metrics.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:46:26.481Z",
+    "dateModified": "2026-03-03T08:46:26.481Z",
+    "keywords": [
+      "kubernetes",
+      "kubernetes-exporter",
+      "kubernetes-monitoring",
+      "metrics",
+      "monitoring",
+      "observability",
+      "prometheus",
+      "prometheus-exporter"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "[![Build Status](https://github.com/kubernetes/kube-state-metrics/workflows/continuous-integration/badge.svg)](https://github.com/kubernetes/kube-state-metrics/actions)\n[![Go Report Card](https://goreportcard.com/badge/github.com/kubernetes/kube-state-metrics)](https://goreportcard.com/report/github.com/kubernetes/kube-state-metrics)\n[![Go Reference](https://pkg.go.dev/badge/github.com/kubernetes/kube-state-metrics.svg)](https://pkg.go.dev/github.com/kubernetes/kube-state-metrics)\n[![govulncheck](https://github.com/kubernetes/kube-state-metrics/actions/workflows/govulncheck.yml/badge.svg)](https://github.com/kubernetes/kube-state-metrics/actions/workflows/govulncheck.yml)\n[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/8696/badge)](https://www.bestpractices.dev/projects/8696)\n[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/kubernetes/kube-state-metrics/badge)](https://api.securityscorecards.dev/projects/github.com/kubernetes/kube-state-metrics)",
+    "context": "[![Build Status](https://github.com/kubernetes/kube-state-metrics/workflows/continuous-integration/badge.svg)](https://github.com/kubernetes/kube-state-metrics/actions)\n[![Go Report Card](https://goreportcard.com/badge/github.com/kubernetes/kube-state-metrics)](https://goreportcard.com/report/github.com/kubernetes/kube-state-metrics)\n[![Go Reference](https://pkg.go.dev/badge/github.com/kubernetes/kube-state-metrics.svg)](https://pkg.go.dev/github.com/kubernetes/kube-state-metrics)\n[![govulncheck](https://github.com/kubernetes/kube-state-metrics/actions/workflows/govulncheck.yml/badge.svg)](https://github.com/kubernetes/kube-state-metrics/actions/workflows/govulncheck.yml)\n[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/8696/badge)](https://www.bestpractices.dev/projects/8696)\n[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/kubernetes/kube-state-metrics/badge)](https://api.securityscorecards.dev/projects/github.com/kubernetes/kube-state-metrics)\n\nkube-state-metrics (KSM) is a simple service that listens to the Kubernetes API\nserver and generates metrics about the state of the objects. (See examples in\nthe Metrics section below.) It is not focused on the health of the individual\nKubernetes components, but rather on the health of the various objects inside,\nsuch as deployments, nodes and pods.\n\nkube-state-metrics is about generating metrics from Kubernetes API objects\nwithout modification. This ensures that features provided by kube-state-metrics\nhave the same grade of stability as the Kubernetes API objects themselves. In\nturn, this means that kube-state-metrics in certain situations may not show the\nexact same values as kubectl, as kubectl applies certain heuristics to display\ncomprehensible messages. kube-state-metrics exposes raw data unmodified from the\nKubernetes API, this way users have all the data they require and perform\nheuristics as they see fit.\n\nThe metrics are exported on the HTTP endpoint `/metrics` on the listening port\n(default 8080). They are served as plaintext. They are designed to be consumed\neither by Prometheus itself or by a scraper that is compatible with scraping a\nPrometheus client endpoint. You can also open `/metrics` in a browser to see\nthe raw metrics. Note that the metrics exposed on the `/metrics` endpoint\nreflect the current state of the Kubernetes cluster. When Kubernetes objects\nare deleted they are no longer visible on the `/metrics` endpoint.\n\n> [!NOTE]\n> This README is generated from a [template](./README.md.tpl). Please make your changes there and run `make generate-template`.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "devops",
+    "containerization",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "6070 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "2151 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:46:26.481Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/kubernetes/kube-state-metrics",
+        "description": "GitHub repository: kubernetes/kube-state-metrics"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://kubernetes.io/docs/concepts/cluster-administration/kube-state-metrics/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "github.com/KimMachineGun/automemlimit",
+        "version": "v0.7.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/KimMachineGun/automemlimit"
+      },
+      {
+        "name": "github.com/dgryski/go-jump",
+        "version": "v0.0.0-20211018200510-ba001c3ffce0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/dgryski/go-jump"
+      },
+      {
+        "name": "github.com/dlclark/regexp2",
+        "version": "v1.11.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/dlclark/regexp2"
+      },
+      {
+        "name": "github.com/fsnotify/fsnotify",
+        "version": "v1.9.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/fsnotify/fsnotify"
+      },
+      {
+        "name": "github.com/go-logr/logr",
+        "version": "v1.4.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-logr/logr"
+      },
+      {
+        "name": "github.com/gobuffalo/flect",
+        "version": "v1.0.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gobuffalo/flect"
+      },
+      {
+        "name": "github.com/google/go-cmp",
+        "version": "v0.7.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/go-cmp"
+      },
+      {
+        "name": "github.com/oklog/run",
+        "version": "v1.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/oklog/run"
+      },
+      {
+        "name": "github.com/prometheus/client_golang",
+        "version": "v1.23.3-0.20251103151724-a5ae20370e5e",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/client_golang"
+      },
+      {
+        "name": "github.com/prometheus/client_model",
+        "version": "v0.6.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/client_model"
+      },
+      {
+        "name": "github.com/prometheus/common",
+        "version": "v0.67.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/common"
+      },
+      {
+        "name": "github.com/prometheus/exporter-toolkit",
+        "version": "v0.15.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/exporter-toolkit"
+      },
+      {
+        "name": "github.com/robfig/cron/v3",
+        "version": "v3.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/robfig/cron/v3"
+      },
+      {
+        "name": "github.com/spf13/cobra",
+        "version": "v1.10.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/cobra"
+      },
+      {
+        "name": "github.com/spf13/viper",
+        "version": "v1.21.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/viper"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.11.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      },
+      {
+        "name": "k8s.io/api",
+        "version": "v0.34.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/api"
+      },
+      {
+        "name": "k8s.io/apimachinery",
+        "version": "v0.34.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/apimachinery"
+      },
+      {
+        "name": "k8s.io/client-go",
+        "version": "v0.34.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/client-go"
+      },
+      {
+        "name": "k8s.io/component-base",
+        "version": "v0.34.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/component-base"
+      },
+      {
+        "name": "k8s.io/klog/v2",
+        "version": "v2.130.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/klog/v2"
+      },
+      {
+        "name": "k8s.io/sample-controller",
+        "version": "v0.34.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/sample-controller"
+      },
+      {
+        "name": "k8s.io/utils",
+        "version": "v0.0.0-20250820121507-0af2bda4dd1d",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/utils"
+      },
+      {
+        "name": "sigs.k8s.io/controller-runtime",
+        "version": "v0.22.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/sigs.k8s.io/controller-runtime"
+      },
+      {
+        "name": "sigs.k8s.io/yaml",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/sigs.k8s.io/yaml"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "kubernetes",
+        "type": "human",
+        "uri": "https://github.com/kubernetes"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 10372,
+      "validation_diversity": 0.87,
+      "context_breadth": 0.62,
+      "temporal_stability": 1,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.75
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.802
+  }
+}

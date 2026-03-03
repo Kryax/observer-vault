@@ -1,0 +1,243 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/amacneil--dbmate",
+  "meta": {
+    "title": "Dbmate",
+    "description": "🚀 A lightweight, framework-agnostic database migration tool.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:43:26.513Z",
+    "dateModified": "2026-03-03T08:43:26.513Z",
+    "keywords": [
+      "clickhouse",
+      "cpp",
+      "database",
+      "database-migrations",
+      "database-schema",
+      "docker",
+      "go",
+      "golang",
+      "migration",
+      "migrations",
+      "mysql",
+      "nodejs",
+      "postgres",
+      "postgresql",
+      "python",
+      "rust",
+      "sqlite"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "[![Release](https://img.shields.io/github/release/amacneil/dbmate.svg)](https://github.com/amacneil/dbmate/releases)\n[![Go Report](https://goreportcard.com/badge/github.com/amacneil/dbmate)](https://goreportcard.com/report/github.com/amacneil/dbmate)\n[![Reference](https://img.shields.io/badge/go.dev-reference-blue?logo=go&logoColor=white)](https://pkg.go.dev/github.com/amacneil/dbmate/v2/pkg/dbmate)",
+    "context": "[![Release](https://img.shields.io/github/release/amacneil/dbmate.svg)](https://github.com/amacneil/dbmate/releases)\n[![Go Report](https://goreportcard.com/badge/github.com/amacneil/dbmate)](https://goreportcard.com/report/github.com/amacneil/dbmate)\n[![Reference](https://img.shields.io/badge/go.dev-reference-blue?logo=go&logoColor=white)](https://pkg.go.dev/github.com/amacneil/dbmate/v2/pkg/dbmate)\n\nDbmate is a database migration tool that will keep your database schema in sync across multiple developers and your production servers.\n\nIt is a standalone command line tool that can be used with Go, Node.js, Python, Ruby, PHP, Rust, C++, or any other language or framework you are using to write database-backed applications. This is especially helpful if you are writing multiple services in different languages, and want to maintain some sanity with consistent development tools.\n\nFor a comparison between dbmate and other popular database schema migration tools, please see [Alternatives](#alternatives).",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "data-management",
+    "devops",
+    "containerization",
+    "developer-tools",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "6746 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "343 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:43:26.513Z"
+  },
+  "implementation": {
+    "type": "framework",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/amacneil/dbmate",
+        "description": "GitHub repository: amacneil/dbmate"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "cloud.google.com/go/bigquery",
+        "version": "v1.73.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/cloud.google.com/go/bigquery"
+      },
+      {
+        "name": "github.com/ClickHouse/clickhouse-go/v2",
+        "version": "v2.43.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/ClickHouse/clickhouse-go/v2"
+      },
+      {
+        "name": "github.com/go-sql-driver/mysql",
+        "version": "v1.9.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-sql-driver/mysql"
+      },
+      {
+        "name": "github.com/joho/godotenv",
+        "version": "v1.5.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/joho/godotenv"
+      },
+      {
+        "name": "github.com/lib/pq",
+        "version": "v1.11.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/lib/pq"
+      },
+      {
+        "name": "github.com/mattn/go-sqlite3",
+        "version": "v1.14.33",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mattn/go-sqlite3"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.11.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      },
+      {
+        "name": "github.com/urfave/cli/v2",
+        "version": "v2.27.7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/urfave/cli/v2"
+      },
+      {
+        "name": "github.com/zenizh/go-capturer",
+        "version": "v0.0.0-20211219060012-52ea6c8fed04",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/zenizh/go-capturer"
+      },
+      {
+        "name": "google.golang.org/api",
+        "version": "v0.265.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/api"
+      },
+      {
+        "name": "gorm.io/driver/bigquery",
+        "version": "v1.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gorm.io/driver/bigquery"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "amacneil",
+        "type": "human",
+        "uri": "https://github.com/amacneil"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 7432,
+      "validation_diversity": 0.61,
+      "context_breadth": 0.65,
+      "temporal_stability": 1,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.75
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.722
+  }
+}

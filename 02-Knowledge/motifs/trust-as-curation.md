@@ -2,9 +2,9 @@
 name: "Trust-as-Curation"
 tier: 1
 status: provisional
-confidence: 0.3
+confidence: 0.4
 source: "top-down"
-domain_count: 3
+domain_count: 4
 created: 2026-03-03
 updated: 2026-03-03
 ---
@@ -37,6 +37,12 @@ Trust vectors determine what enters the system and how prominently it features, 
 - **Domain:** Industry/Policy
 - **Expression:** Retraining provider credibility based on demonstrated outcomes rather than accreditation. Providers with strong employment outcomes earn higher trust; new providers start low and build credibility through results. Trust determines resource allocation priority.
 - **Discovery date:** 2026-03-02
+- **Source:** top-down
+
+### Instance 4: Knowledge Architecture / Metacognition (Motif Confidence Scoring)
+- **Domain:** Knowledge Architecture / Metacognition
+- **Expression:** Motif confidence scoring where trust is earned through cross-domain confirmation, not granted by authority. High-confidence motifs participate in meta-analysis and inform future creative sessions; low-confidence motifs exist but are excluded from higher-tier operations. Triangulation (independent top-down and bottom-up confirmation) grants a +0.2 trust bonus. The library is curated by trust — not by access control — determining what knowledge enters higher cognitive operations.
+- **Discovery date:** 2026-03-03
 - **Source:** top-down
 
 ## Relationships

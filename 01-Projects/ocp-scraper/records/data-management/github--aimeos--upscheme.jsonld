@@ -1,0 +1,179 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/aimeos--upscheme",
+  "meta": {
+    "title": "Upscheme: Database schema updates made easy",
+    "description": "Database migrations and schema updates made easy",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T08:43:48.086Z",
+    "dateModified": "2026-03-03T08:43:48.086Z",
+    "keywords": [
+      "database",
+      "database-management",
+      "database-migrations",
+      "database-schema",
+      "database-schema-migration",
+      "db",
+      "migration",
+      "migrations",
+      "mysql",
+      "php",
+      "postgresql",
+      "rdbms",
+      "schema",
+      "sql",
+      "sql-server",
+      "sqlite",
+      "sqlserver",
+      "sqlsrv"
+    ],
+    "license": "LGPL-3.0"
+  },
+  "problemSolved": {
+    "statement": "Easy to use PHP package for updating the database schema of your application\nand migrate data between versions.",
+    "context": "Easy to use PHP package for updating the database schema of your application\nand migrate data between versions.\n\n```bash\ncomposer req aimeos/upscheme\n```\n\n**Table of contents**\n\n* [Why Upscheme](#why-upscheme)\n* [Database support](#database-support)\n* [Integrating Upscheme](#integrating-upscheme)\n* [Writing migrations](#writing-migrations)\n  * [Naming](#naming-migrations)\n  * [Dependencies](#dependencies)\n  * [Messages](#messages)\n  * [Schemas](#schemas)\n  * [Generate from database](#generate-from-database)\n* [Database](#database)\n  * [Accessing objects](#accessing-objects)\n  * [Checking existence](#checking-existence)\n  * [Renaming objects](#renaming-objects)\n  * [Removing objects](#removing-objects)\n  * [Query/modify table rows](#querymodify-table-rows)\n  * [Executing custom SQL](#executing-custom-sql)\n  * [Database methods](#database-methods)\n* [Tables](#tables)\n  * [Creating tables](#creating-tables)\n  * [Setting table options](#setting-table-options)\n  * [Checking table existence](#checking-table-existence)\n  * [Changing tables](#changing-tables)\n  * [Renaming tables](#renaming-tables)\n  * [Dropping tables](#dropping-tables)\n  * [Table methods](#table-methods)\n* [Columns](#columns)\n  * [Adding columns](#adding-columns)\n  * [Available column types](#available-column-types)\n  * [Column modifiers](#column-modifiers)\n  * [Checking column existence](#checking-column-existence)\n  * [Changing columns](#changing-columns)\n  * [Renaming columns](#renaming-columns)\n  * [Dropping columns](#dropping-columns)\n  * [Column methods](#column-methods)\n* [Foreign keys](#foreign-keys)\n  * [Creating foreign keys](#creating-foreign-keys)\n  * [Checking foreign key existence](#checking-foreign-key-existence)\n  * [Dropping foreign keys](#dropping-foreign-keys)\n  * [Foreign key methods](#foreign-key-methods)\n* [Sequences](#sequences)\n  * [Adding sequences](#adding-sequences)\n  * [Checking sequence existence](#checking-sequence-existence)\n  * [Dropping sequences](#dropping-sequences)\n  * [Sequence methods](#sequence-methods)\n* [Indexes](#indexes)\n  * [Adding indexes](#adding-indexes)\n  * [Checking index existence](#checking-index-existence)\n  * [Renaming indexes](#renaming-indexes)\n  * [Dropping indexes](#dropping-indexes)\n  * [Custom index naming](#custom-index-naming)\n* [Customizing Upscheme](#customizing-upscheme)\n  * [Adding custom methods](#adding-custom-methods)\n  * [Implementing custom columns](#implementing-custom-columns)\n* [Upgrade Upscheme](#upgrade-upscheme)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "data-management",
+    "lang:php"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "2610 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "4 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T08:43:48.086Z"
+  },
+  "implementation": {
+    "type": "service",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/aimeos/upscheme",
+        "description": "GitHub repository: aimeos/upscheme"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://upscheme.org",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "PHP"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "aimeos",
+        "type": "human",
+        "uri": "https://github.com/aimeos"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 2618,
+      "validation_diversity": 0,
+      "context_breadth": 0.46,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.7
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.089
+  }
+}
