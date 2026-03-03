@@ -2,9 +2,9 @@
 name: "Explicit State Machine Backbone"
 tier: 1
 status: provisional
-confidence: 0.3
+confidence: 0.4
 source: "bottom-up"
-domain_count: 3
+domain_count: 4
 created: 2026-03-03
 updated: 2026-03-03
 ---
@@ -39,6 +39,12 @@ An enumerated set of named states with explicit, guarded transitions governing a
 - **Discovery date:** 2026-03-03
 - **Source:** bottom-up (OCP scraper, 112-repo triad run — data-management: flyway/flyway, fluentmigrator/fluentmigrator)
 
+### Instance 4: CI/CD Pipeline Execution (Dagger)
+- **Domain:** CI/CD / Build Systems
+- **Expression:** Dagger models pipeline execution as an explicit state machine where each build step occupies a defined state (queued → running → succeeded | failed | cancelled). Transitions are guarded: a step cannot move to "running" unless its dependencies have "succeeded"; a step cannot be "cancelled" once "succeeded." The pipeline DAG is a composition of per-step state machines. Invalid transitions (running a step with unmet dependencies, re-running a completed pipeline without reset) are structurally rejected. The entire build's correctness depends on the state machine being explicit and transition-guarded, not hidden in shell script conditionals.
+- **Discovery date:** 2026-03-03
+- **Source:** bottom-up (OCP scraper, 112-repo triad run — machine-learning: dagger/dagger)
+
 ## Relationships
 
 | Related Motif | Relationship | Description |
@@ -48,7 +54,7 @@ An enumerated set of named states with explicit, guarded transitions governing a
 
 ## Discovery Context
 
-Identified through bottom-up analysis of the 112-repo OCP scraper corpus during the triad run (2026-03-03). The pattern appeared independently in terminal UI frameworks (Bubbletea's Elm architecture), authentication systems (Authelia's login flow, CAS ticket lifecycle), and database migration tools (Flyway's migration states). In each case, the system's correctness depends on making the state machine explicit rather than implicit in conditional logic.
+Identified through bottom-up analysis of the 112-repo OCP scraper corpus during the triad run (2026-03-03). The pattern appeared independently in terminal UI frameworks (Bubbletea's Elm architecture), authentication systems (Authelia's login flow, CAS ticket lifecycle), database migration tools (Flyway's migration states), and CI/CD pipeline execution (Dagger's step lifecycle). In each case, the system's correctness depends on making the state machine explicit rather than implicit in conditional logic.
 
 ## Falsification Conditions
 

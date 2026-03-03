@@ -20,7 +20,7 @@ cssclasses:
 | Tier 1 (Cross-Domain) | 9 |
 | Tier 2 (Structural Operator) | 1 |
 | Tier 3 (Meta-Structural) | 0 |
-| Tier 2 candidates (3+ domains) | 2 |
+| Tier 2 candidates (4+ domains) | 6 |
 
 ## Motif Registry
 
@@ -30,10 +30,10 @@ cssclasses:
 | Observer-Feedback Loop | 1 | 0.5 | 4 | top-down | [observer-feedback-loop.md](observer-feedback-loop.md) |
 | Trust-as-Curation | 1 | 0.4 | 4 | top-down | [trust-as-curation.md](trust-as-curation.md) |
 | Template-Driven Classification | 1 | 0.3 | 2 | top-down | [template-driven-classification.md](template-driven-classification.md) |
-| Bounded Buffer With Overflow Policy | 1 | 0.3 | 3 | bottom-up | [bounded-buffer-with-overflow-policy.md](bounded-buffer-with-overflow-policy.md) |
-| Explicit State Machine Backbone | 1 | 0.3 | 3 | bottom-up | [explicit-state-machine-backbone.md](explicit-state-machine-backbone.md) |
-| Idempotent State Convergence | 1 | 0.3 | 3 | bottom-up | [idempotent-state-convergence.md](idempotent-state-convergence.md) |
-| Composable Plugin Architecture | 1 | 0.3 | 3 | bottom-up | [composable-plugin-architecture.md](composable-plugin-architecture.md) |
+| Bounded Buffer With Overflow Policy | 1 | 0.4 | 4 | bottom-up | [bounded-buffer-with-overflow-policy.md](bounded-buffer-with-overflow-policy.md) |
+| Explicit State Machine Backbone | 1 | 0.4 | 4 | bottom-up | [explicit-state-machine-backbone.md](explicit-state-machine-backbone.md) |
+| Idempotent State Convergence | 1 | 0.4 | 4 | bottom-up | [idempotent-state-convergence.md](idempotent-state-convergence.md) |
+| Composable Plugin Architecture | 1 | 0.4 | 4 | bottom-up | [composable-plugin-architecture.md](composable-plugin-architecture.md) |
 | Scaffold-First Architecture | 1 | 0.2 | 2 | top-down | [scaffold-first-architecture.md](scaffold-first-architecture.md) |
 | Progressive Formalization | 1 | 0.2 | 2 | top-down | [progressive-formalization.md](progressive-formalization.md) |
 
@@ -52,7 +52,7 @@ The following Tier 1 motifs have 3+ domain instances and are eligible for Tier 2
 | Observer-Feedback Loop | 4 | 0.5 | Ready — strongest remaining candidate, highest confidence |
 | Trust-as-Curation | 4 | 0.4 | Ready — clean instances across 4 domains |
 
-*Note: The 4 new bottom-up motifs (Bounded Buffer, Explicit State Machine, Idempotent State Convergence, Composable Plugin) each have 3 domains and are technically eligible, but need triangulation (top-down confirmation) before Tier 2 candidacy is strong.*
+*Note: The 4 new bottom-up motifs now have 4 domains each and are technically eligible for Tier 2, but need triangulation (top-down confirmation) before Tier 2 candidacy is strong. Schema requires 3+ domains, validation protocol, AND human approval.*
 
 ## Phase 5: Meta-Analysis Gate
 

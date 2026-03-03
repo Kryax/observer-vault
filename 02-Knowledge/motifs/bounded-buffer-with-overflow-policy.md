@@ -2,9 +2,9 @@
 name: "Bounded Buffer With Overflow Policy"
 tier: 1
 status: provisional
-confidence: 0.3
+confidence: 0.4
 source: "bottom-up"
-domain_count: 3
+domain_count: 4
 created: 2026-03-03
 updated: 2026-03-03
 ---
@@ -38,6 +38,12 @@ A finite container with an explicit, policy-governed behavior at its capacity bo
 - **Expression:** Continuous profiling systems ingest high-volume flame graph data into bounded storage. Pyroscope uses time-based retention with configurable compaction — when storage fills, older profiles are downsampled or dropped per a defined retention policy. HyperDX bounds log ingestion with rate limits and overflow-to-cold-storage. The ingestion boundary is a policy, not a crash.
 - **Discovery date:** 2026-03-03
 - **Source:** bottom-up (OCP scraper, 112-repo triad run — devops: grafana/pyroscope; web-development: hyperdxio/hyperdx)
+
+### Instance 4: Message Queuing (RobustMQ, miniqueue, mangos)
+- **Domain:** Message Queuing / Broker
+- **Expression:** Message brokers allocate bounded queue depth per topic or channel and define explicit overflow policies: reject-publish (backpressure to producer), dead-letter routing, or drop-oldest. RobustMQ implements configurable per-queue memory and disk limits with overflow-to-disk spill. miniqueue bounds its in-memory queue and blocks producers at capacity. mangos (nanomsg) defines socket buffer limits with configurable send/receive high-water marks — exceeding the mark triggers the socket's overflow policy (block or drop). The broker's correctness depends on the overflow policy being a design decision, not an OOM surprise.
+- **Discovery date:** 2026-03-03
+- **Source:** bottom-up (OCP scraper, 112-repo triad run — machine-learning: robustmq/robustmq; lang:go: tomarrell/miniqueue, nanomsg/mangos)
 
 ## Relationships
 

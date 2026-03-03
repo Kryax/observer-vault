@@ -98,6 +98,40 @@ All five conditions satisfied:
 
 **Triangulation confirmed:** Top-down creative reflection and bottom-up corpus analysis independently identified the same structural motif, meeting the triangulation criterion defined in _SCHEMA.md.
 
+## Confidence Score Arithmetic
+
+Per `_SCHEMA.md` confidence rules:
+
+| Step | Event | Change | Running Total |
+|------|-------|--------|---------------|
+| 1 | Motif created with Instance 1 (Protocol Design) | Start at 0.1 | 0.1 |
+| 2 | Instance 2 added (Software Architecture) | +0.1 | 0.2 |
+| 3 | Instance 3 added (Industry/Policy) | +0.1 | 0.3 |
+| 4 | Instance 4 added (Knowledge Architecture) | +0.1 | 0.4 |
+| 5 | Instance 5 added (Database Migration, bottom-up) | +0.1 | 0.5 |
+| 6 | Instance 6 added (Auth, bottom-up) | +0.1 | 0.6 |
+| 7 | Instance 7 added (Monitoring, bottom-up) | +0.1 | 0.7 |
+| 8 | Instance 8 added (CLI, bottom-up) | +0.1 | 0.8 |
+| 9 | Triangulation confirmed (top-down + bottom-up) | +0.2 | 1.0 |
+
+**Final: 1.0** (at maximum). 8 domain instances (0.1 start + 7 × 0.1 = 0.8) + triangulation bonus (0.2) = 1.0.
+
+## Counterexamples / Non-instances
+
+Systems or domains where dual-speed governance plausibly *could* apply but structurally does not:
+
+### Non-instance 1: Pure Streaming / Dataflow Systems (e.g., Apache Kafka topic partitions)
+
+Kafka topics operate at a single speed: messages flow through partitions at a rate determined by producers and consumers. Topic configuration (partition count, retention policy, replication factor) *looks* like a slow governance layer, but structurally the configuration is not a "governance cycle" — it's a one-time setup with infrequent changes, not a continuously operating slow cycle that constrains a fast cycle. The configuration doesn't "run" — it just *is*. There's no deliberative slow process that repeatedly evaluates and adjusts constraints on the fast flow. This distinguishes dual-speed governance (two *active* coupled cycles) from simple "configuration + runtime" (a static setting + a dynamic process).
+
+### Non-instance 2: Peer-to-Peer Networks Without Central Governance (e.g., BitTorrent DHT)
+
+BitTorrent's DHT operates entirely at one speed: every node makes autonomous routing and sharing decisions at network speed. There is no slow constitutional cycle constraining the fast operational cycle — the protocol rules are baked into the software, not governed by a deliberative process that can evolve independently. Changing the protocol requires a new software release adopted by the swarm, which is more akin to a version upgrade than a governance cycle. The absence of a *running* slow cycle that can independently constrain the fast cycle means this is a single-speed system with a static ruleset, not dual-speed governance.
+
+### Non-instance 3: Real-Time Game Physics Engines
+
+Game physics simulations run at a fixed timestep (e.g., 60Hz) with no governance layer. The rules of physics (gravity, collision response, friction) are constants compiled into the engine, not a slow cycle that evaluates and adjusts constraints. There's no deliberative process that can change *which* physics rules apply at governance speed — they're static for the lifetime of the simulation. "Fast simulation governed by immutable rules" is not dual-speed governance; it's "fast simulation with constants."
+
 ## Falsification Conditions
 
 - If the two speeds are actually independent (no coupling between them), this is just "two separate systems" not a governance pattern

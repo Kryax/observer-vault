@@ -2,9 +2,9 @@
 name: "Composable Plugin Architecture"
 tier: 1
 status: provisional
-confidence: 0.3
+confidence: 0.4
 source: "bottom-up"
-domain_count: 3
+domain_count: 4
 created: 2026-03-03
 updated: 2026-03-03
 ---
@@ -39,6 +39,12 @@ A minimal core with interface-defined extension points where independently autho
 - **Discovery date:** 2026-03-03
 - **Source:** bottom-up (OCP scraper, 112-repo triad run — developer-tools: bashly-framework/bashly, remkop/picocli, dthree/vorpal)
 
+### Instance 4: Web Framework Middleware (Ts.ED, Amber)
+- **Domain:** Web Framework / Server-Side
+- **Expression:** Ts.ED (TypeScript) defines a minimal core with decorator-based extension points where middleware, controllers, and interceptors are independently authored plugins that compose into the request pipeline. Each middleware conforms to the decorator interface contract; the core discovers and wires them without knowing their internals. Amber (Crystal) follows the same pattern with its pipe-based middleware composition — each pipe is an independent plugin that the framework composes into the request/response lifecycle. Adding a new middleware/pipe doesn't modify the framework core; it adds a composable unit the machinery discovers.
+- **Discovery date:** 2026-03-03
+- **Source:** bottom-up (OCP scraper, 112-repo triad run — web-development: tsedio/tsed, amberframework/amber)
+
 ## Relationships
 
 | Related Motif | Relationship | Description |
@@ -48,7 +54,7 @@ A minimal core with interface-defined extension points where independently autho
 
 ## Discovery Context
 
-Identified through bottom-up analysis of the 112-repo OCP scraper corpus during the triad run (2026-03-03). The pattern appeared independently in browser extension frameworks (Extension.js), authentication middleware (OmniAuth's strategy pattern, next-auth's providers), and CLI frameworks (Bashly, picocli, Vorpal). In each case, the system's extensibility comes from defining a minimal core with explicit extension points rather than from modifying a monolithic codebase.
+Identified through bottom-up analysis of the 112-repo OCP scraper corpus during the triad run (2026-03-03). The pattern appeared independently in browser extension frameworks (Extension.js), authentication middleware (OmniAuth's strategy pattern, next-auth's providers), CLI frameworks (Bashly, picocli, Vorpal), and web framework middleware systems (Ts.ED's decorators, Amber's pipes). In each case, the system's extensibility comes from defining a minimal core with explicit extension points rather than from modifying a monolithic codebase.
 
 ## Falsification Conditions
 

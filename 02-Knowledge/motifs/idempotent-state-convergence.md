@@ -2,9 +2,9 @@
 name: "Idempotent State Convergence"
 tier: 1
 status: provisional
-confidence: 0.3
+confidence: 0.4
 source: "bottom-up"
-domain_count: 3
+domain_count: 4
 created: 2026-03-03
 updated: 2026-03-03
 ---
@@ -39,6 +39,12 @@ Repeatedly applicable operations that converge actual state toward declared desi
 - **Discovery date:** 2026-03-03
 - **Source:** bottom-up (OCP scraper, 112-repo triad run — devops: oneuptime/oneuptime; data-management: grafana/grafana)
 
+### Instance 4: Backend-as-a-Service (PocketBase, Nhost)
+- **Domain:** Backend-as-a-Service / Application Platform
+- **Expression:** PocketBase and Nhost both declare backend schemas (collections, auth rules, storage policies) as configuration that converges the running backend toward the declared state. Re-applying the same schema definition is idempotent — collections that already exist are skipped, rules that already match are no-ops. Nhost's `nhost config deploy` converges the remote environment toward the local config declaration. PocketBase's admin API accepts collection definitions idempotently. Both treat the backend as a desired-state system where re-application is always safe and convergence is the primary correctness mechanism.
+- **Discovery date:** 2026-03-03
+- **Source:** bottom-up (OCP scraper, 112-repo triad run — web-development: pocketbase/pocketbase, nhost/nhost)
+
 ## Relationships
 
 | Related Motif | Relationship | Description |
@@ -48,7 +54,7 @@ Repeatedly applicable operations that converge actual state toward declared desi
 
 ## Discovery Context
 
-Identified through bottom-up analysis of the 112-repo OCP scraper corpus during the triad run (2026-03-03). The pattern appeared independently in container orchestration (Kubernetes controller model, observable via kube-state-metrics), database migration tools (golang-migrate, goose, dbmate all implementing idempotent schema convergence), and monitoring systems (OneUptime's declarative monitoring, Grafana's provisioning). In each case, the system's reliability comes from making operations safely repeatable rather than carefully sequenced.
+Identified through bottom-up analysis of the 112-repo OCP scraper corpus during the triad run (2026-03-03). The pattern appeared independently in container orchestration (Kubernetes controller model, observable via kube-state-metrics), database migration tools (golang-migrate, goose, dbmate all implementing idempotent schema convergence), monitoring systems (OneUptime's declarative monitoring, Grafana's provisioning), and Backend-as-a-Service platforms (PocketBase, Nhost). In each case, the system's reliability comes from making operations safely repeatable rather than carefully sequenced.
 
 ## Falsification Conditions
 
