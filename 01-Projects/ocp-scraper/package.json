@@ -1,0 +1,23 @@
+{
+  "name": "ocp-scraper",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "ocp": "./src/cli/index.ts"
+  },
+  "scripts": {
+    "start": "bun src/cli/index.ts",
+    "dev": "bun --watch src/cli/index.ts"
+  },
+  "dependencies": {
+    "@octokit/rest": "^21.0.0",
+    "commander": "^13.0.0",
+    "marked": "^15.0.0",
+    "smol-toml": "^1.3.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.0",
+    "bun-types": "^1.3.10",
+    "typescript": "^5.7.0"
+  }
+}

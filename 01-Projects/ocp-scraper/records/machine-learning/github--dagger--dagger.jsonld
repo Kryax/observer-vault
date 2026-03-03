@@ -1,0 +1,1275 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/dagger--dagger",
+  "meta": {
+    "title": "dagger",
+    "description": "Automation engine to build, test and ship any codebase. Runs locally, in CI, or directly in the cloud",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-03T00:14:04.049Z",
+    "dateModified": "2026-03-03T00:14:04.049Z",
+    "keywords": [
+      "agents",
+      "ai",
+      "caching",
+      "ci-cd",
+      "containers",
+      "continuous-deployment",
+      "continuous-integration",
+      "dag",
+      "dagger",
+      "devops",
+      "docker",
+      "graphql",
+      "workflows"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "Dagger makes your software delivery *programmable*, *local-first*, *repeatable* and *observable*.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "devops",
+    "containerization",
+    "automation",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "15487 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "845 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-03T00:14:04.049Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/dagger/dagger",
+        "description": "GitHub repository: dagger/dagger"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://dagger.io",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "dagger.io/dagger",
+        "version": "v0.20.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/dagger.io/dagger"
+      },
+      {
+        "name": "github.com/dagger/dagger/engine/distconsts",
+        "version": "v0.20.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/dagger/dagger/engine/distconsts"
+      },
+      {
+        "name": "github.com/1password/onepassword-sdk-go",
+        "version": "v0.3.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/1password/onepassword-sdk-go"
+      },
+      {
+        "name": "github.com/99designs/gqlgen",
+        "version": "v0.17.81",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/99designs/gqlgen"
+      },
+      {
+        "name": "github.com/Khan/genqlient",
+        "version": "v0.8.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Khan/genqlient"
+      },
+      {
+        "name": "github.com/MakeNowJust/heredoc/v2",
+        "version": "v2.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/MakeNowJust/heredoc/v2"
+      },
+      {
+        "name": "github.com/Microsoft/go-winio",
+        "version": "v0.6.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Microsoft/go-winio"
+      },
+      {
+        "name": "github.com/Microsoft/hcsshim",
+        "version": "v0.13.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Microsoft/hcsshim"
+      },
+      {
+        "name": "github.com/Netflix/go-expect",
+        "version": "v0.0.0-20220104043353-73e0943537d2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Netflix/go-expect"
+      },
+      {
+        "name": "github.com/adrg/xdg",
+        "version": "v0.5.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/adrg/xdg"
+      },
+      {
+        "name": "github.com/agext/levenshtein",
+        "version": "v1.2.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/agext/levenshtein"
+      },
+      {
+        "name": "github.com/alecthomas/chroma/v2",
+        "version": "v2.20.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/alecthomas/chroma/v2"
+      },
+      {
+        "name": "github.com/anthropics/anthropic-sdk-go",
+        "version": "v1.14.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/anthropics/anthropic-sdk-go"
+      },
+      {
+        "name": "github.com/armon/circbuf",
+        "version": "v0.0.0-20190214190532-5111143e8da2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/armon/circbuf"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2",
+        "version": "v1.41.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/config",
+        "version": "v1.31.13",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/config"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/credentials",
+        "version": "v1.18.17",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/credentials"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/feature/s3/manager",
+        "version": "v1.19.13",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/feature/s3/manager"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/service/s3",
+        "version": "v1.88.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/s3"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/service/secretsmanager",
+        "version": "v1.41.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/secretsmanager"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/service/ssm",
+        "version": "v1.67.8",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/ssm"
+      },
+      {
+        "name": "github.com/aws/smithy-go",
+        "version": "v1.24.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/smithy-go"
+      },
+      {
+        "name": "github.com/bmatcuk/doublestar/v4",
+        "version": "v4.6.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/bmatcuk/doublestar/v4"
+      },
+      {
+        "name": "github.com/cenkalti/backoff/v4",
+        "version": "v4.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/cenkalti/backoff/v4"
+      },
+      {
+        "name": "github.com/charmbracelet/bubbles",
+        "version": "v0.21.1-0.20250623103423-23b8fd6302d7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/charmbracelet/bubbles"
+      },
+      {
+        "name": "github.com/charmbracelet/bubbletea",
+        "version": "v1.3.10",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/charmbracelet/bubbletea"
+      },
+      {
+        "name": "github.com/charmbracelet/glamour",
+        "version": "v0.10.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/charmbracelet/glamour"
+      },
+      {
+        "name": "github.com/charmbracelet/huh",
+        "version": "v0.8.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/charmbracelet/huh"
+      },
+      {
+        "name": "github.com/charmbracelet/lipgloss",
+        "version": "v1.1.1-0.20250404203927-76690c660834",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/charmbracelet/lipgloss"
+      },
+      {
+        "name": "github.com/charmbracelet/x/cellbuf",
+        "version": "v0.0.13",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/charmbracelet/x/cellbuf"
+      },
+      {
+        "name": "github.com/cilium/ebpf",
+        "version": "v0.17.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/cilium/ebpf"
+      },
+      {
+        "name": "github.com/containerd/console",
+        "version": "v1.0.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/containerd/console"
+      },
+      {
+        "name": "github.com/containerd/containerd/api",
+        "version": "v1.9.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/containerd/containerd/api"
+      },
+      {
+        "name": "github.com/containerd/containerd/v2",
+        "version": "v2.1.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/containerd/containerd/v2"
+      },
+      {
+        "name": "github.com/containerd/continuity",
+        "version": "v0.4.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/containerd/continuity"
+      },
+      {
+        "name": "github.com/containerd/errdefs",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/containerd/errdefs"
+      },
+      {
+        "name": "github.com/containerd/errdefs/pkg",
+        "version": "v0.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/containerd/errdefs/pkg"
+      },
+      {
+        "name": "github.com/containerd/fuse-overlayfs-snapshotter/v2",
+        "version": "v2.1.6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/containerd/fuse-overlayfs-snapshotter/v2"
+      },
+      {
+        "name": "github.com/containerd/go-cni",
+        "version": "v1.1.13",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/containerd/go-cni"
+      },
+      {
+        "name": "github.com/containerd/go-runc",
+        "version": "v1.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/containerd/go-runc"
+      },
+      {
+        "name": "github.com/containerd/log",
+        "version": "v0.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/containerd/log"
+      },
+      {
+        "name": "github.com/containerd/platforms",
+        "version": "v1.0.0-rc.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/containerd/platforms"
+      },
+      {
+        "name": "github.com/containerd/stargz-snapshotter/estargz",
+        "version": "v0.18.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/containerd/stargz-snapshotter/estargz"
+      },
+      {
+        "name": "github.com/containerd/typeurl/v2",
+        "version": "v2.2.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/containerd/typeurl/v2"
+      },
+      {
+        "name": "github.com/containernetworking/cni",
+        "version": "v1.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/containernetworking/cni"
+      },
+      {
+        "name": "github.com/containernetworking/plugins",
+        "version": "v1.8.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/containernetworking/plugins"
+      },
+      {
+        "name": "github.com/coreos/go-systemd/v22",
+        "version": "v22.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/coreos/go-systemd/v22"
+      },
+      {
+        "name": "github.com/creack/pty",
+        "version": "v1.1.24",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/creack/pty"
+      },
+      {
+        "name": "github.com/dagger/testctx",
+        "version": "v0.0.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/dagger/testctx"
+      },
+      {
+        "name": "github.com/dagger/testctx/oteltest",
+        "version": "v0.0.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/dagger/testctx/oteltest"
+      },
+      {
+        "name": "github.com/dave/jennifer",
+        "version": "v1.7.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/dave/jennifer"
+      },
+      {
+        "name": "github.com/denisbrodbeck/machineid",
+        "version": "v1.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/denisbrodbeck/machineid"
+      },
+      {
+        "name": "github.com/distribution/reference",
+        "version": "v0.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/distribution/reference"
+      },
+      {
+        "name": "github.com/docker/cli",
+        "version": "v28.5.1+incompatible",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/docker/cli"
+      },
+      {
+        "name": "github.com/docker/docker",
+        "version": "v28.5.1+incompatible",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/docker/docker"
+      },
+      {
+        "name": "github.com/docker/go-connections",
+        "version": "v0.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/docker/go-connections"
+      },
+      {
+        "name": "github.com/docker/go-units",
+        "version": "v0.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/docker/go-units"
+      },
+      {
+        "name": "github.com/dschmidt/go-layerfs",
+        "version": "v0.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/dschmidt/go-layerfs"
+      },
+      {
+        "name": "github.com/dustin/go-humanize",
+        "version": "v1.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/dustin/go-humanize"
+      },
+      {
+        "name": "github.com/fogleman/ease",
+        "version": "v0.0.0-20170301025033-8da417bf1776",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/fogleman/ease"
+      },
+      {
+        "name": "github.com/frioux/shellquote",
+        "version": "v0.0.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/frioux/shellquote"
+      },
+      {
+        "name": "github.com/go-git/go-git/v5",
+        "version": "v5.16.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-git/go-git/v5"
+      },
+      {
+        "name": "github.com/gofrs/flock",
+        "version": "v0.13.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gofrs/flock"
+      },
+      {
+        "name": "github.com/gogo/googleapis",
+        "version": "v1.4.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gogo/googleapis"
+      },
+      {
+        "name": "github.com/gogo/protobuf",
+        "version": "v1.3.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gogo/protobuf"
+      },
+      {
+        "name": "github.com/golang/protobuf",
+        "version": "v1.5.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/golang/protobuf"
+      },
+      {
+        "name": "github.com/google/go-cmp",
+        "version": "v0.7.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/go-cmp"
+      },
+      {
+        "name": "github.com/google/go-containerregistry",
+        "version": "v0.20.6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/go-containerregistry"
+      },
+      {
+        "name": "github.com/google/go-github/v59",
+        "version": "v59.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/go-github/v59"
+      },
+      {
+        "name": "github.com/google/shlex",
+        "version": "v0.0.0-20191202100458-e7afc7fbc510",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/shlex"
+      },
+      {
+        "name": "github.com/google/uuid",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/uuid"
+      },
+      {
+        "name": "github.com/googleapis/gax-go/v2",
+        "version": "v2.15.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/googleapis/gax-go/v2"
+      },
+      {
+        "name": "github.com/goproxy/goproxy",
+        "version": "v0.23.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/goproxy/goproxy"
+      },
+      {
+        "name": "github.com/hashicorp/go-cleanhttp",
+        "version": "v0.5.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/go-cleanhttp"
+      },
+      {
+        "name": "github.com/hashicorp/go-immutable-radix/v2",
+        "version": "v2.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/go-immutable-radix/v2"
+      },
+      {
+        "name": "github.com/hashicorp/go-multierror",
+        "version": "v1.1.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/go-multierror"
+      },
+      {
+        "name": "github.com/hashicorp/golang-lru/v2",
+        "version": "v2.0.7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/golang-lru/v2"
+      },
+      {
+        "name": "github.com/hashicorp/vault/api",
+        "version": "v1.22.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/vault/api"
+      },
+      {
+        "name": "github.com/hashicorp/vault/api/auth/approle",
+        "version": "v0.11.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/vault/api/auth/approle"
+      },
+      {
+        "name": "github.com/iancoleman/strcase",
+        "version": "v0.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/iancoleman/strcase"
+      },
+      {
+        "name": "github.com/in-toto/in-toto-golang",
+        "version": "v0.9.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/in-toto/in-toto-golang"
+      },
+      {
+        "name": "github.com/invopop/jsonschema",
+        "version": "v0.13.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/invopop/jsonschema"
+      },
+      {
+        "name": "github.com/jackpal/gateway",
+        "version": "v1.1.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jackpal/gateway"
+      },
+      {
+        "name": "github.com/jedevc/diffparser",
+        "version": "v0.0.0-20251006145221-cebbf07eb779",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jedevc/diffparser"
+      },
+      {
+        "name": "github.com/jedevc/go-libsecret",
+        "version": "v0.0.0-20250327192457-f925a032ae4f",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jedevc/go-libsecret"
+      },
+      {
+        "name": "github.com/joho/godotenv",
+        "version": "v1.5.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/joho/godotenv"
+      },
+      {
+        "name": "github.com/juju/ansiterm",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/juju/ansiterm"
+      },
+      {
+        "name": "github.com/klauspost/compress",
+        "version": "v1.18.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/klauspost/compress"
+      },
+      {
+        "name": "github.com/koron-go/prefixw",
+        "version": "v1.0.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/koron-go/prefixw"
+      },
+      {
+        "name": "github.com/lmittmann/tint",
+        "version": "v1.1.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/lmittmann/tint"
+      },
+      {
+        "name": "github.com/mackerelio/go-osstat",
+        "version": "v0.2.6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mackerelio/go-osstat"
+      },
+      {
+        "name": "github.com/mark3labs/mcp-go",
+        "version": "v0.41.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mark3labs/mcp-go"
+      },
+      {
+        "name": "github.com/mattn/go-isatty",
+        "version": "v0.0.20",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mattn/go-isatty"
+      },
+      {
+        "name": "github.com/mitchellh/go-spdx",
+        "version": "v0.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mitchellh/go-spdx"
+      },
+      {
+        "name": "github.com/mitchellh/hashstructure/v2",
+        "version": "v2.0.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mitchellh/hashstructure/v2"
+      },
+      {
+        "name": "github.com/mitchellh/mapstructure",
+        "version": "v1.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mitchellh/mapstructure"
+      },
+      {
+        "name": "github.com/moby/docker-image-spec",
+        "version": "v1.3.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/moby/docker-image-spec"
+      },
+      {
+        "name": "github.com/moby/locker",
+        "version": "v1.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/moby/locker"
+      },
+      {
+        "name": "github.com/moby/patternmatcher",
+        "version": "v0.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/moby/patternmatcher"
+      },
+      {
+        "name": "github.com/moby/sys/mount",
+        "version": "v0.3.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/moby/sys/mount"
+      },
+      {
+        "name": "github.com/moby/sys/mountinfo",
+        "version": "v0.7.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/moby/sys/mountinfo"
+      },
+      {
+        "name": "github.com/moby/sys/reexec",
+        "version": "v0.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/moby/sys/reexec"
+      },
+      {
+        "name": "github.com/moby/sys/signal",
+        "version": "v0.7.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/moby/sys/signal"
+      },
+      {
+        "name": "github.com/moby/sys/user",
+        "version": "v0.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/moby/sys/user"
+      },
+      {
+        "name": "github.com/moby/sys/userns",
+        "version": "v0.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/moby/sys/userns"
+      },
+      {
+        "name": "github.com/modelcontextprotocol/go-sdk",
+        "version": "v1.3.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/modelcontextprotocol/go-sdk"
+      },
+      {
+        "name": "github.com/morikuni/aec",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/morikuni/aec"
+      },
+      {
+        "name": "github.com/muesli/reflow",
+        "version": "v0.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/muesli/reflow"
+      },
+      {
+        "name": "github.com/muesli/termenv",
+        "version": "v0.16.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/muesli/termenv"
+      },
+      {
+        "name": "github.com/openai/openai-go",
+        "version": "v1.12.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/openai/openai-go"
+      },
+      {
+        "name": "github.com/opencontainers/go-digest",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/opencontainers/go-digest"
+      },
+      {
+        "name": "github.com/opencontainers/image-spec",
+        "version": "v1.1.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/opencontainers/image-spec"
+      },
+      {
+        "name": "github.com/opencontainers/runc",
+        "version": "v1.2.9",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/opencontainers/runc"
+      },
+      {
+        "name": "github.com/opencontainers/runtime-spec",
+        "version": "v1.2.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/opencontainers/runtime-spec"
+      },
+      {
+        "name": "github.com/opencontainers/selinux",
+        "version": "v1.13.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/opencontainers/selinux"
+      },
+      {
+        "name": "github.com/package-url/packageurl-go",
+        "version": "v0.1.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/package-url/packageurl-go"
+      },
+      {
+        "name": "github.com/pelletier/go-toml",
+        "version": "v1.9.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/pelletier/go-toml"
+      },
+      {
+        "name": "github.com/pkg/browser",
+        "version": "v0.0.0-20240102092130-5ac0b6a4141c",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/pkg/browser"
+      },
+      {
+        "name": "github.com/pkg/errors",
+        "version": "v0.9.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/pkg/errors"
+      },
+      {
+        "name": "github.com/pkg/profile",
+        "version": "v1.7.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/pkg/profile"
+      },
+      {
+        "name": "github.com/prometheus/client_golang",
+        "version": "v1.23.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/client_golang"
+      },
+      {
+        "name": "github.com/prometheus/procfs",
+        "version": "v0.17.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/procfs"
+      },
+      {
+        "name": "github.com/psanford/memfs",
+        "version": "v0.0.0-20230130182539-4dbf7e3e865e",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/psanford/memfs"
+      },
+      {
+        "name": "github.com/rs/cors",
+        "version": "v1.11.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/rs/cors"
+      },
+      {
+        "name": "github.com/shurcooL/graphql",
+        "version": "v0.0.0-20220606043923-3cf50f8a0a29",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/shurcooL/graphql"
+      },
+      {
+        "name": "github.com/sirupsen/logrus",
+        "version": "v1.9.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/sirupsen/logrus"
+      },
+      {
+        "name": "github.com/sourcegraph/conc",
+        "version": "v0.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/sourcegraph/conc"
+      },
+      {
+        "name": "github.com/spdx/tools-golang",
+        "version": "v0.5.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spdx/tools-golang"
+      },
+      {
+        "name": "github.com/spf13/cobra",
+        "version": "v1.10.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/cobra"
+      },
+      {
+        "name": "github.com/spf13/pflag",
+        "version": "v1.0.10",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/pflag"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.11.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      },
+      {
+        "name": "github.com/tidwall/gjson",
+        "version": "v1.18.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/tidwall/gjson"
+      },
+      {
+        "name": "github.com/tonistiigi/go-actions-cache",
+        "version": "v0.0.0-20240327122527-58651d5e11d6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/tonistiigi/go-actions-cache"
+      },
+      {
+        "name": "github.com/tonistiigi/go-archvariant",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/tonistiigi/go-archvariant"
+      },
+      {
+        "name": "github.com/tonistiigi/go-csvvalue",
+        "version": "v0.0.0-20240710180619-ddb21b71c0b4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/tonistiigi/go-csvvalue"
+      },
+      {
+        "name": "github.com/tonistiigi/units",
+        "version": "v0.0.0-20180711220420-6950e57a87ea",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/tonistiigi/units"
+      },
+      {
+        "name": "github.com/tonistiigi/vt100",
+        "version": "v0.0.0-20240514184818-90bafcd6abab",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/tonistiigi/vt100"
+      },
+      {
+        "name": "github.com/urfave/cli",
+        "version": "v1.22.17",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/urfave/cli"
+      },
+      {
+        "name": "github.com/vektah/gqlparser/v2",
+        "version": "v2.5.30",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/vektah/gqlparser/v2"
+      },
+      {
+        "name": "github.com/vishvananda/netlink",
+        "version": "v1.3.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/vishvananda/netlink"
+      },
+      {
+        "name": "github.com/vito/bubbline",
+        "version": "v0.0.0-20250312195236-5f4f49d6ebcb",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/vito/bubbline"
+      },
+      {
+        "name": "github.com/vito/go-interact",
+        "version": "v1.0.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/vito/go-interact"
+      },
+      {
+        "name": "github.com/vito/go-sse",
+        "version": "v1.1.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/vito/go-sse"
+      },
+      {
+        "name": "github.com/vito/midterm",
+        "version": "v0.2.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/vito/midterm"
+      },
+      {
+        "name": "github.com/zeebo/xxh3",
+        "version": "v1.0.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/zeebo/xxh3"
+      },
+      {
+        "name": "go.etcd.io/bbolt",
+        "version": "v1.4.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.etcd.io/bbolt"
+      },
+      {
+        "name": "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc",
+        "version": "v0.63.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
+      },
+      {
+        "name": "go.opentelemetry.io/contrib/instrumentation/net/http/httptrace/otelhttptrace",
+        "version": "v0.57.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/contrib/instrumentation/net/http/httptrace/otelhttptrace"
+      },
+      {
+        "name": "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp",
+        "version": "v0.63.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
+      },
+      {
+        "name": "go.opentelemetry.io/otel",
+        "version": "v1.38.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/exporters/otlp/otlplog/otlploghttp",
+        "version": "v0.14.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/exporters/otlp/otlplog/otlploghttp"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetricgrpc",
+        "version": "v1.38.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetricgrpc"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetrichttp",
+        "version": "v1.38.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetrichttp"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/exporters/otlp/otlptrace",
+        "version": "v1.38.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/exporters/otlp/otlptrace"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc",
+        "version": "v1.38.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp",
+        "version": "v1.38.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/log",
+        "version": "v0.14.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/log"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/metric",
+        "version": "v1.38.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/metric"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/sdk",
+        "version": "v1.38.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/sdk"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/sdk/log",
+        "version": "v0.14.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/sdk/log"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/sdk/metric",
+        "version": "v1.38.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/sdk/metric"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/trace",
+        "version": "v1.38.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/trace"
+      },
+      {
+        "name": "go.opentelemetry.io/proto/otlp",
+        "version": "v1.8.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/proto/otlp"
+      },
+      {
+        "name": "golang.org/x/crypto",
+        "version": "v0.43.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/crypto"
+      },
+      {
+        "name": "golang.org/x/exp",
+        "version": "v0.0.0-20251023183803-a4bb9ffd2546",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/exp"
+      },
+      {
+        "name": "golang.org/x/mod",
+        "version": "v0.29.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/mod"
+      },
+      {
+        "name": "golang.org/x/net",
+        "version": "v0.46.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/net"
+      },
+      {
+        "name": "golang.org/x/oauth2",
+        "version": "v0.32.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/oauth2"
+      },
+      {
+        "name": "golang.org/x/sync",
+        "version": "v0.17.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/sync"
+      },
+      {
+        "name": "golang.org/x/sys",
+        "version": "v0.38.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/sys"
+      },
+      {
+        "name": "golang.org/x/term",
+        "version": "v0.36.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/term"
+      },
+      {
+        "name": "golang.org/x/text",
+        "version": "v0.30.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/text"
+      },
+      {
+        "name": "golang.org/x/time",
+        "version": "v0.14.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/time"
+      },
+      {
+        "name": "golang.org/x/tools",
+        "version": "v0.38.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/tools"
+      },
+      {
+        "name": "google.golang.org/genai",
+        "version": "v1.31.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/genai"
+      },
+      {
+        "name": "google.golang.org/genproto/googleapis/rpc",
+        "version": "v0.0.0-20250825161204-c5933d9347a5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/genproto/googleapis/rpc"
+      },
+      {
+        "name": "google.golang.org/grpc",
+        "version": "v1.76.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/grpc"
+      },
+      {
+        "name": "google.golang.org/protobuf",
+        "version": "v1.36.10",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/protobuf"
+      },
+      {
+        "name": "gopkg.in/yaml.v3",
+        "version": "v3.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gopkg.in/yaml.v3"
+      },
+      {
+        "name": "gotest.tools/v3",
+        "version": "v3.5.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gotest.tools/v3"
+      },
+      {
+        "name": "modernc.org/sqlite",
+        "version": "v1.44.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/modernc.org/sqlite"
+      },
+      {
+        "name": "mvdan.cc/sh/v3",
+        "version": "v3.12.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/mvdan.cc/sh/v3"
+      },
+      {
+        "name": "resenje.org/singleflight",
+        "version": "v0.4.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/resenje.org/singleflight"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "dagger",
+        "type": "human",
+        "uri": "https://github.com/dagger"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 17177,
+      "validation_diversity": 0.83,
+      "context_breadth": 0.69,
+      "temporal_stability": 0.94,
+      "test_coverage": 0.7,
+      "documentation_quality": 0.45
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.821
+  }
+}
