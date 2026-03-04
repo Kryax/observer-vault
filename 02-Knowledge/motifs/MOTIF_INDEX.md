@@ -24,18 +24,18 @@ cssclasses:
 
 ## Motif Registry
 
-| Name | Tier | Confidence | Domains | Source | File |
-|------|------|-----------|---------|--------|------|
-| **Dual-Speed Governance** | **2** | **1.0** | **12** | **triangulated** | [dual-speed-governance.md](dual-speed-governance.md) |
-| **Composable Plugin Architecture** | **2** | **0.9** | **7** | **triangulated** | [composable-plugin-architecture.md](composable-plugin-architecture.md) |
-| **Explicit State Machine Backbone** | **2** | **0.9** | **7** | **triangulated** | [explicit-state-machine-backbone.md](explicit-state-machine-backbone.md) |
-| **Bounded Buffer With Overflow Policy** | **2** | **0.9** | **7** | **triangulated** | [bounded-buffer-with-overflow-policy.md](bounded-buffer-with-overflow-policy.md) |
-| Observer-Feedback Loop | 1 | 0.5 | 4 | top-down | [observer-feedback-loop.md](observer-feedback-loop.md) |
-| Trust-as-Curation | 1 | 0.4 | 4 | top-down | [trust-as-curation.md](trust-as-curation.md) |
-| Template-Driven Classification | 1 | 0.3 | 2 | top-down | [template-driven-classification.md](template-driven-classification.md) |
-| Idempotent State Convergence | 1 | 0.7 | 5 | triangulated | [idempotent-state-convergence.md](idempotent-state-convergence.md) |
-| Scaffold-First Architecture | 1 | 0.2 | 2 | top-down | [scaffold-first-architecture.md](scaffold-first-architecture.md) |
-| Progressive Formalization | 1 | 0.2 | 2 | top-down | [progressive-formalization.md](progressive-formalization.md) |
+| Name | Tier | Confidence | Domains | Source | Derivative Order | Primary Axis | File |
+|------|------|-----------|---------|--------|-----------------|-------------|------|
+| **Dual-Speed Governance** | **2** | **1.0** | **12** | **triangulated** | **2** | **integrate** | [dual-speed-governance.md](dual-speed-governance.md) |
+| **Composable Plugin Architecture** | **2** | **0.9** | **7** | **triangulated** | **2** | **differentiate** | [composable-plugin-architecture.md](composable-plugin-architecture.md) |
+| **Explicit State Machine Backbone** | **2** | **0.9** | **7** | **triangulated** | **2** | **differentiate** | [explicit-state-machine-backbone.md](explicit-state-machine-backbone.md) |
+| **Bounded Buffer With Overflow Policy** | **2** | **0.9** | **7** | **triangulated** | **1.5** | **differentiate** | [bounded-buffer-with-overflow-policy.md](bounded-buffer-with-overflow-policy.md) |
+| Observer-Feedback Loop | 1 | 0.5 | 4 | top-down | 1-2 | recurse | [observer-feedback-loop.md](observer-feedback-loop.md) |
+| Trust-as-Curation | 1 | 0.4 | 4 | top-down | 0-1 | integrate | [trust-as-curation.md](trust-as-curation.md) |
+| Template-Driven Classification | 1 | 0.3 | 2 | top-down | 0 | differentiate | [template-driven-classification.md](template-driven-classification.md) |
+| Idempotent State Convergence | 1 | 0.7 | 5 | triangulated | 1 | integrate | [idempotent-state-convergence.md](idempotent-state-convergence.md) |
+| Scaffold-First Architecture | 1 | 0.2 | 2 | top-down | 0 | differentiate | [scaffold-first-architecture.md](scaffold-first-architecture.md) |
+| Progressive Formalization | 1 | 0.2 | 2 | top-down | 1 | integrate | [progressive-formalization.md](progressive-formalization.md) |
 
 ## Tier 2 Promoted
 

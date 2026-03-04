@@ -9,6 +9,8 @@ created: 2026-03-03
 updated: 2026-03-04
 promoted: 2026-03-04
 promotion_justification: "7 domains, 0.9 confidence, alien-domain triangulation (game engines, spaced repetition, music production). All 5 validation protocol conditions satisfied."
+derivative_order: 2
+primary_axis: differentiate
 cssclasses:
   - status-canonical
 ---

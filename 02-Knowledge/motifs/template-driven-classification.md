@@ -5,6 +5,8 @@ status: provisional
 confidence: 0.3
 source: "top-down"
 domain_count: 2
+derivative_order: 0
+primary_axis: differentiate
 created: 2026-03-03
 updated: 2026-03-03
 ---

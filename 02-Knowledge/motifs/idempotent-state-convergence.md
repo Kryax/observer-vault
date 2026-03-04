@@ -5,6 +5,8 @@ status: provisional
 confidence: 0.7
 source: "triangulated"
 domain_count: 5
+derivative_order: 1
+primary_axis: integrate
 created: 2026-03-03
 updated: 2026-03-03
 ---

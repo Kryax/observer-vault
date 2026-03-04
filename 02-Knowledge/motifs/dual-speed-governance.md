@@ -9,6 +9,8 @@ created: 2026-03-03
 updated: 2026-03-03
 promoted: 2026-03-03
 promotion_justification: "Bottom-up triangulation from triad run across 112 repos. Pattern independently emerged in 4 domains: migration, auth, monitoring, CLI."
+derivative_order: 2
+primary_axis: integrate
 cssclasses:
   - status-canonical
 ---

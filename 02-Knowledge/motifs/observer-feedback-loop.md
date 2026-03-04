@@ -5,6 +5,8 @@ status: provisional
 confidence: 0.5
 source: "top-down"
 domain_count: 4
+derivative_order: "1-2"
+primary_axis: recurse
 created: 2026-03-03
 updated: 2026-03-03
 ---

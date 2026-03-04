@@ -5,6 +5,8 @@ status: provisional
 confidence: 0.2
 source: "top-down"
 domain_count: 2
+derivative_order: 1
+primary_axis: integrate
 created: 2026-03-03
 updated: 2026-03-03
 ---
