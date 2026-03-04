@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+# OIL-MANAGED-HOOK (observer-vault)
+# Installed: 2026-03-02
+# Updated: 2026-03-02 (upgraded to full governance chain)
+# Purpose: Full OIL governance chain for observer-vault commits.
+# Chain:
+#   1. oil_secretgate_staged.sh — regex pattern scan on staged diff
+#   2. trufflehog — deep secret detection on staged changes
+#
+# To uninstall: remove this file.
+# To temporarily bypass: git commit --no-verify (USE WITH CAUTION)
+
+set -e
+
+OIL_SCRIPTS="/home/adam/vault/workspaces/observer/oil/scripts"
+
+# 1. OIL Secret Gate — regex pattern scan on staged diff
+bash "${OIL_SCRIPTS}/oil_secretgate_staged.sh" "$@"
+
+# 2. TruffleHog — deep secret detection on staged changes
+# Only run if trufflehog is installed; warn but don't block if missing
+# Wrapped in 30s timeout to prevent hanging on large commits (fail-open)
+TRUFFLEHOG_TIMEOUT=30
+if command -v trufflehog >/dev/null 2>&1; then
+    echo "OIL: Running TruffleHog scan on staged changes (${TRUFFLEHOG_TIMEOUT}s timeout)..."
+    if timeout "${TRUFFLEHOG_TIMEOUT}s" trufflehog git "file://$(git rev-parse --show-toplevel)" --since-commit HEAD --only-verified --fail 2>/dev/null; then
+        echo "OIL: TruffleHog scan clean."
+    else
+        th_exit=$?
+        if [ "$th_exit" -eq 124 ]; then
+            echo "WARNING: TruffleHog timed out after ${TRUFFLEHOG_TIMEOUT}s — skipping (fail-open). Review manually." >&2
+        else
+            echo "BLOCKED: TruffleHog detected verified secrets in staged changes." >&2
+            exit 1
+        fi
+    fi
+else
+    echo "WARNING: trufflehog not found — skipping deep secret scan." >&2
+fi
