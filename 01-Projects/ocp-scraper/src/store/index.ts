@@ -152,9 +152,20 @@ export class SearchIndex {
       JSON.stringify(record),
     );
 
-    // Update FTS index — use the records table as content source
+    // Sync FTS index — delete stale entry first, then re-insert from content table.
+    // INSERT OR REPLACE on the records table can change rowid, leaving orphan FTS entries.
+    // The FTS5 'delete' command requires the OLD values; rebuild approach is more reliable.
+    const existingFts = this.db.prepare(
+      `SELECT rowid, id, title, description, problem_statement, domains, language, keywords FROM records_fts WHERE id = ?`
+    ).get(record['@id']) as Record<string, unknown> | null;
+    if (existingFts) {
+      this.db.prepare(
+        `INSERT INTO records_fts(records_fts, rowid, id, title, description, problem_statement, domains, language, keywords)
+         VALUES('delete', ?, ?, ?, ?, ?, ?, ?, ?)`
+      ).run(existingFts.rowid, existingFts.id, existingFts.title, existingFts.description, existingFts.problem_statement, existingFts.domains, existingFts.language, existingFts.keywords);
+    }
     this.db.prepare(`
-      INSERT OR REPLACE INTO records_fts(rowid, id, title, description, problem_statement, domains, language, keywords)
+      INSERT INTO records_fts(rowid, id, title, description, problem_statement, domains, language, keywords)
       SELECT rowid, id, title, description, problem_statement, domains, language, keywords
       FROM records WHERE id = ?
     `).run(record['@id']);
@@ -516,12 +527,14 @@ export class SearchIndex {
    */
   rebuild(records: SolutionRecord[]): void {
     this.db.exec('DELETE FROM records');
-    this.db.exec('DELETE FROM records_fts');
     this.db.exec('DELETE FROM edges');
 
     for (const record of records) {
       this.index(record);
     }
+
+    // Rebuild FTS5 from content table to ensure full consistency
+    this.db.exec(`INSERT INTO records_fts(records_fts) VALUES('rebuild')`);
   }
 
   /**
