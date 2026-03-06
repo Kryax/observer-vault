@@ -31,8 +31,9 @@ export interface ObserverPreToolUse {
 export interface ObserverPostToolUse {
   type: "ObserverPostToolUse";
   toolName: string;
+  toolInput: Record<string, unknown>;
   result: unknown;
-  durationMs: number;
+  durationMs?: number;
   sessionContext: {
     sessionId: string;
     timestamp: string;
@@ -43,8 +44,8 @@ export interface ObserverSessionStop {
   type: "ObserverSessionStop";
   sessionId: string;
   timestamp: string;
-  summary?: string;
-  exitReason: "user_exit" | "timeout" | "error" | "completed";
+  reason?: string;
+  exitReason: "user_exit" | "timeout" | "error" | "completed" | "unknown";
 }
 
 export type ObserverEvent =

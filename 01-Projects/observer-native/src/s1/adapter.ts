@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 /**
  * S1 -- Hook Adapter (CLI Bridge)
  *
@@ -45,44 +46,39 @@ export interface HookRegistrationConfig {
 }
 
 // ---------------------------------------------------------------------------
-// Claude Code Native Types (what the CLI sends us)
+// Claude Code Native Types (what the CLI sends us via stdin)
+// See: https://github.com/anthropics/claude-code — hooks documentation
 // ---------------------------------------------------------------------------
 
-interface ClaudeCodeSessionStartEvent {
-  type: "SessionStart";
+/** Common fields present on every hook stdin payload. */
+interface ClaudeCodeCommonFields {
   session_id: string;
+  hook_event_name: string;
+  transcript_path: string;
   cwd: string;
-  timestamp?: string;
-  git?: {
-    branch?: string;
-    status?: string;
-    recent_commits?: string[];
-  };
+  permission_mode: string;
 }
 
-interface ClaudeCodePreToolUseEvent {
-  type: "PreToolUse";
-  session_id: string;
+interface ClaudeCodeSessionStartEvent extends ClaudeCodeCommonFields {
+  hook_event_name: "SessionStart";
+}
+
+interface ClaudeCodePreToolUseEvent extends ClaudeCodeCommonFields {
+  hook_event_name: "PreToolUse";
   tool_name: string;
-  parameters: Record<string, unknown>;
-  timestamp?: string;
+  tool_input: Record<string, unknown>;
 }
 
-interface ClaudeCodePostToolUseEvent {
-  type: "PostToolUse";
-  session_id: string;
+interface ClaudeCodePostToolUseEvent extends ClaudeCodeCommonFields {
+  hook_event_name: "PostToolUse";
   tool_name: string;
-  result: unknown;
-  duration_ms: number;
-  timestamp?: string;
+  tool_input: Record<string, unknown>;
+  tool_result: unknown;
 }
 
-interface ClaudeCodeStopEvent {
-  type: "Stop";
-  session_id: string;
-  timestamp?: string;
-  summary?: string;
-  exit_reason?: "user_exit" | "timeout" | "error" | "completed";
+interface ClaudeCodeStopEvent extends ClaudeCodeCommonFields {
+  hook_event_name: "Stop";
+  reason?: string;
 }
 
 type ClaudeCodeEvent =
@@ -121,7 +117,7 @@ export class ClaudeCodeAdapter implements HookAdapter {
     const event = cliEvent as ClaudeCodeEvent;
     const now = new Date().toISOString();
 
-    switch (event.type) {
+    switch (event.hook_event_name) {
       case "SessionStart":
         return this.translateSessionStart(event, now);
       case "PreToolUse":
@@ -132,7 +128,7 @@ export class ClaudeCodeAdapter implements HookAdapter {
         return this.translateStop(event, now);
       default:
         throw new Error(
-          `Unknown Claude Code event type: ${(event as { type: string }).type}`
+          `Unknown Claude Code event type: ${(event as ClaudeCodeCommonFields).hook_event_name}`
         );
     }
   }
@@ -218,15 +214,8 @@ export class ClaudeCodeAdapter implements HookAdapter {
     return {
       type: "ObserverSessionStart",
       sessionId: event.session_id,
-      timestamp: event.timestamp ?? fallbackTimestamp,
+      timestamp: fallbackTimestamp,
       workingDirectory: event.cwd,
-      gitContext: event.git
-        ? {
-            branch: event.git.branch ?? "unknown",
-            status: event.git.status ?? "",
-            recentCommits: event.git.recent_commits,
-          }
-        : undefined,
     };
   }
 
@@ -237,10 +226,10 @@ export class ClaudeCodeAdapter implements HookAdapter {
     return {
       type: "ObserverPreToolUse",
       toolName: event.tool_name,
-      parameters: event.parameters,
+      parameters: event.tool_input ?? {},
       sessionContext: {
         sessionId: event.session_id,
-        timestamp: event.timestamp ?? fallbackTimestamp,
+        timestamp: fallbackTimestamp,
       },
     };
   }
@@ -252,11 +241,11 @@ export class ClaudeCodeAdapter implements HookAdapter {
     return {
       type: "ObserverPostToolUse",
       toolName: event.tool_name,
-      result: event.result,
-      durationMs: event.duration_ms,
+      toolInput: event.tool_input ?? {},
+      result: event.tool_result,
       sessionContext: {
         sessionId: event.session_id,
-        timestamp: event.timestamp ?? fallbackTimestamp,
+        timestamp: fallbackTimestamp,
       },
     };
   }
@@ -265,12 +254,19 @@ export class ClaudeCodeAdapter implements HookAdapter {
     event: ClaudeCodeStopEvent,
     fallbackTimestamp: string
   ): ObserverSessionStop {
+    // Map CC's free-form reason to Observer's exit reason enum
+    const reasonMap: Record<string, ObserverSessionStop["exitReason"]> = {
+      user_exit: "user_exit",
+      timeout: "timeout",
+      error: "error",
+      completed: "completed",
+    };
     return {
       type: "ObserverSessionStop",
       sessionId: event.session_id,
-      timestamp: event.timestamp ?? fallbackTimestamp,
-      summary: event.summary,
-      exitReason: event.exit_reason ?? "completed",
+      timestamp: fallbackTimestamp,
+      reason: event.reason,
+      exitReason: reasonMap[event.reason ?? ""] ?? "unknown",
     };
   }
 
@@ -289,4 +285,36 @@ export class ClaudeCodeAdapter implements HookAdapter {
   private appendToStream(line: string): void {
     appendFileSync(this.eventStreamPath, line, "utf-8");
   }
+}
+
+// ---------------------------------------------------------------------------
+// Hook Entry Point
+// Claude Code invokes this file directly, sending event JSON via stdin.
+// Must output { continue: true } to stdout so the CLI proceeds.
+// ---------------------------------------------------------------------------
+
+const WORKSPACE = "/mnt/zfs-host/backup/projects/observer-vault/01-Projects/observer-native";
+
+// Immediately tell Claude Code to continue — never block the tool pipeline.
+console.log(JSON.stringify({ continue: true }));
+
+try {
+  const reader = Bun.stdin.stream().getReader();
+  let raw = "";
+  const read = (async () => {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      raw += new TextDecoder().decode(value, { stream: true });
+    }
+  })();
+  // 200ms timeout — if stdin doesn't arrive quickly, bail out.
+  await Promise.race([read, new Promise<void>((r) => setTimeout(r, 200))]);
+  if (raw.trim()) {
+    const cliEvent = JSON.parse(raw.trim());
+    const adapter = new ClaudeCodeAdapter({ workspace: WORKSPACE });
+    adapter.handleHookEvent(cliEvent);
+  }
+} catch {
+  // Fail-silent — never break the CLI session
 }
