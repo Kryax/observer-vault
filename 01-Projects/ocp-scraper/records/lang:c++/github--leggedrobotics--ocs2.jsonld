@@ -1,0 +1,164 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/leggedrobotics--ocs2",
+  "meta": {
+    "title": "OCS2 Toolbox",
+    "description": "Optimal Control for Switched Systems",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-06T05:57:54.637Z",
+    "dateModified": "2026-03-06T05:57:54.637Z",
+    "keywords": [
+      "control",
+      "mpc",
+      "optimal-control",
+      "robotics"
+    ],
+    "license": "BSD-3-Clause"
+  },
+  "problemSolved": {
+    "statement": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.",
+    "context": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.\n\n![legged-robot](https://leggedrobotics.github.io/ocs2/_static/gif/legged_robot.gif)\n\nOCS2 handles general path constraints through Augmented Lagrangian or relaxed barrier methods. To facilitate the application of OCS2 in robotic tasks, it provides additional tools to set up the system dynamics (such as kinematic or dynamic models) and cost/constraints (such as self-collision avoidance and end-effector tracking) from a URDF model. The library also provides an automatic differentiation tool to calculate derivatives of the system dynamics, constraints, and cost. To facilitate deployment on robotic platforms, OCS2 provides tools for ROS interfaces. The toolbox’s efficient and numerically stable implementations in conjunction with its user-friendly interface have paved the way for employing it on numerous robotic applications with limited onboard computation power.\n\n> **ROS 2 port available:** use branch `ros2`.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:c++"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "1293 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "299 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-06T05:57:54.637Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/leggedrobotics/ocs2",
+        "description": "GitHub repository: leggedrobotics/ocs2"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://leggedrobotics.github.io/ocs2",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "C++"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "leggedrobotics",
+        "type": "human",
+        "uri": "https://github.com/leggedrobotics"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 1891,
+      "validation_diversity": 0.55,
+      "context_breadth": 0.41,
+      "temporal_stability": 1,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.68
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.579
+  }
+}

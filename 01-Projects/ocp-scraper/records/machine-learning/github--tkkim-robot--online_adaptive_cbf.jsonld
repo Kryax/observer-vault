@@ -1,0 +1,168 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/tkkim-robot--online_adaptive_cbf",
+  "meta": {
+    "title": "online_adaptive_cbf",
+    "description": "Implementation of the Online Adaptive CBF for safety-critical navigation for input constrained systems.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-06T05:58:10.769Z",
+    "dateModified": "2026-03-06T05:58:10.769Z",
+    "keywords": [
+      "cbf",
+      "cbf-learning",
+      "control",
+      "mpc",
+      "navigation",
+      "obstacle-avoidance",
+      "robotics",
+      "safety-critical"
+    ]
+  },
+  "problemSolved": {
+    "statement": "This repository contains the implementation of an online adaptive framework for Control Barrier Functions (CBFs) in input-constrained nonlinear systems. The algorithm dynamically adapts CBF parameters to optimize performance while ensuring safety, particularly for robotic navigation tasks. Please see our paper [\"Learning to Refine Input Constrained Control Barrier Functions via Uncertainty-Aware Online Parameter Adaptation\"]() for more details.",
+    "context": "This repository contains the implementation of an online adaptive framework for Control Barrier Functions (CBFs) in input-constrained nonlinear systems. The algorithm dynamically adapts CBF parameters to optimize performance while ensuring safety, particularly for robotic navigation tasks. Please see our paper [\"Learning to Refine Input Constrained Control Barrier Functions via Uncertainty-Aware Online Parameter Adaptation\"]() for more details.\n\n\n<div align=\"center\">\n<img src=\"https://github.com/user-attachments/assets/d047f394-008f-4eb2-9e79-3e2f7a074b47\" width=\"700px\">\n\n<div align=\"center\">\n\n[[Homepage]](https://www.taekyung.me/online-adaptive-cbf)\n[[Arxiv]](https://arxiv.org/abs/2409.14616)\n[[Video]](https://youtu.be/255IUS1f6Lo)\n[[Research Group]](https://dasc-lab.github.io/)\n\n</div>\n</div>",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "56 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "5 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-06T05:58:10.769Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/tkkim-robot/online_adaptive_cbf",
+        "description": "GitHub repository: tkkim-robot/online_adaptive_cbf"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://www.taekyung.me/online-adaptive-cbf",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "tkkim-robot",
+        "type": "human",
+        "uri": "https://github.com/tkkim-robot"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 66,
+      "validation_diversity": 0.1,
+      "context_breadth": 0.39,
+      "temporal_stability": 0.82,
+      "test_coverage": 0,
+      "documentation_quality": 0.85
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.166
+  }
+}

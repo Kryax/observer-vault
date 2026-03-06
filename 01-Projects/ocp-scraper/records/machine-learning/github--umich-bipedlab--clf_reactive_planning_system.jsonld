@@ -1,0 +1,180 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/umich-bipedlab--clf_reactive_planning_system",
+  "meta": {
+    "title": "CLF_reactive_planning_system",
+    "description": "This package provides a CLF-based reactive planning system, described in paper: Efficient Anytime CLF Reactive Planning System for a Bipedal Robot on Undulating Terrain. The reactive planning system consists of a 5-Hz planning thread to guide a robot to a distant goal and a 300-Hz Control-Lyapunov-Function-based (CLF-based) reactive thread to cope with robot deviations. The planning system allowed Cassie Blue to autonomously traverse sinusoidally varying terrain. More experiments are still being conducted and this repo and the paper will be updated accordingly.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-06T05:58:08.413Z",
+    "dateModified": "2026-03-06T05:58:08.413Z",
+    "keywords": [
+      "autonomous-navigation",
+      "autonomy",
+      "biped",
+      "bipedal-robots",
+      "cassie",
+      "cassie-robot",
+      "control-lyapunov-functions",
+      "motion-planning",
+      "navigation",
+      "path-planning",
+      "pathfinder",
+      "pathfinding",
+      "reactive-planner",
+      "robot",
+      "robotics",
+      "route-planner",
+      "route-planning",
+      "rrt",
+      "rrt-star",
+      "terrain"
+    ],
+    "license": "AGPL-3.0"
+  },
+  "problemSolved": {
+    "statement": "This package provides a CLF-based reactive planning system, described in the paper: **Efficient Anytime CLF Reactive Planning System for a Bipedal Robot on Undulating Terrain** ([PDF](./Reactive_CLF_Planning_System.pdf))([arXiv](https://arxiv.org/abs/2108.06699)). The reactive planning system consists of a 5-Hz planning thread to guide a robot to a distant goal and a 300-Hz Control-Lyapunov-Function-based (CLF-based) reactive thread to cope with robot deviations.  The planning system allowed Cassie Blue to autonomously traverse sinusoidally varying terrain. More experiments are still being conducted and this repo and the paper will be updated accordingly.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "lang:c++"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "64 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "13 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-06T05:58:08.413Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/UMich-BipedLab/CLF_reactive_planning_system",
+        "description": "GitHub repository: UMich-BipedLab/CLF_reactive_planning_system"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://arxiv.org/abs/2108.06699",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "C++"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "UMich-BipedLab",
+        "type": "human",
+        "uri": "https://github.com/UMich-BipedLab"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 90,
+      "validation_diversity": 0,
+      "context_breadth": 0.51,
+      "temporal_stability": 0.58,
+      "test_coverage": 0.17,
+      "documentation_quality": 0.6
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.071
+  }
+}

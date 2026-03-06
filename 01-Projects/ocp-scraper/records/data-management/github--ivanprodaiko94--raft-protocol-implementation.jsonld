@@ -1,0 +1,164 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/ivanprodaiko94--raft-protocol-implementation",
+  "meta": {
+    "title": "raft-protocol-implementation",
+    "description": "Raft protocol implementation as part of \"Distributed databases\" course in UCU",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-06T05:58:34.764Z",
+    "dateModified": "2026-03-06T05:58:34.764Z",
+    "keywords": [
+      "consensus",
+      "consensus-algorithm",
+      "distributed",
+      "distributed-systems",
+      "raft",
+      "raft-consensus",
+      "raft-protocol",
+      "ucu"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "- Each server launches rpc server\n- Communication with client is done via [raft http client](https://github.com/IvanProdaiko94/raft-protocol-implementation-client) or you can do it directly via [evans](https://github.com/ktr0731/evans)\n- Creating new entry is done via leader node, other nodes will respond with no success and leader id.\n- Each node could reveil log via `GetLog` rpc call. (this is done according to task requirements)",
+    "context": "Raft protocol implementation as part of \"Distributed databases\" course in UCU",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "data-management",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "15 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "3 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-06T05:58:34.764Z"
+  },
+  "implementation": {
+    "type": "algorithm",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/IvanProdaiko94/raft-protocol-implementation",
+        "description": "GitHub repository: IvanProdaiko94/raft-protocol-implementation"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "IvanProdaiko94",
+        "type": "human",
+        "uri": "https://github.com/IvanProdaiko94"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 21,
+      "validation_diversity": 0.1,
+      "context_breadth": 0.37,
+      "temporal_stability": 0.64,
+      "test_coverage": 0.2,
+      "documentation_quality": 0.4
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.243
+  }
+}

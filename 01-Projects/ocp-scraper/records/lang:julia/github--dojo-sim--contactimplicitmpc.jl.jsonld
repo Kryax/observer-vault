@@ -1,0 +1,162 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/dojo-sim--contactimplicitmpc.jl",
+  "meta": {
+    "title": "ContactImplicitMPC.jl",
+    "description": "Fast contact-implicit model predictive control for robotic systems that make and break contact with their environments.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-06T05:58:04.624Z",
+    "dateModified": "2026-03-06T05:58:04.624Z",
+    "keywords": [
+      "contact",
+      "control",
+      "locomotion",
+      "model-predictive-control",
+      "motion-planning",
+      "optimization",
+      "robotics"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "[![CI](https://github.com/thowell/ContactImplicitMPC.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/thowell/ContactImplicitMPC.jl/actions/workflows/CI.yml)\n[![codecov](https://codecov.io/gh/thowell/ContactImplicitMPC.jl/branch/main/graph/badge.svg?token=3J4VOJ0VCH)](https://codecov.io/gh/thowell/ContactImplicitMPC.jl)",
+    "context": "[![CI](https://github.com/thowell/ContactImplicitMPC.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/thowell/ContactImplicitMPC.jl/actions/workflows/CI.yml)\n[![codecov](https://codecov.io/gh/thowell/ContactImplicitMPC.jl/branch/main/graph/badge.svg?token=3J4VOJ0VCH)](https://codecov.io/gh/thowell/ContactImplicitMPC.jl)\n\nThis repository contains algorithms and examples from our paper: [Fast Contact-Implicit Model-Predictive Control](https://arxiv.org/abs/2107.05616).\n\nA collection of examples are pre-generated in notebooks with the package, please try: [flamingo](examples/flamingo/flat.jl), [pushbot](examples/pushbot/push_recovery.jl), [hopper](examples/hopper/flat.jl), and [quadruped](examples/quadruped/flat.jl). Additional notebooks with examples from the paper can be [generated](examples/README.md).",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:julia"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "160 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "16 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-06T05:58:04.624Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/dojo-sim/ContactImplicitMPC.jl",
+        "description": "GitHub repository: dojo-sim/ContactImplicitMPC.jl"
+      }
+    ],
+    "language": "Julia"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "dojo-sim",
+        "type": "human",
+        "uri": "https://github.com/dojo-sim"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 192,
+      "validation_diversity": 0.23,
+      "context_breadth": 0.4,
+      "temporal_stability": 0.63,
+      "test_coverage": 0.47,
+      "documentation_quality": 0.65
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.404
+  }
+}

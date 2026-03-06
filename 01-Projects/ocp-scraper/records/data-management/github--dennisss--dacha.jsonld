@@ -1,0 +1,206 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/dennisss--dacha",
+  "meta": {
+    "title": "dacha",
+    "description": "Monorepo for awesome tools/projects/libraries",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-06T05:58:32.410Z",
+    "dateModified": "2026-03-06T05:58:32.410Z",
+    "keywords": [
+      "consensus",
+      "database",
+      "distributed",
+      "networking",
+      "replication",
+      "rust"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "This is a monorepo/ecosystem of software/hardware solutions built by [Dennis](https://github.com/dennisss). Code is written primarily in Rust. Check out the partial list of what's available below.",
+    "context": "This is a monorepo/ecosystem of software/hardware solutions built by [Dennis](https://github.com/dennisss). Code is written primarily in Rust. Check out the partial list of what's available below.\n\nTo get started using the existing applications in this repo, follow the [user guide](./doc/user_guide.md).",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "data-management",
+    "networking",
+    "lang:rust"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "87 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "9 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-06T05:58:32.410Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/dennisss/dacha",
+        "description": "GitHub repository: dennisss/dacha"
+      }
+    ],
+    "language": "Rust"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "canvas",
+        "version": "^3.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/canvas"
+      },
+      {
+        "name": "esm",
+        "version": "^3.2.25",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/esm"
+      },
+      {
+        "name": "leveldown",
+        "version": "6.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/leveldown"
+      },
+      {
+        "name": "levelup",
+        "version": "5.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/levelup"
+      },
+      {
+        "name": "mathjax-node",
+        "version": "^2.1.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/mathjax-node"
+      },
+      {
+        "name": "rocksdb",
+        "version": "5.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/rocksdb"
+      },
+      {
+        "name": "tslib",
+        "version": "^2.3.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/tslib"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "dennisss",
+        "type": "human",
+        "uri": "https://github.com/dennisss"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 105,
+      "validation_diversity": 0,
+      "context_breadth": 0.34,
+      "temporal_stability": 1,
+      "test_coverage": 0.2,
+      "documentation_quality": 0.45
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.07
+  }
+}

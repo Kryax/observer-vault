@@ -1,0 +1,170 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/mayataka--robotoc",
+  "meta": {
+    "title": "robotoc",
+    "description": "Efficient optimal control solvers for robotic systems.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-06T05:57:58.999Z",
+    "dateModified": "2026-03-06T05:57:58.999Z",
+    "keywords": [
+      "interior-point-method",
+      "model-predictive-control",
+      "motion-planning",
+      "mpc",
+      "numerical-optimal-control",
+      "numerical-optimization",
+      "optimal-control",
+      "robotics",
+      "switched-systems",
+      "switching-time-optimization",
+      "trajectory-optimization"
+    ],
+    "license": "BSD-3-Clause"
+  },
+  "problemSolved": {
+    "statement": "- Direct multiple-shooting method based on the **lifted contact dynamics** / **inverse dynamics**.\n- Riccati recursion algorithm for **switching time optimization (STO)** problems and efficient **pure-state equality constraint handling**.\n- **Primal-dual interior point method** for inequality constraints.\n- Very fast computation of rigid body dynamics and its sensitivities thanks to [Pinocchio](https://github.com/stack-of-tasks/pinocchio).",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:c++"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "309 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "55 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-06T05:57:58.999Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/mayataka/robotoc",
+        "description": "GitHub repository: mayataka/robotoc"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://mayataka.github.io/robotoc/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "C++"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "mayataka",
+        "type": "human",
+        "uri": "https://github.com/mayataka"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 419,
+      "validation_diversity": 0.1,
+      "context_breadth": 0.57,
+      "temporal_stability": 0.64,
+      "test_coverage": 0.47,
+      "documentation_quality": 0.6
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.348
+  }
+}

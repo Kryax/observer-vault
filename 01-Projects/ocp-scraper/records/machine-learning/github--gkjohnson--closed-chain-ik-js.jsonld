@@ -1,0 +1,195 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/gkjohnson--closed-chain-ik-js",
+  "meta": {
+    "title": "Closed Chain Inverse Kinematics",
+    "description": "A generalized inverse kinematics solver that supports closed chains for parallel kinematics systems, dynamic reconfiguration, and arbitrary joint configuration based on damped least squares error minimization techniques",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-06T05:58:00.837Z",
+    "dateModified": "2026-03-06T05:58:00.837Z",
+    "keywords": [
+      "animation",
+      "control",
+      "graphics",
+      "ik",
+      "inverse-kinematics",
+      "javascript",
+      "joints",
+      "least-squares",
+      "parallel",
+      "robotics",
+      "robots",
+      "three",
+      "threejs",
+      "urdf"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "[![build](https://img.shields.io/github/actions/workflow/status/gkjohnson/closed-chain-ik-js/node.js.yml?style=flat-square&label=build&branch=main)](https://github.com/gkjohnson/closed-chain-ik-js/actions)\n[![github](https://flat.badgen.net/badge/icon/github?icon=github&label)](https://github.com/gkjohnson/closed-chain-ik-js/)\n[![twitter](https://flat.badgen.net/badge/twitter/@garrettkjohnson/?icon&label)](https://twitter.com/garrettkjohnson)\n[![sponsors](https://img.shields.io/github/sponsors/gkjohnson?style=flat-square&color=1da1f2)](https://github.com/sponsors/gkjohnson/)",
+    "context": "[![build](https://img.shields.io/github/actions/workflow/status/gkjohnson/closed-chain-ik-js/node.js.yml?style=flat-square&label=build&branch=main)](https://github.com/gkjohnson/closed-chain-ik-js/actions)\n[![github](https://flat.badgen.net/badge/icon/github?icon=github&label)](https://github.com/gkjohnson/closed-chain-ik-js/)\n[![twitter](https://flat.badgen.net/badge/twitter/@garrettkjohnson/?icon&label)](https://twitter.com/garrettkjohnson)\n[![sponsors](https://img.shields.io/github/sponsors/gkjohnson?style=flat-square&color=1da1f2)](https://github.com/sponsors/gkjohnson/)\n\nA generalized inverse kinematics solver that supports closed chains for parallel kinematics systems, dynamic reconfiguration, and arbitrary joint configuration based on damped least squares error minimization techniques. Supports all variety of joints including combinations of rotation and translation degrees of freedom and is agnostic to visualization framework. Inspired by [Marty Vona's MSim research work](https://www2.ccs.neu.edu/research/gpc/MSim/MSim-info.html) and using techniques outlined in this [2009 paper by Samuel Buss](https://math.ucsd.edu/~sbuss/ResearchWeb/ikmethods/iksurvey.pdf). Developed with some aid and advice from [Marty Vona](https://www2.ccs.neu.edu/research/gpc/vona.html).\n\n![](./images/banner.png)\n\n_<p align=\"center\">Solver being used on JPL's ATHLETE robot for full body IK</p>_",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "graphics",
+    "lang:javascript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "276 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "44 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-06T05:58:00.837Z"
+  },
+  "implementation": {
+    "type": "configuration",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/gkjohnson/closed-chain-ik-js",
+        "description": "GitHub repository: gkjohnson/closed-chain-ik-js"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://gkjohnson.github.io/closed-chain-ik-js/dist/index.html",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "JavaScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "gl-matrix",
+        "version": "^3.3.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/gl-matrix"
+      },
+      {
+        "name": "linear-solve",
+        "version": "^1.2.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/linear-solve"
+      },
+      {
+        "name": "svd-js",
+        "version": "^1.1.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/svd-js"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "gkjohnson",
+        "type": "human",
+        "uri": "https://github.com/gkjohnson"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 364,
+      "validation_diversity": 0.28,
+      "context_breadth": 0.56,
+      "temporal_stability": 0.88,
+      "test_coverage": 0,
+      "documentation_quality": 0.75
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.265
+  }
+}
