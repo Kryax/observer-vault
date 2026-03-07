@@ -24,6 +24,7 @@ export interface SessionRecord {
   iscOutcomes: ISCOutcome[];
   reflectOutput?: ReflectSeed;
   motifCandidates?: MotifCandidate[];
+  tensions?: TensionGap[];
 }
 
 /**
@@ -39,17 +40,31 @@ export interface ISCOutcome {
 
 /**
  * Reflect output preserved to seed the next session's Oscillate (ISC criterion 7).
+ * Numeric fields are nullable until real data informs their meaning (D/I/R Session 3).
  */
 export interface ReflectSeed {
   transferFunctionSummary: string;
-  independenceScore: number;
+  independenceScore: number | null;
   axisBalanceReport: {
     differentiate: number;
     integrate: number;
     recurse: number;
-  };
-  newLenses: string[];
-  shiftedAssumptions: string[];
+  } | null;
+  newLenses?: string[];
+  shiftedAssumptions?: string[];
+}
+
+/**
+ * A tension or gap surfaced during a session — fuel for the generative engine.
+ * Tensions accumulate across sessions; sessionCount tracks recurrence.
+ */
+export interface TensionGap {
+  id: string;
+  description: string;
+  firstSeen: string;
+  sessionCount: number;
+  relatedMotifs?: string[];
+  status: "open" | "resolved";
 }
 
 /**

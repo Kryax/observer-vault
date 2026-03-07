@@ -17,6 +17,7 @@ export type {
   ISCOutcome,
   ReflectSeed,
   MotifCandidate,
+  TensionGap,
 } from "./session-capture.ts";
 
 // Context hydration — startup context loading
