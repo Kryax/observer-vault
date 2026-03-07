@@ -1,17 +1,17 @@
 ---
 prd: true
 id: PRD-20260308-s2-episodic-memory-loop
-status: DRAFT
+status: COMPLETE
 mode: interactive
 effort_level: Extended
 created: 2026-03-08
 updated: 2026-03-08
-iteration: 0
+iteration: 1
 maxIterations: 128
-loopStatus: null
-last_phase: null
-failing_criteria: []
-verification_summary: "0/0"
+loopStatus: completed
+last_phase: VERIFY
+failing_criteria: [ISC-C7]
+verification_summary: "11/12"
 parent: null
 children: []
 language: TypeScript
@@ -34,10 +34,10 @@ runtime: Bun
 
 | What | State |
 |------|-------|
-| Progress | 0/12 criteria passing (pre-build) |
-| Phase | PRD complete, awaiting approval |
-| Next action | Adam reviews PRD |
-| Blocked by | Nothing (specification phase) |
+| Progress | 11/12 criteria passing |
+| Phase | VERIFY complete |
+| Next action | Adam runs acceptance test (ISC-C7) |
+| Blocked by | Manual loop closure test |
 
 ---
 
@@ -215,24 +215,32 @@ The session-end hook should produce a mechanical summary (event counts, key file
 
 ## IDEAL STATE CRITERIA
 
-- [ ] ISC-C1: SessionRecord interface includes tensions TensionGap array field | Verify: Grep: `tensions.*TensionGap` in session-capture.ts
-- [ ] ISC-C2: TensionGap type has id description firstSeen sessionCount status fields | Verify: Read: TensionGap interface in session-capture.ts
-- [ ] ISC-C3: Session-end hook constructs SessionRecord and calls captureSession | Verify: Grep: `captureSession` invocation in hook script
-- [ ] ISC-C4: Session-start loader reads recent SessionRecords formats priming context | Verify: Grep: `hydrateContext` invocation in hook script
-- [ ] ISC-C5: ReflectSeed newLenses shiftedAssumptions specified as optional free-text | Verify: Read: ReflectSeed interface shows optional arrays
-- [ ] ISC-C6: ReflectSeed independenceScore axisBalanceReport are nullable types | Verify: Grep: `number \| null` in ReflectSeed
+- [x] ISC-C1: SessionRecord interface includes tensions TensionGap array field | Verify: Grep: `tensions.*TensionGap` in session-capture.ts
+- [x] ISC-C2: TensionGap type has id description firstSeen sessionCount status fields | Verify: Read: TensionGap interface in session-capture.ts
+- [x] ISC-C3: Session-end hook constructs SessionRecord and calls captureSession | Verify: Grep: `captureSession` invocation in hook script
+- [x] ISC-C4: Session-start loader reads recent SessionRecords formats priming context | Verify: Grep: `hydrateContext` invocation in hook script
+- [x] ISC-C5: ReflectSeed newLenses shiftedAssumptions specified as optional free-text | Verify: Read: ReflectSeed interface shows optional arrays
+- [x] ISC-C6: ReflectSeed independenceScore axisBalanceReport are nullable types | Verify: Grep: `number \| null` in ReflectSeed
 - [ ] ISC-C7: Loop closure acceptance test passes end to end | Verify: Custom: run the acceptance test manually
-- [ ] ISC-C8: TensionGap exported from s2 index module | Verify: Grep: `TensionGap` in s2/index.ts
-- [ ] ISC-C9: Session-end hook handles trivial or empty sessions gracefully | Verify: Read: conditional logic in hook script
-- [ ] ISC-C10: Session-start context stays within 10 percent context budget | Verify: Read: summarization/truncation logic in formatter
+- [x] ISC-C8: TensionGap exported from s2 index module | Verify: Grep: `TensionGap` in s2/index.ts
+- [x] ISC-C9: Session-end hook handles trivial or empty sessions gracefully | Verify: Read: conditional logic in hook script
+- [x] ISC-C10: Session-start context stays within 10 percent context budget | Verify: Read: summarization/truncation logic in formatter
 
-- [ ] ISC-A1: PRD scope excludes salience filter motif priming scraper cron | Verify: Grep: absence of salience/FTS5/cron in ISC
-- [ ] ISC-A2: No modifications to PAI files or settings.json without approval | Verify: CLI: git diff --name-only
+- [x] ISC-A1: PRD scope excludes salience filter motif priming scraper cron | Verify: Grep: absence of salience/FTS5/cron in ISC
+- [x] ISC-A2: No modifications to PAI files or settings.json without approval | Verify: CLI: git diff --name-only
 
 ## DECISIONS
 
-(Populated during build)
+- 2026-03-08: Session-end hook lives at `src/s2/session-end-hook.ts` (not s1) because it operates on S2 types. The S1 adapter remains pure translation.
+- 2026-03-08: Trivial session threshold set to 2 events. Sessions with < 2 events are skipped entirely.
+- 2026-03-08: Context budget set to 2000 chars (~10% of typical initial context). Hard truncation with ellipsis.
+- 2026-03-08: FrameworkDelta summary uses `transferFunctionSummary` field (no `description` field exists).
 
 ## LOG
 
-(Populated during build iterations)
+### Iteration 1 — 2026-03-08
+- Phase reached: VERIFY
+- Criteria progress: 11/12
+- Work done: All 5 work items implemented across 3 commits (types, session-end hook, session-start hook). Type-checks clean.
+- Failing: ISC-C7 (loop closure acceptance test — requires manual run by Adam)
+- Context for next iteration: Register hooks in settings.json (requires Adam's approval per PAI safety boundary). Then run the acceptance test: start session → do work → end session → start new session → verify priming context appears.
