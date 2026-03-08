@@ -1,17 +1,17 @@
 ---
 prd: true
 id: PRD-20260308-s2-salience-filter
-status: DRAFT
+status: COMPLETE
 mode: interactive
 effort_level: Extended
 created: 2026-03-08
 updated: 2026-03-08
-iteration: 0
+iteration: 1
 maxIterations: 128
-loopStatus: null
-last_phase: null
+loopStatus: completed
+last_phase: VERIFY
 failing_criteria: []
-verification_summary: "0/12"
+verification_summary: "15/15"
 parent: null
 children: []
 language: TypeScript
@@ -34,10 +34,10 @@ runtime: Bun
 
 | What | State |
 |------|-------|
-| Progress | 0/12 criteria passing |
-| Phase | DRAFT |
-| Next action | Adam approves PRD |
-| Blocked by | Adam's approval |
+| Progress | 15/15 criteria passing |
+| Phase | VERIFY complete |
+| Next action | Commit and close |
+| Blocked by | Nothing |
 
 ---
 
@@ -259,27 +259,34 @@ The salience filter is a pure function module with no side effects — it takes 
 
 ## IDEAL STATE CRITERIA
 
-- [ ] ISC-C1: Highlight interface defined with event salience and triggers | Verify: Grep: `interface Highlight` in salience-filter.ts
-- [ ] ISC-C2: SalienceTrigger union covers motif error novel duration types | Verify: Read: SalienceTrigger type in salience-filter.ts
-- [ ] ISC-C3: Motif-touch heuristic compares events against active motif entries | Verify: Grep: `motif_touch` in salience-filter.ts
-- [ ] ISC-C4: Error-and-failure heuristic detects errors in PostToolUse results | Verify: Grep: `error_or_failure` in salience-filter.ts
-- [ ] ISC-C5: Novel-tool heuristic tracks first tool appearances per session | Verify: Grep: `novel_tool` in salience-filter.ts
-- [ ] ISC-C6: Long-duration heuristic detects slow PreToolUse PostToolUse pairs | Verify: Grep: `long_duration` in salience-filter.ts
-- [ ] ISC-C7: filterForSalience function returns highlights from event array | Verify: Grep: `function filterForSalience` in salience-filter.ts
-- [ ] ISC-C8: Session-end hook calls filterForSalience and enriches summary | Verify: Grep: `filterForSalience` in session-end-hook.ts
-- [ ] ISC-C9: Highlight and SalienceTrigger exported from s2 index module | Verify: Grep: `Highlight` in s2/index.ts
-- [ ] ISC-C10: Common tools excluded or reduced in novel tool detection | Verify: Read: common tool list constant in salience-filter.ts
-- [ ] ISC-C11: Salience scores are additive and capped at one point zero | Verify: Read: score computation in filterForSalience
-- [ ] ISC-C12: Active motifs loaded via existing readActiveMotifs function | Verify: Grep: `readActiveMotifs` import in session-end-hook.ts or salience-filter.ts
+- [x] ISC-C1: Highlight interface defined with event salience and triggers | Verify: Grep: `interface Highlight` in salience-filter.ts
+- [x] ISC-C2: SalienceTrigger union covers motif error novel duration types | Verify: Read: SalienceTrigger type in salience-filter.ts
+- [x] ISC-C3: Motif-touch heuristic compares events against active motif entries | Verify: Grep: `motif_touch` in salience-filter.ts
+- [x] ISC-C4: Error-and-failure heuristic detects errors in PostToolUse results | Verify: Grep: `error_or_failure` in salience-filter.ts
+- [x] ISC-C5: Novel-tool heuristic tracks first tool appearances per session | Verify: Grep: `novel_tool` in salience-filter.ts
+- [x] ISC-C6: Long-duration heuristic detects slow PreToolUse PostToolUse pairs | Verify: Grep: `long_duration` in salience-filter.ts
+- [x] ISC-C7: filterForSalience function returns highlights from event array | Verify: Grep: `function filterForSalience` in salience-filter.ts
+- [x] ISC-C8: Session-end hook calls filterForSalience and enriches summary | Verify: Grep: `filterForSalience` in session-end-hook.ts
+- [x] ISC-C9: Highlight and SalienceTrigger exported from s2 index module | Verify: Grep: `Highlight` in s2/index.ts
+- [x] ISC-C10: Common tools excluded or reduced in novel tool detection | Verify: Read: common tool list constant in salience-filter.ts
+- [x] ISC-C11: Salience scores are additive and capped at one point zero | Verify: Read: score computation in filterForSalience
+- [x] ISC-C12: Active motifs loaded via existing readActiveMotifs function | Verify: Grep: `readActiveMotifs` import in session-end-hook.ts or salience-filter.ts
 
-- [ ] ISC-A1: S1 adapter code remains completely unmodified | Verify: CLI: git diff src/s1/adapter.ts shows no changes
-- [ ] ISC-A2: No NLP or LLM inference calls in salience heuristics | Verify: Grep: absence of `anthropic` or `inference` imports in salience-filter.ts
-- [ ] ISC-A3: No new external dependencies added for salience scoring | Verify: Read: no new entries in package.json
+- [x] ISC-A1: S1 adapter code remains completely unmodified | Verify: CLI: git diff src/s1/adapter.ts shows no changes
+- [x] ISC-A2: No NLP or LLM inference calls in salience heuristics | Verify: Grep: absence of `anthropic` or `inference` imports in salience-filter.ts
+- [x] ISC-A3: No new external dependencies added for salience scoring | Verify: Read: no new entries in package.json
 
 ## DECISIONS
 
-*(Populated during BUILD/EXECUTE phases)*
+- 2026-03-08: `readActiveMotifs()` promoted from private to exported in context-hydration.ts to enable reuse by salience filter and session-end hook.
+- 2026-03-08: Long-duration heuristic uses `durationMs` field on PostToolUse when available, falls back to timestamp differencing for pre/post pairs.
+- 2026-03-08: `formatHighlightSummary()` extracted as a separate export for reuse by future consumers (fast loop, dashboard).
 
 ## LOG
 
-*(Populated per iteration)*
+### Iteration 1 — 2026-03-08
+- Phase reached: VERIFY
+- Criteria progress: 15/15
+- Work done: Created salience-filter.ts with Highlight type, 4 heuristics, filterForSalience. Integrated into session-end-hook. Exported from s2/index. All type-checks clean.
+- Failing: none
+- Context for next iteration: N/A — complete. Step 3 (motif library priming) is the next build order item.

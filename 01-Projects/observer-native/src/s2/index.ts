@@ -21,7 +21,7 @@ export type {
 } from "./session-capture.ts";
 
 // Context hydration — startup context loading
-export { hydrateContext } from "./context-hydration.ts";
+export { hydrateContext, readActiveMotifs } from "./context-hydration.ts";
 
 export type {
   HydratedContext,
@@ -37,6 +37,15 @@ export {
 } from "./framework-delta.ts";
 
 export type { FrameworkDelta } from "./framework-delta.ts";
+
+// Salience filter — highlight layer above S1 events
+export { filterForSalience, formatHighlightSummary } from "./salience-filter.ts";
+
+export type {
+  Highlight,
+  SalienceTrigger,
+  SalienceContext,
+} from "./salience-filter.ts";
 
 // Vault writer — vault-aware file operations
 export {

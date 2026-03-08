@@ -138,7 +138,7 @@ function readRecentSessions(count: number): SessionRecord[] {
 /**
  * Reads active motif entries from 02-Knowledge/motifs/.
  */
-function readActiveMotifs(): MotifEntry[] {
+export function readActiveMotifs(): MotifEntry[] {
   const absMotifs = join(VAULT_ROOT, MOTIFS_DIR);
   if (!existsSync(absMotifs)) return [];
 

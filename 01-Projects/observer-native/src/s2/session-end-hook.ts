@@ -13,6 +13,8 @@ import { readFileSync, existsSync } from "node:fs";
 import { captureSession } from "./session-capture.ts";
 import type { SessionRecord, ISCOutcome } from "./session-capture.ts";
 import type { ObserverEvent } from "../s0/events.ts";
+import { filterForSalience, formatHighlightSummary } from "./salience-filter.ts";
+import { readActiveMotifs } from "./context-hydration.ts";
 
 const WORKSPACE =
   "/mnt/zfs-host/backup/projects/observer-vault/01-Projects/observer-native";
@@ -139,6 +141,17 @@ async function main() {
   const stopEvt = events.find((e) => e.type === "ObserverSessionStop");
   const now = new Date().toISOString();
 
+  // Run salience filter to produce highlights
+  const activeMotifs = readActiveMotifs();
+  const highlights = filterForSalience(events, { activeMotifs });
+  const highlightSuffix = formatHighlightSummary(highlights);
+
+  // Build summary: mechanical base + highlight enrichment
+  const baseSummary = generateSummary(events);
+  const summary = highlightSuffix
+    ? `${baseSummary}. ${highlightSuffix}`
+    : baseSummary;
+
   const record: SessionRecord = {
     sessionId,
     startedAt: startEvent?.type === "ObserverSessionStart"
@@ -151,7 +164,7 @@ async function main() {
       ? startEvent.workingDirectory
       : process.cwd(),
     exitReason: mapExitReason(stopEvent.reason),
-    summary: generateSummary(events),
+    summary,
     iscOutcomes: [],
     // reflectOutput, motifCandidates, tensions: undefined initially (honest state)
   };
