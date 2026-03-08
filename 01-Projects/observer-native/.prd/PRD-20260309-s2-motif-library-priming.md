@@ -1,17 +1,17 @@
 ---
 prd: true
 id: PRD-20260309-s2-motif-library-priming
-status: DRAFT
+status: COMPLETE
 mode: interactive
 effort_level: Extended
 created: 2026-03-09
 updated: 2026-03-09
-iteration: 0
+iteration: 1
 maxIterations: 128
-loopStatus: null
-last_phase: null
+loopStatus: completed
+last_phase: VERIFY
 failing_criteria: []
-verification_summary: "0/14"
+verification_summary: "14/14"
 parent: null
 children: []
 language: TypeScript
@@ -34,10 +34,10 @@ runtime: Bun
 
 | What | State |
 |------|-------|
-| Progress | 0/14 criteria |
-| Phase | DRAFT |
-| Next action | Adam approves, then build |
-| Blocked by | Adam's approval |
+| Progress | 14/14 criteria passing |
+| Phase | COMPLETE |
+| Next action | Commit |
+| Blocked by | Nothing |
 
 ---
 
@@ -271,26 +271,26 @@ Motif priming is a pure function module — takes loaded motifs + session contex
 
 ### Core Functionality
 
-- [ ] ISC-C1: PrimedMotif type defined with name tier axis relevance fields | Verify: Grep: `interface PrimedMotif` in motif-priming.ts
-- [ ] ISC-C2: Frontmatter parser extracts tier confidence primary-axis from motif markdown | Verify: Read: parser function in motif-priming.ts handles `---` blocks
-- [ ] ISC-C3: Context signal extractor combines session summaries and open tensions | Verify: Read: function takes SessionRecord[] and TensionGap[] inputs
-- [ ] ISC-C4: Relevance score computed as keyword-match times tier-weighted confidence | Verify: Read: scoring formula uses `0.5 + (0.5 * confidence)` weight
-- [ ] ISC-C5: primeMotifs function returns PrimedMotif array sorted by relevance descending | Verify: Grep: `function primeMotifs` in motif-priming.ts
-- [ ] ISC-C6: Output capped at maximum five motifs per session start | Verify: Grep: slice or limit of 5 in primeMotifs
-- [ ] ISC-C7: Each primed motif includes structural description first sentence snippet | Verify: Read: description extraction from `## Structural Description`
-- [ ] ISC-C8: Session-start hook formats primed motifs with name tier and description | Verify: Read: formatPrimingContext uses primeMotifs output
-- [ ] ISC-C9: PrimedMotif and primeMotifs exported from s2 index module | Verify: Grep: `PrimedMotif` in s2/index.ts
+- [x] ISC-C1: PrimedMotif type defined with name tier axis relevance fields | Verify: Grep: `interface PrimedMotif` in motif-priming.ts
+- [x] ISC-C2: Frontmatter parser extracts tier confidence primary-axis from motif markdown | Verify: Read: parser function in motif-priming.ts handles `---` blocks
+- [x] ISC-C3: Context signal extractor combines session summaries and open tensions | Verify: Read: function takes SessionRecord[] and TensionGap[] inputs
+- [x] ISC-C4: Relevance score computed as keyword-match times tier-weighted confidence | Verify: Read: scoring formula uses `0.5 + (0.5 * confidence)` weight
+- [x] ISC-C5: primeMotifs function returns PrimedMotif array sorted by relevance descending | Verify: Grep: `function primeMotifs` in motif-priming.ts
+- [x] ISC-C6: Output capped at maximum five motifs per session start | Verify: Grep: slice or limit of 5 in primeMotifs
+- [x] ISC-C7: Each primed motif includes structural description first sentence snippet | Verify: Read: description extraction from `## Structural Description`
+- [x] ISC-C8: Session-start hook formats primed motifs with name tier and description | Verify: Read: formatPrimingContext uses primeMotifs output
+- [x] ISC-C9: PrimedMotif and primeMotifs exported from s2 index module | Verify: Grep: `PrimedMotif` in s2/index.ts
 
 ### Integration
 
-- [ ] ISC-C10: Motif data sourced from existing readActiveMotifs not new file reads | Verify: Grep: `readActiveMotifs` import in motif-priming.ts or session-start-hook.ts
-- [ ] ISC-C11: Cold start with no prior sessions does not error or crash | Verify: Read: graceful fallback when recentSessions is empty
+- [x] ISC-C10: Motif data sourced from existing readActiveMotifs not new file reads | Verify: Grep: `readActiveMotifs` import in motif-priming.ts or session-start-hook.ts
+- [x] ISC-C11: Cold start with no prior sessions does not error or crash | Verify: Read: graceful fallback when recentSessions is empty
 
 ### Anti-Criteria
 
-- [ ] ISC-A1: No HTTP calls or control plane dependency in motif priming | Verify: Grep: absence of `fetch` or `localhost` in motif-priming.ts
-- [ ] ISC-A2: No NLP or LLM inference calls in relevance scoring | Verify: Grep: absence of `anthropic` or `inference` imports in motif-priming.ts
-- [ ] ISC-A3: No new external dependencies added for motif priming | Verify: Read: no new entries in package.json
+- [x] ISC-A1: No HTTP calls or control plane dependency in motif priming | Verify: Grep: absence of `fetch` or `localhost` in motif-priming.ts
+- [x] ISC-A2: No NLP or LLM inference calls in relevance scoring | Verify: Grep: absence of `anthropic` or `inference` imports in motif-priming.ts
+- [x] ISC-A3: No new external dependencies added for motif priming | Verify: Read: no new entries in package.json
 
 ## DECISIONS
 
@@ -298,4 +298,7 @@ Motif priming is a pure function module — takes loaded motifs + session contex
 
 ## LOG
 
-*No iterations yet.*
+### Iteration 1 — 2026-03-09
+- Phase reached: VERIFY (COMPLETE)
+- Criteria progress: 14/14
+- Work done: Created motif-priming.ts with PrimedMotif type, frontmatter parser, context signal extractor, relevance scorer. Updated session-start-hook to use primed motifs instead of flat name list. Added exports to s2/index.ts. Functional test confirmed: "state machine" context → Explicit State Machine Backbone #1, cold start → graceful empty.

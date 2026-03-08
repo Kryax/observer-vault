@@ -13,6 +13,7 @@
 import { hydrateContext } from "./context-hydration.ts";
 import type { HydratedContext } from "./context-hydration.ts";
 import type { SessionRecord } from "./session-capture.ts";
+import { primeMotifs, formatPrimedMotifs } from "./motif-priming.ts";
 
 const PROJECT_ROOT =
   "/mnt/zfs-host/backup/projects/observer-vault/01-Projects/observer-native";
@@ -68,8 +69,16 @@ function formatPrimingContext(ctx: HydratedContext): string {
     );
   }
 
-  // Active motifs (names only, not full content)
-  if (ctx.activeMotifs.length > 0) {
+  // Primed motifs — relevance-scored against session context
+  const openTensions = ctx.recentSessions.flatMap(
+    (s) => (s.tensions ?? []).filter((t) => t.status === "open"),
+  );
+  const primed = primeMotifs(ctx.activeMotifs, ctx.recentSessions, openTensions);
+  const primedText = formatPrimedMotifs(primed);
+  if (primedText) {
+    sections.push(primedText);
+  } else if (ctx.activeMotifs.length > 0) {
+    // Fallback: flat name list when no relevance signals available
     const motifNames = ctx.activeMotifs
       .map((m) => m.filename.replace(/\.(md|json)$/, ""))
       .slice(0, 10);

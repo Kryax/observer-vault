@@ -47,6 +47,11 @@ export type {
   SalienceContext,
 } from "./salience-filter.ts";
 
+// Motif priming — relevance-scored motif loading at session start
+export { primeMotifs, formatPrimedMotifs } from "./motif-priming.ts";
+
+export type { PrimedMotif } from "./motif-priming.ts";
+
 // Vault writer — vault-aware file operations
 export {
   vaultAppend,
