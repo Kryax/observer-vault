@@ -6,6 +6,10 @@
 
 This is Adam's Observer Vault — the persistent memory and knowledge base for the Observer Council, OIL, Control Plane, Observer Commons, and all related projects. It lives on ZFS (NFS-shared from Polaris proxmox) at `/mnt/zfs-host/backup/projects/observer-vault/`.
 
+## Observer-Native Context
+
+Read `01-Projects/observer-native/SKILL.md` — this is the primary cognitive context for vault sessions. It defines D/I/R as the operating primitive, the two-speed model, session memory, and sovereignty gate.
+
 ## Session Start
 
 1. Check control plane status: `curl -s http://localhost:9000/health | python3 -m json.tool`
