@@ -52,6 +52,17 @@ export { primeMotifs, formatPrimedMotifs } from "./motif-priming.ts";
 
 export type { PrimedMotif } from "./motif-priming.ts";
 
+// Tension tracking — living backlog from accumulated session tensions
+export {
+  trackTensions,
+  readBacklog,
+  readOpenTensions,
+  detectTensions,
+  accumulateTensions,
+  resolveTensions,
+  formatTensionSummary,
+} from "./tension-tracker.ts";
+
 // Vault writer — vault-aware file operations
 export {
   vaultAppend,

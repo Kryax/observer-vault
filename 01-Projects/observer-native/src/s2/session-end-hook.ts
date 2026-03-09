@@ -15,6 +15,7 @@ import type { SessionRecord, ISCOutcome } from "./session-capture.ts";
 import type { ObserverEvent } from "../s0/events.ts";
 import { filterForSalience, formatHighlightSummary } from "./salience-filter.ts";
 import { readActiveMotifs } from "./context-hydration.ts";
+import { trackTensions } from "./tension-tracker.ts";
 
 const WORKSPACE =
   "/mnt/zfs-host/backup/projects/observer-vault/01-Projects/observer-native";
@@ -152,6 +153,11 @@ async function main() {
     ? `${baseSummary}. ${highlightSuffix}`
     : baseSummary;
 
+  const iscOutcomes: ISCOutcome[] = [];
+
+  // Run tension tracking: detect from failing ISC, accumulate in backlog, resolve passing
+  const sessionTensions = trackTensions(iscOutcomes);
+
   const record: SessionRecord = {
     sessionId,
     startedAt: startEvent?.type === "ObserverSessionStart"
@@ -165,8 +171,8 @@ async function main() {
       : process.cwd(),
     exitReason: mapExitReason(stopEvent.reason),
     summary,
-    iscOutcomes: [],
-    // reflectOutput, motifCandidates, tensions: undefined initially (honest state)
+    iscOutcomes,
+    tensions: sessionTensions.length > 0 ? sessionTensions : undefined,
   };
 
   captureSession(record);

@@ -1,17 +1,17 @@
 ---
 prd: true
 id: PRD-20260309-s2-tension-gap-tracking
-status: DRAFT
+status: COMPLETE
 mode: interactive
 effort_level: Standard
 created: 2026-03-09
 updated: 2026-03-09
-iteration: 0
+iteration: 1
 maxIterations: 128
-loopStatus: null
-last_phase: null
+loopStatus: completed
+last_phase: VERIFY
 failing_criteria: []
-verification_summary: "0/15"
+verification_summary: "15/15"
 parent: null
 children: []
 language: TypeScript
@@ -34,10 +34,10 @@ runtime: Bun
 
 | What | State |
 |------|-------|
-| Progress | 0/15 criteria passing |
-| Phase | DRAFT |
-| Next action | Adam reviews and approves |
-| Blocked by | Adam's approval |
+| Progress | 15/15 criteria passing |
+| Phase | COMPLETE |
+| Next action | Commit |
+| Blocked by | Nothing |
 
 ---
 
@@ -302,27 +302,27 @@ Tension tracking is a pipeline: detect → read backlog → accumulate → resol
 
 ### Core Functionality
 
-- [ ] ISC-C1: Tension tracker module exists at src/s2/tension-tracker.ts | Verify: Glob: `src/s2/tension-tracker.ts`
-- [ ] ISC-C2: Failing ISC outcomes converted to TensionGap objects at session-end | Verify: Read: detection function in tension-tracker.ts takes ISCOutcome[]
-- [ ] ISC-C3: Tension backlog persisted as JSONL at tensions.jsonl project-level | Verify: Read: read/write functions target `tensions.jsonl`
-- [ ] ISC-C4: New tensions appended with sessionCount one and current firstSeen date | Verify: Read: new tension construction sets sessionCount=1
-- [ ] ISC-C5: Recurring tensions increment sessionCount preserving original firstSeen and id | Verify: Read: accumulation logic matches by description and increments
-- [ ] ISC-C6: Tension deduplication uses normalized exact description match | Verify: Read: normalization (lowercase, whitespace) before comparison
-- [ ] ISC-C7: Resolved tensions marked status resolved when matching ISC passes | Verify: Read: resolution function checks passing outcomes against open tensions
-- [ ] ISC-C8: Tension backlog loaded into HydratedContext at session start | Verify: Grep: `tensions` field read from backlog in context-hydration.ts
-- [ ] ISC-C9: Session-start priming shows top five open tensions by recurrence count | Verify: Read: formatting function sorts by sessionCount, caps at 5
-- [ ] ISC-C10: Tension IDs use t-YYYYMMDD-NNN sequential format | Verify: Grep: `t-` ID pattern in tension-tracker.ts
+- [x] ISC-C1: Tension tracker module exists at src/s2/tension-tracker.ts | Verify: Glob: `src/s2/tension-tracker.ts`
+- [x] ISC-C2: Failing ISC outcomes converted to TensionGap objects at session-end | Verify: Read: detection function in tension-tracker.ts takes ISCOutcome[]
+- [x] ISC-C3: Tension backlog persisted as JSONL at tensions.jsonl project-level | Verify: Read: read/write functions target `tensions.jsonl`
+- [x] ISC-C4: New tensions appended with sessionCount one and current firstSeen date | Verify: Read: new tension construction sets sessionCount=1
+- [x] ISC-C5: Recurring tensions increment sessionCount preserving original firstSeen and id | Verify: Read: accumulation logic matches by description and increments
+- [x] ISC-C6: Tension deduplication uses normalized exact description match | Verify: Read: normalization (lowercase, whitespace) before comparison
+- [x] ISC-C7: Resolved tensions marked status resolved when matching ISC passes | Verify: Read: resolution function checks passing outcomes against open tensions
+- [x] ISC-C8: Tension backlog loaded into HydratedContext at session start | Verify: Grep: `tensions` field read from backlog in context-hydration.ts
+- [x] ISC-C9: Session-start priming shows top five open tensions by recurrence count | Verify: Read: formatting function sorts by sessionCount, caps at 5
+- [x] ISC-C10: Tension IDs use t-YYYYMMDD-NNN sequential format | Verify: Grep: `t-` ID pattern in tension-tracker.ts
 
 ### Integration
 
-- [ ] ISC-C11: Session-end hook calls tension tracker after captureSession write | Verify: Read: session-end-hook.ts calls detect+accumulate+write
-- [ ] ISC-C12: SessionRecord.tensions field populated with session's detected tensions | Verify: Read: tensions set on record before captureSession call or after detection
-- [ ] ISC-C13: Missing tensions.jsonl handled gracefully as empty backlog on first run | Verify: Read: file-not-found produces empty array, no error
+- [x] ISC-C11: Session-end hook calls tension tracker after captureSession write | Verify: Read: session-end-hook.ts calls detect+accumulate+write
+- [x] ISC-C12: SessionRecord.tensions field populated with session's detected tensions | Verify: Read: tensions set on record before captureSession call or after detection
+- [x] ISC-C13: Missing tensions.jsonl handled gracefully as empty backlog on first run | Verify: Read: file-not-found produces empty array, no error
 
 ### Anti-Criteria
 
-- [ ] ISC-A1: No NLP or LLM inference calls in tension detection or matching | Verify: Grep: absence of `anthropic` or `inference` imports in tension-tracker.ts
-- [ ] ISC-A2: No new external dependencies added for tension tracking | Verify: Read: no new entries in package.json
+- [x] ISC-A1: No NLP or LLM inference calls in tension detection or matching | Verify: Grep: absence of `anthropic` or `inference` imports in tension-tracker.ts
+- [x] ISC-A2: No new external dependencies added for tension tracking | Verify: Read: no new entries in package.json
 
 ## DECISIONS
 
@@ -330,4 +330,7 @@ Tension tracking is a pipeline: detect → read backlog → accumulate → resol
 
 ## LOG
 
-*No iterations yet.*
+### Iteration 1 — 2026-03-09
+- Phase reached: VERIFY (COMPLETE)
+- Criteria progress: 15/15
+- Work done: Created tension-tracker.ts with detect/accumulate/resolve/read/write/format functions. Wired session-end-hook to call trackTensions after captureSession. Added tensionBacklog to HydratedContext via readOpenTensions. Updated session-start-hook to format backlog tensions in priming output and use backlog tensions for motif priming. Exported all functions from s2/index.ts. Functional tests confirmed: detection from failing ISC, accumulation with dedup (sessionCount 2→3), resolution on passing ISC, cold start graceful handling, formatted output.

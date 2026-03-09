@@ -13,7 +13,8 @@ import { join } from "node:path";
 import { vaultRead, vaultExists, VAULT_ROOT } from "./vault-writer.ts";
 import { retrieveLatestDelta } from "./framework-delta.ts";
 import type { FrameworkDelta } from "./framework-delta.ts";
-import type { SessionRecord, ReflectSeed } from "./session-capture.ts";
+import type { SessionRecord, ReflectSeed, TensionGap } from "./session-capture.ts";
+import { readOpenTensions } from "./tension-tracker.ts";
 
 /**
  * The hydrated context available to a new session at startup.
@@ -29,6 +30,8 @@ export interface HydratedContext {
   activeMotifs: MotifEntry[];
   /** Prior Reflect output to seed this session's Oscillate */
   priorReflectOutput: ReflectSeed | null;
+  /** Open tensions from the accumulated backlog, sorted by recurrence */
+  tensionBacklog: TensionGap[];
 }
 
 export interface ProjectState {
@@ -64,6 +67,7 @@ export function hydrateContext(projectRoot: string): HydratedContext {
   const frameworkDelta = retrieveLatestDelta();
   const activeMotifs = readActiveMotifs();
   const priorReflectOutput = extractPriorReflectOutput(recentSessions);
+  const tensionBacklog = readOpenTensions(5);
 
   return {
     projectState,
@@ -71,6 +75,7 @@ export function hydrateContext(projectRoot: string): HydratedContext {
     frameworkDelta,
     activeMotifs,
     priorReflectOutput,
+    tensionBacklog,
   };
 }
 

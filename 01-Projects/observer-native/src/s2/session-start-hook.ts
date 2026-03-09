@@ -14,6 +14,7 @@ import { hydrateContext } from "./context-hydration.ts";
 import type { HydratedContext } from "./context-hydration.ts";
 import type { SessionRecord } from "./session-capture.ts";
 import { primeMotifs, formatPrimedMotifs } from "./motif-priming.ts";
+import { formatTensionSummary } from "./tension-tracker.ts";
 
 const PROJECT_ROOT =
   "/mnt/zfs-host/backup/projects/observer-vault/01-Projects/observer-native";
@@ -69,10 +70,18 @@ function formatPrimingContext(ctx: HydratedContext): string {
     );
   }
 
-  // Primed motifs — relevance-scored against session context
-  const openTensions = ctx.recentSessions.flatMap(
-    (s) => (s.tensions ?? []).filter((t) => t.status === "open"),
-  );
+  // Tension backlog — accumulated open tensions sorted by recurrence
+  const tensionText = formatTensionSummary(ctx.tensionBacklog);
+  if (tensionText) {
+    sections.push(tensionText);
+  }
+
+  // Primed motifs — relevance-scored against session context (uses backlog tensions)
+  const openTensions = ctx.tensionBacklog.length > 0
+    ? ctx.tensionBacklog
+    : ctx.recentSessions.flatMap(
+        (s) => (s.tensions ?? []).filter((t) => t.status === "open"),
+      );
   const primed = primeMotifs(ctx.activeMotifs, ctx.recentSessions, openTensions);
   const primedText = formatPrimedMotifs(primed);
   if (primedText) {
