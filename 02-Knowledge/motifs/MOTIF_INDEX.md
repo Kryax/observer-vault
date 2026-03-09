@@ -1,7 +1,7 @@
 ---
 status: canonical
 date: 2026-03-03
-updated: 2026-03-03
+updated: 2026-03-09
 cssclasses:
   - status-canonical
 ---
@@ -15,8 +15,8 @@ cssclasses:
 
 | Metric | Count |
 |--------|-------|
-| Total motifs | 10 |
-| Tier 0 (Observation) | 0 |
+| Total motifs | 13 |
+| Tier 0 (Observation) | 3 |
 | Tier 1 (Cross-Domain) | 6 |
 | Tier 2 (Structural Operator) | 4 |
 | Tier 3 (Meta-Structural) | 0 |
@@ -36,6 +36,9 @@ cssclasses:
 | Idempotent State Convergence | 1 | 0.7 | 5 | triangulated | 1 | integrate | [idempotent-state-convergence.md](idempotent-state-convergence.md) |
 | Scaffold-First Architecture | 1 | 0.2 | 2 | top-down | 0 | differentiate | [scaffold-first-architecture.md](scaffold-first-architecture.md) |
 | Progressive Formalization | 1 | 0.2 | 2 | top-down | 1 | integrate | [progressive-formalization.md](progressive-formalization.md) |
+| Live Event Bus | 0 | 0.1 | 1 | bottom-up | 1 | integrate | [live-event-bus.md](live-event-bus.md) |
+| Metacognitive Steering | 0 | 0.1 | 1 | bottom-up | 2 | recurse | [metacognitive-steering.md](metacognitive-steering.md) |
+| Epistemic Governance | 0 | 0.1 | 1 | bottom-up | 1 | differentiate | [epistemic-governance.md](epistemic-governance.md) |
 
 ## Tier 2 Promoted
 
