@@ -177,6 +177,7 @@ export function primeMotifs(
   motifs: MotifEntry[],
   recentSessions: SessionRecord[],
   openTensions: TensionGap[],
+  minTier: number = 0,
 ): PrimedMotif[] {
   const contextKeywords = extractContextSignals(recentSessions, openTensions);
 
@@ -197,6 +198,7 @@ export function primeMotifs(
 
     const metadata = parseFrontmatter(motif.content);
     if (!metadata) continue;
+    if (metadata.tier < minTier) continue;
 
     const motifKeywords = extractMotifKeywords(motif.filename, metadata.name);
     if (motifKeywords.length === 0) continue;

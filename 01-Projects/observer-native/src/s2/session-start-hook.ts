@@ -82,16 +82,10 @@ function formatPrimingContext(ctx: HydratedContext): string {
     : ctx.recentSessions.flatMap(
         (s) => (s.tensions ?? []).filter((t) => t.status === "open"),
       );
-  const primed = primeMotifs(ctx.activeMotifs, ctx.recentSessions, openTensions);
+  const primed = primeMotifs(ctx.activeMotifs, ctx.recentSessions, openTensions, 2);
   const primedText = formatPrimedMotifs(primed);
   if (primedText) {
     sections.push(primedText);
-  } else if (ctx.activeMotifs.length > 0) {
-    // Fallback: flat name list when no relevance signals available
-    const motifNames = ctx.activeMotifs
-      .map((m) => m.filename.replace(/\.(md|json)$/, ""))
-      .slice(0, 10);
-    sections.push(`Active motifs: ${motifNames.join(", ")}`);
   }
 
   // Framework delta
