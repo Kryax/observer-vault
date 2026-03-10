@@ -1,0 +1,318 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/biocypher--karenina",
+  "meta": {
+    "title": "Karenina",
+    "description": "Backend library for benchmarking  LLMs through templates",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-10T21:01:47.305Z",
+    "dateModified": "2026-03-10T21:01:47.305Z",
+    "keywords": []
+  },
+  "problemSolved": {
+    "statement": "Karenina is a framework designed to standardize domain expertise and concepts into runnable benchmarks. The core challenge Karenina addresses is: *making the formulation of domain-specific benchmarks accessible to non-LLM-technical experts, allowing them to focus their time and expertise on knowledge rather than infrastructure.*",
+    "context": "<div align=\"center\">\n\n[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/downloads/)\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n[![Code style: ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)\n[![Type checked: mypy](https://img.shields.io/badge/type%20checked-mypy-blue)](http://mypy-lang.org/)\n\n**A comprehensive benchmarking system for Large Language Models (LLMs)**\n\n[Installation](#-installation) • [Quick Start](#-quick-start) • [Features](#-features) • [Documentation](#-documentation) • [Contributing](#-contributing)\n\n</div>\n\n> **Note:** Karenina is still experimental and under active, fast-paced development. APIs and features may change without notice. A first stable release will be available soon — stay tuned!\n\n---",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "backend",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "4 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "3 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T21:01:47.305Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/biocypher/karenina",
+        "description": "GitHub repository: biocypher/karenina"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "pydantic",
+        "version": ">=2.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pydantic/"
+      },
+      {
+        "name": "pandas",
+        "version": ">=2.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pandas/"
+      },
+      {
+        "name": "openpyxl",
+        "version": ">=3.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/openpyxl/"
+      },
+      {
+        "name": "aiohttp",
+        "version": ">=3.8.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/aiohttp/"
+      },
+      {
+        "name": "python-dotenv",
+        "version": ">=1.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/python-dotenv/"
+      },
+      {
+        "name": "tenacity",
+        "version": ">=8.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tenacity/"
+      },
+      {
+        "name": "httpx",
+        "version": ">=0.24.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/httpx/"
+      },
+      {
+        "name": "tiktoken",
+        "version": ">=0.5.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tiktoken/"
+      },
+      {
+        "name": "anthropic",
+        "version": ">=0.76.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/anthropic/"
+      },
+      {
+        "name": "mcp",
+        "version": ">=1.25.0,<2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/mcp/"
+      },
+      {
+        "name": "langchain",
+        "version": ">=1.1.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/langchain/"
+      },
+      {
+        "name": "langchain-openai",
+        "version": ">=0.3.25",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/langchain-openai/"
+      },
+      {
+        "name": "langchain-core",
+        "version": ">=0.3.66",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/langchain-core/"
+      },
+      {
+        "name": "langchain-google-genai",
+        "version": ">=2.1.6",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/langchain-google-genai/"
+      },
+      {
+        "name": "langchain-anthropic",
+        "version": ">=0.3.15",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/langchain-anthropic/"
+      },
+      {
+        "name": "langgraph",
+        "version": ">=0.5.4",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/langgraph/"
+      },
+      {
+        "name": "langchain-mcp-adapters",
+        "version": ">=0.1.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/langchain-mcp-adapters/"
+      },
+      {
+        "name": "sqlalchemy",
+        "version": ">=2.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/sqlalchemy/"
+      },
+      {
+        "name": "alembic",
+        "version": ">=1.12.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/alembic/"
+      },
+      {
+        "name": "tavily-python",
+        "version": ">=0.7.12",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tavily-python/"
+      },
+      {
+        "name": "langchain-community",
+        "version": ">=0.3.27",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/langchain-community/"
+      },
+      {
+        "name": "typer",
+        "version": ">=0.9.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/typer/"
+      },
+      {
+        "name": "rich",
+        "version": ">=13.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/rich/"
+      },
+      {
+        "name": "cloudpickle",
+        "version": ">=3.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/cloudpickle/"
+      },
+      {
+        "name": "json-repair",
+        "version": ">=0.30.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/json-repair/"
+      },
+      {
+        "name": "gepa",
+        "version": ">=0.0.24",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/gepa/"
+      },
+      {
+        "name": "litellm",
+        "version": ">=1.80.11",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/litellm/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "biocypher",
+        "type": "human",
+        "uri": "https://github.com/biocypher"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 10,
+      "validation_diversity": 0,
+      "context_breadth": 0.05,
+      "temporal_stability": 0.72,
+      "test_coverage": 0,
+      "documentation_quality": 0.6
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.023
+  }
+}

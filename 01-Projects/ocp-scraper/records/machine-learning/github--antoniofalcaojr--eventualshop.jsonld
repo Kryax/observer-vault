@@ -1,0 +1,181 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/antoniofalcaojr--eventualshop",
+  "meta": {
+    "title": "![](https://raw.githubusercontent.com/AntonioFalcaoJr/EventualShop/release/.assets/img/new_logo.png)",
+    "description": "A state-of-the-art distributed system using Reactive DDD as uncertainty modeling, Event Storming as subdomain decomposition, Event Sourcing as an eventual persistence mechanism, CQRS, Async Projections, Microservices for individual deployable units, Event-driven Architecture for efficient integration, and Clean Architecture as domain-centric design",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-10T21:01:34.218Z",
+    "dateModified": "2026-03-10T21:01:34.218Z",
+    "keywords": [
+      "architecture",
+      "clean-architecture",
+      "cqrs",
+      "ddd",
+      "ddd-architecture",
+      "domain-driven-design",
+      "dotnet",
+      "dotnet6",
+      "dotnet7",
+      "eda",
+      "event-driven",
+      "event-sourcing",
+      "event-store",
+      "eventsourcing",
+      "eventstore",
+      "masstransit",
+      "microservices",
+      "reactive",
+      "reactive-programming",
+      "uncertainty"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "The main objective of this **cloud-native** project is to represent the state-of-the-art of a **distributed**, **reliable**, and **highly scalable** system by interpreting the most relevant principles of [**Reactive\nDomain Driven Design**](https://www.infoq.com/articles/modeling-uncertainty-reactive-ddd/).",
+    "context": "<p align=\"center\">\n  <a href=\"#bulb-about\">About</a> &nbsp;&bull;&nbsp;\n  <a href=\"#classical_building-the-solution-architecture\">The Solution Architecture</a> &nbsp;&bull;&nbsp;\n  <a href=\"#mag_right-research\">Research</a> &nbsp;&bull;&nbsp;\n  <a href=\"#computer-running\">Running</a> &nbsp;&bull;&nbsp;\n  <a href=\"#toolbox-tech-stack\">Tech Stack</a>\n</p>\n\n<br>\n\n<div align=\"center\">\n\n| Service       |                                                                                                              Command Stack                                                                                                               |                                                                                                            Query Stack                                                                                                             | \n|---------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|\n| Account       |          [![Account - Command Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/account-command.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/account-command.yaml)          |          [![Account - Query Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/account-query.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/account-query.yaml)          |\n| Communication | [![Communication - Command Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/communication-command.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/communication-command.yaml) | [![Communication - Query Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/communication-query.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/communication-query.yaml) |\n| Identity      |        [![Identity - Command Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/identity-command.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/identity-command.yaml)         |        [![Identity - Query Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/identity-query.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/identity-query.yaml)         |\n| Order         |             [![Order - Command Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/order-command.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/order-command.yaml)             |             [![Order - Query Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/order-query.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/order-query.yaml)             |\n| Catalog       |          [![Catalog - Command Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/catalog-command.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/catalog-command.yaml)          |          [![Catalog - Query Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/catalog-query.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/catalog-query.yaml)          |\n| Warehouse     |       [![Warehouse - Command Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/warehouse-command.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/warehouse-command.yaml)       |       [![Warehouse - Query Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/warehouse-query.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/warehouse-query.yaml)       |\n| Shopping Cart | [![Shopping Cart - Command Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/shopping-cart-command.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/shopping-cart-command.yaml) | [![Shopping Cart - Query Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/shopping-cart-query.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/shopping-cart-query.yaml) |\n| Payment       |          [![Payment - Command Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/payment-command.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/payment-command.yaml)          |          [![Payment - Query Stack](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/payment-query.yaml/badge.svg)](https://github.com/AntonioFalcaoJr/EventualShop/actions/workflows/payment-query.yaml)          |\n\n :construction: <sub>Work in Progress (WIP)</sub>\n\n</div>",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "lang:c#"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "415 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "82 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T21:01:34.218Z"
+  },
+  "implementation": {
+    "type": "service",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/AntonioFalcaoJr/EventualShop",
+        "description": "GitHub repository: AntonioFalcaoJr/EventualShop"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://github.com/AntonioFalcaoJr/EventualShop/blob/release/README.md#bulb-about",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "C#"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "AntonioFalcaoJr",
+        "type": "human",
+        "uri": "https://github.com/AntonioFalcaoJr"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 579,
+      "validation_diversity": 0.28,
+      "context_breadth": 0.59,
+      "temporal_stability": 1,
+      "test_coverage": 0.67,
+      "documentation_quality": 0.6
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.524
+  }
+}

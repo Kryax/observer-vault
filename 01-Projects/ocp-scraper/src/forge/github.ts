@@ -14,7 +14,11 @@ export class GitHubAdapter implements ForgeAdapter {
   }
 
   async searchRepos(params: ForgeSearchParams): Promise<ForgeSearchResult> {
-    const query = `topic:${params.topic}${params.minStars ? ` stars:>=${params.minStars}` : ''}${params.language ? ` language:${params.language}` : ''} sort:stars`;
+    // Use topic: prefix for single-word topics, text search for multi-word queries
+    const topicPart = params.topic.includes(' ')
+      ? `${params.topic} in:name,description,readme`
+      : `topic:${params.topic}`;
+    const query = `${topicPart}${params.minStars ? ` stars:>=${params.minStars}` : ''}${params.language ? ` language:${params.language}` : ''} sort:stars`;
 
     const response = await this.octokit.search.repos({
       q: query,

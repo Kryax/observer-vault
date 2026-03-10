@@ -1,7 +1,7 @@
 ---
 status: canonical
 date: 2026-03-03
-updated: 2026-03-10
+updated: 2026-03-11
 cssclasses:
   - status-canonical
 ---
@@ -15,8 +15,8 @@ cssclasses:
 
 | Metric | Count |
 |--------|-------|
-| Total motifs | 19 |
-| Tier 0 (Observation) | 9 |
+| Total motifs | 20 |
+| Tier 0 (Observation) | 10 |
 | Tier 1 (Cross-Domain) | 6 |
 | Tier 2 (Structural Operator) | 4 |
 | Tier 3 (Meta-Structural) | 0 |
@@ -45,6 +45,7 @@ cssclasses:
 | Propagated Uncertainty Envelope | 0 | 0.1 | 1 | bottom-up | 1 | integrate | [propagated-uncertainty-envelope.md](propagated-uncertainty-envelope.md) |
 | Estimation-Control Separation | 0 | 0.1 | 1 | bottom-up | 1 | differentiate | [estimation-control-separation.md](estimation-control-separation.md) |
 | Safety-Liveness Duality | 0 | 0.1 | 1 | bottom-up | 2 | differentiate | [safety-liveness-duality.md](safety-liveness-duality.md) |
+| Reflexive Structural Transition | 0 | 0.1 | 1 | bottom-up | 2 | recurse | [reflexive-structural-transition.md](reflexive-structural-transition.md) |
 
 ## Tier 2 Promoted
 

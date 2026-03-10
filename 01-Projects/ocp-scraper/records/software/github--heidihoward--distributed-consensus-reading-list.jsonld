@@ -1,0 +1,169 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/heidihoward--distributed-consensus-reading-list",
+  "meta": {
+    "title": "Distributed Consensus Reading List 📚",
+    "description": "A list of papers about distributed consensus.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-10T20:59:57.547Z",
+    "dateModified": "2026-03-10T20:59:57.547Z",
+    "keywords": [
+      "atomic-broadcast-protocol",
+      "consensus-algorithms",
+      "consistency",
+      "distributed-computing",
+      "distributed-systems",
+      "fault-tolerance",
+      "paxos",
+      "quorum-systems",
+      "replication",
+      "state-machine-replication",
+      "zookeeper"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Since its inception in the 1980s, [distributed consensus](https://en.wikipedia.org/wiki/Consensus_(computer_science)) has been the subject of extensive academic research. Whilst definitions vary, [distributed consensus](https://en.wikipedia.org/wiki/Consensus_(computer_science)) (or equivalently, [atomic broadcast](https://en.wikipedia.org/wiki/Atomic_broadcast)) most often refers to the problem of how to decide an ordered sequence of values between a set of distributed nodes. This can be used to implement an append-only replicated log which can be utilized either directly or indirectly, to provide services such as primary backup replication or [state machine replication](https://en.wikipedia.org/wiki/State_machine_replication). These abstractions can, in turn, form the building blocks of new abstractions, such as a distributed [key-value store](https://en.wikipedia.org/wiki/Key–value_database). Some consensus algorithms instead decide only a single value or a partially ordered sequence of values.\nWhat unifies distributed consensus algorithms is the fact that they are always safe, regardless of delays and crashes (though they are not necessarily [Byzantine fault tolerance](https://en.wikipedia.org/wiki/Byzantine_fault)), and are guaranteed to make progress provided sufficient liveness.",
+    "context": "Since its inception in the 1980s, [distributed consensus](https://en.wikipedia.org/wiki/Consensus_(computer_science)) has been the subject of extensive academic research. Whilst definitions vary, [distributed consensus](https://en.wikipedia.org/wiki/Consensus_(computer_science)) (or equivalently, [atomic broadcast](https://en.wikipedia.org/wiki/Atomic_broadcast)) most often refers to the problem of how to decide an ordered sequence of values between a set of distributed nodes. This can be used to implement an append-only replicated log which can be utilized either directly or indirectly, to provide services such as primary backup replication or [state machine replication](https://en.wikipedia.org/wiki/State_machine_replication). These abstractions can, in turn, form the building blocks of new abstractions, such as a distributed [key-value store](https://en.wikipedia.org/wiki/Key–value_database). Some consensus algorithms instead decide only a single value or a partially ordered sequence of values.\nWhat unifies distributed consensus algorithms is the fact that they are always safe, regardless of delays and crashes (though they are not necessarily [Byzantine fault tolerance](https://en.wikipedia.org/wiki/Byzantine_fault)), and are guaranteed to make progress provided sufficient liveness.\n\nThis is a long list of papers relating to distributed consensus. Many of the papers listed below fit into more than one section. However, for simplicity, each paper is listed only in the most relevant section. Where possible, open access links for each paper have been provided.\n\nContributions via pull requests are welcome.\n\n⭐️ Influential papers - If you are looking for a starting point, a subset of the most influential papers on distributed consensus are highlighted using a yellow star. ⭐️\n\n💎 Hidden gems - Papers which I personally love but are not as highly cited as the influential papers 💎\n\nKey: acmdl = [ACM Digital Library](https://dl.acm.org)\n\nThe sections are as follows:\n* [Distributed consensus](#distributed-consensus)\n  * [Theoretical results](#theoretical-results)\n  * [Surveys](#surveys)\n  * [Algorithms for consensus](#algorithms-for-consensus)\n  * [Consensus for specialist hardware](#consensus-for-specialist-hardware)\n  * [Consensus for geo-distributed systems](#consensus-for-geo-distributed-systems)\n  * [Consensus in production](#consensus-in-production)\n  * [Implementations of consensus](#implementations-of-consensus)\n  * [Evaluations of consensus](#evaluations-of-consensus)\n  * [State machine replication](#state-machine-replication)\n  * [Reconfiguration](#reconfiguration)\n* [Related Topics](#related-topics)\n  * [Weaker consistency models](#weaker-consistency-models)\n  * [Failures](#failures)\n  * [Clocks](#clocks)\n  * [Correctness of consensus algorithms](#correctness-of-consensus-algorithms)\n  * [Quorum systems](#quorum-systems)\n  * [Byzantine fault tolerance](#byzantine-fault-tolerance)\n    * [BFT surveys](#bft-surveys)\n    * [BFT in theory](#bft-in-theory)\n    * [BFT in practice](#bft-in-practice)\n  * [Alternative fault models in distributed consensus](#alternative-fault-models-in-distributed-consensus)\n  * [Misc](#misc)\n* [Future reading list](#future-reading-list)\n  * [Blogroll](#blogroll)\n  * [Reading lists](#reading-lists)\n  * [Academic conferences & symposiums](#academic-conferences--symposiums)\n  * [Academic workshops](#academic-workshops)\n  * [Academic journals & magazines](#academic-journals--magazines)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "software"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "2611 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "215 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T20:59:57.547Z"
+  },
+  "implementation": {
+    "type": "algorithm",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/heidihoward/distributed-consensus-reading-list",
+        "description": "GitHub repository: heidihoward/distributed-consensus-reading-list"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://heidihoward.github.io/distributed-consensus-reading-list/",
+        "description": "Project homepage"
+      }
+    ]
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "heidihoward",
+        "type": "human",
+        "uri": "https://github.com/heidihoward"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 3041,
+      "validation_diversity": 0.2,
+      "context_breadth": 0.63,
+      "temporal_stability": 0.72,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.6
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.454
+  }
+}

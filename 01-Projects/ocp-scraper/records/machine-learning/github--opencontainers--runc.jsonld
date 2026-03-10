@@ -1,0 +1,300 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/opencontainers--runc",
+  "meta": {
+    "title": "runc",
+    "description": "CLI tool for spawning and running containers according to the OCI specification",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-10T21:01:44.178Z",
+    "dateModified": "2026-03-10T21:01:44.178Z",
+    "keywords": [
+      "containers",
+      "docker",
+      "oci"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "`runc` is a CLI tool for spawning and running containers on Linux according to the OCI specification.",
+    "context": "[![Go Report Card](https://goreportcard.com/badge/github.com/opencontainers/runc)](https://goreportcard.com/report/github.com/opencontainers/runc)\n[![Go Reference](https://pkg.go.dev/badge/github.com/opencontainers/runc.svg)](https://pkg.go.dev/github.com/opencontainers/runc)\n[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/588/badge)](https://bestpractices.coreinfrastructure.org/projects/588)\n[![gha/validate](https://github.com/opencontainers/runc/workflows/validate/badge.svg)](https://github.com/opencontainers/runc/actions?query=workflow%3Avalidate)\n[![gha/ci](https://github.com/opencontainers/runc/workflows/ci/badge.svg)](https://github.com/opencontainers/runc/actions?query=workflow%3Aci)\n[![CirrusCI](https://api.cirrus-ci.com/github/opencontainers/runc.svg)](https://cirrus-ci.com/github/opencontainers/runc)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "devops",
+    "containerization",
+    "developer-tools",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "13105 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "2267 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T21:01:44.178Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/opencontainers/runc",
+        "description": "GitHub repository: opencontainers/runc"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://www.opencontainers.org/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "github.com/checkpoint-restore/go-criu/v7",
+        "version": "v7.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/checkpoint-restore/go-criu/v7"
+      },
+      {
+        "name": "github.com/containerd/console",
+        "version": "v1.0.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/containerd/console"
+      },
+      {
+        "name": "github.com/coreos/go-systemd/v22",
+        "version": "v22.7.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/coreos/go-systemd/v22"
+      },
+      {
+        "name": "github.com/cyphar/filepath-securejoin",
+        "version": "v0.6.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/cyphar/filepath-securejoin"
+      },
+      {
+        "name": "github.com/docker/go-units",
+        "version": "v0.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/docker/go-units"
+      },
+      {
+        "name": "github.com/godbus/dbus/v5",
+        "version": "v5.2.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/godbus/dbus/v5"
+      },
+      {
+        "name": "github.com/moby/sys/capability",
+        "version": "v0.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/moby/sys/capability"
+      },
+      {
+        "name": "github.com/moby/sys/mountinfo",
+        "version": "v0.7.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/moby/sys/mountinfo"
+      },
+      {
+        "name": "github.com/moby/sys/user",
+        "version": "v0.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/moby/sys/user"
+      },
+      {
+        "name": "github.com/moby/sys/userns",
+        "version": "v0.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/moby/sys/userns"
+      },
+      {
+        "name": "github.com/mrunalp/fileutils",
+        "version": "v0.5.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mrunalp/fileutils"
+      },
+      {
+        "name": "github.com/opencontainers/cgroups",
+        "version": "v0.0.6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/opencontainers/cgroups"
+      },
+      {
+        "name": "github.com/opencontainers/runtime-spec",
+        "version": "v1.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/opencontainers/runtime-spec"
+      },
+      {
+        "name": "github.com/opencontainers/selinux",
+        "version": "v1.13.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/opencontainers/selinux"
+      },
+      {
+        "name": "github.com/seccomp/libseccomp-golang",
+        "version": "v0.11.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/seccomp/libseccomp-golang"
+      },
+      {
+        "name": "github.com/sirupsen/logrus",
+        "version": "v1.9.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/sirupsen/logrus"
+      },
+      {
+        "name": "github.com/urfave/cli",
+        "version": "v1.22.17",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/urfave/cli"
+      },
+      {
+        "name": "github.com/vishvananda/netlink",
+        "version": "v1.3.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/vishvananda/netlink"
+      },
+      {
+        "name": "github.com/vishvananda/netns",
+        "version": "v0.0.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/vishvananda/netns"
+      },
+      {
+        "name": "golang.org/x/net",
+        "version": "v0.50.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/net"
+      },
+      {
+        "name": "golang.org/x/sys",
+        "version": "v0.41.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/sys"
+      },
+      {
+        "name": "google.golang.org/protobuf",
+        "version": "v1.36.11",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/protobuf"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "opencontainers",
+        "type": "human",
+        "uri": "https://github.com/opencontainers"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 17639,
+      "validation_diversity": 0.88,
+      "context_breadth": 0.42,
+      "temporal_stability": 1,
+      "test_coverage": 0.67,
+      "documentation_quality": 0.6
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.769
+  }
+}

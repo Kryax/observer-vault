@@ -1,0 +1,228 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/shunfei--cronsun",
+  "meta": {
+    "title": "cronsun [![Build Status](https://travis-ci.org/shunfei/cronsun.svg?branch=master)](https://travis-ci.org/shunfei/cronsun)",
+    "description": "A Distributed, Fault-Tolerant Cron-Style Job System.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-10T20:59:53.259Z",
+    "dateModified": "2026-03-10T20:59:53.259Z",
+    "keywords": [
+      "cron",
+      "crontab",
+      "fault-tolerance",
+      "go",
+      "golang",
+      "job-scheduler"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "`cronsun` is a distributed cron-style job system. It's similar with `crontab` on stand-alone `*nix`.",
+    "context": "`cronsun` is a distributed cron-style job system. It's similar with `crontab` on stand-alone `*nix`.\n\n[简体中文](README_ZH.md)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "2923 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "458 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T20:59:53.259Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/shunfei/cronsun",
+        "description": "GitHub repository: shunfei/cronsun"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "github.com/cockroachdb/cmux",
+        "version": "v0.0.0-20170110192607-30d10be49292",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/cockroachdb/cmux"
+      },
+      {
+        "name": "github.com/coreos/etcd",
+        "version": "v3.3.9+incompatible",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/coreos/etcd"
+      },
+      {
+        "name": "github.com/fsnotify/fsnotify",
+        "version": "v1.4.7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/fsnotify/fsnotify"
+      },
+      {
+        "name": "github.com/go-gomail/gomail",
+        "version": "v0.0.0-20160411212932-81ebce5c23df",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-gomail/gomail"
+      },
+      {
+        "name": "github.com/gofrs/uuid",
+        "version": "v3.1.0+incompatible",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gofrs/uuid"
+      },
+      {
+        "name": "github.com/gorilla/mux",
+        "version": "v1.6.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gorilla/mux"
+      },
+      {
+        "name": "github.com/rogpeppe/fastuuid",
+        "version": "v0.0.0-20150106093220-6724a57986af",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/rogpeppe/fastuuid"
+      },
+      {
+        "name": "github.com/smartystreets/goconvey",
+        "version": "v0.0.0-20180222194500-ef6db91d284a",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/smartystreets/goconvey"
+      },
+      {
+        "name": "github.com/spf13/cobra",
+        "version": "v0.0.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/cobra"
+      },
+      {
+        "name": "go.uber.org/zap",
+        "version": "v1.9.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.uber.org/zap"
+      },
+      {
+        "name": "gopkg.in/mgo.v2",
+        "version": "v2.0.0-20180705113604-9856a29383ce",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gopkg.in/mgo.v2"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "shunfei",
+        "type": "human",
+        "uri": "https://github.com/shunfei"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 3839,
+      "validation_diversity": 0.37,
+      "context_breadth": 0.51,
+      "temporal_stability": 0.72,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.6
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.555
+  }
+}

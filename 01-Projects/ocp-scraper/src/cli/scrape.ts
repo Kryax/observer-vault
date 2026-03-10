@@ -1,7 +1,7 @@
 import { Command } from 'commander';
 import { GitHubAdapter } from '../forge/github';
 import { ForgejoAdapter } from '../forge/forgejo';
-import { coarseFilter } from '../filter/coarse';
+import { coarseFilter, DEFAULT_COARSE_CONFIG } from '../filter/coarse';
 import { fineFilter } from '../filter/fine';
 import { extractMetadata } from '../extract/metadata';
 import { parseReadme } from '../extract/readme';
@@ -80,8 +80,12 @@ export const scrapeCommand = new Command('scrape')
         processed++;
 
         try {
-          // Stage 1: Coarse filter
-          const coarseResult = coarseFilter(repo);
+          // Stage 1: Coarse filter (pass CLI min-stars through)
+          const coarseResult = coarseFilter(repo, {
+            ...DEFAULT_COARSE_CONFIG,
+            minStars: minStars,
+            minForks: minStars === 0 ? 0 : DEFAULT_COARSE_CONFIG.minForks,
+          });
           if (!coarseResult.passed) {
             filtered++;
             console.log(`   ⏭️  ${repo.fullName} — filtered: ${coarseResult.reasons.join(', ')}`);

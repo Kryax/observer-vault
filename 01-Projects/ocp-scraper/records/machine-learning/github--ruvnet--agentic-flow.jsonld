@@ -1,0 +1,384 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/ruvnet--agentic-flow",
+  "meta": {
+    "title": "🚀 Agentic-Flow v2",
+    "description": "Easily switch between alternative low-cost AI models in Claude Code/Agent SDK. For those comfortable using Claude agents and commands, it lets you take what you've created and deploy fully hosted agents for real business purposes. Use Claude Code to get the agent working, then deploy it in your favorite cloud.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-10T21:01:38.176Z",
+    "dateModified": "2026-03-10T21:01:38.176Z",
+    "keywords": [
+      "agents",
+      "claude",
+      "claude-agent-sdk",
+      "claude-code",
+      "gemini",
+      "openrouter",
+      "swarm-intelligence"
+    ]
+  },
+  "problemSolved": {
+    "statement": "| Hook | Purpose | When Triggered |\n|------|---------|----------------|\n| `pre-edit` | Get context and agent suggestions | Before file edits |\n| `post-edit` | Record edit outcomes for learning | After file edits |\n| `pre-command` | Assess command risk | Before Bash commands |\n| `post-command` | Record command outcomes | After Bash commands |\n| `route` | Route task to optimal agent | On task assignment |\n| `explain` | Explain routing decision | On demand |\n| `pretrain` | Bootstrap from repository | During setup |\n| `build-agents` | Generate agent configs | After pretrain |\n| `metrics` | View learning dashboard | On demand |\n| `transfer` | Transfer patterns between projects | On demand |",
+    "context": "> **Production-ready AI agent orchestration with 66 self-learning agents, 213 MCP tools, and autonomous multi-agent swarms.**\n\n[![npm version](https://badge.fury.io/js/agentic-flow.svg)](https://www.npmjs.com/package/agentic-flow)\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue.svg)](https://www.typescriptlang.org/)\n[![Node.js](https://img.shields.io/badge/Node.js-18%2B-green.svg)](https://nodejs.org/)\n\n---",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "lang:typescript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "530 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "123 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T21:01:38.176Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/ruvnet/agentic-flow",
+        "description": "GitHub repository: ruvnet/agentic-flow"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://ruv.io",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "TypeScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "@anthropic-ai/claude-agent-sdk",
+        "version": "^0.1.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@anthropic-ai/claude-agent-sdk"
+      },
+      {
+        "name": "@anthropic-ai/claude-code",
+        "version": "^2.0.35",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@anthropic-ai/claude-code"
+      },
+      {
+        "name": "@anthropic-ai/sdk",
+        "version": "^0.65.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@anthropic-ai/sdk"
+      },
+      {
+        "name": "@google/genai",
+        "version": "^1.22.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@google/genai"
+      },
+      {
+        "name": "@ruvector/attention",
+        "version": "^0.1.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@ruvector/attention"
+      },
+      {
+        "name": "@ruvector/gnn",
+        "version": "^0.1.23",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@ruvector/gnn"
+      },
+      {
+        "name": "@ruvector/ruvllm",
+        "version": "^0.2.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@ruvector/ruvllm"
+      },
+      {
+        "name": "@ruvector/sona",
+        "version": "^0.1.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@ruvector/sona"
+      },
+      {
+        "name": "@supabase/supabase-js",
+        "version": "^2.78.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@supabase/supabase-js"
+      },
+      {
+        "name": "@types/react",
+        "version": "^19.2.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@types/react"
+      },
+      {
+        "name": "@types/react-dom",
+        "version": "^19.2.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@types/react-dom"
+      },
+      {
+        "name": "@vitejs/plugin-react-swc",
+        "version": "^4.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@vitejs/plugin-react-swc"
+      },
+      {
+        "name": "@xenova/transformers",
+        "version": "^2.17.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@xenova/transformers"
+      },
+      {
+        "name": "agentdb",
+        "version": "^2.0.0-alpha.3.6",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/agentdb"
+      },
+      {
+        "name": "agentic-payments",
+        "version": "^0.1.13",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/agentic-payments"
+      },
+      {
+        "name": "autoprefixer",
+        "version": "^10.4.21",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/autoprefixer"
+      },
+      {
+        "name": "axios",
+        "version": "^1.12.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/axios"
+      },
+      {
+        "name": "better-sqlite3",
+        "version": "^11.10.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/better-sqlite3"
+      },
+      {
+        "name": "dotenv",
+        "version": "^16.4.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/dotenv"
+      },
+      {
+        "name": "express",
+        "version": "^5.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/express"
+      },
+      {
+        "name": "fastmcp",
+        "version": "^3.19.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/fastmcp"
+      },
+      {
+        "name": "http-proxy-middleware",
+        "version": "^3.0.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/http-proxy-middleware"
+      },
+      {
+        "name": "lucide-react",
+        "version": "^0.548.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/lucide-react"
+      },
+      {
+        "name": "marked",
+        "version": "^17.0.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/marked"
+      },
+      {
+        "name": "postcss",
+        "version": "^8.5.6",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/postcss"
+      },
+      {
+        "name": "react",
+        "version": "^19.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react"
+      },
+      {
+        "name": "react-dom",
+        "version": "^19.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-dom"
+      },
+      {
+        "name": "react-router-dom",
+        "version": "^7.9.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-router-dom"
+      },
+      {
+        "name": "tailwindcss",
+        "version": "^4.1.16",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/tailwindcss"
+      },
+      {
+        "name": "tailwindcss-animate",
+        "version": "^1.0.7",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/tailwindcss-animate"
+      },
+      {
+        "name": "tiktoken",
+        "version": "^1.0.22",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/tiktoken"
+      },
+      {
+        "name": "ulid",
+        "version": "^3.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/ulid"
+      },
+      {
+        "name": "vite",
+        "version": "^7.1.12",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/vite"
+      },
+      {
+        "name": "ws",
+        "version": "^8.18.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/ws"
+      },
+      {
+        "name": "yaml",
+        "version": "^2.8.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/yaml"
+      },
+      {
+        "name": "zod",
+        "version": "^3.25.76",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/zod"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "ruvnet",
+        "type": "human",
+        "uri": "https://github.com/ruvnet"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 776,
+      "validation_diversity": 0.23,
+      "context_breadth": 0.49,
+      "temporal_stability": 0.82,
+      "test_coverage": 0.2,
+      "documentation_quality": 0.6
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.418
+  }
+}

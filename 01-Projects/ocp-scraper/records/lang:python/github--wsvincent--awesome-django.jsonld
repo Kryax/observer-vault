@@ -1,0 +1,189 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/wsvincent--awesome-django",
+  "meta": {
+    "title": "Awesome Django [![Awesome](https://awesome.re/badge-flat.svg)](https://github.com/sindresorhus/awesome)",
+    "description": "A curated list of awesome things related to Django",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-10T21:01:51.259Z",
+    "dateModified": "2026-03-10T21:01:51.259Z",
+    "keywords": [
+      "awesome",
+      "awesome-list",
+      "django"
+    ],
+    "license": "CC0-1.0"
+  },
+  "problemSolved": {
+    "statement": "> A curated list of awesome things related to Django. Maintained by [Will Vincent](https://github.com/wsvincent) and [Jeff Triplett](https://github.com/jefftriplett).",
+    "context": "> A curated list of awesome things related to Django. Maintained by [Will Vincent](https://github.com/wsvincent) and [Jeff Triplett](https://github.com/jefftriplett).\n\n<br>\n\n<div align=\"center\">\n<picture>\n  <source media=\"(prefers-color-scheme: dark)\" srcset=\"./assets/django-logo-negative.svg\">\n  <img alt=\"Dark and Light mode version of the Django logo\" src=\"./assets/django-logo-positive.svg\">\n</picture>\n</div>\n\n<br>\n\nPlease consider supporting Django by making a donation to the <a rel=\"sponsored\" href=\"https://www.djangoproject.com/fundraising/\">Django Software Foundation</a>,\nsponsoring via <a rel=\"sponsored\" href=\"https://github.com/sponsors/django\">GitHub Sponsors</a>,\nor buying <a rel=\"sponsored\" href=\"https://django.threadless.com/\">official merchandise</a>.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "11015 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "1445 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T21:01:51.259Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/wsvincent/awesome-django",
+        "description": "GitHub repository: wsvincent/awesome-django"
+      },
+      {
+        "type": "documentation",
+        "uri": "http://awesomedjango.org",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "mkdocs",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/mkdocs/"
+      },
+      {
+        "name": "mkdocs-material",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/mkdocs-material/"
+      },
+      {
+        "name": "requests",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/requests/"
+      },
+      {
+        "name": "rich",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/rich/"
+      },
+      {
+        "name": "typer",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/typer/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "wsvincent",
+        "type": "human",
+        "uri": "https://github.com/wsvincent"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 13905,
+      "validation_diversity": 0.69,
+      "context_breadth": 0.42,
+      "temporal_stability": 1,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.6
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.656
+  }
+}

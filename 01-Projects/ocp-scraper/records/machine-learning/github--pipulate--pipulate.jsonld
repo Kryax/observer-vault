@@ -1,0 +1,355 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/pipulate--pipulate",
+  "meta": {
+    "title": "Pipulate: Local First AI SEO Software",
+    "description": "Local First AI SEO Software on Nix, FastHTML & HTMX",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-10T21:01:39.996Z",
+    "dateModified": "2026-03-10T21:01:39.996Z",
+    "keywords": [
+      "ai",
+      "fasthtml",
+      "htmx",
+      "machine-learning",
+      "mcp",
+      "mcp-client",
+      "mcp-server",
+      "nix",
+      "python",
+      "seo"
+    ],
+    "license": "NOASSERTION"
+  },
+  "problemSolved": {
+    "statement": "Pipulate is a **local-first, single-tenant desktop app framework** featuring AI-assisted, step-by-step workflows. Designed to feel like an Electron app, it uniquely runs a full, reproducible Linux environment within a project folder using Nix, ensuring consistency across macOS, Linux, and Windows (via WSL).",
+    "context": "![Pipulate Free & Open Source SEO with & for LLMs](https://github.com/miklevin/pipulate/raw/main/assets/images/ai-seo-software.png)\n\n> **Your data. Your AI. Your machine. Your control.**  \n> No subscriptions, no vendor lock-in, no cloud costs.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "developer-tools",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "9 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "1 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T21:01:39.996Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/pipulate/pipulate",
+        "description": "GitHub repository: pipulate/pipulate"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://pipulate.com/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "blinker",
+        "version": "==1.6.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/blinker/"
+      },
+      {
+        "name": "apsw",
+        "version": "==3.50.3.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/apsw/"
+      },
+      {
+        "name": "piper-tts",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/piper-tts/"
+      },
+      {
+        "name": "onnxruntime",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/onnxruntime/"
+      },
+      {
+        "name": "google-generativeai",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/google-generativeai/"
+      },
+      {
+        "name": "langchain",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/langchain/"
+      },
+      {
+        "name": "langchain-openai",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/langchain-openai/"
+      },
+      {
+        "name": "langchain-google-genai",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/langchain-google-genai/"
+      },
+      {
+        "name": "langchain-community",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/langchain-community/"
+      },
+      {
+        "name": "jupyterlab",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/jupyterlab/"
+      },
+      {
+        "name": "jupyter-ai",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/jupyter-ai/"
+      },
+      {
+        "name": "ipywidgets",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/ipywidgets/"
+      },
+      {
+        "name": "itables",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/itables/"
+      },
+      {
+        "name": "jupytext",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/jupytext/"
+      },
+      {
+        "name": "nbstripout",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/nbstripout/"
+      },
+      {
+        "name": "requests",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/requests/"
+      },
+      {
+        "name": "beautifulsoup4",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/beautifulsoup4/"
+      },
+      {
+        "name": "pandas",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pandas/"
+      },
+      {
+        "name": "openpyxl",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/openpyxl/"
+      },
+      {
+        "name": "lxml",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/lxml/"
+      },
+      {
+        "name": "python-fasthtml",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/python-fasthtml/"
+      },
+      {
+        "name": "uvicorn",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/uvicorn/"
+      },
+      {
+        "name": "selenium",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/selenium/"
+      },
+      {
+        "name": "undetected-chromedriver",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/undetected-chromedriver/"
+      },
+      {
+        "name": "webdriver-manager",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/webdriver-manager/"
+      },
+      {
+        "name": "matplotlib",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/matplotlib/"
+      },
+      {
+        "name": "scikit-learn",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scikit-learn/"
+      },
+      {
+        "name": "numpy",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numpy/"
+      },
+      {
+        "name": "pylint",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pylint/"
+      },
+      {
+        "name": "vulture",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/vulture/"
+      },
+      {
+        "name": "yapf",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/yapf/"
+      },
+      {
+        "name": "isort",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/isort/"
+      },
+      {
+        "name": "python-dotenv",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/python-dotenv/"
+      },
+      {
+        "name": "loguru",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/loguru/"
+      },
+      {
+        "name": "rich",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/rich/"
+      },
+      {
+        "name": "watchdog",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/watchdog/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "pipulate",
+        "type": "human",
+        "uri": "https://github.com/pipulate"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 11,
+      "validation_diversity": 0,
+      "context_breadth": 0.4,
+      "temporal_stability": 0.94,
+      "test_coverage": 0,
+      "documentation_quality": 0.7
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.037
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/forestsystemtransformation--forest-carbon-lite",
+  "meta": {
+    "title": "Forest Carbon Lite v0.1 - Professional Review Draft",
+    "description": "Forest Carbon Lite V.1.0 - A comprehensive Python implementation of a \"FullCAM-lite\" forest carbon accounting model, featuring the Tree Yield Formula (TYF) growth engine with dynamic scenario generation and climate change integration.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-10T21:01:35.749Z",
+    "dateModified": "2026-03-10T21:01:35.749Z",
+    "keywords": [],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "The Forest Carbon Lite Simulator (FCL v0.1) presents an open-source, scientifically-grounded framework for projecting carbon sequestration outcomes under climate change and management scenarios. Designed for rapid scenario exploration, the model addresses the gap between time intensive national carbon models and simple growth calculations. FCL enables practitioners to quickly create and compare multiple strategies, evaluating reforestation versus restoration approaches, management interventions, and climate adaptation pathways. Key features include orthogonal separation of climate and management effects to prevent double-counting, modular scenario generation, and integrated economic analysis aligned with carbon credit markets. Built on FullCAM's validated Tree Yield Formula and incorporating stochastic mortality and disturbance processes, FCL supports critical professional decisions such as site selection, management intensity optimisation, and climate adaptation planning. The model is designed for preliminary screening and scenario exploration, with field validation required before operational deployment for investment decisions.",
+    "context": "The Forest Carbon Lite Simulator (FCL v0.1) presents an open-source, scientifically-grounded framework for projecting carbon sequestration outcomes under climate change and management scenarios. Designed for rapid scenario exploration, the model addresses the gap between time intensive national carbon models and simple growth calculations. FCL enables practitioners to quickly create and compare multiple strategies, evaluating reforestation versus restoration approaches, management interventions, and climate adaptation pathways. Key features include orthogonal separation of climate and management effects to prevent double-counting, modular scenario generation, and integrated economic analysis aligned with carbon credit markets. Built on FullCAM's validated Tree Yield Formula and incorporating stochastic mortality and disturbance processes, FCL supports critical professional decisions such as site selection, management intensity optimisation, and climate adaptation planning. The model is designed for preliminary screening and scenario exploration, with field validation required before operational deployment for investment decisions.\n\n**Version:** 0.1 (Professional Review Draft)  \n**Status:** Seeking validation partnerships and peer review feedback  \n**Institution:** Healthy Forests Foundation\n\n📄 **[Download Technical Paper (PDF)](Forest_Carbon_Lite_V0.1.pdf)** - Complete technical documentation with mathematical formulations, validation status, and detailed methodology.\n\n---",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "developer-tools",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "0 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "0 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T21:01:35.749Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/forestsystemtransformation/forest-carbon-lite",
+        "description": "GitHub repository: forestsystemtransformation/forest-carbon-lite"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "numpy",
+        "version": ">=1.21.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numpy/"
+      },
+      {
+        "name": "pandas",
+        "version": ">=1.3.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pandas/"
+      },
+      {
+        "name": "matplotlib",
+        "version": ">=3.5.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/matplotlib/"
+      },
+      {
+        "name": "seaborn",
+        "version": ">=0.11.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/seaborn/"
+      },
+      {
+        "name": "pyyaml",
+        "version": ">=6.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyyaml/"
+      },
+      {
+        "name": "click",
+        "version": ">=8.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/click/"
+      },
+      {
+        "name": "pydantic",
+        "version": ">=2.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pydantic/"
+      },
+      {
+        "name": "scipy",
+        "version": ">=1.7.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scipy/"
+      },
+      {
+        "name": "tqdm",
+        "version": ">=4.62.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tqdm/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "forestsystemtransformation",
+        "type": "human",
+        "uri": "https://github.com/forestsystemtransformation"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 0,
+      "validation_diversity": 0,
+      "context_breadth": 0,
+      "temporal_stability": 0.57,
+      "test_coverage": 0,
+      "documentation_quality": 0.5
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.003
+  }
+}

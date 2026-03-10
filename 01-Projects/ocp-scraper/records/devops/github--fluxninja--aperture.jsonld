@@ -1,0 +1,1486 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/fluxninja--aperture",
+  "meta": {
+    "title": "🥷 FluxNinja Aperture",
+    "description": "Rate limiting, caching, and request prioritization for modern workloads",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-10T21:01:33.909Z",
+    "dateModified": "2026-03-10T21:01:33.909Z",
+    "keywords": [
+      "caching",
+      "cloud-native",
+      "concurrency-limiter",
+      "kubernetes",
+      "llm",
+      "microservices",
+      "observability",
+      "rate-limiter",
+      "scheduler"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "Aperture is a distributed load management platform designed for rate limiting,\ncaching, and prioritizing requests in cloud applications. Built upon a\nfoundation of distributed counters, observability, and a global control plane,\nit provides a comprehensive suite of load management capabilities. These\ncapabilities enhance the reliability and performance of cloud applications,\nwhile also optimizing cost and resource utilization.",
+    "context": "Aperture is a distributed load management platform designed for rate limiting,\ncaching, and prioritizing requests in cloud applications. Built upon a\nfoundation of distributed counters, observability, and a global control plane,\nit provides a comprehensive suite of load management capabilities. These\ncapabilities enhance the reliability and performance of cloud applications,\nwhile also optimizing cost and resource utilization.\n\n![Unified Load Management](./docs/content/assets/img/unified-load-management-light.svg#gh-light-mode-only)\n![Unified Load Management](./docs/content/assets/img/unified-load-management-dark.svg#gh-dark-mode-only)\n\nIntegrating Aperture in your application through SDKs is a simple 3-step\nprocess:\n\n- **Define labels**: Define labels to identify users, entities, or features\n  within your application. For example, you can define labels to identify\n  individual users, features, or API endpoints.\n\n<!-- vale off -->\n<!-- markdownlint-disable -->\n\n  <details>\n  <summary>Example</summary>\n\n```typescript\n// Tailor policies to get deeper insights into your workload with labels that\n// capture business context.\nconst labels = {\n  // You can rate limit each user individually.\n  user: \"jack\",\n  // And have different rate limits for different tiers of users.\n  tier: \"premium\",\n  // You can also provide the tokens for each request.\n  // Tokens are flexible: LLM AI tokens in a prompt, complexity of a request,\n  // number of sub-actions, etc.\n  tokens: \"200\",\n  // When peak load exceeds external quotas or infrastructure capacity,\n  // requests can be throttled and prioritized.\n  priority: HIGH,\n  // Get deep insights into your workload. You can slice and dice performance\n  // metrics by any label.\n  workload: \"/chat\",\n};\n```\n\n<!-- markdownlint-enable -->\n<!-- vale on -->\n\n  </details>\n\n- **Wrap your workload**: Wrap your workload with `startFlow` and `endFlow`\n  calls to establish control points around specific features or code sections\n  inside your application. For example, you can wrap your API endpoints with\n  Aperture SDKs to limit the number of requests per user or feature.\n\n<!-- vale off -->\n<!-- markdownlint-disable -->\n\n  <details>\n  <summary>Example</summary>\n\n```typescript\n// Wrap your workload with startFlow and endFlow calls, passing in the\n// labels you defined earlier.\nconst flow = await apertureClient.startFlow(\"your_workload\", {\n  labels: labels,\n  // Lookup result cache key to retrieve a cached result.\n  resultCacheKey: queryParams,\n});\n\n// If rate or quota limit is not exceeded, the workload is executed.\nif (flow.shouldRun()) {\n  // Return a cached result or execute the workload.\n  const cachedResult = flow.resultCache();\n  const result = await yourWorkload(cachedResult);\n  flow.setResultCache({\n    value: result,\n    ttl: { seconds: 86400, nanos: 0 },\n  });\n}\n//\n```\n\n  </details>\n\n<!-- markdownlint-enable -->\n<!-- vale on -->\n\n- **Configure & monitor policies**: Configure policies to control the rate,\n  concurrency, and priority of requests.\n\n<!-- vale off -->\n<!-- markdownlint-disable -->\n\n  <details>\n  <summary>Policy YAML</summary>\n\n```yaml\nblueprint: rate-limiting/base\nuri: github.com/fluxninja/aperture/blueprints@latest\npolicy:\n  policy_name: rate_limit\n  rate_limiter:\n    bucket_capacity: 60\n    fill_amount: 60\n    parameters:\n      interval: 3600s\n      limit_by_label_key: user\n    selectors:\n      - control_point: your_workload\n        label_matcher:\n          match_list:\n            - key: tier\n              operator: In\n              values:\n                - premium\n```\n\n  </details>\n\n<!-- markdownlint-enable -->\n<!-- vale on -->\n\n![Rate Limiter Blueprint](./docs/content/get-started/assets/rate-limiter-blueprint-dark.png#gh-dark-mode-only)\n![Rate Limiter Blueprint](./docs/content/get-started/assets/rate-limiter-blueprint-light.png#gh-light-mode-only)\n![Rate Limiter Dashboard](./docs/content/get-started/assets/rate-limiter-dashboard-dark.png#gh-dark-mode-only)\n![Rate Limiter Dashboard](./docs/content/get-started/assets/rate-limiter-dashboard-light.png#gh-light-mode-only)\n\nIn addition to language SDKs, Aperture also integrates with existing control\npoints such as API gateways, service meshes, and application middlewares.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "devops",
+    "containerization",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "729 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "35 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T21:01:33.909Z"
+  },
+  "implementation": {
+    "type": "service",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/fluxninja/aperture",
+        "description": "GitHub repository: fluxninja/aperture"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://docs.fluxninja.com",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "cloud.google.com/go/secretmanager",
+        "version": "v1.11.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/cloud.google.com/go/secretmanager"
+      },
+      {
+        "name": "cloud.google.com/go/storage",
+        "version": "v1.37.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/cloud.google.com/go/storage"
+      },
+      {
+        "name": "github.com/BurntSushi/toml",
+        "version": "v1.3.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/BurntSushi/toml"
+      },
+      {
+        "name": "github.com/Henry-Sarabia/sliceconv",
+        "version": "v1.0.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Henry-Sarabia/sliceconv"
+      },
+      {
+        "name": "github.com/Masterminds/semver/v3",
+        "version": "v3.2.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Masterminds/semver/v3"
+      },
+      {
+        "name": "github.com/buger/jsonparser",
+        "version": "v1.1.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/buger/jsonparser"
+      },
+      {
+        "name": "github.com/buraksezer/olric",
+        "version": "v0.0.0-00010101000000-000000000000",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/buraksezer/olric"
+      },
+      {
+        "name": "github.com/cenkalti/backoff/v4",
+        "version": "v4.2.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/cenkalti/backoff/v4"
+      },
+      {
+        "name": "github.com/cespare/xxhash",
+        "version": "v1.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/cespare/xxhash"
+      },
+      {
+        "name": "github.com/charmbracelet/bubbletea",
+        "version": "v0.25.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/charmbracelet/bubbletea"
+      },
+      {
+        "name": "github.com/clarketm/json",
+        "version": "v1.17.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/clarketm/json"
+      },
+      {
+        "name": "github.com/containerd/cgroups",
+        "version": "v1.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/containerd/cgroups"
+      },
+      {
+        "name": "github.com/eapache/queue",
+        "version": "v1.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/eapache/queue"
+      },
+      {
+        "name": "github.com/elastic/gmux",
+        "version": "v0.3.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/elastic/gmux"
+      },
+      {
+        "name": "github.com/elastic/gosigar",
+        "version": "v0.14.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/elastic/gosigar"
+      },
+      {
+        "name": "github.com/emicklei/dot",
+        "version": "v1.6.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/emicklei/dot"
+      },
+      {
+        "name": "github.com/envoyproxy/go-control-plane",
+        "version": "v0.12.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/envoyproxy/go-control-plane"
+      },
+      {
+        "name": "github.com/fluxninja/aperture/api/v2",
+        "version": "v2.0.0-20231228195310-b65720bf7857",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/fluxninja/aperture/api/v2"
+      },
+      {
+        "name": "github.com/fluxninja/datasketches-go",
+        "version": "v0.0.0-20220916235224-7501a2d28551",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/fluxninja/datasketches-go"
+      },
+      {
+        "name": "github.com/fluxninja/lumberjack",
+        "version": "v0.0.0-20220729045908-655029e4d814",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/fluxninja/lumberjack"
+      },
+      {
+        "name": "github.com/getsentry/sentry-go",
+        "version": "v0.24.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/getsentry/sentry-go"
+      },
+      {
+        "name": "github.com/ghodss/yaml",
+        "version": "v1.0.1-0.20190212211648-25d852aebe32",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/ghodss/yaml"
+      },
+      {
+        "name": "github.com/go-logr/zerologr",
+        "version": "v1.2.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-logr/zerologr"
+      },
+      {
+        "name": "github.com/go-openapi/runtime",
+        "version": "v0.27.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-openapi/runtime"
+      },
+      {
+        "name": "github.com/go-openapi/strfmt",
+        "version": "v0.22.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-openapi/strfmt"
+      },
+      {
+        "name": "github.com/go-playground/validator/v10",
+        "version": "v10.14.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-playground/validator/v10"
+      },
+      {
+        "name": "github.com/gofrs/flock",
+        "version": "v0.8.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gofrs/flock"
+      },
+      {
+        "name": "github.com/golang/mock",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/golang/mock"
+      },
+      {
+        "name": "github.com/google/go-jsonnet",
+        "version": "v0.20.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/go-jsonnet"
+      },
+      {
+        "name": "github.com/google/uuid",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/uuid"
+      },
+      {
+        "name": "github.com/gorilla/mux",
+        "version": "v1.8.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gorilla/mux"
+      },
+      {
+        "name": "github.com/grpc-ecosystem/go-grpc-prometheus",
+        "version": "v1.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grpc-ecosystem/go-grpc-prometheus"
+      },
+      {
+        "name": "github.com/grpc-ecosystem/grpc-gateway/v2",
+        "version": "v2.19.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grpc-ecosystem/grpc-gateway/v2"
+      },
+      {
+        "name": "github.com/hashicorp/go-multierror",
+        "version": "v1.1.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/go-multierror"
+      },
+      {
+        "name": "github.com/hashicorp/memberlist",
+        "version": "v0.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/memberlist"
+      },
+      {
+        "name": "github.com/integralist/go-findroot",
+        "version": "v0.0.0-20160518114804-ac90681525dc",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/integralist/go-findroot"
+      },
+      {
+        "name": "github.com/jonboulle/clockwork",
+        "version": "v0.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jonboulle/clockwork"
+      },
+      {
+        "name": "github.com/json-iterator/go",
+        "version": "v1.1.12",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/json-iterator/go"
+      },
+      {
+        "name": "github.com/jsonnet-bundler/jsonnet-bundler",
+        "version": "v0.5.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jsonnet-bundler/jsonnet-bundler"
+      },
+      {
+        "name": "github.com/knadh/koanf/parsers/json",
+        "version": "v0.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/knadh/koanf/parsers/json"
+      },
+      {
+        "name": "github.com/knadh/koanf/parsers/yaml",
+        "version": "v0.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/knadh/koanf/parsers/yaml"
+      },
+      {
+        "name": "github.com/knadh/koanf/providers/confmap",
+        "version": "v0.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/knadh/koanf/providers/confmap"
+      },
+      {
+        "name": "github.com/knadh/koanf/providers/posflag",
+        "version": "v0.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/knadh/koanf/providers/posflag"
+      },
+      {
+        "name": "github.com/knadh/koanf/providers/rawbytes",
+        "version": "v0.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/knadh/koanf/providers/rawbytes"
+      },
+      {
+        "name": "github.com/knadh/koanf/v2",
+        "version": "v2.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/knadh/koanf/v2"
+      },
+      {
+        "name": "github.com/lithammer/dedent",
+        "version": "v1.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/lithammer/dedent"
+      },
+      {
+        "name": "github.com/looplab/tarjan",
+        "version": "v0.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/looplab/tarjan"
+      },
+      {
+        "name": "github.com/mitchellh/copystructure",
+        "version": "v1.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mitchellh/copystructure"
+      },
+      {
+        "name": "github.com/mitchellh/mapstructure",
+        "version": "v1.5.1-0.20231216201459-8508981c8b6c",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mitchellh/mapstructure"
+      },
+      {
+        "name": "github.com/natefinch/atomic",
+        "version": "v1.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/natefinch/atomic"
+      },
+      {
+        "name": "github.com/onsi/ginkgo/v2",
+        "version": "v2.15.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/onsi/ginkgo/v2"
+      },
+      {
+        "name": "github.com/onsi/gomega",
+        "version": "v1.31.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/onsi/gomega"
+      },
+      {
+        "name": "github.com/open-policy-agent/opa",
+        "version": "v0.60.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-policy-agent/opa"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/fileexporter",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/exporter/fileexporter"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/prometheusremotewriteexporter",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/exporter/prometheusremotewriteexporter"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/healthcheckextension",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/extension/healthcheckextension"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/pprofextension",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/extension/pprofextension"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/attributesprocessor",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/processor/attributesprocessor"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/cumulativetodeltaprocessor",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/processor/cumulativetodeltaprocessor"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/deltatorateprocessor",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/processor/deltatorateprocessor"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/filterprocessor",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/processor/filterprocessor"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/groupbyattrsprocessor",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/processor/groupbyattrsprocessor"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/groupbytraceprocessor",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/processor/groupbytraceprocessor"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/k8sattributesprocessor",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/processor/k8sattributesprocessor"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/metricsgenerationprocessor",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/processor/metricsgenerationprocessor"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/metricstransformprocessor",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/processor/metricstransformprocessor"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/probabilisticsamplerprocessor",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/processor/probabilisticsamplerprocessor"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/resourcedetectionprocessor",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/processor/resourcedetectionprocessor"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/resourceprocessor",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/processor/resourceprocessor"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/routingprocessor",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/processor/routingprocessor"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/servicegraphprocessor",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/processor/servicegraphprocessor"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/spanmetricsprocessor",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/processor/spanmetricsprocessor"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/spanprocessor",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/processor/spanprocessor"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/tailsamplingprocessor",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/processor/tailsamplingprocessor"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/processor/transformprocessor"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/activedirectorydsreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/activedirectorydsreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/aerospikereceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/aerospikereceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/apachereceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/apachereceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/awscloudwatchreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/awscloudwatchreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/awscontainerinsightreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/awscontainerinsightreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/awsecscontainermetricsreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/awsecscontainermetricsreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/awsfirehosereceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/awsfirehosereceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/awsxrayreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/awsxrayreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/azureblobreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/azureblobreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/azureeventhubreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/azureeventhubreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/bigipreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/bigipreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/carbonreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/carbonreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/chronyreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/chronyreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/cloudfoundryreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/cloudfoundryreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/collectdreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/collectdreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/couchdbreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/couchdbreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/dockerstatsreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/dockerstatsreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/elasticsearchreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/elasticsearchreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/expvarreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/expvarreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/filelogreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/filelogreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/flinkmetricsreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/flinkmetricsreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/fluentforwardreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/fluentforwardreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/googlecloudpubsubreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/googlecloudpubsubreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/googlecloudspannerreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/googlecloudspannerreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/haproxyreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/haproxyreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/hostmetricsreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/hostmetricsreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/httpcheckreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/httpcheckreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/iisreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/iisreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/influxdbreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/influxdbreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/jaegerreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/jaegerreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/journaldreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/journaldreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/k8sclusterreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/k8sclusterreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/k8seventsreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/k8seventsreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/k8sobjectsreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/k8sobjectsreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/kafkametricsreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/kafkametricsreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/kafkareceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/kafkareceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/kubeletstatsreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/kubeletstatsreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/memcachedreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/memcachedreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/mongodbatlasreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/mongodbatlasreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/mongodbreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/mongodbreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/mysqlreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/mysqlreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/nginxreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/nginxreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/nsxtreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/nsxtreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/opencensusreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/opencensusreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/oracledbreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/oracledbreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/otlpjsonfilereceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/otlpjsonfilereceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/podmanreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/podmanreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/postgresqlreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/postgresqlreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/prometheusreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/prometheusreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/pulsarreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/pulsarreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/purefareceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/purefareceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/rabbitmqreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/rabbitmqreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/receivercreator",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/receivercreator"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/redisreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/redisreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/riakreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/riakreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/saphanareceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/saphanareceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/sapmreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/sapmreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/signalfxreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/signalfxreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/simpleprometheusreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/simpleprometheusreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/skywalkingreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/skywalkingreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/snmpreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/snmpreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/solacereceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/solacereceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/splunkhecreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/splunkhecreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/sqlqueryreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/sqlqueryreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/sqlserverreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/sqlserverreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/statsdreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/statsdreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/syslogreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/syslogreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/tcplogreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/tcplogreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/udplogreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/udplogreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/vcenterreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/vcenterreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/wavefrontreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/wavefrontreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/windowseventlogreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/windowseventlogreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/windowsperfcountersreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/windowsperfcountersreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/zipkinreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/zipkinreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/zookeeperreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/zookeeperreceiver"
+      },
+      {
+        "name": "github.com/prometheus/alertmanager",
+        "version": "v0.26.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/alertmanager"
+      },
+      {
+        "name": "github.com/prometheus/client_golang",
+        "version": "v1.18.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/client_golang"
+      },
+      {
+        "name": "github.com/prometheus/common",
+        "version": "v0.46.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/common"
+      },
+      {
+        "name": "github.com/prometheus/prometheus",
+        "version": "v0.48.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/prometheus"
+      },
+      {
+        "name": "github.com/reugn/go-quartz",
+        "version": "v0.7.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/reugn/go-quartz"
+      },
+      {
+        "name": "github.com/rs/zerolog",
+        "version": "v1.31.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/rs/zerolog"
+      },
+      {
+        "name": "github.com/sourcegraph/conc",
+        "version": "v0.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/sourcegraph/conc"
+      },
+      {
+        "name": "github.com/spf13/cast",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/cast"
+      },
+      {
+        "name": "github.com/spf13/cobra",
+        "version": "v1.8.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/cobra"
+      },
+      {
+        "name": "github.com/spf13/pflag",
+        "version": "v1.0.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/pflag"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.8.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      },
+      {
+        "name": "github.com/technosophos/moniker",
+        "version": "v0.0.0-20210218184952-3ea787d3943b",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/technosophos/moniker"
+      },
+      {
+        "name": "github.com/xeipuuv/gojsonschema",
+        "version": "v1.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/xeipuuv/gojsonschema"
+      },
+      {
+        "name": "go.etcd.io/etcd/api/v3",
+        "version": "v3.5.12",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.etcd.io/etcd/api/v3"
+      },
+      {
+        "name": "go.etcd.io/etcd/client/v3",
+        "version": "v3.5.12",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.etcd.io/etcd/client/v3"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/component",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/component"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/confmap",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/confmap"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/connector",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/connector"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/consumer",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/consumer"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/exporter",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/exporter"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/exporter/loggingexporter",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/exporter/loggingexporter"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/exporter/otlpexporter",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/exporter/otlpexporter"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/exporter/otlphttpexporter",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/exporter/otlphttpexporter"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/extension",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/extension"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/extension/ballastextension",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/extension/ballastextension"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/extension/zpagesextension",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/extension/zpagesextension"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/otelcol",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/otelcol"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/pdata",
+        "version": "v1.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/pdata"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/processor",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/processor"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/processor/batchprocessor",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/processor/batchprocessor"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/processor/memorylimiterprocessor",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/processor/memorylimiterprocessor"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/receiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/receiver"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/receiver/otlpreceiver",
+        "version": "v0.93.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/receiver/otlpreceiver"
+      },
+      {
+        "name": "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc",
+        "version": "v0.47.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
+      },
+      {
+        "name": "go.opentelemetry.io/otel",
+        "version": "v1.22.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel"
+      },
+      {
+        "name": "go.opentelemetry.io/proto/otlp",
+        "version": "v1.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/proto/otlp"
+      },
+      {
+        "name": "go.uber.org/automaxprocs",
+        "version": "v1.5.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.uber.org/automaxprocs"
+      },
+      {
+        "name": "go.uber.org/fx",
+        "version": "v1.20.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.uber.org/fx"
+      },
+      {
+        "name": "go.uber.org/goleak",
+        "version": "v1.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.uber.org/goleak"
+      },
+      {
+        "name": "go.uber.org/multierr",
+        "version": "v1.11.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.uber.org/multierr"
+      },
+      {
+        "name": "go.uber.org/zap",
+        "version": "v1.26.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.uber.org/zap"
+      },
+      {
+        "name": "golang.org/x/exp",
+        "version": "v0.0.0-20240119083558-1b970713d09a",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/exp"
+      },
+      {
+        "name": "golang.org/x/net",
+        "version": "v0.20.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/net"
+      },
+      {
+        "name": "google.golang.org/genproto/googleapis/rpc",
+        "version": "v0.0.0-20240125205218-1f4bbc51befe",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/genproto/googleapis/rpc"
+      },
+      {
+        "name": "google.golang.org/grpc",
+        "version": "v1.61.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/grpc"
+      },
+      {
+        "name": "google.golang.org/protobuf",
+        "version": "v1.32.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/protobuf"
+      },
+      {
+        "name": "gopkg.in/fsnotify.v1",
+        "version": "v1.4.7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gopkg.in/fsnotify.v1"
+      },
+      {
+        "name": "gopkg.in/yaml.v3",
+        "version": "v3.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gopkg.in/yaml.v3"
+      },
+      {
+        "name": "helm.sh/helm/v3",
+        "version": "v3.13.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/helm.sh/helm/v3"
+      },
+      {
+        "name": "k8s.io/api",
+        "version": "v0.28.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/api"
+      },
+      {
+        "name": "k8s.io/apimachinery",
+        "version": "v0.28.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/apimachinery"
+      },
+      {
+        "name": "k8s.io/client-go",
+        "version": "v0.28.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/client-go"
+      },
+      {
+        "name": "k8s.io/klog/v2",
+        "version": "v2.110.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/klog/v2"
+      },
+      {
+        "name": "sigs.k8s.io/controller-runtime",
+        "version": "v0.16.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/sigs.k8s.io/controller-runtime"
+      },
+      {
+        "name": "github.com/docker/docker",
+        "version": "v24.0.7+incompatible",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/docker/docker"
+      },
+      {
+        "name": "github.com/docker/go-connections",
+        "version": "v0.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/docker/go-connections"
+      },
+      {
+        "name": "github.com/facebookgo/symwalk",
+        "version": "v0.0.0-20150726040526-42004b9f3222",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/facebookgo/symwalk"
+      },
+      {
+        "name": "github.com/go-logr/logr",
+        "version": "v1.4.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-logr/logr"
+      },
+      {
+        "name": "github.com/gogo/protobuf",
+        "version": "v1.3.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gogo/protobuf"
+      },
+      {
+        "name": "github.com/google/go-cmp",
+        "version": "v0.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/go-cmp"
+      },
+      {
+        "name": "github.com/googleapis/gax-go/v2",
+        "version": "v2.12.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/googleapis/gax-go/v2"
+      },
+      {
+        "name": "github.com/imdario/mergo",
+        "version": "v0.3.16",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/imdario/mergo"
+      },
+      {
+        "name": "github.com/lukejoshuapark/infchan",
+        "version": "v1.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/lukejoshuapark/infchan"
+      },
+      {
+        "name": "github.com/prometheus-community/prom-label-proxy",
+        "version": "v0.7.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus-community/prom-label-proxy"
+      },
+      {
+        "name": "golang.org/x/mod",
+        "version": "v0.14.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/mod"
+      },
+      {
+        "name": "golang.org/x/oauth2",
+        "version": "v0.16.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/oauth2"
+      },
+      {
+        "name": "golang.org/x/text",
+        "version": "v0.14.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/text"
+      },
+      {
+        "name": "k8s.io/utils",
+        "version": "v0.0.0-20230726121419-3b25d923346b",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/utils"
+      },
+      {
+        "name": "sigs.k8s.io/yaml",
+        "version": "v1.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/sigs.k8s.io/yaml"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "fluxninja",
+        "type": "human",
+        "uri": "https://github.com/fluxninja"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 799,
+      "validation_diversity": 0.49,
+      "context_breadth": 0.51,
+      "temporal_stability": 0.75,
+      "test_coverage": 0.2,
+      "documentation_quality": 0.68
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.528
+  }
+}

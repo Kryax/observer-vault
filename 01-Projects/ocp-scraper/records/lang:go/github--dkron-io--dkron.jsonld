@@ -1,0 +1,466 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/dkron-io--dkron",
+  "meta": {
+    "title": "Dkron - Distributed, fault tolerant job scheduling system for cloud native environments [![GoDoc](https://godoc.org/github.com/distribworks/dkron?status.svg)](https://godoc.org/github.com/distribworks/dkron) [![Actions Status](https://github.com/distribworks/dkron/workflows/Test/badge.svg)](https://github.com/distribworks/dkron/actions) [![Gitter](https://badges.gitter.im/distribworks/dkron.svg)](https://gitter.im/distribworks/dkron) [![Gurubase](https://img.shields.io/badge/Gurubase-Ask%20Dkron%20Guru-006BFF)](https://gurubase.io/g/dkron)",
+    "description": "Dkron - Distributed, fault tolerant job scheduling system https://dkron.io",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-10T20:59:48.024Z",
+    "dateModified": "2026-03-10T20:59:48.024Z",
+    "keywords": [
+      "cron",
+      "distributed-systems",
+      "fault-tolerance",
+      "scheduled-jobs"
+    ],
+    "license": "LGPL-3.0"
+  },
+  "problemSolved": {
+    "statement": "Website: http://dkron.io/",
+    "context": "Website: http://dkron.io/\n\nDkron is a distributed cron service, easy to setup and fault tolerant with focus in:\n\n- Easy: Easy to use with a great UI\n- Reliable: Completely fault tolerant\n- Highly scalable: Able to handle high volumes of scheduled jobs and thousands of nodes\n\nDkron is written in Go and leverage the power of the Raft protocol and Serf for providing fault tolerance, reliability\nand scalability while keeping simple and easily installable.\n\nDkron is inspired by the google\nwhitepaper [Reliable Cron across the Planet](https://queue.acm.org/detail.cfm?id=2745840) and by Airbnb Chronos\nborrowing the same features from it.\n\nDkron runs on Linux, OSX and Windows. It can be used to run scheduled commands on a server cluster using any combination\nof servers for each job. It has no single points of failure due to the use of the Gossip protocol and fault tolerant\ndistributed databases.\n\nYou can use Dkron to run the most important part of your company, scheduled jobs.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "4681 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "406 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T20:59:48.024Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/dkron-io/dkron",
+        "description": "GitHub repository: dkron-io/dkron"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "cloud.google.com/go/pubsub",
+        "version": "v1.50.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/cloud.google.com/go/pubsub"
+      },
+      {
+        "name": "github.com/IBM/sarama",
+        "version": "v1.46.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/IBM/sarama"
+      },
+      {
+        "name": "github.com/armon/circbuf",
+        "version": "v0.0.0-20190214190532-5111143e8da2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/armon/circbuf"
+      },
+      {
+        "name": "github.com/devopsfaith/krakend-usage",
+        "version": "v1.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/devopsfaith/krakend-usage"
+      },
+      {
+        "name": "github.com/fluent/fluent-logger-golang",
+        "version": "v1.10.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/fluent/fluent-logger-golang"
+      },
+      {
+        "name": "github.com/fullstorydev/grpcurl",
+        "version": "v1.9.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/fullstorydev/grpcurl"
+      },
+      {
+        "name": "github.com/gin-contrib/cors",
+        "version": "v1.7.6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gin-contrib/cors"
+      },
+      {
+        "name": "github.com/gin-contrib/expvar",
+        "version": "v1.0.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gin-contrib/expvar"
+      },
+      {
+        "name": "github.com/gin-gonic/gin",
+        "version": "v1.11.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gin-gonic/gin"
+      },
+      {
+        "name": "github.com/hashicorp/go-discover",
+        "version": "v1.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/go-discover"
+      },
+      {
+        "name": "github.com/hashicorp/go-hclog",
+        "version": "v1.6.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/go-hclog"
+      },
+      {
+        "name": "github.com/hashicorp/go-metrics",
+        "version": "v0.5.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/go-metrics"
+      },
+      {
+        "name": "github.com/hashicorp/go-multierror",
+        "version": "v1.1.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/go-multierror"
+      },
+      {
+        "name": "github.com/hashicorp/go-plugin",
+        "version": "v1.7.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/go-plugin"
+      },
+      {
+        "name": "github.com/hashicorp/go-sockaddr",
+        "version": "v1.0.7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/go-sockaddr"
+      },
+      {
+        "name": "github.com/hashicorp/go-syslog",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/go-syslog"
+      },
+      {
+        "name": "github.com/hashicorp/go-uuid",
+        "version": "v1.0.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/go-uuid"
+      },
+      {
+        "name": "github.com/hashicorp/go-version",
+        "version": "v1.8.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/go-version"
+      },
+      {
+        "name": "github.com/hashicorp/golang-lru",
+        "version": "v1.0.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/golang-lru"
+      },
+      {
+        "name": "github.com/hashicorp/memberlist",
+        "version": "v0.5.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/memberlist"
+      },
+      {
+        "name": "github.com/hashicorp/raft",
+        "version": "v1.7.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/raft"
+      },
+      {
+        "name": "github.com/hashicorp/raft-boltdb",
+        "version": "v0.0.0-20231211162105-6c830fa4535e",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/raft-boltdb"
+      },
+      {
+        "name": "github.com/hashicorp/serf",
+        "version": "v0.10.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/serf"
+      },
+      {
+        "name": "github.com/jhump/protoreflect",
+        "version": "v1.18.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jhump/protoreflect"
+      },
+      {
+        "name": "github.com/jordan-wright/email",
+        "version": "v4.0.1-0.20210109023952-943e75fe5223+incompatible",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jordan-wright/email"
+      },
+      {
+        "name": "github.com/kardianos/osext",
+        "version": "v0.0.0-20190222173326-2bc1f35cddc0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/kardianos/osext"
+      },
+      {
+        "name": "github.com/mattn/go-shellwords",
+        "version": "v1.0.12",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mattn/go-shellwords"
+      },
+      {
+        "name": "github.com/nats-io/nats.go",
+        "version": "v1.49.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/nats-io/nats.go"
+      },
+      {
+        "name": "github.com/pkg/errors",
+        "version": "v0.9.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/pkg/errors"
+      },
+      {
+        "name": "github.com/prometheus/client_golang",
+        "version": "v1.23.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/client_golang"
+      },
+      {
+        "name": "github.com/rabbitmq/amqp091-go",
+        "version": "v1.10.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/rabbitmq/amqp091-go"
+      },
+      {
+        "name": "github.com/robfig/cron/v3",
+        "version": "v3.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/robfig/cron/v3"
+      },
+      {
+        "name": "github.com/ryanuber/columnize",
+        "version": "v2.1.2+incompatible",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/ryanuber/columnize"
+      },
+      {
+        "name": "github.com/shirou/gopsutil/v3",
+        "version": "v3.24.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/shirou/gopsutil/v3"
+      },
+      {
+        "name": "github.com/sirupsen/logrus",
+        "version": "v1.9.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/sirupsen/logrus"
+      },
+      {
+        "name": "github.com/soheilhy/cmux",
+        "version": "v0.1.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/soheilhy/cmux"
+      },
+      {
+        "name": "github.com/spf13/cobra",
+        "version": "v1.10.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/cobra"
+      },
+      {
+        "name": "github.com/spf13/pflag",
+        "version": "v1.0.10",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/pflag"
+      },
+      {
+        "name": "github.com/spf13/viper",
+        "version": "v1.21.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/viper"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.11.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      },
+      {
+        "name": "github.com/tidwall/buntdb",
+        "version": "v1.3.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/tidwall/buntdb"
+      },
+      {
+        "name": "github.com/xdg-go/scram",
+        "version": "v1.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/xdg-go/scram"
+      },
+      {
+        "name": "go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin",
+        "version": "v0.65.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin"
+      },
+      {
+        "name": "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc",
+        "version": "v0.66.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
+      },
+      {
+        "name": "go.opentelemetry.io/otel",
+        "version": "v1.41.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc",
+        "version": "v1.40.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/sdk",
+        "version": "v1.41.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/sdk"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/trace",
+        "version": "v1.41.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/trace"
+      },
+      {
+        "name": "golang.org/x/net",
+        "version": "v0.50.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/net"
+      },
+      {
+        "name": "google.golang.org/grpc",
+        "version": "v1.79.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/grpc"
+      },
+      {
+        "name": "google.golang.org/protobuf",
+        "version": "v1.36.11",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/protobuf"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "dkron-io",
+        "type": "human",
+        "uri": "https://github.com/dkron-io"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 5493,
+      "validation_diversity": 0.66,
+      "context_breadth": 0.42,
+      "temporal_stability": 1,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.3
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.641
+  }
+}

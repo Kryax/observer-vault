@@ -1,0 +1,784 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/zettlr--zettlr",
+  "meta": {
+    "title": "Zettlr",
+    "description": "Your One-Stop Publication Workbench",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-10T21:01:46.725Z",
+    "dateModified": "2026-03-10T21:01:46.725Z",
+    "keywords": [
+      "desktop",
+      "docx",
+      "electron",
+      "html",
+      "languages",
+      "libreoffice",
+      "linux",
+      "macos",
+      "markdown",
+      "nodejs",
+      "office",
+      "offline",
+      "pandoc",
+      "pdf",
+      "productivity",
+      "windows",
+      "zettlr"
+    ],
+    "license": "GPL-3.0"
+  },
+  "problemSolved": {
+    "statement": "- Your Notes are your notes: Zettlr is **privacy-first**\n- **Citations** made easy: Tight and ever-growing integration with your favourite reference manager (Zotero, JabRef, and many others)\n- Available in over a **dozen languages**\n- Draft your publications in a professional environment, with **LaTeX and Word template support**\n- Simple and beautiful exports with [Pandoc](https://pandoc.org/), [LaTeX](https://www.latex-project.org/), and [Textbundle](http://textbundle.org/)\n- **Snippets** allow you to automate insertion of boilerplate code\n- Themes, dark modes, and full flexibility with **custom CSS**\n- **Code highlighting** for many languages\n- Support for state of the art knowledge management techniques (**Zettelkasten**)\n- A powerful **full text search** that helps you find anything, anywhere",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "lang:typescript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "12629 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "771 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T21:01:46.725Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/Zettlr/Zettlr",
+        "description": "GitHub repository: Zettlr/Zettlr"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://www.zettlr.com",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "TypeScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "@cds/core",
+        "version": "^6.17.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@cds/core"
+      },
+      {
+        "name": "@codemirror/autocomplete",
+        "version": "^6.20.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/autocomplete"
+      },
+      {
+        "name": "@codemirror/collab",
+        "version": "^6.1.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/collab"
+      },
+      {
+        "name": "@codemirror/commands",
+        "version": "^6.10.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/commands"
+      },
+      {
+        "name": "@codemirror/lang-angular",
+        "version": "^0.1.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/lang-angular"
+      },
+      {
+        "name": "@codemirror/lang-cpp",
+        "version": "^6.0.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/lang-cpp"
+      },
+      {
+        "name": "@codemirror/lang-css",
+        "version": "^6.3.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/lang-css"
+      },
+      {
+        "name": "@codemirror/lang-go",
+        "version": "^6.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/lang-go"
+      },
+      {
+        "name": "@codemirror/lang-html",
+        "version": "^6.4.11",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/lang-html"
+      },
+      {
+        "name": "@codemirror/lang-java",
+        "version": "^6.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/lang-java"
+      },
+      {
+        "name": "@codemirror/lang-javascript",
+        "version": "^6.2.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/lang-javascript"
+      },
+      {
+        "name": "@codemirror/lang-jinja",
+        "version": "^6.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/lang-jinja"
+      },
+      {
+        "name": "@codemirror/lang-json",
+        "version": "^6.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/lang-json"
+      },
+      {
+        "name": "@codemirror/lang-less",
+        "version": "^6.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/lang-less"
+      },
+      {
+        "name": "@codemirror/lang-lezer",
+        "version": "^6.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/lang-lezer"
+      },
+      {
+        "name": "@codemirror/lang-liquid",
+        "version": "^6.3.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/lang-liquid"
+      },
+      {
+        "name": "@codemirror/lang-markdown",
+        "version": "^6.5.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/lang-markdown"
+      },
+      {
+        "name": "@codemirror/lang-php",
+        "version": "^6.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/lang-php"
+      },
+      {
+        "name": "@codemirror/lang-python",
+        "version": "^6.2.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/lang-python"
+      },
+      {
+        "name": "@codemirror/lang-rust",
+        "version": "^6.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/lang-rust"
+      },
+      {
+        "name": "@codemirror/lang-sass",
+        "version": "^6.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/lang-sass"
+      },
+      {
+        "name": "@codemirror/lang-sql",
+        "version": "^6.10.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/lang-sql"
+      },
+      {
+        "name": "@codemirror/lang-vue",
+        "version": "^0.1.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/lang-vue"
+      },
+      {
+        "name": "@codemirror/lang-wast",
+        "version": "^6.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/lang-wast"
+      },
+      {
+        "name": "@codemirror/lang-xml",
+        "version": "^6.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/lang-xml"
+      },
+      {
+        "name": "@codemirror/lang-yaml",
+        "version": "^6.1.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/lang-yaml"
+      },
+      {
+        "name": "@codemirror/language",
+        "version": "^6.12.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/language"
+      },
+      {
+        "name": "@codemirror/legacy-modes",
+        "version": "^6.5.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/legacy-modes"
+      },
+      {
+        "name": "@codemirror/lint",
+        "version": "^6.9.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/lint"
+      },
+      {
+        "name": "@codemirror/search",
+        "version": "^6.6.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/search"
+      },
+      {
+        "name": "@codemirror/state",
+        "version": "^6.5.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/state"
+      },
+      {
+        "name": "@codemirror/view",
+        "version": "^6.39.16",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/view"
+      },
+      {
+        "name": "@lezer/common",
+        "version": "^1.5.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@lezer/common"
+      },
+      {
+        "name": "@lezer/highlight",
+        "version": "^1.2.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@lezer/highlight"
+      },
+      {
+        "name": "@lezer/lr",
+        "version": "^1.4.8",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@lezer/lr"
+      },
+      {
+        "name": "@lezer/markdown",
+        "version": "^1.6.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@lezer/markdown"
+      },
+      {
+        "name": "@replit/codemirror-emacs",
+        "version": "^6.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@replit/codemirror-emacs"
+      },
+      {
+        "name": "@replit/codemirror-lang-nix",
+        "version": "^6.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@replit/codemirror-lang-nix"
+      },
+      {
+        "name": "@replit/codemirror-vim",
+        "version": "^6.3.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@replit/codemirror-vim"
+      },
+      {
+        "name": "adm-zip",
+        "version": "^0.5.16",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/adm-zip"
+      },
+      {
+        "name": "archiver",
+        "version": "^7.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/archiver"
+      },
+      {
+        "name": "astrocite",
+        "version": "^0.16.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/astrocite"
+      },
+      {
+        "name": "bcp-47",
+        "version": "^2.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/bcp-47"
+      },
+      {
+        "name": "biblatex-csl-converter",
+        "version": "^3.4.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/biblatex-csl-converter"
+      },
+      {
+        "name": "chalk",
+        "version": "^5.6.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/chalk"
+      },
+      {
+        "name": "chokidar",
+        "version": "^5.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/chokidar"
+      },
+      {
+        "name": "citeproc",
+        "version": "^2.4.63",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/citeproc"
+      },
+      {
+        "name": "d3",
+        "version": "^7.9.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/d3"
+      },
+      {
+        "name": "fix-path",
+        "version": "^5.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/fix-path"
+      },
+      {
+        "name": "gemoji",
+        "version": "^8.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/gemoji"
+      },
+      {
+        "name": "gettext-parser",
+        "version": "^9.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/gettext-parser"
+      },
+      {
+        "name": "got",
+        "version": "^11.8.6",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/got"
+      },
+      {
+        "name": "katex",
+        "version": "^0.16.37",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/katex"
+      },
+      {
+        "name": "ky",
+        "version": "^1.14.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/ky"
+      },
+      {
+        "name": "lang-criticmarkup",
+        "version": "^0.3.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/lang-criticmarkup"
+      },
+      {
+        "name": "luxon",
+        "version": "^3.7.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/luxon"
+      },
+      {
+        "name": "md5",
+        "version": "^2.3.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/md5"
+      },
+      {
+        "name": "mermaid",
+        "version": "^11.12.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/mermaid"
+      },
+      {
+        "name": "nodehun",
+        "version": "^3.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/nodehun"
+      },
+      {
+        "name": "pinia",
+        "version": "^3.0.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/pinia"
+      },
+      {
+        "name": "rehype-parse",
+        "version": "^9.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/rehype-parse"
+      },
+      {
+        "name": "rehype-remark",
+        "version": "^10.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/rehype-remark"
+      },
+      {
+        "name": "rehype-remove-comments",
+        "version": "^6.1.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/rehype-remove-comments"
+      },
+      {
+        "name": "remark",
+        "version": "^15.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark"
+      },
+      {
+        "name": "remark-frontmatter",
+        "version": "^5.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-frontmatter"
+      },
+      {
+        "name": "remark-lint",
+        "version": "^10.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-lint"
+      },
+      {
+        "name": "remark-lint-blockquote-indentation",
+        "version": "^4.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-lint-blockquote-indentation"
+      },
+      {
+        "name": "remark-lint-checkbox-character-style",
+        "version": "^5.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-lint-checkbox-character-style"
+      },
+      {
+        "name": "remark-lint-code-block-style",
+        "version": "^4.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-lint-code-block-style"
+      },
+      {
+        "name": "remark-lint-emphasis-marker",
+        "version": "^4.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-lint-emphasis-marker"
+      },
+      {
+        "name": "remark-lint-fenced-code-marker",
+        "version": "^4.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-lint-fenced-code-marker"
+      },
+      {
+        "name": "remark-lint-hard-break-spaces",
+        "version": "^4.1.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-lint-hard-break-spaces"
+      },
+      {
+        "name": "remark-lint-heading-style",
+        "version": "^4.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-lint-heading-style"
+      },
+      {
+        "name": "remark-lint-link-title-style",
+        "version": "^4.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-lint-link-title-style"
+      },
+      {
+        "name": "remark-lint-list-item-bullet-indent",
+        "version": "^5.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-lint-list-item-bullet-indent"
+      },
+      {
+        "name": "remark-lint-list-item-indent",
+        "version": "^4.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-lint-list-item-indent"
+      },
+      {
+        "name": "remark-lint-no-blockquote-without-marker",
+        "version": "^6.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-lint-no-blockquote-without-marker"
+      },
+      {
+        "name": "remark-lint-no-consecutive-blank-lines",
+        "version": "^5.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-lint-no-consecutive-blank-lines"
+      },
+      {
+        "name": "remark-lint-no-duplicate-definitions",
+        "version": "^4.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-lint-no-duplicate-definitions"
+      },
+      {
+        "name": "remark-lint-no-heading-content-indent",
+        "version": "^5.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-lint-no-heading-content-indent"
+      },
+      {
+        "name": "remark-lint-no-shortcut-reference-image",
+        "version": "^4.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-lint-no-shortcut-reference-image"
+      },
+      {
+        "name": "remark-lint-no-shortcut-reference-link",
+        "version": "^4.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-lint-no-shortcut-reference-link"
+      },
+      {
+        "name": "remark-lint-no-unused-definitions",
+        "version": "^4.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-lint-no-unused-definitions"
+      },
+      {
+        "name": "remark-lint-ordered-list-marker-style",
+        "version": "^4.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-lint-ordered-list-marker-style"
+      },
+      {
+        "name": "remark-lint-rule-style",
+        "version": "^4.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-lint-rule-style"
+      },
+      {
+        "name": "remark-lint-strong-marker",
+        "version": "^4.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-lint-strong-marker"
+      },
+      {
+        "name": "remark-lint-table-cell-padding",
+        "version": "^5.1.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-lint-table-cell-padding"
+      },
+      {
+        "name": "remark-math",
+        "version": "^6.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-math"
+      },
+      {
+        "name": "remark-stringify",
+        "version": "^11.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/remark-stringify"
+      },
+      {
+        "name": "rimraf",
+        "version": "^6.1.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/rimraf"
+      },
+      {
+        "name": "sanitize-filename",
+        "version": "^1.6.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/sanitize-filename"
+      },
+      {
+        "name": "sanitize-html",
+        "version": "^2.17.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/sanitize-html"
+      },
+      {
+        "name": "semver",
+        "version": "^7.7.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/semver"
+      },
+      {
+        "name": "tippy.js",
+        "version": "^6.3.7",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/tippy.js"
+      },
+      {
+        "name": "underscore",
+        "version": "^1.13.8",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/underscore"
+      },
+      {
+        "name": "unified",
+        "version": "^11.0.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/unified"
+      },
+      {
+        "name": "uuid",
+        "version": "^13.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/uuid"
+      },
+      {
+        "name": "vue",
+        "version": "^3.5.29",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/vue"
+      },
+      {
+        "name": "vue-virtual-scroller",
+        "version": "^2.0.0-beta.8",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/vue-virtual-scroller"
+      },
+      {
+        "name": "w3c-keyname",
+        "version": "^2.2.8",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/w3c-keyname"
+      },
+      {
+        "name": "yaml",
+        "version": "^2.8.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/yaml"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Zettlr",
+        "type": "human",
+        "uri": "https://github.com/Zettlr"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 14171,
+      "validation_diversity": 0.75,
+      "context_breadth": 0.69,
+      "temporal_stability": 1,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.6
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.782
+  }
+}

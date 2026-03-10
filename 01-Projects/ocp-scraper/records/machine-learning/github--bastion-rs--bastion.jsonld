@@ -1,0 +1,172 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/bastion-rs--bastion",
+  "meta": {
+    "title": "bastion",
+    "description": "Highly-available Distributed Fault-tolerant Runtime",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-10T20:59:55.442Z",
+    "dateModified": "2026-03-10T20:59:55.442Z",
+    "keywords": [
+      "actor",
+      "asynchronous",
+      "concurrency",
+      "distributed",
+      "distributed-systems",
+      "fault-tolerance",
+      "hacktoberfest",
+      "numa-aware",
+      "rust",
+      "rust-language",
+      "smp",
+      "supervision"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "* Message-based communication makes this project a lean mesh of actor system.\n    * Without web servers, weird shenanigans, forced trait implementations, and static dispatch.\n* Runtime fault-tolerance makes it a good candidate for distributed systems.\n    * If you want the smell of Erlang and the powerful aspects of Rust. That's it!\n* Completely asynchronous runtime with NUMA-aware and cache-affine SMP executor.\n    * Exploiting hardware locality wherever it is possible. It is designed for servers.\n* Supervision system makes it easy to manage lifecycles.\n    * Kill your application in certain condition or restart you subprocesses whenever a certain condition is met.\n* Automatic member discovery, cluster formation and custom message passing between cluster members.\n    * Using zeroconf or not, launch your bastion cluster from everywhere, with a single actor block.\n* Proactive IO system which doesn't depend on anything other than `futures`.\n    * Bastion's proactive IO has scatter/gather operations, `io_uring` support and much more...",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "lang:rust"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "2900 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "103 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T20:59:55.442Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/bastion-rs/bastion",
+        "description": "GitHub repository: bastion-rs/bastion"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://www.bastion-rs.com",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Rust"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "bastion-rs",
+        "type": "human",
+        "uri": "https://github.com/bastion-rs"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 3106,
+      "validation_diversity": 0.5,
+      "context_breadth": 0.6,
+      "temporal_stability": 0.64,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.6
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.617
+  }
+}

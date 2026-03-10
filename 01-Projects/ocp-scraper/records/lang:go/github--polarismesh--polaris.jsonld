@@ -1,0 +1,403 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/polarismesh--polaris",
+  "meta": {
+    "title": "Polaris: Service Discovery and Governance",
+    "description": "Service Discovery and Governance Platform for Microservice and Distributed Architecture",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-10T20:59:59.434Z",
+    "dateModified": "2026-03-10T20:59:59.434Z",
+    "keywords": [
+      "authenticate",
+      "circuit-break",
+      "fault-tolerance",
+      "health-check",
+      "load-balance",
+      "microservice",
+      "polaris",
+      "polarismesh",
+      "rate-limit",
+      "service-discover",
+      "service-governance",
+      "service-register",
+      "servicemesh",
+      "traffic-control"
+    ],
+    "license": "NOASSERTION"
+  },
+  "problemSolved": {
+    "statement": "Polaris is an open source system for service discovery and governance. It can be used to solve the problem of service management, traffic control, fault tolerance and config management in distributed and microservice architecture.",
+    "context": "[![Build Status](https://github.com/polarismesh/polaris/actions/workflows/codecov.yaml/badge.svg)](https://github.com/PolarisMesh/polaris/actions/workflows/codecov.yaml)\n[![codecov.io](https://codecov.io/gh/polarismesh/polaris/branch/main/graph/badge.svg)](https://codecov.io/gh/polarismesh/polaris?branch=main)\n[![Go Report Card](https://goreportcard.com/badge/github.com/polarismesh/polaris)](https://goreportcard.com/report/github.com/polarismesh/polaris)\n[![Docker Pulls](https://img.shields.io/docker/pulls/polarismesh/polaris-server)](https://hub.docker.com/repository/docker/polarismesh/polaris-server/general)\n[![Contributors](https://img.shields.io/github/contributors/polarismesh/polaris)](https://github.com/polarismesh/polaris/graphs/contributors)\n[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)\n[![GitHub release (latest by date)](https://img.shields.io/github/v/release/polarismesh/polaris?style=flat-square)](https://github.com/polarismesh/polaris)\n\n<img src=\"logo.svg\" width=\"10%\" height=\"10%\" />\n\nEnglish | [简体中文](./README-zh.md)\n\nREADME：\n\n- [Polaris: Service Discovery and Governance](#polaris-service-discovery-and-governance)\n  - [Introduction](#introduction)\n  - [How to install](#how-to-install)\n  - [How to develop service](#how-to-develop-service)\n  - [How to integrate service gateway](#how-to-integrate-service-gateway)\n  - [Chat group](#chat-group)\n\nVisit [Website](https://polarismesh.cn/) to learn more",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "2544 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "404 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T20:59:59.434Z"
+  },
+  "implementation": {
+    "type": "service",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/polarismesh/polaris",
+        "description": "GitHub repository: polarismesh/polaris"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://polarismesh.cn",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "github.com/BurntSushi/toml",
+        "version": "v1.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/BurntSushi/toml"
+      },
+      {
+        "name": "github.com/emicklei/go-restful/v3",
+        "version": "v3.9.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/emicklei/go-restful/v3"
+      },
+      {
+        "name": "github.com/envoyproxy/go-control-plane",
+        "version": "v0.13.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/envoyproxy/go-control-plane"
+      },
+      {
+        "name": "github.com/go-openapi/spec",
+        "version": "v0.20.7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-openapi/spec"
+      },
+      {
+        "name": "github.com/go-redis/redis/v8",
+        "version": "v8.11.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-redis/redis/v8"
+      },
+      {
+        "name": "github.com/go-sql-driver/mysql",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-sql-driver/mysql"
+      },
+      {
+        "name": "github.com/gogo/protobuf",
+        "version": "v1.3.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gogo/protobuf"
+      },
+      {
+        "name": "github.com/golang/mock",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/golang/mock"
+      },
+      {
+        "name": "github.com/golang/protobuf",
+        "version": "v1.5.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/golang/protobuf"
+      },
+      {
+        "name": "github.com/google/uuid",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/uuid"
+      },
+      {
+        "name": "github.com/hashicorp/go-multierror",
+        "version": "v1.1.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/go-multierror"
+      },
+      {
+        "name": "github.com/hashicorp/golang-lru",
+        "version": "v0.5.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/golang-lru"
+      },
+      {
+        "name": "github.com/mitchellh/mapstructure",
+        "version": "v1.4.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mitchellh/mapstructure"
+      },
+      {
+        "name": "github.com/natefinch/lumberjack",
+        "version": "v2.0.0+incompatible",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/natefinch/lumberjack"
+      },
+      {
+        "name": "github.com/nicksnyder/go-i18n/v2",
+        "version": "v2.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/nicksnyder/go-i18n/v2"
+      },
+      {
+        "name": "github.com/pkg/errors",
+        "version": "v0.9.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/pkg/errors"
+      },
+      {
+        "name": "github.com/polarismesh/go-restful-openapi/v2",
+        "version": "v2.0.0-20220928152401-083908d10219",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/polarismesh/go-restful-openapi/v2"
+      },
+      {
+        "name": "github.com/prometheus/client_golang",
+        "version": "v1.18.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/client_golang"
+      },
+      {
+        "name": "github.com/smartystreets/goconvey",
+        "version": "v1.6.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/smartystreets/goconvey"
+      },
+      {
+        "name": "github.com/spf13/cobra",
+        "version": "v1.2.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/cobra"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.9.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      },
+      {
+        "name": "go.uber.org/atomic",
+        "version": "v1.10.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.uber.org/atomic"
+      },
+      {
+        "name": "go.uber.org/automaxprocs",
+        "version": "v1.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.uber.org/automaxprocs"
+      },
+      {
+        "name": "go.uber.org/zap",
+        "version": "v1.23.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.uber.org/zap"
+      },
+      {
+        "name": "golang.org/x/crypto",
+        "version": "v0.23.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/crypto"
+      },
+      {
+        "name": "golang.org/x/net",
+        "version": "v0.25.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/net"
+      },
+      {
+        "name": "golang.org/x/sync",
+        "version": "v0.7.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/sync"
+      },
+      {
+        "name": "golang.org/x/text",
+        "version": "v0.15.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/text"
+      },
+      {
+        "name": "golang.org/x/time",
+        "version": "v0.1.1-0.20221020023724-80b9fac54d29",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/time"
+      },
+      {
+        "name": "google.golang.org/grpc",
+        "version": "v1.65.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/grpc"
+      },
+      {
+        "name": "google.golang.org/protobuf",
+        "version": "v1.34.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/protobuf"
+      },
+      {
+        "name": "gopkg.in/yaml.v2",
+        "version": "v2.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gopkg.in/yaml.v2"
+      },
+      {
+        "name": "github.com/ArthurHlt/go-eureka-client",
+        "version": "v1.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/ArthurHlt/go-eureka-client"
+      },
+      {
+        "name": "gopkg.in/yaml.v3",
+        "version": "v3.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gopkg.in/yaml.v3"
+      },
+      {
+        "name": "github.com/DATA-DOG/go-sqlmock",
+        "version": "v1.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/DATA-DOG/go-sqlmock"
+      },
+      {
+        "name": "github.com/polarismesh/specification",
+        "version": "v1.5.3-alpha.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/polarismesh/specification"
+      },
+      {
+        "name": "github.com/dlclark/regexp2",
+        "version": "v1.10.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/dlclark/regexp2"
+      },
+      {
+        "name": "go.etcd.io/bbolt",
+        "version": "v1.3.7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.etcd.io/bbolt"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "polarismesh",
+        "type": "human",
+        "uri": "https://github.com/polarismesh"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 3352,
+      "validation_diversity": 0.65,
+      "context_breadth": 0.66,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.67,
+      "documentation_quality": 0.53
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.72
+  }
+}

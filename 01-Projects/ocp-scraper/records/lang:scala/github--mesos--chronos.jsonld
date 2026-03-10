@@ -1,0 +1,171 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/mesos--chronos",
+  "meta": {
+    "title": "Chronos [![Build Status](https://travis-ci.org/mesos/chronos.svg?branch=master)](https://travis-ci.org/mesos/chronos)",
+    "description": "Fault tolerant job scheduler for Mesos which handles dependencies and ISO8601 based schedules",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-10T20:59:51.356Z",
+    "dateModified": "2026-03-10T20:59:51.356Z",
+    "keywords": [
+      "chronos",
+      "chronos-scheduler",
+      "cron",
+      "cron-jobs",
+      "crontab",
+      "fault-tolerance",
+      "job-scheduler",
+      "mesos",
+      "mesos-framework",
+      "mesosphere",
+      "scheduled-jobs"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "Chronos is a replacement for `cron`. It is a distributed and fault-tolerant scheduler that runs on top of [Apache Mesos][mesos] that can be used for job orchestration.  It supports custom Mesos executors as well\nas the default command executor. Thus by default, Chronos executes `sh`\n(on most systems bash) scripts.",
+    "context": "Chronos is a replacement for `cron`. It is a distributed and fault-tolerant scheduler that runs on top of [Apache Mesos][mesos] that can be used for job orchestration.  It supports custom Mesos executors as well\nas the default command executor. Thus by default, Chronos executes `sh`\n(on most systems bash) scripts.\n\nChronos can be used to interact with systems such as Hadoop (incl. EMR), even if the Mesos agents on which execution happens do not have Hadoop installed. Included wrapper scripts allow transfering files and executing them on a remote machine in the background and using asynchronous callbacks to notify Chronos of job completion or failures. Chronos is also natively able to schedule jobs that run inside Docker containers.\n\nChronos has a number of advantages over regular cron.\nIt allows you to schedule your jobs using [ISO8601][ISO8601] repeating interval notation, which enables more flexibility in job scheduling. Chronos also supports the definition of jobs triggered by the completion of other jobs. It supports arbitrarily long dependency chains.\n\n*The easiest way to use Chronos is to use [DC/OS](https://dcos.io/get-started/) and install chronos via the universe.*",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:scala"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "4382 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "521 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T20:59:51.356Z"
+  },
+  "implementation": {
+    "type": "framework",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/mesos/chronos",
+        "description": "GitHub repository: mesos/chronos"
+      },
+      {
+        "type": "documentation",
+        "uri": "http://mesos.github.io/chronos/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Scala"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "mesos",
+        "type": "human",
+        "uri": "https://github.com/mesos"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 5424,
+      "validation_diversity": 0.72,
+      "context_breadth": 0.67,
+      "temporal_stability": 0.58,
+      "test_coverage": 0.17,
+      "documentation_quality": 0.68
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.64
+  }
+}
