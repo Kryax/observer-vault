@@ -9,7 +9,7 @@ Observer-native is designed to be CLI-agnostic. The S1 adapter interface
 |-----|---------|---------|---------------------|------|
 | Claude Code | latest | `npm i -g @anthropic-ai/claude-code` | `CLAUDE.md` | `claude login` (browser) |
 | Codex CLI | 0.113.0 | `npm i -g @openai/codex` | `AGENTS.md` | `codex login` (ChatGPT browser) or `OPENAI_API_KEY` |
-| OpenCode | 0.0.55 | curl installer (see below) | `opencode.md` | Provider-specific (API keys) |
+| OpenCode | 1.2.24 | `npm i -g opencode-ai` | `opencode.md` | Provider-specific (API keys) |
 | Gemini CLI | 0.32.1 | `npm i -g @google/gemini-cli` | `GEMINI.md` | `gemini` → Google OAuth, or `GEMINI_API_KEY` |
 
 ## Install Commands
@@ -29,10 +29,8 @@ codex login  # ChatGPT browser OAuth
 
 ### OpenCode
 ```bash
-curl -fsSL https://raw.githubusercontent.com/opencode-ai/opencode/refs/heads/main/install | bash
-# Binary installs to ~/.opencode/bin/opencode
-# Add to fish PATH:
-fish_add_path ~/.opencode/bin
+npm i -g opencode-ai
+# Package: opencode-ai (NOT opencode — that's the archived Go project)
 ```
 
 ### Gemini CLI
@@ -93,26 +91,47 @@ gemini -p "your prompt here"          # non-interactive (if supported)
 - **Hooks**: SessionStart + Stop hooks wired (`src/s2/`)
 - **Adapter**: `src/s1/adapter.ts` (ClaudeCodeAdapter)
 - **Skills**: Triad skill at `~/.claude/skills/Triad/SKILL.md`
-- **MCP**: 12 tools via observer-control-plane bridge
+- **MCP**: observer-control-plane + ocp-scraper via `.mcp.json` at vault root
 - **Session memory**: S2 subsystems active (capture, motif priming, salience, tensions)
 
-### Codex CLI — Project Instructions Only
+### Codex CLI — Project Instructions + MCP
 - **Project file**: `AGENTS.md` at vault root
+- **MCP**: observer-control-plane + ocp-scraper via `~/.codex/config.toml`
 - **Hooks**: None (adapter pending)
 - **Skills**: None (Codex has no skill system)
-- **Status**: Can read vault, follows governance, no lifecycle integration
+- **Status**: Can read vault, follows governance, MCP tools available, no lifecycle integration
 
-### OpenCode — Project Instructions Only
+### OpenCode — Project Instructions + MCP
 - **Project file**: `opencode.md` at vault root
+- **MCP**: observer-control-plane + ocp-scraper via `opencode.json` at vault root
 - **Hooks**: None (adapter pending)
 - **Skills**: None
-- **Status**: Can read vault, follows governance, no lifecycle integration
+- **Status**: Can read vault, follows governance, MCP tools available, no lifecycle integration
 
-### Gemini CLI — Project Instructions Only
+### Gemini CLI — Project Instructions + MCP
 - **Project file**: `GEMINI.md` at vault root
+- **MCP**: observer-control-plane + ocp-scraper via `gemini mcp add` (project-level `.gemini/`)
 - **Hooks**: None (adapter pending)
 - **Skills**: None (Gemini has custom commands but no skill equivalent)
-- **Status**: Can read vault, follows governance, no lifecycle integration
+- **Status**: Can read vault, follows governance, MCP tools available, no lifecycle integration
+
+## MCP Server Configuration
+
+All CLIs are wired to the same two MCP servers:
+
+| Server | Command | Purpose |
+|--------|---------|---------|
+| `observer-control-plane` | `node /opt/observer-system/scripts/mcp-bridge.mjs` | 12 tools: session/thread management, vault query, audit |
+| `ocp-scraper` | `bun .../ocp-scraper/src/mcp/server.ts` | Scrape, search, inspect motif library records |
+
+### Config Locations
+
+| CLI | Config File | Format |
+|-----|-------------|--------|
+| Claude Code | `.mcp.json` (vault root) | JSON `mcpServers` object |
+| Codex CLI | `~/.codex/config.toml` | TOML `[mcp_servers.*]` sections |
+| OpenCode | `opencode.json` (vault root) | JSON `mcp` object with `"type": "local"` |
+| Gemini CLI | `.gemini/settings.json` (project) | Added via `gemini mcp add` CLI command |
 
 ## S1 Adapter Interface Contract
 
