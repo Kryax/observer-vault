@@ -76,24 +76,36 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/leggedrobotics--ocs2",
+  "@id": "ocp:github/pronenewbits--embedded_ekf_library",
   "meta": {
-    "title": "OCS2 Toolbox",
-    "description": "Optimal Control for Switched Systems",
+    "title": "Arduino_EKF_Library",
+    "description": " A compact Extended Kalman Filter (EKF) library for real time embedded system (with template for Teensy4/Arduino and STM32CubeIDE)",
     "version": "1.0.0",
-    "dateCreated": "2026-03-10T05:02:06.302Z",
-    "dateModified": "2026-03-10T05:02:06.302Z",
+    "dateCreated": "2026-03-10T05:00:28.693Z",
+    "dateModified": "2026-03-10T05:00:28.693Z",
     "keywords": [
-      "control",
-      "mpc",
-      "optimal-control",
-      "robotics"
+      "arduino",
+      "c-plus-plus",
+      "control-theory",
+      "cpp",
+      "ekf",
+      "embedded",
+      "embedded-systems",
+      "extended-kalman-filter",
+      "extended-kalman-filters",
+      "kalman-filter",
+      "mcu",
+      "microcontroller",
+      "real-time",
+      "realtime",
+      "stm32",
+      "teensy"
     ],
-    "license": "BSD-3-Clause"
+    "license": "CC0-1.0"
   },
   "problemSolved": {
-    "statement": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.",
-    "context": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.\n\n![legged-robot](https://leggedrobotics.github.io/ocs2/_static/gif/legged_robot.gif)\n\nOCS2 handles general path constraints through Augmented Lagrangian or relaxed barrier methods. To facilitate the application of OCS2 in robotic tasks, it provides additional tools to set up the system dynamics (such as kinematic or dynamic models) and cost/constraints (such as self-collision avoidance and end-effector tracking) from a URDF model. The library also provides an automatic differentiation tool to calculate derivatives of the system dynamics, constraints, and cost. To facilitate deployment on robotic platforms, OCS2 provides tools for ROS interfaces. The toolbox’s efficient and numerically stable implementations in conjunction with its user-friendly interface have paved the way for employing it on numerous robotic applications with limited onboard computation power.\n\n> **ROS 2 port available:** use branch `ros2`.",
+    "statement": "This is a compact Extended Kalman Filter (EKF) library for Teensy4.0/Arduino system (or real time embedded system in general).\n- It's not using Eigen (small source code - more simple to understand).\n- It's not using C++ Standard Library/std (for embedded consideration).\n- If you set `SYSTEM_IMPLEMENTATION` to `SYSTEM_IMPLEMENTATION_EMBEDDED_NO_PRINT` in `konfig.h`, the code is platform agnostic (not using any library beside these C header files: `stdlib.h`, `stdint.h`, `stdbool.h`, `string.h`, and `math.h`).\n- There's no malloc/new/free dynamic memory allocation for real time application (but using heavy stack local variables, so you need to run it through static memory analyzer if you are really concerned about implement this in mission critical hard real time application).",
+    "context": "This is a compact Extended Kalman Filter (EKF) library for Teensy4.0/Arduino system (or real time embedded system in general).\n- It's not using Eigen (small source code - more simple to understand).\n- It's not using C++ Standard Library/std (for embedded consideration).\n- If you set `SYSTEM_IMPLEMENTATION` to `SYSTEM_IMPLEMENTATION_EMBEDDED_NO_PRINT` in `konfig.h`, the code is platform agnostic (not using any library beside these C header files: `stdlib.h`, `stdint.h`, `stdbool.h`, `string.h`, and `math.h`).\n- There's no malloc/new/free dynamic memory allocation for real time application (but using heavy stack local variables, so you need to run it through static memory analyzer if you are really concerned about implement this in mission critical hard real time application).",
     "cynefinDomain": "complex"
   },
   "domains": [
@@ -104,28 +116,23 @@
     "evidence": [
       {
         "type": "github-stars",
-        "description": "1298 GitHub stars indicating community adoption"
+        "description": "133 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "299 forks indicating reuse"
+        "description": "29 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-10T05:02:06.302Z"
+    "validationDate": "2026-03-10T05:00:28.693Z"
   },
   "implementation": {
-    "type": "library",
+    "type": "pattern",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/leggedrobotics/ocs2",
-        "description": "GitHub repository: leggedrobotics/ocs2"
-      },
-      {
-        "type": "documentation",
-        "uri": "https://leggedrobotics.github.io/ocs2",
-        "description": "Project homepage"
+        "uri": "https://github.com/pronenewbits/Embedded_EKF_Library",
+        "description": "GitHub repository: pronenewbits/Embedded_EKF_Library"
       }
     ],
     "language": "C++"
@@ -139,9 +146,9 @@
   "provenance": {
     "authors": [
       {
-        "name": "leggedrobotics",
+        "name": "pronenewbits",
         "type": "human",
-        "uri": "https://github.com/leggedrobotics"
+        "uri": "https://github.com/pronenewbits"
       }
     ],
     "sourceType": "scraped",
@@ -149,16 +156,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 1896,
-      "validation_diversity": 0.55,
-      "context_breadth": 0.41,
-      "temporal_stability": 1,
+      "validation_count": 191,
+      "validation_diversity": 0,
+      "context_breadth": 0.55,
+      "temporal_stability": 0.64,
       "test_coverage": 0.3,
-      "documentation_quality": 0.68
+      "documentation_quality": 0.4
     },
-    "confidence": "provisional",
+    "confidence": "speculative",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.579
+    "trustScore": 0.079
   }
 }

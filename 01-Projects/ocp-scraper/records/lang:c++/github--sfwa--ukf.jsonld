@@ -76,24 +76,24 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/leggedrobotics--ocs2",
+  "@id": "ocp:github/sfwa--ukf",
   "meta": {
-    "title": "OCS2 Toolbox",
-    "description": "Optimal Control for Switched Systems",
+    "title": "UKF",
+    "description": "Unscented Kalman Filter library for state and parameter estimation",
     "version": "1.0.0",
-    "dateCreated": "2026-03-10T05:02:06.302Z",
-    "dateModified": "2026-03-10T05:02:06.302Z",
+    "dateCreated": "2026-03-10T05:00:46.616Z",
+    "dateModified": "2026-03-10T05:00:46.616Z",
     "keywords": [
-      "control",
-      "mpc",
-      "optimal-control",
-      "robotics"
+      "kalman-filter",
+      "state-estimation",
+      "ukf",
+      "unscented-filtering"
     ],
-    "license": "BSD-3-Clause"
+    "license": "MIT"
   },
   "problemSolved": {
-    "statement": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.",
-    "context": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.\n\n![legged-robot](https://leggedrobotics.github.io/ocs2/_static/gif/legged_robot.gif)\n\nOCS2 handles general path constraints through Augmented Lagrangian or relaxed barrier methods. To facilitate the application of OCS2 in robotic tasks, it provides additional tools to set up the system dynamics (such as kinematic or dynamic models) and cost/constraints (such as self-collision avoidance and end-effector tracking) from a URDF model. The library also provides an automatic differentiation tool to calculate derivatives of the system dynamics, constraints, and cost. To facilitate deployment on robotic platforms, OCS2 provides tools for ROS interfaces. The toolbox’s efficient and numerically stable implementations in conjunction with its user-friendly interface have paved the way for employing it on numerous robotic applications with limited onboard computation power.\n\n> **ROS 2 port available:** use branch `ros2`.",
+    "statement": "Unscented Kalman filter library. Several different UKF implementations are\nprovided:",
+    "context": "Unscented Kalman filter library. Several different UKF implementations are\nprovided:\n\n  * Standard Unscented Kalman Filter for state estimation, as originally\n    described in [[1]](#ref1), with extensions for quaternions as described\n    in [[2]](#ref2).\n  * Square-root Unscented Kalman Filter for state estimation, implemented as\n    described in [[3]](#ref3).\n  * Optimised form of square-root Unscented Kalman filter for parameter\n    estimation, implemented as described in [[3]](#ref3).\n\nThis library makes use of the [Eigen](https://eigen.tuxfamily.org) library\nfor linear algebra routines and matrix and vector operations. Heavy use is\nmade of C++11 and C++14 features in an attempt to avoid any dynamic memory\nallocations and maximise opportunities for compile-time optimisations.\n\nA primary goal of the library is to provide efficient UKF implementations for\nuse on embedded systems, so there is a strong focus on having minimal\ndependencies and avoiding non-deterministic operations.\n\nThe filter can be compiled using either single or double precision by\nchoosing one of the following preprocessor definitions:\n\n  * UKF_SINGLE_PRECISION\n  * UKF_DOUBLE_PRECISION",
     "cynefinDomain": "complex"
   },
   "domains": [
@@ -104,27 +104,27 @@
     "evidence": [
       {
         "type": "github-stars",
-        "description": "1298 GitHub stars indicating community adoption"
+        "description": "513 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "299 forks indicating reuse"
+        "description": "179 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-10T05:02:06.302Z"
+    "validationDate": "2026-03-10T05:00:46.616Z"
   },
   "implementation": {
     "type": "library",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/leggedrobotics/ocs2",
-        "description": "GitHub repository: leggedrobotics/ocs2"
+        "uri": "https://github.com/sfwa/ukf",
+        "description": "GitHub repository: sfwa/ukf"
       },
       {
         "type": "documentation",
-        "uri": "https://leggedrobotics.github.io/ocs2",
+        "uri": "http://au.tono.my/log/20130531-kalman-filter.html",
         "description": "Project homepage"
       }
     ],
@@ -139,9 +139,9 @@
   "provenance": {
     "authors": [
       {
-        "name": "leggedrobotics",
+        "name": "sfwa",
         "type": "human",
-        "uri": "https://github.com/leggedrobotics"
+        "uri": "https://github.com/sfwa"
       }
     ],
     "sourceType": "scraped",
@@ -149,16 +149,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 1896,
-      "validation_diversity": 0.55,
-      "context_breadth": 0.41,
-      "temporal_stability": 1,
+      "validation_count": 871,
+      "validation_diversity": 0.32,
+      "context_breadth": 0.39,
+      "temporal_stability": 0.64,
       "test_coverage": 0.3,
-      "documentation_quality": 0.68
+      "documentation_quality": 0.6
     },
     "confidence": "provisional",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.579
+    "trustScore": 0.45
   }
 }

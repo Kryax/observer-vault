@@ -76,24 +76,31 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/leggedrobotics--ocs2",
+  "@id": "ocp:github/nicolapiccinelli--libmpc",
   "meta": {
-    "title": "OCS2 Toolbox",
-    "description": "Optimal Control for Switched Systems",
+    "title": "libmpc++",
+    "description": "libmpc++ is a C++ header-only library to solve linear and non-linear MPC",
     "version": "1.0.0",
-    "dateCreated": "2026-03-10T05:02:06.302Z",
-    "dateModified": "2026-03-10T05:02:06.302Z",
+    "dateCreated": "2026-03-10T05:00:18.317Z",
+    "dateModified": "2026-03-10T05:00:18.317Z",
     "keywords": [
-      "control",
+      "control-systems",
+      "control-theory",
+      "cpp",
+      "cpp20",
+      "header-only",
+      "linear-mpc",
+      "model-predictive-controller",
       "mpc",
-      "optimal-control",
-      "robotics"
+      "mppi",
+      "nonlinear-mpc",
+      "optimal-control"
     ],
-    "license": "BSD-3-Clause"
+    "license": "MIT"
   },
   "problemSolved": {
-    "statement": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.",
-    "context": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.\n\n![legged-robot](https://leggedrobotics.github.io/ocs2/_static/gif/legged_robot.gif)\n\nOCS2 handles general path constraints through Augmented Lagrangian or relaxed barrier methods. To facilitate the application of OCS2 in robotic tasks, it provides additional tools to set up the system dynamics (such as kinematic or dynamic models) and cost/constraints (such as self-collision avoidance and end-effector tracking) from a URDF model. The library also provides an automatic differentiation tool to calculate derivatives of the system dynamics, constraints, and cost. To facilitate deployment on robotic platforms, OCS2 provides tools for ROS interfaces. The toolbox’s efficient and numerically stable implementations in conjunction with its user-friendly interface have paved the way for employing it on numerous robotic applications with limited onboard computation power.\n\n> **ROS 2 port available:** use branch `ros2`.",
+    "statement": "**libmpc++** is a C++ library to solve linear and non-linear MPC. The library is written in modern **C++20** and it\nis tested to work on Linux, macOS and Windows.",
+    "context": "**libmpc++** is a C++ library to solve linear and non-linear MPC. The library is written in modern **C++20** and it\nis tested to work on Linux, macOS and Windows.\n\n* gcc version (>= 10.3.0)\n\nThe libmpc++ website can be found at the following link: https://altairlab.gitlab.io/optcontrol/libmpc/\n\nStarting from the version **0.5.0** the library is also available as a Python package (https://pypi.org/project/pympcxx/). The Python package is available on PyPI and can be installed using pip:\n```\npip install pympcxx\n```",
     "cynefinDomain": "complex"
   },
   "domains": [
@@ -104,27 +111,27 @@
     "evidence": [
       {
         "type": "github-stars",
-        "description": "1298 GitHub stars indicating community adoption"
+        "description": "200 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "299 forks indicating reuse"
+        "description": "23 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-10T05:02:06.302Z"
+    "validationDate": "2026-03-10T05:00:18.317Z"
   },
   "implementation": {
     "type": "library",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/leggedrobotics/ocs2",
-        "description": "GitHub repository: leggedrobotics/ocs2"
+        "uri": "https://github.com/nicolapiccinelli/libmpc",
+        "description": "GitHub repository: nicolapiccinelli/libmpc"
       },
       {
         "type": "documentation",
-        "uri": "https://leggedrobotics.github.io/ocs2",
+        "uri": "https://altairlab.gitlab.io/optcontrol/libmpc/",
         "description": "Project homepage"
       }
     ],
@@ -139,9 +146,9 @@
   "provenance": {
     "authors": [
       {
-        "name": "leggedrobotics",
+        "name": "nicolapiccinelli",
         "type": "human",
-        "uri": "https://github.com/leggedrobotics"
+        "uri": "https://github.com/nicolapiccinelli"
       }
     ],
     "sourceType": "scraped",
@@ -149,16 +156,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 1896,
-      "validation_diversity": 0.55,
-      "context_breadth": 0.41,
-      "temporal_stability": 1,
+      "validation_count": 246,
+      "validation_diversity": 0.16,
+      "context_breadth": 0.54,
+      "temporal_stability": 0.87,
       "test_coverage": 0.3,
-      "documentation_quality": 0.68
+      "documentation_quality": 0.6
     },
-    "confidence": "provisional",
+    "confidence": "speculative",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.579
+    "trustScore": 0.382
   }
 }

@@ -76,72 +76,115 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/leggedrobotics--ocs2",
+  "@id": "ocp:github/pytorch--rl",
   "meta": {
-    "title": "OCS2 Toolbox",
-    "description": "Optimal Control for Switched Systems",
+    "title": "TorchRL",
+    "description": "A modular, primitive-first, python-first PyTorch library for Reinforcement Learning.",
     "version": "1.0.0",
-    "dateCreated": "2026-03-10T05:02:06.302Z",
-    "dateModified": "2026-03-10T05:02:06.302Z",
+    "dateCreated": "2026-03-10T05:01:56.612Z",
+    "dateModified": "2026-03-10T05:01:56.612Z",
     "keywords": [
+      "ai",
       "control",
-      "mpc",
-      "optimal-control",
-      "robotics"
+      "decision-making",
+      "distributed-computing",
+      "machine-learning",
+      "marl",
+      "model-based-reinforcement-learning",
+      "multi-agent-reinforcement-learning",
+      "pytorch",
+      "reinforcement-learning",
+      "rl",
+      "robotics",
+      "torch"
     ],
-    "license": "BSD-3-Clause"
+    "license": "MIT"
   },
   "problemSolved": {
-    "statement": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.",
-    "context": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.\n\n![legged-robot](https://leggedrobotics.github.io/ocs2/_static/gif/legged_robot.gif)\n\nOCS2 handles general path constraints through Augmented Lagrangian or relaxed barrier methods. To facilitate the application of OCS2 in robotic tasks, it provides additional tools to set up the system dynamics (such as kinematic or dynamic models) and cost/constraints (such as self-collision avoidance and end-effector tracking) from a URDF model. The library also provides an automatic differentiation tool to calculate derivatives of the system dynamics, constraints, and cost. To facilitate deployment on robotic platforms, OCS2 provides tools for ROS interfaces. The toolbox’s efficient and numerically stable implementations in conjunction with its user-friendly interface have paved the way for employing it on numerous robotic applications with limited onboard computation power.\n\n> **ROS 2 port available:** use branch `ros2`.",
+    "statement": "<p align=\"center\">\n  <img src=\"docs/source/_static/img/icon.png\"  width=\"200\" >\n</p>",
+    "context": "<p align=\"center\">\n  <img src=\"docs/source/_static/img/icon.png\"  width=\"200\" >\n</p>\n\n[**What's New**](#-whats-new) | [**LLM API**](#llm-api---complete-framework-for-language-model-fine-tuning) | [**Getting Started**](#getting-started) | [**Documentation**](#documentation-and-knowledge-base) | [**TensorDict**](#writing-simplified-and-portable-rl-codebase-with-tensordict) |\n[**Features**](#features) | [**Examples, tutorials and demos**](#examples-tutorials-and-demos) | [**Citation**](#citation) | [**Installation**](#installation) |\n[**Asking a question**](#asking-a-question) | [**Contributing**](#contributing)\n\n**TorchRL** is an open-source Reinforcement Learning (RL) library for PyTorch.",
     "cynefinDomain": "complex"
   },
   "domains": [
-    "lang:c++"
+    "machine-learning",
+    "lang:python"
   ],
   "validation": {
     "method": "community-consensus",
     "evidence": [
       {
         "type": "github-stars",
-        "description": "1298 GitHub stars indicating community adoption"
+        "description": "3333 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "299 forks indicating reuse"
+        "description": "441 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-10T05:02:06.302Z"
+    "validationDate": "2026-03-10T05:01:56.612Z"
   },
   "implementation": {
     "type": "library",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/leggedrobotics/ocs2",
-        "description": "GitHub repository: leggedrobotics/ocs2"
+        "uri": "https://github.com/pytorch/rl",
+        "description": "GitHub repository: pytorch/rl"
       },
       {
         "type": "documentation",
-        "uri": "https://leggedrobotics.github.io/ocs2",
+        "uri": "https://pytorch.org/rl",
         "description": "Project homepage"
       }
     ],
-    "language": "C++"
+    "language": "Python"
   },
   "composability": {
     "inputs": [],
     "outputs": [],
-    "dependencies": [],
+    "dependencies": [
+      {
+        "name": "torch",
+        "version": ">=2.1.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/torch/"
+      },
+      {
+        "name": "pyvers",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyvers/"
+      },
+      {
+        "name": "numpy",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numpy/"
+      },
+      {
+        "name": "packaging",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/packaging/"
+      },
+      {
+        "name": "cloudpickle",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/cloudpickle/"
+      },
+      {
+        "name": "tensordict",
+        "version": ">=0.11.0,<0.12.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tensordict/"
+      }
+    ],
     "composableWith": []
   },
   "provenance": {
     "authors": [
       {
-        "name": "leggedrobotics",
+        "name": "pytorch",
         "type": "human",
-        "uri": "https://github.com/leggedrobotics"
+        "uri": "https://github.com/pytorch"
       }
     ],
     "sourceType": "scraped",
@@ -149,16 +192,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 1896,
-      "validation_diversity": 0.55,
-      "context_breadth": 0.41,
-      "temporal_stability": 1,
-      "test_coverage": 0.3,
-      "documentation_quality": 0.68
+      "validation_count": 4215,
+      "validation_diversity": 0.77,
+      "context_breadth": 0.66,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.17,
+      "documentation_quality": 0.7
     },
     "confidence": "provisional",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.579
+    "trustScore": 0.678
   }
 }

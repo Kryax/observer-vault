@@ -76,59 +76,54 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/leggedrobotics--ocs2",
+  "@id": "ocp:github/manuelrausch--statconfr",
   "meta": {
-    "title": "OCS2 Toolbox",
-    "description": "Optimal Control for Switched Systems",
+    "title": "1 The `statConfR` package for R",
+    "description": "Development of an R package for metacognition researchers",
     "version": "1.0.0",
-    "dateCreated": "2026-03-10T05:02:06.302Z",
-    "dateModified": "2026-03-10T05:02:06.302Z",
+    "dateCreated": "2026-03-09T11:16:54.762Z",
+    "dateModified": "2026-03-09T11:16:54.762Z",
     "keywords": [
-      "control",
-      "mpc",
-      "optimal-control",
-      "robotics"
+      "cognitive-modeling",
+      "information-theory",
+      "metacognition",
+      "signal-detection-theory"
     ],
-    "license": "BSD-3-Clause"
+    "license": "GPL-3.0"
   },
   "problemSolved": {
-    "statement": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.",
-    "context": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.\n\n![legged-robot](https://leggedrobotics.github.io/ocs2/_static/gif/legged_robot.gif)\n\nOCS2 handles general path constraints through Augmented Lagrangian or relaxed barrier methods. To facilitate the application of OCS2 in robotic tasks, it provides additional tools to set up the system dynamics (such as kinematic or dynamic models) and cost/constraints (such as self-collision avoidance and end-effector tracking) from a URDF model. The library also provides an automatic differentiation tool to calculate derivatives of the system dynamics, constraints, and cost. To facilitate deployment on robotic platforms, OCS2 provides tools for ROS interfaces. The toolbox’s efficient and numerically stable implementations in conjunction with its user-friendly interface have paved the way for employing it on numerous robotic applications with limited onboard computation power.\n\n> **ROS 2 port available:** use branch `ros2`.",
+    "statement": "The `statConfR` package provides functions to fit static models of\ndecision-making and confidence derived from signal detection theory for\nbinary discrimination tasks with confidence ratings on the data from\nindividual subjects (Rausch et al., 2025). Up to now, the following\nmodels have been included:",
+    "context": "The `statConfR` package provides functions to fit static models of\ndecision-making and confidence derived from signal detection theory for\nbinary discrimination tasks with confidence ratings on the data from\nindividual subjects (Rausch et al., 2025). Up to now, the following\nmodels have been included:\n\n- signal detection rating model (Green & Swets, 1966),\n- Gaussian noise model (Maniscalco & Lau, 2016),\n- weighted evidence and visibility model (Rausch et al., 2018),\n- post-decisional accumulation model (Rausch et al., 2018),\n- independent Gaussian model (Rausch & Zehetleitner, 2017),\n- independent truncated Gaussian model (the model underlying the\n  meta-d$`^\\prime`$/d$`^\\prime`$ method, see Rausch et al., 2023),\n- lognormal noise model (Shekhar & Rahnev, 2021),\n- lognormal weighted evidence and visibility model (Shekhar & Rahnev,\n  2023),\n- the response-congruent-evidence model (Peters et al., 2017), and\n- the CASANDRE model (Boundy-Singer et al., 2022).\n\nIn addition, the `statConfR` package provides functions for estimating\ndifferent kinds of measures of metacognition:\n\n- meta-d$`^\\prime`$/d$`^\\prime`$, the most widely-used measure of\n  metacognitive efficiency, allowing both Maniscalco and Lau (2012)’s\n  and Fleming (2017)’s model specification. Fitting models of confidence\n  is a way to test the assumptions underlying\n  meta-d$`^\\prime`$/d$`^\\prime`$.\n\n- information-theoretic measures of metacognition (Dayan, 2023),\n  including\n\n  - meta-I, an information-theoretic measures of metacognitive\n    sensitivity,\n  - $`meta-I_{1}^{r}`$ and $`meta-I_{2}^{r}`$, two measures of\n    metacognitive efficiency proposed by Dayan (2023),\n  - meta-$`I_{1}^{r\\prime}`$, a novel variant of $`meta-I_{1}^{r}`$,\n  - RMI, a novel measure of metacognitive accuracy, also derived from\n    information theory.",
     "cynefinDomain": "complex"
   },
   "domains": [
-    "lang:c++"
+    "lang:html"
   ],
   "validation": {
     "method": "community-consensus",
     "evidence": [
       {
         "type": "github-stars",
-        "description": "1298 GitHub stars indicating community adoption"
+        "description": "13 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "299 forks indicating reuse"
+        "description": "2 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-10T05:02:06.302Z"
+    "validationDate": "2026-03-09T11:16:54.762Z"
   },
   "implementation": {
     "type": "library",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/leggedrobotics/ocs2",
-        "description": "GitHub repository: leggedrobotics/ocs2"
-      },
-      {
-        "type": "documentation",
-        "uri": "https://leggedrobotics.github.io/ocs2",
-        "description": "Project homepage"
+        "uri": "https://github.com/ManuelRausch/StatConfR",
+        "description": "GitHub repository: ManuelRausch/StatConfR"
       }
     ],
-    "language": "C++"
+    "language": "HTML"
   },
   "composability": {
     "inputs": [],
@@ -139,9 +134,9 @@
   "provenance": {
     "authors": [
       {
-        "name": "leggedrobotics",
+        "name": "ManuelRausch",
         "type": "human",
-        "uri": "https://github.com/leggedrobotics"
+        "uri": "https://github.com/ManuelRausch"
       }
     ],
     "sourceType": "scraped",
@@ -149,16 +144,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 1896,
-      "validation_diversity": 0.55,
-      "context_breadth": 0.41,
-      "temporal_stability": 1,
-      "test_coverage": 0.3,
-      "documentation_quality": 0.68
+      "validation_count": 17,
+      "validation_diversity": 0.26,
+      "context_breadth": 0.19,
+      "temporal_stability": 0.79,
+      "test_coverage": 0,
+      "documentation_quality": 0.5
     },
-    "confidence": "provisional",
+    "confidence": "speculative",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.579
+    "trustScore": 0.169
   }
 }

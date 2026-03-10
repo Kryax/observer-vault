@@ -76,59 +76,58 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/leggedrobotics--ocs2",
+  "@id": "ocp:github/libmir--mir-cpuid",
   "meta": {
-    "title": "OCS2 Toolbox",
-    "description": "Optimal Control for Switched Systems",
+    "title": "CPU Information",
+    "description": "BetterC CPU Identification Routines",
     "version": "1.0.0",
-    "dateCreated": "2026-03-10T05:02:06.302Z",
-    "dateModified": "2026-03-10T05:02:06.302Z",
+    "dateCreated": "2026-03-10T04:44:52.008Z",
+    "dateModified": "2026-03-10T04:44:52.008Z",
     "keywords": [
-      "control",
-      "mpc",
-      "optimal-control",
-      "robotics"
-    ],
-    "license": "BSD-3-Clause"
+      "cpu",
+      "cpuid",
+      "dub",
+      "system"
+    ]
   },
   "problemSolved": {
-    "statement": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.",
-    "context": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.\n\n![legged-robot](https://leggedrobotics.github.io/ocs2/_static/gif/legged_robot.gif)\n\nOCS2 handles general path constraints through Augmented Lagrangian or relaxed barrier methods. To facilitate the application of OCS2 in robotic tasks, it provides additional tools to set up the system dynamics (such as kinematic or dynamic models) and cost/constraints (such as self-collision avoidance and end-effector tracking) from a URDF model. The library also provides an automatic differentiation tool to calculate derivatives of the system dynamics, constraints, and cost. To facilitate deployment on robotic platforms, OCS2 provides tools for ROS interfaces. The toolbox’s efficient and numerically stable implementations in conjunction with its user-friendly interface have paved the way for employing it on numerous robotic applications with limited onboard computation power.\n\n> **ROS 2 port available:** use branch `ros2`.",
+    "statement": "```d\nvoid main()\n{\n    import std.stdio;\n    import cpuid.unified;",
+    "context": "```d\nvoid main()\n{\n    import std.stdio;\n    import cpuid.unified;\n\n    enum fmt = \"%14s: %s\";\n\n    fmt.writefln(\"cores\", cores);\n    fmt.writefln(\"threads\", threads);\n\n    fmt.writefln(\"data caches\", dCache.length);\n    fmt.writefln(\"code caches\", iCache.length);\n    fmt.writefln(\"unified caches\", uCache.length);\n\n    fmt.writefln(\"data TLBs\", dTlb.length);\n    fmt.writefln(\"code TLBs\", iTlb.length);\n    fmt.writefln(\"unified TLBs\", uTlb.length);\n}\n```\n\nThis package also can be used as workaround for [core.cpuid Issue 16028](https://issues.dlang.org/show_bug.cgi?id=16028).",
     "cynefinDomain": "complex"
   },
   "domains": [
-    "lang:c++"
+    "lang:d"
   ],
   "validation": {
     "method": "community-consensus",
     "evidence": [
       {
         "type": "github-stars",
-        "description": "1298 GitHub stars indicating community adoption"
+        "description": "26 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "299 forks indicating reuse"
+        "description": "7 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-10T05:02:06.302Z"
+    "validationDate": "2026-03-10T04:44:52.008Z"
   },
   "implementation": {
     "type": "library",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/leggedrobotics/ocs2",
-        "description": "GitHub repository: leggedrobotics/ocs2"
+        "uri": "https://github.com/libmir/mir-cpuid",
+        "description": "GitHub repository: libmir/mir-cpuid"
       },
       {
         "type": "documentation",
-        "uri": "https://leggedrobotics.github.io/ocs2",
+        "uri": "http://mir-cpuid.libmir.org",
         "description": "Project homepage"
       }
     ],
-    "language": "C++"
+    "language": "D"
   },
   "composability": {
     "inputs": [],
@@ -139,9 +138,9 @@
   "provenance": {
     "authors": [
       {
-        "name": "leggedrobotics",
+        "name": "libmir",
         "type": "human",
-        "uri": "https://github.com/leggedrobotics"
+        "uri": "https://github.com/libmir"
       }
     ],
     "sourceType": "scraped",
@@ -149,16 +148,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 1896,
-      "validation_diversity": 0.55,
-      "context_breadth": 0.41,
-      "temporal_stability": 1,
-      "test_coverage": 0.3,
-      "documentation_quality": 0.68
+      "validation_count": 40,
+      "validation_diversity": 0.26,
+      "context_breadth": 0.24,
+      "temporal_stability": 0.72,
+      "test_coverage": 0,
+      "documentation_quality": 0.65
     },
-    "confidence": "provisional",
+    "confidence": "speculative",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.579
+    "trustScore": 0.19
   }
 }

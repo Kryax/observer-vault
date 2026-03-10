@@ -76,24 +76,25 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/leggedrobotics--ocs2",
+  "@id": "ocp:github/liuguitao--avp-slam-plus",
   "meta": {
-    "title": "OCS2 Toolbox",
-    "description": "Optimal Control for Switched Systems",
+    "title": "AVP-SLAM-PLUS",
+    "description": "An implementation of AVP-SLAM and some new contributions",
     "version": "1.0.0",
-    "dateCreated": "2026-03-10T05:02:06.302Z",
-    "dateModified": "2026-03-10T05:02:06.302Z",
+    "dateCreated": "2026-03-10T05:00:44.612Z",
+    "dateModified": "2026-03-10T05:00:44.612Z",
     "keywords": [
-      "control",
-      "mpc",
-      "optimal-control",
-      "robotics"
+      "autonomous-driving",
+      "avp-slam",
+      "slam",
+      "slam-algorithms",
+      "state-estimation"
     ],
-    "license": "BSD-3-Clause"
+    "license": "AGPL-3.0"
   },
   "problemSolved": {
-    "statement": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.",
-    "context": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.\n\n![legged-robot](https://leggedrobotics.github.io/ocs2/_static/gif/legged_robot.gif)\n\nOCS2 handles general path constraints through Augmented Lagrangian or relaxed barrier methods. To facilitate the application of OCS2 in robotic tasks, it provides additional tools to set up the system dynamics (such as kinematic or dynamic models) and cost/constraints (such as self-collision avoidance and end-effector tracking) from a URDF model. The library also provides an automatic differentiation tool to calculate derivatives of the system dynamics, constraints, and cost. To facilitate deployment on robotic platforms, OCS2 provides tools for ROS interfaces. The toolbox’s efficient and numerically stable implementations in conjunction with its user-friendly interface have paved the way for employing it on numerous robotic applications with limited onboard computation power.\n\n> **ROS 2 port available:** use branch `ros2`.",
+    "statement": "AVP-SLAM-PLUS is an implementation of AVP-SLAM and some new contributions. Performance of AVP-SLAM-PLUS could be found in video(https://www.bilibili.com/video/BV11R4y137xb/)",
+    "context": "AVP-SLAM-PLUS is an implementation of AVP-SLAM and some new contributions. Performance of AVP-SLAM-PLUS could be found in video(https://www.bilibili.com/video/BV11R4y137xb/)\n\n<p align='center'>\n<img src=\"images/mapping1.gif\"  width = 45% height = 40% \" />\n<img src=\"images/mapping2.gif\" width = 45% height = 40% />\n<h5 align=\"center\">mapping</h5>\n</p>\n\n<p align='center'>\n<img src=\"images/localization1.gif\" width = 45% height = 45% />\n<img src=\"images/localization2.gif\" width = 45% height = 45% />\n<h5 align=\"center\">localization</h5>\n</p>\n                  \nAVP-SLAM-PLUS contain a simple implementation of [AVP-SLAM: Semantic Visual Mapping and Localization for Autonomous Vehicles in the Parking Lot(IROS 2020)](https://arxiv.org/abs/2007.01813) and some new contributions.\n\nThe new contribustions are as follows: Firstly,the system provide two camera style mode which are multi RGB cameras mode and multi RGBD cameras mode; Secondly,the system provide two registration mode which are ICP mode and NDT mode. Lastly,the system provide mapping mode and localization mode, that means you can not only do SLAM,but also do localization in a prior map.\n\n<p align='center'>\n<img src=\"images/avp_slam_plus_frame.PNG\" width = 55% height = 55% />\n<h5 align=\"center\">AVP-SLAM-PLUS Framework</h5>\n</p>\n\nThis code is simple and is a good learning material for SLAM beginners.\n\n\n**Author**: Liu Guitao\n\n**Email**: 2521426640@qq.com",
     "cynefinDomain": "complex"
   },
   "domains": [
@@ -104,28 +105,23 @@
     "evidence": [
       {
         "type": "github-stars",
-        "description": "1298 GitHub stars indicating community adoption"
+        "description": "668 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "299 forks indicating reuse"
+        "description": "201 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-10T05:02:06.302Z"
+    "validationDate": "2026-03-10T05:00:44.612Z"
   },
   "implementation": {
-    "type": "library",
+    "type": "algorithm",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/leggedrobotics/ocs2",
-        "description": "GitHub repository: leggedrobotics/ocs2"
-      },
-      {
-        "type": "documentation",
-        "uri": "https://leggedrobotics.github.io/ocs2",
-        "description": "Project homepage"
+        "uri": "https://github.com/liuguitao/AVP-SLAM-PLUS",
+        "description": "GitHub repository: liuguitao/AVP-SLAM-PLUS"
       }
     ],
     "language": "C++"
@@ -139,9 +135,9 @@
   "provenance": {
     "authors": [
       {
-        "name": "leggedrobotics",
+        "name": "liuguitao",
         "type": "human",
-        "uri": "https://github.com/leggedrobotics"
+        "uri": "https://github.com/liuguitao"
       }
     ],
     "sourceType": "scraped",
@@ -149,16 +145,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 1896,
-      "validation_diversity": 0.55,
-      "context_breadth": 0.41,
-      "temporal_stability": 1,
+      "validation_count": 1070,
+      "validation_diversity": 0,
+      "context_breadth": 0.43,
+      "temporal_stability": 0.63,
       "test_coverage": 0.3,
-      "documentation_quality": 0.68
+      "documentation_quality": 0.5
     },
-    "confidence": "provisional",
+    "confidence": "speculative",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.579
+    "trustScore": 0.081
   }
 }

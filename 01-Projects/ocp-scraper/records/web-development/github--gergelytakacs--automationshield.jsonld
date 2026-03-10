@@ -76,59 +76,73 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/leggedrobotics--ocs2",
+  "@id": "ocp:github/gergelytakacs--automationshield",
   "meta": {
-    "title": "OCS2 Toolbox",
-    "description": "Optimal Control for Switched Systems",
+    "title": "AutomationShield Library",
+    "description": "Arduino library and MATLAB/Simulink API for the AutomationShield Arduino expansion boards for control engineering education.",
     "version": "1.0.0",
-    "dateCreated": "2026-03-10T05:02:06.302Z",
-    "dateModified": "2026-03-10T05:02:06.302Z",
+    "dateCreated": "2026-03-10T05:01:33.831Z",
+    "dateModified": "2026-03-10T05:01:33.831Z",
     "keywords": [
+      "arduino",
+      "arduino-ide",
+      "arduino-library",
+      "automation",
+      "automation-education",
+      "automationshield-library",
       "control",
-      "mpc",
-      "optimal-control",
-      "robotics"
+      "control-engineering",
+      "control-systems",
+      "didactic",
+      "education",
+      "educational-project",
+      "embedded",
+      "feedback",
+      "feedback-loop",
+      "matlab",
+      "microcontroller",
+      "process-engineering",
+      "simulink"
     ],
-    "license": "BSD-3-Clause"
+    "license": "NOASSERTION"
   },
   "problemSolved": {
-    "statement": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.",
-    "context": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.\n\n![legged-robot](https://leggedrobotics.github.io/ocs2/_static/gif/legged_robot.gif)\n\nOCS2 handles general path constraints through Augmented Lagrangian or relaxed barrier methods. To facilitate the application of OCS2 in robotic tasks, it provides additional tools to set up the system dynamics (such as kinematic or dynamic models) and cost/constraints (such as self-collision avoidance and end-effector tracking) from a URDF model. The library also provides an automatic differentiation tool to calculate derivatives of the system dynamics, constraints, and cost. To facilitate deployment on robotic platforms, OCS2 provides tools for ROS interfaces. The toolbox’s efficient and numerically stable implementations in conjunction with its user-friendly interface have paved the way for employing it on numerous robotic applications with limited onboard computation power.\n\n> **ROS 2 port available:** use branch `ros2`.",
+    "statement": "Arduino, MATLAB and Simulink API and example collection for the AutomationShield expansion boards for control engineering and mechatronics education. You can read more about the AutomationShield project in our [Wiki page](https://github.com/gergelytakacs/AutomationShield/wiki).",
+    "context": "[![Build Status](https://travis-ci.org/gergelytakacs/AutomationShield.svg?branch=master)](https://travis-ci.org/gergelytakacs/AutomationShield) [![CodeFactor](https://www.codefactor.io/repository/github/gergelytakacs/automationshield/badge)](https://www.codefactor.io/repository/github/gergelytakacs/automationshield) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/bae54207cca24ef2929c38b87e279764)](https://app.codacy.com/app/gergelytakacs/AutomationShield?utm_source=github.com&utm_medium=referral&utm_content=gergelytakacs/AutomationShield&utm_campaign=Badge_Grade_Dashboard) [![Spell Check (Arduino)](https://github.com/gergelytakacs/AutomationShield/actions/workflows/spell-check-arduino.yml/badge.svg)](https://github.com/gergelytakacs/AutomationShield/actions/workflows/spell-check-arduino.yml)",
     "cynefinDomain": "complex"
   },
   "domains": [
-    "lang:c++"
+    "web-development",
+    "backend",
+    "automation",
+    "lang:c"
   ],
   "validation": {
     "method": "community-consensus",
     "evidence": [
       {
         "type": "github-stars",
-        "description": "1298 GitHub stars indicating community adoption"
+        "description": "46 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "299 forks indicating reuse"
+        "description": "19 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-10T05:02:06.302Z"
+    "validationDate": "2026-03-10T05:01:33.831Z"
   },
   "implementation": {
-    "type": "library",
+    "type": "service",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/leggedrobotics/ocs2",
-        "description": "GitHub repository: leggedrobotics/ocs2"
-      },
-      {
-        "type": "documentation",
-        "uri": "https://leggedrobotics.github.io/ocs2",
-        "description": "Project homepage"
+        "uri": "https://github.com/gergelytakacs/AutomationShield",
+        "description": "GitHub repository: gergelytakacs/AutomationShield"
       }
     ],
-    "language": "C++"
+    "solutionApproach": "See usage section in README",
+    "language": "C"
   },
   "composability": {
     "inputs": [],
@@ -139,9 +153,9 @@
   "provenance": {
     "authors": [
       {
-        "name": "leggedrobotics",
+        "name": "gergelytakacs",
         "type": "human",
-        "uri": "https://github.com/leggedrobotics"
+        "uri": "https://github.com/gergelytakacs"
       }
     ],
     "sourceType": "scraped",
@@ -149,16 +163,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 1896,
-      "validation_diversity": 0.55,
-      "context_breadth": 0.41,
-      "temporal_stability": 1,
-      "test_coverage": 0.3,
-      "documentation_quality": 0.68
+      "validation_count": 84,
+      "validation_diversity": 0.47,
+      "context_breadth": 0.53,
+      "temporal_stability": 0.54,
+      "test_coverage": 0,
+      "documentation_quality": 0.65
     },
-    "confidence": "provisional",
+    "confidence": "speculative",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.579
+    "trustScore": 0.27
   }
 }

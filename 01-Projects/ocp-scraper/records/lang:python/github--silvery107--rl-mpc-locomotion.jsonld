@@ -76,59 +76,60 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/leggedrobotics--ocs2",
+  "@id": "ocp:github/silvery107--rl-mpc-locomotion",
   "meta": {
-    "title": "OCS2 Toolbox",
-    "description": "Optimal Control for Switched Systems",
+    "title": "RL MPC Locomotion",
+    "description": "Deep RL for MPC control of Quadruped Robot Locomotion",
     "version": "1.0.0",
-    "dateCreated": "2026-03-10T05:02:06.302Z",
-    "dateModified": "2026-03-10T05:02:06.302Z",
+    "dateCreated": "2026-03-10T05:02:13.704Z",
+    "dateModified": "2026-03-10T05:02:13.704Z",
     "keywords": [
-      "control",
+      "isaac-gym",
       "mpc",
-      "optimal-control",
+      "quadruped",
+      "reinforcement-learning",
       "robotics"
     ],
-    "license": "BSD-3-Clause"
+    "license": "MIT"
   },
   "problemSolved": {
-    "statement": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.",
-    "context": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.\n\n![legged-robot](https://leggedrobotics.github.io/ocs2/_static/gif/legged_robot.gif)\n\nOCS2 handles general path constraints through Augmented Lagrangian or relaxed barrier methods. To facilitate the application of OCS2 in robotic tasks, it provides additional tools to set up the system dynamics (such as kinematic or dynamic models) and cost/constraints (such as self-collision avoidance and end-effector tracking) from a URDF model. The library also provides an automatic differentiation tool to calculate derivatives of the system dynamics, constraints, and cost. To facilitate deployment on robotic platforms, OCS2 provides tools for ROS interfaces. The toolbox’s efficient and numerically stable implementations in conjunction with its user-friendly interface have paved the way for employing it on numerous robotic applications with limited onboard computation power.\n\n> **ROS 2 port available:** use branch `ros2`.",
+    "statement": "This repo aims to provide a fast simulation and RL training framework for a quadruped locomotion task by dynamically predicting the weight parameters of a MPC controller. The control framework is a hierarchical controller composed of a higher-level policy network and a lower-level model predictive controller.",
+    "context": "This repo aims to provide a fast simulation and RL training framework for a quadruped locomotion task by dynamically predicting the weight parameters of a MPC controller. The control framework is a hierarchical controller composed of a higher-level policy network and a lower-level model predictive controller. \n\nThe MPC controller refers to [Cheetah Software](https://github.com/mit-biomimetics/Cheetah-Software) but written in python, and it completely opens the interface between sensor data and motor commands, so that the controller can be easily ported to any mainstream simulators.\n\nThe RL training utilizes the [NVIDIA Isaac Gym](https://developer.nvidia.com/isaac-gym) in parallel using Unitree Robotics Aliengo model, and transferring it from simulation to reality on a [real Aliengo robot](#sim2real_anchor) (sim2real is not included in this codebase).",
     "cynefinDomain": "complex"
   },
   "domains": [
-    "lang:c++"
+    "lang:python"
   ],
   "validation": {
     "method": "community-consensus",
     "evidence": [
       {
         "type": "github-stars",
-        "description": "1298 GitHub stars indicating community adoption"
+        "description": "927 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "299 forks indicating reuse"
+        "description": "90 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-10T05:02:06.302Z"
+    "validationDate": "2026-03-10T05:02:13.704Z"
   },
   "implementation": {
     "type": "library",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/leggedrobotics/ocs2",
-        "description": "GitHub repository: leggedrobotics/ocs2"
+        "uri": "https://github.com/silvery107/rl-mpc-locomotion",
+        "description": "GitHub repository: silvery107/rl-mpc-locomotion"
       },
       {
         "type": "documentation",
-        "uri": "https://leggedrobotics.github.io/ocs2",
+        "uri": "https://docs.google.com/presentation/d/18bznpYrkCPnhCisySPDz18hvL3Ytere7JiJEbdLvpgU/edit?usp=sharing",
         "description": "Project homepage"
       }
     ],
-    "language": "C++"
+    "language": "Python"
   },
   "composability": {
     "inputs": [],
@@ -139,9 +140,9 @@
   "provenance": {
     "authors": [
       {
-        "name": "leggedrobotics",
+        "name": "silvery107",
         "type": "human",
-        "uri": "https://github.com/leggedrobotics"
+        "uri": "https://github.com/silvery107"
       }
     ],
     "sourceType": "scraped",
@@ -149,16 +150,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 1896,
-      "validation_diversity": 0.55,
-      "context_breadth": 0.41,
-      "temporal_stability": 1,
+      "validation_count": 1107,
+      "validation_diversity": 0,
+      "context_breadth": 0.4,
+      "temporal_stability": 0.71,
       "test_coverage": 0.3,
-      "documentation_quality": 0.68
+      "documentation_quality": 0.73
     },
-    "confidence": "provisional",
+    "confidence": "speculative",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.579
+    "trustScore": 0.083
   }
 }

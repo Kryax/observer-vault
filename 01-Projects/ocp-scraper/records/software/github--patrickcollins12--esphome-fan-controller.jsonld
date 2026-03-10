@@ -76,59 +76,55 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/leggedrobotics--ocs2",
+  "@id": "ocp:github/patrickcollins12--esphome-fan-controller",
   "meta": {
-    "title": "OCS2 Toolbox",
-    "description": "Optimal Control for Switched Systems",
+    "title": "ESPHome Fan Controller",
+    "description": "ESPHome Fan Controller",
     "version": "1.0.0",
-    "dateCreated": "2026-03-10T05:02:06.302Z",
-    "dateModified": "2026-03-10T05:02:06.302Z",
+    "dateCreated": "2026-03-10T04:59:45.290Z",
+    "dateModified": "2026-03-10T04:59:45.290Z",
     "keywords": [
-      "control",
-      "mpc",
-      "optimal-control",
-      "robotics"
-    ],
-    "license": "BSD-3-Clause"
+      "esp32",
+      "esphome",
+      "home-assistant",
+      "pid-control",
+      "pid-controller",
+      "pwm",
+      "temperature"
+    ]
   },
   "problemSolved": {
-    "statement": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.",
-    "context": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.\n\n![legged-robot](https://leggedrobotics.github.io/ocs2/_static/gif/legged_robot.gif)\n\nOCS2 handles general path constraints through Augmented Lagrangian or relaxed barrier methods. To facilitate the application of OCS2 in robotic tasks, it provides additional tools to set up the system dynamics (such as kinematic or dynamic models) and cost/constraints (such as self-collision avoidance and end-effector tracking) from a URDF model. The library also provides an automatic differentiation tool to calculate derivatives of the system dynamics, constraints, and cost. To facilitate deployment on robotic platforms, OCS2 provides tools for ROS interfaces. The toolbox’s efficient and numerically stable implementations in conjunction with its user-friendly interface have paved the way for employing it on numerous robotic applications with limited onboard computation power.\n\n> **ROS 2 port available:** use branch `ros2`.",
+    "statement": "This project describes how to build a whisper quiet thermostat-controlled fan for cooling your media console, gaming cupboard or that dying star in your networking cabinet.\r\n\r\nThe software is ESPHome and Home Assistant. The hardware is an ESP32 with a regular 12v 120mm Computer Fan (PWM) and a Temperature Sensor (DHT11).",
+    "context": "This project describes how to build a whisper quiet thermostat-controlled fan for cooling your media console, gaming cupboard or that dying star in your networking cabinet.\r\n\r\nThe software is ESPHome and Home Assistant. The hardware is an ESP32 with a regular 12v 120mm Computer Fan (PWM) and a Temperature Sensor (DHT11).",
     "cynefinDomain": "complex"
   },
   "domains": [
-    "lang:c++"
+    "software"
   ],
   "validation": {
     "method": "community-consensus",
     "evidence": [
       {
         "type": "github-stars",
-        "description": "1298 GitHub stars indicating community adoption"
+        "description": "663 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "299 forks indicating reuse"
+        "description": "84 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-10T05:02:06.302Z"
+    "validationDate": "2026-03-10T04:59:45.290Z"
   },
   "implementation": {
     "type": "library",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/leggedrobotics/ocs2",
-        "description": "GitHub repository: leggedrobotics/ocs2"
-      },
-      {
-        "type": "documentation",
-        "uri": "https://leggedrobotics.github.io/ocs2",
-        "description": "Project homepage"
+        "uri": "https://github.com/patrickcollins12/esphome-fan-controller",
+        "description": "GitHub repository: patrickcollins12/esphome-fan-controller"
       }
-    ],
-    "language": "C++"
+    ]
   },
   "composability": {
     "inputs": [],
@@ -139,9 +135,9 @@
   "provenance": {
     "authors": [
       {
-        "name": "leggedrobotics",
+        "name": "patrickcollins12",
         "type": "human",
-        "uri": "https://github.com/leggedrobotics"
+        "uri": "https://github.com/patrickcollins12"
       }
     ],
     "sourceType": "scraped",
@@ -149,16 +145,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 1896,
-      "validation_diversity": 0.55,
-      "context_breadth": 0.41,
-      "temporal_stability": 1,
+      "validation_count": 831,
+      "validation_diversity": 0.16,
+      "context_breadth": 0.47,
+      "temporal_stability": 0.71,
       "test_coverage": 0.3,
-      "documentation_quality": 0.68
+      "documentation_quality": 0.6
     },
-    "confidence": "provisional",
+    "confidence": "speculative",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.579
+    "trustScore": 0.383
   }
 }

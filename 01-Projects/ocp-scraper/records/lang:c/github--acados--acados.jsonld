@@ -76,59 +76,72 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/leggedrobotics--ocs2",
+  "@id": "ocp:github/acados--acados",
   "meta": {
-    "title": "OCS2 Toolbox",
-    "description": "Optimal Control for Switched Systems",
+    "title": "acados",
+    "description": "Fast and embedded solvers for nonlinear optimal control and nonlinear model predictive control",
     "version": "1.0.0",
-    "dateCreated": "2026-03-10T05:02:06.302Z",
-    "dateModified": "2026-03-10T05:02:06.302Z",
+    "dateCreated": "2026-03-10T05:01:08.571Z",
+    "dateModified": "2026-03-10T05:01:08.571Z",
     "keywords": [
       "control",
-      "mpc",
+      "differentiable-model-predictive-control",
+      "differentiable-optimization",
+      "differentiable-programming",
+      "differential-dynamic-programming",
+      "embedded",
+      "high-performance",
+      "model-predictive-control",
+      "moving-horizon-estimation",
+      "nonlinear",
+      "nonlinear-control",
+      "optimal",
       "optimal-control",
-      "robotics"
+      "optimization",
+      "real-time",
+      "simulation",
+      "simulink",
+      "solver"
     ],
-    "license": "BSD-3-Clause"
+    "license": "NOASSERTION"
   },
   "problemSolved": {
-    "statement": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.",
-    "context": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.\n\n![legged-robot](https://leggedrobotics.github.io/ocs2/_static/gif/legged_robot.gif)\n\nOCS2 handles general path constraints through Augmented Lagrangian or relaxed barrier methods. To facilitate the application of OCS2 in robotic tasks, it provides additional tools to set up the system dynamics (such as kinematic or dynamic models) and cost/constraints (such as self-collision avoidance and end-effector tracking) from a URDF model. The library also provides an automatic differentiation tool to calculate derivatives of the system dynamics, constraints, and cost. To facilitate deployment on robotic platforms, OCS2 provides tools for ROS interfaces. The toolbox’s efficient and numerically stable implementations in conjunction with its user-friendly interface have paved the way for employing it on numerous robotic applications with limited onboard computation power.\n\n> **ROS 2 port available:** use branch `ros2`.",
+    "statement": "Some key features of `acados` are summarized in the following.\nThe [software design](#design-paradigms) allows to implement many algorithms beyond this list.\n- **Nonlinear and economic model predictive control (NMPC)**: Solve challenging control problems with nonlinear dynamics and cost functions.\n- **Moving horizon estimation (MHE)**: Estimate states and parameters of dynamic systems in real-time.\n- **Support for differential algebraic equations (DAE)**: Efficiently handle systems with algebraic constraints.\n- **Multiple shooting method**: Leverage the multiple shooting approach for time discretization, enabling fast and robust solutions.\n- **Efficient integration methods**: Include advanced integrators for solving ODEs and DAEs, with support for first- and second-order sensitivities.\n- **Real-time performance**: Optimized for high-frequency control loops, enabling reliable solutions for time-critical applications.\n- **High-performance solvers**: Implement fast SQP-type solvers tailored for optimal control problems.\n- **Modular design**: Easily extend and combine components for simulation, estimation, and control to fit diverse applications.\n- **Solution sensitivity computation and combination with reinforcement learning (RL)**: The combination of MPC and RL is a hot research topic in control. Many learning algorithms can profit from the availability of solution sensitivities or in particular policy gradients.\n`acados` offers the possibility to embed an NLP solver as a differentiable layer in an ML architecture as is demonstrated in the [`leap-c` project](https://github.com/leap-c/leap-c).",
     "cynefinDomain": "complex"
   },
   "domains": [
-    "lang:c++"
+    "lang:c"
   ],
   "validation": {
     "method": "community-consensus",
     "evidence": [
       {
         "type": "github-stars",
-        "description": "1298 GitHub stars indicating community adoption"
+        "description": "1252 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "299 forks indicating reuse"
+        "description": "324 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-10T05:02:06.302Z"
+    "validationDate": "2026-03-10T05:01:08.571Z"
   },
   "implementation": {
     "type": "library",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/leggedrobotics/ocs2",
-        "description": "GitHub repository: leggedrobotics/ocs2"
+        "uri": "https://github.com/acados/acados",
+        "description": "GitHub repository: acados/acados"
       },
       {
         "type": "documentation",
-        "uri": "https://leggedrobotics.github.io/ocs2",
+        "uri": "https://docs.acados.org",
         "description": "Project homepage"
       }
     ],
-    "language": "C++"
+    "language": "C"
   },
   "composability": {
     "inputs": [],
@@ -139,9 +152,9 @@
   "provenance": {
     "authors": [
       {
-        "name": "leggedrobotics",
+        "name": "acados",
         "type": "human",
-        "uri": "https://github.com/leggedrobotics"
+        "uri": "https://github.com/acados"
       }
     ],
     "sourceType": "scraped",
@@ -149,16 +162,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 1896,
-      "validation_diversity": 0.55,
-      "context_breadth": 0.41,
-      "temporal_stability": 1,
-      "test_coverage": 0.3,
-      "documentation_quality": 0.68
+      "validation_count": 1900,
+      "validation_diversity": 0.67,
+      "context_breadth": 0.65,
+      "temporal_stability": 0.94,
+      "test_coverage": 0,
+      "documentation_quality": 0.6
     },
-    "confidence": "provisional",
+    "confidence": "speculative",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.579
+    "trustScore": 0.376
   }
 }

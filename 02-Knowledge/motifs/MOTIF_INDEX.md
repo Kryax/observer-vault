@@ -15,8 +15,8 @@ cssclasses:
 
 | Metric | Count |
 |--------|-------|
-| Total motifs | 16 |
-| Tier 0 (Observation) | 6 |
+| Total motifs | 19 |
+| Tier 0 (Observation) | 9 |
 | Tier 1 (Cross-Domain) | 6 |
 | Tier 2 (Structural Operator) | 4 |
 | Tier 3 (Meta-Structural) | 0 |
@@ -42,6 +42,9 @@ cssclasses:
 | Punctuated Crystallisation | 0 | 0.1 | 1 | triangulated | 2 | recurse | [punctuated-crystallisation.md](punctuated-crystallisation.md) |
 | Instrument-Before-Product | 0 | 0.1 | 1 | bottom-up | 1 | differentiate | [instrument-before-product.md](instrument-before-product.md) |
 | Kill-Ratio as Health Signal | 0 | 0.1 | 1 | bottom-up | 1 | integrate | [kill-ratio-as-health-signal.md](kill-ratio-as-health-signal.md) |
+| Propagated Uncertainty Envelope | 0 | 0.1 | 1 | bottom-up | 1 | integrate | [propagated-uncertainty-envelope.md](propagated-uncertainty-envelope.md) |
+| Estimation-Control Separation | 0 | 0.1 | 1 | bottom-up | 1 | differentiate | [estimation-control-separation.md](estimation-control-separation.md) |
+| Safety-Liveness Duality | 0 | 0.1 | 1 | bottom-up | 2 | differentiate | [safety-liveness-duality.md](safety-liveness-duality.md) |
 
 ## Tier 2 Promoted
 

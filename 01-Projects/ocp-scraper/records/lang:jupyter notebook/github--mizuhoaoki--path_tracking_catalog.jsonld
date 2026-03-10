@@ -1,0 +1,200 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/mizuhoaoki--path_tracking_catalog",
+  "meta": {
+    "title": "Path Tracking Catalog",
+    "description": "25 path-tracking algorithms are (going to be) implemented with python.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-10T05:00:20.060Z",
+    "dateModified": "2026-03-10T05:00:20.060Z",
+    "keywords": [
+      "control",
+      "control-engineering",
+      "control-theory",
+      "controller",
+      "dynamic-window-approach",
+      "fuzzy-logic",
+      "fuzzy-logic-control",
+      "lqr",
+      "lqr-controller",
+      "mppi",
+      "path-following",
+      "path-tracking",
+      "pid",
+      "pid-control",
+      "pid-controller",
+      "pure-pursuit",
+      "purepursuit",
+      "python",
+      "stanley",
+      "vehicle-dynamics"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "25 path-tracking algorithms are (goint to be) implemented with python.",
+    "context": "25 path-tracking algorithms are (goint to be) implemented with python.\n\nhttps://github.com/MizuhoAOKI/path_tracking_catalog/assets/63337525/1b2b39f6-87fc-4f3d-9b18-4ae32f71b5fd\n\n- [Vehicle Models for Simulation](#vehicle-models-for-simulation)\n  - [x] [Dynamic Bicycle Model](#dynamic-bicycle-model)\n  - [x] [Kinematic Bicycle Model](#kinematic-bicycle-model)\n  - [x] [Unicycle Model](#unicycle-model)\n- [Control Algorithms](#control-algorithms)\n  - [x] [Bang-Bang Control](#bang-bang-control)\n  - [x] [PID Control](#pid-control)\n  - [x] [Pure Pursuit Control](#pure-pursuit-control)\n  - [x] [Stanley Control](#stanley-control)\n  - [x] [Fuzzy Logic Control](#fuzzy-logic-control)\n  - [ ] Genetic Algorithm\n  - [x] [Dynamic Window Approach](#dynamic-window-approach)\n  - [ ] State Lattice Planner\n  - [x] [State Feedback Control](#state-feedback-control)\n  - [x] [Linear Quadratic Regulator (infinite horizon)](#linear-quadratic-regulator)\n  - [ ] Linear Quadratic Regulator (finite horizon)\n  - [ ] Differential Dynamic Programming (infinite horizon)\n  - [ ] Differential Dynamic Programming (finite horizon)\n  - [ ] Iterative LQR (infinite horizon)\n  - [ ] Iterative LQR (finite horizon)\n  - [ ] Linear Model Predictive Control (formulated as Quadratic Programming)\n  - [ ] Nonlinear Model Predictive Control (solved by C/GMRES method)\n  - [x] [Model Predictive Path-Integral Control](#model-predictive-path-integral-control)\n  - [ ] Sliding Mode Control\n  - [ ] Q-Learning\n  - [ ] Multi Layer Perceptron\n  - [ ] Linear Quadratic Gaussian\n  - [ ] H∞ Control (LMI)\n  - [ ] Lyapunov\n  - [ ] Adaptive Control",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:jupyter notebook"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "191 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "15 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T05:00:20.060Z"
+  },
+  "implementation": {
+    "type": "algorithm",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/MizuhoAOKI/path_tracking_catalog",
+        "description": "GitHub repository: MizuhoAOKI/path_tracking_catalog"
+      }
+    ],
+    "language": "Jupyter Notebook"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "matplotlib",
+        "version": "^3.8.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/matplotlib/"
+      },
+      {
+        "name": "numpy",
+        "version": "^1.26.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numpy/"
+      },
+      {
+        "name": "notebook",
+        "version": "^7.0.4",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/notebook/"
+      },
+      {
+        "name": "sympy",
+        "version": "^1.12",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/sympy/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "MizuhoAOKI",
+        "type": "human",
+        "uri": "https://github.com/MizuhoAOKI"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 221,
+      "validation_diversity": 0,
+      "context_breadth": 0.52,
+      "temporal_stability": 0.68,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.65
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.081
+  }
+}

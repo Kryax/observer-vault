@@ -76,59 +76,61 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/leggedrobotics--ocs2",
+  "@id": "ocp:github/bsorrentino--langgraph-swift",
   "meta": {
-    "title": "OCS2 Toolbox",
-    "description": "Optimal Control for Switched Systems",
+    "title": "LangGraph for Swift",
+    "description": "🚀 LangGraph for Swift. A library for building stateful, multi-actor applications with LLMs, built to work jointly with langchain-swift",
     "version": "1.0.0",
-    "dateCreated": "2026-03-10T05:02:06.302Z",
-    "dateModified": "2026-03-10T05:02:06.302Z",
+    "dateCreated": "2026-03-09T11:15:19.369Z",
+    "dateModified": "2026-03-09T11:15:19.369Z",
     "keywords": [
-      "control",
-      "mpc",
-      "optimal-control",
-      "robotics"
+      "agent",
+      "ai",
+      "cognitive-architecture",
+      "graph",
+      "swift"
     ],
-    "license": "BSD-3-Clause"
+    "license": "MIT"
   },
   "problemSolved": {
-    "statement": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.",
-    "context": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.\n\n![legged-robot](https://leggedrobotics.github.io/ocs2/_static/gif/legged_robot.gif)\n\nOCS2 handles general path constraints through Augmented Lagrangian or relaxed barrier methods. To facilitate the application of OCS2 in robotic tasks, it provides additional tools to set up the system dynamics (such as kinematic or dynamic models) and cost/constraints (such as self-collision avoidance and end-effector tracking) from a URDF model. The library also provides an automatic differentiation tool to calculate derivatives of the system dynamics, constraints, and cost. To facilitate deployment on robotic platforms, OCS2 provides tools for ROS interfaces. The toolbox’s efficient and numerically stable implementations in conjunction with its user-friendly interface have paved the way for employing it on numerous robotic applications with limited onboard computation power.\n\n> **ROS 2 port available:** use branch `ros2`.",
+    "statement": "![SwiftPM](https://img.shields.io/badge/SwiftPM-Compatible-green) ![GitHub tag (latest by semver)](https://img.shields.io/github/v/tag/bsorrentino/LangGraph-Swift?sort=semver) [![DocC](https://img.shields.io/badge/DocC-Documentation-blue)][docc]",
+    "context": "![SwiftPM](https://img.shields.io/badge/SwiftPM-Compatible-green) ![GitHub tag (latest by semver)](https://img.shields.io/github/v/tag/bsorrentino/LangGraph-Swift?sort=semver) [![DocC](https://img.shields.io/badge/DocC-Documentation-blue)][docc] \n\n\n🚀 LangGraph for Swift. A library for building stateful, multi-actor applications with LLMs, developed to work with [LangChain-Swift]. \n> It is a porting of original [LangGraph] from [LangChain AI project][langchain.ai] in Swift fashion",
     "cynefinDomain": "complex"
   },
   "domains": [
-    "lang:c++"
+    "machine-learning",
+    "lang:swift"
   ],
   "validation": {
     "method": "community-consensus",
     "evidence": [
       {
         "type": "github-stars",
-        "description": "1298 GitHub stars indicating community adoption"
+        "description": "85 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "299 forks indicating reuse"
+        "description": "8 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-10T05:02:06.302Z"
+    "validationDate": "2026-03-09T11:15:19.369Z"
   },
   "implementation": {
     "type": "library",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/leggedrobotics/ocs2",
-        "description": "GitHub repository: leggedrobotics/ocs2"
+        "uri": "https://github.com/bsorrentino/LangGraph-Swift",
+        "description": "GitHub repository: bsorrentino/LangGraph-Swift"
       },
       {
         "type": "documentation",
-        "uri": "https://leggedrobotics.github.io/ocs2",
+        "uri": "https://bsorrentino.github.io/LangGraph-Swift/documentation/langgraph/",
         "description": "Project homepage"
       }
     ],
-    "language": "C++"
+    "language": "Swift"
   },
   "composability": {
     "inputs": [],
@@ -139,9 +141,9 @@
   "provenance": {
     "authors": [
       {
-        "name": "leggedrobotics",
+        "name": "bsorrentino",
         "type": "human",
-        "uri": "https://github.com/leggedrobotics"
+        "uri": "https://github.com/bsorrentino"
       }
     ],
     "sourceType": "scraped",
@@ -149,16 +151,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 1896,
-      "validation_diversity": 0.55,
-      "context_breadth": 0.41,
-      "temporal_stability": 1,
-      "test_coverage": 0.3,
-      "documentation_quality": 0.68
+      "validation_count": 101,
+      "validation_diversity": 0.1,
+      "context_breadth": 0.29,
+      "temporal_stability": 0.67,
+      "test_coverage": 0.2,
+      "documentation_quality": 0.7
     },
-    "confidence": "provisional",
+    "confidence": "speculative",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.579
+    "trustScore": 0.265
   }
 }

@@ -76,59 +76,61 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/leggedrobotics--ocs2",
+  "@id": "ocp:github/kaimary--cyclesql",
   "meta": {
-    "title": "OCS2 Toolbox",
-    "description": "Optimal Control for Switched Systems",
+    "title": "<span style=\"font-size:0.8em;\">G</span>rounding Natural Language to SQL Translation with Data-Based Self-Explanations",
+    "description": "ICDE 2025 Paper, Grounding Natural Language to SQL Translation with Data-Based Self-Explanations",
     "version": "1.0.0",
-    "dateCreated": "2026-03-10T05:02:06.302Z",
-    "dateModified": "2026-03-10T05:02:06.302Z",
+    "dateCreated": "2026-03-10T05:01:42.031Z",
+    "dateModified": "2026-03-10T05:01:42.031Z",
     "keywords": [
-      "control",
-      "mpc",
-      "optimal-control",
-      "robotics"
+      "data-provenance",
+      "feedback-loop",
+      "natural-language-interface",
+      "self-explanations",
+      "text-to-sql"
     ],
-    "license": "BSD-3-Clause"
+    "license": "Apache-2.0"
   },
   "problemSolved": {
-    "statement": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.",
-    "context": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.\n\n![legged-robot](https://leggedrobotics.github.io/ocs2/_static/gif/legged_robot.gif)\n\nOCS2 handles general path constraints through Augmented Lagrangian or relaxed barrier methods. To facilitate the application of OCS2 in robotic tasks, it provides additional tools to set up the system dynamics (such as kinematic or dynamic models) and cost/constraints (such as self-collision avoidance and end-effector tracking) from a URDF model. The library also provides an automatic differentiation tool to calculate derivatives of the system dynamics, constraints, and cost. To facilitate deployment on robotic platforms, OCS2 provides tools for ROS interfaces. The toolbox’s efficient and numerically stable implementations in conjunction with its user-friendly interface have paved the way for employing it on numerous robotic applications with limited onboard computation power.\n\n> **ROS 2 port available:** use branch `ros2`.",
+    "statement": "This code implements:",
+    "context": "> Improve NL2SQL with Natural Language Explanations as Self-provided Feeback\n> \nThe official repository contains the code and pre-trained models for our paper [Grounding Natural Language to SQL Translation with Data-Based Self-Explanations](https://arxiv.org/pdf/2411.02948).\n\n<p align=\"center\">\n   <a href=\"https://github.com/kaimary/CycleSQL/blob/main/LICENSE\">\n        <img alt=\"license\" src=\"https://img.shields.io/github/license/kaimary/CycleSQL.svg?color=blue\">\n   </a>\n   <a href=\"https://github.com/kaimary/CycleSQL/stargazers\">\n       <img alt=\"stars\" src=\"https://img.shields.io/github/stars/kaimary/CycleSQL\" />\n  \t</a>\n  \t<a href=\"https://github.com/kaimary/CycleSQL/network/members\">\n       <img alt=\"FORK\" src=\"https://img.shields.io/github/forks/kaimary/CycleSQL?color=FF8000\" />\n  \t</a>\n    <a href=\"https://github.com/kaimary/CycleSQL/issues\">\n      <img alt=\"Issues\" src=\"https://img.shields.io/github/issues/kaimary/CycleSQL?color=0088ff\"/>\n    </a>\n    <br />\n</p>",
     "cynefinDomain": "complex"
   },
   "domains": [
-    "lang:c++"
+    "data-management",
+    "lang:python"
   ],
   "validation": {
     "method": "community-consensus",
     "evidence": [
       {
         "type": "github-stars",
-        "description": "1298 GitHub stars indicating community adoption"
+        "description": "17 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "299 forks indicating reuse"
+        "description": "2 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-10T05:02:06.302Z"
+    "validationDate": "2026-03-10T05:01:42.031Z"
   },
   "implementation": {
     "type": "library",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/leggedrobotics/ocs2",
-        "description": "GitHub repository: leggedrobotics/ocs2"
+        "uri": "https://github.com/Kaimary/CycleSQL",
+        "description": "GitHub repository: Kaimary/CycleSQL"
       },
       {
         "type": "documentation",
-        "uri": "https://leggedrobotics.github.io/ocs2",
+        "uri": "https://arxiv.org/pdf/2411.02948",
         "description": "Project homepage"
       }
     ],
-    "language": "C++"
+    "language": "Python"
   },
   "composability": {
     "inputs": [],
@@ -139,9 +141,9 @@
   "provenance": {
     "authors": [
       {
-        "name": "leggedrobotics",
+        "name": "Kaimary",
         "type": "human",
-        "uri": "https://github.com/leggedrobotics"
+        "uri": "https://github.com/Kaimary"
       }
     ],
     "sourceType": "scraped",
@@ -149,16 +151,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 1896,
-      "validation_diversity": 0.55,
-      "context_breadth": 0.41,
-      "temporal_stability": 1,
-      "test_coverage": 0.3,
-      "documentation_quality": 0.68
+      "validation_count": 21,
+      "validation_diversity": 0,
+      "context_breadth": 0.23,
+      "temporal_stability": 0.68,
+      "test_coverage": 0.17,
+      "documentation_quality": 0.4
     },
-    "confidence": "provisional",
+    "confidence": "speculative",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.579
+    "trustScore": 0.055
   }
 }

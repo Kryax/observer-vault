@@ -76,59 +76,64 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/leggedrobotics--ocs2",
+  "@id": "ocp:github/lecar-lab--dial-mpc",
   "meta": {
-    "title": "OCS2 Toolbox",
-    "description": "Optimal Control for Switched Systems",
+    "title": "DIAL-MPC: Diffusion-Inspired Annealing For Legged MPC",
+    "description": "Official implementation for the paper \"Full-Order Sampling-Based MPC for Torque-Level Locomotion Control via Diffusion-Style Annealing\". DIAL-MPC is a novel sampling-based MPC framework for legged robot full-order torque-level control with both precision and agility in a training-free manner.",
     "version": "1.0.0",
-    "dateCreated": "2026-03-10T05:02:06.302Z",
-    "dateModified": "2026-03-10T05:02:06.302Z",
+    "dateCreated": "2026-03-10T05:01:20.214Z",
+    "dateModified": "2026-03-10T05:01:20.214Z",
     "keywords": [
-      "control",
+      "diffusion",
+      "humanoid",
+      "legged-robots",
       "mpc",
+      "online-control",
       "optimal-control",
-      "robotics"
+      "quadruped",
+      "sampling-based-control"
     ],
-    "license": "BSD-3-Clause"
+    "license": "Apache-2.0"
   },
   "problemSolved": {
-    "statement": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.",
-    "context": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.\n\n![legged-robot](https://leggedrobotics.github.io/ocs2/_static/gif/legged_robot.gif)\n\nOCS2 handles general path constraints through Augmented Lagrangian or relaxed barrier methods. To facilitate the application of OCS2 in robotic tasks, it provides additional tools to set up the system dynamics (such as kinematic or dynamic models) and cost/constraints (such as self-collision avoidance and end-effector tracking) from a URDF model. The library also provides an automatic differentiation tool to calculate derivatives of the system dynamics, constraints, and cost. To facilitate deployment on robotic platforms, OCS2 provides tools for ROS interfaces. The toolbox’s efficient and numerically stable implementations in conjunction with its user-friendly interface have paved the way for employing it on numerous robotic applications with limited onboard computation power.\n\n> **ROS 2 port available:** use branch `ros2`.",
+    "statement": "The real-world deployment procedure is very similar to asynchronous simulation.",
+    "context": "<div align=\"center\">\n\nICRA 2025, Best Paper Finalist\n\n[[Website]](https://lecar-lab.github.io/dial-mpc/)\n[[PDF]](https://drive.google.com/file/d/1Z39MCvnl-Tdraon4xAj37iQYLsUh5UOV/view?usp=sharing)\n[[Arxiv]](https://arxiv.org/abs/2409.15610)\n\n[<img src=\"https://img.shields.io/badge/Backend-Jax-red.svg\"/>](https://github.com/google/jax)\n[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)\n\n<img src=\"assets/joint.gif\" width=\"600px\"/>\n\n</div>\n\nThis repository contains the code (simulation and real-world experiments with minimum setup) for the paper \"Full-Order Sampling-Based MPC for Torque-Level Locomotion Control via Diffusion-Style Annealing\".\n\nDIAL-MPC is a sampling-based MPC framework for legged robot ***full-order torque-level*** control with both precision and agility in a ***training-free*** manner. \nDIAL-MPC is designed to be simple and flexible, with minimal requirements for specific reward design and dynamics model. It directly samples and rolls out in physics-based simulations (``Brax``) and does not require reduced-order modeling, linearization, convexification, or predefined contact sequences.\nThat means you can test out the controller in a plug-and-play manner with minimum setup.",
     "cynefinDomain": "complex"
   },
   "domains": [
-    "lang:c++"
+    "machine-learning",
+    "lang:python"
   ],
   "validation": {
     "method": "community-consensus",
     "evidence": [
       {
         "type": "github-stars",
-        "description": "1298 GitHub stars indicating community adoption"
+        "description": "942 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "299 forks indicating reuse"
+        "description": "98 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-10T05:02:06.302Z"
+    "validationDate": "2026-03-10T05:01:20.214Z"
   },
   "implementation": {
-    "type": "library",
+    "type": "framework",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/leggedrobotics/ocs2",
-        "description": "GitHub repository: leggedrobotics/ocs2"
+        "uri": "https://github.com/LeCAR-Lab/dial-mpc",
+        "description": "GitHub repository: LeCAR-Lab/dial-mpc"
       },
       {
         "type": "documentation",
-        "uri": "https://leggedrobotics.github.io/ocs2",
+        "uri": "https://lecar-lab.github.io/dial-mpc/",
         "description": "Project homepage"
       }
     ],
-    "language": "C++"
+    "language": "Python"
   },
   "composability": {
     "inputs": [],
@@ -139,9 +144,9 @@
   "provenance": {
     "authors": [
       {
-        "name": "leggedrobotics",
+        "name": "LeCAR-Lab",
         "type": "human",
-        "uri": "https://github.com/leggedrobotics"
+        "uri": "https://github.com/LeCAR-Lab"
       }
     ],
     "sourceType": "scraped",
@@ -149,16 +154,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 1896,
-      "validation_diversity": 0.55,
-      "context_breadth": 0.41,
-      "temporal_stability": 1,
-      "test_coverage": 0.3,
-      "documentation_quality": 0.68
+      "validation_count": 1138,
+      "validation_diversity": 0.28,
+      "context_breadth": 0.52,
+      "temporal_stability": 0.66,
+      "test_coverage": 0.47,
+      "documentation_quality": 0.6
     },
     "confidence": "provisional",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.579
+    "trustScore": 0.486
   }
 }

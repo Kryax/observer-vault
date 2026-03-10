@@ -76,59 +76,59 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/leggedrobotics--ocs2",
+  "@id": "ocp:github/cram2--pycram",
   "meta": {
-    "title": "OCS2 Toolbox",
-    "description": "Optimal Control for Switched Systems",
+    "title": "pycram",
+    "description": "Cognitive Robot Abstract Machine in Python",
     "version": "1.0.0",
-    "dateCreated": "2026-03-10T05:02:06.302Z",
-    "dateModified": "2026-03-10T05:02:06.302Z",
+    "dateCreated": "2026-03-09T11:15:21.662Z",
+    "dateModified": "2026-03-09T11:15:21.662Z",
     "keywords": [
-      "control",
-      "mpc",
-      "optimal-control",
+      "ai",
+      "cognitive-architecture",
+      "cognitive-robotics",
       "robotics"
     ],
-    "license": "BSD-3-Clause"
+    "license": "GPL-3.0"
   },
   "problemSolved": {
-    "statement": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.",
-    "context": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.\n\n![legged-robot](https://leggedrobotics.github.io/ocs2/_static/gif/legged_robot.gif)\n\nOCS2 handles general path constraints through Augmented Lagrangian or relaxed barrier methods. To facilitate the application of OCS2 in robotic tasks, it provides additional tools to set up the system dynamics (such as kinematic or dynamic models) and cost/constraints (such as self-collision avoidance and end-effector tracking) from a URDF model. The library also provides an automatic differentiation tool to calculate derivatives of the system dynamics, constraints, and cost. To facilitate deployment on robotic platforms, OCS2 provides tools for ROS interfaces. The toolbox’s efficient and numerically stable implementations in conjunction with its user-friendly interface have paved the way for employing it on numerous robotic applications with limited onboard computation power.\n\n> **ROS 2 port available:** use branch `ros2`.",
+    "statement": "- Intent-based task specification: express “what” to do using designators; the framework decides the concrete “how” at run time.\n- Late binding and adaptability: defer grounding of actions, motions, objects, and locations until execution to match the current world and robot state.\n- Composable plans: build behaviors as trees of plan nodes with clear control-flow constructs (sequential, parallel, retry, repeat, monitor).\n- Introspection and observability: plans track node status, timing, and context for debugging, visualization, and monitoring.\n- ORM-backed persistence: automatically capture plans, actions, spatial data, and outcomes in a relational schema for analysis and reproducibility.\n- Reusable across robots: separate intent from embodiment so the same high-level logic can target different platforms.\n- Motion building blocks: ready-to-use motion designators (e.g., TCP and gripper control) compose into higher-level actions like pick-up and transport.\n- World model integration: operate over bodies, links, transforms, and semantic annotations; reason about objects and places, not only coordinates.\n- Simulation-first workflow: run end-to-end plans in simulation for rapid iteration, with optional visualization.\n- Clear validation points: action and motion steps can declare pre/post conditions to verify success (e.g., object grasped).\n- Data-driven improvement: stored execution traces support benchmarking, failure analysis, and experiment tracking.\n- Modular and extensible: define custom designators, actions, and plan patterns while leveraging the common orchestration and logging.\n- Tested examples and demos: runnable scenarios (e.g., PR2 pick-and-place) illustrate typical workflows and best practices.",
     "cynefinDomain": "complex"
   },
   "domains": [
-    "lang:c++"
+    "machine-learning",
+    "lang:python"
   ],
   "validation": {
     "method": "community-consensus",
     "evidence": [
       {
         "type": "github-stars",
-        "description": "1298 GitHub stars indicating community adoption"
+        "description": "47 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "299 forks indicating reuse"
+        "description": "60 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-10T05:02:06.302Z"
+    "validationDate": "2026-03-09T11:15:21.662Z"
   },
   "implementation": {
     "type": "library",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/leggedrobotics/ocs2",
-        "description": "GitHub repository: leggedrobotics/ocs2"
+        "uri": "https://github.com/cram2/pycram",
+        "description": "GitHub repository: cram2/pycram"
       },
       {
         "type": "documentation",
-        "uri": "https://leggedrobotics.github.io/ocs2",
+        "uri": "https://pycram.readthedocs.io/en/latest/index.html",
         "description": "Project homepage"
       }
     ],
-    "language": "C++"
+    "language": "Python"
   },
   "composability": {
     "inputs": [],
@@ -139,9 +139,9 @@
   "provenance": {
     "authors": [
       {
-        "name": "leggedrobotics",
+        "name": "cram2",
         "type": "human",
-        "uri": "https://github.com/leggedrobotics"
+        "uri": "https://github.com/cram2"
       }
     ],
     "sourceType": "scraped",
@@ -149,16 +149,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 1896,
-      "validation_diversity": 0.55,
-      "context_breadth": 0.41,
-      "temporal_stability": 1,
-      "test_coverage": 0.3,
-      "documentation_quality": 0.68
+      "validation_count": 167,
+      "validation_diversity": 0.53,
+      "context_breadth": 0.34,
+      "temporal_stability": 0.76,
+      "test_coverage": 0,
+      "documentation_quality": 0.73
     },
-    "confidence": "provisional",
+    "confidence": "speculative",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.579
+    "trustScore": 0.276
   }
 }

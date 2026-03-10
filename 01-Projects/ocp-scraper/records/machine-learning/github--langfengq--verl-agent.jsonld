@@ -1,0 +1,169 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/langfengq--verl-agent",
+  "meta": {
+    "title": "News",
+    "description": "verl-agent is an extension of veRL, designed for training LLM/VLM agents via RL. verl-agent is also the official code for paper \"Group-in-Group Policy Optimization for LLM Agent Training\"",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-09T11:17:50.443Z",
+    "dateModified": "2026-03-09T11:17:50.443Z",
+    "keywords": [
+      "agent-framework",
+      "deepseek-r1",
+      "gigpo",
+      "grpo",
+      "large-language-models",
+      "llm-agents",
+      "llm-training",
+      "reinforcement-learning"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "| Feature Category | Supported Capabilities|\n| - | - |\n| **Interaction**          | ✅ Multi-turn Agent-Environment interaction<br>✅ Step-wise interaction<br>✅ Scalable for long-horizon tasks |\n| **Memory**               | ✅ Fully customizable memory module<br>✅ Flexible history management|\n| **Input Flexibility**    | ✅ Fully customizable per-step input structures |\n| **Execution**            | ✅ Parallelized Gym environments<br>✅ Group environments support (for group-based RL)|\n| **Model Support**        | ✅ Qwen3<br>✅ Qwen3-VL<br>✅ Qwen2.5<br>✅ Qwen2.5-VL<br>✅ LLaMA3.2<br>and more |\n| **Modality**             | ✅ Text-only<br>✅ Text + Image (multi-modal) |\n| **Lightweight Training** | ✅ Supports LoRA training |\n| **Environments**         | ✅ ALFWorld<br>✅ WebShop<br> ✅ Search (Tool Calling)<br> ✅ Sokoban<br>✅ Gym Cards<br>✅ AppWorld |\n| **RL Algorithms**        | ✅ GiGPO<br>✅ GRPO<br>✅ PPO<br>✅ DAPO<br>✅ GSPO<br>✅ RLOO<br>✅ REINFORCE++<br>✅ Dynamic sampling & clip-higher supported <br> and more |\n| **Prompt-based Agent**   | ✅ GPT-4o prompt-based agent  |",
+    "context": "- [2026.02] `HGPO` accepted at [ICLR 2026](https://iclr.cc/)! 🎉🎉🎉 [[Paper](https://openreview.net/forum?id=T8Dev99qnz)] [[Code](https://github.com/langfengQ/verl-agent/tree/master/recipe/hgpo)]\n- [2026.02] 🔥 We open-source [Dr. MAS](https://github.com/langfengQ/DrMAS), which supports stable end-to-end RL post-training of **multi-agent LLM systems**! [[Paper](https://arxiv.org/pdf/2602.08847)] [[Code](https://github.com/langfengQ/DrMAS)]\n- [2025.12] `Qwen3-VL` is supported! See example [here](./examples/gigpo_trainer/run_sokoban_qwen3vl.sh).\n- [2025.09] `GiGPO` is now supported by [ROLL](https://github.com/alibaba/ROLL)! [[Document](https://alibaba.github.io/ROLL/docs/English/UserGuide/agentic/agentic_GiGPO)] [[Train Curves](https://github.com/alibaba/ROLL/issues/173#issuecomment-3332106534)].\n- [2025.09] `verl-agent`-style training pipeline is now supported by [OpenManus-RL](https://github.com/OpenManus/OpenManus-RL)!\n- [2025.09] [GiGPO](https://arxiv.org/abs/2505.10978) accepted at [NeurIPS 2025](https://neurips.cc/)! 🎉🎉🎉\n- [2025.08] Add **Search-R1 experiments** and **similarity-based GiGPO**! Check out GiGPO's superior performance in Search-R1 experiments [here](#results).\n- [2025.07] `GiGPO` & `verl-agent` talks at [Agent for SWE meetup](https://lu.ma/e498qhsi) by LF AI & Data Singapore on 7/11.\n- [2025.07] Add modular memory manager. See [here](./agent_system/memory).\n- [2025.06] ***Major update***: Merge all features from the latest [veRL](https://github.com/volcengine/verl). For example, `verl-agent` now supports Qwen3, LoRA, REINFORCE++, and more. Feel free to explore!\n- [2025.05] Code released and paper on `GiGPO` released.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "1639 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "145 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-09T11:17:50.443Z"
+  },
+  "implementation": {
+    "type": "framework",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/langfengQ/verl-agent",
+        "description": "GitHub repository: langfengQ/verl-agent"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://huggingface.co/papers/2505.10978",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "langfengQ",
+        "type": "human",
+        "uri": "https://github.com/langfengQ"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 1929,
+      "validation_diversity": 0.68,
+      "context_breadth": 0.54,
+      "temporal_stability": 0.91,
+      "test_coverage": 0.47,
+      "documentation_quality": 0.7
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.676
+  }
+}

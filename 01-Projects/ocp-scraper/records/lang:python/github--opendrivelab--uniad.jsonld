@@ -76,59 +76,59 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/leggedrobotics--ocs2",
+  "@id": "ocp:github/opendrivelab--uniad",
   "meta": {
-    "title": "OCS2 Toolbox",
-    "description": "Optimal Control for Switched Systems",
+    "title": "Planning-oriented Autonomous Driving",
+    "description": "[CVPR 2023 Best Paper Award] Planning-oriented Autonomous Driving",
     "version": "1.0.0",
-    "dateCreated": "2026-03-10T05:02:06.302Z",
-    "dateModified": "2026-03-10T05:02:06.302Z",
+    "dateCreated": "2026-03-10T05:03:01.084Z",
+    "dateModified": "2026-03-10T05:03:01.084Z",
     "keywords": [
-      "control",
-      "mpc",
-      "optimal-control",
-      "robotics"
+      "autonomous-driving",
+      "autonomous-driving-framework",
+      "bev-segmentation",
+      "end-to-end-autonomous-driving",
+      "motion-planning",
+      "motion-prediction",
+      "multi-object-tracking",
+      "occupancy-prediction",
+      "perception-prediction-planning"
     ],
-    "license": "BSD-3-Clause"
+    "license": "Apache-2.0"
   },
   "problemSolved": {
-    "statement": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.",
-    "context": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.\n\n![legged-robot](https://leggedrobotics.github.io/ocs2/_static/gif/legged_robot.gif)\n\nOCS2 handles general path constraints through Augmented Lagrangian or relaxed barrier methods. To facilitate the application of OCS2 in robotic tasks, it provides additional tools to set up the system dynamics (such as kinematic or dynamic models) and cost/constraints (such as self-collision avoidance and end-effector tracking) from a URDF model. The library also provides an automatic differentiation tool to calculate derivatives of the system dynamics, constraints, and cost. To facilitate deployment on robotic platforms, OCS2 provides tools for ROS interfaces. The toolbox’s efficient and numerically stable implementations in conjunction with its user-friendly interface have paved the way for employing it on numerous robotic applications with limited onboard computation power.\n\n> **ROS 2 port available:** use branch `ros2`.",
+    "statement": "- :oncoming_automobile: **Planning-oriented philosophy**: UniAD is a Unified Autonomous Driving algorithm framework following a planning-oriented philosophy. Instead of standalone modular design and multi-task learning, we cast a series of tasks, including perception, prediction and planning tasks hierarchically.\n- :trophy: **SOTA performance**: All tasks within UniAD achieve SOTA performance, especially prediction and planning (motion: 0.71m minADE, occ: 63.4% IoU, planning: 0.31% avg.Col)",
+    "context": "</div>\n\n\n<h3 align=\"center\">\n  <a href=\"https://arxiv.org/abs/2212.10156\">arXiv</a> |\n  <a href=\"https://www.youtube.com/watch?v=cyrxJJ_nnaQ\">Video</a> |\n  <a href=\"sources/cvpr23_uniad_poster.png\">Poster</a> |\n  <a href=\"https://opendrivelab.github.io/UniAD_plenary_talk_slides.pdf\">Slides</a>\n</h3>\n\n\n\n\n\nhttps://github.com/OpenDriveLab/UniAD/assets/48089846/bcf685e4-2471-450e-8b77-e028a46bd0f7\n\n\n\n\n<br><br>",
     "cynefinDomain": "complex"
   },
   "domains": [
-    "lang:c++"
+    "lang:python"
   ],
   "validation": {
     "method": "community-consensus",
     "evidence": [
       {
         "type": "github-stars",
-        "description": "1298 GitHub stars indicating community adoption"
+        "description": "4508 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "299 forks indicating reuse"
+        "description": "517 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-10T05:02:06.302Z"
+    "validationDate": "2026-03-10T05:03:01.084Z"
   },
   "implementation": {
-    "type": "library",
+    "type": "framework",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/leggedrobotics/ocs2",
-        "description": "GitHub repository: leggedrobotics/ocs2"
-      },
-      {
-        "type": "documentation",
-        "uri": "https://leggedrobotics.github.io/ocs2",
-        "description": "Project homepage"
+        "uri": "https://github.com/OpenDriveLab/UniAD",
+        "description": "GitHub repository: OpenDriveLab/UniAD"
       }
     ],
-    "language": "C++"
+    "language": "Python"
   },
   "composability": {
     "inputs": [],
@@ -139,9 +139,9 @@
   "provenance": {
     "authors": [
       {
-        "name": "leggedrobotics",
+        "name": "OpenDriveLab",
         "type": "human",
-        "uri": "https://github.com/leggedrobotics"
+        "uri": "https://github.com/OpenDriveLab"
       }
     ],
     "sourceType": "scraped",
@@ -149,16 +149,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 1896,
-      "validation_diversity": 0.55,
-      "context_breadth": 0.41,
-      "temporal_stability": 1,
+      "validation_count": 5542,
+      "validation_diversity": 0.37,
+      "context_breadth": 0.63,
+      "temporal_stability": 0.86,
       "test_coverage": 0.3,
-      "documentation_quality": 0.68
+      "documentation_quality": 0.5
     },
     "confidence": "provisional",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.579
+    "trustScore": 0.561
   }
 }

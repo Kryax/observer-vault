@@ -76,59 +76,55 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/leggedrobotics--ocs2",
+  "@id": "ocp:github/ivaquero--book-control",
   "meta": {
-    "title": "OCS2 Toolbox",
-    "description": "Optimal Control for Switched Systems",
+    "title": "简明控制理论教程",
+    "description": "简明控制理论教程",
     "version": "1.0.0",
-    "dateCreated": "2026-03-10T05:02:06.302Z",
-    "dateModified": "2026-03-10T05:02:06.302Z",
+    "dateCreated": "2026-03-10T05:00:26.439Z",
+    "dateModified": "2026-03-10T05:00:26.439Z",
     "keywords": [
-      "control",
-      "mpc",
-      "optimal-control",
-      "robotics"
+      "bilibili",
+      "control-theory",
+      "matlab",
+      "simulink",
+      "typst"
     ],
-    "license": "BSD-3-Clause"
+    "license": "MIT"
   },
   "problemSolved": {
-    "statement": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.",
-    "context": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.\n\n![legged-robot](https://leggedrobotics.github.io/ocs2/_static/gif/legged_robot.gif)\n\nOCS2 handles general path constraints through Augmented Lagrangian or relaxed barrier methods. To facilitate the application of OCS2 in robotic tasks, it provides additional tools to set up the system dynamics (such as kinematic or dynamic models) and cost/constraints (such as self-collision avoidance and end-effector tracking) from a URDF model. The library also provides an automatic differentiation tool to calculate derivatives of the system dynamics, constraints, and cost. To facilitate deployment on robotic platforms, OCS2 provides tools for ROS interfaces. The toolbox’s efficient and numerically stable implementations in conjunction with its user-friendly interface have paved the way for employing it on numerous robotic applications with limited onboard computation power.\n\n> **ROS 2 port available:** use branch `ros2`.",
+    "statement": "![code size](https://img.shields.io/github/languages/code-size/ivaquero/book-control.svg)\n![repo size](https://img.shields.io/github/repo-size/ivaquero/book-control.svg)",
+    "context": "![code size](https://img.shields.io/github/languages/code-size/ivaquero/book-control.svg)\n![repo size](https://img.shields.io/github/repo-size/ivaquero/book-control.svg)\n\n本仓库致力于编写一部易于上手的简明控制理论教程，内容上参考了 DR_CAN [哔站课程](https://space.bilibili.com/230105574/channel/series)，及其著作 [控制之美：卷 1](https://book.douban.com/subject/35934779/) 及[控制之美：卷 2](https://book.douban.com/subject/36556895/) （未包含 Kalman 滤波部分），同时使用其他教材和教程对诸多内容进行了细化，统一规范了公式和代码。\n\n共包括\n\n- Typst 笔记\n- MATLAB 代码\n- Simulink 程序\n- 福利：控制工具箱 API 梳理\n\n笔记原采用 Markdown 格式，但因该格式输出的 PDF 不够稳定，且样式单一，后转向现代排版软件[Typst](https://github.com/typst/typst)，其安装可参考[知乎帖子](https://zhuanlan.zhihu.com/p/642509853)。相信大家会喜欢上 Typst 这个软件。",
     "cynefinDomain": "complex"
   },
   "domains": [
-    "lang:c++"
+    "lang:matlab"
   ],
   "validation": {
     "method": "community-consensus",
     "evidence": [
       {
         "type": "github-stars",
-        "description": "1298 GitHub stars indicating community adoption"
+        "description": "159 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "299 forks indicating reuse"
+        "description": "29 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-10T05:02:06.302Z"
+    "validationDate": "2026-03-10T05:00:26.439Z"
   },
   "implementation": {
     "type": "library",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/leggedrobotics/ocs2",
-        "description": "GitHub repository: leggedrobotics/ocs2"
-      },
-      {
-        "type": "documentation",
-        "uri": "https://leggedrobotics.github.io/ocs2",
-        "description": "Project homepage"
+        "uri": "https://github.com/ivaquero/book-control",
+        "description": "GitHub repository: ivaquero/book-control"
       }
     ],
-    "language": "C++"
+    "language": "MATLAB"
   },
   "composability": {
     "inputs": [],
@@ -139,9 +135,9 @@
   "provenance": {
     "authors": [
       {
-        "name": "leggedrobotics",
+        "name": "ivaquero",
         "type": "human",
-        "uri": "https://github.com/leggedrobotics"
+        "uri": "https://github.com/ivaquero"
       }
     ],
     "sourceType": "scraped",
@@ -149,16 +145,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 1896,
-      "validation_diversity": 0.55,
-      "context_breadth": 0.41,
-      "temporal_stability": 1,
+      "validation_count": 217,
+      "validation_diversity": 0.1,
+      "context_breadth": 0.35,
+      "temporal_stability": 0.84,
       "test_coverage": 0.3,
-      "documentation_quality": 0.68
+      "documentation_quality": 0.5
     },
-    "confidence": "provisional",
+    "confidence": "speculative",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.579
+    "trustScore": 0.299
   }
 }

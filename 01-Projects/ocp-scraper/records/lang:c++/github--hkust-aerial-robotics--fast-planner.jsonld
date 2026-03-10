@@ -1,0 +1,160 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/hkust-aerial-robotics--fast-planner",
+  "meta": {
+    "title": "Fast-Planner",
+    "description": "A Robust and Efficient Trajectory Planner for Quadrotors",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-10T05:03:04.595Z",
+    "dateModified": "2026-03-10T05:03:04.595Z",
+    "keywords": [
+      "aerial-robotics",
+      "autonomous-navigation",
+      "motion-planning",
+      "uav"
+    ],
+    "license": "GPL-3.0"
+  },
+  "problemSolved": {
+    "statement": "**Fast-Planner** is developed aiming to enable quadrotor fast flight in complex unknown environments. It contains a rich set of carefully designed planning algorithms. It also provides a foundational code framework and algorithms that support several popular open-source drone projects, including [ego-planner](https://github.com/ZJU-FAST-Lab/ego-planner),\n[FUEL](https://github.com/HKUST-Aerial-Robotics/FUEL) and [RACER](https://github.com/SYSU-STAR/RACER), etc.",
+    "context": "**Fast-Planner** is developed aiming to enable quadrotor fast flight in complex unknown environments. It contains a rich set of carefully designed planning algorithms. It also provides a foundational code framework and algorithms that support several popular open-source drone projects, including [ego-planner](https://github.com/ZJU-FAST-Lab/ego-planner),\n[FUEL](https://github.com/HKUST-Aerial-Robotics/FUEL) and [RACER](https://github.com/SYSU-STAR/RACER), etc.\n\n**News**: \n\n- __Mar 13, 2021__: Code for fast autonomous exploration is available now! Check this [repo](https://github.com/HKUST-Aerial-Robotics/FUEL) for more details.\n\n- __Oct 20, 2020__: Fast-Planner is extended and applied to fast autonomous exploration. Check this [repo](https://github.com/HKUST-Aerial-Robotics/FUEL) for more details.\n\n__Authors__: [Boyu Zhou](http://sysu-star.com) and [Shaojie Shen](http://uav.ust.hk/group/) from the [HUKST Aerial Robotics Group](http://uav.ust.hk/), [Fei Gao](http://zju-fast.com/fei-gao/) from ZJU FAST Lab.\n<!-- - __B-spline trajectory optimization guided by topological paths__:\n<p align=\"center\">\n  <img src=\"https://github.com/HKUST-Aerial-Robotics/TopoTraj/blob/master/files/icra20_1.gif\" width = \"420\" height = \"237\"/>\n  <img src=\"https://github.com/HKUST-Aerial-Robotics/TopoTraj/blob/master/files/icra20_2.gif\" width = \"420\" height = \"237\"/>\n</p> -->\n\n<p align=\"center\">\n  <img src=\"files/raptor1.gif\" width = \"400\" height = \"225\"/>\n  <img src=\"files/raptor2.gif\" width = \"400\" height = \"225\"/>\n  <img src=\"files/icra20_2.gif\" width = \"400\" height = \"225\"/>\n  <img src=\"files/ral19_2.gif\" width = \"400\" height = \"225\"/>\n  <!-- <img src=\"files/icra20_1.gif\" width = \"320\" height = \"180\"/> -->\n</p>\n\nComplete videos: \n[video1](https://www.youtube.com/watch?v=NvR8Lq2pmPg&feature=emb_logo),\n[video2](https://www.youtube.com/watch?v=YcEaFTjs-a0), \n[video3](https://www.youtube.com/watch?v=toGhoGYyoAY). \nDemonstrations about this work have been reported on the IEEE Spectrum: [page1](https://spectrum.ieee.org/automaton/robotics/robotics-hardware/video-friday-nasa-lemur-robot), [page2](https://spectrum.ieee.org/automaton/robotics/robotics-hardware/video-friday-india-space-humanoid-robot),\n[page3](https://spectrum.ieee.org/automaton/robotics/robotics-hardware/video-friday-soft-exoskeleton-glove-extra-thumb) (search for _HKUST_ in the pages).\n\nTo run this project in minutes, check [Quick Start](#1-Quick-Start). Check other sections for more detailed information.\n\nPlease kindly star :star: this project if it helps you. We take great efforts to develope and maintain it :grin::grin:.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:c++"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "3208 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "751 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T05:03:04.595Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/HKUST-Aerial-Robotics/Fast-Planner",
+        "description": "GitHub repository: HKUST-Aerial-Robotics/Fast-Planner"
+      }
+    ],
+    "solutionApproach": "See usage section in README",
+    "language": "C++"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "HKUST-Aerial-Robotics",
+        "type": "human",
+        "uri": "https://github.com/HKUST-Aerial-Robotics"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 4710,
+      "validation_diversity": 0.16,
+      "context_breadth": 0.45,
+      "temporal_stability": 0.72,
+      "test_coverage": 0.47,
+      "documentation_quality": 0.8
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.427
+  }
+}

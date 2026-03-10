@@ -76,72 +76,92 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/leggedrobotics--ocs2",
+  "@id": "ocp:github/spotahome--gontroller",
   "meta": {
-    "title": "OCS2 Toolbox",
-    "description": "Optimal Control for Switched Systems",
+    "title": "Gontroller [![Build Status][github-actions-image]][github-actions-url] [![Go Report Card][goreport-image]][goreport-url] [![GoDoc][godoc-image]][godoc-url]",
+    "description": "Go library to create resilient feedback loop/control controllers.",
     "version": "1.0.0",
-    "dateCreated": "2026-03-10T05:02:06.302Z",
-    "dateModified": "2026-03-10T05:02:06.302Z",
+    "dateCreated": "2026-03-10T05:01:27.584Z",
+    "dateModified": "2026-03-10T05:01:27.584Z",
     "keywords": [
-      "control",
-      "mpc",
-      "optimal-control",
-      "robotics"
+      "control-theory",
+      "controller",
+      "feedback-loop",
+      "infrastructure",
+      "kubernetes",
+      "operator",
+      "reconciliation",
+      "resilience",
+      "robustness"
     ],
-    "license": "BSD-3-Clause"
+    "license": "Apache-2.0"
   },
   "problemSolved": {
-    "statement": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.",
-    "context": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.\n\n![legged-robot](https://leggedrobotics.github.io/ocs2/_static/gif/legged_robot.gif)\n\nOCS2 handles general path constraints through Augmented Lagrangian or relaxed barrier methods. To facilitate the application of OCS2 in robotic tasks, it provides additional tools to set up the system dynamics (such as kinematic or dynamic models) and cost/constraints (such as self-collision avoidance and end-effector tracking) from a URDF model. The library also provides an automatic differentiation tool to calculate derivatives of the system dynamics, constraints, and cost. To facilitate deployment on robotic platforms, OCS2 provides tools for ROS interfaces. The toolbox’s efficient and numerically stable implementations in conjunction with its user-friendly interface have paved the way for employing it on numerous robotic applications with limited onboard computation power.\n\n> **ROS 2 port available:** use branch `ros2`.",
+    "statement": "Kubernetes controllers/operators are based on [controller pattern a.k.a reconciliation loop][what-is-a-controller], this pattern is based on maintaining the desired state and self-heal if it is required. It's a very resilient and robust pattern to maintain and automate tasks.",
+    "context": "A Go library to create [feedback loop/control controllers][control-theory], or in other words... a Go library to create controllers without Kubernetes resources.",
     "cynefinDomain": "complex"
   },
   "domains": [
-    "lang:c++"
+    "devops",
+    "containerization",
+    "lang:go"
   ],
   "validation": {
     "method": "community-consensus",
     "evidence": [
       {
         "type": "github-stars",
-        "description": "1298 GitHub stars indicating community adoption"
+        "description": "165 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "299 forks indicating reuse"
+        "description": "15 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-10T05:02:06.302Z"
+    "validationDate": "2026-03-10T05:01:27.584Z"
   },
   "implementation": {
     "type": "library",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/leggedrobotics/ocs2",
-        "description": "GitHub repository: leggedrobotics/ocs2"
+        "uri": "https://github.com/spotahome/gontroller",
+        "description": "GitHub repository: spotahome/gontroller"
       },
       {
         "type": "documentation",
-        "uri": "https://leggedrobotics.github.io/ocs2",
+        "uri": "https://product.spotahome.com/gontroller-a-go-library-to-create-reliable-feedback-loop-controllers-832d4a9522ea",
         "description": "Project homepage"
       }
     ],
-    "language": "C++"
+    "language": "Go"
   },
   "composability": {
     "inputs": [],
     "outputs": [],
-    "dependencies": [],
+    "dependencies": [
+      {
+        "name": "github.com/prometheus/client_golang",
+        "version": "v1.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/client_golang"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      }
+    ],
     "composableWith": []
   },
   "provenance": {
     "authors": [
       {
-        "name": "leggedrobotics",
+        "name": "spotahome",
         "type": "human",
-        "uri": "https://github.com/leggedrobotics"
+        "uri": "https://github.com/spotahome"
       }
     ],
     "sourceType": "scraped",
@@ -149,16 +169,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 1896,
-      "validation_diversity": 0.55,
-      "context_breadth": 0.41,
-      "temporal_stability": 1,
-      "test_coverage": 0.3,
-      "documentation_quality": 0.68
+      "validation_count": 195,
+      "validation_diversity": 0,
+      "context_breadth": 0.48,
+      "temporal_stability": 0.64,
+      "test_coverage": 0.67,
+      "documentation_quality": 0.85
     },
-    "confidence": "provisional",
+    "confidence": "speculative",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.579
+    "trustScore": 0.086
   }
 }

@@ -1,0 +1,249 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/zalando-incubator--kube-aws-iam-controller",
+  "meta": {
+    "title": "AWS IAM Controller for Kubernetes",
+    "description": "Distribute different AWS IAM credentials to different pods in Kubernetes via secrets.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-10T05:02:41.218Z",
+    "dateModified": "2026-03-10T05:02:41.218Z",
+    "keywords": [
+      "aws",
+      "golang",
+      "iam",
+      "kubernetes",
+      "modules",
+      "robust",
+      "sdk"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "[![Build Status](https://travis-ci.org/zalando-incubator/kube-aws-iam-controller.svg?branch=master)](https://travis-ci.org/zalando-incubator/kube-aws-iam-controller)\n[![Coverage Status](https://coveralls.io/repos/github/zalando-incubator/kube-aws-iam-controller/badge.svg?branch=master)](https://coveralls.io/github/zalando-incubator/kube-aws-iam-controller?branch=master)",
+    "context": "[![Build Status](https://travis-ci.org/zalando-incubator/kube-aws-iam-controller.svg?branch=master)](https://travis-ci.org/zalando-incubator/kube-aws-iam-controller)\n[![Coverage Status](https://coveralls.io/repos/github/zalando-incubator/kube-aws-iam-controller/badge.svg?branch=master)](https://coveralls.io/github/zalando-incubator/kube-aws-iam-controller?branch=master)\n\nThis is a Kubernetes controller for distributing AWS IAM role credentials to\npods via secrets.\n\nIt aims to solve the same problem as other existing tools like\n[jtblin/kube2iam](https://github.com/jtblin/kube2iam) and\n[uswitch/kiam](https://github.com/uswitch/kiam), namely distribute different\nAWS IAM roles to different pods within the same cluster.  However, it solves\nthe problem in a different way to work around an inherit problem with the\narchitecture or kube2iam and similar solutions.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "devops",
+    "containerization",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "161 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "16 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T05:02:41.218Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/zalando-incubator/kube-aws-iam-controller",
+        "description": "GitHub repository: zalando-incubator/kube-aws-iam-controller"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "github.com/alecthomas/kingpin/v2",
+        "version": "v2.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/alecthomas/kingpin/v2"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2",
+        "version": "v1.39.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/config",
+        "version": "v1.31.8",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/config"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/credentials",
+        "version": "v1.18.12",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/credentials"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/feature/ec2/imds",
+        "version": "v1.18.7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/feature/ec2/imds"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/service/sts",
+        "version": "v1.38.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/sts"
+      },
+      {
+        "name": "github.com/heptiolabs/healthcheck",
+        "version": "v0.0.0-20211123025425-613501dd5deb",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/heptiolabs/healthcheck"
+      },
+      {
+        "name": "github.com/sirupsen/logrus",
+        "version": "v1.9.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/sirupsen/logrus"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.11.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      },
+      {
+        "name": "k8s.io/api",
+        "version": "v0.34.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/api"
+      },
+      {
+        "name": "k8s.io/apimachinery",
+        "version": "v0.34.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/apimachinery"
+      },
+      {
+        "name": "k8s.io/client-go",
+        "version": "v0.34.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/client-go"
+      },
+      {
+        "name": "k8s.io/code-generator",
+        "version": "v0.34.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/code-generator"
+      },
+      {
+        "name": "sigs.k8s.io/controller-tools",
+        "version": "v0.19.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/sigs.k8s.io/controller-tools"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "zalando-incubator",
+        "type": "human",
+        "uri": "https://github.com/zalando-incubator"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 193,
+      "validation_diversity": 0.43,
+      "context_breadth": 0.4,
+      "temporal_stability": 0.82,
+      "test_coverage": 0.2,
+      "documentation_quality": 0.65
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.459
+  }
+}

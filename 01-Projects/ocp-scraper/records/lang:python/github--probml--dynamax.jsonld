@@ -1,0 +1,211 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/probml--dynamax",
+  "meta": {
+    "title": "Welcome to DYNAMAX!",
+    "description": "A Python package for probabilistic state space modeling with JAX",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-10T04:59:36.972Z",
+    "dateModified": "2026-03-10T04:59:36.972Z",
+    "keywords": [
+      "hidden-markov-models",
+      "jax",
+      "kalman-filter",
+      "python",
+      "state-space-models"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "Core team: Peter Chang, Giles Harper-Donnelly, Aleyna Kara, Xinglong Li, Scott Linderman, Kevin Murphy.",
+    "context": "![Logo](https://raw.githubusercontent.com/probml/dynamax/main/logo/logo.gif)\n\n![Test Status](https://github.com/probml/dynamax/actions/workflows/run_tests.yml/badge.svg?branch=main)\n![Docstrings](https://github.com/probml/dynamax/actions/workflows/interrogate.yml/badge.svg)\n[![DOI](https://joss.theoj.org/papers/10.21105/joss.07069/status.svg)](https://doi.org/10.21105/joss.07069)\n\nDynamax is a library for probabilistic state space models (SSMs) written\nin [JAX](https://github.com/google/jax). It has code for inference\n(state estimation) and learning (parameter estimation) in a variety of\nSSMs, including:\n\n-   Hidden Markov Models (HMMs)\n-   Linear Gaussian State Space Models (aka Linear Dynamical Systems)\n-   Nonlinear Gaussian State Space Models\n-   Generalized Gaussian State Space Models (with non-Gaussian emission\n    models)\n\nThe library consists of a set of core, functionally pure, low-level\ninference algorithms, as well as a set of model classes which provide a\nmore user-friendly, object-oriented interface. It is compatible with\nother libraries in the JAX ecosystem, such as\n[optax](https://github.com/deepmind/optax) (used for estimating\nparameters using stochastic gradient descent), and\n[Blackjax](https://github.com/blackjax-devs/blackjax) (used for\ncomputing the parameter posterior using Hamiltonian Monte Carlo (HMC) or\nsequential Monte Carlo (SMC)).",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "935 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "108 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T04:59:36.972Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/probml/dynamax",
+        "description": "GitHub repository: probml/dynamax"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://probml.github.io/dynamax/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "jax",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/jax/"
+      },
+      {
+        "name": "jaxlib",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/jaxlib/"
+      },
+      {
+        "name": "tfp-nightly",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tfp-nightly/"
+      },
+      {
+        "name": "fastprogress",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/fastprogress/"
+      },
+      {
+        "name": "optax",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/optax/"
+      },
+      {
+        "name": "scikit-learn",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scikit-learn/"
+      },
+      {
+        "name": "jaxtyping",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/jaxtyping/"
+      },
+      {
+        "name": "typing-extensions",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/typing-extensions/"
+      },
+      {
+        "name": "numpy",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numpy/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "probml",
+        "type": "human",
+        "uri": "https://github.com/probml"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 1151,
+      "validation_diversity": 0.51,
+      "context_breadth": 0.4,
+      "temporal_stability": 0.81,
+      "test_coverage": 0,
+      "documentation_quality": 0.75
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.308
+  }
+}

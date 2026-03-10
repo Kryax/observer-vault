@@ -76,32 +76,29 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/open-spaced-repetition--fsrs4anki",
+  "@id": "ocp:github/diffeqml--torchdyn",
   "meta": {
-    "title": "FSRS4Anki",
-    "description": "A modern Anki custom scheduling based on Free Spaced Repetition Scheduler algorithm",
+    "title": "your preferred torch.nn.Module here",
+    "description": "A PyTorch library entirely dedicated to neural differential equations, implicit models and related numerical methods",
     "version": "1.0.0",
-    "dateCreated": "2026-03-10T05:01:00.058Z",
-    "dateModified": "2026-03-10T05:01:00.058Z",
+    "dateCreated": "2026-03-10T05:00:04.330Z",
+    "dateModified": "2026-03-10T05:00:04.330Z",
     "keywords": [
-      "anki",
-      "anki-addon",
+      "control-theory",
+      "deep-equilibrium-models",
       "deep-learning",
-      "fsrs",
-      "intelligent-tutoring-system",
-      "machine-learning",
-      "memory",
-      "optimal-control",
-      "reinforcement-learning",
-      "spaced-repetition",
-      "spaced-repetition-algorithm",
-      "srs"
+      "dynamical-systems",
+      "implicit-models",
+      "neural-differential-equations",
+      "neural-network",
+      "neural-ode",
+      "numerical-methods",
+      "pytorch"
     ],
-    "license": "MIT"
+    "license": "Apache-2.0"
   },
   "problemSolved": {
-    "statement": "FSRS4Anki (Free Spaced Repetition Scheduler for Anki) consists of two main parts: the scheduler and the optimizer.",
-    "context": "_✨ A modern spaced-repetition scheduler for Anki based on the [Free Spaced Repetition Scheduler algorithm](https://github.com/open-spaced-repetition/fsrs4anki/wiki/The-Algorithm) ✨_  \n\n</div>\n\n<p align=\"center\">\n  <a href=\"https://raw.githubusercontent.com/open-spaced-repetition/fsrs4anki/main/LICENSE\">\n    <img src=\"https://img.shields.io/github/license/open-spaced-repetition/fsrs4anki\" alt=\"license\">\n  </a>\n  <a href=\"https://github.com/open-spaced-repetition/fsrs4anki/releases/latest\">\n    <img src=\"https://img.shields.io/github/v/release/open-spaced-repetition/fsrs4anki?color=blueviolet\" alt=\"release\">\n  </a>\n</p>",
+    "statement": "Interest in the blend of differential equations, deep learning and dynamical systems has been reignited by recent works [[1](https://arxiv.org/abs/1806.07366),[2](https://arxiv.org/abs/2001.04385), [3](https://arxiv.org/abs/2002.08071), [4](https://arxiv.org/abs/1909.01377)]. Modern deep learning frameworks such as PyTorch, coupled with further improvements in computational resources have allowed the continuous version of neural networks, with proposals dating back to the 80s [[5](https://ieeexplore.ieee.org/abstract/document/6814892)], to finally come to life and provide a novel perspective on classical machine learning problems.",
     "cynefinDomain": "complex"
   },
   "domains": [
@@ -113,27 +110,27 @@
     "evidence": [
       {
         "type": "github-stars",
-        "description": "3837 GitHub stars indicating community adoption"
+        "description": "1555 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "157 forks indicating reuse"
+        "description": "133 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-10T05:01:00.058Z"
+    "validationDate": "2026-03-10T05:00:04.330Z"
   },
   "implementation": {
-    "type": "algorithm",
+    "type": "library",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/open-spaced-repetition/fsrs4anki",
-        "description": "GitHub repository: open-spaced-repetition/fsrs4anki"
+        "uri": "https://github.com/DiffEqML/torchdyn",
+        "description": "GitHub repository: DiffEqML/torchdyn"
       },
       {
         "type": "documentation",
-        "uri": "https://github.com/open-spaced-repetition/fsrs4anki/wiki",
+        "uri": "https://torchdyn.org",
         "description": "Project homepage"
       }
     ],
@@ -142,15 +139,82 @@
   "composability": {
     "inputs": [],
     "outputs": [],
-    "dependencies": [],
+    "dependencies": [
+      {
+        "name": "torch",
+        "version": ">=1.8.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/torch/"
+      },
+      {
+        "name": "torchsde",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/torchsde/"
+      },
+      {
+        "name": "torchcde",
+        "version": "^0.2.3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/torchcde/"
+      },
+      {
+        "name": "scikit-learn",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scikit-learn/"
+      },
+      {
+        "name": "pytorch-lightning",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pytorch-lightning/"
+      },
+      {
+        "name": "torchvision",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/torchvision/"
+      },
+      {
+        "name": "scipy",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scipy/"
+      },
+      {
+        "name": "matplotlib",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/matplotlib/"
+      },
+      {
+        "name": "ipykernel",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/ipykernel/"
+      },
+      {
+        "name": "ipywidgets",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/ipywidgets/"
+      },
+      {
+        "name": "poethepoet",
+        "version": "^0.10.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/poethepoet/"
+      }
+    ],
     "composableWith": []
   },
   "provenance": {
     "authors": [
       {
-        "name": "open-spaced-repetition",
+        "name": "DiffEqML",
         "type": "human",
-        "uri": "https://github.com/open-spaced-repetition"
+        "uri": "https://github.com/DiffEqML"
       }
     ],
     "sourceType": "scraped",
@@ -158,16 +222,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 4151,
-      "validation_diversity": 0.39,
-      "context_breadth": 0.62,
-      "temporal_stability": 0.86,
-      "test_coverage": 0.3,
+      "validation_count": 1821,
+      "validation_diversity": 0.48,
+      "context_breadth": 0.61,
+      "temporal_stability": 0.72,
+      "test_coverage": 0.47,
       "documentation_quality": 0.6
     },
     "confidence": "provisional",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.569
+    "trustScore": 0.604
   }
 }

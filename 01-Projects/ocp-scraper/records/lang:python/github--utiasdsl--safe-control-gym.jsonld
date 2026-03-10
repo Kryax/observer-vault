@@ -1,0 +1,323 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/utiasdsl--safe-control-gym",
+  "meta": {
+    "title": "safe-control-gym",
+    "description": "PyBullet CartPole and Quadrotor environments—with CasADi symbolic a priori dynamics—for learning-based control and RL",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-10T05:02:15.618Z",
+    "dateModified": "2026-03-10T05:02:15.618Z",
+    "keywords": [
+      "cartpole",
+      "casadi",
+      "control",
+      "gym",
+      "pybullet",
+      "quadcopter",
+      "quadrotor",
+      "reinforcement-learning",
+      "robotics",
+      "robustness",
+      "safety",
+      "symbolic"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "Physics-based CartPole and Quadrotor [Gym](https://gym.openai.com) environments (using [PyBullet](https://pybullet.org/wordpress/)) with symbolic *a priori* dynamics (using [CasADi](https://web.casadi.org)) for **learning-based control**, and model-free and model-based **reinforcement learning** (RL).",
+    "context": "Physics-based CartPole and Quadrotor [Gym](https://gym.openai.com) environments (using [PyBullet](https://pybullet.org/wordpress/)) with symbolic *a priori* dynamics (using [CasADi](https://web.casadi.org)) for **learning-based control**, and model-free and model-based **reinforcement learning** (RL).\n\nThese environments include (and evaluate) symbolic safety constraints and implement input, parameter, and dynamics disturbances to test the robustness and generalizability of control approaches. [[PDF]](https://arxiv.org/pdf/2108.06266.pdf)\n\n<img src=\"figures/problem_illustration.jpg\" alt=\"problem illustration\" width=\"800\">\n\n```bibtex\n@article{brunke2021safe,\n         title={Safe Learning in Robotics: From Learning-Based Control to Safe Reinforcement Learning},\n         author={Lukas Brunke and Melissa Greeff and Adam W. Hall and Zhaocong Yuan and Siqi Zhou and Jacopo Panerati and Angela P. Schoellig},\n         journal = {Annual Review of Control, Robotics, and Autonomous Systems},\n         year={2021},\n         url = {https://arxiv.org/abs/2108.06266}}\n```\n\nTo reproduce the results in the article, see [branch `ar`](https://github.com/utiasDSL/safe-control-gym/releases/tag/v0.5.0).\n\n```bibtex\n@article{yuan2021safecontrolgym,\n  author={Yuan, Zhaocong and Hall, Adam W. and Zhou, Siqi and Brunke, Lukas and Greeff, Melissa and Panerati, Jacopo and Schoellig, Angela P.},\n  journal={IEEE Robotics and Automation Letters},\n  title={Safe-Control-Gym: A Unified Benchmark Suite for Safe Learning-Based Control and Reinforcement Learning in Robotics},\n  year={2022},\n  volume={7},\n  number={4},\n  pages={11142-11149},\n  doi={10.1109/LRA.2022.3196132}}\n```\n\nTo reproduce the results in the article, see [branch `submission`](https://github.com/utiasDSL/safe-control-gym/releases/tag/v0.6.0).\n\n<!-- ![baselines](./figures/baselines.png) -->",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "847 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "159 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T05:02:15.618Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/utiasDSL/safe-control-gym",
+        "description": "GitHub repository: utiasDSL/safe-control-gym"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://www.dynsyslab.org/safe-robot-learning/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "matplotlib",
+        "version": "^3.10",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/matplotlib/"
+      },
+      {
+        "name": "munch",
+        "version": "^4.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/munch/"
+      },
+      {
+        "name": "PyYAML",
+        "version": "^6.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/PyYAML/"
+      },
+      {
+        "name": "imageio",
+        "version": "^2.37",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/imageio/"
+      },
+      {
+        "name": "dict-deep",
+        "version": "^4.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/dict-deep/"
+      },
+      {
+        "name": "scikit-optimize",
+        "version": "^0.10",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scikit-optimize/"
+      },
+      {
+        "name": "scikit-learn",
+        "version": "^1.7",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scikit-learn/"
+      },
+      {
+        "name": "gymnasium",
+        "version": "^0.28",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/gymnasium/"
+      },
+      {
+        "name": "torch",
+        "version": "^2.8",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/torch/"
+      },
+      {
+        "name": "gpytorch",
+        "version": "^1.14",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/gpytorch/"
+      },
+      {
+        "name": "tensorboard",
+        "version": "^2.20",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tensorboard/"
+      },
+      {
+        "name": "casadi",
+        "version": "^3.7",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/casadi/"
+      },
+      {
+        "name": "pybullet",
+        "version": "^3.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pybullet/"
+      },
+      {
+        "name": "numpy",
+        "version": "^2.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numpy/"
+      },
+      {
+        "name": "cvxpy",
+        "version": "^1.7",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/cvxpy/"
+      },
+      {
+        "name": "pycddlib",
+        "version": "^2.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pycddlib/"
+      },
+      {
+        "name": "pytope",
+        "version": "^0.0.4",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pytope/"
+      },
+      {
+        "name": "Mosek",
+        "version": "^11.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/Mosek/"
+      },
+      {
+        "name": "termcolor",
+        "version": "^3.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/termcolor/"
+      },
+      {
+        "name": "pytest",
+        "version": "^8.4",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pytest/"
+      },
+      {
+        "name": "pre-commit",
+        "version": "^4.3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pre-commit/"
+      },
+      {
+        "name": "optuna",
+        "version": "^3.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/optuna/"
+      },
+      {
+        "name": "optuna-dashboard",
+        "version": "^0.9",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/optuna-dashboard/"
+      },
+      {
+        "name": "mysql-connector-python",
+        "version": "8.0.33",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/mysql-connector-python/"
+      },
+      {
+        "name": "pymysql",
+        "version": "1.1.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pymysql/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "utiasDSL",
+        "type": "human",
+        "uri": "https://github.com/utiasDSL"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 1165,
+      "validation_diversity": 0.43,
+      "context_breadth": 0.62,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.6
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.563
+  }
+}

@@ -76,59 +76,54 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/leggedrobotics--ocs2",
+  "@id": "ocp:github/cognitivemodeling--braincontrol",
   "meta": {
-    "title": "OCS2 Toolbox",
-    "description": "Optimal Control for Switched Systems",
+    "title": "BrainControl",
+    "description": "A cognitive control architecture and also a platform video game developed at the chair of Cognitive Modelling at the University of Tuebingen.",
     "version": "1.0.0",
-    "dateCreated": "2026-03-10T05:02:06.302Z",
-    "dateModified": "2026-03-10T05:02:06.302Z",
+    "dateCreated": "2026-03-09T11:15:41.030Z",
+    "dateModified": "2026-03-09T11:15:41.030Z",
     "keywords": [
-      "control",
-      "mpc",
-      "optimal-control",
-      "robotics"
+      "cognitive-architecture"
     ],
-    "license": "BSD-3-Clause"
+    "license": "GPL-3.0"
   },
   "problemSolved": {
-    "statement": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.",
-    "context": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.\n\n![legged-robot](https://leggedrobotics.github.io/ocs2/_static/gif/legged_robot.gif)\n\nOCS2 handles general path constraints through Augmented Lagrangian or relaxed barrier methods. To facilitate the application of OCS2 in robotic tasks, it provides additional tools to set up the system dynamics (such as kinematic or dynamic models) and cost/constraints (such as self-collision avoidance and end-effector tracking) from a URDF model. The library also provides an automatic differentiation tool to calculate derivatives of the system dynamics, constraints, and cost. To facilitate deployment on robotic platforms, OCS2 provides tools for ROS interfaces. The toolbox’s efficient and numerically stable implementations in conjunction with its user-friendly interface have paved the way for employing it on numerous robotic applications with limited onboard computation power.\n\n> **ROS 2 port available:** use branch `ros2`.",
+    "statement": "A cognitive control architecture and also a platform video game developed at the chair of Cognitive Modelling at the University of Tuebingen.",
+    "context": "A cognitive control architecture and also a platform video game developed at the chair of Cognitive Modelling at the University of Tuebingen.\n\n> **Note** This is all work in progress and some things might be outdated. If something is unclear, please contact us - through opening an issue, preferably.  \n> **Git-related Note** This repository uses git-lfs. Be sure to _clone_ the repo _only when you have git-lfs installed_ to actually fetch all files.",
     "cynefinDomain": "complex"
   },
   "domains": [
-    "lang:c++"
+    "machine-learning",
+    "game-development",
+    "media",
+    "lang:java"
   ],
   "validation": {
     "method": "community-consensus",
     "evidence": [
       {
         "type": "github-stars",
-        "description": "1298 GitHub stars indicating community adoption"
+        "description": "10 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "299 forks indicating reuse"
+        "description": "2 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-10T05:02:06.302Z"
+    "validationDate": "2026-03-09T11:15:41.030Z"
   },
   "implementation": {
     "type": "library",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/leggedrobotics/ocs2",
-        "description": "GitHub repository: leggedrobotics/ocs2"
-      },
-      {
-        "type": "documentation",
-        "uri": "https://leggedrobotics.github.io/ocs2",
-        "description": "Project homepage"
+        "uri": "https://github.com/CognitiveModeling/BrainControl",
+        "description": "GitHub repository: CognitiveModeling/BrainControl"
       }
     ],
-    "language": "C++"
+    "language": "Java"
   },
   "composability": {
     "inputs": [],
@@ -139,9 +134,9 @@
   "provenance": {
     "authors": [
       {
-        "name": "leggedrobotics",
+        "name": "CognitiveModeling",
         "type": "human",
-        "uri": "https://github.com/leggedrobotics"
+        "uri": "https://github.com/CognitiveModeling"
       }
     ],
     "sourceType": "scraped",
@@ -149,16 +144,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 1896,
-      "validation_diversity": 0.55,
-      "context_breadth": 0.41,
-      "temporal_stability": 1,
-      "test_coverage": 0.3,
-      "documentation_quality": 0.68
+      "validation_count": 14,
+      "validation_diversity": 0.2,
+      "context_breadth": 0.07,
+      "temporal_stability": 0.64,
+      "test_coverage": 0.2,
+      "documentation_quality": 0.45
     },
-    "confidence": "provisional",
+    "confidence": "speculative",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.579
+    "trustScore": 0.209
   }
 }

@@ -1,0 +1,169 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/juliapomdp--pomdps.jl",
+  "meta": {
+    "title": "POMDPs",
+    "description": "MDPs and POMDPs in Julia - An interface for defining, solving, and simulating fully and partially observable Markov decision processes on discrete and continuous spaces.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-10T04:59:07.478Z",
+    "dateModified": "2026-03-10T04:59:07.478Z",
+    "keywords": [
+      "artificial-intelligence",
+      "control-systems",
+      "julia",
+      "markov-decision-processes",
+      "mdps",
+      "pomdps",
+      "python",
+      "reinforcement-learning",
+      "reinforcement-learning-algorithms"
+    ],
+    "license": "NOASSERTION"
+  },
+  "problemSolved": {
+    "statement": "| **`Linux`** | **`Mac OS X`** | **`Windows`** |\n|-----------------|---------------------|-------------------------|\n| [![Build Status](https://github.com/JuliaPOMDP/POMDPs.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/JuliaPOMDP/POMDPs.jl/actions/workflows/CI.yml) | [![Build Status](https://github.com/JuliaPOMDP/POMDPs.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/JuliaPOMDP/POMDPs.jl/actions/workflows/CI.yml)| [![Build Status](https://github.com/JuliaPOMDP/POMDPs.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/JuliaPOMDP/POMDPs.jl/actions/workflows/CI.yml)|",
+    "context": "| **`Linux`** | **`Mac OS X`** | **`Windows`** |\n|-----------------|---------------------|-------------------------|\n| [![Build Status](https://github.com/JuliaPOMDP/POMDPs.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/JuliaPOMDP/POMDPs.jl/actions/workflows/CI.yml) | [![Build Status](https://github.com/JuliaPOMDP/POMDPs.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/JuliaPOMDP/POMDPs.jl/actions/workflows/CI.yml)| [![Build Status](https://github.com/JuliaPOMDP/POMDPs.jl/actions/workflows/CI.yml/badge.svg)](https://github.com/JuliaPOMDP/POMDPs.jl/actions/workflows/CI.yml)|\n\n[![Docs](https://img.shields.io/badge/docs-stable-blue.svg)](https://JuliaPOMDP.github.io/POMDPs.jl/stable)\n[![Dev-Docs](https://img.shields.io/badge/docs-latest-blue.svg)](https://JuliaPOMDP.github.io/POMDPs.jl/latest)\n[![Gitter](https://badges.gitter.im/JuliaPOMDP/Lobby.svg)](https://gitter.im/JuliaPOMDP/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)\n[![Slack](https://img.shields.io/badge/Chat%20on%20Slack-with%20%23pomdp--bridged-ff69b4)](https://julialang.org/slack/)\n\nThis package provides a core interface for working with [Markov decision processes (MDPs)](https://en.wikipedia.org/wiki/Markov_decision_process) and [partially observable Markov decision processes (POMDPs)](https://en.wikipedia.org/wiki/Partially_observable_Markov_decision_process).\nThe [POMDPTools](https://juliapomdp.github.io/POMDPs.jl/stable/POMDPTools/#pomdptools_section) package acts as a \"standard library\" for the POMDPs.jl interface, providing implementations of commonly-used components such as policies, belief updaters, distributions, and simulators.\n\nOur goal is to provide a common programming vocabulary for:\n\n1. [Expressing problems as MDPs and POMDPs](http://juliapomdp.github.io/POMDPs.jl/stable/def_pomdp). \n2. Writing solver software.\n3. Running simulations efficiently.\n\nPOMDPs.jl integrates with other ecosystems:\n\n- Python can be used to define and solve MDPs and POMDPs via the [quickpomdps](https://github.com/JuliaPOMDP/quickpomdps) package or through tables directly via [pyjulia](https://github.com/JuliaPy/pyjulia).\n- POMDPTools provides [two-way integration](https://juliapomdp.github.io/POMDPModelTools.jl/stable/common_rl/#CommonRLInterface-Integration) with [CommonRLInterface](https://github.com/JuliaReinforcementLearning/CommonRLInterface.jl) and therefore with the [JuliaReinforcementLearning packages](https://github.com/JuliaReinforcementLearning/ReinforcementLearning.jl).\n- The [SymbolicMDPs package](https://github.com/JuliaPlanners/SymbolicMDPs.jl) provides an interface to work with PDDL models.\n\nFor a detailed introduction, check out our [Julia Academy course](https://juliaacademy.com/p/decision-making-under-uncertainty-with-pomdps-jl)! For help, please post in [GitHub Discussions tab](https://github.com/JuliaPOMDP/POMDPs.jl/discussions). We welcome contributions from anyone! See [CONTRIBUTING.md](/CONTRIBUTING.md) for information about contributing.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:julia"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "747 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "109 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T04:59:07.478Z"
+  },
+  "implementation": {
+    "type": "algorithm",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/JuliaPOMDP/POMDPs.jl",
+        "description": "GitHub repository: JuliaPOMDP/POMDPs.jl"
+      },
+      {
+        "type": "documentation",
+        "uri": "http://juliapomdp.github.io/POMDPs.jl/latest/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Julia"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "JuliaPOMDP",
+        "type": "human",
+        "uri": "https://github.com/JuliaPOMDP"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 965,
+      "validation_diversity": 0.52,
+      "context_breadth": 0.56,
+      "temporal_stability": 1,
+      "test_coverage": 0.47,
+      "documentation_quality": 0.75
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.622
+  }
+}

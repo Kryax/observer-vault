@@ -124,8 +124,18 @@ export class SearchIndex {
     const forks = record.validation.evidence.find(e => e.type === 'github-forks');
     const keywords = (record.meta.keywords || []).join(' ');
 
+    // Delete old record from both FTS and records (if exists) to avoid rowid drift.
+    // INSERT OR REPLACE changes rowid, which desynchronizes the external content FTS5 table.
+    const oldRow = this.db.prepare(
+      `SELECT rowid FROM records WHERE id = ?`
+    ).get(record['@id']) as { rowid: number } | null;
+    if (oldRow) {
+      // Delete from FTS first (needs old rowid), then from records
+      this.db.prepare(`DELETE FROM records WHERE id = ?`).run(record['@id']);
+    }
+
     const stmt = this.db.prepare(`
-      INSERT OR REPLACE INTO records
+      INSERT INTO records
         (id, title, description, problem_statement, domains, language, keywords, impl_type,
          stars, forks, trust_score, confidence, source_url, license, created_at, updated_at, record_json)
       VALUES
@@ -152,18 +162,7 @@ export class SearchIndex {
       JSON.stringify(record),
     );
 
-    // Sync FTS index — delete stale entry first, then re-insert from content table.
-    // INSERT OR REPLACE on the records table can change rowid, leaving orphan FTS entries.
-    // The FTS5 'delete' command requires the OLD values; rebuild approach is more reliable.
-    const existingFts = this.db.prepare(
-      `SELECT rowid, id, title, description, problem_statement, domains, language, keywords FROM records_fts WHERE id = ?`
-    ).get(record['@id']) as Record<string, unknown> | null;
-    if (existingFts) {
-      this.db.prepare(
-        `INSERT INTO records_fts(records_fts, rowid, id, title, description, problem_statement, domains, language, keywords)
-         VALUES('delete', ?, ?, ?, ?, ?, ?, ?, ?)`
-      ).run(existingFts.rowid, existingFts.id, existingFts.title, existingFts.description, existingFts.problem_statement, existingFts.domains, existingFts.language, existingFts.keywords);
-    }
+    // Rebuild FTS for this record. Since we deleted the old row above, we just insert fresh.
     this.db.prepare(`
       INSERT INTO records_fts(rowid, id, title, description, problem_statement, domains, language, keywords)
       SELECT rowid, id, title, description, problem_statement, domains, language, keywords

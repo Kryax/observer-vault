@@ -76,72 +76,118 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/leggedrobotics--ocs2",
+  "@id": "ocp:github/asmaloney--gactar",
   "meta": {
-    "title": "OCS2 Toolbox",
-    "description": "Optimal Control for Switched Systems",
+    "title": "![gactar logo](doc/images/logo/gactar-logo.svg) gactar",
+    "description": "🧠 A tool for creating & running basic ACT-R models on multiple implementations using a single declarative file format",
     "version": "1.0.0",
-    "dateCreated": "2026-03-10T05:02:06.302Z",
-    "dateModified": "2026-03-10T05:02:06.302Z",
+    "dateCreated": "2026-03-09T11:15:28.292Z",
+    "dateModified": "2026-03-09T11:15:28.292Z",
     "keywords": [
-      "control",
-      "mpc",
-      "optimal-control",
-      "robotics"
+      "act-r",
+      "cognitive-architecture",
+      "cognitive-modelling",
+      "cognitive-science",
+      "cogsci",
+      "proof-of-concept"
     ],
-    "license": "BSD-3-Clause"
+    "license": "MIT"
   },
   "problemSolved": {
-    "statement": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.",
-    "context": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.\n\n![legged-robot](https://leggedrobotics.github.io/ocs2/_static/gif/legged_robot.gif)\n\nOCS2 handles general path constraints through Augmented Lagrangian or relaxed barrier methods. To facilitate the application of OCS2 in robotic tasks, it provides additional tools to set up the system dynamics (such as kinematic or dynamic models) and cost/constraints (such as self-collision avoidance and end-effector tracking) from a URDF model. The library also provides an automatic differentiation tool to calculate derivatives of the system dynamics, constraints, and cost. To facilitate deployment on robotic platforms, OCS2 provides tools for ROS interfaces. The toolbox’s efficient and numerically stable implementations in conjunction with its user-friendly interface have paved the way for employing it on numerous robotic applications with limited onboard computation power.\n\n> **ROS 2 port available:** use branch `ros2`.",
+    "statement": "`gactar` takes an [_amod_ file](#gactar-models) and generates code to run it on three different ACT-R implementations:",
+    "context": "`gactar` is a tool for creating and running [ACT-R](https://en.wikipedia.org/wiki/ACT-R) models using a declarative file format called _amod_.\n\nThe initial writeup as a tech note: **[gactar: A Tool For Exploring ACT-R Modelling](https://dx.doi.org/10.13140/RG.2.2.25387.36642)**",
     "cynefinDomain": "complex"
   },
   "domains": [
-    "lang:c++"
+    "lang:go"
   ],
   "validation": {
     "method": "community-consensus",
     "evidence": [
       {
         "type": "github-stars",
-        "description": "1298 GitHub stars indicating community adoption"
+        "description": "23 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "299 forks indicating reuse"
+        "description": "6 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-10T05:02:06.302Z"
+    "validationDate": "2026-03-09T11:15:28.292Z"
   },
   "implementation": {
-    "type": "library",
+    "type": "tool",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/leggedrobotics/ocs2",
-        "description": "GitHub repository: leggedrobotics/ocs2"
-      },
-      {
-        "type": "documentation",
-        "uri": "https://leggedrobotics.github.io/ocs2",
-        "description": "Project homepage"
+        "uri": "https://github.com/asmaloney/gactar",
+        "description": "GitHub repository: asmaloney/gactar"
       }
     ],
-    "language": "C++"
+    "language": "Go"
   },
   "composability": {
     "inputs": [],
     "outputs": [],
-    "dependencies": [],
+    "dependencies": [
+      {
+        "name": "github.com/alecthomas/participle/v2",
+        "version": "v2.1.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/alecthomas/participle/v2"
+      },
+      {
+        "name": "github.com/jwalton/gchalk",
+        "version": "v1.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jwalton/gchalk"
+      },
+      {
+        "name": "github.com/kylelemons/godebug",
+        "version": "v1.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/kylelemons/godebug"
+      },
+      {
+        "name": "github.com/spf13/cobra",
+        "version": "v1.8.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/cobra"
+      },
+      {
+        "name": "github.com/spf13/pflag",
+        "version": "v1.0.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/pflag"
+      },
+      {
+        "name": "github.com/vearutop/statigz",
+        "version": "v1.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/vearutop/statigz"
+      },
+      {
+        "name": "golang.org/x/exp",
+        "version": "v0.0.0-20240719175910-8a7402abbf56",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/exp"
+      },
+      {
+        "name": "golang.org/x/term",
+        "version": "v0.22.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/term"
+      }
+    ],
     "composableWith": []
   },
   "provenance": {
     "authors": [
       {
-        "name": "leggedrobotics",
+        "name": "asmaloney",
         "type": "human",
-        "uri": "https://github.com/leggedrobotics"
+        "uri": "https://github.com/asmaloney"
       }
     ],
     "sourceType": "scraped",
@@ -149,16 +195,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 1896,
-      "validation_diversity": 0.55,
-      "context_breadth": 0.41,
-      "temporal_stability": 1,
-      "test_coverage": 0.3,
-      "documentation_quality": 0.68
+      "validation_count": 35,
+      "validation_diversity": 0.1,
+      "context_breadth": 0.32,
+      "temporal_stability": 0.54,
+      "test_coverage": 0.37,
+      "documentation_quality": 0.6
     },
-    "confidence": "provisional",
+    "confidence": "speculative",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.579
+    "trustScore": 0.262
   }
 }

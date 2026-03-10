@@ -76,72 +76,134 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/leggedrobotics--ocs2",
+  "@id": "ocp:github/ag2ai--ag2",
   "meta": {
-    "title": "OCS2 Toolbox",
-    "description": "Optimal Control for Switched Systems",
+    "title": "AG2: Open-Source AgentOS for AI Agents",
+    "description": "AG2 (formerly AutoGen): The Open-Source AgentOS. Join us at: https://discord.gg/sNGSwQME3x",
     "version": "1.0.0",
-    "dateCreated": "2026-03-10T05:02:06.302Z",
-    "dateModified": "2026-03-10T05:02:06.302Z",
+    "dateCreated": "2026-03-09T11:17:42.597Z",
+    "dateModified": "2026-03-09T11:17:42.597Z",
     "keywords": [
-      "control",
-      "mpc",
-      "optimal-control",
-      "robotics"
+      "a2a",
+      "ag2",
+      "agent-framework",
+      "agentic",
+      "agentic-ai",
+      "ai",
+      "ai-agents-framework",
+      "aiagents",
+      "genai",
+      "llm",
+      "llms",
+      "mcp",
+      "multi-agent",
+      "multi-agent-system",
+      "open-source",
+      "python"
     ],
-    "license": "BSD-3-Clause"
+    "license": "Apache-2.0"
   },
   "problemSolved": {
-    "statement": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.",
-    "context": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.\n\n![legged-robot](https://leggedrobotics.github.io/ocs2/_static/gif/legged_robot.gif)\n\nOCS2 handles general path constraints through Augmented Lagrangian or relaxed barrier methods. To facilitate the application of OCS2 in robotic tasks, it provides additional tools to set up the system dynamics (such as kinematic or dynamic models) and cost/constraints (such as self-collision avoidance and end-effector tracking) from a URDF model. The library also provides an automatic differentiation tool to calculate derivatives of the system dynamics, constraints, and cost. To facilitate deployment on robotic platforms, OCS2 provides tools for ROS interfaces. The toolbox’s efficient and numerically stable implementations in conjunction with its user-friendly interface have paved the way for employing it on numerous robotic applications with limited onboard computation power.\n\n> **ROS 2 port available:** use branch `ros2`.",
+    "statement": "We have several agent concepts in AG2 to help you build your AI agents. We introduce the most common ones here.",
+    "context": "AG2 (formerly AutoGen) is an open-source programming framework for building AI agents and facilitating cooperation among multiple agents to solve tasks. AG2 aims to streamline the development and research of agentic AI. It offers features such as agents capable of interacting with each other, facilitates the use of various large language models (LLMs) and tool use support, autonomous and human-in-the-loop workflows, and multi-agent conversation patterns.\n\nThe project is currently maintained by a [dynamic group of volunteers](MAINTAINERS.md) from several organizations. Contact project administrators Chi Wang and Qingyun Wu via [support@ag2.ai](mailto:support@ag2.ai) if you are interested in becoming a maintainer.",
     "cynefinDomain": "complex"
   },
   "domains": [
-    "lang:c++"
+    "machine-learning",
+    "lang:python"
   ],
   "validation": {
     "method": "community-consensus",
     "evidence": [
       {
         "type": "github-stars",
-        "description": "1298 GitHub stars indicating community adoption"
+        "description": "4236 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "299 forks indicating reuse"
+        "description": "557 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-10T05:02:06.302Z"
+    "validationDate": "2026-03-09T11:17:42.597Z"
   },
   "implementation": {
-    "type": "library",
+    "type": "framework",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/leggedrobotics/ocs2",
-        "description": "GitHub repository: leggedrobotics/ocs2"
+        "uri": "https://github.com/ag2ai/ag2",
+        "description": "GitHub repository: ag2ai/ag2"
       },
       {
         "type": "documentation",
-        "uri": "https://leggedrobotics.github.io/ocs2",
+        "uri": "https://ag2.ai",
         "description": "Project homepage"
       }
     ],
-    "language": "C++"
+    "language": "Python"
   },
   "composability": {
     "inputs": [],
     "outputs": [],
-    "dependencies": [],
+    "dependencies": [
+      {
+        "name": "diskcache",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/diskcache/"
+      },
+      {
+        "name": "termcolor",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/termcolor/"
+      },
+      {
+        "name": "python-dotenv",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/python-dotenv/"
+      },
+      {
+        "name": "tiktoken",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tiktoken/"
+      },
+      {
+        "name": "pydantic",
+        "version": ">=2.6.1,<3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pydantic/"
+      },
+      {
+        "name": "docker",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/docker/"
+      },
+      {
+        "name": "packaging",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/packaging/"
+      },
+      {
+        "name": "httpx",
+        "version": ">=0.28.1,<1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/httpx/"
+      },
+      {
+        "name": "anyio",
+        "version": ">=3.0.0,<5.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/anyio/"
+      }
+    ],
     "composableWith": []
   },
   "provenance": {
     "authors": [
       {
-        "name": "leggedrobotics",
+        "name": "ag2ai",
         "type": "human",
-        "uri": "https://github.com/leggedrobotics"
+        "uri": "https://github.com/ag2ai"
       }
     ],
     "sourceType": "scraped",
@@ -149,16 +211,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 1896,
-      "validation_diversity": 0.55,
-      "context_breadth": 0.41,
-      "temporal_stability": 1,
+      "validation_count": 5350,
+      "validation_diversity": 0.89,
+      "context_breadth": 0.67,
+      "temporal_stability": 0.93,
       "test_coverage": 0.3,
-      "documentation_quality": 0.68
+      "documentation_quality": 0.6
     },
-    "confidence": "provisional",
+    "confidence": "tested",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.579
+    "trustScore": 0.751
   }
 }

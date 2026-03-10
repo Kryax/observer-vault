@@ -76,24 +76,27 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/leggedrobotics--ocs2",
+  "@id": "ocp:github/powerbroker2--ardupid",
   "meta": {
-    "title": "OCS2 Toolbox",
-    "description": "Optimal Control for Switched Systems",
+    "title": "ArduPID",
+    "description": "PID library for Arduinos",
     "version": "1.0.0",
-    "dateCreated": "2026-03-10T05:02:06.302Z",
-    "dateModified": "2026-03-10T05:02:06.302Z",
+    "dateCreated": "2026-03-10T04:44:41.671Z",
+    "dateModified": "2026-03-10T04:44:41.671Z",
     "keywords": [
       "control",
-      "mpc",
-      "optimal-control",
-      "robotics"
+      "control-systems",
+      "control-theory",
+      "controller",
+      "pid",
+      "pid-control",
+      "pid-controller"
     ],
-    "license": "BSD-3-Clause"
+    "license": "MIT"
   },
   "problemSolved": {
-    "statement": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.",
-    "context": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.\n\n![legged-robot](https://leggedrobotics.github.io/ocs2/_static/gif/legged_robot.gif)\n\nOCS2 handles general path constraints through Augmented Lagrangian or relaxed barrier methods. To facilitate the application of OCS2 in robotic tasks, it provides additional tools to set up the system dynamics (such as kinematic or dynamic models) and cost/constraints (such as self-collision avoidance and end-effector tracking) from a URDF model. The library also provides an automatic differentiation tool to calculate derivatives of the system dynamics, constraints, and cost. To facilitate deployment on robotic platforms, OCS2 provides tools for ROS interfaces. The toolbox’s efficient and numerically stable implementations in conjunction with its user-friendly interface have paved the way for employing it on numerous robotic applications with limited onboard computation power.\n\n> **ROS 2 port available:** use branch `ros2`.",
+    "statement": "PID stands for **Proportional, Integral, Derivative**, and is a common feedback control strategy. A PID controller continuously calculates an **error** value as the difference between a desired setpoint and a measured process variable, and applies corrections via three terms:\r\n\r\n- **P (Proportional):** Reacts proportionally to the error.  \r\n- **I (Integral):** Accumulates past errors to eliminate steady-state offset.  \r\n- **D (Derivative):** Predicts future error based on its rate of change to dampen oscillations.  \r\n\r\nPID controllers can stabilize control for systems such as motors, servos, temperature, or even cruise control in vehicles.\r\n\r\n---",
+    "context": "[![GitHub version](https://badge.fury.io/gh/PowerBroker2%2FArduPID.svg)](https://badge.fury.io/gh/PowerBroker2%2FArduPID) [![arduino-library-badge](https://www.ardu-badge.com/badge/ArduPID.svg?)](https://www.ardu-badge.com/ArduPID)  \r\n\r\nPID library for Arduino with improved accuracy and configurability compared to the legacy Arduino PID library.\r\n\r\n---",
     "cynefinDomain": "complex"
   },
   "domains": [
@@ -104,28 +107,23 @@
     "evidence": [
       {
         "type": "github-stars",
-        "description": "1298 GitHub stars indicating community adoption"
+        "description": "113 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "299 forks indicating reuse"
+        "description": "26 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-10T05:02:06.302Z"
+    "validationDate": "2026-03-10T04:44:41.671Z"
   },
   "implementation": {
     "type": "library",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/leggedrobotics/ocs2",
-        "description": "GitHub repository: leggedrobotics/ocs2"
-      },
-      {
-        "type": "documentation",
-        "uri": "https://leggedrobotics.github.io/ocs2",
-        "description": "Project homepage"
+        "uri": "https://github.com/PowerBroker2/ArduPID",
+        "description": "GitHub repository: PowerBroker2/ArduPID"
       }
     ],
     "language": "C++"
@@ -139,9 +137,9 @@
   "provenance": {
     "authors": [
       {
-        "name": "leggedrobotics",
+        "name": "PowerBroker2",
         "type": "human",
-        "uri": "https://github.com/leggedrobotics"
+        "uri": "https://github.com/PowerBroker2"
       }
     ],
     "sourceType": "scraped",
@@ -149,16 +147,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 1896,
-      "validation_diversity": 0.55,
-      "context_breadth": 0.41,
+      "validation_count": 165,
+      "validation_diversity": 0.28,
+      "context_breadth": 0.42,
       "temporal_stability": 1,
       "test_coverage": 0.3,
-      "documentation_quality": 0.68
+      "documentation_quality": 0.5
     },
     "confidence": "provisional",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.579
+    "trustScore": 0.424
   }
 }

@@ -1,0 +1,219 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/ssdeanx--branch-thinking-mcp",
+  "meta": {
+    "title": "🚦 Branch-Thinking MCP Tool",
+    "description": "Branch-Thinking MCP Tool A TypeScript-powered MCP server for managing parallel branches of thought, semantic cross-references, and persistent tasks. Features dynamic scoring, AI-generated insights, batch operations, and visual graph navigation for advanced agentic workflows.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-09T11:15:33.009Z",
+    "dateModified": "2026-03-09T11:15:33.009Z",
+    "keywords": [
+      "agentic-ai",
+      "agents",
+      "cache",
+      "cognitive-architecture",
+      "cross-referencing",
+      "insight-generation",
+      "knowledge-graph",
+      "knowledge-graph-embeddings",
+      "mcp",
+      "mcp-server",
+      "mcp-tools",
+      "nodejs",
+      "semantic-search",
+      "task-management",
+      "task-management-system",
+      "tasks-manager",
+      "typescript",
+      "workflow",
+      "workflow-automation"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "> **Branch-Thinking MCP Tool** is an advanced agentic platform for managing, visualizing, and reasoning over branching thoughts, tasks, code, and knowledge. It empowers both AI agents and humans to organize complex projects, cross-link ideas, and automate insight generation using a powerful branch-based paradigm. With semantic search, visualization, and persistent task/code management, it is designed for next-generation collaborative and autonomous workflows.",
+    "context": "[![Changelog](https://img.shields.io/badge/changelog-md-blue)](./CHANGELOG.md)\n[![Issues](https://img.shields.io/github/issues/your-org/branch-thinking-mcp)](https://github.com/your-org/branch-thinking-mcp/issues)\n![Node.js](https://img.shields.io/badge/Node.js-18%2B-green?logo=node.js) ![TypeScript](https://img.shields.io/badge/TypeScript-4.x-blue?logo=typescript) ![MCP](https://img.shields.io/badge/MCP-Server-orange?logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSI+PHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiByeD0iNSIgZmlsbD0iI0ZGMzYwMCIvPjwvc3ZnPg==) ![MIT License](https://img.shields.io/badge/license-MIT-lightgrey) ![@dagrejs/graphlib](https://img.shields.io/badge/dagrejs--graphlib-%234B32C3?logo=dependabot) ![ml-kmeans](https://img.shields.io/badge/ml--kmeans-ML%20Clustering-brightgreen) ![lru-cache](https://img.shields.io/badge/lru--cache-LRU%2BTTL-yellowgreen) ![@xenova/transformers](https://img.shields.io/badge/xenova--transformers-red) ![@modelcontextprotocol/sdk](https://img.shields.io/badge/MCP%20SDK-v1.10.2-blue) ![chalk](https://img.shields.io/badge/chalk-CLI%20Colors-yellow) ![Mermaid](https://img.shields.io/badge/Mermaid-Gantt%20Charts-9cf) ![pnpm](https://img.shields.io/badge/pnpm-fast%20deps-orange)\n\n> **What’s New (2025-04):**\n>\n> - Advanced visualization: clustering (k-means/degree), centrality overlays, edge bundling, and agentic overlays for tasks and priorities\n> - Agentic cache & prefetch: LRU+TTL caches for embeddings, summaries, analytics, and proactive agent cache warming\n> - Enhanced analytics: real-time, multi-branch, and focusNode support; agent-optimized metadata\n> - Upgraded documentation and onboarding for agents and users\n\n---",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "automation",
+    "lang:typescript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "15 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "9 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-09T11:15:33.009Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/ssdeanx/branch-thinking-mcp",
+        "description": "GitHub repository: ssdeanx/branch-thinking-mcp"
+      }
+    ],
+    "language": "TypeScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "@dagrejs/graphlib",
+        "version": "^2.2.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@dagrejs/graphlib"
+      },
+      {
+        "name": "@modelcontextprotocol/sdk",
+        "version": "1.10.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@modelcontextprotocol/sdk"
+      },
+      {
+        "name": "@xenova/transformers",
+        "version": "^2.17.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@xenova/transformers"
+      },
+      {
+        "name": "chalk",
+        "version": "^5.4.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/chalk"
+      },
+      {
+        "name": "fs-extra",
+        "version": "^11.3.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/fs-extra"
+      },
+      {
+        "name": "lru-cache",
+        "version": "^11.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/lru-cache"
+      },
+      {
+        "name": "ml-kmeans",
+        "version": "^6.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/ml-kmeans"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "ssdeanx",
+        "type": "human",
+        "uri": "https://github.com/ssdeanx"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 33,
+      "validation_diversity": 0,
+      "context_breadth": 0.5,
+      "temporal_stability": 0.45,
+      "test_coverage": 0.37,
+      "documentation_quality": 0.75
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.071
+  }
+}

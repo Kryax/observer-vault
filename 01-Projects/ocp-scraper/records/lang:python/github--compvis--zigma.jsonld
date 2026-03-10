@@ -76,59 +76,61 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/leggedrobotics--ocs2",
+  "@id": "ocp:github/compvis--zigma",
   "meta": {
-    "title": "OCS2 Toolbox",
-    "description": "Optimal Control for Switched Systems",
+    "title": "ZigMa: A DiT-style Zigzag Mamba Diffusion Model  (ECCV 2024)",
+    "description": "A PyTorch implementation of the paper  \"ZigMa: A DiT-Style Mamba-based Diffusion Model\" (ECCV 2024)",
     "version": "1.0.0",
-    "dateCreated": "2026-03-10T05:02:06.302Z",
-    "dateModified": "2026-03-10T05:02:06.302Z",
+    "dateCreated": "2026-03-10T04:52:58.647Z",
+    "dateModified": "2026-03-10T04:52:58.647Z",
     "keywords": [
-      "control",
-      "mpc",
-      "optimal-control",
-      "robotics"
+      "diffusion-models",
+      "flow-matching",
+      "mamba",
+      "state-space-model",
+      "stochastic-interpolant",
+      "zigma"
     ],
-    "license": "BSD-3-Clause"
+    "license": "Apache-2.0"
   },
   "problemSolved": {
-    "statement": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.",
-    "context": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.\n\n![legged-robot](https://leggedrobotics.github.io/ocs2/_static/gif/legged_robot.gif)\n\nOCS2 handles general path constraints through Augmented Lagrangian or relaxed barrier methods. To facilitate the application of OCS2 in robotic tasks, it provides additional tools to set up the system dynamics (such as kinematic or dynamic models) and cost/constraints (such as self-collision avoidance and end-effector tracking) from a URDF model. The library also provides an automatic differentiation tool to calculate derivatives of the system dynamics, constraints, and cost. To facilitate deployment on robotic platforms, OCS2 provides tools for ROS interfaces. The toolbox’s efficient and numerically stable implementations in conjunction with its user-friendly interface have paved the way for employing it on numerous robotic applications with limited onboard computation power.\n\n> **ROS 2 port available:** use branch `ros2`.",
+    "statement": "ZigMa: A DiT-style Zigzag Mamba Diffusion Model  (ECCV 2024) — problem statement could not be extracted from README",
+    "context": "**ECCV 2024**\n\n**[Oral Talk in ICML 2024 Workshop on Long Context Foundation Models (LCFM)](https://icml.cc/virtual/2024/39058)**\n\n\n\nThis repository represents the official implementation of the paper titled \"ZigMa: A DiT-style Zigzag Mamba Diffusion Model (ECCV 2024)\".\n\n[![Website](doc/badges/badge-website.svg)](https://taohu.me/zigma)\n[![Paper](https://img.shields.io/badge/arXiv-PDF-b31b1b)](https://arxiv.org/abs/2403.13802)\n[![Hugging Face Model](https://img.shields.io/badge/🤗%20Hugging%20Face-Model-green)](https://huggingface.co/taohu/zigma)\n[![GitHub](https://img.shields.io/github/stars/CompVis/zigma?style=social)](https://github.com/CompVis/zigma)\n[![GitHub closed issues](https://img.shields.io/github/issues-closed/CompVis/zigma?color=success&label=Issues)](https://github.com/CompVis/zigma/issues?q=is%3Aissue+is%3Aclosed) \n[![Twitter](https://img.shields.io/badge/Twitter-🔥%2020k%2B120k%20views-b31b1b.svg?style=social&logo=twitter)](https://twitter.com/_akhaliq/status/1770668624392421512)\n[![License](https://img.shields.io/badge/License-Apache--2.0-929292)](https://www.apache.org/licenses/LICENSE-2.0)\n![visitors](https://visitor-badge.laobi.icu/badge?page_id=CompVis/zigma)\n\n[Vincent Tao Hu](http://taohu.me),\n[Stefan Andreas Baumann](https://scholar.google.de/citations?user=egzbdnoAAAAJ&hl=en),\n[Ming Gui](https://www.linkedin.com/in/ming-gui-87b76a16b/?originalSubdomain=de),\n[Olga Grebenkova](https://www.linkedin.com/in/grebenkovao/),\n[Pingchuan Ma](https://www.linkedin.com/in/pingchuan-ma-492543156/),\n[Johannes Schusterbauer](https://www.linkedin.com/in/js-fischer/ ),\n[Björn Ommer](https://ommer-lab.com/people/ommer/ )\n\nWe present ZigMa, a scanning scheme that follows a zigzag pattern, considering both spatial continuity and parameter efficiency. We further adapt this scheme to video, separating the reasoning between spatial and temporal dimensions, thus achieving efficient parameter utilization. Our design allows for greater incorporation of inductive bias for non-1D data and improves parameter efficiency in diffusion models.",
     "cynefinDomain": "complex"
   },
   "domains": [
-    "lang:c++"
+    "lang:python"
   ],
   "validation": {
     "method": "community-consensus",
     "evidence": [
       {
         "type": "github-stars",
-        "description": "1298 GitHub stars indicating community adoption"
+        "description": "344 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "299 forks indicating reuse"
+        "description": "23 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-10T05:02:06.302Z"
+    "validationDate": "2026-03-10T04:52:58.647Z"
   },
   "implementation": {
     "type": "library",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/leggedrobotics/ocs2",
-        "description": "GitHub repository: leggedrobotics/ocs2"
+        "uri": "https://github.com/CompVis/zigma",
+        "description": "GitHub repository: CompVis/zigma"
       },
       {
         "type": "documentation",
-        "uri": "https://leggedrobotics.github.io/ocs2",
+        "uri": "https://taohu.me/zigma",
         "description": "Project homepage"
       }
     ],
-    "language": "C++"
+    "language": "Python"
   },
   "composability": {
     "inputs": [],
@@ -139,9 +141,9 @@
   "provenance": {
     "authors": [
       {
-        "name": "leggedrobotics",
+        "name": "CompVis",
         "type": "human",
-        "uri": "https://github.com/leggedrobotics"
+        "uri": "https://github.com/CompVis"
       }
     ],
     "sourceType": "scraped",
@@ -149,16 +151,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 1896,
-      "validation_diversity": 0.55,
-      "context_breadth": 0.41,
-      "temporal_stability": 1,
+      "validation_count": 390,
+      "validation_diversity": 0.1,
+      "context_breadth": 0.38,
+      "temporal_stability": 0.67,
       "test_coverage": 0.3,
-      "documentation_quality": 0.68
+      "documentation_quality": 0.6
     },
-    "confidence": "provisional",
+    "confidence": "speculative",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.579
+    "trustScore": 0.308
   }
 }

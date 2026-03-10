@@ -76,59 +76,75 @@
     "extensions": "ocp:extensions"
   },
   "@type": "SolutionRecord",
-  "@id": "ocp:github/leggedrobotics--ocs2",
+  "@id": "ocp:github/sargisyonan--ukal",
   "meta": {
-    "title": "OCS2 Toolbox",
-    "description": "Optimal Control for Switched Systems",
+    "title": "μKal",
+    "description": "Micro Kalman Filter for linear and nonlinear systems",
     "version": "1.0.0",
-    "dateCreated": "2026-03-10T05:02:06.302Z",
-    "dateModified": "2026-03-10T05:02:06.302Z",
+    "dateCreated": "2026-03-10T04:44:37.016Z",
+    "dateModified": "2026-03-10T04:44:37.016Z",
     "keywords": [
-      "control",
-      "mpc",
-      "optimal-control",
-      "robotics"
+      "c",
+      "ekf",
+      "embedded",
+      "estimation",
+      "extended",
+      "filter",
+      "fusion",
+      "kalman",
+      "linear",
+      "microcontroller",
+      "nonlinear",
+      "optimal",
+      "order",
+      "second",
+      "sensor",
+      "sof",
+      "state",
+      "suppression",
+      "system",
+      "variance"
     ],
-    "license": "BSD-3-Clause"
+    "license": "NOASSERTION"
   },
   "problemSolved": {
-    "statement": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.",
-    "context": "OCS2 (**O**ptimal **C**ontrol for **S**witched **S**ystems) is a C++ toolbox for formulating and solving nonlinear optimal control problems, with an emphasis on real-time **Model Predictive Control (MPC)** for robotics.\n\n![legged-robot](https://leggedrobotics.github.io/ocs2/_static/gif/legged_robot.gif)\n\nOCS2 handles general path constraints through Augmented Lagrangian or relaxed barrier methods. To facilitate the application of OCS2 in robotic tasks, it provides additional tools to set up the system dynamics (such as kinematic or dynamic models) and cost/constraints (such as self-collision avoidance and end-effector tracking) from a URDF model. The library also provides an automatic differentiation tool to calculate derivatives of the system dynamics, constraints, and cost. To facilitate deployment on robotic platforms, OCS2 provides tools for ROS interfaces. The toolbox’s efficient and numerically stable implementations in conjunction with its user-friendly interface have paved the way for employing it on numerous robotic applications with limited onboard computation power.\n\n> **ROS 2 port available:** use branch `ros2`.",
+    "statement": "The Micro Kalman Filter Library",
+    "context": "The Micro Kalman Filter Library\n\n[![Build Status](https://travis-ci.com/SargisYonan/uKal.svg?branch=master)](https://travis-ci.com/SargisYonan/uKal)\n[![DOI](https://zenodo.org/badge/167520013.svg)](https://zenodo.org/badge/latestdoi/167520013)\n\n\nA library for Kalman filtering, state estimation, and sensor fusion on memory constrained microncontrollers and embedded systems. The library is built on top of [μLAPack](https://www.github.com/SargisYonan/ulapack), a micro linear algebra package optimized for memory constrained systems, and can run on any target that C can be compiled for.\n\nμKal is a full discrete-time Kalman Filtering library. The library can filter linear, and non-linear, systems via an Extended Kalman Filter (EKF) or second-order filter (SOF).",
     "cynefinDomain": "complex"
   },
   "domains": [
-    "lang:c++"
+    "lang:c"
   ],
   "validation": {
     "method": "community-consensus",
     "evidence": [
       {
         "type": "github-stars",
-        "description": "1298 GitHub stars indicating community adoption"
+        "description": "42 GitHub stars indicating community adoption"
       },
       {
         "type": "github-forks",
-        "description": "299 forks indicating reuse"
+        "description": "19 forks indicating reuse"
       }
     ],
     "reproducibility": "contextual",
-    "validationDate": "2026-03-10T05:02:06.302Z"
+    "validationDate": "2026-03-10T04:44:37.016Z"
   },
   "implementation": {
     "type": "library",
     "refs": [
       {
         "type": "repository",
-        "uri": "https://github.com/leggedrobotics/ocs2",
-        "description": "GitHub repository: leggedrobotics/ocs2"
+        "uri": "https://github.com/SargisYonan/uKal",
+        "description": "GitHub repository: SargisYonan/uKal"
       },
       {
         "type": "documentation",
-        "uri": "https://leggedrobotics.github.io/ocs2",
+        "uri": "http://www.yonan.org/ukal",
         "description": "Project homepage"
       }
     ],
-    "language": "C++"
+    "language": "C"
   },
   "composability": {
     "inputs": [],
@@ -139,9 +155,9 @@
   "provenance": {
     "authors": [
       {
-        "name": "leggedrobotics",
+        "name": "SargisYonan",
         "type": "human",
-        "uri": "https://github.com/leggedrobotics"
+        "uri": "https://github.com/SargisYonan"
       }
     ],
     "sourceType": "scraped",
@@ -149,16 +165,16 @@
   },
   "trust": {
     "vector": {
-      "validation_count": 1896,
-      "validation_diversity": 0.55,
-      "context_breadth": 0.41,
-      "temporal_stability": 1,
-      "test_coverage": 0.3,
-      "documentation_quality": 0.68
+      "validation_count": 80,
+      "validation_diversity": 0.1,
+      "context_breadth": 0.53,
+      "temporal_stability": 0.64,
+      "test_coverage": 0,
+      "documentation_quality": 0.6
     },
-    "confidence": "provisional",
+    "confidence": "speculative",
     "authority": "low",
     "status": "draft",
-    "trustScore": 0.579
+    "trustScore": 0.171
   }
 }

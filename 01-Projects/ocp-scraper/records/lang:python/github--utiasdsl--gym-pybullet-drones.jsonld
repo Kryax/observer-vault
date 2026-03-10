@@ -1,0 +1,229 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/utiasdsl--gym-pybullet-drones",
+  "meta": {
+    "title": "gym-pybullet-drones",
+    "description": "PyBullet Gymnasium environments for single and multi-agent reinforcement learning of quadcopter control",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-10T05:02:00.681Z",
+    "dateModified": "2026-03-10T05:02:00.681Z",
+    "keywords": [
+      "betaflight",
+      "control",
+      "crazyflie",
+      "gym",
+      "gymnasium",
+      "multi-agent",
+      "pybullet",
+      "quadcopter",
+      "quadrotor",
+      "reinforcement-learning",
+      "robotics",
+      "sitl",
+      "stable-baselines3",
+      "uav"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "This is a minimalist refactoring of the original `gym-pybullet-drones` repository, designed for compatibility with [`gymnasium`](https://github.com/Farama-Foundation/Gymnasium), [`stable-baselines3` 2.0](https://github.com/DLR-RM/stable-baselines3/pull/1327), and [`betaflight`](https://github.com/betaflight/betaflight)/[`crazyflie-firmware`](https://github.com/bitcraze/crazyflie-firmware/) SITL.",
+    "context": "This is a minimalist refactoring of the original `gym-pybullet-drones` repository, designed for compatibility with [`gymnasium`](https://github.com/Farama-Foundation/Gymnasium), [`stable-baselines3` 2.0](https://github.com/DLR-RM/stable-baselines3/pull/1327), and [`betaflight`](https://github.com/betaflight/betaflight)/[`crazyflie-firmware`](https://github.com/bitcraze/crazyflie-firmware/) SITL.\n\n> **NOTE**: if you want to access the original codebase, presented at IROS in 2021, please `git checkout [paper|master]`\n\n<img src=\"gym_pybullet_drones/assets/helix.gif\" alt=\"formation flight\" width=\"325\"> <img src=\"gym_pybullet_drones/assets/helix.png\" alt=\"control info\" width=\"425\">",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "1876 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "522 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T05:02:00.681Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/utiasDSL/gym-pybullet-drones",
+        "description": "GitHub repository: utiasDSL/gym-pybullet-drones"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://arxiv.org/pdf/2103.02142",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "numpy",
+        "version": "^2.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numpy/"
+      },
+      {
+        "name": "scipy",
+        "version": "^1.10",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scipy/"
+      },
+      {
+        "name": "transforms3d",
+        "version": "^0.4.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/transforms3d/"
+      },
+      {
+        "name": "matplotlib",
+        "version": "^3.7",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/matplotlib/"
+      },
+      {
+        "name": "pytest",
+        "version": ">=7.3,<10.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pytest/"
+      },
+      {
+        "name": "pybullet",
+        "version": "^3.2.5",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pybullet/"
+      },
+      {
+        "name": "gymnasium",
+        "version": "~=1.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/gymnasium/"
+      },
+      {
+        "name": "stable-baselines3",
+        "version": "^2.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/stable-baselines3/"
+      },
+      {
+        "name": "control",
+        "version": "^0.10.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/control/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "utiasDSL",
+        "type": "human",
+        "uri": "https://github.com/utiasDSL"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 2920,
+      "validation_diversity": 0.43,
+      "context_breadth": 0.67,
+      "temporal_stability": 0.94,
+      "test_coverage": 0,
+      "documentation_quality": 0.6
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.336
+  }
+}
