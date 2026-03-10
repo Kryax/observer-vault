@@ -82,7 +82,7 @@ This is not a guideline. It is a hard gate.
 
 This is not PAI. Observer-native is built from scratch, informed by PAI's proven patterns, owned entirely by the Observer project. It does not reproduce PAI's phase ceremony, format requirements, or algorithm loop. It replaces them with D/I/R as the cognitive primitive and the triad as the deep-thinking protocol.
 
-The relationship to PAI is architectural inheritance, not operational dependence. PAI continues to run elsewhere. Observer-native runs here.
+PAI was retired on 2026-03-11. Observer-native is the active cognitive layer. The relationship to PAI is architectural inheritance — PAI's patterns informed the design, but there is no operational dependence.
 
 ## Key Paths
 

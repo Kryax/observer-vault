@@ -68,7 +68,7 @@ Phase 4 items (Telegram bot, cross-VM, bubblewrap, WebSocket, Observer Commons e
 ## Governance Boundaries (NON-NEGOTIABLE)
 
 1. **Security changes require extra care.** Moving secrets, changing credential stores, modifying hooks — double-check everything. If unsure, STOP and ask Adam.
-2. **Do not break existing functionality.** PAI, OIL, and the governance plugin are operational. Integration must preserve current capabilities.
+2. **Do not break existing functionality.** OIL and the governance plugin are operational. Integration must preserve current capabilities. (PAI retired 2026-03-11.)
 3. **Test before declaring done.** Every phase must have proof — services running, hooks triggering, tests passing.
 4. **If OIL governance is wired, use it.** Once pre-commit hooks are active, all subsequent work must pass through them.
 5. **Backup before modifying.** Before changing ~/.profile, settings.json, or any config that affects the running system, create a dated backup.
@@ -78,8 +78,7 @@ Phase 4 items (Telegram bot, cross-VM, bubblewrap, WebSocket, Observer Commons e
 
 | Component | Location |
 |-----------|----------|
-| PAI v3.0 | `/home/adam/.claude/` |
-| PAI settings | `/home/adam/.claude/settings.json` (938 lines, 24.8KB — handle with care) |
+| ~/.claude config | `/home/adam/.claude/settings.json` (PAI retired 2026-03-11) |
 | OIL | `/home/adam/vault/workspaces/observer/oil/` |
 | Control Plane code | `01-Projects/control-plane/observer-system/` |
 | Control Plane setup | `01-Projects/control-plane/observer-system/packages/setup/` |

@@ -2,9 +2,11 @@
 name: "Reflexive Structural Transition"
 tier: 0
 status: draft
-confidence: 0.1
+confidence: 0.3
 source: bottom-up
-domain_count: 1
+domain_count: 7
+promotion_ready: tier-1
+evidence_type: hybrid (bottom-up scrape + top-down domain knowledge)
 created: 2026-03-11
 updated: 2026-03-11
 derivative_order: 2

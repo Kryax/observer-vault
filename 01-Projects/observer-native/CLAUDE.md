@@ -52,14 +52,9 @@ Do not bypass proof gates.
 If it happened, there is a receipt in `receipts/`.
 Receipts are the audit trail. They are not optional.
 
-### PAI Safety
-Do NOT modify any files under:
-  ~/.claude/               (PAI — must remain untouched)
-  ~/.claude/skills/        (PAI skills — copy FROM, never write TO)
-  ~/.claude/settings.json  (hook registration — NOT until Adam explicitly approves)
-
-PAI continues running in parallel. Observer-native and PAI coexist.
-There is no cutover until Adam decides.
+### ~/.claude Safety
+Do NOT modify files under `~/.claude/` without Adam's explicit approval.
+PAI has been retired (2026-03-11). Observer-native is the active cognitive layer.
 
 ## Stop Conditions (Always Apply)
 
@@ -68,7 +63,7 @@ There is no cutover until Adam decides.
 - Merge conflict between sub-agent outputs → STOP, report to Adam
 - Uncertainty about architectural intent → STOP and ask
 - Any change to the hook adapter interface → STOP, this requires Adam's explicit approval
-- Any temptation to write to ~/.claude/ → STOP, this requires Adam's explicit approval
+- Any modification to ~/.claude/ → STOP, this requires Adam's explicit approval
 
 ## Key Reference Files (Outside This Workspace)
 
@@ -90,7 +85,7 @@ These are read-only references. Do not modify them.
 # Control plane state (built, do not re-specify):
 /mnt/zfs-host/backup/projects/observer-vault/01-Projects/control-plane/PROJECT_STATE.md
 
-# PAI architecture (reference only):
+# PAI architecture (historical reference, PAI retired 2026-03-11):
 /home/adam/.claude-v3/skills/PAI/PAISYSTEMARCHITECTURE.md
 /home/adam/.claude-v3/skills/PAI/PAIAGENTSYSTEM.md
 ```
