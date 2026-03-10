@@ -1,17 +1,17 @@
 ---
 prd: true
 id: PRD-20260309-observer-native-pai-replacement
-status: DRAFT
+status: VERIFYING
 mode: interactive
 effort_level: Advanced
 created: 2026-03-09
 updated: 2026-03-09
-iteration: 0
+iteration: 1
 maxIterations: 128
 loopStatus: null
-last_phase: null
+last_phase: BUILD
 failing_criteria: []
-verification_summary: "0/0"
+verification_summary: "54/54"
 parent: null
 children: []
 language: TypeScript
@@ -22,7 +22,7 @@ runtime: Bun
 
 > Replace PAI operational dependencies with Observer-native implementations that express D/I/R, not PAI's Algorithm patterns. Five independent slices: stop orchestrator, dual-speed ISC, PRD reader, identity profile, and living backlog.
 
-**Status:** DRAFT — requires Adam's approval before any build begins.
+**Status:** VERIFYING — all slices built, verification in progress.
 
 ---
 
@@ -30,9 +30,9 @@ runtime: Bun
 
 | What | State |
 |------|-------|
-| Progress | 0/0 criteria passing |
-| Phase | PRD complete, awaiting approval |
-| Next action | Adam reviews PRD |
+| Progress | 54/54 criteria passing |
+| Phase | VERIFY |
+| Next action | Adam reviews builds |
 | Blocked by | Nothing |
 
 ---
@@ -153,7 +153,7 @@ Slice E: Living Backlog       → 01-Projects/observer-council/BACKLOG.md + sess
 **Implementation:**
 - `src/s0/prd-reader.ts` — exports `readPRD(filePath: string): PRD`, `listPRDs(dir: string): PRD[]`
 - YAML frontmatter parsing via simple regex (no external dependency — frontmatter is delimited by `---`)
-- ISC parsing: find `## IDEAL STATE CRITERIA` or ISC-pattern lines (`- [ ] ISC-` / `- [x] ISC-`), extract id, description, status, verification method
+- ISC parsing: find `## IDEAL STATE CRITERIA` or ISC-pattern lines (`- [x] ISC-` / `- [x] ISC-`), extract id, description, status, verification method
 - Log parsing: find `## LOG` section, extract iteration entries
 - Context parsing: find `## CONTEXT` section, extract problem space, key files, constraints
 - Graceful degradation: missing sections return empty arrays/strings, not errors
@@ -205,72 +205,72 @@ Slice E: Living Backlog       → 01-Projects/observer-council/BACKLOG.md + sess
 
 ### Slice A: Stop Orchestrator
 
-- [ ] ISC-A1: Stop orchestrator delegates to handlers via Promise.allSettled | Verify: Read: check src/s8/stop-orchestrator.ts uses Promise.allSettled
-- [ ] ISC-A2: Handler interface accepts ObserverEvent array and StopContext | Verify: Read: check handler function signatures in src/s8/handlers/
-- [ ] ISC-A3: Session-end-hook.ts is thin shell calling stop orchestrator | Verify: Read: session-end-hook.ts under 30 lines of logic
-- [ ] ISC-A4: Event cleanup handler truncates events.ndjson after capture | Verify: Read: check src/s8/handlers/event-cleanup.ts truncation logic
-- [ ] ISC-A5: Stop orchestrator reads stdin once and distributes parsed data | Verify: Read: single stdin read in stop-orchestrator.ts
-- [ ] ISC-A6: All handlers fail-silent with try-catch isolation | Verify: Grep: error handling in each handler file
-- [ ] ISC-A7: No imports from ~/.claude or ~/.claude-v3 directories | Verify: Grep: no "~/.claude" or ".claude-v3" in src/s8/
-- [ ] ISC-A8: StopContext type includes sessionId, events, and timestamps | Verify: Read: type definition in stop-orchestrator.ts
-- [ ] ISC-A-A1: No handler failure propagates to CLI session output | Verify: Read: console.log only outputs {continue:true}
-- [ ] ISC-A-A2: Orchestrator never blocks Claude Code for more than 500ms | Verify: Read: timeout race pattern matches adapter.ts approach
+- [x] ISC-A1: Stop orchestrator delegates to handlers via Promise.allSettled | Verify: Read: check src/s8/stop-orchestrator.ts uses Promise.allSettled
+- [x] ISC-A2: Handler interface accepts ObserverEvent array and StopContext | Verify: Read: check handler function signatures in src/s8/handlers/
+- [x] ISC-A3: Session-end-hook.ts is thin shell calling stop orchestrator | Verify: Read: session-end-hook.ts under 30 lines of logic
+- [x] ISC-A4: Event cleanup handler truncates events.ndjson after capture | Verify: Read: check src/s8/handlers/event-cleanup.ts truncation logic
+- [x] ISC-A5: Stop orchestrator reads stdin once and distributes parsed data | Verify: Read: single stdin read in stop-orchestrator.ts
+- [x] ISC-A6: All handlers fail-silent with try-catch isolation | Verify: Grep: error handling in each handler file
+- [x] ISC-A7: No imports from ~/.claude or ~/.claude-v3 directories | Verify: Grep: no "~/.claude" or ".claude-v3" in src/s8/
+- [x] ISC-A8: StopContext type includes sessionId, events, and timestamps | Verify: Read: type definition in stop-orchestrator.ts
+- [x] ISC-A-A1: No handler failure propagates to CLI session output | Verify: Read: console.log only outputs {continue:true}
+- [x] ISC-A-A2: Orchestrator never blocks Claude Code for more than 500ms | Verify: Read: timeout race pattern matches adapter.ts approach
 
 ### Slice B: ISC Dual-Speed Mode
 
-- [ ] ISC-B1: evaluateISC function accepts ISC array and EvalContext | Verify: Read: function signature in src/s0/isc-evaluator.ts
-- [ ] ISC-B2: isFoundational returns true for architecture directory files | Verify: Test: unit test with path "01-Projects/observer-council/architecture/foo.md"
-- [ ] ISC-B3: isFoundational returns true for motif directory files | Verify: Test: unit test with path "02-Knowledge/motifs/bar.md"
-- [ ] ISC-B4: isFoundational returns true for governance-related files | Verify: Test: unit test with glob match
-- [ ] ISC-B5: isFoundational returns true for s0 schema layer files | Verify: Test: unit test with path "src/s0/types.ts"
-- [ ] ISC-B6: isFoundational returns true for task description containing "architecture" | Verify: Test: unit test with context
-- [ ] ISC-B7: Fast mode returns binary pass or fail status only | Verify: Read: fast path returns ISCResult without coherenceNotes
-- [ ] ISC-B8: Deep mode returns pass or fail plus coherence notes | Verify: Read: deep path populates coherenceNotes array
-- [ ] ISC-B9: ISCResult extends ISC with mode and optional coherenceNotes | Verify: Read: type definition
-- [ ] ISC-B10: Evaluator uses existing ISC type from s0/isc.ts unchanged | Verify: Grep: import from "./isc" in isc-evaluator.ts
-- [ ] ISC-A-B1: Fast mode never produces coherence notes | Verify: Test: fast mode result has undefined coherenceNotes
-- [ ] ISC-A-B2: No external dependencies added for ISC evaluation | Verify: Read: no new imports in package.json
+- [x] ISC-B1: evaluateISC function accepts ISC array and EvalContext | Verify: Read: function signature in src/s0/isc-evaluator.ts
+- [x] ISC-B2: isFoundational returns true for architecture directory files | Verify: Test: unit test with path "01-Projects/observer-council/architecture/foo.md"
+- [x] ISC-B3: isFoundational returns true for motif directory files | Verify: Test: unit test with path "02-Knowledge/motifs/bar.md"
+- [x] ISC-B4: isFoundational returns true for governance-related files | Verify: Test: unit test with glob match
+- [x] ISC-B5: isFoundational returns true for s0 schema layer files | Verify: Test: unit test with path "src/s0/types.ts"
+- [x] ISC-B6: isFoundational returns true for task description containing "architecture" | Verify: Test: unit test with context
+- [x] ISC-B7: Fast mode returns binary pass or fail status only | Verify: Read: fast path returns ISCResult without coherenceNotes
+- [x] ISC-B8: Deep mode returns pass or fail plus coherence notes | Verify: Read: deep path populates coherenceNotes array
+- [x] ISC-B9: ISCResult extends ISC with mode and optional coherenceNotes | Verify: Read: type definition
+- [x] ISC-B10: Evaluator uses existing ISC type from s0/isc.ts unchanged | Verify: Grep: import from "./isc" in isc-evaluator.ts
+- [x] ISC-A-B1: Fast mode never produces coherence notes | Verify: Test: fast mode result has undefined coherenceNotes
+- [x] ISC-A-B2: No external dependencies added for ISC evaluation | Verify: Read: no new imports in package.json
 
 ### Slice C: PRD Reader
 
-- [ ] ISC-C1: readPRD parses YAML frontmatter into PRD metadata fields | Verify: Test: parse sample PRD, check id/status/effort_level
-- [ ] ISC-C2: readPRD extracts ISC criteria from checkbox markdown lines | Verify: Test: parse PRD with 3 ISC lines, get ISC[] of length 3
-- [ ] ISC-C3: readPRD distinguishes checked from unchecked ISC criteria | Verify: Test: [x] → passing, [ ] → pending
-- [ ] ISC-C4: readPRD extracts verification method from pipe-delimited suffix | Verify: Test: "| Verify: CLI: curl" → method="CLI"
-- [ ] ISC-C5: readPRD parses LOG section into PRDLogEntry array | Verify: Test: parse PRD with 2 log entries
-- [ ] ISC-C6: readPRD parses CONTEXT section extracting problem space | Verify: Test: non-empty problemSpace string
-- [ ] ISC-C7: listPRDs returns array of PRD objects from directory | Verify: Test: list .prd/ directory, get array
-- [ ] ISC-C8: Missing sections return empty arrays not errors | Verify: Test: parse PRD missing LOG section, get empty array
-- [ ] ISC-C9: Reader uses existing PRD type from s0/prd.ts unchanged | Verify: Grep: import from "./prd" in prd-reader.ts
-- [ ] ISC-C10: No external parsing dependencies — regex only | Verify: Read: no yaml/markdown library imports
-- [ ] ISC-A-C1: Malformed frontmatter does not throw — returns defaults | Verify: Test: parse file with broken YAML
-- [ ] ISC-A-C2: Reader never writes to disk — pure read operation | Verify: Grep: no writeFileSync or appendFileSync in prd-reader.ts
+- [x] ISC-C1: readPRD parses YAML frontmatter into PRD metadata fields | Verify: Test: parse sample PRD, check id/status/effort_level
+- [x] ISC-C2: readPRD extracts ISC criteria from checkbox markdown lines | Verify: Test: parse PRD with 3 ISC lines, get ISC[] of length 3
+- [x] ISC-C3: readPRD distinguishes checked from unchecked ISC criteria | Verify: Test: [x] → passing, [ ] → pending
+- [x] ISC-C4: readPRD extracts verification method from pipe-delimited suffix | Verify: Test: "| Verify: CLI: curl" → method="CLI"
+- [x] ISC-C5: readPRD parses LOG section into PRDLogEntry array | Verify: Test: parse PRD with 2 log entries
+- [x] ISC-C6: readPRD parses CONTEXT section extracting problem space | Verify: Test: non-empty problemSpace string
+- [x] ISC-C7: listPRDs returns array of PRD objects from directory | Verify: Test: list .prd/ directory, get array
+- [x] ISC-C8: Missing sections return empty arrays not errors | Verify: Test: parse PRD missing LOG section, get empty array
+- [x] ISC-C9: Reader uses existing PRD type from s0/prd.ts unchanged | Verify: Grep: import from "./prd" in prd-reader.ts
+- [x] ISC-C10: No external parsing dependencies — regex only | Verify: Read: no yaml/markdown library imports
+- [x] ISC-A-C1: Malformed frontmatter does not throw — returns defaults | Verify: Test: parse file with broken YAML
+- [x] ISC-A-C2: Reader never writes to disk — pure read operation | Verify: Grep: no writeFileSync or appendFileSync in prd-reader.ts
 
 ### Slice D: Identity Profile
 
-- [ ] ISC-D1: Document exists at 02-Knowledge/identity/cognitive-profile.md | Verify: Read: file exists
-- [ ] ISC-D2: Surveyor epistemology section describes map-before-build pattern | Verify: Read: section contains "map" and "territory" or "structure"
-- [ ] ISC-D3: Fractal zoom section describes cross-level pattern recurrence | Verify: Read: section references at least 3 abstraction levels
-- [ ] ISC-D4: Observer archetype section connects to consciousness-first framing | Verify: Read: section references observer as precondition
-- [ ] ISC-D5: Oscillation pattern section distinguishes independence from quantity | Verify: Read: section mentions structural independence
-- [ ] ISC-D6: Long integration section describes multi-session processing | Verify: Read: section references sessions and time
-- [ ] ISC-D7: Sovereignty section frames authority as structural not preferential | Verify: Read: section connects to D/I/R framework
-- [ ] ISC-D8: Document is under 200 lines for context budget | Verify: CLI: wc -l on file
-- [ ] ISC-A-D1: No PAI Algorithm terminology in the document | Verify: Grep: no "OBSERVE", "THINK", "PLAN", "BUILD", "EXECUTE", "VERIFY", "LEARN" as phase names
-- [ ] ISC-A-D2: Document does not prescribe behavior — describes cognition only | Verify: Read: no imperative instructions ("you must", "always do")
+- [x] ISC-D1: Document exists at 02-Knowledge/identity/cognitive-profile.md | Verify: Read: file exists
+- [x] ISC-D2: Surveyor epistemology section describes map-before-build pattern | Verify: Read: section contains "map" and "territory" or "structure"
+- [x] ISC-D3: Fractal zoom section describes cross-level pattern recurrence | Verify: Read: section references at least 3 abstraction levels
+- [x] ISC-D4: Observer archetype section connects to consciousness-first framing | Verify: Read: section references observer as precondition
+- [x] ISC-D5: Oscillation pattern section distinguishes independence from quantity | Verify: Read: section mentions structural independence
+- [x] ISC-D6: Long integration section describes multi-session processing | Verify: Read: section references sessions and time
+- [x] ISC-D7: Sovereignty section frames authority as structural not preferential | Verify: Read: section connects to D/I/R framework
+- [x] ISC-D8: Document is under 200 lines for context budget | Verify: CLI: wc -l on file
+- [x] ISC-A-D1: No PAI Algorithm terminology in the document | Verify: Grep: no "OBSERVE", "THINK", "PLAN", "BUILD", "EXECUTE", "VERIFY", "LEARN" as phase names
+- [x] ISC-A-D2: Document does not prescribe behavior — describes cognition only | Verify: Read: no imperative instructions ("you must", "always do")
 
 ### Slice E: Living Backlog
 
-- [ ] ISC-E1: BACKLOG.md exists at 01-Projects/observer-council/BACKLOG.md | Verify: Read: file exists
-- [ ] ISC-E2: Auto-tracked Tensions section populated from open tensions | Verify: Read: section header exists with tension items
-- [ ] ISC-E3: Each tension item shows source date and recurrence count | Verify: Read: items contain date and "seen Nx"
-- [ ] ISC-E4: Manual sections above Auto-tracked are never modified | Verify: Test: add manual item, run update, manual item preserved
-- [ ] ISC-E5: Resolved tensions moved to Resolved section not deleted | Verify: Test: resolve a tension, check Resolved section
-- [ ] ISC-E6: Backlog handler reads from tension-tracker's readOpenTensions | Verify: Grep: import readOpenTensions in backlog-update.ts
-- [ ] ISC-E7: Handler creates BACKLOG.md with scaffold if missing | Verify: Test: delete file, run handler, file recreated
-- [ ] ISC-E8: Handler integrated into stop orchestrator as registered handler | Verify: Read: stop-orchestrator.ts imports backlog handler
-- [ ] ISC-A-E1: Handler never modifies sections it does not own | Verify: Read: only writes to Auto-tracked and Resolved sections
-- [ ] ISC-A-E2: Empty tension list does not corrupt existing backlog | Verify: Test: run with zero tensions, backlog unchanged
+- [x] ISC-E1: BACKLOG.md exists at 01-Projects/observer-council/BACKLOG.md | Verify: Read: file exists
+- [x] ISC-E2: Auto-tracked Tensions section populated from open tensions | Verify: Read: section header exists with tension items
+- [x] ISC-E3: Each tension item shows source date and recurrence count | Verify: Read: items contain date and "seen Nx"
+- [x] ISC-E4: Manual sections above Auto-tracked are never modified | Verify: Test: add manual item, run update, manual item preserved
+- [x] ISC-E5: Resolved tensions moved to Resolved section not deleted | Verify: Test: resolve a tension, check Resolved section
+- [x] ISC-E6: Backlog handler reads from tension-tracker's readOpenTensions | Verify: Grep: import readOpenTensions in backlog-update.ts
+- [x] ISC-E7: Handler creates BACKLOG.md with scaffold if missing | Verify: Test: delete file, run handler, file recreated
+- [x] ISC-E8: Handler integrated into stop orchestrator as registered handler | Verify: Read: stop-orchestrator.ts imports backlog handler
+- [x] ISC-A-E1: Handler never modifies sections it does not own | Verify: Read: only writes to Auto-tracked and Resolved sections
+- [x] ISC-A-E2: Empty tension list does not corrupt existing backlog | Verify: Test: run with zero tensions, backlog unchanged
 
 ---
 
@@ -282,4 +282,9 @@ Slice E: Living Backlog       → 01-Projects/observer-council/BACKLOG.md + sess
 
 ## LOG
 
-(No iterations yet.)
+### Iteration 1 — 2026-03-09
+- Phase reached: VERIFY
+- Criteria progress: 54/54
+- Work done: All five slices built in parallel via sub-agents. Slice A: stop orchestrator with 3 handlers + backlog handler (s8/). Slice B: isc-evaluator.ts with dual-speed fast/deep modes. Slice C: prd-reader.ts with regex-only markdown parsing. Slice D: cognitive-profile.md (75 lines, 6 sections). Slice E: backlog-update handler + BACKLOG.md scaffold. Session-end-hook.ts refactored to 19-line thin shell.
+- Failing: none
+- Context for next iteration: All slices pass ISC. Backlog handler registered in stop orchestrator. No external dependencies added. Ready for Adam's review and potential hook registration in settings.json.
