@@ -91,9 +91,17 @@ export function buildSepCanonicalUrl(slug: string, baseUrl: string = SEP_BASE_UR
 }
 
 function extractAuthors(html: string, fallback: string[]): string[] {
+  const citationAuthors = extractMetaContents(html, 'citation_author');
+  if (citationAuthors.length > 0) {
+    return citationAuthors.flatMap((author) => splitAuthors(author)).filter(Boolean);
+  }
+
+  const dcAuthors = extractMetaContents(html, 'dc.creator');
+  if (dcAuthors.length > 0) {
+    return dcAuthors.flatMap((author) => splitAuthors(author)).filter(Boolean);
+  }
+
   const candidates = [
-    extractMetaContent(html, 'citation_author'),
-    extractMetaContent(html, 'dc.creator'),
     extractSpanByClass(html, 'au'),
     extractPubInfoAuthors(html),
   ];
@@ -157,7 +165,7 @@ function extractRelatedEntries(article: string): SepRelatedEntry[] {
 
   const seen = new Set<string>();
   const results: SepRelatedEntry[] = [];
-  for (const match of section.matchAll(/<a\b[^>]*href=["'](?:\.\.\/)?entries\/([^\/"'#?]+)\/?[^"']*["'][^>]*>([\s\S]*?)<\/a>/gi)) {
+  for (const match of section.matchAll(/<a\b[^>]*href=["'](?:(?:\.\.\/)+)?(?:entries\/)?([^\/"'#?]+)\/?[^"']*["'][^>]*>([\s\S]*?)<\/a>/gi)) {
     const slug = normalizeSepSlug(match[1]);
     const title = normalizeText(stripHtml(match[2]));
     if (!slug || !title || seen.has(slug)) {
@@ -309,8 +317,8 @@ function extractDateFromText(text: string, pattern: RegExp): string | null {
 
 function extractArticleBody(html: string): string {
   const candidates = [
-    extractElementById(html, 'main-text'),
     extractElementById(html, 'aueditable'),
+    extractElementById(html, 'main-text'),
     extractTagText(html, 'article'),
     extractTagText(html, 'body'),
   ];
@@ -403,21 +411,27 @@ function extractSpanByClass(html: string, className: string): string | null {
 }
 
 function extractMetaContent(html: string, name: string): string | null {
+  return extractMetaContents(html, name)[0] ?? null;
+}
+
+function extractMetaContents(html: string, name: string): string[] {
   const patterns = [
-    new RegExp(`<meta\\b[^>]*name=["']${escapeRegex(name)}["'][^>]*content=["']([^"']*)["'][^>]*>`, 'i'),
-    new RegExp(`<meta\\b[^>]*content=["']([^"']*)["'][^>]*name=["']${escapeRegex(name)}["'][^>]*>`, 'i'),
-    new RegExp(`<meta\\b[^>]*property=["']${escapeRegex(name)}["'][^>]*content=["']([^"']*)["'][^>]*>`, 'i'),
-    new RegExp(`<meta\\b[^>]*content=["']([^"']*)["'][^>]*property=["']${escapeRegex(name)}["'][^>]*>`, 'i'),
+    new RegExp(`<meta\\b[^>]*name=["']${escapeRegex(name)}["'][^>]*content=["']([^"']*)["'][^>]*>`, 'gi'),
+    new RegExp(`<meta\\b[^>]*content=["']([^"']*)["'][^>]*name=["']${escapeRegex(name)}["'][^>]*>`, 'gi'),
+    new RegExp(`<meta\\b[^>]*property=["']${escapeRegex(name)}["'][^>]*content=["']([^"']*)["'][^>]*>`, 'gi'),
+    new RegExp(`<meta\\b[^>]*content=["']([^"']*)["'][^>]*property=["']${escapeRegex(name)}["'][^>]*>`, 'gi'),
   ];
 
+  const values: string[] = [];
   for (const pattern of patterns) {
-    const match = html.match(pattern);
-    if (match?.[1]) {
-      return decodeHtml(match[1]);
+    for (const match of html.matchAll(pattern)) {
+      if (match[1]) {
+        values.push(decodeHtml(match[1]));
+      }
     }
   }
 
-  return null;
+  return [...new Set(values.map((value) => value.trim()).filter(Boolean))];
 }
 
 function extractLinkHref(html: string, rel: string): string | null {

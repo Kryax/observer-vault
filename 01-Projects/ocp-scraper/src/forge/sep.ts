@@ -9,6 +9,7 @@ import { parseSepEntryHtml } from './sep-entry';
 
 const SEP_BASE_URL = 'https://plato.stanford.edu';
 const SEP_CONTENTS_URL = `${SEP_BASE_URL}/contents.html`;
+const SEP_SEARCH_URL = `${SEP_BASE_URL}/search/searcher.py`;
 const MIN_REQUEST_DELAY_MS = 5000;
 
 export interface SepAdapterOptions {
@@ -43,18 +44,24 @@ export class SepAdapter implements ForgeAdapter {
 
   private readonly baseUrl: string;
   private readonly contentsUrl: string;
+  private readonly searchUrl: string;
   private readonly minRequestDelayMs: number;
   private lastRequestAt = 0;
 
   constructor(options: SepAdapterOptions = {}) {
     this.baseUrl = options.baseUrl ?? SEP_BASE_URL;
     this.contentsUrl = options.contentsUrl ?? SEP_CONTENTS_URL;
+    this.searchUrl = `${this.baseUrl}/search/searcher.py`;
     this.minRequestDelayMs = options.minRequestDelayMs ?? MIN_REQUEST_DELAY_MS;
   }
 
   async searchRepos(params: ForgeSearchParams): Promise<ForgeSearchResult> {
     const entries = await this.fetchContentsEntries();
-    const matches = filterContentsEntries(entries, params.topic).slice(0, params.limit);
+    const contentsMatches = filterContentsEntries(entries, params.topic);
+    const candidates = contentsMatches.length > 0
+      ? contentsMatches
+      : await this.fetchSearchEntries(params.topic);
+    const matches = candidates.slice(0, params.limit);
 
     const repos: ForgeRepo[] = [];
     for (const entry of matches) {
@@ -64,8 +71,8 @@ export class SepAdapter implements ForgeAdapter {
 
     return {
       repos,
-      totalCount: filterContentsEntries(entries, params.topic).length,
-      hasMore: matches.length < filterContentsEntries(entries, params.topic).length,
+      totalCount: candidates.length,
+      hasMore: matches.length < candidates.length,
     };
   }
 
@@ -107,6 +114,14 @@ export class SepAdapter implements ForgeAdapter {
     await this.enforceRateLimit();
     const html = await fetchSepHtml(this.contentsUrl);
     return parseSepContents(html);
+  }
+
+  private async fetchSearchEntries(topic: string): Promise<SepContentsEntry[]> {
+    await this.enforceRateLimit();
+    const url = new URL(this.searchUrl);
+    url.searchParams.set('query', topic);
+    const html = await fetchSepHtml(url.toString());
+    return parseSepSearchResults(html);
   }
 
   private async fetchEntrySnapshot(slug: string, fallback?: Partial<SepContentsEntry>): Promise<SepEntrySnapshot> {
@@ -187,6 +202,47 @@ export function filterContentsEntries(entries: SepContentsEntry[], topic: string
     const haystack = [entry.slug, entry.title, entry.authors.join(' ')].join(' ').toLowerCase();
     return tokens.every((token) => haystack.includes(token));
   });
+}
+
+export function parseSepSearchResults(html: string): SepContentsEntry[] {
+  const entries: SepContentsEntry[] = [];
+  const seen = new Set<string>();
+
+  for (const match of html.matchAll(/<a\b[^>]*href=["'][^"']*search\/r\?entry=\/entries\/([^/"'&?#]+)\/[^"']*["'][^>]*>([\s\S]*?)<\/a>/gi)) {
+    const slug = normalizeSepSlug(match[1]);
+    if (!slug || seen.has(slug)) {
+      continue;
+    }
+
+    seen.add(slug);
+    entries.push({
+      slug,
+      title: normalizeText(stripHtml(match[2])),
+      authors: [],
+      anchorLetter: null,
+    });
+  }
+
+  if (entries.length > 0) {
+    return entries;
+  }
+
+  for (const match of html.matchAll(/<a\b[^>]*href=["'](?:https?:\/\/plato\.stanford\.edu\/)?entries\/([^/"'?#]+)\/?["'][^>]*>([\s\S]*?)<\/a>/gi)) {
+    const slug = normalizeSepSlug(match[1]);
+    if (!slug || seen.has(slug)) {
+      continue;
+    }
+
+    seen.add(slug);
+    entries.push({
+      slug,
+      title: normalizeText(stripHtml(match[2])),
+      authors: [],
+      anchorLetter: null,
+    });
+  }
+
+  return entries;
 }
 
 export function parseSepEntry(

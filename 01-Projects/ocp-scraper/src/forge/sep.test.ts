@@ -6,6 +6,7 @@ import {
   normalizeSepSlug,
   parseSepContents,
   parseSepEntry,
+  parseSepSearchResults,
 } from './sep';
 
 describe('SEP adapter helpers', () => {
@@ -28,6 +29,21 @@ describe('SEP adapter helpers', () => {
     expect(entries[0]?.slug).toBe('artificial-intelligence');
     expect(filterContentsEntries(entries, 'autopoiesis')).toEqual([
       expect.objectContaining({ slug: 'autopoiesis' }),
+    ]);
+  });
+
+  test('parses SEP search results fallback entries', () => {
+    const html = `
+      <h1>Search</h1>
+      <a href="https://plato.stanford.edu/search/r?entry=/entries/teleology-biology/&page=1&query=autopoiesis">Teleological Notions in Biology</a>
+      <p>Autopoiesis appears in this entry.</p>
+      <a href="https://plato.stanford.edu/search/r?entry=/entries/embodied-cognition/&page=1&query=autopoiesis">Embodied Cognition</a>
+      <p>Another hit.</p>
+    `;
+
+    expect(parseSepSearchResults(html)).toEqual([
+      expect.objectContaining({ slug: 'teleology-biology', title: 'Teleological Notions in Biology' }),
+      expect.objectContaining({ slug: 'embodied-cognition', title: 'Embodied Cognition' }),
     ]);
   });
 

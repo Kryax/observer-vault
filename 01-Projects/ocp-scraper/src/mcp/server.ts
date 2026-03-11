@@ -20,6 +20,7 @@ import { clusterQueries } from '../cli/gaps';
 import { GitHubAdapter } from '../forge/github';
 import { ForgejoAdapter } from '../forge/forgejo';
 import { ArxivAdapter } from '../forge/arxiv';
+import { SepAdapter } from '../forge/sep';
 import { coarseFilter } from '../filter/coarse';
 import { fineFilter } from '../filter/fine';
 import { extractMetadata } from '../extract/metadata';
@@ -27,6 +28,7 @@ import { parseReadme } from '../extract/readme';
 import { parseDependencies, MANIFEST_FILES } from '../extract/dependencies';
 import { assembleSolutionRecord } from '../record/assembler';
 import { assembleArxivSolutionRecord } from '../record/arxiv';
+import { assembleSepSolutionRecord } from '../record/sep';
 import { enrichGraph } from '../search/enrichment';
 
 import type { ForgeAdapter } from '../types/forge';
@@ -159,7 +161,7 @@ server.registerTool(
     description: 'Scrape repositories by topic from a forge (GitHub, Codeberg, Forgejo) and create Solution Records.',
     inputSchema: z.object({
       topic: z.string().describe('Topic to search for'),
-      source: z.enum(['github', 'codeberg', 'forgejo', 'arxiv']).optional().default('github').describe('Forge source'),
+      source: z.enum(['github', 'codeberg', 'forgejo', 'arxiv', 'sep']).optional().default('github').describe('Forge source'),
       limit: z.number().optional().default(10).describe('Maximum repos to scrape'),
       minStars: z.number().optional().default(10).describe('Minimum stars filter'),
       forgeUrl: z.string().optional().describe('Base URL for self-hosted Forgejo instances'),
@@ -187,6 +189,8 @@ server.registerTool(
         forge = new ForgejoAdapter({ baseUrl: forgeUrl });
       } else if (source === 'arxiv') {
         forge = new ArxivAdapter();
+      } else if (source === 'sep') {
+        forge = new SepAdapter();
       } else {
         return {
           content: [{ type: 'text' as const, text: JSON.stringify({ error: `Unknown source: ${source}` }) }],
@@ -229,6 +233,39 @@ server.registerTool(
             const paper = await arxiv.getPaper('arxiv', repo.id);
             const record = assembleArxivSolutionRecord(paper, {
               generatedBy: 'ocp-scraper/arxiv-adapter',
+            });
+
+            vault.save(record);
+            index.index(record);
+            indexed++;
+
+            records.push({
+              id: record['@id'],
+              title: record.meta.title,
+              stars: 0,
+              trustScore: record.trust.trustScore || 0,
+            });
+            continue;
+          }
+
+          if (source === 'sep') {
+            const sep = forge as SepAdapter;
+            const entry = await sep.getEntry('sep', repo.id);
+            const record = assembleSepSolutionRecord({
+              slug: entry.slug,
+              title: entry.title,
+              preamble: entry.preamble,
+              authors: entry.authors,
+              relatedEntries: entry.relatedEntries,
+              publishedAt: entry.publishedAt,
+              revisedAt: entry.revisedAt,
+              firstSectionTitle: entry.firstSectionTitle,
+              firstSectionText: entry.firstSectionText,
+              bibliographyCount: entry.bibliographyCount,
+              bibliographyEntries: entry.bibliographyEntries,
+              entryUrl: repo.url,
+            }, {
+              generatedBy: 'ocp-scraper/sep-adapter',
             });
 
             vault.save(record);

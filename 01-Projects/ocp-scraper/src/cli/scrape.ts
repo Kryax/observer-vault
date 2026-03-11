@@ -2,6 +2,7 @@ import { Command } from 'commander';
 import { GitHubAdapter } from '../forge/github';
 import { ForgejoAdapter } from '../forge/forgejo';
 import { ArxivAdapter } from '../forge/arxiv';
+import { SepAdapter } from '../forge/sep';
 import { coarseFilter, DEFAULT_COARSE_CONFIG } from '../filter/coarse';
 import { fineFilter } from '../filter/fine';
 import { extractMetadata } from '../extract/metadata';
@@ -9,6 +10,7 @@ import { parseReadme } from '../extract/readme';
 import { parseDependencies, MANIFEST_FILES } from '../extract/dependencies';
 import { assembleSolutionRecord } from '../record/assembler';
 import { assembleArxivSolutionRecord } from '../record/arxiv';
+import { assembleSepSolutionRecord } from '../record/sep';
 import { VaultStore } from '../store/vault';
 import { SearchIndex } from '../store/index';
 import type { ForgeAdapter } from '../types/forge';
@@ -21,7 +23,7 @@ const DB_PATH = `${BASE_DIR}/.ocp/index.db`;
 export const scrapeCommand = new Command('scrape')
   .description('Scrape repositories by topic and create Solution Records')
   .requiredOption('--topic <topic>', 'Topic to search for')
-  .option('--source <source>', 'Forge source (github, codeberg, forgejo, arxiv)', 'github')
+  .option('--source <source>', 'Forge source (github, codeberg, forgejo, arxiv, sep)', 'github')
   .option('--limit <number>', 'Maximum repos to scrape', '10')
   .option('--min-stars <number>', 'Minimum stars filter', '10')
   .option('--forge-url <url>', 'Base URL for self-hosted Forgejo instances')
@@ -59,8 +61,10 @@ export const scrapeCommand = new Command('scrape')
       forge = new ForgejoAdapter({ baseUrl: forgeUrl });
     } else if (source === 'arxiv') {
       forge = new ArxivAdapter();
+    } else if (source === 'sep') {
+      forge = new SepAdapter();
     } else {
-      console.error(`❌ Unknown source: ${source}. Supported: github, codeberg, forgejo, arxiv`);
+      console.error(`❌ Unknown source: ${source}. Supported: github, codeberg, forgejo, arxiv, sep`);
       process.exit(1);
     }
 
@@ -103,6 +107,35 @@ export const scrapeCommand = new Command('scrape')
 
             const trustScore = record.trust.trustScore?.toFixed(3) || '0.000';
             console.log(`   ✅ arxiv/${paper.id} — trust:${trustScore} | ${paper.categories.join(', ')} → ${filePath.replace(BASE_DIR + '/', '')}`);
+            continue;
+          }
+
+          if (source === 'sep') {
+            const sep = forge as SepAdapter;
+            const entry = await sep.getEntry('sep', repo.id);
+            const record = assembleSepSolutionRecord({
+              slug: entry.slug,
+              title: entry.title,
+              preamble: entry.preamble,
+              authors: entry.authors,
+              relatedEntries: entry.relatedEntries,
+              publishedAt: entry.publishedAt,
+              revisedAt: entry.revisedAt,
+              firstSectionTitle: entry.firstSectionTitle,
+              firstSectionText: entry.firstSectionText,
+              bibliographyCount: entry.bibliographyCount,
+              bibliographyEntries: entry.bibliographyEntries,
+              entryUrl: repo.url,
+            }, {
+              generatedBy: 'ocp-scraper/sep-adapter',
+            });
+
+            const filePath = vault.save(record);
+            index.index(record);
+            indexed++;
+
+            const trustScore = record.trust.trustScore?.toFixed(3) || '0.000';
+            console.log(`   ✅ sep/${entry.slug} — trust:${trustScore} | ${entry.relatedEntries.length} related → ${filePath.replace(BASE_DIR + '/', '')}`);
             continue;
           }
 
