@@ -2,6 +2,7 @@ import { Database } from 'bun:sqlite';
 import { mkdirSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import type { SolutionRecord } from '../types/solution-record';
+import { buildArxivCategoryEdges } from './arxiv';
 
 /**
  * SQLite Index — FTS5 search + graph edges for solution discovery.
@@ -119,9 +120,9 @@ export class SearchIndex {
    * Idempotent: upserts if record with same ID exists.
    */
   index(record: SolutionRecord): void {
-    const sourceUrl = record.implementation.refs.find(r => r.type === 'repository')?.uri || '';
-    const stars = record.validation.evidence.find(e => e.type === 'github-stars');
-    const forks = record.validation.evidence.find(e => e.type === 'github-forks');
+    const sourceUrl = getSourceUrl(record);
+    const stars = getEvidenceMetric(record, 'github-stars');
+    const forks = getEvidenceMetric(record, 'github-forks');
     const keywords = (record.meta.keywords || []).join(' ');
 
     // Delete old record from both FTS and records (if exists) to avoid rowid drift.
@@ -130,7 +131,7 @@ export class SearchIndex {
       `SELECT rowid FROM records WHERE id = ?`
     ).get(record['@id']) as { rowid: number } | null;
     if (oldRow) {
-      // Delete from FTS first (needs old rowid), then from records
+      this.db.prepare(`DELETE FROM records_fts WHERE rowid = ?`).run(oldRow.rowid);
       this.db.prepare(`DELETE FROM records WHERE id = ?`).run(record['@id']);
     }
 
@@ -151,8 +152,8 @@ export class SearchIndex {
       Array.isArray(record.implementation.language) ? record.implementation.language[0] : record.implementation.language || null,
       keywords,
       record.implementation.type,
-      parseInt(stars?.description?.match(/(\d+)/)?.[1] || '0'),
-      parseInt(forks?.description?.match(/(\d+)/)?.[1] || '0'),
+      stars,
+      forks,
       record.trust.trustScore || 0,
       record.trust.confidence,
       sourceUrl,
@@ -195,12 +196,44 @@ export class SearchIndex {
         JSON.stringify({ name: dep.name, version: dep.version, type: dep.type }),
       );
     }
+
+    for (const edge of buildArxivCategoryEdges(record)) {
+      edgeStmt.run(
+        record['@id'],
+        edge.targetId,
+        edge.edgeType,
+        edge.weight,
+        JSON.stringify(edge.metadata),
+      );
+    }
   }
 
   /**
    * Full-text search across indexed records.
    */
   search(query: string, limit: number = 20): SearchResult[] {
+    const trimmedQuery = query.trim();
+    if (!trimmedQuery) {
+      return [];
+    }
+
+    try {
+      return this.runSearch(trimmedQuery, limit);
+    } catch (error) {
+      if (!isFtsSyntaxError(error)) {
+        throw error;
+      }
+
+      const escapedQuery = buildLiteralFtsQuery(trimmedQuery);
+      if (!escapedQuery || escapedQuery === trimmedQuery) {
+        throw error;
+      }
+
+      return this.runSearch(escapedQuery, limit);
+    }
+  }
+
+  private runSearch(query: string, limit: number): SearchResult[] {
     const stmt = this.db.prepare(`
       SELECT r.id, r.title, r.description, r.problem_statement, r.domains,
              r.language, r.impl_type, r.stars, r.trust_score, r.confidence,
@@ -544,6 +577,39 @@ export class SearchIndex {
   }
 }
 
+function getSourceUrl(record: SolutionRecord): string {
+  return record.implementation.refs.find((ref) => ref.type === 'repository')?.uri
+    ?? record.implementation.refs[0]?.uri
+    ?? '';
+}
+
+function getEvidenceMetric(record: SolutionRecord, type: string): number {
+  const evidence = record.validation.evidence.find((item) => item.type === type);
+  if (!evidence) {
+    return 0;
+  }
+
+  const match = evidence.description.match(/(\d[\d,]*)/);
+  return match ? Number.parseInt(match[1].replace(/,/g, ''), 10) : 0;
+}
+
+function isFtsSyntaxError(error: unknown): boolean {
+  return error instanceof Error && /fts5|no such column|unterminated/i.test(error.message);
+}
+
+function buildLiteralFtsQuery(query: string): string {
+  const tokens = query
+    .match(/[\p{L}\p{N}]+/gu)
+    ?.map((token) => token.trim())
+    .filter(Boolean);
+
+  if (!tokens || tokens.length === 0) {
+    return '';
+  }
+
+  return tokens.map((token) => `"${token.replace(/"/g, '""')}"`).join(' AND ');
+}
+
 /** Search result shape */
 export interface SearchResult {
   id: string;
@@ -622,3 +688,5 @@ export interface RelatedRecord {
   edge_type: string;
   weight: number;
 }
+
+export { buildArxivCategoryEdges, extractArxivCategories, isArxivRecord } from './arxiv';
