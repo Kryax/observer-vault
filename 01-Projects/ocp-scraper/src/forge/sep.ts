@@ -5,6 +5,7 @@ import type {
   ForgeSearchParams,
   ForgeSearchResult,
 } from '../types/forge';
+import { parseSepEntryHtml } from './sep-entry';
 
 const SEP_BASE_URL = 'https://plato.stanford.edu';
 const SEP_CONTENTS_URL = `${SEP_BASE_URL}/contents.html`;
@@ -30,6 +31,8 @@ export interface SepEntrySnapshot {
   preamble: string;
   firstSectionTitle: string | null;
   firstSectionText: string;
+  bibliographyCount: number;
+  bibliographyEntries: string[];
   publishedAt: string | null;
   revisedAt: string | null;
   relatedEntries: string[];
@@ -191,116 +194,24 @@ export function parseSepEntry(
   slug: string,
   fallback: Partial<SepContentsEntry> = {},
 ): SepEntrySnapshot {
-  const title = normalizeText(stripHtml(extractH1(html) ?? fallback.title ?? slug));
-  const authors = extractAuthors(html);
-  const introSection = extractIntroAndFirstSection(html);
-  const published = extractPublicationDate(html);
-  const revised = extractRevisionDate(html);
-  const relatedEntries = extractRelatedEntrySlugs(html);
+  const parsed = parseSepEntryHtml(html, slug, {
+    title: fallback.title,
+    authors: fallback.authors,
+  });
 
   return {
     slug,
-    title,
-    authors: authors.length > 0 ? authors : fallback.authors ?? [],
-    preamble: introSection.preamble,
-    firstSectionTitle: introSection.firstSectionTitle,
-    firstSectionText: introSection.firstSectionText,
-    publishedAt: published,
-    revisedAt: revised,
-    relatedEntries,
+    title: parsed.title,
+    authors: parsed.authors,
+    preamble: parsed.preamble,
+    firstSectionTitle: parsed.firstSectionTitle,
+    firstSectionText: parsed.firstSectionText,
+    bibliographyCount: parsed.bibliography.length,
+    bibliographyEntries: parsed.bibliography.map((entry) => entry.raw),
+    publishedAt: parsed.publishedAt,
+    revisedAt: parsed.revisedAt,
+    relatedEntries: parsed.relatedEntries.map((entry) => entry.slug),
   };
-}
-
-function extractH1(html: string): string | null {
-  const match = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
-  return match ? match[1] : null;
-}
-
-function extractAuthors(html: string): string[] {
-  const infoLink = html.match(/Author and Citation Info[^>]*entry=([^"&]+)[^"]*/i);
-  const byline = html.match(/<p[^>]*class="preamble"[^>]*>[\s\S]*?<span[^>]*class="au"[^>]*>([\s\S]*?)<\/span>/i)
-    ?? html.match(/<div[^>]*id="pubinfo"[^>]*>([\s\S]*?)<\/div>/i);
-
-  if (!byline && !infoLink) {
-    return [];
-  }
-
-  const text = normalizeText(stripHtml(byline?.[1] ?? ''));
-  return splitAuthors(text.replace(/^by\s+/i, ''));
-}
-
-function extractIntroAndFirstSection(html: string): { preamble: string; firstSectionTitle: string | null; firstSectionText: string } {
-  const article = extractArticleBody(html);
-  const preambleParts: string[] = [];
-  const paragraphMatches = [...article.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)];
-
-  for (const match of paragraphMatches) {
-    const text = normalizeText(stripHtml(match[1]));
-    if (!text) continue;
-    if (/^First published /i.test(text)) continue;
-    preambleParts.push(text);
-    if (preambleParts.length >= 3) break;
-  }
-
-  const firstHeadingMatch = article.match(/<(h2|h3)[^>]*id="([^"]+)"[^>]*>([\s\S]*?)<\/\1>/i)
-    ?? article.match(/<(h2|h3)[^>]*>([0-9]+\.[\s\S]*?)<\/\1>/i);
-
-  if (!firstHeadingMatch) {
-    return {
-      preamble: preambleParts.join('\n\n'),
-      firstSectionTitle: null,
-      firstSectionText: '',
-    };
-  }
-
-  const headingHtml = firstHeadingMatch[firstHeadingMatch.length - 1] ?? '';
-  const firstSectionTitle = normalizeText(stripHtml(headingHtml));
-  const sectionStart = firstHeadingMatch.index ?? 0;
-  const nextHeadingIndex = findNextHeadingIndex(article, sectionStart + firstHeadingMatch[0].length);
-  const sectionHtml = article.slice(sectionStart + firstHeadingMatch[0].length, nextHeadingIndex < 0 ? undefined : nextHeadingIndex);
-  const sectionParagraphs = [...sectionHtml.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)]
-    .map((match) => normalizeText(stripHtml(match[1])))
-    .filter(Boolean);
-
-  return {
-    preamble: preambleParts.join('\n\n'),
-    firstSectionTitle,
-    firstSectionText: sectionParagraphs.join('\n\n'),
-  };
-}
-
-function extractArticleBody(html: string): string {
-  const articleMatch = html.match(/<div[^>]+id="main-text"[^>]*>([\s\S]*?)<div[^>]+id="article-copyright"/i)
-    ?? html.match(/<div[^>]+id="aueditable"[^>]*>([\s\S]*?)<div[^>]+id="article-copyright"/i)
-    ?? html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
-  return articleMatch?.[1] ?? html;
-}
-
-function findNextHeadingIndex(html: string, from: number): number {
-  const next = html.slice(from).match(/<(h2|h3)\b/i);
-  return next && next.index !== undefined ? from + next.index : -1;
-}
-
-function extractPublicationDate(html: string): string | null {
-  const text = normalizeText(stripHtml(extractArticleBody(html)));
-  const firstPublishedMatch = text.match(/First published ([A-Z][a-z]{2} [A-Z][a-z]{2} \d{1,2}, \d{4})/);
-  return firstPublishedMatch ? toIsoDate(firstPublishedMatch[1]) : null;
-}
-
-function extractRevisionDate(html: string): string | null {
-  const text = normalizeText(stripHtml(extractArticleBody(html)));
-  const revisedMatch = text.match(/substantive revision ([A-Z][a-z]{2} [A-Z][a-z]{2} \d{1,2}, \d{4})/i);
-  return revisedMatch ? toIsoDate(revisedMatch[1]) : extractPublicationDate(html);
-}
-
-function extractRelatedEntrySlugs(html: string): string[] {
-  const relatedSection = html.match(/<h2[^>]*id="Rel"[^>]*>[\s\S]*?<\/h2>([\s\S]*?)(?:<h2|<div[^>]+id="article-copyright")/i)?.[1]
-    ?? html.match(/Related Entries[\s\S]*?(<ul[\s\S]*?<\/ul>)/i)?.[1]
-    ?? '';
-  const slugs = [...relatedSection.matchAll(/href="(?:\.\.\/)?entries\/([^/]+)\//gi)]
-    .map((match) => normalizeSepSlug(match[1]))
-    .filter(Boolean);
-  return [...new Set(slugs)];
 }
 
 function mapSnapshotToForgeRepo(snapshot: SepEntrySnapshot): ForgeRepo {
@@ -346,43 +257,28 @@ function buildReadmeContent(snapshot: SepEntrySnapshot): string {
   return parts.filter(Boolean).join('\n\n');
 }
 
-function splitAuthors(raw: string): string[] {
-  return raw
-    .split(/,| and /i)
-    .map((author) => normalizeText(author))
-    .filter(Boolean);
-}
-
-function stripHtml(value: string): string {
-  return decodeHtml(value)
-    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
-    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
-    .replace(/<[^>]+>/g, ' ');
-}
-
 function normalizeText(value: string): string {
   return value.replace(/\s+/g, ' ').trim();
 }
 
-function decodeHtml(value: string): string {
+function stripHtml(value: string): string {
   return value
+    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
     .replace(/&nbsp;/g, ' ')
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&rsquo;/g, "'")
-    .replace(/&lsquo;/g, "'")
-    .replace(/&ldquo;/g, '"')
-    .replace(/&rdquo;/g, '"')
-    .replace(/&ndash;/g, '-')
-    .replace(/&mdash;/g, '--');
+    .replace(/&#39;/g, "'");
 }
 
-function toIsoDate(value: string): string | null {
-  const parsed = new Date(value);
-  return Number.isNaN(parsed.valueOf()) ? null : parsed.toISOString();
+function splitAuthors(raw: string): string[] {
+  return raw
+    .split(/,| and /i)
+    .map((author) => normalizeText(author))
+    .filter(Boolean);
 }
 
 function assertSepOwner(owner: string): void {

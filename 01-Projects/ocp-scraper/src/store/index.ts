@@ -3,6 +3,7 @@ import { mkdirSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import type { SolutionRecord } from '../types/solution-record';
 import { buildArxivCategoryEdges } from './arxiv';
+import { buildSepGraphEdges, extractSepSearchText } from './sep';
 
 /**
  * SQLite Index — FTS5 search + graph edges for solution discovery.
@@ -32,6 +33,7 @@ export class SearchIndex {
         domains TEXT, -- JSON array
         language TEXT,
         keywords TEXT, -- space-separated keywords
+        search_text TEXT,
         impl_type TEXT,
         stars INTEGER DEFAULT 0,
         forks INTEGER DEFAULT 0,
@@ -55,9 +57,32 @@ export class SearchIndex {
         domains,
         language,
         keywords,
+        search_text,
         content=records,
         content_rowid=rowid
       )
+    `);
+
+    this.ensureRecordsColumn('search_text', 'TEXT');
+    this.db.exec('DROP TABLE IF EXISTS records_fts');
+    this.db.exec(`
+      CREATE VIRTUAL TABLE records_fts USING fts5(
+        id,
+        title,
+        description,
+        problem_statement,
+        domains,
+        language,
+        keywords,
+        search_text,
+        content=records,
+        content_rowid=rowid
+      )
+    `);
+    this.db.exec(`
+      INSERT INTO records_fts(rowid, id, title, description, problem_statement, domains, language, keywords, search_text)
+      SELECT rowid, id, title, description, problem_statement, domains, language, keywords, search_text
+      FROM records
     `);
 
     // Graph edges table (from dependency relationships)
@@ -115,6 +140,15 @@ export class SearchIndex {
     `);
   }
 
+  private ensureRecordsColumn(name: string, definition: string): void {
+    const columns = this.db.prepare('PRAGMA table_info(records)').all() as { name: string }[];
+    if (columns.some((column) => column.name === name)) {
+      return;
+    }
+
+    this.db.exec(`ALTER TABLE records ADD COLUMN ${name} ${definition}`);
+  }
+
   /**
    * Index a Solution Record.
    * Idempotent: upserts if record with same ID exists.
@@ -124,6 +158,7 @@ export class SearchIndex {
     const stars = getEvidenceMetric(record, 'github-stars');
     const forks = getEvidenceMetric(record, 'github-forks');
     const keywords = (record.meta.keywords || []).join(' ');
+    const searchText = extractSepSearchText(record);
 
     // Delete old record from both FTS and records (if exists) to avoid rowid drift.
     // INSERT OR REPLACE changes rowid, which desynchronizes the external content FTS5 table.
@@ -137,10 +172,10 @@ export class SearchIndex {
 
     const stmt = this.db.prepare(`
       INSERT INTO records
-        (id, title, description, problem_statement, domains, language, keywords, impl_type,
+        (id, title, description, problem_statement, domains, language, keywords, search_text, impl_type,
          stars, forks, trust_score, confidence, source_url, license, created_at, updated_at, record_json)
       VALUES
-        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `);
 
     stmt.run(
@@ -151,6 +186,7 @@ export class SearchIndex {
       JSON.stringify(record.domains),
       Array.isArray(record.implementation.language) ? record.implementation.language[0] : record.implementation.language || null,
       keywords,
+      searchText,
       record.implementation.type,
       stars,
       forks,
@@ -165,8 +201,8 @@ export class SearchIndex {
 
     // Rebuild FTS for this record. Since we deleted the old row above, we just insert fresh.
     this.db.prepare(`
-      INSERT INTO records_fts(rowid, id, title, description, problem_statement, domains, language, keywords)
-      SELECT rowid, id, title, description, problem_statement, domains, language, keywords
+      INSERT INTO records_fts(rowid, id, title, description, problem_statement, domains, language, keywords, search_text)
+      SELECT rowid, id, title, description, problem_statement, domains, language, keywords, search_text
       FROM records WHERE id = ?
     `).run(record['@id']);
 
@@ -198,6 +234,16 @@ export class SearchIndex {
     }
 
     for (const edge of buildArxivCategoryEdges(record)) {
+      edgeStmt.run(
+        record['@id'],
+        edge.targetId,
+        edge.edgeType,
+        edge.weight,
+        JSON.stringify(edge.metadata),
+      );
+    }
+
+    for (const edge of buildSepGraphEdges(record)) {
       edgeStmt.run(
         record['@id'],
         edge.targetId,
@@ -509,7 +555,7 @@ export class SearchIndex {
         (e.source_id = r.id AND e.target_id = ?)
       )
       WHERE r.id IS NOT NULL
-        AND e.edge_type IN ('shared_domain', 'compatible_port', 'depends_on')
+        AND e.edge_type IN ('shared_domain', 'compatible_port', 'depends_on', 'related_to', 'references')
       GROUP BY r.id
       ORDER BY e.weight DESC, r.trust_score DESC
       LIMIT ?
@@ -690,3 +736,10 @@ export interface RelatedRecord {
 }
 
 export { buildArxivCategoryEdges, extractArxivCategories, isArxivRecord } from './arxiv';
+export {
+  buildSepGraphEdges,
+  extractSepBibliographyTargets,
+  extractSepRelatedEntries,
+  extractSepSearchText,
+  isSepRecord,
+} from './sep';
