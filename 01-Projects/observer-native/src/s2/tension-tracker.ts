@@ -147,7 +147,7 @@ export function resolveTensions(
 ): TensionGap[] {
   const passingDescriptions = new Set(
     outcomes
-      .filter((o) => o.status === "completed")
+      .filter((o) => o.status === "passing")
       .map((o) => normalize(o.description)),
   );
 
