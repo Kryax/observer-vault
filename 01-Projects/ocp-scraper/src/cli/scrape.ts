@@ -1,12 +1,14 @@
 import { Command } from 'commander';
 import { GitHubAdapter } from '../forge/github';
 import { ForgejoAdapter } from '../forge/forgejo';
+import { ArxivAdapter } from '../forge/arxiv';
 import { coarseFilter, DEFAULT_COARSE_CONFIG } from '../filter/coarse';
 import { fineFilter } from '../filter/fine';
 import { extractMetadata } from '../extract/metadata';
 import { parseReadme } from '../extract/readme';
 import { parseDependencies, MANIFEST_FILES } from '../extract/dependencies';
 import { assembleSolutionRecord } from '../record/assembler';
+import { assembleArxivSolutionRecord } from '../record/arxiv';
 import { VaultStore } from '../store/vault';
 import { SearchIndex } from '../store/index';
 import type { ForgeAdapter } from '../types/forge';
@@ -19,10 +21,14 @@ const DB_PATH = `${BASE_DIR}/.ocp/index.db`;
 export const scrapeCommand = new Command('scrape')
   .description('Scrape repositories by topic and create Solution Records')
   .requiredOption('--topic <topic>', 'Topic to search for')
-  .option('--source <source>', 'Forge source (github, codeberg, forgejo)', 'github')
+  .option('--source <source>', 'Forge source (github, codeberg, forgejo, arxiv)', 'github')
   .option('--limit <number>', 'Maximum repos to scrape', '10')
   .option('--min-stars <number>', 'Minimum stars filter', '10')
   .option('--forge-url <url>', 'Base URL for self-hosted Forgejo instances')
+  .option('--keyword <keyword>', 'arXiv keyword query')
+  .option('--author <author>', 'arXiv author query')
+  .option('--date-from <date>', 'arXiv lower date bound (YYYY-MM-DD or YYYYMMDD)')
+  .option('--date-to <date>', 'arXiv upper date bound (YYYY-MM-DD or YYYYMMDD)')
   .action(async (opts) => {
     const limit = parseInt(opts.limit, 10);
     const minStars = parseInt(opts.minStars, 10);
@@ -51,8 +57,10 @@ export const scrapeCommand = new Command('scrape')
         process.exit(1);
       }
       forge = new ForgejoAdapter({ baseUrl: forgeUrl });
+    } else if (source === 'arxiv') {
+      forge = new ArxivAdapter();
     } else {
-      console.error(`❌ Unknown source: ${source}. Supported: github, codeberg, forgejo`);
+      console.error(`❌ Unknown source: ${source}. Supported: github, codeberg, forgejo, arxiv`);
       process.exit(1);
     }
 
@@ -64,7 +72,9 @@ export const scrapeCommand = new Command('scrape')
       // Search repositories
       console.log(`📡 Searching ${source} for topic "${topic}"...`);
       const searchResult = await forge.searchRepos({
-        topic,
+        topic: source === 'arxiv'
+          ? buildArxivTopicQuery(topic, opts.keyword as string | undefined, opts.author as string | undefined, opts.dateFrom as string | undefined, opts.dateTo as string | undefined)
+          : topic,
         limit: limit * 2, // Fetch more to account for filtering
         minStars,
       });
@@ -80,6 +90,22 @@ export const scrapeCommand = new Command('scrape')
         processed++;
 
         try {
+          if (source === 'arxiv') {
+            const arxiv = forge as ArxivAdapter;
+            const paper = await arxiv.getPaper('arxiv', repo.id);
+            const record = assembleArxivSolutionRecord(paper, {
+              generatedBy: 'ocp-scraper/arxiv-adapter',
+            });
+
+            const filePath = vault.save(record);
+            index.index(record);
+            indexed++;
+
+            const trustScore = record.trust.trustScore?.toFixed(3) || '0.000';
+            console.log(`   ✅ arxiv/${paper.id} — trust:${trustScore} | ${paper.categories.join(', ')} → ${filePath.replace(BASE_DIR + '/', '')}`);
+            continue;
+          }
+
           // Stage 1: Coarse filter (pass CLI min-stars through)
           const coarseResult = coarseFilter(repo, {
             ...DEFAULT_COARSE_CONFIG,
@@ -175,3 +201,18 @@ export const scrapeCommand = new Command('scrape')
       index.close();
     }
   });
+
+function buildArxivTopicQuery(
+  topic: string,
+  keyword?: string,
+  author?: string,
+  dateFrom?: string,
+  dateTo?: string,
+): string {
+  const parts = [`category:${topic}`];
+  if (keyword) parts.push(`keyword:${keyword}`);
+  if (author) parts.push(`author:${author}`);
+  if (dateFrom) parts.push(`from:${dateFrom}`);
+  if (dateTo) parts.push(`to:${dateTo}`);
+  return parts.join('; ');
+}

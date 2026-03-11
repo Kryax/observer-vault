@@ -4,10 +4,13 @@ export interface ArxivFeedEntry {
   authors: string[];
   abstract: string;
   categories: string[];
+  primaryCategory: string | null;
   published: string | null;
   updated: string | null;
   doi: string | null;
   pdfUrl: string | null;
+  comment: string | null;
+  journalRef: string | null;
 }
 
 export interface ArxivFeed {
@@ -39,10 +42,13 @@ export function parseArxivEntry(entryXml: string): ArxivFeedEntry {
       .filter(Boolean),
     abstract: normalizeText(extractTagText(entryXml, 'summary') ?? ''),
     categories: extractCategoryTerms(entryXml),
+    primaryCategory: normalizeOptionalText(extractAttributeFromTag(entryXml, 'arxiv:primary_category', 'term')),
     published: normalizeOptionalText(extractTagText(entryXml, 'published')),
     updated: normalizeOptionalText(extractTagText(entryXml, 'updated')),
     doi: normalizeOptionalText(extractTagText(entryXml, 'arxiv:doi')),
     pdfUrl: extractPdfUrl(entryXml),
+    comment: normalizeOptionalText(extractTagText(entryXml, 'arxiv:comment')),
+    journalRef: normalizeOptionalText(extractTagText(entryXml, 'arxiv:journal_ref')),
   };
 }
 
@@ -97,6 +103,11 @@ function extractAttribute(attributes: string, attributeName: string): string | n
   const pattern = new RegExp(`\\b${escapeRegExp(attributeName)}=(['"])([\\s\\S]*?)\\1`);
   const match = attributes.match(pattern);
   return match ? decodeXml(match[2]) : null;
+}
+
+function extractAttributeFromTag(xml: string, tagName: string, attributeName: string): string | null {
+  const startTag = extractStartTags(xml, tagName)[0];
+  return startTag ? extractAttribute(startTag, attributeName) : null;
 }
 
 function assertWellFormedXml(xml: string): void {

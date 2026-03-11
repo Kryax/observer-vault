@@ -25,6 +25,12 @@ describe('ArxivAdapter query helpers', () => {
     });
   });
 
+  test('builds date-bounded query terms', () => {
+    expect(buildArxivSearchQuery({ category: 'cs.AI', dateFrom: '2025-01-01', dateTo: '2025-01-31' })).toBe(
+      'cat:cs.AI+AND+submittedDate:[202501010000+TO+202501312359]',
+    );
+  });
+
   test('treats bare category as category and bare text as keyword', () => {
     expect(parseTopicQuery('cs.LG')).toEqual({ category: 'cs.LG' });
     expect(parseTopicQuery('transformer scaling laws')).toEqual({ keyword: 'transformer scaling laws' });

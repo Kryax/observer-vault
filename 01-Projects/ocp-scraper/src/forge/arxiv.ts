@@ -5,6 +5,8 @@ import type {
   ForgeSearchParams,
   ForgeSearchResult,
 } from '../types/forge';
+import { parseArxivFeed, type ArxivFeedEntry } from './arxiv-feed';
+import type { ArxivPaperMetadata } from '../record/arxiv';
 
 const ARXIV_API_URL = 'http://export.arxiv.org/api/query';
 const ARXIV_ABS_URL = 'https://arxiv.org/abs';
@@ -20,6 +22,8 @@ export interface ArxivQueryOptions {
   title?: string;
   author?: string;
   keyword?: string;
+  dateFrom?: string;
+  dateTo?: string;
 }
 
 /**
@@ -53,56 +57,32 @@ export class ArxivAdapter implements ForgeAdapter {
     url.searchParams.set('sortOrder', 'descending');
 
     await this.enforceRateLimit();
-    const response = await fetch(url.toString(), {
-      headers: {
-        'User-Agent': 'observer-ocp-scraper/0.1.0 (academic adapter; contact Adam)',
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error(`arXiv API error: ${response.status} ${response.statusText}`);
-    }
-
-    const xml = await response.text();
-    const entries = extractArxivEntries(xml);
-    const repos = entries.map(mapEntryToForgeRepo);
+    const xml = await fetchArxivXml(url.toString());
+    const feed = parseArxivFeed(xml);
+    const repos = feed.entries.map(mapEntryToForgeRepo);
 
     return {
       repos,
-      totalCount: repos.length,
-      hasMore: repos.length >= params.limit,
+      totalCount: feed.totalResults ?? repos.length,
+      hasMore: (feed.totalResults ?? repos.length) > repos.length,
     };
   }
 
   async getRepo(owner: string, repo: string): Promise<ForgeRepo> {
     assertArxivOwner(owner);
+    return mapEntryToForgeRepo(await this.fetchEntryById(repo));
+  }
 
-    const query = `id_list=${encodeURIComponent(normalizeArxivId(repo))}`;
-    await this.enforceRateLimit();
-    const response = await fetch(`${this.apiUrl}?${query}`, {
-      headers: {
-        'User-Agent': 'observer-ocp-scraper/0.1.0 (academic adapter; contact Adam)',
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error(`arXiv API error: ${response.status} ${response.statusText}`);
-    }
-
-    const xml = await response.text();
-    const entries = extractArxivEntries(xml);
-    const entry = entries[0];
-
-    if (!entry) {
-      throw new Error(`arXiv paper not found: ${repo}`);
-    }
-
-    return mapEntryToForgeRepo(entry);
+  async getPaper(owner: string, repo: string): Promise<ArxivPaperMetadata> {
+    assertArxivOwner(owner);
+    const entry = await this.fetchEntryById(repo);
+    return mapEntryToPaperMetadata(entry);
   }
 
   async getReadme(owner: string, repo: string): Promise<ForgeFileContent | null> {
-    const paper = await this.getRepo(owner, repo);
-    const abstract = paper.description ?? '';
+    assertArxivOwner(owner);
+    const paper = mapEntryToPaperMetadata(await this.fetchEntryById(repo));
+    const abstract = paper.abstract;
 
     return {
       content: abstract,
@@ -129,6 +109,19 @@ export class ArxivAdapter implements ForgeAdapter {
     }
     this.lastRequestAt = Date.now();
   }
+
+  private async fetchEntryById(repo: string): Promise<ArxivFeedEntry> {
+    const query = `id_list=${encodeURIComponent(normalizeArxivId(repo))}`;
+    await this.enforceRateLimit();
+    const xml = await fetchArxivXml(`${this.apiUrl}?${query}`);
+    const entry = parseArxivFeed(xml).entries[0];
+
+    if (!entry) {
+      throw new Error(`arXiv paper not found: ${repo}`);
+    }
+
+    return entry;
+  }
 }
 
 export function normalizeArxivId(raw: string): string {
@@ -153,6 +146,9 @@ export function buildArxivSearchQuery(options: ArxivQueryOptions): string {
   }
   if (options.keyword) {
     parts.push(`all:${sanitizeQueryTerm(options.keyword)}`);
+  }
+  if (options.dateFrom || options.dateTo) {
+    parts.push(buildDateRangeTerm(options.dateFrom, options.dateTo));
   }
 
   if (parts.length === 0) {
@@ -212,6 +208,17 @@ function parseExplicitQuery(topic: string): ArxivQueryOptions | null {
       case 'q':
         result.keyword = value;
         break;
+      case 'from':
+      case 'date-from':
+      case 'start':
+        result.dateFrom = value;
+        break;
+      case 'to':
+      case 'until':
+      case 'date-to':
+      case 'end':
+        result.dateTo = value;
+        break;
     }
   }
 
@@ -222,98 +229,32 @@ function sanitizeQueryTerm(value: string): string {
   return value.trim().replace(/\s+/g, '+');
 }
 
-interface ArxivEntry {
-  id: string;
-  title: string;
-  abstract: string;
-  categories: string[];
-  published: string;
-  updated: string;
-  doi: string | null;
-  pdfUrl: string | null;
-  authors: string[];
-}
-
-function extractArxivEntries(xml: string): ArxivEntry[] {
-  const entryBlocks = [...xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)];
-  return entryBlocks.map((match) => parseEntryBlock(match[1])).filter((entry): entry is ArxivEntry => entry !== null);
-}
-
-function parseEntryBlock(block: string): ArxivEntry | null {
-  const id = normalizeArxivId(extractSingleTag(block, 'id') ?? '');
-  const title = decodeXml(extractSingleTag(block, 'title') ?? '').replace(/\s+/g, ' ').trim();
-  if (!id || !title) {
-    return null;
-  }
-
-  const abstract = decodeXml(extractSingleTag(block, 'summary') ?? '').replace(/\s+/g, ' ').trim();
-  const published = extractSingleTag(block, 'published') ?? new Date(0).toISOString();
-  const updated = extractSingleTag(block, 'updated') ?? published;
-  const doi = extractSingleTag(block, 'arxiv:doi');
-  const authors = [...block.matchAll(/<author>[\s\S]*?<name>([\s\S]*?)<\/name>[\s\S]*?<\/author>/g)]
-    .map((match) => decodeXml(match[1]).replace(/\s+/g, ' ').trim())
-    .filter(Boolean);
-  const categories = [...block.matchAll(/<category[^>]*term="([^"]+)"/g)].map((match) => match[1]);
-  const pdfUrl = extractPdfUrl(block);
-
-  return {
-    id,
-    title,
-    abstract,
-    categories,
-    published,
-    updated,
-    doi: doi ? decodeXml(doi).trim() : null,
-    pdfUrl,
-    authors,
-  };
-}
-
-function extractSingleTag(block: string, tag: string): string | null {
-  const match = block.match(new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\/${tag}>`));
-  return match ? match[1] : null;
-}
-
-function extractPdfUrl(block: string): string | null {
-  const match = block.match(/<link[^>]*title="pdf"[^>]*href="([^"]+)"/i) ??
-    block.match(/<link[^>]*href="([^"]+\.pdf)"/i);
-  return match ? decodeXml(match[1]).trim() : null;
-}
-
-function decodeXml(value: string): string {
-  return value
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&amp;/g, '&')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'");
-}
-
 function assertArxivOwner(owner: string): void {
   if (owner !== 'arxiv') {
     throw new Error(`arXiv adapter expects owner "arxiv", received: ${owner}`);
   }
 }
 
-function mapEntryToForgeRepo(entry: ArxivEntry): ForgeRepo {
+function mapEntryToForgeRepo(entry: ArxivFeedEntry): ForgeRepo {
+  const arxivId = entry.arxivId ?? '';
   return {
-    id: entry.id,
+    id: arxivId,
     name: entry.title,
-    fullName: `arxiv/${entry.id}`,
+    fullName: `arxiv/${arxivId}`,
     description: entry.abstract.slice(0, 200) || null,
-    url: `${ARXIV_ABS_URL}/${entry.id}`,
+    url: `${ARXIV_ABS_URL}/${arxivId}`,
     homepage: entry.pdfUrl,
     stars: 0,
     forks: 0,
     watchers: 0,
     openIssues: 0,
-    language: entry.categories[0] ?? null,
+    language: entry.primaryCategory ?? entry.categories[0] ?? null,
     languages: {},
     license: null,
     topics: entry.categories,
-    createdAt: entry.published,
-    updatedAt: entry.updated,
-    pushedAt: entry.updated,
+    createdAt: entry.published ?? new Date(0).toISOString(),
+    updatedAt: entry.updated ?? entry.published ?? new Date(0).toISOString(),
+    pushedAt: entry.updated ?? entry.published ?? new Date(0).toISOString(),
     defaultBranch: 'main',
     hasReadme: true,
     isArchived: false,
@@ -321,4 +262,58 @@ function mapEntryToForgeRepo(entry: ArxivEntry): ForgeRepo {
     size: Math.ceil(entry.abstract.length / 1024),
     contributorsCount: entry.authors.length,
   };
+}
+
+function mapEntryToPaperMetadata(entry: ArxivFeedEntry): ArxivPaperMetadata {
+  const id = entry.arxivId ?? '';
+  return {
+    id,
+    title: entry.title,
+    abstract: entry.abstract,
+    authors: entry.authors,
+    categories: entry.categories,
+    published: entry.published ?? new Date(0).toISOString(),
+    updated: entry.updated ?? entry.published ?? new Date(0).toISOString(),
+    doi: entry.doi,
+    pdfUrl: entry.pdfUrl,
+    absUrl: `${ARXIV_ABS_URL}/${id}`,
+    comment: entry.comment,
+    journalRef: entry.journalRef,
+  };
+}
+
+function buildDateRangeTerm(dateFrom?: string, dateTo?: string): string {
+  const start = formatArxivDateBound(dateFrom, 'start');
+  const end = formatArxivDateBound(dateTo, 'end');
+  return `submittedDate:[${start}+TO+${end}]`;
+}
+
+function formatArxivDateBound(value: string | undefined, bound: 'start' | 'end'): string {
+  if (!value) {
+    return bound === 'start' ? '000000000000' : '300012312359';
+  }
+
+  const digits = value.replace(/[^0-9]/g, '');
+  if (digits.length === 8) {
+    return `${digits}${bound === 'start' ? '0000' : '2359'}`;
+  }
+  if (digits.length === 12) {
+    return digits;
+  }
+
+  throw new Error(`Invalid arXiv date bound: ${value}`);
+}
+
+async function fetchArxivXml(url: string): Promise<string> {
+  const response = await fetch(url, {
+    headers: {
+      'User-Agent': 'observer-ocp-scraper/0.1.0 (academic adapter; contact Adam)',
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(`arXiv API error: ${response.status} ${response.statusText}`);
+  }
+
+  return response.text();
 }

@@ -77,10 +77,13 @@ describe('parseArxivFeed', () => {
       authors: ['Jane Doe', 'John Smith'],
       abstract: 'We study memory-backed agents & show how retrieval changes performance.',
       categories: ['cs.AI', 'cs.IR'],
+      primaryCategory: null,
       published: '2025-01-09T08:00:00Z',
       updated: '2025-01-10T11:22:33Z',
       doi: '10.1000/example-doi',
       pdfUrl: 'https://arxiv.org/pdf/2501.01234v2.pdf',
+      comment: null,
+      journalRef: null,
     });
 
     expect(feed.entries[1]).toEqual({
@@ -89,10 +92,13 @@ describe('parseArxivFeed', () => {
       authors: ['Alice Example'],
       abstract: 'Second paper.',
       categories: ['cs.LG'],
+      primaryCategory: null,
       published: '2025-01-10T00:00:00Z',
       updated: '2025-01-11T00:00:00Z',
       doi: null,
       pdfUrl: 'https://arxiv.org/pdf/2501.09999.pdf',
+      comment: null,
+      journalRef: null,
     });
   });
 
@@ -109,10 +115,13 @@ describe('parseArxivFeed', () => {
         authors: ['Solo Author'],
         abstract: 'Text with irregular spacing.',
         categories: [],
+        primaryCategory: null,
         published: null,
         updated: null,
         doi: null,
         pdfUrl: null,
+        comment: null,
+        journalRef: null,
       },
       {
         arxivId: null,
@@ -120,10 +129,13 @@ describe('parseArxivFeed', () => {
         authors: [],
         abstract: '',
         categories: [],
+        primaryCategory: null,
         published: null,
         updated: null,
         doi: null,
         pdfUrl: null,
+        comment: null,
+        journalRef: null,
       },
     ]);
   });

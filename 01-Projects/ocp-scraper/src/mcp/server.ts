@@ -19,12 +19,14 @@ import { clusterQueries } from '../cli/gaps';
 // Forge adapters for scrape
 import { GitHubAdapter } from '../forge/github';
 import { ForgejoAdapter } from '../forge/forgejo';
+import { ArxivAdapter } from '../forge/arxiv';
 import { coarseFilter } from '../filter/coarse';
 import { fineFilter } from '../filter/fine';
 import { extractMetadata } from '../extract/metadata';
 import { parseReadme } from '../extract/readme';
 import { parseDependencies, MANIFEST_FILES } from '../extract/dependencies';
 import { assembleSolutionRecord } from '../record/assembler';
+import { assembleArxivSolutionRecord } from '../record/arxiv';
 import { enrichGraph } from '../search/enrichment';
 
 import type { ForgeAdapter } from '../types/forge';
@@ -157,13 +159,17 @@ server.registerTool(
     description: 'Scrape repositories by topic from a forge (GitHub, Codeberg, Forgejo) and create Solution Records.',
     inputSchema: z.object({
       topic: z.string().describe('Topic to search for'),
-      source: z.enum(['github', 'codeberg', 'forgejo']).optional().default('github').describe('Forge source'),
+      source: z.enum(['github', 'codeberg', 'forgejo', 'arxiv']).optional().default('github').describe('Forge source'),
       limit: z.number().optional().default(10).describe('Maximum repos to scrape'),
       minStars: z.number().optional().default(10).describe('Minimum stars filter'),
       forgeUrl: z.string().optional().describe('Base URL for self-hosted Forgejo instances'),
+      keyword: z.string().optional().describe('arXiv keyword query'),
+      author: z.string().optional().describe('arXiv author query'),
+      dateFrom: z.string().optional().describe('arXiv lower date bound (YYYY-MM-DD or YYYYMMDD)'),
+      dateTo: z.string().optional().describe('arXiv upper date bound (YYYY-MM-DD or YYYYMMDD)'),
     }),
   },
-  async ({ topic, source, limit, minStars, forgeUrl }) => {
+  async ({ topic, source, limit, minStars, forgeUrl, keyword, author, dateFrom, dateTo }) => {
     // Initialize forge adapter
     let forge: ForgeAdapter;
     try {
@@ -179,6 +185,8 @@ server.registerTool(
           };
         }
         forge = new ForgejoAdapter({ baseUrl: forgeUrl });
+      } else if (source === 'arxiv') {
+        forge = new ArxivAdapter();
       } else {
         return {
           content: [{ type: 'text' as const, text: JSON.stringify({ error: `Unknown source: ${source}` }) }],
@@ -196,7 +204,13 @@ server.registerTool(
     const index = new SearchIndex(DB_PATH);
 
     try {
-      const searchResult = await forge.searchRepos({ topic, limit: limit * 2, minStars });
+      const searchResult = await forge.searchRepos({
+        topic: source === 'arxiv'
+          ? buildArxivTopicQuery(topic, keyword, author, dateFrom, dateTo)
+          : topic,
+        limit: limit * 2,
+        minStars,
+      });
 
       let processed = 0;
       let indexed = 0;
@@ -210,6 +224,26 @@ server.registerTool(
         processed++;
 
         try {
+          if (source === 'arxiv') {
+            const arxiv = forge as ArxivAdapter;
+            const paper = await arxiv.getPaper('arxiv', repo.id);
+            const record = assembleArxivSolutionRecord(paper, {
+              generatedBy: 'ocp-scraper/arxiv-adapter',
+            });
+
+            vault.save(record);
+            index.index(record);
+            indexed++;
+
+            records.push({
+              id: record['@id'],
+              title: record.meta.title,
+              stars: 0,
+              trustScore: record.trust.trustScore || 0,
+            });
+            continue;
+          }
+
           const coarseResult = coarseFilter(repo);
           if (!coarseResult.passed) {
             filtered++;
@@ -293,6 +327,21 @@ server.registerTool(
     }
   },
 );
+
+function buildArxivTopicQuery(
+  topic: string,
+  keyword?: string,
+  author?: string,
+  dateFrom?: string,
+  dateTo?: string,
+): string {
+  const parts = [`category:${topic}`];
+  if (keyword) parts.push(`keyword:${keyword}`);
+  if (author) parts.push(`author:${author}`);
+  if (dateFrom) parts.push(`from:${dateFrom}`);
+  if (dateTo) parts.push(`to:${dateTo}`);
+  return parts.join('; ');
+}
 
 // ─── ocp_status ──────────────────────────────────────────────────────────────
 
