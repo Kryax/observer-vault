@@ -209,3 +209,17 @@ Built the minimum viable algebra engine in `observer-native`, used it to run an 
   - this is the final gate
 - `BBWOP` necessity question remains open: if pressure proves required in all credible cases, the minimal triple claim must be revised to the quad.
 - Total session commits: `26`.
+
+## Addendum 4 — Final
+
+- Strict mechanistic d-test completed on two domains (webpack HMR + adaptive immune escalation)
+- Five-part chain mapped in domain-native terms with temporal ordering in both domains
+- Six distinct failure modes documented (3 per domain), each domain-recognisable and different — composition is load-bearing
+- BBWOP necessity asymmetric: optional in low-pressure software, constitutive in immune remodelling
+- Key distinction earned: theoretical minimum (triple) vs operational minimum (quad)
+- d remains strong partial pass — upgraded by mechanistic evidence but not yet exhaustive proof
+- Three-way advisory final consensus: quad operational minimum strongly supported, not yet canonical
+- Gemini meta-observation: the advisory ecosystem itself performed DSG during this session (Gemini as fast-path integration, GPT as slow-path governance)
+- Gemini algebra insight: stress (⊗_stress) is shared trigger for both ↑ and ↓ — unifies Theorems 2 and 3
+- Next: designing ESMB + BBWOP pillars for Observer-native to complete the quad in the system itself
+- Total session commits: 28
