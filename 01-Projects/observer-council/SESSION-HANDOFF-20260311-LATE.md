@@ -182,3 +182,30 @@ Built the minimum viable algebra engine in `observer-native`, used it to run an 
   - KDE config
   - Gemini CLI auth
 - Michelle's birthday is Saturday, March 15.
+
+## Addendum 3 - Evening
+
+- Tier 3 `d`-condition test was run with a systematic capability matrix.
+- Five-part chain defined:
+  - `Notice`
+  - `Represent`
+  - `Authorize`
+  - `Install`
+  - `Continue`
+- Result: `d partially passes`.
+- Clean structural gap holds at the abstract level:
+  - no pair completes `Represent -> Authorize -> Install`
+  - the triple is the first composition to close all five steps
+- Domain evidence remains uneven:
+  - immune remodelling is the strongest domain
+  - software reconfiguration is strong on `Install` and `Continue`
+  - constitutional law is weakest on `Install`
+- Tier 3 was not promoted; this was correctly held at the sovereignty gate.
+- Three-way advisory consensus (`Claude`, `GPT`, `Gemini`) remains: the compositional read is real but not yet sovereign.
+- Next session target:
+  - strict mechanistic `d`-test on two domains only: immune remodelling + live software reconfiguration
+  - temporal ordering of the five-part chain
+  - failure-mode analysis: remove each middle capability and show the breakdown
+  - this is the final gate
+- `BBWOP` necessity question remains open: if pressure proves required in all credible cases, the minimal triple claim must be revised to the quad.
+- Total session commits: `26`.
