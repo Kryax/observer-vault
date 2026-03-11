@@ -125,25 +125,60 @@ Built the minimum viable algebra engine in `observer-native`, used it to run an 
 - OCP scraper data records remain uncommitted by design; the volume is too large to treat as routine git history without a more deliberate data-commit policy.
 - Total commits this session: `16`.
 
-## Addendum 2 - Afternoon
+## Addendum 2 - Full Afternoon
 
 - arXiv forge adapter built and verified:
   - `3df0628` `feat: arXiv adapter phase 1 query skeleton`
   - `7988393` `feat: arXiv adapter phase 2 parsing assembly and index`
   - `b4a6025` `feat: arXiv adapter phase 3 cli mcp and e2e`
-- arXiv PRD committed: `2996e43` `prd: arXiv forge adapter for OCP scraper`
+- arXiv PRD committed:
+  - `2996e43` `prd: arXiv forge adapter for OCP scraper`
+- SEP forge adapter built and verified:
+  - `37ad3d6` `feat: SEP adapter phase 1 discovery skeleton`
+  - `bba7359` `feat: SEP adapter phase 2 parsing assembly and graph`
+  - `b06ad57` `feat: SEP adapter phase 3 cli mcp and e2e`
+- SEP PRD saved:
+  - `01-Projects/ocp-scraper/.prd/PRD-20260311-sep-adapter.md`
+- OCP scraper now has three source adapters:
+  - GitHub
+  - arXiv
+  - SEP
 - arXiv R-axis tests run across two evidence classes:
   - mechanistic: `nlin.AO`, `cond-mat.stat-mech`, `cs.MA`
-  - reflective: `physics.hist-ph` plus three reflective `cs.AI` keyword searches
-- `RSR` reclassification is now confirmed across both GitHub and arXiv evidence classes.
+  - reflective: `physics.hist-ph` plus `3` zero-result reflective `cs.AI` keyword searches
+- `RSR` is now reclassified as effect descriptor, confirmed across both GitHub and arXiv evidence classes.
 - `AFR` surfaced as the better cause-shaped candidate, but `d` remains contested.
-- Substrate bias is now empirically confirmed, including `3` zero-result reflective `cs.AI` scrapes.
-- The recurse-axis Tier 2 standalone operator is now doubtful.
-- The Tier 3 compositional hypothesis is the current best read.
-- R-axis status is now frozen as canonical structural conclusion.
+- Substrate bias is now empirically confirmed:
+  - GitHub = effect-heavy
+  - arXiv = mechanism-heavy
+  - SEP = reflective/conceptual
+  - each produces a qualitatively different evidence class
+- The recurse-axis Tier 2 standalone operator is now doubtful and frozen as canonical structural conclusion.
+- Tier 3 composition inquiry was run with balanced three-source evidence.
+- Current result: recurse-axis behavior is compositional, not a missing peer motif.
+  - minimal composition: `Dual-Speed Governance x Explicit State Machine Backbone x Composable Plugin Architecture`
+  - strongest under pressure: full quad, with `Bounded Buffer With Overflow Policy` acting as catalyst
+- Gemini independently confirmed a major algebraic update: `stress` (`⊗_stress`) is both the trigger for collapse (`↓`) and the catalyst for emergence (`↑`).
+- This unifies Theorem 2 and Theorem 3 of the algebra through a shared trigger condition.
+- Three-way LLM triangulation now converges on the same structural read:
+  - Claude
+  - GPT
+  - Gemini
+- Condition `d` (non-derivability) is now the final gate for Tier 3 promotion.
+- No Tier 3 motif was declared; this was correctly held at the sovereignty gate.
+- SEP related-entry graph edges are confirmed working as native philosophical cross-references.
 - OCP scraper data records remain uncommitted by design.
-- Decision: do not commit scraper data to git; the volume is too large over time and the data remains available on ZFS.
-- Next work:
-  - Tier 3 composition inquiry
-  - then `SEP` adapter as first reflective source
-- Total session commits after this: `19`.
+- Decision: scraper data stays on ZFS and is not pushed to the git repo because the volume will become too large over time.
+- Total session commits after this: `25`.
+
+### Next session priorities
+
+- Design the `d`-condition test: find an emergent property of `DSG x ESMB x CPA` that is impossible with only two of the three.
+- Capture the Gemini algebra update formally: stress as shared trigger for `↑` and `↓`.
+- Commit the SEP adapter PRD formally.
+- Housekeeping still pending:
+  - dead PAI skills cleanup
+  - PAI memory harvest
+  - KDE config
+  - Gemini CLI auth
+- Michelle's birthday is Saturday, March 15.
