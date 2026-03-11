@@ -108,3 +108,19 @@ Built the minimum viable algebra engine in `observer-native`, used it to run an 
 
 - Do not force a recurse Tier 2 promotion from `RSR`.
 - Use the open question to search for a cleaner operator whose primary mechanism is not governance, alignment/compression, or reflexive dissolution, but which still reliably generates reachability-space rewriting as its effect.
+
+## Addendum - Late Afternoon
+
+- arXiv forge adapter built and verified in three commits:
+  - `3df0628` `feat: arXiv adapter phase 1 query skeleton`
+  - `7988393` `feat: arXiv adapter phase 2 parsing assembly and index`
+  - `b4a6025` `feat: arXiv adapter phase 3 cli mcp and e2e`
+- arXiv PRD committed: `2996e43` `prd: arXiv forge adapter for OCP scraper`
+- First arXiv evidence test completed across `nlin.AO`, `cond-mat.stat-mech`, and `cs.MA`.
+- `RSR` reclassification as effect descriptor is confirmed by academic evidence.
+- New candidate surfaced: `Admissibility-Field Reparameterization`, but `d` remains contested.
+- Key insight: recurring `d`-failure may indicate the recurse-axis gap is Tier 3 (compositional) rather than Tier 2 (standalone).
+- Primary open question updated: `Is the recurse-axis gap truly Tier 2, or is it a Tier 3 compositional operator emerging from the interaction of existing Tier 2 motifs?`
+- arXiv scraper is now validated as an epistemically different evidence class: it exposes mechanism more directly than GitHub proxy evidence, which often exposed only effect.
+- OCP scraper data records remain uncommitted by design; the volume is too large to treat as routine git history without a more deliberate data-commit policy.
+- Total commits this session: `16`.
