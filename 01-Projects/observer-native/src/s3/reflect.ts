@@ -33,6 +33,7 @@ import type {
   OscillateOutput,
   ConvergenceResult,
 } from "./types.ts";
+import { extractMotifCandidatesFromSessionContent } from "./algebra/index.ts";
 
 // ---------------------------------------------------------------------------
 // Core Reflect function
@@ -90,10 +91,8 @@ function executeOp5Recognition(sessionContent: string): Op5Recognition {
 // ---------------------------------------------------------------------------
 
 function executeOp6MotifExtraction(sessionContent: string): Op6MotifExtraction {
-  // Extract motif candidates from session content
-  // In production, this uses LLM-based structural analysis
   return {
-    motifCandidates: [],
+    motifCandidates: extractMotifCandidatesFromSessionContent(sessionContent),
   };
 }
 

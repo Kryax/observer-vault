@@ -53,10 +53,12 @@ export interface HookRegistrationConfig {
 /** Common fields present on every hook stdin payload. */
 interface ClaudeCodeCommonFields {
   session_id: string;
-  hook_event_name: string;
-  transcript_path: string;
+  hook_event_name?: string;
+  type?: string;
+  transcript_path?: string;
   cwd: string;
-  permission_mode: string;
+  permission_mode?: string;
+  timestamp?: string;
 }
 
 interface ClaudeCodeSessionStartEvent extends ClaudeCodeCommonFields {
@@ -72,13 +74,16 @@ interface ClaudeCodePreToolUseEvent extends ClaudeCodeCommonFields {
 interface ClaudeCodePostToolUseEvent extends ClaudeCodeCommonFields {
   hook_event_name: "PostToolUse";
   tool_name: string;
-  tool_input: Record<string, unknown>;
-  tool_result: unknown;
+  tool_input?: Record<string, unknown>;
+  tool_result?: unknown;
+  result?: unknown;
+  duration_ms?: number;
 }
 
 interface ClaudeCodeStopEvent extends ClaudeCodeCommonFields {
   hook_event_name: "Stop";
   reason?: string;
+  exit_reason?: string;
 }
 
 type ClaudeCodeEvent =
@@ -114,21 +119,22 @@ export class ClaudeCodeAdapter implements HookAdapter {
    * Wraps translation in try/catch -- adapter errors never propagate.
    */
   translateEvent(cliEvent: unknown): ObserverEvent {
-    const event = cliEvent as ClaudeCodeEvent;
-    const now = new Date().toISOString();
+    const event = cliEvent as ClaudeCodeEvent & { type?: string };
+    const now = event.timestamp ?? new Date().toISOString();
+    const eventName = event.hook_event_name ?? (cliEvent as { type?: string }).type;
 
-    switch (event.hook_event_name) {
+    switch (eventName) {
       case "SessionStart":
-        return this.translateSessionStart(event, now);
+        return this.translateSessionStart(event as ClaudeCodeSessionStartEvent, now);
       case "PreToolUse":
-        return this.translatePreToolUse(event, now);
+        return this.translatePreToolUse(event as ClaudeCodePreToolUseEvent, now);
       case "PostToolUse":
-        return this.translatePostToolUse(event, now);
+        return this.translatePostToolUse(event as ClaudeCodePostToolUseEvent, now);
       case "Stop":
-        return this.translateStop(event, now);
+        return this.translateStop(event as ClaudeCodeStopEvent, now);
       default:
         throw new Error(
-          `Unknown Claude Code event type: ${(event as ClaudeCodeCommonFields).hook_event_name}`
+          `Unknown Claude Code event type: ${eventName}`
         );
     }
   }
@@ -216,6 +222,7 @@ export class ClaudeCodeAdapter implements HookAdapter {
       sessionId: event.session_id,
       timestamp: fallbackTimestamp,
       workingDirectory: event.cwd,
+      gitContext: (cliHasGitContext(event) ? event.git : undefined),
     };
   }
 
@@ -242,7 +249,8 @@ export class ClaudeCodeAdapter implements HookAdapter {
       type: "ObserverPostToolUse",
       toolName: event.tool_name,
       toolInput: event.tool_input ?? {},
-      result: event.tool_result,
+      result: event.tool_result ?? event.result,
+      durationMs: event.duration_ms,
       sessionContext: {
         sessionId: event.session_id,
         timestamp: fallbackTimestamp,
@@ -261,12 +269,13 @@ export class ClaudeCodeAdapter implements HookAdapter {
       error: "error",
       completed: "completed",
     };
+    const exitReasonKey = event.exit_reason ?? event.reason ?? "";
     return {
       type: "ObserverSessionStop",
       sessionId: event.session_id,
       timestamp: fallbackTimestamp,
       reason: event.reason,
-      exitReason: reasonMap[event.reason ?? ""] ?? "unknown",
+      exitReason: reasonMap[exitReasonKey] ?? "unknown",
     };
   }
 
@@ -285,6 +294,15 @@ export class ClaudeCodeAdapter implements HookAdapter {
   private appendToStream(line: string): void {
     appendFileSync(this.eventStreamPath, line, "utf-8");
   }
+}
+
+function cliHasGitContext(
+  event: ClaudeCodeCommonFields,
+): event is ClaudeCodeCommonFields & {
+  git: { branch: string; status: string; recentCommits?: string[] };
+} {
+  return typeof (event as { git?: unknown }).git === "object" &&
+    (event as { git?: unknown }).git !== null;
 }
 
 // ---------------------------------------------------------------------------

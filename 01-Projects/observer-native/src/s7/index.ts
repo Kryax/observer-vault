@@ -28,6 +28,14 @@ export {
   createEscalationAuditRecord,
 } from "./sovereignty.ts";
 
+export {
+  assertAlgebraReviewGateResolved,
+  createAlgebraReviewEscalation,
+  createAlgebraReviewGate,
+  createAlgebraReviewGateFromDecision,
+  resolveAlgebraReviewGate,
+} from "./algebra-review.ts";
+
 export type {
   TaskFailureResolution,
   ProcessQualityResolution,
