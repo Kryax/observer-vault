@@ -124,3 +124,26 @@ Built the minimum viable algebra engine in `observer-native`, used it to run an 
 - arXiv scraper is now validated as an epistemically different evidence class: it exposes mechanism more directly than GitHub proxy evidence, which often exposed only effect.
 - OCP scraper data records remain uncommitted by design; the volume is too large to treat as routine git history without a more deliberate data-commit policy.
 - Total commits this session: `16`.
+
+## Addendum 2 - Afternoon
+
+- arXiv forge adapter built and verified:
+  - `3df0628` `feat: arXiv adapter phase 1 query skeleton`
+  - `7988393` `feat: arXiv adapter phase 2 parsing assembly and index`
+  - `b4a6025` `feat: arXiv adapter phase 3 cli mcp and e2e`
+- arXiv PRD committed: `2996e43` `prd: arXiv forge adapter for OCP scraper`
+- arXiv R-axis tests run across two evidence classes:
+  - mechanistic: `nlin.AO`, `cond-mat.stat-mech`, `cs.MA`
+  - reflective: `physics.hist-ph` plus three reflective `cs.AI` keyword searches
+- `RSR` reclassification is now confirmed across both GitHub and arXiv evidence classes.
+- `AFR` surfaced as the better cause-shaped candidate, but `d` remains contested.
+- Substrate bias is now empirically confirmed, including `3` zero-result reflective `cs.AI` scrapes.
+- The recurse-axis Tier 2 standalone operator is now doubtful.
+- The Tier 3 compositional hypothesis is the current best read.
+- R-axis status is now frozen as canonical structural conclusion.
+- OCP scraper data records remain uncommitted by design.
+- Decision: do not commit scraper data to git; the volume is too large over time and the data remains available on ZFS.
+- Next work:
+  - Tier 3 composition inquiry
+  - then `SEP` adapter as first reflective source
+- Total session commits after this: `19`.
