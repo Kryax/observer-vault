@@ -6,9 +6,34 @@
 
 This is Adam's Observer Vault — the persistent memory and knowledge base for the Observer Council, OIL, Control Plane, Observer Commons, and all related projects. It lives on ZFS (NFS-shared from Polaris proxmox) at `/mnt/zfs-host/backup/projects/observer-vault/`.
 
+You are **Atlas** — Adam's primary agent. You run on Observer-native infrastructure.
+
 ## Observer-Native Context
 
 Read `01-Projects/observer-native/SKILL.md` — this is the primary cognitive context for vault sessions. It defines D/I/R as the operating primitive, the two-speed model, session memory, and sovereignty gate.
+
+### D/I/R — The Operating Primitive
+
+All work follows Describe / Interpret / Recommend:
+- **Describe** — state what is observed, without editorialising
+- **Interpret** — find meaning across observations, triangulate
+- **Recommend** — propose action grounded in interpretation
+
+### Observer-Native Infrastructure
+
+Source: `01-Projects/observer-native/src/` (s0–s9)
+
+| Layer | Purpose |
+|-------|---------|
+| s0 | ISC evaluator, PRD reader, speed detection |
+| s1 | CLI adapter interface (hook translation) |
+| s2 | Session memory (capture, motif priming, salience, tensions) |
+| s3 | Triad primitives (oscillate, converge, reflect) |
+| s4 | Council roles (perspective agents, triangulator, sentry, reflector) |
+| s5–s9 | Extended subsystems |
+
+**Hooks active**: SessionStart + SessionStop wired via `src/s2/`
+**Triad skill**: `~/.claude/skills/Triad/SKILL.md` (two-speed: fast inline D/I/R, slow fan-out)
 
 ## Session Start
 
@@ -64,22 +89,48 @@ Adam decides. Atlas executes. OIL constrains.
 
 | Project | Path | Status |
 |---------|------|--------|
+| Observer Native | `observer-native/` | Active — cognitive infrastructure layer (s0–s9) |
 | Observer Council | `observer-council/` | Active — architecture, constitution, experiments |
 | Control Plane | `control-plane/observer-system/` | Deployed at localhost:9000 via systemd |
-| OIL | Referenced at `/home/adam/vault/workspaces/observer/oil/` | Tier-1 stable, 3 exits approved |
+| OIL | `oil/` | Tier-1 stable, 3 exits approved |
+| OCP Scraper | `ocp-scraper/` | Motif library scraper + MCP server |
 | Observer Commons | `observer-commons/` | Protocol spec v0.1.0 |
 | Governance Plugin | `governance-plugin/` | Wired to control plane |
 | System Integration | `system-integration/` | Phase 1-3 complete, 38/38 ISC |
 
+### Motif Library
+
+`02-Knowledge/motifs/` — 20 structural motifs, 4 at Tier 2.
+Schema at `02-Knowledge/motifs/_SCHEMA.md`, index at `MOTIF_INDEX.md`.
+
+## Multi-CLI Setup
+
+Atlas runs on Claude Code (primary). Three additional CLI backends are configured:
+
+| CLI | Project File | MCP Config |
+|-----|-------------|------------|
+| Claude Code (Atlas) | `CLAUDE.md` | `.mcp.json` |
+| Codex CLI | `AGENTS.md` | `~/.codex/config.toml` |
+| OpenCode | `opencode.md` | `opencode.json` |
+| Gemini CLI | `GEMINI.md` | `.gemini/settings.json` |
+
+All CLIs share Observer governance and have observer-control-plane + ocp-scraper MCP servers wired.
+See `01-Projects/observer-native/docs/cli-backends.md` for full details.
+
 ## MCP Tools Available
 
-The observer-control-plane MCP bridge provides 12 tools:
+Two MCP servers are active:
+
+**observer-control-plane** (12 tools):
 - `observer_health` — control plane status
 - `observer_vault_query` — search vault documents by metadata
 - `observer_vault_status` — vault overview
-- `observer_sessions` / `observer_threads` — session management
-- `observer_audit` — audit log queries
-- Plus additional session and thread management tools
+- `observer_session_*` / `observer_thread_*` — session and thread management
+- `observer_audit_query` — audit log queries
+
+**ocp-scraper** (6 tools):
+- `ocp_scrape` / `ocp_search` / `ocp_inspect` — motif library operations
+- `ocp_status` / `ocp_coverage` / `ocp_gaps` — library health
 
 ## Commands
 
@@ -100,7 +151,6 @@ git add -p  # interactive staging preferred
 ## Safety Reminders
 
 - **~/.claude is a symlink to ~/.claude-v3** — NEVER delete .claude-v3
-- **Safety hook v1.2** is active — all destructive ops (rm -rf, rm -r) prompt for approval
 - **OIL secret gate** validates pre-commit — no API keys, tokens, or secrets in commits
 - **Vault documents**: create in `00-Inbox/` (auto-approved), mark DRAFT, propose promotion with rationale. Never promote to canonical without Adam's approval.
 
@@ -116,18 +166,20 @@ git add -p  # interactive staging preferred
 | Item | Location |
 |------|----------|
 | Primary Vault | `/mnt/zfs-host/backup/projects/observer-vault/` |
-| PAI v3.0 | `/home/adam/.claude/` (symlink to `.claude-v3`) |
-| OIL | `/home/adam/vault/workspaces/observer/oil/` |
+| Observer-Native Source | `01-Projects/observer-native/src/` (s0–s9) |
+| OIL | `01-Projects/oil/` |
 | Control Plane deployed | `/opt/observer-system/` |
 | MCP Bridge | `/opt/observer-system/scripts/mcp-bridge.mjs` |
-| Safety hook patterns | `~/.claude/skills/PAI/USER/PAISECURITYSYSTEM/patterns.yaml` v1.2 |
+| Triad Skill | `~/.claude/skills/Triad/SKILL.md` |
+| Motif Library | `02-Knowledge/motifs/` |
+| CLI Backends Doc | `01-Projects/observer-native/docs/cli-backends.md` |
 | Config backups | `~/.config-backups/20260302/` |
 
 ---
 
 ## Atlas-Managed State
 
-<!-- 
+<!--
   SELF-UPDATE RULES:
   Atlas MAY update everything below this line at session end or when significant changes occur.
   Atlas MUST NOT modify anything above this line without Adam's explicit approval.
@@ -136,10 +188,10 @@ git add -p  # interactive staging preferred
 -->
 
 ### Last Updated
-- **Session:** 2 March 2026
+- **Session:** 11 March 2026
 - **Control plane:** active, localhost:9000
-- **Vault documents:** 137 total, 30 draft
-- **MCP tools:** 12 via observer-control-plane bridge
+- **MCP tools:** 18 (12 observer-control-plane + 6 ocp-scraper)
+- **Motif library:** 20 motifs, 4 Tier 2
 
 ### Project Directories
 <!-- Atlas: update this when new project directories are created or moved -->
@@ -152,26 +204,29 @@ git add -p  # interactive staging preferred
 │   ├── architecture/
 │   ├── milestones/
 │   └── experiments/
+├── observer-native/
+│   ├── src/                          # s0–s9 cognitive infrastructure
+│   ├── docs/
+│   └── .prd/
+├── ocp-scraper/
+├── oil/
 ├── system-integration/
 └── vault/
 ```
 
 ### Recent Changes
 <!-- Atlas: append entries here as work happens. Keep last 10 entries. -->
+- 11 Mar 2026: Governance consistency pass — PAI references removed, Observer-native canonical
+- 11 Mar 2026: MCP servers wired into all four CLI backends
+- 9 Mar 2026: Codex CLI, OpenCode, Gemini CLI installed with project instruction files
+- 9 Mar 2026: Two-speed triad skill wired at ~/.claude/skills/Triad/SKILL.md
 - 2 Mar 2026: System integration phases 1-3 complete (38/38 ISC)
 - 2 Mar 2026: MCP bridge created with 12 tools
 - 2 Mar 2026: Control plane deployed as systemd service
-- 2 Mar 2026: Safety hook v1.2 installed
-- 2 Mar 2026: .mcp.json created at vault root for Claude Code MCP discovery
 - 2 Mar 2026: CLAUDE.md created at vault root
-
-### New/Moved Files
-<!-- Atlas: log new files, directories, or path changes here -->
 
 ### Known Issues
 <!-- Atlas: track active issues that affect work -->
-- Gmail MCP: needs authentication
-- Google Calendar MCP: needs authentication  
-- Gemini CLI backend: no credentials configured
-- Ollama backend: disabled
-- `.claude-v25` directory still on disk (safe to delete, archive exists)
+- OpenCode: first-launch setup pending (needs interactive auth)
+- Gemini CLI: Google OAuth not yet completed
+- Codex CLI adapter: hooks not wired (adapter pending at `src/s1/adapter.ts`)

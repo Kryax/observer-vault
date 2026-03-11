@@ -58,6 +58,17 @@ See `01-Projects/observer-native/SKILL.md` for the full framework.
 - Cross-project boundary → STOP, ask Adam
 - Pre-commit gate failure → STOP, report
 
+## MCP Tools Available
+
+If MCP is configured, two servers provide vault and motif library access:
+- **observer-control-plane**: 12 tools (health, vault query, session/thread management, audit)
+- **ocp-scraper**: 6 tools (scrape, search, inspect motif library records)
+
+## Motif Library
+
+`02-Knowledge/motifs/` — structural motifs extracted from sessions and analysis.
+Schema at `02-Knowledge/motifs/_SCHEMA.md`.
+
 ## Shell & Environment
 
 - Shell: fish
