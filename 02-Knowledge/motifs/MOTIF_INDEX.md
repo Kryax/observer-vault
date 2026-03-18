@@ -88,7 +88,16 @@ Meta-analysis (Tier 3 motif detection) requires 3+ Tier 2 motifs. Current Tier 2
 
 ## Meta-Motifs (Tier 3)
 
-*No meta-motifs yet. Phase 5 gate is now OPEN with 4 Tier 2 motifs. Meta-structural analysis can proceed.*
+**Status: Two DRAFT candidates from slow triad (2026-03-19). No promotions — sovereignty gate applies.**
+
+| Name | Status | Criteria Met | Primary Gap | File |
+|------|--------|-------------|-------------|------|
+| Coordination Type Lattice | draft | geometric ✓, self-referential ✓, falsification ~, load-bearing ~ | post-hoc naming of coordination types | [meta/coordination-type-lattice.md](meta/coordination-type-lattice.md) |
+| Derivative Order Collapse Under Self-Reference | draft | geometric ✓, falsification ✓, self-referential ✓, load-bearing ~ | narrow prediction space, single R-axis data point | [meta/derivative-order-collapse.md](meta/derivative-order-collapse.md) |
+
+**Killed candidates (2026-03-19):** Three-Layer Self-Amendment Architecture (not geometric), Reentrant Structural Reconfiguration revised (fails tier-independent falsification), Observational Depth Gradient standalone (not generative), Convergence-Recursion Tension (empirically thin), Coordination Pressure Escalation (subsumed by CTL).
+
+**Full analysis:** [meta/tier3-triad-analysis-20260319.md](meta/tier3-triad-analysis-20260319.md)
 
 ## Schema Reference
 
