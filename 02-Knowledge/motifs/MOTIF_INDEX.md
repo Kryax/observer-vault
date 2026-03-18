@@ -1,7 +1,7 @@
 ---
 status: canonical
 date: 2026-03-03
-updated: 2026-03-11
+updated: 2026-03-19
 cssclasses:
   - status-canonical
 ---
@@ -17,10 +17,10 @@ cssclasses:
 |--------|-------|
 | Total motifs | 20 |
 | Tier 0 (Observation) | 10 |
-| Tier 1 (Cross-Domain) | 6 |
-| Tier 2 (Structural Operator) | 4 |
+| Tier 1 (Cross-Domain) | 4 |
+| Tier 2 (Structural Operator) | 6 |
 | Tier 3 (Meta-Structural) | 0 |
-| Tier 2 candidates (4+ domains) | 2 |
+| Tier 2 candidates (4+ domains) | 0 |
 
 ## Motif Registry
 
@@ -30,10 +30,10 @@ cssclasses:
 | **Composable Plugin Architecture** | **2** | **0.9** | **7** | **triangulated** | **2** | **differentiate** | [composable-plugin-architecture.md](composable-plugin-architecture.md) |
 | **Explicit State Machine Backbone** | **2** | **0.9** | **7** | **triangulated** | **2** | **differentiate** | [explicit-state-machine-backbone.md](explicit-state-machine-backbone.md) |
 | **Bounded Buffer With Overflow Policy** | **2** | **0.9** | **7** | **triangulated** | **1.5** | **differentiate** | [bounded-buffer-with-overflow-policy.md](bounded-buffer-with-overflow-policy.md) |
-| Observer-Feedback Loop | 1 | 0.5 | 4 | top-down | 1-2 | recurse | [observer-feedback-loop.md](observer-feedback-loop.md) |
+| **Idempotent State Convergence** | **2** | **1.0** | **10** | **triangulated** | **1** | **integrate** | [idempotent-state-convergence.md](idempotent-state-convergence.md) |
+| **Observer-Feedback Loop** | **2** | **0.9** | **8** | **top-down** | **1-2** | **recurse** | [observer-feedback-loop.md](observer-feedback-loop.md) |
 | Trust-as-Curation | 1 | 0.4 | 4 | top-down | 0-1 | integrate | [trust-as-curation.md](trust-as-curation.md) |
 | Template-Driven Classification | 1 | 0.3 | 2 | top-down | 0 | differentiate | [template-driven-classification.md](template-driven-classification.md) |
-| Idempotent State Convergence | 1 | 0.7 | 5 | triangulated | 1 | integrate | [idempotent-state-convergence.md](idempotent-state-convergence.md) |
 | Scaffold-First Architecture | 1 | 0.2 | 2 | top-down | 0 | differentiate | [scaffold-first-architecture.md](scaffold-first-architecture.md) |
 | Progressive Formalization | 1 | 0.2 | 2 | top-down | 1 | integrate | [progressive-formalization.md](progressive-formalization.md) |
 | Live Event Bus | 0 | 0.1 | 1 | bottom-up | 1 | integrate | [live-event-bus.md](live-event-bus.md) |
@@ -55,32 +55,29 @@ cssclasses:
 | Composable Plugin Architecture | 7 | 0.9 | 2026-03-04 | Alien-domain triangulation across game engines (Bevy, A-Frame, GDevelop), music production (Zrythm — STRONGEST instance), and bioinformatics (Nextflow, GATK). 7 domains, all 5 validation protocol conditions satisfied. |
 | Explicit State Machine Backbone | 7 | 0.9 | 2026-03-04 | Alien-domain triangulation across game engines (Godot, Bevy, libGDX — canonical domain), spaced repetition (FSRS4Anki — problem-shaped), and music production (Zrythm transport). 7 domains, all 5 validation protocol conditions satisfied. |
 | Bounded Buffer With Overflow Policy | 7 | 0.9 | 2026-03-04 | Alien-domain triangulation across music production (Zrythm audio buffers — CANONICAL instance predating software eng), bioinformatics (Nextflow channels, fastp I/O), and game engines (Bevy event TTL). 7 domains, all 5 validation protocol conditions satisfied. |
+| Idempotent State Convergence | 10 | 1.0 | 2026-03-19 | Slow triad alien domain expansion: 5 new alien domains (biology/homeostasis, materials science/crystal annealing, mathematics/proof normalization, economics/arbitrage, governance/regulatory compliance). 10 domains, all 5 validation protocol conditions satisfied. Domain boundary refined from "pipeline/declarative systems" to "active control with declared targets." |
+| Observer-Feedback Loop | 8 | 0.9 | 2026-03-19 | Slow triad alien domain expansion: 4 new alien domains (biology/adaptive immunity, jurisprudence/common law, clinical medicine/psychiatric nosology, anthropology/ethnographic framework evolution). 8 domains, all 5 validation protocol conditions satisfied. **Conditional promotion** — all instances top-down derived; bottom-up corpus confirmation pending. |
 
 ## Tier 2 Candidates
 
-The following Tier 1 motifs have 3+ domain instances and are eligible for Tier 2 promotion pending validation protocol and human approval:
-
-| Name | Domains | Confidence | Promotion Readiness |
-|------|---------|-----------|-------------------|
-| Idempotent State Convergence | 5 | 0.7 | **Moderate** — 5 domains, triangulated, but domain-constrained to pipeline/declarative systems |
-| Observer-Feedback Loop | 4 | 0.5 | Ready — needs alien domain testing to strengthen candidacy |
-
-*Note: Three motifs (Plugin, StateMachine, Buffer) promoted to Tier 2 on 2026-03-04. Idempotent Convergence remains a moderate candidate with a documented domain constraint. Trust-as-Curation (4 domains, 0.4 confidence) needs more domain instances to qualify.*
+No current Tier 2 candidates. Trust-as-Curation (4 domains, 0.4 confidence) is the closest Tier 1 motif but needs additional domain instances and alien domain testing to qualify.
 
 ## Phase 5: Meta-Analysis Gate
 
 **Status: OPEN**
 
-Meta-analysis (Tier 3 motif detection) requires 3+ Tier 2 motifs. Current Tier 2 count: **4**.
+Meta-analysis (Tier 3 motif detection) requires 3+ Tier 2 motifs. Current Tier 2 count: **6**.
 
-| Tier 2 Motif | Domains | Promoted |
-|-------------|---------|----------|
-| Dual-Speed Governance | 12 | 2026-03-03 |
-| Composable Plugin Architecture | 7 | 2026-03-04 |
-| Explicit State Machine Backbone | 7 | 2026-03-04 |
-| Bounded Buffer With Overflow Policy | 7 | 2026-03-04 |
+| Tier 2 Motif | Domains | Promoted | Status |
+|-------------|---------|----------|--------|
+| Dual-Speed Governance | 12 | 2026-03-03 | canonical |
+| Composable Plugin Architecture | 7 | 2026-03-04 | canonical |
+| Explicit State Machine Backbone | 7 | 2026-03-04 | canonical |
+| Bounded Buffer With Overflow Policy | 7 | 2026-03-04 | canonical |
+| Idempotent State Convergence | 10 | 2026-03-19 | canonical |
+| Observer-Feedback Loop | 8 | 2026-03-19 | provisional (triangulation gap) |
 
-**Gate opened 2026-03-04.** With 4 Tier 2 structural operators, motif-of-motif detection (Tier 3) can now proceed. Look for structural relationships, compositional patterns, and meta-structural regularities across the 4 Tier 2 motifs.
+**Gate opened 2026-03-04.** With 6 Tier 2 structural operators, motif-of-motif detection (Tier 3) has a richer operator space. The addition of ISC (integrate axis) and OFL (recurse axis) brings all three primary axes into the Tier 2 set, enabling cross-axis meta-structural analysis.
 
 ## Meta-Motifs (Tier 3)
 

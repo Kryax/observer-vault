@@ -1,6 +1,6 @@
 ---
 name: "Observer-Feedback Loop"
-tier: 1
+tier: 2
 status: provisional
 confidence: 0.9
 source: "top-down"
@@ -155,4 +155,6 @@ This motif now meets most quantitative criteria for Tier 2 promotion:
    - Clean failure: YES (4 specific, tested falsification conditions)
 
 **Gap:** No bottom-up (corpus) confirmation yet. All instances are top-down derived.
-**Awaiting Adam's approval for Tier 2 promotion.**
+
+**Promoted to Tier 2 (conditional) — 2026-03-19. Approved by Adam.**
+Triangulation gap noted: all 8 instances are top-down derived. Bottom-up corpus confirmation via OCP scraper would complete the triangulation and upgrade status to canonical. This is a standing action item.

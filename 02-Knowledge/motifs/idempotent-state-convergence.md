@@ -1,7 +1,7 @@
 ---
 name: "Idempotent State Convergence"
-tier: 1
-status: provisional
+tier: 2
+status: canonical
 confidence: 1.0
 source: "triangulated"
 domain_count: 10
