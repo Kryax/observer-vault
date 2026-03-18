@@ -15,8 +15,8 @@ cssclasses:
 
 | Metric | Count |
 |--------|-------|
-| Total motifs | 20 |
-| Tier 0 (Observation) | 10 |
+| Total motifs | 27 |
+| Tier 0 (Observation) | 17 |
 | Tier 1 (Cross-Domain) | 4 |
 | Tier 2 (Structural Operator) | 6 |
 | Tier 3 (Meta-Structural) | 0 |
@@ -46,6 +46,13 @@ cssclasses:
 | Estimation-Control Separation | 0 | 0.1 | 1 | bottom-up | 1 | differentiate | [estimation-control-separation.md](estimation-control-separation.md) |
 | Safety-Liveness Duality | 0 | 0.1 | 1 | bottom-up | 2 | differentiate | [safety-liveness-duality.md](safety-liveness-duality.md) |
 | Reflexive Structural Transition | 0 | 0.1 | 1 | bottom-up | 2 | recurse | [reflexive-structural-transition.md](reflexive-structural-transition.md) |
+| Prediction-Error as Primary Signal | 0 | 0.1 | 1 | top-down | 2 | recurse | [prediction-error-as-primary-signal.md](prediction-error-as-primary-signal.md) |
+| Ratchet with Asymmetric Friction | 0 | 0.1 | 1 | top-down | 1 | recurse | [ratchet-with-asymmetric-friction.md](ratchet-with-asymmetric-friction.md) |
+| Nested Self-Similar Hierarchy | 0 | 0.1 | 1 | top-down | 2 | recurse | [nested-self-similar-hierarchy.md](nested-self-similar-hierarchy.md) |
+| Two Antagonistic Modes | 0 | 0.1 | 1 | top-down | 1 | integrate | [two-antagonistic-modes.md](two-antagonistic-modes.md) |
+| Redundancy as Resilience Tax | 0 | 0.1 | 1 | top-down | 1 | integrate | [redundancy-as-resilience-tax.md](redundancy-as-resilience-tax.md) |
+| Hidden Structure / Surface Form Separation | 0 | 0.1 | 1 | top-down | 0 | differentiate | [hidden-structure-surface-form-separation.md](hidden-structure-surface-form-separation.md) |
+| Drift Toward Regularity Under Repeated Transmission | 0 | 0.1 | 1 | top-down | 2 | recurse | [drift-toward-regularity.md](drift-toward-regularity.md) |
 
 ## Tier 2 Promoted
 
