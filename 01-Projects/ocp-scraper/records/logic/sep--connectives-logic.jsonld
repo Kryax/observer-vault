@@ -1,0 +1,688 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/connectives-logic",
+  "meta": {
+    "title": "Sentence Connectives in Formal Logic",
+    "description": "Natural language sentence-linking words (like \"and\", \"or\") have traditionally had aspects of their use simulated by corresponding connectives in various systems of formal logic. (In fact we use the word \"connective\" more generously, so that there don't have to be two or more sentences linked, allowing us to consider the analogues of words like \"not\" and \"necessarily\" as connectives too.) Among the questions this enterprise has raised are the following. (1) Which such naturally occurring sentence connectives call for a treatment of this kind? (Which of them should be counted as 'logical constants'?) (2) Do the aspects of their use which are simulated in that process exhaust what we might think of as their meanings , or is there typically some mismatch here? Of course this second question depends on the particular formal treatment given, since different logics may disagree on the formal principles accorded to their representatives--for example in the case of \"if\", but according to one famous line of thought (developed by H. P. Grice) when we focus specifically on their treatment in classical propositional logic, any such apparent discrepancies can be explained away by appeal to pragmatic principles regulating ordinary cooperative conversation, and do not reflect differences of meaning (semantic differences). Neither question (1) nor question (2) will be addressed here. Instead, this entry focusses on the properties of--and relations between--the formal representatives of these connectives. Examples of such properties include truth-functionality and a replacement property called congruentiality, and of such relations what we call the subconnective relation--relating one connective to another when (roughly speaking) every logical principle holding for the first of a pair of connectives also holds for the second. In fact, all of these concepts are subject to a further relativity. For instance a connective is or is not congruential according to a given logic, with a similar relativity in the case of whether one connective is a subconnective of another. On the other hand, as truth-functionality is defined below, a connective is or is not truth-functional with respect to a class of truth-value assignments--and various interesting further relations give rise to a corresponding logic-relative version of this concept depending on the different ways a class of truth-value assignments is linked to a logic (which in turn depends on how we think of a logic--as an ordinary consequence relation, for example, or as a 'multiple conclusion' consequence relation: see further note 1 below). For some other properties, the further relativity is a bit different. For example, whether a given connective is uniquely characterized --in the sense of being governed by rules which when reduplicated to govern a new connective render compounds formed from the same component sentences using the original and the new connective completely interchangeable--is relative not just to a logic but to a particular proof system (set of rules systematizing the logic). Section 1 introduces the idea of formal sentential languages as (absolutely free) algebras, their primitive connectives having the status of the fundamental operations of these algebras, and explains the notion of a consequence relation on such a language. At a more general level, Galois connections are also introduced, and a simple observation made concerning what we call binary relational connections, to be applied in later sections. Section 2 introduces the fundamental idea of a valuation for a language (a bivalent truth-value assignment to its formulas). Truth-functionality and a generalization thereof called pseudo-truth-functionality (of a connective with respect to a class of valuations) are explained, as well as the idea of sequents and sequent-to-sequent rules. We then move to a more general conception of sequents as originally conceived, allowing a set of formulas to play the conclusion role rather than just a single formula, as well as to the associated idea of generalized consequence relations, emphasizing Carnap's motivation for making this generalization. That motivation can be summarised with reference to one connective. We take negation as our example. Consider the consequence relation determined by the class of all valuations on which the usual negation truth-function is associated with the negation connective. This can be regarded as the classical logic of negation, at least if logics are identified with consequence relations. Now, there are additional valuations consistent with this consequence relation on which the negation truth-function is not associated with the negation connective. (The terminology of a valuation's being consistent with a consequence relation is adapted from Dana Scott. A precise definition appears in Section 2.) But when we consider instead generalized consequence relations, the analogous discrepancy does not arise. Section 2 includes a statement of a result of D. Gabbay which isolates precisely the truth-functions for which such discrepancies do not arise (roughly: generalizations of the conjunction truth-function and various projection functions), as well as of a result of W. Rautenberg showing that despite this expressive weakness in the apparatus of consequence relations, they are sufficiently discriminating--without the need to pass to generalized consequence relations--to distinguish the logical properties of any two truth-functions (of the same arity). Section 3 picks up the theme of sequent-to-sequent rules, concentrating on semantic analysis in the style of J. W. Garson of such rules, and also on the existence and uniqueness of connectives satisfying given rules (a topic introduced by H. Hi&#380;). These last two are seen to be connected with what we call cut-inductivity and id-inductivity of specifically sequent-calculus rules, via, in the former case, a proposal identifying the existence of a connective (with prescribed logical behaviour, given the perspective provided by a logic not explicitly providing such a connective) with conservative extension (of the given logic by rules for the new connective detailing that behaviour). This proposal was made by N. D. Belnap; some problems for conservative extension as a sufficient condition for granting the existence or intelligibility of a new connective with such-and-such logical properties are noted. Section 4 collects several cases of interest in which one might wonder about the existence of connectives with various such properties. For instance (this being Example 3 out of a total of seven) one might ask if it makes sense to have a 1-ary connective with the property that two applications of this connective are equivalent to a single application of (classical) negation. Section 5 assembles supplementary notes and references.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T06:11:05.796Z",
+    "dateModified": "2026-03-22T06:11:05.796Z",
+    "datePublished": "2010-05-03T14:00:00.000Z",
+    "keywords": [
+      "algebra",
+      "logic classical",
+      "logic modal",
+      "logical constants",
+      "logical form",
+      "prior"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Natural language sentence-linking words (like \"and\", \"or\") have traditionally had aspects of their use simulated by corresponding connectives in various systems of formal logic. (In fact we use the word \"connective\" more generously, so that there don't have to be two or more sentences linked, allowing us to consider the analogues of words like \"not\" and \"necessarily\" as connectives too.) Among the questions this enterprise has raised are the following. (1) Which such naturally occurring sentence connectives call for a treatment of this kind? (Which of them should be counted as 'logical constants'?) (2) Do the aspects of their use which are simulated in that process exhaust what we might think of as their meanings , or is there typically some mismatch here? Of course this second question depends on the particular formal treatment given, since different logics may disagree on the formal principles accorded to their representatives--for example in the case of \"if\", but according to one famous line of thought (developed by H. P. Grice) when we focus specifically on their treatment in classical propositional logic, any such apparent discrepancies can be explained away by appeal to pragmatic principles regulating ordinary cooperative conversation, and do not reflect differences of meaning (semantic differences). Neither question (1) nor question (2) will be addressed here. Instead, this entry focusses on the properties of--and relations between--the formal representatives of these connectives. Examples of such properties include truth-functionality and a replacement property called congruentiality, and of such relations what we call the subconnective relation--relating one connective to another when (roughly speaking) every logical principle holding for the first of a pair of connectives also holds for the second. In fact, all of these concepts are subject to a further relativity. For instance a connective is or is not congruential according to a given logic, with a similar relativity in the case of whether one connective is a subconnective of another. On the other hand, as truth-functionality is defined below, a connective is or is not truth-functional with respect to a class of truth-value assignments--and various interesting further relations give rise to a corresponding logic-relative version of this concept depending on the different ways a class of truth-value assignments is linked to a logic (which in turn depends on how we think of a logic--as an ordinary consequence relation, for example, or as a 'multiple conclusion' consequence relation: see further note 1 below). For some other properties, the further relativity is a bit different. For example, whether a given connective is uniquely characterized --in the sense of being governed by rules which when reduplicated to govern a new connective render compounds formed from the same component sentences using the original and the new connective completely interchangeable--is relative not just to a logic but to a particular proof system (set of rules systematizing the logic). Section 1 introduces the idea of formal sentential languages as (absolutely free) algebras, their primitive connectives having the status of the fundamental operations of these algebras, and explains the notion of a consequence relation on such a language. At a more general level, Galois connections are also introduced, and a simple observation made concerning what we call binary relational connections, to be applied in later sections. Section 2 introduces the fundamental idea of a valuation for a language (a bivalent truth-value assignment to its formulas). Truth-functionality and a generalization thereof called pseudo-truth-functionality (of a connective with respect to a class of valuations) are explained, as well as the idea of sequents and sequent-to-sequent rules. We then move to a more general conception of sequents as originally conceived, allowing a set of formulas to play the conclusion role rather than just a single formula, as well as to the associated idea of generalized consequence relations, emphasizing Carnap's motivation for making this generalization. That motivation can be summarised with reference to one connective. We take negation as our example. Consider the consequence relation determined by the class of all valuations on which the usual negation truth-function is associated with the negation connective. This can be regarded as the classical logic of negation, at least if logics are identified with consequence relations. Now, there are additional valuations consistent with this consequence relation on which the negation truth-function is not associated with the negation connective. (The terminology of a valuation's being consistent with a consequence relation is adapted from Dana Scott. A precise definition appears in Section 2.) But when we consider instead generalized consequence relations, the analogous discrepancy does not arise. Section 2 includes a statement of a result of D. Gabbay which isolates precisely the truth-functions for which such discrepancies do not arise (roughly: generalizations of the conjunction truth-function and various projection functions), as well as of a result of W. Rautenberg showing that despite this expressive weakness in the apparatus of consequence relations, they are sufficiently discriminating--without the need to pass to generalized consequence relations--to distinguish the logical properties of any two truth-functions (of the same arity). Section 3 picks up the theme of sequent-to-sequent rules, concentrating on semantic analysis in the style of J. W. Garson of such rules, and also on the existence and uniqueness of connectives satisfying given rules (a topic introduced by H. Hi&#380;). These last two are seen to be connected with what we call cut-inductivity and id-inductivity of specifically sequent-calculus rules, via, in the former case, a proposal identifying the existence of a connective (with prescribed logical behaviour, given the perspective provided by a logic not explicitly providing such a connective) with conservative extension (of the given logic by rules for the new connective detailing that behaviour). This proposal was made by N. D. Belnap; some problems for conservative extension as a sufficient condition for granting the existence or intelligibility of a new connective with such-and-such logical properties are noted. Section 4 collects several cases of interest in which one might wonder about the existence of connectives with various such properties. For instance (this being Example 3 out of a total of seven) one might ask if it makes sense to have a 1-ary connective with the property that two applications of this connective are equivalent to a single application of (classical) negation. Section 5 assembles supplementary notes and references.",
+    "context": "Opening section: 1. Preliminaries | Related entries: algebra, logic-classical, logic-modal, logical-constants, logical-form, prior",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "logic"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry connectives-logic",
+        "uri": "https://plato.stanford.edu/entries/connectives-logic/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 6 related entries, bibliography size 154"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2010-05-03T14:00:00.000Z and revised 2024-06-24T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2024-06-24T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/connectives-logic/",
+        "description": "SEP entry for connectives-logic"
+      }
+    ],
+    "solutionApproach": "1. Preliminaries"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/algebra",
+      "ocp:sep/logic-classical",
+      "ocp:sep/logic-modal",
+      "ocp:sep/logical-constants",
+      "ocp:sep/logical-form",
+      "ocp:sep/prior"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Humberstone, Lloyd",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/connectives-logic/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 105,
+      "validation_diversity": 0.39,
+      "context_breadth": 0.37,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.89
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.513
+  },
+  "extensions": {
+    "sep": {
+      "slug": "connectives-logic",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/connectives-logic/",
+      "preamble": "Natural language sentence-linking words (like \"and\", \"or\") have traditionally had aspects of their use simulated by corresponding connectives in various systems of formal logic. (In fact we use the word \"connective\" more generously, so that there don't have to be two or more sentences linked, allowing us to consider the analogues of words like \"not\" and \"necessarily\" as connectives too.) Among the questions this enterprise has raised are the following. (1) Which such naturally occurring sentence connectives call for a treatment of this kind? (Which of them should be counted as 'logical constants'?) (2) Do the aspects of their use which are simulated in that process exhaust what we might think of as their meanings , or is there typically some mismatch here? Of course this second question depends on the particular formal treatment given, since different logics may disagree on the formal principles accorded to their representatives--for example in the case of \"if\", but according to one famous line of thought (developed by H. P. Grice) when we focus specifically on their treatment in classical propositional logic, any such apparent discrepancies can be explained away by appeal to pragmatic principles regulating ordinary cooperative conversation, and do not reflect differences of meaning (semantic differences). Neither question (1) nor question (2) will be addressed here. Instead, this entry focusses on the properties of--and relations between--the formal representatives of these connectives. Examples of such properties include truth-functionality and a replacement property called congruentiality, and of such relations what we call the subconnective relation--relating one connective to another when (roughly speaking) every logical principle holding for the first of a pair of connectives also holds for the second. In fact, all of these concepts are subject to a further relativity. For instance a connective is or is not congruential according to a given logic, with a similar relativity in the case of whether one connective is a subconnective of another. On the other hand, as truth-functionality is defined below, a connective is or is not truth-functional with respect to a class of truth-value assignments--and various interesting further relations give rise to a corresponding logic-relative version of this concept depending on the different ways a class of truth-value assignments is linked to a logic (which in turn depends on how we think of a logic--as an ordinary consequence relation, for example, or as a 'multiple conclusion' consequence relation: see further note 1 below). For some other properties, the further relativity is a bit different. For example, whether a given connective is uniquely characterized --in the sense of being governed by rules which when reduplicated to govern a new connective render compounds formed from the same component sentences using the original and the new connective completely interchangeable--is relative not just to a logic but to a particular proof system (set of rules systematizing the logic). Section 1 introduces the idea of formal sentential languages as (absolutely free) algebras, their primitive connectives having the status of the fundamental operations of these algebras, and explains the notion of a consequence relation on such a language. At a more general level, Galois connections are also introduced, and a simple observation made concerning what we call binary relational connections, to be applied in later sections. Section 2 introduces the fundamental idea of a valuation for a language (a bivalent truth-value assignment to its formulas). Truth-functionality and a generalization thereof called pseudo-truth-functionality (of a connective with respect to a class of valuations) are explained, as well as the idea of sequents and sequent-to-sequent rules. We then move to a more general conception of sequents as originally conceived, allowing a set of formulas to play the conclusion role rather than just a single formula, as well as to the associated idea of generalized consequence relations, emphasizing Carnap's motivation for making this generalization. That motivation can be summarised with reference to one connective. We take negation as our example. Consider the consequence relation determined by the class of all valuations on which the usual negation truth-function is associated with the negation connective. This can be regarded as the classical logic of negation, at least if logics are identified with consequence relations. Now, there are additional valuations consistent with this consequence relation on which the negation truth-function is not associated with the negation connective. (The terminology of a valuation's being consistent with a consequence relation is adapted from Dana Scott. A precise definition appears in Section 2.) But when we consider instead generalized consequence relations, the analogous discrepancy does not arise. Section 2 includes a statement of a result of D. Gabbay which isolates precisely the truth-functions for which such discrepancies do not arise (roughly: generalizations of the conjunction truth-function and various projection functions), as well as of a result of W. Rautenberg showing that despite this expressive weakness in the apparatus of consequence relations, they are sufficiently discriminating--without the need to pass to generalized consequence relations--to distinguish the logical properties of any two truth-functions (of the same arity). Section 3 picks up the theme of sequent-to-sequent rules, concentrating on semantic analysis in the style of J. W. Garson of such rules, and also on the existence and uniqueness of connectives satisfying given rules (a topic introduced by H. Hi&#380;). These last two are seen to be connected with what we call cut-inductivity and id-inductivity of specifically sequent-calculus rules, via, in the former case, a proposal identifying the existence of a connective (with prescribed logical behaviour, given the perspective provided by a logic not explicitly providing such a connective) with conservative extension (of the given logic by rules for the new connective detailing that behaviour). This proposal was made by N. D. Belnap; some problems for conservative extension as a sufficient condition for granting the existence or intelligibility of a new connective with such-and-such logical properties are noted. Section 4 collects several cases of interest in which one might wonder about the existence of connectives with various such properties. For instance (this being Example 3 out of a total of seven) one might ask if it makes sense to have a 1-ary connective with the property that two applications of this connective are equivalent to a single application of (classical) negation. Section 5 assembles supplementary notes and references.",
+      "firstSectionTitle": "1. Preliminaries",
+      "firstSectionText": "The connectives of the formal languages of propositional logic are typically expected to exhibit salient features of the sentence-connecting devices of natural languages, and especially such devices as are regarded as items of logical vocabulary ( and , or ), not , if-then ,&hellip;), though it will be no part of our concern to inquire as to what their 'logicality' consists in. This is an issue which arises for expressions and constructions such as quantifiers, the identity predicate, and so on, and not just for sentence connectives; for this issue the entry \"Logical Constants\" by John MacFarlane (2015) should be consulted. The formal languages concerned may be taken to agree in constructing their formulas ultimately on the basis of the same countably infinite supply of propositional variables--or 'sentence letters'--\\(p_1, p_2,\\ldots\\), the first three of which we write for convenience as \\(p, q, r\\). Where they differ is in respect of their stock of primitive connectives. So for example, we have the language \\(\\mathbf{L} = (L, \\wedge , \\rightarrow , \\neg , \\bot)\\) with (set of) formulas \\(L\\) and connectives as indicated, of arities 2, 2, 1 and 0. (We have no qualms in the last two cases in speaking of connectives, even when there are not two or more formulas to 'connect'. Note that 0-ary or nullary connectives are already formulas--sometimes called sentential constants--in their own right.) As the notation suggests (with boldface capitals for algebras and the corresponding italic capitals for their universes), we are thinking--in the Polish tradition--of languages as algebras, identifying the primitive connectives with the fundamental operations of such algebras, and in particular, as absolutely free algebras of their similarity types (in the present instance, \\(\\langle 2,2,1,0\\rangle)\\) with the \\(p_i\\) as free generators. This allows us to speak in the usual fashion of the main connective of a given formula, the variables occurring in and more generally the subformulas of such and such a formula, and so on, without restricting ourselves to construing the formulas as obtained specifically by concatenating various symbols. Alongside this 'syntactic operation' sense of connective --explained above for the primitive connectives and extended to derived connectives presently--another use of the term is indispensable: to refer to a connective with particular logical behaviour, as when people want to compare the behaviour of intuitionistic and classical implication. In due course we will see the notion of a consequence relation as one way of specifying such behaviour. If \\(\\vdash\\) is such a relation there is a unique language in the above sense which is the language of \\(\\vdash\\) and we can think of this 'logically loaded' sense of connective as applying to the ordered pair \\(\\langle\\#, \\vdash \\rangle\\); thus in the case of intuitionistic implication this would be \\(\\langle \\rightarrow , \\vdash_{IL}\\rangle\\) , where \\(\\vdash_{IL}\\) is the consequence relation of intuitionistic logic. (In fact it would be preferable to take equivalence classes of such pairs under a relation of translational equivalence but we will make no further explicit use of these ordered pairs or any such equivalence classes, and keep this aspect of the discussion relatively informal. Instead of saying \\(\\ldquo\\langle\\#, \\vdash \\rangle\\rdquo\\), we will say things like \\(\\ldquo\\#\\) as it behaves according to \\(\\vdash\\rdquo\\). It would be better still to use not consequence relations--or the later introduced generalized consequence relations--as the second coordinate of the representatives \\(\\langle\\#,\\vdash \\rangle\\) but instead to insert here a reference to a proof system--a set of sequent-to-sequent rules of the kind introduced below, that is--since important differences between logics fail to show up at the level which would individuate them merely as consequence relations. ) The 'languages as algebras' perspective also allows us the convenience of defining matrix evaluations (see Section 5 ) as just homomorphisms from the algebra of formulas to the algebra of the matrix in question, of defining derived connectives and (sentential) contexts as term functions (formerly known as polynomial functions) and algebraic functions (now commonly called polynomial functions) respectively, and so on. This treatment would need some emendation were the discussion to embrace infinitary connectives, branching connectives, and various other exotic devices, but there will be enough to consider without touching on these. For example, there is the issue raised by the use of the notation above for the operations of \\(\\mathbf{L}\\). Such a choice suggests that \\(\\wedge , \\rightarrow , \\neg\\) will represent conjunction, implication (or the conditional) and negation--that is, be intended to capture some aspect of the behaviour of and , if-then , and not , respectively--and that \\(\\bot\\) will be some kind of falsity constant. (Similarly, while we are fixing notation, if we had written \\(\\ldquo\\vee\\rdquo\\), \\(\\ldquo\\leftrightarrow\\rdquo\\), or \\(\\ldquo\\top\\rdquo\\), we would be arousing expectations of disjunction, equivalence--or biconditionality--and a truth constant, respectively.) We can think of this as a matter of the inference patterns to be sanctioned by some proof system offered for \\(\\mathbf{L}\\), or as a matter of how the formulas of this language are to be interpreted by assigning suitable semantic values to them (truth-values being the simplest candidates here). We refer to the former as a proof-theoretic or syntactical characterization of the logic and the latter as a semantical characterization. The terminology is somewhat unfortunate in that a perfectly respectable view in the philosophy of logic (going back at least to Gentzen) has it that the meanings of items of logical vocabulary, such as the connectives of current concern, for a particular reasoner, are given by a specification of the set of primitive rules , or a favoured subset thereof, governing those items in a proof system representing that reasoner's (perhaps idealized) inferential practices. We take up some of those issues later, beginning with a reprise of the semantical side of the story at the start of the following section. We need first some general preliminaries, and forgetting the intended application(s) for a moment, let us define, given sets \\(S\\) and \\(T\\), a pair of functions \\((f, g)\\) to be a Galois connection between \\(S\\) and \\(T\\) when \\(f: \\wp(S) \\rightarrow \\wp(T)\\) and \\(g: \\wp(T)\\rightarrow \\wp(S)\\), and for all \\(S_0, S_1 \\subseteq S,\\) \\(T_0, T_1 \\subseteq T,\\) we have \\(S_0 \\subseteq g(f(S_0)),\\) \\(T_0 \\subseteq f(g(T_0)),\\) \\(S_0 \\subseteq S_1 \\Rightarrow f(S_1) \\subseteq f(S_0),\\) and \\(T_0 \\subseteq T_1 \\Rightarrow g(T_1) \\subseteq g(T_0).\\) It is well known that the composition of \\(g\\) with \\(f\\) (respectively, \\(f\\) with \\(g)\\) in such a case is a closure operation on \\(S\\) (respectively, on \\(T)\\) in the sense of being a function (we do the \\(S\\) case) \\(C: \\wp(S) \\rightarrow \\wp(S)\\) satisfying, for all subsets \\(S_0, S_1\\), of \\(S\\): Further, where \\(R \\subseteq S \\times T\\), the triple \\(\\langle R, S, T\\rangle\\), which we may call a binary relational connection (between \\(S\\) and \\(T)\\), induces a Galois connection \\((f_R, g_R)\\) between \\(S\\) and \\(T\\) when we put, for all \\(S_0 \\subseteq S, T_0\\subseteq T\\): (\\(\\ldquo S\\rdquo\\) and \\(\\ldquo T\\rdquo\\) here are mnemonic for \"Source\" and \"Target\" respectively; note that we do not require \\(S \\cap T = \\varnothing\\), or even that \\(S \\ne T\\).) Suppose we consider, not the sentential languages of our opening paragraph but rather first-order languages, and take \\(S\\) as the set of closed formulas of such a language and \\(T\\) as the set of models (interpretations, structures,&hellip;) for that language, then with \\(R\\) as the relation holding between a closed formula \\(\\phi\\) and a structure \\(\\mathcal{M}\\) when \\(\\mathcal{M} \\vDash \\phi , f_R (S_0)\\) and \\(g_R (T_0)\\) are usually denoted by \\(\\Mod(S_0)\\) and \\(Th(T_0)\\). (The labels are intended to suggest \"class of all models of\" and \"theory of\", respectively.) In this case the derived closure operations \\(Th\\circ\\Mod\\) (mapping \\(S_0\\) to \\(Th(\\Mod(S_0)))\\) and \\(\\Mod\\circ Th\\) (understood analogously) on \\(S\\) and \\(T\\) respectively deliver the set of first-order consequences of \\(S_0\\) and the set of all models verifying all the sentences verified by every \\(\\mathcal{M} \\in T_0\\). When there is only one such \\(\\mathcal{M}\\) in the latter case, what is delivered is the class of structures elementarily equivalent to \\(\\mathcal{M}\\). (Here we are thinking of classical first-order model theory.) Returning to the former case: as this use of the term 'consequences' reminds us, a closure operation on the set of formulas of some language is conventionally called a consequence operation , and perhaps to use the notation \\(Cn(\\cdot)\\) rather than simply \\(C(\\cdot)\\), though it is often more convenient to talk in terms of the corresponding consequence relation , holding between a set of formulas \\(\\Gamma\\) and an individual formula \\(\\phi\\)--notated in some such way as \\(\\ldquo\\Gamma \\Vdash \\phi\\rdquo\\), \\(\\ldquo\\Gamma \\vdash \\phi\\rdquo\\), etc.--when \\(\\phi \\in Cn(\\Gamma)\\); when the relation has been defined semantically it is not uncommon to press \\(\\ldquo\\vDash\\rdquo\\) into service in this role. (This will occur once or twice below.) Certain shortcuts are usually taken with this notation, so that one writes, for example \\(\\ldquo\\Gamma , \\Delta , \\phi , \\psi \\vdash \\chi\\rdquo\\) and \\(\\ldquo\\vdash \\phi\\rdquo\\) to mean \\(\\ldquo\\Gamma \\cup \\Delta \\cup \\{\\phi ,\\psi \\} \\vdash \\chi\\rdquo\\) and \\(\\ldquo\\varnothing \\vdash \\phi\\rdquo\\), respectively. (For the moment, capital Greek letters range over sets of formulas.) The conditions given earlier for \\(C\\)'s being a closure operation can be recast as conditions definitive of a consequence relation, conditions we do not give explicitly here. A consequence relation \\(\\vdash\\) on some language is finitary if whenever \\(\\Gamma \\vdash \\phi\\) then we have \\(\\Gamma_0 \\vdash \\phi\\) for some finite \\(\\Gamma_0 \\subseteq \\Gamma\\); to be substitution-invariant whenever \\(\\Gamma \\vdash \\phi\\) then \\(s(\\Gamma) \\vdash s(\\phi)\\) where \\(s\\) is any substitution, i.e., any endomorphism of the algebra of formulas (and \\(s(\\Gamma)\\) is \\(\\{s(\\psi) \\mid \\psi \\in \\Gamma \\})\\); and, finally, to be congruential when \\(\\phi \\dashv \\vdash \\psi\\) implies \\(\\chi(\\phi) \\dashv \\vdash \\chi(\\psi)\\), in which the notation is to be understood as follows. \\(\\ldquo\\phi \\dashv \\vdash \\psi\\rdquo\\) abbreviates \" \\(\\phi \\vdash \\psi\\) and \\(\\psi \\vdash \\phi\\rdquo\\) (and if we are decorating the turnstile \\(\\ldquo\\vdash\\rdquo\\) with superscripts or subscripts, these are written only on the \\(\\vdash\\) and not also on the \\(\\dashv\\) part of the composite notation); \\(\\chi\\) is some formula constructed from propositional variables including at least one, \\(p_k\\), say--to indicate which we may sometimes write \\(\\chi = \\chi(p_k)\\)--and \\(\\chi(\\phi)\\), for a formula \\(\\phi\\), is the result of substituting \\(\\phi\\) for all occurrences of \\(p_k\\) in \\(\\chi\\). (So \\(\\chi(\\phi)\\) is \\(s(\\chi)\\) for the unique substitution \\(s\\) for which \\(s(p_i) = p_i\\) for \\(i \\ne k\\) and \\(s(p_k) = \\phi\\).) The \\(\\chi(\\cdot)\\) notation amounts to thinking of \\(\\chi\\) as a (sentential) context , and putting \\(\\phi\\) into this context amounts to producing the formula \\(\\chi(\\phi)\\); more generally, we can think of an \\(n\\)-ary context as a formula containing \\(n\\) distinguished propositional variables \\(p_{k_1},\\ldots ,p_{k_n}\\), say--and perhaps additional variables too. If there are no additional variables, then the formula \\(\\chi(p_{k_1},\\ldots ,p_{k_n})\\) can be thought of as a derived or composite connective of the language under consideration. Returning to the 1-ary case, when \\(\\phi \\dashv \\vdash \\psi\\) we describe \\(\\phi\\) and \\(\\psi\\) as equivalent according to \\(\\vdash\\), and, following Smiley (1962), when for all \\(\\chi(\\cdot)\\), the formulas \\(\\chi(\\phi)\\) and \\(\\chi(\\psi)\\) are equivalent according to \\(\\vdash\\), we describe \\(\\phi\\) and \\(\\psi\\) as synonymous (according to \\(\\vdash)\\). Thus a congruential consequence relation is one for which any equivalent formulas are synonymous. The characterization of the (classical first-order) consequence relation given above was semantic, in that we described it in terms of the consequence operation \\(Th\\circ\\Mod\\) which invokes the structures for the language and what is true in them. A proof system for first-order logic provides a direct syntactic account of when \\(\\phi\\) is a consequence of \\(\\Gamma\\), in terms of derivability using rules (and perhaps axioms) sensitive only to the form of the formulas involved. We could discuss the properties of sentence connectives in terms of such quantified languages (in which open as well as closed sentences can be their arguments) but to avoid extraneous complications prefer the setting of the propositional languages with which we began. And, as in the discussion to this point, we will generally just say \"connective\", rather than \"sentence connective\". Any binary relational connection \\(\\langle R, S, T\\rangle\\), as above, will be said to have conjunctive combinations on the left (right) if for any \\(s_0, s_1 \\in S\\) there exists \\(s_2 \\in S\\) such that for all \\(t \\in T, R(s_2, t)\\) just in case \\(R(s_0, t)\\) and \\(R(s_1, t)\\) (respectively, for any \\(t_0, t_1 \\in T\\) there exists \\(t_2 \\in T\\) such that for all \\(s \\in S, R(s, t_2)\\) just in case \\(R(s, t_0)\\) and \\(R(s, t_1))\\); we call \\(s_2\\) (respectively, \\(t_2)\\) a conjunctive combination of \\(s_0\\) and \\(s_1 (t_0\\) and \\(t_1)\\) in this case. Replacing the two \"and\"s after the words \"just in case\" by \"or\" gives the notion of disjunctive combinations on the left and right of \\(\\langle R, S, T\\rangle\\). Both notions admit of an obvious generalization to the case in which \\(\\{s_0, s_1\\}\\) is replaced by an arbitrary subset \\(S_0\\) of \\(S\\), and similarly on the \\(T\\) side. We write \\(\\prod_L S_0\\) and \\(\\sum_L S_0\\) for conjunctive and disjunctive combinations, respectively, in this case, and similarly on the right (with an \\(\\ldquo R\\rdquo\\) subscript), when we know either that such a combination is unique or that, while not unique, what is being said would be correct however a representative combination were chosen. The subscript is omitted when no confusion is likely. If, as above \\(S_0 = \\{s_0, s_1\\},\\) instead of writing \\(\\prod S_0\\) (respectively, \\(\\sum S_0)\\), we write \\(s_0 \\cdot s_1\\) (respectively, \\(s_0 + s_1),\\) and similarly on the right. To illustrate these concepts, consider the connection \\(\\langle R, S, T\\rangle\\) with \\(S\\) some non-empty set, \\(T\\) its power set, and \\(R\\) the relation of membership \\((\\in)\\). There are conjunctive combinations and disjunctive combinations on the right, being intersections and unions respectively, but there are in general neither conjunctive nor disjunctive combinations on the left. Taking the former case, a conjunctive combination of \\(s_0\\) and \\(s_1\\), where these are distinct elements of \\(S\\), would be an element of \\(S\\) belonging to precisely those subsets of \\(S\\) to which each of \\(s_0, s_1\\), belongs--which is impossible since the unit set of this element--as with any unit set--contains only one element, and so not both of \\(s_0, s_1\\). By analogy with the above definitions of conjunctive and disjunctive combinations we can also consider the existence of negative objects on the left and right of a relational connection, and note that again the set-theoretic example just given presents is with negative objects on the right (for \\(S_0 \\subseteq S\\), the corresponding negative object is \\(S\\backslash S_0)\\), but not on the left (\"no negative individuals\", as philosophers might put it, and the point would stand if we switched to the case in which \\(T\\) comprised properties--rather than sets--of individuals, reconstruing \\(R\\) accordingly). This absence of combinations simultaneously on the left and right of a relational connection is typical of non-degenerate cases, in that one can easily verify that if a relational connection has disjunctive combinations on the left and conjunctive combinations on the right, or vice versa, then it satisfies the following (rather strong) crossover condition : (To see this, assume the antecedent and consider the relation \\(R\\) as it relates \\(s_0 + s_1\\) and \\(t_0 \\cdot t_1\\)--or, for the \"vice versa\", \\(s_0 \\cdot s_1\\) and \\(t_0 + t_1\\).)",
+      "relatedEntries": [
+        "algebra",
+        "logic-classical",
+        "logic-modal",
+        "logical-constants",
+        "logical-form",
+        "prior"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "algebra"
+        },
+        {
+          "slug": "logic-classical"
+        },
+        {
+          "slug": "logic-modal"
+        },
+        {
+          "slug": "logical-constants"
+        },
+        {
+          "slug": "logical-form"
+        },
+        {
+          "slug": "prior"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 154,
+      "bibliography": [
+        {
+          "raw": "Aloni, Maria, 2016, \"Disjunction\", The Stanford Encyclopedia of Philosophy (Winter 2016 Edition), Edward N. Zalta (ed.), URL \\(= \\lt\\) https://plato.stanford.edu/archives/win2016/entries/disjunction/ \\(\\gt\\)."
+        },
+        {
+          "raw": "Avron, Arnon, 1988, \"The Semantics and Proof Theory of Linear Logic\", Theoretical Computer Science , 57: 161-187."
+        },
+        {
+          "raw": "Avron, Arnon, 2010, \"Tonk--A Full Mathematical Solution\", in A. Biletzki (ed.), Hues of Philosophy: Essays in Memory of Ruth Manor , London: College Publications, pp. 17-42."
+        },
+        {
+          "raw": "Beall, J.C., and Greg Restall, 2006, Logical Pluralism , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Bell, J.L., 1986, \"A New Approach to Quantum Logic\", British Journal for the Philosophy of Science , 37: 83-99."
+        },
+        {
+          "raw": "Belnap, Nuel D., 1962, \"Tonk, Plonk, and Plink\", Analysis , 22: 130-134."
+        },
+        {
+          "raw": "Belnap, Nuel D., and J.M. Dunn, 1981, \"Entailment and the Disjunctive Syllogism\", in Contemporary Philosophy: A New Survey , Vol. 1, G. Fl&oslash;istad (ed.), Martinus Nijhoff: The Hague, pp. 337-366."
+        },
+        {
+          "raw": "B&eacute;ziau, Jean-Yves, and Marcelo E. Coniglio, 2010, \"To Distribute or Not to Distribute?\", Logic Journal of the IGPL , 19: 566-583."
+        },
+        {
+          "raw": "Birkhoff, Garrett, 1967, Lattice Theory , 3rd Edition, Providence, Rhode Island: American Mathematical Society."
+        },
+        {
+          "raw": "Bimb&oacute;, Katalin and J. Michael Dunn, 2008, Generalized Galois Logics , Stanford: CSLI Publications."
+        },
+        {
+          "raw": "Blamey, Stephen, and Lloyd Humberstone, 1991, \"A Perspective on Modal Sequent Logic\", Publications of the Research Institute for Mathematical Sciences, Kyoto University , 27: 763-782."
+        },
+        {
+          "raw": "Blok, W.J., and D. Pigozzi, 1989, \"Algebraizable Logics\", Memoirs of the American Mathematical Society , 77(396)."
+        },
+        {
+          "raw": "Bonnay, Denis, and B. Simmenauer, 2005, \"Tonk Strikes Back\", Australasian Journal of Logic , 3: 33-44."
+        },
+        {
+          "raw": "Bonnay, Denis, and Dag Westerst&aring;hl, 2016, \"Compositionality Solves Carnap's Problem\", Erkenntnis , 81:721-739."
+        },
+        {
+          "raw": "Bonnay, Denis, and Dag Westerst&aring;hl, 2023, \"Carnap's Problem for Modal Logic\", Review of Symbolic Logic , 16:578-602."
+        },
+        {
+          "raw": "Byrd, Michael, 1973, \"Knowledge and True Belief in Hintikka's Epistemic Logic\", Journal of Philosophical Logic , 2: 181-192."
+        },
+        {
+          "raw": "Caicedo, Xavier, 2004, \"Implicit Connectives of Algebraizable Logics\", Studia Logica , 78: 155-170."
+        },
+        {
+          "raw": "Caicedo, Xavier, and Roberto Cignoli, 2001, \"An Algebraic Approach to Intuitionistic Connectives\", Journal of Symbolic Logic , 66: 1620-1636."
+        },
+        {
+          "raw": "Carnap, Rudolf, 1943/1961, Formalization of Logic , reprinted in Introduction to Semantics and Formalization of Logic , Cambridge, Massachusetts: Harvard University Press."
+        },
+        {
+          "raw": "Ciabattoni, A., 2004, \"Automated Generation of Analytic Calculi for Logics with Linearity\", in CSL 2004 , (Series: Lecture Notes in Computer Science, Volume 3210), J. Marczinkowski and A. Tarlecki (eds.), Berlin: Springer-Verlag, pp. 503-517."
+        },
+        {
+          "raw": "Ciabattoni, A., and K. Terui, 2006, \"Towards a Semantic Characterization of Cut-Elimination\", Studia Logica , 82: 95-119."
+        },
+        {
+          "raw": "Cook, R.T., 2005, \"What's Wrong with Tonk?\", Journal of Philosophical Logic , 34: 217-226."
+        },
+        {
+          "raw": "Cross, C., and F. Roelofsen, 2018, \"Questions\", Stanford Encyclopedia of Philosophy (Spring 2018 Edition), Edward N. Zalta (ed.), URL = https://plato.stanford.edu/archives/spr2018/entries/questions/ \\(\\gt\\)."
+        },
+        {
+          "raw": "Dalla Chiara, Maria Luisa, R. Giuntini, and R. Greechie, 2004, Reasoning in Quantum Theory: Sharp and Unsharp Quantum Logics , Dordrecht: Kluwer."
+        },
+        {
+          "raw": "Davies, Martin, and Lloyd Humberstone, 1980, \"Two Notions of Necessity\", Philosophical Studies , 38: 1-30."
+        },
+        {
+          "raw": "De, Michael, and Hitoshi Omori, 2014, \"More on Empirical Negation\", in R. Gor&eacute;, B. Kooi and A. Kurucz (eds.), Advances in Modal Logic, Vol. 10 , pp. 114-133."
+        },
+        {
+          "raw": "de Jongh, D.H.J., and L.A. Chagrova, 1995, \"The Decidability of Dependency in Intuitionistic Propositional Logic\", Journal of Symbolic Logic , 60: 498-504."
+        },
+        {
+          "raw": "Deutsch, David, 1989, \"Quantum Computational Networks\", Proceedings of the Royal Society of London. Series A, Mathematical and Physical Sciences , 425: 73-90."
+        },
+        {
+          "raw": "Deutsch, David, Artur Ekert, and Rossella Lupacchini, 2000, \"Machines, Logic and Quantum Physics\", Bulletin of Symbolic Logic , 6: 265-283."
+        },
+        {
+          "raw": "Dicher, Bogdan, 2016, \"Weak Disharmony: Some Lessons for Proof-Theoretic Semantics\", Review of Symbolic Logic , 9: 583-602."
+        },
+        {
+          "raw": "Do&scaron;en, Kosta, and Peter Schroeder-Heister, 1985, \"Conservativeness and Uniqueness\", Theoria , 51: 159-173."
+        },
+        {
+          "raw": "---, 1988, \"Uniqueness, Definability and Interpolation\", Journal of Symbolic Logic , 53: 554-570."
+        },
+        {
+          "raw": "Dummett, M.A., 1991, The Logical Basis of Metaphysics , Cambridge, Massachusetts: Harvard University Press."
+        },
+        {
+          "raw": "Dunn, J.M., and G.M. Hardegree, 2001, Algebraic Methods in Philosophical Logic , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Ertola Biraben, R.C., 2012, \"On Some Extensions of Intuitionistic Logic\", Bulletin of the Section of Logic , 41: 17-22."
+        },
+        {
+          "raw": "Ertola Biraben, R.C., and H. J. San Mart&iacute;n, 2011, \"On Some Compatible Operations on Heyting Algebras\", Studia Logica , 98: 331-345."
+        },
+        {
+          "raw": "Fari&ntilde;as del Cerro, Luis, and Andreas Herzig, 1996, \"Combining Classical and Intuitionistic Logic\", in Frontiers of Combining Systems , F. Baader and K. Schulz (eds.), Dordrecht: Kluwer, pp. 93-102."
+        },
+        {
+          "raw": "Font, J.M., and P. H&aacute;jek, 2002, \"On &#321;ukasiewicz's Four-Valued Modal Logic\", Studia Logica , 70: 157-182."
+        },
+        {
+          "raw": "Francez, Nissim, 2014, \"Harmony in Multiple-Conclusion Natural-Deduction\", Logica Universalis , 8: 215-259."
+        },
+        {
+          "raw": "Francez, Nissim, and Roy Dyckhoff, 2012, \"A Note on Harmony\", Journal of Philosophical Logic , 41: 613-628."
+        },
+        {
+          "raw": "Fusco, Melissa, 2015, \"Deontic Modality and The Semantics of Choice\", Philosophers' Imprint 15, Article No. 28."
+        },
+        {
+          "raw": "---, 2018, \"Naturalizing Deontic Logic: Indeterminacy, Diagonalization, and Self-Affirmation\", Philosophical Perspectives , 32: 165-187."
+        },
+        {
+          "raw": "Gabbay, D.M., 1977, \"On Some New Intuitionistic Propositional Connectives, I\", Studia Logica , 36: 127-139."
+        },
+        {
+          "raw": "---, 1978, \"What is a Classical Connective?\", Zeitschr. f&uuml;r math. Logik und Grundlagen der Math. , 24: 37-44."
+        },
+        {
+          "raw": "---, 1981, Semantical Investigations in Heyting's Intuitionistic Logic , Dordrecht: Reidel."
+        },
+        {
+          "raw": "Garson, James W., 1990, \"Categorical Semantics\", in Truth or Consequences: Essays in Honor of Nuel Belnap , J.M. Dunn and A. Gupta (eds.), Dordrecht: Kluwer, pp. 155-175."
+        },
+        {
+          "raw": "---, 2001, \"Natural Semantics: Why Natural Deduction is Intuitionistic\", Theoria , 67: 114-139."
+        },
+        {
+          "raw": "---, 2013, What Logics Mean: From Proof Theory to Model-Theoretic Semantics , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Gentzen, G., 1934, \"Untersuchungen &uuml;ber das Logische Schliessen\", Math. Zeitschrift , 39: 176-210, 405-431; English translation in The Collected Papers of Gerhard Genzen , M. Szabo (ed.), Amsterdam: North-Holland, 1969."
+        },
+        {
+          "raw": "Girard, Jean-Yves, 1987, \"Linear Logic\", Theoretical Computer Science , 50: 1-102."
+        },
+        {
+          "raw": "Girard, Jean-Yves, with Paul Taylor and Yves Lafont, 1989, Proofs and Types , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Groenendijk, Jeroen, and Martin Stokhof, 1982, \"Semantic Analysis of \\(Wh\\)-Complements\", Linguistics and Philosophy , 5: 175-233."
+        },
+        {
+          "raw": "Hamblin, C.L., 1967, \"One-Valued Logic\", Philosophical Quarterly , 17: 38-45."
+        },
+        {
+          "raw": "Hand, Michael, 1993, \"Negations in Conflict\", Erkenntnis , 38: 115-29."
+        },
+        {
+          "raw": "Hart, W.D., 1982, \"Prior and Belnap\", Theoria , 48: 127-138."
+        },
+        {
+          "raw": "Harris, J.H., 1982, \"What's so Logical about the 'Logical' Axioms?\", Studia Logica , 41: 159-171."
+        },
+        {
+          "raw": "Hodes, Harold, 2004, \"On the Sense and Reference of a Logical Constant\", Philosophical Quarterly , 54: 134-165."
+        },
+        {
+          "raw": "Horn, Laurence R., and Heinrich Wansing, 2022, \"Negation\", The Stanford Encyclopedia of Philosophy (Winter 2022 Edition), Edward N. Zalta & Uri Nodelman (eds.), URL \\(= \\lt\\)https://plato.stanford.edu/archives/win2022/entries/negation/\\(\\gt\\)."
+        },
+        {
+          "raw": "Hjortland, Ole, 2012, \"Harmony and the Context of Deducibility\", in Insolubles and Consequences: Essays in Honour of Stephen Read , Dutilh Novaes, C., and O. T. Hjorltand (eds.), London: College Publications, pp. 105-117."
+        },
+        {
+          "raw": "Holliday, Wesley H., 2023, \"A Fundamental Non-Classical Logic\", Logics, 1:36-79."
+        },
+        {
+          "raw": "Holliday, Wesley H., and Matthew Mandelkern, 2022, \"Compatibility, Compossibility, and Epistemic Modality\", in M. Degano, T. Roberts, G. Sbardolini & M. Schouwstra (eds.), Proceedings of the 23rd Amsterdam Colloquium, Institute for Logic, Language and Computation, UvA, Amsterdam."
+        },
+        {
+          "raw": "H&ouml;sli, Brigitte, and Gerhard J&auml;ger, 1994, \"About Some Symmetries of Negation\", Journal of Symbolic Logic , 59: 473-485."
+        },
+        {
+          "raw": "Hudson, James L., 1975, \"Logical Subtraction\", Analysis , 35: 130-135."
+        },
+        {
+          "raw": "Huet, G&eacute;rard, and Gordon Plotkin (eds.), 1991, Logical Frameworks , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Humberstone, Lloyd, 1995, \"Negation by Iteration\", Theoria , 61: 1-24."
+        },
+        {
+          "raw": "---, 1998, \"Many-Valued Logics, Philosophical Issues in\", Routledge Encyclopedia of Philosophy, Vol. 6 , E. Craig (ed.), Routledge: London, pp. 84-91."
+        },
+        {
+          "raw": "---, 2000, \"Parts and Partitions\", Theoria , 66: 41-82."
+        },
+        {
+          "raw": "---, 2002, \"The Modal Logic of Agreement and Noncontingency\", Notre Dame Journal of Formal Logic , 43: 95-127."
+        },
+        {
+          "raw": "---, 2011, The Connectives , Cambridge MA: MIT Press."
+        },
+        {
+          "raw": "---, 2013, \"Logical Relations\", Philosophical Perspectives , 27: 176-230."
+        },
+        {
+          "raw": "---, 2014, \"Prior's OIC Nonconservativity Example Revisited\", Journal of Applied Non-Classical Logics , 24: 209-235."
+        },
+        {
+          "raw": "---, 2015, \"B&eacute;ziau on And and \\(Or\\)\", in The Road to Universal Logic: Festschrift for the 50th Birthday of Jean-Yves B&eacute;ziau, Volume I , A. Koslow and A. Buchsbaum (eds.), Heidelberg: Birkh&auml;user, pp. 283-307."
+        },
+        {
+          "raw": "---, 2016, Philosophical Applications of Modal Logic , London: College Publications."
+        },
+        {
+          "raw": "---, 2019, \"Supervenience, Dependence, Disjunction\", Logic and Logical Philosophy , 28: 3-135."
+        },
+        {
+          "raw": "Hyde, Dominic, 1997, \"From Heaps and Gaps to Heaps of Gluts\", Mind , 106: 641-60."
+        },
+        {
+          "raw": "Jankov, V.A., 1969, \"Conjunctively Indecomposable Formulas in Propositional Calculi\", Math. USSR--Izvestija , 3: 17-35."
+        },
+        {
+          "raw": "Kaminski, M. 1988, \"Nonstandard Connectives of Intuitionistic Propositional Logic\", Notre Dame Journal of Formal Logic , 29: 309-331."
+        },
+        {
+          "raw": "Kalinowski, Georges, 1967, review of L. S. Rogowski, \"Logika kierunkowa a heglowska teza o sprzeczno&#347;ci zmiany\" [Directional logic and Hegel's thesis on the contradiction of change (1964)], Revue Philosophique de Louvain , 86: 239-241."
+        },
+        {
+          "raw": "Koslow, A., 1992, A Structuralist Theory of Logic , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Leblanc, Hugues, 1966, \"Two Separation Theorems for Natural Deduction\", Notre Dame Journal of Formal Logic , 7: 159-180."
+        },
+        {
+          "raw": "Lemmon, E.J., 1965, Beginning Logic , London: Nelson."
+        },
+        {
+          "raw": "Lewis, David, 1982 \"'Whether' Report\", T. Pauli (ed.), \\(\\langle 320311\\rangle\\): Philosophical Essays Dedicated to Lennart Aqvist on his Fiftieth Birthday , T. Pauli (ed.), University of Uppsala, pp. 194-206."
+        },
+        {
+          "raw": "L&oacute;pez-Escobar, E.G.K., 1985, \"On Intuitionistic Sentential Connectives. I\", Revista Colombiana de Matem&aacute;ticas , 19: 117-130."
+        },
+        {
+          "raw": "&#321;ukasiewicz, Jan, 1953, \"A System of Modal Logic\", Journal of Computing Systems , 1: 111-149. Reprinted in Jan &#321;ukasiewicz: Selected Works , L. Borkowski (ed.), Amsterdam: North-Holland, 1970."
+        },
+        {
+          "raw": "MacFarlane, John, 2015, \"Logical Constants\", The Stanford Encyclopedia of Philosophy (Summer 2015 Edition), Edward N. Zalta (ed.), URL \\(= \\lt\\) https://plato.stanford.edu/archives/sum2015/entries/logical-constants/ \\(\\gt\\)."
+        },
+        {
+          "raw": "Makinson, David, 2014, \"Intelim Rules for Classical Connectives\", in David Makinson on Classical Methods for Non-Classical Problems , S. O. Hansson (ed.), Dordrecht: Springer, pp. 359-385."
+        },
+        {
+          "raw": "McNamara, Paul, 2019, \"Deontic Logic\", The Stanford Encyclopedia of Philosophy (Summer 2019 Edition), Edward N. Zalta (ed.), URL \\(= \\lt\\) https://plato.stanford.edu/archives/sum2019/entries/logic-deontic/ \\(\\gt\\)."
+        },
+        {
+          "raw": "Meyer, Robert K., 1974, \"Entailment is not Strict Implication\", Australasian Journal of Philosophy , 52: 211-231."
+        },
+        {
+          "raw": "Milne, Peter, 1994, \"Classical Harmony: Rules of Inference and the Meaning of the Logical Constants\", Synthese , 100: 49-94."
+        },
+        {
+          "raw": "---, 2002, \"Harmony, Purity, Simplicity and a 'Seemingly Magical Fact'\", The Monist , 85: 498-534."
+        },
+        {
+          "raw": "---, 2015, \"Inversion Principles and Introduction Rules\", in Wansing (2015), pp. 189-224."
+        },
+        {
+          "raw": "Morton, Adam, 1973, \"Denying the Doctrine and Changing the Subject\", Journal of Philosophy , 70: 503-510."
+        },
+        {
+          "raw": "Niki, S., and Hitoshi Omori, 2022, \"Another Combination of Classical and Intuitionistic Conditionals\", in A. Indrzejczak and M. Zawidzki (eds), 10th International Conference on Non-Classical Logics: Theory and Applications (NCL 2022), pp. 174-188."
+        },
+        {
+          "raw": "Omori, Hitoshi, and Heinrich Wansing, 2018, \"On Contra-Classical Variants of Nelson Logic N4 and Its Classical Extension\", Review of Symbolic Logic , 11:805-820."
+        },
+        {
+          "raw": "Ono, Hiroakira, and Yuichi Komori, 1985, \"Logics without the Contraction Rule\", Journal of Symbolic Logic , 50: 169-201."
+        },
+        {
+          "raw": "Or&#322;owska, Ewa, 1985, \"Semantics of Nondeterministic Possible Worlds\", Bulletin of the Polish Academy of Sciences (Mathematics) , 33: 453-458."
+        },
+        {
+          "raw": "Pahi, B., 1971, \"Full Models and Restricted Extensions of Propositional Calculi\", Zeitschr. f&uuml;r math. Logik und Grundlagen der Math. , 17: 5-10."
+        },
+        {
+          "raw": "Paoli, F., 2019, \"Bilattice Logics and Demi-Negation\", in H. Omori, H. Wansing (eds.), New Essays on Belnap-Dunn Logic , Basel: Springer, pp. 233-253."
+        },
+        {
+          "raw": "Peacocke, Christopher, 1987, \"Understanding Logical Constants: A Realist's Account\", Proceedings of the British Academy , 73: 153-199."
+        },
+        {
+          "raw": "Poggiolesi, Francesca, and Greg Restall, 2012, \"Interpreting and Applying Proof Theories for Modal Logic\", in New Waves in Philosophical Logic , G. Restall and G. Russell (eds.), New York: Palgrave Macmillan, pp. 39-62."
+        },
+        {
+          "raw": "Pollard, Stephen, 2002, \"The Expressive Truth Conditions of Two-Valued Logic\", Notre Dame Journal of Formal Logic , 43: 221-230."
+        },
+        {
+          "raw": "Pollard, Stephen, and Norman M. Martin, 1996, \"Closed Bases and Closure Logic\", The Monist , 79: 117-127."
+        },
+        {
+          "raw": "Popper, Karl, 1948, \"On the Theory of Deduction\", Indagationes Math. , 10: 44-54, 111-120."
+        },
+        {
+          "raw": "Porte, Jean, 1979, \"The \\(\\Omega\\)-System and the &#321;-System of Modal Logic\", Notre Dame Journal of Formal Logic , 20: 915-920."
+        },
+        {
+          "raw": "Priest, Graham, 2006, Doubt Truth to Be a Liar , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Prior, A.N., 1957, Time and Modality , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "---, 1960, \"The Runabout Inference-Ticket\", Analysis , 21: 38-39. Reprinted in Papers in Logic and Ethics , P.T. Geach and A. Kenny (eds.), London: Duckworth, 1976, pp. 85-87."
+        },
+        {
+          "raw": "---, 1964, \"Conjunction and Contonktion Revisited\", Analysis , 24: 191-5. Reprinted in Papers in Logic and Ethics , P.T. Geach and A. Kenny (eds.), London: Duckworth, 1976, pp. 159-164."
+        },
+        {
+          "raw": "Quine, W.V., 1951, Mathematical Logic , Cambridge, Massachusetts: Harvard University Press."
+        },
+        {
+          "raw": "Rabinowicz, W., and K. Segerberg, 1994, \"Actual Truth, Possible Knowledge\", Topoi 13: 101-115."
+        },
+        {
+          "raw": "Rahman, Shahid, 2012, \"Negation in the Logic of First Degree Entailment and Tonk : a Dialogical Study\", in The Realism-Antirealism Debate in the Age of Alternative Logics , S. Rahman, G. Primiero, and M. Marion (eds.), pp. 213-250, Berlin: Springer."
+        },
+        {
+          "raw": "Rautenberg, Wolfgang, 1981, \"2-Element Matrices\", Studia Logica , 40: 315-353."
+        },
+        {
+          "raw": "---, 1985, \"Consequence Relations of 2-Element Algebras\", in Foundations of Logic and Linguistics: Problems and their Solutions , G. Dorn and P. Weingartner (eds.), New York: Plenum Press, pp. 3-23."
+        },
+        {
+          "raw": "---, 1989, \"A Calculus for the Common Rules of \\(\\wedge\\) and \\(\\vee\\)\", Studia Logica , 48: 531-537."
+        },
+        {
+          "raw": "---, 1991, \"Common Logic of 2-Valued Semigroup Connectives\", Zeitschr. f&uuml;r math. Logik und Grundlagen der Math. , 37: 187-192."
+        },
+        {
+          "raw": "Read, Stephen, 1988, Relevant Logic , Oxford: Basil Blackwell."
+        },
+        {
+          "raw": "---, 2000, \"Harmony and Autonomy in Classical Logic\", Journal of Philosophical Logic , 29: 123-154."
+        },
+        {
+          "raw": "---, 2010, \"General-Elimination Harmony and the Meaning of the Logical Constants\", Journal of Philosophical Logic , 39, 557-76."
+        },
+        {
+          "raw": "---, 2015, \"General-Elimination Harmony and Higher-Level Rules\", in Wansing (2015), pp. 293-312."
+        },
+        {
+          "raw": "Restall, Greg, 1993, \"How to be Really Contraction Free\", Studia Logica , 52: 381-391."
+        },
+        {
+          "raw": "---, 1999, \"Negation in Relevant Logics\", in What is Negation? , D.M. Gabbay and H. Wansing (eds.), Dordrecht: Kluwer, pp. 53-76."
+        },
+        {
+          "raw": "---, 2000, An Introduction to Substructural Logics , London: Routledge."
+        },
+        {
+          "raw": "Rousseau, G.F., 1968, \"Sheffer Functions in Intuitionistic Logic\", Zeitschr. f&uuml;r math. Logik und Grundlagen der Math. , 14: 279-282."
+        },
+        {
+          "raw": "Schroeder-Heister, Peter, 1984, \"Popper's Theory of Deductive Inference and the Concept of a Logical Constant\", History and Philosophy of Logic , 5: 79-110."
+        },
+        {
+          "raw": "---, 2014, \"Proof-Theoretic Semantics \", The Stanford Encyclopedia of Philosophy (Summer 2014 Edition), Edward N. Zalta (ed.), URL \\(= \\lt\\) https://plato.stanford.edu/archives/sum2014/entries/proof-theoretic-semantics/ \\(\\gt\\)."
+        },
+        {
+          "raw": "---, 2015, \"Harmony in Proof-Theoretic Semantics: A Reductive Analysis\", in Wansing (2015), pp. 329-358."
+        },
+        {
+          "raw": "Segerberg, Krister, 1982, Classical Propositional Operators , Oxford: Clarendon."
+        },
+        {
+          "raw": "Setlur, R.V., 1970, \"The Product of Implication and Counter-Implication Systems\", Notre Dame Journal of Formal Logic , 11: 241-248."
+        },
+        {
+          "raw": "Shoesmith, D. J., and T.J. Smiley, 1978, Multiple-Conclusion Logic , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Smiley, T.J., 1961, \"On &#321;ukasiewicz's &#321;-modal System\", Notre Dame Journal of Formal Logic , 2: 149-153."
+        },
+        {
+          "raw": "---, 1962, \"The Independence of Connectives\", Journal of Symbolic Logic , 27: 426-436."
+        },
+        {
+          "raw": "Stalnaker, Robert, 1978, \"Assertion\", in P. Cole (ed.), Syntax and Semantics 9: Pragmatics , New York: New York Academic Press, pp. 315-332."
+        },
+        {
+          "raw": "Steinberger, Florian, 2011, \"What Harmony Could and Could Not Be\", Australasian Journal of Philosophy , 89: 617-639."
+        },
+        {
+          "raw": "Stevenson, J.T., 1961, \"Roundabout the Runabout Inference-Ticket\", Analysis , 21: 124-128."
+        },
+        {
+          "raw": "Sundholm, G&ouml;ran, 2001, \"The Proof Theory of Stig Kanger: A Personal Reflection\", in Collected Papers of Stig Kanger, With Essays on His Life and Work , G. Holmstr&ouml;m-Hintikka, S. Lindstr&ouml;m, and R. Slivinski (eds.), Dordecht: Kluwer, Vol. II, pp. 31-42."
+        },
+        {
+          "raw": "Tennant, Neil, 1978, Natural Logic , Edinburgh: Edinburgh University Press."
+        },
+        {
+          "raw": "---, 1987, Anti-Realism and Logic , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "---, 2005, \"Rule-Circularity and the Justification of Deduction\", Philosophical Quarterly , 55: 625-645."
+        },
+        {
+          "raw": "Tong, Haotian, and Dag Westerst&aring;hl, 2023, \"Carnap's Problem for Intuitionistic Propositional Logic\", Logics , 1: 163-181."
+        },
+        {
+          "raw": "Troelstra, A.S., 1992, Lectures on Linear Logic , (Series: CSLI Lecture Notes, Number 29), Stanford, California: CSLI Publications."
+        },
+        {
+          "raw": "Turzy&#324;ski, Konrad, 1990, \"The Temporal Functors in the Directional Logic of Rogowski: Some Results\", Bulletin of the Section of Logic , 19: 30-32."
+        },
+        {
+          "raw": "Urquhart, Alasdair, 1974, \"Implicational Formulas in Intuitionistic Logic\", Journal of Symbolic Logic , 39: 661-664."
+        },
+        {
+          "raw": "van Toor, Jonathan, 2022, \"Pattern Connectives\", Journal of Logic and Computation , 32: 1365-1374."
+        },
+        {
+          "raw": "Wagner, Steven, 1981, \"Tonk\", Notre Dame Journal of Formal Logic , 22: 289-300."
+        },
+        {
+          "raw": "Wansing, Heinrich, 2006, \"Connectives Stranger than Tonk\", Journal of Philosophical Logic , 35: 653-660."
+        },
+        {
+          "raw": "---, 2015, (ed.), Dag Prawitz on Proofs and Meaning , Basel: Springer."
+        },
+        {
+          "raw": "Wansing, Heinrich, Grigory Olkhovikov, and Hitoshi Omori, 2021 \"Questions to Michael Dunn\", Logical Investigations 27: 9-19."
+        },
+        {
+          "raw": "Weir, Alan, 1986, \"Classical Harmony\", Notre Dame Journal of Formal Logic , 27: 459-482."
+        },
+        {
+          "raw": "Williamson, Timothy, 2006a, \"Indicative versus Subjunctive Conditionals, Congruential versus Non-Hyperintensional Contexts\", Philosophical Issues , 16: 310-333."
+        },
+        {
+          "raw": "---, 2006b, \"Conceptual Truth\", Aristotelian Society Supplementary Volume , 80: 1-41."
+        },
+        {
+          "raw": "---, 2012, \"Boghossian and Casalegno on Understanding and Inference\", Dialectica , 66: 237-247."
+        },
+        {
+          "raw": "Woods, Jack, 2013, \"Failures of Categoricity and Compositionality for Intuitionistic Disjunction\", Thought , 1: 281-291."
+        },
+        {
+          "raw": "Yablo, Stephen, 2014, Aboutness , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Zolin, Evgeni E., 2000, \"Embeddings of Propositional Monomodal Logics\", Logic Journal of the IGPL , 8: 861-882."
+        }
+      ],
+      "publishedAt": "2010-05-03T14:00:00.000Z",
+      "revisedAt": "2024-06-24T14:00:00.000Z"
+    }
+  }
+}

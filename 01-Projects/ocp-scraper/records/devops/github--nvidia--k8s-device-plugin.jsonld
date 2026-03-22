@@ -1,0 +1,309 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/nvidia--k8s-device-plugin",
+  "meta": {
+    "title": "NVIDIA device plugin for Kubernetes",
+    "description": "NVIDIA device plugin for Kubernetes",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T06:57:26.069Z",
+    "dateModified": "2026-03-22T06:57:26.069Z",
+    "keywords": [
+      "kubernetes"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "The NVIDIA device plugin for Kubernetes is a Daemonset that allows you to automatically:",
+    "context": "[![End-to-end Tests](https://github.com/NVIDIA/k8s-device-plugin/actions/workflows/e2e.yaml/badge.svg)](https://github.com/NVIDIA/k8s-device-plugin/actions/workflows/e2e.yaml) [![Go Report Card](https://goreportcard.com/badge/github.com/NVIDIA/k8s-device-plugin)](https://goreportcard.com/report/github.com/NVIDIA/k8s-device-plugin) [![Latest Release](https://img.shields.io/github/v/release/NVIDIA/k8s-device-plugin)](https://github.com/NVIDIA/k8s-device-plugin/releases/latest)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "devops",
+    "containerization",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "3706 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "799 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T06:57:26.069Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/NVIDIA/k8s-device-plugin",
+        "description": "GitHub repository: NVIDIA/k8s-device-plugin"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "github.com/NVIDIA/go-gpuallocator",
+        "version": "v0.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/NVIDIA/go-gpuallocator"
+      },
+      {
+        "name": "github.com/NVIDIA/go-nvlib",
+        "version": "v0.9.1-0.20251202135446-d0f42ba016dd",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/NVIDIA/go-nvlib"
+      },
+      {
+        "name": "github.com/NVIDIA/go-nvml",
+        "version": "v0.13.0-1.0.20260212130905-92cf8c963449",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/NVIDIA/go-nvml"
+      },
+      {
+        "name": "github.com/NVIDIA/nvidia-container-toolkit",
+        "version": "v1.19.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/NVIDIA/nvidia-container-toolkit"
+      },
+      {
+        "name": "github.com/fsnotify/fsnotify",
+        "version": "v1.9.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/fsnotify/fsnotify"
+      },
+      {
+        "name": "github.com/google/renameio",
+        "version": "v1.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/renameio"
+      },
+      {
+        "name": "github.com/google/uuid",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/uuid"
+      },
+      {
+        "name": "github.com/opencontainers/selinux",
+        "version": "v1.13.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/opencontainers/selinux"
+      },
+      {
+        "name": "github.com/prometheus/procfs",
+        "version": "v0.20.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/procfs"
+      },
+      {
+        "name": "github.com/sirupsen/logrus",
+        "version": "v1.9.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/sirupsen/logrus"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.11.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      },
+      {
+        "name": "github.com/urfave/cli/v2",
+        "version": "v2.27.7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/urfave/cli/v2"
+      },
+      {
+        "name": "golang.org/x/mod",
+        "version": "v0.34.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/mod"
+      },
+      {
+        "name": "google.golang.org/grpc",
+        "version": "v1.79.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/grpc"
+      },
+      {
+        "name": "k8s.io/api",
+        "version": "v0.35.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/api"
+      },
+      {
+        "name": "k8s.io/apimachinery",
+        "version": "v0.35.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/apimachinery"
+      },
+      {
+        "name": "k8s.io/client-go",
+        "version": "v0.35.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/client-go"
+      },
+      {
+        "name": "k8s.io/klog/v2",
+        "version": "v2.140.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/klog/v2"
+      },
+      {
+        "name": "k8s.io/kubelet",
+        "version": "v0.35.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/kubelet"
+      },
+      {
+        "name": "k8s.io/mount-utils",
+        "version": "v0.35.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/mount-utils"
+      },
+      {
+        "name": "sigs.k8s.io/node-feature-discovery",
+        "version": "v0.18.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/sigs.k8s.io/node-feature-discovery"
+      },
+      {
+        "name": "sigs.k8s.io/node-feature-discovery/api/nfd",
+        "version": "v0.18.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/sigs.k8s.io/node-feature-discovery/api/nfd"
+      },
+      {
+        "name": "sigs.k8s.io/yaml",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/sigs.k8s.io/yaml"
+      },
+      {
+        "name": "tags.cncf.io/container-device-interface",
+        "version": "v1.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/tags.cncf.io/container-device-interface"
+      },
+      {
+        "name": "tags.cncf.io/container-device-interface/specs-go",
+        "version": "v1.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/tags.cncf.io/container-device-interface/specs-go"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "NVIDIA",
+        "type": "human",
+        "uri": "https://github.com/NVIDIA"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 5304,
+      "validation_diversity": 0.6,
+      "context_breadth": 0.33,
+      "temporal_stability": 1,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.5
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.608
+  }
+}

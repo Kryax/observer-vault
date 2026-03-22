@@ -1,0 +1,168 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/weaidb--awesome-data-llm",
+  "meta": {
+    "title": "A Survey of LLM × DATA",
+    "description": "Official Repository of \"LLM × DATA\" Survey Paper",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T06:16:25.108Z",
+    "dateModified": "2026-03-22T06:16:25.108Z",
+    "keywords": [
+      "data-acquisition",
+      "data-deduplication",
+      "data-filtering",
+      "data-mixing",
+      "data-provenance",
+      "data-selection",
+      "data-synthesis",
+      "data-transformation",
+      "llm",
+      "vlm"
+    ]
+  },
+  "problemSolved": {
+    "statement": "[English](README.md) | [中文](README_CN.md)\r\n\r\n> A collection of papers and projects related to LLMs and corresponding data-centric methods. [![arXiv](https://camo.githubusercontent.com/dc1f84975e5d05724930d5c650e4b6eaea49e9f4c03d00de50bd7bf950394b4f/68747470733a2f2f68756767696e67666163652e636f2f64617461736574732f68756767696e67666163652f6261646765732f7261772f6d61696e2f70617065722d706167652d736d2d6461726b2e737667)](https://arxiv.org/abs/2505.18458)\r\n>\r\n> Other publicly-available materials: [[Slides]](./assets/DATA4LLM-10-22-en.pdf)\r\n>\r\n> If you find our survey useful, please cite the paper:\r\n\r\n```\r\n@article{LLMDATASurvey,\r\n    title={A Survey of LLM × DATA},\r\n    author={Xuanhe Zhou and Junxuan He and Wei Zhou and Haodong Chen and Zirui Tang and Haoyu Zhao and Xin Tong and Guoliang Li and Youmin Chen and Jun Zhou and Zhaojun Sun and Binyuan Hui and Shuo Wang and Conghui He and Zhiyuan Liu and Jingren Zhou and Fan Wu},\r\n    year={2025},\r\n    journal={arXiv preprint arXiv:2505.18458},\r\n    url={https://arxiv.org/abs/2505.18458}\r\n}\r\n@article{tangllmasanalyst,\r\n    title={LLM/Agent-as-Data-Analyst: A Survey},\r\n    author={Zirui Tang and Weizheng Wang and Zihang Zhou and Yang Jiao and Bangrui Xu and Boyu Niu and Xuanhe Zhou and Guoliang Li and Yeye He and Wei Zhou and Yitong Song and Cheng Tan and Bin Wang and Conghui He and Xiaoyang Wang and Fan Wu},\r\n    year={2025},\r\n    journal={arXiv preprint arXiv:2509.23988},\r\n    url={https://arxiv.org/abs/2509.23988}\r\n}\r\n@article{zhoullmpreparationsurvey,\r\n    title={Can LLMs Clean Up Your Mess? A Survey of Application-Ready Data Preparation with LLMs},\r\n    author={Wei Zhou and Jun Zhou and Haoyu Wang and Zhenghao Li and Qikang He and Shaokun Han and Guoliang Li and Xuanhe Zhou and Yeye He and Chunwei Liu and Zirui Tang and Bin Wang and Shen Tang and Kai Zuo and Yuyu Luo and Zhenzhe Zheng and Conghui He and Jingren Zhou and Fan Wu},\r\n    year={2026},\r\n    journal={arXiv preprint arXiv:2601.17058},\r\n    url={https://arxiv.org/abs/2601.17058}\r\n}\r\n```",
+    "context": "[English](README.md) | [中文](README_CN.md)\r\n\r\n> A collection of papers and projects related to LLMs and corresponding data-centric methods. [![arXiv](https://camo.githubusercontent.com/dc1f84975e5d05724930d5c650e4b6eaea49e9f4c03d00de50bd7bf950394b4f/68747470733a2f2f68756767696e67666163652e636f2f64617461736574732f68756767696e67666163652f6261646765732f7261772f6d61696e2f70617065722d706167652d736d2d6461726b2e737667)](https://arxiv.org/abs/2505.18458)\r\n>\r\n> Other publicly-available materials: [[Slides]](./assets/DATA4LLM-10-22-en.pdf)\r\n>\r\n> If you find our survey useful, please cite the paper:\r\n\r\n```\r\n@article{LLMDATASurvey,\r\n    title={A Survey of LLM × DATA},\r\n    author={Xuanhe Zhou and Junxuan He and Wei Zhou and Haodong Chen and Zirui Tang and Haoyu Zhao and Xin Tong and Guoliang Li and Youmin Chen and Jun Zhou and Zhaojun Sun and Binyuan Hui and Shuo Wang and Conghui He and Zhiyuan Liu and Jingren Zhou and Fan Wu},\r\n    year={2025},\r\n    journal={arXiv preprint arXiv:2505.18458},\r\n    url={https://arxiv.org/abs/2505.18458}\r\n}\r\n@article{tangllmasanalyst,\r\n    title={LLM/Agent-as-Data-Analyst: A Survey},\r\n    author={Zirui Tang and Weizheng Wang and Zihang Zhou and Yang Jiao and Bangrui Xu and Boyu Niu and Xuanhe Zhou and Guoliang Li and Yeye He and Wei Zhou and Yitong Song and Cheng Tan and Bin Wang and Conghui He and Xiaoyang Wang and Fan Wu},\r\n    year={2025},\r\n    journal={arXiv preprint arXiv:2509.23988},\r\n    url={https://arxiv.org/abs/2509.23988}\r\n}\r\n@article{zhoullmpreparationsurvey,\r\n    title={Can LLMs Clean Up Your Mess? A Survey of Application-Ready Data Preparation with LLMs},\r\n    author={Wei Zhou and Jun Zhou and Haoyu Wang and Zhenghao Li and Qikang He and Shaokun Han and Guoliang Li and Xuanhe Zhou and Yeye He and Chunwei Liu and Zirui Tang and Bin Wang and Shen Tang and Kai Zuo and Yuyu Luo and Zhenzhe Zheng and Conghui He and Jingren Zhou and Fan Wu},\r\n    year={2026},\r\n    journal={arXiv preprint arXiv:2601.17058},\r\n    url={https://arxiv.org/abs/2601.17058}\r\n}\r\n```",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "data-management"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "744 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "67 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T06:16:25.108Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/weAIDB/awesome-data-llm",
+        "description": "GitHub repository: weAIDB/awesome-data-llm"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://arxiv.org/pdf/2505.18458",
+        "description": "Project homepage"
+      }
+    ]
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "weAIDB",
+        "type": "human",
+        "uri": "https://github.com/weAIDB"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 878,
+      "validation_diversity": 0.43,
+      "context_breadth": 0.58,
+      "temporal_stability": 0.94,
+      "test_coverage": 0.47,
+      "documentation_quality": 0.6
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.579
+  }
+}

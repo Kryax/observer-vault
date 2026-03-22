@@ -1,0 +1,631 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/epistemic-utility",
+  "meta": {
+    "title": "Epistemic Utility Arguments for Epistemic Norms",
+    "description": "If I believe George Eliot wrote more than six novels and also believe she wrote fewer than four, you will no doubt judge my beliefs irrational. After all, if she did write more than six, she didn't write fewer than four. And similarly, if my degree of belief that Eliot wrote more than six novels is greater than my degree of belief that she wrote more than five, then again you will think me irrational. After all, if she did write more than six, she also wrote more than five. In both cases, there is a general norm I fail to satisfy. In the first, it might be this: Consistency\\(_2\\) If two propositions cannot both be true together, you should not believe both. In the second case, it might be this: No Drop If one proposition entails another, then your degree of belief in the first should not exceed your degree of belief in the second. This entry is concerned with norms like these. More specifically, it is concerned with how we might establish these norms. More specifically still, it is concerned with what epistemologists have come to call epistemic utility arguments in their favor. The norms we seek to establish primarily govern epistemic states ; that is, they say what rationality requires of your beliefs, degrees of belief, and any other attitudes whose role it is to represent the way the world is. But, as we will see, they also govern the activities by which we acquire those states, such as gathering and responding to evidence. Epistemic utility arguments are inspired by traditional utility-based arguments in decision theory, so let's begin with a quick summary of those. Traditional decision theory explores a particular strategy for establishing the norms that govern which choices it is rational for an individual to make in a particular situation (see entry on normative theories of rational choice: expected utility ). Given such a situation, the framework for the theory includes: states of the world described in as much detail as required; actions that are available to the individual in the situation, and the individual's utility function , which takes a state of the world and an action and returns a measure of the extent to which she values the outcome of performing that action at that world. We call this measure the utility of the outcome at the world. For example, there might be just two relevant states of the world: one in which it rains and one in which it doesn't. And there might be just two relevant actions from which to choose: take an umbrella when you leave the house or don't. Then your utility function will measure how much you value the outcomes of each action at each state of the world: that is, it will give the value of being in the rain without an umbrella, being in the rain with an umbrella, being with an umbrella when there is no rain, and being without an umbrella when there is no rain. With this framework in hand, we can state certain very general norms of action in terms of it. For instance, if one action has strictly greater utility than another in every possible state of the world, we say the first strongly dominates the second, and the norm of Dominance says that you should not choose a strongly dominated action. In epistemic utility theory, the states of the world remain the same, but the possible actions an individual might perform are replaced by the possible epistemic states she might be in, and the utility function is replaced by an epistemic utility function , which takes a state of the world and an epistemic state and returns a measure of the purely epistemic value of that epistemic state at that state of the world. So, in epistemic utility theory, we appeal to epistemic utility to ask which of a range of possible epistemic states it is rational to be in, just as in traditional utility theory we appeal to non-epistemic, pragmatic utility to ask which of a range of possible actions it is rational to perform. (In fact, we will often talk of epistemic dis utility rather than epistemic utility in this entry. But it is easy to translate between them: the negative of an epistemic utility function is an epistemic disutility function, and vice versa .) Again, certain very general norms may be stated, such as the obvious analogue of Dominance from above: if one epistemic state has greater epistemic utility than another in every possible state of the world, then it is irrational to be in the latter. And we might use them to establish norms for epistemic states. For instance, consider Consistency\\(_2\\) from the introduction. Let's say the epistemic utility of believing a truth is some positive number \\(R\\), while the epistemic utility of believing a falsehood is some negative number \\(-W\\) (\\(R\\) for R ight, \\(W\\) for W rong). And let's say the epistemic utility of a set of beliefs is just the sum of the epistemic utilities of the individual beliefs that belong to it, so that if you believe two truths and a falsehood, for instance, your epistemic utility is \\(2R - W\\). Now suppose that \\(W\\) is greater than \\(R\\); that is, the badness of believing falsely is greater than the goodness of believing truly; that is, we more strongly wish to avoid false belief than we want to achieve true belief; that is, our epistemic utilities encode a sort of epistemic conservatism. Then, if I believe each of two propositions that cannot both be true together, my total epistemic utility is either \\(R-W\\), if one is true and the other false, or \\(-2W\\) if neither is true. And each of these is less than zero. So suspending judgment on both is guaranteed to be better than believing both. And so, by Dominance, believing both is irrational and we have an epistemic utility argument for Consistency\\(_2\\). This is the style of argument we will consider in this entry. As we'll see in Section 5.2 , there is an argument from Dominance to No Drop as well. Because we appeal to the purely epistemic utility of the epistemic states we consider, rather than the pragmatic or practical utility of the outcomes of the choices they lead us to make, the arguments of epistemic utility theory are different from betting arguments or dutch book arguments for epistemic norms (Ramsey 1926 [1931]; de Finetti 1937 [1980]; see entry on dutch book arguments ). They are also different from the sort of axiomatic justification exemplified by Cox's theorem (Cox 1946, 1961; Paris 1994) as well as the sort of structural justification given by R. I. G. Hughes and Bas van Fraassen (1984) and Hannes Leitgeb (2021).",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T07:29:51.566Z",
+    "dateModified": "2026-03-22T07:29:51.566Z",
+    "datePublished": "2011-09-22T14:00:00.000Z",
+    "keywords": [
+      "epistemology",
+      "epistemology bayesian",
+      "formal belief",
+      "probability interpret"
+    ]
+  },
+  "problemSolved": {
+    "statement": "If I believe George Eliot wrote more than six novels and also believe she wrote fewer than four, you will no doubt judge my beliefs irrational. After all, if she did write more than six, she didn't write fewer than four. And similarly, if my degree of belief that Eliot wrote more than six novels is greater than my degree of belief that she wrote more than five, then again you will think me irrational. After all, if she did write more than six, she also wrote more than five. In both cases, there is a general norm I fail to satisfy. In the first, it might be this: Consistency\\(_2\\) If two propositions cannot both be true together, you should not believe both. In the second case, it might be this: No Drop If one proposition entails another, then your degree of belief in the first should not exceed your degree of belief in the second. This entry is concerned with norms like these. More specifically, it is concerned with how we might establish these norms. More specifically still, it is concerned with what epistemologists have come to call epistemic utility arguments in their favor. The norms we seek to establish primarily govern epistemic states ; that is, they say what rationality requires of your beliefs, degrees of belief, and any other attitudes whose role it is to represent the way the world is. But, as we will see, they also govern the activities by which we acquire those states, such as gathering and responding to evidence. Epistemic utility arguments are inspired by traditional utility-based arguments in decision theory, so let's begin with a quick summary of those. Traditional decision theory explores a particular strategy for establishing the norms that govern which choices it is rational for an individual to make in a particular situation (see entry on normative theories of rational choice: expected utility ). Given such a situation, the framework for the theory includes: states of the world described in as much detail as required; actions that are available to the individual in the situation, and the individual's utility function , which takes a state of the world and an action and returns a measure of the extent to which she values the outcome of performing that action at that world. We call this measure the utility of the outcome at the world. For example, there might be just two relevant states of the world: one in which it rains and one in which it doesn't. And there might be just two relevant actions from which to choose: take an umbrella when you leave the house or don't. Then your utility function will measure how much you value the outcomes of each action at each state of the world: that is, it will give the value of being in the rain without an umbrella, being in the rain with an umbrella, being with an umbrella when there is no rain, and being without an umbrella when there is no rain. With this framework in hand, we can state certain very general norms of action in terms of it. For instance, if one action has strictly greater utility than another in every possible state of the world, we say the first strongly dominates the second, and the norm of Dominance says that you should not choose a strongly dominated action. In epistemic utility theory, the states of the world remain the same, but the possible actions an individual might perform are replaced by the possible epistemic states she might be in, and the utility function is replaced by an epistemic utility function , which takes a state of the world and an epistemic state and returns a measure of the purely epistemic value of that epistemic state at that state of the world. So, in epistemic utility theory, we appeal to epistemic utility to ask which of a range of possible epistemic states it is rational to be in, just as in traditional utility theory we appeal to non-epistemic, pragmatic utility to ask which of a range of possible actions it is rational to perform. (In fact, we will often talk of epistemic dis utility rather than epistemic utility in this entry. But it is easy to translate between them: the negative of an epistemic utility function is an epistemic disutility function, and vice versa .) Again, certain very general norms may be stated, such as the obvious analogue of Dominance from above: if one epistemic state has greater epistemic utility than another in every possible state of the world, then it is irrational to be in the latter. And we might use them to establish norms for epistemic states. For instance, consider Consistency\\(_2\\) from the introduction. Let's say the epistemic utility of believing a truth is some positive number \\(R\\), while the epistemic utility of believing a falsehood is some negative number \\(-W\\) (\\(R\\) for R ight, \\(W\\) for W rong). And let's say the epistemic utility of a set of beliefs is just the sum of the epistemic utilities of the individual beliefs that belong to it, so that if you believe two truths and a falsehood, for instance, your epistemic utility is \\(2R - W\\). Now suppose that \\(W\\) is greater than \\(R\\); that is, the badness of believing falsely is greater than the goodness of believing truly; that is, we more strongly wish to avoid false belief than we want to achieve true belief; that is, our epistemic utilities encode a sort of epistemic conservatism. Then, if I believe each of two propositions that cannot both be true together, my total epistemic utility is either \\(R-W\\), if one is true and the other false, or \\(-2W\\) if neither is true. And each of these is less than zero. So suspending judgment on both is guaranteed to be better than believing both. And so, by Dominance, believing both is irrational and we have an epistemic utility argument for Consistency\\(_2\\). This is the style of argument we will consider in this entry. As we'll see in Section 5.2 , there is an argument from Dominance to No Drop as well. Because we appeal to the purely epistemic utility of the epistemic states we consider, rather than the pragmatic or practical utility of the outcomes of the choices they lead us to make, the arguments of epistemic utility theory are different from betting arguments or dutch book arguments for epistemic norms (Ramsey 1926 [1931]; de Finetti 1937 [1980]; see entry on dutch book arguments ). They are also different from the sort of axiomatic justification exemplified by Cox's theorem (Cox 1946, 1961; Paris 1994) as well as the sort of structural justification given by R. I. G. Hughes and Bas van Fraassen (1984) and Hannes Leitgeb (2021).",
+    "context": "Opening section: 1. Modelling Epistemic States | Related entries: formal-belief, epistemology, epistemology-bayesian, probability-interpret",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "epistemology"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry epistemic-utility",
+        "uri": "https://plato.stanford.edu/entries/epistemic-utility/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 4 related entries, bibliography size 139"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2011-09-22T14:00:00.000Z and revised 2023-10-10T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2023-10-10T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/epistemic-utility/",
+        "description": "SEP entry for epistemic-utility"
+      }
+    ],
+    "solutionApproach": "1. Modelling Epistemic States"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/formal-belief",
+      "ocp:sep/epistemology",
+      "ocp:sep/epistemology-bayesian",
+      "ocp:sep/probability-interpret"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Pettigrew, Richard",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/epistemic-utility/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 95,
+      "validation_diversity": 0.35,
+      "context_breadth": 0.31,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.87
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.477
+  },
+  "extensions": {
+    "sep": {
+      "slug": "epistemic-utility",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/epistemic-utility/",
+      "preamble": "If I believe George Eliot wrote more than six novels and also believe she wrote fewer than four, you will no doubt judge my beliefs irrational. After all, if she did write more than six, she didn't write fewer than four. And similarly, if my degree of belief that Eliot wrote more than six novels is greater than my degree of belief that she wrote more than five, then again you will think me irrational. After all, if she did write more than six, she also wrote more than five. In both cases, there is a general norm I fail to satisfy. In the first, it might be this: Consistency\\(_2\\) If two propositions cannot both be true together, you should not believe both. In the second case, it might be this: No Drop If one proposition entails another, then your degree of belief in the first should not exceed your degree of belief in the second. This entry is concerned with norms like these. More specifically, it is concerned with how we might establish these norms. More specifically still, it is concerned with what epistemologists have come to call epistemic utility arguments in their favor. The norms we seek to establish primarily govern epistemic states ; that is, they say what rationality requires of your beliefs, degrees of belief, and any other attitudes whose role it is to represent the way the world is. But, as we will see, they also govern the activities by which we acquire those states, such as gathering and responding to evidence. Epistemic utility arguments are inspired by traditional utility-based arguments in decision theory, so let's begin with a quick summary of those. Traditional decision theory explores a particular strategy for establishing the norms that govern which choices it is rational for an individual to make in a particular situation (see entry on normative theories of rational choice: expected utility ). Given such a situation, the framework for the theory includes: states of the world described in as much detail as required; actions that are available to the individual in the situation, and the individual's utility function , which takes a state of the world and an action and returns a measure of the extent to which she values the outcome of performing that action at that world. We call this measure the utility of the outcome at the world. For example, there might be just two relevant states of the world: one in which it rains and one in which it doesn't. And there might be just two relevant actions from which to choose: take an umbrella when you leave the house or don't. Then your utility function will measure how much you value the outcomes of each action at each state of the world: that is, it will give the value of being in the rain without an umbrella, being in the rain with an umbrella, being with an umbrella when there is no rain, and being without an umbrella when there is no rain. With this framework in hand, we can state certain very general norms of action in terms of it. For instance, if one action has strictly greater utility than another in every possible state of the world, we say the first strongly dominates the second, and the norm of Dominance says that you should not choose a strongly dominated action. In epistemic utility theory, the states of the world remain the same, but the possible actions an individual might perform are replaced by the possible epistemic states she might be in, and the utility function is replaced by an epistemic utility function , which takes a state of the world and an epistemic state and returns a measure of the purely epistemic value of that epistemic state at that state of the world. So, in epistemic utility theory, we appeal to epistemic utility to ask which of a range of possible epistemic states it is rational to be in, just as in traditional utility theory we appeal to non-epistemic, pragmatic utility to ask which of a range of possible actions it is rational to perform. (In fact, we will often talk of epistemic dis utility rather than epistemic utility in this entry. But it is easy to translate between them: the negative of an epistemic utility function is an epistemic disutility function, and vice versa .) Again, certain very general norms may be stated, such as the obvious analogue of Dominance from above: if one epistemic state has greater epistemic utility than another in every possible state of the world, then it is irrational to be in the latter. And we might use them to establish norms for epistemic states. For instance, consider Consistency\\(_2\\) from the introduction. Let's say the epistemic utility of believing a truth is some positive number \\(R\\), while the epistemic utility of believing a falsehood is some negative number \\(-W\\) (\\(R\\) for R ight, \\(W\\) for W rong). And let's say the epistemic utility of a set of beliefs is just the sum of the epistemic utilities of the individual beliefs that belong to it, so that if you believe two truths and a falsehood, for instance, your epistemic utility is \\(2R - W\\). Now suppose that \\(W\\) is greater than \\(R\\); that is, the badness of believing falsely is greater than the goodness of believing truly; that is, we more strongly wish to avoid false belief than we want to achieve true belief; that is, our epistemic utilities encode a sort of epistemic conservatism. Then, if I believe each of two propositions that cannot both be true together, my total epistemic utility is either \\(R-W\\), if one is true and the other false, or \\(-2W\\) if neither is true. And each of these is less than zero. So suspending judgment on both is guaranteed to be better than believing both. And so, by Dominance, believing both is irrational and we have an epistemic utility argument for Consistency\\(_2\\). This is the style of argument we will consider in this entry. As we'll see in Section 5.2 , there is an argument from Dominance to No Drop as well. Because we appeal to the purely epistemic utility of the epistemic states we consider, rather than the pragmatic or practical utility of the outcomes of the choices they lead us to make, the arguments of epistemic utility theory are different from betting arguments or dutch book arguments for epistemic norms (Ramsey 1926 [1931]; de Finetti 1937 [1980]; see entry on dutch book arguments ). They are also different from the sort of axiomatic justification exemplified by Cox's theorem (Cox 1946, 1961; Paris 1994) as well as the sort of structural justification given by R. I. G. Hughes and Bas van Fraassen (1984) and Hannes Leitgeb (2021).",
+      "firstSectionTitle": "1. Modelling Epistemic States",
+      "firstSectionText": "Let's begin by listing the different ways in which we might represent an individual's epistemic state at a given time (see entry on formal representations of belief ). We might represent them using any of the following: Epistemic utility theory may be applied to any one of these ways of representing an individual's epistemic state. Whichever we choose, we define an epistemic (dis)utility function to be a function that takes a set of epistemic states modelled in this way, together with a state of the world, to a real number, or (positive or) negative infinity, and we take this number to measure the epistemic (dis)utility of those epistemic attitudes at that world.",
+      "relatedEntries": [
+        "formal-belief",
+        "epistemology",
+        "epistemology-bayesian",
+        "probability-interpret"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "formal-belief"
+        },
+        {
+          "slug": "epistemology"
+        },
+        {
+          "slug": "epistemology-bayesian"
+        },
+        {
+          "slug": "probability-interpret"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 139,
+      "bibliography": [
+        {
+          "raw": "Alchourr&oacute;n, C.E., P. G&auml;rdenfors, & D. Makinson, 1985, \"On the Logic of Theory Change: Partial Meet Contraction and Revision Functions\", Journal of Symbolic Logic , 50: 510-530."
+        },
+        {
+          "raw": "Berker, S., 2013a, \"Epistemic Teleology and the Separateness of Propositions\", Philosophical Review , 122(3): 337-393."
+        },
+        {
+          "raw": "---, 2013b, \"The Rejection of Epistemic Consequentialism\", Philosophical Issues (Supp. No&ucirc;s) , 23(1): 363-387."
+        },
+        {
+          "raw": "BonJour, L., 1985, The Structure of Empirical Knowledge , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Briggs, R. A. & R. Pettigrew, 2020, \"An Accuracy-Dominance Argument for Conditionalization\", No&ucirc;s , 54(1): 162-181."
+        },
+        {
+          "raw": "Brown, P. M., 1976, \"Conditionalization and expected utility\" Philosophy of Science , 43(3): 415-419."
+        },
+        {
+          "raw": "Buchak, L., 2013, Risk and Rationality , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Caie, M., 2013, \"Rational Probabilistic Incoherence\", Philosophical Review , 122(4): 527-575."
+        },
+        {
+          "raw": "Campbell-Moore, C., 2015, \"Rational Probabilistic Incoherence? A Reply to Michael Caie\", Philosophical Review 124(3): 393-406."
+        },
+        {
+          "raw": "---, & B. Salow 2020, \"Avoiding Risk and Avoiding Evidence\", Australasian Journal of Philosophy , 98(3): 495-515."
+        },
+        {
+          "raw": "---, & B. Salow 2022, \"Accurate Updating for the Risk-Sensitive\", The British Journal for the Philosophy of Science , 73(3): 751-776."
+        },
+        {
+          "raw": "Carr, J., 2015, \"Epistemic Expansions\", Res Philosophica , 92(2): 217-236."
+        },
+        {
+          "raw": "---, 2017, \"Epistemic Utility Theory and the Aim of Belief\", Philosophy and Phenomenological Research , 95(3): 511-534."
+        },
+        {
+          "raw": "---, 2019, \"A Modesty Proposal\", Synthese . doi:10.1007/s11229-019-02301-x"
+        },
+        {
+          "raw": "Cox, R. T., 1946, \"Probability, Frequency and Reasonable Expectation\", American Journal of Physics , 14: 1-13."
+        },
+        {
+          "raw": "---, 1961, The Algebra of Probable Inference , Baltimore: Johns Hopkins University Press."
+        },
+        {
+          "raw": "D'Agostino, M. & C. Sinigaglia, 2010, \"Epistemic Accuracy and Subjective Probability\", in M. Dorato & M. Su&agrave;rez (eds.), EPSA Epistemology and Methodology of Science , Springer."
+        },
+        {
+          "raw": "Das, N., \"The Value of Biased Information\", The British Journal for the Philosophy of Science , 74(1): 25-55."
+        },
+        {
+          "raw": "de Finetti, B., 1937 [1980], \"Foresight: Its Logical Laws, Its Subjective Sources\", in H. E. Kyburg & H. E. K. Smokler (eds.), Studies in Subjective Probability , Huntington, NY: Robert E. Kreiger Publishing Co., 1980"
+        },
+        {
+          "raw": "---, 1974, Theory of Probability Vol. 1, New York: Wiley."
+        },
+        {
+          "raw": "Diaconis, P. & S. Zabell, 1982, \"Updating Subjective Probability\" Journal of the American Statistical Association , 77(380): 822-830."
+        },
+        {
+          "raw": "Dorst, K., 2017, \"Lockeans Maximize Expected Accuracy\", Mind , 128(509): 175-211."
+        },
+        {
+          "raw": "Douven, I. & S. Wenmackers, 2017, \"Inference to the Best Explanation versus Bayes???s Rule in a Social Setting\", British Journal for the Philosophy of Science , 68(2): 535-570."
+        },
+        {
+          "raw": "Dunn, J., 2018, \"Accuracy, Verisimilitude, and Scoring Rules\", Australasian Journal of Philosophy , 97(1): 151-166."
+        },
+        {
+          "raw": "Easwaran, K., 2013, \"Expected Accuracy Supports Conditionalization--and Conglomerability and Reflection\", Philosophy of Science , 80(1): 119-142."
+        },
+        {
+          "raw": "---, 2015, \"Accuracy, Coherence, and Evidence\", Oxford Studies in Epistemology , 5, 61-96."
+        },
+        {
+          "raw": "---, 2016, \"Dr Truthlove, Or: How I Learned to Stop Worrying and Love Bayesian Probabilities\", No&ucirc;s , 50(4): 816-853"
+        },
+        {
+          "raw": "--- & B. Fitelson, 2012, \"An 'evidentialist' worry about Joyce's argument for Probabilism\", Dialectica , 66(3): 425-433."
+        },
+        {
+          "raw": "Feldman, R., 2005, \"Respecting the Evidence\", Philosophical Perspectives , 19(1): 95-119."
+        },
+        {
+          "raw": "Fitelson, B. & K. Easwaran, 2015, \"Accuracy, Coherence and Evidence\", Oxford Studies in Epistemology , 5: 61-96."
+        },
+        {
+          "raw": "Fitelson B. & D. McCarthy, 2014, \"Toward an epistemic foundation for comparative confidence\", Presentation, University of Wisconsin-Madison. [Online version available here] ."
+        },
+        {
+          "raw": "Flores, C. & E. Woodard, forthcoming, \"Epistemic Norms on Evidence-Gathering\", Philosophical Studies ."
+        },
+        {
+          "raw": "Foley, R., 1992, \"The Epistemology of Belief and the Epistemology of Degrees of Belief\", American Philosophical Quarterly , 29(2): 111-121."
+        },
+        {
+          "raw": "Fraassen, B.C. van, 1983, \"Calibration: Frequency Justification for Personal Probability\", in R.S. Cohen & L. Laudan (eds.), Physics, Philosophy, and Psychoanalysis , Dordrecht: Springer."
+        },
+        {
+          "raw": "Gallow, J. D., 2019, \"Learning and Value Change\", Philosophers' Imprint , 19: 1-22."
+        },
+        {
+          "raw": "---, 2021, \"Updating for Externalists\", No&ucirc;s , 55(3): 487-516."
+        },
+        {
+          "raw": "Goldman, A.I., 1999, Knowledge in a Social World , New York: Oxford University Press."
+        },
+        {
+          "raw": "Good, I. J., 1967, \"On the Principle of Total Evidence\", The British Journal for the Philosophy of Science , 17(4):319-321."
+        },
+        {
+          "raw": "Greaves, H., 2013, \"Epistemic Decision Theory\", Mind , 122(488): 915-952."
+        },
+        {
+          "raw": "Greaves, H. & D. Wallace, 2006, \"Justifying Conditionalization: Conditionalization Maximizes Expected Epistemic Utility\", Mind , 115(459): 607-632."
+        },
+        {
+          "raw": "Hacking, I., 1967, \"Slightly More Realistic Personal Probability\", Philosophy of Science , 34(4): 311-325."
+        },
+        {
+          "raw": "Harman, G., 1973, Thought , Princeton, NJ: Princeton University Press."
+        },
+        {
+          "raw": "H&aacute;jek, A., 2008, \"Arguments For--Or Against--Probabilism?\", The British Journal for the Philosophy of Science , 59(4): 793-819."
+        },
+        {
+          "raw": "---, 2009, \"Fifteen Arguments against Hypothetical Frequentism\", Erkenntnis , 70: 211-235."
+        },
+        {
+          "raw": "Hempel, C., 1962, \"Deductive-Nomological vs. Statistical Explanation\", in H. Feigl and & G. Maxwell (eds.) Minnesota Studies in the Philosophy of Science (vol. III) , Minneapolis:University of Minnesota Press."
+        },
+        {
+          "raw": "Horowitz, S., 2014, \"Immoderately rational\", Philosophical Studies , 167: 41-56."
+        },
+        {
+          "raw": "---, 2017, \"Accuracy and Educated Guesses\" in T. Szab&oacute; Gendler & J. Hawthorne (eds.) Oxford Studies in Epistemology, volume 6 Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2019, \"The Truth Problem for Permissivism\", Journal of Philosophy 116(5): 237-262."
+        },
+        {
+          "raw": "Hughes, R. I. G. & B. C. van Fraassen, 1984, \"Symmetry arguments in probability kinematics\", in PSA: Proceedings of the Biennial Meeting of the Philosophy of Science Association (Issue 2/Volume Two: Symposia and Invited Papers), pp. 851-869 doi:10.1086/psaprocbienmeetp.1984.2.192543"
+        },
+        {
+          "raw": "Hurwicz, L., 1952, \"A criterion for decision making under uncertainty\", Cowles Commission Technical Report 355."
+        },
+        {
+          "raw": "Huttegger, S.M., 2013, \"In Defense of Reflection\", Philosophy of Science , 80(3): 413-433."
+        },
+        {
+          "raw": "Ismael, J., 2008, \"Raid! Dissolving the Big, Bad Bug\", No&ucirc;s , 42(2): 292-307."
+        },
+        {
+          "raw": "Jaffray, J-Y., 1989, \"Coherent bets under partially resolving uncertainty and belief functions\", Theory and Decision , 26: 90-105."
+        },
+        {
+          "raw": "James, W., 1897, \"The Will to Believe', in The Will to Believe, and Other Essays in Popular Philosophy , New York: Longmans Green."
+        },
+        {
+          "raw": "Jeffrey, R., 1965, The Logic of Decision , New York: McGraw-Hill."
+        },
+        {
+          "raw": "Jeffrey, R., 1983, The Logic of Decision (2 ). Chicago; London: University of Chicago Press."
+        },
+        {
+          "raw": "Jenkins, C.S., 2007, \"Entitlement and Rationality\", Synthese , 157: 25-45."
+        },
+        {
+          "raw": "Joyce, J.M., 1998, \"A Nonpragmatic Vindication of Probabilism\", Philosophy of Science , 65(4): 575-603."
+        },
+        {
+          "raw": "---, 2009, \"Accuracy and Coherence: Prospects for an Alethic Epistemology of Partial Belief\", in F. Huber & C. Schmidt-Petri (eds.), Degrees of Belief , Springer."
+        },
+        {
+          "raw": "---, 2018, \"The True Consequences of Epistemic Consequentialism\", in Ahlstrom-Vij & Dunn 2018."
+        },
+        {
+          "raw": "Kelley, M., 2019, Accuracy Dominance on Infinite Opinion Sets , MA Thesis, UC Berkeley. [Online version available here] ."
+        },
+        {
+          "raw": "Kelly, T., 2014, \"Evidence Can Be Permissive\", in M. Steup, J. Turri, & E. Sosa (eds.) Contemporary Debates in Epistemology , Oxford: Wiley-Blackwell."
+        },
+        {
+          "raw": "Kerbel, G., ms, \"A New Approach to Scoring on the Educated Guessing Framework\", Unpublished manuscript."
+        },
+        {
+          "raw": "Konek, J., 2016, \"Probabilistic Knowledge and Cognitive Ability\", Philosophical Review , 125(4): 509-587."
+        },
+        {
+          "raw": "---, 2019, \"IP Scoring Rules: Foundations and Applications\", Proceedings of Machine Learning Research , 103: 256-264."
+        },
+        {
+          "raw": "---, 2022, \"The Art of Learning\" in T. Szab&oacute; Gendler & J. Hawthorne (eds.) Oxford Studies in Epistemology, volume 7 Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Konek, J. & B.A. Levinstein, 2019, \"The Foundations of Epistemic Decision Theory\", Mind , 128(509): 69-107."
+        },
+        {
+          "raw": "Kopec, M., 2012, \"We Ought to Agree: A Consequence of Repairing Goldman's Group Scoring Rule\", Episteme , 9: 101-14."
+        },
+        {
+          "raw": "Leitgeb, H., 2021, \"A Structural Justification of Probabilism: From Partition Invariance to Subjective Probability\", Philosophy of Science , 88(2): 341-365."
+        },
+        {
+          "raw": "Leitgeb, H. & R. Pettigrew, 2010a, \"An Objective Justification of Bayesianism I: Measuring Inaccuracy\", Philosophy of Science , 77: 201-235."
+        },
+        {
+          "raw": "---, 2010b, \"An Objective Justification of Bayesianism II: The Consequences of Minimizing Inaccuracy\", Philosophy of Science , 77: 236-272."
+        },
+        {
+          "raw": "Levinstein, B. A., 2012, \"Leitgeb and Pettigrew on Accuracy and Updating\", Philosophy of Science , 79(3): 413-424."
+        },
+        {
+          "raw": "---, 2015, \"With All Due Respect: The Macro-Epistemology of Disagreement\", Philosophers' Imprint , 15(3): 1-20."
+        },
+        {
+          "raw": "---, 2017, \"A Pragmatist's Guide to Epistemic Utility\", Philosophy of Science 84(4): 613-638."
+        },
+        {
+          "raw": "---, 2018, \"An Objection of Varying Importance to Epistemic Utility Theory\", Philosophical Studies . doi:10.1007/s11098-018-1157-9"
+        },
+        {
+          "raw": "---, 2023, \"Accuracy, Deference, and Chance\" Philosophical Review 132(1): 43-87."
+        },
+        {
+          "raw": "Lewis, D., 1980, \"A Subjectivist's Guide to Objective Chance\", in R.C. Jeffrey (ed.), Studies in Inductive Logic and Probability (Vol. II). Berkeley: University of California Press."
+        },
+        {
+          "raw": "Locke, J., 1689 [1975] An Essay Concerning Human Understanding , P.H. Nidditch (ed.) Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Maher, P., 1993, Betting on Theories , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 2002, \"Joyce's Argument for Probabilism\", Philosophy of Science , 69(1): 73-81."
+        },
+        {
+          "raw": "Mayo-Wilson, C. & G. Wheeler, 2016, \"Scoring Imprecise Credences: A Mildly Immodest Proposal\", Philosophy and Phenomenological Research , 92(1): 55-78."
+        },
+        {
+          "raw": "---, ms., \"Epistemic Decision Theory's Reckoning\". Unpublished manuscript. [Online version available here] ."
+        },
+        {
+          "raw": "Meacham, C. J. G., 2018, \"Can All-Accuracy Accounts Justify Evidential Norms\", in Ahlstrom-Vij & Dunn 2018."
+        },
+        {
+          "raw": "Moss, S., 2011, \"Scoring Rules and Epistemic Compromise\", Mind , 120(480): 1053-1069."
+        },
+        {
+          "raw": "---, 2018, \"Probabilistic Knowledge\", Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Myrvold, W., 2012, \"Epistemic values and the value of learning\", Synthese , 187: 547-568."
+        },
+        {
+          "raw": "Nielsen, M., 2021, \"Accuracy-dominance and conditionalization\", Philosophical Studies , 178(10): 3217-3236."
+        },
+        {
+          "raw": "---, 2022, \"On the Best Accuracy Arguments for Probabilism\", Philosophy of Science , 89(3): 621-630."
+        },
+        {
+          "raw": "---, 2023, \"Accuracy and Probabilism in Infinite Domains\" Mind , 132(526): 402-427."
+        },
+        {
+          "raw": "Oddie, G., 1997, \"Conditionalization, cogency, and cognitive value\", British Journal for the Philosophy of Science , 48(4): 533-541."
+        },
+        {
+          "raw": "---, 2019, \"What Accuracy Could Not Be\", The British Journal for the Philosophy of Science , 70(2): 551-580."
+        },
+        {
+          "raw": "Paris, J. B., 1994, The Uncertain Reasoner's Companion: A Mathematical Perspective , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 2001, \"A Note on the Dutch Book Method\", Proceedings of the Second International Symposium on Imprecise Probabilities and their Applications Ithaca, NY: Shaker."
+        },
+        {
+          "raw": "P&eacute;rez Carballo, A., 2018, \"Good Questions\", in J. Dunn & K. Ahlstrom-Vij (eds.), Epistemic Consequentialism , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Pettigrew, R., 2010, \"Modelling uncertainty\", Grazer Philosophische Studien , 80."
+        },
+        {
+          "raw": "---, 2013a, \"A New Epistemic Utility Argument for the Principal Principle\", Episteme , 10(1): 19-35."
+        },
+        {
+          "raw": "---, 2013b, \"Epistemic Utility and Norms for Credence\", Philosophy Compass , 8(10): 897-908."
+        },
+        {
+          "raw": "---, 2014a, \"Accuracy and Evidence\", Dialectica ."
+        },
+        {
+          "raw": "---, 2014b, \"Accuracy, Risk, and the Principle of Indifference\", Philosophy and Phenomenological Research ."
+        },
+        {
+          "raw": "---, 2016b, \"Jamesian epistemology formalised: An explication of 'The Will to Believe'\" Episteme 13(3): 253-268."
+        },
+        {
+          "raw": "---, 2017, \"On the Accuracy of Group Credences\" in T. Szab&oacute; Gendler & J. Hawthorne (eds.) Oxford Studies in Epistemology, volume 6 Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2018a, \"Making Things Right: the true consequences of decision theory in epistemology\", in Ahlstrom-Vij & Dunn 2018."
+        },
+        {
+          "raw": "---, 2018b, \"The Population Ethics of Belief: In Search of an Epistemic Theory X\", No&ucirc;s , 52(2): 336-372."
+        },
+        {
+          "raw": "---, 2018c, \"Accuracy-First Epistemology Without Additivity\", Philosophy of Science , 89(1): 128-151."
+        },
+        {
+          "raw": "---, 2021a, \"Logical ignorance and logical learning\", Synthese , 198(10): 9991-10020."
+        },
+        {
+          "raw": "---, 2021b, \"On the pragmatic and epistemic virtues of inference to the best explanation\", Synthese 199(5-6): 12407-12438."
+        },
+        {
+          "raw": "---, 2022, Epistemic Risk and the Demands of Rationality , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2023, \"Bayesian updating when what you learn might be false\", Erkenntnis 88(1): 309-324."
+        },
+        {
+          "raw": "Predd, J., et al., 2009, \"Probabilistic Coherence and Proper Scoring Rules\", IEEE Transactions on Information Theory 55(10): 4786-4792."
+        },
+        {
+          "raw": "Quiggin, J., 1982, \"A theory of anticipated utility\", Journal of Economic Behavior and Organization 3(4): 323-43."
+        },
+        {
+          "raw": "Raidl, E. & W. Spohn, 2020, \"An Accuracy Argument in Favor of Ranking Theory\", Journal of Philosophical Logic 49(2): 283-313."
+        },
+        {
+          "raw": "Ramsey, F. P., 1926 [1931], \"Truth and Probability\", in R. B. Braithwaite (ed.) The Foundations of Mathematics and other Logical Essays , London: Routledge & Kegan Paul Ltd."
+        },
+        {
+          "raw": "Rescorla, M., 2022, \"An Improved Dutch Book Theorem for Conditionalization\", Erkenntnis , 87(3): 1013-1041."
+        },
+        {
+          "raw": "Rosenkrantz, R.D., 1981, Foundations and Applications of Inductive Probability , Atascadero, CA: Ridgeview Press."
+        },
+        {
+          "raw": "Rothschild, D., 2021, 'Lockean Beliefs, Dutch Books, and Scoring Systems', Erkenntnis , 88(5): 1979-1995."
+        },
+        {
+          "raw": "Schervish, M. J., 1989, \"A General Method for Comparing Probability Assessors\" The Annals of Statistics , 17(4): 1856-1879."
+        },
+        {
+          "raw": "Schoenfield, M., 2014, \"Permission to Believe: Why Permissivism Is True and What It Tells Us About Irrelevant Influences on Belief\", No&ucirc;s , 48(2): 193-218."
+        },
+        {
+          "raw": "---, 2016, \"Conditionalization does not (in general) Maximize Expected Accuracy\", Mind , 126(504): 1155-1187"
+        },
+        {
+          "raw": "---, 2017, \"The Accuracy and Rationality of Imprecise Credences\", No&ucirc;s , 51(4): 667-685."
+        },
+        {
+          "raw": "---, 2019, \"Accuracy and Verisimilitude: The Good, The Bad, and The Ugly\", The British Journal for the Philosophy of Science . doi:10.1093/bjps/axz032"
+        },
+        {
+          "raw": "Seidenfeld, T., 1985, \"Calibration, Coherence, and Scoring Rules\", Philosophy of Science , 52(2): 274-294."
+        },
+        {
+          "raw": "Seidenfeld, T., M.J. Schervish, & J.B. Kadane, 2012, \"Forecasting with imprecise probabilities\", International Journal of Approximate Reasoning , 53: 1248-1261."
+        },
+        {
+          "raw": "Shear, T. & B. Fitelson, 2019, \"Two Approaches to Belief Revision\" Erkenntnis 84(3): 487-518."
+        },
+        {
+          "raw": "Spohn, W., 2012, The Laws of Belief: Ranking Theory & its Philosophical Applications , New York: Oxford University Press."
+        },
+        {
+          "raw": "Staffel, J. & G. de Bona, Forthcoming, \"An Improved Argument for Superconditionalization\", Erkenntnis ."
+        },
+        {
+          "raw": "Sylvan, K., 2020, \"An Epistemic Non-Consequentialism\", The Philosophical Review , 129(1): 1-51."
+        },
+        {
+          "raw": "Talbot, B., 2022, I \"Headaches for Epistemologists\", Philosophy and Phenomenological Research , 104(2): 408-433."
+        },
+        {
+          "raw": "van Fraassen, B. C., 1999, \"Conditionalization, A New Argument For\", Topoi , 18(2): 93-96."
+        },
+        {
+          "raw": "Vindrola, F. & V. Crupi, forthcoming, \"Bayesians Too Should Follow Wason: A Comprehensive Accuracy-Based Analysis of the Selection Task\", The British Journal for the Philosophy of Science ."
+        },
+        {
+          "raw": "Wald, A., 1945, \"Statistical decision functions which minimize the maximum risk\", The Annals of Mathematics , 46(2): 265-280."
+        },
+        {
+          "raw": "Walsh, S., ms., \"Probabilism in Infinite Dimensions\". Unpublished manuscript."
+        },
+        {
+          "raw": "White, R., 2009, \"Evidential Symmetry and Mushy Credence\", Oxford Studies in Epistemology , 3: 161-186."
+        },
+        {
+          "raw": "Williams, J. R. G., 2012a, \"Gradational accuracy and nonclassical semantics\", Review of Symbolic Logic , 5(4):513-537."
+        },
+        {
+          "raw": "---, 2012b, \"Generalized Probabilism: Dutch Books and accuracy domination\", Journal of Philosophical Logic , 41(5):811-840."
+        },
+        {
+          "raw": "---, 2018, \"Rational Illogicality\", Australasian Journal of Philosophy , 96(1): 127-141."
+        },
+        {
+          "raw": "Williams, J. R. G. & R. Pettigrew, 2023, 'Consequences of Calibration', The British Journal for the Philosophy of Science ."
+        },
+        {
+          "raw": "Williamson, T., 2000, Knowledge and its Limits , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Wong, S.K.M., Yao, Y.Y., Bollmann, P., & B&uuml;rger, H.C., 1991, \"Axiomatization of qualitative belief structure\", IEEE Transactions on System, Man, and Cybernetics , 21: 726-734."
+        },
+        {
+          "raw": "Zollman, K. J. S., 2010, \"The Epistemic Benefit of Transient Diversity\", Erkenntnis 72(1): 17-35."
+        }
+      ],
+      "publishedAt": "2011-09-22T14:00:00.000Z",
+      "revisedAt": "2023-10-10T13:00:00.000Z"
+    }
+  }
+}

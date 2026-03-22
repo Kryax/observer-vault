@@ -1,0 +1,736 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/natural-kinds",
+  "meta": {
+    "title": "Natural Kinds",
+    "description": "Scientific disciplines frequently divide the particulars they study into kinds and theorize about those kinds. To say that a kind is natural is to say that it corresponds to a grouping that reflects the structure of the natural world rather than the interests and actions of human beings. We tend to assume that science is often successful in revealing these kinds; it is a corollary of scientific realism that when all goes well the classifications and taxonomies employed by science correspond to the real kinds in nature. The existence of these real and independent kinds of things is held to justify our scientific inferences and practices. Putative examples of kinds may be found in all scientific disciplines. Chemistry provides what are taken by many to be the paradigm examples of kinds, the chemical elements, while chemical compounds, such as H 2 O, are also natural kinds of stuff. (Instances of a natural kind may be man-made, such as artificially synthesized ascorbic acid, i.e., vitamin C; but whether chemical kinds all of whose instances are artificial are natural kinds is open to debate. The synthetic transuranium elements, e.g. Rutherfordium, seem good candidates for natural kinds, whereas artificial chemical kinds, such as the entirely synthetic compound bismuth germanate, Bi 4 Ge 3O O 12 , which is used in particle detectors, are, arguably, less obviously natural kinds.) The standard model in quantum physics reveals many kinds of fundamental particles (electron, tau neutrino, charm quark), plus broader categories such as kinds of kind (lepton, quark) and higher kinds (fermion, boson). Astronomy classifies the heavenly bodies: galaxies, for example, can be either elliptical, lenticular, or spiral. Since kinds are revealed by science, a science can revise which kinds it holds exist: phlogisticated air was regarded as a kind until after Lavoisier's chemical revolution. A science can even question a whole category of kinds, or sort and classify kinds differently as the science changes and new knowlege is gained. Before being superseded in this regard by the chemical elements, biological species were taken to be the best exemplars of kindhood. Yet now it is somewhat controversial to state that species are natural kinds. As the world changes, its kinds may change too. Rapidly mutating micro-organisms demand new classification systems. Kinds in the social sciences, such as economics or sociology, are even more problematic, since the changing norms and practices of individuals and societies may also be held to be constitutive factors in kind membership, and these norms and practices may themselves respond to our classification of people into kinds. These examples are troublesome because there is some tension between the existence of kinds and the mutability of the particulars which are supposed to fall under those kinds. In the case of atoms or galaxies, the particulars under study are typically long-lived and only slowly changing; viruses and economic structures, on the other hand, are more dynamic. This article divides philosophical discussions of natural kinds into four areas: metaphysics, epistemology, philosophy of science, and philosophy of language. The metaphysics of natural kinds asks whether we should think of our supposed natural kinds as genuinely natural. And if they are, what are natural kinds? And, finally, do natural kinds have essences? Philosophy of science is concerned with natural kinds because, as mentioned above, it is the use of natural kinds by the individual ('special') sciences that generates our interest in them. So we may ask, whether the kinds appearing in our best scientific theories do indeed satisfy the theories of natural kinds proposed by the metaphysicians. Philosophy of language takes an interest in natural kinds because basic issues are raised by the semantics of natural kind terms. For example, if we think of naming an entity and describing it as, semantically speaking, fundamentally different ways of talking about it, should we think of natural kind terms as functioning like names or like descriptions?",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T06:29:13.434Z",
+    "dateModified": "2026-03-22T06:29:13.434Z",
+    "datePublished": "2008-09-16T14:00:00.000Z",
+    "keywords": [
+      "causation metaphysics",
+      "dispositions",
+      "laws of nature",
+      "mental causation",
+      "multiple realizability",
+      "names",
+      "properties",
+      "reference",
+      "rigid designators",
+      "species"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Scientific disciplines frequently divide the particulars they study into kinds and theorize about those kinds. To say that a kind is natural is to say that it corresponds to a grouping that reflects the structure of the natural world rather than the interests and actions of human beings. We tend to assume that science is often successful in revealing these kinds; it is a corollary of scientific realism that when all goes well the classifications and taxonomies employed by science correspond to the real kinds in nature. The existence of these real and independent kinds of things is held to justify our scientific inferences and practices. Putative examples of kinds may be found in all scientific disciplines. Chemistry provides what are taken by many to be the paradigm examples of kinds, the chemical elements, while chemical compounds, such as H 2 O, are also natural kinds of stuff. (Instances of a natural kind may be man-made, such as artificially synthesized ascorbic acid, i.e., vitamin C; but whether chemical kinds all of whose instances are artificial are natural kinds is open to debate. The synthetic transuranium elements, e.g. Rutherfordium, seem good candidates for natural kinds, whereas artificial chemical kinds, such as the entirely synthetic compound bismuth germanate, Bi 4 Ge 3O O 12 , which is used in particle detectors, are, arguably, less obviously natural kinds.) The standard model in quantum physics reveals many kinds of fundamental particles (electron, tau neutrino, charm quark), plus broader categories such as kinds of kind (lepton, quark) and higher kinds (fermion, boson). Astronomy classifies the heavenly bodies: galaxies, for example, can be either elliptical, lenticular, or spiral. Since kinds are revealed by science, a science can revise which kinds it holds exist: phlogisticated air was regarded as a kind until after Lavoisier's chemical revolution. A science can even question a whole category of kinds, or sort and classify kinds differently as the science changes and new knowlege is gained. Before being superseded in this regard by the chemical elements, biological species were taken to be the best exemplars of kindhood. Yet now it is somewhat controversial to state that species are natural kinds. As the world changes, its kinds may change too. Rapidly mutating micro-organisms demand new classification systems. Kinds in the social sciences, such as economics or sociology, are even more problematic, since the changing norms and practices of individuals and societies may also be held to be constitutive factors in kind membership, and these norms and practices may themselves respond to our classification of people into kinds. These examples are troublesome because there is some tension between the existence of kinds and the mutability of the particulars which are supposed to fall under those kinds. In the case of atoms or galaxies, the particulars under study are typically long-lived and only slowly changing; viruses and economic structures, on the other hand, are more dynamic. This article divides philosophical discussions of natural kinds into four areas: metaphysics, epistemology, philosophy of science, and philosophy of language. The metaphysics of natural kinds asks whether we should think of our supposed natural kinds as genuinely natural. And if they are, what are natural kinds? And, finally, do natural kinds have essences? Philosophy of science is concerned with natural kinds because, as mentioned above, it is the use of natural kinds by the individual ('special') sciences that generates our interest in them. So we may ask, whether the kinds appearing in our best scientific theories do indeed satisfy the theories of natural kinds proposed by the metaphysicians. Philosophy of language takes an interest in natural kinds because basic issues are raised by the semantics of natural kind terms. For example, if we think of naming an entity and describing it as, semantically speaking, fundamentally different ways of talking about it, should we think of natural kind terms as functioning like names or like descriptions?",
+    "context": "Opening section: 1. The Metaphysics of Natural Kinds | Related entries: causation-metaphysics, dispositions, laws-of-nature, mental-causation, multiple-realizability, names, properties, reference, rigid-designators, species",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "metaphysics",
+    "political-philosophy",
+    "philosophy-of-science"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry natural-kinds",
+        "uri": "https://plato.stanford.edu/entries/natural-kinds/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "2 author(s), 10 related entries, bibliography size 160"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2008-09-16T14:00:00.000Z and revised 2022-01-27T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2022-01-27T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/natural-kinds/",
+        "description": "SEP entry for natural-kinds"
+      }
+    ],
+    "solutionApproach": "1. The Metaphysics of Natural Kinds"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/causation-metaphysics",
+      "ocp:sep/dispositions",
+      "ocp:sep/laws-of-nature",
+      "ocp:sep/mental-causation",
+      "ocp:sep/multiple-realizability",
+      "ocp:sep/names",
+      "ocp:sep/properties",
+      "ocp:sep/reference",
+      "ocp:sep/rigid-designators",
+      "ocp:sep/species"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Bird, Alexander",
+        "type": "human"
+      },
+      {
+        "name": "Tobin, Emma",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/natural-kinds/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 115,
+      "validation_diversity": 0.56,
+      "context_breadth": 0.46,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.91
+    },
+    "confidence": "tested",
+    "authority": "high",
+    "status": "draft",
+    "trustScore": 0.601
+  },
+  "extensions": {
+    "sep": {
+      "slug": "natural-kinds",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/natural-kinds/",
+      "preamble": "Scientific disciplines frequently divide the particulars they study into kinds and theorize about those kinds. To say that a kind is natural is to say that it corresponds to a grouping that reflects the structure of the natural world rather than the interests and actions of human beings. We tend to assume that science is often successful in revealing these kinds; it is a corollary of scientific realism that when all goes well the classifications and taxonomies employed by science correspond to the real kinds in nature. The existence of these real and independent kinds of things is held to justify our scientific inferences and practices. Putative examples of kinds may be found in all scientific disciplines. Chemistry provides what are taken by many to be the paradigm examples of kinds, the chemical elements, while chemical compounds, such as H 2 O, are also natural kinds of stuff. (Instances of a natural kind may be man-made, such as artificially synthesized ascorbic acid, i.e., vitamin C; but whether chemical kinds all of whose instances are artificial are natural kinds is open to debate. The synthetic transuranium elements, e.g. Rutherfordium, seem good candidates for natural kinds, whereas artificial chemical kinds, such as the entirely synthetic compound bismuth germanate, Bi 4 Ge 3O O 12 , which is used in particle detectors, are, arguably, less obviously natural kinds.) The standard model in quantum physics reveals many kinds of fundamental particles (electron, tau neutrino, charm quark), plus broader categories such as kinds of kind (lepton, quark) and higher kinds (fermion, boson). Astronomy classifies the heavenly bodies: galaxies, for example, can be either elliptical, lenticular, or spiral. Since kinds are revealed by science, a science can revise which kinds it holds exist: phlogisticated air was regarded as a kind until after Lavoisier's chemical revolution. A science can even question a whole category of kinds, or sort and classify kinds differently as the science changes and new knowlege is gained. Before being superseded in this regard by the chemical elements, biological species were taken to be the best exemplars of kindhood. Yet now it is somewhat controversial to state that species are natural kinds. As the world changes, its kinds may change too. Rapidly mutating micro-organisms demand new classification systems. Kinds in the social sciences, such as economics or sociology, are even more problematic, since the changing norms and practices of individuals and societies may also be held to be constitutive factors in kind membership, and these norms and practices may themselves respond to our classification of people into kinds. These examples are troublesome because there is some tension between the existence of kinds and the mutability of the particulars which are supposed to fall under those kinds. In the case of atoms or galaxies, the particulars under study are typically long-lived and only slowly changing; viruses and economic structures, on the other hand, are more dynamic. This article divides philosophical discussions of natural kinds into four areas: metaphysics, epistemology, philosophy of science, and philosophy of language. The metaphysics of natural kinds asks whether we should think of our supposed natural kinds as genuinely natural. And if they are, what are natural kinds? And, finally, do natural kinds have essences? Philosophy of science is concerned with natural kinds because, as mentioned above, it is the use of natural kinds by the individual ('special') sciences that generates our interest in them. So we may ask, whether the kinds appearing in our best scientific theories do indeed satisfy the theories of natural kinds proposed by the metaphysicians. Philosophy of language takes an interest in natural kinds because basic issues are raised by the semantics of natural kind terms. For example, if we think of naming an entity and describing it as, semantically speaking, fundamentally different ways of talking about it, should we think of natural kind terms as functioning like names or like descriptions?",
+      "firstSectionTitle": "1. The Metaphysics of Natural Kinds",
+      "firstSectionText": "The principal metaphysical questions concerning natural kinds are fourfold. First, are the kinds that we think of as 'natural' kinds genuinely natural ? Or are our classification processes more anthropocentric than that? Secondly, are our natural kind classifications really classifications into kinds ? Thirdly, what are natural kinds? Are natural kinds any sort of entity at all? Are they basic ontological entities or are they derived from or reducible to other entities (e.g., universals)? Fourthly, do natural kinds have essences? As regards the first question, the general problem is to determine which of the kinds to which science makes appeal, if any, correspond to real natural kinds--those existing in nature, so to speak--and which of these kinds are merely conventional--those whose boundaries are fixed by us rather than nature. The second question builds on the first by noting that in addition to classifying things in a natural way, classification by natural kinds, is also classification of things into kinds. What then is it to classify by kind? The third question leads one to ask: if natural kinds are genuinely natural and genuinely kinds, what are they? Are there entities that are the natural kinds, and if so what can we say about the nature of such entities? Are they irreducible, basic, sui generis entities (alongside, for example, particulars and universals) (Ellis 2001; Lowe 1998)? Or can they be reduced, say to universals (Armstrong 1978, 1997; Hawley and Bird 2011) or to clusters of properties (Boyd 1991, Millikan 1999)? The fourth question asks whether there are properties that might be essential for kind membership. Natural kind essentialists hold that natural kinds have essences (Ellis 2001, 2002; Devitt 2008), where the essence of a natural kind is a property or set of properties whose possession is a necessary and sufficient condition for a particular's being a member of the kind. That fact is a so-called essential fact concerning the kind; it is a fact that, in Fine's terms, stems from the identity or nature of the kind (Fine 1994). We can use answers to these questions to articulate the metaphysical commitment of a theory of natural kinds (Bird 2018). At one extreme the out-and-out conventionalist may claim that there is no natural sameness and difference in nature (or at least that our human classifications do not capture any such natural sameness and difference). A fortiori , there are no classifications into natural kinds , no entities that are natural kinds, and no natural kinds essences. At the other extreme, one might hold that there are natural distinctions between things, some of these distinctions are distinctions of kinds, that the natural kinds are a certain species of entity, that these entities are irreducible, and that they have essences. Intermediate views tend to be more popular. For example, a common view is that there are natural classifications by kinds, but there are no entities that are the natural kinds. Some hold that view and accept essentialism about natural kinds, while others hold that view and reject essentialism. A common view concerning our so-called natural kind classifications is that there are genuinely natural ways of classifying things. Intuitively, to group all instances of the metal zinc together is to engage in a natural classification, whereas to group together Trajan's column, the number two, and Julius Caesar is to classify things in an arbitrary manner. The classifications 'cars manufactured in Germany', 'culinary vegetables', 'altars' are not arbitrary, but neither are they natural, since they reflect human interests. This view we call naturalism . It is often called realism because of the close affinity to scientific realism; indeed naturalism may be regarded as a consequence or component of standard scientific realism. Scientific realists hold that successful scientific theories represent theory-independent phenomena. Thus the theoretical posits of science reflect natural divisions in nature; for example, the periodic system for classifying the chemical elements reflects natural divisions between the elements. However, since 'realism' is also associated with ontological doctrines (e.g., realism about universals, modal realism etc.) it would be preferable to use weak realism (or, as above, naturalism ) to label the ontologically uncommitted view that our classifications are often natural. (We will note below that not all natural classifications are classifications into natural kinds.) Naturalism need not maintain that all the classifications we in fact take to be natural are indeed natural. Sometimes scientists and others err in the natural kinds they take to exist. There is no kind that is phlogiston or phlogisticated air. Many might suppose jade to be a natural kind of mineral, but it is not because there are two distinct minerals called 'jade'. (See LaPorte 2004, 94-100 and Hacking 2007b for detailed discussions of jade.) Similarly, biologists now believe that reptiles do not form a natural kind. Naturalism is the view that there are in fact natural divisions among things, so that when we attempt to make a natural classification, there is a fact of the matter as to whether that classification is indeed genuinely natural. Assuming that one is a naturalist about (some of) our classifications, what makes a classification into one of natural kinds? The following are often suggested criteria or characteristics of a natural kind classification (some of which are more contentious than others): Naturalism about natural kind classifications contrasts with conventionalism (also called constructivism or constructionism ), the view natural kinds don't exist independently of the scientists and others who talk about them. John Stuart Mill expresses the contrast thus: \"In so far as a natural classification is grounded on real kinds, its groups are certainly not conventional; it is perfectly true that they do not depend upon an arbitrary choice of the naturalist\" (Mill 1884, bk. IV, ch. II). While the sciences do, it appears, employ classifications according to kinds, the conventionalist will maintain that the purposes of scientists are just one species of interest among many: others will include the interests of automobile enthusiasts, of cooks, and of religious people or sociologists of religion. Conventionalists (constructivists, constructionists) deny that any of our classifications, including those of science, are naturally privileged forms of classification. The classifications of botanists do not carve nature at its joints any more than the classifications of cooks. We may distinguish between weak conventionalism and strong conventionalism. Weak conventionalism asserts that our actual classifications are not, or are very unlikely to be, natural. The principal ground for weak conventionalism is scepticism about the ability of science to uncover the natural principles of classification. We may attribute this reason for conventionalism to Locke (1690: III). It appears (although this is a matter of debate) that Locke thought that if there were real essences of species, these would be found in the shared imperceptible micro-structural properties of things, and that there may be such genuinely natural species but that science was ill-equipped to do better than speculate about them. (Locke also held, employing Criterion 6 above, that there would be 'gaps' or 'chasms' between genuine species but that observation showed only smooth gradations between the kinds we actually employ, which therefore must be conventional.) Strong conventionalism, however, goes on to deny even that conventionalism is forced upon us simply by ignorance. It denies that there are any such natural divisions, known or unknown. Strong conventionalists claim that the differences and similarities that we attribute to things exist in virtue of, for example, the social function of the relevant concepts rather than in virtue of natural facts. For example, the concept of gender is used to mark a distinction of social role. The conventionalist treats natural kinds in the same way. The chemical elements, biological species, quarks, neutrinos and bosons are equally constructed by the activity of scientists. The key claim is that natural kinds are constructed rather than discovered. As Woolgar claims \"there is no object beyond discourse\" (1988, 73). Hacking (1999) argues against the strong version of conventionalism (which he terms 'universal constructivism'). The point of social constructivism is to reveal that some of our classificatory categories and practices, though they may appear inevitable, are actually contingent and relative to the practice of classification in the context of social institutions and norms. However, according to Hacking, some constructed categories reflect real divisions and so we need not be constructivists in the strong sense. There is still room to distinguish between constructed kinds that reflect real categories and those that do not. For example, Hacking (1999, Ch. 5) distinguishes between 'child abuse' and 'satanic ritual abuse'. Satanic ritual abuse is a socially constructed idea, but not a social kind. In the 1990s, there was an exhaustive investigation into satanic ritual abuse in Great Britain after a number of reported cases. However, an independent commission claimed that none of the charges were substantiated by evidence. Thus, our constructed categories are subject to empirical investigation. We must establish a referent class for our constructed categories. For example and in contrast, a kind such as child abuse is considered real. The emergence of the category can be traced to a definite time (1961) at a definite place (Denver) in the discussions of paediatricians. Moreover, the reference of the category was abused children. This reference dynamically changed as the idea became embedded in new legislation, incorporated in practices involving social workers, police, schoolteachers etc. (see Hacking 1999, Ch. 5.) But, importantly real instances of the category were found through empirical investigation. The chief claim made by all varieties of conventionalism is that facts about the structure of the world are in some sense dependent on human beings, their concepts and their activities in society. The denial of this view, which we will examine in Section 1.2, is the claim that facts about the world are independent of human beings, their concepts and their activities, that is, that there are real independent natural kinds in the world. The claim that scientific facts about the world are dependent on human activity has been analysed in different ways by constructivists. Kukla (2000, Ch. 3) distinguishes (i) material, (ii) causal, and (iii) constitutive dependence. The first, and weakest, claim is material dependence, namely that scientific entities are constructed by the activities of scientists in the laboratory. Chemical reactions are brought about by scientists in the laboratory using purified chemicals in a controlled environment (Knorr-Cetina et al. 1983). The resultant kinds are merely the constructs of this highly artificial environment, along with the pragmatic interests of the scientists (i.e., what they are testing for and the methodology they choose to use). However, it is clear that scientists still abstract from a complex reality and in some circumstances the materials used are purifications of some naturally occurring materials. Indeed, material dependence is a rather weak kind of conventionalism and could even be made compatible with some versions of naturalism/realism (cf. Hacking 1983). Therefore, no general conclusion may be drawn about the natural world and its kinds, from the fact that scientists study scientific kinds in a highly idealized and controlled setting. The second element in Kukla's three-fold distinction is causal dependence, which occurs when the relevant facts are caused to be true by the fact that they are believed to be true (e.g. belief that there will be a run on the bank can cause a run on the bank, Merton 1948). Hacking's (1995) human, interactive kinds, such as person with multiple-personality disorder, may be regarded as instances, where the kind and its members are brought into existence by the belief that there are such kinds and people do belong to them. Lastly, the constitutive dependence thesis claims that convention is constitutive of the physical facts. Plausibly, conventions exist in virtue of people holding that they do. Woolgar's constructivism is of the type that treats all scientific facts like conventions in this respect. Dupr&eacute; (1993) promiscuous realism claims that there are countless ways of taxonomizing the world into kinds. The structure of the world is vastly complex and can be categorized in many different cross-cutting ways, according to the different theoretical interests we happen to be pursuing. Nevertheless, Dupr&eacute; insists that his view is not conventionalist, but rather that he is committed to naturalism and realism about natural kinds. He accepts that there are properties that members of natural kinds have in common, but denies that these are intrinsic properties of kinds (see Criterion 1 above). He also denies that there is a hierarchical structure of natural kinds in the world (see Criterion 5 above) and that kinds are categorically distinct (see Criterion 6 above). Dupr&eacute; (1993, 28) argues that promiscuous realism about natural kinds reflects our classificatory practices within the context of both common sense and particular sciences. The kinds classified by common sense and scientific practice often cross one another. For example, in common sense we classify lilies as a certain kind of flower. However, in biological classification the genus Lilium comprises over one hundred species, including bulbs such as garlic and onions. Moreover, species with the name \"lily\" in common sense do not all in fact belong to the lilium genus in biological classification (e.g., Calla Lilies and Canna Lilies). Therefore, common sense and biological science provide us with pluralistic ways of taxonomizing lilies. Each is equally legitimate, according to Dupr&eacute;, depending on our interests. Furthermore, Dupr&eacute; (1993, 38) argues that cross-classification occurs even within the context of a science. Taking the biological classification of species as an example, he argues that there are countless ways of taxonomizing species, depending on the model of biological systematics that is used (see Section 2.1 below). There are equally legitimate, objectively grounded ways of classifying natural kinds. There is accordingly no unique way of carving nature at its joints; different systems of classification are equally acceptable, scientifically, and metaphysically. Realism about natural kinds is the view that there exist entities that are the natural kinds. While naturalism about natural kind classifications is a matter of there being natural groupings and distinctions among things and as such has no ontological commitment, realism is an ontologically committed view. Since '(weak) realism' is sometimes used to denote naturalism, we may distinguish by using the term strong realism for the stronger, ontological, claim that the natural divisions between kinds reflect the boundaries between real entities; i.e. the difference between silver and gold is not just a difference between two natural groups of thing, but is a difference between two distinct entities silver and gold . The traditional realism versus nominalism debate is an ontological debate over whether in order to account for properties we need to invoke a class of entity, universals. There is an analogous debate as regards natural kinds, whether in order to account for our natural kind talk and our natural classifications, we need a special sort of entity in our ontology. The natural kind nominalist may accept that there are genuinely natural classifications, but will reject the idea that we should invoke any object as a consequence. For example, the nominalist might take the world to be made up of individuals, which can be classified as kinds in a natural way. But, the nominalist claims, there is no kind of entity beyond the individual instances of each kind. The (strong) realist maintains that we cannot explain the distinction between natural and non-natural classifications without appealing to certain entities, the natural kinds. The naturalism versus conventionalism debate discussed in the preceding section asked whether there is a genuine metaphysical difference between natural classifications and non-natural classifications; it is not obvious that the naturalist, who maintains that there is a metaphysical difference, is obliged to understand that difference in terms of an ontological category of entities that are natural kinds. The analogue in the debate over properties is whether there is a metaphysical distinction between natural properties and non-natural properties, between, in David Lewis's terminology, sparse and abundant properties (Lewis, 1986). There is no immediate contradiction in the position of a nominalist who rejects universals, but who maintains that there is a metaphysical difference between natural properties and other properties. The realist in both cases argues that, ultimately, naturalism (about properties and about classification) requires a commitment to entities (universals and natural kinds respectively). Quine is an example of a philosopher who accepts, to some extent, natural classifications into kinds. He holds (1969) that kinds are sets, so he does think that there are entities that are kinds, and to that extent he is a realist. That said, his realism is minimal, since sets are ubiquitous entities. Any coherent classificatory principle will determine a set of things thus classified, whether natural or artificial. Thus the ontology of natural kinds does not of itself explain there being natural kinds. Quine regards the notions of kind and similarity as \"substantially one notion\" (1969, 119) but denies that it is straightforward to give a definition of one in terms of the other. He does consider defining relative similarity thus: a is more similar to b than to c iff a and b share more properties than a and c do. But this will work only if properties are less abundant than sets are (since any two things are jointly members of any number of sets). And Quine regards such a notion of property as no clearer than the notion of kind. Quine opens his discussion of natural kinds by asking \"what tends to confirm an induction?\" (see Criterion 2 above) (1969, 114). With Goodman's new riddle of induction and Hempel's paradox of confirmation in mind, Quine answers that it is the similarity or sameness of kinds between instances that permits an induction: two green emeralds are more similar than two grue emeralds when one of them is green and the other blue. It is the \"dubious scientific standing of a general notion of similarity, or of kind\" (1969, 116) that prompts the discussion alluded to above. An intuitive notion of similarity is used in our ordinary inductions. And the force of Darwinian processes gives us some reason to think that we have evolved an innate similarity space that corresponds to some natural similarities. At the same time, natural science, which developed from these primitive inductions, supported by similarities, is able to reveal deeper similarities that may contradict superficial similarities. For example, we have strong sense that things of the same colour are objectively alike, but science tells us that there is no deep similarity among like-coloured things. Quine thinks that in due course science will obviate the need for a general notion of similarity or kind: in each area of science more specific notions will take the place of the generic notion; this is a sign of the maturity of a branch of science. For example, in zoology we may replace talk of the similarity between two animals by discussion of the historical proximity of their closest common ancestor. Quine's conception of natural kinds is liberal. Not all sets are natural kinds, but any set whose members share a natural property are a natural kind. So the set of white objects is at least a candidate natural kind and Quine asserts that positively charged objects form a natural kind. One might wonder whether an up quark, an uranium nucleus, a hydronium ion, a charged water droplet, and a balloon that has been rubbed on someone's jumper all belong to one kind. The literature on natural kinds (cf. Mill 1884) has tended to adopt a more restricted conception of kinds, although articulating that conception is not straightforward. This question is related to the link that Quine draws between kinds and what it is that confirms induction. If one adopts the narrower conception of kinds, then one will hold that a law such as 'positively charged objects repel one another' does not concern kinds at all, but nonetheless may be confirmed by instances of objects that are positively charged repelling one another. So the real answer to \"what tends to confirm an induction?\" is not \"natural kinds and their instances\" but is \"natural properties and their instances\". A further reason for taking this view is that inductions often concern relations (such as the repulsion between two objects). But we do not suppose that objects that enter into a natural relation form a natural kind, nor that there is a natural kind of ordered sequences of objects satisfying a given natural relation. Following Quine, some realists have expanded upon his intuition that a natural kind's members share a natural property by counting families of such properties that are contingently clustered in nature (Boyd 1991, 1999a; Millikan 1999). These families of properties cluster together over time either because the presence of some properties in the family favours the presence of others or because there are underlying internal mechanisms and/or extrinsic contextual mechanisms which tend to secure the co-occurrence of the properties. A natural kind is any such family of co-occurring properties that may be employed in inductive inferences or for the purposes of scientific explanation. Cluster kind realists will readily concede that, depending on the case, environmental pressures may affect and alter the set of properties associated with a kind over time. Therefore, in such cases, none of the properties themselves need be individually necessary for kind membership. Richard Boyd (1999) considers biological species to be paradigmatic natural kind clusters, where the clustering is due to a homeostatic mechanism. Homeostatic property clusters (HPCs) occur when mechanisms exist that cause the properties to cluster by ensuring that deviations from the cluster have a low chance of persisting; the presence of some of the properties in the cluster favours the presence of the others. A homeostatic mechanism thereby achieves self-regulation, maintaining a stable range of properties. In the case of species, the homeostatic mechanisms may be intrinsic (e.g. gene exchange within a population or developmental factors) or extrinsic (e.g. a species's evolutionary niche provides common selective factors). Since individuals inherit their basic characteristics from their parents, and very few people are taller than 2.5m, we can expect the next generation to contain few people of that height. Height can, however, be affected by environmental factors; a mutation can cause offpring to have genes different from their parents that might cause greater than usual height, and malfunctioning of the pituitary gland can cause an excess of growth hormone. So there can be individual cases of excessive height. But they will remain rare because such gigantism and acromegaly are accompanied by serious complicating disorders and often result in premature death. Consequently, these individuals are less likely to reproduce than others. Even greater extremes of height (e.g. 4m) are just not possible, since the same developmental factors would prevent the individual from being viable at an earlier stage in life. Colouration across a species is often uniform when it is a camouflage against predation. The more specific the ecological niche occupied, the more uniform will colouration and other features be. Deviations will lead to decreased fitness and will be selected against. Obligate mutualistic symbiosis often provides very specialized ecological niches; consequently certain key properties must be present in order for an individual to survive. Certain beard worms, such as Riftia pachyptila , live at ocean floor thermal vents and have no digestive tract; instead they supply hydrogen sulphide and methane to bacteria in their trophosomes, which oxidise the hydrogen sulphide and methane on behalf of the worm. As a result the worm cannot lack any property essential for the survival of the bacteria to which it is host. Such homeostatic mechanisms do not preclude deviations from the standard combinations of properties--mutations do occur. Homeostasis just means that usually such mutations will not persist. The rare benevolent, or even merely neutral, mutations may persist and flourish, in which case there will be variation and change. Environments may change, perhaps locally, also leading to variation and change (e.g. the famous peppered moth). Consequently, it will not always be the case that property P in a homeostatic property cluster F is a necessary condition of an individual belonging to the relevant kind. One potential problem with the HPC view account is that homeostatic mechanisms are not clearly delineated in the account. In other words, the role of mechanisms in maintaining the stability of property cluster is not addressed in Boyd's original account. Craver (2009) is skeptical about our attempts to give a fully realist account of the homeostatic property clusters because conventional elements are involved in deciding when two mechanisms are of the same kind and also in identifying when one mechanism ends and the other begins. Tobin (2017) argues that there is an overlapping problem for mechanisms which is similar to the overlapping problem often discussed in the natural kinds literature. Slater (2015, 396) claims that the HPC view can be made clearer by focusing on the special sort of stability that a cluster of properties might have whereby it is suitable for inductive and explanatory purposes, instead of focusing on something causing that stability. Slater calls this view the Stable Property Cluster account of natural kinds. In such cases, the boundaries of the natural kind are vague. Cluster kinds nevertheless do form a kind (Criterion 4 above). Members will have at least some properties in common (Criterion 1). Since the emergence of cluster kinds is not entirely random and a causal-historical account can be provided in virtue of stable homeostatic mechanisms, cluster kinds are sufficiently robust to support induction (Criterion 2) and perhaps even laws of nature in some cases (Criterion 3). Conversely, because the boundaries between natural kinds are vague, a cluster kind realist will reject the claim that natural kinds are categorically distinct (Criterion 6). She may be neutral on whether they always form hierarchies (Criterion 5). That said, not all clusters need exhibit the flexibility and vagueness of these biological, homeostatic cases. In other cases the clustering may be directly due to the laws of nature. Thus the laws of physics rule out fractional nuclear charge, with the consequence that the chemical elements are kinds that have clearly defined boundaries and nuclear charge is a necessary and sufficient condition of kind membership. Chakravarrty (forthcoming) argues that natural kind realism has run its course and that attempts to be more liberal about multifarious natural kinds have meant that more recent natural kind realist accounts dissolve into conventionalism. Alternatively, many more recent realist account of natural kinds attempt to cling on to natural kind realism by buttressing it to other forms of realism. For example, theorist have identified what is (mind-independently) real with other things (property clusters, correlations, mechanisms, structures and so on). According to Chakravarrty this is to conflate sui generis natural kind realism with other kinds of realism (e.g. realism about property clusters or realism about mechanisms). As mentioned above (introduction to Section 1.2), natural kind realism may be understood as an analogue of realism about universals. A further question is whether these are simply analogues or in fact related positions. Perhaps natural kinds just are (a species of) universals or are reducible to universals. Within realism, that reductionist view can be contrasted with natural kind fundamentalism , which holds that not only are there natural kinds (as entities), but also that natural kinds find a basic and sui generis place in our ontology. We illustrate three positions within naturalism about natural kinds: (i) naturalism without (strong) realism; reductionist realism; fundamentalist realism. According to David Armstrong (1997, 67-8) \"The kinds mark true joints in nature. But it is not clear that we require an independent and irreducible category of universal to accommodate the kinds\". Armstrong's view is naturalistic, since there are genuine natural divisions; but he is also resistant to realism. If there were natural kinds they would be universals. But the properties shared by all and only the members of a kind will typically be very complex. For example, he considers whether there is some description of human DNA. There may be, but it would be too complex to qualify as a genuine universal. And there is no reason to suppose that this complex universal would do any causal or nomic work. So there is not simply an identity between natural kinds and a subcategory of universals, the natural kind universals (e.g., the universal of being gold , or of being a human )--according to Armstrong's argument there are no natural kind universals. He does concede that the case is stronger for basic kind universals, such as electronhood, where a few properties (the electron's mass, charge, and spin) are individually necessary and jointly sufficient for kind membership. Hawley and Bird (2011) argue that natural kinds are complex universals. A complex universal is a universal whose parts are universals (just as a complex particular is a particular whose parts are particulars). In the case of the electron the fundamental universals (the electron's mass, charge, and spin) do combine to form a complex universal. Since an universal is wholly located where the universal is located, every entity that instantiates electronhood also instantiates its component universals, the electron's mass, charge, and spin. Not every collection of universals constitutes a natural kind, just as not every collection of particulars constitutes a natural (complex) particular. The facts that explain the clustering of properties explain why these universals compose a complex one. Not every complex universal is, like electronhood, precise. Some are vague, and this fact can accommodate the indeterminacy of kind constitution implied by Boyd's view of the clusters in the case of biological kinds. Like Hawley and Bird, E. J. Lowe takes natural kinds to be entities (1998, 2006a, 2006b). Thus Lowe is a natural kind realist. Furthermore, he takes natural kinds-- substantial universals in his terminology--to constitute an irreducible ontological category (one category in his four-category ontology). Hence he is a natural kind fundamentalist. Lowe argues that recognizing the ontologically fundamental distinction between substantial universals (natural kinds) and non-substantial universals (properties) accounts for the laws of nature in a manner that, while avoiding the problems of a regularity account, may nonetheless do without Armstrong's second order relation of necessitation, itself a relational universal (Armstrong 1983, 75-110). Consider the law that planets travel in ellipses. According to Lowe's account, this should be understood as a matter of the kind planet being characterized by the property travels in an ellipse . (One might query whether all laws can be given this form and so whether the fact that some general truth is a law should be explained this way. For what makes planets travel in ellipses is the fact that they have mass and hence little to do with their being planets . For example, Kepler's law is an application of Newton's laws, but the latter concerns quantities (mass, distance), which should be understood as universals not kinds.) As in Lowe's ontology, natural kinds play a fundamental role in the ontology of Brian Ellis (2001, 2002). For Ellis the term 'natural kind' covers three hierarchical categories: natural kinds of objects (substantive kinds), natural kinds of processes and events (dynamic kinds), and natural kinds of properties and relations (property kinds). The chemical elements and compounds are substantive kinds; the different chemical reactions are dynamic kinds; a tetrahedral molecular structure is a (structural) property kind (whose species include the particular tetrahedral structures of methane, carbon tetrachloride, silicon tetrafluoride and so forth). Ellis is uncommitted on whether the dynamic kinds are independent of the other two types of kinds; but these are independent of one another. Each kind is a universal, and the three categories of kind therefore form three categories of universal. Thus the substantive kinds--the familiar kinds of thing and stuff--are universals, but these are not reducible to property universals. Ellis notes that laws of nature have a hierarchical structure: Kepler's laws of planetary motion are an application of Newton's laws. He argues (2001, 90) that the only satisfactory account of this is fact that natural kinds also exist in hierarchies (see Criterion 5). Do natural kinds have essences? When discussing kinds and essences we need to distinguish two quite different claims. The first claim is that the kind a particular belongs to is essential to that particular: if a belongs to kind K , then it is an essential property of a that it belongs to K . The second claim is that the kinds themselves have essential properties: for each kind K there is some property &Phi; of the kind such that it is essential to K that &Phi;( K ). What is the logical relation between these two claims? The first claim may be strictly consistent with the denial of the second, but it may be difficult to motivate the first without having reason to accept the second. Would one think that some object's nature requires it to belong to kind K without thinking that there is some distinctive (essential) property characteristic of all Ks? The second claim, essentialism about kinds, does not obviously imply the first, individual essentialism. To see this, consider the following two cases that would seem to show that the latter does not imply the former (Bird 2018). The first case is chemical/physical. A nucleus of neptunium-239 may undergo beta decay, in which one of its neutrons emits an electron leaving a proton. As a consequence the nucleus now has one more proton and so is a nucleus of neptunium no longer but is now a nucleus of plutonium. This description is consistent with the claim that it is essential to neptunium that nuclei of neptunium atoms have 93 protons whereas it is essential to plutonium that its nuclei have 94 protons. But one may also claim, as the description implicitly suggests, that one and the same nucleus persists through this transformation. If that is so, then a particular has retained its identity while undergoing a change of kind. That kind essentialism does not entail essentialism of kind membership is also demonstrated by a second, biological, example. According to Mayr's biological species concept, a species is a reproductively isolated breeding population. Thus a new species can be created by the advent of reproductive isolation, which will typically split existing populations (Matthen 2009). And so the existing organisms in at least one (and arguably both) of the newly isolated (sub-)populations will belong to a new species. And if species are natural kinds, this is an example of particulars changing their kinds. But this account of species is consistent with the view that species have essences (LaPorte 1997, 2004, 11-12). (As a matter of fact, most essentialists accept that an object's kind is essential to it. The point being advanced here is that this claim does not follow immediately from the claim that kinds have essences.) It has been widely held that essentialism, and natural kind essentialism in particular, is a consequence of the semantic arguments concerning reference put forward by Kripke (1980) and Putnam (1975a). These arguments support semantic externalism, the view that the reference of a speaker's term can depend on facts external to the speaker herself (e.g. facts concerning prior uses of the term). However, Salmon (1979, 1982) has argued persuasively that only trivial essentialism can be inferred from such arguments; stronger essentialist theses are derived only on the basis of unstated essentialist premises. For example, consider the following argument, reconstructed by Donnellan and discussed in Salmon (1982, 161-75): (Salmon 1982, 166) P3, however, is not free of non-trivial essentialist import. According to Salmon, deriving essentialism via the theory of reference is question-begging. Nonetheless, the fact that essentialist conclusions seem so plausible may be taken as evidence that there exist strong essentialist intuitions, and the arguments from Kripke and Putnam can be framed in non-semantic terms and thereby motivate essentialism directly--indeed many of Kripke's arguments are not framed in semantic terms at all. Several of Kripke's exemplary cases concern theoretical identities; these are typically identities of the form C = T , expressed using a common name for a kind, ' C ', and a technical identification of the kind, ' T ', typically thereby telling us what that kind is . Examples: light is a stream of photons; water is H 2 O; lightning is an electrical discharge; gold is the element with atomic number 79. This might give the impression that Kripkean essentialism is just a matter of the necessity of identity. However, in several of his discussions Kripke does provide separate, independent arguments on the one hand for the (necessary) necessity of being T for being C and on the other hand for the (necessary) sufficiency of being T for being C . In general, where K is a kind and P is some property, arguments for &#9633;&forall; x ( Kx &rarr; Px ) can be decoupled from arguments for &#9633;&forall;x( Px &rarr; Kx ). For example, in his discussion of gold, Kripke argues that something that is superficially like gold in appearance but lacks the property of having atomic number 79, would not be gold. This establishes that, of necessity, having atomic number 79 is necessary for being gold, but does not show that possession of this property is sufficient for being gold. Similarly, argues Kripke, if we were to discover a population of animals with the appearance of tigers but which turn out to be reptiles, we would deny that such creatures are tigers. Being mammalian is necessarily a necessary condition of being a tiger, but of course not a sufficient condition Putnam's (1975a) Twin Earth thought experiment, in a non-semantic guise, leads to a similar conclusion. We imagine there is a planet, 'Twin Earth', exactly like Earth in all readily observable respects. Every person and thing on Earth has a twin equivalent on Twin Earth. However, there is no H 2 O on Twin Earth. Instead, there is a liquid that shares the manifest properties of water (e.g., its being colourless, tasteless, odourless, good for drinking, etc.). This liquid is composed not of H 2 O molecules but of very different molecules to which we assign the made-up formula 'XYZ'. Despite its superficially water-like properties, intuitively XYZ is not water. What prevents XYZ from being water is the fact that XYZ is microstructurally different from H 2 O. If intuition is reliable in this respect, then (i) possessing water's superficial properties is not sufficient to make something a sample of water, and (ii) being composed of molecules of H 2 O is necessary for something's being a sample of water. (For more on Putnam's Twin Earth thought experiment, see Section 4.2.3.) It is natural to use the expression ' the essence of &hellip;', which implies sufficiency as well as necessity: possession of the essence of K suffices for membership of K , as well as being necessary for it. According to the foregoing, not all the arguments of Kripke and Putnam establish what the essence of some kind is, rather they establish only what we may call a partial essence, conditions that are necessary but not sufficient. This is clear in some other of Kripke's arguments. Thus it is only a partial essence that someone originates with the gamete (sperm and egg) from which they in fact originate, since they might have a monozygotic (identical) twin who has the same origin. A further question is whether there is a full essence ( the essence) for everything that has a partial essence. The fact that such arguments show only that F is an essential property of K means that they are invulnerable to complaints that not everything with F is K . For example it is sometimes complained that water cannot be essentially H 2 O for the following reasons (a) water is a liquid, whereas a substance comprised of H 2 O can exist as a solid or a gas; (b) a single H 2 O molecule is not a sample of water because it does not have the properties we can ascribe to samples of water (such as a temperature); (c) water is not simply H 2 O but is a polymer-like substance held together by hydrogen bonds. These observations are consistent with the claim of Putnam's argument that necessarily all water is composed of H 2 O molecules. The arguments so far considered show that the superficial properties associated with a kind are, in those cases, not sufficient for kind membership, and so some further property (often a microstructural property) is a necessary condition. Kripke also provides arguments that show that many of the superficial properties typically associated with a kind are not even necessary. Kripke examines Kant's claim that it is a priori that gold is a yellow metal (Kripke 1980, 118). Let us imagine that the yellow appearance of what we have always taken to be samples of gold is just an optical illusion. Intuitively, we would conclude that we had previously erred in thinking that gold is yellow--we would not conclude that there is no gold. Likewise, one might ask whether animal species are characterized (necessarily) by superficially available qualities, for example, whether a tiger is, by definition, a large carnivorous quadrupedal feline, tawny yellow in colour with blackish transverse stripes and a white belly (Kripke 1980, 119-121). Again, we may consider that these features of the individual animals we have held to be tigers are in fact illusory; that those individuals and others of the same species are, for example, three-legged but that an optical illusion made us think otherwise. This suggests that satisfying a set of readily observable 'superficial' properties is not necessary for membership of the tiger kind. The foregoing arguments from Kripke lead to the conclusion that the relevant kinds are not characterized of necessity by the readily observable properties of their instances. They do not show what does characterize those kinds. Kripke takes the view that, in most cases, it is certain microstructural properties that determine the nature of these natural kinds, as evident in his endorsement of the identities: 'water is H 2 O'; 'gold is the element with atomic number 79', 'light is a stream of photons'. Such essential properties of kinds are features, therefore, that may be unknown even to competent users of a relevant kind concept. Consequently, these are essences that, when known at all, are known a posteriori . While the arguments just considered suggest a microstructural essence for the chemical and physical kinds considered, they do not have the consequence that every natural kind must have a microstructural essence. Kripke regards material individuals as having historical essences. In the light of cladism in biology, one may regard biological taxa as having historical essences also, and this is consistent with the general picture given to us by Kripke and Putnam, even if they themselves once thought that biological kinds had microstructural essences (McGinn 1976; Kornblith 1993, 111; LaPorte 2004, 64). Cladism is the most commonly accepted system of biological classification that groups organisms according to their shared phylogenetic ancestry. Cladism has replaced the Linnean hierarchical system of biological classification where organisms were grouped according to their shared morphological characteristics (see Section 2.1 below). Kripke does not distinguish 'essential property' from 'necessary property'. Fine (1994) notes that the claim that P is a necessary property of X is not the same as the claim that P is an essential property of X: the latter implies the former but the former does not imply the latter. The arguments for essentialism discussed above do not note this distinction and move quickly from claims about necessity to claims about essence: having shown that necessarily anything that is gold is made up of an element with atomic number 79, Kripke concludes that having atomic number 79 is an essential property of the kind gold. Fine's point may not be an insuperable obstacle to establishing essentialism via the arguments of Kripke and Putnam. For it may be held, as Fine holds, that essences concern the nature or identity of things. One may then argue that the arguments of Kripke, Putnam, and others do appeal to intuitions concerning the nature and/or identity of natural kinds, and so the inferences to essentialism from claims about necessity are legitimate in these cases. The Kripke-Putnam arguments for essentialism are, in effect, direct appeals to intuition. For Ellis and Lowe, the dialectical basis for essentialism is that essentialism is a core part of what they each take to be the optimal metaphysical system. Ellis (2001, 145-50) regards his essentialist metaphysics as supported by his argument that it yields a stronger argument for scientific realism. In particular, for Ellis the essences of natural kinds explain the laws of nature: laws are grounded in the world's natural kind structure, which includes not only natural kinds of thing but also natural kinds of process and event. Above it was mentioned that for Lowe (2006, 144) laws concern natural kinds; by contrast, for Ellis laws are grounded in essential facts about kinds. As a consequence, the laws of nature are metaphysically necessary. This has the advantage of explaining what natural necessity is (it is just metaphysical necessity), but at the cost of denying the intuitive contingency of laws. Lowe, on the other hand, holds that laws can be grounded in the contingent possession of properties by kinds, and so need not be metaphysically necessary. Recently, there has been a debate about the usefulness of natural kind classification in philosophy of science. Some philosophers have argued that the concept of natural kinds should be eliminated on the grounds that it does not play a useful role in scientific classification. David Ludwig (2018) and Ian Hacking (2007a) have argued for eliminating the concept of natural kind altogether. The arguments here are twofold: firstly, the concept of natural kind is applicable to a heterogeneous set of practices of natural classification. The usage of the natural kind concept is so multifarious that it is misleading to practicing scientists if they use the natural kind concept in scientific classification. On these grounds, the concept of natural kind should be eliminated. Indeed Hacking (2007a, 229) does not mince his words: \"Delete every mention of natural kinds\". The second, related, argument is on the grounds that there are so many different theories of natural kinds in the literature, of which some apply more readily to some scientific disciplines, while others seem to apply more readily in others. For example, the grounds for essentialism seem more warranted in chemistry, while Boyd's HPC view seems more readily applicable in biology. Indeed, a homogeneous theory of natural kinds that would apply in all disciplines looks very unlikely. On these grounds, so the argument goes, the search for a unitary theory of natural kinds for all scientific classification is futile. Conix and Chi (2021) argue that these arguments for eliminativism do not provide a sufficient justification to eliminate the natural kind concept altogether. They argue that the notion of 'natural kind' plays another epistemic role in philosophical research, because it enables fruitful investigation into non-arbitrary classification.",
+      "relatedEntries": [
+        "causation-metaphysics",
+        "dispositions",
+        "laws-of-nature",
+        "mental-causation",
+        "multiple-realizability",
+        "names",
+        "properties",
+        "reference",
+        "rigid-designators",
+        "species"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "causation-metaphysics"
+        },
+        {
+          "slug": "dispositions"
+        },
+        {
+          "slug": "laws-of-nature"
+        },
+        {
+          "slug": "mental-causation"
+        },
+        {
+          "slug": "multiple-realizability"
+        },
+        {
+          "slug": "names"
+        },
+        {
+          "slug": "properties"
+        },
+        {
+          "slug": "reference"
+        },
+        {
+          "slug": "rigid-designators"
+        },
+        {
+          "slug": "species"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 160,
+      "bibliography": [
+        {
+          "raw": "Armstrong, D. M., 1978. Universals and Scientific Realism , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 1983. What is a Law of Nature? , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 1997. A World of States of Affairs , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 1999. \"The Causal Theory of Properties: Properties According to Shoemaker, Ellis and Others\", Philosophical Topics , 26: 25-37."
+        },
+        {
+          "raw": "Bartol, J. 2016. \"Biochemical kinds\", British Journal for the Philosophy of Science , 67: 531-551."
+        },
+        {
+          "raw": "Beatty, J., 1997. \"Why do Biologists Argue Like They Do?\", Philosophy of Science , 64: 432-443."
+        },
+        {
+          "raw": "Bird, A., 2018. \"The Metaphysics of Natural Kinds\", Synthese , 195: 1397-1426."
+        },
+        {
+          "raw": "---, A., 2020. \"Natural Kinds and Modality\" in O.Bueno and S. Shalkowski (eds.), The Routledge Handbook of Modality , London: Routledge, 239-250."
+        },
+        {
+          "raw": "Boyd, R., 1988. \"How to be a Moral Realist\", in G. Sayre-McCord (ed.), Essays on Moral Realism , Ithaca, NY: Cornell University Press: 181-228."
+        },
+        {
+          "raw": "---, 1991. \"Realism, Anti-Foundationalism and the Enthusiasm for Natural Kinds\", Philosophical Studies , 61: 127-148."
+        },
+        {
+          "raw": "---, 1999a. \"Homeostasis, Species, and Higher Taxa\", in R. Wilson (ed.), Species: New Interdisciplinary Essays , Cambridge, MA: MIT Press: 141-186."
+        },
+        {
+          "raw": "---, 1999b. \"Kinds, Complexity and Multiple Realization\", Philosophical Studies , 95: 67-98."
+        },
+        {
+          "raw": "Brigandt, I., 2003. \"Species Pluralism Does not Imply Species Eliminativism\", Philosophy of Science , 70: 1305-1316."
+        },
+        {
+          "raw": "Burge, T., 1979. \"Individualism and the Mental\", Midwest Studies in Philosophy , 4: 73-121."
+        },
+        {
+          "raw": "---, 1986. \"Individualism and Psychology\", Philosophical Review , 45: 3-45."
+        },
+        {
+          "raw": "Bursten, J. R. (2018). \"Smaller than a Breadbox: Scale and NaturalKkinds\", The British Journal for the Philosophy of Science , 69: 1-23."
+        },
+        {
+          "raw": "Chakravarrty, A. (forthcoming), \"Last Chance Saloons for Natural Kind Realism\", American Philosophical Quarterly ."
+        },
+        {
+          "raw": "Churchland, P. M., 1981. \"Eliminative Materialism and the Propositional Attitudes\", Journal of Philosophy , 78: 67-90."
+        },
+        {
+          "raw": "---, 1988. Matter and Consciousness , revised edition. Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Conix, S. and Chi, P.S., 2021. \"Natural Kind Eliminativism\", Synthese , 198: 8999-9020."
+        },
+        {
+          "raw": "Cooper, R., 2004. \"Why Hacking is Wrong About Human Kinds\", British Journal for the Philosophy of Science , 55: 73-85."
+        },
+        {
+          "raw": "Cosmides, L. and Tooby, J., 1992. \"The Psychological Foundations of Culture\", in J. H. Barkow, L. Cosmides, and J. Tooby, (eds.), The Adapted Mind: Evolutionary Psychology and the Generation of Culture , New York: Oxford University Press, 19-136."
+        },
+        {
+          "raw": "Cracraft, J., 1983. \"Species Concepts and Speciation Analysis\", in Current Ornithology , R. Johnston (ed.), New York: Plenum Press, 159-187."
+        },
+        {
+          "raw": "Craver, C.F. 2009, \"Mechanisms and Natural Kinds\", Philosophical Psychology , 22: 575-594."
+        },
+        {
+          "raw": "Darwin, C., 1859. The Origin of Species , G. Stade (ed.). New York: Barnes & Noble, 2003."
+        },
+        {
+          "raw": "Devitt, M., 2008. \"Resurrecting Biological Essentialism\", Philosophy of Science , 75: 344-382."
+        },
+        {
+          "raw": "Dummett, M., 1973. Frege: Philosophy of Language , London: Duckworth."
+        },
+        {
+          "raw": "Dupr&eacute;, J., 1981. \"Natural Kinds and Biological Taxa\", Philosophical Review , 90: 66-90."
+        },
+        {
+          "raw": "---, 1993. The Disorder of Things : Metaphysical Foundations of the Disunity of Science , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "---, 1996. \"Promiscuous Realism: A Reply to Wilson\" British Journal for the Philosophy of Science , 47: 441-444."
+        },
+        {
+          "raw": "---, 2001. \"In Defence of Classification\", Studies in History and Philosophy of Biological and Biomedical Sciences , 32: 203-219."
+        },
+        {
+          "raw": "Durkheim, E., 1897. Le Suicide. Etude de sociologie , Paris: Germer Bailliere: et cie (trans: Suicide. A Study in Sociology)."
+        },
+        {
+          "raw": "Ellis, B. and Lierse, C., 1994. \"Dispositional Essentialism\", Australasian Journal of Philosophy , 72: 27-45."
+        },
+        {
+          "raw": "Ellis, B., 2001. Scientific Essentialism , Cambridge Studies in Philosophy. Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 2002. The Philosophy of Nature , Chesham: Acumen."
+        },
+        {
+          "raw": "Ereshefsky, M., 1992. \"Eliminative Pluralism\", Philosophy of Science , 59: 671-690."
+        },
+        {
+          "raw": "---, 1998. \"Species Pluralism and Anti-Realism\" Philosophy of Science , 65: 103-120"
+        },
+        {
+          "raw": "Ereshefsky, M. and Reydon, T. A. C., 2015. \"Scientific kinds\", Philosophical Studies , 172: 969-986."
+        },
+        {
+          "raw": "Evans, G., 1982. The Varieties of Reference , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Fine, K., 1994. \"Essence and Modality : The Second Philosophical Perspectives Lecture\", Philosophical Perspectives , 8: 1-16."
+        },
+        {
+          "raw": "Fodor, J. A., 1974. \"Special Sciences or the Disunity of the Sciences as a Working Hypothesis\", Synthese , 28: 97-115."
+        },
+        {
+          "raw": "---, 1983. Modularity of Mind: An Essay on Faculty Psychology , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 1997. \"Special Sciences: Still Autonomous After all these Years\", Philosophical Perspectives , 11: 149-163."
+        },
+        {
+          "raw": "---, 1998. Concepts, Where Cognitive Science Went Wrong , New York: Oxford University Press."
+        },
+        {
+          "raw": "---, 2008. LOT 2: The Language of Thought Revisited , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Franklin-Hall, L. R., 2015. \"Natural Kinds as Categorical Bottlenecks\", Philosophical Studies , 172: 925-948."
+        },
+        {
+          "raw": "Frege, G., 1892. \"On Sense and Reference\", in P. Geach and M. Black, (eds.), (1952), Translations from the Philosophical Writings of Gottlob Frege , Oxford: Blackwell."
+        },
+        {
+          "raw": "Ghiselin, M. T., 1974. \"A Radical Solution to the Species Problem\", Systematic Zoology , 23: 536-544."
+        },
+        {
+          "raw": "---, 1987. \"Species Concepts, Individuality and Objectivity\", Biology and Philosophy , 2: 127-144."
+        },
+        {
+          "raw": "---, 1995. \"Ostensive Definitions of the Names of Species and Clades\", Biology and Philosophy , 10: 219-222."
+        },
+        {
+          "raw": "---, 1997. Metaphysics and the Origin of Species , Albany: State University of New York Press."
+        },
+        {
+          "raw": "Godman, M, Mallozzi, A. and Papineau, D., 2020. \"Essential Properties Are Super-Explanatory: Taming Metaphysical Modality\", Journal of the American Philosophical Association , 6: 316-334."
+        },
+        {
+          "raw": "Goodman, N., 1978. Ways of Worldmaking , Indianapolis: Hackett."
+        },
+        {
+          "raw": "Goodwin, W., 2011. \" Structure, Function and Protein Taxonomy\", Biology and Philosophy , 26: 533-545."
+        },
+        {
+          "raw": "Griffiths P. E., 2004. \"Emotions as Normative and Natural Kinds\", Philosophy of Science , 71: 901-911."
+        },
+        {
+          "raw": "Griffiths P. E. and Stotz, K, 2007. \"Gene\", in M. Ruse and D. Hull (eds.) Cambridge Companion to Philosophy of Biology , Cambridge: Cambridge University Press, 85-102."
+        },
+        {
+          "raw": "Hacking, I., 1983. Representing and Intervening , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 1990. \"Natural Kinds\", in R. B. Barrett and R. Gibson, (eds.), Perspectives on Quine , Oxford: Blackwell: 129-141."
+        },
+        {
+          "raw": "---, 1991a. \"A Tradition of Natural Kinds\", Philosophical Studies , 61: 109-126."
+        },
+        {
+          "raw": "---, 1991b. \"On Boyd\", Philosophical Studies , 61: 149-154."
+        },
+        {
+          "raw": "---, 1995. \"The Looping Effects of Human Kinds\", In D. Sperber, D. Premack, and A. Premack (eds.), Causal Cognition: A multidisciplinary debate , Oxford: Clarendon Press, 35-94."
+        },
+        {
+          "raw": "---, 1999. The Social Construction of What? , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "---, 2007a. \"Natural Kinds: Rosy Dawn, Scholastic Twilight\", Royal Institute of Philosophy Supplement , 61: 203-239."
+        },
+        {
+          "raw": "---, 2007b. \"The Contingencies of Ambiguity\", Analysis , 67: 269-277."
+        },
+        {
+          "raw": "Hawley, K. and Bird, A., 2011. \"What are Natural Kinds?\", Philosophical Perspectives , 25: 205-221."
+        },
+        {
+          "raw": "Heil, J. and Mele, A. (eds.), 1993. Mental Causation , New York: Oxford University Press."
+        },
+        {
+          "raw": "Hendry, R., 2006. \"Elements, Compounds and Other Chemical Kinds\", Philosophy of Science , 73: 864-875."
+        },
+        {
+          "raw": "---, 2010. \"The Elements and Conceptual Change\", The Semantics and Metaphysics of Natural Kinds , H. Beebee & N. Sabbarton-Leary, London: Routledge. 137-158."
+        },
+        {
+          "raw": "---, 2012. \"Chemical Substances and the Limits of Pluralism\", Foundations of Chemistry , 14: 55-68."
+        },
+        {
+          "raw": "---, 2010. \"Entropy and Chemical Substance\", Philosophy of Science , 77: 921-932."
+        },
+        {
+          "raw": "---, 2010. \"Ontological Reduction and Molecular Structure\", Studies In History and Philosophy of Science Part B: Studies In History and Philosophy of Modern Physics , 41: 183-191."
+        },
+        {
+          "raw": "Hull, D. L., 1965. \"The Effect of Essentialism on Taxonomy-Two Thousand Years of Stasis (I)\", British Journal for the Philosophy of Science , 15: 314-326."
+        },
+        {
+          "raw": "---, 1976. \"Are Species Really Individuals?\", Systematic Zoology , 25: 174-191."
+        },
+        {
+          "raw": "---, 1978. \"A Matter of Individuality\", Philosophy of Science , 45: 335-360."
+        },
+        {
+          "raw": "---, 1980. \"Individuality and Selection\", Annual Review of Ecology and Systematics , 11: 311-332."
+        },
+        {
+          "raw": "---, 1987. \"Genealogical Actors in Ecological Roles\", Biology and Philosophy , 2: 168-184."
+        },
+        {
+          "raw": "Kaplan, D., 1977. \"Demonstratives\" in Almog (ed.) Themes from Kaplan , Oxford: Oxford University Press, 1989."
+        },
+        {
+          "raw": "Kendig, C., 2015. \"Natural Kinds and Classification in Scientific Practice\", London and New York: Routledge."
+        },
+        {
+          "raw": "Kendig, C. and Grey, J., 2021. \"Can the Epistemic Value of Natural Kinds Be Explained Independently of Their Metaphysics?\" British Journal for the Philosophy of Science , 72(2): 359-376; first online 31 January, 2019. doi:10.1093/bjps/axz004"
+        },
+        {
+          "raw": "Kein&auml;nen, M and Tahko, T.E. 2019. \"Bundle Theory with Kinds\". Philosophical Quarterly , 69: 838-857."
+        },
+        {
+          "raw": "Khalidi, M. A., 1998. \"Natural Kinds and Crosscutting Categories\", Journal of Philosophy , 95: 33-50."
+        },
+        {
+          "raw": "---, 2010. \"Interactive Kinds\", British Journal for the Philosophy of Science , 61: 335-360."
+        },
+        {
+          "raw": "---, 2013. Natural Categories and Human Kinds: Classification in the Natural and Social Sciences , Cambridge, Cambridge University Press."
+        },
+        {
+          "raw": "Kim, J., 1992, \"Multiple Realization and the Metaphysics of Reduction\", Philosophy and Phenomenological Research , 52: 1-26."
+        },
+        {
+          "raw": "---, 1993. Supervenience and Mind , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Kitcher, P., 1984. \"Species\", Philosophy of Science , 51: 308-333."
+        },
+        {
+          "raw": "Kitts, D. B. and Kitts, D. J., 1979. \"Biological Species as Natural Kinds\", Philosophy of Science , 46: 613-622."
+        },
+        {
+          "raw": "Knorr-Cetina, K. and Mulkay M., (eds.), 1983. Science Observed: Perspectives on the Social Study of Science , London: Sage."
+        },
+        {
+          "raw": "Kornblith, H., 1993. Inductive Inference and Its Natural Ground , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Kripke, S., 1971. \"Identity and Necessity\" Identity and Individuation , M.K. Munitz, (ed.), New York, New York University Press, 135-164."
+        },
+        {
+          "raw": "---, 1972. \"Naming and Necessity\", Semantics of Natural Language , G. Harman & D. Davidson (eds.), Dordrecht: Reidel, 253-355."
+        },
+        {
+          "raw": "---, 1980. Naming and Necessity , Oxford: Basil Blackwell."
+        },
+        {
+          "raw": "Kuhn, T., 2000. The Road Since Structure , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Kukla, A., 2000. Social Construction and the Philosophy of Science , London: Routledge."
+        },
+        {
+          "raw": "LaPorte, J., 1996. \"Chemical Kind Term Reference and the Discovery of Essence\", No&ucirc;s , 30: 112-132."
+        },
+        {
+          "raw": "---, 1997. \"Essential Membership\", Philosophy of Science , 64: 96-112."
+        },
+        {
+          "raw": "---, 2004. Natural Kinds and Conceptual Change , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Lemeire, O., 2021 \"No Purely Epistemic Theory Can Account for the Naturalness of Kinds\", Synthese , 198: 2907-2925."
+        },
+        {
+          "raw": "Lewis, D., 1980. \"Mad Pain and Martian Pain\", Readings in the Philosophy of Psychology (Volume I), N. Block (ed.), Cambridge, MA: Harvard University Press: 216-222."
+        },
+        {
+          "raw": "---, 1986. On the Plurality of Worlds , Oxford: Blackwell."
+        },
+        {
+          "raw": "Locke, J., 1690. An Essay Concerning Human Understanding , P. H. Nidditch (ed.), Oxford: Clarendon Press, 1975."
+        },
+        {
+          "raw": "Lowe, E. J., 1998. The Possibility of Metaphysics: Substance, Identity, and Time , New York: Oxford University Press."
+        },
+        {
+          "raw": "---, 2006b. \"Metaphysics as the Science of Essence\", in A. Carruth, S. Gibb, and J. Heil (eds.), Ontology, Modality, and Mind: Themes from the Metaphysics of E. J. Lowe , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Ludwig, D. 2018. \"Letting Go of \"Natural Kind\". Towards a Multidimensional Framework of Non-Arbitrary Classification.\" Philosophy of Science , 85: 31-52."
+        },
+        {
+          "raw": "Machery, E., 2005. \"Concepts are not a natural kind\" Philosophy of Science , 72: 444-467."
+        },
+        {
+          "raw": "---, 2009. Doing Without Concepts , New York: Oxford University Press."
+        },
+        {
+          "raw": "---, 2010. \"Precis of Doing Without Concepts \", Behavioral and Brain Sciences , 33: 195-244."
+        },
+        {
+          "raw": "Magnus, P.D., 2012. Scientific Enquiry and Natural Kinds: From Planets to Mallards , London: Palgrave-Macmillan."
+        },
+        {
+          "raw": "Margolis, E., 1994. \"A reassessment of the shift from the classical theory of concepts to prototype theory\", Cognition , 51: 73-89."
+        },
+        {
+          "raw": "---, 1995. \"The significance of the theory analogy in the psychological study of concepts\", Mind and Language , 10: 45-71."
+        },
+        {
+          "raw": "Mart&iacute;, G., 2003. \"The Question of Rigidity in New Theories of Reference\", No&ucirc;s , 37: 161-79."
+        },
+        {
+          "raw": "---, 2004. \"Rigidity and General Terms\" Proceedings of the Aristotelian Society , 104: 129-146."
+        },
+        {
+          "raw": "Matthen, M., 2009. \"Chicken, Eggs, and Speciation\", No&ucirc;s , 43: 94-115."
+        },
+        {
+          "raw": "Mayr, E., 1969. Principles of Systematic Zoology , New York: McGraw-Hill."
+        },
+        {
+          "raw": "McDowell, J., 1977. \"On the Sense and Reference of a Proper Name\", Mind , 86: 159-185."
+        },
+        {
+          "raw": "McGinn, C., 1976. \"On the Necessity of Origin\", Journal of Philosophy , 73: 127-135."
+        },
+        {
+          "raw": "Mellor, D. H., 1977. \"Natural Kinds\", British Journal for the Philosophy of Science , 28: 299-331."
+        },
+        {
+          "raw": "Merton, R. K., 1948. \"The Self-fulfilling Prophecy\", Antioch Review , 8: 193-210."
+        },
+        {
+          "raw": "Mill, J. S., 1884. A System of Logic , London: Longman."
+        },
+        {
+          "raw": "Millikan, R. G., 1999. \"Historical Kinds and the Special Sciences\", Philosophical Studies , 95: 45-65."
+        },
+        {
+          "raw": "Mishler, B., 1999. \"Getting Rid of Species?\", in Species: New Interdisciplinary Essays , R. A. Wilson. (ed.), Cambridge, MA: MIT Press: 307-316."
+        },
+        {
+          "raw": "Mitchell, S. and Gronenborn, A.M., 2017, \"After Fifty Years, Why Are Protein X-ray Crystallographers Still in Business?\", British Journal for the Philosophy of Science , 68: 703-723."
+        },
+        {
+          "raw": "Mumford, S., 2005. \"Kinds, Essences, Powers\", Ratio , 18: 420-436."
+        },
+        {
+          "raw": "Needham, P., 2000. \"What is Water?\", Analysis , 60: 13-21."
+        },
+        {
+          "raw": "---, 2002. \"The Discovery that Water is H 2 O\", International Studies in the Philosophy of Science , 16: 205-226."
+        },
+        {
+          "raw": "Okasha, S., 2002. \"Darwinian Metaphysics: Species and the Question of Essentialism\", Synthese , 131: 191-213."
+        },
+        {
+          "raw": "Piccinini G, and Scott S., 2006. \"Splitting concepts\", Philosophy of Science , 73: 390-409."
+        },
+        {
+          "raw": "Place, U. T., 1956. \"Is Consciousness a Brain Process?\", British Journal of Psychology , 47: 44-50."
+        },
+        {
+          "raw": "Putnam, H., 1973. \"Meaning and Reference\", Journal of Philosophy , 70: 699-711."
+        },
+        {
+          "raw": "---, 1975a. \"The Meaning of 'Meaning'\", Minnesota Studies in the Philosophy of Science , 7: 215-271; reprinted in Putnam 1975b."
+        },
+        {
+          "raw": "Quine, W. V., 1961. From a Logical Point of View , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "---, 1969. Ontological Relativity and Other Essays , New York: Columbia University Press."
+        },
+        {
+          "raw": "Reydon, T., 2006. \"Generalizations and Kinds in Natural Science: The Case of Species\", Studies in History and Philosophy of Biological and Biomedical Sciences , 37: 230-255."
+        },
+        {
+          "raw": "---, 2009. \"How to Fix Kind Membership: A Problem for HPC Theory and a Solution\", Philosophy of Science , 76: 724-736."
+        },
+        {
+          "raw": "---, 2016 \"From a Zooming-In Model to a Co-creation Model: Towards a more Dynamic Account of Classification and Kinds\" in C. E. Kendig (ed.), Natural Kinds and Classification in Scientific Practice , London: Routledge, 2016, 59-73."
+        },
+        {
+          "raw": "Russell, B., 1905. \"On Denoting\", Mind , 14: 479-493; reprinted in B. Russell, Essays in Analysis , London: Allen and Unwin, 1973, 103-119."
+        },
+        {
+          "raw": "Salmon, N., 1979. \"How Not to Derive Essentialism from the Theory of Reference\", Journal of Philosophy , 76: 703-725."
+        },
+        {
+          "raw": "---, 1982. Reference and Essence , Oxford: Basil Blackwell."
+        },
+        {
+          "raw": "Schwartz, S., 2002. \"Kinds, General Terms, and Rigidity\", Philosophical Studies , 109: 265-277."
+        },
+        {
+          "raw": "Shoemaker, S., 2003. Identity, Cause, and Mind: Philosophical Essays , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Slater, M., 2009. \"Macromolecular Pluralism\", Philosophy of Science , 76: 851-863."
+        },
+        {
+          "raw": "---, 2015. \"Natural kindness\", The British Journal for the Philosophy of Science , 66, 375-411."
+        },
+        {
+          "raw": "Smart, J. J. C., 1959. \"Sensations and Brain Processes\", Philosophical Review , 68: 141-156."
+        },
+        {
+          "raw": "Soames, S., 2002. Beyond Rigidity , New York: Oxford University Press."
+        },
+        {
+          "raw": "---, 2004. \"Knowledge of Manifest Natural Kinds\", Facta Philosophica , 6: 159-181."
+        },
+        {
+          "raw": "Sober, E., 1980. \"Evolution, Population Thinking and Essentialism\", Philosophy of Science , 47: 250-83."
+        },
+        {
+          "raw": "Stanford, P. and Kitcher P., 2000. \"Refining the Causal Theory of Reference for Natural Kind Terms\", Philosophical Studies , 97: 99-129."
+        },
+        {
+          "raw": "Sullivan, A., 2005. \"Rigid Designation, Direct Reference, and Modal Metaphysics\", Pacific Philosophical Quarterly , 86: 577-99."
+        },
+        {
+          "raw": "Tahko, T.E., 2015. \"Natural Kind Essentialism Revisited\", Mind , 124: 795-822."
+        },
+        {
+          "raw": "---, 2017. \"Disentangling Nature's Joints\", in W. Simpson, R. Koons, and N. Teh (eds.), Neo-Aristotelian Perspectives on Contemporary Science , London: Routledge, 147-166."
+        },
+        {
+          "raw": "Tobin, E. 2010a. \"Microstructuralism and Macromolecules: The Case of Moonlighting Proteins\", Foundations of Chemistry , 12: 41-54."
+        },
+        {
+          "raw": "---, 2010b. \"Crosscutting Natural Kinds and the Hierarchy Thesis\", The Semantics and Metaphysics of Natural Kinds , Helen Beebee and Nigel Sabbarton-Leary (eds.), New York: Routledge, 179-191."
+        },
+        {
+          "raw": "---, 2012. \"The Metaphysics of Determinable Kinds\", in A. Bird, B. Ellis and H. Sankey (eds.), Properties, Powers and Structures: Issues in the Metaphysics of Realism , Abingdon: Routledge, 219-232."
+        },
+        {
+          "raw": "---, 2013. \"Are Natural Kinds and Natural Properties Distinct?\" in S. Mumford and M. Tugby (eds.), Metaphysics and Science , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2017. \"Mechanisms and Natural Kinds\" in The Routledge Handbook of Mechanisms and Mechanical Philosophy , Abingdon: Taylor and Francis."
+        },
+        {
+          "raw": "Van Brakel, J., 2000. Philosophy of Chemistry , Leuven: Leuven University Press."
+        },
+        {
+          "raw": "Venn, J., 1866. The Logic of Chance , London: Macmillan."
+        },
+        {
+          "raw": "Whewell, W., 1860. On the Philosophy of Discovery: Chapters Historical and Critical , London: J.W. Parker."
+        },
+        {
+          "raw": "Wilson, R. A., 1996. \"Promiscuous Realism\", British Journal for the Philosophy of Science , 47: 303-316."
+        },
+        {
+          "raw": "Woolgar, S., 1988. Science: The Very Idea , London: Tavistock."
+        }
+      ],
+      "publishedAt": "2008-09-16T14:00:00.000Z",
+      "revisedAt": "2022-01-27T13:00:00.000Z"
+    }
+  }
+}

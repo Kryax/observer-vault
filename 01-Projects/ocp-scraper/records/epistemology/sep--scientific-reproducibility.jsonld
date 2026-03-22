@@ -1,0 +1,627 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/scientific-reproducibility",
+  "meta": {
+    "title": "Reproducibility of Scientific Results",
+    "description": "The terms \"reproducibility crisis\" and \"replication crisis\" gained currency in conversation and in print over the last decade (e.g., Pashler & Wagenmakers 2012), as disappointing results emerged from large scale reproducibility projects in various medical, life and behavioural sciences (e.g., Open Science Collaboration, OSC 2015). In 2016, a poll conducted by the journal Nature reported that more than half (52%) of scientists surveyed believed science was facing a \"replication crisis\" (Baker 2016). More recently, some authors have moved to more positive terms for describing this episode in science; for example, Vazire (2018) refers instead to a \"credibility revolution\" highlighting the improved methods and open science practices it has motivated. The crisis often refers collectively to at least the following things: The associated open science reform movement aims to rectify conditions that led to the crisis. This is done by promoting activities such as data sharing and public pre-registration of studies, and by advocating stricter editorial policies around statistical reporting including publishing replication studies and statistically non-significant results. This review consists of four distinct parts. First, we look at the term \"reproducibility\" and related terms like \"repeatability\" and \"replication\", presenting some definitions and conceptual discussion about the epistemic function of different types of replication studies. Second, we describe the meta-science research that has established and characterised the reproducibility crisis, including large scale replication projects and surveys of questionable research practices in various scientific communities. Third, we look at attempts to address epistemological questions about the limitations of replication, and what value it holds for scientific inquiry and the accumulation of knowledge. The fourth and final part describes some of the many initiatives the open science reform movement has proposed (and in many cases implemented) to improve reproducibility in science. In addition, we reflect there on the values and norms which those reforms embody, noting their relevance to the debate about the role of values in the philosophy of science.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T06:35:05.391Z",
+    "dateModified": "2026-03-22T06:35:05.391Z",
+    "datePublished": "2018-12-02T13:00:00.000Z",
+    "keywords": [
+      "bayes theorem",
+      "epistemology bayesian",
+      "measurement science",
+      "operationalism",
+      "science big data",
+      "science theory observation",
+      "scientific knowledge social",
+      "scientific method"
+    ]
+  },
+  "problemSolved": {
+    "statement": "The terms \"reproducibility crisis\" and \"replication crisis\" gained currency in conversation and in print over the last decade (e.g., Pashler & Wagenmakers 2012), as disappointing results emerged from large scale reproducibility projects in various medical, life and behavioural sciences (e.g., Open Science Collaboration, OSC 2015). In 2016, a poll conducted by the journal Nature reported that more than half (52%) of scientists surveyed believed science was facing a \"replication crisis\" (Baker 2016). More recently, some authors have moved to more positive terms for describing this episode in science; for example, Vazire (2018) refers instead to a \"credibility revolution\" highlighting the improved methods and open science practices it has motivated. The crisis often refers collectively to at least the following things: The associated open science reform movement aims to rectify conditions that led to the crisis. This is done by promoting activities such as data sharing and public pre-registration of studies, and by advocating stricter editorial policies around statistical reporting including publishing replication studies and statistically non-significant results. This review consists of four distinct parts. First, we look at the term \"reproducibility\" and related terms like \"repeatability\" and \"replication\", presenting some definitions and conceptual discussion about the epistemic function of different types of replication studies. Second, we describe the meta-science research that has established and characterised the reproducibility crisis, including large scale replication projects and surveys of questionable research practices in various scientific communities. Third, we look at attempts to address epistemological questions about the limitations of replication, and what value it holds for scientific inquiry and the accumulation of knowledge. The fourth and final part describes some of the many initiatives the open science reform movement has proposed (and in many cases implemented) to improve reproducibility in science. In addition, we reflect there on the values and norms which those reforms embody, noting their relevance to the debate about the role of values in the philosophy of science.",
+    "context": "Opening section: 1. Replicating, Repeating, and Reproducing Scientific Results | Related entries: bayes-theorem, epistemology-bayesian, measurement-science, operationalism, science-theory-observation, scientific-knowledge-social, scientific-method, science-big-data",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "epistemology",
+    "philosophy-of-science"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry scientific-reproducibility",
+        "uri": "https://plato.stanford.edu/entries/scientific-reproducibility/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "2 author(s), 8 related entries, bibliography size 128"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2018-12-02T13:00:00.000Z and revised 2018-12-02T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2018-12-02T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/scientific-reproducibility/",
+        "description": "SEP entry for scientific-reproducibility"
+      }
+    ],
+    "solutionApproach": "1. Replicating, Repeating, and Reproducing Scientific Results"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/bayes-theorem",
+      "ocp:sep/epistemology-bayesian",
+      "ocp:sep/measurement-science",
+      "ocp:sep/operationalism",
+      "ocp:sep/science-theory-observation",
+      "ocp:sep/scientific-knowledge-social",
+      "ocp:sep/scientific-method",
+      "ocp:sep/science-big-data"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Fidler, Fiona",
+        "type": "human"
+      },
+      {
+        "name": "Wilcox, John",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/scientific-reproducibility/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 89,
+      "validation_diversity": 0.53,
+      "context_breadth": 0.42,
+      "temporal_stability": 0.7,
+      "test_coverage": 0.78,
+      "documentation_quality": 0.9
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.544
+  },
+  "extensions": {
+    "sep": {
+      "slug": "scientific-reproducibility",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/scientific-reproducibility/",
+      "preamble": "The terms \"reproducibility crisis\" and \"replication crisis\" gained currency in conversation and in print over the last decade (e.g., Pashler & Wagenmakers 2012), as disappointing results emerged from large scale reproducibility projects in various medical, life and behavioural sciences (e.g., Open Science Collaboration, OSC 2015). In 2016, a poll conducted by the journal Nature reported that more than half (52%) of scientists surveyed believed science was facing a \"replication crisis\" (Baker 2016). More recently, some authors have moved to more positive terms for describing this episode in science; for example, Vazire (2018) refers instead to a \"credibility revolution\" highlighting the improved methods and open science practices it has motivated. The crisis often refers collectively to at least the following things: The associated open science reform movement aims to rectify conditions that led to the crisis. This is done by promoting activities such as data sharing and public pre-registration of studies, and by advocating stricter editorial policies around statistical reporting including publishing replication studies and statistically non-significant results. This review consists of four distinct parts. First, we look at the term \"reproducibility\" and related terms like \"repeatability\" and \"replication\", presenting some definitions and conceptual discussion about the epistemic function of different types of replication studies. Second, we describe the meta-science research that has established and characterised the reproducibility crisis, including large scale replication projects and surveys of questionable research practices in various scientific communities. Third, we look at attempts to address epistemological questions about the limitations of replication, and what value it holds for scientific inquiry and the accumulation of knowledge. The fourth and final part describes some of the many initiatives the open science reform movement has proposed (and in many cases implemented) to improve reproducibility in science. In addition, we reflect there on the values and norms which those reforms embody, noting their relevance to the debate about the role of values in the philosophy of science.",
+      "firstSectionTitle": "1. Replicating, Repeating, and Reproducing Scientific Results",
+      "firstSectionText": "A starting point in any philosophical exploration of reproducibility and related notions is to consider the conceptual question of what such notions mean. According to some (e.g., Cartwright 1991), the terms \"replication\", \"reproduction\" and \"repetition\" denote distinct concepts, while others use these terms interchangeably (e.g., Atmanspacher & Maasen 2016a). Different disciplines can have different understandings of these terms too. In computational disciplines, for example, reproducibility often refers to the ability to reproduce computations alone, that is, it relates exclusively to sharing and sufficiently annotating data and code (e.g., Peng 2011, 2015). In those disciplines, replication describes the redoing of whole experiments (Barba 2017, Other Internet Resources). In psychology and other social and life sciences, however, reproducibility may refer to either the redoing of computations, or the redoing of experiments. The Reproducibility Projects, coordinated by the Center for Open Science, redo entire studies, data collection and analysis. A recent funding program announcement by DARPA (US Defense Advanced Research Programs Agency) distinguished between reproducibility and replicability, where the former refers to computational reproducibility and the latter to the redoing of experiments. Here we use all three terms--\"replication\", \"reproduction\" and \"repetition\"--interchangeably, unless explicitly describing the distinctions of other authors. When describing a study as \"replicable\", people could have in mind either of at least two different things. The first is that the study is replicable in principle the sense that it can be carried out again, particularly when its methods, procedures and analysis are described in a sufficiently detailed and transparent way. The second is that the study is replicable in that sense that it can be carried out again and, when this happens, the replication study will successfully produce the same or sufficiently similar results as the original. A study may be replicable in the former sense but not in the second sense: one might be able to replicate the methods, procedures and analysis of a study, but fail to successfully replicate the results of the original study. Similarly, when people talk of a \"replication\", they could also have in mind two different things: the replication of the methods, procedures and analysis of a study (irrespective of the results) or, alternatively, the replication of such methods, procedures and analysis as well as the results. Arguably, most typologies of replication make more or less fine-grained distinctions between direct replication (which closely follow the original study to verify results) and conceptual replications (which deliberately alter important features of the study to generalize findings or to test the underlying hypothesis in a new way). As suggested, this distinction may not always be known by these terms. For example, roughly the same distinction is referred to as exact and inexact replication by Keppel (1982); concrete and conceptual replication by Sargent (1981), and literal, operational and constructive replication by Lykken (1968). Computational reproducibility is most often direct (reproducing particular analysis outcomes from the same data set using the same code and software), but it can also be conceptual (analysing the same raw data set with alternative approaches, different models or statistical frameworks). For an example of a conceptual computational reproducibility study, see Silberzahn and Uhlmann 2015. We do not attempt to resolve these disciplinary differences or to create a new typology of replication, and instead we will provide a limited snapshot of the conceptual terrain by surveying three existing typologies--from Stefan Schmidt (2009), from Omar G&oacute;mez, Natalia Juristo, and Sira Vegas (2010) and from Hans Radder. Schmidt's account has been influential and widely-cited in psychology and social sciences, where the replication crisis literature is heavily concentrated. G&oacute;mez, Juristo, and Vegas's (2010) typology of replication is based on a multidisciplinary survey of over 18 scholarly classifications of replication studies which collectively contain more than 79 types of replication. Finally, Radder's (1996, 2003, 2006, 2009, 2012) typology is perhaps best known within philosophy of science itself. Schmidt outlines five functions of replication studies in the social sciences: Modifying Hendrik's (1991) classes of variables that define a research space, Schmidt (2009) presents four classes of variables which may be altered or held constant in order for a given replication study to fulfil one of the above functions. The four classes are: Schmidt then systematically works through examples of how each function can be achieved by altering and/or holding a different class or classes of variable constant. For example, to fulfil the function of controlling for sampling error ( Function 1 ), one should alter only variables regarding participant recruitment (Class 3), attempting to keep variables in all other classes as close to the original study as possible. To control for artefacts ( Function 2 ), one should alter variables concerning the context and dependent variable measures (variables in Classes 2 and 4 respectively), but keep variables in 1 and 3 (information conveyed to participants and participant recruitment) as close to the original as possible. Schmidt, like most other authors in this area, acknowledges the practical limits of being able to hold all else constant. Controlling for fraud ( Function 3 ) is served by the same arrangements as controlling for artefacts ( Function 2 ). In Schmidt's account, controlling for sampling error, artefacts and fraud (Functions 1 to 3) are connected by a theme of confirming the results of the original study. Functions 4 and 5 go beyond this--generalizing to new populations ( Function 4 ) which is served by changes to participant recruitment (Class 3) and confirming the underlying hypothesis ( Function 5 ), which served by changes to the information conveyed, the context and dependant variable measures (Classes 1, 2 and 4 respectively) but not changes to participant recruitment (Class 3, although Schmidt acknowledges that holding the latter class of variables constant whilst varying everything else is often practically impossible). Attempts to enable verification of the underlying research hypothesis (i.e., to fulfil Function 5) alone are what Schmidt classifies as conceptual replications, following Rosenthal (1991). Attempts to fulfil the other four functions are considered variants of direct replications. In summary, for Schmidt, direct replications control for sampling error, artifacts, and fraud, and provide information about the reliability and validity of prior empirical work. Conceptual replications help corroborate the underlying theory or substantive (as opposed to statistical) hypothesis in question and the extent to which they generalize in new circumstances and situations. In practice, direct and conceptual replications lie on a continuum, with replication studies varying more or less compared to the original on potentially a great number of dimensions. G&oacute;mez, Juristo, and Vega's (2010) survey of the literature in 18 disciplines identified 79 types of replication, not all of which they considered entirely distinct. They identify five main ways in which a replication study may diverge from an initial study. With some similarities to Schimdt's four classes above: A change in any one or combination of these elements in a replication study corresponds to different purposes underlying the study, and thereby establishes a different kind of validity. Like Schmidt et al. then systematically work through how changes to each of the above work to fulfil different epistemic functions. Radder (1996, 2003, 2006, 2009, 2012) distinguishes three types of reproducibility. One is the reproducibility of what Radder calls an experiment's material realization . Using one of Radder's own examples as an illustration, two people may carry out the same actions to measure the mass of an object. Despite doing the same actions, person A regards themselves as measuring the object's Newtonian mass while person B regards themselves as measuring the object's Einsteinian mass. Here, then, the actions or material realization of the experimental procedure can be reproduced, but the theoretical descriptions of their significance differ. Radder, however, does not specify what is required for one material realisation to be a reproduction of another, a pertinent question, especially since, as Radder himself affirms, no reproduction will be exactly the same as any other reproduction (1996: 82-83). A second type of reproducibility is the reproducibility of an experiment, given a fixed theoretical description . For example, a social scientist might conduct two experiments to examine social conformity. In one experiment, a young child might be instructed to give an answer to a question before a group of other children who are, unknown to the former child, instructed to give wrong answers to the same question. In another experiment, an adult might be instructed to give an answer to a question before a group of other adults who are, unknown to the former adult, instructed to give wrong answers to the same question. If the child and the adult give a wrong answer that conforms to the answers of others, then the social scientist might interpret the result as exemplifying social conformity. For Radder, the theoretical description of the experiment might be fixed, specifying that if some people in a participant's surroundings give intentionally false answers to the question, then the genuine participant will conform to the behaviour of their peers. However, the material realization of these experiments differs insofar as one concerns children and the other adults. It is difficult to see how, in this example at least, this differs from what either Schmidt or G&oacute;mez, Juristo, and Vegas would refer to as establishing generalizability to a different population (Schmidt's [2009] Class 3 and Function 5 ; G&oacute;mez, Juristo, and Vegas's [2010] way 5 and Function 4 ). The third kind of reproducibility is what Radder calls replicability . This is where experimental procedures differ to produce the same experimental result (otherwise known as a successful replication). For example, Radder notes that multiple experiments might obtain the result \"a fluid of type f has a boiling point b \", despite having different kinds of thermometers by which to measure this boiling point (2006: 113-114). Schmidt (2009) points out that the difference between Radder's second and third types of reproducibility is small in comparison to their differences to the first type. He consequently suggests his alternative distinction between direct and conceptual replication, presumably intending a conceptual replication to cover Radder's second and third types. In summary, whilst G&oacute;mez, Juristo, and Vegas's typology draws distinctions in slightly different places to Schmidt's, its purpose is arguably the same--to explain what types of alterations in replication studies fulfil different scientific goals, such as establishing internal validity or the extent of generalization and so on. With the exception of his discussion of reproducing the material realization, Radder's other two categories can perhaps be seen as fitting within the larger range of functions described by Schmidt and G&oacute;mez et al., who both acknowledge that in practice, direct and conceptual replications lie on a noisy continuum.",
+      "relatedEntries": [
+        "bayes-theorem",
+        "epistemology-bayesian",
+        "measurement-science",
+        "operationalism",
+        "science-theory-observation",
+        "scientific-knowledge-social",
+        "scientific-method",
+        "science-big-data"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "bayes-theorem"
+        },
+        {
+          "slug": "epistemology-bayesian"
+        },
+        {
+          "slug": "measurement-science"
+        },
+        {
+          "slug": "operationalism"
+        },
+        {
+          "slug": "science-theory-observation"
+        },
+        {
+          "slug": "scientific-knowledge-social"
+        },
+        {
+          "slug": "scientific-method"
+        },
+        {
+          "slug": "science-big-data"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 128,
+      "bibliography": [
+        {
+          "raw": "Agnoli, Franca, Jelte M. Wicherts, Coosje L. S. Veldkamp, Paolo Albiero, and Roberto Cubelli, 2017, \"Questionable Research Practices among Italian Research Psychologists\", Jakob Pietschnig (ed.), PLoS ONE , 12(3): e0172792. doi:10.1371/journal.pone.0172792"
+        },
+        {
+          "raw": "Allen, Peter J., Kate P. Dorozenko, and Lynne D. Roberts, 2016, \"Difficult Decisions: A Qualitative Exploration of the Statistical Decision Making Process from the Perspectives of Psychology Students and Academics\", Frontiers in Psychology , 7(February): 188. doi:10.3389/fpsyg.2016.00188"
+        },
+        {
+          "raw": "Anderson, Christopher J., &Scaron;t&#283;p&aacute;n Bahnik, Michael Barnett-Cowan, Frank A. Bosco, Jesse Chandler, C. R. Chartier, F. Cheung, et al., 2016, \"Response to Comment on 'Estimating the Reproducibility of Psychological Science'\", Science , 351(6277): 1037. doi:10.1126/science.aad9163"
+        },
+        {
+          "raw": "Anderson, Melissa S., Emily A. Ronning, Raymond De Vries, and Brian C. Martinson, 2010, \"Extending the Mertonian Norms: Scientists' Subscription to Norms of Research\", The Journal of Higher Education , 81(3): 366-393. doi:10.1353/jhe.0.0095"
+        },
+        {
+          "raw": "Atmanspacher, Harald and Sabine Maasen, 2016a, \"Introduction\", in Atmanspacher and Maasen 2016b: 1-8. doi:10.1002/9781118865064.ch0"
+        },
+        {
+          "raw": "--- (eds.), 2016b, Reproducibility: Principles, Problems, Practices, and Prospects , Hoboken, NJ: John Wiley & Sons. doi:10.1002/9781118865064"
+        },
+        {
+          "raw": "Baker, Monya, 2016, \"1,500 Scientists Lift the Lid on Reproducibility\", Nature , 533(7604): 452-454. doi:10.1038/533452a"
+        },
+        {
+          "raw": "Bakker, Marjan, Chris H. J. Hartgerink, Jelte M. Wicherts, and Han L. J. van der Maas, 2016, \"Researchers' Intuitions About Power in Psychological Research\", Psychological Science , 27(8): 1069-1077. doi:10.1177/0956797616647519"
+        },
+        {
+          "raw": "Bakker, Marjan and Jelte M. Wicherts, 2011, \"The (Mis)Reporting of Statistical Results in Psychology Journals\", Behavior Research Methods , 43(3): 666-678. doi:10.3758/s13428-011-0089-5"
+        },
+        {
+          "raw": "Begley, C. Glenn and Lee M. Ellis, 2012, \"Raise Standards for Preclinical Cancer Research: Drug Development\", Nature , 483(7391): 531-533. doi:10.1038/483531a"
+        },
+        {
+          "raw": "Bem, Daryl J., 2011, \"Feeling the Future: Experimental Evidence for Anomalous Retroactive Influences on Cognition and Affect\", Journal of Personality and Social Psychology , 100(3): 407-425."
+        },
+        {
+          "raw": "Benjamin, Daniel J., James O. Berger, Magnus Johannesson, Brian A. Nosek, Eric-Jan Wagenmakers, Richard Berk, Kenneth A. Bollen, et al., 2018, \"Redefine Statistical Significance\", Nature Human Behaviour , 2(1): 6-10. doi:10.1038/s41562-017-0189-z"
+        },
+        {
+          "raw": "Braude, Stephen E., 1979, ESP and Psychokinesis. A Philosophical Examination , Philadelphia: Temple University Press."
+        },
+        {
+          "raw": "Button, Katherine S., John P. A. Ioannidis, Claire Mokrysz, Brian A. Nosek, Jonathan Flint, Emma S. J. Robinson, and Marcus R. Munaf&ograve;, 2013, \"Power Failure: Why Small Sample Size Undermines the Reliability of Neuroscience\", Nature Reviews Neuroscience , 14(5): 365-376. doi:10.1038/nrn3475"
+        },
+        {
+          "raw": "Camerer C.F., et al., 2018, \"Evaluating the replicability of social science experiments in Nature and Science between 2010 and 2015\", Nature Human Behaviour , 2: 637-644. doi: 10.1038/s41562-018-0399-z"
+        },
+        {
+          "raw": "Cartwright, Nancy, 1991, \"Replicability, Reproducibility and Robustness: Comments on Harry Collins\", History of Political Economy , 23(1): 143-155."
+        },
+        {
+          "raw": "Chambers, Christopher D., 2013, \"Registered Reports: A New Publishing Initiative at Cortex\", Cortex , 49(3): 609-610. doi:10.1016/j.cortex.2012.12.016"
+        },
+        {
+          "raw": "---, 2017, The Seven Deadly Sins of Psychology A Manifesto for Reforming the Culture of Scientific Practice , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Chang, Andrew C. and Phillip Li, 2015, \"Is Economics Research Replicable? Sixty Published Papers from Thirteen Journals Say 'Usually Not'\", Finance and Economics Discussion Series , 2015(83): 1-26. doi:10.17016/FEDS.2015.083"
+        },
+        {
+          "raw": "Churchman, C. West, 1948, \"Statistics, Pragmatics, Induction\", Philosophy of Science , 15(3): 249-268. doi:10.1086/286991"
+        },
+        {
+          "raw": "Collins, Harry M., 1985, Changing Order: Replication and Induction in Scientific Practice , London; Beverly Hills: Sage Publications."
+        },
+        {
+          "raw": "---, 2016, \"Reproducibility of experiments: experiments' regress, statistical uncertainty principle, and the replication imperative\" in Atmanspacher and Maasen 2016b: 65-82. doi:10.1002/9781118865064.ch4"
+        },
+        {
+          "raw": "Cohen, Jacob, 1962, \"The Statistical Power of Abnormal-Social Psychological Research: A Review\",, The Journal of Abnormal and Social Psychology , 65(3): 145-153. doi:10.1037/h0045186"
+        },
+        {
+          "raw": "---, 1994, \"The Earth Is Round (\\(p American Psychologist , 49(12): 997-1003, doi:10.1037/0003-066X.49.12.997"
+        },
+        {
+          "raw": "Cova, Florian, Brent Strickland, Angela Abatista, Aur&eacute;lien Allard, James Andow, Mario Attie, James Beebe, et al., forthcoming, \"Estimating the Reproducibility of Experimental Philosophy\", Review of Philosophy and Psychology , early online: 14 June 2018. doi:10.1007/s13164-018-0400-9"
+        },
+        {
+          "raw": "Cristea, Ioana Alina and John P. A. Ioannidis, 2018, \"P Values in Display Items Are Ubiquitous and Almost Invariably Significant: A Survey of Top Science Journals\", Christos A. Ouzounis (ed.), PLoS ONE , 13(5): e0197440. doi:10.1371/journal.pone.0197440"
+        },
+        {
+          "raw": "Cumming, Geoff, 2012, Understanding the New Statistics: Effect Sizes, Confidence Intervals, and Meta-Analysis . New York: Routledge."
+        },
+        {
+          "raw": "Cumming, Geoff and Robert Calin-Jageman, 2017, Introduction to the New Statistics: Estimation, Open Science and Beyond , New York: Routledge."
+        },
+        {
+          "raw": "Cumming, Geoff, Fiona Fidler, Martine Leonard, Pavel Kalinowski, Ashton Christiansen, Anita Kleinig, Jessica Lo, Natalie McMenamin, and Sarah Wilson, 2007, \"Statistical Reform in Psychology: Is Anything Changing?\", Psychological Science , 18(3): 230-232. doi:10.1111/j.1467-9280.2007.01881.x"
+        },
+        {
+          "raw": "Di Bucchianico, Marilena, 2014, \"A Matter of Phronesis: Experiment and Virtue in Physics, A Case Study\", in Virtue Epistemology Naturalized , Abrol Fairweather (ed.), Cham: Springer International Publishing, 291-312. doi:10.1007/978-3-319-04672-3_17"
+        },
+        {
+          "raw": "Dominus, Susan, 2017, \"When the Revolution Came for Amy Cuddy\", The New York Times , October 21, Sunday Magazine, page 29."
+        },
+        {
+          "raw": "Douglas, Heather, 2016, \"Values in Science\", in Paul Humphreys, The Oxford Handbook of Philosophy of Science , New York: Oxford University Press, pp. 609-630."
+        },
+        {
+          "raw": "Earp, Brian D. and David Trafimow, 2015, \"Replication, Falsification, and the Crisis of Confidence in Social Psychology\", Frontiers in Psychology , 6(May): 621. doi:10.3389/fpsyg.2015.00621"
+        },
+        {
+          "raw": "Errington, Timothy M., Elizabeth Iorns, William Gunn, Fraser Elisabeth Tan, Joelle Lomax, and Brian A Nosek, 2014, \"An Open Investigation of the Reproducibility of Cancer Biology Research\", ELife , 3(December): e043333. doi:10.7554/eLife.04333"
+        },
+        {
+          "raw": "Etz, Alexander and Joachim Vandekerckhove, 2016, \"A Bayesian Perspective on the Reproducibility Project: Psychology\", Daniele Marinazzo (ed.), PLoS ONE , 11(2): e0149794. doi:10.1371/journal.pone.0149794"
+        },
+        {
+          "raw": "Fanelli, Daniele, 2010a, \"Do Pressures to Publish Increase Scientists' Bias? An Empirical Support from US States Data\", Enrico Scalas (ed.), PLoS ONE , 5(4): e10271. doi:10.1371/journal.pone.0010271"
+        },
+        {
+          "raw": "---, 2010b, \"'Positive' Results Increase Down the Hierarchy of the Sciences\", Enrico Scalas (ed.), PLoS ONE , 5(4): e10068. doi:10.1371/journal.pone.0010068"
+        },
+        {
+          "raw": "---, 2012, \"Negative Results Are Disappearing from Most Disciplines and Countries\", Scientometrics , 90(3): 891-904. doi:10.1007/s11192-011-0494-7"
+        },
+        {
+          "raw": "Fang, Ferric C., R. Grant Steen, and Arturo Casadevall, 2012, \"Misconduct Accounts for the Majority of Retracted Scientific Publications\", Proceedings of the National Academy of Sciences , 109(42): 17028-17033. doi:10.1073/pnas.1212247109"
+        },
+        {
+          "raw": "Feest, Uljana, 2016, \"The Experimenters' Regress Reconsidered: Replication, Tacit Knowledge, and the Dynamics of Knowledge Generation\", Studies in History and Philosophy of Science Part A , 58(August): 34-45. doi:10.1016/j.shpsa.2016.04.003"
+        },
+        {
+          "raw": "Fidler, Fiona, Mark A. Burgman, Geoff Cumming, Robert Buttrose, and Neil Thomason, 2006, \"Impact of Criticism of Null-Hypothesis Significance Testing on Statistical Reporting Practices in Conservation Biology\", Conservation Biology , 20(5): 1539-1544. doi:10.1111/j.1523-1739.2006.00525.x"
+        },
+        {
+          "raw": "Fidler, Fiona, Yung En Chee, Bonnie C. Wintle, Mark A. Burgman, Michael A. McCarthy, and Ascelin Gordon, 2017, \"Metaresearch for Evaluating Reproducibility in Ecology and Evolution\", BioScience , 67(3): 282-289. doi:10.1093/biosci/biw159"
+        },
+        {
+          "raw": "Fiedler, Klaus and Norbert Schwarz, 2016, \"Questionable Research Practices Revisited\", Social Psychological and Personality Science , 7(1): 45-52. doi:10.1177/1948550615612150"
+        },
+        {
+          "raw": "Fiske, Susan T., 2016, \"A Call to Change Science's Culture of Shaming\", Association for Psychological Science Observer , 29(9). [ Fiske 2016 available online ]"
+        },
+        {
+          "raw": "Franklin, Allan, 1989, \"The Epistemology of Experiment\", in David Gooding, Trevor Pinch, and Simon Schaffer (eds.), The Uses of Experiment: Studies in the Natural Sciences , Cambridge: Cambridge University Press, pp. 437-460."
+        },
+        {
+          "raw": "---, 1994, \"How to Avoid the Experimenters' Regress\", Studies in History and Philosophy of Science Part A , 25(3): 463-491. doi:10.1016/0039-3681(94)90062-0"
+        },
+        {
+          "raw": "Franklin, Allan and Harry Collins, 2016, \"Two Kinds of Case Study and a New Agreement\", in The Philosophy of Historical Case Studies , Tilman Sauer and Raphael Scholl (eds.), Cham: Springer International Publishing, 319: 95-121. doi:10.1007/978-3-319-30229-4_6"
+        },
+        {
+          "raw": "Fraser, Hannah, Tim Parker, Shinichi Nakagawa, Ashley Barnett, and Fiona Fidler, 2018, \"Questionable Research Practices in Ecology and Evolution\", Jelte M. Wicherts (ed.), PLoS ONE , 13(7): e0200303. doi:10.1371/journal.pone.0200303"
+        },
+        {
+          "raw": "Freedman, Leonard P., Iain M. Cockburn, and Timothy S. Simcoe, 2015, \"The Economics of Reproducibility in Preclinical Research\", PLoS Biology , 13(6): e1002165. doi:10.1371/journal.pbio.1002165"
+        },
+        {
+          "raw": "Giner-Sorolla, Roger, 2012, \"Science or Art? How Aesthetic Standards Grease the Way Through the Publication Bottleneck but Undermine Science\", Perspectives on Psychological Science , 7(6): 562-571. doi:10.1177/1745691612457576"
+        },
+        {
+          "raw": "Gigerenzer, Gerd, 2018, \"Statistical Rituals: The Replication Delusion and How We Got There\", Advances in Methods and Practices in Psychological Science , 1(2): 198-218. doi:10.1177/2515245918771329"
+        },
+        {
+          "raw": "Gilbert, Daniel T., Gary King, Stephen Pettigrew, and Timothy D. Wilson, 2016, \"Comment on 'Estimating the Reproducibility of Psychological Science'\", Science , 351(6277): 1037-1037. doi:10.1126/science.aad7243"
+        },
+        {
+          "raw": "Goldman, Alvin I., 1999, Knowledge in a Social World , Oxford: Clarendon. doi:10.1093/0198238207.001.0001"
+        },
+        {
+          "raw": "G&oacute;mez, Omar S., Natalia Juristo, and Sira Vegas, 2010, \"Replications Types in Experimental Disciplines\", in Proceedings of the 2010 ACM-IEEE International Symposium on Empirical Software Engineering and Measurement - ESEM '10 , Bolzano-Bozen, Italy: ACM Press. doi:10.1145/1852786.1852790"
+        },
+        {
+          "raw": "Hackett, B., 2005, \"Essential tensions: Identity, control, and risk in research\", Social Studies of Science , 35(5): 787-826. doi:10.1177/0306312705056045"
+        },
+        {
+          "raw": "Haller, Heiko, and Stefan Krauss, 2002, \"Misinterpretations of Significance: a Problem Students Share with Their Teachers?\" Methods of Psychological Research--Online , 7(1): 1-20. [ Haller & Kraus 2002 available online ]"
+        },
+        {
+          "raw": "Hartgerink, Chris H.J., Robbie C.M. van Aert, Mich&egrave;le B. Nuijten, Jelte M. Wicherts, and Marcel A.L.M. van Assen, 2016, \"Distributions of p -Values Smaller than .05 in Psychology: What Is Going On?\", PeerJ , 4(April): e1935. doi:10.7717/peerj.1935"
+        },
+        {
+          "raw": "Hendrick, Clyde, 1991. \"Replication, Strict Replications, and Conceptual Replications: Are They Important?\", in Neuliep 1991: 41-49."
+        },
+        {
+          "raw": "Ioannidis, John P. A., 2005, \"Why Most Published Research Findings Are False\", PLoS Medicine , 2(8): e124. doi:10.1371/journal.pmed.0020124"
+        },
+        {
+          "raw": "Ioannidis, John P. A., Daniele Fanelli, Debbie Drake Dunne, and Steven N. Goodman, 2015, \"Meta-Research: Evaluation and Improvement of Research Methods and Practices\", PLOS Biology , 13(10): e1002264. doi:10.1371/journal.pbio.1002264"
+        },
+        {
+          "raw": "Jennions, Michael D. and Anders Pape M&oslash;ller, 2003, \"A Survey of the Statistical Power of Research in Behavioral Ecology and Animal Behavior\", Behavioral Ecology , 14(3): 438-445. doi:10.1093/beheco/14.3.438"
+        },
+        {
+          "raw": "John, Leslie K., George Loewenstein, and Drazen Prelec, 2012, \"Measuring the Prevalence of Questionable Research Practices With Incentives for Truth Telling\", Psychological Science , 23(5): 524-532. doi:10.1177/0956797611430953"
+        },
+        {
+          "raw": "Kaiser, Jocelyn, 2018, \"Plan to Replicate 50 High-Impact Cancer Papers Shrinks to Just 18\", Science , 31 July 2018. doi:10.1126/science.aau9619"
+        },
+        {
+          "raw": "Keppel, Geoffrey, 1982, Design and Analysis. A Researcher's Handbook , second edition, Englewood Cliffs, NJ: Prentice-Hall."
+        },
+        {
+          "raw": "Kerr, Norbert L., 1998, \"HARKing: Hypothesizing After the Results Are Known\", Personality and Social Psychology Review , 2(3): 196-217. doi:10.1207/s15327957pspr0203_4"
+        },
+        {
+          "raw": "Kidwell, Mallory C., Ljiljana B. Lazarevi&#263;, Erica Baranski, Tom E. Hardwicke, Sarah Piechowski, Lina-Sophia Falkenberg, Curtis Kennett, et al., 2016, \"Badges to Acknowledge Open Practices: A Simple, Low-Cost, Effective Method for Increasing Transparency\", Malcolm R Macleod (ed.), PLOS Biology , 14(5): e1002456. doi:10.1371/journal.pbio.1002456"
+        },
+        {
+          "raw": "Klein, Richard A., Kate A. Ratliff, Michelangelo Vianello, Reginald B. Adams, &Scaron;t&#283;p&aacute;n Bahn&iacute;k, Michael J. Bernstein, Konrad Bocian, et al., 2014, \"Investigating Variation in Replicability: A 'Many Labs' Replication Project\", Social Psychology , 45(3): 142-152. doi:10.1027/1864-9335/a000178"
+        },
+        {
+          "raw": "Lakens, Daniel, Federico G. Adolfi, Casper J. Albers, Farid Anvari, Matthew A. J. Apps, Shlomo E. Argamon, Thom Baguley, et al., 2018, \"Justify Your Alpha\", Nature Human Behaviour , 2(3): 168-171. doi:10.1038/s41562-018-0311-x"
+        },
+        {
+          "raw": "Longino, Helen E., 1990, Science as Social Knowledge: Values and Objectivity in Scientific Inquiry , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "---, 1996, \"Cognitive and Non-Cognitive Values in Science: Rethinking the Dichotomy\", in Feminism, Science, and the Philosophy of Science , Lynn Hankinson Nelson and Jack Nelson (eds.), Dordrecht: Springer Netherlands, 39-58. doi:10.1007/978-94-009-1742-2_3"
+        },
+        {
+          "raw": "---, 1997, \"Feminist Epistemology as a Local Epistemology: Helen E. Longino\", Aristotelian Society Supplementary Volume , 71(1): 19-35. doi:10.1111/1467-8349.00017"
+        },
+        {
+          "raw": "Lykken, David T., 1968, \"Statistical Significance in Psychological Research\", Psychological Bulletin , 70(3, Pt.1): 151-159. doi:10.1037/h0026141"
+        },
+        {
+          "raw": "Madden, Charles S., Richard W. Easley, and Mark G. Dunn, 1995, \"How Journal Editors View Replication Research\", Journal of Advertising , 24(December): 77-87. doi:10.1080/00913367.1995.10673490"
+        },
+        {
+          "raw": "Makel, Matthew C., Jonathan A. Plucker, and Boyd Hegarty, 2012, \"Replications in Psychology Research: How Often Do They Really Occur?\", Perspectives on Psychological Science , 7(6): 537-542. doi:10.1177/1745691612460688"
+        },
+        {
+          "raw": "MacCoun, Robert J. and Saul Perlmutter, 2017, \"Blind Analysis as a Correction for Confirmatory Bias in Physics and in Psychology\", in Psychological Science Under Scrutiny , Scott O. Lilienfeld and Irwin D. Waldman (eds.), Hoboken, NJ: John Wiley & Sons, pp. 295-322. doi:10.1002/9781119095910.ch15"
+        },
+        {
+          "raw": "Martin, B., 1992, \"Scientific fraud and the power structure of science\", Prometheus , 10(1): 83-98. doi:10.1080/08109029208629515"
+        },
+        {
+          "raw": "Masicampo, E.J. and Daniel R. Lalande, 2012, \"A Peculiar Prevalence of p Values Just below .05\", Quarterly Journal of Experimental Psychology , 65(11): 2271-2279. doi:10.1080/17470218.2012.711335"
+        },
+        {
+          "raw": "Mahoney, Michael J., 1985, \"Open Exchange and Epistemic Progress\",, American Psychologist , 40(1): 29-39. doi:10.1037/0003-066X.40.1.29"
+        },
+        {
+          "raw": "Meehl, Paul E., 1967, \"Theory-Testing in Psychology and Physics: A Methodological Paradox\", Philosophy of Science , 34(2): 103-115. doi:10.1086/288135"
+        },
+        {
+          "raw": "---, 1978, \"Theoretical Risks and Tabular Asterisks: Sir Karl, Sir Ronald, and the Slow Progress of Soft Psychology\", Journal of Consulting and Clinical Psychology , 46(4): 806-834. doi:10.1037/0022-006X.46.4.806"
+        },
+        {
+          "raw": "Merton, Robert K., 1942 [1973], \"A Note on Science and Technology in a Democratic Order\", Journal of Legal and Political Sociology , 1(1-2): 115-126; reprinted as \"The Normative Structure of Science\", in Robert K. Merton (ed.) The Sociology of Science: Theoretical and Empirical Investigations , Chicago, IL: University of Chicago Press."
+        },
+        {
+          "raw": "Munaf&ograve;, Marcus R., Brian A. Nosek, Dorothy V. M. Bishop, Katherine S. Button, Christopher D. Chambers, Nathalie Percie du Sert, Uri Simonsohn, Eric-Jan Wagenmakers, Jennifer J. Ware, and John P. A. Ioannidis, 2017, \"A Manifesto for Reproducible Science\", Nature Human Behaviour , 1(1): 0021. doi:10.1038/s41562-016-0021"
+        },
+        {
+          "raw": "Neuliep, James William (ed.), 1991, Replication Research in the Social Sciences , (Journal of social behavior and personality; 8: 6), Newbury Park, CA: Sage Publications."
+        },
+        {
+          "raw": "Neuliep, James W. and Rick Crandall, 1990, \"Editorial Bias Against Replication Research\", Journal of Social Behavior and Personality , 5(4): 85-90"
+        },
+        {
+          "raw": "Nosek, Brian A. and Dani&euml;l Lakens, 2014, \"Registered Reports: A Method to Increase the Credibility of Published Results\", Social Psychology , 45(3): 137-141. doi:10.1027/1864-9335/a000192"
+        },
+        {
+          "raw": "Nosek, Brian A., Jeffrey R. Spies, and Matt Motyl, 2012, \"Scientific Utopia: II. Restructuring Incentives and Practices to Promote Truth Over Publishability\", Perspectives on Psychological Science , 7(6): 615-631. doi:10.1177/1745691612459058"
+        },
+        {
+          "raw": "Nosek, B. A., G. Alter, G. C. Banks, D. Borsboom, S. D. Bowman, S. J. Breckler, S. Buck, et al., 2015, \"Promoting an Open Research Culture\", Science , 348(6242): 1422-1425. doi:10.1126/science.aab2374,"
+        },
+        {
+          "raw": "Nosek, Brian A., Charles R. Ebersole, Alexander C. DeHaven, and David T. Mellor, 2018, \"The Preregistration Revolution\", Proceedings of the National Academy of Sciences , 115(11): 2600-2606. doi:10.1073/pnas.1708274114"
+        },
+        {
+          "raw": "Nuijten, Mich&egrave;le B., Chris H. J. Hartgerink, Marcel A. L. M. van Assen, Sacha Epskamp, and Jelte M. Wicherts, 2016, \"The Prevalence of Statistical Reporting Errors in Psychology (1985-2013)\", Behavior Research Methods , 48(4): 1205-1226. doi:10.3758/s13428-015-0664-2"
+        },
+        {
+          "raw": "Oakes, Michael, 1986, Statistical Inference: A Commentary for the Social and Behavioral Sciences , New York: Wiley."
+        },
+        {
+          "raw": "Open Science Collaboration (OSC), 2015, \"Estimating the Reproducibility of Psychological Science\", Science , 349(6251): 943-951. doi:10.1126/science.aac4716"
+        },
+        {
+          "raw": "Oransky, Ivan, 2016, \"Half of Biomedical Studies Don't Stand up to Scrutiny and What We Need to Do about That\", The Conversation , 11 November 2016. [ Oransky 2016 available online ]"
+        },
+        {
+          "raw": "Parker, T.H., E. Main, S. Nakagawa, J. Gurevitch, F. Jarrad, and M. Burgman, 2016, \"Promoting Transparency in Conservation Science: Editorial\", Conservation Biology , 30(6): 1149-1150. doi:10.1111/cobi.12760"
+        },
+        {
+          "raw": "Pashler, Harold and Eric-Jan Wagenmakers, 2012, \"Editors' Introduction to the Special Section on Replicability in Psychological Science: A Crisis of Confidence?\", Perspectives on Psychological Science , 7(6): 528-530. doi:10.1177/1745691612465253"
+        },
+        {
+          "raw": "Peng, Roger D., 2011, \"Reproducible Research in Computational Science\", Science , 334(6060): 1226-1227. doi:10.1126/science.1213847"
+        },
+        {
+          "raw": "---, 2015, \"The Reproducibility Crisis in Science: A Statistical Counterattack\", Significance , 12(3): 30-32. doi:10.1111/j.1740-9713.2015.00827.x"
+        },
+        {
+          "raw": "Radder, Hans, 1996, In And About The World: Philosophical Studies Of Science And Technology , Albany, NY: State University of New York Press."
+        },
+        {
+          "raw": "---, 2003, \"Technology and Theory in Experimental Science\", in Hans Radder (ed.), The Philosophy of Scientific Experimentation , Pittsburgh: University of Pittsburgh Press, pp. 152-173."
+        },
+        {
+          "raw": "---, 2006, The World Observed/The World Conceived , Pittsburgh, PA: University of Pittsburgh Press."
+        },
+        {
+          "raw": "---, 2009, \"Science, Technology and the Science-Technology Relationship\", in Anthonie Meijers (ed.), Philosophy of Technology and Engineering Sciences , Amsterdam: Elsevier, pp. 65-91. doi:10.1016/B978-0-444-51667-1.50007-0"
+        },
+        {
+          "raw": "---, 2012, The Material Realization of Science: From Habermas to Experimentation and Referential Realism , Boston: Springer. doi:10.1007/978-94-007-4107-2"
+        },
+        {
+          "raw": "Rauscher, Frances H., Gordon L. Shaw, and Catherine N. Ky, 1993, \"Music and Spatial Task Performance\", Nature , 365(6447): 611-611. doi:10.1038/365611a0"
+        },
+        {
+          "raw": "Rauscher, Frances H., Gordon L. Shaw, and Katherine N. Ky, 1995, \"Listening to Mozart Enhances Spatial-Temporal Reasoning: Towards a Neurophysiological Basis\", Neuroscience Letters , 185(1): 44-47. doi:10.1016/0304-3940(94)11221-4"
+        },
+        {
+          "raw": "Ritchie, Stuart J., Richard Wiseman, and Christopher C. French, 2012, \"Failing the Future: Three Unsuccessful Attempts to Replicate Bem's 'Retroactive Facilitation of Recall' Effect\", Sam Gilbert (ed.), PLoS ONE , 7(3): e33423. doi:10.1371/journal.pone.0033423"
+        },
+        {
+          "raw": "Rooney, Phyllis, 1992, \"On Values in Science: Is the Epistemic/Non-Epistemic Distinction Useful?\", PSA: Proceedings of the Biennial Meeting of the Philosophy of Science Association , 1992(1): 13-22. doi:10.1086/psaprocbienmeetp.1992.1.192740"
+        },
+        {
+          "raw": "Rosenthal, Robert, 1979, \"The File Drawer Problem and Tolerance for Null Results\", Psychological Bulletin , 86(3): 638-641. doi:10.1037/0033-2909.86.3.638"
+        },
+        {
+          "raw": "---, 1991, \"Replication in Behavioral Research\", in Neuliep 1991: 1-39."
+        },
+        {
+          "raw": "Rosnow, Ralph L. and Robert Rosenthal, 1989, \"Statistical Procedures and the Justification of Knowledge in Psychological Science\",, American Psychologist , 44(10): 1276-1284. doi:10.1037/0003-066X.44.10.1276"
+        },
+        {
+          "raw": "Rowhani-Farid, Anisa, Michelle Allen, and Adrian G. Barnett, 2017, \"What Incentives Increase Data Sharing in Health and Medical Research? A Systematic Review\", Research Integrity and Peer Review , 2: 4. doi:10.1186/s41073-017-0028-9"
+        },
+        {
+          "raw": "Rudner, Richard, 1953, \"The Scientist Qua Scientist Makes Value Judgments\", Philosophy of Science , 20(1): 1-6. doi:10.1086/287231"
+        },
+        {
+          "raw": "Sargent, C.L., 1981, \"The Repeatability Of Significance And The Significance Of Repeatability\", European Journal of Parapsychology , 3: 423-433."
+        },
+        {
+          "raw": "Schekman, Randy, 2013, \"How Journals like Nature, Cell and Science Are Damaging Science | Randy Schekman\", The Guardian , December 9, sec. Opinion, [ Schekman 2013 available online ]"
+        },
+        {
+          "raw": "Schmidt, Stefan, 2009, \"Shall We Really Do It Again? The Powerful Concept of Replication Is Neglected in the Social Sciences\", Review of General Psychology , 13(2): 90-100. doi:10.1037/a0015108"
+        },
+        {
+          "raw": "Silberzahn, Raphael,and Uhlmann, Eric L., 2015, \"Many hands make tight work: crowdsourcing research can balance discussions, validate findings and better inform policy\", Nature , 526(7572): 189-192."
+        },
+        {
+          "raw": "Simmons, Joseph P., Leif D. Nelson, and Uri Simonsohn, 2011, \"False-Positive Psychology: Undisclosed Flexibility in Data Collection and Analysis Allows Presenting Anything as Significant\", Psychological Science , 22(11): 1359-1366. doi:10.1177/0956797611417632"
+        },
+        {
+          "raw": "Smith, Daniel R., Ian C.W. Hardy, and Martin P. Gammell, 2011, \"Power Rangers: No Improvement in the Statistical Power of Analyses Published in Animal Behaviour\", Animal Behaviour , 81(1): 347-352. doi:10.1016/j.anbehav.2010.09.026"
+        },
+        {
+          "raw": "Sovacool, B. K., 2008, \"Exploring scientific misconduct: Isolated individuals, impure institutions, or an inevitable idiom of modern science?\" Journal of Bioethical Inquiry , 5: 271-282. doi: 10.1007/s11673-008-9113-6"
+        },
+        {
+          "raw": "Steel, Daniel, 2010, \"Epistemic Values and the Argument from Inductive Risk*\", Philosophy of Science , 77(1): 14-34. doi:10.1086/650206"
+        },
+        {
+          "raw": "Stegenga, Jacob, 2018, Medical Nihilism , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Steinle, Friedrich, 2016, \"Stability and Replication of Experimental Results: A Historical Perspective\", in Atmanspacher and Maasen 2016b: 39-68. doi:10.1002/9781118865064.ch3"
+        },
+        {
+          "raw": "Sterling, Theodore D., 1959, \"Publication Decisions and Their Possible Effects on Inferences Drawn from Tests of Significance - or Vice Versa\", Journal of the American Statistical Association , 54(285): 30-34. doi:10.1080/01621459.1959.10501497"
+        },
+        {
+          "raw": "Sutton, Jon, 2018, \"Tone Deaf?\", The Psychologist , 31: 12-13. [ Sutton 2018 available online ]"
+        },
+        {
+          "raw": "Szucs, Denes and John P. A. Ioannidis, 2017, \"Empirical Assessment of Published Effect Sizes and Power in the Recent Cognitive Neuroscience and Psychology Literature\", Eric-Jan Wagenmakers (ed.), PLoS Biology , 15(3): e2000797. doi:10.1371/journal.pbio.2000797"
+        },
+        {
+          "raw": "Teira, David, 2013, \"A Contractarian Solution to the Experimenter's Regress\", Philosophy of Science , 80(5): 709-720. doi:10.1086/673717"
+        },
+        {
+          "raw": "Vazire, Simine, 2018, \"Implications of the Credibility Revolution for Productivity, Creativity, and Progress\", Perspectives on Psychological Science , 13(4): 411-417. doi:10.1177/1745691617751884"
+        },
+        {
+          "raw": "Wagenmakers, Eric-Jan, Ruud Wetzels, Denny Borsboom, Han L. J. van der Maas, and Rogier A. Kievit, 2012, \"An Agenda for Purely Confirmatory Research\", Perspectives on Psychological Science , 7(6): 632-638. doi:10.1177/1745691612463078"
+        },
+        {
+          "raw": "Washburn, Anthony N., Brittany E. Hanson, Matt Motyl, Linda J. Skitka, Caitlyn Yantis, Kendal M. Wong, Jiaqing Sun, et al., 2018, \"Why Do Some Psychology Researchers Resist Adopting Proposed Reforms to Research Practices? A Description of Researchers' Rationales\", Advances in Methods and Practices in Psychological Science , 1(2): 166-173. doi:10.1177/2515245918757427"
+        },
+        {
+          "raw": "Wasserstein, Ronald L. and Nicole A. Lazar, 2016, \"The ASA's Statement on p-Values: Context, Process, and Purpose\", The American Statistician , 70(2): 129-133. doi:10.1080/00031305.2016.1154108"
+        }
+      ],
+      "publishedAt": "2018-12-02T13:00:00.000Z",
+      "revisedAt": "2018-12-02T13:00:00.000Z"
+    }
+  }
+}

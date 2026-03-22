@@ -1,0 +1,398 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/microsoft--call-center-ai",
+  "meta": {
+    "title": "Call Center AI",
+    "description": "Send a phone call from AI agent, in an API call. Or, directly call the bot from the configured phone number!",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T06:18:44.929Z",
+    "dateModified": "2026-03-22T06:18:44.929Z",
+    "keywords": [],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "Send a phone call from AI agent, in an API call. Or, directly call the bot from the configured phone number!",
+    "context": "AI-powered call center solution with Azure and OpenAI GPT.\n\n<!-- github.com badges -->\n[![Last release date](https://img.shields.io/github/release-date/clemlesne/call-center-ai)](https://github.com/clemlesne/call-center-ai/releases)\n[![Project license](https://img.shields.io/github/license/clemlesne/call-center-ai)](https://github.com/clemlesne/call-center-ai/blob/main/LICENSE)\n\n<!-- GitHub Codespaces badge -->\n[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/call-center-ai?quickstart=1)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "backend",
+    "machine-learning",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "6407 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "753 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T06:18:44.929Z"
+  },
+  "implementation": {
+    "type": "service",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/microsoft/call-center-ai",
+        "description": "GitHub repository: microsoft/call-center-ai"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "aiohttp-retry",
+        "version": "~=2.9",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/aiohttp-retry/"
+      },
+      {
+        "name": "aiohttp",
+        "version": "~=3.10",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/aiohttp/"
+      },
+      {
+        "name": "aiojobs",
+        "version": "~=1.3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/aiojobs/"
+      },
+      {
+        "name": "azure-ai-inference",
+        "version": "~=1.0.0a0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/azure-ai-inference/"
+      },
+      {
+        "name": "azure-ai-translation-text",
+        "version": "~=1.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/azure-ai-translation-text/"
+      },
+      {
+        "name": "azure-appconfiguration",
+        "version": "~=1.7",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/azure-appconfiguration/"
+      },
+      {
+        "name": "azure-cognitiveservices-speech",
+        "version": "~=1.41",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/azure-cognitiveservices-speech/"
+      },
+      {
+        "name": "azure-communication-callautomation",
+        "version": "~=1.4.0a0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/azure-communication-callautomation/"
+      },
+      {
+        "name": "azure-communication-sms",
+        "version": "~=1.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/azure-communication-sms/"
+      },
+      {
+        "name": "azure-cosmos",
+        "version": "~=4.7",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/azure-cosmos/"
+      },
+      {
+        "name": "azure-eventgrid",
+        "version": "~=4.20",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/azure-eventgrid/"
+      },
+      {
+        "name": "azure-identity",
+        "version": "~=1.19",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/azure-identity/"
+      },
+      {
+        "name": "azure-monitor-opentelemetry",
+        "version": "~=1.6",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/azure-monitor-opentelemetry/"
+      },
+      {
+        "name": "azure-search-documents",
+        "version": "~=11.6.0a0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/azure-search-documents/"
+      },
+      {
+        "name": "azure-storage-queue",
+        "version": "~=12.12",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/azure-storage-queue/"
+      },
+      {
+        "name": "django-htmlmin",
+        "version": "~=0.11",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/django-htmlmin/"
+      },
+      {
+        "name": "fastapi",
+        "version": "~=0.115",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/fastapi/"
+      },
+      {
+        "name": "granian",
+        "version": "~=2.3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/granian/"
+      },
+      {
+        "name": "jinja2",
+        "version": "~=3.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/jinja2/"
+      },
+      {
+        "name": "json-repair",
+        "version": "~=0.30",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/json-repair/"
+      },
+      {
+        "name": "mistune",
+        "version": "~=3.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/mistune/"
+      },
+      {
+        "name": "noisereduce",
+        "version": "~=3.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/noisereduce/"
+      },
+      {
+        "name": "opentelemetry-instrumentation-aiohttp-client",
+        "version": "~=0.0a0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/opentelemetry-instrumentation-aiohttp-client/"
+      },
+      {
+        "name": "opentelemetry-instrumentation-redis",
+        "version": "~=0.0a0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/opentelemetry-instrumentation-redis/"
+      },
+      {
+        "name": "opentelemetry-semantic-conventions",
+        "version": "~=0.0a0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/opentelemetry-semantic-conventions/"
+      },
+      {
+        "name": "phonenumbers",
+        "version": "~=8.13",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/phonenumbers/"
+      },
+      {
+        "name": "pydantic-extra-types",
+        "version": "~=2.9",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pydantic-extra-types/"
+      },
+      {
+        "name": "pydantic-settings",
+        "version": "~=2.6",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pydantic-settings/"
+      },
+      {
+        "name": "pydantic",
+        "version": "~=2.9",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pydantic/"
+      },
+      {
+        "name": "pyjwt",
+        "version": "~=2.9",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyjwt/"
+      },
+      {
+        "name": "python-dotenv",
+        "version": "~=1.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/python-dotenv/"
+      },
+      {
+        "name": "python-multipart",
+        "version": "==0.*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/python-multipart/"
+      },
+      {
+        "name": "pytz",
+        "version": "~=2024.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pytz/"
+      },
+      {
+        "name": "pyyaml",
+        "version": "~=6.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyyaml/"
+      },
+      {
+        "name": "redis",
+        "version": "~=5.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/redis/"
+      },
+      {
+        "name": "structlog",
+        "version": "~=24.4",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/structlog/"
+      },
+      {
+        "name": "tenacity",
+        "version": "~=8.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tenacity/"
+      },
+      {
+        "name": "tiktoken",
+        "version": "~=0.8",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tiktoken/"
+      },
+      {
+        "name": "twilio",
+        "version": "~=9.3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/twilio/"
+      },
+      {
+        "name": "typing-extensions",
+        "version": "~=4.12",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/typing-extensions/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "microsoft",
+        "type": "human",
+        "uri": "https://github.com/microsoft"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 7913,
+      "validation_diversity": 0.16,
+      "context_breadth": 0.29,
+      "temporal_stability": 0.84,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.6
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.38
+  }
+}

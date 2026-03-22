@@ -1,0 +1,289 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/continuum-hypothesis",
+  "meta": {
+    "title": "The Continuum Hypothesis",
+    "description": "The continuum hypothesis (CH) is one of the most central open problems in set theory, one that is important for both mathematical and philosophical reasons. The problem actually arose with the birth of set theory; indeed, in many respects it stimulated the birth of set theory. In 1874 Cantor had shown that there is a one-to-one correspondence between the natural numbers and the algebraic numbers. More surprisingly, he showed that there is no one-to-one correspondence between the natural numbers and the real numbers. Taking the existence of a one-to-one correspondence as a criterion for when two sets have the same size (something he certainly did by 1878), this result shows that there is more than one level of infinity and thus gave birth to the higher infinite in mathematics. Cantor immediately tried to determine whether there were any infinite sets of real numbers that were of intermediate size, that is, whether there was an infinite set of real numbers that could not be put into one-to-one correspondence with the natural numbers and could not be put into one-to-one correspondence with the real numbers. The continuum hypothesis (under one formulation) is simply the statement that there is no such set of real numbers. It was through his attempt to prove this hypothesis that led Cantor do develop set theory into a sophisticated branch of mathematics. Despite his efforts Cantor could not resolve CH. The problem persisted and was considered so important by Hilbert that he placed it first on his famous list of open problems to be faced by the 20 century. Hilbert also struggled to resolve CH, again without success. Ultimately, this lack of progress was explained by the combined results of G&ouml;del and Cohen, which together showed that CH cannot be resolved on the basis of the axioms that mathematicians were employing; in modern terms, CH is independent of Zermelo-Fraenkel set theory extended with the Axiom of Choice (ZFC). This independence result was quickly followed by many others. The independence techniques were so powerful that set theorists soon found themselves preoccupied with the meta-theoretic enterprise of proving that certain fundamental statements could not be proved or refuted within ZFC. The question then arose as to whether there were ways to settle the independent statements. The community of mathematicians and philosophers of mathematics was largely divided on this question. The pluralists (like Cohen) maintained that the independence results effectively settled the question by showing that it had no answer . On this view, one could adopt a system in which, say CH was an axiom and one could adopt a system in which &not;CH was an axiom and that was the end of the matter--there was no question as to which of two incompatible extensions was the \"correct\" one. The non-pluralists (like G&ouml;del) held that the independence results merely indicated the paucity of our means for circumscribing mathematical truth. On this view, what was needed were new axioms, axioms that are both justified and sufficient for the task. G&ouml;del actually went further in proposing candidates for new axioms--large cardinal axioms--and he conjectured that they would settle CH. G&ouml;del's program for large cardinal axioms proved to be remarkably successful. Over the course of the next 30 years it was shown that large cardinal axioms settle many of the questions that were shown to be independent during the era of independence. However, CH was left untouched. The situation turned out to be rather ironic since in the end it was shown (in a sense that can be made precise) that although the standard large cardinal axioms effectively settle all question of complexity strictly below that of CH, they cannot (by results of Levy and Solovay and others) settle CH itself. Thus, in choosing CH as a test case for his program, G&ouml;del put his finger precisely on the point where it fails. It is for this reason that CH continues to play a central role in the search for new axioms. In this entry we shall give an overview of the major approaches to settling CH and we shall discuss some of the major foundational frameworks which maintain that CH does not have an answer. The subject is a large one and we have had to sacrifice full comprehensiveness in two dimensions. First, we have not been able to discuss the major philosophical issues that are lying in the background. For this the reader is directed to the entry \" Large Cardinals and Determinacy \", which contains a general discussion of the independence results, the nature of axioms, the nature of justification, and the successes of large cardinal axioms in the realm \"below CH\". Second, we have not been able to discuss every approach to CH that is in the literature. Instead we have restricted ourselves to those approaches that appear most promising from a philosophical point of view and where the mathematics has been developed to a sufficiently advanced state. In the approaches we shall discuss--forcing axioms, inner model theory, quasi-large cardinals--the mathematics has been pressed to a very advanced stage over the course of 40 years. And this has made our task somewhat difficult. We have tried to keep the discussion as accessible as possible and we have placed the more technical items in the endnotes. But the reader should bear in mind that we are presenting a bird's eye view and that for a higher resolution at any point the reader should dip into the suggested readings that appear at the end of each section. There are really two kinds of approaches to new axioms--the local approach and the global approach. On the local approach one seeks axioms that answer questions concerning a specifiable fragment of the universe, such as V &omega;+1 or V &omega;+2 , where CH lies. On the global approach one seeks axioms that attempt to illuminate the entire structure of the universe of sets. The global approach is clearly much more challenging. In this entry we shall start with the local approach and toward the end we shall briefly touch upon the global approach. Here is an overview of the entry: Section 1 surveys the independence results in cardinal arithmetic, covering both the case of regular cardinals (where CH lies) and singular cardinals. Section 2 considers approaches to CH where one successively verifies a hierarchy of approximations to CH, each of which is an \"effective\" version of CH. This approach led to the remarkable discovery of Woodin that it is possible (in the presence of large cardinals) to have an effective failure of CH, thereby showing, that the effective failure of CH is as intractable (with respect to large cardinal axioms) as CH itself. Section 3 continues with the developments that stemmed from this discovery. The centerpiece of the discussion is the discovery of a \"canonical\" model in which CH fails. This formed the basis of a network of results that was collectively presented by Woodin as a case for the failure of CH. To present this case in the most streamlined form we introduce the strong logic &Omega;-logic. Section 4 takes up the competing foundational view that there is no solution to CH. This view is sharpened in terms of the generic multiverse conception of truth and that view is then scrutinized. Section 5 continues the assessment of the case for &not;CH by investigating a parallel case for CH. In the remaining two sections we turn to the global approach to new axioms and here we shall be much briefer. Section 6 discusses the approach through inner model theory. Section 7 discusses the approach through quasi-large cardinal axioms.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T07:30:06.212Z",
+    "dateModified": "2026-03-22T07:30:06.212Z",
+    "datePublished": "2013-05-21T14:00:00.000Z",
+    "keywords": [
+      "goedel",
+      "large cardinals determinacy",
+      "set theory",
+      "settheory early"
+    ]
+  },
+  "problemSolved": {
+    "statement": "The continuum hypothesis (CH) is one of the most central open problems in set theory, one that is important for both mathematical and philosophical reasons. The problem actually arose with the birth of set theory; indeed, in many respects it stimulated the birth of set theory. In 1874 Cantor had shown that there is a one-to-one correspondence between the natural numbers and the algebraic numbers. More surprisingly, he showed that there is no one-to-one correspondence between the natural numbers and the real numbers. Taking the existence of a one-to-one correspondence as a criterion for when two sets have the same size (something he certainly did by 1878), this result shows that there is more than one level of infinity and thus gave birth to the higher infinite in mathematics. Cantor immediately tried to determine whether there were any infinite sets of real numbers that were of intermediate size, that is, whether there was an infinite set of real numbers that could not be put into one-to-one correspondence with the natural numbers and could not be put into one-to-one correspondence with the real numbers. The continuum hypothesis (under one formulation) is simply the statement that there is no such set of real numbers. It was through his attempt to prove this hypothesis that led Cantor do develop set theory into a sophisticated branch of mathematics. Despite his efforts Cantor could not resolve CH. The problem persisted and was considered so important by Hilbert that he placed it first on his famous list of open problems to be faced by the 20 century. Hilbert also struggled to resolve CH, again without success. Ultimately, this lack of progress was explained by the combined results of G&ouml;del and Cohen, which together showed that CH cannot be resolved on the basis of the axioms that mathematicians were employing; in modern terms, CH is independent of Zermelo-Fraenkel set theory extended with the Axiom of Choice (ZFC). This independence result was quickly followed by many others. The independence techniques were so powerful that set theorists soon found themselves preoccupied with the meta-theoretic enterprise of proving that certain fundamental statements could not be proved or refuted within ZFC. The question then arose as to whether there were ways to settle the independent statements. The community of mathematicians and philosophers of mathematics was largely divided on this question. The pluralists (like Cohen) maintained that the independence results effectively settled the question by showing that it had no answer . On this view, one could adopt a system in which, say CH was an axiom and one could adopt a system in which &not;CH was an axiom and that was the end of the matter--there was no question as to which of two incompatible extensions was the \"correct\" one. The non-pluralists (like G&ouml;del) held that the independence results merely indicated the paucity of our means for circumscribing mathematical truth. On this view, what was needed were new axioms, axioms that are both justified and sufficient for the task. G&ouml;del actually went further in proposing candidates for new axioms--large cardinal axioms--and he conjectured that they would settle CH. G&ouml;del's program for large cardinal axioms proved to be remarkably successful. Over the course of the next 30 years it was shown that large cardinal axioms settle many of the questions that were shown to be independent during the era of independence. However, CH was left untouched. The situation turned out to be rather ironic since in the end it was shown (in a sense that can be made precise) that although the standard large cardinal axioms effectively settle all question of complexity strictly below that of CH, they cannot (by results of Levy and Solovay and others) settle CH itself. Thus, in choosing CH as a test case for his program, G&ouml;del put his finger precisely on the point where it fails. It is for this reason that CH continues to play a central role in the search for new axioms. In this entry we shall give an overview of the major approaches to settling CH and we shall discuss some of the major foundational frameworks which maintain that CH does not have an answer. The subject is a large one and we have had to sacrifice full comprehensiveness in two dimensions. First, we have not been able to discuss the major philosophical issues that are lying in the background. For this the reader is directed to the entry \" Large Cardinals and Determinacy \", which contains a general discussion of the independence results, the nature of axioms, the nature of justification, and the successes of large cardinal axioms in the realm \"below CH\". Second, we have not been able to discuss every approach to CH that is in the literature. Instead we have restricted ourselves to those approaches that appear most promising from a philosophical point of view and where the mathematics has been developed to a sufficiently advanced state. In the approaches we shall discuss--forcing axioms, inner model theory, quasi-large cardinals--the mathematics has been pressed to a very advanced stage over the course of 40 years. And this has made our task somewhat difficult. We have tried to keep the discussion as accessible as possible and we have placed the more technical items in the endnotes. But the reader should bear in mind that we are presenting a bird's eye view and that for a higher resolution at any point the reader should dip into the suggested readings that appear at the end of each section. There are really two kinds of approaches to new axioms--the local approach and the global approach. On the local approach one seeks axioms that answer questions concerning a specifiable fragment of the universe, such as V &omega;+1 or V &omega;+2 , where CH lies. On the global approach one seeks axioms that attempt to illuminate the entire structure of the universe of sets. The global approach is clearly much more challenging. In this entry we shall start with the local approach and toward the end we shall briefly touch upon the global approach. Here is an overview of the entry: Section 1 surveys the independence results in cardinal arithmetic, covering both the case of regular cardinals (where CH lies) and singular cardinals. Section 2 considers approaches to CH where one successively verifies a hierarchy of approximations to CH, each of which is an \"effective\" version of CH. This approach led to the remarkable discovery of Woodin that it is possible (in the presence of large cardinals) to have an effective failure of CH, thereby showing, that the effective failure of CH is as intractable (with respect to large cardinal axioms) as CH itself. Section 3 continues with the developments that stemmed from this discovery. The centerpiece of the discussion is the discovery of a \"canonical\" model in which CH fails. This formed the basis of a network of results that was collectively presented by Woodin as a case for the failure of CH. To present this case in the most streamlined form we introduce the strong logic &Omega;-logic. Section 4 takes up the competing foundational view that there is no solution to CH. This view is sharpened in terms of the generic multiverse conception of truth and that view is then scrutinized. Section 5 continues the assessment of the case for &not;CH by investigating a parallel case for CH. In the remaining two sections we turn to the global approach to new axioms and here we shall be much briefer. Section 6 discusses the approach through inner model theory. Section 7 discusses the approach through quasi-large cardinal axioms.",
+    "context": "Opening section: 1. Independence in Cardinal Arithmetic | Related entries: goedel, set-theory, settheory-early, large-cardinals-determinacy",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "general-philosophy"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry continuum-hypothesis",
+        "uri": "https://plato.stanford.edu/entries/continuum-hypothesis/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 4 related entries, bibliography size 25"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2013-05-21T14:00:00.000Z and revised 2013-05-21T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2013-05-21T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/continuum-hypothesis/",
+        "description": "SEP entry for continuum-hypothesis"
+      }
+    ],
+    "solutionApproach": "1. Independence in Cardinal Arithmetic"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/goedel",
+      "ocp:sep/set-theory",
+      "ocp:sep/settheory-early",
+      "ocp:sep/large-cardinals-determinacy"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Koellner, Peter",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/continuum-hypothesis/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 30,
+      "validation_diversity": 0.35,
+      "context_breadth": 0.31,
+      "temporal_stability": 0.75,
+      "test_coverage": 0.37,
+      "documentation_quality": 0.73
+    },
+    "confidence": "provisional",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.391
+  },
+  "extensions": {
+    "sep": {
+      "slug": "continuum-hypothesis",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/continuum-hypothesis/",
+      "preamble": "The continuum hypothesis (CH) is one of the most central open problems in set theory, one that is important for both mathematical and philosophical reasons. The problem actually arose with the birth of set theory; indeed, in many respects it stimulated the birth of set theory. In 1874 Cantor had shown that there is a one-to-one correspondence between the natural numbers and the algebraic numbers. More surprisingly, he showed that there is no one-to-one correspondence between the natural numbers and the real numbers. Taking the existence of a one-to-one correspondence as a criterion for when two sets have the same size (something he certainly did by 1878), this result shows that there is more than one level of infinity and thus gave birth to the higher infinite in mathematics. Cantor immediately tried to determine whether there were any infinite sets of real numbers that were of intermediate size, that is, whether there was an infinite set of real numbers that could not be put into one-to-one correspondence with the natural numbers and could not be put into one-to-one correspondence with the real numbers. The continuum hypothesis (under one formulation) is simply the statement that there is no such set of real numbers. It was through his attempt to prove this hypothesis that led Cantor do develop set theory into a sophisticated branch of mathematics. Despite his efforts Cantor could not resolve CH. The problem persisted and was considered so important by Hilbert that he placed it first on his famous list of open problems to be faced by the 20 century. Hilbert also struggled to resolve CH, again without success. Ultimately, this lack of progress was explained by the combined results of G&ouml;del and Cohen, which together showed that CH cannot be resolved on the basis of the axioms that mathematicians were employing; in modern terms, CH is independent of Zermelo-Fraenkel set theory extended with the Axiom of Choice (ZFC). This independence result was quickly followed by many others. The independence techniques were so powerful that set theorists soon found themselves preoccupied with the meta-theoretic enterprise of proving that certain fundamental statements could not be proved or refuted within ZFC. The question then arose as to whether there were ways to settle the independent statements. The community of mathematicians and philosophers of mathematics was largely divided on this question. The pluralists (like Cohen) maintained that the independence results effectively settled the question by showing that it had no answer . On this view, one could adopt a system in which, say CH was an axiom and one could adopt a system in which &not;CH was an axiom and that was the end of the matter--there was no question as to which of two incompatible extensions was the \"correct\" one. The non-pluralists (like G&ouml;del) held that the independence results merely indicated the paucity of our means for circumscribing mathematical truth. On this view, what was needed were new axioms, axioms that are both justified and sufficient for the task. G&ouml;del actually went further in proposing candidates for new axioms--large cardinal axioms--and he conjectured that they would settle CH. G&ouml;del's program for large cardinal axioms proved to be remarkably successful. Over the course of the next 30 years it was shown that large cardinal axioms settle many of the questions that were shown to be independent during the era of independence. However, CH was left untouched. The situation turned out to be rather ironic since in the end it was shown (in a sense that can be made precise) that although the standard large cardinal axioms effectively settle all question of complexity strictly below that of CH, they cannot (by results of Levy and Solovay and others) settle CH itself. Thus, in choosing CH as a test case for his program, G&ouml;del put his finger precisely on the point where it fails. It is for this reason that CH continues to play a central role in the search for new axioms. In this entry we shall give an overview of the major approaches to settling CH and we shall discuss some of the major foundational frameworks which maintain that CH does not have an answer. The subject is a large one and we have had to sacrifice full comprehensiveness in two dimensions. First, we have not been able to discuss the major philosophical issues that are lying in the background. For this the reader is directed to the entry \" Large Cardinals and Determinacy \", which contains a general discussion of the independence results, the nature of axioms, the nature of justification, and the successes of large cardinal axioms in the realm \"below CH\". Second, we have not been able to discuss every approach to CH that is in the literature. Instead we have restricted ourselves to those approaches that appear most promising from a philosophical point of view and where the mathematics has been developed to a sufficiently advanced state. In the approaches we shall discuss--forcing axioms, inner model theory, quasi-large cardinals--the mathematics has been pressed to a very advanced stage over the course of 40 years. And this has made our task somewhat difficult. We have tried to keep the discussion as accessible as possible and we have placed the more technical items in the endnotes. But the reader should bear in mind that we are presenting a bird's eye view and that for a higher resolution at any point the reader should dip into the suggested readings that appear at the end of each section. There are really two kinds of approaches to new axioms--the local approach and the global approach. On the local approach one seeks axioms that answer questions concerning a specifiable fragment of the universe, such as V &omega;+1 or V &omega;+2 , where CH lies. On the global approach one seeks axioms that attempt to illuminate the entire structure of the universe of sets. The global approach is clearly much more challenging. In this entry we shall start with the local approach and toward the end we shall briefly touch upon the global approach. Here is an overview of the entry: Section 1 surveys the independence results in cardinal arithmetic, covering both the case of regular cardinals (where CH lies) and singular cardinals. Section 2 considers approaches to CH where one successively verifies a hierarchy of approximations to CH, each of which is an \"effective\" version of CH. This approach led to the remarkable discovery of Woodin that it is possible (in the presence of large cardinals) to have an effective failure of CH, thereby showing, that the effective failure of CH is as intractable (with respect to large cardinal axioms) as CH itself. Section 3 continues with the developments that stemmed from this discovery. The centerpiece of the discussion is the discovery of a \"canonical\" model in which CH fails. This formed the basis of a network of results that was collectively presented by Woodin as a case for the failure of CH. To present this case in the most streamlined form we introduce the strong logic &Omega;-logic. Section 4 takes up the competing foundational view that there is no solution to CH. This view is sharpened in terms of the generic multiverse conception of truth and that view is then scrutinized. Section 5 continues the assessment of the case for &not;CH by investigating a parallel case for CH. In the remaining two sections we turn to the global approach to new axioms and here we shall be much briefer. Section 6 discusses the approach through inner model theory. Section 7 discusses the approach through quasi-large cardinal axioms.",
+      "firstSectionTitle": "1. Independence in Cardinal Arithmetic",
+      "firstSectionText": "In this section we shall discuss the independence results in cardinal arithmetic. First, we shall treat of the case of regular cardinals, where CH lies and where very little is determined in the context of ZFC. Second, for the sake of comprehensiveness, we shall discuss the case of singular cardinals, where much more can be established in the context of ZFC. The addition and multiplication of infinite cardinal numbers is trivial: For infinite cardinals &kappa; and &lambda;, The situation becomes interesting when one turns to exponentiation and the attempt to compute &kappa; for infinite cardinals. During the dawn of set theory Cantor showed that for every cardinal &kappa;, There is no mystery about the size of 2 for finite n . The first natural question then is where 2 is located in the aleph-hierarchy: Is it &alefsym; 1 , &alefsym; 2 , &hellip;, &alefsym; 17 or something much larger? The cardinal 2 is important since it is the size of the continuum (the set of real numbers). Cantor's famous continuum hypothesis (CH) is the statement that 2 = &alefsym; 1 . This is a special case of the generalized continuum hypothesis (GCH) which asserts that for all &alpha;, 2 = &alefsym; &alpha;+1 . One virtue of GCH is that it gives a complete solution to the problem of computing &kappa; for infinite cardinals: Assuming GCH, if &kappa; &le; &lambda; then &kappa; = &lambda; ; if cf(&kappa;) &le; &lambda; &le; &kappa; then &kappa; = &kappa; ; and if &lambda; < cf(&kappa;) then &kappa; = &kappa;. Very little progress was made on CH and GCH. In fact, in the early era of set theory the only other piece of progress beyond Cantor's result that 2 > &kappa; (and the trivial result that if &kappa; &le; &lambda; then 2 &le; 2 ) was K&ouml;nig's result that cf(2 ) > &kappa;. The explanation for the lack of progress was provided by the independence results in set theory: To prove this G&ouml;del invented the method of inner models --he showed that CH and GCH held in the minimal inner model L of ZFC. Cohen then complemented this result: He did this by inventing the method of outer models and showing that CH failed in a generic extension V of V . The combined results of G&ouml;del and Cohen thus demonstrate that assuming the consistency of ZFC, it is in principle impossible to settle either CH or GCH in ZFC. In the Fall of 1963 Easton completed the picture by showing that for infinite regular cardinals &kappa; the only constraints on the function &kappa; &#8614; 2 that are provable in ZFC are the trivial constraint and the results of Cantor and K&ouml;nig: Thus, set theorists had pushed the cardinal arithmetic of regular cardinals as far as it could be pushed within the confines of ZFC. The case of cardinal arithmetic on singular cardinals is much more subtle. For the sake of completeness we pause to briefly discuss this before proceeding with the continuum hypothesis. It was generally believed that, as in the case for regular cardinals, the behaviour of the function &kappa; &#8614; 2 would be relatively unconstrained within the setting of ZFC. But then Silver proved the following remarkable result: It turns out that (by a deep result of Magidor, published in 1977) GCH can first fail at &alefsym; &omega; (assuming the consistency of a supercompact cardinal). Silver's theorem shows that it cannot first fail at &alefsym; &omega; 1 and this is provable in ZFC. This raises the question of whether one can \"control\" the size of 2 with a weaker assumption than that &alefsym; &delta; is a singular cardinal of uncountable cofinality such that GCH holds below &alefsym; &delta; . The natural hypothesis to consider is that &alefsym; &delta; is a singular cardinal of uncountable cofinality which is a strong limit cardinal , that is, that for all &alpha; &delta; , 2 &delta; . In 1975 Galvin and Hajnal proved (among other things) that under this weaker assumption there is indeed a bound: It is possible that there is a jump--in fact, Woodin showed (again assuming large cardinals) that it is possible that for all &kappa;, 2 = &kappa; . What the above theorem shows is that in ZFC there is a provable bound on how big the jump can be. The next question is whether a similar situation prevails with singular cardinals of countable cofinality. In 1978 Shelah showed that this is indeed the case. To fix ideas let us concentrate on &alefsym; &omega; . One drawback of this result is that the bound is sensitive to the actual size of 2 , which can be anything below &alefsym; &omega; . Remarkably Shelah was later able to remedy this with the development of his pcf (possible cofinalities) theory. One very quotable result from this theory is the following: In summary, although the continuum function at regular cardinals is relatively unconstrained in ZFC, the continuum function at singular cardinals is (provably in ZFC) constrained in significant ways by the behaviour of the continuum function on the smaller cardinals. Further Reading : For more cardinal arithmetic see Jech (2003). For more on the case of singular cardinals and pcf theory see Abraham & Magidor (2010) and Holz, Steffens & Weitz (1999).",
+      "relatedEntries": [
+        "goedel",
+        "set-theory",
+        "settheory-early",
+        "large-cardinals-determinacy"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "goedel"
+        },
+        {
+          "slug": "set-theory"
+        },
+        {
+          "slug": "settheory-early"
+        },
+        {
+          "slug": "large-cardinals-determinacy"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 25,
+      "bibliography": [
+        {
+          "raw": "Abraham, U. and M. Magidor, 2010, \"Cardinal arithmetic,\" in Foreman and Kanamori 2010."
+        },
+        {
+          "raw": "Bagaria, J., N. Castells, and P. Larson, 2006, \"An &Omega;-logic primer,\" in J. Bagaria and S. Todorcevic (eds), Set theory , Trends in Mathematics, Birkh&auml;user, Basel, pp. 1-28."
+        },
+        {
+          "raw": "Cohen, P., 1963, \"The independence of the continuum hypothesis I,\" Proceedings of the U.S. National Academy of Sciemces , 50: 1143-48."
+        },
+        {
+          "raw": "Foreman, M. and A. Kanamori, 2010, Handbook of Set Theory , Springer-Verlag."
+        },
+        {
+          "raw": "Foreman, M. and M. Magidor, 1995, \"Large cardinals and definable counterexamples to the continuum hypothesis,\" Annals of Pure and Applied Logic 76: 47-97."
+        },
+        {
+          "raw": "Foreman, M., M. Magidor, and S. Shelah, 1988, \"Martin's Maximum, saturated ideals, and non-regular ultrafilters. Part i,\" Annals of Mathematics 127: 1-47."
+        },
+        {
+          "raw": "G&ouml;del, K., 1938a. \"The consistency of the axiom of choice and of the generalized continuum-hypothesis,\" Proceedings of the U.S. National Academy of Sciences , 24: 556-7."
+        },
+        {
+          "raw": "G&ouml;del, K., 1938b. \"Consistency-proof for the generalized continuum-hypothesis,\" Proceedings of the U.S. National Academy of Sciemces , 25: 220-4."
+        },
+        {
+          "raw": "Hallett, M., 1984, Cantorian Set Theory and Limitation of Size , Vol. 10 of Oxford Logic Guides , Oxford University Press."
+        },
+        {
+          "raw": "Holz, M., K. Steffens, and E. Weitz, 1999, Introduction to Cardinal Arithmetic , Birkh&auml;user Advanced Texts, Birkh&auml;user Verlag, Basel."
+        },
+        {
+          "raw": "Jech, T. J., 2003, Set Theory: Third Millennium Edition, Revised and Expanded , Springer-Verlag, Berlin."
+        },
+        {
+          "raw": "Ketchersid, R., P. Larson, and J. Zapletal, 2010, \"Regular embeddings of the stationary tower and Woodin's Sigma-2-2 maximality theorem.\" Journal of Symbolic Logic 75(2):711-727."
+        },
+        {
+          "raw": "Koellner, P., 2010, \"Strong logics of first and second order,\" Bulletin of Symbolic Logic 16(1): 1-36."
+        },
+        {
+          "raw": "Koellner, P. and W. H. Woodin, 2009, \"Incompatible &Omega;-complete theories,\" The Journal of Symbolic Logic 74 (4)."
+        },
+        {
+          "raw": "Martin, D. A., 1976, \"Hilbert's first problem: The Continuum Hypothesis,\" in F. Browder (ed.), Mathematical Developments Arising from Hilbert's Problems , Vol. 28 of Proceedings of Symposia in Pure Mathematics , American Mathematical Society, Providence, pp. 81-92."
+        },
+        {
+          "raw": "Mitchell, W., 2010, \"Beginning inner model theory,\" in Foreman and Kanamori 2010."
+        },
+        {
+          "raw": "Steel, J. R., 2010, \"An outline of inner model theory,\" in Foreman and Kanamori 2010."
+        },
+        {
+          "raw": "Woodin, W. H., 1999, The Axiom of Determinacy, Forcing Axioms, and the Nonstationary Ideal , Vol. 1 of de Gruyter Series in Logic and its Applications , de Gruyter, Berlin."
+        },
+        {
+          "raw": "---, 2001a, \"The continuum hypothesis, part I,\" Notices of the American Mathematical Society 48(6): 567-576."
+        },
+        {
+          "raw": "---, 2001b, \"The continuum hypothesis, part II,\" Notices of the American Mathematical Society 48(7): 681-690."
+        },
+        {
+          "raw": "---, 2005a, \"The continuum hypothesis,\" in R. Cori, A. Razborov, S. Todor&#265;evi&#263; and C. Wood (eds), Logic Colloquium 2000 , Vol. 19 of Lecture Notes in Logic , Association of Symbolic Logic, pp. 143-197."
+        },
+        {
+          "raw": "---, 2005b, \"Set theory after Russell: the journey back to Eden,\" in G. Link (ed.), One Hundred Years Of Russell's Paradox: Mathematics, Logic, Philosophy , Vol. 6 of de Gruyter Series in Logic and Its Applications , Walter De Gruyter Inc, pp. 29-47."
+        },
+        {
+          "raw": "---, 2010, \"Suitable extender models I,\" Journal of Mathematical Logic 10(1-2): 101-339."
+        },
+        {
+          "raw": "---, 2011a, \"The Continuum Hypothesis, the generic-multiverse of sets, and the &Omega;-conjecture,\" in J. Kennedy and R. Kossak, (eds), Set Theory, Arithmetic, and Foundations of Mathematics: Theorems, Philosophies , Vol. 36 of Lecture Notes in Logic , Cambridge University Press."
+        },
+        {
+          "raw": "---, 2011b, \"Suitable extender models II,\" Journal of Mathematical Logic 11(2): 115-436."
+        }
+      ],
+      "publishedAt": "2013-05-21T14:00:00.000Z",
+      "revisedAt": "2013-05-21T14:00:00.000Z"
+    }
+  }
+}

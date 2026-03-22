@@ -1,0 +1,229 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/crossbario--autobahn-python",
+  "meta": {
+    "title": "Autobahn|Python",
+    "description": "WebSocket and WAMP in Python for Twisted and asyncio",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T07:01:01.509Z",
+    "dateModified": "2026-03-22T07:01:01.509Z",
+    "keywords": [
+      "autobahn",
+      "pubsub",
+      "python",
+      "real-time",
+      "rpc",
+      "wamp",
+      "websocket"
+    ],
+    "license": "NOASSERTION"
+  },
+  "problemSolved": {
+    "statement": "**Autobahn|Python** is a subproject of\n[Autobahn](https://crossbar.io/autobahn) and provides open-source\nimplementations of",
+    "context": "WebSocket & WAMP for Python on Twisted and asyncio.\n\n[![PyPI](https://img.shields.io/pypi/v/autobahn.svg)](https://pypi.python.org/pypi/autobahn)\n[![Python](https://img.shields.io/pypi/pyversions/autobahn.svg)](https://pypi.python.org/pypi/autobahn)\n[![CI](https://github.com/crossbario/autobahn-python/workflows/main/badge.svg)](https://github.com/crossbario/autobahn-python/actions?query=workflow%3Amain)\n[![CI (wstest)](https://github.com/crossbario/autobahn-python/workflows/wstest/badge.svg)](https://github.com/crossbario/autobahn-python/actions?query=workflow%3Awstest)\n[![CD (wheels)](https://github.com/crossbario/autobahn-python/workflows/wheels/badge.svg)](https://github.com/crossbario/autobahn-python/actions?query=workflow%3Awheels)\n[![CD (wheels-arm64)](https://github.com/crossbario/autobahn-python/workflows/wheels-arm64/badge.svg)](https://github.com/crossbario/autobahn-python/actions?query=workflow%3Awheels-arm64)\n[![CD (wheels-docker)](https://github.com/crossbario/autobahn-python/workflows/wheels-docker/badge.svg)](https://github.com/crossbario/autobahn-python/actions?query=workflow%3Awheels-docker)\n[![Docs](https://readthedocs.org/projects/autobahn/badge/?version=latest)](https://autobahn.readthedocs.io/en/latest/)\n[![License](https://img.shields.io/pypi/l/autobahn.svg)](https://github.com/crossbario/autobahn-python/blob/master/LICENSE)\n[![Downloads](https://img.shields.io/pypi/dm/autobahn.svg)](https://pypi.python.org/pypi/autobahn)\n\n---\n\n**Quick Links**:\n[Source Code](https://github.com/crossbario/autobahn-python) -\n[Documentation](https://autobahn.readthedocs.io/en/latest/) -\n[WebSocket Examples](https://autobahn.readthedocs.io/en/latest/websocket/examples.html) -\n[WAMP Examples](https://autobahn.readthedocs.io/en/latest/wamp/examples.html)\n**Community**:\n[Forum](https://crossbar.discourse.group/) -\n[StackOverflow](https://stackoverflow.com/questions/tagged/autobahn) -\n[Twitter](https://twitter.com/autobahnws) -\n[IRC \\#autobahn/chat.freenode.net](https://webchat.freenode.net/)\n**Companion\nProjects**:\n[Autobahn|JS](https://github.com/crossbario/autobahn-js/) -\n[Autobahn|Cpp](https://github.com/crossbario/autobahn-cpp) -\n[Autobahn|Testsuite](https://github.com/crossbario/autobahn-testsuite) -\n[Crossbar.io](https://crossbar.io) -\n[WAMP](https://wamp-proto.org)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "2534 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "769 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T07:01:01.509Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/crossbario/autobahn-python",
+        "description": "GitHub repository: crossbario/autobahn-python"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://crossbar.io/autobahn",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "txaio",
+        "version": ">=25.12.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/txaio/"
+      },
+      {
+        "name": "cryptography",
+        "version": ">=3.4.6",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/cryptography/"
+      },
+      {
+        "name": "cffi",
+        "version": ">=2.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/cffi/"
+      },
+      {
+        "name": "hyperlink",
+        "version": ">=21.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/hyperlink/"
+      },
+      {
+        "name": "importlib-resources",
+        "version": ">=5.0.0; python_version < '3.10'",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/importlib-resources/"
+      },
+      {
+        "name": "msgpack",
+        "version": ">=1.0.2; platform_python_implementation == 'CPython'",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/msgpack/"
+      },
+      {
+        "name": "u-msgpack-python",
+        "version": ">=2.1; platform_python_implementation != 'CPython'",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/u-msgpack-python/"
+      },
+      {
+        "name": "ujson",
+        "version": ">=4.0.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/ujson/"
+      },
+      {
+        "name": "cbor2",
+        "version": ">=5.2.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/cbor2/"
+      },
+      {
+        "name": "py-ubjson",
+        "version": ">=0.16.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/py-ubjson/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "crossbario",
+        "type": "human",
+        "uri": "https://github.com/crossbario"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 4072,
+      "validation_diversity": 0.71,
+      "context_breadth": 0.57,
+      "temporal_stability": 0.82,
+      "test_coverage": 0.17,
+      "documentation_quality": 0.7
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.634
+  }
+}

@@ -1,0 +1,463 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/natural-selection",
+  "meta": {
+    "title": "Natural Selection",
+    "description": "Charles Darwin and Alfred Wallace are the two co-discoverers of natural selection (Darwin & Wallace 1858), though, between the two, Darwin is the principal theorist of the notion whose most famous work on the topic is On the Origin of Species (Darwin 1859). For Darwin, natural selection is a drawn-out, complex process involving multiple interconnected causes. Natural selection requires variation in a population of organisms. For the process to work, at least some of that variation must be heritable and passed on to organisms' descendants in some way. That variation is acted upon by the struggle for existence, a process that in effect \"selects\" variations conducive to the survival and reproduction of their bearers. Much like breeders choose which of their animals will reproduce and thereby create the various breeds of domesticated dogs, pigeons, and cattle, nature effectively \"selects\" which animals will breed and creates evolutionary change just as breeders do. Such \"selection\" by nature, natural selection, occurs as a result of the struggle for existence and, in the case of sexual populations, the struggle for mating opportunities. That struggle is itself the result of checks on the geometric population increase that would occur in the absence of the checks. All populations, even slow-breeding ones such as those of elephants, will increase in size in the absence of limitations on growth that are imposed by nature. These checks take different forms in different populations. Such limitations may take the form of limited food supply, limited nesting sites, predation, disease, harsh climactic conditions, and much else besides. One way or another, only some of the candidate reproducers in natural populations actually do reproduce, often because others simply die before maturity. Owing to the variations among the candidate reproducers, some have better chances of making it into the sample of actual reproducers than do others. If such variations are heritable, the offspring of those with the \"beneficial\" traits will be likely to produce especially many further descendants themselves. To use one of Darwin's own examples, wolves with especially long legs that allow them to run more quickly will be more likely to catch prey and thereby avoid starvation and so produce offspring that have especially long legs that allow them, in turn, to breed and produce still more long-legged descendants, and so on. By means of this iterative process, a trait conducive to reproduction that is initially found in one or a few population members will spread through the population. Multiple bouts of Darwin's process involving different traits, acting sequentially or in concert, may then explain both how speciation and the evolution of complex adaptations occur through the gradual evolution (change over time) of natural populations. Darwin aimed to convince his audience that even such structures as the vertebrate eye, which at first seem explicable only as the product of design, could instead be explained by incremental, directional evolution, a complex but still naturalistic process (Darwin 1859: ch. 6). What is initially a light sensitive patch may be transformed into an eye by means of a great many bouts of selection that gradually improve and enhance its sensitivity. Showing that something is explicable is importantly different from explaining it (Lennox 1991); still, a theory must be an explanatory sort of theory for it to accomplish either task. After Darwin, the appearance of novel species in the geological record and the existence of designed-appearing adaptations cannot be used as grounds for invoking supernatural causes as a matter of last explanatory resort.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T06:29:35.823Z",
+    "dateModified": "2026-03-22T06:29:35.823Z",
+    "datePublished": "2019-09-24T14:00:00.000Z",
+    "keywords": [
+      "adaptationism",
+      "confirmation",
+      "fitness",
+      "genetic drift",
+      "population genetics",
+      "replication",
+      "selection units"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Charles Darwin and Alfred Wallace are the two co-discoverers of natural selection (Darwin & Wallace 1858), though, between the two, Darwin is the principal theorist of the notion whose most famous work on the topic is On the Origin of Species (Darwin 1859). For Darwin, natural selection is a drawn-out, complex process involving multiple interconnected causes. Natural selection requires variation in a population of organisms. For the process to work, at least some of that variation must be heritable and passed on to organisms' descendants in some way. That variation is acted upon by the struggle for existence, a process that in effect \"selects\" variations conducive to the survival and reproduction of their bearers. Much like breeders choose which of their animals will reproduce and thereby create the various breeds of domesticated dogs, pigeons, and cattle, nature effectively \"selects\" which animals will breed and creates evolutionary change just as breeders do. Such \"selection\" by nature, natural selection, occurs as a result of the struggle for existence and, in the case of sexual populations, the struggle for mating opportunities. That struggle is itself the result of checks on the geometric population increase that would occur in the absence of the checks. All populations, even slow-breeding ones such as those of elephants, will increase in size in the absence of limitations on growth that are imposed by nature. These checks take different forms in different populations. Such limitations may take the form of limited food supply, limited nesting sites, predation, disease, harsh climactic conditions, and much else besides. One way or another, only some of the candidate reproducers in natural populations actually do reproduce, often because others simply die before maturity. Owing to the variations among the candidate reproducers, some have better chances of making it into the sample of actual reproducers than do others. If such variations are heritable, the offspring of those with the \"beneficial\" traits will be likely to produce especially many further descendants themselves. To use one of Darwin's own examples, wolves with especially long legs that allow them to run more quickly will be more likely to catch prey and thereby avoid starvation and so produce offspring that have especially long legs that allow them, in turn, to breed and produce still more long-legged descendants, and so on. By means of this iterative process, a trait conducive to reproduction that is initially found in one or a few population members will spread through the population. Multiple bouts of Darwin's process involving different traits, acting sequentially or in concert, may then explain both how speciation and the evolution of complex adaptations occur through the gradual evolution (change over time) of natural populations. Darwin aimed to convince his audience that even such structures as the vertebrate eye, which at first seem explicable only as the product of design, could instead be explained by incremental, directional evolution, a complex but still naturalistic process (Darwin 1859: ch. 6). What is initially a light sensitive patch may be transformed into an eye by means of a great many bouts of selection that gradually improve and enhance its sensitivity. Showing that something is explicable is importantly different from explaining it (Lennox 1991); still, a theory must be an explanatory sort of theory for it to accomplish either task. After Darwin, the appearance of novel species in the geological record and the existence of designed-appearing adaptations cannot be used as grounds for invoking supernatural causes as a matter of last explanatory resort.",
+    "context": "Opening section: 1. Two Conceptions of Natural Selection | Related entries: adaptationism, confirmation, fitness, genetic-drift, population-genetics, selection-units, replication",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "general-philosophy"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry natural-selection",
+        "uri": "https://plato.stanford.edu/entries/natural-selection/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 7 related entries, bibliography size 77"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2019-09-24T14:00:00.000Z and revised 2024-03-03T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2024-03-03T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/natural-selection/",
+        "description": "SEP entry for natural-selection"
+      }
+    ],
+    "solutionApproach": "1. Two Conceptions of Natural Selection"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/adaptationism",
+      "ocp:sep/confirmation",
+      "ocp:sep/fitness",
+      "ocp:sep/genetic-drift",
+      "ocp:sep/population-genetics",
+      "ocp:sep/selection-units",
+      "ocp:sep/replication"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Gildenhuys, Peter",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/natural-selection/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 67,
+      "validation_diversity": 0.41,
+      "context_breadth": 0.4,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.96,
+      "documentation_quality": 0.89
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.512
+  },
+  "extensions": {
+    "sep": {
+      "slug": "natural-selection",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/natural-selection/",
+      "preamble": "Charles Darwin and Alfred Wallace are the two co-discoverers of natural selection (Darwin & Wallace 1858), though, between the two, Darwin is the principal theorist of the notion whose most famous work on the topic is On the Origin of Species (Darwin 1859). For Darwin, natural selection is a drawn-out, complex process involving multiple interconnected causes. Natural selection requires variation in a population of organisms. For the process to work, at least some of that variation must be heritable and passed on to organisms' descendants in some way. That variation is acted upon by the struggle for existence, a process that in effect \"selects\" variations conducive to the survival and reproduction of their bearers. Much like breeders choose which of their animals will reproduce and thereby create the various breeds of domesticated dogs, pigeons, and cattle, nature effectively \"selects\" which animals will breed and creates evolutionary change just as breeders do. Such \"selection\" by nature, natural selection, occurs as a result of the struggle for existence and, in the case of sexual populations, the struggle for mating opportunities. That struggle is itself the result of checks on the geometric population increase that would occur in the absence of the checks. All populations, even slow-breeding ones such as those of elephants, will increase in size in the absence of limitations on growth that are imposed by nature. These checks take different forms in different populations. Such limitations may take the form of limited food supply, limited nesting sites, predation, disease, harsh climactic conditions, and much else besides. One way or another, only some of the candidate reproducers in natural populations actually do reproduce, often because others simply die before maturity. Owing to the variations among the candidate reproducers, some have better chances of making it into the sample of actual reproducers than do others. If such variations are heritable, the offspring of those with the \"beneficial\" traits will be likely to produce especially many further descendants themselves. To use one of Darwin's own examples, wolves with especially long legs that allow them to run more quickly will be more likely to catch prey and thereby avoid starvation and so produce offspring that have especially long legs that allow them, in turn, to breed and produce still more long-legged descendants, and so on. By means of this iterative process, a trait conducive to reproduction that is initially found in one or a few population members will spread through the population. Multiple bouts of Darwin's process involving different traits, acting sequentially or in concert, may then explain both how speciation and the evolution of complex adaptations occur through the gradual evolution (change over time) of natural populations. Darwin aimed to convince his audience that even such structures as the vertebrate eye, which at first seem explicable only as the product of design, could instead be explained by incremental, directional evolution, a complex but still naturalistic process (Darwin 1859: ch. 6). What is initially a light sensitive patch may be transformed into an eye by means of a great many bouts of selection that gradually improve and enhance its sensitivity. Showing that something is explicable is importantly different from explaining it (Lennox 1991); still, a theory must be an explanatory sort of theory for it to accomplish either task. After Darwin, the appearance of novel species in the geological record and the existence of designed-appearing adaptations cannot be used as grounds for invoking supernatural causes as a matter of last explanatory resort.",
+      "firstSectionTitle": "1. Two Conceptions of Natural Selection",
+      "firstSectionText": "Natural selection is chiefly discussed in two different ways among contemporary philosophers and biologists. One usage, the \"focused\" one, aims to capture only a single element of one iteration of Darwin's process under the rubric \"natural selection\", while the other, the \"capacious\" usage, aims to capture a full cycle under the same rubric. These are clearly alternative, non-competing uses of the term, and distinct philosophical controversies surround each one. This section distinguishes these two uses and the following two sections are dedicated to the debates that surround each one. Sections 4 and 5 consider how natural selection connects to explanation and causation. In Darwin's wake, theorists have developed formal, quantitative approaches to modeling Darwin's process. The \"focused\" usage of natural selection finds its home as an interpretation of a single term in some of these formalisms (and only some of them). Below, we will consider two formal approaches, type recursions and the Price Equation, elements of which have been interpreted as quantifying selection. In the Price Equation, the covariance of offspring number and phenotype is interpreted as quantifying selection; in type recursions, fitness variables (or, equivalently, selection coefficients) are interpreted as quantifying selection. What makes these interpretations focused is that they quantify only a single element of Darwin's process using the notion natural selection; other facets of Darwin's process are handled in other ways. So, in type recursions for instance, type frequency variables quantify how the population varies, and \"spontaneous\" variations are quantified by mutation parameters. Similarly, in the Price Equation, inheritance is captured by a different term than the term that is interpreted as quantifying natural selection. The point is that each formal apparatus as a whole is understood to capture Darwin's process, while only a single element of that apparatus is said to refer to natural selection. Some philosophers' definitions of natural selection are clearly intended to capture this focused usage of the term. Millstein, for instance, characterizes selection as a discriminate sampling process (Millstein 2002: 35). Otsuka identifies natural selection with the causal influence of traits on offspring number in causal-graphical models (Otsuka 2016: 265). Okasha interprets the covariance of offspring number and offspring phenotype as quantifying the causal influence of selection (Okasha 2006: 28) Clearly, these uses of \"natural selection\" are meant to capture only an element of Darwin's process; they make no mention of inheritance or replication. As discussed further below, controversies over the focused notion of selection have to do with whether the focused notion of selection can be distinguished from that of drift ( section 3 ), and whether selection, in the focused sense, should be counted as a cause ( section 5 ). The alternative, \"capacious\", usage of the notion of natural selection is to capture Darwin's process in its entirety, rather than a single contributor to it. Because Darwin's process is cyclical, specifying what is sufficient for a single cycle of it, a single instance of, say, replication of genes for long legs caused by long-legged wolves making narrow captures, is sufficient to specify a process that may explain adaptation and speciation. This is true, anyway, when it is added that the process gets repeated. The capacious notion, capturing a cycle of Darwin's process, is used by Lewontin and later authors working in the same vein, who put forward conditions for evolution by natural selection: these include variation, inheritance, and reproduction. While falling within the scope of \"natural selection\" in the capacious sense used by Lewontin, these elements of Darwin's process are treated as distinct from natural selection when that notion is used in its focused sense.",
+      "relatedEntries": [
+        "adaptationism",
+        "confirmation",
+        "fitness",
+        "genetic-drift",
+        "population-genetics",
+        "selection-units",
+        "replication"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "adaptationism"
+        },
+        {
+          "slug": "confirmation"
+        },
+        {
+          "slug": "fitness"
+        },
+        {
+          "slug": "genetic-drift"
+        },
+        {
+          "slug": "population-genetics"
+        },
+        {
+          "slug": "selection-units"
+        },
+        {
+          "slug": "replication"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 77,
+      "bibliography": [
+        {
+          "raw": "Barros, D. Benjamin, 2008, \"Natural Selection as a Mechanism\", Philosophy of Science , 75(3): 306-322. doi:10.1086/593075"
+        },
+        {
+          "raw": "Bayliss, Christopher D., Dawn Field, and Richard Moxon, \"The Simple Sequence Contingency Loci of Haemophilus Influenzae and Neisseria Meningitidis \", Journal of Clinical Investigation , 107(6): 657-662. doi:10.1172/JCI12557"
+        },
+        {
+          "raw": "Beatty, John, 1992, \"Random Drift\", in Evelyn Fox Keller and Elisabeth A. Lloyd (ed.), Keywords in Evolutionary Biology , Cambridge, MA: Harvard University Press, pp. 273-281."
+        },
+        {
+          "raw": "---, 2016, \"The Creativity of Natural Selection? Part 1: Darwin, Darwinism, and the mutationists\", Journal of the history of Biology , 49: 659-684. doi:10.1007/s10739-016-9456-5"
+        },
+        {
+          "raw": "---, 2019, \"The Creativity of Natural Selection? Part 2: the synthesis and since\", Journal of the history of Biology , 52(4): 705-731. doi:10.1007/s10739-019-09583-4"
+        },
+        {
+          "raw": "Birch, Jonathan, 2012, \"The Negative View of Natural Selection\", Studies in History and Philosophy of Science Part C: Studies in History and Philosophy of Biological and Biomedical Sciences , 43(2): 569-573. doi:10.1016/j.shpsc.2012.02.002"
+        },
+        {
+          "raw": "Bouchard, Fr&eacute;d&eacute;ric and Alex Rosenberg, 2004, \"Fitness, Probability and the Principles of Natural Selection\", The British Journal for the Philosophy of Science , 55(4): 693-712. doi:10.1093/bjps/55.4.693"
+        },
+        {
+          "raw": "Bourrat, Pierrick, 2015, \"How to Read 'Heritability' in the Recipe Approach to Natural Selection\", The British Journal for the Philosophy of Science , 66(4): 883-903. doi:10.1093/bjps/axu015"
+        },
+        {
+          "raw": "Brandon, Robert N., 1978, \"Adaptation and Evolutionary Theory\", Studies in History and Philosophy of Science Part A , 9(3): 181-206. doi:10.1016/0039-3681(78)90005-5"
+        },
+        {
+          "raw": "---, 1990, Adaptation and Environment , Princeton, NJ: Princeton University Press."
+        },
+        {
+          "raw": "---, 2005, \"The Difference Between Selection and Drift: A Reply to Millstein\", Biology & Philosophy , 20(1): 153-170. doi:10.1007/s10539-004-1070-9"
+        },
+        {
+          "raw": "---, 2006, \"The Principle of Drift: Biology's First Law\", Journal of Philosophy , 103(7): 319-335. doi:10.5840/jphil2006103723"
+        },
+        {
+          "raw": "Brandon, Robert N. and John Beatty, 1984, \"The Propensity Interpretation of 'Fitness' - No Interpretation is No Substitute\", Philosophy of Science , 51(2): 342-347."
+        },
+        {
+          "raw": "Campbell, Richmond and Jason Scott Robert, 2005, \"The Structure of Evolution by Natural Selection\", Biology & Philosophy , 20(4): 673-696. doi:10.1007/s10539-004-2439-5"
+        },
+        {
+          "raw": "Charlat, Sylvain, Andre Ariew, Pierrick Bourrat, Maria Ferreira Ruiz, Thomas Heams, Phillipe Heneman, Sandeep Krishna, Michael Lachmann, Nicholas Lartillot, Louis Le Sergeant d'Hendecourt, Christophe Malterre, Phillipe Nghe, Etienne Rajon, Olivier rivoire, Matteo Smerlak, Zorana Zeravcic, 2021, \"Natural Selection Beyond Life? A Workshop Report\", Life , 11(10). doi:10.3390/life11101051"
+        },
+        {
+          "raw": "Darwin, Charles, 1859, On the Origin of Species , London: John Murray."
+        },
+        {
+          "raw": "---, 1877, The Different Forms of Flowers on Plants of the Same Species , London: John Murray. New York: New York University Press. [ Darwin 1877 available online ]"
+        },
+        {
+          "raw": "Darwin, Charles and Alfred Wallace, 1858, \"On the Tendency of Species to Form Varieties; and on the Perpetuation of Varieties and Species by Natural Means of Selection\", Journal of the Proceedings of the Linnean Society of London. Zoology , 3(9): 45-62. doi:10.1111/j.1096-3642.1858.tb02500.x"
+        },
+        {
+          "raw": "Dawkins, Richard, 1982, The Extended Phenotype: the Gene as the Unit of Selection , New York: Oxford University Press."
+        },
+        {
+          "raw": "Dempster, Everett R., 1955, \"Maintenance of Genetic Heterogeneity\", Cold Spring Harbor Symposia on Quantitative Biology , 20: 25-32. doi:10.1101/SQB.1955.020.01.005"
+        },
+        {
+          "raw": "DesAutels, Lane, 2016, \"Natural Selection and Mechanistic Regularity\", Studies in History and Philosophy of Science Part C: Studies in History and Philosophy of Biological and Biomedical Sciences , 57: 13-23. doi:10.1016/j.shpsc.2016.01.004"
+        },
+        {
+          "raw": "Earnshaw-Whyte, Eugene, 2012, \"Increasingly Radical Claims about Heredity and Fitness\", Philosophy of Science , 79(3): 396-412. doi:10.1086/666060"
+        },
+        {
+          "raw": "Gildenhuys, Peter, 2011, \"Righteous Modeling: The Competence of Classical Population Genetics\", Biology & Philosophy , 26(6): 813-835. doi:10.1007/s10539-011-9268-0"
+        },
+        {
+          "raw": "Glymour, Bruce, 2006, \"Wayward Modeling: Population Genetics and Natural Selection\", Philosophy of Science , 73(4): 369-389. doi:10.1086/516805"
+        },
+        {
+          "raw": "---, 2013, \"The Wrong Equations: A Reply to Gildenhuys\", Biology & Philosophy , 28(4): 675-681. doi:10.1007/s10539-013-9362-6"
+        },
+        {
+          "raw": "Godfrey-Smith, Peter, 2000, \"The Replicator in Retrospect\", Biology & Philosophy , 15(3): 403-423. doi:10.1023/A:1006704301415"
+        },
+        {
+          "raw": "---, 2007, \"Conditions for Evolution by Natural Selection\":, Journal of Philosophy , 104(10): 489-516. doi:10.5840/jphil2007104103"
+        },
+        {
+          "raw": "Gould, Stephen J. and Richard C. Lewontin, 1979, \"The Spandrels of San Marco and the Panglossian Paradigm\", Proceedings of the Royal Society of London , 205(1161): 581-598. doi:10.1098/rspb.1979.0086"
+        },
+        {
+          "raw": "Grafen, Alan, 2000, \"Developments of the Price Equation and Natural Selection under Uncertainty\", Proceedings of the Royal Society of London. Series B: Biological Sciences , 267(1449): 1223-1227. doi:10.1098/rspb.2000.1131"
+        },
+        {
+          "raw": "Havstad, Joyce C., 2011, \"Problems for Natural Selection as a Mechanism\", Philosophy of Science , 78(3): 512-523. doi:10.1086/660734"
+        },
+        {
+          "raw": "Hedrick, Philip W., 2011, Genetics of Populations , fourth edition, Sudbury, MA: Jones and Bartlett Publishers."
+        },
+        {
+          "raw": "Hori, Michio, 1993, \"Frequency-Dependent Natural Selection in the Handedness of Scale-Eating Cichlid Fish\", Science , 260(5105): 216-219. doi:10.1126/science.260.5105.216"
+        },
+        {
+          "raw": "Hull, David L., 1988, Science as a Process: An Evolutionary Account of the Social and Conceptual Development of Science , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "---, 2001, Science and Selection: Essays on Biological Evolution and the Philosophy of Science , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Jantzen, Benjamin C., 2019, \"Kinds of Process and the Levels of Selection\", Synthese , 196(6): 2407-2433. doi:10.1007/s11229-017-1546-1"
+        },
+        {
+          "raw": "Kerr, Benjamin and Peter Godfrey-Smith, 2002, \"Individualist and Multi-Level Perspectives on Selection in Structured Populations\", Biology & Philosophy , 17(4): 477-517. doi:10.1023/A:1020504900646"
+        },
+        {
+          "raw": "Krupp, D.B., 2016, \"Causality and the Levels of Selection\", Trends in Ecology & Evolution , 31(4): 255-257. doi:10.1016/j.tree.2016.01.008"
+        },
+        {
+          "raw": "Lennox, James G., 1991, \"Darwinian Thought Experiments: A Function For Just So Stories\", in Tamara Horowitz and Gerald J. Massey (eds.), Thought Experiments in Science and Philosophy , Savage, MD: Rowman and Littlefield, pp. 173-195."
+        },
+        {
+          "raw": "Lennox, James G. and Bradley E. Wilson, 1994, \"Natural Selection and the Struggle for Existence\", Studies in History and Philosophy of Science Part A , 25(1): 65-80. doi:10.1016/0039-3681(94)90020-5"
+        },
+        {
+          "raw": "Lewontin, Richard C, 1970, \"The Units of Selection\", Annual Review of Ecology and Systematics , 1(1): 1-18. doi:10.1146/annurev.es.01.110170.000245"
+        },
+        {
+          "raw": "---, 1978, \"Adaptation\", Scientific American , 239(3): 212-230. doi:10.1038/scientificamerican0978-212"
+        },
+        {
+          "raw": "Machamer, Peter, Lindley Darden, and Carl F. Craver, 2000, \"Thinking about Mechanisms\", Philosophy of Science , 67(1): 1-25. doi:10.1086/392759"
+        },
+        {
+          "raw": "Matthen, Mohan, Andre Ariew, 2002, \"Two Ways of Thinking about Fitness and Natural Selection\", The Journal of Philosophy , XCIX(2): 55-83. doi:10.2307/3655552"
+        },
+        {
+          "raw": "Matthews, Lucas J., 2016, \"On Closing the Gap between Philosophical Concepts and Their Usage in Scientific Practice: A Lesson from the Debate about Natural Selection as Mechanism\", Studies in History and Philosophy of Science Part C: Studies in History and Philosophy of Biological and Biomedical Sciences , 55: 21-28. doi:10.1016/j.shpsc.2015.11.012"
+        },
+        {
+          "raw": "Maynard Smith, John, 1991, \"A Darwinian View of Symbiosis\", in Lynn Margulis and Ren&eacute; Fester (eds), Symbiosis as a Source of Evolutionary Innovation , Cambridge, MA: MIT Press, pp. 26-39."
+        },
+        {
+          "raw": "Mayr, Ernst, 1983, \"How to Carry Out the Adaptationist Program?\", The American Naturalist , 121(3): 324-334. doi:10.1086/284064"
+        },
+        {
+          "raw": "Mills, Susan K. and John H. Beatty, 1979, \"The Propensity Interpretation of Fitness\", Philosophy of Science , 46(2): 263-286. doi:10.1086/288865"
+        },
+        {
+          "raw": "Millstein, Roberta L., 2002, \"Are Random Drift and Natural Selection Conceptually Distinct?\", Biology & Philosophy , 17(1): 33-53. doi:10.1023/A:1012990800358"
+        },
+        {
+          "raw": "---, 2009, \"Populations as Individuals\", Biological Theory , 4(3): 267-273. doi:10.1162/biot.2009.4.3.267"
+        },
+        {
+          "raw": "Neander, Karen, 1988, \"What Does Natural Selection Explain? Correction to Sober\", Philosophy of Science , 55(3): 422-426. doi:10.1086/289446"
+        },
+        {
+          "raw": "---, 1995, \"Explaining Complex Adaptations: A Reply to Sober's 'Reply to Neander'\", The British Journal for the Philosophy of Science , 46(4): 583-587. doi:10.1093/bjps/46.4.583"
+        },
+        {
+          "raw": "Ohta, T., 1973, \"Slightly Deleterious Mutant Substitutions in Evolution\", Nature , 246(5428): 96-8. doi:10.1038/246096a0"
+        },
+        {
+          "raw": "Okasha, Samir, 2006, Evolution and the Levels of Selection , New York: Oxford University Press. doi:10.1093/acprof:oso/9780199267972.001.0001"
+        },
+        {
+          "raw": "---, 2016, \"The Relation between Kin and Multilevel Selection: An Approach Using Causal Graphs\", The British Journal for the Philosophy of Science , 67(2): 435-470. doi:10.1093/bjps/axu047"
+        },
+        {
+          "raw": "Otsuka, Jun, 2016, \"Causal Foundations of Evolutionary Genetics\", The British Journal for the Philosophy of Science , 67(1): 247-269. doi:10.1093/bjps/axu039"
+        },
+        {
+          "raw": "Papale, Francois, 2021, \"Evolution by Means of Natural Selection without Reproduction: revamping Lewontin's account\", Synthese , 198(11): 10429-10455. doi:10.1007/s11229-020-02729-6"
+        },
+        {
+          "raw": "Pust, Joel, 2004, \"Natural Selection and the Traits of Individual Organisms\", Biology & Philosophy , 19(5): 765-779. doi:10.1007/s10539-005-0888-0"
+        },
+        {
+          "raw": "Razeto-Barry, P. and R. Frick, \"Probabilistic causation and the explanatory role of natural selection\", Studies in History and Philosophy of Science Part C: Studies in History and Philosophy of Biological and Biomedical Sciences , 42(3): 344-355. doi:10.1016/j.shpsc.2011.03.001"
+        },
+        {
+          "raw": "Reisman, Kenneth and Patrick Forber, 2005, \"Manipulation and the Causes of Evolution\", Philosophy of Science , 72(5): 1113-1123. doi:10.1086/508120"
+        },
+        {
+          "raw": "Reydon, Thomas A. C., 2011, \"The Arrival of the Fittest What?\", in D. Diecks, W.J. Gonzales, S. Hartmann, T. Uebel & M. Weber (eds.), Explanation, Prediction, and Confirmation , Dordrecht: Springer, pp. 162-187."
+        },
+        {
+          "raw": "---, 2023, \"The Proper Role of History in Evolutionary Explanations\", Nous , 57(1): 162-187. doi: 10.1111/nous.12402."
+        },
+        {
+          "raw": "Rice, Sean H., 2004, Evolutionary Theory: Mathematical and Conceptual Foundations , Sunderland, MA: Sinauer and Associates."
+        },
+        {
+          "raw": "Rosenberg, Alexander, 1982, \"On the Propensity Definition of Fitness\", Philosophy of Science , 49(2): 268-273."
+        },
+        {
+          "raw": "Skipper, Robert A. and Roberta L. Millstein, 2005, \"Thinking about Evolutionary Mechanisms: Natural Selection\", Studies in History and Philosophy of Science Part C: Studies in History and Philosophy of Biological and Biomedical Sciences , 36(2): 327-347. doi:10.1016/j.shpsc.2005.03.006"
+        },
+        {
+          "raw": "Sober, Elliott, 1984, The Nature Of Selection: Evolutionary Theory In Philosophical Focus , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 1995, \"Natural Selection and Distributive Explanation: A Reply to Neander\", The British Journal for the Philosophy of Science , 46(3): 384-397. doi:10.1093/bjps/46.3.384"
+        },
+        {
+          "raw": "---, 2000, Philosophy of Biology , Boulder, CO: Westview Press."
+        },
+        {
+          "raw": "Sober, Elliott and David Sloan Wilson, 1998, Unto Others: The Evolution and Psychology of Unselfish Behavior , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Tennant, Neil, 2014, \"The Logical Structure of Evolutionary Explanation and Prediction: Darwinism's Fundamental Schema\", Biology & Philosophy , 29(5): 611-655. doi:10.1007/s10539-014-9444-0"
+        },
+        {
+          "raw": "Villegas, Cristina, 2024, \"Causing and Composing Evolution: lessons from evo-devo mechanisms\", in J.L. Cordovil, G. Santos, D. Vecchi (eds.), New Mechanism. History, Philosophy and Theory of the Life Sciences (Volume 35), Cham: Springer. doi:10.1007/978-3-031-46917-6_4."
+        },
+        {
+          "raw": "Walsh, D.M., 1998, \"The Scope of Selection: Sober and Neander on What Natural Selection Explains\", Australasian Journal of Philosophy , 76(2): 250-264. doi:10.1080/00048409812348391"
+        },
+        {
+          "raw": "---, 2004, \"Bookkeeping or Metaphysics? The Units of Selection Debate\", Synthese , 138(3): 337-361. doi:10.1023/B:SYNT.0000016426.73707.92"
+        },
+        {
+          "raw": "---, 2007, \"The Pomp of Superfluous Causes: The Interpretation of Evolutionary Theory*\", Philosophy of Science , 74(3): 281-303. doi:10.1086/520777"
+        },
+        {
+          "raw": "Walsh, Denis M., Andr&eacute; Ariew, and Mohan Matthen, 2017, \"Four Pillars of Statisticalism\", Philosophy, Theory, and Practice in Biology , 9(1). doi:10.3998/ptb.6959004.0009.001 [ Walsh, Ariew, & Matthen 2017 available online ]"
+        },
+        {
+          "raw": "Walsh, Denis, Tim Lewens, and Andr&eacute; Ariew, 2002, \"The Trials of Life: Natural Selection and Random Drift*\", Philosophy of Science , 69(3): 429-446. doi:10.1086/342454"
+        },
+        {
+          "raw": "Woodward, James, 2003, Making Things Happen: A Theory of Causal Explanation , New York: Oxford University Press. doi:10.1093/0195155270.001.0001"
+        },
+        {
+          "raw": "Zurek, Wojciech Hubert, 2009, \"Quantum Darwinism\", Nature Physics , 5(3): 181-188. doi:10.1038/nphys1202"
+        }
+      ],
+      "publishedAt": "2019-09-24T14:00:00.000Z",
+      "revisedAt": "2024-03-03T13:00:00.000Z"
+    }
+  }
+}

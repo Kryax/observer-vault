@@ -1,0 +1,454 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/closure-epistemic",
+  "meta": {
+    "title": "Epistemic Closure",
+    "description": "Most of us think we can safely enlarge our knowledge base by accepting things that are entailed by (or logically implied by) things we know. Roughly speaking, the set of things we know is closed under entailment (or under deduction or logical implication), so we know that a given claim is true upon recognizing, and accepting thereby, that it follows from what we know. This is not to say that our usual way of adding to our knowledge is simply to recognize and accept what follows from what we already know. Obviously much more is involved. For instance, we gather data and construct explanations of those data, and under suitable circumstances we learn from others. More to the point at hand, when we claim that we know, of some proposition, that it is true, that claim is itself subject to error; often, seeing what follows from a knowledge claim prompts us to reassess and even withdraw our claim, instead of concluding, of the things that follow from it, that we know that they are true. Still, it seems reasonable to think that if we do know that some proposition is true then we are in a position to know, of the things that follow from it, that they, too, are true. However, some theorists have denied that knowledge is closed under entailment. The arguments against closure include the following: The argument from the analysis of knowledge : given the correct analysis, knowledge is not closed, so it isn't. For example, if the correct analysis includes a tracking condition, then closure fails. The argument from nonclosure of knowledge modes : since the modes of gaining, preserving or extending knowledge, such as perception, testimony, proof, memory, indication, and information are not individually closed, neither is knowledge. The argument from unknowable (or not easily knowable) propositions : certain sorts of propositions cannot be known (without special measures); given closure, they could be known (without special measures), by deducing them from mundane claims we known, so knowledge is not closed. The argument from skepticism : skepticism is false but it would be true if knowledge were closed, so knowledge is not closed. While proponents of closure have responses to these arguments, they also argue, somewhat in the style of G. E. Moore (1959), that closure itself is a firm datum--it is obvious enough to rule out any understanding of knowledge or related notions that undermines closure. A closely related idea is that it is rational (justifiable) for us to believe anything that follows from what it is rational for us to believe. This idea is intimately related to the thesis that knowledge is closed, since, according to some theorists, knowing p entails justifiably believing p . If knowledge entails justification, closure failure of the latter might lead to closure failure of the former.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T07:30:10.918Z",
+    "dateModified": "2026-03-22T07:30:10.918Z",
+    "datePublished": "2001-12-30T13:00:00.000Z",
+    "keywords": [
+      "confirmation",
+      "contextualism epistemology",
+      "evidence",
+      "knowledge analysis",
+      "reliabilism",
+      "skepticism",
+      "skepticism content externalism"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Most of us think we can safely enlarge our knowledge base by accepting things that are entailed by (or logically implied by) things we know. Roughly speaking, the set of things we know is closed under entailment (or under deduction or logical implication), so we know that a given claim is true upon recognizing, and accepting thereby, that it follows from what we know. This is not to say that our usual way of adding to our knowledge is simply to recognize and accept what follows from what we already know. Obviously much more is involved. For instance, we gather data and construct explanations of those data, and under suitable circumstances we learn from others. More to the point at hand, when we claim that we know, of some proposition, that it is true, that claim is itself subject to error; often, seeing what follows from a knowledge claim prompts us to reassess and even withdraw our claim, instead of concluding, of the things that follow from it, that we know that they are true. Still, it seems reasonable to think that if we do know that some proposition is true then we are in a position to know, of the things that follow from it, that they, too, are true. However, some theorists have denied that knowledge is closed under entailment. The arguments against closure include the following: The argument from the analysis of knowledge : given the correct analysis, knowledge is not closed, so it isn't. For example, if the correct analysis includes a tracking condition, then closure fails. The argument from nonclosure of knowledge modes : since the modes of gaining, preserving or extending knowledge, such as perception, testimony, proof, memory, indication, and information are not individually closed, neither is knowledge. The argument from unknowable (or not easily knowable) propositions : certain sorts of propositions cannot be known (without special measures); given closure, they could be known (without special measures), by deducing them from mundane claims we known, so knowledge is not closed. The argument from skepticism : skepticism is false but it would be true if knowledge were closed, so knowledge is not closed. While proponents of closure have responses to these arguments, they also argue, somewhat in the style of G. E. Moore (1959), that closure itself is a firm datum--it is obvious enough to rule out any understanding of knowledge or related notions that undermines closure. A closely related idea is that it is rational (justifiable) for us to believe anything that follows from what it is rational for us to believe. This idea is intimately related to the thesis that knowledge is closed, since, according to some theorists, knowing p entails justifiably believing p . If knowledge entails justification, closure failure of the latter might lead to closure failure of the former.",
+    "context": "Opening section: 1. Knowledge Closure | Related entries: confirmation, contextualism-epistemology, evidence, knowledge-analysis, reliabilism, skepticism, skepticism-content-externalism",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "epistemology"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry closure-epistemic",
+        "uri": "https://plato.stanford.edu/entries/closure-epistemic/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 7 related entries, bibliography size 74"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2001-12-30T13:00:00.000Z and revised 2016-02-23T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2016-02-23T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/closure-epistemic/",
+        "description": "SEP entry for closure-epistemic"
+      }
+    ],
+    "solutionApproach": "1. Knowledge Closure"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/confirmation",
+      "ocp:sep/contextualism-epistemology",
+      "ocp:sep/evidence",
+      "ocp:sep/knowledge-analysis",
+      "ocp:sep/reliabilism",
+      "ocp:sep/skepticism",
+      "ocp:sep/skepticism-content-externalism"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Luper, Steven",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/closure-epistemic/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 66,
+      "validation_diversity": 0.41,
+      "context_breadth": 0.4,
+      "temporal_stability": 0.84,
+      "test_coverage": 0.94,
+      "documentation_quality": 0.88
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.508
+  },
+  "extensions": {
+    "sep": {
+      "slug": "closure-epistemic",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/closure-epistemic/",
+      "preamble": "Most of us think we can safely enlarge our knowledge base by accepting things that are entailed by (or logically implied by) things we know. Roughly speaking, the set of things we know is closed under entailment (or under deduction or logical implication), so we know that a given claim is true upon recognizing, and accepting thereby, that it follows from what we know. This is not to say that our usual way of adding to our knowledge is simply to recognize and accept what follows from what we already know. Obviously much more is involved. For instance, we gather data and construct explanations of those data, and under suitable circumstances we learn from others. More to the point at hand, when we claim that we know, of some proposition, that it is true, that claim is itself subject to error; often, seeing what follows from a knowledge claim prompts us to reassess and even withdraw our claim, instead of concluding, of the things that follow from it, that we know that they are true. Still, it seems reasonable to think that if we do know that some proposition is true then we are in a position to know, of the things that follow from it, that they, too, are true. However, some theorists have denied that knowledge is closed under entailment. The arguments against closure include the following: The argument from the analysis of knowledge : given the correct analysis, knowledge is not closed, so it isn't. For example, if the correct analysis includes a tracking condition, then closure fails. The argument from nonclosure of knowledge modes : since the modes of gaining, preserving or extending knowledge, such as perception, testimony, proof, memory, indication, and information are not individually closed, neither is knowledge. The argument from unknowable (or not easily knowable) propositions : certain sorts of propositions cannot be known (without special measures); given closure, they could be known (without special measures), by deducing them from mundane claims we known, so knowledge is not closed. The argument from skepticism : skepticism is false but it would be true if knowledge were closed, so knowledge is not closed. While proponents of closure have responses to these arguments, they also argue, somewhat in the style of G. E. Moore (1959), that closure itself is a firm datum--it is obvious enough to rule out any understanding of knowledge or related notions that undermines closure. A closely related idea is that it is rational (justifiable) for us to believe anything that follows from what it is rational for us to believe. This idea is intimately related to the thesis that knowledge is closed, since, according to some theorists, knowing p entails justifiably believing p . If knowledge entails justification, closure failure of the latter might lead to closure failure of the former.",
+      "firstSectionTitle": "1. Knowledge Closure",
+      "firstSectionText": "Precisely what is meant by the claim that knowledge is closed under entailment? One response is that the following straight principle of closure of knowledge under entailment is true: The conditional involved in the straight principle might be the material conditional, the subjunctive conditional, or entailment, yielding three possibilities, each stronger than the one before: However, each version of the straight principle is false, since we can know one thing, p , but fail to see that p entails q, or for some other reason fail to believe q . Since knowledge entails belief (according to nearly all theorists), we fail to know q . A less obvious worry is that we might reason badly in coming to believe that p entails q . Perhaps we think that p entails q because we think everything entails everything, or because we have a warm tingly feeling between our toes. Hawthorne (2005) raises the possibility that, in the course of grasping that p entails q , S will cease to know p . He also notes that SP1 is defensible on the (deviant) assumption that a thought, p , is equivalent to another, q , if p and q hold in all of the same possible worlds. Suppose p entails q . Then p is equivalent to the conjunction of p and q , and so the thought p is identical to the thought p and q . Hence in knowing p S knows p and q . Assuming that, in knowing p and q , S knows p and S knows q , then when S knows p S knows q , as SP1 says. The straight principle needs qualifying, but this should not concern us so long as the qualifications are natural given the idea we are trying to capture, namely, that we can extend our knowledge by recognizing, and accepting thereby, things that follow from something that we know. The qualifications embedded in the following principle (construed as a material conditional) seem natural enough: As Williamson (2000) notes, the idea that we can extend our knowledge by applying deduction to what we know supports a closure principle that is stronger than K . It is a principle that says we know things we believe on the grounds that they are jointly implied by several separate known items. Suppose I know Mary is tall and I know Mary is left handed. K does not authorize my putting these two pieces of knowledge together so as to know that Mary is tall and left handed. But the following generalized closure principle covers deductions involving separate known items: Some theorists distinguish between something they call \"single premise\" and something they call \"multiple-premise closure\". Such theorists would deny that K captures \"single premise\" closure, because K says that S knows q if S knows that two things are true: that p is true as well as that p entails q . The \"single premise\" closure principle is usually formulated roughly as follows (following Williamson 2002 and Hawthorne 2004): However, it is far from clear that one may competently deduce q from p without relying on any knowledge aside from p . Fortunately, it seems that nothing hinges on this possibility, except perhaps for people interested in whether we can identify something that can appropriately be labeled \"single premise closure principle\". Proponents of closure might accept both K and GK , perhaps further qualified in natural ways (but they might not: see the concerns about justification closure raised in section 6). By contrast, Fred Dretske and Robert Nozick reject K and therefore GK as well. They reject any closure principle, no matter how narrowly restricted, that warrants our knowing that skeptical hypotheses (e.g., I am a brain in a vat) are false on the basis of mundane knowledge claims (e.g., I am not in a vat). In addition to rejecting K and GK , they deny knowledge closure across instantiation and simplification, but not across equivalence (Nozick 1981: 227-229): Let us turn to their arguments.",
+      "relatedEntries": [
+        "confirmation",
+        "contextualism-epistemology",
+        "evidence",
+        "knowledge-analysis",
+        "reliabilism",
+        "skepticism",
+        "skepticism-content-externalism"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "confirmation"
+        },
+        {
+          "slug": "contextualism-epistemology"
+        },
+        {
+          "slug": "evidence"
+        },
+        {
+          "slug": "knowledge-analysis"
+        },
+        {
+          "slug": "reliabilism"
+        },
+        {
+          "slug": "skepticism"
+        },
+        {
+          "slug": "skepticism-content-externalism"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 74,
+      "bibliography": [
+        {
+          "raw": "Alston, W., 1993, The Reliability of Sense Perception , Ithaca: Cornell University Press."
+        },
+        {
+          "raw": "Armstrong, D., 1973, Belief, Truth and Knowledge , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Audi, R., 1995, \"Deductive Closure, Defeasibility and Scepticism: A Reply to Feldman.\" Philosophical Quarterly , 45: 494-499."
+        },
+        {
+          "raw": "Becker, K., 2009, Epistemology Modalized , New York: Routledge."
+        },
+        {
+          "raw": "Black, M., 1949, \"The Justification of Induction,\" Language and Philosophy , Cornell University Press."
+        },
+        {
+          "raw": "Black, T., and Murphy, P., 2007, \"In Defense of Sensitivity\", Synthese , 154(1): 53-71."
+        },
+        {
+          "raw": "Bogdan, R.J., 1985, \"Cognition and Epistemic Closure,\" American Philosophical Quarterly , 22: 55-63."
+        },
+        {
+          "raw": "BonJour, L., 1987, \"Nozick, Externalism, and Skepticism,\" in Luper 1987a, 297-313."
+        },
+        {
+          "raw": "Brueckner, A., 1985a, \"Losing Track of the Sceptic,\" Analysis , 45: 103-104."
+        },
+        {
+          "raw": "---, 1985b, \"Skepticism and Epistemic Closure,\" Philosophical Topics , 13: 89-117."
+        },
+        {
+          "raw": "---, 1985c, \"Transmission for Knowledge Not Established,\" Philosophical Quarterly , 35: 193-196."
+        },
+        {
+          "raw": "---, 2012, \"Roush on Knowledge: Tracking Redux?,\" in K. Becker and T. Black (eds.), The Sensitivity Principle in Epistemology , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Cohen, S., 1987, \"Knowledge, Context, and Social Standards,\" Synthese , 73: 3-26."
+        },
+        {
+          "raw": "---, 1988, \"How to be a Fallibilist,\" Philosophical Perspectives 2: Epistemology , Atascadero, CA: Ridgeview, 91-123."
+        },
+        {
+          "raw": "---, 1999, \"Contextualism, Skepticism, and the Structure of Reasons,\" Philosophical Perspectives 13: Epistemology , Atascadero, CA: Ridgeview, 57-89."
+        },
+        {
+          "raw": "---, 2002, \"Basic Knowledge and the Problem of Easy Knowledge,\" Philosophy and Phenomenological Research , 65.2: 309-329."
+        },
+        {
+          "raw": "Davies, M., 1998, \"Externalism, Architecturalism, and Epistemic Warrant,\" in Crispin Wright, Barry Smith, and Cynthia Macdonald (eds.), Knowing Our Own Minds, Oxford: Oxford University Press, pp. 321-361."
+        },
+        {
+          "raw": "DeRose, K., 1995, \"Solving the Skeptical Problem,\" Philosophical Review , 104: 1-52."
+        },
+        {
+          "raw": "Dretske, F., 1969, Seeing and Knowing , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "---, 1970, \"Epistemic Operators,\" Journal of Philosophy , 67: 1007-1023."
+        },
+        {
+          "raw": "---, 1971, \"Conclusive Reasons,\" Australasian Journal of Philosophy , 49: 1-22."
+        },
+        {
+          "raw": "---, 1972, \"Contrastive Statements,\" Philosophical Review , 81: 411-430."
+        },
+        {
+          "raw": "---, 2003, \"Skepticism: What Perception Teaches,\" in Luper 2003b, pp. 105-118."
+        },
+        {
+          "raw": "---, 2005, \"Is Knowledge Closed Under Known Entailment?\" in Steup 2005."
+        },
+        {
+          "raw": "Feldman, R., 1995, \"In Defense of Closure,\" Philosophical Quarterly , 45: 487-494."
+        },
+        {
+          "raw": "Firth, R., 1978, \"Are Epistemic Concepts Reducible to Ethical Concepts?\" in Alvin Goldman and Jaegwon Kim (eds.), Values and Morals , Dordrecht: D. Reidel Publishing Co."
+        },
+        {
+          "raw": "Fumerton, R., 1995, Metaepistemology , and Skepticism , Lanham, MD: Rowman and Littlefield."
+        },
+        {
+          "raw": "Goldman, A., 1976, \"Discrimination and Perceptual Knowledge,\" Journal of Philosophy , 73: 771-791."
+        },
+        {
+          "raw": "---, 1979, \"What is Justified Belief?,\" in Justification and Knowledge , G.S. Pappas (ed.), Dordrecht: D. Reidel."
+        },
+        {
+          "raw": "Goodman, N., 1955, Fact, Fiction, and Forecast . (4th ed.), Harvard University Press, 1983."
+        },
+        {
+          "raw": "Hales, S., 1995, Epistemic Closure Principles, Southern Journal of Philosophy , 33: 185-201."
+        },
+        {
+          "raw": "Harman, G. and Sherman, B., 2004, \"Knowledge, Assumptions, Lotteries,\" Philosophical Issues , 14: 492-500."
+        },
+        {
+          "raw": "Hawthorne, J., 2004, Knowledge and Lotteries , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2005, \"The Case for Closure,\" in Steup 2005."
+        },
+        {
+          "raw": "Jaeger, C. 2004, \"Skepticism, Information, and Closure: Dretske's Theory of Knowledge,\" Erkenntnis , 61: 187-201."
+        },
+        {
+          "raw": "Klein, P., 1981, Certainty: A Refutation of Skepticism , Minneapolis, MN: University of Minnesota Press."
+        },
+        {
+          "raw": "---, 1995, \"Skepticism and Closure: Why the Evil Genius Argument Fails,\" Philosophical Topics , 23: 213-236."
+        },
+        {
+          "raw": "---, 2004, \"Closure Matters: Academic Skepticism and Easy Knowledge,\" Philosophical Issues , 14(1): 165-184."
+        },
+        {
+          "raw": "Kripke, S., 2011, \"Nozick on Knowledge,\" in Philosophical Troubles (Collected Papers, Volume 1), New York: Oxford University Press."
+        },
+        {
+          "raw": "Kyburg, H., 1961, Probability and the Logic of Rational Belief , Dordrecht: Kluwer."
+        },
+        {
+          "raw": "Lewis, D., 1973, Counterfactuals , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 1979, \"Scorekeeping in a Language Game,\" Journal of Philosophical Logic , 8: 339-359."
+        },
+        {
+          "raw": "---, 1996, \"Elusive Knowledge,\" Australasian Journal of Philosophy , 74: 549-567."
+        },
+        {
+          "raw": "Luper, S., 1984, \"The Epistemic Predicament: Knowledge, Nozickian Tracking, and Skepticism,\" Australasian Journal of Philosophy , 62: 26-50."
+        },
+        {
+          "raw": "---, 1987b, \"The Possibility of Skepticism,\" in Luper 1987a."
+        },
+        {
+          "raw": "---, 1987c, \"The Causal Indicator Analysis of Knowledge,\" Philosophy and Phenomenological Research , 47: 563-587."
+        },
+        {
+          "raw": "---, 2003a, \"Indiscernability Skepticism,\" in S. Luper 2003b, pp. 183-202."
+        },
+        {
+          "raw": "---, 2004, \"Epistemic Relativism,\" Philosophical Issues , 14, a supplement to No&ucirc;s , 2004, 271-295."
+        },
+        {
+          "raw": "---, 2006, \"Dretske on Knowledge Closure,\" Australasian Journal of Philosophy , 84(3): 379-394."
+        },
+        {
+          "raw": "---, 2012, \"False Negatives,\" in K. Becker and T. Black (eds.), The Sensitivity Principle in Epistemology , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Moore, G. E., 1959, \"Proof of an External World,\" and \"Certainty,\" in Philosophical Papers , London: George Allen & Unwin, Ltd."
+        },
+        {
+          "raw": "Murphy, P., 2005, \"Closure Failures for Safety,\" Philosophia , 33: 331-334."
+        },
+        {
+          "raw": "Nozick, R., 1981, Philosophical Explanations , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Papineau, D., 1992, \"Reliabilism, Induction, and Scepticism,\" The Philosophical Quarterly , 42: 1-20."
+        },
+        {
+          "raw": "Pritchard, D., 2007, \"Anti-Luck Epistemology,\" Synthese , 158: 227-298."
+        },
+        {
+          "raw": "Ramsey, F. P., 1931, The Foundations of Mathematics and Other Logical Essays , London: Routledge and Kegan Paul."
+        },
+        {
+          "raw": "Roush, S., 2005, Tracking Truth: Knowledge, Evidence and Science , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Shatz, D., 1987, \"Nozick's Conception of Skepticism,\" in The Possibility of Knowledge , S. Luper (ed.), Totowa, NJ: Rowman and Littlefield."
+        },
+        {
+          "raw": "Sosa, E., 1999, \"How to Defeat Opposition to Moore,\" Philosophical Perspectives , 13: 141-152."
+        },
+        {
+          "raw": "---, 2003, \"Neither Contextualism Nor Skepticism,\" in The Skeptics , S. Luper (ed.), Hampshire: Ashgate Publishing, Limited, pp. 165-182."
+        },
+        {
+          "raw": "---, 2007, A Virtue Epistemology: Apt Belief and Reflective Knowledge Volume I , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2009, A Virtue Epistemology: Apt Belief and Reflective Knowledge Volume II , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Stalnaker, R., 1968, \"A Theory of Conditionals,\" American Philosophical Quarterly (Monograph No. 2), 98-112."
+        },
+        {
+          "raw": "Steup, M. and Sosa, E. (eds.), 2005, Contemporary Debates in Epistemology , Malden, MA: Blackwell."
+        },
+        {
+          "raw": "Stine, G.C., 1971, \"Dretske on Knowing the Logical Consequences,\" Journal of Philosophy , 68: 296-299."
+        },
+        {
+          "raw": "---, 1976, \"Skepticism, Relevant Alternatives, and Deductive Closure,\" Philosophical Studies , 29: 249-261."
+        },
+        {
+          "raw": "Van Cleve, J., 1979, \"Foundationalism, Epistemic Principles, and the Cartesian Circle,\" Philosophical Review , 88: 55-91."
+        },
+        {
+          "raw": "---, 2003, \"Is Knowledge Easy--or Impossible? Externalism as the Only Alternative to Skepticism,\" in S. Luper 2003b, pp. 45-60."
+        },
+        {
+          "raw": "Vogel, J., 1990, \"Are There Counterexamples to the Closure Principle?\" in Doubting: Contemporary Perspectives on Skepticism , M. Roth and G. Ross (eds.), Dordrecht: Kluwer Academic Publishers."
+        },
+        {
+          "raw": "---, 2000, \"Reliabilism Leveled,\" Journal of Philosophy , 97: 602-623."
+        },
+        {
+          "raw": "---, 2004, \"Speaking of Knowledge,\" Philosophical Issues , 14: 501-509."
+        },
+        {
+          "raw": "Williamson, T., 2000, Knowledge and Its Limits , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Wittgenstein, L., 1969, On Certainty , G.E.M. Anscombe (trans.), New York: Harper and Row, Inc."
+        },
+        {
+          "raw": "Wright, C., 1985, \"Facts and Certainty,\" Proceedings of the British Academy , 71: 429-472."
+        }
+      ],
+      "publishedAt": "2001-12-30T13:00:00.000Z",
+      "revisedAt": "2016-02-23T13:00:00.000Z"
+    }
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/aphyr--distsys-class",
+  "meta": {
+    "title": "An Introduction to Distributed Systems",
+    "description": "Class materials for a distributed systems lecture series",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T06:55:07.835Z",
+    "dateModified": "2026-03-22T06:55:07.835Z",
+    "keywords": []
+  },
+  "problemSolved": {
+    "statement": "- Iterated consensus gives us agreement on a single total order of operations\n- Unnecessary blocking betwixt transactions which *could* execute independently\n- How do we improve performance?\n- [Distributed Transaction Architectures](https://aphyr.com/media/talks/2019/distributed-transaction-architectures.pdf)\n- Single-writer\n  - All updates go through a single queue, readers execute on snapshots\n  - Usually involves some kind of persistent data structure\n  - Serializable to strict-1SR\n  - See [Datomic](https://docs.datomic.com/on-prem/architecture.html)\n- OK but multiple writers?\n  - In general, have several shards, each running a consensus-backed FSM\n  - Some kind of protocol for cross-shard txns\n- Independent shards\n  - A sort of halfway-step to general-purpose transactions\n  - Disallow cross-shard txns\n  - Just run a bunch of independent consensus FSMs\n  - Can add a single global consensus group for cross-shard transactions\n    - Limited throughput though!\n  - See [VoltDB](https://docs.voltdb.com/UsingVoltDB/IntroHowVoltDBWorks.php)\n- [Percolator](https://storage.googleapis.com/pub-tools-public-publication-data/pdf/36726.pdf)\n  - Snapshot isolation over linearizable shards\n  - Time Stamp Oracle assigns sequential txn timestamps (using consensus)\n  - Read timestamp, read from leaders, prewrite, commit timestamp, commit, finalize\n  - 14 network hops, potentially all cross-DC\n  - See [TiDB](https://tikv.org/deep-dive/distributed-transaction/percolator/)\n- [Spanner](https://static.googleusercontent.com/media/research.google.com/en//archive/spanner-osdi2012.pdf)\n  - \"External consistency\" (strict-1SR?)\n  - Speed up timestamp assignment by using GPS+Atomic clocks\n  - Basically 2PC over Paxos groups\n    - Locks on Paxos leaders\n    - Pick one Paxos group to serve as the commit record for entire txn\n  - Fixed latency floor to ensure timestamp monotonicity\n  - See [Yugabyte DB](https://blog.yugabyte.com/distributed-postgresql-on-a-google-spanner-architecture-storage-layer/)\n  - See [CockroachDB](https://www.cockroachlabs.com/guides/cockroachdb-the-resilient-geo-distributed-sql-database-sigmod-2020/)\n- [Calvin](http://cs.yale.edu/homes/thomson/publications/calvin-sigmod12.pdf)\n  - Order transactions in a log using consensus\n  - Shard log for arbitrarily high throughput\n  - Periodically seal log windows and apply transactions to shards\n  - Application requires no communication!\n  - Strict-1SR\n  - 1 inter-DC round trip, more hops for local comms\n  - Scalable throughput\n  - Minimum latency floor\n  - Txns must be pure, expressed up-front\n    - Could be made interactive with extensions to protocol\n  - See [Fauna](https://fauna.com/)",
+    "context": "Copyright Kyle Kingsbury & Jepsen, LLC.\n\nThis outline accompanies a 16 to 32 hour [overview class on distributed systems\nfundamentals](https://jepsen.io/training.html). The course aims to introduce\nsoftware engineers to the practical basics of distributed systems, through\nlecture and discussion, and optional\n[labwork](https://github.com/jepsen-io/maelstrom). Participants will gain an\nintuitive understanding of key distributed systems terms, an overview of the\nalgorithmic landscape, and explore production concerns.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "software"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "9463 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "696 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T06:55:07.835Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/aphyr/distsys-class",
+        "description": "GitHub repository: aphyr/distsys-class"
+      }
+    ]
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "aphyr",
+        "type": "human",
+        "uri": "https://github.com/aphyr"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 10855,
+      "validation_diversity": 0.2,
+      "context_breadth": 0.28,
+      "temporal_stability": 0.72,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.5
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.397
+  }
+}

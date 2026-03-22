@@ -1,0 +1,800 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/formal-epistemology",
+  "meta": {
+    "title": "Formal Epistemology",
+    "description": "Formal epistemology explores knowledge and reasoning using \"formal\" tools, tools from math and logic. For example, a formal epistemologist might use probability theory to explain how scientific reasoning works. Or she might use modal logic to defend a particular theory of knowledge. The questions that drive formal epistemology are often the same as those that drive \"informal\" epistemology. What is knowledge, and how is it different from mere opinion? What separates science from pseudoscience? When is a belief justified? What justifies my belief that the sun will rise tomorrow, or that the external world is real and not an illusion induced by Descartes' demon? And yet, the tools formal epistemologists apply to these questions share much history and interest with other fields, both inside and outside philosophy. So formal epistemologists often ask questions that aren't part of the usual epistemological core, questions about decision-making ( &sect;5.1 ) or the meaning of hypothetical language ( &sect;5.3 ), for example. Perhaps the best way to get a feel for formal epistemology is to look at concrete examples. We'll take a few classic epistemological questions and look at popular formal approaches to them, to see what formal tools bring to the table. We'll also look at some applications of these formal methods outside epistemology.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T06:07:20.915Z",
+    "dateModified": "2026-03-22T06:07:20.915Z",
+    "datePublished": "2015-03-01T13:00:00.000Z",
+    "keywords": [
+      "bayes theorem",
+      "conditionals",
+      "confirmation",
+      "decision causal",
+      "dutch book",
+      "epistemic paradoxes",
+      "epistemic utility",
+      "epistemology",
+      "epistemology bayesian",
+      "fitch paradox",
+      "formal belief",
+      "game theory",
+      "imprecise probabilities",
+      "induction problem",
+      "justep coherence",
+      "justep foundational",
+      "learning formal",
+      "logic conditionals",
+      "logic epistemic",
+      "logic inductive",
+      "logic modal",
+      "logic nonmonotonic",
+      "logic probability",
+      "pascal wager",
+      "preferences",
+      "probability interpret",
+      "rationality normative utility",
+      "reasoning defeasible",
+      "risk",
+      "social choice",
+      "statistics"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Formal epistemology explores knowledge and reasoning using \"formal\" tools, tools from math and logic. For example, a formal epistemologist might use probability theory to explain how scientific reasoning works. Or she might use modal logic to defend a particular theory of knowledge. The questions that drive formal epistemology are often the same as those that drive \"informal\" epistemology. What is knowledge, and how is it different from mere opinion? What separates science from pseudoscience? When is a belief justified? What justifies my belief that the sun will rise tomorrow, or that the external world is real and not an illusion induced by Descartes' demon? And yet, the tools formal epistemologists apply to these questions share much history and interest with other fields, both inside and outside philosophy. So formal epistemologists often ask questions that aren't part of the usual epistemological core, questions about decision-making ( &sect;5.1 ) or the meaning of hypothetical language ( &sect;5.3 ), for example. Perhaps the best way to get a feel for formal epistemology is to look at concrete examples. We'll take a few classic epistemological questions and look at popular formal approaches to them, to see what formal tools bring to the table. We'll also look at some applications of these formal methods outside epistemology.",
+    "context": "Opening section: 1. First Case Study: Confirming Scientific Theories | Related entries: bayes-theorem, formal-belief, conditionals, confirmation, decision-causal, dutch-book, epistemic-paradoxes, epistemic-utility, epistemology, epistemology-bayesian, fitch-paradox, game-theory, induction-problem, justep-coherence, justep-foundational, learning-formal, logic-probability, logic-conditionals, logic-epistemic, logic-inductive, logic-modal, logic-nonmonotonic, pascal-wager, preferences, imprecise-probabilities, probability-interpret, rationality-normative-utility, reasoning-defeasible, risk, social-choice, statistics",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "epistemology",
+    "logic"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry formal-epistemology",
+        "uri": "https://plato.stanford.edu/entries/formal-epistemology/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 31 related entries, bibliography size 141"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2015-03-01T13:00:00.000Z and revised 2021-03-14T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2021-03-14T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/formal-epistemology/",
+        "description": "SEP entry for formal-epistemology"
+      }
+    ],
+    "solutionApproach": "1. First Case Study: Confirming Scientific Theories"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/bayes-theorem",
+      "ocp:sep/formal-belief",
+      "ocp:sep/conditionals",
+      "ocp:sep/confirmation",
+      "ocp:sep/decision-causal",
+      "ocp:sep/dutch-book",
+      "ocp:sep/epistemic-paradoxes",
+      "ocp:sep/epistemic-utility",
+      "ocp:sep/epistemology",
+      "ocp:sep/epistemology-bayesian",
+      "ocp:sep/fitch-paradox",
+      "ocp:sep/game-theory",
+      "ocp:sep/induction-problem",
+      "ocp:sep/justep-coherence",
+      "ocp:sep/justep-foundational",
+      "ocp:sep/learning-formal",
+      "ocp:sep/logic-probability",
+      "ocp:sep/logic-conditionals",
+      "ocp:sep/logic-epistemic",
+      "ocp:sep/logic-inductive",
+      "ocp:sep/logic-modal",
+      "ocp:sep/logic-nonmonotonic",
+      "ocp:sep/pascal-wager",
+      "ocp:sep/preferences",
+      "ocp:sep/imprecise-probabilities",
+      "ocp:sep/probability-interpret",
+      "ocp:sep/rationality-normative-utility",
+      "ocp:sep/reasoning-defeasible",
+      "ocp:sep/risk",
+      "ocp:sep/social-choice",
+      "ocp:sep/statistics"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Weisberg, Jonathan",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/formal-epistemology/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 123,
+      "validation_diversity": 0.52,
+      "context_breadth": 0.57,
+      "temporal_stability": 0.84,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.94
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.611
+  },
+  "extensions": {
+    "sep": {
+      "slug": "formal-epistemology",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/formal-epistemology/",
+      "preamble": "Formal epistemology explores knowledge and reasoning using \"formal\" tools, tools from math and logic. For example, a formal epistemologist might use probability theory to explain how scientific reasoning works. Or she might use modal logic to defend a particular theory of knowledge. The questions that drive formal epistemology are often the same as those that drive \"informal\" epistemology. What is knowledge, and how is it different from mere opinion? What separates science from pseudoscience? When is a belief justified? What justifies my belief that the sun will rise tomorrow, or that the external world is real and not an illusion induced by Descartes' demon? And yet, the tools formal epistemologists apply to these questions share much history and interest with other fields, both inside and outside philosophy. So formal epistemologists often ask questions that aren't part of the usual epistemological core, questions about decision-making ( &sect;5.1 ) or the meaning of hypothetical language ( &sect;5.3 ), for example. Perhaps the best way to get a feel for formal epistemology is to look at concrete examples. We'll take a few classic epistemological questions and look at popular formal approaches to them, to see what formal tools bring to the table. We'll also look at some applications of these formal methods outside epistemology.",
+      "firstSectionTitle": "1. First Case Study: Confirming Scientific Theories",
+      "firstSectionText": "How does scientific reasoning work? In the early 20 century, large swaths of mathematics were successfully reconstructed using first-order logic. Many philosophers sought a similar systematization of the reasoning in empirical sciences, like biology, psychology, and physics. Though empirical sciences rely heavily on non-deductive reasoning, the tools of deductive logic still offer a promising starting point. Consider a hypothesis like All electrons have negative charge , which in first-order logic is rendered \\(\\forall x (Ex \\supset Nx)\\). Having identified some object \\(a\\) as an electron, this hypothesis deductively entails a prediction, \\(Na\\), that \\(a\\) has negative charge: \\[ \\begin{array}{l} \\forall x (Ex \\supset Nx)\\\\ Ea\\\\ \\hline Na \\end{array} \\] If we test this prediction and observe that, indeed, \\(Na\\), this would seem to support the hypothesis. Scientific hypothesis-testing thus appears to work something like \"deduction in reverse\" (Goodman 1954). If we swap the hypothesis and the predicted datum in the above deduction, we get an example of confirmation: \\[ \\begin{array}{l} Ea\\\\ Na\\\\ \\overline{\\overline{\\forall x (Ex \\supset Nx)}} \\end{array} \\] Here the double-line represents non-deductive inference. The inference is very weak in this case, since the hypothesis has only been verified in one instance, \\(a\\). But as we add further instances \\(b\\), \\(c\\), etc., it becomes stronger (provided we discover no counter-instances, of course). These observations suggest a proposal due to Nicod (1930) and famously examined by Hempel (1945): Nicod's Criterion A universal generalization is confirmed by its positive instances (as long as no counter-instances are discovered): \\(\\forall x(Fx \\supset Gx)\\) is confirmed by \\(Fa \\wedge Ga\\), by \\(Fb \\wedge Gb\\), etc. The general idea is that hypotheses are confirmed when their predictions are borne out. To capture this idea formally in deductive logic, we're equating prediction with logical entailment. When an object is \\(F\\), the hypothesis \\(\\forall x(Fx \\supset Gx)\\) entails/predicts that the object is \\(G\\). So any discovery of an object that is both \\(F\\) and \\(G\\) confirms the hypothesis. One classic challenge for Nicod's criterion is the notorious raven paradox . Suppose we want to test the hypothesis that all ravens are black, which we formalize \\(\\forall x(Rx \\supset Bx)\\). That's logically equivalent to \\(\\forall x(\\neg Bx \\supset \\neg Rx)\\), by contraposition. And Nicod's Criterion says this latter hypothesis is confirmed by the discovery of any object that is not black and not a raven--a red shirt, for example, or a pair of blue underpants (Hempel 1937, 1945). But walking the halls of my department noting non-black non-ravens hardly seems a reasonable way to verify that all ravens are black. How can \"indoor ornithology\" (Goodman 1954) be good science?! A second, more general challenge for the prediction-as-deduction approach is posed by statistical hypotheses. Suppose we want to test the theory that only 50% of ravens are black. This hypothesis entails nothing about the color of an individual raven; it might be one of the black ones, it might not. In fact, even a very large survey of ravens, all of which turn out to be black, does not contradict this hypothesis. It's always possible that the 50% of ravens that aren't black weren't caught up in the survey. (Maybe non-black ravens are exceptionally skilled at evasion.) This challenge suggests some important lessons. First, we need a laxer notion of prediction than deductive entailment. The 50% hypothesis may not entail that a large survey of ravens will have some non-black ravens, but it does suggest this prediction pretty strongly. Second, as a sort of corollary, confirmation is quantitative: it comes in degrees. A single, black raven doesn't do much to support the hypothesis that 50% of ravens are black, but a large sample of roughly half black, half white ravens would. Third and finally, degrees of confirmation should be understood in terms of probability. The 50% hypothesis doesn't make it very probable that a single raven will be black, but it makes it highly probable that a much larger collection will be roughly half black, half non-black. And the all-black hypothesis predicts that any sample of ravens will be entirely black with \\(100\\)% probability. A quantitative approach also promises to help resolve the raven paradox. The most popular resolution says that observing a red shirt does confirm that all ravens are black, just by a very minuscule amount. The raven paradox is thus an illusion: we mistake a minuscule amount of confirmation for none at all (Hosiasson-Lindenbaum 1940). But to make this response convincing, we need a proper, quantitative theory of confirmation that explains how a red shirt could be relevant to a hypothesis about ravens, but only just slightly relevant. Let's start with the idea that to confirm a hypothesis is to make it more probable. The more a piece of evidence increases the probability of a hypothesis, the more it confirms the hypothesis. What we need then is a theory of probability. The standard theory begins with a function, \\(p\\), which takes in a proposition and returns a number, \\(x\\), the probability of that proposition: \\(p(A)=x\\). To qualify as a probability function , \\(p\\) must satisfy three axioms: The first axiom sets the scale of probability, from 0 to 1, which we can think of as running from 0% probability to 100% probability. The second axiom places tautologies at the top of this scale: nothing is more probable than a tautology. And finally, the third axiom tells us how to figure out the probability of a hypothesis by breaking it into parts. For example, the probability that an American country will be the first to develop a cure for Alzheimer's can be figured by adding the probability that a North American country will be first to the probability that a South American country will be. What about conditional probabilities, like the probability of doing well in your next philosophy class given that you've done well in previous ones? So far we've only formalized the notion of absolute probability, \\(p(A)=x\\). Let's introduce conditional probability by definition: Definition. The conditional probability of \\(B\\) given \\(A\\) is written \\(p(B\\mid A)\\), and is defined: \\[p(B\\mid A) = \\frac{p(B \\wedge A)}{p(A)}.\\] Why this definition? A helpful heuristic is to think of the probability of \\(B\\) given \\(A\\) as something like the portion of the \\(A\\)-possibilities that are also \\(B\\)-possibilities. For example, the probability of rolling a high number (4, 5, or 6) on a six-sided die given that the roll is even is 2/3. Why? There are 3 even possibilities (2, 4, 6), so \\(p(A) = 3/6\\). Of those 3 possibilities, 2 are also high numbers (4, 6), so \\(p(B \\wedge A) = 2/6\\). Thus \\[p(B\\mid A) = \\frac{p(B \\wedge A)}{p(A)} = \\frac{2/6}{3/6} = 2/3.\\] Generalizing this idea, we start with the quantity of \\(A\\)-possibilities as a sort of baseline by putting \\(p(A)\\) in the denominator. Then we consider how many of those are also \\(B\\)-possibilities by putting \\(p(B \\wedge A)\\) in the numerator. Notice, by the way, that \\(p(B\\mid A)\\) is undefined when \\(p(A) = 0\\). This might seem fine at first. Why worry about the probability of \\(B\\) when \\(A\\) is true if there's no chance \\(A\\) is true? In fact there are deep problems lurking here (H&aacute;jek m.s., Other Internet Resources), though we won't stop to explore them. Instead, let's take advantage of the groundwork we've laid to state our formal definition of quantitative confirmation. Our guiding idea is that evidence confirms a hypothesis to the extent that it increases its probability. So we are comparing \\(p(H\\mid E)\\) to \\(p(H)\\) by looking at the difference between them: Definition. The degree to which \\(E\\) confirms \\(H\\), called the degree of confirmation , is written \\(c(H,E)\\) and is defined: \\[c(H,E) = p(H\\mid E) - p(H).\\] When \\(c(H,E)\\) is negative, \\(E\\) actually decreases the probability of \\(H\\), and we say that \\(E\\) disconfirms \\(H\\). When \\(c(H,E)\\) is 0, we say that \\(E\\) is neutral with respect to \\(H\\). Minimal as they are, these simple axioms and definitions are enough to derive many interesting claims about probability and confirmation. The following two subsections introduce some elementary, yet promising results. See the technical supplement for proofs. Let's start with some elementary theorems that illustrate how probability interacts with deductive logic: Theorem (No Chance for Contradictions). When \\(A\\) is a contradiction, \\(p(A) = 0\\). Theorem (Complementarity for Contradictories). For any \\(A\\), \\(p(A) = 1 - p(\\neg A)\\). Theorem (Equality for Equivalents). When \\(A\\) and \\(B\\) are logically equivalent, \\(p(A) = p(B)\\). Theorem (Conditional Certainty for Logical Consequences) When \\(A\\) logically entails \\(B\\), \\(p(B\\mid A)=1\\). The next three theorems go a bit deeper, and are useful for building up more interesting results: Theorem (Conjunction Costs Probability). For any \\(A\\) and \\(B\\), \\(p(A) > p(A \\wedge B)\\) unless \\(p(A \\wedge \\neg B)=0\\), in which case \\(p(A) = p(A \\wedge B)\\). One way of thinking about what Conjunction Costs Probability says is that the stronger a statement is, the greater the risk of falsehood. If we strengthen \\(A\\) by adding \\(B\\) to it, the resulting, stronger statement is less probable. Unless, that is, there was no chance of \\(A\\) being true without \\(B\\) to begin with. In that case, adding \\(B\\) to \\(A\\) doesn't change the risk of falsehood, because there was no chance of \\(A\\) being true without \\(B\\) anyway. Theorem (The Conjunction Rule). For any \\(A\\) and \\(B\\) such that \\(p(B) \\neq 0\\), \\(p(A \\wedge B) = p(A\\mid B)p(B)\\). This says we can calculate how likely two statements \\(A\\) and \\(B\\) are to be true together by temporarily taking \\(B\\) for granted, assessing the probability of \\(A\\) in that light, and then giving the result as much weight as \\(B\\)'s probability on its own merits. Theorem (The Law of Total Probability). For any \\(A\\), and any \\(B\\) whose probability is neither \\(0\\) nor 1: \\[p(A) = p(A\\mid B)p(B) + p(A\\mid \\neg B)p(\\neg B).\\] The Law of Total Probability basically says that we can calculate the probability of \\(A\\) by breaking it down into two possible cases: \\(B\\) and \\(\\neg B\\). We consider how likely \\(A\\) is if \\(B\\) is true and how likely it is if \\(B\\) is false. We then give each case appropriate \"weight\", by multiplying it against the probability that it holds, then adding together the results. For this to work, \\(p(A\\mid B)\\) and \\(p(A\\mid \\neg B)\\) have to be well-defined, so \\(p(B)\\) can't be 0 or 1. This classic theorem relates a conditional probability \\(p(H\\mid E)\\) to the unconditional probability, \\(p(H)\\): \\[ p(H\\mid E) = p(H)\\frac{p(E\\mid H)}{p(E)}\\] The theorem is philosophically important, as we'll see in a moment. But it's also useful as a tool for calculating \\(p(H\\mid E)\\), because the three terms on the right hand side can often be inferred from available statistics. Consider, for example, whether a student at University X having high grades (\\(E\\)) says anything about the likelihood of her taking a class in philosophy (\\(H\\)). The registrar tells us that 35% of students take a philosophy class at some point, so \\(p(H) = 35/100\\). They also tell us that only 20% of students campus-wide have high grades (defined as a GPA of 3.5 or above), so \\(p(E) = 20/100\\). But they don't keep track of any more detailed information. Luckily, the philosophy department can tell us that 25% of students who take their classes have high grades, so \\(p(E\\mid H) = 25/100\\). That's everything we need to apply Bayes' theorem: \\[\\begin{split} p(H\\mid E) &= p(H)\\frac{p(E\\mid H)}{p(E)}\\\\ &= 35/100 \\times \\frac{25/100}{20/100}\\\\ &= 7/16\\end{split}\\] That's higher than \\(p(H) = 20/100\\), so we can also see that a student's having high grades confirms the hypothesis that she will take a philosophy class. What's the philosophical significance of Bayes' theorem? It unifies a number of influential ideas about confirmation and scientific methodology, binding them together in a single, simple equation. Let's see how. Theoretical Fit. It's a truism that the better a theory fits the evidence, the more the evidence supports it. But what does it mean for a theory to fit the evidence? When \\(H\\) entails \\(E\\), the theory says the evidence must be true, so the discovery of the evidence fits the theory perfectly. Our formalism vindicates the truism in this special case as follows. When \\(H\\) entails \\(E\\), Conditional Certainty for Logical Consequences tells us that \\(p(E\\mid H)=1\\), so Bayes' theorem becomes: \\[p(H\\mid E) = p(H)\\frac{1}{p(E)}\\] Provided \\(p(E)\\) is less than 1, this amounts to multiplying \\(p(H)\\) by a ratio greater than 1, which means \\(p(H\\mid E)\\) comes out larger than \\(p(H)\\). Moreover, since 1 is the greatest quantity that can appear in the numerator, the case where \\(H\\) entails \\(E\\) and thus \\(p(E\\mid H)=1\\) gives the greatest possible boost to the probability of \\(H\\). In other words, confirmation is greatest when the theory fits the evidence as well as possible. (What if \\(p(E) = 1\\), though? Then \\(H\\) may fit \\(E\\), but so may \\(\\neg H\\). If \\(p(E)=1\\), we can prove that \\(p(E\\mid H)=1\\) and \\(p(E\\mid \\neg H)=1\\) (hint: combine The Law of Total Probability with Complementarity for Contradictories). In other words, \\(E\\) fits both \\(H\\) and its negation perfectly. So it shouldn't be able to discriminate between these two hypotheses. And, indeed, in this case \\(p(H\\mid E)\\) comes out the same as \\(p(H)\\), so \\(c(H,E)=0\\).) What about when the theory fits the evidence less than perfectly? If we think of fit as the certainty with which \\(H\\) predicts \\(E\\), \\(p(E\\mid H)\\), then the previous analysis generalizes nicely. Suppose \\(H\\) predicts \\(E\\) strongly, but not with absolute certainty: \\(p(E\\mid H) = 1 - \\varepsilon\\), for some small number \\(\\varepsilon\\). Applying Bayes' theorem again, we have: \\[ p(H\\mid E) = p(H)\\frac{1-\\varepsilon}{p(E)}\\] This again amounts to multiplying \\(p(H)\\) by a ratio larger than 1, provided \\(p(E)\\) isn't close to 1. So \\(p(H\\mid E)\\) will come out larger than \\(p(H)\\). Of course, the larger \\(\\varepsilon\\) gets, the weaker the confirmation becomes, befitting the weakness with which \\(H\\) then predicts \\(E\\). Novel Prediction. Another truism is that novel predictions count more. When a theory predicts something we wouldn't otherwise expect, it's confirmed especially strongly if the prediction is borne out. For example, Poisson derided the theory that light is a wave because it predicted a bright spot should appear at the center of certain shadows. No one had previously observed such bright spots, making it a novel prediction. When the presence of these bright spots was then verified, it was a boon for the wave theory. Once again, our formalization vindicates the truism. Suppose as before that \\(H\\) predicts \\(E\\) and thus \\(p(E\\mid H) = 1\\), or nearly so. A novel prediction is one where \\(p(E)\\) is low, or at least not very high. It's a prediction one wouldn't expect. Our previous analysis exposed that, in such circumstances, we multiply \\(p(H)\\) by a large ratio in Bayes' theorem. Thus \\(p(H\\mid E)\\) comes out significantly larger than \\(p(H)\\), making \\(c(H,E)\\) large. So novel predictions turn out especially confirmatory. Prior Plausibility. A final truism: new evidence for a theory has to be weighed against the theory's prior plausibility. Maybe the theory is inherently implausible, being convoluted or metaphysically fraught. Or maybe the theory had become implausible because it clashed with earlier evidence. Or maybe the theory was already pretty plausible, being elegant and fitting well with previous evidence. In any case, the new evidence has to be evaluated in light of these prior considerations. Once again, Bayes' theorem vindicates this truism. \\(p(H\\mid E)\\) is calculated by multiplying \\(p(H)\\) by the factor \\(p(E\\mid H)/p(E)\\). We can think of the factor \\(p(E\\mid H)/p(E)\\) as capturing the extent to which the evidence counts for \\(H\\) (or against it, if \\(p(E\\mid H)/p(E)\\) is less than 1), which we then multiply against the previous probability of \\(H\\), \\(p(H)\\), in order to obtain \\(H\\)'s new, all-things-considered plausibility. If \\(H\\) was already implausible, \\(p(H)\\) will be low and the result of this multiplication will be smaller than it would be if \\(H\\) had already been plausible, and \\(p(H)\\) had thus been high. Let's pause to summarize. Bayes' theorem isn't just a useful calculational tool. It also vindicates three truisms about confirmation, unifying them in a single equation. Each truism corresponds to a term in Bayes' theorem: \\(p(E\\mid H)\\) corresponds to theoretical fit . The better the hypothesis fits the evidence, the greater this quantity will be. Since this term appears in the numerator in Bayes' theorem, better fit means a larger value for \\(p(H\\mid E)\\). \\(p(E)\\) corresponds to predictive novelty , or rather the lack of it. The more novel the prediction is, the less we expect \\(E\\) to be true, and thus the smaller \\(p(E)\\) is. Since this term appears in the denominator of Bayes' theorem, more novelty means a larger value for \\(p(H\\mid E)\\). \\(p(H)\\) corresponds to prior plausibility . The more plausible \\(H\\) is before the discovery of \\(E\\), the greater this quantity will be, and thus the greater \\(p(H\\mid E)\\) will be. But what about the raven paradox? Recall the raven paradox: the hypothesis that all ravens are black is logically equivalent to the hypothesis that all non-black things are non-ravens. Yet the latter would seem to be confirmed with each discovery of a non-black, non-raven&hellip;red shirts, blue underpants, etc. Yet examining the contents of your neighbor's clothesline doesn't seem a good way to research an ornithological hypothesis. (Nor does it seem a good way to treat your neighbor.) The classic, quantitative solution originates with Hosiasson-Lindenbaum (1940). It holds that the discovery of blue underpants does confirm the hypothesis that all ravens are black, just by so little that we overlook it. How could blue underpants be relevant to the hypothesis that all ravens are black? Informally, the idea is that an object which turns out to be a blue pair of underpants could instead have turned out to be a white raven. When it turns out not to be such a counterexample, our hypothesis passes a weak sort of test. Does our formal theory of confirmation vindicate this informal line of thinking? The answer is, \"yes, but&hellip;\". The 'but&hellip;' will prove crucial to the fate of Nicod's Criterion (spoiler: outlook not good). But let's start with the 'yes'. We vindicate the 'yes' with a theorem: discovering an object to be a non-raven that isn't black, \\(\\neg R \\wedge \\neg B\\), just slightly boosts the probability of the hypothesis that all ravens are black, \\(H\\), if we make certain assumptions . Here is the theorem (see the technical supplement for a proof): Theorem (Raven Theorem). If (i) \\(p(\\neg R \\mid \\neg B)\\) is very high and (ii) \\(p(\\neg B\\mid H)=p(\\neg B)\\), then \\(p(H\\mid \\neg R \\wedge \\neg B)\\) is just slightly larger than \\(p(H)\\). The first assumption, that \\(p(\\neg R \\mid \\neg B)\\) is very high, seems pretty sensible. With all the non-ravens in the world, the probability that a given object will be a non-raven is quite high, especially if it's not black. The second assumption is that \\(p(\\neg B\\mid H)=p(\\neg B)\\). In other words, assuming that all ravens are black doesn't change the probability that a given object will not be black. This assumption is more controversial (Vranas 2004). If all the ravens are black, then some of the things that might have been black aren't, namely the ravens. In that case shouldn't \\(p(\\neg B\\mid H) < p(\\neg B)\\) instead? On the other hand, maybe all the ravens being black doesn't reduce the number of black things in the universe. Maybe it just means that other kinds of things are black slightly more often. Luckily, it turns out we can replace (ii) with less dubious assumptions (Fitelson 2006; Fitelson and Hawthorne 2010; Rinard 2014). But we can't do with no assumptions at all, which brings us to two crucial points about confirmation and probability. The first point is that Nicod's Criterion fails. Assumptions like (i) and (ii) of the Raven Theorem don't always hold. In fact, in some situations, discovering a black raven would actually lower the probability that all ravens are black. How could this be? The trick is to imagine a situation where the very discovery of a raven is bad news for the hypothesis that all ravens are black. This would happen if the only way for all the ravens to be black is for there to be very few of them. Then stumbling across a raven would suggest that ravens are actually plentiful, in which case they aren't all black. Good (1967) offers the following, concrete illustration. Suppose there are only two possibilities: All ravens are black, though there are only \\(100\\) ravens and a million other things. There is one non-black raven out of \\(1,000\\) ravens, and there are a million other things. In this case, happening upon a raven favors \\(\\neg H\\) because \\(\\neg H\\) makes ravens ten times less exotic. That the raven is black fits slightly better with \\(H\\), but not enough to outweigh the first effect: black ravens are hardly a rarity on \\(\\neg H\\). This is the 'but&hellip;' to go with our earlier 'yes'. The second point is a far-reaching moral: that the fates of claims about confirmation often turn crucially on what assumptions we make about the values of \\(p\\). Nicod's criterion fails in situations like Good's, where \\(p\\) assigns a lower value to \\(p(R \\wedge B\\mid H)\\) than to \\(p(R \\wedge B\\mid \\neg H)\\). But in another situation, where things are reversed, Nicod's Criterion does apply. Likewise, a diagnosis of the raven paradox like the standard one only applies given certain assumptions about \\(p\\), like assumptions (i) and (ii) of the Raven Theorem. The probability axioms alone generally aren't enough to tell us when Nicod's Criterion applies, or when confirmation is small or large, positive or negative. This last point is a very general, very important phenomenon. Like the axioms of first-order logic, the axioms of probability are quite weak (Howson and Urbach 1993; Christensen 2004). Unless \\(H\\) is a tautology or contradiction, the axioms only tell us that its probability is somewhere between \\(0\\) and 1. If we can express \\(H\\) as a disjunction of two logically incompatible sub-hypotheses, \\(H_1\\) and \\(H_2\\), and we know the probabilities of these sub-hypotheses, then the third axiom lets us compute \\(p(H) = p(H_1)+p(H_2)\\). But this just pushes things back a step, since the axioms by themselves only tell us that \\(p(H_1)\\) and \\(p(H_2)\\) must themselves lie between \\(0\\) and 1. This weakness of the probability axioms generates the famous problem of the priors , the problem of saying where initial probabilities come from. Are they always based on evidence previously collected? If so, how does scientific inquiry get started? If instead they're not based on previous evidence but are a priori , what principles govern this a priori reasoning? Formal epistemologists are split on this question. The so-called objectivists see the probability axioms as incomplete, waiting to be supplemented by additional postulates that determine the probabilities with which inquiry should begin. (The Principle of Indifference (PoI) is the leading candidate here. See the entry on the interpretation of probability .) The so-called subjectivists think instead that there is no single, correct probability function \\(p\\) with which inquiry should begin. Different inquirers may begin with different values for \\(p\\), and none of them is thereby more or less scientific or rational than the others. In later sections the problem of the priors will return several times, illustrating its importance and ubiquity. We've seen that formalizing confirmation using probability theory yields an account that succeeds in several significant ways: it vindicates several truisms about confirmation, it unifies those truisms in a single equation, and it resolves a classic paradox (not to mention others we didn't discuss (Crupi and Tentori 2010)). We also saw that it raises a problem though, the problem of priors, which formal epistemologists are divided on how to resolve. And there are other problems we didn't explore, most notably the problems of logical omniscience and old evidence (see subsections of entry on Bayesian epistemology ). These and other problems have led to the exploration and development of other approaches to scientific reasoning, and reasoning in general. Some stick to the probabilistic framework but develop different methodologies within it (Fisher 1925; Neyman and Pearson 1928a,b; Royall 1997; Mayo 1996; Mayo and Spanos 2011; see entry on the philosophy of statistics ). Others depart from standard probability theory, like Dempster-Shafer theory (Shafer 1976; see entry on formal representations of belief ), a variant of probability theory meant to solve the problem of the priors and make other improvements. Ranking theory (Spohn 1988, 2012; again see entry on formal representations of belief ) also bears some resemblance to probability theory but draws much inspiration from possible-world semantics for conditionals (see entry on indicative conditionals ). Bootstrapping theory (Glymour 1980; Douven and Meijs 2006) leaves the probabilistic framework behind entirely, drawing inspiration instead from the deduction-based approach we began with. Still other approaches develop non-monotonic logics (see entry) , logics for making not only deductive inferences, but also defeasible, inductive inferences (Pollock 1995, 2008; Horty 2012). Formal learning theory provides a framework for studying the long-run consequences of a wide range of methodologies. For the next two sections we'll build on the probabilistic approach introduced here, since it's currently the most popular and influential approach to formal epistemology. But it's important to remember that there is a rich and variegated range of alternative approaches, and that this one has its problems, some consequences of which we'll soon encounter.",
+      "relatedEntries": [
+        "bayes-theorem",
+        "formal-belief",
+        "conditionals",
+        "confirmation",
+        "decision-causal",
+        "dutch-book",
+        "epistemic-paradoxes",
+        "epistemic-utility",
+        "epistemology",
+        "epistemology-bayesian",
+        "fitch-paradox",
+        "game-theory",
+        "induction-problem",
+        "justep-coherence",
+        "justep-foundational",
+        "learning-formal",
+        "logic-probability",
+        "logic-conditionals",
+        "logic-epistemic",
+        "logic-inductive",
+        "logic-modal",
+        "logic-nonmonotonic",
+        "pascal-wager",
+        "preferences",
+        "imprecise-probabilities",
+        "probability-interpret",
+        "rationality-normative-utility",
+        "reasoning-defeasible",
+        "risk",
+        "social-choice",
+        "statistics"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "bayes-theorem"
+        },
+        {
+          "slug": "formal-belief"
+        },
+        {
+          "slug": "conditionals"
+        },
+        {
+          "slug": "confirmation"
+        },
+        {
+          "slug": "decision-causal"
+        },
+        {
+          "slug": "dutch-book"
+        },
+        {
+          "slug": "epistemic-paradoxes"
+        },
+        {
+          "slug": "epistemic-utility"
+        },
+        {
+          "slug": "epistemology"
+        },
+        {
+          "slug": "epistemology-bayesian"
+        },
+        {
+          "slug": "fitch-paradox"
+        },
+        {
+          "slug": "game-theory"
+        },
+        {
+          "slug": "induction-problem"
+        },
+        {
+          "slug": "justep-coherence"
+        },
+        {
+          "slug": "justep-foundational"
+        },
+        {
+          "slug": "learning-formal"
+        },
+        {
+          "slug": "logic-probability"
+        },
+        {
+          "slug": "logic-conditionals"
+        },
+        {
+          "slug": "logic-epistemic"
+        },
+        {
+          "slug": "logic-inductive"
+        },
+        {
+          "slug": "logic-modal"
+        },
+        {
+          "slug": "logic-nonmonotonic"
+        },
+        {
+          "slug": "pascal-wager"
+        },
+        {
+          "slug": "preferences"
+        },
+        {
+          "slug": "imprecise-probabilities"
+        },
+        {
+          "slug": "probability-interpret"
+        },
+        {
+          "slug": "rationality-normative-utility"
+        },
+        {
+          "slug": "reasoning-defeasible"
+        },
+        {
+          "slug": "risk"
+        },
+        {
+          "slug": "social-choice"
+        },
+        {
+          "slug": "statistics"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 141,
+      "bibliography": [
+        {
+          "raw": "Akiba, Ken, 2000, \"Shogenji's Probabilistic Measure of Coherence Is Incoherent\", Analysis , 60(4): 356-59."
+        },
+        {
+          "raw": "Alchourr&oacute;n, Carlos E., Peter G&auml;rdenfors, and David Makinson, 1985, \"On the Logic of Theory Change: Partial Meet Contraction and Revision Functions\", The Journal of Symbolic Logic , 50(2): 510-30."
+        },
+        {
+          "raw": "Bertrand, Joseph L.F., 2007 [1888], Calcul Des Probabilit&eacute;s , Oxford University Press."
+        },
+        {
+          "raw": "Bonjour, Laurence, 1985, The Structure of Empirical Knowledge , Harvard University Press."
+        },
+        {
+          "raw": "Bovens, Luc and Stephan Hartmann, 2003, Bayesian Epistemology , Oxford University Press."
+        },
+        {
+          "raw": "Bradley, Richard, 2000, \"A Preservation Condition for Conditionals\", Analysis , 60(3): 219-22."
+        },
+        {
+          "raw": "---, 2018, \"Learning From Others: Conditioning Versus Averaging\", Theory and Decision , 85(1): 5-20."
+        },
+        {
+          "raw": "Buchak, Lara, 2013, Risk and Rationality , Oxford University Press."
+        },
+        {
+          "raw": "---, 2014, \"Risk and Tradeoffs\", Erkenntnis , 79(6): 1091-1117."
+        },
+        {
+          "raw": "Carnap, Rudolph, 1950, Logical Foundations of Probability , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Carr, Jennifer, 2013, \"Justifying Bayesianism\", PhD thesis, Massachusetts Institute of Technology."
+        },
+        {
+          "raw": "---, 2017, \"Epistemic Utility Theory and the Aim of Belief\", Philosophy and Phenomenological Research , 95(3): 511-34."
+        },
+        {
+          "raw": "Carter, Brandon, 1974, \"Large Number Coincidences and the Anthropic Principle in Cosmology\", in Confrontation of Cosmological Theories with Observational Data , edited by Malcolm S. Longair, 291-98, Boston: D. Reidel."
+        },
+        {
+          "raw": "Castell, Paul, 1998, \"A Consistent Restriction of the Principle of Indifference\", British Journal for the Philosophy of Science , 49(3): 387-95."
+        },
+        {
+          "raw": "Christensen, David, 1992, \"Confirmational Holism and Bayesian Epistemology\", Philosophy of Science , 59(4): 540-557."
+        },
+        {
+          "raw": "---, 1996, \"Dutch Book Arguments Depragmatized: Epistemic Consistency for Partial Believers\", The Journal of Philosophy , 93(9): 450-79."
+        },
+        {
+          "raw": "---, 2001, \"Preference-Based Arguments for Probabilism\", Philosophy of Science , 68(3):356-376."
+        },
+        {
+          "raw": "---, 2004, Putting Logic in Its Place , Oxford University Press."
+        },
+        {
+          "raw": "Cohen, Stewart, 2002, \"Basic Knowledge and the Problem of Easy Knowledge\", Philosophy and Phenomenological Research , 65(2): 309-29."
+        },
+        {
+          "raw": "Collins, Robin, 2009, \"The Teleological Argument: An Exploration of the Fine-Tuning of the Universe\", in The Blackwell Companion to Natural Theology , edited by William Lane Craig and J.P. Moreland, 202-81. Wiley-Blackwell."
+        },
+        {
+          "raw": "Colyvan, Mark, Jay L. Garfield, and Graham Priest, 2005, \"Problems with the Argument from Fine Tuning\", Synthese , 145(3): 325-38."
+        },
+        {
+          "raw": "Cresto, Eleonora, 2012, \"A Defense of Temperate Epistemic Transparency\", Journal of Philosophical Logic , 41(6): 923-55."
+        },
+        {
+          "raw": "Crupi, Vincenzo, and Katya Tentori, 2010, \"Irrelevant Conjunction: Statement and Solution of a New Paradox\", Philosophy of Science , 77(1): 1-13."
+        },
+        {
+          "raw": "Douven, Igor, and Richard Dietz, 2011, \"A Puzzle About Stalnaker's Hypothesis\", Topoi , 30(1): 31-37."
+        },
+        {
+          "raw": "Douven, Igor, and Wouter Meijs, 2006, \"Bootstrap Confirmation Made Quantitative\", Synthese , 149(1): 97-132."
+        },
+        {
+          "raw": "---, 2007, \"Measuring Coherence\", Synthese , 156(3): 405-25."
+        },
+        {
+          "raw": "Douven, Igor and Sylvia Wenmackers, 2017, \"Inference to the Best Explanation versus Bayes's Rule in a Social Setting\", British Journal for the Philosophy of science , 68(2): 535-570."
+        },
+        {
+          "raw": "Easwaran, Kenny, Luke Fenton-Glynn, Christopher Hitchcock, and Joel D. Velasco, 2016, \"Updating on the Credences of Others: Disagreement, Agreement, and Synergy\", Philosophers' Imprint , 16(11): 1-39."
+        },
+        {
+          "raw": "Edgington, Dorothy, 1995, \"On Conditionals\", Mind , 104: 235-329."
+        },
+        {
+          "raw": "---, 2000, \"General Conditional Statements: A Reply to K&ouml;lbel\", Mind , 109: 109-16."
+        },
+        {
+          "raw": "Etlin, David, 2009, \"The Problem of Noncounterfactual Conditionals\", Philosophy of Science , 76(5): 676-88."
+        },
+        {
+          "raw": "Field, Hartry, 1978, \"A Note on Jeffrey Conditionalization\", Philosophy of Science , 45(3): 361-367."
+        },
+        {
+          "raw": "Fisher, Ronald A., 1925, Statistical Methods for Research Workers , Edinburgh: Oliver; Boyd."
+        },
+        {
+          "raw": "Fitch, Frederic B., 1963, \"A Logical Analysis of Some Value Concepts\", The Journal of Symbolic Logic , 28(2): 135-42."
+        },
+        {
+          "raw": "Fitelson, Branden, 2003, \"A Probabilistic Theory of Coherence\", Analysis , 63(3): 194-99."
+        },
+        {
+          "raw": "---, 2006, \"The Paradox of Confirmation\", Philosophy Compass , 1(1): 95."
+        },
+        {
+          "raw": "Fitelson, Branden, and James Hawthorne, 2010, \"How Bayesian Confirmation Theory Handles the Paradox of the Ravens\", in The Place of Probability in Science , 284:247-75, New York: Springer."
+        },
+        {
+          "raw": "G&auml;rdenfors, Peter, 1986, \"Belief Revisions and the Ramsey Test for Conditionals\", The Philosophical Review , 95(1): 81-93."
+        },
+        {
+          "raw": "Genest, Christian and James V. Zidek, 1986, \"Combining Probability Distributions: A Critique and an Annotated Bibliography\", Statistical Science , 1(1): 114-135."
+        },
+        {
+          "raw": "Gibbard, Allan, and William Harper, 1978, \"Counterfactuals and Two Kinds of Expected Utility\", in Foundations and Applications of Decision Theory , edited by A. Hooker, J.J. Leach, and E.F. McClennen, Dordrecht: D. Reidel."
+        },
+        {
+          "raw": "Gigerenzer, Gerd, Peter M. Todd, and The ABC Research Group, 1999, Simple Heuristics That Make Us Smart , Oxford University Press."
+        },
+        {
+          "raw": "Glass, David H., 2002, \"Coherence, Explanation, and Bayesian Networks\", Artificial Intelligence and Cognitive Science , 2464: 177-82."
+        },
+        {
+          "raw": "Glymour, Clark, 1980, Theory and Evidence , Princeton University Press."
+        },
+        {
+          "raw": "Good, I.J., 1967, \"The White Shoe Is a Red Herring\", British Journal for the Philosophy of Science , 17(4): 322."
+        },
+        {
+          "raw": "Goodman, Nelson, 1954, Fact, Fiction, and Forecast , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Greaves, Hilary, and David Wallace, 2006, \"Justifying Conditionalization: Conditionalization Maximizes Expected Epistemic Utility\", Mind , 115: 607-32."
+        },
+        {
+          "raw": "Greco, Daniel, 2014, \"Could KK Be OK?\" The Journal of Philosophy , 111(4): 169-197."
+        },
+        {
+          "raw": "Grice, Paul, 1989, Studies in the Ways of Words , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Haack, Susan, 1976, \"The Justification of Deduction\", Mind , 85(337): 112-19."
+        },
+        {
+          "raw": "---, 1993, Evidence and Inquiry: Towards Reconstruction in Epistemology , Oxford: Blackwell Publishers."
+        },
+        {
+          "raw": "Hacking, Ian, 1987, \"The Inverse Gambler's Fallacy: The Argument from Design. the Anthropic Principle Applied to Wheeler Universes\", Mind , 96(383): 331-40."
+        },
+        {
+          "raw": "Harman, Gilbert, 1986, Change in View: Principles of Reasoning , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Hawthorne, John, 2005, \"Knowledge and Evidence\", Philosophy and Phenomenological Research , 70(2): 452-58."
+        },
+        {
+          "raw": "H&aacute;jek, Alan, 1989, \"Probabilities of Conditionals: Revisited\", Journal of Philosophical Logic , 18(4): 423-28."
+        },
+        {
+          "raw": "Hempel, Carl G., 1937, \"Le Probl&egrave;me de La V&eacute;rit&eacute;\", Theoria , 3(2): 206-44."
+        },
+        {
+          "raw": "---, 1945, \"Studies in the Logic of Confirmation I\", Mind , 54: 1-26."
+        },
+        {
+          "raw": "Hintikka, Jaakko, 1962, Knowledge and Belief: An Introduction to the Logic of the Two Notions , Ithaca, NY: Cornell University Press."
+        },
+        {
+          "raw": "Horty, John F., 2012, Reasons as Defaults , Oxford University Press."
+        },
+        {
+          "raw": "Hosiasson-Lindenbaum, Janina, 1940, \"On Confirmation\", The Journal of Symbolic Logic , 5(4): 133-48."
+        },
+        {
+          "raw": "Howson, Colin, and Peter Urbach, 1993, Scientific Reasoning: The Bayesian Approach , Chicago: Open Court."
+        },
+        {
+          "raw": "Huemer, Michael, 1997, \"Probability and Coherence Justification\", The Southern Journal of Philosophy , 35(4): 463-72."
+        },
+        {
+          "raw": "---, 2011, \"Does Probability Theory Refute Coherentism?\" The Journal of Philosophy , 108(1): 35-54."
+        },
+        {
+          "raw": "Jackson, Frank, 1987, Conditionals , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Jeffrey, Richard C., 1965, The Logic of Decision , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Joyce, James, 1998, \"A Nonpragmatic Vindication of Probabilism\", Philosophy of Science , 65(4): 575-603."
+        },
+        {
+          "raw": "---, 1999, The Foundations of Causal Decision Theory , Cambridge University Press."
+        },
+        {
+          "raw": "---, 2009, \"Accuracy and Coherence: Prospects for an Alethic Epistemology of Partial Belief\", in Degrees of Belief , edited by Franz Huber and Christoph Schmidt-Petri, 342:263-97. Synthese Library, Dordrecht: Springer."
+        },
+        {
+          "raw": "Kahneman, Daniel, and Amos Tversky, 1979, \"Prospect Theory: An Analysis of Decision Under Risk\", Econometrica , 47(2): 263-292."
+        },
+        {
+          "raw": "Keynes, John Maynard, 1921, A Treatise on Probability , New York: MacMillan."
+        },
+        {
+          "raw": "Klein, Peter, and Ted A. Warfield, 1994, \"What Price Coherence?\" Analysis , 54(3): 129-32."
+        },
+        {
+          "raw": "Leitgeb, Hannes, and Richard Pettigrew, 2010a, \"An Objective Justification of Bayesianism I: Measuring Inaccuracy\", Philosophy of Science , 77(2): 201-35."
+        },
+        {
+          "raw": "---, 2010b, \"An Objective Justification of Bayesianism II: The Consequences of Minimizing Inaccuracy\", Philosophy of Science , 77(2): 236-272."
+        },
+        {
+          "raw": "Leslie, John, 1989, Universes , London: Routledge."
+        },
+        {
+          "raw": "Lewis, David, 1976, \"Probabilities of Conditionals and Conditional Probabilities\", The Philosophical Review , LXXXV(3): 297-315."
+        },
+        {
+          "raw": "---, 1981, \"Causal Decision Theory\", Australasian Journal of Philosophy , 59(1): 5-30."
+        },
+        {
+          "raw": "---, 1999, \"Why Conditionalize?\" in Papers in Metaphysics and Epistemology , 403-7, Cambridge University Press."
+        },
+        {
+          "raw": "List, Christian and Philip Pettit, 2002, \"Aggregating Sets of Judgments: An Impossibility Result\", Economics and Philosophy , 18(1): 89-110."
+        },
+        {
+          "raw": "Maher, Patrick, 1996, \"Subjective and Objective Confirmation\", Philosophy of Science , 63(2): 149-174."
+        },
+        {
+          "raw": "Mahtani, Anna, 2008, \"Williamson on Inexact Knowledge\", Philosophical Studies , 139(2): 171-80."
+        },
+        {
+          "raw": "Mayo, Deborah G., 1996, Error and the Growth of Experimental Knowledge , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Mayo, Deborah G., and Aris Spanos, 2011, \"Error Statistics\", in Philosophy of Statistics , edited by Prasanta S. Bandyopadhyay and Malcolm R. Forster, Vol. 7. Handbook of Philosophy of Science, Elsevier."
+        },
+        {
+          "raw": "Mayo-Wilson, Conor, Kevin J.S. Zollman, and David Danks, 2011, \"The Independence Thesis: When Individual and Social Epistemology Diverge\", Philosophy of Science , 78(4): 653-77."
+        },
+        {
+          "raw": "McGrew, Timothy, Lydia McGrew, and Eric Vestrup, 2001, \"Probabilities and the Fine-Tuning Argument: A Skeptical View\", Mind , 110(440): 1027-37."
+        },
+        {
+          "raw": "McMullin, Ernan, 1993, \"Indifference Principle and Anthropic Principle in Cosmology\", Studies in the History and Philosophy of Science , 24: 359-89."
+        },
+        {
+          "raw": "Merricks, Trenton, 1995, \"On Behalf of the Coherentist\", Analysis , 55(4): 306-9."
+        },
+        {
+          "raw": "Monton, Bradley, 2006, \"God, Fine-Tuning, and the Problem of Old Evidence\", British Journal for the Philosophy of Science , 57(2): 405-24."
+        },
+        {
+          "raw": "Neyman, Jerzy, and Karl Pearson, 1928a, \"On the Use and Interpretation of Certain Test Criteria for Purposes of Statistical Inference, Part I\", Biometrika , 20A(1/2): 175-240."
+        },
+        {
+          "raw": "---, 1928b, \"On the Use and Interpretation of Certain Test Criteria for Purposes of Statistical Inference, Part I\", Biometrika , 20A(3/4): 263-94."
+        },
+        {
+          "raw": "Nicod, Jean, 1930, Foundations of Geometry and Induction , New York: Harcourt, Brace, & Co."
+        },
+        {
+          "raw": "Nozick, Robert, 1981, Philosophical Explanations , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "O'Connor, Cailin, and James Owen Weatherall, 2018, \"Scientific Polarization\", European Journal for Philosophy of Science , 8(3): 855-875."
+        },
+        {
+          "raw": "Olsson, Erik J., 2002, \"What Is the Problem of Coherence and Truth?\" The Journal of Philosophy , 99(5): 246-72."
+        },
+        {
+          "raw": "---, 2005, Against Coherence: Truth, Probability, and Justification , Oxford University Press."
+        },
+        {
+          "raw": "Payne, John W., James R. Bettman, and Eric J. Johnson, 1993, The Adaptive Decision Maker , Cambridge University Press."
+        },
+        {
+          "raw": "Pettigrew, Richard, 2016, \"Accuracy, Risk, and the Principle of Indifference\", Philosophy and Phenomenological Research , 92(1): 35-59."
+        },
+        {
+          "raw": "Pollock, John L., 1995, Cognitive Carpentry , Philosophy of Science , Cambridge: MIT Press."
+        },
+        {
+          "raw": "---, 2008, \"Defeasible Reasoning\", in Reasoning: Studies of Human Inference and Its Foundations , edited by Jonathan E. Adler and Lance J. Rips, Cambridge University Press."
+        },
+        {
+          "raw": "Pryor, James, 2013, \"Problems for Credulism\", in Seemings and Justification: New Essays on Dogmatism and Phenomenal Conservatism , edited by Chris Tucker, Oxford University Press."
+        },
+        {
+          "raw": "Ramachandran, Murali, 2009, \"Anti-Luminosity: Four Unsuccessful Strategies\", Australasian Journal of Philosophy , 87(4): 659-673."
+        },
+        {
+          "raw": "Ramsey, Frank Plumpton, 1964 [1926], \"Truth and Probability\", in Studies in Subjective Probability , edited by Henry E. Kyburg and Howard E. Smokler, 61-92, New York: Wiley."
+        },
+        {
+          "raw": "---, 1990 [1929], \"General Propositions and Causality\", in Philosophical Papers , 145-63, Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Rees, Martin, 1999, Just Six Numbers , Basic Books."
+        },
+        {
+          "raw": "Rinard, Susanna, 2014, \"A New Bayesian Solution to the Paradox of the Ravens\", Philosophy of Science , 81(1): 81-100."
+        },
+        {
+          "raw": "Rosenstock, Sarita, Justin Bruner, and Cailin O'Connor, 2017, \"In Epistemic Networks, Is Less Really More?\", Philosophy of Science , 84(2): 234-252."
+        },
+        {
+          "raw": "Roush, Sherrilyn, 2005, Tracking Truth: Knowledge, Evidence, and Science , Oxford University Press."
+        },
+        {
+          "raw": "---, 2009, \"Pr&egrave;cis of Tracking Truth \", Philosophy and Phenomenological Research , 79(1): 213-22."
+        },
+        {
+          "raw": "Royall, Richard, 1997, Statistical Evidence: A Likelihood Paradigm , London: Chapman & Hall."
+        },
+        {
+          "raw": "Russell, Gillian, and Greg Restall, 2010, \"Barriers to Implication\", in Hume on Is and Ought , edited by Charles Pigden, Palgrave MacMillan."
+        },
+        {
+          "raw": "Russell, Jeffrey Sanford, John Hawthorne, and Lara Buchak, 2015, \"Groupthink\", Philosophical studies , 172(5): 1287-1309."
+        },
+        {
+          "raw": "Salerno, Joe, 2009, \"Knowability Noir\", in New Essays on the Knowability Paradox , edited by Joe Salerno, Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Savage, Leonard J., 1954, The Foundations of Statistics , New York: Wiley Publications in Statistics."
+        },
+        {
+          "raw": "Sellars, Wilfrid, 1956, \"Empiricism and the Philosophy of Mind\", in Minnesota Studies in the Philosophy of Science, Volume I: The Foundations of Science and the Concepts of Psychology and Psychoanalysis , edited by Herbert Feigl and Michael Scriven, University of Minnesota Press."
+        },
+        {
+          "raw": "Shafer, Glenn, 1976, A Mathematical Theory of Evidence , Princeton University Press."
+        },
+        {
+          "raw": "Shogenji, Tomoji, 1999, \"Is Coherence Truth Conducive?\" Analysis , 59(4): 338-45."
+        },
+        {
+          "raw": "Skyrms, Brian, 1980, \"The Role of Causal Factors in Rational Decision\", in Causal Necessity , Brian Skyrms, pp. 128-139, New Haven: Yale University Press."
+        },
+        {
+          "raw": "Sober, Elliott, 2005, \"The Design Argument\", in The Blackwell Guide to the Philosophy of Religion , edited by William E. Mann, 117-47, Blackwell Publishing."
+        },
+        {
+          "raw": "---, 2009, \"Absence of Evidence and Evidence of Absence\", Philosophical Studies , 143(1): 63-90."
+        },
+        {
+          "raw": "Spohn, Wolfgang, 1988, \"Ordinal Conditional Functions: A Dynamic Theory of Epistemic States\", in Causation in Decision, Belief Change, and Statistics II , edited by William Leonard Harper and Brian Skyrms, Kluwer."
+        },
+        {
+          "raw": "---, 2012, The Laws of Belief: Ranking Theory and Its Philosophical Applications , Oxford University Press."
+        },
+        {
+          "raw": "Stalnaker, Robert, 1970, \"Probability and Conditionals\", Philosophy of Science , 37(1): 64-80."
+        },
+        {
+          "raw": "Steele, Katie, 2007, \"Distinguishing Indeterminate Belief from 'Risk-Averse' Preferences\", Synthese , 158(2): 189-205."
+        },
+        {
+          "raw": "Stroud, Barry, 1984, The Philosophical Significance of Skepticism , Oxford University Press."
+        },
+        {
+          "raw": "Teller, Paul, 1973, \"Conditionalisation and Observation\", Synthese , 26: 218-58."
+        },
+        {
+          "raw": "Turri, John, and Peter D. Klein (eds), 2014, Ad Infinitum: New Essays on Epistemological Infinitism , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "van Fraassen , Bas, 1989, Laws and Symmetry , Oxford University Press."
+        },
+        {
+          "raw": "Vineberg, Susan, 1997, \"Dutch Books, Dutch Strategies, and What They Show About Rationality\", Philosophical Studies , 86(2): 185-201."
+        },
+        {
+          "raw": "---, 2001, \"The Notion of Consistency for Partial Belief\", Philosophical Studies , 102(3): 281-96."
+        },
+        {
+          "raw": "von Neumann , John, and Oskar Morgenstern, 1944, Theory of Games and Economic Behavior , Princeton University Press."
+        },
+        {
+          "raw": "Vranas, Peter B.M., 2004, \"Hempel's Raven Paradox: A Lacuna in the Standard Bayesian Account\", British Journal for the Philosophy of Science , 55: 545-60."
+        },
+        {
+          "raw": "Weatherall, James Owen, and Cailin O'Connor, forthcoming, \"Endogenous Epistemic Factionalization\", Synthese , first online 04 June 2020. doi:10.1007/s11229-020-02675-3"
+        },
+        {
+          "raw": "Weintraub, Ruth, 1995, \"What Was Hume's Contribution to the Problem of Induction\", The Philosophical Quarterly , 45(181): 460-70."
+        },
+        {
+          "raw": "Weirich, Paul, 2004, Realistic Decision Theory: Rules for Nonideal Agents in Nonideal Circumstances , New York: Oxford University Press."
+        },
+        {
+          "raw": "Wheeler, John Archibald, 1973, \"From Relativity to Mutability\", in The Physicist's Conception of Nature , edited by Jagdesh Mehra. Springer."
+        },
+        {
+          "raw": "White, Roger, 2000, \"Fine-Tuning and Multiple Universes\", No&ucirc;s , 34(2): 260-76."
+        },
+        {
+          "raw": "---, 2006, \"Problems for Dogmatism\", Philosophical Studies , 131(3): 525-57."
+        },
+        {
+          "raw": "---, 2009, \"Evidential Symmetry and Mushy Credence\", in Oxford Studies in Epistemology , Oxford University Press."
+        },
+        {
+          "raw": "Williams, P.M., 1980, \"Bayesian Conditionalisation and the Principle of Minimum Information\", British Journal for the Philosophy of Science , 32(2): 131-44."
+        },
+        {
+          "raw": "Williamson, Jon, 2007, \"Inductive Influence\", British Journal for the Philosophy of Science , 58(4): 689-708."
+        },
+        {
+          "raw": "Williamson, Timothy, 2000, Knowledge and Its Limits , Oxford University Press."
+        },
+        {
+          "raw": "Zollman, Kevin J. S., 2007, \"The Communication Structure of Epistemic Communities\", Philosophy of Science , 74(5): 574-587."
+        },
+        {
+          "raw": "---, 2013, \"Network Epistemology: Communication in Epistemic Communities\", Philosophy Compass , 8(1): 15-27."
+        }
+      ],
+      "publishedAt": "2015-03-01T13:00:00.000Z",
+      "revisedAt": "2021-03-14T13:00:00.000Z"
+    }
+  }
+}

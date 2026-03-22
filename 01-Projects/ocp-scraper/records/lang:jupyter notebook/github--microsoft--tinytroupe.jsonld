@@ -1,0 +1,282 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/microsoft--tinytroupe",
+  "meta": {
+    "title": "TinyTroupe 🤠🤓🥸🧐",
+    "description": "LLM-powered multiagent persona simulation for imagination enhancement and business insights.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T06:18:42.242Z",
+    "dateModified": "2026-03-22T06:18:42.242Z",
+    "keywords": [],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "*LLM-powered multiagent persona simulation for imagination enhancement and business insights.*",
+    "context": "*LLM-powered multiagent persona simulation for imagination enhancement and business insights.*\n\n<p align=\"center\">\n  <img src=\"./docs/tinytroupe_stage.png\" alt=\"A tiny office with tiny people doing some tiny jobs.\">\n</p>\n\n>[!TIP]\n>📄 **New Paper Released!** Check out our [TinyTroupe paper (preprint)](https://arxiv.org/abs/2507.09788) that describes the library and its use cases in detail. You can find the related experiments and complementary material in the [publications/](./publications/) folder.\n\n*TinyTroupe* is an experimental Python library that allows the **simulation** of people with specific personalities, interests, and goals. These artificial agents - `TinyPerson`s - can listen to us and one another, reply back, and go about their lives in simulated `TinyWorld` environments. This is achieved by leveraging the power of Large Language Models (LLMs), notably GPT-4, to generate realistic simulated behavior. This allows us to investigate a wide range of **convincing interactions** and **consumer types**, with **highly customizable personas**, under **conditions of our choosing**. The focus is thus on *understanding* human behavior and not on directly *supporting it* (like, say, AI assistants do) -- this results in, among other things, specialized mechanisms that make sense only in a simulation setting. Further, unlike other *game-like* LLM-based simulation approaches, TinyTroupe aims at enlightening productivity and business scenarios, thereby contributing to more successful projects and products. Here are some application ideas to **enhance human imagination**:\n\n  - **Advertisement:** TinyTroupe can **evaluate digital ads (e.g., Bing Ads)** offline with a simulated audience before spending money on them!\n  - **Software Testing:** TinyTroupe can **provide test input** to systems (e.g., search engines, chatbots or copilots) and then **evaluate the results**.\n  - **Training and exploratory data:** TinyTroupe can generate realistic **synthetic data** that can be later used to train models or be subject to opportunity analyses.\n  - **Product and project management:** TinyTroupe can **read project or product proposals** and **give feedback** from the perspective of **specific personas** (e.g., physicians, lawyers, and knowledge workers in general).\n  - **Brainstorming:** TinyTroupe can simulate **focus groups** and deliver great product feedback at a fraction of the cost!\n\nIn all of the above, and many others, we hope experimenters can **gain insights** about their domain of interest, and thus make better decisions. \n\nWe are releasing *TinyTroupe* at a relatively early stage, with considerable work still to be done, because we are looking for feedback and contributions to steer development in productive directions. We are particularly interested in finding new potential use cases, for instance in specific industries. \n\n>[!NOTE] \n>🚧 **WORK IN PROGRESS: expect frequent changes**.\n>TinyTroupe is an ongoing research project, still under **very significant development** and requiring further **tidying up**. In particular, the API is still subject to frequent changes. Experimenting with API variations is essential to shape it correctly, but we are working to stabilize it and provide a more consistent and friendly experience over time. We appreciate your patience and feedback as we continue to improve the library.\n\n>[!CAUTION] \n>⚖️ **Read the LEGAL DISCLAIMER.**\n>TinyTroupe is for research and simulation only. You are fully responsible for any use you make of the generated outputs. Various important additional legal considerations apply and constrain its use. Please read the full [Legal Disclaimer](#legal-disclaimer) section below before using TinyTroupe.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:jupyter notebook"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "7336 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "642 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T06:18:42.242Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/microsoft/TinyTroupe",
+        "description": "GitHub repository: microsoft/TinyTroupe"
+      }
+    ],
+    "language": "Jupyter Notebook"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "pandas",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pandas/"
+      },
+      {
+        "name": "pytest",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pytest/"
+      },
+      {
+        "name": "pytest-cov",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pytest-cov/"
+      },
+      {
+        "name": "pytest-timeout",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pytest-timeout/"
+      },
+      {
+        "name": "pytest-html",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pytest-html/"
+      },
+      {
+        "name": "openai",
+        "version": ">= 1.65",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/openai/"
+      },
+      {
+        "name": "httpx",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/httpx/"
+      },
+      {
+        "name": "tiktoken",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tiktoken/"
+      },
+      {
+        "name": "msal",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/msal/"
+      },
+      {
+        "name": "rich",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/rich/"
+      },
+      {
+        "name": "requests",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/requests/"
+      },
+      {
+        "name": "chevron",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/chevron/"
+      },
+      {
+        "name": "llama-index",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/llama-index/"
+      },
+      {
+        "name": "llama-index-embeddings-huggingface",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/llama-index-embeddings-huggingface/"
+      },
+      {
+        "name": "llama-index-readers-web",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/llama-index-readers-web/"
+      },
+      {
+        "name": "llama-index-embeddings-azure-openai",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/llama-index-embeddings-azure-openai/"
+      },
+      {
+        "name": "pypandoc",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pypandoc/"
+      },
+      {
+        "name": "docx",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/docx/"
+      },
+      {
+        "name": "markdown",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/markdown/"
+      },
+      {
+        "name": "jupyter",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/jupyter/"
+      },
+      {
+        "name": "matplotlib",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/matplotlib/"
+      },
+      {
+        "name": "pydantic",
+        "version": ">=2.5.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pydantic/"
+      },
+      {
+        "name": "pypandoc",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pypandoc/"
+      },
+      {
+        "name": "textdistance",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/textdistance/"
+      },
+      {
+        "name": "scipy",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scipy/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "microsoft",
+        "type": "human",
+        "uri": "https://github.com/microsoft"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 8620,
+      "validation_diversity": 0.35,
+      "context_breadth": 0.28,
+      "temporal_stability": 0.95,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.65
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.486
+  }
+}

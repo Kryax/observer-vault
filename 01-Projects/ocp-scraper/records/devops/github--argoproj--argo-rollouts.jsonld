@@ -1,0 +1,497 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/argoproj--argo-rollouts",
+  "meta": {
+    "title": "Argo Rollouts - Progressive Delivery for Kubernetes",
+    "description": "Progressive Delivery for Kubernetes",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T06:47:15.239Z",
+    "dateModified": "2026-03-22T06:47:15.239Z",
+    "keywords": [
+      "argo-rollouts",
+      "argoproj",
+      "bluegreen",
+      "canary",
+      "deployments",
+      "experiments",
+      "gitops",
+      "hacktoberfest",
+      "kubernetes",
+      "progressive-delivery"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "Argo Rollouts is a Kubernetes controller and set of CRDs which provide advanced deployment capabilities such as blue-green, canary, canary analysis, experimentation, and progressive delivery features to Kubernetes.",
+    "context": "[![codecov](https://codecov.io/gh/argoproj/argo-rollouts/branch/master/graph/badge.svg)](https://codecov.io/gh/argoproj/argo-rollouts)\n[![slack](https://img.shields.io/badge/slack-argoproj-brightgreen.svg?logo=slack)](https://argoproj.github.io/community/join-slack)\n[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/3834/badge)](https://bestpractices.coreinfrastructure.org/projects/3834)\n[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/argoproj/argo-rollouts/badge)](https://api.securityscorecards.dev/projects/github.com/argoproj/argo-rollouts)\n[![Artifact HUB](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/argo-rollouts)](https://artifacthub.io/packages/helm/argo/argo-rollouts)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "devops",
+    "containerization",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "3406 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "1102 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T06:47:15.239Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/argoproj/argo-rollouts",
+        "description": "GitHub repository: argoproj/argo-rollouts"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://argo-rollouts.readthedocs.io/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "github.com/argoproj/notifications-engine",
+        "version": "v0.5.1-0.20260213231747-1dbe3de712f8",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/argoproj/notifications-engine"
+      },
+      {
+        "name": "github.com/argoproj/pkg",
+        "version": "v0.13.6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/argoproj/pkg"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2",
+        "version": "v1.41.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/config",
+        "version": "v1.32.12",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/config"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/service/cloudwatch",
+        "version": "v1.55.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/cloudwatch"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/service/elasticloadbalancingv2",
+        "version": "v1.54.9",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/elasticloadbalancingv2"
+      },
+      {
+        "name": "github.com/aws/smithy-go",
+        "version": "v1.24.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/smithy-go"
+      },
+      {
+        "name": "github.com/blang/semver",
+        "version": "v3.5.1+incompatible",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/blang/semver"
+      },
+      {
+        "name": "github.com/bombsimon/logrusr/v4",
+        "version": "v4.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/bombsimon/logrusr/v4"
+      },
+      {
+        "name": "github.com/evanphx/json-patch/v5",
+        "version": "v5.9.11",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/evanphx/json-patch/v5"
+      },
+      {
+        "name": "github.com/expr-lang/expr",
+        "version": "v1.17.7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/expr-lang/expr"
+      },
+      {
+        "name": "github.com/gogo/protobuf",
+        "version": "v1.3.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gogo/protobuf"
+      },
+      {
+        "name": "github.com/golang/mock",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/golang/mock"
+      },
+      {
+        "name": "github.com/golang/protobuf",
+        "version": "v1.5.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/golang/protobuf"
+      },
+      {
+        "name": "github.com/google/uuid",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/uuid"
+      },
+      {
+        "name": "github.com/grpc-ecosystem/grpc-gateway",
+        "version": "v1.16.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/grpc-ecosystem/grpc-gateway"
+      },
+      {
+        "name": "github.com/hashicorp/go-plugin",
+        "version": "v1.7.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/go-plugin"
+      },
+      {
+        "name": "github.com/influxdata/influxdb-client-go/v2",
+        "version": "v2.14.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/influxdata/influxdb-client-go/v2"
+      },
+      {
+        "name": "github.com/juju/ansiterm",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/juju/ansiterm"
+      },
+      {
+        "name": "github.com/machinebox/graphql",
+        "version": "v0.2.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/machinebox/graphql"
+      },
+      {
+        "name": "github.com/mitchellh/mapstructure",
+        "version": "v1.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mitchellh/mapstructure"
+      },
+      {
+        "name": "github.com/newrelic/newrelic-client-go/v2",
+        "version": "v2.81.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/newrelic/newrelic-client-go/v2"
+      },
+      {
+        "name": "github.com/prometheus/client_golang",
+        "version": "v1.23.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/client_golang"
+      },
+      {
+        "name": "github.com/prometheus/client_model",
+        "version": "v0.6.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/client_model"
+      },
+      {
+        "name": "github.com/prometheus/common",
+        "version": "v0.67.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/common"
+      },
+      {
+        "name": "github.com/prometheus/common/sigv4",
+        "version": "v0.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/common/sigv4"
+      },
+      {
+        "name": "github.com/servicemeshinterface/smi-sdk-go",
+        "version": "v0.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/servicemeshinterface/smi-sdk-go"
+      },
+      {
+        "name": "github.com/sirupsen/logrus",
+        "version": "v1.9.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/sirupsen/logrus"
+      },
+      {
+        "name": "github.com/soheilhy/cmux",
+        "version": "v0.1.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/soheilhy/cmux"
+      },
+      {
+        "name": "github.com/spaceapegames/go-wavefront",
+        "version": "v1.8.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spaceapegames/go-wavefront"
+      },
+      {
+        "name": "github.com/spf13/cobra",
+        "version": "v1.9.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/cobra"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.11.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      },
+      {
+        "name": "github.com/tj/assert",
+        "version": "v0.0.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/tj/assert"
+      },
+      {
+        "name": "github.com/valyala/fasttemplate",
+        "version": "v1.2.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/valyala/fasttemplate"
+      },
+      {
+        "name": "golang.org/x/oauth2",
+        "version": "v0.36.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/oauth2"
+      },
+      {
+        "name": "golang.org/x/sync",
+        "version": "v0.20.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/sync"
+      },
+      {
+        "name": "google.golang.org/genproto/googleapis/api",
+        "version": "v0.0.0-20251202230838-ff82c1b0f217",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/genproto/googleapis/api"
+      },
+      {
+        "name": "google.golang.org/grpc",
+        "version": "v1.79.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/grpc"
+      },
+      {
+        "name": "google.golang.org/protobuf",
+        "version": "v1.36.11",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/protobuf"
+      },
+      {
+        "name": "gopkg.in/yaml.v2",
+        "version": "v2.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gopkg.in/yaml.v2"
+      },
+      {
+        "name": "k8s.io/api",
+        "version": "v0.34.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/api"
+      },
+      {
+        "name": "k8s.io/apiextensions-apiserver",
+        "version": "v0.34.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/apiextensions-apiserver"
+      },
+      {
+        "name": "k8s.io/apimachinery",
+        "version": "v0.34.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/apimachinery"
+      },
+      {
+        "name": "k8s.io/apiserver",
+        "version": "v0.34.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/apiserver"
+      },
+      {
+        "name": "k8s.io/cli-runtime",
+        "version": "v0.34.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/cli-runtime"
+      },
+      {
+        "name": "k8s.io/client-go",
+        "version": "v0.34.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/client-go"
+      },
+      {
+        "name": "k8s.io/code-generator",
+        "version": "v0.34.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/code-generator"
+      },
+      {
+        "name": "k8s.io/component-base",
+        "version": "v0.34.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/component-base"
+      },
+      {
+        "name": "k8s.io/klog/v2",
+        "version": "v2.130.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/klog/v2"
+      },
+      {
+        "name": "k8s.io/kube-openapi",
+        "version": "v0.0.0-20250910181357-589584f1c912",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/kube-openapi"
+      },
+      {
+        "name": "k8s.io/kubectl",
+        "version": "v0.34.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/kubectl"
+      },
+      {
+        "name": "k8s.io/kubernetes",
+        "version": "v1.34.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/kubernetes"
+      },
+      {
+        "name": "k8s.io/utils",
+        "version": "v0.0.0-20250604170112-4c0f3b243397",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/utils"
+      },
+      {
+        "name": "sigs.k8s.io/yaml",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/sigs.k8s.io/yaml"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "argoproj",
+        "type": "human",
+        "uri": "https://github.com/argoproj"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 5610,
+      "validation_diversity": 0.85,
+      "context_breadth": 0.7,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.2,
+      "documentation_quality": 0.85
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.727
+  }
+}

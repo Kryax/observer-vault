@@ -1,0 +1,158 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/jbaldwin--libcoro",
+  "meta": {
+    "title": "libcoro C++20 coroutine library",
+    "description": "C++20 coroutine library",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T06:04:25.336Z",
+    "dateModified": "2026-03-22T06:04:25.336Z",
+    "keywords": [
+      "coroutines",
+      "cpp20",
+      "cpplibrary"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "* C++20 coroutines!\n* Modern Safe C++20 API\n* Higher level coroutine constructs\n    - [coro::sync_wait(awaitable)](#sync_wait)\n    - [coro::when_all(awaitable...) -> awaitable](#when_all)\n    - [coro::when_any(awaitable...) -> awaitable](#when_any)\n    - [coro::task<T>](#task)\n    - [coro::generator<T>](#generator)\n    - [coro::event](#event)\n    - [coro::latch](#latch)\n    - [coro::mutex](#mutex)\n    - [coro::shared_mutex](#shared_mutex)\n    - [coro::semaphore](#semaphore)\n    - [coro::ring_buffer<element, num_elements>](#ring_buffer)\n    - [coro::queue](#queue)\n    - [coro::condition_variable](#condition_variable)\n    - [coro::invoke(functor, args...) -> awaitable](#invoke)\n* Executors\n    - [coro::thread_pool](#thread_pool) for coroutine cooperative multitasking\n    - [coro::scheduler](#scheduler) for driving i/o events\n        - Can use `coro::thread_pool` for latency sensitive or long-lived tasks.\n        - Can use inline task processing for thread per core or short-lived tasks.\n        - Requires `LIBCORO_FEATURE_NETWORKING` to be supported.\n    - coro::task_group for grouping dynamic lifetime tasks\n* Coroutine Networking\n    - coro::net::dns::resolver for async dns\n        - Uses libc-ares\n    - [coro::net::tcp::client](#scheduler)\n    - [coro::net::tcp::server](#scheduler)\n      * [Example TCP/HTTP Echo Server](#tcp_echo_server)\n    - coro::net::tls::client (OpenSSL)\n    - coro::net::tls::server (OpenSSL)\n    - coro::net::udp::peer\n*\n* [Requirements](#requirements)\n* [Build Instructions](#build-instructions)\n* [Android Support](#android-support)\n* [Contributing](#contributing)\n* [Support](#support)",
+    "context": "[![CI](https://github.com/jbaldwin/libcoro/actions/workflows/ci-coverage.yml/badge.svg)](https://github.com/jbaldwin/libcoro/actions/workflows/ci-coverage.yml)\n[![Coverage Status](https://coveralls.io/repos/github/jbaldwin/libcoro/badge.svg?branch=main)](https://coveralls.io/github/jbaldwin/libcoro?branch=main)\n[![Codacy Badge](https://app.codacy.com/project/badge/Grade/c190d4920e6749d4b4d1a9d7d6687f4f)](https://www.codacy.com/gh/jbaldwin/libcoro/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jbaldwin/libcoro&amp;utm_campaign=Badge_Grade)\n[![language][badge.language]][language]\n[![license][badge.license]][license]\n\n**libcoro** is licensed under the Apache 2.0 license.\n\n**libcoro** is meant to provide low level coroutine constructs for building larger applications.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:c++"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "927 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "97 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T06:04:25.336Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/jbaldwin/libcoro",
+        "description": "GitHub repository: jbaldwin/libcoro"
+      }
+    ],
+    "language": "C++"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "jbaldwin",
+        "type": "human",
+        "uri": "https://github.com/jbaldwin"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 1121,
+      "validation_diversity": 0.5,
+      "context_breadth": 0.32,
+      "temporal_stability": 1,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.5
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.518
+  }
+}

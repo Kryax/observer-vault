@@ -1,0 +1,159 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/h4cc--awesome-elixir",
+  "meta": {
+    "title": "Awesome Elixir [![CI Badge](https://github.com/h4cc/awesome-elixir/actions/workflows/ci.yml/badge.svg)](https://github.com/h4cc/awesome-elixir) [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)",
+    "description": "A curated list of amazingly awesome Elixir and Erlang libraries, resources and shiny things. Updates:",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T07:18:47.969Z",
+    "dateModified": "2026-03-22T07:18:47.969Z",
+    "keywords": [],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "A curated list of amazingly awesome Elixir libraries, resources, and shiny things inspired by [awesome-php](https://github.com/ziadoz/awesome-php).",
+    "context": "A curated list of amazingly awesome Elixir libraries, resources, and shiny things inspired by [awesome-php](https://github.com/ziadoz/awesome-php).\n\nIf you think a package should be added, please add a :+1: (`:+1:`) at the according issue or create a new one.\n\nThere are [other sites with curated lists of elixir packages](#other-awesome-lists) which you can have a look at.\n\n- [Awesome Elixir  ](#awesome-elixir--)\n  - [Actors](#actors)\n  - [Algorithms and Data structures](#algorithms-and-data-structures)\n  - [Applications](#applications)\n  - [Artificial Intelligence](#artificial-intelligence)\n  - [Audio and Sounds](#audio-and-sounds)\n  - [Authentication](#authentication)\n  - [Authorization](#authorization)\n  - [Behaviours and Interfaces](#behaviours-and-interfaces)\n  - [Benchmarking](#benchmarking)\n  - [Bittorrent](#bittorrent)\n  - [BSON](#bson)\n  - [Build Tools](#build-tools)\n  - [Caching](#caching)\n  - [Chatting](#chatting)\n  - [Cloud Infrastructure and Management](#cloud-infrastructure-and-management)\n  - [Code Analysis](#code-analysis)\n  - [Command Line Applications](#command-line-applications)\n  - [Configuration](#configuration)\n  - [Cryptography](#cryptography)\n  - [CSV](#csv)\n  - [Data Visualization](#data-visualization)\n  - [Date and Time](#date-and-time)\n  - [Debugging](#debugging)\n  - [Deployment](#deployment)\n  - [Documentation](#documentation)\n  - [Domain-specific language](#domain-specific-language)\n  - [ECMAScript](#ecmascript)\n  - [Email](#email)\n  - [Embedded Systems](#embedded-systems)\n  - [Encoding and Compression](#encoding-and-compression)\n  - [Errors and Exception Handling](#errors-and-exception-handling)\n  - [Eventhandling](#eventhandling)\n  - [Examples and funny stuff](#examples-and-funny-stuff)\n  - [Feature Flags and Toggles](#feature-flags-and-toggles)\n  - [Feeds](#feeds)\n  - [Files and Directories](#files-and-directories)\n  - [Forms](#forms)\n  - [Framework Components](#framework-components)\n  - [Frameworks](#frameworks)\n  - [Games](#games)\n  - [Geolocation](#geolocation)\n  - [GUI](#gui)\n  - [Hardware](#hardware)\n  - [HTML](#html)\n  - [HTTP](#http)\n  - [Images](#images)\n  - [Instrumenting / Monitoring](#instrumenting--monitoring)\n  - [JSON](#json)\n  - [Languages](#languages)\n  - [Lexical analysis](#lexical-analysis)\n  - [Logging](#logging)\n  - [Macros](#macros)\n  - [Markdown](#markdown)\n  - [Miscellaneous](#miscellaneous)\n  - [Native Implemented Functions](#native-implemented-functions)\n  - [Natural Language Processing (NLP)](#natural-language-processing-nlp)\n  - [Networking](#networking)\n  - [Office](#office)\n  - [ORM and Datamapping](#orm-and-datamapping)\n  - [OTP](#otp)\n  - [Package Management](#package-management)\n  - [PDF](#pdf)\n  - [Protocols](#protocols)\n  - [Queue](#queue)\n  - [QUIC](#quic)\n  - [Release Management](#release-management)\n  - [REST and API](#rest-and-api)\n  - [Search](#search)\n  - [Security](#security)\n  - [SMS](#sms)\n  - [Static Page Generation](#static-page-generation)\n  - [Statistics](#statistics)\n  - [Templating](#templating)\n  - [Testing](#testing)\n  - [Text and Numbers](#text-and-numbers)\n  - [Third Party APIs](#third-party-apis)\n  - [Translations and Internationalizations](#translations-and-internationalizations)\n  - [Utilities](#utilities)\n  - [Validations](#validations)\n  - [Version Control](#version-control)\n  - [Video](#video)\n  - [WebAssembly](#webassembly)\n  - [XML](#xml)\n  - [YAML](#yaml)\n- [Resources](#resources)\n  - [Books](#books)\n  - [Cheat Sheets](#cheat-sheets)\n  - [Community](#community)\n  - [Editors](#editors)\n  - [Newsletters](#newsletters)\n  - [Other Awesome Lists](#other-awesome-lists)\n  - [Podcasts](#podcasts)\n  - [Reading](#reading)\n  - [Screencasts](#screencasts)\n  - [Styleguides](#styleguides)\n  - [Websites](#websites)\n- [Contributing](#contributing)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:elixir"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "13102 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "1183 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T07:18:47.969Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/h4cc/awesome-elixir",
+        "description": "GitHub repository: h4cc/awesome-elixir"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://twitter.com/AwesomeElixir",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Elixir"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "h4cc",
+        "type": "human",
+        "uri": "https://github.com/h4cc"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 15468,
+      "validation_diversity": 0.94,
+      "context_breadth": 0.3,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.6
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.666
+  }
+}

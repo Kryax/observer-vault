@@ -1,0 +1,759 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/dynamic-epistemic",
+  "meta": {
+    "title": "Dynamic Epistemic Logic",
+    "description": "Dynamic Epistemic Logic is the study of modal logics of model change. DEL (pronounced \"dell\") is a highly active area of applied logic that touches on topics in many areas, including Formal and Social Epistemology, Epistemic and Doxastic Logic, Belief Revision, multi-agent and distributed systems, Artificial Intelligence, Defeasible and Non-monotonic Reasoning, and Epistemic Game Theory. This article surveys DEL, identifying along the way a number of open questions and natural directions for further research.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T07:29:58.453Z",
+    "dateModified": "2026-03-22T07:29:58.453Z",
+    "datePublished": "2016-06-23T14:00:00.000Z",
+    "keywords": [
+      "common knowledge",
+      "epistemic paradoxes",
+      "epistemology",
+      "fitch paradox",
+      "formal belief",
+      "logic belief revision",
+      "logic classical",
+      "logic conditionals",
+      "logic epistemic",
+      "logic justification",
+      "logic modal",
+      "logic modal origins",
+      "logic probability",
+      "logic temporal"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Dynamic Epistemic Logic is the study of modal logics of model change. DEL (pronounced \"dell\") is a highly active area of applied logic that touches on topics in many areas, including Formal and Social Epistemology, Epistemic and Doxastic Logic, Belief Revision, multi-agent and distributed systems, Artificial Intelligence, Defeasible and Non-monotonic Reasoning, and Epistemic Game Theory. This article surveys DEL, identifying along the way a number of open questions and natural directions for further research.",
+    "context": "Opening section: 1. Introduction | Related entries: formal-belief, common-knowledge, epistemic-paradoxes, epistemology, fitch-paradox, logic-modal-origins, logic-probability, logic-classical, logic-conditionals, logic-epistemic, logic-justification, logic-modal, logic-belief-revision, logic-temporal",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "epistemology",
+    "logic"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry dynamic-epistemic",
+        "uri": "https://plato.stanford.edu/entries/dynamic-epistemic/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "2 author(s), 14 related entries, bibliography size 160"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2016-06-23T14:00:00.000Z and revised 2016-06-23T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2016-06-23T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/dynamic-epistemic/",
+        "description": "SEP entry for dynamic-epistemic"
+      }
+    ],
+    "solutionApproach": "1. Introduction"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/formal-belief",
+      "ocp:sep/common-knowledge",
+      "ocp:sep/epistemic-paradoxes",
+      "ocp:sep/epistemology",
+      "ocp:sep/fitch-paradox",
+      "ocp:sep/logic-modal-origins",
+      "ocp:sep/logic-probability",
+      "ocp:sep/logic-classical",
+      "ocp:sep/logic-conditionals",
+      "ocp:sep/logic-epistemic",
+      "ocp:sep/logic-justification",
+      "ocp:sep/logic-modal",
+      "ocp:sep/logic-belief-revision",
+      "ocp:sep/logic-temporal"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Baltag, Alexandru",
+        "type": "human"
+      },
+      {
+        "name": "Renne, Bryan",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/dynamic-epistemic/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 111,
+      "validation_diversity": 0.59,
+      "context_breadth": 0.51,
+      "temporal_stability": 0.7,
+      "test_coverage": 0.78,
+      "documentation_quality": 0.93
+    },
+    "confidence": "tested",
+    "authority": "high",
+    "status": "draft",
+    "trustScore": 0.592
+  },
+  "extensions": {
+    "sep": {
+      "slug": "dynamic-epistemic",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/dynamic-epistemic/",
+      "preamble": "Dynamic Epistemic Logic is the study of modal logics of model change. DEL (pronounced \"dell\") is a highly active area of applied logic that touches on topics in many areas, including Formal and Social Epistemology, Epistemic and Doxastic Logic, Belief Revision, multi-agent and distributed systems, Artificial Intelligence, Defeasible and Non-monotonic Reasoning, and Epistemic Game Theory. This article surveys DEL, identifying along the way a number of open questions and natural directions for further research.",
+      "firstSectionTitle": "1. Introduction",
+      "firstSectionText": "Dynamic Epistemic Logic is the study of a family of modal logics, each of which is obtained from a given logical language by adding one or more modal operators that describe model-transforming actions. If \\([A]\\) is such a modality, then new formulas of the form \\([A]F\\) are used to express the statement that F is true after the occurrence of action A . To determine whether \\([A]F\\) is true at a pointed Kripke model \\((M,w)\\) (see Appendix A for definitions), we transform the current Kripke model M according to the prescription of action A and we obtain a new pointed Kripke model \\((M',w')\\) at which we then investigate whether F is true. If it is true there, then we say that original formula \\([A]F\\) is true in our starting situation \\((M,w)\\). If F is not true in the newly produced situation \\((M',w')\\), then we conclude the opposite: \\([A]F\\) is not true in our starting situation \\((M,w)\\). In this way, we obtain the meaning of \\([A]F\\) not by the analysis of what obtains in a single Kripke model but by the analysis of what obtains as a result of a specific modality-specified Kripke model transformation. This is a shift from a static semantics of truth that takes place in an individual Kripke model to a dynamic semantics of truth that takes place across modality-specified Kripke model transformations. The advantage of the dynamic perspective is that we can analyze the epistemic and doxastic consequences of actions such as public and private announcements without having to \"hard wire\" the results into the model from the start. Furthermore, we may look at the consequences of different sequences of actions simply by changing the sequence of action-describing modalities. In the following sections, we will look at the many model-changing actions that have been studied in Dynamic Epistemic Logic. Many natural applications and questions arise as part of this study, and we will see some of the results obtained in this work. Along the way it will be convenient to consider many variations of the general formal setup described above. Despite these differences, at the core is the same basic idea: new modalities describing certain application-specific model-transforming operations are added to an existing logical language and the study proceeds from there. Proceeding now ourselves, we begin with what is perhaps the quintessential and most basic model-transforming operation: the public announcement.",
+      "relatedEntries": [
+        "formal-belief",
+        "common-knowledge",
+        "epistemic-paradoxes",
+        "epistemology",
+        "fitch-paradox",
+        "logic-modal-origins",
+        "logic-probability",
+        "logic-classical",
+        "logic-conditionals",
+        "logic-epistemic",
+        "logic-justification",
+        "logic-modal",
+        "logic-belief-revision",
+        "logic-temporal"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "formal-belief"
+        },
+        {
+          "slug": "common-knowledge"
+        },
+        {
+          "slug": "epistemic-paradoxes"
+        },
+        {
+          "slug": "epistemology"
+        },
+        {
+          "slug": "fitch-paradox"
+        },
+        {
+          "slug": "logic-modal-origins"
+        },
+        {
+          "slug": "logic-probability"
+        },
+        {
+          "slug": "logic-classical"
+        },
+        {
+          "slug": "logic-conditionals"
+        },
+        {
+          "slug": "logic-epistemic"
+        },
+        {
+          "slug": "logic-justification"
+        },
+        {
+          "slug": "logic-modal"
+        },
+        {
+          "slug": "logic-belief-revision"
+        },
+        {
+          "slug": "logic-temporal"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 160,
+      "bibliography": [
+        {
+          "raw": "&Aring;gotnes, T., P. Balbiani, H. van Ditmarsch, and P. Seban, 2010, \"Group announcement logic\", Journal of Applied Logic , 8(1): 62-81. doi:10.1016/j.jal.2008.12.002"
+        },
+        {
+          "raw": "Alchourr&oacute;n, C.E., P. G&auml;rdenfors, and D. Makinson, 1985, \"On the logic of theory change: Partial meet contraction and revision functions\", Journal of Symbolic Logic , 50(2): 510-530. doi:10.2307/2274239"
+        },
+        {
+          "raw": "Andr&eacute;ka, H., I. N&eacute;meti, and J. van Benthem, 1998, \"Modal languages and bounded fragments of predicate logic\", Journal of Philosophical Logic , 27(3): 217-274. doi:10.1023/A:1004275029985"
+        },
+        {
+          "raw": "Areces, C., R. Fervari, and G. Hoffmann, 2012, \"Moving arrows and four model checking results\", in Ong and Queiroz 2012: 142-153. doi:10.1007/978-3-642-32621-9_11"
+        },
+        {
+          "raw": "Arl&oacute;-Costa, H. and R. Parikh, 2005, \"Conditional probability and defeasible inference\", Journal of Philosophical Logic , 34(1): 97-119. doi:10.1007/s10992-004-5553-6"
+        },
+        {
+          "raw": "Artemov, S.N., 2008, \"The logic of justification\", The Review of Symbolic Logic , 1(4): 477-513. doi:10.1017/S1755020308090060"
+        },
+        {
+          "raw": "Artemov, S.N. and M. Fitting, 2012, \"Justification logic\", in E.N. Zalta (ed.), The Stanford Encyclopedia of Philosophy (Fall 2012 Edition). URL= https://plato.stanford.edu/archives/fall2012/entries/logic-justification/ >"
+        },
+        {
+          "raw": "Aucher, G., 2003, \"A combined system for update logic and belief revision\", Master's thesis, University of Amsterdam. [ Aucher 2003 available online (pdf) ]"
+        },
+        {
+          "raw": "---, 2005, \"A combined system for update logic and belief revision\", in Intelligent Agents and Multi-Agent Systems: 7th Pacific Rim International Workshop on Multi-Agents, PRIMA 2004, Auckland, New Zealand, August 8-13, 2004, Revised Selected Papers , Volume 3371 of Lecture Notes in Computer Science , pp. 1-17, Berlin/Heidelberg: Springer. doi:10.1007/b107183"
+        },
+        {
+          "raw": "---, 2008, \"Consistency preservation and crazy formulas in BMS\", in S. H&ouml;lldobler, C. Lutz, and H. Wansing (eds.), Logics in Artificial Intelligence: 11th European Conference, JELIA 2008, Dresden, Germany, September 28-October 1, 2008. Proceedings , Volume 5293 of Lecture Notes in Computer Science , pp. 21-33, Berlin/Heidelberg: Springer. doi:10.1007/978-3-540-87803-2_4"
+        },
+        {
+          "raw": "Aucher, G., P. Balbiani, L. Fari&ntilde;as del Cerro, and A. Herzig, 2009, \"Global and local graph modifiers\", in C. Areces and S. Demri (eds.), Proceedings of the 5th Workshop on Methods for Modalities (M4M5 2007) , Volume 231 of Electronic Notes in Theoretical Computer Science , Cachan, France, pp. 293-307. doi:10.1016/j.entcs.2009.02.042"
+        },
+        {
+          "raw": "Aucher, G. and F. Schwarzentruber, 2013, \"On the complexity of dynamic epistemic logic\", in B.C. Schipper (ed.), Proceedings of the 14th Conference of Theoretical Aspects of Rationality and Knowledge (TARK XIV) , Chennai, India, pp. 19-28. [ Aucher and Schwarzentruber 2013 available online (pdf) ]"
+        },
+        {
+          "raw": "Balbiani, P., A. Baltag, H. van Ditmarsch, A. Herzig, T. Hoshi, and T. de Lima, 2007, \"What can we achieve by arbitrary announcements? A dynamic take on Fitch's knowability\", in D. Samet (ed.), Proceedings of the 11th Conference on Theoretical Aspects of Rationality and Knowledge (TARK XI) , Brussels, Belgium, pp. 42-51. [ Balbiani et al. 2007 available online (pdf) ]"
+        },
+        {
+          "raw": "---, 2008, \"'Knowable' as 'known after an announcement'\", The Review of Symbolic Logic , 1(3): 305-334. doi:10.1016/j.entcs.2006.05.034 | [ Balbiani et al. 2008 available online (pdf) ]"
+        },
+        {
+          "raw": "Balbiani, P., H. van Ditmarsch, A. Herzig, and T. De Lima, 2012, \"Some truths are best left unsaid\", in Bolander et al. 2012: Vol. 9, pp. 36-54. [ Balbiani et al. 2012 available online (pdf) ]"
+        },
+        {
+          "raw": "Ballarin, R., 2010, \"Modern origins of modal logic\", in E.N. Zalta (ed.), The Stanford Encyclopedia of Philosophy (Winter 2014 edition). URL= https://plato.stanford.edu/archives/win2014/entries/logic-modal-origins/ >"
+        },
+        {
+          "raw": "Baltag, A. and L.S. Moss, 2004, \"Logics for epistemic programs\", Synthese , 139(2): 165-224. doi:10.1023/B:SYNT.0000024912.56773.5e"
+        },
+        {
+          "raw": "Baltag, A., L.S. Moss, and S. Solecki, 1998, \"The logic of public announcements, common knowledge, and private suspicions\", in I. Gilboa (ed.), Proceedings of the 7th Conference on Theoretical Aspects of Rationality and Knowledge (TARK VII) , Evanston, Illinois, USA, pp. 43-56. [ Baltag, Moss, and Solecki 1998 available online (pdf) ]"
+        },
+        {
+          "raw": "---, 1999, \"The logic of public announcements, common knowledge, and private suspicions\", Technical Report TR534 (November), Indiana University. [ Baltag, Moss, and Solecki 1999 available online (pdf) ]"
+        },
+        {
+          "raw": "Baltag, A., B. Renne, and S. Smets, 2012, \"The logic of justified belief change, soft evidence and defeasible knowledge\", in Ong and Queiroz 2012: 168-190. doi:10.1007/978-3-642-32621-9_13"
+        },
+        {
+          "raw": "---, 2014, \"The logic of justified belief, explicit knowledge, and conclusive evidence\", Annals of Pure and Applied Logic , 165(1): 49-81. doi:10.1016/j.apal.2013.07.005"
+        },
+        {
+          "raw": "---, 2015, \"Revisable justified belief: Preliminary report\", E-print, arXiv.org. arXiv:1503.08141 [cs.LO]. [ Baltag, Renne, and Smets 2015 available online (html) | Baltag, Renne, and Smets 2015 available online (pdf) ]"
+        },
+        {
+          "raw": "Baltag, A. and S. Smets, 2008a, \"Probabilistic dynamic belief revision\", Synthese , 165(2): 179-202. doi:10.1007/s11229-008-9369-8"
+        },
+        {
+          "raw": "---, 2008b, \"A qualitative theory of dynamic interactive belief revision\", in G. Bonanno, W. van der Hoek, and M. Wooldridge (eds.), TLG 3: Logic and the Foundations of Game and Decision Theory (LOFT 7) , Volume 3 of Texts in logic and games , pp. 11-58, Amsterdam: Amsterdam University Press. [ Baltag and Smets 2008a available online (pdf) ]"
+        },
+        {
+          "raw": "Blackburn, P., M. de Rijke, and Y. Venema, 2002, Modal Logic , Volume 53 of Cambridge Tracts in Theoretical Computer Science , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Board, O., 2004, \"Dynamic interactive epistemology\", Games and Economic Behavior , 49(1): 49-80. doi:10.1016/j.geb.2003.10.006"
+        },
+        {
+          "raw": "Bolander, T., T. Bra&uuml;ner, S. Ghilardi, and L.S. Moss (eds.), 2012, Advances in Modal Logic (AiML) , Copenhagen, Denmark: College Publications."
+        },
+        {
+          "raw": "Boutilier, C., 1993, \"Revision sequences and nested conditionals\", in Proceedings of the 13th International Joint Conference on Artificial Intelligence (IJCAI 2011) , Volume 93, Chamb&eacute;ry, France, pp. 519-531. [ Boutilier 1993 available online (pdf) ]"
+        },
+        {
+          "raw": "---, 1995, \"On the revision of probabilistic belief states\", Notre Dame Journal of Formal Logic , 36(1): 158-183. doi:10.1305/ndjfl/1040308833"
+        },
+        {
+          "raw": "Brogaard, B. and J. Salerno, 2012, \"Fitch's paradox of knowability\", in E.N. Zalta (ed.), The Stanford Encyclopedia of Philosophy (Winter 2013 edition). URL= https://plato.stanford.edu/archives/win2013/entries/fitch-paradox/ >"
+        },
+        {
+          "raw": "Bucheli, S., R. Kuznets, J. Sack, and T. Studer, 2010, \"Justified belief change\", in X. Arrazola and M. Ponte (eds.), LogKCA-10: Proceedings of the 2nd ILCLI International Workshop on Logic and Philosophy of Knowledge, Communication and Action , pp. 135-155. The University of the Basque Country Press. [ Bucheli et al. available online (pdf) ]"
+        },
+        {
+          "raw": "Bucheli, S., R. Kuznets, and T. Studer, 2011, \"Partial realization in dynamic justification logic\", in L.D. Beklemishev and R. de Queiroz (eds.), Logic, Language, Information and Computation: 18th International Workshop, WoLLIC 2011, Philadelphia, PA, USA, Proceedings , Volume 6642 of Lecture Notes in Computer Science , pp. 35-51, Berlin/Heidelberg: Springer. doi:10.1007/978-3-642-20920-8_9 | [ Bucheli et al. 2011 available online (pdf) ]"
+        },
+        {
+          "raw": "Chang, K., 2015, \"A math problem from Singapore goes viral: When is Cheryl's birthday?\" The New York Times (15 April 2015). [ Chang 2015 available online (html) ]"
+        },
+        {
+          "raw": "D&eacute;gr&eacute;mont, C., B. L&ouml;we, and A. Witzel, 2011, \"The synchronicity of dynamic epistemic logic\", in K.R. Apt (ed.), Proceedings of the 13th Conference of Theoretical Aspects of Rationality and Knowledge (TARK XIII) , Groningen, The Netherlands, pp. 145-152. [ D&eacute;gr&eacute;mont et al. 2011 available online (pdf) ]"
+        },
+        {
+          "raw": "Demey, L., B. Kooi, and J. Sack, 2013, \"Logic and probability\", in E.N. Zalta (ed.), The Stanford Encyclopedia of Philosophy (Fall 2014 edition). URL= https://plato.stanford.edu/archives/fall2014/entries/logic-probability/ >"
+        },
+        {
+          "raw": "Fagin, R., J.Y. Halpern, and N. Megiddo, 1990, \"A logic for reasoning about probabilities\", Information and Computation , 87, 78-128. doi:10.1016/0890-5401(90)90060-U"
+        },
+        {
+          "raw": "Fagin, R., J.Y. Halpern, Y. Moses, and M. Vardi, 1995, Reasoning About Knowledge , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Fervari, R., 2014, Relation-Changing Modal Logics , Ph. D. thesis, Facultad de Matem&aacute;tica Astronom&iacute;a y F&iacute;sica, Universidad Nacional de C&oacute;rdoba, C&oacute;rdoba, Argentina."
+        },
+        {
+          "raw": "Fitch, F.B., 1963, \"A logical analysis of some value concepts\", The Journal of Symbolic Logic , 28(2): 135-142."
+        },
+        {
+          "raw": "French, T., W. van der Hoek, P. Iliev, and B. Kooi, 2011, \"Succinctness of epistemic languages\", in Proceedings of the 22nd International Joint Conference on Artificial Intelligence (IJCAI 2011) , Barcelona, Spain, pp. 881-886. doi:10.5591/978-1-57735-516-8/IJCAI11-153 | [ French et al. 2011 available online (pdf) ]"
+        },
+        {
+          "raw": "---, 2013, \"On the succinctness of some modal logics\", Artificial Intelligence , 197: 56-85. doi:10.1016/j.artint.2013.02.003"
+        },
+        {
+          "raw": "French, T. and H. van Ditmarsch, 2008, \"Undecidability for arbitrary public announcement logic\", in L. Beklemishev, V. Goranko, and V. Shehtman (eds.), Advances in Modal Logic (AiML) , Volume 7, Nancy, France, pp. 23-42. College Publications. [ French and van Ditmarsch 2008 available online (pdf) ]"
+        },
+        {
+          "raw": "G&auml;rdenfors, P., 1988, Knowledge in Flux: Modeling the Dynamics of Epistemic States , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Garson, J., 2014, \"Modal logic\", in E.N. Zalta (ed.), The Stanford Encyclopedia of Philosophy (Summer 2014 edition). URL= https://plato.stanford.edu/archives/sum2014/entries/logic-modal/ >"
+        },
+        {
+          "raw": "Gerbrandy, J., 1999, Bisimulations on Planet Kripke , Ph. D. thesis, University of Amsterdam. [ Gerbrandy 1999 available online (pdf) ]"
+        },
+        {
+          "raw": "Gerbrandy, J. and W. Groeneveld, 1997, \"Reasoning about information change\", Journal of Logic, Language and Information , 6(2): 147-169. doi:10.1023/A:1008222603071"
+        },
+        {
+          "raw": "Gettier, E., 1963, \"Is justified true belief knowledge?\" Analysis , 23, 121-123."
+        },
+        {
+          "raw": "Girard, P., 2008, Modal Logic for Belief and Preference Change , Ph. D. thesis, University of Amsterdam. [ Girard 2008 available online (pdf) ]"
+        },
+        {
+          "raw": "Girard, P., O. Roy, and M. Marion (eds.), 2011, Dynamic Formal Epistemology , Volume 351 of Synthese Library , Berlin/Heidelberg: Springer."
+        },
+        {
+          "raw": "Girard, P., J. Seligman, and F. Liu, 2012, \"General dynamic dynamic logic\", in Bolander et al. 2012: Vol. 8, pp. 239-260. [ Girard, Seligman, and Liu 2012 available online (pdf) ]"
+        },
+        {
+          "raw": "Grove, A., 1988, \"Two modellings for theory change\", Journal of Philosophical Logic , 17(2): 157-170. doi:10.1007/BF00247909"
+        },
+        {
+          "raw": "Halpern, J.Y., 2001, \"Lexicographic probability, conditional probability, and nonstandard probability\", in J. van Benthem (ed.), Proceedings of the 8th Conference on Theoretical Aspects of Rationality and Knowledge (TARK VIII) , Certosa di Pontignano, Italy, pp. 17-30. [ Halpern 2001 available online (pdf) ]"
+        },
+        {
+          "raw": "---, 2003, Reasoning about Uncertainty , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Hansson, S.O., 2012, \"Logic of belief revision\", in E.N. Zalta (ed.), The Stanford Encyclopedia of Philosophy (Winter 2014 edition). URL= https://plato.stanford.edu/archives/win2014/entries/logic-belief-revision/ >"
+        },
+        {
+          "raw": "Hendricks, V. and J. Symons, 2006, \"Epistemic logic\", in E.N. Zalta (ed.), The Stanford Encyclopedia of Philosophy (Fall 2015 edition). URL= https://plato.stanford.edu/archives/fall2015/entries/logic-epistemic/ >"
+        },
+        {
+          "raw": "Hintikka, J., 1962, Knowledge and belief: an introduction to the logic of the two notions , Cornell: Cornell University Press."
+        },
+        {
+          "raw": "Holliday, W.H., T. Hoshi, and T.F. Icard, III, 2012, \"A uniform logic of information dynamics\", in Bolander et al. 2012: Vol. 8, pp. 348-367. [ Holliday et al. 2012 available online (pdf) ]"
+        },
+        {
+          "raw": "Holliday, W.H. and T.F. Icard, III, 2010, \"Moorean phenomena in epistemic logic\", in L. Beklemishev, V. Goranko, and V. Shehtman (eds.), Advances in Modal Logic (AiML) , Volume 8, Moscow, Russia, pp. 178-199. College Publications. [ Holliday and Icard 2010 available online (pdf) ]"
+        },
+        {
+          "raw": "Hoshi, T., 2008, \"Public announcement logics with constrained protocols\", in Proceedings of the 8th Conference on Logic and the Foundations of Game and Decision Theory (LOFT 8) , Amsterdam, The Netherlands. [ Hoshi 2008 available online (pdf) ]"
+        },
+        {
+          "raw": "---, 2009, Epistemic dynamics and protocol information , Ph. D. thesis, Stanford University. [ Hoshi 2009 available online (pdf) ]"
+        },
+        {
+          "raw": "---, 2010, \"Merging DEL and ETL\", Journal of Logic, Language and Information , 19(4): 413-430. doi:10.1007/s10849-009-9116-7"
+        },
+        {
+          "raw": "Hoshi, T. and A. Yap, 2009, \"Dynamic epistemic logic with branching temporal structures\", Synthese , 169(2): 259-281. doi:10.1007/s11229-009-9552-6"
+        },
+        {
+          "raw": "Katsuno, H. and A.O. Mendelzon, 1991, \"Propositional knowledge base revision and minimal change\", Artificial Intelligence , 52(3): 263-294. doi:10.1016/0004-3702(91)90069-V"
+        },
+        {
+          "raw": "Kooi, B., 2003, \"Probabilistic dynamic epistemic logic\", Journal of Logic, Language and Information , 12(4): 381-408. doi:10.1023/A:1025050800836"
+        },
+        {
+          "raw": "---, 2007, \"Expressivity and completeness for public update logics via reduction axioms\", Journal of Applied Non-Classical Logics , 17(2): 231-253. doi:10.3166/jancl.17.231-253"
+        },
+        {
+          "raw": "Kooi, B. and B. Renne, 2011a, \"Arrow update logic\", Review of Symbolic Logic , 4(4): 536-559. doi:10.1017/S1755020311000189"
+        },
+        {
+          "raw": "---, 2011b, \"Generalized arrow update logic\", in K.R. Apt (ed.), Proceedings of the 13th Conference of Theoretical Aspects of Rationality and Knowledge (TARK XIII) , Groningen, The Netherlands, pp. 205-211. [ Kooi and Renne 2011b available online (pdf) ]"
+        },
+        {
+          "raw": "Kooi, B. and J. van Benthem, 2004, \"Reduction axioms for epistemic actions\", in R. Schmidt, I. Pratt-Hartmann, M. Reynolds, and H. Wansing (eds.), AiML-2004: Advances in Modal Logic (Preliminary Proceedings) , Manchester, UK, pp. 197-211. [ Kooi and van Benthem 2003 available online (pdf) ]"
+        },
+        {
+          "raw": "Lehrer, K., 1990, Theory of Knowledge , Routledge."
+        },
+        {
+          "raw": "---, 2000, Theory of Knowledge , Westview Press."
+        },
+        {
+          "raw": "Lehrer, K. and J. Paxson, T., 1969, \"Knowledge: Undefeated justified true belief\", Journal of Philosophy , 66, 225-237."
+        },
+        {
+          "raw": "Liu, F., 2008, Changing for the better: Preference dynamics and agent diversity , Ph. D. thesis, University of Amsterdam. [ Liu 2008 available online (pdf) ]"
+        },
+        {
+          "raw": "---, 2010, \"Von Wright's 'The logic of preference' revisited\", Synthese , 175(1): 69-88. doi:10.1007/s11229-009-9530-z"
+        },
+        {
+          "raw": "---, 2011, Reasoning about preference dynamics , Volume 354 of Synthese Library , Berlin/Heidelberg: Springer. doi:10.1007/978-94-007-1344-4"
+        },
+        {
+          "raw": "Lutz, C., 2006, \"Complexity and succinctness of public announcement logic\", in Proceedings of the 5th International Conference on Autonomous Agents and Multiagent Systems (AAMAS-2006) , Hakodate, Japan, pp. 137-144. Association for Computing Machinery (ACM), New York, New York, USA. doi:10.1145/1160633.1160657"
+        },
+        {
+          "raw": "Miller, J.S. and L.S. Moss, 2005, \"The undecidability of iterated modal relativization\", Studia Logica , 79(3): 373-407. doi:10.1007/s11225-005-3612-9"
+        },
+        {
+          "raw": "Ong, L. and R. de Queiroz (eds.), 2012, Logic, Language, Information and Computation: 19th International Workshop, WoLLIC 2012, Buenos Aires, Argentina, September 3-6, 2012, Proceedings , Volume 7456 of Lecture Notes in Computer Science , Berlin/Heidelberg: Springer-Verlag."
+        },
+        {
+          "raw": "Parikh, R. and R. Ramanujam, 2003, \"A knowledge based semantics of messages\", Journal of Logic, Language and Information , 12(4): 453-467. doi:10.1023/A:1025007018583"
+        },
+        {
+          "raw": "Peppas, P., 2008, \"Belief revision\", in F. van Harmelen, V. Lifschitz, and B. Porter (eds.), Handbook of Knowledge Representation , Volume 3 of Foundations of Artificial Intelligence , Chapter 8, pp. 317-359, Amsterdam, The Netherlands: Elsevier. doi:10.1016/S1574-6526(07)03008-8"
+        },
+        {
+          "raw": "Plaza, J., 1989, \"Logics of public communications\", in M.L. Emrich, M.S. Pfeifer, M. Hadzikadic, and Z.W. Ras (eds.), Proceedings of the 4th International Symposium on Methodologies for Intelligent Systems (ISMIS 1989): Poster Session Program , Charlotte, North Carolina, USA, pp. 201-216. Oak Ridge National Laboratory ORNL/DSRD-24."
+        },
+        {
+          "raw": "---, 2007, \"Logics of public communications\", Synthese , 158(2): 165-179. doi:10.1007/s11229-007-9168-7"
+        },
+        {
+          "raw": "Popper, K., 2002 [1935], The Logic of Scientific Discovery , London, United Kingdom: Routledge Classics. First published in 1935 as Logik der Forschung , Vienna: Verlag von Julius Springer."
+        },
+        {
+          "raw": "Renardel de Lavalette, G.R., 2004, \"Changing modalities\", Journal of Logic and Computation , 14(2): 251-275. doi:10.1093/logcom/14.2.251"
+        },
+        {
+          "raw": "Renne, B., 2008, \"Public and private communication are different: Results on relative expressivity\", Synthese , 165(2): 225-245. doi:10.1007/s11229-008-9395-6"
+        },
+        {
+          "raw": "---, 2009, \"Evidence elimination in multi-agent justification logic\", in A. Heifetz (ed.), Proceedings of the 12th Conference of Theoretical Aspects of Rationality and Knowledge (TARK XII) , Stanford, California, USA, pp. 227-236. doi:10.1145/1562814.1562845"
+        },
+        {
+          "raw": "---, 2011a, \"Public communication in justification logic\", Journal of Logic and Computation , 21(6): 1005-1034. doi:10.1093/logcom/exq026"
+        },
+        {
+          "raw": "---, 2011b, \"Simple evidence elimination in justification logic\", in Girard et al. 2011: Chapter 7, pp. 127-149. doi:10.1007/978-94-007-0074-1_7"
+        },
+        {
+          "raw": "---, 2012, \"Multi-agent justification logic: Communication and evidence elimination\", Synthese , 185(S1), 43-82. doi:10.1007/s11229-011-9968-7"
+        },
+        {
+          "raw": "Renne, B., J. Sack, and A. Yap, 2009, \"Dynamic epistemic temporal logic\", in X. He, J. Horty, and E. Pacuit (eds.), Logic, Rationality, and Interaction: Second International Workshop, LORI 2009, Chongqing, China, October 8-11, 2009, Proceedings , Volume 5834 of Lecture Notes in Computer Science , pp. 263-277, Berlin/Heidelberg: Springer-Verlag. doi:10.1007/978-3-642-04893-7_21"
+        },
+        {
+          "raw": "---, 2015, \"Logics of temporal-epistemic actions\", Synthese . doi:10.1007/s11229-015-0773-6 . [ Renne, Sack, and Yap available online ]"
+        },
+        {
+          "raw": "R&eacute;nyi, A., 1955, \"On a new axiomatic theory of probability\", Acta Mathematica Hungarica , 6(3-4), 285-335. doi:10.1007/BF02024393"
+        },
+        {
+          "raw": "---, 1964, \"Sur les espaces simples des probabilit&eacute;s conditionnelles\", in Annales de l'institut Henri Poincar&eacute; (B) Probabilit&eacute;s et Statistiques , Volume 1, pp. 3-21. [ R&eacute;nyi 1964 available online ]"
+        },
+        {
+          "raw": "Roelofsen, F., 2007, \"Distributed knowledge\", Journal of Applied Non-Classical Logics , 17(2): 255-273. doi:10.3166/jancl.17.255-273"
+        },
+        {
+          "raw": "Rott, H., 1989, \"Conditionals and theory change: Revisions, expansions, and additions\", Synthese , 81(1): 91-113. doi:10.1007/BF00869346"
+        },
+        {
+          "raw": "Sack, J., 2007, Adding Temporal Logic to Dynamic Epistemic Logic , Ph. D. thesis, Indiana University."
+        },
+        {
+          "raw": "---, 2008, \"Temporal languages for epistemic programs\", Journal of Logic, Language and Information , 17(2): 183-216. doi:10.1007/s10849-007-9054-1"
+        },
+        {
+          "raw": "---, 2009, \"Extending probabilistic dynamic epistemic logic\", Synthese , 169(2): 241-257. doi:10.1007/s11229-009-9555-3"
+        },
+        {
+          "raw": "---, 2010, \"Logic for update products and steps into the past\", Annals of Pure and Applied Logic , 161(12): 1431-1461. doi:10.1016/j.apal.2010.04.011"
+        },
+        {
+          "raw": "Saraf, S. and S. Sourabh, 2012, \"Characterizing successful formulas: the multi-agent case\", E-print 1209.0935, arXiv.org. [ Saraf and Sourabh 2012 available online (pdf) ]"
+        },
+        {
+          "raw": "Seligman, J., F. Liu, and P. Girard, 2011, \"Logic in the community\", in M. Banerjee and A. Seth (eds.), Logic and Its Applications: 4th Indian Conference, ICLA 2011, Delhi, India, January 5-11, 2011, Proceedings , Volume 6521 of Lecture Notes in Computer Science , pp. 178-188, Berlin/Heidelberg: Springer. doi:10.1007/978-3-642-18026-2_15"
+        },
+        {
+          "raw": "---, 2013, \"Facebook and the epistemic logic of friendship\", in B.C. Schipper (ed.), Proceedings of the 14th Conference of Theoretical Aspects of Rationality and Knowledge (TARK XIV) , Chennai, India, pp. 229-238. [ Seligman, Liu, and Girard 2013 available online (pdf) ]"
+        },
+        {
+          "raw": "Sietsma, F. and J. van Eijck, 2012, \"Action emulation between canonical models\", in Proceedings of the 10th Conference on Logic and the Foundations of Game and Decision Theory (LOFT 10) , Sevilla, Spain. [ Sietsma and van Eijck 2012 available online (pdf) ]"
+        },
+        {
+          "raw": "Sorensen, R., 2011, \"Epistemic paradoxes\", in E.N. Zalta (ed.), The Stanford Encyclopedia of Philosophy (Spring 2014 edition). URL= https://plato.stanford.edu/archives/spr2014/entries/epistemic-paradoxes/ >"
+        },
+        {
+          "raw": "Spohn, W., 1988, \"Ordinal conditional functions: A dynamic theory of epistemic states\", in W.L. Harper and B. Skyrms (eds.), Causation in Decision, Belief Change, and Statistics: Proceedings of the Irvine Conference on Probability and Causation , Volume 42 of The University of Western Ontario Series in Philosophy of Science , pp. 105-134, Netherlands: Springer. doi:10.1007/978-94-009-2865-7_6"
+        },
+        {
+          "raw": "Stalnaker, R.C., 1980, \"A theory of conditionals\", in W.L. Harper, R. Stalnaker, and G. Pearce (eds.), IFS: Conditionals, Belief, Decision, Chance and Time , Volume 15 of The University of Western Ontario Series in Philosophy of Science , pp. 41-55, Netherlands: Springer. doi:10.1007/978-94-009-9117-0_2"
+        },
+        {
+          "raw": "---, 2006, \"On logics of knowledge and belief\", Philosophical studies , 128(1): 169-199. doi:10.1007/s11098-005-4062-y"
+        },
+        {
+          "raw": "Steiner, D., 2006, \"A system for consistency preserving belief change\", in S. Artemov and R. Parikh (eds.), Proceedings of the Workshop on Rationality and Knowledge, 18th European Summer School in Logic, Language, and Information (ESSLLI) , M&aacute;laga, Spain, pp. 133-144. [ Steiner 2006 available online (pdf) ]"
+        },
+        {
+          "raw": "---, 2009, Belief Change Functions for Multi-Agent Systems , Ph. D. thesis, Universit&auml;t Bern. [ Steiner 2009 available online (pdf) ]"
+        },
+        {
+          "raw": "Steiner, D. and T. Studer, 2007, \"Total public announcements\", in Logical Foundations of Computer Science: International Symposium, LFCS 2007, New York, NY, USA, June 4-7, 2007, Proceedings , Volume 4514 of Lecture Notes in Computer Science , pp. 498-511, Berlin/Heidelberg: Springer. doi:10.1007/978-3-540-72734-7_35"
+        },
+        {
+          "raw": "Steup, M., 2005, \"Epistemology\", in E.N. Zalta (ed.), The Stanford Encyclopedia of Philosophy (Spring 2014 edition). URL= https://plato.stanford.edu/archives/spr2014/entries/epistemology/ >"
+        },
+        {
+          "raw": "van Benthem, J., 2003, \"Conditional probability meets update logic\", Journal of Logic, Language and Information , 12(4): 409-421. doi:10.1023/A:1025002917675"
+        },
+        {
+          "raw": "---, 2004, \"What one may come to know\", Analysis , 64(2): 95-105. doi:10.1111/j.1467-8284.2004.00467.x"
+        },
+        {
+          "raw": "---, 2005, \"An essay on sabotage and obstruction\", in D. Hutter and W. Stephan (eds.), Mechanizing Mathematical Reasoning , Volume 2605 of Lecture Notes in Computer Science , pp. 268-276, Berlin/Heidelberg: Springer. doi:10.1007/978-3-540-32254-2_16"
+        },
+        {
+          "raw": "---, 2007, \"Dynamic logic for belief revision\", Journal of Applied Non-Classical Logics , 17(2): 129-155. doi:10.3166/jancl.17.129-155"
+        },
+        {
+          "raw": "---, 2008a, \"For better of for worse: Dynamic logics of preference\", Technical Report PP-2008-16, Institute for Logic, Language, Information and Computation (ILLC), University of Amsterdam. [ van Benthem 2008a available online (pdf) ]"
+        },
+        {
+          "raw": "---, 2008b, \"Merging observation and access in dynamic epistemic logic\", Studies in Logic , 1(1): 1-17."
+        },
+        {
+          "raw": "---, 2008c, \"Merging observation and access in dynamic logic\", Technical Report PP-2008-36, Institute for Logic, Language, Information and Computation (ILLC), University of Amsterdam. [ van Benthem 2008c available online (pdf) ]"
+        },
+        {
+          "raw": "van Benthem, J., D. Fern&aacute;ndez-Dunque, and E. Pacuit, 2012, \"Evidence logic: A new look at neighborhood structures\", in Bolander et al. 2012: Vol. 9, pp. 97-118. [ van Benthem, Ferna&#769;ndez-Dunque, and Pacuit 2012 available online (pdf) ]"
+        },
+        {
+          "raw": "---, 2014, \"Evidence and plausibility in neighborhood structures\", Annals of Pure and Applied Logic , 165(1): 106-133. doi:10.1016/j.apal.2013.07.007"
+        },
+        {
+          "raw": "van Benthem, J., J. Gerbrandy, T. Hoshi, and E. Pacuit, 2009a, \"Merging frameworks for interaction\", Journal of Philosophical Logic , 38(5): 491-526. doi:10.1007/s10992-008-9099-x"
+        },
+        {
+          "raw": "van Benthem, J., J. Gerbrandy, and B. Kooi, 2009b, \"Dynamic update with probabilities\", Studia Logica , 93(1): 67-96. doi:10.1007/s11225-009-9209-y"
+        },
+        {
+          "raw": "van Benthem, J., J. Gerbrandy, and E. Pacuit, 2007, \"Merging frameworks for interaction: DEL and ETL\", in D. Samet (ed.), Proceedings of the 11th Conference on Theoretical Aspects of Rationality and Knowledge (TARK XI) , Brussels, Belgium, pp. 43-56. [ van Benthem 2007 available online (pdf) ]"
+        },
+        {
+          "raw": "van Benthem, J., P. Girard, and O. Roy, 2009c, \"Everything else being equal: A modal logic for ceteris paribus preferences\", Journal of Philosophical Logic , 38(1): 83-125. doi:10.1007/s10992-008-9085-3"
+        },
+        {
+          "raw": "van Benthem, J. and D. Ikegami, 2008, \"Modal fixed-point logic and changing models\", in A. Avron, N. Dershowitz, and A. Rabinovich (eds.), Pillars of Computer Science: Essays Dedicated to Boris (Boaz) Trakhtenbrot on the Occasion of His 85th Birthday , Volume 4800 of Lecture Notes in Computer Science , pp. 146-165, Berlin/Heidelberg: Springer. doi:10.1007/978-3-540-78127-1_9"
+        },
+        {
+          "raw": "van Benthem, J. and F. Liu, 2007, \"Dynamic logic of preference upgrade\", Journal of Applied Non-Classical Logics , 17(2): 157-182. doi:10.3166/jancl.17.157-182"
+        },
+        {
+          "raw": "van Benthem, J. and E. Pacuit, 2011a, \"Dynamic logics of evidence-based beliefs\", Studia Logica , 99(1-3), 61-92. doi:10.1007/s11225-011-9347-x"
+        },
+        {
+          "raw": "---, 2011b, \"Dynamic logics of evidence-based beliefs\", Technical Report PP-2011-19, Institute for Logic, Language, Information and Computation (ILLC), University of Amsterdam. [ van Benthem and Pacuit 2011b available online (pdf) ]"
+        },
+        {
+          "raw": "van Benthem, J., J. van Eijck, and B. Kooi, 2006, \"Logics of communication and change\", Information and Computation , 204(11): 1620-1662. doi:10.1016/j.ic.2006.04.006"
+        },
+        {
+          "raw": "van Benthem, J. and F.R. Vel&aacute;zquez-Quesada, 2010, \"The dynamics of awareness\", Synthese , 177(1): 5-27. doi:10.1007/s11229-010-9764-9"
+        },
+        {
+          "raw": "van Ditmarsch, H., 2005, \"Prolegomena to dynamic logic for belief revision\", Synthese , 147(2): 229-275. doi:10.1007/s11229-005-1349-7"
+        },
+        {
+          "raw": "van Ditmarsch, H., J. Eijck, I. Hern&aacute;ndez-Ant&oacute;n, F. Sietsma, S. Simon, and F. Soler-Toscano, 2012a, \"Modelling cryptographic keys in dynamic epistemic logic with demo\", in J.B. P&eacute;rez, M.A. S&aacute;nchez, P. Mathieu, J.M.C. Rodr&iacute;guez, E. Adam, A. Ortega, M.N. Moreno, E. Navarro, B. Hirsch, H. Lopes-Cardoso, and V. Juli&aacute;n (eds.), Highlights on Practical Applications of Agents and Multi-Agent Systems: 10th International Conference on Practical Applications of Agents and Multi-Agent Systems , Volume 156 of Advances in Intelligent and Soft Computing , pp. 155-162, Berlin/Heidelberg: Springer. doi:10.1007/978-3-642-28762-6_19"
+        },
+        {
+          "raw": "van Ditmarsch, H. and B. Kooi, 2006, \"The secret of my success\", Synthese , 151(2): 201-232. doi:10.1007/s11229-005-3384-9"
+        },
+        {
+          "raw": "van Ditmarsch, H. and J. Ruan, 2007, \"Model checking logic puzzles\", in Proceedings of Quatri&egrave;mes Journ&eacute;es Francophones Mod&egrave;ls Formels de l'Interaction (MFI'07) . [ van Ditmarsch and Ruan 2007 available online (pdf) ]"
+        },
+        {
+          "raw": "van Ditmarsch, H., J. Ruan, and R. Verbrugge, 2008, \"Sum and product in dynamic epistemic logic\", Journal of Logic and Computation , 18(4): 563-588. doi:10.1093/logcom/exm081"
+        },
+        {
+          "raw": "van Ditmarsch, H., W. van der Hoek, and P. Iliev, 2012b, \" Everything is knowable -- how to get to know whether a proposition is true\", Theoria , 78(2): 93-114. doi:10.1111/j.1755-2567.2011.01119.x"
+        },
+        {
+          "raw": "van Ditmarsch, H., W. van der Hoek, and B. Kooi, 2005, \"Dynamic epistemic logic with assignment\", in Proceedings of the 4th International Conference on Autonomous Agents and Multiagent Systems (AAMAS-2005) , Utrecht, The Netherlands, pp. 141-148. Association for Computing Machinery (ACM), New York, New York, USA. doi:10.1145/1082473.1082495"
+        },
+        {
+          "raw": "---, 2007, Dynamic Epistemic Logic , Volume 337 of Synthese Library , Netherlands: Springer. doi:10.1007/978-1-4020-5839-4"
+        },
+        {
+          "raw": "van Ditmarsch, H., W. van der Hoek, R. van der Meyden, and J. Ruan, 2006, \"Model checking Russian cards\", in C. Pecheur and B. Williams (eds.), Proceedings of the Third Workshop on Model Checking and Artificial Intelligence (MoChArt 2005) , Volume 149 of Electronic Notes in Theoretical Computer Science , pp. 105-123. doi:10.1016/j.entcs.2005.07.029"
+        },
+        {
+          "raw": "van Ditmarsch, H., J. van Eijck, and W. Wu, 2010a, \"One hundred prisoners and a lightbulb -- logic and computation\", in F. Lin, U. Sattler, and M. Truszczynski (eds.), Proceedings of the 12th International Conference on the Principles of Knowledge Representation and Reasoning (KR 2010) , Toronto, Canada, pp. 90-100. AAAI Press. [ van Ditmarsch et al. 2010a available online ]"
+        },
+        {
+          "raw": "---, 2010b, \"Verifying one hundred prisoners and a lightbulb\", Journal of Applied Non-Classical Logics , 20(3): 173-191. doi:10.3166/jancl.20.173-191"
+        },
+        {
+          "raw": "van Eijck, J., 2005, \"Dynamic epistemic modelling\", Manuscript version 1.03. [ van Eijck 2005 available online (pdf) ]"
+        },
+        {
+          "raw": "---, 2008a, \"Demo--a demo of epistemic modelling\", in J. van Benthem, B. L&ouml;we, and D.M. Gabbay (eds.), Interactive Logic: Selected Papers from the 7th Augustus de Morgan Workshop, London , Number 1 in Texts in Logic and Games, pp. 303-362. Amsterdam University Press. doi:10.5117/9789053563564 | [ van Eijck 2008a available online (pdf) ]"
+        },
+        {
+          "raw": "---, 2008b, \"Yet more modal logics of preference change and belief revision\", in K.R. Apt and R. van Rooij (eds.), New Perspectives on Games and Interaction , Volume 4 of Texts in Logic and Games , pp. 81-104. Amsterdam University Press. [ van Eijck 2008b available online (pdf) ]"
+        },
+        {
+          "raw": "van Eijck, J. and S. Orzan, 2005, \"Modelling the epistemics of communication with functional programming\", in M. van Eekelen (ed.), Proceedings of the 6th Symposium on Trends in Functional Programming (TFP 2005) , pp. 44-59. [ van Eijck and Orzan 2005 available online (pdf) ]"
+        },
+        {
+          "raw": "van Eijck, J., J. Ruan, and T. Sadzik, 2012, \"Action emulation\", Synthese , 185(1): 131-151. doi:10.1007/s11229-012-0083-1"
+        },
+        {
+          "raw": "van Eijck, J. and F. Sietsma, 2010, \"Multi-agent belief revision with linked preferences\", in G. Bonanno, B. L&ouml;we, and W. Hoek (eds.), Logic and the Foundations of Game and Decision Theory -- LOFT 8: 8th International Conference, Amsterdam, The Netherlands, July 3-5, 2008, Revised Selected Papers , Volume 6006 of Lecture Notes in Computer Science , pp. 174-189, Berlin/Heidelberg: Springer. doi:10.1007/978-3-642-15164-4_9"
+        },
+        {
+          "raw": "van Eijck, J. and Y. Wang, 2008, \"Propositional dynamic logic as a logic of belief revision\", in W. Hodges and R. de Queiroz (eds.), Logic, Language, Information and Computation: 15th International Workshop, WoLLIC 2008 Edinburgh, UK, July 1-4, 2008 Proceedings , Volume 5110 of Lecture Notes in Computer Science , pp. 136-148, Berlin/Heidelberg: Springer. doi:10.1007/978-3-540-69937-8_13"
+        },
+        {
+          "raw": "van Fraassen, B.C., 1976, \"Representational of conditional probabilities\", Journal of Philosophical Logic , 5(3): 417-430."
+        },
+        {
+          "raw": "---, 1995, \"Fine-grained opinion, probability, and the logic of full belief\", Journal of Philosophical Logic , 24(4): 349-377. doi:10.1007/BF01048352"
+        },
+        {
+          "raw": "Vel&aacute;zquez-Quesada, F.R., 2009, \"Inference and update\", Synthese , 169(2): 283-300. doi:10.1007/s11229-009-9556-2"
+        },
+        {
+          "raw": "Visser, A., 1994, \"Actions under Presuppositions\", in J. van Eijck and A. Visser (eds.), Logic and Information Flow , pp. 196-233, Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "von Wright, G.H., 1963, The Logic of Preference , Edinburgh University Press."
+        },
+        {
+          "raw": "Wang, Y. and Q. Cao, 2013, \"On axiomatizations of public announcement logic\", Synthese , 190(1): 103-134. doi:10.1007/s11229-012-0233-5"
+        },
+        {
+          "raw": "W&aacute;ng, Y.N. and T. &Aring;gotnes, 2011, \"Public announcement logic with distributed knowledge\", in H. Ditmarsch, J. Lang, and S. Ju (eds.), Logic, Rationality, and Interaction: Third International Workshop, LORI 2011, Guangzhou, China, October 10-13, 2011, Proceedings , Volume 6953 of Lecture Notes in Computer Science , pp. 328-341, Berlin/Heidelberg: Springer. doi:10.1007/978-3-642-24130-7_24"
+        },
+        {
+          "raw": "---, 2013, \"Public announcement logic with distributed knowledge: expressivity, completeness and complexity\", Synthese , 190(1): 135-162. doi:10.1007/s11229-012-0243-3"
+        },
+        {
+          "raw": "Yamada, T., 2007a, \"Acts of commanding and changing obligations\", in K. Inoue, K. Satoh, and F. Toni (eds.), Computational Logic in Multi-Agent Systems: 7th International Workshop, CLIMA VII, Hakodate, Japan, May 8-9, 2006, Revised Selected and Invited Papers , Volume 4371 of Lecture Notes in Computer Science , pp. 1-19, Berlin/Heidelberg: Springer. doi:10.1007/978-3-540-69619-3_1"
+        },
+        {
+          "raw": "---, 2007b, \"Logical dynamics of some speech acts that affect obligations and preferences\", in J. van Benthem, S. Ju, and F. Veltman (eds.), A Meeting of the Minds: Proceedings of the Workshop on Logic, Rationality and Interaction, Beijing, 2007 (LORI-I) , Volume 8 of Texts in Computer Science , pp. 275-290. College Publications."
+        },
+        {
+          "raw": "---, 2008, \"Logical dynamics of some speech acts that affect obligations and preferences\", Synthese , 165(2): 295-315. doi:10.1007/s11229-008-9368-9"
+        },
+        {
+          "raw": "Yap, A., 2006, \"Product update and looking backward\", Technical Report PP-2006-39, Institute for Logic, Language, Information and Computation (ILLC), University of Amsterdam. [ Yap 2006 available online (pdf) ]"
+        },
+        {
+          "raw": "---, 2011, \"Dynamic epistemic logic and temporal modality\", in Girard et al. 2011: Chapter 3, pp. 33-50. doi:10.1007/978-94-007-0074-1_3"
+        }
+      ],
+      "publishedAt": "2016-06-23T14:00:00.000Z",
+      "revisedAt": "2016-06-23T14:00:00.000Z"
+    }
+  }
+}

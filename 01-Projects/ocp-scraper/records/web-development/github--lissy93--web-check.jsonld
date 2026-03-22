@@ -1,0 +1,419 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/lissy93--web-check",
+  "meta": {
+    "title": "web-check",
+    "description": "🕵️‍♂️ All-in-one OSINT tool for analysing any website",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T06:51:14.225Z",
+    "dateModified": "2026-03-22T06:51:14.225Z",
+    "keywords": [
+      "osint",
+      "privacy",
+      "security",
+      "security-tools",
+      "sysadmin"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "Get an insight into the inner-workings of a given website: uncover potential attack vectors, analyse server architecture, view security configurations, and learn what technologies a site is using.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "security",
+    "lang:typescript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "32387 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "2564 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T06:51:14.225Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/Lissy93/web-check",
+        "description": "GitHub repository: Lissy93/web-check"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://web-check.xyz",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "TypeScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "@astrojs/check",
+        "version": "^0.5.10",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@astrojs/check"
+      },
+      {
+        "name": "@astrojs/react",
+        "version": "^3.3.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@astrojs/react"
+      },
+      {
+        "name": "@emotion/react",
+        "version": "^11.11.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@emotion/react"
+      },
+      {
+        "name": "@emotion/styled",
+        "version": "^11.11.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@emotion/styled"
+      },
+      {
+        "name": "@fortawesome/fontawesome-svg-core",
+        "version": "^6.5.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@fortawesome/fontawesome-svg-core"
+      },
+      {
+        "name": "@fortawesome/free-brands-svg-icons",
+        "version": "^6.5.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@fortawesome/free-brands-svg-icons"
+      },
+      {
+        "name": "@fortawesome/free-regular-svg-icons",
+        "version": "^6.5.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@fortawesome/free-regular-svg-icons"
+      },
+      {
+        "name": "@fortawesome/free-solid-svg-icons",
+        "version": "^6.5.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@fortawesome/free-solid-svg-icons"
+      },
+      {
+        "name": "@fortawesome/svelte-fontawesome",
+        "version": "^0.2.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@fortawesome/svelte-fontawesome"
+      },
+      {
+        "name": "@types/react",
+        "version": "^18.3.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@types/react"
+      },
+      {
+        "name": "@types/react-dom",
+        "version": "^18.3.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@types/react-dom"
+      },
+      {
+        "name": "astro",
+        "version": "^4.7.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/astro"
+      },
+      {
+        "name": "axios",
+        "version": "^1.4.8",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/axios"
+      },
+      {
+        "name": "cheerio",
+        "version": "^1.0.0-rc.12",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/cheerio"
+      },
+      {
+        "name": "chrome-aws-lambda",
+        "version": "^10.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/chrome-aws-lambda"
+      },
+      {
+        "name": "chromium",
+        "version": "^3.0.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/chromium"
+      },
+      {
+        "name": "connect-history-api-fallback",
+        "version": "^2.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/connect-history-api-fallback"
+      },
+      {
+        "name": "cors",
+        "version": "^2.8.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/cors"
+      },
+      {
+        "name": "csv-parser",
+        "version": "^3.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/csv-parser"
+      },
+      {
+        "name": "dotenv",
+        "version": "^16.4.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/dotenv"
+      },
+      {
+        "name": "express",
+        "version": "^4.19.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/express"
+      },
+      {
+        "name": "express-rate-limit",
+        "version": "^7.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/express-rate-limit"
+      },
+      {
+        "name": "framer-motion",
+        "version": "^11.2.6",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/framer-motion"
+      },
+      {
+        "name": "got",
+        "version": "^14.2.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/got"
+      },
+      {
+        "name": "pm2",
+        "version": "^5.3.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/pm2"
+      },
+      {
+        "name": "psl",
+        "version": "^1.9.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/psl"
+      },
+      {
+        "name": "puppeteer",
+        "version": "^22.8.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/puppeteer"
+      },
+      {
+        "name": "puppeteer-core",
+        "version": "^22.8.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/puppeteer-core"
+      },
+      {
+        "name": "react",
+        "version": "^18.3.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react"
+      },
+      {
+        "name": "react-dom",
+        "version": "^18.3.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-dom"
+      },
+      {
+        "name": "react-masonry-css",
+        "version": "^1.0.16",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-masonry-css"
+      },
+      {
+        "name": "react-router-dom",
+        "version": "^6.23.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-router-dom"
+      },
+      {
+        "name": "react-simple-maps",
+        "version": "^3.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-simple-maps"
+      },
+      {
+        "name": "react-toastify",
+        "version": "^10.0.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-toastify"
+      },
+      {
+        "name": "recharts",
+        "version": "^2.12.6",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/recharts"
+      },
+      {
+        "name": "svelte",
+        "version": "^4.2.17",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/svelte"
+      },
+      {
+        "name": "traceroute",
+        "version": "^1.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/traceroute"
+      },
+      {
+        "name": "typescript",
+        "version": "^5.4.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/typescript"
+      },
+      {
+        "name": "unzipper",
+        "version": "^0.11.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/unzipper"
+      },
+      {
+        "name": "url-parse",
+        "version": "^1.5.10",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/url-parse"
+      },
+      {
+        "name": "wappalyzer",
+        "version": "^6.10.65",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/wappalyzer"
+      },
+      {
+        "name": "xml2js",
+        "version": "^0.6.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/xml2js"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Lissy93",
+        "type": "human",
+        "uri": "https://github.com/Lissy93"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 37515,
+      "validation_diversity": 0.5,
+      "context_breadth": 0.5,
+      "temporal_stability": 0.85,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.5
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.648
+  }
+}

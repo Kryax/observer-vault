@@ -1,0 +1,519 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/justep-foundational",
+  "meta": {
+    "title": "Foundationalist Theories of Epistemic Justification",
+    "description": "Foundationalism is a view about the structure of (epistemic) justification or knowledge. The foundationalist's thesis in short is that (a) there are some \"basic\" or \"foundational\" beliefs that have a positive epistemic status--e.g., they count as justified or as knowledge--without depending on any other beliefs for this status, and (b) any other beliefs with a positive epistemic status must depend, ultimately, on foundational beliefs for this status. Many interesting and difficult questions can be raised about the relation between justification and knowledge, including whether knowledge should be analyzed in terms of justification, as epistemologists traditionally seem to have thought, or whether knowledge is prior to or independent of justification. In what follows we will concentrate on foundationalism about justification, though much of what we say also applies to foundationalism about knowledge. A little reflection suggests that the vast majority of the propositions that we know or are justified in believing have that status only because we know or are justified in believing other propositions. So, for example, I am justified in believing that there is at least one dog in our neighborhood, because I am justified in believing that my next door neighbor has a dog; I am justified in believing that our garbage will get picked up tomorrow, because I am justified in believing that tomorrow is Tuesday and that our garbage gets picked up every Tuesday; and I am justified in believing that there is going to be at least some rain in the next week, because I am justified in believing that the forecast calls for a good deal of rain, and that forecasts are almost always right when it comes to similar short-term forecasts in this area. And the dependence seems to be inferential in nature: in each case, I am justified in believing the former only because I have inferred it, or at least am able to infer it, from the latter. Foundationalists about justification want to contrast my foundationally justified belief (knowledge) with a kind of justified belief (knowledge) that doesn't involve the having of other justified beliefs (knowledge). There is no standard terminology for what we shall henceforth refer to as foundational justification (knowledge). We just noted that the epistemic dependence of one belief on another in the above examples seems to be a kind of inferential dependence. Epistemologists do tend to assume that all epistemic dependence between beliefs is inferential. But perhaps not all relations of epistemic or justificatory dependence between beliefs are inferential. When I form an introspective belief about a conscious or occurrent belief of mine -- e.g., my belief that I believe it's raining outside -- perhaps (on some views) my second-order belief's justification depends on my having the conscious belief that it is raining. Many would take such introspective beliefs to be \"foundational\", akin to my justification for beliefs about my own present experiences. One way to make sense of this is that even if such beliefs depend for their justification on the first-order beliefs, they are foundational in the sense of not depending positively on the epistemic or justificatory status of other beliefs. (Notice that my belief that I believe that it is raining outside doesn't depend for its justification on whether I'm justified in believing that it's raining outside.) This suggests that we understand foundational beliefs as those that do not depend on the epistemic status of other beliefs, and non-foundational beliefs as beliefs that do so depend. And if we think that any dependence of a belief on the epistemic status of another belief must be inferential , we get the neat result that foundational beliefs do not, but non-foundational beliefs do, depend for their justification on inferential relations to other beliefs. But is it possible for a belief to depend on the epistemic status of other beliefs, but in a non-inferential way? We will briefly illustrate how some accounts might accept the possibility of non-inferential epistemic dependence between beliefs further below, when we discuss coherentism and reliabilism. However, aside from such cases, we will treat \"foundational/nonfoundational\" justification and the \"noninferential/inferential\" justification as interchangeable. Epistemologists commonly distinguish between doxastic and propositional justification. Very roughly, one has propositional justification when one has justification (e.g., some reason or evidence) for belief in a proposition. One has doxastic justification when one not only has justification to believe a proposition but also believes the proposition and believes it on the basis of the justification one has. This distinction applies to foundational and non-foundational beliefs: being foundationally/non-foundationally justified in believing that P requires having some foundational/non-foundational justification for P, and believing that P on the basis of this justification. (While this is to understand doxastic justification in terms of propositional justification, some prefer to go the other way round, and understand having justification in terms of being in a position to acquire doxastic justification. For a helpful discussion, see Turri 2010.) For ease of exposition, much of our discussion is put in terms that most naturally refer to doxastic justification--e.g., \"justified belief\", \"being justified in believing\". However, even when we use such terms, we focus on propositional justification (which is required for doxastic justification) and assume that the other conditions involved in believing on a proper basis are satisfied. (For more on the basing requirement, see the entry on the epistemic basing relation .)",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T06:07:20.041Z",
+    "dateModified": "2026-03-22T06:07:20.041Z",
+    "datePublished": "2000-02-20T13:00:00.000Z",
+    "keywords": [
+      "epistemology",
+      "justep coherence",
+      "justep intext",
+      "knowledge acquaindescrip",
+      "knowledge analysis",
+      "reliabilism"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Foundationalism is a view about the structure of (epistemic) justification or knowledge. The foundationalist's thesis in short is that (a) there are some \"basic\" or \"foundational\" beliefs that have a positive epistemic status--e.g., they count as justified or as knowledge--without depending on any other beliefs for this status, and (b) any other beliefs with a positive epistemic status must depend, ultimately, on foundational beliefs for this status. Many interesting and difficult questions can be raised about the relation between justification and knowledge, including whether knowledge should be analyzed in terms of justification, as epistemologists traditionally seem to have thought, or whether knowledge is prior to or independent of justification. In what follows we will concentrate on foundationalism about justification, though much of what we say also applies to foundationalism about knowledge. A little reflection suggests that the vast majority of the propositions that we know or are justified in believing have that status only because we know or are justified in believing other propositions. So, for example, I am justified in believing that there is at least one dog in our neighborhood, because I am justified in believing that my next door neighbor has a dog; I am justified in believing that our garbage will get picked up tomorrow, because I am justified in believing that tomorrow is Tuesday and that our garbage gets picked up every Tuesday; and I am justified in believing that there is going to be at least some rain in the next week, because I am justified in believing that the forecast calls for a good deal of rain, and that forecasts are almost always right when it comes to similar short-term forecasts in this area. And the dependence seems to be inferential in nature: in each case, I am justified in believing the former only because I have inferred it, or at least am able to infer it, from the latter. Foundationalists about justification want to contrast my foundationally justified belief (knowledge) with a kind of justified belief (knowledge) that doesn't involve the having of other justified beliefs (knowledge). There is no standard terminology for what we shall henceforth refer to as foundational justification (knowledge). We just noted that the epistemic dependence of one belief on another in the above examples seems to be a kind of inferential dependence. Epistemologists do tend to assume that all epistemic dependence between beliefs is inferential. But perhaps not all relations of epistemic or justificatory dependence between beliefs are inferential. When I form an introspective belief about a conscious or occurrent belief of mine -- e.g., my belief that I believe it's raining outside -- perhaps (on some views) my second-order belief's justification depends on my having the conscious belief that it is raining. Many would take such introspective beliefs to be \"foundational\", akin to my justification for beliefs about my own present experiences. One way to make sense of this is that even if such beliefs depend for their justification on the first-order beliefs, they are foundational in the sense of not depending positively on the epistemic or justificatory status of other beliefs. (Notice that my belief that I believe that it is raining outside doesn't depend for its justification on whether I'm justified in believing that it's raining outside.) This suggests that we understand foundational beliefs as those that do not depend on the epistemic status of other beliefs, and non-foundational beliefs as beliefs that do so depend. And if we think that any dependence of a belief on the epistemic status of another belief must be inferential , we get the neat result that foundational beliefs do not, but non-foundational beliefs do, depend for their justification on inferential relations to other beliefs. But is it possible for a belief to depend on the epistemic status of other beliefs, but in a non-inferential way? We will briefly illustrate how some accounts might accept the possibility of non-inferential epistemic dependence between beliefs further below, when we discuss coherentism and reliabilism. However, aside from such cases, we will treat \"foundational/nonfoundational\" justification and the \"noninferential/inferential\" justification as interchangeable. Epistemologists commonly distinguish between doxastic and propositional justification. Very roughly, one has propositional justification when one has justification (e.g., some reason or evidence) for belief in a proposition. One has doxastic justification when one not only has justification to believe a proposition but also believes the proposition and believes it on the basis of the justification one has. This distinction applies to foundational and non-foundational beliefs: being foundationally/non-foundationally justified in believing that P requires having some foundational/non-foundational justification for P, and believing that P on the basis of this justification. (While this is to understand doxastic justification in terms of propositional justification, some prefer to go the other way round, and understand having justification in terms of being in a position to acquire doxastic justification. For a helpful discussion, see Turri 2010.) For ease of exposition, much of our discussion is put in terms that most naturally refer to doxastic justification--e.g., \"justified belief\", \"being justified in believing\". However, even when we use such terms, we focus on propositional justification (which is required for doxastic justification) and assume that the other conditions involved in believing on a proper basis are satisfied. (For more on the basing requirement, see the entry on the epistemic basing relation .)",
+    "context": "Opening section: 1. Regress Arguments for Foundationalism | Related entries: epistemology, justep-coherence, justep-intext, knowledge-analysis, knowledge-acquaindescrip, reliabilism",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "epistemology",
+    "philosophy-of-science"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry justep-foundational",
+        "uri": "https://plato.stanford.edu/entries/justep-foundational/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "2 author(s), 6 related entries, bibliography size 96"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2000-02-20T13:00:00.000Z and revised 2022-08-04T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2022-08-04T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/justep-foundational/",
+        "description": "SEP entry for justep-foundational"
+      }
+    ],
+    "solutionApproach": "1. Regress Arguments for Foundationalism"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/epistemology",
+      "ocp:sep/justep-coherence",
+      "ocp:sep/justep-intext",
+      "ocp:sep/knowledge-analysis",
+      "ocp:sep/knowledge-acquaindescrip",
+      "ocp:sep/reliabilism"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Hasan, Ali",
+        "type": "human"
+      },
+      {
+        "name": "Fumerton, Richard",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/justep-foundational/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 79,
+      "validation_diversity": 0.5,
+      "context_breadth": 0.37,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.89
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.545
+  },
+  "extensions": {
+    "sep": {
+      "slug": "justep-foundational",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/justep-foundational/",
+      "preamble": "Foundationalism is a view about the structure of (epistemic) justification or knowledge. The foundationalist's thesis in short is that (a) there are some \"basic\" or \"foundational\" beliefs that have a positive epistemic status--e.g., they count as justified or as knowledge--without depending on any other beliefs for this status, and (b) any other beliefs with a positive epistemic status must depend, ultimately, on foundational beliefs for this status. Many interesting and difficult questions can be raised about the relation between justification and knowledge, including whether knowledge should be analyzed in terms of justification, as epistemologists traditionally seem to have thought, or whether knowledge is prior to or independent of justification. In what follows we will concentrate on foundationalism about justification, though much of what we say also applies to foundationalism about knowledge. A little reflection suggests that the vast majority of the propositions that we know or are justified in believing have that status only because we know or are justified in believing other propositions. So, for example, I am justified in believing that there is at least one dog in our neighborhood, because I am justified in believing that my next door neighbor has a dog; I am justified in believing that our garbage will get picked up tomorrow, because I am justified in believing that tomorrow is Tuesday and that our garbage gets picked up every Tuesday; and I am justified in believing that there is going to be at least some rain in the next week, because I am justified in believing that the forecast calls for a good deal of rain, and that forecasts are almost always right when it comes to similar short-term forecasts in this area. And the dependence seems to be inferential in nature: in each case, I am justified in believing the former only because I have inferred it, or at least am able to infer it, from the latter. Foundationalists about justification want to contrast my foundationally justified belief (knowledge) with a kind of justified belief (knowledge) that doesn't involve the having of other justified beliefs (knowledge). There is no standard terminology for what we shall henceforth refer to as foundational justification (knowledge). We just noted that the epistemic dependence of one belief on another in the above examples seems to be a kind of inferential dependence. Epistemologists do tend to assume that all epistemic dependence between beliefs is inferential. But perhaps not all relations of epistemic or justificatory dependence between beliefs are inferential. When I form an introspective belief about a conscious or occurrent belief of mine -- e.g., my belief that I believe it's raining outside -- perhaps (on some views) my second-order belief's justification depends on my having the conscious belief that it is raining. Many would take such introspective beliefs to be \"foundational\", akin to my justification for beliefs about my own present experiences. One way to make sense of this is that even if such beliefs depend for their justification on the first-order beliefs, they are foundational in the sense of not depending positively on the epistemic or justificatory status of other beliefs. (Notice that my belief that I believe that it is raining outside doesn't depend for its justification on whether I'm justified in believing that it's raining outside.) This suggests that we understand foundational beliefs as those that do not depend on the epistemic status of other beliefs, and non-foundational beliefs as beliefs that do so depend. And if we think that any dependence of a belief on the epistemic status of another belief must be inferential , we get the neat result that foundational beliefs do not, but non-foundational beliefs do, depend for their justification on inferential relations to other beliefs. But is it possible for a belief to depend on the epistemic status of other beliefs, but in a non-inferential way? We will briefly illustrate how some accounts might accept the possibility of non-inferential epistemic dependence between beliefs further below, when we discuss coherentism and reliabilism. However, aside from such cases, we will treat \"foundational/nonfoundational\" justification and the \"noninferential/inferential\" justification as interchangeable. Epistemologists commonly distinguish between doxastic and propositional justification. Very roughly, one has propositional justification when one has justification (e.g., some reason or evidence) for belief in a proposition. One has doxastic justification when one not only has justification to believe a proposition but also believes the proposition and believes it on the basis of the justification one has. This distinction applies to foundational and non-foundational beliefs: being foundationally/non-foundationally justified in believing that P requires having some foundational/non-foundational justification for P, and believing that P on the basis of this justification. (While this is to understand doxastic justification in terms of propositional justification, some prefer to go the other way round, and understand having justification in terms of being in a position to acquire doxastic justification. For a helpful discussion, see Turri 2010.) For ease of exposition, much of our discussion is put in terms that most naturally refer to doxastic justification--e.g., \"justified belief\", \"being justified in believing\". However, even when we use such terms, we focus on propositional justification (which is required for doxastic justification) and assume that the other conditions involved in believing on a proper basis are satisfied. (For more on the basing requirement, see the entry on the epistemic basing relation .)",
+      "firstSectionTitle": "1. Regress Arguments for Foundationalism",
+      "firstSectionText": "A foundationally justified belief (henceforth simply: 'foundational belief') is one that does not depend on any other beliefs for its justification. According to foundationalism, any justified belief must either be foundational or depend for its justification, ultimately, on foundational beliefs. Historically, foundationalism was very widely, almost universally accepted. Aristotle argued that \"not all knowledge is demonstrative\" (i.e., not all knowledge is based on an argument from other things known), and that some knowledge must be \"independent of demonstration\" ( Posterior Analytics , I.3). Many of the medieval philosophers seemed in agreement with Aristotle, holding that all knowledge must rest on \"first principles\" or \"self-evident truths\" of some sort. More recently, Descartes famously held that all knowledge must rest on a secure foundation of indubitable truths (see the entry on Descartes's epistemology ). Many other philosophers of the early modern period, including Locke, Leibniz, Berkeley, Hume, and Reid, all seemed to accept foundationalism as well, despite disagreeing about much else. When an argument was implicitly or explicitly offered for the view, it was most often some version of the now famous epistemic regress argument. (See Aristotle's Posterior Analytics , I.3, for an early version of this argument.) Before presenting the argument we should discuss a principle it depends on. Suppose I claim to be justified in believing that Fred will die shortly and offer as my evidence that Fred has an untreatable and serious form of cancer. Concerned, you ask me how I discovered that Fred has cancer, and I respond that it is just a hunch on my part. As soon as you become convinced (perhaps after further questioning) that I have no good reason to suppose that Fred has cancer, you will immediately conclude that my suspicion about Fred's condition gives me no justification for believing that Fred will soon die. Generalizing, one might suggest the following principle: To be justified in believing P on the basis of E one must be justified in believing E . Now consider another example. Suppose I claim to be justified in believing that Fred will die shortly and offer as my justification that a certain line across his palm (his infamous \"lifeline\") is short. Rightly skeptical, you wonder this time what reason I have for believing that palm lines have anything whatsoever to do with length of life. As soon as you become satisfied that I have no justification for supposing that there is any kind of probabilistic connection between the character of this line and Fred's life, you will again reject my claim to have a justified belief about Fred's impending demise. That suggests that we might expand our principle to include a second clause. Principle of Inferential Justification (PIJ): To be justified in believing P on the basis of E one must be (1) justified in believing E , and (2) justified in believing that E makes probable P . One might note that in the palm reading example there actually is no significant, objective probability between the length of Fred's so-called \"life-line\" and his life span. Perhaps this is why my belief that he is going to die soon is unjustified, and not that I don't satisfy clause (2). Against this, the proponent of PIJ might ask us to consider an amendment to the case. Suppose that, surprisingly, it turns out that there is some objective, significant probabilistic connection between \"life-lines\" and the life spans of the individuals who have them, though again, suppose that I do not have any justification for believing that there is such a connection. This possibility seems coherent: the fact that the relevant objective probabilistic relation obtains is not sufficient for one to have justification for believing that it obtains. But then, intuitively, I remain unjustified in believing that Fred is going to die soon. Or consider the possibility that I believe Fred will die because he has just ingested a lot of hemlock, and when you ask me why I think hemlock would lead to death, I say that I'm not sure, that it is just a hunch on my part that it is going to kill him. Again, if I lack justification for believing that hemlock is a deadly poison, or that it is likely to have this effect, then intuitively, I lack justification for believing that Fred will die soon. What more, then, is needed? A natural though controversial suggestion is that one must satisfy something like clause (2). With the first clause of PIJ, one can present a relatively straightforward epistemic regress argument for foundationalism. That clause basically says that one cannot acquire justification for a belief by inferring it from an unjustified belief. It also seems that one cannot acquire justification for a belief by way of a circular, inferential justification--one cannot rely even in part on a proposition as a premise in an inference in support of that very proposition. We seem left with two options: allow that some beliefs have justification without depending on other beliefs, or suppose that all justification is inferential. If all justification is inferential, then for someone S to be justified in believing some proposition P , S must be in a position to legitimately infer it from some other proposition E 1. But E 1 could justify S in believing P only if S were justified in believing E 1, and if all justification were inferential, S would have to infer it (or at least be able to infer it) from some other proposition justifiably believed, E 2, a proposition which in turn would have to be inferred from some other proposition justifiably believed, E 3, and so on, ad infinitum . But finite beings cannot complete an infinitely long chain of reasoning. And so, if all justification were inferential, no one could be justified in believing anything at all to any extent whatsoever. This, however, is not yet an argument for foundationalism as much as an argument against what we might call \"inferentialism\"--the view that all justification is inferential--for it leaves open the skeptical position that we are not, and could not be, justified in believing anything at all, whether by inference or otherwise. This most radical of all skepticisms seems absurd (it entails that one couldn't even be justified in believing it). But, strictly speaking, none of this shows that we have non-inferential justification for any of our beliefs, or even that non-inferential justification is possible. At best, it shows only that, if justification is possible, or if we are or could be justified in believing anything at all, then that justification must take a foundationalist structure. The epistemic regress argument for foundationalism thus needs an additional premise, though one that all but the most radical skeptics would accept: that epistemic justification is in principle possible for beings like us. If we accept the more controversial second clause of PIJ, the looming regresses proliferate. Not only must S above be justified in believing E 1, S must also be justified in believing that E 1 makes likely P , a proposition he would have to infer (if there are no foundations) from some other proposition F 1, which he would have to infer from F 2, which he would have to infer from F 3, and so on ad infinitum . But S would also need to be justified in believing that F 1 does in fact make likely that E 1 makes likely P , a proposition he would need to infer from some other proposition G 1, which he would need to infer from some other proposition G 2, and so on. And he would need to infer that G 1 does indeed make likely that F 1 makes likely that E 1 makes likely P , and so on. Without noninferentially justified beliefs, it would seem that we would need to complete an infinite number of infinitely long chains of reasoning in order to be justified in believing anything! PIJ is controversial, especially its second clause. It is important to note that either clause of the principle can be used by itself to generate the allegedly vicious regress for the philosopher who rejects foundations. It is the two clauses combined that are supposed to present the anti-foundationalist with an infinite number of vicious regresses. A number of philosophers (among them foundationalists) would argue that the second clause of PIJ confuses levels of epistemic questions. It is far too strong to require someone to have a justified belief in a probabilistic connection between available evidence and the conclusion reached on the basis of that evidence. Such a requirement is at best plausible for having second-level justification, justification for the epistemic belief that one has an inferentially justified belief. In responding to a challenge presented to one's having an inferentially justified belief in P on the basis of E , one might find oneself searching for justification to support the claim that E makes probable P , but that is only because in the context of the challenge one is trying to support or justify the claim that one has a justified belief. A similar claim might be made with respect to clause (1) of the principle, although it is more difficult to generate the supporting intuition. In any event, the careful foundationalist is certainly not confused about level-distinctions. The foundationalist who supports PIJ is claiming that a necessary condition for someone's having an inferentially justified belief in P based on E is that the person have both a justified belief in E and a justified belief in the proposition that E makes P probable. It is simply not enough that E is true or that E does in fact make probable P . Our original examples used to support PIJ would seem to reinforce that conclusion. Even if there happened to be some bizarre connection between palm lines and length of life, for example, the person who has no reason to believe that such a connection exists has no justification for conclusions reached about length of life based on this anatomical feature of people. Similarly, even though there is in fact a connection between ingesting hemlock and dying, a person who had no reason to believe that ingesting hemlock would bring about death has no justification for believing that someone (who has just ingested hemlock) is about to die. Some have attempted to defend a weaker version of the principle, one that replaces the second clause of PIJ with the condition that the subject have some sort of non-doxastic awareness or appreciation of the connection--e.g., that one be acquainted with the connection or that it appear to one that the connection holds (e.g., Tucker 2012). There are responses to the charge of vicious regress facing anti-foundationalists. One is to deny the premise that circular inferences are vicious or no good: granted, one can't effectively convince someone who is skeptical of the truth of P that it is true by relying on an inference that ultimately comes back to P , but perhaps circular inferences can provide justification despite being dialectically ineffective (i.e., ineffective in persuading others). Still, it seems odd to say that one could justify P by use of an inference from P . After all, if P is already justified, the subject does not need to use it to justify P ; and if it is not justified then, in line with the first clause of PIJ, one could not use it to justify P . More plausibly, the anti-foundationalist might reject the presupposition that all justification is linear or one-directional, that it flows from one belief to another, or is inherited by a belief from others. According to coherentism about epistemic justification, beliefs are justified \"holistically\" rather than in a linear, piecemeal way. Each belief is justified by virtue of its coherence with the rest of what one believes--in other words, by virtue of belonging to a coherent set or web of beliefs. The coherentist avoids the appearance of vicious circularity by insisting that one needn't first have justification for believing the other propositions in one's belief system. The coherence theorist's response to the argument for foundationalism is, of course, only as plausible as the coherence theory of justification (see coherentist theories of epistemic justification ). Some forms of coherentism might complicate our taxonomy. According to some coherentists, a belief can depend for its justification on how well it \"coheres\" with the rest of one's beliefs, and if this coherence is not understood in terms of actual or available inference, then they would allow for dependent but non-inferentially justified belief. Some beliefs may count as foundational in the sense of not depending on inference from other beliefs for justification, while still depending on other beliefs. One other response is to embrace infinitism and hold that an infinite regress is not necessarily vicious or problematic. Infinitism has a few defenders (e.g., Peter Klein (1998) and more recently, Fantl (2003) and Aikin (2011)). The infinitist accepts the need to be able to supply non-circular justification for believing what we do, but argues that given the complexity of the human mind and its capacity to entertain and justifiably believe an infinite number of propositions, there is nothing vicious about the relevant regresses we face. There is no reason to suppose that we would be unable to justify every proposition we believe by appeal to some other different proposition which we justifiably believe. Infinitism is a view that should be seriously considered, particularly once one realizes that one not only can but arguably does have an infinite number of justified beliefs (e.g., that 2 is greater than 1, that 3 is greater that 1, and so on.). For some further discussion of infinitism and challenges to it, see Klein and Turri (2014). Some don't find the regress argument to be the best argument for the existence of foundational justification; as with any argument by elimination, it depends on whether the alternatives eliminated really are untenable. Pryor (2013b), for example, claims that the best argument comes from considering examples. I believe that I feel tired, that I have a headache, that I intend to get a glass of water, that black is not white; and in each case, it doesn't seem that my justification is mediated by any other proposition. This supports the claim that there are foundational beliefs, though it does not speak directly to the thesis that all other beliefs must depend, ultimately, on foundational beliefs for their justification.",
+      "relatedEntries": [
+        "epistemology",
+        "justep-coherence",
+        "justep-intext",
+        "knowledge-analysis",
+        "knowledge-acquaindescrip",
+        "reliabilism"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "epistemology"
+        },
+        {
+          "slug": "justep-coherence"
+        },
+        {
+          "slug": "justep-intext"
+        },
+        {
+          "slug": "knowledge-analysis"
+        },
+        {
+          "slug": "knowledge-acquaindescrip"
+        },
+        {
+          "slug": "reliabilism"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 96,
+      "bibliography": [
+        {
+          "raw": "Aikin, Scott F., 2011, Epistemology and the Regress Problem , New York: Routledge."
+        },
+        {
+          "raw": "Alston, William P., 1989, Epistemic justification: Essays in the theory of knowledge , Ithaca: Cornell University Press."
+        },
+        {
+          "raw": "Aristotle, Posterior Analytics , Jonathan Barnes (trans.), second edition, translated with a commentary, Oxford: Oxford University Press, 1956."
+        },
+        {
+          "raw": "Armstrong, David, 1973, Belief, Truth and Knowledge , London: Cambridge University Press."
+        },
+        {
+          "raw": "Audi, Robert, 1993, The Structure of Justification , New York: Cambridge University Press."
+        },
+        {
+          "raw": "Ayer, A. J., 1956, The Problem of Knowledge , London: Cambridge University Press."
+        },
+        {
+          "raw": "Bach, Kent, 1985, \"A Rationale for Reliabilism\", Monist , 68(2): 246-263."
+        },
+        {
+          "raw": "Bergmann, Michael, 2006, Justification without Awareness: A Defense of Epistemic Externalism , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "---, 2008, \"Externalist Responses to Skepticism\", in Oxford Handbook of Skepticism , John Greco (ed.), Oxford University Press, pp. 504-32. doi:10.1093/oxfordhb/9780195183214.003.0024"
+        },
+        {
+          "raw": "BonJour, Laurence, 1978, \"Can Empirical Knowledge Have a Foundation?\" American Philosophical Quarterly , 15(1): 1-13."
+        },
+        {
+          "raw": "---, 1985, The Structure of Empirical Knowledge , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "---, 2000, \"Toward a Defense of Empirical Foundationalism\", in Resurrecting Old-Fashioned Foundationalism , Michael DePaul (ed.), Lanham, MD: Rowman & Littlefield."
+        },
+        {
+          "raw": "---, 2003, \"A Version of Internalist Foundationalism\", in Epistemic Justification: Internalism vs. Externalism, Foundationalism vs. Virtues , L. BonJour and E. Sosa (eds.), Malden, MA: Blackwell."
+        },
+        {
+          "raw": "Chisholm, Roderick, 1980, \"A Version of Foundationalism\", Midwest Studies in Philosophy , 5(1): 543-564. doi:10.1111/j.1475-4975.1980.tb00423.x"
+        },
+        {
+          "raw": "---, 1989, Theory of Knowledge , 3 edition, Englewood Cliffs: Prentice-Hall."
+        },
+        {
+          "raw": "Christensen, David, 1994, \"Conservatism in Epistemology\", No&ucirc;s , 28(1): 69-89. doi:10.2307/2215920"
+        },
+        {
+          "raw": "Cohen, Stewart, 1984, \"Justification and Truth\", Philosophical Studies , 46(3): 279-295."
+        },
+        {
+          "raw": "---, 2002, \"Basic Knowledge and the Problem of Easy Knowledge\", Philosophy and Phenomenological Research , 65(2): 309-329."
+        },
+        {
+          "raw": "---, 2005, \"Why Basic Knowledge is Easy Knowledge\", Philosophy and Phenomenological Research , 70(2): 417-430. doi:10.1111/j.1933-1592.2005.tb00536.x"
+        },
+        {
+          "raw": "Comesa&ntilde;a, Juan, 2002, \"The Diagonal and the Demon\", Philosophical Studies , 110(3): 249-266. doi: 10.1023/A:1020656411534"
+        },
+        {
+          "raw": "Conee, Earl, 2013, \"Seeming Evidence\", in Chris Tucker (ed.), Seemings and Justification: New Essays on Dogmatism and Phenomenal Conservatism . Oxford University Press."
+        },
+        {
+          "raw": "Cullison, Andrew, 2010, \"What are Seemings?\" Ratio , 23(3): 260-274. doi:10.1111/j.1467-9329.2010.00466.x"
+        },
+        {
+          "raw": "Dretske, Fred I., 1970, \"Epistemic Operators\", The Journal of Philosophy , 67(24): 1007-1023. doi:10.2307/2024710"
+        },
+        {
+          "raw": "Engel, Mylan, 1992, \"Personal and Doxastic Justification in Epistemology\", Philosophical Studies , 67(2): 133-150."
+        },
+        {
+          "raw": "Fales, Evan, 1996, A Defense of the Given , Lanham, MA: Rowman and Littlefield."
+        },
+        {
+          "raw": "---, 2014, \"Turtle Epistemology\", Philosophical Studies , 169(2): 339-354. doi:10.1007/s11098-013-0185-8"
+        },
+        {
+          "raw": "Fantl, Jeremy, 2003, \"Modest Infinitism\", Canadian Journal of Philosophy , 33(4): 537-562. doi:10.1080/00455091.2003.10716554"
+        },
+        {
+          "raw": "Foley, Richard, 1983, \"Epistemic Conservatism\", Philosophical Studies , 43(2): 165-182."
+        },
+        {
+          "raw": "Fumerton, Richard, 1995, Metaepistemology and Skepticism , Lanham, MA: Rowman and Littlefield."
+        },
+        {
+          "raw": "---, 2006, \"Epistemic Internalism, Philosophical Assurance and the Skeptical Predicament\", in Knowledge and Reality , Thomas M. Crisp, Matthew Davidson, and David Vander Laan (eds.), Vol. 103, Springer Science & Business Media. doi:10.1007/1-4020-4733-9_8"
+        },
+        {
+          "raw": "---, 2009, \"Markie, Speckles, and Classical Foundationalism\", Philosophy and Phenomenological Research , 79(1): 207-212. doi:10.1111/j.1933-1592.2009.00272.x"
+        },
+        {
+          "raw": "---, 2010, \"Poston on Similarity and Acquaintance\", Philosophical Studies , 147(3): 379-386."
+        },
+        {
+          "raw": "---, 2016, \"The Prospects for Traditional Internalism\", in Brett Coppenger and Michael Bergmann (eds.), Intellectual Assurance: Essays on Traditional Epistemic Internalism , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780198719632.003.0013"
+        },
+        {
+          "raw": "Gl&uuml;er, Kathrin, 2018, \"Defeating looks\", Synthese , 195(7): 2985-3012."
+        },
+        {
+          "raw": "Goldman, Alvin, 1979, \"What is Justified Belief?\" in Justification and Knowledge , George Pappas (ed.), Dordrecht: Reidel, pp. 1-23."
+        },
+        {
+          "raw": "---, 1986, Epistemology and Cognition , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "---, 1988, \"Strong and Weak Justification\", in Philosophical Perspectives 2: Epistemology , James Tomberlin (ed.), Atascadero, Calif.: Ridgeview Publishing Co., pp. 51-69."
+        },
+        {
+          "raw": "---, 2009, \"Internalism, Externalism, and the Architecture of Justification\", The Journal of Philosophy , 106(6): 309-338."
+        },
+        {
+          "raw": "Hasan, Ali, 2011, \"Classical Foundationalism and Bergmann's Dilemma for Internalism\", Journal of Philosophical Research , 36: 391-410. doi:10.5840/jpr_2011_22"
+        },
+        {
+          "raw": "---, 2013, \"Phenomenal Conservatism, Classical Foundationalism, and Internalist Justification\", Philosophical Studies , 162(2): 119-141. doi:10.1007/s11098-011-9751-0"
+        },
+        {
+          "raw": "Henderson, David and Terence Horgan, 2006, \"Transglobal Reliabilism\", Croatian Journal of Philosophy , 6(17): 171-195."
+        },
+        {
+          "raw": "Huemer, Michael, 2001, Skepticism and the Veil of Perception , Lanham, MD: Rowman & Littlefield."
+        },
+        {
+          "raw": "---, 2002, \"Fumerton's Principle of Inferential Justification\", Journal of Philosophical Research , 27: 329-40. doi:10.5840/jpr_2002_4"
+        },
+        {
+          "raw": "---, 2007, \"Compassionate Phenomenal Conservatism\", Philosophy and Phenomenological Research , 74(1): 30-55. doi:10.1111/j.1933-1592.2007.00002.x"
+        },
+        {
+          "raw": "---, 2013, \"Phenomenal Conservatism &Uuml;ber Alles\", in Tucker 2013: 328-350. doi:10.1093/acprof:oso/9780199899494.003.0015"
+        },
+        {
+          "raw": "Klein, Peter, 1998, \"Foundationalism and the Infinite Regress of Reasons\", Philosophy and Phenomenological Research , 58: 919-26. doi:10.2307/2653735"
+        },
+        {
+          "raw": "Kvanvig, Jonathan and Christopher Menzel, 1990, \"The Basic Notion of Justification\", Philosophical Studies , 59(3): 235-261."
+        },
+        {
+          "raw": "Lehrer, Keith, 1974, Knowledge , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "---, 1990, The Theory of Knowledge , New York: Routledge."
+        },
+        {
+          "raw": "Lehrer, Keith and Stewart Cohen, 1983, \"Justification, Truth, and Knowledge\", Synthese , 55(2): 191-207. doi:10.1007/BF00485068"
+        },
+        {
+          "raw": "Lewis, C. I., 1929, Mind and the World-Order: Outline of a Theory of Knowledge , New York: Charles Scribner's Sons. Reprinted by New York: Dover Publications, 1956. doi:10.1353/cjp.0.0054"
+        },
+        {
+          "raw": "---,1946, An Analysis of Knowledge and Valuation , La Salle, IL: Open Court."
+        },
+        {
+          "raw": "Littlejohn, Clayton, 2009, \"The Externalist's Demon\", Canadian Journal of Philosophy , 39(3): 399-434."
+        },
+        {
+          "raw": "Lyons, Jack, 2009, Perception and Basic Beliefs , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2011, \"Circularity, Reliability, and the Cognitive Penetrability of Perception\", Philosophical Issues , 21(1): 289-311. doi:10.1111/j.1533-6077.2011.00205.x"
+        },
+        {
+          "raw": "Majors, Brad and Sarah Sawyer, 2005, \"The Epistemological Argument for Content Externalism\", Philosophical Perspectives , 19: 257-80. doi:10.1111/j.1520-8583.2005.00062.x"
+        },
+        {
+          "raw": "Markie, Peter, 2005, \"Easy Knowledge\", Philosophy and Phenomenological Research , 70(2): 406-416."
+        },
+        {
+          "raw": "---, 2013, \"Searching for True Dogmatism\", in Tucker 2013: 248-69. doi:10.1093/acprof:oso/9780199899494.003.0011"
+        },
+        {
+          "raw": "McAllister, Blake, 2018), \"Seemings as sui generis.\" Synthese , 195(7): 3079-3096"
+        },
+        {
+          "raw": "McCain, Kevin, 2008, \"The Virtues of Epistemic Conservatism\", Synthese , 164(2): 185-200. doi:10.1007/s11229-007-9222-5"
+        },
+        {
+          "raw": "McCain, Kevin & Moretti, Luca, 2021, Appearance and Explanation: Phenomenal Explanationism in Epistemology . Oxford: Oxford University Press."
+        },
+        {
+          "raw": "McGrath, Matthew, 2013, \"Phenomenal Conservatism and Cognitive Penetration: The 'Bad Basis' Counterexamples\", in Tucker 2013: 225-47. doi:10.1093/acprof:oso/10.1093/acprof:oso/9780199899494.003.0010"
+        },
+        {
+          "raw": "McGrew, Timothy, 1995, The Foundations of Knowledge , Lanham, MD: Littlefield Adams Books."
+        },
+        {
+          "raw": "---, 1998, \"A Defense of Classical Foundationalism\", in The Theory of Knowledge: Classical and Contemporary Readings , second edition, L.P. Pojman (ed.), Belmont, CA/London: Wadsworth, pp. 224-35."
+        },
+        {
+          "raw": "Mill, John Stuart, 1906, A System of Logic , London: Longmans, Green, and Co."
+        },
+        {
+          "raw": "Moser, Paul, 1989, Knowledge and Evidence , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Nozick, Robert, 1981, Philosophical Explanations , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Pollock, John and Joseph Cruz, 1999, Contemporary Theories of Knowledge , second edition, Lanham, MA: Rowman & Littlefield."
+        },
+        {
+          "raw": "Poston, Ted, 2010, \"Similarity and Acquaintance: A Dilemma\", Philosophical Studies , 147(3): 369-378. doi:10.1007/s11098-008-9290-5"
+        },
+        {
+          "raw": "Pryor, James, 2000, \"The Skeptic and the Dogmatist\", No&ucirc;s , 34(4): 517-549. doi:10.1111/0029-4624.00277"
+        },
+        {
+          "raw": "---, 2001, \"Highlights of Recent Epistemology\", The British Journal for the Philosophy of Science , 52(1): 95-124. doi:10.1093/bjps/52.1.95"
+        },
+        {
+          "raw": "---, 2004, \"What's Wrong with Moore's Argument?\" Philosophical Issues , 14(1): 349-378. doi:10.1111/j.1533-6077.2004.00034.x"
+        },
+        {
+          "raw": "---, 2013a, \"Problems for Credulism\", in Tucker 2013: 89-132. doi:10.1093/acprof:oso/9780199899494.003.0005"
+        },
+        {
+          "raw": "---, 2013b, \"There is Immediate Justification\", in Turri, Steup, & Sosa (eds.) Contemporary Debates in Epistemology. 2nd Edition, Blackwell."
+        },
+        {
+          "raw": "Rogers, Jason and Jonathan Matheson, 2011, \"Bergmann's Dilemma: Exit Strategies for Internalists\", Philosophical Studies , 152(1): 55-80. doi:10.1007/s11098-009-9460-0"
+        },
+        {
+          "raw": "Russell, Bertrand, 1910-11, \"Knowledge by Acquaintance and Knowledge by Description\", The Proceedings of the Aristotelian Society , 11: 209-32."
+        },
+        {
+          "raw": "---, 1984 [1913], Theory of Knowledge: The 1913 Manuscript , Elizabeth Eames (ed.), London: Allen and Unwin Ltd."
+        },
+        {
+          "raw": "---, 1948, Human Knowledge: Its Scope and Limits , New York: Simon and Schuster."
+        },
+        {
+          "raw": "Sellars, Wilfrid, 1963, Science, Perception and Reality , London: Routledge & Kegan Paul."
+        },
+        {
+          "raw": "Siegel, Susanna, 2013, \"The Epistemic Impact of the Etiology of Experience\", Philosophical Studies , 162(3): 697-722. doi:10.1007/s11098-012-0059-5"
+        },
+        {
+          "raw": "Skene, Matthew, 2013, \"Seemings and the Possibility of Epistemic Justification\", Philosophical Studies , 163(2): 539-559. doi:10.1007/s11098-011-9830-2"
+        },
+        {
+          "raw": "Smithies, Declan, 2019, The Epistemic Role of Consciousness . Oxford University Press."
+        },
+        {
+          "raw": "Steup, Matthias, 2004, \"Internalist Reliabilism\", Philosophical Issues , 14(1): 403-425. doi:10.1111/j.1533-6077.2004.00036.x"
+        },
+        {
+          "raw": "Sosa, Ernest, 1997, \"Reflective Knowledge in the Best Circles\", The Journal of Philosophy , 94(8): 410-430. doi:10.2307/2564607"
+        },
+        {
+          "raw": "---, 2003, \"Privileged Access\", in Consciousness: New Philosophical Essays , Q. Smith and A. Jokic (eds.), Oxford: Oxford University Press, pp. 273-92."
+        },
+        {
+          "raw": "Tolhurst, William, 1998, \"Seemings\", American Philosophical Quarterly , 35(3): 293-302."
+        },
+        {
+          "raw": "Tooley, Michael, 2013, \"Michael Huemer and the Principle of Phenomenal Conservatism.\" In Chris Tucker (ed.), Seemings and Justification: New Essays on Dogmatism and Phenomenal Conservatism . Oxford University Press."
+        },
+        {
+          "raw": "Tucker, Chris, 2010, \"Why Open-Minded People Should Endorse Dogmatism\", Philosophical Perspectives , 24(1): 529-545. cite:10.1111/j.1520-8583.2010.00202.x"
+        },
+        {
+          "raw": "---, 2012, \"Movin' on up: Higher-Level Requirements and Inferential Justification\", Philosophical Studies 157(3): 323-340."
+        },
+        {
+          "raw": "--- (ed.), 2013, Seemings and Justification: New Essays on Dogmatism and Phenomenal Conservatism , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2016, \"Acquaintance and Fallible Non-Inferential Justification\", in Brett Coppenger and Michael Bergmann (eds.), Intellectual Assurance: Essays on Traditional Epistemic Internalism , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780198719632.003.0003"
+        },
+        {
+          "raw": "Turri, John (2010). \"On the relationship between propositional and doxastic justification\", Philosophy and Phenomenological Research , 80(2) :312-326."
+        },
+        {
+          "raw": "Turri, John & Klein, Peter D. (eds.), 2014, Ad infinitum: new essays on epistemological infinitism . Oxford University Press."
+        },
+        {
+          "raw": "Vogel, Jonathan, 2008a, \"Internalist Responses to Skepticism\", in The Oxford Handbook of Skepticism , John Greco (ed.), Oxford University Press, pp. 553-56. doi:10.1093/oxfordhb/9780195183214.003.0025"
+        },
+        {
+          "raw": "---, 2008b, \"Epistemic Bootstrapping\", The Journal of Philosophy , 105(9): 518-539."
+        },
+        {
+          "raw": "Williamson, Timothy, 2000, Knowledge and its Limits , Oxford: Oxford University Press."
+        }
+      ],
+      "publishedAt": "2000-02-20T13:00:00.000Z",
+      "revisedAt": "2022-08-04T14:00:00.000Z"
+    }
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/sairyss--backend-best-practices",
+  "meta": {
+    "title": "Backend best practices",
+    "description": "Best practices, tools and guidelines for backend development. Code examples in TypeScript + NodeJS",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T07:03:58.558Z",
+    "dateModified": "2026-03-22T07:03:58.558Z",
+    "keywords": [
+      "api",
+      "backend",
+      "backend-api",
+      "backend-services",
+      "best-practices",
+      "developer-tools",
+      "development",
+      "devops",
+      "javascript",
+      "nestjs",
+      "nodejs",
+      "software-design",
+      "typescript"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "**Check out my other repositories**:",
+    "context": "**Check out my other repositories**:\n\n- [Domain-Driven Hexagon](https://github.com/Sairyss/domain-driven-hexagon) - Guide on Domain-Driven Design, software architecture, design patterns, best practices etc.\n- [System Design Patterns](https://github.com/Sairyss/system-design-patterns) - list of topics and resources related to distributed systems, system design, microservices, scalability and performance, etc.\n- [Full Stack starter template](https://github.com/Sairyss/fullstack-starter-template) - template for full stack applications based on TypeScript, React, Vite, ChakraUI, tRPC, Fastify, Prisma, zod, etc.\n\n---\n\nIn this readme are presented some of the best practices, tools and guidelines for backend applications gathered from different sources.\n\nThis Readme contains code examples mainly for TypeScript + NodeJS, but practices described here are language agnostic and can be used in any backend project.\n\n---\n\n- [Backend best practices](#backend-best-practices)\n  - [Architecture](#architecture)\n  - [API Security](#api-security)\n    - [Data Validation](#data-validation)\n    - [Enforce least privilege](#enforce-least-privilege)\n    - [Rate Limiting](#rate-limiting)\n  - [Testing](#testing)\n    - [White box vs Black box](#white-box-vs-black-box)\n    - [Load Testing](#load-testing)\n    - [Fuzz Testing](#fuzz-testing)\n  - [Documentation](#documentation)\n    - [Document APIs](#document-apis)\n    - [Use wiki](#use-wiki)\n    - [Add Readme](#add-readme)\n    - [Write self-documenting code](#write-self-documenting-code)\n    - [Prefer statically typed languages](#prefer-statically-typed-languages)\n    - [Avoid useless comments](#avoid-useless-comments)\n  - [Database Best Practices](#database-best-practices)\n    - [Backups](#backups)\n    - [Managing Schema Changes](#managing-schema-changes)\n    - [Data Seeding](#data-seeding)\n  - [Configuration](#configuration)\n  - [Logging](#logging)\n  - [Monitoring](#monitoring)\n    - [Telemetry](#telemetry)\n  - [Standardization](#standardization)\n  - [Static Code Analysis](#static-code-analysis)\n  - [Code formatting](#code-formatting)\n  - [Shut down gracefully](#shut-down-gracefully)\n  - [Profiling](#profiling)\n  - [Benchmarking](#benchmarking)\n  - [Make application easy to setup](#make-application-easy-to-setup)\n  - [Deployment](#deployment)\n    - [Blue-Green Deployment](#blue-green-deployment)\n  - [Code Generation](#code-generation)\n  - [Version Control](#version-control)\n    - [Pre-push/pre-commit hooks](#pre-pushpre-commit-hooks)\n    - [Conventional commits](#conventional-commits)\n  - [API Versioning](#api-versioning)\n- [Additional resources](#additional-resources)\n  - [Github Repositories](#github-repositories)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "backend",
+    "devops"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "2254 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "178 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T07:03:58.558Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/Sairyss/backend-best-practices",
+        "description": "GitHub repository: Sairyss/backend-best-practices"
+      }
+    ]
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Sairyss",
+        "type": "human",
+        "uri": "https://github.com/Sairyss"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 2610,
+      "validation_diversity": 0.1,
+      "context_breadth": 0.63,
+      "temporal_stability": 0.71,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.5
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.364
+  }
+}

@@ -1,0 +1,613 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/logic-epistemic",
+  "meta": {
+    "title": "Epistemic Logic",
+    "description": "Epistemic logic is a subfield of philosophical logic concerned with logical approaches to knowledge, belief, and related notions. Though any logic with an epistemic interpretation may be called an epistemic logic , the most widespread type of epistemic logics in use at present are modal logics. Knowledge and belief are represented via the modal operators K and B , often with a subscript indicating the agent that holds the attitude. Formulas \\(K_{a}\\varphi\\) and \\(B_{a}\\varphi\\) are then read \"agent a knows that phi\" and \"agent a believes that phi\", respectively. Epistemic logic allows the formal exploration of the implications of epistemic principles. For example, the formula \\(K_{a}\\varphi\\rightarrow\\varphi\\) states that what is known is true, while \\(K_{a}\\varphi\\rightarrow K_{a}K_{a}\\varphi\\) states that what is known is known to be known. The semantics of epistemic logic are typically given in terms of possible worlds via Kripke models such that the formula \\(K_{a}\\varphi\\) is read to assert that \\(\\varphi\\) is true in all worlds agent a considers epistemically possible relative to its current information. The central problems that have concerned epistemic logicians include, for example, determining which epistemic principles are most appropriate for characterizing knowledge and belief, the logical relations between different conceptions of knowledge and belief, and the epistemic features of groups of agents. Beyond philosophy proper, epistemic logic flourishes in theoretical computer science, AI, economics, and related fields.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T07:30:01.758Z",
+    "dateModified": "2026-03-22T07:30:01.758Z",
+    "datePublished": "2019-06-06T14:00:00.000Z",
+    "keywords": [
+      "common knowledge",
+      "dynamic epistemic",
+      "heytesbury",
+      "impossible worlds",
+      "logic belief revision",
+      "logic information",
+      "logic justification",
+      "logic modal",
+      "phil multimodallogic"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Epistemic logic is a subfield of philosophical logic concerned with logical approaches to knowledge, belief, and related notions. Though any logic with an epistemic interpretation may be called an epistemic logic , the most widespread type of epistemic logics in use at present are modal logics. Knowledge and belief are represented via the modal operators K and B , often with a subscript indicating the agent that holds the attitude. Formulas \\(K_{a}\\varphi\\) and \\(B_{a}\\varphi\\) are then read \"agent a knows that phi\" and \"agent a believes that phi\", respectively. Epistemic logic allows the formal exploration of the implications of epistemic principles. For example, the formula \\(K_{a}\\varphi\\rightarrow\\varphi\\) states that what is known is true, while \\(K_{a}\\varphi\\rightarrow K_{a}K_{a}\\varphi\\) states that what is known is known to be known. The semantics of epistemic logic are typically given in terms of possible worlds via Kripke models such that the formula \\(K_{a}\\varphi\\) is read to assert that \\(\\varphi\\) is true in all worlds agent a considers epistemically possible relative to its current information. The central problems that have concerned epistemic logicians include, for example, determining which epistemic principles are most appropriate for characterizing knowledge and belief, the logical relations between different conceptions of knowledge and belief, and the epistemic features of groups of agents. Beyond philosophy proper, epistemic logic flourishes in theoretical computer science, AI, economics, and related fields.",
+    "context": "Opening section: 1. Introduction | Related entries: common-knowledge, heytesbury, impossible-worlds, logic-information, dynamic-epistemic, logic-justification, logic-modal, logic-belief-revision, phil-multimodallogic",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "epistemology",
+    "logic"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry logic-epistemic",
+        "uri": "https://plato.stanford.edu/entries/logic-epistemic/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "3 author(s), 9 related entries, bibliography size 120"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2019-06-06T14:00:00.000Z and revised 2023-11-30T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2023-11-30T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/logic-epistemic/",
+        "description": "SEP entry for logic-epistemic"
+      }
+    ],
+    "solutionApproach": "1. Introduction"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/common-knowledge",
+      "ocp:sep/heytesbury",
+      "ocp:sep/impossible-worlds",
+      "ocp:sep/logic-information",
+      "ocp:sep/dynamic-epistemic",
+      "ocp:sep/logic-justification",
+      "ocp:sep/logic-modal",
+      "ocp:sep/logic-belief-revision",
+      "ocp:sep/phil-multimodallogic"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Rendsvig, Rasmus",
+        "type": "human"
+      },
+      {
+        "name": "Symons, John",
+        "type": "human"
+      },
+      {
+        "name": "Wang, Yanjing",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/logic-epistemic/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 97,
+      "validation_diversity": 0.64,
+      "context_breadth": 0.44,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.91
+    },
+    "confidence": "tested",
+    "authority": "high",
+    "status": "draft",
+    "trustScore": 0.611
+  },
+  "extensions": {
+    "sep": {
+      "slug": "logic-epistemic",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/logic-epistemic/",
+      "preamble": "Epistemic logic is a subfield of philosophical logic concerned with logical approaches to knowledge, belief, and related notions. Though any logic with an epistemic interpretation may be called an epistemic logic , the most widespread type of epistemic logics in use at present are modal logics. Knowledge and belief are represented via the modal operators K and B , often with a subscript indicating the agent that holds the attitude. Formulas \\(K_{a}\\varphi\\) and \\(B_{a}\\varphi\\) are then read \"agent a knows that phi\" and \"agent a believes that phi\", respectively. Epistemic logic allows the formal exploration of the implications of epistemic principles. For example, the formula \\(K_{a}\\varphi\\rightarrow\\varphi\\) states that what is known is true, while \\(K_{a}\\varphi\\rightarrow K_{a}K_{a}\\varphi\\) states that what is known is known to be known. The semantics of epistemic logic are typically given in terms of possible worlds via Kripke models such that the formula \\(K_{a}\\varphi\\) is read to assert that \\(\\varphi\\) is true in all worlds agent a considers epistemically possible relative to its current information. The central problems that have concerned epistemic logicians include, for example, determining which epistemic principles are most appropriate for characterizing knowledge and belief, the logical relations between different conceptions of knowledge and belief, and the epistemic features of groups of agents. Beyond philosophy proper, epistemic logic flourishes in theoretical computer science, AI, economics, and related fields.",
+      "firstSectionTitle": "1. Introduction",
+      "firstSectionText": "Aristotelian texts set the groundwork for discussions of the logic of knowledge and belief, particularly De Sophisticis Elenchis as well as the Prior and Posterior Analytics . While Aristotle addressed the four alethic modes of possibility, necessity, impossibility, and contingency, Buridan, Pseudo Scotus, Ockham, and Ralph Strode, helped to extend Aristotle's insights to epistemic themes and problems (Boh 1993; Knuuttila 1993). During this period, Pseudo Scotus and William of Ockham supplemented Aristotle's study of mental acts of cognition and volition (see Boh 1993: 130). Ivan Boh's studies of the history of fourteenth and fifteenth century investigations into epistemic logic provide an excellent coverage of the topic, especially his Epistemic Logic in the Later Middle Ages (1993). According to Boh, the English philosopher Ralph Strode formulated a fully general system of propositional epistemic rules in his influential 1387 book Consequences (Boh 1993: 135). Strode's presentation built on the earlier logical treatises of Ockham and Burley. Problems of epistemic logic were also discussed between the 1330s and 1360s by the so-called Oxford Calculators, most prominently by William Heytesbury and Richard Kilvington. By the fifteenth century, Paul of Venice and other Italian philosophers also engaged in sophisticated reflection on the relationship between knowledge, truth, and ontology. Discussions of epistemic logic during the medieval period share a similar set of foundational assumptions with contemporary discussions. Most importantly, medieval philosophers explored the connection between knowledge and veracity: If I know p , then p is true. Furthermore, many medieval discussions begin with an assumption similar to G.E. Moore's observation that an epistemic agent cannot coherently assert \" p but I do not believe (know) p \". Sentences of this form are generally referred to as Moore sentences . Modern treatments of the logic of knowledge and belief grew out of the work of philosophers and logicians writing from 1948 through the 1950s. Rudolf Carnap, Jerzy &#321;o&#347;, Arthur Prior, Nicholas Rescher, G.H. von Wright, and others recognized that our discourse concerning knowledge and belief admits of an axiomatic-deductive treatment. Among the many important papers that appeared in the 1950s, von Wright's seminal work (1951) is widely acknowledged as having initiated the formal study of epistemic logic as we know it today. Von Wright's insights were extended by Jaakko Hintikka in his book Knowledge and Belief: An Introduction to the Logic of the Two Notions (1962). Hintikka provided a way of interpreting epistemic concepts in terms of possible world semantics and as such it has served as the foundational text for the study of epistemic logic ever since. In the 1980s and 1990s, epistemic logicians focused on the logical properties of systems containing groups of knowers and later still on the epistemic features of so-called \"multi-modal\" contexts. Since the 1990s work in dynamic epistemic logic has extended traditional epistemic logic by modeling the dynamic process of knowledge acquisition and belief revision. In the past two decades, epistemic logic has come to comprise a broad set of formal approaches to the interdisciplinary study of knowledge and belief. Interest in epistemic logic extends well beyond philosophers. Recent decades have seen a great deal of interdisciplinary attention to epistemic logic with economists and computer scientists actively developing the field together with logicians and philosophers. In 1995 two important books signaled the fertile interplay between computer science and epistemic logic: Fagin, Halpern, Moses, and Vardi (1995) and Meyer and van der Hoek (1995). Work by computer scientists has become increasingly central to epistemic logic in the intervening years. Among philosophers, there is increased attention to the interplay between these formal approaches and traditional epistemological problems (see for example, van Benthem 2006; Hendricks & Symons 2006; Stalnaker 2006; Artemov 2008; Holliday 2018; Baltag, Bezhanishvili, et al. 2019). Several introductory texts on epistemic logic exist, e.g., Fagin et al. (1995), van Benthem (2011); van Ditmarsch, van der Hoek, and Kooi (2007); van Ditmarsch, Halpern, et al. (2015); Gochet and Gribomont (2006); and Meyer (2001) with Lenzen (1980) providing an overview of early developments.",
+      "relatedEntries": [
+        "common-knowledge",
+        "heytesbury",
+        "impossible-worlds",
+        "logic-information",
+        "dynamic-epistemic",
+        "logic-justification",
+        "logic-modal",
+        "logic-belief-revision",
+        "phil-multimodallogic"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "common-knowledge"
+        },
+        {
+          "slug": "heytesbury"
+        },
+        {
+          "slug": "impossible-worlds"
+        },
+        {
+          "slug": "logic-information"
+        },
+        {
+          "slug": "dynamic-epistemic"
+        },
+        {
+          "slug": "logic-justification"
+        },
+        {
+          "slug": "logic-modal"
+        },
+        {
+          "slug": "logic-belief-revision"
+        },
+        {
+          "slug": "phil-multimodallogic"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 120,
+      "bibliography": [
+        {
+          "raw": "Aloni, Maria, 2001, Quantification Under Conceptual Covers , Ph.D. Thesis, University of Amsterdam. [ Aloni 2001 available online ]"
+        },
+        {
+          "raw": "---, 2018, \"Knowing-Who in Quantified Epistemic Logic\", in van Ditmarsch and Sandu 2018: 109-129. doi:10.1007/978-3-319-62864-6_4"
+        },
+        {
+          "raw": "Areces, Carlos, Raul Fervari, Andr&eacute;s R. Saravia, and Fernando R. Vel&aacute;zquez-Quesada, 2023, \"First Steps in Updating Knowing How\", in DaL&iacute; 2022: Dynamic Logic. New Trends and Applications , Carlos Areces and Diana Costa (eds.), (Lecture Notes in Computer Science 13780), Cham: Springer International Publishing, 1-16. doi:10.1007/978-3-031-26622-5_1"
+        },
+        {
+          "raw": "Arl&oacute;-Costa, Horacio, Vincent F. Hendricks, and Johan van Benthem (eds.), 2016, Readings in Formal Epistemology , Cham: Springer International Publishing. doi:10.1007/978-3-319-20451-2"
+        },
+        {
+          "raw": "Artemov, Sergei, 2008, \"The Logic of Justification\", The Review of Symbolic Logic , 1(4): 477-513. doi:10.1017/S1755020308090060"
+        },
+        {
+          "raw": "Aucher, Guillaume, 2014, \"Principles of Knowledge, Belief and Conditional Belief\", in Interdisciplinary Works in Logic, Epistemology, Psychology and Linguistics: Dialogue, Rationality, and Formalism , Manuel Rebuschi, Martine Batt, Gerhard Heinzmann, Franck Lihoreau, Michel Musiol, and Alain Trognon (eds.), Cham: Springer International Publishing, 97-134. doi:10.1007/978-3-319-03044-9_5"
+        },
+        {
+          "raw": "Aumann, Robert J., 1976, \"Agreeing to Disagree\", The Annals of Statistics , 4(6): 1236-1239. Reprinted in Arl&oacute;-Costa, Hendricks, and van Benthem 2016: 859-862. doi:10.1214/aos/1176343654, doi:10.1007/978-3-319-20451-2_40"
+        },
+        {
+          "raw": "Baltag, Alexandru, 2016, \"To Know Is to Know the Value of a Variable\", in Advances in Modal Logic (Volume 11), Lev Beklemishev, St&eacute;phane Demri, and Andr&aacute;s M&aacute;t&eacute; (eds.), Rickmansworth, UK: College Publications, 135-155. [ Baltag 2016 available online ]"
+        },
+        {
+          "raw": "Baltag, Alexandru, Nick Bezhanishvili, Ayb&uuml;ke &Ouml;zg&uuml;n, and Sonja Smets, 2019, \"A Topological Approach to Full Belief\", Journal of Philosophical Logic , 48(2): 205-244. doi:10.1007/s10992-018-9463-4"
+        },
+        {
+          "raw": "Baltag, Alexandru, Rachel Boddy, and Sonja Smets, 2018, \"Group Knowledge in Interrogative Epistemology\", in van Ditmarsch and Sandu 2018: 131-164. doi:10.1007/978-3-319-62864-6_5"
+        },
+        {
+          "raw": "Baltag, Alexandru and Sonja Smets, 2008, \"A Qualitative Theory of Dynamic Interactive Belief Revision\", in Logic and the Foundations of Game and Decision Theory (LOFT 7), Texts in Logic and Games: Volume 3, G. Bonanno, W. van der Hoek, and M. Wooldridge (eds.) , Amsterdam: Amsterdam University Press, 9-58."
+        },
+        {
+          "raw": "Belardinelli, Francesco and Alessio Lomuscio, 2011, \"First-Order Linear-Time Epistemic Logic with Group Knowledge: An Axiomatisation of the Monodic Fragment\", Fundamenta Informaticae , 106(2-4): 175-190."
+        },
+        {
+          "raw": "van Benthem, Johan, 2006, \"Epistemic Logic and Epistemology: The State of Their Affairs\", Philosophical Studies , 128(1): 49-76. doi:10.1007/s11098-005-4052-0"
+        },
+        {
+          "raw": "---, 2011, Logical Dynamics of Information and Interaction , Cambridge: Cambridge University Press. doi:10.1017/CBO9780511974533"
+        },
+        {
+          "raw": "van Benthem, Johan, David Fern&aacute;ndez-Duque, and Eric Pacuit, 2014, \"Evidence and Plausibility in Neighborhood Structures\", Annals of Pure and Applied Logic , 165(1): 106-133. doi:10.1016/j.apal.2013.07.007"
+        },
+        {
+          "raw": "Blackburn, Patrick, Maarten de Rijke, and Yde Venema, 2001, Modal Logic , Cambridge: Cambridge University Press. doi:10.1017/CBO9781107050884"
+        },
+        {
+          "raw": "Boh, Ivan, 1993, Epistemic Logic in the Later Middle Ages , (Topics in Medieval Philosophy), London/New York: Routledge."
+        },
+        {
+          "raw": "Bra&uuml;ner, Torben and Silvio Ghilardi, 2007, \"First-Order Modal Logic\", in Handbook of Modal Logic , Patrick Blackburn, Johan van Benthem, and Frank Wolter (eds.), (Studies in Logic and Practical Reasoning 3), Amsterdam, Boston: Elsevier, 549-620. doi:10.1016/S1570-2464(07)80012-7"
+        },
+        {
+          "raw": "Chellas, Brian F., 1980, Modal Logic: An Introduction , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Chisholm, Roderick M., 1963, \"The Logic of Knowing\", The Journal of Philosophy , 60(25): 773-795. doi:10.2307/2022834"
+        },
+        {
+          "raw": "Ciardelli, Ivano, 2014, \"Modalities in the Realm of Questions: Axiomatizing Inquisitive Epistemic Logic\", in Advances in Modal Logic (Volume 10), Rajeev Gor&eacute;, Barteld Kooi, and Agi Kurucz (eds.), Rickmansworth, UK: College Publications, 94-113. [ Ciardelli 2014 available online ]"
+        },
+        {
+          "raw": "---, 2016, Questions in Logic , Ph.D. Thesis, University of Amsterdam."
+        },
+        {
+          "raw": "---, 2023, Inquisitive Logic: Consequence and Inference in the Realm of Questions , (Trends in Logic 60), Cham: Springer International Publishing. doi:10.1007/978-3-031-09706-5"
+        },
+        {
+          "raw": "Ciardelli, Ivano and Floris Roelofsen, 2011, \"Inquisitive Logic\", Journal of Philosophical Logic , 40(1): 55-94. doi:10.1007/s10992-010-9142-6"
+        },
+        {
+          "raw": "---, 2015, \"Inquisitive Dynamic Epistemic Logic\", Synthese , 192(6): 1643-1687. doi:10.1007/s11229-014-0404-7"
+        },
+        {
+          "raw": "Cohen, Michael, Wen Tang, and Yanjing Wang, 2021, \"De Re Updates\", in Proceedings Eighteenth Conference on Theoretical Aspects of Rationality and Knowledge (TARK 2021), Joseph Halpern and Andr&eacute;s Perea (eds.), Electronic Proceedings in Theoretical Computer Science 335, 103-117. doi:10.4204/EPTCS.335.9"
+        },
+        {
+          "raw": "Cohen, Mika and Mads Dam, 2007, \"A Complete Axiomatization of Knowledge and Cryptography\", in 22nd Annual IEEE Symposium on Logic in Computer Science (LiCS 2007), IEEE, 77-88. doi:10.1109/LICS.2007.4"
+        },
+        {
+          "raw": "Corsi, Giovanna and Eugenio Orlandelli, 2013, \"Free Quantified Epistemic Logics\", Studia Logica , 101(6): 1159-1183. doi:10.1007/s11225-013-9528-x"
+        },
+        {
+          "raw": "van Ditmarsch, Hans, Joseph Y. Halpern, Wiebe van der Hoek, and Barteld Kooi (eds.), 2015, Handbook of Epistemic Logic , London: College Publications."
+        },
+        {
+          "raw": "van Ditmarsch, Hans, Wiebe van der Hoek, and Barteld Kooi, 2007, Dynamic Epistemic Logic , Dordrecht: Springer Netherlands. doi:10.1007/978-1-4020-5839-4"
+        },
+        {
+          "raw": "van Ditmarsch, Hans and Gabriel Sandu (eds.), 2018, Jaakko Hintikka on Knowledge and Game-Theoretical Semantics , (Outstanding Contributions to Logic, 12), Cham: Springer International Publishing. doi:10.1007/978-3-319-62864-6"
+        },
+        {
+          "raw": "van Eijck, Jan, Malvin Gattinger, and Yanjing Wang, 2017, \"Knowing Values and Public Inspection\", in ICLA 2017: Logic and Its Applications (Lecture Notes in Computer Science: Volume 10119), Sujata Ghosh and Sanjiva Prasad (eds.), Berlin,Heidelberg: Springer, 77-90. doi:10.1007/978-3-662-54069-5_7"
+        },
+        {
+          "raw": "Epstein, Sophia and Pavel Naumov, 2021, \"Epistemic Logic of Know-Who\", Proceedings of the AAAI Conference on Artificial Intelligence , 35(13): 11479-11486. doi:10.1609/aaai.v35i13.17367"
+        },
+        {
+          "raw": "Fagin, Ronald and Joseph Y. Halpern, 1987, \"Belief, Awareness, and Limited Reasoning\", Artificial Intelligence , 34(1): 39-76. doi:10.1016/0004-3702(87)90003-8"
+        },
+        {
+          "raw": "Fagin, Ronald, Joseph Y. Halpern, Yoram Moses, and Moshe Y. Vardi, 1995, Reasoning About Knowledge , Cambridge, MA: The MIT Press."
+        },
+        {
+          "raw": "Fan, Jie, 2019, \"Bimodal Logics with Contingency and Accident\", Journal of Philosophical Logic , 48(2): 425-445. doi:10.1007/s10992-018-9470-5"
+        },
+        {
+          "raw": "---, 2021, \"A Logic for Disjunctive Ignorance\", Journal of Philosophical Logic , 50(6): 1293-1312. doi:10.1007/s10992-021-09599-4"
+        },
+        {
+          "raw": "Fan, Jie, Yanjing Wang, and Hans van Ditmarsch, 2015, \"Contingency and Knowing Whether\", The Review of Symbolic Logic , 8(1): 75-107. doi:10.1017/S1755020314000343"
+        },
+        {
+          "raw": "Fervari, Raul, Andreas Herzig, Yanjun Li, and Yanjing Wang, 2017, \"Strategically Knowing How\", in Proceedings of the Twenty-Sixth International Joint Conference on Artificial Intelligence IJCAI 2017), Carles Sierra (ed.), 1031-1038. doi:10.24963/ijcai.2017/143"
+        },
+        {
+          "raw": "Fine, Kit, 2018, \"Ignorance of Ignorance\", Synthese , 195(9): 4031-4045. doi:10.1007/s11229-017-1406-z"
+        },
+        {
+          "raw": "Fitting, Melvin, Lars Thalmann, and Andrei Voronkov, 2001, \"Term-Modal Logics\", Studia Logica , 69(1): 133-169. doi:10.1023/A:1013842612702"
+        },
+        {
+          "raw": "Gochet, Paul and Pascal Gribomont, 2006, \"Epistemic Logic\", in Dov M. Gabbay and John Woods (eds.), Handbook of the History of Logic 7: Logic and the Modalities in the Twentieth Century (Studies in Logic and Practical Reasoning), Amsterdam: North-Holland, 99-105."
+        },
+        {
+          "raw": "Groenendijk, Joroen and Martin Stokhof, 1982, \"Semantic Analysis of WH -Complements\", Linguistics and Philosophy , 5(2): 175-233. doi:10.1007/BF00351052"
+        },
+        {
+          "raw": "Grove, Adam J., 1995, \"Naming and Identity in Epistemic Logic Part II: A First-Order Logic for Naming\", Artificial Intelligence , 74(2): 311-350. doi:10.1016/0004-3702(95)98593-D"
+        },
+        {
+          "raw": "Gu, Tao and Yanjing Wang, 2016, \"'Knowing Value' Logic as a Normal Modal Logic\", in Advances in Modal Logic , (Volume 11), Lev Beklemishev, St&eacute;phane Demri, and Andr&aacute;s M&aacute;t&eacute; (eds.), Rickmansworth, UK: College Publications, 362-381. [ Gu and Wang 2016 available online ]"
+        },
+        {
+          "raw": "Halpern, Joseph Y., 1996, \"Should Knowledge Entail Belief?\", Journal of Philosophical Logic , 25(5): 483-494. doi:10.1007/BF00257382"
+        },
+        {
+          "raw": "Halpern, Joseph Y., Dov Samet, and Ella Segev, 2009, \"Defining Knowledge in Terms of Belief: The Modal Logic Perspective\", The Review of Symbolic Logic , 2(3): 469-487. doi:10.1017/S1755020309990141"
+        },
+        {
+          "raw": "Halpern, Joseph Y. and Riccardo Pucella, 2011, \"Dealing with Logical Omniscience: Expressiveness and Pragmatics\", Artificial Intelligence , 175(1): 220-235. doi:10.1016/j.artint.2010.04.009"
+        },
+        {
+          "raw": "Halpern, Joseph Y. and Yoram Moses, 1984, \"Knowledge and Common Knowledge in a Distributed Environment\", in Proceedings of the Third Annual ACM Symposium on Principles of Distributed Computing (PODC '84), Vancouver: ACM Press, 50-61. doi:10.1145/800222.806735"
+        },
+        {
+          "raw": "Harrah, David, 2002, \"The Logic of Questions\", in Handbook of Philosophical Logic (Volume 8), Dov M. Gabbay and F. Guenthner (eds.), second edition, Dordrecht: Springer Netherlands, 1-60. doi:10.1007/978-94-010-0387-2_1"
+        },
+        {
+          "raw": "Hendricks, Vincent F., 2005, Mainstream and Formal Epistemology , Cambridge: Cambridge University Press. doi:10.1017/CBO9780511616150"
+        },
+        {
+          "raw": "Hendricks, Vincent F. and Rasmus K. Rendsvig, 2018, \"Hintikka's Knowledge and Belief in Flux\", in van Ditmarsch and Sandu 2018: 317-337. doi:10.1007/978-3-319-62864-6_13"
+        },
+        {
+          "raw": "Hendricks, Vincent F. and John Symons, 2006, \"Where's the Bridge? Epistemology and Epistemic Logic\", Philosophical Studies , 128(1): 137-167. doi:10.1007/s11098-005-4060-0"
+        },
+        {
+          "raw": "Herzig, Andreas, 2015, \"Logics of Knowledge and Action: Critical Analysis and Challenges\", Autonomous Agents and Multi-Agent Systems , 29(5): 719-753. doi:10.1007/s10458-014-9267-z"
+        },
+        {
+          "raw": "Herzig, Andreas and Elise Perrotin, 2020, \"On the Axiomatisation of Common Knowledge\", in Advances in Modal Logic (Volume 13), Nicola Olivetti, Rineke Verbrugge, Sara Negri, and Gabriel Sandu (eds.), Rickmansworth, UK: College Publications, 309-328. [ Herzig and Perrotin 2020 available online ]"
+        },
+        {
+          "raw": "Hintikka, Jaakko, 1962 [2005], Knowledge and Belief: An Introduction to the Logic of the Two Notions (Texts in Philosophy: 1), second edition, Vincent F. Hendriks and John Symons (eds.), London: College Publications."
+        },
+        {
+          "raw": "---, 1969, \"Semantics for Propositional Attitudes\", in Philosophical Logic , J. W. Davis, D. J. Hockney, and W. K. Wilson (eds.), Dordrecht: Springer Netherlands, 21-45. doi:10.1007/978-94-010-9614-0_2"
+        },
+        {
+          "raw": "---, 1978, \"Impossible Possible Worlds Vindicated\", in Game-Theoretical Semantics , Esa Saarinen (ed.) (SLAP 5), Dordrecht: Springer Netherlands, 367-379. doi:10.1007/978-1-4020-4108-2_13"
+        },
+        {
+          "raw": "---, 2003, \"A Second Generation Epistemic Logic and Its General Significance\", in Knowledge Contributors , Vincent F. Hendricks, Klaus Frovin J&oslash;rgensen, and Stig Andur Pedersen (eds.), Dordrecht: Springer Netherlands, 33-55. doi:10.1007/978-94-007-1001-6_3"
+        },
+        {
+          "raw": "---, 2007, \"Epistemology without Knowledge and without Belief\", in Socratic Epistemology: Explorations of Knowledge-Seeking by Questioning , Cambridge: Cambridge University Press, 11-37. doi:10.1017/CBO9780511619298.002"
+        },
+        {
+          "raw": "Hintikka, Jaakko and John Symons, 2003, \"Systems of Visual Identification in Neuroscience: Lessons from Epistemic Logic\", Philosophy of Science , 70(1): 89-104. doi:10.1086/367871"
+        },
+        {
+          "raw": "Hocutt, Max O., 1972, \"Is Epistemic Logic Possible?\", Notre Dame Journal of Formal Logic , 13(4): 433-453. doi:10.1305/ndjfl/1093890705"
+        },
+        {
+          "raw": "Hodkinson, Ian, Frank Wolter, and Michael Zakharyaschev, 2000, \"Decidable Fragments of First-Order Temporal Logics\", Annals of Pure and Applied Logic , 106(1-3): 85-134. doi:10.1016/S0168-0072(00)00018-X"
+        },
+        {
+          "raw": "van der Hoek, Wiebe, 1993, \"Systems for Knowledge and Belief\", Journal of Logic and Computation , 3(2): 173-195. doi:10.1093/logcom/3.2.173"
+        },
+        {
+          "raw": "van der Hoek, Wiebe and Alessio Lomuscio, 2004, \"A Logic for Ignorance\", in DALT 2003: Declarative Agent Languages and Technologies (Lecture Notes in Computer Science 2990), Jo&atilde;o Leite, Andrea Omicini, Leon Sterling, and Paolo Torroni (eds.), Berlin/Heidelberg: Springer, 97-108. doi:10.1007/978-3-540-25932-9_6"
+        },
+        {
+          "raw": "Holliday, Wesley H., 2018, \"Epistemic Logic and Epistemology\", in Introduction to Formal Philosophy , Sven Ove Hansson and Vincent F. Hendricks (eds.), Cham: Springer International Publishing, 351-369. doi:10.1007/978-3-319-77434-3_17"
+        },
+        {
+          "raw": "Holliday, Wesley H. and John Perry, 2014, \"Roles, Rigidity, and Quantification in Epistemic Logic\", in Johan van Benthem on Logic and Information Dynamics (Outstanding Contributions to Logic 5), Alexandru Baltag and Sonja Smets (eds.), Cham: Springer International Publishing, 591-629. doi:10.1007/978-3-319-06025-5_22"
+        },
+        {
+          "raw": "Jago, Mark, 2007, \"Hintikka and Cresswell on Logical Omniscience\", Logic and Logical Philosophy , 15(4): 325-354. doi:10.12775/LLP.2006.019"
+        },
+        {
+          "raw": "---, 2014, The Impossible: An Essay on Hyperintensionality , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780198709008.001.0001"
+        },
+        {
+          "raw": "Jamroga, Wojciech and Thomas &Aring;gotnes, 2007, \"Constructive Knowledge: What Agents Can Achieve under Imperfect Information\", Journal of Applied Non-Classical Logics , 17(4): 423-475. doi:10.3166/jancl.17.423-475"
+        },
+        {
+          "raw": "Jamroga, Wojciech and Wiebe van der Hoek, 2004, \"Agents That Know How to Play\", Fundamenta Informaticae , 63(2-3): 185-219."
+        },
+        {
+          "raw": "Jiang, Junli and Pavel Naumov, 2022, \"Data-Informed Knowledge and Strategies\", Artificial Intelligence , 309: article 103727. doi:10.1016/j.artint.2022.103727"
+        },
+        {
+          "raw": "Kaneko, Mamoru and Takashi Nagashima, 1996, \"Game Logic and Its Applications I\", Studia Logica , 57(2-3): 325-354. doi:10.1007/BF00370838"
+        },
+        {
+          "raw": "Knuuttila, Simo, 1993, Modalities in Medieval Philosophy , (Topics in Medieval Philosophy), New York: Routledge."
+        },
+        {
+          "raw": "Kooi, Barteld P., 2007, \"Dynamic Term-Modal Logic\", in A Meeting of the Minds, Proceedings of the Workshop on Logic, Rationality and Interaction (LORI-I), Johan van Benthem, Shier Ju, and Frank Veltman (eds.), London: College Publications, 173-185."
+        },
+        {
+          "raw": "Kraus, Sarit and Daniel Lehmann, 1986, \"Knowledge, Belief and Time\", in Automata, Languages and Programming , Laurent Kott (ed.), Berlin, Heidelberg: Springer Berlin Heidelberg, 186-195."
+        },
+        {
+          "raw": "Kutschera, Franz von, 1976, Einf&uuml;hrung in Die Intensionale Semantik , (De Gruyter Studienbuch: Grundlagen Der Kommunikation), Berlin/New York: De Gruyter."
+        },
+        {
+          "raw": "Lehmann, Daniel, 1984, \"Knowledge, Common Knowledge and Related Puzzles (Extended Summary)\", Proceedings of the Third Annual ACM Symposium on Principles of Distributed Computing (PODC '84), 62-67. doi:10.1145/800222.806736"
+        },
+        {
+          "raw": "Lenzen, Wolfgang, 1978, Recent Work in Epistemic Logic , (Acta Philosophica Fennica, 30), Amsterdam: North Holland Publishing Company."
+        },
+        {
+          "raw": "---, 1980, Glauben, Wissen Und Wahrscheinlichkeit: Systeme Der Epistemischen Logik , (Library of Exact Philosophy, 12), Wien: Springer."
+        },
+        {
+          "raw": "Lewis, David K., 1969, Convention: A Philosophical Study , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Li, Yanjun and Yanjing Wang, 2021a, \"Knowing How to Plan\", in Proceedings Eighteenth Conference on Theoretical Aspects of Rationality and Knowledge (TARK 2021), Joseph Halpern and Andr&eacute;s Perea (eds.), Electronic Proceedings in Theoretical Computer Science 335, 233-247. doi:10.4204/EPTCS.335.22"
+        },
+        {
+          "raw": "---, 2021b, \"Planning-Based Knowing How: A Unified Approach\", Artificial Intelligence , 296: article 103487. doi:10.1016/j.artint.2021.103487"
+        },
+        {
+          "raw": "Liu, Mo, Anantha Padmanabha, R. Ramanujam, and Yanjing Wang, 2023, \"Are Bundles Good Deals for First-Order Modal Logic?\", Information and Computation , 293: article 105062. doi:10.1016/j.ic.2023.105062"
+        },
+        {
+          "raw": "Meyer, John-Jules Ch, 2001, \"Epistemic Logic\", in The Blackwell Guide to Philosophical Logic , Lou Goble (ed.), Oxford: John Wiley & Sons, 183-202."
+        },
+        {
+          "raw": "Meyer, John-Jules Ch. and Wiebe van der Hoek, 1995, Epistemic Logic for AI and Computer Science , (Cambridge Tracts in Theoretical Computer Science, 41), Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Ma Xiwen and Guo Weide, 1983, \"W-JS: A Modal Logic of Knowledge\", in Proceedings of the Eighth International Joint Conference on Artificial Intelligence (IJCAI-83), Volume 1: 398-401. [ Ma and Guo 1983 available online ]"
+        },
+        {
+          "raw": "Maubert, Bastien, Aniello Murano, Sophie Pinchinat, Francois Schwarzentruber, and Silvia Stranieri, 2020, \"Dynamic Epistemic Logic Games with Epistemic Temporal Goals\", in ECAI 2020 (Frontiers in Artificial Intelligence and Applications 325), Amsterdam: IOS Press, 155-162. [ Maubert, Murano et al. 2020 available online ]"
+        },
+        {
+          "raw": "Maubert, Bastien, Sophie Pinchinat, Francois Schwarzentruber, and Silvia Stranieri, 2020, \"Concurrent Games in Dynamic Epistemic Logic\", in Proceedings of the Twenty-Ninth International Joint Conference on Artificial Intelligence (IJCAI 2020), Christian Bessiere (ed.), 1877-1883. doi:10.24963/ijcai.2020/260"
+        },
+        {
+          "raw": "Naumov, Pavel and Jia Tao, 2017, \"Together We Know How to Achieve: An Epistemic Logic of Know-How (Extended Abstract)\", in Proceedings Sixteenth Conference on Theoretical Aspects of Rationality and Knowledge (TARK 2017), J&eacute;r&ocirc;me Lang (ed.), Electronic Proceedings in Theoretical Computer Science 251, 441-453. doi:10.4204/EPTCS.251.32"
+        },
+        {
+          "raw": "---, 2018, \"Together We Know How to Achieve: An Epistemic Logic of Know-How\", Artificial Intelligence , 262: 279-300. doi:10.1016/j.artint.2018.06.007"
+        },
+        {
+          "raw": "---, 2019, \"Knowing-How under Uncertainty\", Artificial Intelligence , 276: 41-56. doi:10.1016/j.artint.2019.06.007"
+        },
+        {
+          "raw": "---, 2020, \"An Epistemic Logic of Blameworthiness\", Artificial Intelligence , 283: article 103269. doi:10.1016/j.artint.2020.103269"
+        },
+        {
+          "raw": "Occhipinti Liberman, Andr&eacute;s, Andreas Achen, and Rasmus Kr&aelig;mmer Rendsvig, 2020, \"Dynamic Term-Modal Logics for First-Order Epistemic Planning\", Artificial Intelligence , 286: article 103305. doi:10.1016/j.artint.2020.103305"
+        },
+        {
+          "raw": "Occhipinti Liberman, Andr&eacute;s and Rasmus K. Rendsvig, 2022, \"Reasoning about Epistemic Social Network Dynamics Using Dynamic Term-Modal Logic\", Journal of Logic and Computation , 32(6): 1067-1087. doi:10.1093/logcom/exac019"
+        },
+        {
+          "raw": "Orlandelli, Eugenio and Giovanna Corsi, 2018, \"Decidable Term-Modal Logics\", in Multi-Agent Systems and Agreement Technologies: 15th European Conference, EUMAS 2017, and 5th International Conference, AT 2017 (Lecture Notes in Computer Science 10767), Francesco Belardinelli and Estefan&iacute;a Argente (eds.), Cham: Springer International Publishing, 147-162. doi:10.1007/978-3-030-01713-2_11"
+        },
+        {
+          "raw": "Padmanabha, Anantha and R. Ramanujam, 2019a, \"The Monodic Fragment of Propositional Term Modal Logic\", Studia Logica , 107(3): 533-557. doi:10.1007/s11225-018-9784-x"
+        },
+        {
+          "raw": "---, 2019b, \"Two Variable Fragment of Term Modal Logic\". in 44th International Symposium on Mathematical Foundations of Computer Science (MFCS 2019), Peter Rossmanith, Pinar Heggernes, and Joost-Pieter Katoen (eds.), Leibniz International Proceedings in Informatics 138, article 30. doi:10.4230/LIPIcs.MFCS.2019.30"
+        },
+        {
+          "raw": "Pavese, Carlotta, 2021 [2022], \"Knowledge How\", The Stanford Encyclopedia of Philosophy (Fall 2022 Edition), Edward N. Zalta and Uri Nodelman (eds.), URL = https://plato.stanford.edu/archives/fall2022/entries/knowledge-how/ >."
+        },
+        {
+          "raw": "Plaza, Jan A., 1989, \"Logics of Public Communications\", in Proceedings of the Fourth International Symposium on Methodologies for Intelligent Systems: Poster Session Program , M. L. Emrich, S. Pfeifer, M. Hadzikadic, and Z. W. Ras (eds.), Oak Ridge National Laboratory, 201-216; reprinted, 2007, \"Logics of Public Communications\", Synthese , 158(2): 165-179. doi:10.1007/s11229-007-9168-7"
+        },
+        {
+          "raw": "Rantala, Veikko, 1975, \"Urn Models: A New Kind of Non-Standard Model for First-Order Logic\", Journal of Philosophical Logic , 4(4): 455-474. doi:10.1007/BF00558760"
+        },
+        {
+          "raw": "Rendsvig, Rasmus K., 2012, \"Modeling Semantic Competence: A Critical Review of Frege's Puzzle about Identity\", in New Directions in Logic, Language and Computation: ESSLLI 2010 and ESSLLI 2011 Student Sessions, Selected Papers (Lecture Notes in Computer Science 7415), Daniel Lassiter and Marija Slavkovik (eds.), Berlin/Heidelberg: Springer, 140-157. doi:10.1007/978-3-642-31467-4_10"
+        },
+        {
+          "raw": "Schipper, Burkhard C., 2015, \"Awareness\", in van Ditmarsch et al. 2015: 77-146."
+        },
+        {
+          "raw": "Stalnaker, Robert, 2006, \"On Logics of Knowledge and Belief\", Philosophical Studies , 128(1): 169-199. doi:10.1007/s11098-005-4062-y"
+        },
+        {
+          "raw": "Stanley, Jason and Timothy Willlamson, 2001, \"Knowing How\", Journal of Philosophy , 98(8): 411-444. doi:10.2307/2678403"
+        },
+        {
+          "raw": "Sturm, Holger, Frank Wolter, and Michael Zakharyaschev, 2000, \"Monodic Epistemic Predicate Logic\", in Logics in Artificial Intelligence: European Workshop JELIA 2000 (Lecture Notes in Computer Science 1919), Manuel Ojeda-Aciego, Inma P. De Guzm&aacute;n, Gerhard Brewka, and Lu&iacute;s Moniz Pereira (eds.), Berlin/Heidelberg: Springer, 329-344. doi:10.1007/3-540-40006-0_23"
+        },
+        {
+          "raw": "Su, Xingchi, 2017, \"Distributed Knowing Whether (Extended Abstract)\", in LORI 2017: Logic, Rationality, and Interaction (Lecture Notes in Computer Science 10455), Alexandru Baltag, Jeremy Seligman, and Tomoyuki Yamada (eds.), Berlin, Heidelberg: Springer, 653-657. doi:10.1007/978-3-662-55665-8_47"
+        },
+        {
+          "raw": "Velazquez-Quesada Fernando Raymundo, 2011, \"Small Steps in Dynamics of Information\", Ph.D. Thesis, Institute for Logic, Language and Computation, University of Amsterdam."
+        },
+        {
+          "raw": "Voorbraak, Franciscus Petrus Johannes Maria, 1993, \"As Far as I Know: Epistemic Logic and Uncertainty\", Ph.D. Thesis, Department of Philosophy, Utrecht University."
+        },
+        {
+          "raw": "Wang, Haoyu, Yanjing Wang, and Yunsong Wang, 2022, \"Inquisitive Logic as an Epistemic Logic of Knowing How\", Annals of Pure and Applied Logic , 173(10): article 103145. doi:10.1016/j.apal.2022.103145"
+        },
+        {
+          "raw": "Wang, Yanjing, 2017, \"A New Modal Framework for Epistemic Logic\", in Proceedings Sixteenth Conference on Theoretical Aspects of Rationality and Knowledge (TARK 2017), J&eacute;r&ocirc;me Lang (ed.), Electronic Proceedings in Theoretical Computer Science 251, 515-534. doi:10.4204/EPTCS.251.38"
+        },
+        {
+          "raw": "---, 2018a, \"A Logic of Goal-Directed Knowing How\", Synthese , 195(10): 4419-4439. doi:10.1007/s11229-016-1272-0"
+        },
+        {
+          "raw": "---, 2018b, \"Beyond Knowing That: A New Generation of Epistemic Logics\", in van Ditmarsch and Sandu 2018: 499-533. doi:10.1007/978-3-319-62864-6_21"
+        },
+        {
+          "raw": "Wang, Yanjing and Jie Fan, 2013, \"Knowing That, Knowing What, and Public Communication: Public Announcement Logic with Kv Operators\", in Proceedings of the Twenty-Third International Joint Conference on Artificial Intelligence (IJCAI 2013), Francesca Rossi (ed.), 1147-1154. [ Wang and Fan 2013 available online ]"
+        },
+        {
+          "raw": "Wang, Yanjing, Yu Wei, and Jeremy Seligman, 2022, \"Quantifier-Free Epistemic Term-Modal Logic with Assignment Operator\", Annals of Pure and Applied Logic , 173(3): article 103071. doi:10.1016/j.apal.2021.103071"
+        },
+        {
+          "raw": "Williamson, Timothy, 2000, Knowledge and Its Limits , Oxford: Oxford University Press. doi:10.1093/019925656X.001.0001"
+        },
+        {
+          "raw": "Wright, Georg Henrik von, 1951, An Essay in Modal Logic , (Studies in Logic and the Foundations of Mathematics), Amsterdam: North-Holland Publishing Company."
+        },
+        {
+          "raw": "Xiang, Yimei, 2016, Interpreting Questions with Non-Exhaustive Answers , Ph.D. Thesis, Harvard University."
+        },
+        {
+          "raw": "Xu, Chao, Yanjing Wang, and Thomas Studer, 2021, \"A Logic of Knowing Why\", Synthese , 198(2): 1259-1285. doi:10.1007/s11229-019-02104-0"
+        },
+        {
+          "raw": "Yang, Yuanzhe, 2023, \"Knowledge-wh and False Belief Sensitivity: A Logical Study (An Extended Abstract)\", in Proceedings Nineteenth Conference on Theoretical Aspects of Rationality and Knowledge (TARK 2023), Rineke Verbrugge (ed.), Electronic Proceedings in Theoretical Computer Science 379, 527-544. doi:10.4204/EPTCS.379.40"
+        }
+      ],
+      "publishedAt": "2019-06-06T14:00:00.000Z",
+      "revisedAt": "2023-11-30T13:00:00.000Z"
+    }
+  }
+}

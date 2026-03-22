@@ -1,0 +1,637 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/folkpsych-simulation",
+  "meta": {
+    "title": "Folk Psychology as Mental Simulation",
+    "description": "The capacity for \"mindreading\" is understood in philosophy of mind and cognitive science as the capacity to represent, reason about, and respond to others' mental states. Essentially the same capacity is also known as \"folk psychology\", \"Theory of Mind\", and \"mentalizing\". An example of everyday mindreading: you notice that Tom's fright embarrassed Mary and surprised Bill, who had believed that Tom wanted to try everything. Mindreading is of crucial importance for our social life: our ability to predict, explain, and/or coordinate with others' actions on countless occasions crucially relies on representing their mental states. For instance, by attributing to Steve the desire for a banana and the belief that there are no more bananas at home but there are some left at the local grocery store, you can: (i) explain why Steve has just left home; (ii) predict where Steve is heading; and (iii) coordinate your behavior with his (meet him at the store, or prepare a surpise party while he is gone). Without mindreading, (i)-(iii) do not come easily--if they come at all. That much is fairly uncontroversial. What is controversial is how to explain mindreading. That is, how do people arrive at representing others' mental states? This is the main question to which the Simulation (or, mental simulation) Theory (ST) of mindreading offers an answer. Common sense has it that, in many circumstances, we arrive at representing others' mental states by putting ourselves in their shoes, or taking their perspective. For example, I can try to figure out my chess opponent's next decision by imagining what I would decide if I were in her place. (Although we may also speak of this as a kind of empathy , that term must be understood here without any implication of sympathy or benevolence.) ST takes this commonsensical idea seriously and develops it into a fully-fledged theory. At the core of the theory, we find the thesis that mental simulation plays a central role in mindreading: we typically arrive at representing others' mental states by simulating their mental states in our own mind. So, to figure out my chess opponent's next decision, I mentally switch roles with her in the game. In doing this, I simulate her relevant beliefs and goals , and then feed these simulated mental states into my decision-making mechanism and let the mechanism produce a simulated decision . This decision is projected on or attributed to the opponent. In other words, the basic idea of ST is that if the resources our own brain uses to guide our own behavior can be modified to work as representations of other people's mental states, then we have no need to store general information about what makes people tick: we just do the ticking for them. Accordingly, ST challenges the Theory-Theory of mindreading (TT), the view that a tacit psychological theory underlies the ability to represent and reason about others' mental states. While TT maintains that mindreading is an information-rich and theory-driven process, ST sees it as informationally poor and process driven (Goldman 1989). This entry is organized as follows. In section 1 (The Origins and Varieties of ST), we briefly reconstruct ST's history and elaborate further on ST's main theoretical aims. We then go on to explain the very idea of mental simulation (section 2: What is Meant by \"Mental Simulation\"?) In section 3 (Two Types of Simulation Processes), we consider the cognitive architecture underlying mental simulation and introduce the distinction between high-level and low-level simulation processes. In section 4 (The Role of Mental Simulation in Mindreading), we discuss what role mental simulation is supposed to play in mindreading, according to ST. This discussion carries over to section 5 (Simulation Theory and Theory-Theory), where we contrast the accounts of mindreading given by ST and TT. Finally, section 6 (Simulation Theory: Pros and Cons) examines some of the main arguments in favour of and against ST as theory of mindreading.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T06:07:22.110Z",
+    "dateModified": "2026-03-22T06:07:22.110Z",
+    "datePublished": "1997-12-07T13:00:00.000Z",
+    "keywords": [
+      "computational mind",
+      "folkpsych theory",
+      "imagination",
+      "introspection",
+      "materialism eliminative",
+      "self knowledge"
+    ]
+  },
+  "problemSolved": {
+    "statement": "The capacity for \"mindreading\" is understood in philosophy of mind and cognitive science as the capacity to represent, reason about, and respond to others' mental states. Essentially the same capacity is also known as \"folk psychology\", \"Theory of Mind\", and \"mentalizing\". An example of everyday mindreading: you notice that Tom's fright embarrassed Mary and surprised Bill, who had believed that Tom wanted to try everything. Mindreading is of crucial importance for our social life: our ability to predict, explain, and/or coordinate with others' actions on countless occasions crucially relies on representing their mental states. For instance, by attributing to Steve the desire for a banana and the belief that there are no more bananas at home but there are some left at the local grocery store, you can: (i) explain why Steve has just left home; (ii) predict where Steve is heading; and (iii) coordinate your behavior with his (meet him at the store, or prepare a surpise party while he is gone). Without mindreading, (i)-(iii) do not come easily--if they come at all. That much is fairly uncontroversial. What is controversial is how to explain mindreading. That is, how do people arrive at representing others' mental states? This is the main question to which the Simulation (or, mental simulation) Theory (ST) of mindreading offers an answer. Common sense has it that, in many circumstances, we arrive at representing others' mental states by putting ourselves in their shoes, or taking their perspective. For example, I can try to figure out my chess opponent's next decision by imagining what I would decide if I were in her place. (Although we may also speak of this as a kind of empathy , that term must be understood here without any implication of sympathy or benevolence.) ST takes this commonsensical idea seriously and develops it into a fully-fledged theory. At the core of the theory, we find the thesis that mental simulation plays a central role in mindreading: we typically arrive at representing others' mental states by simulating their mental states in our own mind. So, to figure out my chess opponent's next decision, I mentally switch roles with her in the game. In doing this, I simulate her relevant beliefs and goals , and then feed these simulated mental states into my decision-making mechanism and let the mechanism produce a simulated decision . This decision is projected on or attributed to the opponent. In other words, the basic idea of ST is that if the resources our own brain uses to guide our own behavior can be modified to work as representations of other people's mental states, then we have no need to store general information about what makes people tick: we just do the ticking for them. Accordingly, ST challenges the Theory-Theory of mindreading (TT), the view that a tacit psychological theory underlies the ability to represent and reason about others' mental states. While TT maintains that mindreading is an information-rich and theory-driven process, ST sees it as informationally poor and process driven (Goldman 1989). This entry is organized as follows. In section 1 (The Origins and Varieties of ST), we briefly reconstruct ST's history and elaborate further on ST's main theoretical aims. We then go on to explain the very idea of mental simulation (section 2: What is Meant by \"Mental Simulation\"?) In section 3 (Two Types of Simulation Processes), we consider the cognitive architecture underlying mental simulation and introduce the distinction between high-level and low-level simulation processes. In section 4 (The Role of Mental Simulation in Mindreading), we discuss what role mental simulation is supposed to play in mindreading, according to ST. This discussion carries over to section 5 (Simulation Theory and Theory-Theory), where we contrast the accounts of mindreading given by ST and TT. Finally, section 6 (Simulation Theory: Pros and Cons) examines some of the main arguments in favour of and against ST as theory of mindreading.",
+    "context": "Opening section: 1. The Origins and Varieties of ST | Related entries: folkpsych-theory, imagination, introspection, materialism-eliminative, computational-mind, self-knowledge",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "mind",
+    "epistemology"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry folkpsych-simulation",
+        "uri": "https://plato.stanford.edu/entries/folkpsych-simulation/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "3 author(s), 6 related entries, bibliography size 134"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 1997-12-07T13:00:00.000Z and revised 2017-03-27T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2017-03-27T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/folkpsych-simulation/",
+        "description": "SEP entry for folkpsych-simulation"
+      }
+    ],
+    "solutionApproach": "1. The Origins and Varieties of ST"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/folkpsych-theory",
+      "ocp:sep/imagination",
+      "ocp:sep/introspection",
+      "ocp:sep/materialism-eliminative",
+      "ocp:sep/computational-mind",
+      "ocp:sep/self-knowledge"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Barlassina, Luca",
+        "type": "human"
+      },
+      {
+        "name": "Gordon",
+        "type": "human"
+      },
+      {
+        "name": "Robert M.",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/folkpsych-simulation/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 101,
+      "validation_diversity": 0.59,
+      "context_breadth": 0.37,
+      "temporal_stability": 0.84,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.89
+    },
+    "confidence": "tested",
+    "authority": "high",
+    "status": "draft",
+    "trustScore": 0.574
+  },
+  "extensions": {
+    "sep": {
+      "slug": "folkpsych-simulation",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/folkpsych-simulation/",
+      "preamble": "The capacity for \"mindreading\" is understood in philosophy of mind and cognitive science as the capacity to represent, reason about, and respond to others' mental states. Essentially the same capacity is also known as \"folk psychology\", \"Theory of Mind\", and \"mentalizing\". An example of everyday mindreading: you notice that Tom's fright embarrassed Mary and surprised Bill, who had believed that Tom wanted to try everything. Mindreading is of crucial importance for our social life: our ability to predict, explain, and/or coordinate with others' actions on countless occasions crucially relies on representing their mental states. For instance, by attributing to Steve the desire for a banana and the belief that there are no more bananas at home but there are some left at the local grocery store, you can: (i) explain why Steve has just left home; (ii) predict where Steve is heading; and (iii) coordinate your behavior with his (meet him at the store, or prepare a surpise party while he is gone). Without mindreading, (i)-(iii) do not come easily--if they come at all. That much is fairly uncontroversial. What is controversial is how to explain mindreading. That is, how do people arrive at representing others' mental states? This is the main question to which the Simulation (or, mental simulation) Theory (ST) of mindreading offers an answer. Common sense has it that, in many circumstances, we arrive at representing others' mental states by putting ourselves in their shoes, or taking their perspective. For example, I can try to figure out my chess opponent's next decision by imagining what I would decide if I were in her place. (Although we may also speak of this as a kind of empathy , that term must be understood here without any implication of sympathy or benevolence.) ST takes this commonsensical idea seriously and develops it into a fully-fledged theory. At the core of the theory, we find the thesis that mental simulation plays a central role in mindreading: we typically arrive at representing others' mental states by simulating their mental states in our own mind. So, to figure out my chess opponent's next decision, I mentally switch roles with her in the game. In doing this, I simulate her relevant beliefs and goals , and then feed these simulated mental states into my decision-making mechanism and let the mechanism produce a simulated decision . This decision is projected on or attributed to the opponent. In other words, the basic idea of ST is that if the resources our own brain uses to guide our own behavior can be modified to work as representations of other people's mental states, then we have no need to store general information about what makes people tick: we just do the ticking for them. Accordingly, ST challenges the Theory-Theory of mindreading (TT), the view that a tacit psychological theory underlies the ability to represent and reason about others' mental states. While TT maintains that mindreading is an information-rich and theory-driven process, ST sees it as informationally poor and process driven (Goldman 1989). This entry is organized as follows. In section 1 (The Origins and Varieties of ST), we briefly reconstruct ST's history and elaborate further on ST's main theoretical aims. We then go on to explain the very idea of mental simulation (section 2: What is Meant by \"Mental Simulation\"?) In section 3 (Two Types of Simulation Processes), we consider the cognitive architecture underlying mental simulation and introduce the distinction between high-level and low-level simulation processes. In section 4 (The Role of Mental Simulation in Mindreading), we discuss what role mental simulation is supposed to play in mindreading, according to ST. This discussion carries over to section 5 (Simulation Theory and Theory-Theory), where we contrast the accounts of mindreading given by ST and TT. Finally, section 6 (Simulation Theory: Pros and Cons) examines some of the main arguments in favour of and against ST as theory of mindreading.",
+      "firstSectionTitle": "1. The Origins and Varieties of ST",
+      "firstSectionText": "The idea that we often arrive at representing other people's mental states by mentally simulating those states in ourselves has a distinguished history in philosophy and the human sciences. Robert Gordon (1995) traces it back to David Hume (1739) and Adam Smith's (1759) notion of sympathy; Jane Heal (2003) and Gordon (2000) find simulationist themes in the Verstehen approach to the philosophy of history (e.g., Dilthey 1894); Alvin Goldman (2006) considers Theodor Lipps's (1903) account of empathy ( Einf&uuml;hlung ) as a precursor of the notion of mental simulation. In its modern guise, ST was established in 1986, with the publication of Robert Gordon's \"Folk Psychology as Simulation\" and Jane Heal's \"Replication and Functionalism\". These two articles criticized the Theory-Theory and introduced ST as a better account of mindreading. In his article, Gordon discussed psychological findings concerning the development of the capacity to represent others' false beliefs. This attracted the interest of developmental psychologists, especially Paul Harris (1989, 1992), who presented empirical support for ST, and Alison Gopnik (Gopnik & Wellman 1992) and Joseph Perner (Perner & Howes 1992), who argued against it--Perner has since come to defend a hybrid version of ST (Perner & K&uuml;hberger 2005). Alvin Goldman was an early and influential defender of ST (1989) and has done much to give the theory its prominence. His work with the neuroscientist Vittorio Gallese (Gallese & Goldman 1998) was the first to posit an important connection between ST and the newly discovered mirror neurons. Goldman's 2006 book Simulating Minds is the clearest and most comprehensive account to date of the relevant philosophical and empirical issues. Among other philosophical proponents of ST, Gregory Currie and Susan Hurley have been influential. Since the late 1980s, ST has been one of the central players in the philosophical, psychological, and neuroscientific discussions of mindreading. It has however been argued that the fortunes of ST have had a notable negative consequence: the expression \"mental simulation\" has come to be used broadly and in a variety of ways, making \"Simulation Theory\" a blanket term lumping together many distinct approaches to mindreading. Stephen Stich and Shaun Nichols (1997) already urged dropping it in favor of a finer-grained terminology. There is some merit to this. ST is in fact better conceived of as a family of theories rather than a single theory. All the members of the family agree on the thesis that mental simulation, rather than a body of knowledge about other minds, plays a central role in mindreading. However, different members of the family can differ from one another in significant respects. One fundamental area of disagreement among Simulation Theorists is the very nature of ST--what kind of theory ST is supposed to be--and what philosophers can contribute to it. Some Simulation Theorists take the question \"How do people arrive at representing others' mental states?\" as a straightforward empirical question about the cognitive processes and mechanisms underlying mindreading (Goldman 2006; Hurley 2008). According to them, ST is thus a theory in cognitive science , to which philosophers can contribute exactly as theoretical physicists contribute to physics: theorists specialize in creating and tweaking theoretical structures that comport with experimental data, whereas experimentalists have the primary job of generating the data. (Goldman 2006: 22) Other philosophical defenders of ST, however, do not conceive of themselves as theoretical cognitive scientists at all. For example, Heal (1998) writes that: it is commonly taken that the inquiry into &hellip; the extent of simulation in psychological understanding is empirical, and that scientific investigation is the way to tell whether ST &hellip; is correct. But this perception is confused. It is an a priori truth &hellip; that simulation must be given a substantial role in our personal-level account of psychological understanding. (Heal 1998: 477-478) Adjudicating this meta-philosophical dispute goes well beyond the aim of this entry. To be as inclusive as we can, we shall adopt a \"balanced diet\" approach: we shall discuss the extent to which ST is supported by empirical findings from psychology and neuroscience, and, at the same time , we shall dwell on \"purely philosophical\" problems concerning ST. We leave to the reader the task of evaluating which aspects should be put at the centre of the inquiry. Importantly, even those who agree on the general nature of ST might disagree on other crucial issues. We will focus on what are typically taken to be the three most important bones of contention among Simulation Theorists: what is meant by \"mental simulation\"? ( section 2 ). What types of simulation processes are there? ( section 3 ). What is the role of mental simulation in mindreading? ( section 4 ). After having considered what keeps Simulation Theorists apart, we shall move to discuss what holds them together, i.e., the opposition to the Theory-Theory of mindreading ( section 5 and section 6 ). This should give the reader a sense of the \"unity amidst diversity\" that characterizes ST.",
+      "relatedEntries": [
+        "folkpsych-theory",
+        "imagination",
+        "introspection",
+        "materialism-eliminative",
+        "computational-mind",
+        "self-knowledge"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "folkpsych-theory"
+        },
+        {
+          "slug": "imagination"
+        },
+        {
+          "slug": "introspection"
+        },
+        {
+          "slug": "materialism-eliminative"
+        },
+        {
+          "slug": "computational-mind"
+        },
+        {
+          "slug": "self-knowledge"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 134,
+      "bibliography": [
+        {
+          "raw": "Anderson, Michael L., 2008, \"Neural Reuse: A Fundamental Organizational Principle of the Brain\", Behavioral and Brain Science , 20(4): 239-313. doi:10.1017/S0140525X10000853"
+        },
+        {
+          "raw": "---, 2015, After Phrenology: Neural Reuse and the Interactive Brain , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Apperly, Ian A. and Stephen A. Butterfill, 2009, \"Do Humans Have Two Systems to Track Beliefs and Belief-Like States?\", Psychological Review , 116(4): 953-70. doi:10.1037/a0016923"
+        },
+        {
+          "raw": "Avenanti, Alessio, Domenica Bueti, Gaspare Galati, & Salvatore M. Aglioti, 2005, \"Transcranial Magnetic Stimulation Highlights the Sensorimotor Side of Empathy for Pain\", Nature Neuroscience , 8(7): 955-960. doi:10.1038/nn1481"
+        },
+        {
+          "raw": "Baillargeon, Ren&eacute;e, Rose M. Scott, and Zijing He, 2010, \"False-Belief Understanding in Infants\", Trends in Cognitive Sciences , 14(3): 110-118. doi:10.1016/j.tics.2009.12.006"
+        },
+        {
+          "raw": "Baillargeon, Ren&eacute;e, Rose M. Scott, and Lin Bian, 2016, \"Psychological Reasoning in Infancy\", Annual Review of Psychology , 67: 159-186. doi:10.1146/annurev-psych-010213-115033"
+        },
+        {
+          "raw": "Barlassina, Luca, 2013, \"Simulation is not Enough: A Hybrid Model of Disgust Attribution on the Basis of Visual Stimuli\", Philosophical Psychology , 26(3): 401-419. doi:10.1080/09515089.2012.659167"
+        },
+        {
+          "raw": "Baron-Cohen, Simon, 2000, \"Theory of Mind and Autism: A Fifteen Year Review\", in Simon Baron-Cohen, Helen Tager-Flusberg, and Donald J. Cohen (eds.); Understanding Other Minds: Perspectives from Developmental Cognitive Neuroscience (2nd edition), New York: Oxford University Press, pp. 3-20."
+        },
+        {
+          "raw": "Bechtel, William, 2008, Mental Mechanisms: Philosophical Perspectives on Cognitive Neuroscience , New York: Taylor and Francis."
+        },
+        {
+          "raw": "Birch, Susan A. and Paul Bloom, 2007, \"The Curse of Knowledge in Reasoning About False Beliefs\", Psychological Science , 18(5): 382-386. doi:10.1111/j.1467-9280.2007.01909.x"
+        },
+        {
+          "raw": "Bisiach, Edoardo and Claudio Luzzatti, 1978, \"Unilateral Neglect of Representational Space\", Cortex , 14(1): 129-133. doi:10.1016/S0010-9452(78)80016-1"
+        },
+        {
+          "raw": "Blakemore, S.-J., D. Bristow, G. Bird, C. Frith, and J. Ward, 2005, \"Somatosensory Activations During the Observation of Touch and a Case of Vision-Touch Synaesthesia\", Brain , 128(7): 1571-1583. doi:10.1093/brain/awh500"
+        },
+        {
+          "raw": "Bloom, Paul and Tim P. German, 2000, \"Two Reasons to Abandon the False Belief Task as a Test of Theory of Mind\", Cognition , 77(1): B25-31. doi:10.1016/S0010-0277(00)00096-2"
+        },
+        {
+          "raw": "Botterill, George and Peter Carruthers, 1999, The Philosophy of Psychology , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Brass, Marcel, Ruth M. Schmitt, Stephanie Spengler, and Gy&ouml;rgy Gergely, 2007, \"Investigating Action Understanding: Inferential Processes versus Action Simulation\", Current Biology , 17(24): 2117-2121. doi:10.1016/j.cub.2007.11.057"
+        },
+        {
+          "raw": "Brozzo, Chiara, forthcoming, \"Motor Intentions: How Intentions and Motor Representations Come Together\", Mind & Language ."
+        },
+        {
+          "raw": "Buckner, Randy L. and Daniel C. Carroll, 2007, \"Self-Projection and the Brain\", Trends in Cognitive Science , 11(2): 49-57. doi:10.1016/j.tics.2006.11.004"
+        },
+        {
+          "raw": "Butterfill, Stephen A. and Corrado Sinigaglia, 2014, \"Intention and Motor Representation in Purposive Action\", Philosophy and Phenomenological Research , 88(1): 119-145. doi:10.1111/j.1933-1592.2012.00604.x"
+        },
+        {
+          "raw": "Carruthers, Peter, 1996, \"Simulation and Self-Knowledge: A Defense of Theory-Theory\", in Carruthers and Smith 1996: 22-38. doi:10.1017/CBO9780511597985.004"
+        },
+        {
+          "raw": "---, 2009, \"How we Know Our Own Minds: The Relationship between Mindreading and Metacognition\", Behavioral and Brain Sciences , 32(2): 121-138. doi:10.1017/S0140525X09000545"
+        },
+        {
+          "raw": "---, 2011, The Opacity of Mind: An Integrative Theory of Self-Knowledge , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199596195.001.0001"
+        },
+        {
+          "raw": "---, 2013, \"Mindreading in Infancy\", Mind and Language , 28(2): 141-172. doi:10.1111/mila.12014"
+        },
+        {
+          "raw": "Carruthers, Peter and Peter K. Smith (eds.), 1996, Theories of Theories of Mind , Cambridge: Cambridge University Press. doi:10.1017/CBO9780511597985"
+        },
+        {
+          "raw": "Clements, Wendy A. and Josef Perner, 1994, \"Implicit Understanding of Belief\", Cognitive Development , 9(4): 377-395. doi:10.1016/0885-2014(94)90012-4"
+        },
+        {
+          "raw": "Craver, Carl F., 2007, Explaining the Brain. Mechanisms and the Mosaic Unity of Neuroscience , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199299317.001.0001"
+        },
+        {
+          "raw": "Csibra, Gergely, 2007, \"Action Mirroring and Action Understanding: An Alternative Account\", in Patrick Haggard, Yves Rosetti, and Mitsuo Kawato (eds.) Sensorimotor Foundations of Higher Cognition. Attention and Performance XII , Oxford University Press, Oxford, pp. 453-459. doi:10.1093/acprof:oso/9780199231447.003.0020"
+        },
+        {
+          "raw": "Currie, Gregory, 1995, \"Visual Imagery as the Simulation of Vision\", Mind and Language , 10(1-2): 25-44. doi:10.1111/j.1468-0017.1995.tb00004.x"
+        },
+        {
+          "raw": "---, 2002, \"Desire in Imagination\", in Tamar Szabo Gendler and John Hawthorne (eds.), Conceivability and Possibility , Oxford: Oxford University Press, pp. 201-221."
+        },
+        {
+          "raw": "Currie, Gregory and Ian Ravenscroft, 1997, \"Mental Simulation and Motor Imagery\", Philosophy of Science , 64(1): 161-80. doi:10.1086/392541"
+        },
+        {
+          "raw": "---, 2002, Recreative Minds: Imagination in Philosophy and Psychology , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780198238089.001.0001"
+        },
+        {
+          "raw": "Davies, Martin, 1987, \"Tacit Knowledge and Semantic Theory: Can a Five per Cent Difference Matter?\" Mind , 96(384): 441-462. doi:10.1093/mind/XCVI.384.441"
+        },
+        {
+          "raw": "---, 2001, \"Mental Simulation, Tacit Theory, and the Threat of Collapse\", Philosophical Topics , 29(1/2): 127-173. doi:10.5840/philtopics2001291/212"
+        },
+        {
+          "raw": "Decety, Jean and Fran&ccedil;ois Michel, 1989, \"Comparative Analysis of Actual and Mental Movement Times in Two Graphic Tasks\", Brain and Cognition , 11(1): 87-97. doi:10.1016/0278-2626(89)90007-9"
+        },
+        {
+          "raw": "De Jaegher, Hanne, Ezequiel Di Paolo, and Shaun Gallagher, 2010, \"Can Social Interaction Constitute Social Cognition?\" Trends in Cognitive Sciences , 14(10): 441-447. doi:10.1016/j.tics.2010.06.009"
+        },
+        {
+          "raw": "Dennett, Daniel C., 1987, The Intentional Stance , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "de Vignemont, Fr&eacute;d&eacute;rique, 2009, \"Drawing the Boundary Between Low-Level and High-Level Mindreading\", Philosophical Studies , 144(3): 457-466. doi:10.1007/s11098-009-9354-1"
+        },
+        {
+          "raw": "de Vignemont, Fr&eacute;d&eacute;rique and Hugo Mercier, 2016, \"Under Influence: Is Altercentric Bias Compatible with Simulation Theory?\" in Brian P. McLaughlin and Hilary Kornblith (eds.), Goldman and his Critics , Oxford: Blackwell. doi:10.1002/9781118609378.ch13"
+        },
+        {
+          "raw": "Dilthey, Wilhelm, [1894] 1977, Descriptive Psychology and Historical Understanding , Richard M. Zaner and Kenneth L. Heiges (trans.), with an introduction by Rudolf A. Makkreel, The Hague: Martinus Nijhof. doi:10.1007/978-94-009-9658-8"
+        },
+        {
+          "raw": "di Pellegrino, G., L. Fadiga, L. Fogassi, V. Gallese, and G. Rizzolatti, 1992, \"Understanding Motor Events: A Neuropsychological Study\", Experimental Brain Research , 91(1): 176-180. doi:10.1007/BF00230027"
+        },
+        {
+          "raw": "Doggett, Tyler and Andy Egan, 2007, \"Wanting Things You Don't Want: The Case for an Imaginative Analogue of Desire\", Philosophers' Imprint , 7(9). [ Doggett and Egan 2007 available online ]"
+        },
+        {
+          "raw": "Evans, Gareth, 1982, The Varieties of Reference , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Fisher, Justin C., 2006, \"Does Simulation Theory Really Involve Simulation?\" Philosophical Psychology , 19(4): 417-432. doi:10.1080/09515080600726377"
+        },
+        {
+          "raw": "Fuller, Gary, 1995, \"Simulation and Psychological Concepts\", in Davies and Stone 1995b: chapter 1, pp. 19-32"
+        },
+        {
+          "raw": "Funkhouser, Eric and Shannon Spaulding, 2009, \"Imagination and Other Scripts\", Philosophical Studies , 143(3): 291-314. doi:10.1007/s11098-009-9348-z"
+        },
+        {
+          "raw": "Gallagher, Shaun, 2001, \"The Practice of Mind: Theory, Simulation, or Primary Interaction?\" Journal of Consciousness Studies , 8(5-7): 83-108."
+        },
+        {
+          "raw": "---, 2007, \"Simulation Trouble\", Social Neuroscience , 2(3-4): 353-365. doi:10.1080/17470910601183549"
+        },
+        {
+          "raw": "Gallagher, Shaun and Daniel D. Hutto, 2008, \"Understanding Others Through Primary Interaction and Narrative Practice\", in Jordan Zlatev, Timothy P. Racine, Chris Sinha, & Esa Itkonen (eds.), The Shared Mind: Perspectives on Intersubjectivity , Amsterdam: John Benjamins, pp. 17-38. doi:10.1075/celcr.12.04gal"
+        },
+        {
+          "raw": "Gallese, Vittorio, 2001, \"The 'Shared Manifold' Hypothesis: From Mirror Neurons to Empathy\", Journal of Consciousness Studies , 8(5-7): 33-50."
+        },
+        {
+          "raw": "---, 2007, \"Before and Below 'Theory of Mind': Embodied Simulation and the Neural Correlates of Social Cognition\", Philosophical Transactions of the Royal Society B , 362: 659-669. doi:10.1098/rstb.2006.2002"
+        },
+        {
+          "raw": "Gallese, Vittorio and Alvin Goldman, 1998, \"Mirror Neurons and the Simulation Theory of Mind-reading\", Trends in Cognitive Sciences , 2(12): 493-501. doi:10.1016/S1364-6613(98)01262-5"
+        },
+        {
+          "raw": "Gallese, Vittorio and Corrado Sinigaglia, 2011, \"What is so Special about Embodied Simulation?\" Trends in Cognitive Science , 15(11): 512-9. doi:10.1016/j.tics.2011.09.003"
+        },
+        {
+          "raw": "Gallese, Vittorio, Luciano Fadiga, Leonardo Fogassi, and Giacomo Rizzolatti, 1996, \"Action Recognition in the Premotor Cortex\", Brain , 119(2): 593-609. doi:10.1093/brain/119.2.593"
+        },
+        {
+          "raw": "Gallese, Vittorio, Leonardo Fogassi, Luciano Fadiga, and Giacomo Rizzolatti, 2002, \"Action Representation and the Inferior Parietal Lobule\", in Wolfgang Prinz and Bernhard Hommel (eds.), Common Mechanisms in Perception and Action (Attention and Performance XIX), Oxford: Oxford University Press, pp. 247-266."
+        },
+        {
+          "raw": "Gallese, Vittorio, Christian Keysers, and Giacomo Rizzolatti, 2004, \"A Unifying View of the Basis of Social Cognition\", Trends in Cognitive Sciences : 8(9): 396-403. doi:10.1016/j.tics.2004.07.002"
+        },
+        {
+          "raw": "Gari&eacute;py, Jean-Fran&ccedil;ois, Karli K. Watson, Emily Du, Diana L. Xie, Joshua Erb, Dianna Amasino, and Michael L. Platt, 2014, \"Social Learning in Humans and Other Animals\", Frontiers in Neuroscience , 31 March 2014, doi:10.3389/fnins.2014.00058."
+        },
+        {
+          "raw": "Gergely, Gy&ouml;rgy and Gergely Csibra, 2003, \"Teleological Reasoning in Infancy: The Na&iuml;ve Theory of Rational Action\", Trends in Cognitive Sciences , 7(7): 287-292. doi:10.1016/S1364-6613(03)00128-1"
+        },
+        {
+          "raw": "Gergely, Gy&ouml;rgy, Zolt&aacute;n N&aacute;dasdy, Gergely Csibra, and Szilvia B&iacute;r&oacute;, 1995, \"Taking the Intentional Stance at 12 Months of Age\", Cognition , 56(2): 165-93. doi:10.1016/0010-0277(95)00661-H"
+        },
+        {
+          "raw": "Goldenberg, Georg, Wolf M&uuml;llbacher, and Andreas Nowak, 1995, \"Imagery without Perception: A Case Study of Anosognosia for Cortical Blindness\", Neuropsychologia , 33(11): 1373-1382. doi:10.1016/0028-3932(95)00070-J"
+        },
+        {
+          "raw": "Goldman, Alvin I., 1989, \"Interpretation Psychologized\", Mind and Language , 4(3): 161-185; reprinted in Davies and Stone 1995a, pp. 74-99. doi:10.1111/j.1468-0017.1989.tb00249.x"
+        },
+        {
+          "raw": "---, 2002, \"Simulation Theory and Mental Concepts\", in J&eacute;r&ocirc;me Dokic & Jo&euml;lle Proust (eds.), Simulation and Knowledge of Action , Amsterdam ; Philadelphia: John Benjamins, 35-71."
+        },
+        {
+          "raw": "---, 2006, Simulating Minds: The Philosophy, Psychology, and Neuroscience of Mindreading , Oxford: Oxford University Press. doi:10.1093/0195138929.001.0001"
+        },
+        {
+          "raw": "---, 2008a, \"Hurley on Simulation\", Philosophy and Phenomenological Research , 77(3): 775-788. doi:10.1111/j.1933-1592.2008.00221.x"
+        },
+        {
+          "raw": "---, 2008b, \"Mirroring, Mindreading, and Simulation\", in Jaime A. Pineda (ed.), Mirror Neuron Systems: The Role of Mirroring Processes in Social Cognition , New York: Humana Press, pp. 311-330. doi:10.1007/978-1-59745-479-7_14"
+        },
+        {
+          "raw": "---, 2009, \" Pr&eacute;cis of Simulating Minds: : The Philosophy, Psychology, and Neuroscience of Mindreading \" and \"Replies to Perner and Brandl, Saxe, Vignemont, and Carruthers\", Philosophical Studies 144(3): 431-434, 477-491. doi:10.1007/s11098-009-9355-0 and doi:10.1007/s11098-009-9358-x"
+        },
+        {
+          "raw": "---, 2012a, \"A Moderate Approach to Embodied Cognitive Science\", Review of Philosophy and Psychology , 3(1): 71-88. doi:10.1007/s13164-012-0089-0"
+        },
+        {
+          "raw": "---, 2012b, \"Theory of Mind\", in Eric Margolis, Richard Samuels, and Stephen P. Stich (eds.), The Oxford Handbook of Philosophy of Cognitive Science , Oxford: Oxford University Press, 402-424. doi:10.1093/oxfordhb/9780195309799.013.0017"
+        },
+        {
+          "raw": "Goldman, Alvin I. and Lucy C. Jordan, 2013, \"Mindreading by Simulation: The Roles of Imagination and Mirroring\", in Simon Baron-Cohen, Michael Lombardo, and Helen Tager-Flusberg (eds.), Understanding Other Minds: Perspectives From Developmental Social Neuroscience , Oxford: Oxford University Press, 448-466. doi:10.1093/acprof:oso/9780199692972.003.0025"
+        },
+        {
+          "raw": "Goldman, Alvin I. and Chandra Sekhar Sripada, 2005, \"Simulationist Models of Face-Based Emotion Recognition\", Cognition , 94(3): 193-213. doi:10.1016/j.cognition.2004.01.005"
+        },
+        {
+          "raw": "Gopnik, Alison and Andrew N. Meltzoff, 1997, Words, Thoughts, and Theories , Cambridge, MA: Bradford Books/MIT Press."
+        },
+        {
+          "raw": "Gopnik, Alison and Henry M. Wellman, 1992, \"Why the Child's Theory of Mind Really Is a Theory\", Mind and Language , 7(1-2): 145-71: reprinted in Davies and Stone 1995a, pp. 232-258. doi:10.1111/j.1468-0017.1992.tb00202.x"
+        },
+        {
+          "raw": "---, 2012, \"Reconstructing Constructivism: Causal Models, Bayesian Learning Mechanisms, and the Theory-Theory\", Psychological Bulletin \", 138(6):1085-108. doi:10.1037/a0028044"
+        },
+        {
+          "raw": "Gordon, Robert M., 1986, \"Folk Psychology as Simulation\", Mind and Language , 1(2): 158-171; reprinted in Davies and Stone 1995a, pp. 60-73. doi:10.1111/j.1468-0017.1986.tb00324.x"
+        },
+        {
+          "raw": "---, 1995, \"Simulation Without Introspection or Inference From Me to You\", in Davies & Stone 1995b: 53-67."
+        },
+        {
+          "raw": "---, 1996, \"'Radical' Simulationism\", in Carruthers & Smith 1996: 11-21. doi:10.1017/CBO9780511597985.003"
+        },
+        {
+          "raw": "---, 2000, \"Sellars's Rylean Revisited\", Protosoziologie , 14: 102-114."
+        },
+        {
+          "raw": "---, 2005, \"Intentional Agents Like Myself,\", in Perspectives on Imitation: From Mirror Neurons to Memes , S. Hurley & N. Chater (eds.), Cambridge, MA: MIT Press"
+        },
+        {
+          "raw": "---, 2007, \"Ascent Routines for Propositional Attitudes\", Synthese , 159 (2): 151-165. doi:10.1007/s11229-007-9202-9"
+        },
+        {
+          "raw": "Harris, Paul L., 1989, Children and Emotion , Oxford: Blackwell Publishers."
+        },
+        {
+          "raw": "---, 1992, \"From Simulation to Folk Psychology: The Case for Development\", Mind and Language , 7(1-2): 120-144; reprinted in Davies and Stone 1995a, pp. 207-231. doi:10.1111/j.1468-0017.1992.tb00201.x"
+        },
+        {
+          "raw": "Heal, Jane, 1986, \"Replication and Functionalism\", in Language, Mind, and Logic , J. Butterfield (ed.), Cambridge: Cambridge University Press; reprinted in Davies and Stone 1995a, pp. 45-59."
+        },
+        {
+          "raw": "---, 1994, \"Simulation vs Theory-Theory: What is at Issue?\" in Christopher Peacocke (ed.), Objectivity, Simulation, and the Unity of Consciousness: Current Issues in the Philosophy of Mind (Proceedings of the British Academy, 83), Oxford: Oxford University Press, pp. 129-144. [ Heal 1994 available online ]"
+        },
+        {
+          "raw": "---, 1995, \"How to Think About Thinking\", in Davies and Stone 1995b: chapter 2, pp. 33-52."
+        },
+        {
+          "raw": "---, 1998, \"Co-Cognition and Off-Line Simulation: Two Ways of Understanding the Simulation Approach\", Mind and Language , 13(4): 477-498. doi:10.1111/1468-0017.00088"
+        },
+        {
+          "raw": "---, 2003, Mind, Reason and Imagination , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Helming, Katharina A., Brent Strickland, and Pierre Jacob, 2014, \"Making Sense of Early False-Belief Understanding\", Trends in Cognitive Sciences , 18(4): 167-170. doi:10.1016/j.tics.2014.01.005"
+        },
+        {
+          "raw": "Herschbach, Mitchell, 2012, \"Mirroring Versus Simulation: On the Representational Function of Simulation\", Synthese , 189(3): 483-51. doi:10.1007/s11229-011-9969-6"
+        },
+        {
+          "raw": "Hickok, Gregory, 2009, \"Eight Problems for the Mirror Neuron Theory of Action Understanding in Monkeys and Humans\", Journal of Cognitive of Neuroscience , 21(7): 1229-1243. doi:10.1162/jocn.2009.21189"
+        },
+        {
+          "raw": "---, 2014, The Myth of Mirror Neurons: The Real Neuroscience of Communication and Cognition , New York: Norton."
+        },
+        {
+          "raw": "Hume, David, 1739, A Treatise of Human Nature , edited by L.A. Selby-Bigge, 2 edition, revised by P.H. Nidditch, Oxford: Clarendon Press, 1975"
+        },
+        {
+          "raw": "Hurley, Susan, 2005, \"The Shared Circuits Hypothesis: A Unified Functional Architecture for Control, Imitation, and Simulation\", in Perspectives on Imitation: From Neuroscience to Social Science, Volume 1: Mechanisms of Imitation and Imitation in Animals , Susan Hurley & Nick Chater (eds.), Cambridge, MA: MIT Press, pp. 177-193."
+        },
+        {
+          "raw": "---, 2008, \"Understanding Simulation\", Philosophy and Phenomenological Research , 77(3): 755-774. doi:10.1111/j.1933-1592.2008.00220.x"
+        },
+        {
+          "raw": "Jackson, Frank, 1999, \"All That Can Be at Issue in the Theory-Theory Simulation Debate\", Philosophical Papers , 28(2): 77-95. doi:10.1080/05568649909506593"
+        },
+        {
+          "raw": "Jacob, Pierre, 2008, \"What do Mirror Neurons Contribute to Human Social Cognition?\", Mind and Language , 23(2): 190-223. doi:10.1111/j.1468-0017.2007.00337.x"
+        },
+        {
+          "raw": "---, 2012, \"Sharing and Ascribing Goals\", Mind and Language , 27(2): 200-227. doi:10.1111/j.1468-0017.2012.01441.x"
+        },
+        {
+          "raw": "Jeannerod, Marc and Elisabeth Pacherie, 2004, \"Agency, Simulation and Self-Identification\", Mind and Language 19(2): 113-146. doi:10.1111/j.1468-0017.2004.00251.x"
+        },
+        {
+          "raw": "Kieran, Matthew and Dominic McIver Lopes (eds.), 2003, Imagination, Philosophy, and the Arts , London: Routledge."
+        },
+        {
+          "raw": "Kosslyn, S.M., A. Pascual-Leone, O. Felician, S. Camposano, J.P. Keenan, W.L. Thompson, G. Ganis, K.E. Sukel, and N.M. Alpert, 1999, \"The Role of Area 17 in Visual Imagery: Convergent Evidence from PET and rTMS\", Science , 284(5411): 167-170. doi:10.1126/science.284.5411.167"
+        },
+        {
+          "raw": "Leslie, Alan M., 1994, \"Pretending and Believing: Issues in the Theory of ToMM\", Cognition , 50(1-3): 211-238 . doi:10.1016/0010-0277(94)90029-9"
+        },
+        {
+          "raw": "Lipps, Theodor, 1903, \"Einf&uuml;hlung, Innere Nachahmung und Organempfindung\", Archiv f&uuml;r gesamte Psychologie , 1: 465-519. Translated as \"Empathy, Inner Imitation and Sense-Feelings\", in A Modern Book of Esthetics , New York: Holt, Rinehart and Winston, 1979, pp. 374-382."
+        },
+        {
+          "raw": "Lurz, Robert W., 2011, Mindreading Animals , Cambridge, MA: MIT Press. doi:10.7551/mitpress/9780262016056.001.0001"
+        },
+        {
+          "raw": "Machamer, Peter, Lindley Darden, and Carl F. Craver, 2000, \"Thinking about Mechanisms\", Philosophy of science , 67(1): 1-25. doi:10.1086/392759"
+        },
+        {
+          "raw": "Marr, D., 1982. Vision , San Francisco: Freeman Press."
+        },
+        {
+          "raw": "Nichols, Shaun (ed.), 2006a, The Architecture of the Imagination: New Essays on Pretense, Possibility, and Fiction , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199275731.001.0001"
+        },
+        {
+          "raw": "---, 2006b, \"Just the Imagination: Why Imagining Doesn't Behave Like Believing\", Mind & Language , 21(4): 459-474. doi:10.1111/j.1468-0017.2006.00286.x"
+        },
+        {
+          "raw": "Nichols, Shaun and Stephen P. Stich, 2003, Mindreading: An Integrated Account of Pretence, Self-Awareness, and Understanding of Other Minds , Oxford: Oxford University Press. doi:10.1093/0198236107.001.0001"
+        },
+        {
+          "raw": "Onishi, Kristine H. and Ren&eacute;e Baillargeon, 2005, \"Do 15-Month-Old Infants Understand False Beliefs?\" Science , 308(5719): 255-258. doi:10.1126/science.1107621"
+        },
+        {
+          "raw": "Pacherie, Elisabeth, 2000, \"The Content of Intentions\", Mind and Language , 15(4): 400-432. doi:10.1111/1468-0017.00142"
+        },
+        {
+          "raw": "Peackocke, C. 2005, \"Another I: Representing Conscious States, Perception, and Others\", in J. L. Berm&uacute;dez (ed.), Thought, Reference, and Experience: Themes From the Philosophy of Gareth Evans , Oxford: Clarendon Press"
+        },
+        {
+          "raw": "Perner, Josef and Deborah Howes, 1992, \"'He Thinks he Knows' and more Developmental Evidence Against the Simulation (Role-Taking) Theory\", Mind and Language , 7(1-2): 72-86; reprinted in Davies and Stone 1995a, pp. 159-173. doi:10.1111/j.1468-0017.1992.tb00197.x"
+        },
+        {
+          "raw": "Perner Josef and Anton K&uuml;hberger, 2005, \"Mental Simulation: Royal Road to Other Minds?\", in Bertram F. Malle and Sara D. Hodges (eds.), Other Minds: How Humans Bridge the Divide Between Self and Others , New York: Guilford Press, pp. 174-187."
+        },
+        {
+          "raw": "Perner, Josef and Ted Ruffman, 2005, \"Infants' Insight in to the Mind: How Deep?\" Science , 308(5719): 214-216. doi:10.1126/science.1111656"
+        },
+        {
+          "raw": "Ramsey, William M., 2010, \"How Not to Build a Hybrid: Simulation vs. Fact-finding\", Philosophical Psychology , 23(6): 775-795. doi:10.1080/09515089.2010.529047"
+        },
+        {
+          "raw": "Rizzolatti, Giacomo and Laila Craighero, 2004, \"The Mirror-Neuron System\", Annual Review of Neuroscience , 27: 169-92. doi:10.1146/annurev.neuro.27.070203.144230"
+        },
+        {
+          "raw": "Rizzolatti, Giacomo & Corrado Sinigaglia, 2007, \"Mirror neurons and motor intentionality\", Functional Neurology , 22(4): 205-210"
+        },
+        {
+          "raw": "---, 2010, \"The Functional Role of the Parieto-Frontal Mirror Circuit: Interpretations and Misinterpretations\", Nature Reviews Neuroscience 11: 264-274. doi:10.1038/nrn2805"
+        },
+        {
+          "raw": "---, 2014, \"Review: A Curious Book on Mirror Neurons and Their Myth\", The American Journal of Psychology , 128(4): 527-533. doi:10.5406/amerjpsyc.128.4.0527"
+        },
+        {
+          "raw": "---, forthcoming, \"The Mirror Mechanism: a Basic Principle of Brain Function\", Nature Reviews Neuroscience , 17: 757-765. doi:10.1038/nrn.2016.135"
+        },
+        {
+          "raw": "Rizzolatti, G., R. Camarda, L. Fogassi, M. Gentilucci, G. Luppino, and M. Matelli, 1988, \"Functional Organization of Inferior Area 6 in the Macaque Monkey\", Experimental Brain Research , 71(1): 491-507. doi:10.1007/BF00248742"
+        },
+        {
+          "raw": "Rizzolatti, Giacomo, Luciano Fadiga, Vittorio Gallese, and Leonardo Fogassi, 1996, \"Premotor Cortex and the Recognition of Motor Actions\", Cognitive Brain Research , 3(2): 131-141. doi:10.1016/0926-6410(95)00038-0"
+        },
+        {
+          "raw": "Rozin, Paul, Jonathan Haidt, and Clark R. McCauley, 2008, \"Disgust\", in Michael Lewis, Jeannette M. Haviland-Jones & Lisa Feldman Barrett (eds.), Handbook of Emotions (3rd edition), New York: Guilford Press, pp. 757-776."
+        },
+        {
+          "raw": "Saxe, Rebbecca, 2005, \"Against Simulation: The Argument from Error\", Trends in Cognitive Sciences , 9(4): 174-179. doi:10.1016/j.tics.2005.01.012"
+        },
+        {
+          "raw": "Scholl, Brian J. and Alan M. Leslie, 1999, \"Modularity, Development and Theory of Mind\", Mind and Language , 14(1): 131-153. doi:10.1111/1468-0017.00106"
+        },
+        {
+          "raw": "Singer, Tania, Ben Seymour, John O'Doherty, Holger Kaube, Raymond J. Dolan, and Chris D. Frith, 2004, \"Empathy for Pain Involves the Affective but not Sensory Components of Pain\", Science , 303(5661): 1157- 1162. doi:10.1126/science.1093535"
+        },
+        {
+          "raw": "Smith, Adam, 1759, The Theory of Moral Sentiments , D.D. Raphael and A.L. Macfie (eds.), Oxford: Oxford University Press, 1976."
+        },
+        {
+          "raw": "Spaulding, Shannon, 2012, \"Mirror Neurons are not Evidence for the Simulation Theory\", Synthese , 189(3): 515-534. doi:10.1007/s11229-012-0086-y"
+        },
+        {
+          "raw": "Spivey, Michael J., Daniel C. Richardson, Melinda J. Tyler, and Ezekiel E. Young, 2000, \"Eye movements During Comprehension of Spoken Scene Descriptions\", in Proceedings of the 22 Annual Conference of the Cognitive Science Society , Mahwah, NJ: Erlbaum, pp. 487-492."
+        },
+        {
+          "raw": "Stich, Stephen and Shaun Nichols, 1992, \"Folk Psychology: Simulation or Tacit Theory?\", Mind and Language , 7(1-2): 35-71; reprinted in Davies and Stone 1995a, pp. 123-158. doi:10.1111/j.1468-0017.1992.tb00196.x"
+        },
+        {
+          "raw": "---, 1997, \"Cognitive Penetrability, Rationality, and Restricted Simulation\", Mind and Language , 12(3-4): 297-326. doi:10.1111/j.1468-0017.1997.tb00076.x"
+        },
+        {
+          "raw": "Stich, Stephen and Ian Ravenscroft, 1992, \"What is Folk Psychology?\" Cognition , 50(1-3): 447-68. doi:10.1016/0010-0277(94)90040-X"
+        },
+        {
+          "raw": "Velleman, J. David, 2000, \"The Aim of Belief\", in The Possibility of Practical Reason , Oxford: Oxford University Press, pp. 244-282"
+        },
+        {
+          "raw": "Vannuscorps, Gilles and Alfonso Caramazza, 2015, \"Typical Action Perception and Interpretation without Motor Simulation\", Proceedings of the National Academy of Sciences , 113(1): 1-6. doi:10.1073/pnas.1516978112"
+        },
+        {
+          "raw": "Wellman, Henry M., David Cross, and Julanne Watson, 2001, \"Meta-Analysis of Theory-of-Mind Development: The Truth about False Belief\", Child Development , 72(3): 655-684. doi:10.1111/1467-8624.00304"
+        },
+        {
+          "raw": "Wicker, Bruno, Christian Keysers, Jane Plailly, Jean-Pierre Royet, Vittorio Gallese, and Giacomo Rizzolatti, 2003, \"Both of us Disgusted in My Insula: The Common Neural Basis of Seeing and Feeling Disgust\", Neuron , 40(3): 655-664. doi:10.1016/S0896-6273(03)00679-2"
+        },
+        {
+          "raw": "Wimmer, Heinz and Josef Perner, 1983, \"Beliefs About Beliefs: Representation and Constraint Function of Wrong Beliefs in Young Children's Understanding of Deception\", Cognition , 13(1): 103-128. doi:10.1016/0010-0277(83)90004-5"
+        }
+      ],
+      "publishedAt": "1997-12-07T13:00:00.000Z",
+      "revisedAt": "2017-03-27T13:00:00.000Z"
+    }
+  }
+}
