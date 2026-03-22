@@ -1,0 +1,225 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/logic-belief-revision",
+  "meta": {
+    "title": "Logic of Belief Revision",
+    "description": "In the logic of belief revision (belief change), a belief state (or database) is represented by a set of sentences. The major operations of change are those consisting in the introduction or removal of a belief-representing sentence. In both cases, changes affecting other sentences may be needed (for instance in order to retain consistency). Rationality postulates for such operations have been proposed, and representation theorems have been obtained that characterize specific types of operations in terms of these postulates. In the dominant theory of belief revision, the so-called AGM model, the set representing the belief state is assumed to be a logically closed set of sentences (a belief set ). One of most debated topics in belief revision theory is the recovery postulate, according to which all the original beliefs are regained if one of them is first removed and then reinserted. The recovery postulate holds in the AGM model but not in closely related models employing belief bases. Another much discussed topic is how repeated changes can be adequately represented. Several alternative models have been proposed that are intended to provide a more realistic account of belief change than that offered by the AGM model.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:16:40.726Z",
+    "dateModified": "2026-03-22T05:16:40.726Z",
+    "datePublished": "2006-04-20T14:00:00.000Z",
+    "keywords": [
+      "dynamic epistemic",
+      "logic conditionals",
+      "logic nonmonotonic",
+      "reasoning defeasible"
+    ]
+  },
+  "problemSolved": {
+    "statement": "In the logic of belief revision (belief change), a belief state (or database) is represented by a set of sentences. The major operations of change are those consisting in the introduction or removal of a belief-representing sentence. In both cases, changes affecting other sentences may be needed (for instance in order to retain consistency). Rationality postulates for such operations have been proposed, and representation theorems have been obtained that characterize specific types of operations in terms of these postulates. In the dominant theory of belief revision, the so-called AGM model, the set representing the belief state is assumed to be a logically closed set of sentences (a belief set ). One of most debated topics in belief revision theory is the recovery postulate, according to which all the original beliefs are regained if one of them is first removed and then reinserted. The recovery postulate holds in the AGM model but not in closely related models employing belief bases. Another much discussed topic is how repeated changes can be adequately represented. Several alternative models have been proposed that are intended to provide a more realistic account of belief change than that offered by the AGM model.",
+    "context": "Opening section: 1. Introduction | Related entries: logic-conditionals, dynamic-epistemic, logic-nonmonotonic, reasoning-defeasible",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "epistemology",
+    "logic"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry logic-belief-revision",
+        "uri": "https://plato.stanford.edu/entries/logic-belief-revision/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "2 author(s), 4 related entries, bibliography size 2"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2006-04-20T14:00:00.000Z and revised 2021-12-20T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2021-12-20T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/logic-belief-revision/",
+        "description": "SEP entry for logic-belief-revision"
+      }
+    ],
+    "solutionApproach": "1. Introduction"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/logic-conditionals",
+      "ocp:sep/dynamic-epistemic",
+      "ocp:sep/logic-nonmonotonic",
+      "ocp:sep/reasoning-defeasible"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Hansson",
+        "type": "human"
+      },
+      {
+        "name": "Sven Ove",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/logic-belief-revision/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 30,
+      "validation_diversity": 0.47,
+      "context_breadth": 0.31,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.4,
+      "documentation_quality": 0.68
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.438
+  },
+  "extensions": {
+    "sep": {
+      "slug": "logic-belief-revision",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/logic-belief-revision/",
+      "preamble": "In the logic of belief revision (belief change), a belief state (or database) is represented by a set of sentences. The major operations of change are those consisting in the introduction or removal of a belief-representing sentence. In both cases, changes affecting other sentences may be needed (for instance in order to retain consistency). Rationality postulates for such operations have been proposed, and representation theorems have been obtained that characterize specific types of operations in terms of these postulates. In the dominant theory of belief revision, the so-called AGM model, the set representing the belief state is assumed to be a logically closed set of sentences (a belief set ). One of most debated topics in belief revision theory is the recovery postulate, according to which all the original beliefs are regained if one of them is first removed and then reinserted. The recovery postulate holds in the AGM model but not in closely related models employing belief bases. Another much discussed topic is how repeated changes can be adequately represented. Several alternative models have been proposed that are intended to provide a more realistic account of belief change than that offered by the AGM model.",
+      "firstSectionTitle": "1. Introduction",
+      "firstSectionText": "Belief revision (belief change, belief dynamics) has been recognized as a subject of its own since the middle of the 1980s. It grew out of two converging research traditions. One of these emerged in computer science. Since the beginning of computing, programmers have developed procedures by which databases can be updated. The development of Artificial Intelligence inspired computer scientists to construct more sophisticated models of database updating. The truth maintenance systems developed by Jon Doyle (1979) were important in this development. One of the most significant theoretical contributions was a 1983 paper by Ronald Fagin, Jeffrey Ullman and Moshe Vardi, in which they introduced the notion of database priorities. The second of these two research traditions is philosophical. In a wide sense, belief change has been a subject of philosophical reflection since antiquity. In the twentieth century, philosophers have discussed the mechanisms by which scientific theories develop, and they have proposed criteria of rationality for revisions of probability assignments. Beginning in the 1970s, a more focused discussion has taken place on the requirements of rational belief change. Two milestones can be pointed out. The first was a series of studies conducted by Isaac Levi in the 1970s (Levi 1977, 1980). Levi posed many of the problems that have since then been major concerns in this field of research. He also provided much of the basic formal framework. William Harper's (1977) work from the same period has also had a lasting influence. The next milestone was the AGM model, so called after its three originators, Carlos Alchourr&oacute;n, Peter G&auml;rdenfors, and David Makinson (1985). Alchourr&oacute;n and Makinson had previously cooperated in studies of changes in legal codes (Alchourr&oacute;n and Makinson 1981, 1982). G&auml;rdenfors's early work was concerned with the connections between belief change and conditional sentences (G&auml;rdenfors 1978, 1981). With combined forces the three wrote a paper that provided a new, much more general and versatile formal framework for studies of belief change. (On the history of their joint work, see Makinson 2003 and G&auml;rdenfors 2011.) Since the paper was published in the Journal of Symbolic Logic in 1985, its major concepts and constructions have been the subject of significant elaboration and development. The AGM model and developments that have grown out of it still form the core of belief revision theory. In the AGM model and most other models of belief change, beliefs are represented by sentences in some formal language. Sentences do not capture all aspects of belief, but they are the best general-purpose representation that is presently available. The beliefs held by an agent are represented by a set of such belief-representing sentences. It is usually assumed that this set is closed under logical consequence, i.e., every sentence that follows logically from this set is already in the set. This is clearly an unrealistic idealization, since it means that the agent is taken to be \"logically omniscient\", i.e. a perfect logical reasoner. However, it is a useful idealization since it simplifies the logical treatment; indeed, it seems difficult to obtain an interesting formal treatment without it. In logic, logically closed sets are called \"theories\". In formal epistemology they are also called \"corpora\", \"knowledge sets\", or (more commonly) \"belief sets\". Isaac Levi (1991) has clarified the nature of this idealization by pointing out that a belief set consists of the sentences that someone is committed to believe , not those that she actually believes in. According to Levi, we are doxastically committed to believe in all the logical consequences of our beliefs, but typically our performance does not live up to this commitment. The belief set is the set of the agent's epistemic commitments, and therefore larger than the set of her actually held beliefs. In the AGM framework, there are three types of belief change. In contraction , a specified sentence \\(p\\) is removed, i.e., a belief set \\(K\\) is superseded by another belief set \\(K\\div p\\) that is a subset of \\(K\\) not containing \\(p\\). In expansion a sentence \\(p\\) is added to \\(K\\), and nothing is removed, i.e. \\(K\\) is replaced by a set \\(K+p\\) that is the smallest logically closed set that contains both \\(K\\) and \\(p\\). In revision a sentence \\(p\\) is added to \\(K\\), and at the same time other sentences are removed if this is needed to ensure that the resulting belief set \\(K* p\\) is consistent. It is important to note the specific character of these models. They are input-assimilating . This means that the object of change, the belief set, is exposed to an input, and is changed as a result of this. No explicit representation of time is included. Instead, the characteristic mathematical constituent is a function that, to each pair of a belief set and an input, assigns a new belief set. The belief-representing sentences form a language. (As is usual in logic, the language is identified with the set of all sentences it contains.) Sentences, i.e. elements of this language, will be represented by lowercase letters \\((p, q\\ldots)\\) and sets of sentences by capital letters. This language contains the usual truth-functional connectives: negation \\((\\neg)\\), conjunction \\((\\amp)\\), disjunction \\((\\vee)\\), implication \\((\\rightarrow)\\), and equivalence (\\(\\leftrightarrow\\)). \\(\\smbot\\) denotes an arbitrary contradiction (\"falsum\"), and \\(\\smtop\\) an arbitrary tautology. To express the logic, a Tarskian consequence operator will be used. Intuitively speaking, for any set \\(A\\) of sentences, \\(\\Cn(A)\\) is the set of logical consequences of \\(A\\). More formally, a consequence operation on a given language is a function \\(\\Cn\\) from sets of sentences to sets of sentences. It satisfies the following three conditions: Inclusion : \\(A\\subseteq \\Cn(A)\\) Monotony : If \\(A\\subseteq B\\), then \\(\\Cn(A) \\subseteq \\Cn(B)\\) Iteration : \\(\\Cn(A) = \\Cn(\\Cn(A))\\) \\(\\Cn\\) is assumed to be supraclassical, i.e. if \\(p\\) can be derived from \\(A\\) by classical truth-functional logic, then \\(p \\in \\Cn(A)\\). \\(A\\) is a belief set if and only if \\(A = \\Cn(A)\\). In what follows, \\(K\\) will denote a belief set. \\(X \\vdash p\\) is an alternative notation for \\(p \\in \\Cn(X)\\), and \\(X \\not\\vdash p\\) for \\(p \\not\\in \\Cn(X)\\). \\(\\Cn(\\varnothing)\\) is the set of tautologies. The expansion of \\(K\\) by a sentence \\(p\\), i.e. the operation that just adds \\(p\\) and removes nothing, is denoted \\(K+p\\) and defined as follows: \\(K+p = \\Cn(K\\cup \\{p\\})\\).",
+      "relatedEntries": [
+        "logic-conditionals",
+        "dynamic-epistemic",
+        "logic-nonmonotonic",
+        "reasoning-defeasible"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "logic-conditionals"
+        },
+        {
+          "slug": "dynamic-epistemic"
+        },
+        {
+          "slug": "logic-nonmonotonic"
+        },
+        {
+          "slug": "reasoning-defeasible"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 2,
+      "bibliography": [
+        {
+          "raw": "There are close parallels between changes in norms and changes in beliefs. In order to apply a norm system with conflicting norms to a particular situation, some of the norms may have to be ignored. The problem how to prioritize among conflicting norms is similar to the selection of sentences for removal in belief contraction (Hansson and Makinson 1997). The AGM model was in fact partly the outcome of attempts to formalize changes in norms rather than beliefs (Alchourr&oacute;n and Makinson 1981). In spite of this, authors who apply the AGM model to norms have found it in need of rather extensive modifications to make it suitable for that purpose. Hence, in their model of changes in legislation, Governatori and Rotolo (2010) introduced an explicit representation of time in order to account for phenomena such as retroactivity."
+        },
+        {
+          "raw": "A model of changes in preferences can be obtained by replacing the standard AGM language by sentences of the form \\(p \\ge q\\) (\"\\(p\\) is at least as good as \\(q\\)\") and their truth-functional combinations. The adoption of a new preference can then take the form of revision by such a preference sentence. Partial meet contraction can be used, but some modifications of the AGM model seem to be necessary in applications to preferences (Hansson 1995, Lang and van der Torre 2008, Gr&uuml;ne-Yanoff and Hansson 2009)."
+        }
+      ],
+      "publishedAt": "2006-04-20T14:00:00.000Z",
+      "revisedAt": "2021-12-20T13:00:00.000Z"
+    }
+  }
+}

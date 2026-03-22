@@ -1,0 +1,171 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/satwikkansal--wtfpython",
+  "meta": {
+    "title": "Table of Contents",
+    "description": "What the f*ck Python? 😱",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:35:29.833Z",
+    "dateModified": "2026-03-22T05:35:29.833Z",
+    "keywords": [
+      "documentation",
+      "gotchas",
+      "interview-questions",
+      "pitfalls",
+      "python",
+      "python-interview-questions",
+      "snippets",
+      "wats",
+      "wtf"
+    ],
+    "license": "WTFPL"
+  },
+  "problemSolved": {
+    "statement": "<!-- Generated using \"markdown-toc -i README.md --maxdepth 3\"-->",
+    "context": "<!-- Generated using \"markdown-toc -i README.md --maxdepth 3\"-->\n\n<!-- toc -->\n\n- [Structure of the Examples](#structure-of-the-examples)\n  - [▶ Some fancy Title](#-some-fancy-title)\n- [Usage](#usage)\n- [👀 Examples](#-examples)\n  - [Section: Strain your brain!](#section-strain-your-brain)\n    - [▶ First things first! \\*](#-first-things-first-)\n    - [▶ Strings can be tricky sometimes](#-strings-can-be-tricky-sometimes)\n    - [▶ Be careful with chained operations](#-be-careful-with-chained-operations)\n    - [▶ How not to use `is` operator](#-how-not-to-use-is-operator)\n    - [▶ Hash brownies](#-hash-brownies)\n    - [▶ Deep down, we're all the same.](#-deep-down-were-all-the-same)\n    - [▶ Disorder within order \\*](#-disorder-within-order-)\n    - [▶ Keep trying... \\*](#-keep-trying-)\n    - [▶ For what?](#-for-what)\n    - [▶ Evaluation time discrepancy](#-evaluation-time-discrepancy)\n    - [▶ `is not ...` is not `is (not ...)`](#-is-not--is-not-is-not-)\n    - [▶ A tic-tac-toe where X wins in the first attempt!](#-a-tic-tac-toe-where-x-wins-in-the-first-attempt)\n    - [▶ Schrödinger's variable](#-schrödingers-variable-)\n    - [▶ The chicken-egg problem \\*](#-the-chicken-egg-problem-)\n    - [▶ Subclass relationships](#-subclass-relationships)\n    - [▶ Methods equality and identity](#-methods-equality-and-identity)\n    - [▶ All-true-ation \\*](#-all-true-ation-)\n    - [▶ The surprising comma](#-the-surprising-comma)\n    - [▶ Strings and the backslashes](#-strings-and-the-backslashes)\n    - [▶ not knot!](#-not-knot)\n    - [▶ Half triple-quoted strings](#-half-triple-quoted-strings)\n    - [▶ What's wrong with booleans?](#-whats-wrong-with-booleans)\n    - [▶ Class attributes and instance attributes](#-class-attributes-and-instance-attributes)\n    - [▶ yielding None](#-yielding-none)\n    - [▶ Yielding from... return! \\*](#-yielding-from-return-)\n    - [▶ Nan-reflexivity \\*](#-nan-reflexivity-)\n    - [▶ Mutating the immutable!](#-mutating-the-immutable)\n    - [▶ The disappearing variable from outer scope](#-the-disappearing-variable-from-outer-scope)\n    - [▶ The mysterious key type conversion](#-the-mysterious-key-type-conversion)\n    - [▶ Let's see if you can guess this?](#-lets-see-if-you-can-guess-this)\n    - [▶ Exceeds the limit for integer string conversion](#-exceeds-the-limit-for-integer-string-conversion)\n  - [Section: Slippery Slopes](#section-slippery-slopes)\n    - [▶ Modifying a dictionary while iterating over it](#-modifying-a-dictionary-while-iterating-over-it)\n    - [▶ Stubborn `del` operation](#-stubborn-del-operation)\n    - [▶ The out of scope variable](#-the-out-of-scope-variable)\n    - [▶ Deleting a list item while iterating](#-deleting-a-list-item-while-iterating)\n    - [▶ Lossy zip of iterators \\*](#-lossy-zip-of-iterators-)\n    - [▶ Loop variables leaking out!](#-loop-variables-leaking-out)\n    - [▶ Beware of default mutable arguments!](#-beware-of-default-mutable-arguments)\n    - [▶ Catching the Exceptions](#-catching-the-exceptions)\n    - [▶ Same operands, different story!](#-same-operands-different-story)\n    - [▶ Name resolution ignoring class scope](#-name-resolution-ignoring-class-scope)\n    - [▶ Rounding like a banker \\*](#-rounding-like-a-banker-)\n    - [▶ Needles in a Haystack \\*](#-needles-in-a-haystack-)\n    - [▶ Splitsies \\*](#-splitsies-)\n    - [▶ Wild imports \\*](#-wild-imports-)\n    - [▶ All sorted? \\*](#-all-sorted-)\n    - [▶ Midnight time doesn't exist?](#-midnight-time-doesnt-exist)\n  - [Section: The Hidden treasures!](#section-the-hidden-treasures)\n    - [▶ Okay Python, Can you make me fly?](#-okay-python-can-you-make-me-fly)\n    - [▶ `goto`, but why?](#-goto-but-why)\n    - [▶ Brace yourself!](#-brace-yourself)\n    - [▶ Let's meet Friendly Language Uncle For Life](#-lets-meet-friendly-language-uncle-for-life)\n    - [▶ Even Python understands that love is complicated](#-even-python-understands-that-love-is-complicated)\n    - [▶ Yes, it exists!](#-yes-it-exists)\n    - [▶ Ellipsis \\*](#-ellipsis-)\n    - [▶ Inpinity](#-inpinity)\n    - [▶ Let's mangle](#-lets-mangle)\n  - [Section: Appearances are deceptive!](#section-appearances-are-deceptive)\n    - [▶ Skipping lines?](#-skipping-lines)\n    - [▶ Teleportation](#-teleportation)\n    - [▶ Well, something is fishy...](#-well-something-is-fishy)\n  - [Section: Miscellaneous](#section-miscellaneous)\n    - [▶ `+=` is faster](#--is-faster)\n    - [▶ Let's make a giant string!](#-lets-make-a-giant-string)\n    - [▶ Slowing down `dict` lookups \\*](#-slowing-down-dict-lookups-)\n    - [▶ Bloating instance `dict`s \\*](#-bloating-instance-dicts-)\n    - [▶ Minor Ones \\*](#-minor-ones-)\n- [Contributing](#contributing)\n- [Acknowledgements](#acknowledgements)\n- [🎓 License](#-license)\n  - [Surprise your friends as well!](#surprise-your-friends-as-well)\n  - [More content like this?](#more-content-like-this)\n\n<!-- tocstop -->",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "36909 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "2664 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T05:35:29.833Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/satwikkansal/wtfpython",
+        "description": "GitHub repository: satwikkansal/wtfpython"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "nox",
+        "version": "^2024.10.9",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/nox/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "satwikkansal",
+        "type": "human",
+        "uri": "https://github.com/satwikkansal"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 42237,
+      "validation_diversity": 0.64,
+      "context_breadth": 0.66,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.65
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.715
+  }
+}

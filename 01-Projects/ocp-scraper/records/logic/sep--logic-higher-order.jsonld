@@ -1,0 +1,518 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/logic-higher-order",
+  "meta": {
+    "title": "Second-order and Higher-order Logic",
+    "description": "Second-order logic has a subtle role in the philosophy of mathematics. It is stronger than first order logic in that it incorporates \"for all properties\" into the syntax, while first order logic can only say \"for all elements\". At the same time it is arguably weaker than set theory in that its quantifiers range over one limited domain at a time, while set theory has the universalist approach in that its quantifiers range over all possible domains. This stronger-than-first-order-logic/weaker-than-set-theory duality is the source of lively debate, not least because set theory is usually construed as based on first order logic. How can second-order logic be at the same time stronger and weaker? To make the situation even more complex, it was suggested early on that in order that the strength of second-order logic can be exploited to its full extent and in order that \"for all properties\" can be given an exact interpretation, a first order set-theoretical background has to be assumed. This seemed to undermine the claimed strength of second-order logic as well as its role as the primary foundation of mathematics. It also seemed to attach second-order logic to aspects of set theory which second-order logic might have wanted to bypass: the higher infinite, the independence results, and the difficulties in finding new convincing axioms. Setting aside philosophical questions, it is undeniable and manifested by a continued stream of interesting results, that second-order logic is part and parcel of a logician's toolbox.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:08:49.272Z",
+    "dateModified": "2026-03-22T05:08:49.272Z",
+    "datePublished": "2019-07-31T14:00:00.000Z",
+    "keywords": [
+      "category theory",
+      "computability",
+      "independence large cardinals",
+      "large cardinals determinacy",
+      "mathematics constructive",
+      "plural quant",
+      "set theory",
+      "type theory"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Second-order logic has a subtle role in the philosophy of mathematics. It is stronger than first order logic in that it incorporates \"for all properties\" into the syntax, while first order logic can only say \"for all elements\". At the same time it is arguably weaker than set theory in that its quantifiers range over one limited domain at a time, while set theory has the universalist approach in that its quantifiers range over all possible domains. This stronger-than-first-order-logic/weaker-than-set-theory duality is the source of lively debate, not least because set theory is usually construed as based on first order logic. How can second-order logic be at the same time stronger and weaker? To make the situation even more complex, it was suggested early on that in order that the strength of second-order logic can be exploited to its full extent and in order that \"for all properties\" can be given an exact interpretation, a first order set-theoretical background has to be assumed. This seemed to undermine the claimed strength of second-order logic as well as its role as the primary foundation of mathematics. It also seemed to attach second-order logic to aspects of set theory which second-order logic might have wanted to bypass: the higher infinite, the independence results, and the difficulties in finding new convincing axioms. Setting aside philosophical questions, it is undeniable and manifested by a continued stream of interesting results, that second-order logic is part and parcel of a logician's toolbox.",
+    "context": "Opening section: 1. Introduction | Related entries: category-theory, computability, mathematics-constructive, plural-quant, set-theory, independence-large-cardinals, large-cardinals-determinacy, type-theory",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "logic",
+    "philosophy-of-science"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry logic-higher-order",
+        "uri": "https://plato.stanford.edu/entries/logic-higher-order/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "4 author(s), 8 related entries, bibliography size 89"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2019-07-31T14:00:00.000Z and revised 2024-08-30T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2024-08-30T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/logic-higher-order/",
+        "description": "SEP entry for logic-higher-order"
+      }
+    ],
+    "solutionApproach": "1. Introduction"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/category-theory",
+      "ocp:sep/computability",
+      "ocp:sep/mathematics-constructive",
+      "ocp:sep/plural-quant",
+      "ocp:sep/set-theory",
+      "ocp:sep/independence-large-cardinals",
+      "ocp:sep/large-cardinals-determinacy",
+      "ocp:sep/type-theory"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "V",
+        "type": "human"
+      },
+      {
+        "name": "auml",
+        "type": "human"
+      },
+      {
+        "name": "n",
+        "type": "human"
+      },
+      {
+        "name": "nen, Jouko",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/logic-higher-order/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 83,
+      "validation_diversity": 0.71,
+      "context_breadth": 0.42,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.9
+    },
+    "confidence": "tested",
+    "authority": "high",
+    "status": "draft",
+    "trustScore": 0.619
+  },
+  "extensions": {
+    "sep": {
+      "slug": "logic-higher-order",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/logic-higher-order/",
+      "preamble": "Second-order logic has a subtle role in the philosophy of mathematics. It is stronger than first order logic in that it incorporates \"for all properties\" into the syntax, while first order logic can only say \"for all elements\". At the same time it is arguably weaker than set theory in that its quantifiers range over one limited domain at a time, while set theory has the universalist approach in that its quantifiers range over all possible domains. This stronger-than-first-order-logic/weaker-than-set-theory duality is the source of lively debate, not least because set theory is usually construed as based on first order logic. How can second-order logic be at the same time stronger and weaker? To make the situation even more complex, it was suggested early on that in order that the strength of second-order logic can be exploited to its full extent and in order that \"for all properties\" can be given an exact interpretation, a first order set-theoretical background has to be assumed. This seemed to undermine the claimed strength of second-order logic as well as its role as the primary foundation of mathematics. It also seemed to attach second-order logic to aspects of set theory which second-order logic might have wanted to bypass: the higher infinite, the independence results, and the difficulties in finding new convincing axioms. Setting aside philosophical questions, it is undeniable and manifested by a continued stream of interesting results, that second-order logic is part and parcel of a logician's toolbox.",
+      "firstSectionTitle": "1. Introduction",
+      "firstSectionText": "Second-order logic was introduced by Frege in his Begriffsschrift (1879) who also coined the term \"second order\" (\" zweiter Ordnung \") in (1884: &sect;53). It was widely used in logic until the 1930s, when set theory started to take over as a foundation of mathematics. It is difficult to say exactly why this happened, but set theory has certain simplicity in being based on one single binary predicate \\(x\\in y\\), compared to second- and higher-order logics, including type theory. Discussion among philosophers of the merits of second-order logic especially in comparison to set theory continues to this day (Shapiro 1991). Meanwhile second-order logic has become a standard tool of computer science logic, finite model theory in particular. Central questions of theoretical computer science, such as the P = NP? question, can be seen as questions about second-order logic in the finite context. Ultimately second-order logic is just another formal language. It can be given the standard treatment making syntax, semantics and proof theory exact by working in a mathematical metatheory which we choose to be set theory. It would be possible to use second-order logic itself as metatheory, but it would be more complicated, simply because second-order logic is less developed than set theory. The distinction between first order logic and second-order logic is easiest to understand in elementary mathematics. Let us consider number theory. The objects of our study are the natural numbers 0, 1, 2,&hellip; and their arithmetic. With first order logic we can formulate statements about number theory by using atomic expressions \\(x = y,\\) \\(x+y = z\\) and \\(x\\times y = z\\) combined with the propositional operations \\(\\land,\\) \\(\\neg,\\) \\(\\lor,\\) \\(\\to\\) and the quantifiers \\(\\forall x\\) and \\(\\exists x\\). Here the variables x , y , z ,&hellip; are thought to range over the natural numbers. With second-order logic we can express more: we have variables x , y , z ,&hellip; as in first order logic for numbers. In addition we have variables X , Y , Z ,&hellip; for properties of numbers and relations between numbers as well as quantifiers \\(\\forall X\\) and \\(\\exists X\\) for these variables. We have the atomic expressions of first order logic and also new atomic expressions of the form \\(X(y_1,\\ldots, y_n)\\). An interesting and much studied question arises: what properties of natural numbers can be expressed in first order logic and what can be expressed in second-order logic? The question is equally interesting if \"expressed\" is replaced by \"proved\", once a suitable proof system is given in both cases. We can replace natural numbers by some other mathematical context, for example real numbers, complex numbers, and so on. With just the constant \\(0\\) and the unary function \\(n \\mapsto n^+\\) (where \\(n^+\\) means \\(n+1\\)) we can express in second-order logic the Induction Axiom of natural numbers. This, together with the axioms \\(\\forall x\\,\\neg(x^+=0)\\) and \\(\\forall x\\,\\forall y(x^+=y^+\\to x=y)\\) characterizes the natural numbers with their successor operation up to isomorphism. In first order logic any theory which has a countably infinite model has also an uncountable model (by the Upward L&ouml;wenheim Skolem Theorem). Hence (\\ref{ind}) cannot be expressed in first order logic. Another typical second-order expression is the Completeness Axiom of the linear order \\(\\le\\) of the real numbers: This, together with the axioms of ordered fields characterizes the ordered field of real numbers up to isomorphism. In first order logic any countable theory which has an infinite model has also a countable model (by the Downward L&ouml;wenheim Skolem Theorem). Hence, again, (\\ref{comp}) cannot be expressed in first order logic. To early logicians it seemed natural to use second-order logic on a par with first order logic, as if there were not much difference. This included Russell, L&ouml;wenheim, Hilbert, and Zermelo. Essentially only Skolem emphasized the difference (see Moore 1988 for the emergence of first order logic). In 1929 G&ouml;del proved his Completeness Theorem and the next year his Incompleteness Theorem. It became gradually obvious that second-order logic is very different from first order logic. One of the first indicators was the incompleteness phenomenon. G&ouml;del showed that any effective axiomatization of number theory is incomplete. On the other hand, there was a simple finite categorical--hence complete ( &sect;10 )--axiomatization of the structure \\((\\oN,\\) \\(+,\\) \\(\\times)\\) in second-order logic (see also the discussion related to (\\ref{ind})). This showed that there cannot be such a complete axiomatization of second-order logic as there was for first order logic. What became known in the case of first order logic as G&ouml;del's Completeness Theorem simply cannot hold for second-order logic. The situation changed somewhat when Henkin proved the Completeness Theorem for second-order logic with respect to so-called general models ( &sect;9 ). Now it became possible to use second-order logic in the same way as first order logic, if only one keeps in mind that the semantics is based on general models. The ability of second-order logic to characterize mathematical structures up to isomorphism does not extend to general models (except in the form of internal categoricity--see &sect;10 ). Any second-order theory, in a countable vocabulary, with an infinite general model has general models of all infinite cardinalities, and therefore cannot be categorical in the context of general models. We shall discuss general models and the related Henkin models in &sect;9 .",
+      "relatedEntries": [
+        "category-theory",
+        "computability",
+        "mathematics-constructive",
+        "plural-quant",
+        "set-theory",
+        "independence-large-cardinals",
+        "large-cardinals-determinacy",
+        "type-theory"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "category-theory"
+        },
+        {
+          "slug": "computability"
+        },
+        {
+          "slug": "mathematics-constructive"
+        },
+        {
+          "slug": "plural-quant"
+        },
+        {
+          "slug": "set-theory"
+        },
+        {
+          "slug": "independence-large-cardinals"
+        },
+        {
+          "slug": "large-cardinals-determinacy"
+        },
+        {
+          "slug": "type-theory"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 89,
+      "bibliography": [
+        {
+          "raw": "Ajtai, M., 1979, \"Isomorphism and Higher Order Equivalence\", Annals of Mathematical Logic , 16(3): 181-203. doi:10.1016/0003-4843(79)90001-9"
+        },
+        {
+          "raw": "---, 1983, \"\\(\\Sigma_1^1\\)-Formulae on Finite Structures\", Annals of Pure and Applied Logic , 24(1): 1-48. doi:10.1016/0168-0072(83)90038-6"
+        },
+        {
+          "raw": "Asser, G&uuml;nter, 1981, Einf&uuml;hrung in Die Mathematische Logik: Teil Ill: Pr&auml;dikatenlogik H&ouml;herer Stufe , Thun: Verlag Harri Deutsch."
+        },
+        {
+          "raw": "Awodey, Steve and Erich H. Reck, 2002, \"Completeness and categoricity. I. Nineteenth-century axiomatics to twentieth-century metalogic\", History and Philosophy of Logic , 23(1): 1-30."
+        },
+        {
+          "raw": "Barwise, K. Jon, 1972a, \"Absolute Logics and \\(L_{\\infty \\omega }\\)\", Annals of Mathematical Logic , 4(3): 309-340. doi:10.1016/0003-4843(72)90002-2"
+        },
+        {
+          "raw": "---, 1972b, \"The Hanf Number of Second Order Logic\", Journal of Symbolic Logic , 37(3): 588-594. doi:10.2307/2272748"
+        },
+        {
+          "raw": "B&uuml;chi, J. Richard, 1962, \"On a Decision Method in Restricted Second Order Arithmetic\", in Logic, Methodology and Philosophy of Science: Proceedings of the 1960 International Congress , Ernest Nagel, Patrick Suppes, and Alfred Tarski (eds.), Stanford, CA: Stanford University Press, 1-11."
+        },
+        {
+          "raw": "---, 1973, \"The Monadic Second Order Theory of \\(\\omega _{i}\\)\", in Decidable Theories II: The Monadic Second Order Theory of All Countable Ordinals , by J. Richard B&uuml;chi and Dirk Siefkes, edited by G. H. M&uuml;ller and D. Siefkes, (Lecture Notes in Mathematics 328), Berlin, Heidelberg: Springer Berlin Heidelberg, 1-127. doi:10.1007/BFb0082721"
+        },
+        {
+          "raw": "Buss, Samuel R. (ed.), 1998, Handbook of Proof Theory , (Studies in Logic and the Foundations of Mathematics 137), New York: Elsevier."
+        },
+        {
+          "raw": "Button, Tim and Sean Walsh, 2016, \"Structure and Categoricity: Determinacy of Reference and Truth Value in the Philosophy of Mathematics\", Philosophia Mathematica , 24(3): 283-307. doi:10.1093/philmat/nkw007"
+        },
+        {
+          "raw": "Carnap, Rudolf, 1927/1930 [2000]. Untersuchungen zur allgemeinen Axiomatik , edited and with a foreword by Thomas Bonk and Jesus Mosterin, Darmstadt: Wissenschaftliche Buchgesellschaft."
+        },
+        {
+          "raw": "Church, Alonzo, 1956, Introduction to Mathematical Logic, volume 1 , Revised and enlarged edition, (Princeton Mathematical Series 17), Princeton, NJ: Princeton University Press."
+        },
+        {
+          "raw": "Cohen, Paul J., 1966, Set Theory and the Continuum Hypothesis , New York-Amsterdam: W. A. Benjamin."
+        },
+        {
+          "raw": "Craig, William, 1965, \"Satisfaction for \\(n\\)-th order languages defined in \\(n\\)-th order languages\", Journal of Symbolic Logic , 30: 13-25."
+        },
+        {
+          "raw": "de la Cruz, Omar, 2002, \"Finiteness and Choice\", Fundamenta Mathematicae , 173(1): 57-76. doi:10.4064/fm173-1-4"
+        },
+        {
+          "raw": "Durand, Arnaud, Ronald Fagin, and Bernd Loescher, 1998, \"Spectra with Only Unary Function Symbols\", in Computer Science Logic , Mogens Nielsen and Wolfgang Thomas (eds.), (Lecture Notes in Computer Science 1414), Berlin, Heidelberg: Springer Berlin Heidelberg, 189-202. doi:10.1007/BFb0028015"
+        },
+        {
+          "raw": "Durand, Arnaud, Neil D. Jones, Johann A. Makowsky, and Malika More, 2012, \"Fifty Years of the Spectrum Problem: Survey and New Results\", The Bulletin of Symbolic Logic , 18(4): 505-553. doi:10.2178/bsl.1804020"
+        },
+        {
+          "raw": "Elgot, Calvin C., 1961, \"Decision Problems of Finite Automata Design and Related Arithmetics\", Transactions of the American Mathematical Society , 98(1): 21-21. doi:10.1090/S0002-9947-1961-0139530-9"
+        },
+        {
+          "raw": "Fagin, Ronald, 1974, \"Generalized First-Order Spectra and Polynomial-Time Recognizable Sets\", in Complexity of Computation , Richard M. Karp (ed.), (SIAM-AMS Proceedings 7), Providence, RI: American Mathematical Society, 43-73."
+        },
+        {
+          "raw": "---, 1975, \"Monadic Generalized Spectra\", Zeitschrift f&uuml;r mathematische Logik und Grundlagen der Mathematik , 21(1): 89-96. doi:10.1002/malq.19750210112"
+        },
+        {
+          "raw": "---, 1993, \"Finite-Model Theory--a Personal Perspective\", Theoretical Computer Science , 116(1): 3-31. doi:10.1016/0304-3975(93)90218-I"
+        },
+        {
+          "raw": "Fagin, Ronald, Larry J. Stockmeyer, and Moshe Y. Vardi, 1995, \"On Monadic NP vs Monadic Co-NP\", Information and Computation , 120(1): 78-92. doi:10.1006/inco.1995.1100"
+        },
+        {
+          "raw": "Feferman, Solomon, 1999, \"Does Mathematics Need New Axioms?\", The American Mathematical Monthly , 106(2): 99-111. doi:10.1080/00029890.1999.12005017"
+        },
+        {
+          "raw": "Feferman, Solomon and Georg Kreisel, 1966, \"Persistent and Invariant Formulas Relative to Theories of Higher Order\", Bulletin of the American Mathematical Society , 72(3): 480-486. doi:10.1090/S0002-9904-1966-11507-0"
+        },
+        {
+          "raw": "Fraenkel, Abraham, 1919 [1928], Einleitung in die Mengenlehre (Die Grundlehren der mathematischen Wissenschaften in Einseldarstellungen: Volume 9), Berlin: Springer, 3rd edition, 1928."
+        },
+        {
+          "raw": "Frege, Gottlob, 1879, Begriffsschrift: Eine Der Arithmetischen Nachgebildete Formelsprache Des Reinen Denkens , Halle."
+        },
+        {
+          "raw": "---, 1884, Die Grundlagen Der Arithmetik , Breslau: Verlage Wilhelm Koebner."
+        },
+        {
+          "raw": "Garland, Stephen J., 1974, \"Second-Order Cardinal Characterizability\", in Axiomatic Set Theory, Part 2 , T. J. Jech (ed.), (Proceedings of Symposia in Pure Mathematics, 13.2), Providence, RI: American Math Society, 127-146. [ Garland 1974 available online ]"
+        },
+        {
+          "raw": "Ga&szlig;ner, Christine, 1994, \"The Axiom of Choice in Second-Order Predicate Logic\", Mathematical Logic Quarterly , 40(4): 533-546. doi:10.1002/malq.19940400410"
+        },
+        {
+          "raw": "G&ouml;del, Kurt, 1931 [1986], \"&Uuml;ber formal unentscheidbare S&auml;tze der Principia Mathematica und verwandter Systeme I\", Monatshefte f&uuml;r Mathematik und Physik , 38(1): 173-198. Reprinted and translated as \"On Formally Undecidable Propositions of Principia Mathematica and Related Systems\" in G&ouml;del 1986: 144-195. doi:10.1007/BF01700692"
+        },
+        {
+          "raw": "---, 1936 [1986], \"&Uuml;ber Die L&auml;nge von Beweisen\", Ergebnisse Eirtes Mathematischen Kolloquiums , 7: 23-24. Reprinted and translated as \"On the Length of Proofs\" in G&ouml;del 1986: 396-399."
+        },
+        {
+          "raw": "---, 1939 [1990], \"Consistency-Proof for the Generalized Continuum-Hypothesis\", Proceedings of the National Academy of Sciences , 25(4): 220-224. Reprinted in G&ouml;del 1990: 28-32. doi:10.1073/pnas.25.4.220"
+        },
+        {
+          "raw": "---, 1986, Collected Works, Volume 1: Publications 1929-1936 , Solomon Feferman (ed.), New York: Oxford University Press."
+        },
+        {
+          "raw": "---, 1990, Collected Works, Volume 2: Publications 1938-1974 , Solomon Feferman (ed.), New York: Oxford University Press."
+        },
+        {
+          "raw": "Gurevich, Yuri, 1985, \"Monadic Second-Order Theories\", in Model-Theoretic Logics , Jon Barwise and Sol Feferman (eds.) (Perspectives in Logic), New York: Springer-Verlag, 479-506. doi:10.1017/9781316717158.019"
+        },
+        {
+          "raw": "Gurevich, Yuri, Menachem Magidor, and Saharon Shelah, 1983, \"The Monadic Theory of \\(\\omega_2\\)\", Journal of Symbolic Logic , 48(2): 387-398. doi:10.2307/2273556"
+        },
+        {
+          "raw": "Herre, Heinrich, Micha&#322; Krynicki, Alexandr Pinus, and Jouko V&auml;&auml;n&auml;nen, 1991, \"The H&auml;rtig-quantifier. A survey\", Journal of Symbolic Logic , 56(4): 1153-1183."
+        },
+        {
+          "raw": "Hasenjaeger, Gisbert, 1961, \"Unabh&auml;ngigkeitsbeweise in Mengenlehre Und Stufenlogik Der Modelle.\", Jahresbericht Der Deutschen Mathematiker-Vereinigung , 63: 141-162."
+        },
+        {
+          "raw": "Hellman, Geoffrey, 2001, \"Three Varieties of Mathematical Structuralism&dagger;\", Philosophia Mathematica , 9(2): 184-211. doi:10.1093/philmat/9.2.184"
+        },
+        {
+          "raw": "Henkin, Leon, 1950, \"Completeness in the Theory of Types\", Journal of Symbolic Logic , 15(2): 81-91. doi:10.2307/2266967"
+        },
+        {
+          "raw": "Herbrand, Jacques, 1930, Recherches sur la th&eacute;orie de la d&eacute;monstration , (Th&egrave;ses de l'entre-deux-guerres 110), L'Universit&eacute; de Paris. [ Herbrand 1930 available online ]"
+        },
+        {
+          "raw": "Hilbert, David, 1900, \"&Uuml;ber Den Zahlbegriff.\", Jahresbericht Der Deutschen Mathematiker-Vereinigung , 8: 180-183."
+        },
+        {
+          "raw": "Hilbert, David and William Ackermann, 1928, Grundz&uuml;ge Der Theoretischen Logik , (Grundlehren Der Mathematischen Wissenschaften in Einzeldarstellungen Mit Besonderer Ber&uuml;cksichtigung Der Anwendungsgebiete 27), Berlin: J. Springer."
+        },
+        {
+          "raw": "---, 1938, Grundz&uuml;ge Der Theoretischen Logik , second edition, Berlin: Springer. doi:10.1007/978-3-662-41928-1"
+        },
+        {
+          "raw": "Hintikka, K. Jaakko J., 1955, \"Reductions in the Theory of Types\", Acta Philosophica Fennica , 8: 57-115."
+        },
+        {
+          "raw": "Hyttinen, Tapani, Kaisa Kangas, and Jouko V&auml;&auml;n&auml;nen, 2013, \"On Second-Order Characterizability\", Logic Journal of IGPL , 21(5): 767-787. doi:10.1093/jigpal/jzs047"
+        },
+        {
+          "raw": "Jones, Neil D. and Alan L. Selman, 1974, \"Turing Machines and the Spectra of First-Order Formulas\", Journal of Symbolic Logic , 39(1): 139-150. doi:10.2307/2272354"
+        },
+        {
+          "raw": "Krawczyk, A. and W. Marek, 1977, \"On the Rules of Proof Generated by Hierarchies\", in Set Theory and Hierarchy Theory V , Alistair Lachlan, Marian Srebrny, and Andrzej Zarach (eds.) (Lecture Notes in Mathematics 619), Berlin: Springer Berlin Heidelberg, 227-239. doi:10.1007/BFb0067654"
+        },
+        {
+          "raw": "Kreisel, Georg, 1967, \"Informal Rigour and Completeness Proofs\", in Problems in the Philosophy of Mathematics , Imre Lakatos (ed.), (Studies in Logic and the Foundations of Mathematics 47), Amsterdam: North-Holland, 138-186. doi:10.1016/S0049-237X(08)71525-8"
+        },
+        {
+          "raw": "Krynicki, Micha&#322; and Alistair H. Lachlan, 1979, \"On the Semantics of the Henkin Quantifier\", Journal of Symbolic Logic , 44(2): 184-200. doi:10.2307/2273726"
+        },
+        {
+          "raw": "Kunen, Kenneth (ed.), 1980, Set Theory: An Introduction to Independence Proofs , (Studies in Logic and the Foundations of Mathematics 102), Amsterdam: North-Holland."
+        },
+        {
+          "raw": "L&eacute;vy, Azriel, 1965, A Hierarchy of Formulas in Set Theory , (Memoirs of the American Mathematical Society 57), Providence, RI: American Mathematical Society."
+        },
+        {
+          "raw": "Lindenbaum, Adolf and Andrzej Mostowski, 1938, \"&Uuml;ber Die Unabh&auml;ngigkeit Des Auswahlaxioms Und Einiger Seiner Folgerungen\", Sprawozdania z Posiedze&#324; Towarzystwa Naukowego Warszawskiego, Wydzia&#322; III Nauk Matematyczno-Fizycznych (Comptes-Rendus Des S&eacute;ances de La Soci&eacute;t&eacute; Des Sciences et Des Lettres de Varsovie,Classe III) , 31: 27-32."
+        },
+        {
+          "raw": "L&ouml;wenheim, Leopold, 1915, \"&Uuml;ber M&ouml;glichkeiten im Relativkalk&uuml;l\", Mathematische Annalen , 76(4): 447-470. doi:10.1007/BF01458217"
+        },
+        {
+          "raw": "Lyndon, Roger C., 1959, \"An Interpolation Theorem in the Predicate Calculus.\", Pacific Journal of Mathematics , 9(1): 129-142."
+        },
+        {
+          "raw": "Maddy, Penelope and Jouko V&auml;&auml;n&auml;nen, 2023, Philosophical Uses of Categoricity Arguments (Elements in the Philosophy of Mathematics), Cambridge: Cambridge University Press. doi:10.1017/9781009432894"
+        },
+        {
+          "raw": "Magidor, Menachem, 1971, \"On the Role of Supercompact and Extendible Cardinals in Logic\", Israel Journal of Mathematics , 10(2): 147-157. doi:10.1007/BF02771565"
+        },
+        {
+          "raw": "Magidor, Menachem and Jouko V&auml;&auml;n&auml;nen, 2011, \"On L&uml;wenheim-Skolem-Tarski numbers for extensions of first order logic\", Journal of Mathematical Logic , 11(1): 87-113. doi:10.1142/S0219061311001018"
+        },
+        {
+          "raw": "Makowsky, J.A., Saharon Shelah, and Jonathan Stavi, 1976, \"&Delta;-Logics and Generalized Quantifiers\", Annals of Mathematical Logic , 10(2): 155-192. doi:10.1016/0003-4843(76)90021-8"
+        },
+        {
+          "raw": "Manzano, Mar&iacute;a, 1996, Extensions of First Order Logic , (Cambridge Tracts in Theoretical Computer Science 19), Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Montague, Richard, 1963, \"Reductions of Higher-Order Logic\", in The Theory of Models: Proceedings of the 1963 International Symposium at Berkeley , J.W. Addison, Leon Henkin, and Alfred Tarski (eds.), Amsterdam: North-Holland, 251-264. doi:10.1016/B978-0-7204-2233-7.50030-7"
+        },
+        {
+          "raw": "Moore, Gregory H., 1988, \"The Emergence of First-Order Logic\", in History and Philosophy of Modern Mathematics , (Minnesota Studies in the Philosophy of Science 11), Minneapolis, MN: University of Minnesota Press, 95-135."
+        },
+        {
+          "raw": "Mostowski, Andrzej, 1938, \"O niezale&#380;no&#347;ci definicji sko&#324;czono&#347;ci w systemie logiki\" (\"On the independence of definitions of finiteness in a system of logic\"), Dodatek do Rocznika Towarzystwa. Matematycznego , XI: 1-54; English translation in Mostowski 1979."
+        },
+        {
+          "raw": "Mostowski, Andrzej, 1949, \"An Undecidable Arithmetical Statement\", Fundamenta Mathematicae , 36(1): 143-164."
+        },
+        {
+          "raw": "Mostowski, Andrzej, 1979, Foundational Studies. Selected works (Volume II), Studies in Logic and the Foundations of Mathematics: Volume 93, Amsterdam-New York: North-Holland Publishing Co.; PWN-Polish Scientific Publishers, Warsaw, 1979, edited by Kazimierz Kuratowski, Wiktor Marek, Leszek Pacholski, Helena Rasiowa, Czes&#322;aw Ryll-Nardzewski and Pawe&#322; Zbierski."
+        },
+        {
+          "raw": "Parsons, Charles, 1990, \"The Structuralist View of Mathematical Objects\", Synthese , 84(3): 303-346. doi:10.1007/BF00485186"
+        },
+        {
+          "raw": "Quine, W. V. O., 1970, Philosophy of Logic , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Rabin, Michael O., 1968, \"Decidability of Second-Order Theories and Automata on Infinite Trees\", Bulletin of the American Mathematical Society , 74(5): 1025-1030. doi:10.1090/S0002-9904-1968-12122-6"
+        },
+        {
+          "raw": "Rabin, Michael O. and Dana Scott, 1959, \"Finite Automata and Their Decision Problems\", IBM Journal of Research and Development , 3(2): 114-125. doi:10.1147/rd.32.0114"
+        },
+        {
+          "raw": "Resnik, Michael D., 1988, \"Second-Order Logic Still Wild\", The Journal of Philosophy , 85(2): 75-87. doi:10.2307/2026993"
+        },
+        {
+          "raw": "Schmidt, Arnold, 1951, \"Die Zul&auml;ssigkeit der Behandlung mehrsortiger Theorien mittels der &uuml;blichen einsortigen Pr&auml;dikatenlogik\", Mathematische Annalen , 123(1): 187-200. doi:10.1007/BF02054948"
+        },
+        {
+          "raw": "Scott, Dana, 1961, \"Measurable Cardinals and Constructible Sets\", Bulletin de l'Acad&eacute;mie Polonaise des Sciences, S&eacute;rie des sciences math&eacute;matiques, astronomiques et physiques , 9: 521-524."
+        },
+        {
+          "raw": "Shapiro, Stewart, 1991, Foundations without Foundationalism: A Case for Second-Order Logic , New York: Oxford University Press. doi:10.1093/0198250290.001.0001"
+        },
+        {
+          "raw": "Shelah, Saharon, 1973, \"There Are Just Four Second-Order Quantifiers\", Israel Journal of Mathematics , 15(3): 282-300. doi:10.1007/BF02787572"
+        },
+        {
+          "raw": "---, 2004, \"Spectra of Monadic Second Order Sentences\", Scientiae Mathematicae Japonicae , (Special issue on set theory and algebraic model theory), 59(2): 351-355. [ Shelah 2004 available online ]"
+        },
+        {
+          "raw": "Simpson, Stephen G., 1999 [2009], Subsystems of Second Order Arithmetic , second edition, (Perspectives in Logic), Cambridge: Cambridge University Press. first edition in 1999, New York: Springer. doi:10.1017/CBO9780511581007"
+        },
+        {
+          "raw": "Siskind, Benjamin, Paolo Mancosu and Stewart Shapiro, 2023, \"A note on choice principles in second-order logic\" Review of Symbolic Logic , 16(2): 339-350. doi:10.1017/S1755020320000301"
+        },
+        {
+          "raw": "Tarski, Alfred, 1933 [1956], Poj&#281;cie Prawdy w J&#281;zykach Nauk Dedukcyjnych ( Le concept de v&eacute;rit&eacute; dans les langages formalis&eacute;s ), (Prace Towarzystwa Naukowego Warszawskiego, Wydzia&#322; III Nauk Matematyczno-fizycznych/Travaux de la Soci&eacute;t&eacute; des Sciences et des Lettres de Varsovie, Classe III Sciences Math&eacute;matiques et Physiques, 34), Warsaw. German translation see Tarski 1936. English translation as \"The Concept of Truth in Formalized Languages\" in Tarski 1956: chapter 8: 152-278."
+        },
+        {
+          "raw": "---, 1936 [1956], \"Der Wahrheitsbegriff in Den Formalisierten Sprachen\", Studia Philosophica , 1: 261-405. Translated as \"The Concept of Truth in Formalized Languages\" in Tarski 1956: chapter 8."
+        },
+        {
+          "raw": "---, 1956, Logic, Semantics, Metamathematics; Papers from 1923 to 1938 , J. H. Woodger (trans.), Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Tharp, Leslie H., 1973, \"The Characterization of Monadic Logic\", Journal of Symbolic Logic , 38(3): 481-488. doi:10.2307/2273046"
+        },
+        {
+          "raw": "V&auml;&auml;n&auml;nen, Jouko, 1979, \"Abstract Logic and Set Theory. I. Definability\", in Logic Colloquium '78: Proceedings of the Colloquium Held in Mons , Maurice Boffa, Dirk van Dalen, and Kenneth Mcaloon (eds.), (Studies in Logic and the Foundations of Mathematics 97), Amsterdam: Elsevier, 391-421. doi:10.1016/S0049-237X(08)71637-9"
+        },
+        {
+          "raw": "---, 1980, \"Boolean Valued Models and Generalized Quantifiers\", Annals of Mathematical Logic , 18(3): 193-225. doi:10.1016/0003-4843(80)90005-4"
+        },
+        {
+          "raw": "---, 2012, \"Second Order Logic or Set Theory?\", The Bulletin of Symbolic Logic , 18(1): 91-121. doi:10.2178/bsl/1327328440"
+        },
+        {
+          "raw": "V&auml;&auml;n&auml;nen, Jouko and Tong Wang, 2015, \"Internal Categoricity in Arithmetic and Set Theory\", Notre Dame Journal of Formal Logic , 56(1): 121-134. doi:10.1215/00294527-2835038"
+        },
+        {
+          "raw": "V&auml;&auml;n&auml;nen, Jouko and Philip Welch, 2023, \"When cardinals determine the power set: inner models and H&auml;rtig quantifier logic\", Mathematical Logic Quarterly , 69(4): 460-471. doi:10.1002/malq.202200030"
+        },
+        {
+          "raw": "Walmsley, James, 2002, \"Categoricity and Indefinite Extensibility\", Proceedings of the Aristotelian Society , 102(1): 239-257. doi:10.1111/j.0066-7372.2003.00052.x"
+        },
+        {
+          "raw": "Wang, Hao, 1952, \"Logic of Many-Sorted Theories\", Journal of Symbolic Logic , 17(2): 105-116. doi:10.2307/2266241"
+        },
+        {
+          "raw": "Zermelo, Ernst, 1930, \"&Uuml;ber Grenzzahlen und Mengenbereiche: Neue Untersuchungen &uuml;ber die Grundlagen der Mengenlehre\", Fundamenta Mathematic&aelig; , 16: 29-47."
+        }
+      ],
+      "publishedAt": "2019-07-31T14:00:00.000Z",
+      "revisedAt": "2024-08-30T14:00:00.000Z"
+    }
+  }
+}

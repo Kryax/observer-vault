@@ -1,0 +1,266 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/hkuds--lightrag",
+  "meta": {
+    "title": "🚀 LightRAG: Simple and Fast Retrieval-Augmented Generation",
+    "description": "[EMNLP2025] \"LightRAG: Simple and Fast Retrieval-Augmented Generation\"",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:35:35.333Z",
+    "dateModified": "2026-03-22T05:35:35.333Z",
+    "keywords": [
+      "genai",
+      "gpt",
+      "gpt-4",
+      "graphrag",
+      "knowledge-graph",
+      "large-language-models",
+      "llm",
+      "rag",
+      "retrieval-augmented-generation"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "LightRAG allows you to export your knowledge graph data in various formats for analysis, sharing, and backup purposes. The system supports exporting entities, relations, and relationship data.",
+    "context": "<div align=\"center\">\n    <a href=\"https://trendshift.io/repositories/13043\" target=\"_blank\"><img src=\"https://trendshift.io/api/badge/repositories/13043\" alt=\"HKUDS%2FLightRAG | Trendshift\" style=\"width: 250px; height: 55px;\" width=\"250\" height=\"55\"/></a>\n</div>\n\n<div align=\"center\">\n  <div style=\"width: 100%; height: 2px; margin: 20px 0; background: linear-gradient(90deg, transparent, #00d9ff, transparent);\"></div>\n</div>\n\n<div align=\"center\">\n  <div style=\"background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; padding: 25px; text-align: center;\">\n    <p>\n      <a href='https://github.com/HKUDS/LightRAG'><img src='https://img.shields.io/badge/🔥Project-Page-00d9ff?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e'></a>\n      <a href='https://arxiv.org/abs/2410.05779'><img src='https://img.shields.io/badge/📄arXiv-2410.05779-ff6b6b?style=for-the-badge&logo=arxiv&logoColor=white&labelColor=1a1a2e'></a>\n      <a href=\"https://github.com/HKUDS/LightRAG/stargazers\"><img src='https://img.shields.io/github/stars/HKUDS/LightRAG?color=00d9ff&style=for-the-badge&logo=star&logoColor=white&labelColor=1a1a2e' /></a>\n    </p>\n    <p>\n      <img src=\"https://img.shields.io/badge/🐍Python-3.10-4ecdc4?style=for-the-badge&logo=python&logoColor=white&labelColor=1a1a2e\">\n      <a href=\"https://pypi.org/project/lightrag-hku/\"><img src=\"https://img.shields.io/pypi/v/lightrag-hku.svg?style=for-the-badge&logo=pypi&logoColor=white&labelColor=1a1a2e&color=ff6b6b\"></a>\n    </p>\n    <p>\n      <a href=\"https://discord.gg/yF2MmDJyGJ\"><img src=\"https://img.shields.io/badge/💬Discord-Community-7289da?style=for-the-badge&logo=discord&logoColor=white&labelColor=1a1a2e\"></a>\n      <a href=\"https://github.com/HKUDS/LightRAG/issues/285\"><img src=\"https://img.shields.io/badge/💬WeChat-Group-07c160?style=for-the-badge&logo=wechat&logoColor=white&labelColor=1a1a2e\"></a>\n    </p>\n    <p>\n      <a href=\"README-zh.md\"><img src=\"https://img.shields.io/badge/🇨🇳中文版-1a1a2e?style=for-the-badge\"></a>\n      <a href=\"README.md\"><img src=\"https://img.shields.io/badge/🇺🇸English-1a1a2e?style=for-the-badge\"></a>\n    </p>\n    <p>\n      <a href=\"https://pepy.tech/projects/lightrag-hku\"><img src=\"https://static.pepy.tech/personalized-badge/lightrag-hku?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads\"></a>\n    </p>\n  </div>\n</div>\n\n</div>\n\n<div align=\"center\" style=\"margin: 30px 0;\">\n  <img src=\"https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif\" width=\"800\">\n</div>\n\n<div align=\"center\" style=\"margin: 30px 0;\">\n    <img src=\"./README.assets/b2aaf634151b4706892693ffb43d9093.png\" width=\"800\" alt=\"LightRAG Diagram\">\n</div>\n\n---\n\n<div align=\"center\">\n  <table>\n    <tr>\n      <td style=\"vertical-align: middle;\">\n        <img src=\"./assets/LiteWrite.png\"\n             width=\"56\"\n             height=\"56\"\n             alt=\"LiteWrite\"\n             style=\"border-radius: 12px;\" />\n      </td>\n      <td style=\"vertical-align: middle; padding-left: 12px;\">\n        <a href=\"https://litewrite.ai\">\n          <img src=\"https://img.shields.io/badge/🚀%20LiteWrite-AI%20Native%20LaTeX%20Editor-ff6b6b?style=for-the-badge&logoColor=white&labelColor=1a1a2e\">\n        </a>\n      </td>\n    </tr>\n  </table>\n</div>\n\n---",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "29843 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "4287 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T05:35:35.333Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/HKUDS/LightRAG",
+        "description": "GitHub repository: HKUDS/LightRAG"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://arxiv.org/abs/2410.05779",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "aiohttp",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/aiohttp/"
+      },
+      {
+        "name": "configparser",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/configparser/"
+      },
+      {
+        "name": "google-api-core",
+        "version": ">=2.0.0,<3.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/google-api-core/"
+      },
+      {
+        "name": "google-genai",
+        "version": ">=1.0.0,<2.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/google-genai/"
+      },
+      {
+        "name": "json_repair",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/json_repair/"
+      },
+      {
+        "name": "nano-vectordb",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/nano-vectordb/"
+      },
+      {
+        "name": "networkx",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/networkx/"
+      },
+      {
+        "name": "numpy",
+        "version": ">=1.24.0,<3.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numpy/"
+      },
+      {
+        "name": "packaging",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/packaging/"
+      },
+      {
+        "name": "pandas",
+        "version": ">=2.0.0,<2.4.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pandas/"
+      },
+      {
+        "name": "pipmaster",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pipmaster/"
+      },
+      {
+        "name": "pydantic",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pydantic/"
+      },
+      {
+        "name": "pypinyin",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pypinyin/"
+      },
+      {
+        "name": "python-dotenv",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/python-dotenv/"
+      },
+      {
+        "name": "setuptools",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/setuptools/"
+      },
+      {
+        "name": "tenacity",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tenacity/"
+      },
+      {
+        "name": "tiktoken",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tiktoken/"
+      },
+      {
+        "name": "xlsxwriter",
+        "version": ">=3.1.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/xlsxwriter/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "HKUDS",
+        "type": "human",
+        "uri": "https://github.com/HKUDS"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 38417,
+      "validation_diversity": 0.8,
+      "context_breadth": 0.66,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.6
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.764
+  }
+}

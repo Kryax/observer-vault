@@ -1,0 +1,782 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/nominalism-metaphysics",
+  "meta": {
+    "title": "Nominalism in Metaphysics",
+    "description": "Nominalism is an exclusionary thesis in ontology. It asserts that there are no entities of certain sorts. Precisely which entities it excludes depends on the relevant variety of nominalism, but nominalist theses typically deny the existence of universals or abstract entities. For those who accept nominalism, a central challenge in metaphysics is to make sense of phenomena that anti-nominalist theories explain via universals or abstract entities. For instance, anti-nominalists often rely upon universals to explain similarity, propositions to explain linguistic meaning, and numbers to explain mathematical truth. Nominalists who reject the existence of such entities must therefore find a credible way to explain how things can be similar without sharing universals, have linguistic meaning without expressing propositions, or be truths of mathematics without the existence of any mathematical entities. Since nominalists seek to provide metaphysical theories without positing universals or abstract entities, the resulting nominalist theories often require distinctive resources and face significant competition in the form of rival anti-nominalist theories. It is also controversial whether the nominalist prohibitions against universals or abstract entities are justifiable. This entry surveys arguments for nominalism, opposing anti-nominalist arguments for the existence of universals or abstract entities, and a variety of nominalist theories that eschew commitment to such entities. Before proceeding, a note on terminology and scope is needed. Throughout this entry, we use \"anti-nominalism\" and its cognates to denote theories that accept the existence of universals or abstract entities. The term \"anti-nominalism\" avoids the historical connotations of the commonly used term \"platonism.\" The history of nominalism in metaphysics is extensive and resists concise summary except to say that the reality of universals, numbers, propositions, and related entities has long been controversial. This entry sets aside this lengthy history to focus on the contemporary metaphysical debates regarding nominalism. (See the entry on the medieval problem of universals.) Finally, \"nominalism about F s\" is typically understood as the thesis that F s do not exist, and to deny the existence of a category of entities is to adopt a metaphysical position regarding such entities. 'Nominalism in metaphysics' might therefore seem a redundant title for this entry since any version of nominalism must be within the realm of metaphysics. Our focus in what follows is, however, with nominalism as a view that informs metaphysical debates regarding universals as well as putative abstracta such as properties, propositions, and types. While we will touch upon certain arguments from the philosophy of mathematics that have been influential in shaping the metaphysical debate over nominalism, and while there is no clear-cut divide between metaphysics and the philosophy of mathematics, our focus is on the status of nominalism in the former rather than the latter. Contemporary debates regarding nominalism are troubled by terminological obstacles. Typically, nominalism is understood as one of two theses: (1) nominalism about universals , which denies that such entities exist and holds instead that all entities are particulars or individuals; (2) nominalism about abstract entities , which denies that such entities exist and holds instead that there are only concrete entities. On some views, (2) entails (1) since universals are properly categorized as abstract rather than concrete. For example, some views take universals to be eternal, non-spatiotemporal, necessarily existing entities and therefore categorize universals as abstract rather than concrete (see Bealer 1993 and Jubien 2001). Others reject this view about the location and necessity of universals and instead hold universals to be concrete entities. In light of the resulting complexity, we will, at key points in what follows, separately examine nominalism about universals and nominalism about abstract entities since the debate over these nominalist theses can differ significantly. For instance, a familiar motivation for nominalism about universals is a metaphysical concern about the possibility of entities being wholly shareable by distinct material objects. In contrast, objections against abstract entities like sets or propositions are unlikely to concern shareability. Instead, arguments for nominalism about abstract entities are often motivated by the fact that such entities are alleged to exist outside space or time and are therefore mysterious or unknowable. Despite these differences, nominalist opposition to universals or abstract entities often significantly overlaps. Since the rejection of abstract entities and the rejection of universals are related but separable concerns, we begin by discussing each of these two strands of nominalism. In each case, we assume that nominalism is a thesis regarding the existence of entities. An alternative approach to understanding nominalism holds it to concern fundamentality rather than existence. On this alternative way of understanding nominalism, it is the denial that universals or abstract entities are fundamental entities. Conversely, anti-nominalism, when so understood, is the thesis that such entities are fundamental. Although matters of fundamentality and metaphysical dependence are highly relevant to the debate over nominalism, we assume here that nominalism is specifically a thesis regarding existence rather than fundamentality. (On fundamentality and ontological disagreement, see Cameron 2008, Schaffer 2009, Imaguire 2018, Schulte 2019, and Declos 2021.) Alongside the above nominalist theses regarding universals and abstract entities, an influential thesis labelled as \"nominalism\" is defended by Nelson Goodman and draws upon preceding work in Leonard and Goodman 1940. Goodman's version of nominalism asserts that all entities are \"individuals\" in the specific sense of being mereological atoms or constructed via mereology. As Goodman (1956: 25) notes, this version of nominalism is potentially compatible with the existence of certain sets or classes, but rejects any ontology of sets or classes which admits \"the composition of more than one entity out of exactly the same entities by membership.\" For this reason, Goodman's nominalism is incompatible with standard versions of set theory which accept the construction or generation of sets in violation of classical extensional mereology (e.g., a hierarchy of pure sets constructed from a single empty or null set). (On this version of nominalism, see Cohnitz and Rossberg 2006, Oliver 1993, Eberle 1970, and Dummett 1956.) Despite receiving less attention than nominalism regarding universals or abstract entities, Goodman's nominalism is comprehensive in its development and historically influential, receiving attention in Lewis 1991 (38-41). This entry largely leaves aside discussion of views that find fault with both nominalism and anti-nominalism on metaontological grounds. For instance, we will not examine the relationship of nominalism with views like those of Carnap (1950) that reject the standard interpretation of ontological claims like \"Numbers exist\" or \"There are no universals\" assumed by most nominalists and anti-nominalists. For metaontological challenges to the standard conception of the debate over nominalism, see Balaguer 1998, Chalmers 2009, and Thomasson 2005.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:15:21.420Z",
+    "dateModified": "2026-03-22T05:15:21.420Z",
+    "datePublished": "2025-04-20T14:00:00.000Z",
+    "keywords": [
+      "abstract objects",
+      "bradley regress",
+      "fictionalism",
+      "fictionalism mathematics",
+      "goodman",
+      "mereology",
+      "nominalism mathematics",
+      "object",
+      "ontological commitment",
+      "platonism",
+      "platonism mathematics",
+      "reism",
+      "russell paradox",
+      "structuralism mathematics",
+      "tropes",
+      "truthmakers",
+      "types tokens",
+      "universals medieval"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Nominalism is an exclusionary thesis in ontology. It asserts that there are no entities of certain sorts. Precisely which entities it excludes depends on the relevant variety of nominalism, but nominalist theses typically deny the existence of universals or abstract entities. For those who accept nominalism, a central challenge in metaphysics is to make sense of phenomena that anti-nominalist theories explain via universals or abstract entities. For instance, anti-nominalists often rely upon universals to explain similarity, propositions to explain linguistic meaning, and numbers to explain mathematical truth. Nominalists who reject the existence of such entities must therefore find a credible way to explain how things can be similar without sharing universals, have linguistic meaning without expressing propositions, or be truths of mathematics without the existence of any mathematical entities. Since nominalists seek to provide metaphysical theories without positing universals or abstract entities, the resulting nominalist theories often require distinctive resources and face significant competition in the form of rival anti-nominalist theories. It is also controversial whether the nominalist prohibitions against universals or abstract entities are justifiable. This entry surveys arguments for nominalism, opposing anti-nominalist arguments for the existence of universals or abstract entities, and a variety of nominalist theories that eschew commitment to such entities. Before proceeding, a note on terminology and scope is needed. Throughout this entry, we use \"anti-nominalism\" and its cognates to denote theories that accept the existence of universals or abstract entities. The term \"anti-nominalism\" avoids the historical connotations of the commonly used term \"platonism.\" The history of nominalism in metaphysics is extensive and resists concise summary except to say that the reality of universals, numbers, propositions, and related entities has long been controversial. This entry sets aside this lengthy history to focus on the contemporary metaphysical debates regarding nominalism. (See the entry on the medieval problem of universals.) Finally, \"nominalism about F s\" is typically understood as the thesis that F s do not exist, and to deny the existence of a category of entities is to adopt a metaphysical position regarding such entities. 'Nominalism in metaphysics' might therefore seem a redundant title for this entry since any version of nominalism must be within the realm of metaphysics. Our focus in what follows is, however, with nominalism as a view that informs metaphysical debates regarding universals as well as putative abstracta such as properties, propositions, and types. While we will touch upon certain arguments from the philosophy of mathematics that have been influential in shaping the metaphysical debate over nominalism, and while there is no clear-cut divide between metaphysics and the philosophy of mathematics, our focus is on the status of nominalism in the former rather than the latter. Contemporary debates regarding nominalism are troubled by terminological obstacles. Typically, nominalism is understood as one of two theses: (1) nominalism about universals , which denies that such entities exist and holds instead that all entities are particulars or individuals; (2) nominalism about abstract entities , which denies that such entities exist and holds instead that there are only concrete entities. On some views, (2) entails (1) since universals are properly categorized as abstract rather than concrete. For example, some views take universals to be eternal, non-spatiotemporal, necessarily existing entities and therefore categorize universals as abstract rather than concrete (see Bealer 1993 and Jubien 2001). Others reject this view about the location and necessity of universals and instead hold universals to be concrete entities. In light of the resulting complexity, we will, at key points in what follows, separately examine nominalism about universals and nominalism about abstract entities since the debate over these nominalist theses can differ significantly. For instance, a familiar motivation for nominalism about universals is a metaphysical concern about the possibility of entities being wholly shareable by distinct material objects. In contrast, objections against abstract entities like sets or propositions are unlikely to concern shareability. Instead, arguments for nominalism about abstract entities are often motivated by the fact that such entities are alleged to exist outside space or time and are therefore mysterious or unknowable. Despite these differences, nominalist opposition to universals or abstract entities often significantly overlaps. Since the rejection of abstract entities and the rejection of universals are related but separable concerns, we begin by discussing each of these two strands of nominalism. In each case, we assume that nominalism is a thesis regarding the existence of entities. An alternative approach to understanding nominalism holds it to concern fundamentality rather than existence. On this alternative way of understanding nominalism, it is the denial that universals or abstract entities are fundamental entities. Conversely, anti-nominalism, when so understood, is the thesis that such entities are fundamental. Although matters of fundamentality and metaphysical dependence are highly relevant to the debate over nominalism, we assume here that nominalism is specifically a thesis regarding existence rather than fundamentality. (On fundamentality and ontological disagreement, see Cameron 2008, Schaffer 2009, Imaguire 2018, Schulte 2019, and Declos 2021.) Alongside the above nominalist theses regarding universals and abstract entities, an influential thesis labelled as \"nominalism\" is defended by Nelson Goodman and draws upon preceding work in Leonard and Goodman 1940. Goodman's version of nominalism asserts that all entities are \"individuals\" in the specific sense of being mereological atoms or constructed via mereology. As Goodman (1956: 25) notes, this version of nominalism is potentially compatible with the existence of certain sets or classes, but rejects any ontology of sets or classes which admits \"the composition of more than one entity out of exactly the same entities by membership.\" For this reason, Goodman's nominalism is incompatible with standard versions of set theory which accept the construction or generation of sets in violation of classical extensional mereology (e.g., a hierarchy of pure sets constructed from a single empty or null set). (On this version of nominalism, see Cohnitz and Rossberg 2006, Oliver 1993, Eberle 1970, and Dummett 1956.) Despite receiving less attention than nominalism regarding universals or abstract entities, Goodman's nominalism is comprehensive in its development and historically influential, receiving attention in Lewis 1991 (38-41). This entry largely leaves aside discussion of views that find fault with both nominalism and anti-nominalism on metaontological grounds. For instance, we will not examine the relationship of nominalism with views like those of Carnap (1950) that reject the standard interpretation of ontological claims like \"Numbers exist\" or \"There are no universals\" assumed by most nominalists and anti-nominalists. For metaontological challenges to the standard conception of the debate over nominalism, see Balaguer 1998, Chalmers 2009, and Thomasson 2005.",
+    "context": "Opening section: 1.1 Nominalism as the Rejection of Universals | Related entries: abstract-objects, bradley-regress, fictionalism, goodman, fictionalism-mathematics, nominalism-mathematics, platonism-mathematics, structuralism-mathematics, mereology, object, ontological-commitment, platonism, reism, russell-paradox, tropes, truthmakers, types-tokens, universals-medieval",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "metaphysics",
+    "logic",
+    "history-of-philosophy",
+    "philosophy-of-science"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry nominalism-metaphysics",
+        "uri": "https://plato.stanford.edu/entries/nominalism-metaphysics/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "2 author(s), 18 related entries, bibliography size 159"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2025-04-20T14:00:00.000Z and revised 2025-04-20T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2025-04-20T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/nominalism-metaphysics/",
+        "description": "SEP entry for nominalism-metaphysics"
+      }
+    ],
+    "solutionApproach": "1.1 Nominalism as the Rejection of Universals"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/abstract-objects",
+      "ocp:sep/bradley-regress",
+      "ocp:sep/fictionalism",
+      "ocp:sep/goodman",
+      "ocp:sep/fictionalism-mathematics",
+      "ocp:sep/nominalism-mathematics",
+      "ocp:sep/platonism-mathematics",
+      "ocp:sep/structuralism-mathematics",
+      "ocp:sep/mereology",
+      "ocp:sep/object",
+      "ocp:sep/ontological-commitment",
+      "ocp:sep/platonism",
+      "ocp:sep/reism",
+      "ocp:sep/russell-paradox",
+      "ocp:sep/tropes",
+      "ocp:sep/truthmakers",
+      "ocp:sep/types-tokens",
+      "ocp:sep/universals-medieval"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Cowling, Sam",
+        "type": "human"
+      },
+      {
+        "name": "Giberman, Daniel",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/nominalism-metaphysics/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 114,
+      "validation_diversity": 0.62,
+      "context_breadth": 0.56,
+      "temporal_stability": 0.51,
+      "test_coverage": 0.78,
+      "documentation_quality": 0.94
+    },
+    "confidence": "tested",
+    "authority": "high",
+    "status": "draft",
+    "trustScore": 0.594
+  },
+  "extensions": {
+    "sep": {
+      "slug": "nominalism-metaphysics",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/nominalism-metaphysics/",
+      "preamble": "Nominalism is an exclusionary thesis in ontology. It asserts that there are no entities of certain sorts. Precisely which entities it excludes depends on the relevant variety of nominalism, but nominalist theses typically deny the existence of universals or abstract entities. For those who accept nominalism, a central challenge in metaphysics is to make sense of phenomena that anti-nominalist theories explain via universals or abstract entities. For instance, anti-nominalists often rely upon universals to explain similarity, propositions to explain linguistic meaning, and numbers to explain mathematical truth. Nominalists who reject the existence of such entities must therefore find a credible way to explain how things can be similar without sharing universals, have linguistic meaning without expressing propositions, or be truths of mathematics without the existence of any mathematical entities. Since nominalists seek to provide metaphysical theories without positing universals or abstract entities, the resulting nominalist theories often require distinctive resources and face significant competition in the form of rival anti-nominalist theories. It is also controversial whether the nominalist prohibitions against universals or abstract entities are justifiable. This entry surveys arguments for nominalism, opposing anti-nominalist arguments for the existence of universals or abstract entities, and a variety of nominalist theories that eschew commitment to such entities. Before proceeding, a note on terminology and scope is needed. Throughout this entry, we use \"anti-nominalism\" and its cognates to denote theories that accept the existence of universals or abstract entities. The term \"anti-nominalism\" avoids the historical connotations of the commonly used term \"platonism.\" The history of nominalism in metaphysics is extensive and resists concise summary except to say that the reality of universals, numbers, propositions, and related entities has long been controversial. This entry sets aside this lengthy history to focus on the contemporary metaphysical debates regarding nominalism. (See the entry on the medieval problem of universals.) Finally, \"nominalism about F s\" is typically understood as the thesis that F s do not exist, and to deny the existence of a category of entities is to adopt a metaphysical position regarding such entities. 'Nominalism in metaphysics' might therefore seem a redundant title for this entry since any version of nominalism must be within the realm of metaphysics. Our focus in what follows is, however, with nominalism as a view that informs metaphysical debates regarding universals as well as putative abstracta such as properties, propositions, and types. While we will touch upon certain arguments from the philosophy of mathematics that have been influential in shaping the metaphysical debate over nominalism, and while there is no clear-cut divide between metaphysics and the philosophy of mathematics, our focus is on the status of nominalism in the former rather than the latter. Contemporary debates regarding nominalism are troubled by terminological obstacles. Typically, nominalism is understood as one of two theses: (1) nominalism about universals , which denies that such entities exist and holds instead that all entities are particulars or individuals; (2) nominalism about abstract entities , which denies that such entities exist and holds instead that there are only concrete entities. On some views, (2) entails (1) since universals are properly categorized as abstract rather than concrete. For example, some views take universals to be eternal, non-spatiotemporal, necessarily existing entities and therefore categorize universals as abstract rather than concrete (see Bealer 1993 and Jubien 2001). Others reject this view about the location and necessity of universals and instead hold universals to be concrete entities. In light of the resulting complexity, we will, at key points in what follows, separately examine nominalism about universals and nominalism about abstract entities since the debate over these nominalist theses can differ significantly. For instance, a familiar motivation for nominalism about universals is a metaphysical concern about the possibility of entities being wholly shareable by distinct material objects. In contrast, objections against abstract entities like sets or propositions are unlikely to concern shareability. Instead, arguments for nominalism about abstract entities are often motivated by the fact that such entities are alleged to exist outside space or time and are therefore mysterious or unknowable. Despite these differences, nominalist opposition to universals or abstract entities often significantly overlaps. Since the rejection of abstract entities and the rejection of universals are related but separable concerns, we begin by discussing each of these two strands of nominalism. In each case, we assume that nominalism is a thesis regarding the existence of entities. An alternative approach to understanding nominalism holds it to concern fundamentality rather than existence. On this alternative way of understanding nominalism, it is the denial that universals or abstract entities are fundamental entities. Conversely, anti-nominalism, when so understood, is the thesis that such entities are fundamental. Although matters of fundamentality and metaphysical dependence are highly relevant to the debate over nominalism, we assume here that nominalism is specifically a thesis regarding existence rather than fundamentality. (On fundamentality and ontological disagreement, see Cameron 2008, Schaffer 2009, Imaguire 2018, Schulte 2019, and Declos 2021.) Alongside the above nominalist theses regarding universals and abstract entities, an influential thesis labelled as \"nominalism\" is defended by Nelson Goodman and draws upon preceding work in Leonard and Goodman 1940. Goodman's version of nominalism asserts that all entities are \"individuals\" in the specific sense of being mereological atoms or constructed via mereology. As Goodman (1956: 25) notes, this version of nominalism is potentially compatible with the existence of certain sets or classes, but rejects any ontology of sets or classes which admits \"the composition of more than one entity out of exactly the same entities by membership.\" For this reason, Goodman's nominalism is incompatible with standard versions of set theory which accept the construction or generation of sets in violation of classical extensional mereology (e.g., a hierarchy of pure sets constructed from a single empty or null set). (On this version of nominalism, see Cohnitz and Rossberg 2006, Oliver 1993, Eberle 1970, and Dummett 1956.) Despite receiving less attention than nominalism regarding universals or abstract entities, Goodman's nominalism is comprehensive in its development and historically influential, receiving attention in Lewis 1991 (38-41). This entry largely leaves aside discussion of views that find fault with both nominalism and anti-nominalism on metaontological grounds. For instance, we will not examine the relationship of nominalism with views like those of Carnap (1950) that reject the standard interpretation of ontological claims like \"Numbers exist\" or \"There are no universals\" assumed by most nominalists and anti-nominalists. For metaontological challenges to the standard conception of the debate over nominalism, see Balaguer 1998, Chalmers 2009, and Thomasson 2005.",
+      "firstSectionTitle": "1.1 Nominalism as the Rejection of Universals",
+      "firstSectionText": "Nominalism about universals is the thesis that there are no universals (see Armstrong 1978). While this sounds simple enough, the notion of a universal is complicated. To begin, we can introduce a separate notion of a qualitative nature , where such natures, if they exist, are responsible for the world's qualitative variation and sameness. Consider, for example, a red apple and a green avocado. If there are qualitative natures, then the apple and the avocado have distinct color-relevant qualitative natures, one relevant to redness and one relevant to greenness. They also enjoy distinct texture-relevant qualitative natures, one relevant to smoothness and the other to bumpiness. Further examples are easy to generate, and, if there are qualitative natures, then there is potentially one for every possible qualitative classification. Suppose that there are such entities as qualitative natures. Then the apple and the avocado each has a color-relevant one. Moreover, the apple's color-relevant qualitative nature is numerically distinct from the avocado's. Now consider a second apple of exactly the same shade of red as the first apple. By stipulation, the first apple's color-relevant qualitative nature is qualitatively identical to the second apple's color-relevant qualitative nature, insofar as both apples resemble exactly in color. But is the first apple's color-relevant qualitative nature also numerically identical to that of the second apple? Or are qualitative natures the kind of entity that cannot be in more than one spatial location or \"inhere\" in more than one object at the same time? This final question is helpful for understanding the debate over universals: can a single qualitative nature be in more than one location (or inhere in more than one object or enjoy more than one instance) at the same time? If one answers affirmatively, then one likely accepts universals. If one answers negatively, then the resulting view will likely fall into one of two further camps. First, if one accepts the presupposition that there are qualitative natures but denies that they can be in more than one location or object or instance at a time, one likely rejects universals while accepting what are usually called tropes . A trope is a particular (i.e., non-universal) qualitative nature. That is, the whole qualitative nature is not in multiple places or shared by multiple disjoint individuals at the same time. For most theorists, tropes are specific to their location, or even to their bearer (Williams 1953, Campbell 1990, Maurin 2002, and Fisher 2020; see the entry on tropes). Others allow wholly multi-located tropes (Ehring 2011), or shared tropes, so long as one of the sharing bearers is a part of the other, as when an apple and its skin share a redness trope (Giberman 2022b). Alternatively, if one denies the presupposition that there are any qualitative natures, one likely rejects both universals and tropes and instead accepts what we will call strict nominalism about properties. Strict nominalists deny that any kind of special metaphysical posits are needed to explain the world's qualitative variety. Instead, strict nominalism holds that the phenomenon of qualitative variety is reducible to facts about entities other than qualitative natures, for example, to material objects, sets of material objects, mereological sums of material objects, or linguistic-cognitive facts (see Quine 1948, Sellars 1963, Lewis 1983, Effingham 2020). When nominalism is understood as the rejection of universals, it is regularly assumed that trope theory (and, of course, strict nominalism) qualify as nominalist views. Since universals are wholly shareable entities (the whole universal may be shared by disjoint bearers), the case for nominalism about universals is often premised upon this controversial feature. Arguments against nominalism about universals frequently concern distinctive properties relevant to their putative shareability that are ascribed to them by competing accounts of universals--e.g., their alleged lack of spatiotemporal location or the alleged possibility of being wholly located in multiple places at the same time. Nominalists about universals often seek to avoid these commitments when assigning entities the general theoretical role of \"property.\" Nominalism-friendly candidates for that role include tropes; sets, pluralities, or fusions of tropes; and sets, pluralities, or fusions of material objects. Such entities are compatible with nominalism about universals, since they avoid commitment to the existence of wholly multiply located or non-spatial qualitative natures. They are, however, potentially incompatible with nominalism about abstract entities depending upon the assumed understanding of \"abstract entity.\" For example, theories that accept nominalism regarding universals in part by identifying properties with sets of tropes risk violating nominalism about abstract entities by virtue of accepting the existence of sets, which are standardly categorized as abstract entities (see, e.g., Ehring 2011). Despite the unwelcome complexity, understanding the debate over nominalism and universals requires carefully distinguishing universals from non-universals (or 'particulars'), without identifying the concept of a universal with the concept of a qualitative nature. This leaves open the difficult question of what features distinguish universals from non-universals. Various proposals have been advanced. Universals have been claimed to be distinctive insofar as they are predicable (i.e., they can be true or false of something: Carmichael 2010), multiply located (i.e., they can be wholly located in distinct regions of space at the same time: Armstrong 1978, Lewis 1986: 83, Giberman 2022a), multiply instantiable (i.e., they can be had by distinct entities: Hoffman and Rosenkrantz 2003), subject to the principle of the identity of indiscernibles (Wisdom 1934, Williams 1986, Ehring 2004, 2011), being the fundamental explanans of qualitative similarity (Armstrong 1978) or serving as the semantic value of qualitative predication (van Inwagen 2004). Despite these theoretical options for distinguishing universals from particulars, there is no consensus as to which, if any, of the suggested distinguishing criteria of universality listed above is the correct one. For instance, while some posit universals and assert that they are multiply located, rival theories of universals hold that they are ante rem entities that lack any spatiotemporal location whatsoever. This has led some philosophers to doubt that there is any such criterion (Ramsey 1925, MacBride 2005). In summary, precisely characterizing nominalism about universals is controversial, since the precise characterization of universals is controversial. Clarity can be gained by focusing on the concept of qualitative nature, when understood as a concept neutral between theories that accept universals and theories that accept tropes. As we have also seen, nominalism regarding universals may sometimes be used in the \"strict\" sense above, according to which there are no such entities as qualitative natures regardless of whether they are universals, tropes, or various constructions from such entities. There are many interesting versions of strict nominalism in the literature, including some that have been newly developed or recently defended. Section 4 surveys several nominalist strategies for addressing the metaphysics of qualitative natures.",
+      "relatedEntries": [
+        "abstract-objects",
+        "bradley-regress",
+        "fictionalism",
+        "goodman",
+        "fictionalism-mathematics",
+        "nominalism-mathematics",
+        "platonism-mathematics",
+        "structuralism-mathematics",
+        "mereology",
+        "object",
+        "ontological-commitment",
+        "platonism",
+        "reism",
+        "russell-paradox",
+        "tropes",
+        "truthmakers",
+        "types-tokens",
+        "universals-medieval"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "abstract-objects"
+        },
+        {
+          "slug": "bradley-regress"
+        },
+        {
+          "slug": "fictionalism"
+        },
+        {
+          "slug": "goodman"
+        },
+        {
+          "slug": "fictionalism-mathematics"
+        },
+        {
+          "slug": "nominalism-mathematics"
+        },
+        {
+          "slug": "platonism-mathematics"
+        },
+        {
+          "slug": "structuralism-mathematics"
+        },
+        {
+          "slug": "mereology"
+        },
+        {
+          "slug": "object"
+        },
+        {
+          "slug": "ontological-commitment"
+        },
+        {
+          "slug": "platonism"
+        },
+        {
+          "slug": "reism"
+        },
+        {
+          "slug": "russell-paradox"
+        },
+        {
+          "slug": "tropes"
+        },
+        {
+          "slug": "truthmakers"
+        },
+        {
+          "slug": "types-tokens"
+        },
+        {
+          "slug": "universals-medieval"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 159,
+      "bibliography": [
+        {
+          "raw": "Alston, William P., 1958, \"Ontological Commitments\", Philosophical Studies , 9: 8-16."
+        },
+        {
+          "raw": "Armstrong, David M., 1978, A Theory of Universals I: Universals and Scientific Realism , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 1982, \"Laws of Nature as Relations Between Universals, and as Universals\", Philosophical Topics , 13(1): 7-24."
+        },
+        {
+          "raw": "---, 1997, A World of States of Affairs, Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 2004, Truth and Truthmakers , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Asay, Jamin, 2020, A Theory of Truthmaking, Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Azzouni, Jody, 2004, Deflating Existential Consequence , New York: Oxford University Press."
+        },
+        {
+          "raw": "---, 2010, Talking about Nothing: Numbers, Hallucinations, and Fictions , New York: Oxford University Press."
+        },
+        {
+          "raw": "Balaguer, Mark, 1998, Platonism and Anti-Platonism in Mathematics , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Bealer, George, 1993, \"Universals\", Journal of Philosophy , 90: 5-32."
+        },
+        {
+          "raw": "Benacerraf, Paul, 1965, \"What Numbers Could Not Be\", Philosophical Review , 74(1): 47-73."
+        },
+        {
+          "raw": "---, 1973, \"Mathematical Truth\", Journal of Philosophy , 70(19): 661-679."
+        },
+        {
+          "raw": "Bengson, John, 2015, \"Grasping the Third Realm\", Oxford Studies in Epistemology , 5: 1-38."
+        },
+        {
+          "raw": "Bradley, F.H., 1893, Appearance and Reality , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Bricker, Philip, 2020, \"Realism without Parochialism\", in Modal Matters , Oxford, Oxford University Press, pp. 40-76."
+        },
+        {
+          "raw": "Burgess, John P., 1983, \"Why I Am Not a Nominalist\", Notre Dame Journal of Formal Logic , 24(1): 93-105."
+        },
+        {
+          "raw": "---, 1998, \"Occam's Razor and Scientific Method\", in M. Schirn (ed.), Philosophy of Mathematics Today , Oxford: Oxford University Press, pp. 195-214."
+        },
+        {
+          "raw": "Burgess, John P., and Rosen, Gideon, 1997, A Subject with No Object: Strategies for Nominalistic Interpretation of Mathematics , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2005, \"Nominalism Reconsidered\", in Stewart Shapiro (ed.), Oxford Handbook of Philosophy of Mathematics and Logic , New York: Oxford University Press, pp. 460-482."
+        },
+        {
+          "raw": "Cameron, Ross, 2008, \"There are No Things That are Musical Works\", British Journal of Aesthetics , 48(3): 295-314."
+        },
+        {
+          "raw": "Campbell, Keith, 1990, Abstract Particulars , Oxford: Basil Blackwell."
+        },
+        {
+          "raw": "Carmichael, Chad, 2010, \"Universals\", Philosophical Studies , 150: 373-389."
+        },
+        {
+          "raw": "Caplan, Ben, and Matheson, Carl, 2006, \"Defending Musical Perdurantism\", British Journal of Aesthetics , 46: 59-69."
+        },
+        {
+          "raw": "Caplan, Ben, and Tillman, Chris, 2013, \"Benacerraf's Revenge\", Philosophical Studies , 166 (S1): 111-129."
+        },
+        {
+          "raw": "Carnap, Rudolf, 1934 [1937], Logische Syntax der Sprache , Vienna: Springer. Translated by Amethe Smeaton as The Logical Syntax of Language , London: Routledge, 1937."
+        },
+        {
+          "raw": "---, 1950, \"Empiricism, Semantics, and Ontology\", Revue internationale de philosophie , 4(2): 20-40."
+        },
+        {
+          "raw": "Chalmers, David, 2009, \"Ontological Anti-Realism\", in David Chalmers, David Manley, and Ryan Wasserman (eds.) , Metametaphysics, Oxford: Oxford University Press, pp. 77-129."
+        },
+        {
+          "raw": "Cheyne, Colin, 1998, \"Existence Claims and Causality\", Australasian Journal of Philosophy , 76: 34-47."
+        },
+        {
+          "raw": "Chihara, Charles, 2004, A Structural Account of Mathematics , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Chudnoff, Elijah, 2012, \"Awareness of Abstract Objects\", No&ucirc;s , 47(4): 706-726."
+        },
+        {
+          "raw": "Church, Alonzo, 1951, \"The Need for Abstract Entities in Semantic Analysis\", Proceedings of the American Academy of Arts and Sciences , 80(1): 100-112."
+        },
+        {
+          "raw": "Clarke-Doane, Justin, 2017, \"What is the Benacerraf Problem?\", in F. Pataut (ed.), New Perspectives on the Philosophy of Paul Benacerraf, Cham: Springer, pp. 17-43."
+        },
+        {
+          "raw": "Cohnitz, Daniel, and Rossberg, Marcus, 2006, Nelson Goodman , Montreal: McGill-Queen's University Press."
+        },
+        {
+          "raw": "Colyvan, Mark, 1998, \"Can the Eleatic Principle be Justified?\", Canadian Journal of Philosophy , 28: 313-335."
+        },
+        {
+          "raw": "---, 2001, The Indispensability of Mathematics , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2006, \"Scientific Realism and Mathematical Nominalism\", in Colin Cheyne and John Worrall (eds.), Rationality and Reality , Dordrecht: Springer, pp. 225-237."
+        },
+        {
+          "raw": "Cowling, Sam, 2017, Abstract Entities , London: Routledge."
+        },
+        {
+          "raw": "Davies, James, 2019, \"Towards a Theory of Singular Thought about Abstract Mathematical Objects\", Synthese , 196(10): 4114-4136."
+        },
+        {
+          "raw": "Declos, Alexandre, 2021, \"More Grounds for Grounding Nominalism\", Philosophia , 49: 49-70."
+        },
+        {
+          "raw": "Devitt, Michael, 1980, \"'Ostrich Nominalism' or 'Mirage Realism'?\", Pacific Philosophical Quarterly , 61: 433-439."
+        },
+        {
+          "raw": "Dodd, Julian, 2000, \"Musical Works as Eternal Types\", British Journal of Aesthetics , 40(4): 424-440."
+        },
+        {
+          "raw": "Dorr, Cian, 2008, \"There Are No Abstract Objects\", in John Hawthorne, Theodore Sider, and Dean Zimmerman (eds.), Contemporary Debates in Metaphysics , New York: Blackwell, pp. 32-63."
+        },
+        {
+          "raw": "Dummett, Michael, 1956, \"Nominalism\", Philosophical Review , 65(4): 491-505."
+        },
+        {
+          "raw": "Eberle, Rolf A., 1970, Nominalistic Systems , Dordrecht: Reidel."
+        },
+        {
+          "raw": "Eckert, M. (ed.), 2018, Exploring Meinong's Jungle and Beyond ( The Sylvan Jungle: Volume 1 ), with Introduction by Dominic Hyde, Cham: Springer."
+        },
+        {
+          "raw": "Effingham, Nikk, 2020, \"Mereological Nominalism\", Philosophy and Phenomenological Research , 100: 160-185."
+        },
+        {
+          "raw": "Ehring, Douglas, 2004, \"Distinguishing Universals from Particulars\", Analysis , 64: 326-332."
+        },
+        {
+          "raw": "---, 2011, Tropes , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Field, Hartry, 1980, Science Without Numbers , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "---, 1989, Realism, Mathematics, and Modality , New York: Blackwell."
+        },
+        {
+          "raw": "Fine, Kit, 1977, \"Properties, Propositions and Sets\", Journal of Philosophical Logic , 6: 135-191."
+        },
+        {
+          "raw": "Fisher, A.R.J., 2020, \"Abstracta and Abstraction in Trope Theory\", Philosophical Papers , 49: 41-67."
+        },
+        {
+          "raw": "Forrest, Peter, 1982, \"Occam's Razor and Possible Worlds\", The Monist , 65: 456-464."
+        },
+        {
+          "raw": "Frege, Gottlob, 1884, Die Grundlagen der Arithmetik , Breslau: W. Koebner."
+        },
+        {
+          "raw": "Friedell, David, 2020, \"Abstracta are Causal\", Philosophia, 48(1): 133-142."
+        },
+        {
+          "raw": "Giberman, Daniel, 2022a, \"Whole Multiple Location and Universals\", Analytic Philosophy , 63: 245-258."
+        },
+        {
+          "raw": "---, 2022b, \"Ostrich Tropes\", Synthese , 200: 1-25."
+        },
+        {
+          "raw": "Goodman, Nelson, 1951, The Structure of Appearance , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "---, 1956, \"A World of Individuals\", in I.M. Bochenski, Alonzo Church, and Nelson Goodman, The Problem of Universals , Notre Dame, IN: University of Notre Dame Press, pp. 13-31."
+        },
+        {
+          "raw": "Goodman, Nelson, and Quine, W. V. O., 1947, \"Steps Toward a Constructive Nominalism\", The Journal of Symbolic Logic , 12(4): 105-122."
+        },
+        {
+          "raw": "Grossmann, Reinhardt, 1992, The Existence of the World, New York: Routledge."
+        },
+        {
+          "raw": "Hale, Bob, 1996, \"Singular Terms (1)\", in M. Schirn (ed.), Frege: Importance and Legacy, Berlin: De Gruyter."
+        },
+        {
+          "raw": "Hale, Susan, 1988, \"Spacetime and the Abstract/Concrete Distinction\", Philosophical Studies , 53(1): 85-102."
+        },
+        {
+          "raw": "Hellman, Geoffrey, 1989, Mathematics Without Numbers , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2001, \"On Nominalism\", Philosophy and Phenomenological Research , 62(3): 691-705."
+        },
+        {
+          "raw": "Himelright, Jack, 2023, \"A Lewisian Argument against Platonism, or Why Theses about Abstract Objects are Unintelligible\", Erkenntnis , 88: 3037-3057."
+        },
+        {
+          "raw": "Hoffman, Joshua, and Rosenkrantz, Gary, 2003, \"Platonistic Theories of Universals\", in Michael J. Loux and Dean W. Zimmerman (eds.), Oxford Handbook of Metaphysics , Oxford: Oxford University Press, 46-74."
+        },
+        {
+          "raw": "Hofweber, Thomas, 2005, \"A Puzzle About Ontology\", No&ucirc;s , 37: 256-283."
+        },
+        {
+          "raw": "---, 2016, Ontology and the Ambitions of Metaphysics , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Imaguire, Guido, 2014, \"In Defense of Quine's Ostrich Nominalism\", Grazer Philosophische Studien , 89: 185-203."
+        },
+        {
+          "raw": "---, 2018, Priority Nominalism: Grounding Ostrich Nominalism as a Solution to the Problem of Universals, Cham: Springer Verlag."
+        },
+        {
+          "raw": "Jackson, Frank, 1977, \"Statements about Universals\", Mind , 86: 427-429."
+        },
+        {
+          "raw": "Jones, Nicholas K., 2018, \"Nominalist Realism\", No&ucirc;s , 52: 808-835."
+        },
+        {
+          "raw": "Jubien, Michael, 1977, \"Ontology and Mathematical Truth\", No&ucirc;s , 11(2): 133-150."
+        },
+        {
+          "raw": "---, 2001, \"Propositions and the Objects of Thought\", Philosophical Studies , 104(1): 47-62."
+        },
+        {
+          "raw": "Kaplan, David, 1995, \"A Problem in Possible-World Semantics\", in Walter Sinnott-Armstrong, Diana Raffman, and Nicholas Asher (eds.), Modality, Morality and Belief , Cambridge: Cambridge University Press, pp. 41-52."
+        },
+        {
+          "raw": "Keller, John, 2015, \"Paraphrase, Semantics, and Ontology\", Oxford Studies in Metaphysics , 9: 89-128."
+        },
+        {
+          "raw": "Korman, Daniel, 2015, \"Fundamental Quantification and the Language of the Ontology Room\", No&ucirc;s , 49(2): 298-321."
+        },
+        {
+          "raw": "Kriegel, Uriah, 2015, \"Thought and Thing: Brentano's Reism as Truthmaker Nominalism\", Philosophy and Phenomenological Research , 90: 153-180."
+        },
+        {
+          "raw": "Lear, Jonathan, 1977, \"Sets and Semantics\", Journal of Philosophy , 74(2): 86-102."
+        },
+        {
+          "raw": "Leng, Mary, 2010, Mathematics and Reality , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Leonard, Henry S., and Goodman, Nelson, 1940, \"The Calculus of Individuals and Its Uses\", Journal of Symbolic Logic , 5: 45-55."
+        },
+        {
+          "raw": "Lewis, David, 1983, \"New Work for a Theory of Universals\", Australasian Journal of Philosophy , 61: 343-377."
+        },
+        {
+          "raw": "---, 1986, On the Plurality of Worlds , Oxford: Blackwell."
+        },
+        {
+          "raw": "---, 1990, \"Noneism or Allism?\", Mind , 99: 23-31."
+        },
+        {
+          "raw": "---, 1991, Parts of Classes, Oxford: Blackwell."
+        },
+        {
+          "raw": "Liggins, David, 2010, \"Epistemological Objections to Platonism\", Philosophy Compass, 5(1): 67-77."
+        },
+        {
+          "raw": "---, 2023, Abstract Objects , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Linsky, Bernard, and Zalta, Edward N., 1996, \"In Defense of the Contingently Nonconcrete\", Philosophical Studies, 84(2-3): 283-294."
+        },
+        {
+          "raw": "Loux, Michael, 2002, Metaphysics: A Contemporary Introduction , 2 edition, London: Routledge."
+        },
+        {
+          "raw": "Lowe, E.J., 1995, \"The Metaphysics of Abstract Objects\", Journal of Philosophy , 92: 509-524."
+        },
+        {
+          "raw": "MacBride, Fraser, 2003, \"Speaking with Shadows: A Study of Neo-Logicism\", British Journal for the Philosophy of Science , 54: 103-163."
+        },
+        {
+          "raw": "---, 2005, \"The Particular-Universal Distinction: A Dogma of Metaphysics?\", Mind , 114 (455): 565-614."
+        },
+        {
+          "raw": "Mag Uidhir, Christy, 2013, \"Art, Metaphysics, and the Paradox of Standards\", in C. Mag Uidhir (ed.), Art and Abstract Objects , Oxford: Oxford University Press, pp. 1-26."
+        },
+        {
+          "raw": "Maurin, Anna-Sofia, 2002, If Tropes , Dordrecht: Kluwer."
+        },
+        {
+          "raw": "Meinong, Alexius, 1904, \"&Uuml;ber Gegenstandstheorie\", in A. Meinong (ed.), Untersuchungen Zur Gegenstandstheorie und Psychologie [Investigations in Theory of Objects and Psychology] , Leipzig: Barth, pp. 1-51."
+        },
+        {
+          "raw": "Melia, Joseph, 1992, \"An Alleged Disanalogy between Numbers and Propositions\", Analysis , 52(1), 46-48."
+        },
+        {
+          "raw": "---, 2000, \"Weaseling Away the Indispensability Argument\", Mind , 109: 455-477."
+        },
+        {
+          "raw": "---, 2005. \"Truthmaking without Truthmakers\", in J. Dodd and H. Beebee (eds.), Truthmakers , Oxford: Oxford University Press, pp. 67-84."
+        },
+        {
+          "raw": "---, 2008a, \"Ersatz Possible Worlds\", in T. Sider, J. Hawthorne, and D. Zimmerman (eds.), Contemporary Debates in Metaphysics, London: Blackwell, pp. 135-151."
+        },
+        {
+          "raw": "---, 2008b, \"A World of Concrete Particulars\", Oxford Studies in Metaphysics , 4: 99-124."
+        },
+        {
+          "raw": "Moore, Joseph, 1999, \"Propositions, Numbers, and the Problem of Arbitrary Identification\", Synthese , 120: 229-263."
+        },
+        {
+          "raw": "Nolan, Daniel, 1996, \"Recombination Unbound\", Philosophical Studies , 84(2): 239-262."
+        },
+        {
+          "raw": "---, 1999, \"Is Fertility Virtuous In Its Own Right?\", British Journal for the Philosophy of Science , 50: 265-282."
+        },
+        {
+          "raw": "---, 2002, Topics in the Philosophy of Possible Worlds, London: Routledge."
+        },
+        {
+          "raw": "---, 2020, \"It's a Kind of Magic: Lewis, Magic, and Properties\", Synthese , 197(11): 4717-4741."
+        },
+        {
+          "raw": "Nutting, Eileen, 2020, \"Benacerraf, Field, and the Agreement of Mathematicians\", Synthese , 197(5): 2095-2110."
+        },
+        {
+          "raw": "Oddie, Graham, 1982, \"Armstrong on the Eleatic Principle and Abstract Entities\", Philosophical Studies , 41(2): 285-295."
+        },
+        {
+          "raw": "Oliver, Alex, 1993, \"Classes and Goodman's Nominalism\", Proceedings of the Aristotelian Society , 93: 179-191."
+        },
+        {
+          "raw": "Parsons, Josh, 1999, \"There Is No 'Truthmaker' Argument Against Nominalism\", Australasian Journal of Philosophy , 77: 325-334."
+        },
+        {
+          "raw": "Parsons, Terence, 1976, \"The Methodology of Nonexistence\", Journal of Philosophy , 76: 649-662."
+        },
+        {
+          "raw": "---, 1980, Nonexistent Objects , New Haven, CT: Yale University Press."
+        },
+        {
+          "raw": "Priest, Graham, 2005, Towards Non-Being , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Putnam, Hilary, 1971, The Philosophy of Logic , New York: Harper."
+        },
+        {
+          "raw": "Quine, W.V., 1948, \"On What There Is\", Review of Metaphysics , 2: 21-38."
+        },
+        {
+          "raw": "---, 1970, Philosophy of Logic , Englewood Cliffs, NJ: Prentice Hall."
+        },
+        {
+          "raw": "---, 1980, \"Soft Impeachment Disowned\", Pacific Philosophical Quarterly , 61: 450-451."
+        },
+        {
+          "raw": "---, 2008, \"Nominalism\", Oxford Studies in Metaphysics , 4: 3-21."
+        },
+        {
+          "raw": "Quinton, A., 1957, \"Properties and Classes\", Proceedings of the Aristotelian Society , 58: 33-58."
+        },
+        {
+          "raw": "Ramsey, Frank P., 1925, \"Universals\", Mind , 34: 401-417."
+        },
+        {
+          "raw": "Resnik, Michael D., 1981, \"Mathematics as a Science of Patterns: Ontology and Reference\", No&ucirc;s , 15(4): 529-550."
+        },
+        {
+          "raw": "Rodriguez-Pereyra, Gonzalo, 2002, Resemblance Nominalism , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Rosen, Gideon, 1990, \"Modal Fictionalism\", Mind , 99(395): 327-354."
+        },
+        {
+          "raw": "---, 1993, \"The Refutation of Nominalism (?)\", Philosophical Topics , 21: 149-86."
+        },
+        {
+          "raw": "---, 2002, \"A Study in Modal Deviance\", in John Hawthorne and Tamar Gendler (eds.), Conceivability and Possibility , Oxford: Oxford University Press, pp. 283-307."
+        },
+        {
+          "raw": "Routley, Richard, 1980, Exploring Meinong's Jungle, Department of Philosophy Monograph Series #3, Canberra: Australian National University; reprinted in Eckert (ed.) 2018, pp. xxxv-507."
+        },
+        {
+          "raw": "Schaffer, Jonathan, 2009, \"On What Grounds What\", in David Chalmers, David Manley, and Ryan Wasserman (eds.) , Metametaphysics, Oxford: Oxford University Press, pp. 347-383."
+        },
+        {
+          "raw": "Schindler, Samuel, 2018, Theoretical Virtues in Science , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Schulte, Peter, 2019, \"Grounding Nominalism\", Pacific Philosophical Quarterly , 100: 482-505."
+        },
+        {
+          "raw": "Searle, John, 1969, Speech Acts , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Sellars, Wilfrid, 1963, \"Abstract Entities\", Review of Metaphysics , 16: 627-671."
+        },
+        {
+          "raw": "Shapiro, Stewart, 1997, Philosophy of Mathematics: Structure and Ontology , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Sider, Theodore, 2011, Writing the Book of the World , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2013, \"Against Parthood\", Oxford Studies in Metaphysics , 8: 237-293."
+        },
+        {
+          "raw": "Sj&ouml;lin Wirling, Ylwa, 2024, \"Neutrality and Force in Field's Epistemological Objection to Platonism\", Inquiry , 67(9): 3461-3480."
+        },
+        {
+          "raw": "Stalnaker, Robert, 1976, \"Possible Worlds\", No&ucirc;s , 10: 65-75."
+        },
+        {
+          "raw": "Szab&oacute;, Zoltan, 2003, \"Nominalism\", in Michael Loux and Dean Zimmerman (eds.), Oxford Handbook of Metaphysics , Oxford: Oxford University Press, pp. 11-45."
+        },
+        {
+          "raw": "Thomasson, Amie, 2005, Ontology Made Easy, Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Tooley, Michael, 1977, \"The Nature of Laws\", Canadian Journal of Philosophy , 7(4): 667-698."
+        },
+        {
+          "raw": "Trueman, Robert, 2020, Properties and Propositions: The Metaphysics of Higher-Order Logic , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Tugby, Matthew, 2013, \"Causal Nominalism and the One Over Many Problem\", Analysis , 73: 455-462."
+        },
+        {
+          "raw": "Van Cleve, James, 1994, \"Predication without Universals: A Fling with Ostrich Nominalism\", Philosophy and Phenomenological Research , 54: 577-590."
+        },
+        {
+          "raw": "van Inwagen, Peter, 1986, \"Two Concepts of Possible Worlds\", Midwest Studies in Philosophy , 11(1): 185-213."
+        },
+        {
+          "raw": "---, 2004, \"A Theory of Properties\", Oxford Studies in Metaphysics , 1: 107-138."
+        },
+        {
+          "raw": "von Solodkoff, Tatjana, 2014, \"Paraphrase Strategies in Metaphysics\", Philosophy Compass , 9(8): 570-582."
+        },
+        {
+          "raw": "Wetzel, Linda, 2009, Types and Tokens: On Abstract Objects , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Whittle, Ann, 2009, \"Causal Nominalism\", in Toby Handfield (ed.), Dispositions and Causes , Oxford: Oxford University Press, pp. 242-285."
+        },
+        {
+          "raw": "Williams, Donald, C., 1953, \"On the Elements of Being: I\", Review of Metaphysics , 7: 3-18."
+        },
+        {
+          "raw": "---, 1986, \"Universals and Existents\", Australasian Journal of Philosophy , 64: 1-14."
+        },
+        {
+          "raw": "Williamson, Timothy, 2010, \"Necessitism, Contingentism, and Plural Quantification\", Mind , 119: 657-748."
+        },
+        {
+          "raw": "Wilson, Jessica, 2015, \"Hume's Dictum and Metaphysical Modality: Lewis's Combinatorialism\", in Barry Loewer and Jonathan Schaffer (eds.), Blackwell Companion to David Lewis , Oxford: Blackwell, pp. 138-158."
+        },
+        {
+          "raw": "Wisdom, John, 1934, Problems of Mind and Matter , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Wright, Crispin, 1983, Frege's Conception of Numbers as Objects , Aberdeen: Aberdeen University Press."
+        },
+        {
+          "raw": "Yablo, Stephen, 2002a, \"Go Figure: A Path Through Fictionalism\", Midwest Studies in Philosophy , 25: 72-102."
+        },
+        {
+          "raw": "---, 2002b, \"Abstract Objects: A Case Study\", No&ucirc;s , 36: 220-240."
+        },
+        {
+          "raw": "---, 2005, \"The Myth of the Seven\", in Mark Kalderon (ed.), Fictionalism in Metaphysics, Oxford : Oxford University Press: pp. 88-115."
+        },
+        {
+          "raw": "Yi, Byeong-uk, 2018, \"Nominalism and Comparative Similarity\", Erkenntnis , 83: 793-803."
+        },
+        {
+          "raw": "Zalta, Edward, 1983, Abstract Objects , Dordrecht: Reidel."
+        },
+        {
+          "raw": "Zemach, Eddy M., 1982, \"A Plea for a New Nominalism\", Canadian Journal of Philosophy , 12: 527-537."
+        }
+      ],
+      "publishedAt": "2025-04-20T14:00:00.000Z",
+      "revisedAt": "2025-04-20T14:00:00.000Z"
+    }
+  }
+}

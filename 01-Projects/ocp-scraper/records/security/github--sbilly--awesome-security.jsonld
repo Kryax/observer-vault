@@ -1,0 +1,156 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/sbilly--awesome-security",
+  "meta": {
+    "title": "Awesome Security",
+    "description": "A collection of awesome software, libraries, documents, books, resources and cools stuffs about security.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:27:52.286Z",
+    "dateModified": "2026-03-22T05:27:52.286Z",
+    "keywords": [
+      "awesome-list",
+      "security"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)",
+    "context": "[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)\n\nA collection of awesome software, libraries, documents, books, resources and cool stuff about security.\n\nInspired by [awesome-php](https://github.com/ziadoz/awesome-php), [awesome-python](https://github.com/vinta/awesome-python).\n\nThanks to all [contributors](https://github.com/sbilly/awesome-security/graphs/contributors), you're awesome and wouldn't be possible without you! The goal is to build a categorized community-driven collection of very well-known resources.\n\n- [Awesome Security](#awesome-security)\n  - [Network](#network)\n    - [Scanning / Pentesting](#scanning--pentesting)\n    - [Monitoring / Logging](#monitoring--logging)\n    - [IDS / IPS / Host IDS / Host IPS](#ids--ips--host-ids--host-ips)\n    - [Honey Pot / Honey Net](#honey-pot--honey-net)\n    - [Full Packet Capture / Forensic](#full-packet-capture--forensic)\n    - [Sniffer](#sniffer)\n    - [Security Information & Event Management](#security-information--event-management)\n    - [VPN](#vpn)\n    - [Fast Packet Processing](#fast-packet-processing)\n    - [Firewall](#firewall)\n    - [Anti-Spam](#anti-spam)\n    - [Docker](#docker-images-for-penetration-testing--security)\n  - [Endpoint](#endpoint)\n    - [Anti-Virus / Anti-Malware](#anti-virus--anti-malware)\n    - [Content Disarm & Reconstruct](#content-disarm--reconstruct)\n    - [Configuration Management](#configuration-management)\n    - [Authentication](#authentication)\n    - [Mobile / Android / iOS](#mobile--android--ios)\n    - [Forensics](#forensics)\n  - [Threat Intelligence](#threat-intelligence)\n  - [Social Engineering](#social-engineering)\n  - [Web](#web)\n    - [Organization](#organization)\n    - [Web Application Firewall](#web-application-firewall)\n    - [Scanning / Pentesting](#scanning--pentesting-1)\n    - [Runtime Application Self-Protection](#runtime-application-self-protection)\n    - [Development](#development)\n  - [Red Team Infrastructure Deployment](#red-team-infrastructure-deployment)\n  - [Exploits & Payloads](#exploits--payloads)\n  - [Usability](#usability)\n  - [Big Data](#big-data)\n  - [DevOps](#devops)\n  - [Terminal](#terminal)\n  - [Operating Systems](#operating-systems)\n    - [Online resources](#online-resources)\n  - [Datastores](#datastores)\n  - [Fraud prevention](#fraud-prevention)\n  - [EBooks](#ebooks)\n  - [Other Awesome Lists](#other-awesome-lists)\n    - [Other Security Awesome Lists](#other-security-awesome-lists)\n    - [Other Common Awesome Lists](#other-common-awesome-lists)\n  - [Contributing](#contributing)\n\n------",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "security"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "14135 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "2151 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T05:27:52.286Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/sbilly/awesome-security",
+        "description": "GitHub repository: sbilly/awesome-security"
+      }
+    ]
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "sbilly",
+        "type": "human",
+        "uri": "https://github.com/sbilly"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 18437,
+      "validation_diversity": 0.73,
+      "context_breadth": 0.38,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.5
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.644
+  }
+}

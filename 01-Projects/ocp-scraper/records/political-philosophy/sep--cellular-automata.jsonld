@@ -1,0 +1,554 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/cellular-automata",
+  "meta": {
+    "title": "Cellular Automata",
+    "description": "Cellular automata (henceforth: CA) are discrete , abstract computational systems that have proved useful both as general models of complexity and as more specific representations of non-linear dynamics in a variety of scientific fields. Firstly, CA are (typically) spatially and temporally discrete : they are composed of a finite or denumerable set of homogeneous, simple units, the atoms or cells . At each time unit, the cells instantiate one of a finite set of states. They evolve in parallel at discrete time steps, following state update functions or dynamical transition rules: the update of a cell state obtains by taking into account the states of cells in its local neighborhood (there are, therefore, no actions at a distance). Secondly, CA are abstract : they can be specified in purely mathematical terms and physical structures can implement them. Thirdly, CA are computational systems: they can compute functions and solve algorithmic problems. Despite functioning in a different way from traditional, Turing machine-like devices, CA with suitable rules can emulate a universal Turing machine (see entry) , and therefore compute, given Turing's thesis (see entry on Church-Turing thesis ), anything computable. The mark of CA is in their displaying complex emergent behavior, starting from simple atoms following simple local rules. Because of this, CA attract a growing number of researchers from the cognitive and natural sciences willing to study pattern formation and complexity in a pure, abstract setting. This entry provides an introduction to CA and focuses on some of their philosophical applications: these range from the philosophy of computation and information processing, to accounts of reduction and emergence in metaphysics and cognition, to debates around the foundations of physics. We will proceed as follows. In the introductory Section 1, CA are first explained via an example: Section 1.1 describes a simple one-dimensional automaton displaying an intuitively manifest behavior. Sections 1.2-1.3 provide a short survey of the history and main applications of CA. In Section 2, the general theory of CA is explained, together with a selection of computational and complexity-theoretic results in the field. Section 2.1 provides a fourfold schematic definition of CA. Sections 2.2-2.3 explain the classification of one-dimensional CA proposed by Stephen Wolfram. Section 2.4 introduces the Edge of Chaos hypothesis, a key CA-related conjecture in complexity theory. Sections 2.5-2.7 generalize to automata occupying more than one spatial dimension, and/or relaxing some parameters in the definition of 2.1. We focus on the Game of Life--possibly the most popular CA--and its computational capabilities. Section 3 describes four main uses of CA in philosophical investigation. Firstly, since CA display complex behavioral patterns emerging from simple local rules, they have been naturally linked to emergence : this topic is dealt with in Section 3.1, where different notions of emergence are considered. Secondly, Section 3.2 explores how CA have been put to work, both by philosophers and by scientists, to address the traditional philosophical problems of free will and determinism . Thirdly, Section 3.3 describes the impact of CA theories on the philosophy of computation. Finally, Section 3.4 addresses ontological issues ranging from the sense in which CA count as modelling portions of reality, to the bold philosophical conjecture of some scientists, who claim that the physical world itself may be, at its bottom, a discrete, digital automaton.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:44:02.769Z",
+    "dateModified": "2026-03-22T05:44:02.769Z",
+    "datePublished": "2012-03-25T13:00:00.000Z",
+    "keywords": [
+      "chaos",
+      "church turing",
+      "compatibilism",
+      "computability",
+      "computation physicalsystems",
+      "freewill",
+      "laws of nature",
+      "properties emergent",
+      "quantum field theory",
+      "recursive functions",
+      "supervenience",
+      "turing machine"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Cellular automata (henceforth: CA) are discrete , abstract computational systems that have proved useful both as general models of complexity and as more specific representations of non-linear dynamics in a variety of scientific fields. Firstly, CA are (typically) spatially and temporally discrete : they are composed of a finite or denumerable set of homogeneous, simple units, the atoms or cells . At each time unit, the cells instantiate one of a finite set of states. They evolve in parallel at discrete time steps, following state update functions or dynamical transition rules: the update of a cell state obtains by taking into account the states of cells in its local neighborhood (there are, therefore, no actions at a distance). Secondly, CA are abstract : they can be specified in purely mathematical terms and physical structures can implement them. Thirdly, CA are computational systems: they can compute functions and solve algorithmic problems. Despite functioning in a different way from traditional, Turing machine-like devices, CA with suitable rules can emulate a universal Turing machine (see entry) , and therefore compute, given Turing's thesis (see entry on Church-Turing thesis ), anything computable. The mark of CA is in their displaying complex emergent behavior, starting from simple atoms following simple local rules. Because of this, CA attract a growing number of researchers from the cognitive and natural sciences willing to study pattern formation and complexity in a pure, abstract setting. This entry provides an introduction to CA and focuses on some of their philosophical applications: these range from the philosophy of computation and information processing, to accounts of reduction and emergence in metaphysics and cognition, to debates around the foundations of physics. We will proceed as follows. In the introductory Section 1, CA are first explained via an example: Section 1.1 describes a simple one-dimensional automaton displaying an intuitively manifest behavior. Sections 1.2-1.3 provide a short survey of the history and main applications of CA. In Section 2, the general theory of CA is explained, together with a selection of computational and complexity-theoretic results in the field. Section 2.1 provides a fourfold schematic definition of CA. Sections 2.2-2.3 explain the classification of one-dimensional CA proposed by Stephen Wolfram. Section 2.4 introduces the Edge of Chaos hypothesis, a key CA-related conjecture in complexity theory. Sections 2.5-2.7 generalize to automata occupying more than one spatial dimension, and/or relaxing some parameters in the definition of 2.1. We focus on the Game of Life--possibly the most popular CA--and its computational capabilities. Section 3 describes four main uses of CA in philosophical investigation. Firstly, since CA display complex behavioral patterns emerging from simple local rules, they have been naturally linked to emergence : this topic is dealt with in Section 3.1, where different notions of emergence are considered. Secondly, Section 3.2 explores how CA have been put to work, both by philosophers and by scientists, to address the traditional philosophical problems of free will and determinism . Thirdly, Section 3.3 describes the impact of CA theories on the philosophy of computation. Finally, Section 3.4 addresses ontological issues ranging from the sense in which CA count as modelling portions of reality, to the bold philosophical conjecture of some scientists, who claim that the physical world itself may be, at its bottom, a discrete, digital automaton.",
+    "context": "Opening section: 1. Introduction | Related entries: chaos, church-turing, compatibilism, computability, computation-physicalsystems, properties-emergent, freewill, laws-of-nature, quantum-field-theory, recursive-functions, supervenience, turing-machine",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "political-philosophy"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry cellular-automata",
+        "uri": "https://plato.stanford.edu/entries/cellular-automata/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "2 author(s), 12 related entries, bibliography size 96"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2012-03-25T13:00:00.000Z and revised 2023-12-14T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2023-12-14T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/cellular-automata/",
+        "description": "SEP entry for cellular-automata"
+      }
+    ],
+    "solutionApproach": "1. Introduction"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/chaos",
+      "ocp:sep/church-turing",
+      "ocp:sep/compatibilism",
+      "ocp:sep/computability",
+      "ocp:sep/computation-physicalsystems",
+      "ocp:sep/properties-emergent",
+      "ocp:sep/freewill",
+      "ocp:sep/laws-of-nature",
+      "ocp:sep/quantum-field-theory",
+      "ocp:sep/recursive-functions",
+      "ocp:sep/supervenience",
+      "ocp:sep/turing-machine"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Berto, Francesco",
+        "type": "human"
+      },
+      {
+        "name": "Tagliabue, Jacopo",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/cellular-automata/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 85,
+      "validation_diversity": 0.57,
+      "context_breadth": 0.48,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.92
+    },
+    "confidence": "tested",
+    "authority": "high",
+    "status": "draft",
+    "trustScore": 0.6
+  },
+  "extensions": {
+    "sep": {
+      "slug": "cellular-automata",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/cellular-automata/",
+      "preamble": "Cellular automata (henceforth: CA) are discrete , abstract computational systems that have proved useful both as general models of complexity and as more specific representations of non-linear dynamics in a variety of scientific fields. Firstly, CA are (typically) spatially and temporally discrete : they are composed of a finite or denumerable set of homogeneous, simple units, the atoms or cells . At each time unit, the cells instantiate one of a finite set of states. They evolve in parallel at discrete time steps, following state update functions or dynamical transition rules: the update of a cell state obtains by taking into account the states of cells in its local neighborhood (there are, therefore, no actions at a distance). Secondly, CA are abstract : they can be specified in purely mathematical terms and physical structures can implement them. Thirdly, CA are computational systems: they can compute functions and solve algorithmic problems. Despite functioning in a different way from traditional, Turing machine-like devices, CA with suitable rules can emulate a universal Turing machine (see entry) , and therefore compute, given Turing's thesis (see entry on Church-Turing thesis ), anything computable. The mark of CA is in their displaying complex emergent behavior, starting from simple atoms following simple local rules. Because of this, CA attract a growing number of researchers from the cognitive and natural sciences willing to study pattern formation and complexity in a pure, abstract setting. This entry provides an introduction to CA and focuses on some of their philosophical applications: these range from the philosophy of computation and information processing, to accounts of reduction and emergence in metaphysics and cognition, to debates around the foundations of physics. We will proceed as follows. In the introductory Section 1, CA are first explained via an example: Section 1.1 describes a simple one-dimensional automaton displaying an intuitively manifest behavior. Sections 1.2-1.3 provide a short survey of the history and main applications of CA. In Section 2, the general theory of CA is explained, together with a selection of computational and complexity-theoretic results in the field. Section 2.1 provides a fourfold schematic definition of CA. Sections 2.2-2.3 explain the classification of one-dimensional CA proposed by Stephen Wolfram. Section 2.4 introduces the Edge of Chaos hypothesis, a key CA-related conjecture in complexity theory. Sections 2.5-2.7 generalize to automata occupying more than one spatial dimension, and/or relaxing some parameters in the definition of 2.1. We focus on the Game of Life--possibly the most popular CA--and its computational capabilities. Section 3 describes four main uses of CA in philosophical investigation. Firstly, since CA display complex behavioral patterns emerging from simple local rules, they have been naturally linked to emergence : this topic is dealt with in Section 3.1, where different notions of emergence are considered. Secondly, Section 3.2 explores how CA have been put to work, both by philosophers and by scientists, to address the traditional philosophical problems of free will and determinism . Thirdly, Section 3.3 describes the impact of CA theories on the philosophy of computation. Finally, Section 3.4 addresses ontological issues ranging from the sense in which CA count as modelling portions of reality, to the bold philosophical conjecture of some scientists, who claim that the physical world itself may be, at its bottom, a discrete, digital automaton.",
+      "firstSectionTitle": "1. Introduction",
+      "firstSectionText": "We introduce CA using a simple example. Think of an automaton as a one-dimensional grid of simple elements (the cells). Each of them can only instantiate one of two states; let us say that each cell can be turned on or off . The evolution of the system is determined by a transition rule, to be thought of as implemented in each cell. At each time step, each cell updates its status in response to what happens to its neighboring cells, following the rule. Fig. 1 Although CA are abstract, having a concrete instance in mind can help in the beginning. So think of Fig. 1 as representing the front row of a high school classroom. Each box stands for a student wearing (black) or not wearing (white) a hat. Let us make the two following assumptions: Hat rule : a student will wear the hat in the following class if one or the other--but not both--of the two classmates sitting immediately on her left and on her right has the hat in the current class (if nobody wears a hat, a hat is out of fashion; but if both neighbors wear it, a hat is now too popular to be trendy). Initial class : during the first class in the morning, only one student in the middle shows up with a hat (see Fig. 2 ). Fig. 2 Fig. 3 shows what happens as time goes by. Consecutive rows represent the evolution in time through subsequent classes. Fig. 3 Fig. 3 may be surprising. The evolutionary pattern displayed contrasts with the simplicity of the underlying law (the \"Hat rule\") and ontology (for in terms of object and properties, we only need to take into account simple cells and two states). The global, emergent behavior of the system supervenes upon its local, simple features, at least in the following sense: the scale at which the decision to wear the hat is made (immediate neighbors) is not the scale at which the interesting patterns become manifest. Fig. 3 This example is a paradigmatic illustration of what makes CA appealing to a vast range of researchers: even perfect knowledge of individual decision rules does not always allow us to predict macroscopic structure. We get macro-surprises despite complete micro-knowledge. (Epstein 1999: 48) Since the notion of emergence and the micro-macro interplay have such an important role in science and philosophy (see the entries on supervenience and emergent properties ; for a sample of scientific applications, see Mitchell 2009: 2-13; Gell-Mann 1994: Ch. 9), it has been suggested that many scientific as well as conceptual puzzles can be addressed by adopting the CA perspective. Stephen Wolfram has gone as far as claiming that CA may help us to solve longstanding issues in philosophy: These are very bold claims. In order to assess them, let us take a closer look at the field. The surprising patterns in the aforementioned classroom example were generated by boxes in a line with just two states and a simple rule. One may wonder how many variations are possible on such a basic framework. To address this issue, let us begin by considering how Andrew Ilachinski, in his review of the literature, narrows down CA applications to four main areas, which will be referred to in the rest of this entry (Ilachinski 2001: 7): (CA 1 ) emphasizes that CA perform computations. Just like Turing machines, they can be specified in mathematical terms, and implemented in different physical systems. However, CA are peculiar in two important ways. First, unlike Turing machines and von Neumann-architecture conventional computers, CA compute in a parallel , distributed fashion. Second, computation is pretty much \"in the eye of the beholder\": there is no tape, but the evolution of the cells' states can often be interpreted as a meaningful computational procedure (e.g., bits can be encoded using the white / black cell states). Computational hardware inspired by CA can help solve important technological problems (see Ilachinski 2001: 8), but apart from engineering issues, (CA 1 ) also points to major conceptual questions, such as how exactly a universal Turing machine and an automaton can be rigorously compared (see Beraldo-de-Ara&uacute;jo & Baravalle forthcoming) and what are, if any, the philosophical implications of this comparison (see Wolfram 2002: Ch. 12). (CA 2 ) comprises scientific applications of CA to the modelling of specific problems--to mention just a few: urban evolution (Batty 2005), Ising models (Creutz 1986), neural networks (Franceschetti, et al. 1992: 124-128), lattice fluids (Barberousse & Imbert 2013), security (Ray et al. 2023 [Other Internet Resources]), bioinformatics (Xiao et al. 2011), and even turbulence phenomena (Chen et al. 1983). As Ilachinski remarks, for instance, discrete models of turbulence show that very simple finite dynamical implementations of local conservation laws are capable of exactly reproducing continuum system behavior on the macroscale. (Ilachinski 2001: 8) (CA 3 ) and (CA 4 ) enter very directly into the philosophical arena: as for (CA 3 ) , Daniel Dennett has resorted to a famous automaton we describe below, Conway's Game of Life , to make his point on determinism and the attribution of high-level concepts to emergent patterns (Dennett 1991, 2003). As for (CA 4 ) , CA can provide an account of microphysical dynamics by representing discrete counterparts of quantum field theories (see entry on Quantum Field Theory ) alternative to the standard continuous frames. But the more philosophical, and quite bolder, claim in this area is that nature itself may be a CA: Edward Fredkin, for instance, has advanced his \"Finite Nature\" hypothesis that our universe is an automaton which, at each time step, digitally and locally processes its state for the next time step (see Fredkin 1993). Apart from the interest generated by Fredkin's claim, entertaining the hypothesis raises a number of questions at the crossroads of physics and metaphysics (what is a natural law?), epistemology (what are the limits of physical systems predictability?) and the philosophy of information (what is the role of information in the physical world?). We will address each of these questions in the third Section of this entry. The father of CA is John von Neumann (von Neumann 1951). Working on self-replication and attempting to provide a reductionist theory of biological development, von Neumann was trying to conceive a system capable of producing exact copies of itself. Now biology prima facie appears to be the realm of fluidity and continuous dynamics. But following a suggestion of his colleague Stanislaw Ulam, von Neumann decided to focus on a discrete, two-dimensional system. Instead of just black -or- white cells, von Neumann's automaton used 29 different states and rather complicated dynamics, and was capable of self-reproduction. Von Neumann's CA was also the first discrete parallel computational model in history formally shown to be a universal computer, i.e., capable of emulating a universal Turing machine and computing all recursive functions (see entry) . In the early Sixties, E.F. Moore (1962) and Myhill (1963) proved the Garden-of-Eden theorems stating conditions for the existence of so-called Gardens of Eden, i.e., patterns that cannot appear on the lattice of a CA except as initial conditions. Gustav Hedlund (1969) investigated cellular automata within the framework of symbolic dynamics. In 1970 the mathematician John Conway introduced his aforementioned Life game (Berkelamp, Conway, & Guy 1982), arguably the most popular automaton ever, and one of the simplest computational models ever proved to be a universal computer. In 1977, Tommaso Toffoli used cellular automata to directly model physical laws, laying the foundations for the study of reversible CA (Toffoli 1977). Stephen Wolfram's works in the 1980s contributed to putting the growing community of CA followers on the scientific map. In a series of papers, Wolfram extensively explored one-dimensional CA, providing the first qualitative taxonomy of their behavior and laying the groundwork for further research. A particular transition rule for one-dimensional CA, known as Rule 110 , was conjectured to be universal by Wolfram. Some twenty years after the conjecture, Matthew Cook proved that Rule 110 is capable of universal computation (Cook 2004; Wolfram 2002 also contains a sketch of the proof).",
+      "relatedEntries": [
+        "chaos",
+        "church-turing",
+        "compatibilism",
+        "computability",
+        "computation-physicalsystems",
+        "properties-emergent",
+        "freewill",
+        "laws-of-nature",
+        "quantum-field-theory",
+        "recursive-functions",
+        "supervenience",
+        "turing-machine"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "chaos"
+        },
+        {
+          "slug": "church-turing"
+        },
+        {
+          "slug": "compatibilism"
+        },
+        {
+          "slug": "computability"
+        },
+        {
+          "slug": "computation-physicalsystems"
+        },
+        {
+          "slug": "properties-emergent"
+        },
+        {
+          "slug": "freewill"
+        },
+        {
+          "slug": "laws-of-nature"
+        },
+        {
+          "slug": "quantum-field-theory"
+        },
+        {
+          "slug": "recursive-functions"
+        },
+        {
+          "slug": "supervenience"
+        },
+        {
+          "slug": "turing-machine"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 96,
+      "bibliography": [
+        {
+          "raw": "Aaronson, Scott, 2002, \"On 'A New Kind of Science' by Stephen Wolfram \", Quantum Information and Computation , 2(5): 410-423. [ Aaronson 2002 preprint available online ]"
+        },
+        {
+          "raw": "---, 2011, \"Why Philosophers Should Care About Computational Complexity\", in Computability Turing, G&ouml;del, Church, and Beyond , B. Jack Copeland, Carl J. Posy, and Oron Shagrir (eds.), Cambridge, MA: MIT Press: 261-328. [ Aaronson 2011 preprint available online ]"
+        },
+        {
+          "raw": "Aburasa, Maher Milad, Yuek Ming Hoa, Mohammad Firuz Ramlia, and Zulfa Hanan Ash'aaria, 2016, \"The simulation and prediction of spatio-temporal urban growth trends using cellular automata models: A review\", International Journal of Applied Earth Observation and Geoinformation , 52: 380-389. doi:10.1016/j.jag.2016.07.007"
+        },
+        {
+          "raw": "Albert, David Z., 2000, Time and Chance , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Ambjorn, J., J. Jurkiewicz, and R. Lolli, 2004, \"Emergence of a 4D World from Causal Quantum Gravity\", Physical Review Letters , 98(13): 131-301. doi:10.1103/PhysRevLett.93.131301"
+        },
+        {
+          "raw": "Barberousse, Anouk and Cyrille Imbert, 2013, \"New Mathematics for Old Physics. The Case of Lattice Fluids\", Studies in History and Philosophy of Modern Physics , 44(3): 231-241. doi:10.1016/j.shpsb.2013.03.003"
+        },
+        {
+          "raw": "Barrow, John D., Paul C.W. Davies, and Charles L. Harper, Jr (eds.), 2005, Science and Ultimate Reality , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Batty, Michael, 2005, Cities and Complexity, Understanding Cities with Cellular Automata, Agent-Based Models, and Fractals , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Bedau, Mark A., 1997, \"Weak Emergence\", in Philosophical Perspectives, 11: Mind, Causation, and World , J. Tomberlin (ed.), Oxford: Blackwell Publishers, pp. 375-399. doi:10.1111/0029-4624.31.s11.17"
+        },
+        {
+          "raw": "Beraldo-de-Ara&uacute;jo, Anderson and Lorenzo Baravalle, forthcoming, \"The Ontology of Digital Physics\", Erkenntnis , first published online 19 December 2016, doi:10.1007/s10670-016-9866-y"
+        },
+        {
+          "raw": "Berto, Francesco, Gabriele Rossi, and Jacopo Tagliabue, 2010, The Mathematics of the Models of Reference , London: College Publications."
+        },
+        {
+          "raw": "---, 2016, \"There's Plenty of Boole at the Bottom: A Reversible CA Against Information Entropy\", Minds and Machines , 26(4): 341-367. doi:10.1007/s11023-016-9401-6"
+        },
+        {
+          "raw": "Berto, Francesco and Jacopo Tagliabue, 2014, \"The World is Either Digital or Analogue\", Synthese , 191(3): 481-497. doi:10.1007/s11229-013-0285-1"
+        },
+        {
+          "raw": "Berlekamp, Elwyn R., John H. Conway, and Richard K. Guy, 1982, Winning Ways for Your Mathematical Plays , Vol. 2, London: Academic Press."
+        },
+        {
+          "raw": "Casati, Roberto and Achille C. Varzi, 1999, Parts and Places: The Structures of Spatial Representation , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Chalmers, David John, 1996, The Conscious Mind , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2002, \"Strong and Weak Emergence\", in The Re-Emergence of Emergence , Philip Clayton and Paul Davies (eds.), Oxford: Oxford University Press, pp. 244-255."
+        },
+        {
+          "raw": "Chen, Hudong, Shiyi Chen, Gary Doolen, and Y.C. Lee, 1983, \"Simple Lattice Gas Models for Waves\", Complex Systems , 2(3): 259-267."
+        },
+        {
+          "raw": "Clark, Andy, 1996, Being There: Putting Brain, Body, and World Together Again , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 2013, Mindware: An Introduction to the Philosophy of Cognitive Science , second edition, Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Cook, Matthew, 2004, \"Universality in Elementary Cellular Automata\", Complex Systems , 15(1): 1-40."
+        },
+        {
+          "raw": "Creutz, Michael, 1986, \"Deterministic Ising Dynamics\", Annals of Physics , 167(1): 62-76. doi:10.1016/S0003-4916(86)80006-9"
+        },
+        {
+          "raw": "Crutchfield, James .P., 1994a, \"The Calculi of Emergence: Computation, Dynamics, and Induction\", Physica D , 75(1-3): 11-54. doi:10.1016/0167-2789(94)90273-9"
+        },
+        {
+          "raw": "---, 1994b, \"Is Anything Ever New? Considering Emergence\", in Complexity: Metaphors, Models, and Reality , G. Cowan, D. Pines, D. Melzner (eds.), (SFI Series in the Sciences of Complexity XIX), Redwood City, CA: Addison-Wesley, pp. 479-497."
+        },
+        {
+          "raw": "Crutchfield, James P. and James E. Hanson, 1993, \"Turbulent Pattern Bases for Cellular Automata\", Physica D , 69(3-4): 279-301. doi:10.1016/0167-2789(93)90092-F"
+        },
+        {
+          "raw": "Crutchfield, James P. and M. Mitchell, 1995, \"The Evolution of Emergent Computation\", Proceedings of the National Academy of Sciences , 92(23): 10742-10746."
+        },
+        {
+          "raw": "Dennett, Daniel C., 1987, The Intentional Stance , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 1991, \"Real Patterns\", Journal of Philosophy , 88(1): 27-51. doi:10.2307/2027085"
+        },
+        {
+          "raw": "---, 2003, Freedom Evolves , New York: Viking Penguin."
+        },
+        {
+          "raw": "Deutsch, David, 2005, \"It from Qubit\". in Barrow, Davies, & Harper 2005: 90-102."
+        },
+        {
+          "raw": "Dowker, Fay, 2003, \"Real Time\", New Scientist , 180(2415): 36-39."
+        },
+        {
+          "raw": "Epstein, Joshua M., 1999, \"Agent-Based Computational Models and Generative Social Science\", Complexity , 4(5): 41-60. doi:10.1002/(SICI)1099-0526(199905/06)4:5 3.0.CO;2-F"
+        },
+        {
+          "raw": "Feynman, Richard P., 1965, The Character of Physical Law , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Floridi, Luciano, 2009, \"Against Digital Ontology\", Synthese , 168(1): 151-178. doi:10.1007/s11229-008-9334-6"
+        },
+        {
+          "raw": "Franceschetti, Donald R., D. Wayne Jones, Bruce W. Campbell and John W. Hamneken, 1992, \"Hamming Nets, Ising Sets, Cellular Automata, Neural Nets and Random Walks\", American Journal of Physics , 61: 50-53. doi:10.1119/1.17409"
+        },
+        {
+          "raw": "Fredkin, Edward, 1990, \"Digital Mechanics: An Information Process Based on Reversible Universal Cellular Automata\", Physica D , 45(1-3): 254-270. doi:10.1016/0167-2789(90)90186-S"
+        },
+        {
+          "raw": "---, 1993, \"A New Cosmogony\", in PhysComp '92: Proceedings of the Workshop on Physics and Computation , IEEE Computer Society Press, pp. 116-121. doi:10.1109/PHYCMP.1992.615507"
+        },
+        {
+          "raw": "Fredkin, Edward and Tommaso Toffoli, 1982, \"Conservative Logic\", International Journal of Theoretical Physics , 21(3-4): 219-253. doi:10.1007/BF01857727"
+        },
+        {
+          "raw": "Gell-Mann, Murray, 1994, The Quark and the Jaguar: Adventures in the Simple and the Complex , New York: W.H. Freeman and Company."
+        },
+        {
+          "raw": "Grattarola, Daniele, Lorenzo Livi and Cesare Alippi, 2021, \"Learning Graph Cellular Automata\", Advances in Neural Information Processing Systems , 34: 20983-20994."
+        },
+        {
+          "raw": "Grim, Patrick, 1997, \"The Undecidability of the Spatialized Prisoner's Dilemma\", Theory and Decision , 42: 53-80."
+        },
+        {
+          "raw": "Grim, Patrick, Evan Selinger, William Braynen, Robert Rosenberger, Randy Au, Nancy Louie and John Connolly, 2005, \"Modeling Prejudice Reduction: Spatialized Game Theory and the Contact Hypothesis\", Public Affairs Quarterly , 19(2): 95-125."
+        },
+        {
+          "raw": "Ha, David and Yujin Tang, 2022, \"Collective Intelligence for Deep Learning: A Survey of Recent Developments\", Collective Intelligence , 1(1). doi:10.1177/26339137221114874"
+        },
+        {
+          "raw": "Hanson, James E. and James P. Crutchfield, 1992, \"The Attractor-Basin Portrait of a Cellular Automaton\", Journal of Statistical Physics , 66(5-6): 1415-1462. doi:10.1007/BF01054429"
+        },
+        {
+          "raw": "Hardy, Lucien, 2005, \"Why is Nature Described by Quantum Physics\", in Barrow, Davies, & Harper 2005: 45-71."
+        },
+        {
+          "raw": "Hedlund, G.A., 1969, \"Endomorphisms and Automorphisms of the Shift Dynamical System\", Mathematical Systems Theory , 3(4): 51-59. doi:10.1007/BF01691062"
+        },
+        {
+          "raw": "'t Hooft, Gerard, 1997, In Search of the Ultimate Building Blocks , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Hordijk, Wim, James P. Crutchfield, and Melanie Mitchell, 1996, \"Embedded Particle Computation in Evolved Cellular Automata\", in Proceedings of the Conference on Physics and Computation , T. Toffoli, M. Biafore and J. Leao (eds.), Boston: New England Complex Systems Institute, pp. 153-158."
+        },
+        {
+          "raw": "Ilachinski, Andrew, 2001, Cellular Automata , Singapore: World Scientific Publishing."
+        },
+        {
+          "raw": "---, 2004, Artificial War. Multiagent-Based Simulation of Combat , Singapore: World Scientific Publishing."
+        },
+        {
+          "raw": "Ingerson, T.E. and R.L. Buvel, 1984, \"Structure in Asynchronous Cellular Automata\", Physica D , 10(1-2): 59-68. doi:10.1016/0167-2789(84)90249-5"
+        },
+        {
+          "raw": "Kauffman, Stuart A., 1984, \"Emergent Properties in Random Complex Automata\", Physica D , 10(1-2): 145-156. doi:10.1016/0167-2789(84)90257-4"
+        },
+        {
+          "raw": "Kelso, J.A. Scott, 1995, Dynamic Patterns: The Self-Organization of Brain and Behavior , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Kier, Lemont B., Paul G. Seybold, and Chao-Kun Cheng, 2005, Modeling Chemical Systems using Cellular Automata , Dordrecht: Springer."
+        },
+        {
+          "raw": "Kim, Jaegwon, 1999, \"Making Sense of Emergence\", Philosophical Studies , 95(1/2): 3-36. doi:10.1023/A:1004563122154"
+        },
+        {
+          "raw": "Land, Mark and Richard K. Belew, 1995, \"No Perfect Two-State Cellular Automata for Density Classification Exist\", Physical Review Letters , 74(25): 1548-1550. doi:10.1103/PhysRevLett.74.5148"
+        },
+        {
+          "raw": "Landauer, R., 1961, \"Irreversibility and Heat Generation in the Computing Process\", IBM Journal of Research and Develop men , 5(3): 183-191."
+        },
+        {
+          "raw": "Langton, Chris G., 1990, \"Computation at the Edge of Chaos: Phase Transitions and Emergent Computation\", Physica D , 42(1-3): 12-37. doi:10.1016/0167-2789(90)90064-V"
+        },
+        {
+          "raw": "L&aacute;rragaa, M.E., J.A. del R&iacute;ob, and L. Alvarez-lcaza, 2005, \"Cellular Automata for One-Lane Traffic Flow Modeling\", Transportation Research Part C: Emerging Technologies , 13(1): 63-74. doi:10.1016/j.trc.2004.12.001"
+        },
+        {
+          "raw": "Lee, T.D., 1986, \"Solutions of Discrete Mechanics Near the Continuum Limit\", in Rationale of Being: Recent Developments in Particle, Nuclear, and General Physics, Festschrift in honor of Gy&#333; Takeda , Kenzo Ishikawa et al . (eds.), Singapore: World Scientific Publishing."
+        },
+        {
+          "raw": "Lewis, David, 1973, Counterfactuals , Oxford: Blackwell Publishers."
+        },
+        {
+          "raw": "---, 1994, \"Humean Supervenience Debugged\", Mind , 103(412): 473-490. doi:10.1093/mind/103.412.473"
+        },
+        {
+          "raw": "Malament, David B., 2006, \"Classical General Relativity\", In Jeremy Butterfield & John Earman (eds.), Philosophy of Physics , (Handbook of the Philosophy of Science), Amsterdam: Elsevier. doi:10.1016/B978-044451560-5/50006-3"
+        },
+        {
+          "raw": "Miller, John H. and Scott E. Page, 2007, Complex Adaptive System , Princeton, NJ: Princeton University Press."
+        },
+        {
+          "raw": "Mitchell, Melanie, 1998, An Introduction to Genetic Algorithms , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 2009, Complexity: A Guided Tour , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Mitchell, Melanie, James P. Crutchfield, and Rajarshi Das, 1996, \"Evolving Cellular Automata with Genetic Algorithm: A Review of Recent Works\", in Proceedings of the First International Conference on Evolutionary Computation and Its Applications , Russian Academy of Science. [ Mitchell, Crutchfield, & Das 1996 preprint available online ]"
+        },
+        {
+          "raw": "Mitchell, Melanie, Peter T. Hraber, and James P. Crutchfield, 1994, \"Revisiting the Edge of Chaos: Evolving Cellular Automata to Perform Computations\", Complex Systems , 7(2): 89-130."
+        },
+        {
+          "raw": "Moore, Christopher, 1996, \"Recursion Theory on the Reals and Continuous-Time Computation\", Theoretical Computer Science , 162(1): 23-44. doi:10.1016/0304-3975(95)00248-0"
+        },
+        {
+          "raw": "Moore, E.F., 1962, \"Machine Models of Self-Reproduction\", Proceedings of Symposia in Applied Mathematics , 14: 17-33."
+        },
+        {
+          "raw": "Mordvintsev, Alexander, Ettore Randazzo, Eyvind Niklasson and Michael Levin, 2020, \"Growing Neural Cellular Automata\", Distill . doi:10.23915/distill.00023."
+        },
+        {
+          "raw": "Myhill, John, 1963, \"The Converse of Moore's Garden-of-Eden Theorem\", Proceedings of the American Mathematical Society , 14(4): 685-686. doi:10.1090/S0002-9939-1963-0155764-9"
+        },
+        {
+          "raw": "O'Connor, Timothy and Wong, Hong Yu, 2015, \"Emergent Properties\", The Stanford Encyclopedia of Philosophy , (Summer 2015 Edition), Edward N. Zalta (ed.), URL = https://plato.stanford.edu/archives/sum2015/entries/properties-emergent/ >"
+        },
+        {
+          "raw": "Packard, Norman H., 1988, \"Adaptation toward the Edge of Chaos\", in Dynamic Patterns in Complex Systems , J.A. Scott Kelso, Arnold J. Mandell and Michael F. Schlesinger (eds.), Singapore: World Scientific Publishing, pp. 293-301."
+        },
+        {
+          "raw": "Piccinini, Gualtiero, 2010, \"Computation in Physical Systems\", The Stanford Encyclopedia of Philosophy , (Fall 2010 Edition), Edward N. Zalta (ed.), URL = https://plato.stanford.edu/archives/fall2010/entries/computation-physicalsystems/ >"
+        },
+        {
+          "raw": "Poincar&eacute;, Henri, 1914, Science and Method , New York: Nelsons and Sons."
+        },
+        {
+          "raw": "Putnam, Hilary, 1988, Representation and Reality , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Richards, Fred C., Thomas P. Meyer, and Norman H. Packard, 1990, \"Extracting Cellular Automaton Rules Directly from Experimental Data\", Physica D , 45(1-3): 189-202. doi:10.1016/0167-2789(90)90182-O"
+        },
+        {
+          "raw": "Schelling, Thomas C., 1978, Micromotives and Macrobehavior , New York: Norton."
+        },
+        {
+          "raw": "Searle, John R., 1992, The Rediscovery of the Mind , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Svozil, Karl, 1987, \"Are Quantum Fields Cellular Automata?\", Physics Letters , 119(4): 153-6. doi:10.1016/0375-9601(86)90436-6"
+        },
+        {
+          "raw": "Teller, Paul, 1992, \"A Contemporary Look at Emergence\", in Emergence or Reduction? Essays on the Prospects of Nonreductive Physicalism , Ansgar Beckermann, Hans Flohr and Jaegwon Kim (eds.), Berlin: Walter de Gruyter. doi:10.1515/9783110870084.139"
+        },
+        {
+          "raw": "Thompson, Evan, 2007, Mind in Life. Biology, Phenomenology, and the Sciences of Mind , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Toffoli, Tommaso, 1977, \"Computation and Construction Universality of Reversible Cellular Automata\", Journal of Computer and System Science , 15(2): 213-231. doi:10.1016/S0022-0000(77)80007-X"
+        },
+        {
+          "raw": "---, 1984, \"Cellular Automata as an Alternative to (Rather Than an Approximation of) Differential Equations in Modeling Physics\", Physica D , 10(1-2): 117-127. doi:10.1016/0167-2789(84)90254-9"
+        },
+        {
+          "raw": "Toffoli, Tommaso and Norman H. Margolus, 1990, \"Invertible Cellular Automata: A review\", Physica D , 45(1-3): 229-253. doi:10.1016/0167-2789(90)90185-R"
+        },
+        {
+          "raw": "Turing, Alan M., 1936, \"On Computable Numbers with an Application to the Entscheideungproblem\", Proceeding of the London Mathematical Society , 42: 230-265. doi:10.1112/plms/s2-42.1.230"
+        },
+        {
+          "raw": "Vichniac, G&eacute;rard Y., 1984, \"Simulating Physics With Cellular Automata\", Physica D , 10(1-2): 96-110. doi:10.1016/0167-2789(84)90253-7"
+        },
+        {
+          "raw": "Von Neumann, John, 1951, \"The General and Logical Theory of Automata\", in Cerebral Mechanisms in Behavior: The Hixon Symposium , New York: John Wiley & Sons."
+        },
+        {
+          "raw": "Wheeler, John Archibald, 1990, \"Information, Physics, Quantum: The Search for Links\", in Complexity, Entropy, and the Physics of Information , Wojciech H. Zurek (ed.), Boston: Addison-Wesley."
+        },
+        {
+          "raw": "Wolfram, S., 1983, \"Statistical Mechanics of Cellular Automata\", Reviews of Modern Physics , 55(3): 601-644. doi:10.1103/RevModPhys.55.601"
+        },
+        {
+          "raw": "---, 2002, A New Kind of Science , Champaign, IL: Wolfram Media."
+        },
+        {
+          "raw": "Xiao, Xuan, Pu Wang, and Kuo-Chen Chou, 2011, \"Cellular Automata and Its Applications in Protein Bioinformatics\", Current Protein & Peptide Science , 12(6): 508-19. doi:10.2174/138920311796957720"
+        },
+        {
+          "raw": "Zaheer, Manzil, Michael Wick, Jean-Baptiste Tristan, Alex Smola, and Guy L. Steele, 2016, \"Exponential Stochastic Cellular Automata for Massively Parallel Inference\", Proceedings of the 19th International Conference on Artificial Intelligence and Statistics , PMLR 51: 966-975. [ Zaheer et al. 2016 available online ]"
+        },
+        {
+          "raw": "Zuse, Konrad, 1982, \"The Computing Universe\", International Journal of Theoretical Physics , 21(6-7): 589-600. doi:10.1007/BF02650187"
+        },
+        {
+          "raw": "Miller & Page 2007 and Mitchell 2009 both contain a chapter devoted to CA: they are accessible introductions written by notable scholars. Ilachinski 2001 is an excellent starting point for the exploration of the CA literature: although not up-to-date on some technical points, the volume nicely introduces the field and covers its most important applications. Wolfram 2002 took some twenty-years and 1200 pages to be finished and is a passionate journey including bold speculations on the role of CA for understanding the universe and our place in it."
+        }
+      ],
+      "publishedAt": "2012-03-25T13:00:00.000Z",
+      "revisedAt": "2023-12-14T13:00:00.000Z"
+    }
+  }
+}

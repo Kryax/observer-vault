@@ -1,0 +1,164 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/ycm-core--youcompleteme",
+  "meta": {
+    "title": "Vundle",
+    "description": "A code-completion engine for Vim",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:37:06.686Z",
+    "dateModified": "2026-03-22T05:37:06.686Z",
+    "keywords": [
+      "code-analysis",
+      "code-completion",
+      "semantic-engine",
+      "vim"
+    ],
+    "license": "GPL-3.0"
+  },
+  "problemSolved": {
+    "statement": "Please note that the below instructions suggest using Vundle. Currently there\nare problems with Vundle, so here are some [alternative instructions](https://github.com/ycm-core/YouCompleteMe/issues/4134#issuecomment-1446235584) using Vim packages.",
+    "context": "Please note that the below instructions suggest using Vundle. Currently there\nare problems with Vundle, so here are some [alternative instructions](https://github.com/ycm-core/YouCompleteMe/issues/4134#issuecomment-1446235584) using Vim packages.\n\nContents\n--------\n\n- [Intro](#intro)\n- [Installation](#installation)\n    - [Requirements](#requirements)\n    - [macOS](#macos)\n    - [Linux 64-bit](#linux-64-bit)\n    - [Windows](#windows)\n    - [Full Installation Guide](#full-installation-guide)\n- [Quick Feature Summary](#quick-feature-summary)\n- [User Guide](#user-guide)\n    - [General Usage](#general-usage)\n    - [Client-Server Architecture](#client-server-architecture)\n    - [Completion String Ranking](#completion-string-ranking)\n    - [General Semantic Completion](#general-semantic-completion)\n    - [Signature Help](#signature-help)\n    - [Semantic Highlighting](#semantic-highlighting)\n    - [Inlay Hints](#inlay-hints)\n    - [C-family Semantic Completion](#c-family-semantic-completion)\n    - [Java Semantic Completion](#java-semantic-completion)\n    - [C# Semantic Completion](#c-semantic-completion)\n    - [Python Semantic Completion](#python-semantic-completion)\n    - [Rust Semantic Completion](#rust-semantic-completion)\n    - [Go Semantic Completion](#go-semantic-completion)\n    - [JavaScript and TypeScript Semantic Completion](#javascript-and-typescript-semantic-completion)\n    - [Semantic Completion for Other Languages](#semantic-completion-for-other-languages)\n    - [LSP Configuration](#lsp-configuration)\n    - [Writing New Semantic Completers](#writing-new-semantic-completers)\n    - [Diagnostic Display](#diagnostic-display)\n        - [Diagnostic Highlighting Groups](#diagnostic-highlighting-groups)\n    - [Symbol Search](#symbol-search)\n    - [Type/Call Hierarchy](#typecall-hierarchy)\n- [Commands](#commands)\n    - [YcmCompleter subcommands](#ycmcompleter-subcommands)\n        - [GoTo Commands](#goto-commands)\n        - [Semantic Information Commands](#semantic-information-commands)\n        - [Refactoring Commands](#refactoring-commands)\n        - [Miscellaneous Commands](#miscellaneous-commands)\n- [Functions](#functions)\n- [Autocommands](#autocommands)\n- [Options](#options)\n- [FAQ](#faq)\n- [Contributor Code of Conduct](#contributor-code-of-conduct)\n- [Contact](#contact)\n- [License](#license)\n- [Sponsorship](#sponsorship)\n\n\nIntro\n-----\n\nYouCompleteMe is a fast, as-you-type, fuzzy-search code completion,\ncomprehension and refactoring engine for [Vim][].\n\nIt has several completion engines built-in and supports any protocol-compliant\nLanguage Server, so can work with practically any language. YouCompleteMe\ncontains:\n\n- an identifier-based engine that works with every programming language,\n- a powerful [clangd][]-based engine that provides native semantic code\n  completion for C/C++/Objective-C/Objective-C++/CUDA (from now on referred to\n  as \"the C-family languages\"),\n- a [Jedi][]-based completion engine for Python 2 and 3,\n- an [OmniSharp-Roslyn][]-based completion engine for C#,\n- a [Gopls][]-based completion engine for Go,\n- a [TSServer][]-based completion engine for JavaScript and TypeScript,\n- a [rust-analyzer][]-based completion engine for Rust,\n- a [jdt.ls][]-based completion engine for Java.\n- a [generic Language Server Protocol implementation for any language](#plugging-an-arbitrary-lsp-server)\n- and an omnifunc-based completer that uses data from Vim's omnicomplete system\n  to provide semantic completions for many other languages (Ruby, PHP, etc.).\n\n![YouCompleteMe GIF completion demo](https://i.imgur.com/0OP4ood.gif)\n\nHere's an explanation of what happened in the last GIF demo above.\n\nFirst, realize that **no keyboard shortcuts had to be pressed** to get the list\nof completion candidates at any point in the demo. The user just types and the\nsuggestions pop up by themselves. If the user doesn't find the completion\nsuggestions relevant and/or just wants to type, they can do so; the completion\nengine will not interfere.\n\nWhen the user sees a useful completion string being offered, they press the TAB\nkey to accept it. This inserts the completion string. Repeated presses of the\nTAB key cycle through the offered completions.\n\nIf the offered completions are not relevant enough, the user can continue typing\nto further filter out unwanted completions.\n\nA critical thing to notice is that the completion **filtering is NOT based on\nthe input being a string prefix of the completion** (but that works too). The\ninput needs to be a _[subsequence][] match_ of a completion. This is a fancy way\nof saying that any input characters need to be present in a completion string in\nthe order in which they appear in the input. So `abc` is a subsequence of\n`xaybgc`, but not of `xbyxaxxc`. After the filter, a complicated sorting system\nranks the completion strings so that the most relevant ones rise to the top of\nthe menu (so you usually need to press TAB just once).\n\n**All of the above works with any programming language** because of the\nidentifier-based completion engine. It collects all of the identifiers in the\ncurrent file and other files you visit (and your tags files) and searches them\nwhen you type (identifiers are put into per-filetype groups).\n\nThe demo also shows the semantic engine in use. When the user presses `.`, `->`\nor `::` while typing in insert mode (for C++; different triggers are used for\nother languages), the semantic engine is triggered (it can also be triggered\nwith a keyboard shortcut; see the rest of the docs).\n\nThe last thing that you can see in the demo is YCM's diagnostic display features\n(the little red X that shows up in the left gutter; inspired by [Syntastic][])\nif you are editing a C-family file. As the completer engine compiles your file\nand detects warnings or errors, they will be presented in various ways. You\ndon't need to save your file or press any keyboard shortcut to trigger this, it\n\"just happens\" in the background.\n\n**And that's not all...**\n\nYCM might be the only Vim completion engine with the correct Unicode support.\nThough we do assume UTF-8 everywhere.\n\n![YouCompleteMe GIF unicode demo](https://user-images.githubusercontent.com/10026824/34471853-af9cf32a-ef53-11e7-8229-de534058ddc4.gif)\n\nYCM also provides [semantic IDE-like features](#quick-feature-summary) in a\nnumber of languages, including:\n\n- displaying signature help (argument hints) when entering the arguments to a\n  function call (Vim only)\n- [finding declarations, definitions, usages](#goto-commands), etc.\n  of identifiers, and an [interactive symbol finder](#symbol-search)\n- [displaying type information](#the-gettype-subcommand) for classes,\n  variables, functions etc.,\n- displaying documentation for methods, members, etc. in the [preview\n  window](#the-getdoc-subcommand), or in a\n  [popup next to the cursor](#the-gycm_auto_hover-option) (Vim only)\n- [fixing common coding errors](#the-fixit-subcommand), like missing\n  semi-colons, typos, etc.,\n- [semantic renaming](#the-refactorrename-subcommand) of variables across files,\n- formatting code,\n- removing unused imports, sorting imports, etc.\n\nFor example, here's a demo of signature help:\n\n![Signature Help Early Demo](https://user-images.githubusercontent.com/10584846/58738348-5060da80-83fd-11e9-9537-d07fdbf4554c.gif)\n\nBelow we can see YCM being able to do a few things:\n\n- Retrieve references across files\n- Go to declaration/definition\n- Expand `auto` in C++\n- Fix some common errors, and provide refactorings, with `FixIt`\n- Not shown in the GIF are `GoToImplementation` and `GoToType`\n  for servers that support it.\n\n![YouCompleteMe GIF subcommands demo](https://i.imgur.com/nmUUbdl.gif)\n\nAnd here's some documentation being shown in a hover popup, automatically and\nmanually:\n\n![hover demo](https://user-images.githubusercontent.com/10584846/80312146-91af6500-87db-11ea-996b-7396f3134d1f.gif)\n\nFeatures vary by file type, so make sure to check out the [file type feature\nsummary](#quick-feature-summary) and the\n[full list of completer subcommands](#ycmcompleter-subcommands) to\nfind out what's available for your favourite languages.\n\nYou'll also find that YCM has filepath completers (try typing `./` in a file)\nand a completer that integrates with [UltiSnips][].\n\nInstallation\n------------",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "26276 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "2774 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T05:37:06.686Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/ycm-core/YouCompleteMe",
+        "description": "GitHub repository: ycm-core/YouCompleteMe"
+      },
+      {
+        "type": "documentation",
+        "uri": "http://ycm-core.github.io/YouCompleteMe/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "ycm-core",
+        "type": "human",
+        "uri": "https://github.com/ycm-core"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 31824,
+      "validation_diversity": 0.77,
+      "context_breadth": 0.46,
+      "temporal_stability": 1,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.6
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.705
+  }
+}

@@ -1,0 +1,353 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/sairyss--domain-driven-hexagon",
+  "meta": {
+    "title": "Domain-Driven Hexagon",
+    "description": "Learn Domain-Driven Design, software architecture, design patterns, best practices. Code examples included",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:30:29.759Z",
+    "dateModified": "2026-03-22T05:30:29.759Z",
+    "keywords": [
+      "architectural-patterns",
+      "architecture",
+      "backend",
+      "best-practices",
+      "clean-architecture",
+      "clean-code",
+      "ddd",
+      "design-patterns",
+      "development",
+      "domain-driven-design",
+      "hexagonal-architecture",
+      "javascript",
+      "nestjs",
+      "nodejs",
+      "onion-architecture",
+      "secure-by-design",
+      "solid-principles",
+      "system-design",
+      "typeorm",
+      "typescript"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "**Check out my other repositories**:",
+    "context": "**Check out my other repositories**:\n\n- [Backend best practices](https://github.com/Sairyss/backend-best-practices) - Best practices, tools and guidelines for backend development.\n- [System Design Patterns](https://github.com/Sairyss/system-design-patterns) - list of topics and resources related to distributed systems, system design, microservices, scalability and performance, etc.\n- [Full Stack starter template](https://github.com/Sairyss/fullstack-starter-template) - template for full stack applications based on TypeScript, React, Vite, ChakraUI, tRPC, Fastify, Prisma, zod, etc.\n\n---\n\nThe main emphasis of this project is to provide recommendations on how to design software applications. This readme includes techniques, tools, best practices, architectural patterns and guidelines gathered from different sources.\n\nCode examples are written using [NodeJS](https://nodejs.org/en/), [TypeScript](https://www.typescriptlang.org/), [NestJS](https://docs.nestjs.com/) framework and [Slonik](https://github.com/gajus/slonik) for the database access.\n\nPatterns and principles presented here are **framework/language agnostic**. Therefore, the above technologies can be easily replaced with any alternative. No matter what language or framework is used, any application can benefit from principles described below.\n\n**Note**: code examples are adapted to TypeScript and frameworks mentioned above. <br/>\n(Implementations in other languages will look differently)\n\n**Everything below is provided as a recommendation, not a rule**. Different projects have different requirements, so any pattern mentioned in this readme should be adjusted to project needs or even skipped entirely if it doesn't fit. In real world production applications, you will most likely only need a fraction of those patterns depending on your use cases. More info in [this](#general-recommendations-on-architectures-best-practices-design-patterns-and-principles) section.\n\n---\n\n- [Domain-Driven Hexagon](#domain-driven-hexagon)\n- [Architecture](#architecture)\n      - [Pros](#pros)\n      - [Cons](#cons)\n- [Diagram](#diagram)\n- [Modules](#modules)\n- [Application Core](#application-core)\n- [Application layer](#application-layer)\n  - [Application Services](#application-services)\n  - [Commands and Queries](#commands-and-queries)\n    - [Commands](#commands)\n    - [Queries](#queries)\n  - [Ports](#ports)\n- [Domain Layer](#domain-layer)\n  - [Entities](#entities)\n  - [Aggregates](#aggregates)\n  - [Domain Events](#domain-events)\n  - [Integration Events](#integration-events)\n  - [Domain Services](#domain-services)\n  - [Value objects](#value-objects)\n  - [Domain Invariants](#domain-invariants)\n    - [Replacing primitives with Value Objects](#replacing-primitives-with-value-objects)\n    - [Make illegal states unrepresentable](#make-illegal-states-unrepresentable)\n      - [Validation at compile time](#validation-at-compile-time)\n      - [Validation at runtime](#validation-at-runtime)\n    - [Guarding vs validating](#guarding-vs-validating)\n  - [Domain Errors](#domain-errors)\n  - [Using libraries inside Application's core](#using-libraries-inside-applications-core)\n- [Interface Adapters](#interface-adapters)\n  - [Controllers](#controllers)\n    - [Resolvers](#resolvers)\n  - [DTOs](#dtos)\n    - [Request DTOs](#request-dtos)\n    - [Response DTOs](#response-dtos)\n    - [Additional recommendations](#additional-recommendations)\n    - [Local DTOs](#local-dtos)\n- [Infrastructure layer](#infrastructure-layer)\n  - [Adapters](#adapters)\n  - [Repositories](#repositories)\n  - [Persistence models](#persistence-models)\n  - [Other things that can be a part of Infrastructure layer](#other-things-that-can-be-a-part-of-infrastructure-layer)\n- [Other recommendations](#other-recommendations)\n  - [General recommendations on architectures, best practices, design patterns and principles](#general-recommendations-on-architectures-best-practices-design-patterns-and-principles)\n  - [Recommendations for smaller APIs](#recommendations-for-smaller-apis)\n  - [Behavioral Testing](#behavioral-testing)\n  - [Folder and File Structure](#folder-and-file-structure)\n    - [File names](#file-names)\n  - [Enforcing architecture](#enforcing-architecture)\n  - [Prevent massive inheritance chains](#prevent-massive-inheritance-chains)\n- [Additional resources](#additional-resources)\n  - [Articles](#articles)\n  - [Websites](#websites)\n  - [Blogs](#blogs)\n  - [Videos](#videos)\n  - [Books](#books)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "backend",
+    "machine-learning",
+    "lang:typescript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "14489 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "1529 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T05:30:29.759Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/Sairyss/domain-driven-hexagon",
+        "description": "GitHub repository: Sairyss/domain-driven-hexagon"
+      }
+    ],
+    "language": "TypeScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "@nestjs/apollo",
+        "version": "^10.1.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@nestjs/apollo"
+      },
+      {
+        "name": "@nestjs/common",
+        "version": "^9.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@nestjs/common"
+      },
+      {
+        "name": "@nestjs/core",
+        "version": "^9.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@nestjs/core"
+      },
+      {
+        "name": "@nestjs/cqrs",
+        "version": "^9.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@nestjs/cqrs"
+      },
+      {
+        "name": "@nestjs/event-emitter",
+        "version": "^1.3.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@nestjs/event-emitter"
+      },
+      {
+        "name": "@nestjs/graphql",
+        "version": "^10.1.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@nestjs/graphql"
+      },
+      {
+        "name": "@nestjs/microservices",
+        "version": "^9.1.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@nestjs/microservices"
+      },
+      {
+        "name": "@nestjs/platform-express",
+        "version": "^9.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@nestjs/platform-express"
+      },
+      {
+        "name": "@nestjs/swagger",
+        "version": "^6.1.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@nestjs/swagger"
+      },
+      {
+        "name": "@slonik/migrator",
+        "version": "^0.11.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@slonik/migrator"
+      },
+      {
+        "name": "apollo-server-core",
+        "version": "^3.10.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/apollo-server-core"
+      },
+      {
+        "name": "apollo-server-express",
+        "version": "^3.10.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/apollo-server-express"
+      },
+      {
+        "name": "class-transformer",
+        "version": "^0.5.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/class-transformer"
+      },
+      {
+        "name": "class-validator",
+        "version": "^0.13.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/class-validator"
+      },
+      {
+        "name": "dotenv",
+        "version": "^16.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/dotenv"
+      },
+      {
+        "name": "env-var",
+        "version": "^7.3.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/env-var"
+      },
+      {
+        "name": "graphql",
+        "version": "^16.6.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/graphql"
+      },
+      {
+        "name": "jest-cucumber",
+        "version": "^3.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/jest-cucumber"
+      },
+      {
+        "name": "nanoid",
+        "version": "^3.3.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/nanoid"
+      },
+      {
+        "name": "nestjs-console",
+        "version": "^8.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/nestjs-console"
+      },
+      {
+        "name": "nestjs-request-context",
+        "version": "^2.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/nestjs-request-context"
+      },
+      {
+        "name": "nestjs-slonik",
+        "version": "^9.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/nestjs-slonik"
+      },
+      {
+        "name": "oxide.ts",
+        "version": "^1.0.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/oxide.ts"
+      },
+      {
+        "name": "reflect-metadata",
+        "version": "^0.1.13",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/reflect-metadata"
+      },
+      {
+        "name": "rimraf",
+        "version": "^3.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/rimraf"
+      },
+      {
+        "name": "rxjs",
+        "version": "^7.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/rxjs"
+      },
+      {
+        "name": "slonik",
+        "version": "^31.2.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/slonik"
+      },
+      {
+        "name": "uuid",
+        "version": "^9.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/uuid"
+      },
+      {
+        "name": "zod",
+        "version": "^3.21.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/zod"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Sairyss",
+        "type": "human",
+        "uri": "https://github.com/Sairyss"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 17547,
+      "validation_diversity": 0.43,
+      "context_breadth": 0.7,
+      "temporal_stability": 0.72,
+      "test_coverage": 0.67,
+      "documentation_quality": 0.5
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.659
+  }
+}

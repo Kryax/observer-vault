@@ -1,0 +1,165 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/d-krupke--cpsat-primer",
+  "meta": {
+    "title": "The CP-SAT Primer: Using and Understanding Google OR-Tools' CP-SAT Solver",
+    "description": "The CP-SAT Primer: Using and Understanding Google OR-Tools' CP-SAT Solver",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:38:47.534Z",
+    "dateModified": "2026-03-22T05:38:47.534Z",
+    "keywords": [
+      "combinatorial-optimization",
+      "cp-sat",
+      "operations-research",
+      "optimization",
+      "ortools"
+    ],
+    "license": "CC-BY-4.0"
+  },
+  "problemSolved": {
+    "statement": "This final block of the log contains a summary by the solver. Here you find the\nmost important information, such as how successful the search was.",
+    "context": "_By [Dominik Krupke](https://krupke.cc), TU Braunschweig, with contributions\nfrom Leon Lan, Michael Perk, and\n[others](https://github.com/d-krupke/cpsat-primer/graphs/contributors)._\n\n<!-- Introduction Paragraph --->\n\nMany [combinatorially difficult](https://en.wikipedia.org/wiki/NP-hardness)\noptimization problems can, despite their proven theoretical hardness, be solved\nreasonably well in practice. The most successful approach is to use\n[Mixed Integer Linear Programming](https://en.wikipedia.org/wiki/Integer_programming)\n(MIP) to model the problem and then use a solver to find a solution. The most\nsuccessful solvers for MIPs are, e.g., [Gurobi](https://www.gurobi.com/),\n[CPLEX](https://www.ibm.com/analytics/cplex-optimizer),\n[COPT Cardinal Solver](https://www.copt.de/), and\n[FICO Xpress Optimization](https://www.fico.com/en/products/fico-xpress-optimization),\nwhich are all commercial and expensive (though, mostly free for academics).\nThere are also some open source solvers (e.g., [SCIP](https://www.scipopt.org/)\nand [HiGHS](https://highs.dev/)), but they are often not as powerful as the\ncommercial ones (yet). However, even when investing in such a solver, the\nunderlying techniques\n([Branch and Bound](https://en.wikipedia.org/wiki/Branch_and_bound) &\n[Cut](https://en.wikipedia.org/wiki/Branch_and_cut) on\n[Linear Relaxations](https://en.wikipedia.org/wiki/Linear_programming_relaxation))\nstruggle with some optimization problems, especially if the problem contains a\nlot of logical constraints that a solution has to satisfy. In this case, the\n[Constraint Programming](https://en.wikipedia.org/wiki/Constraint_programming)\n(CP) approach may be more successful. For Constraint Programming, there are many\nopen source solvers, but they usually do not scale as well as MIP-solvers and\nare worse in optimizing objective functions. While MIP-solvers are frequently\nable to optimize problems with hundreds of thousands of variables and\nconstraints, the classical CP-solvers often struggle with problems with more\nthan a few thousand variables and constraints. However, the relatively new\n[CP-SAT](https://developers.google.com/optimization/cp/cp_solver) of Google's\n[OR-Tools](https://github.com/google/or-tools/) suite shows to overcome many of\nthe weaknesses and provides a viable alternative to MIP-solvers, being\ncompetitive for many problems and sometimes even superior.\n\nAs a quick demonstration of CP-SAT's capabilities - particularly for those less\nfamiliar with optimization frameworks - let us solve an instance of the NP-hard\nKnapsack Problem. This classic optimization problem requires selecting a subset\nof items, each with a specific weight and value, to maximize the total value\nwithout exceeding a weight limit. Although a recursive algorithm is easy to\nimplement, 100 items yield approximately $2^{100} \\approx 10^{30}$ possible\nsolutions. Even with a supercomputer performing $10^{18}$ operations per second,\nit would take more than 31,000 years to evaluate all possibilities.\n\nHere is how you can solve it using CP-SAT:\n\n```python\nfrom ortools.sat.python import cp_model  # pip install -U ortools",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:jupyter notebook"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "694 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "56 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T05:38:47.534Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/d-krupke/cpsat-primer",
+        "description": "GitHub repository: d-krupke/cpsat-primer"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://d-krupke.github.io/cpsat-primer/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Jupyter Notebook"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "d-krupke",
+        "type": "human",
+        "uri": "https://github.com/d-krupke"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 806,
+      "validation_diversity": 0.38,
+      "context_breadth": 0.37,
+      "temporal_stability": 0.98,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.85
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.497
+  }
+}

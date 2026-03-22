@@ -1,0 +1,493 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/logic-firstorder-emergence",
+  "meta": {
+    "title": "The Emergence of First-Order Logic",
+    "description": "For anybody schooled in modern logic, first-order logic can seem an entirely natural object of study, and its discovery inevitable. It is semantically complete; it is adequate to the axiomatization of all ordinary mathematics; and Lindstr&ouml;m's theorem shows that it is the maximal logic satisfying the compactness and L&ouml;wenheim-Skolem properties. So it is not surprising that first-order logic has long been regarded as the \"right\" logic for investigations into the foundations of mathematics. It occupies the central place in modern textbooks of mathematical logic, with other systems relegated to the sidelines. The history, however, is anything but straightforward, and is certainly not a matter of a sudden discovery by a single researcher. The emergence is bound up with technical discoveries, with differing conceptions of what constitutes logic, with different programs of mathematical research, and with philosophical and conceptual reflection. So if first-order logic is \"natural\", it is natural only in retrospect. The story is intricate, and at points contested; the following entry can only provide an overview. Discussions of various aspects of the development are provided by Goldfarb 1979, Moore 1988, Eklund 1996, Brady 2000, Ferreir&oacute;s 2001, Sieg 2009, Mancosu, Zach & Badesa 2010, Schiemer & Reck 2013, the notes to Hilbert [LFL], and the encyclopedic handbook Gabbay & Woods 2009.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:40:19.601Z",
+    "dateModified": "2026-03-22T05:40:19.601Z",
+    "datePublished": "2018-11-16T13:00:00.000Z",
+    "keywords": [
+      "epsilon calculus",
+      "frege",
+      "goedel incompleteness",
+      "logic higher order",
+      "logical pluralism",
+      "modeltheory fo",
+      "paradox skolem",
+      "peirce",
+      "peirce benjamin",
+      "peirce logic",
+      "proof theory development",
+      "russell",
+      "russell paradox",
+      "type theory",
+      "whitehead",
+      "zermelo set theory"
+    ]
+  },
+  "problemSolved": {
+    "statement": "For anybody schooled in modern logic, first-order logic can seem an entirely natural object of study, and its discovery inevitable. It is semantically complete; it is adequate to the axiomatization of all ordinary mathematics; and Lindstr&ouml;m's theorem shows that it is the maximal logic satisfying the compactness and L&ouml;wenheim-Skolem properties. So it is not surprising that first-order logic has long been regarded as the \"right\" logic for investigations into the foundations of mathematics. It occupies the central place in modern textbooks of mathematical logic, with other systems relegated to the sidelines. The history, however, is anything but straightforward, and is certainly not a matter of a sudden discovery by a single researcher. The emergence is bound up with technical discoveries, with differing conceptions of what constitutes logic, with different programs of mathematical research, and with philosophical and conceptual reflection. So if first-order logic is \"natural\", it is natural only in retrospect. The story is intricate, and at points contested; the following entry can only provide an overview. Discussions of various aspects of the development are provided by Goldfarb 1979, Moore 1988, Eklund 1996, Brady 2000, Ferreir&oacute;s 2001, Sieg 2009, Mancosu, Zach & Badesa 2010, Schiemer & Reck 2013, the notes to Hilbert [LFL], and the encyclopedic handbook Gabbay & Woods 2009.",
+    "context": "Opening section: 1. George Boole | Related entries: epsilon-calculus, frege, goedel-incompleteness, logic-higher-order, logical-pluralism, modeltheory-fo, paradox-skolem, peirce-benjamin, peirce, peirce-logic, proof-theory-development, russell, russell-paradox, zermelo-set-theory, type-theory, whitehead",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "logic"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry logic-firstorder-emergence",
+        "uri": "https://plato.stanford.edu/entries/logic-firstorder-emergence/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 16 related entries, bibliography size 69"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2018-11-16T13:00:00.000Z and revised 2018-11-16T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2018-11-16T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/logic-firstorder-emergence/",
+        "description": "SEP entry for logic-firstorder-emergence"
+      }
+    ],
+    "solutionApproach": "1. George Boole"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/epsilon-calculus",
+      "ocp:sep/frege",
+      "ocp:sep/goedel-incompleteness",
+      "ocp:sep/logic-higher-order",
+      "ocp:sep/logical-pluralism",
+      "ocp:sep/modeltheory-fo",
+      "ocp:sep/paradox-skolem",
+      "ocp:sep/peirce-benjamin",
+      "ocp:sep/peirce",
+      "ocp:sep/peirce-logic",
+      "ocp:sep/proof-theory-development",
+      "ocp:sep/russell",
+      "ocp:sep/russell-paradox",
+      "ocp:sep/zermelo-set-theory",
+      "ocp:sep/type-theory",
+      "ocp:sep/whitehead"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Ewald, William",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/logic-firstorder-emergence/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 64,
+      "validation_diversity": 0.49,
+      "context_breadth": 0.53,
+      "temporal_stability": 0.7,
+      "test_coverage": 0.7,
+      "documentation_quality": 0.9
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.54
+  },
+  "extensions": {
+    "sep": {
+      "slug": "logic-firstorder-emergence",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/logic-firstorder-emergence/",
+      "preamble": "For anybody schooled in modern logic, first-order logic can seem an entirely natural object of study, and its discovery inevitable. It is semantically complete; it is adequate to the axiomatization of all ordinary mathematics; and Lindstr&ouml;m's theorem shows that it is the maximal logic satisfying the compactness and L&ouml;wenheim-Skolem properties. So it is not surprising that first-order logic has long been regarded as the \"right\" logic for investigations into the foundations of mathematics. It occupies the central place in modern textbooks of mathematical logic, with other systems relegated to the sidelines. The history, however, is anything but straightforward, and is certainly not a matter of a sudden discovery by a single researcher. The emergence is bound up with technical discoveries, with differing conceptions of what constitutes logic, with different programs of mathematical research, and with philosophical and conceptual reflection. So if first-order logic is \"natural\", it is natural only in retrospect. The story is intricate, and at points contested; the following entry can only provide an overview. Discussions of various aspects of the development are provided by Goldfarb 1979, Moore 1988, Eklund 1996, Brady 2000, Ferreir&oacute;s 2001, Sieg 2009, Mancosu, Zach & Badesa 2010, Schiemer & Reck 2013, the notes to Hilbert [LFL], and the encyclopedic handbook Gabbay & Woods 2009.",
+      "firstSectionTitle": "1. George Boole",
+      "firstSectionText": "The modern study of logic is commonly dated to 1847, with the appearance of Boole's Mathematical Analysis of Logic . This work established that Aristotle's syllogistic logic can be translated into an algebraic calculus, whose symbols Boole interpreted as referring either to classes or to propositions. His system encompasses what is today called sentential (or Boolean) logic, but it is also capable of expressing rudimentary quantifications. For instance, the proposition \"All X s are Y s\" is represented in his system by the equation \\(xy = x\\), with the multiplication being thought of either as an intersection of sets, or as logical conjunction. \"Some X s are Y s\" is more difficult, and its expression more artificial. Boole introduces a (tacitly: non-empty) set V containing the items common to X and Y ; the proposition is then written \\(xy = V\\) (1847: 21). Boole's system, in modern terms, can be viewed as a fragment of monadic first-order logic. It is first-order because its notational resources cannot express a quantification that ranges over predicates. It is monadic because it has no notation for n -ary relations. And it is a fragment because it cannot express nested quantifications (\"for every girl, there exists a boy who loves her\"). But these are our categories: not Boole's. His logical system has no symbols corresponding to the quantifiers; so even to call it a restricted system of quantificational logic is anachronistic. The two principal augmentations to Boole's system that produced a recognizably modern logic were (a) the introduction, in addition to one-placed predicates (\" x is mortal\"), of many-placed relations (\" x is the brother of y \"; \" x lies between y and z \"); and (b) the introduction of a notation for universal and existential quantification. Two logicians working in the Boolean tradition carried out these steps. The first step was partially carried out by Augustus De Morgan (in De Morgan 1864). The second was carried out by C. S. Peirce (in Peirce 1885). Working entirely independently, Gottlob Frege carried out both steps simultaneously in his Begriffsschrift of 1879. The subsequent history for several decades is a branching structure, with numerous researchers working in different traditions and only partially aware of one another's accomplishments.",
+      "relatedEntries": [
+        "epsilon-calculus",
+        "frege",
+        "goedel-incompleteness",
+        "logic-higher-order",
+        "logical-pluralism",
+        "modeltheory-fo",
+        "paradox-skolem",
+        "peirce-benjamin",
+        "peirce",
+        "peirce-logic",
+        "proof-theory-development",
+        "russell",
+        "russell-paradox",
+        "zermelo-set-theory",
+        "type-theory",
+        "whitehead"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "epsilon-calculus"
+        },
+        {
+          "slug": "frege"
+        },
+        {
+          "slug": "goedel-incompleteness"
+        },
+        {
+          "slug": "logic-higher-order"
+        },
+        {
+          "slug": "logical-pluralism"
+        },
+        {
+          "slug": "modeltheory-fo"
+        },
+        {
+          "slug": "paradox-skolem"
+        },
+        {
+          "slug": "peirce-benjamin"
+        },
+        {
+          "slug": "peirce"
+        },
+        {
+          "slug": "peirce-logic"
+        },
+        {
+          "slug": "proof-theory-development"
+        },
+        {
+          "slug": "russell"
+        },
+        {
+          "slug": "russell-paradox"
+        },
+        {
+          "slug": "zermelo-set-theory"
+        },
+        {
+          "slug": "type-theory"
+        },
+        {
+          "slug": "whitehead"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 69,
+      "bibliography": [
+        {
+          "raw": "Awodey, Steve & Erich H. Reck, 2002, \"Completeness and Categoricity, Part I: Nineteenth-century Axiomatics to Twentieth-century Metalogic\", History and Philosophy of Logic , 23(1): 1-30. doi:10.1080/01445340210146889"
+        },
+        {
+          "raw": "Badesa, Calixto, 2004, The Birth of Model Theory: L&ouml;wenheim's Theorem in the Frame of the Theory of Relatives , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Bernays, Paul, 1918, \"Beitr&auml;ge zur axiomatischen Behandlung des Aussagen-Kalk&uuml;ls\", Habilitation Thesis, University of G&ouml;ttingen; first published in Hilbert [LFL], pp. 231-268."
+        },
+        {
+          "raw": "---, 1926, \"Axiomatische Untersuchung des Aussagen-Kalk&uuml;ls der Principia Mathematica\", Mathematische Zeitschrift , 25: 305-320."
+        },
+        {
+          "raw": "---, 1937, \"A System of Axiomatic Set Theory\", Journal of Symbolic Logic , 2(1): 65-77. doi:10.2307/2268862"
+        },
+        {
+          "raw": "Boole, George, 1847, The Mathematical Analysis of Logic: Being An Essay Towards a Calculus of Deductive Reasoning , Cambridge: Macmillan. Reprinted in Ewald 1996: vol. 1, pp. 451-509. [ Boole 1847 available online ]"
+        },
+        {
+          "raw": "Brady, Geraldine, 2000, From Peirce to Skolem: A Neglected Chapter in the History of Logic , (Studies in the History and Philosophy of Mathematics, 4), Amsterdam: Elsevier."
+        },
+        {
+          "raw": "Carnap, Rudolf, \"Die logizistische Grundlegung der Mathematik\", Erkenntnis , 2(1): 91-105. (References to the translation in Paul Benacerraf and Hilary Putnam, Philosophy of Mathematics: Selected Readings , Cambridge: Cambridge University Press, 1983, 41-52.) doi:10.1007/BF02028142 (de) doi:10.1017/CBO9781139171519.003 (en)"
+        },
+        {
+          "raw": "Church, Alonzo, 1956, Introduction to Mathematical Logic , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "---, 1974, \"Russellian Simple Type Theory\", Proceedings and Addresses of the American Philosophical Association , 47: 21-33. doi:10.2307/3129899"
+        },
+        {
+          "raw": "De Morgan, Augustus, 1864, \"On the Syllogism, No. IV, and on the Logic of Relations\", Transactions of the Cambridge Philosophical Society , 10: 173-230. (Read 8 Feb. 1858.) [ De Morgan 1864 available online ]"
+        },
+        {
+          "raw": "Dutilh Novaes, Catarina, forthcoming, \"Axiomatizations of Arithmetic and the First-order/Second-order Divide\", Synthese , first online: 30 December 2014. doi:10.1007/s11229-014-0636-6"
+        },
+        {
+          "raw": "Eklund, Matti, 1996, \"On How Logic Became First-Order\", Nordic Journal of Philosophical Logic , 1(2): 147-167. [ Eklund 1996 available online ]"
+        },
+        {
+          "raw": "Ewald, William Bragg (ed.), 1996, From Kant to Hilbert: A Source Book in the Foundations of Mathematics , 2 vols., Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Ferreir&oacute;s, Jos&eacute;, 2001, \"The Road to Modern Logic--An Interpretation\", Bulletin of Symbolic Logic , 7(4): 441-484. doi:10.2307/2687794"
+        },
+        {
+          "raw": "Fraenkel, Abraham A., 1927, \"Review of Skolem 1922\", Jahrbuch &uuml;ber die Fortschritte der Mathematik , 49: 138-139."
+        },
+        {
+          "raw": "Frege, Gottlob, 1879, Begriffsschrift, eine der arithmetischen nachgebildete Formelsprache des reinen Denkens , Halle: Nebert. Translated by Stefan Bauer-Mengelberg in van Heijenoort 1967: 1-82."
+        },
+        {
+          "raw": "---, 1884, Die Grundlagen der Arithmetik, eine logisch-mathematische Untersuchung &uuml;ber den Begriff der Zahl , Breslau: Koebner. Translated by J. L. Austin as The Foundations of Arithmetic, A Logico-Mathematical Inquiry into the Concept of Number , Oxford: Blackwell, 1950."
+        },
+        {
+          "raw": "---, 1893, Grundgesetze der Arithmetik, begriffsschriftlich abgeleitet , vol. 1, Jena: Pohl."
+        },
+        {
+          "raw": "---, 1895, \"Kritische Beleuchtung einiger Punkte in E. Schr&ouml;ders Vorlesungen &uuml;ber die Algebra der Logik\", Archiv f&uuml;r systematische Philosophie , 1: 433-456. [ Frege 1895 available online ]"
+        },
+        {
+          "raw": "---, [ PMC ], Philosophical and Mathematical Correspondence , Gottfried Gabriel, Hans Hermes, Friedrich Kambartel, Christian Thiel, Albert Veraart, Brian McGuinness, and Hans Kaal (eds.), Chicago: University of Chicago Press, 1980."
+        },
+        {
+          "raw": "Gabbay, Dov M. & John Woods (eds.), 2009, Handbook of the History of Logic, Vol. 5: Logic from Russell to Church , Amsterdam: Elsevier-North Holland."
+        },
+        {
+          "raw": "G&ouml;del, Kurt, 1929, &Uuml;ber die Vollst&auml;ndigkeit des Logikkalk&uuml;ls , Doctoral Dissertation, University of Vienna. Printed with translation in Sol Feferman et al. (eds), Kurt G&ouml;del: Collected Works, Vol. 1: Publications 1929-1936 , Oxford: Clarendon Press, pp. 60-101."
+        },
+        {
+          "raw": "---, 1931, \"&Uuml;ber formal unentscheidbare S&auml;tze der Principia Mathematica und verwandter Systeme I\", Monatshefte f&uuml;r Mathematik und Physik , 38: 173-198; translated by S. Bauer-Mengelberg in van Heijenoort 1967: 596-616."
+        },
+        {
+          "raw": "---, 1940, The Consistency of the Axiom of Choice and of the Generalized Continuum Hypothesis with the Axioms of Set Theory , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Goldfarb, Warren D., 1979, \"Logic in the Twenties: The Nature of the Quantifier\", Journal of Symbolic Logic , 44(3): 351-368. doi:10.2307/2273128"
+        },
+        {
+          "raw": "Hilbert, David, 1905, \"&Uuml;ber die Grundlagen der Logik und der Arithmetik\", in Verhandlungen des Dritten Internationalen Mathematiker-Kongresses in Heidelberg vom 8. bis 13. August 1904 , Leipzig: Teubner, pp. 174-185; translated by S. Bauer-Mengelberg in van Heijenoort 1967: 130-138."
+        },
+        {
+          "raw": "---, 1917, \"Axiomatisches Denken\", Mathematische Annalen 78(1-4): 405-415; translated by W. Ewald in Ewald 1996 (Volume 2), pp. 1105-1115. doi:10.1007/BF01457115 (de)"
+        },
+        {
+          "raw": "---, 1917/18, Prinzipien der Mathematik , unpublished lectures held in G&ouml;ttingen, Winter Semester, 1917/18 (lecture notes recorded by Paul Bernays). Reprinted in Hilbert 2013: 31-221.)"
+        },
+        {
+          "raw": "---, 1928, \"Probleme der Grundlegung der Mathematik\", (the \"Bologna Lecture\"), reprinted in Hilbert 2013: 954-966."
+        },
+        {
+          "raw": "---, [ LFL ], David Hilbert, Lectures on the Foundations of Logic, Mathematics and the Natural Sciences (Volume III: Foundations of Logic and Arithmetic, 1917-1933), William Ewald and Wilfried Sieg (eds.), Berlin: Springer Verlag, 2013. doi:10.1007/978-3-540-69444-1"
+        },
+        {
+          "raw": "Hilbert, David & Wilhelm Ackermann, 1928, Grundz&uuml;ge der theoretischen Logik , Berlin: Springer Verlag."
+        },
+        {
+          "raw": "Hilbert, David & Paul Bernays, 1939 , Prinzipien der Mathematik II , Berlin: Springer Verlag."
+        },
+        {
+          "raw": "Landini, Gregory, 1998, Russell's Hidden Substitutional Theory , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Lindstr&ouml;m, Per, 1969, \"On Extensions of Elementary Logic\", Theoria , 35(1): 1-11. doi:10.1111/j.1755-2567.1969.tb00356.x"
+        },
+        {
+          "raw": "Linsky, Bernard, 2011, The Evolution of 'Principia Mathematica': Bertrand Russell's Manuscripts and Notes for the Second Edition , Cambridge: Cambridge University Press. doi:10.1017/CBO9780511760181"
+        },
+        {
+          "raw": "L&ouml;wenheim, Leopold, 1915, \"&Uuml;ber M&ouml;glichkeiten im Relativkalk&uuml;l\", Mathematische Annalen , 76(4): 447-470. Translation in van Heijenoort 1967: 228-251. doi:10.1007/BF01458217 (de)"
+        },
+        {
+          "raw": "---, 1940, \"Einkleidung der Mathematik im Schr&ouml;derschen Relativkalk&uuml;l\", Journal of Symbolic Logic , 5(1): 1-15. doi:10.2307/2269177"
+        },
+        {
+          "raw": "Macintyre, Angus, 2011, \"The Impact of G&ouml;del's Incompleteness Theorems on Mathematics\", in Kurt G&ouml;del and the Foundations of Mathematics: Horizons of Truth , Matthias Baaz, Christos H. Papadimitriou, Dana S. Scott, Hilary Putnam, and Charles L. Harper (eds.), Cambridge: Cambridge University Press, pp. 3-26. doi:10.1017/CBO9780511974236.004"
+        },
+        {
+          "raw": "Mancosu, Paolo (ed.), 1998, From Brouwer to Hilbert: The Debate on the Foundations of Mathematics in the 1920s , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Mancosu, Paolo, Richard Zach, & Calixto Badesa, 2009, \"The Development of Mathematical Logic from Russell to Tarski, 1900-1935\", in L. Haaparanta (ed.), The Development of Modern Logic , Oxford: Oxford University Press, pp. 318-470; reprinted in Paolo Mancosu (ed.), The Adventure of Reason: Interplay Between Philosophy of Mathematics and Mathematical Logic, 1900-1940 , Oxford: Oxford University Press, pp. 5-120."
+        },
+        {
+          "raw": "Moore, Gregory S., 1988, \"The Emergence of First-Order Logic\", in William Aspray and Philip Kitcher (eds), History and Philosophy of Modern Mathematics , (Minnesota Studies in the Philosophy of Science, 11), pp. 95-135, Minneapolis: University of Minnesota Press."
+        },
+        {
+          "raw": "Peano, Giuseppe, 1889, Arithmetices Principia, nova methodo exposita , Turin: Bocca. Translated in van Heijenoort 1967: 20-55. [ Peano 1889 (it) available online ]"
+        },
+        {
+          "raw": "Peirce, Charles S., 1867, Five Papers on Logic Presented to the American Academy; reprinted in Writings of Charles S. Peirce: A Chronological Edition (Volume 2), Edward C. Moore (ed.), Bloomington: Indiana University Press, 1984, pp. 12-86."
+        },
+        {
+          "raw": "---, 1870 [1873], \"Description of a Notation for the Logic of Relatives, Resulting from an Amplification of the Conceptions of Boole's Calculus of Logic\", Memoirs of the American Academy of Arts and Sciences , 9(2): 317-378, communicated 26 January 1870, published 1873. doi:10.2307/25058006"
+        },
+        {
+          "raw": "---, 1881, \"On the Logic of Number\", American Journal of Mathematics , 4(1): 85-95. Reprinted in Ewald 1996: vol. 1, pp. 598-608. doi:10.2307/2369151"
+        },
+        {
+          "raw": "---, 1883, \"A Theory of Probable Inference\", in C. S. Peirce (ed.), Studies in Logic by Members of the Johns Hopkins University , Boston: Little Brown, pp. 126-181. [ Peirce 1883 available online ]"
+        },
+        {
+          "raw": "---, 1885, \"On the Algebra of Logic: A Contribution to the Philosophy of Notation\", American Journal of Mathematics , 7(2): 180-202. Reprinted in Ewald 1996: vol. 1, pp. 608-632. doi:10.2307/2369451"
+        },
+        {
+          "raw": "Quine, Willard V., 1936, \"Set-theoretic Foundations for Logic\", Journal of Symbolic Logic , 1(2): 45-57. doi:10.2307/2268548"
+        },
+        {
+          "raw": "Reck, Erich H., 2013, \"Developments in Logic: Carnap, G&ouml;del, and Tarski\", in Oxford Handbook of the History of Analytical Philosophy , Michael Beaney (ed.), Oxford: Oxford University Press, pp 546-571."
+        },
+        {
+          "raw": "Russell, Bertrand, 1903, The Principles of Mathematics , Cambridge: Cambridge University Press. [ Russell 1903 available online ]"
+        },
+        {
+          "raw": "---, 1908, \"Mathematical Logic as Based on the Theory of Types\", American Journal of Mathematics , 30(3): 222-262. Reprinted in van Heijenoort 1967: 150-182. doi:10.2307/2369948"
+        },
+        {
+          "raw": "Schiemer, Georg & Erich H. Reck, 2013, \"Logic in the 1930s: Type Theory and Model Theory\", Bulletin of Symbolic Logic , 19(4): 433-472. doi:10.1017/S1079898600010568"
+        },
+        {
+          "raw": "Schr&ouml;der, Ernst, 1890-95, Vorlesungen &uuml;ber die Algebra der Logik (exakte Logik) , 3 volumes, Leipzig: Teubner."
+        },
+        {
+          "raw": "Sieg, Wilfried, 1999, \"Hilbert's Programs: 1917-1922\", Bulletin of Symbolic Logic , 5(1): 1-44. doi:10.2307/421139"
+        },
+        {
+          "raw": "---, 2009, \"Hilbert's Proof Theory\", in Gabbay & Woods 2009: 321-384. doi:10.1016/S1874-5857(09)70012-3"
+        },
+        {
+          "raw": "---, 2013, Hilbert's Programs and Beyond , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Skolem, Thoralf, 1920, \"Logisch-kombinatorische Untersuchungen &uuml;ber die Erf&uuml;llbarkeit oder Beweisbarkeit mathematischer S&auml;tze nebst einem theoreme &uuml;ber dichte Mengen\", Kristiania. Partially translated by S. Bauer Mengelberg in van Heijenoort 1967: 252-263."
+        },
+        {
+          "raw": "---, 1922, \"Einige Bemerkungen zur axiomatischen Begr&uuml;ndung der Mengenlehre\", translated by S. Bauer Mengelberg in van Heijenoort 1967: 217-232."
+        },
+        {
+          "raw": "---, 1923, \"Begr&uuml;ndung der elementaren Arithmetik durch die rekurrierende Denkweise ohne Anwendung scheinbarer Ver&auml;nderlichen mit unendlichem Ausdehnungsbereich\", Kristiania. Translated by S. Bauer Mengelberg in van Heijenoort 1967: 302-333. [ Skolem 1923 (de) available online ]"
+        },
+        {
+          "raw": "Tarski, Alfred, 1935, \"Der Wahrheitsbegriff in den formalisierten Sprachen\", Studia Philosophica , 1: 261-405. Translated in Logic, Semantics, Metamathematics: Papers from 1923 to 1938 , Oxford: Oxford University Press, 1956."
+        },
+        {
+          "raw": "van Heijenoort, Jean, (ed.), 1967, From Frege to G&ouml;del: A Source Book in Mathematical Logic, 1879-1931 , Cambridge, MA: Harvard University Press"
+        },
+        {
+          "raw": "von Neumann, John, 1927, \"Zur Hilbertschen Beweistheorie\", Mathematische Zeitschrift , 26: 1-46."
+        },
+        {
+          "raw": "Weyl, Hermann, 1910, \"&Uuml;ber die Definitionen der mathematischen Grundbegriffe\", Mathematisch-Wissenschaftliche Bl&auml;tter , 7: 93-95, 109-113."
+        },
+        {
+          "raw": "---, 1918, Das Kontinuum , Berlin: de Gruyter."
+        },
+        {
+          "raw": "Whitehead, Alfred N. & Bertrand Russell, 1910-1913, Principia Mathematica , 3 volumes, Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Zach, Richard, 1999, \"Completeness Before Post: Bernays, Hilbert, and the Development of Propositional Logic\", Bulletin of Symbolic Logic , 5: 331-366."
+        },
+        {
+          "raw": "Zermelo, Ernst, 1908, \"Untersuchungen &uuml;ber die Grundlagen der Mengenlehre, I\", Mathematische Annalen , 65(2): 261-281. Translated by S. Bauer Mengelberg in van Heijenoort 1967: 199-215. doi:10.1007/BF01449999 (de)"
+        },
+        {
+          "raw": "---, 1929, \"&Uuml;ber den Begriff der Definitheit in der Axiomatik\", Fundamenta Mathematicae , 14: 339-344. doi:10.4064/fm-14-1-339-344"
+        }
+      ],
+      "publishedAt": "2018-11-16T13:00:00.000Z",
+      "revisedAt": "2018-11-16T13:00:00.000Z"
+    }
+  }
+}

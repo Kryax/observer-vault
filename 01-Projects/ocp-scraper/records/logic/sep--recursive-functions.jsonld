@@ -1,0 +1,744 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/recursive-functions",
+  "meta": {
+    "title": "Recursive Functions",
+    "description": "The recursive functions are a class of functions on the natural numbers studied in computability theory , a branch of contemporary mathematical logic which was originally known as recursive function theory . Such functions take their name from the process of recursion by which the value of a function is defined by the application of the same function applied to smaller arguments. This process may be illustrated by considering the familiar factorial function \\(x!\\)--i.e., the function which returns the product \\(1 \\times 2 \\times \\ldots \\times x\\) if \\(x > 0\\) and 1 otherwise. An alternative recursive definition of this function is as follows: Such a definition might at first appear circular in virtue of the fact that the value of \\(\\fact(x)\\) on the left hand side is defined in terms the same function on the righthand side. However a characteristic feature of recursive definitions is that they allow for the values of functions which they describe to be calculated by successively \"unwinding\" the clause for \\(x > 0\\) until the clause for \\(x = 0\\) (the so-called base case ) is reached. For instance the value of \\(fact(4)\\) may be calculated using the preceding definition as follows: Understood in this way, the defining equations (\\ref{defnfact}) provide an algorithm for computing \\(\\fact(x)\\)--i.e., an effective procedure for calculating its values which can be carried out by a human or mechanical computing device within a finite number of steps. It is for this reason that a class of recursive definitions similar to that exemplified by (\\ref{defnfact})--i.e., the general recursive functions --were first employed as the mathematical model of computation on which recursive function theory was originally founded. Section 1 of this entry provides an overview of the foundational developments in logic and mathematics which led to the founding of recursive function theory in the 1930s. Section 2 surveys different forms of recursive definitions, inclusive of the primitive and partial recursive functions which are most central to the classical development of this subject. Section 3 provides an overview of computability theory, inclusive of the so-called Recursion Theorem (Section 3.4)--a result which highlights the centrality of recursion to computation in general as well as its relationship to self-reference. Subsequent updates to this entry will provide an overview of subrecursive hierarchies employed in proof theory and computer science as well as a more comprehensive treatment of contemporary computability theory. Supplement: History of the Ackermann-P&eacute;ter function",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:17:00.871Z",
+    "dateModified": "2026-03-22T05:17:00.871Z",
+    "datePublished": "2020-04-22T14:00:00.000Z",
+    "keywords": [
+      "chance randomness",
+      "church",
+      "church turing",
+      "computability",
+      "computational complexity",
+      "computer science",
+      "goedel",
+      "goedel incompleteness",
+      "hilbert program",
+      "lambda calculus",
+      "learning formal",
+      "logic combinatory",
+      "paradoxes contemporary logic",
+      "proof theory",
+      "reverse mathematics",
+      "self reference",
+      "turing",
+      "turing machine"
+    ]
+  },
+  "problemSolved": {
+    "statement": "The recursive functions are a class of functions on the natural numbers studied in computability theory , a branch of contemporary mathematical logic which was originally known as recursive function theory . Such functions take their name from the process of recursion by which the value of a function is defined by the application of the same function applied to smaller arguments. This process may be illustrated by considering the familiar factorial function \\(x!\\)--i.e., the function which returns the product \\(1 \\times 2 \\times \\ldots \\times x\\) if \\(x > 0\\) and 1 otherwise. An alternative recursive definition of this function is as follows: Such a definition might at first appear circular in virtue of the fact that the value of \\(\\fact(x)\\) on the left hand side is defined in terms the same function on the righthand side. However a characteristic feature of recursive definitions is that they allow for the values of functions which they describe to be calculated by successively \"unwinding\" the clause for \\(x > 0\\) until the clause for \\(x = 0\\) (the so-called base case ) is reached. For instance the value of \\(fact(4)\\) may be calculated using the preceding definition as follows: Understood in this way, the defining equations (\\ref{defnfact}) provide an algorithm for computing \\(\\fact(x)\\)--i.e., an effective procedure for calculating its values which can be carried out by a human or mechanical computing device within a finite number of steps. It is for this reason that a class of recursive definitions similar to that exemplified by (\\ref{defnfact})--i.e., the general recursive functions --were first employed as the mathematical model of computation on which recursive function theory was originally founded. Section 1 of this entry provides an overview of the foundational developments in logic and mathematics which led to the founding of recursive function theory in the 1930s. Section 2 surveys different forms of recursive definitions, inclusive of the primitive and partial recursive functions which are most central to the classical development of this subject. Section 3 provides an overview of computability theory, inclusive of the so-called Recursion Theorem (Section 3.4)--a result which highlights the centrality of recursion to computation in general as well as its relationship to self-reference. Subsequent updates to this entry will provide an overview of subrecursive hierarchies employed in proof theory and computer science as well as a more comprehensive treatment of contemporary computability theory. Supplement: History of the Ackermann-P&eacute;ter function",
+    "context": "Opening section: 1. Historical Background | Related entries: chance-randomness, church, church-turing, computability, computational-complexity, computer-science, goedel, goedel-incompleteness, hilbert-program, lambda-calculus, learning-formal, logic-combinatory, paradoxes-contemporary-logic, proof-theory, reverse-mathematics, self-reference, turing, turing-machine",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "logic",
+    "philosophy-of-science"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry recursive-functions",
+        "uri": "https://plato.stanford.edu/entries/recursive-functions/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "2 author(s), 18 related entries, bibliography size 147"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2020-04-22T14:00:00.000Z and revised 2024-02-29T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2024-02-29T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/recursive-functions/",
+        "description": "SEP entry for recursive-functions"
+      }
+    ],
+    "solutionApproach": "1. Historical Background"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/chance-randomness",
+      "ocp:sep/church",
+      "ocp:sep/church-turing",
+      "ocp:sep/computability",
+      "ocp:sep/computational-complexity",
+      "ocp:sep/computer-science",
+      "ocp:sep/goedel",
+      "ocp:sep/goedel-incompleteness",
+      "ocp:sep/hilbert-program",
+      "ocp:sep/lambda-calculus",
+      "ocp:sep/learning-formal",
+      "ocp:sep/logic-combinatory",
+      "ocp:sep/paradoxes-contemporary-logic",
+      "ocp:sep/proof-theory",
+      "ocp:sep/reverse-mathematics",
+      "ocp:sep/self-reference",
+      "ocp:sep/turing",
+      "ocp:sep/turing-machine"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Dean, Walter",
+        "type": "human"
+      },
+      {
+        "name": "Naibo, Alberto",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/recursive-functions/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 116,
+      "validation_diversity": 0.62,
+      "context_breadth": 0.56,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.94
+    },
+    "confidence": "proven",
+    "authority": "high",
+    "status": "draft",
+    "trustScore": 0.643
+  },
+  "extensions": {
+    "sep": {
+      "slug": "recursive-functions",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/recursive-functions/",
+      "preamble": "The recursive functions are a class of functions on the natural numbers studied in computability theory , a branch of contemporary mathematical logic which was originally known as recursive function theory . Such functions take their name from the process of recursion by which the value of a function is defined by the application of the same function applied to smaller arguments. This process may be illustrated by considering the familiar factorial function \\(x!\\)--i.e., the function which returns the product \\(1 \\times 2 \\times \\ldots \\times x\\) if \\(x > 0\\) and 1 otherwise. An alternative recursive definition of this function is as follows: Such a definition might at first appear circular in virtue of the fact that the value of \\(\\fact(x)\\) on the left hand side is defined in terms the same function on the righthand side. However a characteristic feature of recursive definitions is that they allow for the values of functions which they describe to be calculated by successively \"unwinding\" the clause for \\(x > 0\\) until the clause for \\(x = 0\\) (the so-called base case ) is reached. For instance the value of \\(fact(4)\\) may be calculated using the preceding definition as follows: Understood in this way, the defining equations (\\ref{defnfact}) provide an algorithm for computing \\(\\fact(x)\\)--i.e., an effective procedure for calculating its values which can be carried out by a human or mechanical computing device within a finite number of steps. It is for this reason that a class of recursive definitions similar to that exemplified by (\\ref{defnfact})--i.e., the general recursive functions --were first employed as the mathematical model of computation on which recursive function theory was originally founded. Section 1 of this entry provides an overview of the foundational developments in logic and mathematics which led to the founding of recursive function theory in the 1930s. Section 2 surveys different forms of recursive definitions, inclusive of the primitive and partial recursive functions which are most central to the classical development of this subject. Section 3 provides an overview of computability theory, inclusive of the so-called Recursion Theorem (Section 3.4)--a result which highlights the centrality of recursion to computation in general as well as its relationship to self-reference. Subsequent updates to this entry will provide an overview of subrecursive hierarchies employed in proof theory and computer science as well as a more comprehensive treatment of contemporary computability theory. Supplement: History of the Ackermann-P&eacute;ter function",
+      "firstSectionTitle": "1. Historical Background",
+      "firstSectionText": "The theory of recursive functions is often presented as a chapter in the history of the subject originally known as recursive function theory . This subject has its roots in the foundational debates of the first half of the twentieth century. Within this context, the need arose to provide a precise analysis of what we would naturally describe as inductive or recursive modes of reasoning which play a part in the deductive machinery of axiomatic theories in mathematics. This history will be traced in the current section, with an emphasis on how different forms of recursion have been understood as exemplifying various kinds of step-by-step algorithmic processes. This section assumes some familiarity with some of the terminology introduced in Section 2 and Section 3 . Readers looking for a technical overview of recursive functions or computability theory are advised to start there. Examples of recursive definitions can be found intermittently in the history of ancient and medieval mathematics. A familiar illustration is the sequence \\(F_i\\) of Fibonacci numbers \\(1,1,2,3,5,8,13, \\ldots\\) given by the recurrence \\(F_0 = 1, F_1 = 1\\) and \\(F_{n} = F_{n-1} + F_{n-2}\\) (see Section 2.1.3 ). The definition of this sequence has traditionally been attributed to the thirteenth century Italian mathematician Leonardo of Pisa (also known as Fibonacci) who introduced it in his Liber Abaci in the context of an example involving population genetics (see Fibonacci 1202 [2003: 404-405]). But descriptions of similar sequences can also be found in Greek, Egyptian, and Sanskrit sources dating as early as 700 BCE (see, e.g., Singh 1985). General interest in recursion as a mode of function definition originated in the mid-nineteenth century as part of the broader program of arithmetizing analysis and the ensuing discussions of the foundations of arithmetic itself. In this context, the formulation of recursive definitions for number theoretic functions was closely tied to the isolation of mathematical induction as a mode of reasoning about the natural numbers. It was in this setting in which Grassmann (1861) and Peirce (1881) first gave the familiar recursive definitions of addition and multiplication: They then used these definition to prove the associative, commutative, and distributive laws for these operations. The first person to employ the expression \"definition by recursion\" appears to have been Dedekind in his essay Was sind und was sollen die Zahlen (1888). This work presents a set theoretic foundation for arithmetic wherein Dedekind demonstrated that it was possible to state and prove the existence and uniqueness of functions defined by primitive recursion as mathematical theorems (&sect;125-126). He formulated recursive definitions of addition (&sect;135), multiplication (&sect;147), and exponentiation (&sect;155) and then also formally proved by induction that the functions so defined satisfy the expected algebraic identities. The first two of these definitions would later be adopted by Peano (1889) as defining the symbols \\(+\\) and \\(\\times\\) in the direct axiomatization of arithmetic he based on Dedekind's monograph. The first work devoted exclusively to recursive definability was Skolem's (1923) paper The foundations of elementary arithmetic established by the recursive mode of thought, without the use of apparent variables ranging over infinite domains. This work is significant with respect to the subsequent development of computability theory for at least three reasons. First, it contains a informal description of what we now call the primitive recursive functions . Second, it can be regarded as the first place where recursive definability is linked to effective computability (see also Skolem 1946). And third, it demonstrates that a wide range of functions and relations are primitive recursive in a manner which anticipates G&ouml;del's (1931) use of primitive recursion for the arithmetization of syntax. One of Skolem's stated goals was to present a logical foundation for number theory which avoids the use of unrestricted quantifiers. He was inspired in this regard by the observation that it is possible to develop much of elementary arithmetic without the use of the expressions \"always\" (i.e., for all ) and \"sometimes\" (i.e., there exists ) which figure in the formalization of number theory given by Russell and Whitehead in Principia Mathematica (1910-1913). This was to be accomplished by formulating arithmetical theorems as what he referred to as functional assertions . These took the form of identities between terms defined by primitive recursive operations which Skolem referred to as descriptive functions . For instance, the commutativity of addition is expressed in this form by an equation with free variables In cases where such statements are provable in the system Skolem describes, the intended interpretation is that the claim holds universally for all natural numbers--e.g., \\(\\forall x \\forall y (x + y = y + x)\\). But in Skolem's system there is no means of negating such a statement to express a bare existential assertion without producing a witness. Statements like (\\ref{funassert}) would later be referred to by Hilbert & Bernays (1934) (who provided the first textbook treatment of recursion) as verifiable in the sense that their individual instances can be verified computationally by replacing variables with concrete numerals. This is accomplished by what Skolem referred to as the \"recursive mode of thought\". The sense of this phrase is clarified by the following properties of the system he describes: Taking these principles as a foundation, Skolem showed how to obtain recursive definitions of the predecessor and subtraction functions, the less than , divisibility , and primality relations, greatest common divisors , least common multiples , and bounded sums and products which are similar to those given in Section 2.1.2 below. Overall Skolem considered instances of what we would now refer to as primitive recursion, course of values recursion, double recursion, and recursion on functions of type \\(\\mathbb{N} \\rightarrow \\mathbb{N}\\). He did not, however, introduce general schemas so as to systematically distinguish these modes of definition. Nonetheless, properties i-iv of Skolem's treatment provide a means of assimilating calculations like (\\ref{factcalc}) to derivations in quantifier-free first-order logic. It is thus not difficult to discern in Skolem (1923) the kernel of the system we now know as Primitive Recursive Arithmetic (as later formally introduced by Hilbert & Bernays 1934: ch. 7). The next important steps in the development of a general theory of recursive function arose as a consequence of the interaction between Hilbert's Program and G&ouml;del's (1931) proof of the Incompleteness Theorems. Hilbert (1900) had announced the goal of proving the consistency of arithmetic--and ultimately also analysis and set theory--in the face of the set theoretic paradoxes. His initial plans for carrying out such a proof are described in a series of lectures and addresses in the 1910s-1920s which provide a description of what would come to be called the finitary standpoint --i.e., the fragment of mathematical reasoning pertaining to finite combinatorial objects which was intended to serve as the secure basis for a consistency proof. The proof itself was to be carried out using the methods of what Hilbert referred to as metamathematics --i.e., the formal study of axioms and derivations which would grow into the subject now known as proof theory . In one of his initial descriptions of this program Hilbert (1905) sketched the basic form which a metamathematical proof of consistency might take. Suppose, for instance, that \\(\\mathsf{T}\\) is a mathematical theory about which it is possible to prove the following conditional: Were it possible to provide a mathematical demonstration of i), it might seem possible to conclude However Poincar&eacute; (1906) observed that Hilbert's approach relies on mathematical induction in inferring ii from i. He objected on the basis that this renders Hilbert's proposed method circular in the case that the system \\(\\mathsf{T}\\) in question itself subsumes principles intended to formalize induction. Together with his collaborators Ackermann and Bernays, Hilbert developed metamathematics considerably during the 1910-1920s. This served as the basis of Hilbert's (1922) lecture wherein he replied to Poincar&eacute; by making a systematic distinction between \"formal\" occurrences of mathematical induction in the object language and the metatheoretic use of induction as a \"contentual\" [ inhaltliche ] principle used in order to reason about proofs as finite combinatorial objects. It was also in this context in which Hilbert connected the latter form of induction to the \"construction and deconstruction of number signs\" (1922 [1996: 1123]). As is made clear in subsequent presentations, Hilbert understood \"number signs\" to be unary numerals written in stroke notation of the form Such expressions can be operated on concretely by adjoining or removing strokes in a manner which mirrors the arithmetical operations of successor and predecessor which figure in Skolem's \"recursive mode of thought\". This observation in turn informed Hilbert's explanation of the meaning of functional assertions like (\\ref{funassert}) in terms of their logical derivability from recursive definitions which also serve as procedures for computing the values of functions they define (Hilbert 1920 [2013: 54-57]). Hilbert first described a logical calculus for finitary number theory including \"recursion and intuitive induction for finite totalities\" in 1923 ([1996: 1139]). Although this presentation also included a discussion of definition by simultaneous recursion, a more extensive treatment of what we would now recognize as recursion schemes is given in his well known paper \"On the infinite\" (1926). This includes a discussion of what Hilbert calls ordinary recursion (which is similar to Skolem's description of primitive recursion), transfinite recursion, as well as recursion at higher types. (These different forms of recursion will be discussed further in the supplement on the Ackermann-P&eacute;ter function .) This treatment makes clear that Hilbert and his collaborators had taken substantial steps towards developing a general theory of recursive definability. Ultimately, however, the influence of Hilbert's presentations was diminished in light of the more precise formulation of primitive recursion which G&ouml;del would soon provide. G&ouml;del's (1931 [1986: 157-159]) definition was as follows: A number-theoretic function \\(\\phi(x_1,\\ldots,x_n)\\) is said to be recursively defined in terms of the number-theoretic functions \\(\\psi(x_1,x_2,\\ldots,x_{n-1})\\) and \\(\\mu(x_1,x_2,\\ldots, x_{n+1})\\) if holds for all \\(x_2,\\ldots,x_n,k\\). A number-theoretic function \\(\\phi\\) is said to be recursive if there is a finite sequence of number-theoretic functions \\(\\phi_1 , \\phi_2 , \\ldots \\phi_n\\) that ends with \\(\\phi\\) and has the property that every function \\(\\phi_k\\) of the sequence is recursively defined in terms of two of the preceding functions, or results from any of the preceding functions by substitution, or, finally, is a constant or the successor function \\(x + 1\\)&hellip;. A relation \\(R(x_1, \\ldots , x_n)\\) between natural numbers is said to be recursive if there is a recursive function \\(\\phi(x_1 \\ldots , x_n)\\) such that, for all \\(x_1, x_2, \\ldots, x_n\\) Putting aside G&ouml;del's use of the term \"recursive\" rather than \"primitive recursive\" (which will be explained below), this exposition comes close to coinciding with the contemporary definition of the primitive recursive functions given in Section 2.1 . G&ouml;del's definition also improved upon those of his predecessors by clearly defining the class of initial functions which are allowed in primitive recursive definitions and by stating that each primitive recursive function possesses a definition in terms of a sequence of functions showing how it is built up from initial functions. This makes clear that the primitive recursive functions constitute a mathematically well-defined class of functions on the natural numbers (which will be denoted here as PR ). G&ouml;del additionally proved that the primitive recursive relations--defined as characteristic functions via (\\ref{prch})--are closed under propositional operations and quantification bounded by a primitive recursive function (see Section 2.1.2 ). The foregoing definition appears in G&ouml;del's well-known (1931) paper \"On formally undecidable propositions of Principia mathematica and related systems I\". As he observes immediately before presenting it, the definition of primitive recursion is in fact a digression from the main focus of the paper--i.e., proving the incompleteness of the axiomatic system of arithmetic he calls \\(\\mathsf{P}\\). In order to understand G&ouml;del's contribution to the initial development of recursive function theory, it will be useful to attend both to some features of this system and also to his proof of the First Incompleteness Theorem itself. (Additional details and context are provided in the entry on G&ouml;del's incompleteness theorems .) System \\(\\mathsf{P}\\) is obtained from that of Whitehead and Russell's Principia Mathematica (1910-1913) by omitting the ramification of types, taking the natural numbers as the lowest type, and adding for them the second-order Peano axioms. It is hence a fixed formal system with finitely many non-logical axioms sufficient for the development of elementary number theory. Recall also that an arithmetical system is said to be \\(\\omega\\)- consistent if it does not prove both \\(\\exists x \\varphi(x)\\) and \\(\\neg \\varphi(\\overline{n})\\) for each natural number \\(n \\in \\mathbb{N}\\) (where \\(\\overline{n} =_{\\mathrm{df}} s(s(\\ldots s(0)))\\) n -times) and that \\(\\omega\\)-consistency implies simple consistency (i.e., the non-derivability of a formula and its negation). The incompleteness theorem which G&ouml;del proved states that if \\(\\mathsf{P}\\) is &omega;-consistent, then there exists a formula \\(G_{\\mathsf{P}}\\) which is undecidable in \\(\\mathsf{P}\\)--i.e., neither provable nor refutable from its axioms. In order to obtain such a formula, G&ouml;del first demonstrated how it is possible to express various syntactic and metatheoretic properties of \\(\\mathsf{P}\\)-formulas and proofs as primitive recursive relations via a technique which has come to be known as the arithmetization of syntax (see the entry on G&ouml;del's incompleteness theorems ). Second, he showed that for every primitive recursive relation \\(R(x_1,\\ldots,x_k)\\) there exists a \"class sign\" (i.e., formula) \\(\\varphi_R(x_1,\\ldots,x_n)\\) of \\(\\mathsf{P}\\) such that the fact that \\(R(x_1,\\ldots,x_n)\\) holds of (or does not hold of) a given tuple of numbers \\(n_1,\\ldots,n_k\\) is mirrored by the provability (or refutability) in \\(\\mathsf{P}\\) of the corresponding instance of \\(\\varphi_R(x_1,\\ldots,x_n)\\) when the formal numeral \\(\\overline{n} = s(s(\\ldots s(0)))\\) ( n -times) is substituted for \\(x_i\\)--i.e., According to the terminology G&ouml;del would later introduce in 1934, in such a case \\(\\varphi_R(x_1,\\ldots,x_n)\\) represents \\(R(x_1,\\ldots,x_n)\\). In this presentation, he also generalized his prior definition to say that a function \\(f(x_1,\\ldots,x_n)\\) is representable in \\(\\mathsf{P}\\) just in case there exists a formula \\(\\varphi_f(x_1,\\ldots,x_k,y)\\) such that for all \\(n_1,\\ldots,x_k,m \\in \\mathbb{N}\\), G&ouml;del's arithmetization of syntax provides a means of assigning to each primitive symbol, term, formula, and proof \\(\\alpha\\) of \\(\\mathsf{P}\\) a unique G&ouml;del number \\(\\ulcorner \\alpha \\urcorner \\in \\mathbb{N}\\) according to its syntactic structure. This technique takes advantage of the familiar observation that a finite sequence of numbers \\(n_1,\\ldots,n_k\\) can be encoded as a product of prime powers \\(2^{n_1} \\cdot 3^{n_2} \\cdot \\ldots p_k^{n_k}\\) so that various correlative operations on sequences can be shown to be primitive recursive--e.g., the operation which takes two numbers \\(x\\) and \\(y\\) encoding sequences and returns the code \\(x * y\\) of the result of concatenating \\(x\\) followed by \\(y\\). G&ouml;del proceeded on this basis to show that a sequence of notions about the syntax and proof theory of \\(\\mathsf{P}\\) are primitive recursive--e.g., the function \\(\\textrm{Neg}(x)\\) which returns the G&ouml;del number of the negation of the formula coded by \\(x\\) can be defined as \\(\\ulcorner \\neg \\urcorner * x\\). The availability of the relevant recursive definitions thus falls out naturally since the inductive definitions of syntactic notions like well-formed formula generalize the \"construction and deconstruction of number signs\" in the sense described by Hilbert. The penultimate definition in G&ouml;del's list is the relation \\(\\mathsf{Proof}_{\\mathsf{P}}(x,y)\\) which holds between the G&ouml;del number of a \\(\\mathsf{P}\\)-formula \\(\\varphi\\) and the G&ouml;del number of a finite sequence of \\(\\mathsf{P}\\)-formulas \\(\\psi_1,\\ldots, \\psi_n\\) just in case the latter is a correctly formed derivation of the former from the axioms of \\(\\mathsf{P}\\)--i.e., \\(\\mathsf{Proof}_{\\mathsf{P}}(\\ulcorner \\psi_1,\\ldots, \\psi_n \\urcorner, \\ulcorner \\varphi \\urcorner))\\) iff \\(\\mathsf{P} \\vdash \\varphi\\) via a derivation \\(\\psi_1,\\ldots,\\psi_n\\) in which each \\(\\psi_i\\) is either an axiom of \\(\\mathsf{P}\\) or follows from prior formulas via its rules of inference. From (\\ref{rep}) it follows that there exists a formula \\(\\textrm{Prf}_{\\mathsf{P}}(x,y)\\) of \\(\\mathsf{P}\\) which represents \\(\\mathsf{Proof}_{\\mathsf{P}}(x,y)\\) and thus also a formula G&ouml;del famously named the latter formula \\(\\sc{bew}(x)\\) (for beweisbar ) as it can be understood to express that there exists a proof from the axioms of \\(\\mathsf{P}\\) of the formula with G&ouml;del number \\(y\\). But unlike the other formulas representing primitive recursive relations which figure in its definition, \\(\\textrm{Prov}_{\\mathsf{P}}(x)\\) contains an unbounded existential quantifier. And thus as G&ouml;del is careful to observe, there is no reason to expect that it defines a primitive recursive relation. It is, nonetheless, this formula which G&ouml;del uses to construct a sentence which is undecidable in \\(\\mathsf{P}\\). This can be accomplished by the application of the so-called Diagonal Lemma (see G&ouml;del's incompleteness theorems ) which states that for every formula \\(\\varphi(x)\\) of \\(\\mathsf{P}\\), there exists a sentence \\(\\psi_{\\varphi}\\) such that When applied to the formula \\(\\neg \\textrm{Prov}_{\\mathsf{P}}(x)\\), the Diagonal Lemma yields a sentence \\(G_{\\mathsf{P}}\\)--i.e., the so-called G&ouml;del sentence for \\(\\mathsf{P}\\) --such that \\(\\mathsf{P} \\vdash G_P \\leftrightarrow \\neg \\textrm{Prov}_{\\mathsf{P}}(\\ulcorner G_{\\mathsf{P}} \\urcorner)\\). \\(G_{\\mathsf{P}}\\) is thus interpretable as \"saying of itself\" that it is unprovable in \\(\\mathsf{P}\\). G&ouml;del showed that this formula has the following properties: This constitutes what is now known as G&ouml;del's First Incompleteness Theorem. The proof of this fact relies explicitly on the representability of the relation \\(\\mathsf{Proof}_{\\mathsf{P}}(x,y)\\) in \\(\\mathsf{P}\\) which in turn derives from its primitive recursiveness. But the techniques on which G&ouml;del's proof relies also contributed to the subsequent development of computability theory in several additional ways. First, it follows from the possibility of G&ouml;del numbering the formulas of \\(\\mathsf{P}\\) that we may also effectively enumerate them as \\(\\varphi_0(x), \\varphi_1(x), \\varphi_2(x), \\ldots\\)--e.g., in increasing order of \\(\\ulcorner \\varphi_i \\urcorner\\). This provides a mechanism for referring to formulas via their indices which in turn served as an important precedent for Kleene's (1936a) use of a similar indexation of general recursive definitions in his proof of the Normal Form Theorem (see Section 2.2.2 ). Second, the proof of the Diagonal Lemma also demonstrates how it is possible to formalize the substitution of terms for free variables in a manner which may be understood to yield an effective form of Cantor's diagonal argument (see the entry on self-reference ). This technique served as an important precedent for the use of diagonalization in results such as the undecidability of the Halting Problem (Turing 1937, see Section 3.2 ), the Recursion Theorem (Kleene 1938, see Section 3.4 ), and the Hierarchy Theorem (Kleene 1943, see Section 3.6 ). Another significant contribution of G&ouml;del's paper derives from the fact that after proving the incompleteness of \\(\\mathsf{P}\\), he took several steps towards isolating features of axiomatic theories which are sufficient to ensure that they satisfy analogous undecidability results. In addition to being sufficiently strong to satisfy (\\ref{rep}), the other requirement which he identifies is that \"the class of axioms and the rules of inference \\(\\ldots\\) are recursively definable\" (1931 [1986: 181]). As he notes, these features hold both of Zermelo-Fraenkel set theory \\([\\mathsf{ZF}\\)] and a first-order arithmetical system similar to what we now call first-order Peano arithmetic \\([\\mathsf{PA]}\\), relative to an appropriate G&ouml;del numbering of their axioms. In particular, while neither of these systems is finitely axiomatizable , they may be axiomatized by a finite number of schemes (e.g., of induction or comprehension) such that the relation \\(\\ulcorner \\varphi \\urcorner\\) is the G&ouml;del number of an axiom of T is primitive recursive. This is so precisely because membership in the schemes in question is determined by a inductive condition on formulas whose structure mirrors that of a primitive recursive definition. This observation set the stage for G&ouml;del's subsequent revisiting of the incompleteness theorems in the lectures (1934) wherein he suggests a significant generalization of his original (1931) definition of recursiveness. G&ouml;del starts out by providing the following informal characterization of the requirements of the theories just described: We require that the rules of inference, and the definitions of meaningful formulas and axioms, be constructive; that is, for each rule of inference there shall be a finite procedure for determining whether a given formula \\(B\\) is an immediate consequence (by that rule) of given formulas \\(A_1, \\ldots, A_n\\) and there shall be a finite procedure for determining whether a given formula \\(A\\) is a meaningful formula or an axiom. (G&ouml;del 1934: 346) He also makes clear that what he calls \"recursiveness\" is to be initially regarded as an informal notion which he is attempting to make precise: Recursive functions have the important property that, for each given set of values of the arguments, the value of the function can be computed by a finite procedure. Similarly, recursive relations (classes) are decidable in the sense that, for each given n -tuple of natural numbers, it can be determined by a finite procedure whether the relation holds or does not hold (the number belongs to the class or not), since the representing function is computable. (G&ouml;del 1934 [1986: 348]) One of G&ouml;del's goals was thus to provide a mathematical definition of the term \"recursive\" which generalizes prior examples of recursive definability in a manner but also captures to as great an extent as possible the class of functions computable by a finite procedure. This led him to define the so-called general recursive functions (see Section 1.5 ) whose isolation in turn played an important role in the formulation of Church's Thesis (see Section 1.6 ). However G&ouml;del's definition also took place against the backdrop of other work which had been inspired by Hilbert's original consideration of different forms of recursive definitions. It will now be useful to examine these developments. Already at the time of (1926), Hilbert had anticipated that it would be possible to formulate definitions of functions whose values could be computed in a recursive manner but which are not themselves primitive recursive. In order to illustrate how such a definition might be obtained, he presented a heuristic argument involving the following sequence of functions: The functions in this sequence are defined so that \\(\\alpha_{i+1}(x,y+1)\\) is obtained by primitive recursion as \\(\\alpha_i(\\alpha_{i+1}(x,y),x)\\), together with an appropriate base case. It thus makes sense to consider the function whose first argument \\(i\\) represents the position of the function \\(\\alpha_i(x,y)\\) in the prior list. For fixed \\(i,n,m \\in \\mathbb{N}\\), it is thus possible to effectively compute the value of \\(\\alpha(i,n,m)\\) by first constructing the definition of \\(\\alpha_i(x,y)\\) and then evaluating it at \\(n,m\\). But it is also easy to see that \\(\\alpha_{i+1}(x,x)\\) will eventually dominate \\(\\alpha_i(x,x)\\) for sufficiently large \\(x\\). This in turn suggests that \\(\\alpha(i,x,y)\\) cannot be defined by a finite number of applications of the primitive recursion scheme. It thus follows that \\(\\alpha(i,x,y)\\) is thus not primitive recursive itself. The specification of \\(\\alpha(i,x,y)\\) just given does not have the form of a recursive definition. But it is possible to define similar functions in a manner which generalizes the format of the scheme (\\ref{gprimrec}). One means of doing so is to use a simple form of recursion at higher types as considered by both Skolem and Hilbert. To this end, consider the iteration functional \\(\\mathcal{Iter}\\) which takes as arguments a function \\(f: \\mathbb{N} \\rightarrow \\mathbb{N}\\) and a natural number \\(i\\) and returns the function which is obtained as i -fold composition of \\(f\\) with itself. In other words, \\(\\mathcal{Iter}\\) has the type Such a function can be formally defined as follows: Here \\(id\\) denotes the identity function (i.e., \\(id(y) = y\\)) and denotes what we would more conventionally express as \\(f \\circ f^i\\)--i.e., or the result of composing \\(f\\) with \\(f^i\\). We may now define a function \\(\\beta\\) which takes a natural number as input and returns a function of type \\(\\mathbb{N} \\rightarrow \\mathbb{N}\\)--i.e., of type \\(\\mathbb{N} \\rightarrow (\\mathbb{N} \\rightarrow \\mathbb{N})\\)--as follows: Since the value of \\(\\beta(i)\\) is a function, here \\(y+1\\) and should both be understood as functions of type \\(\\mathbb{N} \\rightarrow \\mathbb{N}\\) depending on a variable \\(y\\) which is implicitly abstracted. In other words, if we employ the notation of the \\(\\lambda\\)-calculus, then we should think of these terms as the abstracts \\(\\lambda y.y+1\\) and With these definitions in place, it can now be verified that as \\(i\\) varies over \\(\\mathbb{N}\\), \\(\\beta(0), \\beta(1), \\ldots\\) correspond to the following sequence of functions of increasing rate of growth: This provides one means of defining what is now often called the P&eacute;ter function (or also the Ackermann-P&eacute;ter function ) as \\(\\pi(i,x) = \\lambda x.\\beta(i)(x)\\). \\(\\pi(i,x)\\) has the same order of growth as \\(\\alpha_i(x,x)\\) and it is possible to prove via the sort of argument sketched above that \\(\\pi(i,x)\\) is not primitive recursive (see, e.g., P&eacute;ter 1967: ch. 9). As with the series of functions \\(\\alpha_i(x,y)\\), it also clear that each function \\(\\pi(i,x)\\) is effectively computable for each concrete number \\(i\\). However in order to define this function uniformly we have had to define \\(\\beta\\) using the functional \\(\\mathcal{Iter}\\) which itself is defined by recursion on type \\(\\mathbb{N} \\rightarrow \\mathbb{N}\\). The question thus arise whether it is also possible to define an extensionally equivalent function by a form of recursion on the natural numbers themselves. An affirmative answer was provided by Ackermann (1928a) for the slightly more complicated Ackermann function described in the supplement and also directly for a function \\(\\pi(x,y)\\) by P&eacute;ter (1935). In particular, it is possible to formulate a definition of a function extensionally coincident with \\(\\beta(i)\\) by what Ackermann originally referred to as simultaneous recursion as follows: The third clause in this definition defines the value of \\(\\pi(i+1,x+1)\\) in terms of \\(\\pi(i,z)\\) where the \\(z\\) is determined by the value of \\(\\pi(i+1,x)\\). It may thus not be immediately obvious that the definition (\\ref{pidef}) describes an algorithm for computing the values of \\(\\pi(i,x)\\) which always terminates in the manner illustrated by the calculation (\\ref{factcalc}). Note, however, the when we expand the clauses on the right-hand side of this definition, either \\(i\\) decreases, or \\(i\\) remains the same and \\(x\\) decreases. It thus follows that each time \\(x\\) reaches \\(0\\), \\(i\\) will start to decrease so that the base case is eventually reached. Thus although the value of \\(\\pi(i,x)\\) grows very rapidly--e.g., \\(\\pi(4,3) = 2^{2^{65536}}-3\\)--it is still reasonable to regard (\\ref{pidef}) as satisfying G&ouml;del's requirement that a recursively defined function is computable by a finite procedure. Systematic consideration of such alternative recursion schemes exemplified by (\\ref{pidef}) was initiated by P&eacute;ter (1932). It was also she who introduced the term \"primitive recursive\" to describe the class of functions given by G&ouml;del's scheme (\\ref{gprimrec}), a choice which would become standard after its adoption by Kleene (1936a). P&eacute;ter additionally showed that the primitive recursive functions are closed course of values recursion (see Section 2.1.3 ), multiple recursion , and nested recursion of one variable (see the supplement ). Thus the choice of there term \"primitive\" not should be understood to diminish the richness of the class of primitive recursive functions. Rather it flags the fact that definitions like (\\ref{pidef}) which give rise to more complicated computational process leading out of this class were also regarded as \"recursive\" by theorists like Hilbert, Ackermann, and P&eacute;ter from the outset of their studies. P&eacute;ter's work in the 1930s also led to her book (P&eacute;ter 1967), whose original German edition Rekursive Funktionen (1951) was the first monograph devoted to recursive functions. Together with the later work of Grzegorczyk (1953), these developments also inspired the investigation of various subrecursive hierarchies which would later play a role in proof theory and computer science. The immediate source for G&ouml;del's discussion of recursion in 1934 was not Ackermann or P&eacute;ter's work but rather a private communication with Herbrand, who in two previous papers (1930, 1932) had proposed a related means of generalizing recursive definitions. G&ouml;del's informal description of Herbrand's suggestion was as follows: If \\(\\phi\\) denotes an unknown function, and \\(\\psi_1,\\ldots,\\psi_k\\) are known functions, and if the \\(\\psi\\)'s and \\(\\phi\\) are substituted in one another in the most general fashions and certain pairs of the resulting expressions are equated, then, if the resulting set of functional equations has one and only one solution for \\(\\phi\\), \\(\\phi\\) is a recursive function. (G&ouml;del 1934 [1986: 308]) As an illustration, consider the following set of equations: In this case, the \"unknown\" function denoted by \\(\\phi(x)\\) is specified in terms of the auxiliary function \\(\\psi(x)\\) in such a way that \\(\\phi(x)\\) appears only once on the lefthand side of the equations (other than the base case). Nonetheless, such a system of equations is unlike a primitive recursive definition in that it does not specify a unique means for computing the values of \\(\\phi(n)\\) by \"deconstructing\" \\(n\\) in the deterministic manner illustrated by calculations such as (\\ref{factcalc}). In the general case there is indeed no guarantee that there will exist a unique extensional function satisfying such a definition. But in the case of this example it can be shown that \\(2 \\times x\\) is the unique function of type \\(\\mathbb{N} \\rightarrow \\mathbb{N}\\) satisfying \\(\\phi(x)\\) in the system of equations (\\ref{genrecex}). This may be illustrated by considering the following calculation of \\(\\phi(2)\\): As G&ouml;del notes, such a calculation may be understood as a derivation in quantifier-free first-order logic wherein the only rules which are allowed are the substitution of numerals for variables and the replacement of a term on the righthand side of an equation by a numeral for which the corresponding identity has already been derived. G&ouml;del introduced the term general recursive to describe a function defined in this manner. Following the modernized presentation of Odifreddi (1989: ch. I.2) this class may be specified on the basis of the following initial definitions: Definition 1.1 The class of numerals is the smallest set containing 0 and closed under the successor function \\(x \\mapsto s(x)\\). We write \\(\\overline{n}\\) for the numeral \\(s(s(\\ldots s(0)))\\) n -times. The class of terms is the smallest set containing the numerals, variables \\(x_0,x_1, \\ldots\\) and closed under the operations \\(t \\mapsto s(t)\\) and \\(t_1,\\ldots,t_n \\mapsto \\psi^n_i(t_1,\\ldots,t_n)\\) where \\(t,t_1,\\ldots,t_n\\) are terms and \\(\\psi^n_i\\) is a primitive n -ary functional symbol. If \\(t\\) and \\(u\\) are terms and \\(t\\) is of the form \\(\\psi^n_i(t_1,\\ldots,t_n)\\) where \\(t_1,\\ldots,t_n\\) do not contain any functional symbols other than \\(s\\), then \\(t = u\\) is an equation . A system of equations is a finite set of equations. \\(\\mathcal{E}(\\psi_1,\\ldots,\\psi_n,\\vec{x})\\) will be used to denote a system of equations containing basic functional symbols \\(\\psi_1,\\ldots,\\psi_n\\) and variables among \\(\\vec{x} = x_1,\\ldots, x_k\\). Herbrand (1932) gave a semantic characterization of what it means for a number theoretic function \\(f\\) to be defined by a system of equations \\(\\mathcal{E}(\\psi_1,\\ldots,\\psi_n,\\vec{x})\\) by requiring both that there is a solution to the system and that \\(f\\) coincides with the function determined as \\(\\psi_1\\) for every solution. He also suggested that this fact should be proved intuitionistically, which might in turn be thought to yield an effective procedure for computing the values of \\(f\\). He did not, however, specify a formal system in which such a proof should be carried out. And thus G&ouml;del suggested (essentially) the following syntactic replacement for Herbrand's definition: Definition 1.2: A function \\(f:\\mathbb{N}^k \\rightarrow \\mathbb{N}\\) is general recursive if there is a system of equations \\(\\mathcal{E}(\\psi_1,\\ldots,\\psi_n,\\vec{x})\\) such that if \\(\\psi^k_i\\) is the leftmost functional symbol in the last equation of \\(\\mathcal{E}\\) then for all \\(n_1,\\ldots,n_k, m \\in \\mathbb{N}\\) if and only if the equation is derivable from the equations comprising \\(\\mathcal{E}\\) via the following two rules: In such a case we say that \\(\\mathcal{E}\\) defines \\(f\\) with respect to \\(\\psi^k_i\\). It can be verified that the system of equations (\\ref{genrecex}) and the derivation (\\ref{genreccal}) exhibited above satisfy the foregoing requirements, thus illustrating how it is possible to mechanically calculate using a system of general recursive equations. However certain systems--e.g., \\(\\{\\phi(x) = 0, \\phi(x) = s(0)\\}\\)--are inconsistent in the sense of not being satisfied by any function on the natural numbers, while others--e.g., \\(\\{\\phi(x) = \\phi(x)\\}\\)--are not satisfied uniquely. One evident drawback of G&ouml;del's definition of general recursiveness is thus that there is no apparent means of establishing whether a given system of equations \\(\\mathcal{E}\\) determines a unique function (even if only partially defined). This is one of the reasons why G&ouml;del's characterization has been replaced by other extensionally equivalent definitions such as Kleene's partial recursive functions (see Section 2.2 ) in the subsequent development of computability theory. By formalizing his informal characterization of recursiveness via Definition 1.2 , G&ouml;del succeeded in formulating a definition which subsumes the primitive recursion scheme (\\ref{gprimrec}), the definition of the Ackermann-P&eacute;ter function, as well as several other schemes considered by Hilbert. G&ouml;del's definition of general recursiveness thus also defined a class GR of functions of type \\(\\mathbb{N}^k \\rightarrow \\mathbb{N}\\) which properly subsumes the primitive recursive functions PR . Moreover, we now know that the class of functions representable in \\(\\mathsf{P}\\) (and in fact in far weaker arithmetical systems) corresponds not to the primitive recursive functions, but rather to the general recursive functions. Weakening the hypothesis that the set of (G&ouml;del numbers) of the axioms of a formal system to the requirement that they be general recursive rather than primitive recursive thus indeed provides a generalization of the First Incompleteness Theorem the manner in which G&ouml;del envisioned. The definition of GR is also of historical importance because it was the first among several equivalent (and nearly contemporaneous) definitions of what were originally called the recursive functions but are now often referred to as the computable functions (see Section 2.2 ). These developments also contributed to one of the two final chapters in the study of recursive definability prior to the initiation of computability theory as an independent subject--i.e., the isolation and eventual adoption of what is now known as Church's Thesis . Church's Thesis corresponds to the claim that the class of functions which are computable by a finite mechanical procedure--or, as it is traditionally said, are effectively computable --coincides with the class of general recursive functions--i.e., There is some historical variation in how authors have glossed the notion of an effectively computable function which CT purports to analyze. (For more on this point, see the entries on Church's Thesis and Computational Complexity Theory .) Nonetheless there is general agreement that this notion approximates that of a function computed by an algorithm and also that a proper understanding of the thesis requires that this latter notion must be understood informally. On this understanding it may appear that G&ouml;del already proposed a version of Church's Thesis in 1934. However, he did not immediately endorse it upon its first explicit articulation by Church. And since the surrounding history is complex it will be useful to record the following observations as a prelude to Sections 2 and 3 . G&ouml;del delivered the lectures (G&ouml;del 1934) while he was visiting Princeton in the spring of 1934. Already at that time Church, together with his students Kleene and Rosser, had made substantial progress in developing the formal system of function application and abstraction now known as the untyped lambda calculus . This system also provides a means of representing natural numbers as formal terms--i.e., as so-called Church numerals . This leads to a notion of a function being lambda-definable which is similar in form to (\\ref{repfun}). Church's definition thus also characterize a class \\(\\mathbf{L}\\) of lambda-definable functions which is similar in form to that of GR . During this period, Kleene demonstrated that a wide range of number theoretic functions were included in \\(\\mathbf{L}\\), in part by showing how it is possible to implement primitive recursion in the lambda calculus. This ultimately led Church to propose in early 1934 that the lambda-definable functions coincide with those possessing the property which he called \"effective calculability\". A natural conjecture was thus that lambda-definability coincided extensionally with general recursiveness. Unlike (CT)--which equates an informally characterized class of functions with one possessing a precise mathematical definition--the statement \\(\\textbf{GR} = \\mathbf{L}\\) potentially admits to formal demonstration. Such a demonstration was given by Church (1936b)--and in greater detail by Kleene 1936b--providing the first of several extensional equivalence results which Kleene (1952: sec. 60, sec. 62) would eventually cite as evidence of what he proposed to call \"Church's Thesis\". Church's Thesis underlies contemporary computability theory in the sense that it justifies the assumption that by studying computability relative to a single formalism (such as GR or \\(\\mathbf{L}\\)) we are thereby providing a general account of which functions in extension can and cannot be effectively computed in principle by an algorithm. In light of this, it will be useful to catalog some additional evidence for Church's Thesis in the form of the equivalence of GR with several other computational formalisms presented in the Stanford Encyclopedia: Let \\(\\mathsf{T}\\) be a consistent, computably axiomatizable theory extending \\(\\mathsf{Q}\\) (i.e., Robinson arithmetic). Then the class of functions \\(\\mathbf{F}_{\\mathsf{T}}\\) which is representable in \\(\\mathsf{T}\\) in the sense of (\\ref{repfun}) above (with \\(\\mathsf{T}\\) replacing \\(\\mathsf{P}\\)) is such that \\(\\mathbf{F}_{\\mathsf{T}} = \\textbf{GR}\\). (See representability in the entry on G&ouml;del's incompleteness theorems and Odifreddi (1989: ch. I.3).) The class REC consisting of the total functions which are members of the class of partial recursive functions (formed by closing the class PR under the unbounded minimization operation) is such that \\(\\textbf{REC} = \\textbf{GR}\\). (See Section 2.2.1 and Odifreddi [1989: ch. I.2].) The class CL of functions representable in Combinatory Logic (a formal system related to the lambda calculus) is such that \\(\\textbf{CL} = \\textbf{GR}.\\) (See computable functions and arithmetic in the entry on combinatory logic and Bimb&oacute; [2012: ch. 5.3].) The class \\(\\mathbf{T}\\) of functions computable by a Turing machine (under several variants of its definition) is such that \\(\\mathbf{T} = \\textbf{GR}\\). (See alternative historical models of computability in the entry on Turing machines and Odifreddi [1989: ch. I.4].) The class \\(\\mathbf{U}\\) of functions computable by Unlimited Register Machines introduced by Shepherdson & Sturgis (1963) is such that \\(\\mathbf{U} = \\textbf{GR}\\). (See Cutland [1980: ch. 1-3] and Cooper [2004: ch. 2].) Equivalence results of these forms testify to the mathematical robustness of the class GR and thereby also to that of the informal notion of effective computability itself. As we have seen, G&ouml;del was originally led to the formulation of general recursiveness by attempting to analyze the background notion of recursive definition as a model of effective computation as inspired by the foundational developments of the late nineteenth and early twentieth centuries. Further discussion of how the work of Church, Turing, and Post can be seen as providing independently motivated analyses of computability which also support Church's Thesis can be found in Gandy (1980) and Sieg (1994, 1997, 2009). In addition to the goal of widening the scope of G&ouml;del's Incompleteness Theorems, another motivation for work on recursive functions during the 1930s was the study of so-called undecidable (or unsolvable ) problems . The original example of such a problem was that of determining whether a given formula \\(\\varphi\\) of first-order logic is valid --i.e., true in all of its models. This was first described as the Entscheidungsproblem (or decision problem ) for first-order logic by Hilbert & Ackermann in their textbook Grundz&uuml;ge der theoretischen Logik (1928): The Entscheidungsproblem is solved if one knows a procedure, which permits the decision of the universality [i.e., validity] or satisfiability of a given logical expression by finitely many operations. The solution of the problem of decision is of fundamental importance to the theory of all domains whose propositions can be logically described using finitely many axioms. (Hilbert & Ackermann 1928: 73) This passage illustrates another sense in which the question of the decidability of logical derivability is connected to the concerns which had initiated Hilbert's study of metamathematics. For note that if \\(\\Gamma\\) is a finite set of axioms \\(\\{\\gamma_1,\\ldots,\\gamma_k\\}\\), then the question of whether \\(\\psi\\) is a logical consequence of \\(\\Gamma\\) is equivalent to whether the sentence \\(\\varphi=_{\\textrm{df}} (\\gamma_1 \\wedge \\ldots \\wedge \\gamma_k) \\rightarrow \\psi\\) is logically valid. By G&ouml;del's Completeness Theorem (see the entry on G&ouml;del) for first-order logic, this is equivalent to the derivability of \\(\\varphi\\) from Hilbert & Ackermann's axiomatization of first-order logic. A positive answer to the Entscheidungsproblem could thus be interpreted as showing that it is possible to mechanize the search for proofs in mathematics in the sense of allowing us to algorithmically determine if a formula expressing an open question (e.g., the Riemann Hypothesis) is a logical consequence of a suitably powerful finitely axiomatized theory (e.g., G&ouml;del-Bernays set theory). In addition to analyzing the notion of effective computability itself, the mathematical goal of both Turing (1937) and Church (1936a,b) was to provide a mathematically precise negative answer to the Entscheidungsproblem . The answers which they provided can be understood as proceeding in three phases: The first of these steps can be undertaken by defining where \\(\\ulcorner \\cdot \\urcorner\\) is a G&ouml;del numbering of the language of \\(\\varphi\\) as described in Section 1.3 . The second step of Turing and Church's negative answer to the Entscheidungsproblem relied on their prior specification of similar decision problems for the models \\(\\mathbf{T}\\), \\(\\mathbf{L}\\), and GR . Together with Kleene (1936a), they showed the following: Proposition 1.1: The characteristic functions of the following sets are not computable with respect to the relevant model: \\(\\HP_T = \\{\\langle i,n \\rangle : \\text{the Turing machine $T_i$ halts on input $n$}\\}\\) \\(\\HP_L = \\{\\ulcorner M \\urcorner : \\text{the untyped $\\lambda$-term $M$ has a normal form}\\}\\) \\(\\HP_{\\textit{GR}} = \\{\\ulcorner \\mathcal{E} \\urcorner :\\) the system of equations \\(\\mathcal{E}\\)-term determines a general recursive function\\(\\}\\) For instance, Part i of Proposition 1.1 shows that there is no Turing machine which outputs 1 if \\(T_i\\) halts on \\(n\\) and 0 otherwise. This is thus a formulation of Turing's well-known unsolvability of the Halting Problem (see the entry on Turing machines) . Part ii and iii would also now be described as expressing that the sets \\(\\HP_T,\\) \\(\\HP_L,\\) and \\(\\HP_{\\textit{GR}}\\) are all undecidable . By taking into account the equivalence results summarized in Section 1.6 , Proposition 1.1 thus shows that membership in these sets cannot be decided relative to any of the models in question. On this basis, Turing (for \\(\\mathbf{T}\\)) and Church (for \\(\\mathbf{L}\\) and GR ) then proved the following: Proposition 1.2: If \\(V\\) were decidable (with respect to any of the models in question), then \\(\\HP_T, \\HP_L\\), and \\(\\HP_{GR}\\) would be as well. The proofs which Turing and Church gave of these facts are constructive in the sense that they show how to effectively transform an individual instance of one of the models into a first-order formula such that the formula is valid if and only if the instance possesses the property in question--e.g., given a Turing machine \\(T_i\\) and input \\(n \\in \\mathbb{N}\\), we construct a formula \\(\\varphi_{i,n}\\) such that the computation \\(T_i(n)\\) halts if and only if \\(\\varphi_{i,n}\\) is valid. This method thus anticipates the definition of many-one reducibility given in Section 3.5.1 below. In conjunction with the other arguments which Church and Turing had already offered in favor of Church's Thesis (see Section 1.6 ), Propositions 1.1 and 1.2 can thus be taken to show that the Entscheidungsproblem is indeed not decidable in the informal sense described by Hilbert & Ackermann (1928)--i.e., not decidable by a \"mechanical procedure using finitely many operations\". As we will see in Section 3 , the desire to develop a general theory of such undecidability results and the relations which they bear to one another was an important motivation for the further development of computability theory starting in the 1940s. The developments just described form part of the prehistory of the subfield of contemporary mathematical logic which was originally known as recursive function theory (or more simply as recursion theory ). This subject was initiated in earnest by Kleene, Turing, and Post starting in the late 1930s, directly on the basis of the papers containing the equivalence and undecidability results summarized in Section 1.6 and Section 1.7 . Of particular importance are the papers (1936a, 1938, 1943, 1955a,b,c) of Kleene. These respectively contain the definition of the partial recursive functions, the proof of their equivalence to GR , the Normal Form Theorem, the Recursion Theorem, and the definitions of the arithmetical and analytical hierarchies. Of equal importance are the papers (1937, 1939) of Turing (which respectively contain the undecidability of the Halting Problem and the definition of Turing reducibility) and the paper (1944) of Post (which introduced many-one and one-one reducibility and formulated what would come to be known as Post's Problem ). These developments will be surveyed in Section 3 . As we will see there, an important theme in the early stages of computability theory was the characterization of a notion of effective computability which is capable of supporting rigorous proofs grounded in intuitions about algorithmic calculability but which abstracts away from the details of the models mentioned in Section 1.6 . To this end, G&ouml;del's original definition of the general recursive equations was replaced in early textbook treatments (e.g., Shoenfield 1967; Rogers 1987) by Kleene's definition of the partial recursive functions in terms of the unbounded minimization operator introduced in Section 2.2 . This characterization has in turn been replaced by machine-based characterizations such as those of Turing (1937) or Shepherdson & Sturgis (1963) in later textbooks (e.g., Soare 1987; Cutland 1980) which are closer in form to informally described computer programs. What is retained in these treatments is an understanding of computation as a means of operating in an effective manner on finite combinatorial objects which can still be understood to fall under the \"recursive mode of thought\" as understood by early theorists such as Skolem, Hilbert, G&ouml;del, and P&eacute;ter. But at the same time, many of the basic definitions and results in recursive function theory are only indirectly related to recursive definability in the informal sense described in this section. In light of this, Soare (1996) proposed that recursive function theory should be renamed computability theory and that we should accordingly refer to what were traditionally known as the recursive functions as the computable functions . Such a change in terminology has been largely adopted in contemporary practice and is reflected in recent textbooks such as Cooper (2004) and Soare (2016). Nonetheless, both sets of terminology are still widely in use, particularly in philosophical and historical sources. Readers are thus advised to keep in mind the terminological discussion at the beginning of Section 3 .",
+      "relatedEntries": [
+        "chance-randomness",
+        "church",
+        "church-turing",
+        "computability",
+        "computational-complexity",
+        "computer-science",
+        "goedel",
+        "goedel-incompleteness",
+        "hilbert-program",
+        "lambda-calculus",
+        "learning-formal",
+        "logic-combinatory",
+        "paradoxes-contemporary-logic",
+        "proof-theory",
+        "reverse-mathematics",
+        "self-reference",
+        "turing",
+        "turing-machine"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "chance-randomness"
+        },
+        {
+          "slug": "church"
+        },
+        {
+          "slug": "church-turing"
+        },
+        {
+          "slug": "computability"
+        },
+        {
+          "slug": "computational-complexity"
+        },
+        {
+          "slug": "computer-science"
+        },
+        {
+          "slug": "goedel"
+        },
+        {
+          "slug": "goedel-incompleteness"
+        },
+        {
+          "slug": "hilbert-program"
+        },
+        {
+          "slug": "lambda-calculus"
+        },
+        {
+          "slug": "learning-formal"
+        },
+        {
+          "slug": "logic-combinatory"
+        },
+        {
+          "slug": "paradoxes-contemporary-logic"
+        },
+        {
+          "slug": "proof-theory"
+        },
+        {
+          "slug": "reverse-mathematics"
+        },
+        {
+          "slug": "self-reference"
+        },
+        {
+          "slug": "turing"
+        },
+        {
+          "slug": "turing-machine"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 147,
+      "bibliography": [
+        {
+          "raw": "Ackermann, Wilhelm, 1928a, \"&Uuml;ber die Erf&uuml;llbarkeit gewisser Z&auml;hlausdr&uuml;cke\", Mathematische Annalen , 100: 638-649. doi:10.1007/BF01448869"
+        },
+        {
+          "raw": "Ackermann, Wilhelm, 1928b [1967], \"Zum Hilbertschen Aufbau der reellen Zahlen\", Mathematische Annalen , 99(1): 118-133. Translated as \"On Hilbert's Construction of the Real Numbers\", in van Heijenoort 1967: 493-507. doi:10.1007/BF01459088"
+        },
+        {
+          "raw": "Adams, Rod, 2011, An Early History of Recursive Functions and Computability: From G&ouml;del to Turing , Boston: Docent Press."
+        },
+        {
+          "raw": "Addison, J.W., 1954, On Some Points of the Theory of Recursive Functions , PhD thesis, University of Wisconsin."
+        },
+        {
+          "raw": "---, 1958, \"Separation Principles in the Hierarchies of Classical and Effective Descriptive Set Theory\", Fundamenta Mathematicae , 46(2): 123-135. doi:10.4064/fm-46-2-123-135"
+        },
+        {
+          "raw": "---, 1959, \"Some Consequences of the Axiom of Constructibility\", Fundamenta Mathematicae , 46(3): 337-357. doi:10.4064/fm-46-3-337-357"
+        },
+        {
+          "raw": "Basu, Sankha S. and Stephen G. Simpson, 2016, \"Mass Problems and Intuitionistic Higher-Order Logic\", Computability , 5(1): 29-47. doi:10.3233/COM-150041"
+        },
+        {
+          "raw": "Bimb&oacute;, Katalin, 2012, Combinatory Logic: Pure, Applied and Typed , Boca Raton, FL: Chapman & Hall."
+        },
+        {
+          "raw": "Boolos, George S., John P. Burgess, and Richard C. Jeffrey, 2007, Computability and Logic , fifth edition, Cambridge: Cambridge University Press. doi:10.1017/CBO9780511804076"
+        },
+        {
+          "raw": "Calude, Cristian, Solomon Marcus, and Ionel Tevy, 1979, \"The First Example of a Recursive Function Which Is Not Primitive Recursive\", Historia Mathematica , 6(4): 380-384. doi:10.1016/0315-0860(79)90024-7"
+        },
+        {
+          "raw": "Church, Alonzo, 1936a, \"A Note on the Entscheidungsproblem \", Journal of Symbolic Logic , 1(1): 40-41. doi:10.2307/2269326"
+        },
+        {
+          "raw": "---, 1936b, \"An Unsolvable Problem of Elementary Number Theory\", American Journal of Mathematics , 58(2): 345-363. doi:10.2307/2371045"
+        },
+        {
+          "raw": "Clote, Peter and Evangelos Kranakis, 2002, Boolean Functions and Computation Models , (Texts in Theoretical Computer Science. An EATCS Series), Berlin, Heidelberg: Springer Berlin Heidelberg. doi:10.1007/978-3-662-04943-3"
+        },
+        {
+          "raw": "Cooper, S. Barry, 2004, Computability Theory , Boca Raton, FL: Chapman & Hall."
+        },
+        {
+          "raw": "Cutland, Nigel, 1980, Computability: An Introduction to Recursive Function Theory , Cambridge: Cambridge University Press. doi:10.1017/CBO9781139171496"
+        },
+        {
+          "raw": "Davis, Martin (ed.), 1965, The Undecidable: Basic Papers on Undecidable Propositions, Unsolvable Problems and Computable Functions , New York: Raven Press."
+        },
+        {
+          "raw": "---, 1982, \"Why G&ouml;del Didn't Have Church's Thesis\", Information and Control , 54(1-2): 3-24. doi:10.1016/S0019-9958(82)91226-8"
+        },
+        {
+          "raw": "Davis, Martin, Ron Sigal, and Elaine J. Weyuker, 1994, Computability, Complexity, and Languages: Fundamentals of Theoretical Computer Science , second edition, (Computer Science and Scientific Computing), Boston: Academic Press, Harcourt, Brace."
+        },
+        {
+          "raw": "Dean, Walter, 2016, \"Algorithms and the mathematical foundations of computer science)\", in G&ouml;del's Disjunction: The Scope and Limits of Mathematical Knowledge , Philip Welch and Leon Horsten (eds.), Oxford: Oxford University Press, pp. 19-66. doi.org/10.1093/acprof:oso/9780198759591.003.0002"
+        },
+        {
+          "raw": "---, 2020, \"Incompleteness via Paradox and Completeness\", The Review of Symbolic Logic , 13(2), 541-592. doi:10.1017/S1755020319000212"
+        },
+        {
+          "raw": "Dedekind, Richard, 1888, Was Sind Und Was Sollen Die Zahlen? , Braunschweig: Vieweg."
+        },
+        {
+          "raw": "Dreben, Burton and Akihiro Kanamori, 1997, \"Hilbert and Set Theory\", Synthese , 110(1): 77-125. doi:10.1023/A:1004908225146"
+        },
+        {
+          "raw": "Enderton, Herbert B., 2010, Computability Theory: An Introduction to Recursion Theory , Burlington, MA: Academic Press."
+        },
+        {
+          "raw": "Epstein, Richard and Walter A. Carnielli, 2008, Computability: Computable Functions, Logic, and the Foundations of Mathematics , third edition, Socorro, NM: Advance Reasoing Forum. First edition, Pacific Grove: Wadsworth & Brooks 1989."
+        },
+        {
+          "raw": "Ewald, William Bragg (ed.), 1996, From Kant to Hilbert: A Source Book in the Foundations of Mathematics. , New York: Oxford University Press."
+        },
+        {
+          "raw": "Feferman, Solomon, 1995, \"Turing in the land of \\(O(z)\\)\", in The Universal Turing Machine a Half-Century Survey , Rolf Herken (ed.), Berlin: Springer, pp. 103-134."
+        },
+        {
+          "raw": "Fibonacci, 1202 [2003], Fibonacci's Liber Abaci: A Translation into Modern English of Leonardo Pisano's Book of Calculation , L. E. Sigler (ed.), Berlin: Springer."
+        },
+        {
+          "raw": "Friedberg, R. M., 1957, \"Two Recursively Enumerable Sets of Incomparable Degrees of Unsolvability (Solution of Post's Problem, 1944)\", Proceedings of the National Academy of Sciences , 43(2): 236-238. doi:10.1073/pnas.43.2.236"
+        },
+        {
+          "raw": "Gandy, Robin, 1980, \"Church's Thesis and Principles for Mechanisms\", in The Kleene Symposium , Jon Barwise, H. Jerome Keisler, and Kenneth Kunen (eds.), (Studies in Logic and the Foundations of Mathematics 101), Amsterdam: Elsevier, 123-148. doi:10.1016/S0049-237X(08)71257-6"
+        },
+        {
+          "raw": "G&ouml;del, Kurt, 1931 [1986], \"&Uuml;ber formal unentscheidbare S&auml;tze der Principia Mathematica und verwandter Systeme, I\" (On Formally Undecidable Propositions of Principia Mathematica and Related Systems I), Monatshefte f&uuml;r Mathematik und Physik , 38: 173-198. Reprinted in G&ouml;del 1986: 144-195."
+        },
+        {
+          "raw": "---, 1934 [1986], \"On Undecidable Propositions of Formal Mathematical Systems\", Princeton lectures. Reprinted in Godel 1986: 338-371."
+        },
+        {
+          "raw": "---, 1986, Collected Works. I: Publications 1929-1936 , Solomon Feferman, John W. Dawson, Jr, Stephen C. Kleene, Gregory H. Moore, Robert M. Solovay, and Jean van Heijenoort (eds.), Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2003, Collected Works. V: Correspondence H-Z , Solomon Feferman, John W. Dawson, Jr, Warren Goldfrab, Charles Parsons, and Wilfried Sieg (eds.), Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Grassmann, Hermann, 1861, Lehrbuch Der Arithmetik F&uuml;r H&ouml;here Lehranstalten , Berin: Th. Chr. Fr. Enslin."
+        },
+        {
+          "raw": "Greibach, Sheila A., 1975, Theory of Program Structures: Schemes, Semantics, Verification , (Lecture Notes in Computer Science 36), Berlin/Heidelberg: Springer-Verlag. doi:10.1007/BFb0023017"
+        },
+        {
+          "raw": "Grzegorczyk, Andrzej, 1953, \"Some Classes of Recursive Functions\", Rozprawy Matematyczne , 4: 3-45."
+        },
+        {
+          "raw": "Grzegorczyk, A., A. Mostowski and C. Ryll-Nardzewski, 1958, \"The Classical and the &omega;-Complete Arithmetic\", The Journal of Symbolic Logic , 23(2): 188-206. doi:10.2307/2964398"
+        },
+        {
+          "raw": "Herbrand, Jacques, 1930, \"Les Bases de la Logique Hilbertienne\", Revue de Metaphysique et de Morale , 37(2): 243-255."
+        },
+        {
+          "raw": "---, 1932, \"Sur La Non-Contradiction de l'Arithm&eacute;tique.\", Journal F&uuml;r Die Reine Und Angewandte Mathematik (Crelles Journal) , 166: 1-8. doi:10.1515/crll.1932.166.1"
+        },
+        {
+          "raw": "Hilbert, David, 1900 [1996], \"Mathematische Probleme. Vortrag, Gehalten Auf Dem Internationalen Mathematiker-Congress Zu Paris 1900\", Nachrichten von Der Gesellschaft Der Wissenschaften Zu G&ouml;ttingen, Mathematisch-Physikalische Klasse , 253-297. English translation as \"Mathematical Problems\" in Ewald 1996: 1096-1105."
+        },
+        {
+          "raw": "---, 1905 [1967], \"&Uuml;ber Die Grundlagen Der Logik Und Der Arithmetik\", in Verhandlungen Des 3. Internationalen Mathematiker-Kongresses : In Heidelberg Vom 8. Bis 13. August 1904 , Leipzig: Teubner, pp. 174-185. English translation as \"On the foundations of logic and and arithmetic\" in van Heijenoort 1967: 129-138."
+        },
+        {
+          "raw": "---, 1920, \"Lectures on Logic 'Logic-Kalk&uuml;l' (1920)\", reprinted in Hilbert 2013: 298-377."
+        },
+        {
+          "raw": "---, 1922 [1996], \"Neubegr&uuml;ndung der Mathematik. Erste Mitteilung\", Abhandlungen aus dem Mathematischen Seminar der Universit&auml;t Hamburg , 1(1): 157-177. English translation as \"The new grounding of mathematics: First report\" in Ewald 1996: 1115-1134. doi:10.1007/BF02940589"
+        },
+        {
+          "raw": "---, 1923 [1996], \"Die logischen Grundlagen der Mathematik\", Mathematische Annalen , 88(1-2): 151-165. English translation as \"The logical foundations of mathematics\" in Ewald 1996: 1134-1148. doi:10.1007/BF01448445"
+        },
+        {
+          "raw": "---, 1925 [2013], \"'&Uuml;ber das Unendliche' (WS 1924/25)\", Lecture notes. Collected in Hilbert 2013: 656-759."
+        },
+        {
+          "raw": "---, 1926 [1967], \"&Uuml;ber das Unendliche\", Mathematische Annalen , 95(1): 161-190. Translated as \"On the Infinite\" in van Heijenoort 1967: 367-392. doi:10.1007/BF01206605"
+        },
+        {
+          "raw": "---, 1928 [1967], Die Grundlagen der Mathematik. Mit Zus&auml;tzen von H. Weyl und P. Bernays , (Hamburger Mathematische Einzelschriften 5), Springer Fachmedien Wiesbaden GmbH. Translated as \"The Foundations of Mathematics\", in van Heijenoort 1967: 464-479."
+        },
+        {
+          "raw": "---, 1930 [1998], \"Probleme der Grundlegung der Mathematik\", Mathematische Annalen , 102: 1-9. English translation as \"Problems of the Grounding of Mathematics\" in Mancosu 1998, 223-233. doi:10.1007/BF01782335"
+        },
+        {
+          "raw": "---, 2013, David Hilbert's Lectures on the Foundations of Arithmetic and Logic 1917-1933 , William Ewald and Wilfried Sieg (eds.), Berlin, Heidelberg: Springer Berlin Heidelberg. doi:10.1007/978-3-540-69444-1"
+        },
+        {
+          "raw": "Hilbert, David and Wilhelm Ackermann, 1928, Grundz&uuml;ge der theoretischen Logik , first edition, Berlin: J. Springer."
+        },
+        {
+          "raw": "Hilbert, David and Paul Bernays, 1934, Grundlagen der mathematik , Vol. 1, Berlin: J. Springer."
+        },
+        {
+          "raw": "---, 1939, Grundlagen der Mathematik , Vol. II, Berlin: Springer."
+        },
+        {
+          "raw": "Hinman, Peter G., 1978, Recursion-Theoretic Hierarchies , Berlin: Springer."
+        },
+        {
+          "raw": "Hopcroft, John and Jeffrey Ulman, 1979, Introduction to Automata Theory, Languages, and Computation , Reading, MA: Addison-Wesley."
+        },
+        {
+          "raw": "Kaye, Richard, 1991, Models of Peano Arithmetic , (Oxford Logic Guides, 15), Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Kechris, Alexander S., 1995, Classical Descriptive Set Theory , Berlin: Springer. doi:10.1007/978-1-4612-4190-4"
+        },
+        {
+          "raw": "Kleene, S. C., 1936a, \"General Recursive Functions of Natural Numbers\", Mathematische Annalen , 112(1): 727-742. doi:10.1007/BF01565439"
+        },
+        {
+          "raw": "---, 1936b, \"&lambda;-Definability and Recursiveness\", Duke Mathematical Journal , 2(2): 340-353. doi:10.1215/S0012-7094-36-00227-2"
+        },
+        {
+          "raw": "---, 1936c, \"A Note on Recursive Functions\", Bulletin of the American Mathematical Society , 42(8): 544-546."
+        },
+        {
+          "raw": "---, 1938, \"On Notation for Ordinal Numbers\", Journal of Symbolic Logic , 3(4): 150-155. doi:10.2307/2267778"
+        },
+        {
+          "raw": "---, 1943, \"Recursive Predicates and Quantifiers\", Transactions of the American Mathematical Society , 53(1): 41-41. doi:10.1090/S0002-9947-1943-0007371-8"
+        },
+        {
+          "raw": "---, 1952, Introduction to Metamathematics , Amsterdam: North-Holland."
+        },
+        {
+          "raw": "---, 1955a, \"Arithmetical Predicates and Function Quantifiers\", Transactions of the American Mathematical Society , 79(2): 312-312. doi:10.1090/S0002-9947-1955-0070594-4"
+        },
+        {
+          "raw": "---, 1955b, \"Hierarchies of Number-Theoretic Predicates\", Bulletin of the American Mathematical Society , 61(3): 193-214. doi:10.1090/S0002-9904-1955-09896-3"
+        },
+        {
+          "raw": "---, 1955c, \"On the Forms of the Predicates in the Theory of Constructive Ordinals (Second Paper)\", American Journal of Mathematics , 77(3): 405-428. doi:10.2307/2372632"
+        },
+        {
+          "raw": "Kleene, S. C. and Emil L. Post, 1954, \"The Upper Semi-Lattice of Degrees of Recursive Unsolvability\", The Annals of Mathematics , 59(3): 379-407. doi:10.2307/1969708"
+        },
+        {
+          "raw": "Kolmogorov, Andrei, 1932, \"Zur Deutung der intuitionistischen Logik\", Mathematische Zeitschrift , 35(1): 58-65. doi:10.1007/BF01186549"
+        },
+        {
+          "raw": "Kond&ocirc;, Motokiti, 1939, \"Sur l'uniformisation des Compl&eacute;mentaires Analytiques et les Ensembles Projectifs de la Seconde Classe\", Japanese Journal of Mathematics&#8239;:Transactions and Abstracts , 15: 197-230. doi:10.4099/jjm1924.15.0_197"
+        },
+        {
+          "raw": "Kreisel, George, 1960, \"La Pr&eacute;dicativit&eacute;\", Bulletin de La Soci&eacute;t&eacute; Math&eacute;matique de France , 79: 371-391. doi:10.24033/bsmf.1554"
+        },
+        {
+          "raw": "Kreisel, George and Gerald E. Sacks, 1965, \"Metarecursive Sets\", Journal of Symbolic Logic , 30(3): 318-338. doi:10.2307/2269621"
+        },
+        {
+          "raw": "Lachlan, A. H., 1966, \"Lower Bounds for Pairs of Recursively Enumerable Degrees\", Proceedings of the London Mathematical Society , s3-16(1): 537-569. doi:10.1112/plms/s3-16.1.537"
+        },
+        {
+          "raw": "---, 1968, \"Distributive Initial Segments of the Degrees of Unsolvability\", Zeitschrift f&uuml;r Mathematische Logik und Grundlagen der Mathematik/Mathematical Logic Quarterly , 14(30): 457-472. doi:10.1002/malq.19680143002"
+        },
+        {
+          "raw": "Lachlan, A.H and R.I Soare, 1980, \"Not Every Finite Lattice Is Embeddable in the Recursively Enumerable Degrees\", Advances in Mathematics , 37(1): 74-82. doi:10.1016/0001-8708(80)90027-4"
+        },
+        {
+          "raw": "Lusin, Nicolas, 1927, \"Sur Les Ensembles Analytiques\", Fundamenta Mathematicae , 10: 1-95. doi:10.4064/fm-10-1-1-95"
+        },
+        {
+          "raw": "Mancosu, Paolo, (ed.), 1998, From Brouwer to Hilbert: The Debate on the Foundations of Mathematics in the 1920s , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "McCarthy, John, 1961, \"A Basis for a Mathematical Theory of Computation, Preliminary Report\", in Papers Presented at the May 9-11, 1961, Western Joint IRE-AIEE-ACM Computer Conference on - IRE-AIEE-ACM '61 (Western) , Los Angeles, California: ACM Press, 225-238. doi:10.1145/1460690.1460715"
+        },
+        {
+          "raw": "M&eacute;dv&eacute;d&eacute;v, &Uacute;. T., 1955, \"St&eacute;p&eacute;ni trudnosti massovyh probl&eacute;m\" (Degrees of Difficulty of Mass Problems), Doklady Akad&eacute;mii Nauk SSSR , 104: 501-504."
+        },
+        {
+          "raw": "Moschovakis, Yiannis N., 1989, \"The Formal Language of Recursion\", The Journal of Symbolic Logic , 54(4): 1216-1252. doi:10.2307/2274814"
+        },
+        {
+          "raw": "---, 1994, Notes on Set Theory , (Undergraduate Texts in Mathematics), New York, NY: Springer New York. doi:10.1007/978-1-4757-4153-7"
+        },
+        {
+          "raw": "---, 2009, Descriptive Set Theory , second edition, Providence, RI: American Mathematical Society. First edition Amsterdam/New York: North-Holland, 1980."
+        },
+        {
+          "raw": "---, 2010, \"Kleene's Amazing Second Recursion Theorem\", The Bulletin of Symbolic Logic , 16(2): 189-239. doi:10.2178/bsl/1286889124"
+        },
+        {
+          "raw": "Mostowski, Andrzej, 1947, \"On Definable Sets of Positive Integers\", Fundamenta Mathematicae , 34: 81-112. doi:10.4064/fm-34-1-81-112"
+        },
+        {
+          "raw": "Muchnik, A. A., 1956, \"On the Unsolvability of the Problem of Reducibility in the Theory of Algorithms\", Doklady Akad&eacute;mii Nauk SSSR , 108: 194-197."
+        },
+        {
+          "raw": "Murawski, Roman, 1999, Recursive Functions and Metamathematics: Problems of Completeness and Decidability, Goedel's Theorems , Dordrecht, Boston: Kluwer."
+        },
+        {
+          "raw": "Myhill, John, 1955, \"Creative sets\", Zeitschrift f&uuml;r Mathematische Logik und Grundlagen der Mathematik/Mathematical Logic Quarterly , 1(2): 97-108. doi:10.1002/malq.19550010205"
+        },
+        {
+          "raw": "Odifreddi, Piergiogio, 1989, Classical Recursion Theory. volume 1: The Theory of Functions and Sets of Natural Numbers , (Studies in Logic and the Foundations of Mathematics 125), Amsterdam: North-Holland"
+        },
+        {
+          "raw": "---, 1999b, \"Reducibilities\", in Handbook of Computability Theory , Edward R. Griffor (ed.), (Studies in Logic and the Foundations of Mathematics 140), Amsterdam: Elsevier, 89-119. doi:10.1016/S0049-237X(99)80019-6"
+        },
+        {
+          "raw": "Owings, James C., 1973, \"Diagonalization and the Recursion Theorem.\", Notre Dame Journal of Formal Logic , 14(1): 95-99. doi:10.1305/ndjfl/1093890812"
+        },
+        {
+          "raw": "Peano, Giuseppe, 1889, Arithmetices Principia, Nova Methodo Exposita , Turin: Bocca."
+        },
+        {
+          "raw": "Peirce, C. S., 1881, \"On the Logic of Number\", American Journal of Mathematics , 4(1/4): 85-95. doi:10.2307/2369151"
+        },
+        {
+          "raw": "P&eacute;ter, R&oacute;zsa, 1932, \"Rekursive Funktionen\", in Verhandlungen Des Internationalen Mathematiker- Kongresses Z&uuml;rich , Vol. 2, pp. 336-337."
+        },
+        {
+          "raw": "---, 1935, \"Konstruktion nichtrekursiver Funktionen\", Mathematische Annalen , 111(1): 42-60. doi:10.1007/BF01472200"
+        },
+        {
+          "raw": "---, 1937, \"&Uuml;ber die mehrfache Rekursion\", Mathematische Annalen , 113(1): 489-527. doi:10.1007/BF01571648"
+        },
+        {
+          "raw": "---, 1951, Rekursive Funktionen , Budapest: Akad&eacute;miai Kiad&oacute;. English translation is P&eacute;ter 1967."
+        },
+        {
+          "raw": "---, 1956, \"Die beschr&auml;nkt-rekursiven Funktionen und die Ackermannsche Majorisierungsmethode\", Publicationes Mathematicae Debrecen , 4(3-4): 362-375. doi:10.5486/PMD.1956.4.3-4.34"
+        },
+        {
+          "raw": "---, 1959, \"Rekursivit&auml;t und Konstruktivit&auml;t\", in Constructivity in Mathematics , Arend Heyting (ed.), North-Holland, Amsterdam, pp. 226-233."
+        },
+        {
+          "raw": "---, 1967, Recursive Functions , Istv&aacute;n F&ouml;ldes (trans.), New York: Academic Press. Translation of P&eacute;ter 1951."
+        },
+        {
+          "raw": "Poincar&eacute;, Henri, 1906, \"Les Math&eacute;matiques et La Logique\", Revue de M&eacute;taphysique et de Morale , 14(3): 294-317."
+        },
+        {
+          "raw": "Post, Emil L., 1944, \"Recursively Enumerable Sets of Positive Integers and Their Decision Problems\", Bulletin of the American Mathematical Society , 50(5): 284-317. doi:10.1090/S0002-9904-1944-08111-1"
+        },
+        {
+          "raw": "---, 1965, \"Absolutely unsolvable problems and relatively undecidable propositions: Account of an anticipation\" (1941) in The undecidable M. Davis, ed., New York: Raven Press, 338-433."
+        },
+        {
+          "raw": "Priest, Graham, 1997, \"On a Paradox of Hilbert and Bernays\", Journal of Philosophical Logic , 26(1): 45-56. doi:10.1023/A:1017900703234"
+        },
+        {
+          "raw": "Putnam, Hilary, 1965, \"Trial and Error Predicates and the Solution to a Problem of Mostowski\", Journal of Symbolic Logic , 30(1): 49-57. doi:10.2307/2270581"
+        },
+        {
+          "raw": "Rice, H. G., 1953, \"Classes of Recursively Enumerable Sets and Their Decision Problems\", Transactions of the American Mathematical Society , 74(2): 358-358. doi:10.1090/S0002-9947-1953-0053041-6"
+        },
+        {
+          "raw": "Robinson, Raphael, 1947, \"Primitive Recursive Functions\", Bulletin of the American Mathematical Society , 53(10): 925-942. doi:10.1090/S0002-9904-1947-08911-4"
+        },
+        {
+          "raw": "Rogers, Hartley, 1987, Theory of Recursive Functions and Effective Computability , second edition, Cambridge, MA: MIT Press. First edition, New York: McGraw-Hill, 1967."
+        },
+        {
+          "raw": "Rose, H. E., 1984, Subrecursion: Functions and Hierarchies , (Oxford Logic Guides, 9), Oxford: Clarendon Press."
+        },
+        {
+          "raw": "---, 1963b, \"On the Degrees Less than 0&prime;\", The Annals of Mathematics , 77(2): 211-231. doi:10.2307/1970214"
+        },
+        {
+          "raw": "---, 1964, \"The Recursively Enumerable Degrees Are Dense\", The Annals of Mathematics , 80(2): 300-312. doi:10.2307/1970393"
+        },
+        {
+          "raw": "---, 1990, Higher Recursion Theory , Berlin: Springer."
+        },
+        {
+          "raw": "Schwichtenberg, Helmut and Stanley S. Wainer, 2011, Proofs and Computations , Cambridge: Cambridge University Press. doi:10.1017/CBO9781139031905"
+        },
+        {
+          "raw": "Shepherdson, J. C. and H. E. Sturgis, 1963, \"Computability of Recursive Functions\", Journal of the ACM , 10(2): 217-255. doi:10.1145/321160.321170"
+        },
+        {
+          "raw": "Shoenfield, Joseph R., 1959, \"On Degrees of Unsolvability\", The Annals of Mathematics , 69(3): 644-653. doi:10.2307/1970028"
+        },
+        {
+          "raw": "---, 1960, \"Degrees of Models\", Journal of Symbolic Logic , 25(3): 233-237. doi:10.2307/2964680"
+        },
+        {
+          "raw": "---, 1967, Mathematical Logic , (Addison-Wesley serices in logic), Reading, MA: Addison-Wesley."
+        },
+        {
+          "raw": "---, 1971, Degrees of Unsolvability , Amsterdam: North-Holland."
+        },
+        {
+          "raw": "Shore, Richard A. and Theodore A. Slaman, 1999, \"Defining the Turing Jump\", Mathematical Research Letters , 6(6): 711-722. doi:10.4310/MRL.1999.v6.n6.a10"
+        },
+        {
+          "raw": "Sieg, Wilfried, 1994, \"Mechanical Procedures and Mathematical Experiences\", in Mathematics and Mind , Alexander George (ed.), Oxford: Oxford University Press, pp. 71-117."
+        },
+        {
+          "raw": "---, 1997, \"Step by Recursive Step: Church's Analysis of Effective Calculability\", Bulletin of Symbolic Logic , 3(2): 154-180. doi:10.2307/421012"
+        },
+        {
+          "raw": "---, 2005, \"Only two letters: The correspondence between Herbrand and G&ouml;del\", Bulletin of Symbolic Logic , 11(2): 172-184. doi:10.2178/bsl/1120231628"
+        },
+        {
+          "raw": "---, 2009, \"On Computability\", in Philosophy of Mathematics , Andrew D. Irvine (ed.), (Handbook of the Philosophy of Science), Amsterdam: Elsevier, 535-630. doi:10.1016/B978-0-444-51555-1.50017-1"
+        },
+        {
+          "raw": "Simpson, Stephen G., 1977, \"First-Order Theory of the Degrees of Recursive Unsolvability\", The Annals of Mathematics , 105(1): 121-139. doi:10.2307/1971028"
+        },
+        {
+          "raw": "---, 2009, Subsystems of Second Order Arithmetic , second edition, (Perspectives in Logic), Cambridge: Cambridge University Press. doi:10.1017/CBO9780511581007"
+        },
+        {
+          "raw": "Singh, Parmanand, 1985, \"The So-Called Fibonacci Numbers in Ancient and Medieval India\", Historia Mathematica , 12(3): 229-244. doi:10.1016/0315-0860(85)90021-7"
+        },
+        {
+          "raw": "Skolem, Thoralf, 1923 [1967], \"Begr&uuml;ndung Der Elementaren Arithmetik Durch Die Rekurrierende Denkweise Ohne Anwendung Scheinbarer Veranderlichen Mit Unendlichem Ausdehnungsbereich\", Videnskapsselskapets Skrifter, I. Matematisk-Naturvidenskabelig Klasse , 6: 1-38. Reprinted as \"The foundations of elementary arithmetic established by means o f the recursive mode of thought, without the use of apparent variables ranging over infinite domainin\" in van Heijenoort 1967: 302-333."
+        },
+        {
+          "raw": "---, 1946, \"The development of recursive arithmetic\" In Dix&iacute;eme Congr&eacute;s des Mathimaticiens Scandinaves , Copenhagen, 1-16. Reprinted in Skolem 1970: 499-415."
+        },
+        {
+          "raw": "---, 1970, Selected Works in Logic Olso: Universitetsforlaget. Edited by J.E. Fenstad."
+        },
+        {
+          "raw": "Slaman, Theodore A., 2008, \"Global Properties of the Turing Degrees and the Turing Jump\", in Computational Prospects of Infinity , by Chitat Chong, Qi Feng, Theodore A. Slaman, W. Hugh Woodin, and Yue Yang, (Lecture Notes Series, Institute for Mathematical Sciences, National University of Singapore 14), Singapore: World Scientific, 83-101. doi:10.1142/9789812794055_0002"
+        },
+        {
+          "raw": "Soare, Robert I., 1987, Recursively Enumerable Sets and Degrees: A Study of Computable Functions and Computably Generated Sets , Berlin: Springer."
+        },
+        {
+          "raw": "---, 1996, \"Computability and Recursion\", Bulletin of Symbolic Logic , 2(3): 284-321. doi:10.2307/420992"
+        },
+        {
+          "raw": "---, 2016, Turing Computability: Theory and Applications , Berlin: Springer. doi:10.1007/978-3-642-31933-4"
+        },
+        {
+          "raw": "Spector, Clifford, 1955, \"Recursive Well-Orderings\", Journal of Symbolic Logic , 20(2): 151-163. doi:10.2307/2266902"
+        },
+        {
+          "raw": "Sudan, Gabriel, 1927, \"Sur le Nombre Transfinite \\(\\omega^{\\omega}\\)\", Bulletin Math&eacute;matique de la Soci&eacute;t&eacute; Roumaine des Sciences , 30(1): 11-30."
+        },
+        {
+          "raw": "Suslin, Michel, 1917, \"Sur Une D&eacute;finition Des Ensembles Mesurables sans Nombres Transfinis\", Comptes Rendus de l'Acad&eacute;mie Des Sciences , 164(2): 88-91."
+        },
+        {
+          "raw": "Tait, William W., 1961, \"Nested Recursion\", Mathematische Annalen , 143(3): 236-250. doi:10.1007/BF01342980"
+        },
+        {
+          "raw": "---, 1968, \"Constructive Reasoning\", in Logic, Methodology and Philosophy of Science III , B. Van Rootselaar and J. F. Staal (eds.), (Studies in Logic and the Foundations of Mathematics 52), Amsterdam: North-Holland, 185-199. doi:10.1016/S0049-237X(08)71195-9"
+        },
+        {
+          "raw": "---, 1981, \"Finitism\", The Journal of Philosophy , 78(9): 524-546. doi:10.2307/2026089"
+        },
+        {
+          "raw": "---, 2005, The Provenance of Pure Reason: Essays in the Philosophy of Mathematics and Its History , (Logic and Computation in Philosophy), New York: Oxford University Press."
+        },
+        {
+          "raw": "Tarski, Alfred, 1935, \"Der Wahrheitsbegriff in den formalisierten Sprachen\", Studia Philosophica , 1: 261-405."
+        },
+        {
+          "raw": "Tarski, Alfred, Andrzej Mostowski, and Raphael M. Robinson, 1953, Undecidable Theories , (Studies in Logic and the Foundations of Mathematics), Amsterdam: North-Holland."
+        },
+        {
+          "raw": "Thomason, S. K., 1971, \"Sublattices of the Recursively Enumerable Degrees\", Zeitschrift f&uuml;r Mathematische Logik und Grundlagen der Mathematik/Mathematical Logic Quarterly , 17(1): 273-280. doi:10.1002/malq.19710170131"
+        },
+        {
+          "raw": "Turing, Alan M., 1937, \"On Computable Numbers, with an Application to the Entscheidungsproblem\", Proceedings of the London Mathematical Society , s2-42(1): 230-265. doi:10.1112/plms/s2-42.1.230"
+        },
+        {
+          "raw": "---, 1939, \"Systems of Logic Based on Ordinals\", Proceedings of the London Mathematical Society , s2-45(1): 161-228. doi:10.1112/plms/s2-45.1.161"
+        },
+        {
+          "raw": "van Heijenoort, Jean (ed.), 1967, From Frege to G&ouml;del: A Source Book in Mathematical Logic, 1879-1931 , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "von Plato, Jan, 2016 \"In search of the roots of formal computation\", In Gadducci, F. and Tavosanis, M., editors, History and Philosophy of Computing: Third International Conference, HaPoC 2015 , 300-320, Berlin: Springer doi:10.1007/978-3-319-47286-7_21"
+        },
+        {
+          "raw": "Wang, Hao, 1957, \"The Axiomatization of Arithmetic\", Journal of Symbolic Logic , 22(2): 145-158. doi:10.2307/2964176"
+        },
+        {
+          "raw": "---, 1974, From Mathematics to Philosophy , New York: Humanities Press."
+        },
+        {
+          "raw": "Whitehead, Alfred North and Bertrand Russell, 1910-1913, Principia Mathematica , first edition, Cambridge: Cambridge University Press."
+        }
+      ],
+      "publishedAt": "2020-04-22T14:00:00.000Z",
+      "revisedAt": "2024-02-29T13:00:00.000Z"
+    }
+  }
+}

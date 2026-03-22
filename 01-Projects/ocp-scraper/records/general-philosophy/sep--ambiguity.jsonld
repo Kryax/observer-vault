@@ -1,0 +1,469 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/ambiguity",
+  "meta": {
+    "title": "Ambiguity",
+    "description": "Fun fact: the word 'ambiguous', at least according to the Oxford English Dictionary, is ambiguous: it can mean uncertainty or dubiousness on the one hand and a sign bearing multiple meanings on the other. I mention this merely to disambiguate what this entry is about, which concerns a word or phrase enjoying multiple meanings. In this sense, ambiguity has been the source of much frustration, bemusement, and amusement for philosophers, lexicographers, linguists, cognitive scientists, literary theorists and critics, authors, poets, orators and pretty much every other being who uses language regularly to communicate. Philosophers' interest in ambiguity stems from several sources, ranging from an intense interest in logical representation to pragmatic, political and ethical concerns about how we use language to communicate. An example of the first concerns regarding the regimentation of natural language in formal logic: arguments that may look good in virtue of their linguistic form in fact can go very wrong if the words or phrases involved are equivocal. It would be logical folly, for example, to conclude from the true (on one reading) sentences 'All bachelors are necessarily unmarried' and 'Adam was a bachelor' that Adam was necessarily unmarried. In other words, philosophers have often found ambiguity the sort of thing one needs to avoid and eradicate when they do their serious philosophical business. Frege worried about the phenomenon enough to counsel against allowing any multiplicities of sense in a perfect language. An example of the second may be found in the infamous case of Smith vs. United States in which the law stipulated that a weapon used in the main question was whether the law proscribing penalties for using a firearm in committing a crime applied to weapons used as items of exchange for drugs. Authors, poets, lyricists and the like, on the other hand, have often found ambiguity to be an extremely powerful tool. Thomas Pynchon's sentence \"we have forests full of game and hundreds of beaters who drive the animals toward the hunters such as myself who are waiting to shoot them,\" (Against the Day, p. 46) utilizes the referential ambiguity of 'them' to great effect when said by his fictionalized Archduke Ferdinand. Shakespeare's \"Ask for me tomorrow and you shall find me a grave man\" (Romeo and Juliet, Act III, Scene 1 line 97-98) plays cleverly on the double meaning of 'grave'. Comedians have often found ambiguity useful in the misdirection essential to some forms of comedy. Groucho Marx's \"I shot an elephant in my pajamas\" is a classic example. Ambiguity is important and it is worth examining what the phenomenon is and how it differs and relates to similar phenomena such as indexicality, polysemy, vagueness, and especially sense generality. While 'is an uncle' can be satisfied by both brothers of mothers and brothers of fathers, the phrase is not ambiguous but unspecified with respect to parent. The boundaries of the predicate 'is a heap' is famously difficult to detect but the problem doesn't seem to be that 'heap' enjoys too many meanings. The article will focus on what the phenomenon is and isn't and discuss some of the interesting factors that confound the easy detection and categorization of apparent ambiguities.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:41:54.240Z",
+    "dateModified": "2026-03-22T05:41:54.240Z",
+    "datePublished": "2011-05-15T14:00:00.000Z",
+    "keywords": [
+      "analytic synthetic",
+      "anaphora",
+      "pragmatics",
+      "reference",
+      "sorites paradox",
+      "vagueness"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Fun fact: the word 'ambiguous', at least according to the Oxford English Dictionary, is ambiguous: it can mean uncertainty or dubiousness on the one hand and a sign bearing multiple meanings on the other. I mention this merely to disambiguate what this entry is about, which concerns a word or phrase enjoying multiple meanings. In this sense, ambiguity has been the source of much frustration, bemusement, and amusement for philosophers, lexicographers, linguists, cognitive scientists, literary theorists and critics, authors, poets, orators and pretty much every other being who uses language regularly to communicate. Philosophers' interest in ambiguity stems from several sources, ranging from an intense interest in logical representation to pragmatic, political and ethical concerns about how we use language to communicate. An example of the first concerns regarding the regimentation of natural language in formal logic: arguments that may look good in virtue of their linguistic form in fact can go very wrong if the words or phrases involved are equivocal. It would be logical folly, for example, to conclude from the true (on one reading) sentences 'All bachelors are necessarily unmarried' and 'Adam was a bachelor' that Adam was necessarily unmarried. In other words, philosophers have often found ambiguity the sort of thing one needs to avoid and eradicate when they do their serious philosophical business. Frege worried about the phenomenon enough to counsel against allowing any multiplicities of sense in a perfect language. An example of the second may be found in the infamous case of Smith vs. United States in which the law stipulated that a weapon used in the main question was whether the law proscribing penalties for using a firearm in committing a crime applied to weapons used as items of exchange for drugs. Authors, poets, lyricists and the like, on the other hand, have often found ambiguity to be an extremely powerful tool. Thomas Pynchon's sentence \"we have forests full of game and hundreds of beaters who drive the animals toward the hunters such as myself who are waiting to shoot them,\" (Against the Day, p. 46) utilizes the referential ambiguity of 'them' to great effect when said by his fictionalized Archduke Ferdinand. Shakespeare's \"Ask for me tomorrow and you shall find me a grave man\" (Romeo and Juliet, Act III, Scene 1 line 97-98) plays cleverly on the double meaning of 'grave'. Comedians have often found ambiguity useful in the misdirection essential to some forms of comedy. Groucho Marx's \"I shot an elephant in my pajamas\" is a classic example. Ambiguity is important and it is worth examining what the phenomenon is and how it differs and relates to similar phenomena such as indexicality, polysemy, vagueness, and especially sense generality. While 'is an uncle' can be satisfied by both brothers of mothers and brothers of fathers, the phrase is not ambiguous but unspecified with respect to parent. The boundaries of the predicate 'is a heap' is famously difficult to detect but the problem doesn't seem to be that 'heap' enjoys too many meanings. The article will focus on what the phenomenon is and isn't and discuss some of the interesting factors that confound the easy detection and categorization of apparent ambiguities.",
+    "context": "Opening section: 1. Introduction | Related entries: analytic-synthetic, anaphora, pragmatics, reference, sorites-paradox, vagueness",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "general-philosophy"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry ambiguity",
+        "uri": "https://plato.stanford.edu/entries/ambiguity/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 6 related entries, bibliography size 81"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2011-05-15T14:00:00.000Z and revised 2021-05-21T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2021-05-21T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/ambiguity/",
+        "description": "SEP entry for ambiguity"
+      }
+    ],
+    "solutionApproach": "1. Introduction"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/analytic-synthetic",
+      "ocp:sep/anaphora",
+      "ocp:sep/pragmatics",
+      "ocp:sep/reference",
+      "ocp:sep/sorites-paradox",
+      "ocp:sep/vagueness"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Sennet, Adam",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/ambiguity/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 68,
+      "validation_diversity": 0.39,
+      "context_breadth": 0.37,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.89
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.501
+  },
+  "extensions": {
+    "sep": {
+      "slug": "ambiguity",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/ambiguity/",
+      "preamble": "Fun fact: the word 'ambiguous', at least according to the Oxford English Dictionary, is ambiguous: it can mean uncertainty or dubiousness on the one hand and a sign bearing multiple meanings on the other. I mention this merely to disambiguate what this entry is about, which concerns a word or phrase enjoying multiple meanings. In this sense, ambiguity has been the source of much frustration, bemusement, and amusement for philosophers, lexicographers, linguists, cognitive scientists, literary theorists and critics, authors, poets, orators and pretty much every other being who uses language regularly to communicate. Philosophers' interest in ambiguity stems from several sources, ranging from an intense interest in logical representation to pragmatic, political and ethical concerns about how we use language to communicate. An example of the first concerns regarding the regimentation of natural language in formal logic: arguments that may look good in virtue of their linguistic form in fact can go very wrong if the words or phrases involved are equivocal. It would be logical folly, for example, to conclude from the true (on one reading) sentences 'All bachelors are necessarily unmarried' and 'Adam was a bachelor' that Adam was necessarily unmarried. In other words, philosophers have often found ambiguity the sort of thing one needs to avoid and eradicate when they do their serious philosophical business. Frege worried about the phenomenon enough to counsel against allowing any multiplicities of sense in a perfect language. An example of the second may be found in the infamous case of Smith vs. United States in which the law stipulated that a weapon used in the main question was whether the law proscribing penalties for using a firearm in committing a crime applied to weapons used as items of exchange for drugs. Authors, poets, lyricists and the like, on the other hand, have often found ambiguity to be an extremely powerful tool. Thomas Pynchon's sentence \"we have forests full of game and hundreds of beaters who drive the animals toward the hunters such as myself who are waiting to shoot them,\" (Against the Day, p. 46) utilizes the referential ambiguity of 'them' to great effect when said by his fictionalized Archduke Ferdinand. Shakespeare's \"Ask for me tomorrow and you shall find me a grave man\" (Romeo and Juliet, Act III, Scene 1 line 97-98) plays cleverly on the double meaning of 'grave'. Comedians have often found ambiguity useful in the misdirection essential to some forms of comedy. Groucho Marx's \"I shot an elephant in my pajamas\" is a classic example. Ambiguity is important and it is worth examining what the phenomenon is and how it differs and relates to similar phenomena such as indexicality, polysemy, vagueness, and especially sense generality. While 'is an uncle' can be satisfied by both brothers of mothers and brothers of fathers, the phrase is not ambiguous but unspecified with respect to parent. The boundaries of the predicate 'is a heap' is famously difficult to detect but the problem doesn't seem to be that 'heap' enjoys too many meanings. The article will focus on what the phenomenon is and isn't and discuss some of the interesting factors that confound the easy detection and categorization of apparent ambiguities.",
+      "firstSectionTitle": "1. Introduction",
+      "firstSectionText": "Ambiguity is generally taken to be a property enjoyed by signs that bear multiple (legitimate) interpretations in a language or, more generally, some system of signs. 'legitimate' is a cover term I'm using to nod to the fact that many signs can, in principle, bear just about any interpretation. The relativization is to prevent ambiguity in terms like like 'leaped' which means leaped in English but loved in German. In common parlance, the word 'ambiguity' is used loosely: often simple underspecificity will suffice for a charge of ambiguity. The U.S.'s policy towards the unification of China and Taiwan has been described as a policy of 'strategic ambiguity', one that allows the U.S. to be non-specific with respect to the status of Taiwan. 'Jane's sister will come to visit' is sometimes thought to be ambiguous when Jane has multiple sisters. A movie with a character that heads to surgery at the end, leaving it open whether he lives or dies, is said to have an ambiguous ending. There is a medical condition known as 'ambiguous genitalia' in which the genitals don't categorize clearly, or exclusively, into male or female genitalia. In many domains, however, theorists have found it useful to divide the phenomenon of ambiguity from other phenomena (e.g., underspecification, vagueness, context sensitivity). Ambiguity is of interest to philosophers for a variety of reasons, some of which we will look at below. First, ambiguity makes vivid some of the differences between formal languages and natural languages and presents demands on the usage of the former to provide representations of the latter. Second, ambiguity can have a deleterious effect on our ability to determine the validity of arguments in natural language on account of possible equivocation. Third, ambiguity in art can intentionally (or unintentionally) increase the interest in a work of art by refusing to allow easy categorization and interpretation. Fourth, ambiguity in the statement of the law can undermine their applicability and our ability to obey them. Finally, ambiguity resolution is an important feature of our cognitive understanding and interpretative abilities. Studying ambiguity and how we resolve it in practice can give us insight into both thought and interpretation. Ambiguity has excited philosophers for a very, very long time. It was studied in the context of the study of fallacies in Aristotle's Sophistical Refutations . Aristotle identifies various fallacies associated with ambiguity and amphiboly writing: There are three varieties of these ambiguities and amphibolies: (1) When either the expression or the name has strictly more than one meaning&hellip; (2) when by custom we use them so; (3) when words that have a simple sense taken alone have more than one meaning in combination; e.g. 'knowing letters'. For each word, both 'knowing' and 'letters', possibly has a single meaning: but both together have more than one-either that the letters themselves have knowledge or that someone else has it of them. ( Sophistical Refutations bk. 4) The stoics were also intrigued by ambiguity (see Atherton 1993). Chrysippus claimed at one point that every word is ambiguous - though by this he meant that the same person may understand a word spoken to him in many distinct ways. Philosophers concerned with the relation between language and thought, particularly those who argue for a language of thought, concerned themselves with whether the language in which we think could contain ambiguous phrases. Ockham, for example, was willing to countenance ambiguities in mental sentences of a language of thought but not mental terms in that language (see Spade p. 101). Frege contemplated non-overlap of sense in natural language in a famous footnote, writing: &hellip;So long as the reference remains the same, such variations of sense may be tolerated, although they are to be avoided in the theoretical structure of a demonstrative science and ought not to occur in a perfect language. (Frege 1948 [1892], p. 210 fn. 2) Frege's hostility to ambiguity remains with us today. Frequently we use formal languages precisely so that we can disambiguate otherwise ambiguous sentences (brackets being a paradigm example of a disambiguating device). Giving an account of ambiguity (and disambiguation) requires one to discern the bearer(s) of ambiguity. Propositions, for example, are presumably unambiguous (since they are meanings they can't be subject to further considerations of meaning). This leaves a range of potential objects: utterances, utterances relative to a context, sentences, sentences relative to a context, discourses, inscriptions&hellip;. The differences aren't trivial: a written down sentence corresponds to many possible ways of being uttered in which features such as prosody can prevent certain meanings that the written down sentence seems capable of enjoying. Two written utterances may sound the same (if they contain words that sound alike) without being spelt alike (if the words aren't co-spelled) thus resulting in phonological ambiguity without corresponding orthographic ambiguity. I'm going to (somewhat perversely) simply use 'sentence' and 'phrase' ambiguously, and I will attempt to disambiguate when necessary. We will also look briefly at the application of ambiguity to discourse transitions. One important question regarding ambiguity is how we ought to represent ambiguities. With structural ambiguities there is no independent issue but with lexical ambiguities there is a real issue. It's tempting to see this as a question we could answer in any number of equally good ways. For example, we may choose to represent the meaning of 'bank' disjunctively or we may choose to individuate 'bank' as multiple lexical items that simply sound and look alike, perhaps using subscripts. Both are potentially problematic if taken as analyses: disjunctive meanings are not unique to ambiguity (I can introduce any term I like with a single disjunctive meaning), and representation using subscripts simply masks the question of what the subscripts represent. This suggests that the issue is more like a problem than a nuisance or a trivial choice and actually has serious ramifications for how to pursue truth conditional semantics. (See Davidson 1967, Gillon 1990, and Saka 2007 (Ch. 6) for an interesting account of the problem regarding representing ambiguity.) I'll proceed as though lexical ambiguities are properly represented as two separate words/lexical items that overlap with respect to some significant feature (phonologically, graphemically, pictorially&hellip;). A brief terminological point: 'polysemy' refers to a phenomenon that is closely related to ambiguity, but often is characterized as a term with multiple meanings that are, in some hard to specify sense, interestingly related. For example, 'in' is often thought to be a paradigm of polysemy: to be in a car, in my thoughts and in trouble seem to play on notions of containment but there is clearly a difference in how we interpret 'in' in each case. It is sometimes characterized as a phenomenon subsumable under ambiguity (basically, an ambiguity with the meanings that are tightly related meanings) but sometimes it is taken to be a different phenomenon altogether. One traditional carving is that ambiguity in words is a matter of two or more lexical entries that correspond to the same word and polysemy a single lexeme that has multiple meanings. For the rest of this article, I will assume that polysemy is simply ambiguity with tightly corresponding meanings and I will not try to distinguish polysemy from ambiguity very carefully. Many cognitive linguists contend that there there is no principled way to divide these in any case. It's worth noticing that terms could be both ambiguous and polysemous if it had three meanings, two of which were suitably related and one which was quite far apart from the other two. See Vicente and Falkum (2017) for a detailed look at polysemy.",
+      "relatedEntries": [
+        "analytic-synthetic",
+        "anaphora",
+        "pragmatics",
+        "reference",
+        "sorites-paradox",
+        "vagueness"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "analytic-synthetic"
+        },
+        {
+          "slug": "anaphora"
+        },
+        {
+          "slug": "pragmatics"
+        },
+        {
+          "slug": "reference"
+        },
+        {
+          "slug": "sorites-paradox"
+        },
+        {
+          "slug": "vagueness"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 81,
+      "bibliography": [
+        {
+          "raw": "Aristotle, On Sophistical Refutations , Pickard-Cambridge (trans.), in The Complete Works of Aristotle: The Revised Oxford Translation , J. Barnes (ed.), Princeton: Princeton University Press, 1984."
+        },
+        {
+          "raw": "Aristotle, Metaphysics , W.D. Ross (trans.), in The Complete Works of Aristotle: The Revised Oxford Translation , J. Barnes (ed.), Princeton: Princeton University Press, 1984."
+        },
+        {
+          "raw": "Atherton, Catherine, 1993. The Stoics on Ambiguity. Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Atlas, Jay, 1989. Philosophy Without Ambiguity: A Logico-Linguistic Essay , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Bach, Kent, 1982. \"Semantic Nonspecificity and Mixed Quantifiers,\" Linguistics and Philosophy , 4: 593-605."
+        },
+        {
+          "raw": "---, 1999. \"The Semantics-Pragmatics Distinction: What It Is and Why It Matters,\" in The Semantics/Pragmatics Interface from Different Points of View , K. Turner (ed.), Oxford: Elsevier, 65-84."
+        },
+        {
+          "raw": "Baker, Mark, 1997. \"Thematic Roles and Syntactic Structure,\" in Elements of Grammar , Liliane Haegeman (ed.), Dordrecht: Kluwer, 73-137."
+        },
+        {
+          "raw": "Bezuidenhout, Anne, 2002. \"Truth-Conditional Pragmatics,\" Philosophical Perspectives , 16: 105-134."
+        },
+        {
+          "raw": "Bittner, Maria, 2007. \"Online Update: Temporal, Modal, and de Se Anaphora in Polysynthetic Discourse,\" in Chris Barker & Pauline Jacobson (eds.), Direct Compositionality , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Braun, David, and Theodore Sider, 2007. \"Vague, So Untrue\", in No&ucirc;s , 41(2): 133-156."
+        },
+        {
+          "raw": "Camp, Elisabeth, 2006. \"Metaphor and That Certain 'Je Ne Sais Quoi',\" Philosophical Studies , 129: 1-25."
+        },
+        {
+          "raw": "Carlson, Greg N., 1982. \"Generic Terms and Generic Sentences,\" Journal of Philosophical Logic , 11: 145-181."
+        },
+        {
+          "raw": "Carlson, Greg N. and Francis Jeffry Pelletier, 1995. The Generic Book , Chicago: The University of Chicago Press."
+        },
+        {
+          "raw": "Chomsky, Noam, 2000. New Horizons in the Study of Language and Mind , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Cruse, D. Alan, 1986. Lexical Semantics , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Culicover, P.W. and R. Jackendoff, 2005. Simpler Syntax , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Davidson, Donald, 1967. \"Truth and Meaning\", Synthese , 17: 304-323."
+        },
+        {
+          "raw": "Dayal, Veneeta, 2004. \"The Universal Force of Free Choice Any,\" Linguistic Variation Yearbook , 4: 5-40."
+        },
+        {
+          "raw": "Doetjes, J., 2011, \"Count/Mass Distinctions Across Languages\" in Semantics: An International Handbook of Natural Language Meaning (Volume 3: Chapter 96), Claudia Maienborn, Klaus von Heusinger, Paul Portner (eds.). Berlin: De Gruyter Mouton."
+        },
+        {
+          "raw": "Donnellan, Keith S., 1966. \"Reference and Definite Descriptions,\" Philosophical Review , 75: 281-304."
+        },
+        {
+          "raw": "Dunbar, George, 2001. \"Towards a Cognitive Analysis of Polysemy, Ambiguity and Vagueness,\" Cognitive Linguistics , 12: 1-14."
+        },
+        {
+          "raw": "Fara, Delia Graff, 2000. \"Shifting Sands: An Interest-Relative Theory of Vagueness,\" Philosophical Topics , 28: 45-81 (originally published under the name \"Delia Graff\")."
+        },
+        {
+          "raw": "Field, Hartry, 1973. \"Theory Change and the Indeterminacy of Reference,\" Journal of Philosophy , 70: 462-81."
+        },
+        {
+          "raw": "Fiengo, Robert and Robert May, 1994. Indices and Identity (Linguistic Inquiry Monographs 24), Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Fodor, Jerry, 1998. Concepts: Where Cognitive Science Went Wrong , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Frege, Gottlob, 1948 [1892]. \"Sense and Reference,\" The Philosophical Review , 53: 209-230."
+        },
+        {
+          "raw": "Giannakidou, Anastasia, 2001. \"The Meaning of Free Choice,\" Linguistics and Philosophy , 24: 659-735."
+        },
+        {
+          "raw": "Gillon, Brendan, 1990. \"Ambiguity, generality, and indeterminacy,\" Synthese , 85: 391-416; extended version, in Semantics: A Reader , Gillon and Davis (eds.), Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Greenough, Patrick, 2003. \"Vagueness: A Minimal Theory,\" Mind , 112: 235-81."
+        },
+        {
+          "raw": "Grice, H. P., 1975. \"Logic and Conversation,\" in Syntax and Semantics 3: Speech Acts , Cole and Morgan (eds.), New York: Academic Press."
+        },
+        {
+          "raw": "Grimshaw, Jane, 1992. Argument Structure , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Heim, Irene, 1983. \"File Change Semantics and the Familiarity Theory of Definiteness,\" in Meaning, Use and Interpretation of Language , B&auml;uerle, Schwarze and von Stechow (eds.), Berlin: Walter de Gruyter, 164-90; reprinted in Portner and Partee (eds.), 2002, 223-248."
+        },
+        {
+          "raw": "---, 1989. The Semantics of Definite and Indefinite Noun Phrases , New York: Garland."
+        },
+        {
+          "raw": "Herburger, Elena, 2000. What Counts: Focus and Quantification (Linguistic Inquiry Monographs: Volume 36), Cambridge. MA: MIT Press."
+        },
+        {
+          "raw": "Hobbs, Jerry, 1979. \"Coherence and coreference\" in Cognitive Science , Los Angeles, CA, 432-5."
+        },
+        {
+          "raw": "---, 1985. \"Granularity,\" in A. Joshi (ed.), Proceedings of the 9th IJCAI (Volume 1), Los Angeles, CA: Morgan Kaufmann, 432-5."
+        },
+        {
+          "raw": "Horn, Laurence, 2000. \"Any and (-)ever: Free choice and free relatives,\" in Proceedings of the 15th Annual Conference of the Israeli Association for Theoretical Linguistics , 71-111."
+        },
+        {
+          "raw": "Jacobson, Pauline, 1999. \"Towards a Variable-Free Semantics,\" Linguistics and Philosophy , 22: 117-184."
+        },
+        {
+          "raw": "Kadmon, Nirit and Fred Landman, 1993: \"Any,\" Linguistics and Philosophy , 16: 353-422."
+        },
+        {
+          "raw": "Kamp, J. A. W., 1981. \"A Theory of Truth and Semantic Representation,\" in Formal Methods in the Study of Language , J. Groenendijk, T. Janssen and M. Stokhof (eds.), Amsterdam: Mathematical Centre, 277-322."
+        },
+        {
+          "raw": "Kratzer, Angelika, 1977. \"What 'Must' and 'Can' Must and Can Mean,\" Linguistics and Philosophy , 1: 337-355."
+        },
+        {
+          "raw": "Kripke, Saul, 1977. \"Speaker's Reference and Semantic Reference,\" Midwest Studies in Philosophy , 2: 255-276."
+        },
+        {
+          "raw": "Lewandowska-Tomaszczyk, Barbara, 2007. \"Polysemy, Prototypes and Radial Categories\". The Oxford Handbook of Cognitive Linguistics , Dirk Geeraerts and Hubert Cuyckens (eds.), Oxford: Oxford University Press, 139-169."
+        },
+        {
+          "raw": "Lepore, Ernie and Stone, Matthew, 2014. Imagination and Convention: Distinguishing Grammar and Inference in Language . Oxford: Oxford University Press."
+        },
+        {
+          "raw": "May, Robert, 1985. Logical Form: Its Structure and Derivation , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 1991. The Grammar of Quantification , New York: Garland; this is a facsimile edition of the 1977 MIT Ph.D. Dissertation, with 1991 preface."
+        },
+        {
+          "raw": "McKay, Thomas, 2006. Plural Predication . Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Montague, Richard, 1973. \"The proper treatment of quantification in ordinary English,\" in R. Montague, Formal Philosophy: Selected Papers of Richard Montague , R. Thomason (ed.), New Haven: Yale University Press, 1974, 247-270."
+        },
+        {
+          "raw": "Neale, Stephen, 1975. Descriptions , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Murray, Sarah E. and Starr, William B., 2018. \"Force and Conventional States,\" in New Work on Speech Acts , Daniel Fogal, Daniel W. Harris, and Matt Moss (eds.), Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Nunberg, Geoffrey, 1978. The Pragmatics of Reference , Bloomington: Indiana University Linguistics Club."
+        },
+        {
+          "raw": "---, 1995. \"Transfers of Meaning,\" Journal of Semantics , 12: 109-32."
+        },
+        {
+          "raw": "Partee, Barbara H., 1986. \"Noun phrase interpretation and type-shifting principles,\" in Studies in Discourse Representation Theory and the Theory of Generalized Quantifiers , Groenendijk, de Jongh and M. Stokhof (eds.), Dordrecht: Foris, 115-143; reprinted in Portner and Partee (eds.), 2002, 357-381; reprinted in B. Partee, Compositionality in Formal Semantics: Selected Papers by Barbara H. Partee , Oxford: Blackwell, 2004, 203-230."
+        },
+        {
+          "raw": "Partee, Barbara H., and Mats Rooth, 1983. \"Generalized conjunction and type ambiguity,\" in Meaning, Use, and Interpretation of Language , B&auml;uerle, Schwarze and von Stechow (eds.), Berlin: Walter de Gruyter, 361-83; reprinted in Portner and Partee (eds.), 2002, 334-356."
+        },
+        {
+          "raw": "Pelletier, F. Jeffry, 1975. \"Non-singular reference: some preliminaries,\" Philosophia , 5(4): 451-465."
+        },
+        {
+          "raw": "Pietroski, Paul, 2005. \"Meaning Before Truth,\" in Contextualism in Philosophy , Preyer and Peters (eds.), Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Pietroski, Paul and Norbert Hornstein, 2002. \"Does Every Sentence Like This Exhibit A Scope Ambiguity?\" in Belief and Meaning , Hinzen and Rott (eds.), Frankfurt: Hansel-Hohenhausen."
+        },
+        {
+          "raw": "Pynchon, Thomas, 2006, Against the Day , Penguin Press."
+        },
+        {
+          "raw": "Quine, W. V., 1951. \"Two Dogmas of Empiricism,\" The Philosophical Review , 60: 20-43."
+        },
+        {
+          "raw": "---, 1960. Word and Object , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Recanati, Francois, 1989. \"The Pragmatics of What is Said,\" Mind and Language , 4: 295-329; reprinted in Pragmatics: A Reader , Davis (ed.), 1991. Oxford: Oxford University Press, 97-120."
+        },
+        {
+          "raw": "---, 2004. Literal Meaning , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Rooth, Mats, 1992. \"A Theory of Focus Interpretation,\" Natural Language Semantics , 1: 75-116."
+        },
+        {
+          "raw": "Ryle, Gilbert, 1949. The Concept of Mind , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Sag, Ivan, 1976. Deletion and Logical Form , Ph.D Thesis, Department of Linguistics, Massachusetts Institute of Technology; published, New York: Garland Publishing, 1980."
+        },
+        {
+          "raw": "Saka, Paul, 2007. How to Think About Meaning . Dordrecht: Springer."
+        },
+        {
+          "raw": "Schein, Barry, 2006. \"Plurals\", in Ernest Lepore & Barry Smith (eds.), The Oxford Handbook of Philosophy of Language , Oxford: Oxford University Press, pp. 716-767."
+        },
+        {
+          "raw": "Schwarzschild, Roger, 2002. \"Singleton Indefinites,\" Journal of Semantics , 19: 289-314."
+        },
+        {
+          "raw": "Searle, John R., 1979. Expression and Meaning: Studies in the Theory of Speech Acts , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Smith, Nicholas, 2005. \"Vagueness as Closeness,\" Australasian Journal of Philosophy , 83: 157 -183."
+        },
+        {
+          "raw": "Smyth, Ron, 1994. \"Grammatical Determinants of Ambiguous Pronoun Resolution,\" Journal of Psycholinguistic Research , 23: 197-229."
+        },
+        {
+          "raw": "Spade, P. V., 1996. Thoughts, Words and Things: An Introduction to Late Mediaeval Logic and Semantic Theory , Version 1.0. Bloomington: Indiana University."
+        },
+        {
+          "raw": "Stone, Matthew and Daniel Hardt, 1997. \"Dynamic Discourse Referents for Tense and Modals,\" Proceedings of IWCS , 2: 287-299."
+        },
+        {
+          "raw": "Strawson, P. F., 1950. \"On Referring,\" Mind , 59: 320-344."
+        },
+        {
+          "raw": "Tuggy, David, 1993. \"Ambiguity, Polysemy and Vagueness,\" Cognitive Linguistics , 4: 273-290."
+        },
+        {
+          "raw": "Vicente, A., & Falkum, I. 2017. 'Polysemy,' in Oxford Research Encyclopedia of Linguistics , Vicente & Falkum 2017 available online . doi:10.1093/acrefore/9780199384655.013.325."
+        },
+        {
+          "raw": "Viebahn, E., 2018. \"Ambiguity and Zeugma,\" in Pacific Philosophical Quarterly , 99(4): 749-762."
+        },
+        {
+          "raw": "Ward, Gregory, 2004. \"Equatives and Deferred Reference,\" Language , 80: 262-289."
+        },
+        {
+          "raw": "Williams, Edwin, 1977. \"Discourse and Logical Form,\" Linguistic Inquiry , 8(1): 101-139."
+        },
+        {
+          "raw": "Williams, Edwin, 1994. Thematic Structure in Syntax. Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Zwicky, Arnold M. and Jerrold M. Sadock, 1975. \"Ambiguity Tests and How to Fail Them,\" in Syntax and Semantics (Volume IV), J. Kimball (ed.), New York: Academic Press, 1-36."
+        }
+      ],
+      "publishedAt": "2011-05-15T14:00:00.000Z",
+      "revisedAt": "2021-05-21T14:00:00.000Z"
+    }
+  }
+}

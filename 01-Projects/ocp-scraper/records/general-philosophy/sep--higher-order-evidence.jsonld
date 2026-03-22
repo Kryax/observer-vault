@@ -1,0 +1,523 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/higher-order-evidence",
+  "meta": {
+    "title": "Higher-Order Evidence",
+    "description": "Higher-order evidence is evidence which bears on a believer's rational capacities, epistemic performance, or evidential situation. Many epistemologists hold that this kind of evidence can rationally affect our \"first-order\" beliefs as well: that is, those beliefs about the world that we form using the relevant rational capacities, or in the relevant evidential situation. It is easiest to get a grip on this phenomenon by looking at examples. Here is a paradigmatic case (paraphrased from Schoenfield 2018: 690, based on similar cases put forth by Adam Elga [2013 and 2008--see Other Internet Resources], Lasonen-Aarnio [2014], Christensen [2010a], and others): Hypoxia : Aisha is out flying her small, unpressurized airplane, wondering whether she has enough fuel to make it to Hawaii. She looks at the gauges, dials, and maps, and obtains some evidence, E , which she knows strongly supports (say to degree .99) either the proposition that she has enough gas ( G ) or that she does not (~ G ). Thinking it over and performing the necessary calculations, Aisha concludes G ; in fact, this is what E supports. But then she checks her altitude and notices that she's at great risk for hypoxia, a condition which impairs one's reasoning while leaving the reasoner feeling perfectly cogent and clear-headed. Aisha knows that at this altitude, pilots performing the kinds of calculations she just did only reach the correct conclusion 50% of the time. Aisha's \"first-order\" evidence is her evidence bearing directly on her beliefs about G : that is, the evidence she receives by consulting her dials, gauges, and maps. Her \"higher-order\" evidence is her evidence suggesting that she's at risk for hypoxia. Higher-order evidence bears directly on Aisha's epistemic situation in various ways, but does not bear directly on G . The primary question that this case raises, for the higher-order evidence literature, is: does Aisha's higher-order evidence also rationally affect her beliefs about G ? (That is, does it bear on G in some indirect way?) Some say yes. It would be reckless for Aisha to head out over the Pacific after realizing that there is such a serious chance that she's rationally impaired, which surely shows (some argue) that she should not be very confident of G . Others say no. As the case stipulates, Aisha's first-order evidence strongly supports G ; whether Aisha is hypoxic has absolutely nothing to do with whether she has enough gas to make it to Hawaii. (Why would her total evidence prompt her to revise confidence in G , when the new evidence she has gained is irrelevant to G ?) Answering \"yes\" raises questions about exactly how and why this level-interaction works. Answering \"no\" raises questions about how to explain the intuitive unreasonableness of Aisha's maintaining high confidence in G . Higher-order evidence thus raises a puzzle. Two apparent features of Hypoxia are in tension with one another: it seems that Aisha is required to reduce her confidence in G , and yet it also seems that her evidence still strongly supports G . Some see this as a conflict between the belief state that seems intuitively rational (reduced confidence or suspension of judgment about G ) and the belief state that seems strongly supported by her evidence (high confidence in G ). Others see it as a conflict within her beliefs. If Aisha maintains high confidence in G , but also takes seriously the possibility that she could be hypoxic, she will be in a state of epistemic akrasia : she will have a belief state (her high confidence in G ) which she also judges likely to be irrational, or unsupported by her evidence. In what follows we will see these issues crop up in several different forms. This article will be organized around a few core questions about higher-order evidence, which will give us different ways to approach these central puzzles. A few quick notes before moving on. Following most of the literature, the term \"higher-order evidence\" is used here, although it would be more accurate to speak of higher-order evidential effects or higher-order evidential import (since one piece of evidence may be relevant to a person's beliefs about many different subject matters, in a number of different ways). And like most of the literature, the focus is on higher-order defeat , rather than higher-order confirmation , even though these possibilities go hand in hand. Some of the issues discussed in this article are discussed in more detail in the entry on epistemic self-doubt . Finally, although the higher-order evidence debate has its roots in the literature on disagreement, this entry focuses on the simpler, single-person case introduced above and mostly omits disagreement.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:08:39.282Z",
+    "dateModified": "2026-03-22T05:08:39.282Z",
+    "datePublished": "2022-09-05T14:00:00.000Z",
+    "keywords": [
+      "disagreement",
+      "epistemic self doubt",
+      "evidence",
+      "justep coherence",
+      "justep foundational",
+      "justep intext",
+      "rationality",
+      "rationality normative nonutility",
+      "rationality normative utility",
+      "rationality structural",
+      "reliabilism"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Higher-order evidence is evidence which bears on a believer's rational capacities, epistemic performance, or evidential situation. Many epistemologists hold that this kind of evidence can rationally affect our \"first-order\" beliefs as well: that is, those beliefs about the world that we form using the relevant rational capacities, or in the relevant evidential situation. It is easiest to get a grip on this phenomenon by looking at examples. Here is a paradigmatic case (paraphrased from Schoenfield 2018: 690, based on similar cases put forth by Adam Elga [2013 and 2008--see Other Internet Resources], Lasonen-Aarnio [2014], Christensen [2010a], and others): Hypoxia : Aisha is out flying her small, unpressurized airplane, wondering whether she has enough fuel to make it to Hawaii. She looks at the gauges, dials, and maps, and obtains some evidence, E , which she knows strongly supports (say to degree .99) either the proposition that she has enough gas ( G ) or that she does not (~ G ). Thinking it over and performing the necessary calculations, Aisha concludes G ; in fact, this is what E supports. But then she checks her altitude and notices that she's at great risk for hypoxia, a condition which impairs one's reasoning while leaving the reasoner feeling perfectly cogent and clear-headed. Aisha knows that at this altitude, pilots performing the kinds of calculations she just did only reach the correct conclusion 50% of the time. Aisha's \"first-order\" evidence is her evidence bearing directly on her beliefs about G : that is, the evidence she receives by consulting her dials, gauges, and maps. Her \"higher-order\" evidence is her evidence suggesting that she's at risk for hypoxia. Higher-order evidence bears directly on Aisha's epistemic situation in various ways, but does not bear directly on G . The primary question that this case raises, for the higher-order evidence literature, is: does Aisha's higher-order evidence also rationally affect her beliefs about G ? (That is, does it bear on G in some indirect way?) Some say yes. It would be reckless for Aisha to head out over the Pacific after realizing that there is such a serious chance that she's rationally impaired, which surely shows (some argue) that she should not be very confident of G . Others say no. As the case stipulates, Aisha's first-order evidence strongly supports G ; whether Aisha is hypoxic has absolutely nothing to do with whether she has enough gas to make it to Hawaii. (Why would her total evidence prompt her to revise confidence in G , when the new evidence she has gained is irrelevant to G ?) Answering \"yes\" raises questions about exactly how and why this level-interaction works. Answering \"no\" raises questions about how to explain the intuitive unreasonableness of Aisha's maintaining high confidence in G . Higher-order evidence thus raises a puzzle. Two apparent features of Hypoxia are in tension with one another: it seems that Aisha is required to reduce her confidence in G , and yet it also seems that her evidence still strongly supports G . Some see this as a conflict between the belief state that seems intuitively rational (reduced confidence or suspension of judgment about G ) and the belief state that seems strongly supported by her evidence (high confidence in G ). Others see it as a conflict within her beliefs. If Aisha maintains high confidence in G , but also takes seriously the possibility that she could be hypoxic, she will be in a state of epistemic akrasia : she will have a belief state (her high confidence in G ) which she also judges likely to be irrational, or unsupported by her evidence. In what follows we will see these issues crop up in several different forms. This article will be organized around a few core questions about higher-order evidence, which will give us different ways to approach these central puzzles. A few quick notes before moving on. Following most of the literature, the term \"higher-order evidence\" is used here, although it would be more accurate to speak of higher-order evidential effects or higher-order evidential import (since one piece of evidence may be relevant to a person's beliefs about many different subject matters, in a number of different ways). And like most of the literature, the focus is on higher-order defeat , rather than higher-order confirmation , even though these possibilities go hand in hand. Some of the issues discussed in this article are discussed in more detail in the entry on epistemic self-doubt . Finally, although the higher-order evidence debate has its roots in the literature on disagreement, this entry focuses on the simpler, single-person case introduced above and mostly omits disagreement.",
+    "context": "Opening section: 1. What is Distinctive About Higher-Order Evidence? | Related entries: disagreement, evidence, justep-coherence, justep-foundational, justep-intext, rationality-normative-utility, rationality-normative-nonutility, rationality, rationality-structural, reliabilism, epistemic-self-doubt",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "general-philosophy"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry higher-order-evidence",
+        "uri": "https://plato.stanford.edu/entries/higher-order-evidence/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 11 related entries, bibliography size 89"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2022-09-05T14:00:00.000Z and revised 2022-09-05T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2022-09-05T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/higher-order-evidence/",
+        "description": "SEP entry for higher-order-evidence"
+      }
+    ],
+    "solutionApproach": "1. What is Distinctive About Higher-Order Evidence?"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/disagreement",
+      "ocp:sep/evidence",
+      "ocp:sep/justep-coherence",
+      "ocp:sep/justep-foundational",
+      "ocp:sep/justep-intext",
+      "ocp:sep/rationality-normative-utility",
+      "ocp:sep/rationality-normative-nonutility",
+      "ocp:sep/rationality",
+      "ocp:sep/rationality-structural",
+      "ocp:sep/reliabilism",
+      "ocp:sep/epistemic-self-doubt"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Horowitz, Sophie",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/higher-order-evidence/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 69,
+      "validation_diversity": 0.45,
+      "context_breadth": 0.47,
+      "temporal_stability": 0.62,
+      "test_coverage": 0.78,
+      "documentation_quality": 0.91
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.516
+  },
+  "extensions": {
+    "sep": {
+      "slug": "higher-order-evidence",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/higher-order-evidence/",
+      "preamble": "Higher-order evidence is evidence which bears on a believer's rational capacities, epistemic performance, or evidential situation. Many epistemologists hold that this kind of evidence can rationally affect our \"first-order\" beliefs as well: that is, those beliefs about the world that we form using the relevant rational capacities, or in the relevant evidential situation. It is easiest to get a grip on this phenomenon by looking at examples. Here is a paradigmatic case (paraphrased from Schoenfield 2018: 690, based on similar cases put forth by Adam Elga [2013 and 2008--see Other Internet Resources], Lasonen-Aarnio [2014], Christensen [2010a], and others): Hypoxia : Aisha is out flying her small, unpressurized airplane, wondering whether she has enough fuel to make it to Hawaii. She looks at the gauges, dials, and maps, and obtains some evidence, E , which she knows strongly supports (say to degree .99) either the proposition that she has enough gas ( G ) or that she does not (~ G ). Thinking it over and performing the necessary calculations, Aisha concludes G ; in fact, this is what E supports. But then she checks her altitude and notices that she's at great risk for hypoxia, a condition which impairs one's reasoning while leaving the reasoner feeling perfectly cogent and clear-headed. Aisha knows that at this altitude, pilots performing the kinds of calculations she just did only reach the correct conclusion 50% of the time. Aisha's \"first-order\" evidence is her evidence bearing directly on her beliefs about G : that is, the evidence she receives by consulting her dials, gauges, and maps. Her \"higher-order\" evidence is her evidence suggesting that she's at risk for hypoxia. Higher-order evidence bears directly on Aisha's epistemic situation in various ways, but does not bear directly on G . The primary question that this case raises, for the higher-order evidence literature, is: does Aisha's higher-order evidence also rationally affect her beliefs about G ? (That is, does it bear on G in some indirect way?) Some say yes. It would be reckless for Aisha to head out over the Pacific after realizing that there is such a serious chance that she's rationally impaired, which surely shows (some argue) that she should not be very confident of G . Others say no. As the case stipulates, Aisha's first-order evidence strongly supports G ; whether Aisha is hypoxic has absolutely nothing to do with whether she has enough gas to make it to Hawaii. (Why would her total evidence prompt her to revise confidence in G , when the new evidence she has gained is irrelevant to G ?) Answering \"yes\" raises questions about exactly how and why this level-interaction works. Answering \"no\" raises questions about how to explain the intuitive unreasonableness of Aisha's maintaining high confidence in G . Higher-order evidence thus raises a puzzle. Two apparent features of Hypoxia are in tension with one another: it seems that Aisha is required to reduce her confidence in G , and yet it also seems that her evidence still strongly supports G . Some see this as a conflict between the belief state that seems intuitively rational (reduced confidence or suspension of judgment about G ) and the belief state that seems strongly supported by her evidence (high confidence in G ). Others see it as a conflict within her beliefs. If Aisha maintains high confidence in G , but also takes seriously the possibility that she could be hypoxic, she will be in a state of epistemic akrasia : she will have a belief state (her high confidence in G ) which she also judges likely to be irrational, or unsupported by her evidence. In what follows we will see these issues crop up in several different forms. This article will be organized around a few core questions about higher-order evidence, which will give us different ways to approach these central puzzles. A few quick notes before moving on. Following most of the literature, the term \"higher-order evidence\" is used here, although it would be more accurate to speak of higher-order evidential effects or higher-order evidential import (since one piece of evidence may be relevant to a person's beliefs about many different subject matters, in a number of different ways). And like most of the literature, the focus is on higher-order defeat , rather than higher-order confirmation , even though these possibilities go hand in hand. Some of the issues discussed in this article are discussed in more detail in the entry on epistemic self-doubt . Finally, although the higher-order evidence debate has its roots in the literature on disagreement, this entry focuses on the simpler, single-person case introduced above and mostly omits disagreement.",
+      "firstSectionTitle": "1. What is Distinctive About Higher-Order Evidence?",
+      "firstSectionText": "Higher-order evidence was introduced above by example. We can come across higher-order evidence in a variety of ways: brain-altering conditions like hypoxia, or drugs, but also more mundane sources like bias and fatigue. Many epistemologists have discussed disagreement as a source of higher-order evidence: if an equally well-informed and thoughtful person looks at the evidence and draws a different conclusion from yours, this arguably gives you reason to worry that you've made a rational error (see, e.g., Kelly 2005, Feldman 2006, Christensen 2007b, Elga 2008 and much following literature). And some have argued that \"irrelevant influences\" on belief, such as one's religious upbringing, can be a source of higher-order evidence as well: the realization that you would have had different religious beliefs if you had been raised in a different community, for example, might give you reason to doubt the rationality of those beliefs (see Elga 2008--see Other Internet Resources, White 2010, and Vavova 2018). It is hard to find an uncontroversial definition of higher-order evidence, as different authors understand it in different ways. But even without a general definition, we can look at cases like Hypoxia to see how higher-order evidence is importantly distinctive. (This section assumes that higher-order evidence has some first-order rational import, as this is where the distinctive features arise.) At first glance, one might think that Hypoxia is simply a case of undercutting defeat, and Aisha's justification for believing G is defeated just as one's perceptual beliefs might be defeated by, for instance, evidence of tricky lighting. But as Feldman (2005) argues, higher-order defeat and undercutting defeat are importantly different. Compare Hypoxia to a case in which you find out that a certain wall, which appears to be red, is illuminated by a red light. In the latter case, you might recognize that your experience as of a red wall generally supports the belief that the wall is red, and also recognize that you responded appropriately to that evidence before finding out about the tricky lighting. But in Hypoxia it seems that Aisha is not in a position to recognize either of these things. If she takes her higher-order evidence seriously, she will come to doubt whether her first-order evidence ever supported G in the first place. And she will also doubt whether she evaluated it correctly. (See Coates 2012 and Christensen 2010a for similar discussion.) So higher-order defeat is not simply undercutting defeat. Joshua DiPaolo (2018) argues that higher-order defeat is also distinctive in that it is \"object-independent\". For instance, learning that there is a red light on the wall will undercut your belief that the wall is red, but will have no effect if you believe that the wall is not red. Higher-order evidence, on the other hand, typically does not discriminate based on the contents of the beliefs it targets. Extending DiPaolo's argument to our case above, Aisha's higher-order evidence targeted her belief about G , but could have easily targeted a belief with different contents if she had been reasoning about a different matter while flying at that altitude. Christensen (2010a) argues that higher-order evidence is distinctive because its import is agent-relative. While Aisha's information about hypoxia gives Aisha reason to doubt her beliefs about whether she will make it to Hawaii, it would have no such effect on another person looking at the same charts and dials from the safety of the ground. However, merely treating higher-order evidence as indexical does not seem to make it less puzzling; see Schoenfield 2018 for further discussion. Perhaps the most puzzling feature of higher-order evidence is that it seems to obligate agents to ignore or set aside parts of their total evidence. (See Christensen 2010a for an early defense of this idea; others, including Elga (2007), also defend it in the context of disagreement.) Even as Aisha comes to doubt her conclusion about G , her first-order evidence and reasoning is still plainly before her. But she cannot rationally appeal to it in forming her beliefs. If she could, Aisha might argue: although I'm at an altitude that renders me susceptible to hypoxia, I must be immune. After all, my first-order evidence in fact supports the conclusion that I have enough fuel to make it to Hawaii, and that's the very same conclusion I reached! To a supporter of higher-order defeat, such reasoning looks irrational and dogmatic. (Furthermore, if she could reason this way, Aisha could arguably keep her high confidence in G --which his just to say, her higher-order evidence wouldn't have a rational effect after all.) In order to rule out the rationality of such reasoning, while acknowledging that Aisha's first-order evidence has not vanished, some epistemologists say that Aisha must set aside the targeted first-order evidence and reasoning once her higher-order evidence comes in. This thought is often called \"Independence\". Section 3.1 discusses it in more detail. Finally, related to this last observation, Horowitz (2019) and Schoenfield (2015b, 2018) both argue that higher-order evidence is predictably misleading: if it has first-order effects, we can predict a priori that it will lead ideally rational thinkers away from the truth. We expect first-order evidence to generally make us more accurate, provided that we respond to it rationally. And we expect higher-order evidence to lead us away from what our first-order evidence supports. So when we accommodate all of that evidence rationally, we'll tend to end up with a less accurate belief state than we would if we had ignored the higher-order evidence. In all of these ways, higher-order evidence presents distinctive problems for epistemology. (Though distinctive does not necessarily mean rare: Hedden and Dorst [forthcoming] argue that almost all evidence has higher-order import.) As we will see in the next section, the difficulties presented by higher-order evidence have prompted some epistemologists to deny that it has first-order import altogether.",
+      "relatedEntries": [
+        "disagreement",
+        "evidence",
+        "justep-coherence",
+        "justep-foundational",
+        "justep-intext",
+        "rationality-normative-utility",
+        "rationality-normative-nonutility",
+        "rationality",
+        "rationality-structural",
+        "reliabilism",
+        "epistemic-self-doubt"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "disagreement"
+        },
+        {
+          "slug": "evidence"
+        },
+        {
+          "slug": "justep-coherence"
+        },
+        {
+          "slug": "justep-foundational"
+        },
+        {
+          "slug": "justep-intext"
+        },
+        {
+          "slug": "rationality-normative-utility"
+        },
+        {
+          "slug": "rationality-normative-nonutility"
+        },
+        {
+          "slug": "rationality"
+        },
+        {
+          "slug": "rationality-structural"
+        },
+        {
+          "slug": "reliabilism"
+        },
+        {
+          "slug": "epistemic-self-doubt"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 89,
+      "bibliography": [
+        {
+          "raw": "Alexander, David, 2013, \"The Problem of Respecting Higher-Order Doubt\", Philosopher's Imprint , 13(September): article 18 (12 pages). [ Alexander 2013 available online ]"
+        },
+        {
+          "raw": "Arsenault, Michael and Zachary C. Irving, 2012, \"Aha! Trick Questions, Independence, and the Epistemology of Disagreement: Trick Questions, Independence, and the Epistemology\", Thought: A Journal of Philosophy , 1(3): 185-194. doi:10.1002/tht3.27"
+        },
+        {
+          "raw": "Barnett, Zach, 2019, \"Philosophy Without Belief\", Mind , 128(509): 109-138. doi:10.1093/mind/fzw076"
+        },
+        {
+          "raw": "Bradley, Darren, 2019, \"Are There Indefeasible Epistemic Rules?\", Philosopher's Imprint , 19: article 3 (19 pages). [ Bradley 2019 available online ]"
+        },
+        {
+          "raw": "Brown, Jessica, 2018, Fallibilism: Evidence and Knowledge , Oxford: Oxford University Press. doi:10.1093/oso/9780198801771.001.0001"
+        },
+        {
+          "raw": "Christensen, David, 2007a, \"Does Murphy's Law Apply in Epistemology?\", in Oxford Studies in Epistemology, Volume 2 , Tamar Szab&oacute; Gendler and John Hawthorne (eds.), Oxford/New York: Oxford University Press, 3-31."
+        },
+        {
+          "raw": "---, 2007b, \"Epistemology of Disagreement: The Good News\", The Philosophical Review , 116(2): 187-217. doi:10.1215/00318108-2006-035"
+        },
+        {
+          "raw": "---, 2010a, \"Higher-Order Evidence\", Philosophy and Phenomenological Research , 81(1): 185-215. doi:10.1111/j.1933-1592.2010.00366.x"
+        },
+        {
+          "raw": "---, 2010b, \"Rational Reflection\", Philosophical Perspectives , 24(1): 121-140. doi:10.1111/j.1520-8583.2010.00187.x"
+        },
+        {
+          "raw": "---, 2011, \"Disagreement, Question-Begging, and Epistemic Self-Criticism\", Philosopher's Imprint , 11(March): article 6 (22 pages). [ Christensen 2011 available online ]"
+        },
+        {
+          "raw": "---, 2013, \"Epistemic Modesty Defended\", in Christensen and Lackey 2013: 77-97. doi:10.1093/acprof:oso/9780199698370.003.0005"
+        },
+        {
+          "raw": "---, 2016a, \"Disagreement, Drugs, Etc.: From Accuracy to Akrasia\", Episteme , 13(4): 397-422. doi:10.1017/epi.2016.20"
+        },
+        {
+          "raw": "---, 2016b, \"Conciliation, Uniqueness and Rational Toxicity\", No&ucirc;s , 50(3): 584-603. doi:10.1111/nous.12077"
+        },
+        {
+          "raw": "---, 2018, \"On Acting as Judge in One's Own (Epistemic) Case\", Proceedings and Addresses of the American Philosophical Association , 93(1): 207-235."
+        },
+        {
+          "raw": "---, 2019, \"Formulating Independence\", in Skipper and Steglich-Petersen 2019: 13-34. doi:10.1093/oso/9780198829775.003.0001"
+        },
+        {
+          "raw": "---, 2021a, \"Akratic (Epistemic) Modesty\", Philosophical Studies , 178(7): 2191-2214. doi:10.1007/s11098-020-01536-6"
+        },
+        {
+          "raw": "---, 2021b, \"Rationality for the Self-Aware\", Proceedings and Addresses of the American Philosophical Association , 95(1): 213-236."
+        },
+        {
+          "raw": "---, 2021c, \"Embracing Epistemic Dilemmas\", in McCain, Stapleford, and Steup 2021: chap. 10."
+        },
+        {
+          "raw": "Christensen, David and Jennifer Lackey (eds.), 2013, The Epistemology of Disagreement: New Essays , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Coates, Allen, 2012, \"Rational Epistemic Akrasia\", American Philosophical Quarterly , 49(2): 113-124."
+        },
+        {
+          "raw": "DiPaolo, Joshua, 2018, \"Higher-Order Defeat Is Object-Independent\", Pacific Philosophical Quarterly , 99(2): 248-269. doi:10.1111/papq.12155"
+        },
+        {
+          "raw": "---, 2019, \"Second Best Epistemology: Fallibility and Normativity\", Philosophical Studies , 176(8): 2043-2066. doi:10.1007/s11098-018-1110-y"
+        },
+        {
+          "raw": "Dorst, Kevin, 2019, \"Higher-Order Uncertainty\", in Skipper and Steglich-Petersen 2019: 35-61. doi:10.1093/oso/9780198829775.003.0002"
+        },
+        {
+          "raw": "---, 2020, \"Evidence: A Guide for the Uncertain\", Philosophy and Phenomenological Research , 100(3): 586-632. doi:10.1111/phpr.12561"
+        },
+        {
+          "raw": "---, forthcoming, \"Higher-Order Evidence\", in The Routledge Handbook for the Philosophy of Evidence , Maria Lasonen-Aarnio and Clayton Littlejohn (eds), Routledge."
+        },
+        {
+          "raw": "Egan, Andy and Adam Elga, 2005, \"I Can't Believe I'm Stupid\", Philosophical Perspectives , 19(1): 77-93. doi:10.1111/j.1520-8583.2005.00054.x"
+        },
+        {
+          "raw": "Elga, Adam, 2007, \"Reflection and Disagreement\", No&ucirc;s , 41(3): 478-502. doi:10.1111/j.1468-0068.2007.00656.x"
+        },
+        {
+          "raw": "---, 2010, \"How to Disagree about How to Disagree\", in Feldman and Warfield 2010: 175-186. doi:10.1093/acprof:oso/9780199226078.003.0008"
+        },
+        {
+          "raw": "---, 2013, \"The Puzzle of the Unmarked Clock and the New Rational Reflection Principle\", Philosophical Studies , 164(1): 127-139. doi:10.1007/s11098-013-0091-0"
+        },
+        {
+          "raw": "Enoch, David, 2010, \"Not Just a Truthometer: Taking Oneself Seriously (but Not Too Seriously) in Cases of Peer Disagreement\", Mind , 119(476): 953-997. doi:10.1093/mind/fzq070"
+        },
+        {
+          "raw": "Feldman, Richard, 2005, \"Respecting the Evidence\", Philosophical Perspectives , 19(1): 95-119. doi:10.1111/j.1520-8583.2005.00055.x"
+        },
+        {
+          "raw": "---, 2006, \"Reasonable Religious Disagreements\", in Philosophers Without Gods: Meditations on Atheism and the Secular Life , Louise Antony (ed.), Oxford/New York: Oxford University Press, 194-214."
+        },
+        {
+          "raw": "Feldman, Richard and Ted A. Warfield (eds.), 2010, Disagreement , Oxford/New York: Oxford University Press. doi:10.1093/acprof:oso/9780199226078.001.0001"
+        },
+        {
+          "raw": "Field, Claire, 2019, \"It's Ok to Make Mistakes: Against the Fixed Point Thesis\", Episteme , 16(2): 175-185. doi:10.1017/epi.2017.33"
+        },
+        {
+          "raw": "Field, Hartry, 2000, \"Apriority as an Evaluative Notion\", in New Essays on the A Priori , Paul Boghossian and Christopher Peacocke (eds.), Oxford/New York: Oxford University Press, 117-149. doi:10.1093/0199241279.003.0006"
+        },
+        {
+          "raw": "Fleisher, Will, 2021, \"How to Endorse Conciliationism\", Synthese , 198(10): 9913-9939. doi:10.1007/s11229-020-02695-z"
+        },
+        {
+          "raw": "Goldberg, Sanford, 2013, \"Defending Philosophy in the Face of Systematic Disagreement\", in Disagreement and Skepticism , Diego E. Machuca (ed.), New York: Routledge, 277-294."
+        },
+        {
+          "raw": "Hall, Ned, 1994, \"Correcting The Guide to Objective Chance\", Mind , 103(412): 505-518. doi:10.1093/mind/103.412.505"
+        },
+        {
+          "raw": "Hawthorne, John, Yoaav Isaacs, and Maria Lasonen&#8208;Aarnio, 2021, \"The Rationality of Epistemic Akrasia\", Philosophical Perspectives , 35(1): 206-228. doi:10.1111/phpe.12144"
+        },
+        {
+          "raw": "Hedden, Brian and Kevin Dorst, forthcoming, \"(Almost) All Evidence is Higher-Order Evidence\", Analysis , early online: 8 May 2022. doi:10.1093/analys/anab081"
+        },
+        {
+          "raw": "Henderson, Leah, forthcoming, \"Higher&#8208;order Evidence and Losing One's Conviction\", No&ucirc;s , early online: 3 May 2021. doi:10.1111/nous.12367"
+        },
+        {
+          "raw": "Horowitz, Sophie, 2014, \"Epistemic Akrasia\", No&ucirc;s , 48(4): 718-744. doi:10.1111/nous.12026"
+        },
+        {
+          "raw": "---, 2019, \"Predictably Misleading Evidence\", in Skipper and Steglich-Petersen 2019: 105-123. doi:10.1093/oso/9780198829775.003.0005"
+        },
+        {
+          "raw": "Hughes, Nick, 2019, \"Dilemmic Epistemology\", Synthese , 196(10): 4059-4090. doi:10.1007/s11229-017-1639-x"
+        },
+        {
+          "raw": "---, 2021, \"Who's Afraid of Epistemic Dilemmas?\", in McCain, Stapleford, and Steup 2021: chap. 15."
+        },
+        {
+          "raw": "Isaacs, Yoaav, 2021, \"The Fallacy of Calibrationism\", Philosophy and Phenomenological Research , 102(2): 247-260. doi:10.1111/phpr.12640"
+        },
+        {
+          "raw": "Kelly, Thomas, 2005, \"The Epistemic Significance of Disagreement\", in Oxford Studies in Epistemology, Volume 1 , Tamar Szab&oacute; Gendler and John Hawthorne (eds.), Oxford/New York: Oxford University Press, 167-196."
+        },
+        {
+          "raw": "---, 2010, \"Peer Disagreement and Higher&#8208;Order Evidence\", in Feldman and Warfield 2010: 111-174. doi:10.1093/acprof:oso/9780199226078.003.0007"
+        },
+        {
+          "raw": "---, 2013, \"Disagreement and the Burdens of Judgment\", in Christensen and Lackey 2013: 31-53. doi:10.1093/acprof:oso/9780199698370.003.0003"
+        },
+        {
+          "raw": "Knoks, Aleks, 2021, \"Misleading Higher-Order Evidence, Conflicting Ideals, and Defeasible Logic\", Ergo an Open Access Journal of Philosophy , 8(6): 141-174. doi:10.3998/ergo.1143"
+        },
+        {
+          "raw": "Lasonen-Aarnio, Maria, 2014, \"Higher-Order Evidence and the Limits of Defeat\", Philosophy and Phenomenological Research , 88(2): 314-345. doi:10.1111/phpr.12090"
+        },
+        {
+          "raw": "---, 2015, \"New Rational Reflection and Internalism about Rationality\", in Oxford Studies in Epistemology, Volume 5 , Tamar Szab&oacute; Gendler and John Hawthorne (eds.), Oxford/New York: Oxford University Press, 145-171. doi:10.1093/acprof:oso/9780198722762.003.0005"
+        },
+        {
+          "raw": "---, 2020, \"Enkrasia or Evidentialism? Learning to Love Mismatch\", Philosophical Studies , 177(3): 597-632. doi:10.1007/s11098-018-1196-2"
+        },
+        {
+          "raw": "Leonard, Nick, 2020, \"Epistemic Dilemmas and Rational Indeterminacy\", Philosophical Studies , 177(3): 573-596. doi:10.1007/s11098-018-1195-3"
+        },
+        {
+          "raw": "Lewis, David, 1971, \"Immodest Inductive Methods\", Philosophy of Science , 38(1): 54-63. doi:10.1086/288339"
+        },
+        {
+          "raw": "Littlejohn, Clayton, 2018, \"Stop Making Sense? On a Puzzle about Rationality\", Philosophy and Phenomenological Research , 96(2): 257-272. doi:10.1111/phpr.12271"
+        },
+        {
+          "raw": "Lord, Errol, 2014, \"From Independence to Conciliationism: An Obituary\", Australasian Journal of Philosophy , 92(2): 365-377. doi:10.1080/00048402.2013.829506"
+        },
+        {
+          "raw": "McCain, Kevin, Scott Stapleford, and Matthias Steup (eds), 2021, Epistemic Dilemmas: New Arguments, New Angles , New York: Routledge. doi:10.4324/9781003134565"
+        },
+        {
+          "raw": "Neta, Ram, 2019, \"The Puzzles of Easy Knowledge and of Higher-Order Evidence: A Unified Solution\", in Skipper and Steglich-Petersen 2019: 173-188. doi:10.1093/oso/9780198829775.003.0008"
+        },
+        {
+          "raw": "Pettigrew, Richard and Michael G. Titelbaum, 2014, \"Deference Done Right\", Philosopher's Imprint , 14(December): article 35 (19 pages). [ Pettigrew and Titelbaum 2014 available online ]"
+        },
+        {
+          "raw": "Roush, Sherrilyn, 2009, \"Second Guessing: A Self-Help Manual\", Episteme , 6(3): 251-268. doi:10.3366/E1742360009000690"
+        },
+        {
+          "raw": "---, 2017, \"Epistemic Self-Doubt\", The Stanford Encyclopedia of Philosophy (Winter 2017 Edition), Edward N. Zalta (ed.), URL = https://plato.stanford.edu/archives/win2017/entries/epistemic-self-doubt/ >."
+        },
+        {
+          "raw": "Salow, Bernhard, 2018, \"The Externalist's Guide to Fishing for Compliments\", Mind , 127(507): 691-728. doi:10.1093/mind/fzw029"
+        },
+        {
+          "raw": "Schoenfield, Miriam, 2015a, \"A Dilemma for Calibrationism\", Philosophy and Phenomenological Research , 91(2): 425-455. doi:10.1111/phpr.12125"
+        },
+        {
+          "raw": "---, 2015b, \"Bridging Rationality and Accuracy\":, The Journal of Philosophy , 112(12): 633-657. doi:10.5840/jphil20151121242"
+        },
+        {
+          "raw": "---, 2018, \"An Accuracy Based Approach to Higher Order Evidence\", Philosophy and Phenomenological Research , 96(3): 690-715. doi:10.1111/phpr.12329"
+        },
+        {
+          "raw": "Schechter, Joshua, 2013, \"Rational Self-Doubt and the Failure of Closure\", Philosophical Studies , 163(2): 429-452. doi:10.1007/s11098-011-9823-1"
+        },
+        {
+          "raw": "Silva, Paul, 2017, \"How Doxastic Justification Helps Us Solve the Puzzle of Misleading Higher-Order Evidence\", Pacific Philosophical Quarterly , 98(S1): 308-328. doi:10.1111/papq.12173"
+        },
+        {
+          "raw": "---, 2018, \"Explaining Enkratic Asymmetries: Knowledge-First Style\", Philosophical Studies , 175(11): 2907-2930. doi:10.1007/s11098-017-0987-1"
+        },
+        {
+          "raw": "Skipper, Mattias, 2021, \"Does Rationality Demand Higher-Order Certainty?\", Synthese , 198(12): 11561-11585. doi:10.1007/s11229-020-02814-w"
+        },
+        {
+          "raw": "Skipper, Mattias and Asbj&oslash;rn Steglich-Petersen (eds.), 2019, Higher-Order Evidence: New Essays , Oxford/New York: Oxford University Press. doi:10.1093/oso/9780198829775.001.0001"
+        },
+        {
+          "raw": "Sliwa, Paulina and Sophie Horowitz, 2015, \"Respecting All the Evidence\", Philosophical Studies , 172(11): 2835-2858. doi:10.1007/s11098-015-0446-9"
+        },
+        {
+          "raw": "Smithies, Declan, 2019, The Epistemic Role of Consciousness , (Philosophy of Mind Series), New York, NY: Oxford University Press. doi:10.1093/oso/9780199917662.001.0001"
+        },
+        {
+          "raw": "Staffel, Julia, forthcoming, \"Transitional Attitudes and the Unmooring View of Higher&#8208;order Evidence\", No&ucirc;s , early online: 6 October 2021. doi:10.1111/nous.12400"
+        },
+        {
+          "raw": "Stalnaker, Robert C., 2009, \"On Hawthorne and Magidor on Assertion, Context, and Epistemic Accessibility\", Mind , 118(470): 399-409. doi:10.1093/mind/fzp061"
+        },
+        {
+          "raw": "Steglich-Petersen, Asbj&oslash;rn, 2019, \"Higher-Order Defeat and Doxastic Resilience\", in Skipper and Steglich-Petersen 2019: 209-225. doi:10.1093/oso/9780198829775.003.0010"
+        },
+        {
+          "raw": "Tal, Eyal, 2021, \"Is Higher-Order Evidence Evidence?\", Philosophical Studies , 178(10): 3157-3175. doi:10.1007/s11098-020-01574-0"
+        },
+        {
+          "raw": "Titelbaum, Michael G., 2015, \"Rationality's Fixed Point (or: In Defense of Right Reason)\", in Oxford Studies in Epistemology, Volume 5 , Tamar Szab&oacute; Gendler and John Hawthorne (eds.), Oxford/New York: Oxford University Press, 253-294. doi:10.1093/acprof:oso/9780198722762.003.0009"
+        },
+        {
+          "raw": "---, 2019, \"Return to Reason\", in Skipper and Steglich-Petersen 2019: 226-245. doi:10.1093/oso/9780198829775.003.0011"
+        },
+        {
+          "raw": "Vavova, Katia, 2018, \"Irrelevant Influences\", Philosophy and Phenomenological Research , 96(1): 134-152. doi:10.1111/phpr.12297"
+        },
+        {
+          "raw": "Weatherson, Brian, 2013, \"Disagreements, Philosophical, and Otherwise\", in Christensen and Lackey 2013: 54-73. doi:10.1093/acprof:oso/9780199698370.003.0004"
+        },
+        {
+          "raw": "---, 2019, Normative Externalism , Oxford: Oxford University Press. doi:10.1093/oso/9780199696536.001.0001"
+        },
+        {
+          "raw": "Wedgwood, Ralph, 2012, \"Justified Inference\", Synthese , 189(2): 273-295. doi:10.1007/s11229-011-0012-8"
+        },
+        {
+          "raw": "White, Roger, 2010, \"You Just Believe That Because&hellip;\", Philosophical Perspectives , 24(1): 573-615. doi:10.1111/j.1520-8583.2010.00204.x"
+        },
+        {
+          "raw": "---, 2009, \"On Treating Oneself and Others as Thermometers\", Episteme , 6(3): 233-250. doi:10.3366/e1742360009000689"
+        },
+        {
+          "raw": "van Wietmarschen, Han, 2013, \"Peer Disagreement, Evidence, and Well-Groundedness\", The Philosophical Review , 122(3): 395-425. doi:10.1215/00318108-2087654"
+        },
+        {
+          "raw": "Williamson, Timothy, 2014, \"Very Improbable Knowing\", Erkenntnis , 79(5): 971-999. doi:10.1007/s10670-013-9590-9"
+        },
+        {
+          "raw": "Worsnip, Alex, 2018, \"The Conflict of Evidence and Coherence\", Philosophy and Phenomenological Research , 96(1): 3-44. doi:10.1111/phpr.12246"
+        },
+        {
+          "raw": "Ye, Ru, 2020, \"Higher-Order Defeat and Intellectual Responsibility\", Synthese , 197(12): 5435-5455. doi:10.1007/s11229-018-01972-2"
+        }
+      ],
+      "publishedAt": "2022-09-05T14:00:00.000Z",
+      "revisedAt": "2022-09-05T14:00:00.000Z"
+    }
+  }
+}

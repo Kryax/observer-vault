@@ -1,0 +1,171 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/rucaibox--llmsurvey",
+  "meta": {
+    "title": "LLMSurvey",
+    "description": "The official GitHub page for the survey paper \"A Survey of Large Language Models\".",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:38:44.091Z",
+    "dateModified": "2026-03-22T05:38:44.091Z",
+    "keywords": [
+      "chain-of-thought",
+      "chatgpt",
+      "in-context-learning",
+      "instruction-tuning",
+      "large-language-models",
+      "llm",
+      "llms",
+      "natural-language-processing",
+      "pre-trained-language-models",
+      "pre-training",
+      "rlhf"
+    ]
+  },
+  "problemSolved": {
+    "statement": "In our latest version, we add new content of the recent popular reasoning paradigm by allocating more time to thinking before responding to a problem. We focus on long CoT reasoning which is the mainstream approach taken by recent LLMs, such as DeepSeek-R1 and OpenAI's o-series models. We first discuss the reasoning patterns and advantages of the long CoT paradigm. Then we present the construction approaches of long CoT data, including data distillation, search-based data synthesis, and multi-agent collaboration. Moreover, we introduce the commonly-used two training methods: long CoT instruction tuning and scaling reinforcement learning training. Finally, we conduct a in-depth discussion about recent test-time scaling efforts for LLMs.",
+    "context": "> A collection of papers and resources related to Large Language Models. \n>\n> The organization of papers refers to our survey [**\"A Survey of Large Language Models\"**](https://arxiv.org/abs/2303.18223). [![Paper page](https://huggingface.co/datasets/huggingface/badges/raw/main/paper-page-sm-dark.svg)](https://huggingface.co/papers/2303.18223)\n>\n> Please let us know if you find out a mistake or have any suggestions by e-mail: batmanfly@gmail.com\n>\n> (we suggest ccing another email francis_kun_zhou@163.com meanwhile, in case of any unsuccessful delivery issue.)\n>\n>\n> If you find our survey useful for your research, please cite the following paper:\n\n```\n@article{LLMSurvey,\n    title={A Survey of Large Language Models},\n    author={Zhao, Wayne Xin and Zhou, Kun and Li, Junyi and Tang, Tianyi and Wang, Xiaolei and Hou, Yupeng and Min, Yingqian and Zhang, Beichen and Zhang, Junjie and Dong, Zican and Du, Yifan and Yang, Chen and Chen, Yushuo and Chen, Zhipeng and Jiang, Jinhao and Ren, Ruiyang and Li, Yifan and Tang, Xinyu and Liu, Zikang and Liu, Peiyu and Nie, Jian-Yun and Wen, Ji-Rong},\n    year={2023},\n    journal={arXiv preprint arXiv:2303.18223},\n    url={http://arxiv.org/abs/2303.18223}\n}\n```",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "12133 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "939 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T05:38:44.091Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/RUCAIBox/LLMSurvey",
+        "description": "GitHub repository: RUCAIBox/LLMSurvey"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://arxiv.org/abs/2303.18223",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "RUCAIBox",
+        "type": "human",
+        "uri": "https://github.com/RUCAIBox"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 14011,
+      "validation_diversity": 0.39,
+      "context_breadth": 0.7,
+      "temporal_stability": 0.69,
+      "test_coverage": 0.47,
+      "documentation_quality": 0.6
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.617
+  }
+}

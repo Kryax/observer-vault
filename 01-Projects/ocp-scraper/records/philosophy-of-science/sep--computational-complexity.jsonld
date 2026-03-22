@@ -1,0 +1,857 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/computational-complexity",
+  "meta": {
+    "title": "Computational Complexity Theory",
+    "description": "Computational complexity theory is a subfield of theoretical computer science one of whose primary goals is to classify and compare the practical difficulty of solving problems about finite combinatorial objects - e.g. given two natural numbers \\(n\\) and \\(m\\), are they relatively prime? Given a propositional formula \\(\\phi\\), does it have a satisfying assignment? If we were to play chess on a board of size \\(n \\times n\\), does white have a winning strategy from a given initial position? These problems are equally difficult from the standpoint of classical computability theory in the sense that they are all effectively decidable. Yet they still appear to differ significantly in practical difficulty. For having been supplied with a pair of numbers \\(m \\gt n \\gt 0\\), it is possible to determine their relative primality by a method (Euclid's algorithm) which requires a number of steps proportional to \\(\\log(n)\\). On the other hand, all known methods for solving the latter two problems require a 'brute force' search through a large class of cases which increase at least exponentially in the size of the problem instance. Complexity theory attempts to make such distinctions precise by proposing a formal criterion for what it means for a mathematical problem to be feasibly decidable - i.e. that it can be solved by a conventional Turing machine in a number of steps which is proportional to a polynomial function of the size of its input. The class of problems with this property is known as \\(\\textbf{P}\\) - or polynomial time - and includes the first of the three problems described above. \\(\\textbf{P}\\) can be formally shown to be distinct from certain other classes such as \\(\\textbf{EXP}\\) - or exponential time - which includes the third problem from above. The second problem from above belongs to a complexity class known as \\(\\textbf{NP}\\) - or non-deterministic polynomial time - consisting of those problems which can be correctly decided by some computation of a non-deterministic Turing machine in a number of steps which is a polynomial function of the size of its input. A famous conjecture - often regarded as the most fundamental in all of theoretical computer science - states that \\(\\textbf{P}\\) is also properly contained in \\(\\textbf{NP}\\) - i.e. \\(\\textbf{P} \\subsetneq \\textbf{NP}\\). Demonstrating the non-coincidence of these and other complexity classes remain important open problems in complexity theory. But even in its present state of development, this subject connects many topics in logic, mathematics, and surrounding fields in a manner which bears on the nature and scope of our knowledge of these subjects. Reflection on the foundations of complexity theory is thus of potential significance not only to the philosophy of computer science , but also to philosophy of mathematics and epistemology as well.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:46:11.587Z",
+    "dateModified": "2026-03-22T05:46:11.587Z",
+    "datePublished": "2015-07-26T14:00:00.000Z",
+    "keywords": [
+      "church turing",
+      "computability",
+      "computer science",
+      "philosophy mathematics",
+      "qt quantcomp",
+      "recursive functions",
+      "turing machine"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Computational complexity theory is a subfield of theoretical computer science one of whose primary goals is to classify and compare the practical difficulty of solving problems about finite combinatorial objects - e.g. given two natural numbers \\(n\\) and \\(m\\), are they relatively prime? Given a propositional formula \\(\\phi\\), does it have a satisfying assignment? If we were to play chess on a board of size \\(n \\times n\\), does white have a winning strategy from a given initial position? These problems are equally difficult from the standpoint of classical computability theory in the sense that they are all effectively decidable. Yet they still appear to differ significantly in practical difficulty. For having been supplied with a pair of numbers \\(m \\gt n \\gt 0\\), it is possible to determine their relative primality by a method (Euclid's algorithm) which requires a number of steps proportional to \\(\\log(n)\\). On the other hand, all known methods for solving the latter two problems require a 'brute force' search through a large class of cases which increase at least exponentially in the size of the problem instance. Complexity theory attempts to make such distinctions precise by proposing a formal criterion for what it means for a mathematical problem to be feasibly decidable - i.e. that it can be solved by a conventional Turing machine in a number of steps which is proportional to a polynomial function of the size of its input. The class of problems with this property is known as \\(\\textbf{P}\\) - or polynomial time - and includes the first of the three problems described above. \\(\\textbf{P}\\) can be formally shown to be distinct from certain other classes such as \\(\\textbf{EXP}\\) - or exponential time - which includes the third problem from above. The second problem from above belongs to a complexity class known as \\(\\textbf{NP}\\) - or non-deterministic polynomial time - consisting of those problems which can be correctly decided by some computation of a non-deterministic Turing machine in a number of steps which is a polynomial function of the size of its input. A famous conjecture - often regarded as the most fundamental in all of theoretical computer science - states that \\(\\textbf{P}\\) is also properly contained in \\(\\textbf{NP}\\) - i.e. \\(\\textbf{P} \\subsetneq \\textbf{NP}\\). Demonstrating the non-coincidence of these and other complexity classes remain important open problems in complexity theory. But even in its present state of development, this subject connects many topics in logic, mathematics, and surrounding fields in a manner which bears on the nature and scope of our knowledge of these subjects. Reflection on the foundations of complexity theory is thus of potential significance not only to the philosophy of computer science , but also to philosophy of mathematics and epistemology as well.",
+    "context": "Opening section: 1. On computational complexity | Related entries: church-turing, computability, computer-science, philosophy-mathematics, qt-quantcomp, recursive-functions, turing-machine",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "philosophy-of-science",
+    "general-philosophy"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry computational-complexity",
+        "uri": "https://plato.stanford.edu/entries/computational-complexity/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 7 related entries, bibliography size 208"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2015-07-26T14:00:00.000Z and revised 2016-07-19T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2016-07-19T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/computational-complexity/",
+        "description": "SEP entry for computational-complexity"
+      }
+    ],
+    "solutionApproach": "1. On computational complexity"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/church-turing",
+      "ocp:sep/computability",
+      "ocp:sep/computer-science",
+      "ocp:sep/philosophy-mathematics",
+      "ocp:sep/qt-quantcomp",
+      "ocp:sep/recursive-functions",
+      "ocp:sep/turing-machine"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Dean, Walter",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/computational-complexity/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 133,
+      "validation_diversity": 0.41,
+      "context_breadth": 0.4,
+      "temporal_stability": 0.84,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.89
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.531
+  },
+  "extensions": {
+    "sep": {
+      "slug": "computational-complexity",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/computational-complexity/",
+      "preamble": "Computational complexity theory is a subfield of theoretical computer science one of whose primary goals is to classify and compare the practical difficulty of solving problems about finite combinatorial objects - e.g. given two natural numbers \\(n\\) and \\(m\\), are they relatively prime? Given a propositional formula \\(\\phi\\), does it have a satisfying assignment? If we were to play chess on a board of size \\(n \\times n\\), does white have a winning strategy from a given initial position? These problems are equally difficult from the standpoint of classical computability theory in the sense that they are all effectively decidable. Yet they still appear to differ significantly in practical difficulty. For having been supplied with a pair of numbers \\(m \\gt n \\gt 0\\), it is possible to determine their relative primality by a method (Euclid's algorithm) which requires a number of steps proportional to \\(\\log(n)\\). On the other hand, all known methods for solving the latter two problems require a 'brute force' search through a large class of cases which increase at least exponentially in the size of the problem instance. Complexity theory attempts to make such distinctions precise by proposing a formal criterion for what it means for a mathematical problem to be feasibly decidable - i.e. that it can be solved by a conventional Turing machine in a number of steps which is proportional to a polynomial function of the size of its input. The class of problems with this property is known as \\(\\textbf{P}\\) - or polynomial time - and includes the first of the three problems described above. \\(\\textbf{P}\\) can be formally shown to be distinct from certain other classes such as \\(\\textbf{EXP}\\) - or exponential time - which includes the third problem from above. The second problem from above belongs to a complexity class known as \\(\\textbf{NP}\\) - or non-deterministic polynomial time - consisting of those problems which can be correctly decided by some computation of a non-deterministic Turing machine in a number of steps which is a polynomial function of the size of its input. A famous conjecture - often regarded as the most fundamental in all of theoretical computer science - states that \\(\\textbf{P}\\) is also properly contained in \\(\\textbf{NP}\\) - i.e. \\(\\textbf{P} \\subsetneq \\textbf{NP}\\). Demonstrating the non-coincidence of these and other complexity classes remain important open problems in complexity theory. But even in its present state of development, this subject connects many topics in logic, mathematics, and surrounding fields in a manner which bears on the nature and scope of our knowledge of these subjects. Reflection on the foundations of complexity theory is thus of potential significance not only to the philosophy of computer science , but also to philosophy of mathematics and epistemology as well.",
+      "firstSectionTitle": "1. On computational complexity",
+      "firstSectionText": "Central to the development of computational complexity theory is the notion of a decision problem . Such a problem corresponds to a set \\(X\\) in which we wish to decide membership. For instance the problem \\(\\sc{PRIMES}\\) corresponds to the subset of the natural numbers which are prime - i.e. \\(\\{n \\in \\mathbb{N} \\mid n \\text{ is prime}\\}\\). Decision problems are typically specified in the form of questions about a class of mathematical objects whose positive instances determine the set in question - e.g. \\(\\sc{SAT}\\ \\) Given a formula \\(\\phi\\) of propositional logic, does there exist a satisfying assignment for \\(\\phi\\)? \\(\\sc{TRAVELING}\\ \\sc{SALESMAN}\\ (\\sc{TSP}) \\ \\) Given a list of cities \\(V\\), the integer distance \\(d(u,v)\\) between each pair of cities \\(u,v \\in V\\), and a budget \\(b \\in \\mathbb{N}\\), is there a tour visiting each city exactly once and returning to the starting city of total distance \\(\\leq b\\)? \\(\\sc{INTEGER}\\ \\sc{PROGRAMMING}\\ \\) Given an \\(n \\times m\\) integer matrix \\(A\\) and an \\(n\\)-dimensional vector of integers \\(\\vec{b}\\), does there exist an \\(m\\)-dimensional vector \\(\\vec{x}\\) of integers such that \\(A \\vec{x} = b\\)? \\(\\sc{PERFECT} \\ \\sc{MATCHING}\\ \\) Given a finite bipartite graph \\(G \\), does there exist a perfect matching in \\(G \\)? (\\(G\\) is bipartite just in case its vertices can be partitioned into two disjoints sets \\(U\\) and \\(V\\) such that all of its edges \\(E \\) connect a vertex in \\(U\\) to one in \\(V\\). A matching is a subset of edges \\(M \\subseteq E\\) no two members of which share a common vertex. \\(M\\) is perfect if it matches all vertices.) These problems are typical of those studied in complexity theory in two fundamental respects. First, they are all effectively decidable . This is to say that they may all be decided in the 'in principle' sense studied in computability theory - i.e. by an effective procedure which halts in finitely many steps for all inputs. Second, they arise in contexts in which we are interested in solving not only isolated instances of the problem in question, but rather in developing methods which allow it to be efficiently solved on a mass scale - i.e. for all instances in which we might be practically concerned. Such interest often arises in virtue of the relationship of computational problems to practical tasks which we seek to analyze using the methods of discrete mathematics. For example, instances of \\(\\sc{SAT}\\) arise when we wish to check the consistency of a set of specifications (e.g. those which might arise in scheduling the sessions of a conference or designing a circuit board), instances of \\(\\sc{TSP}\\) and \\(\\sc{INTEGER}\\ \\sc{PROGRAMMING}\\) arise in many logistical and planning applications, instances of \\(\\sc{PERFECT} \\ \\sc{MATCHING}\\) arise when we wish to find an optimal means of pairing candidates with jobs, etc. The resources involved in carrying out an algorithm to decide an instance of a problems can typically be measured in terms of the number of processor cycles (i.e. elementary computational steps) and the amount of memory space (i.e. storage for auxiliary calculations) which are required to return a solution. The methods of complexity theory can be useful not only in deciding how we can most efficiently expend such resources, but also in helping us to distinguish which effectively decidable problems possess efficient decision methods in the first place. In this regard, it is traditional to distinguish pre-theoretically between the class of feasibly decidable problems - i.e. those which can be solved in practice by an efficient algorithm - and the class of intractable problems - i.e. those which lack such algorithms and may thus be regarded as intrinsically difficult to decide (despite possibly being decidable in principle). The significance of this distinction is most readily appreciated by considering some additional examples. A familiar example of a computational problem is that of primality testing - i.e. that of deciding \\(n \\in \\sc{PRIMES} \\)? This problem was intensely studied in mathematics long before the development of digital computers. (See, e.g., (Williams 1998 ) for a history of primality testing and (Crandall and Pomerance 2005) for a recent survey of the state of the art.) After a number of preliminary results in the 19th and 20th centuries, the problem \\(\\sc{PRIMES}\\) was shown in 2004 to possess a so-called polynomial time decision algorithm - i.e. the so-called AKS primality test (Agrawal, Kayal, and Saxena 2004) . This qualifies \\(\\sc{PRIMES}\\) as feasibly decidable relative to the standards which are now widely accepted in complexity theory and algorithmic analysis (see Section 2.2 ). Two related problems can be used to illustrate the sort of contrasts in difficulty which complexity theorists seek to analyze: \\(\\sc{RELATIVE}\\ \\sc{PRIMALITY}\\ \\) Given natural numbers \\(x\\) and \\(y\\), do \\(x\\) and \\(y\\) possess greatest common divisor \\(1\\)? (I.e. are \\(x\\) and \\(y\\) relatively prime ?) \\(\\sc{FACTORIZATION}\\ \\) Given natural numbers \\(x\\) and \\(y\\), does there exist \\(1 \\lt d \\leq y\\) such that \\(d \\mid x\\)? \\(\\sc{RELATIVE}\\ \\sc{PRIMALITY}\\) can be solved by applying Euclid's greatest common divisor algorithm - i.e. on input \\(y \\leq x\\), repeatedly compute the remainders \\(r_0 = \\text{rem}(x,y)\\), \\(r_1 = \\text{rem}(y, r_0)\\), \\(r_2 = \\text{rem}(r_0, r_1)\\) &hellip;, until \\(r_i = 0\\) and then return 'yes' if \\(r_{i-1} = 1\\) and 'no' otherwise. It may be shown that the number of steps in this sequence is always less than or equal to \\(5 \\cdot \\log_{10}(x)\\). This means that in order to determine if \\(x\\) and \\(y\\) are relatively prime, it suffices to calculate a number of remainders which is proportional to the number of digits in the decimal representation of the smaller of the two numbers. As this may also be accomplished by an efficient algorithm (e.g. long division), it may plausibly be maintained that if we are capable of inscribing a pair of numbers \\(x,y\\) - e.g. by writing their numerical representations in binary or decimal notation on a blackboard or by storing such numerals in the memory of a digital computer of current design - then either we or such a computer will also be able to carry out these algorithms in order to decide whether \\(x\\) and \\(y\\) are relatively prime. This is the hallmark of a feasibly decidable problem - i.e. one which can be decided in the 'in practice' sense of everyday concretely embodied computation. \\(\\sc{FACTORIZATION}\\) is a decision variant of the familiar problem of finding the prime factorization of a given number \\(x\\) - i.e. the unique sequence of primes \\(p_i\\) and exponents \\(a_i\\) such that \\(x = p_1^{a_1} \\cdot \\ldots \\cdot p_k^{a_k}\\). It is not difficult to see that if there existed an efficient algorithm for deciding \\(\\sc{FACTORIZATION}\\), then there would also exist an efficient algorithm for determining prime factorizations. It is also easy to see that the function taking \\(x\\) to its prime factorization is effectively computable in the traditional sense of computability theory. For instance, it can be computed by the trial division algorithm . In its simplest form, trial division operates by successively testing \\(x\\) for divisibility by each integer smaller than \\(x\\) and keeping track of the divisors which have been found thus far. As the number of divisions required by this procedure is proportional to \\(x\\) itself, it might at first seem that it is not a particularly onerous task to employ this method to factor numbers of moderate size using paper and pencil calculation - say \\(x \\lt 100000\\). Note, however, that we conventionally denote natural numbers using positional notations such as binary or decimal numerals. A consequence of this is that the length of the expression which is typically supplied as an input to a numerical algorithm to represent an input \\(x \\in \\mathbb{N}\\) is proportional not to \\(x\\) itself, but rather to \\(\\log_b(x)\\) where \\(b \\geq 2\\) is the base of the notation system in question. As a consequence it is possible to concretely inscribe positional numerals of moderate length which denote astronomically large numbers. For instance a binary numeral of 60 digits denotes a number which is larger than the estimated age of the universe in seconds and a binary numeral of 250 digits denotes a number which is larger than the estimated age of the universe in Planck times. There are thus natural numbers whose binary representations we can easily inscribe, but for which no human mathematician or foreseeable computing device can carry out the trial division algorithm. This again might not seem particularly troubling as this algorithm is indeed 'naive' in the sense that it admits to several obvious improvements - e.g. we need only test \\(x\\) for divisibility by the numbers \\(2, \\ldots, \\sqrt{x}\\) to find an initial factor, and of these we need only test those which are themselves prime (finitely many of which can be stored in a lookup table). Nonetheless, mathematicians have been attempting to find more efficient methods of factorization for several hundred years. The most efficient factorization algorithm yet developed is similar to the trial division algorithm in that it requires a number of primitive steps which grows roughly in proportion to \\(x\\) (i.e. the size of its input, as opposed to the length of its binary representation). A consequence of these observations is that there exist concretely inscribable numbers - say on the order of 400 decimal digits - with the following properties: (i) we are currently unaware of their factorizations; and (ii) it is highly unlikely we could currently find them even if we had access to whatever combination of currently available computing equipment and algorithms we wish. Like the problems introduced above, \\(\\sc{FACTORIZATION}\\) is of considerable practical importance, perhaps most famously because the security of well known cryptographic protocols assume that it is intractable in the general case (see, e.g., Cormen, Leiserson, and Rivest 2005 ). But the foregoing observations still do not entail any fundamental limitation on our ability to know a number's prime factorization. For it might still be hoped that further research will yield a more efficient algorithm which will allow us to determine the prime factorization of every number \\(x\\) in which we might take a practical interest. A comparison of Euclid's algorithm and trial division again provides a useful context for describing the properties which we might expect such an algorithm to possess. For note that the prior observations suggest that we ought to measure the size of the input \\(x \\in \\mathbb{N}\\) to a numerical algorithm not by \\(x\\) itself, but rather in terms of the length of \\(x\\)'s binary representation. If we let \\(\\lvert x\\rvert =_{df} \\log_2(x)\\) denote this quantity, then it is easy to see that the efficiency of Euclid's algorithm is given by a function which grows proportionally to \\(\\lvert x\\rvert^{c_1}\\) for fixed \\(c_1\\) (in fact, \\(c_1 = 1\\)), whereas the efficiency of trial division is given by a function proportional \\(c_2^{\\lvert x\\rvert}\\) for fixed \\(c_2\\) (in fact, \\(c_2 = 2\\)). The difference in the growth rate of these functions illustrates the contrast between polynomial time complexity - which is currently taken by complexity theorists as the touchstone of feasibility - and exponential time complexity - which has traditionally been taken as the touchstone of intractability. For instance, if it could be shown that no polynomial time factorization algorithm exists, it might then seem reasonable to conclude that \\(\\sc{FACTORIZATION}\\) is a genuinely intractable problem. Although it is currently unknown whether this is the case, contemporary results provide circumstantial evidence that \\(\\sc{FACTORIZATION}\\) is indeed intractable (see Section 3.4.1 ). Stronger evidence can be adduced for the intractability of conjecture \\(\\sc{SAT}\\), \\(\\sc{TSP}\\), and \\(\\sc{INTEGER}\\ \\sc{PROGRAMMING}\\) (and similarly for a great many other problems of practical interest in subjects like logic, graph theory, linear algebra, formal language theory, game theory, and combinatorics). The technical development of complexity theory aims to make such comparisons of computational difficulty precise and to show that the classification of certain problems as intractable admits to rigorous mathematical analysis. As we have just seen, in computational complexity theory a problem \\(X\\) is considered to be complex in proportion to the difficulty of carrying out the most efficient algorithm by which it may be decided. Similarly, one problem \\(X\\) is understood to be more complex (or harder ) than another problem \\(Y\\) just in case \\(Y\\) possesses a more efficient decision algorithm than the most efficient algorithm for deciding \\(X\\). In order to make these definitions precise, a number of technical conventions are employed, many of which are borrowed from the adjacent fields of computability theory (e.g. Rogers 1987 ) and algorithmic analysis (e.g. Cormen, Leiserson, and Rivest 2005 ). It will be useful to summarize these before proceeding further. A reference model of computation \\(\\mathfrak{M}\\) is chosen to represent algorithms. \\(\\mathfrak{M}\\) is assumed to be a reasonable model in the sense that it accurately reflects the computational costs of carrying out the sorts of informally specified algorithms which are encountered in mathematical practice. The deterministic Turing machine model \\(\\mathfrak{T}\\) is traditionally selected for this purpose. (See Section 2.2 for further discussion of reasonable models and the justification of this choice.) Decision problems are represented as sets consisting of objects which can serve as the inputs for a machine \\(M \\in \\mathfrak{M}\\). For instance, if \\(\\mathfrak{T}\\) is used as the reference model then it is assumed that all problems \\(X\\) are represented as sets of finite binary strings - i.e. \\(X \\subseteq \\{0,1\\}^*\\). This is accomplished by defining a mapping \\(\\ulcorner \\cdot \\urcorner:X \\rightarrow \\{0,1\\}^*\\) whose definition will depend on the type of objects which comprise \\(X\\). For instance, if \\(X \\subseteq \\mathbb{N}\\), then \\(\\ulcorner n \\urcorner\\) will typically be the binary numeral representing \\(n\\). And if \\(X\\) is a subset of \\(\\text{Form}_{\\mathcal{L}}\\) - i.e. the set of formulas over a formal language \\(\\mathcal{L}\\) such as that of propositional logic - then \\(\\ulcorner \\phi \\urcorner\\) will typically be a (binary) G&ouml;del numeral for \\(\\phi\\). Based on these conventions, problems \\(X\\) will henceforth be identified with sets of strings \\(\\{\\ulcorner x \\urcorner : x \\in X\\} \\subseteq \\{0,1\\}^*\\) (which are often referred to as languages ) corresponding to their images under such an encoding. A machine \\(M\\) is said to decide a language \\(X\\) just in case \\(M\\) computes the characteristic function of \\(X\\) relative to the standard input-output conventions for the model \\(\\mathfrak{M}\\). For instance, a Turing machine \\(T\\) decides \\(X\\) just in case for all \\(x \\in \\{0,1\\}^*\\), the result of applying \\(T\\) to \\(x\\) yields a halting computation ending in a designated accept state if \\(x \\in X\\) and a designated reject state if \\(x \\not\\in X\\). A function problem is that of computing the values of a given function \\(f:A \\rightarrow B\\). \\(M\\) is said to solve a function problem \\(f:A \\rightarrow B\\) just in case the mapping induced by its operation coincides with \\(f(x)\\) - i.e. if \\(M(x) = f(x)\\) for all \\(x \\in A\\) where \\(M(x)\\) denotes the result of applying machine \\(M\\) to input \\(x\\), again relative to the input-output conventions for the model \\(\\mathfrak{M}\\). For each problem \\(X\\), it is also assumed that an appropriate notion of problem size is defined for its instances. Formally, this is a function \\(\\lvert\\cdot \\rvert: X \\rightarrow \\mathbb{N}\\) chosen so that the efficiency of a decision algorithm for \\(X\\) will varying uniformly in \\(\\lvert x\\rvert\\). As we have seen, if \\(X \\subseteq \\mathbb{N}\\), it is standard to take \\(\\lvert n\\rvert = \\log_2(n)\\) - i.e. the number of digits (or length ) of the binary numeral \\(\\ulcorner n \\urcorner\\) representing \\(n\\). Similarly if \\(X\\) is a class of logical formulas over a language \\(\\mathcal{L}\\) (e.g. that or propositional or first-order logic), then \\(\\lvert\\phi\\rvert\\) will typically be a measure of \\(\\phi\\)'s syntactic complexity (e.g. the number of propositional variables or clauses it contains). If \\(X\\) is a graph theoretic problem its instances will consist of the encodings of finite graphs of the form \\(G = \\langle V,E \\rangle\\) where \\(V\\) is a set of vertices and \\(E \\subseteq V \\times V\\) is a set of edges . In this case \\(\\lvert G\\rvert\\) will typically be a function of the cardinalities of the sets \\(V\\) and \\(E\\). The efficiency of a machine \\(M\\) is measured in terms of its time complexity - i.e. the number of basic steps \\(time_M(x)\\) required for \\(M\\) to halt and return an output for the input \\(x\\) (where the precise notion of 'basic step' will vary with the model \\(\\mathfrak{M}\\)). This measure may be converted into a function of type \\(\\mathbb{N} \\rightarrow \\mathbb{N}\\) by considering \\(t_{M}(n) = \\max \\{time_M(x) : \\lvert x\\rvert = n \\}\\) - i.e. the worst case time complexity of \\(M\\) defined as the maximum number of basic steps required for \\(M\\) to halt and return an output for all inputs \\(x\\) of size \\(n\\). The worst case space complexity of \\(M\\) - denoted \\(s_{M}(n)\\) - is defined similarly - i.e. the maximum number of tape cells (or other form of memory locations) visited or written to in the course of \\(M\\)'s computation for all inputs of size \\(n\\). The efficiency of two machines is compared according to the order of growth of their time and space complexities. In particular, given a function \\(f:\\mathbb{N} \\rightarrow \\mathbb{N}\\) we define its order of growth to be \\(O(f(n)) = \\{g(n) : \\exists c \\exists n_0 \\forall n \\geq n_0(g(n) \\lt c \\cdot f(n)) \\}\\) - i.e. the set of all functions which are asymptotically bounded by \\(f(n)\\), ignoring scalar factors. For instance, for all fixed \\(k, c_1, c_2\\ \\in \\mathbb{N}\\) the following functions are all in \\(O(n^2)\\): the constant \\(k\\)-function, \\(\\log(n), n, c_1 \\cdot n^2 + c_2\\). However \\(\\frac{1}{1000}n^3 \\not\\in O(n^2)\\). A machine \\(M_1\\) is said to have lower time complexity (or to run faster than ) another machine \\(M_2\\) if \\(t_{M_1}(n) \\in O(t_{M_2}(n))\\), but not conversely. Space complexity comparisons between machines are performed similarly. The time and space complexity of a problem \\(X\\) are measured in terms of the worst case time and space complexity of the asymptotically most efficient algorithm for deciding \\(X\\). In particular, we say that \\(X\\) has time complexity \\(O(t(n))\\) if the worst case time complexity of the most time efficient machine \\(M\\) deciding \\(X\\) is in \\(O(t(n))\\). Similarly, \\(Y\\) is said to be harder to decide (or more complex ) than \\(X\\) if the time complexity of \\(X\\) is asymptotically bounded by the time complexity of \\(Y\\). The space complexity of a problem is defined similarly. A complexity class can now be defined to be the set of problems for which there exists a decision procedure with a given running time or running space complexity. For instance, the class \\(\\textbf{TIME}(f(n))\\) denotes the class of problems with time complexity \\(f(n)\\). \\(\\textbf{P}\\) - or polynomial time - is used to denote the union of the classes \\(\\textbf{TIME}(n^k)\\) for \\(k \\in \\mathbb{N}\\) with respect to the reference model \\(\\mathfrak{T}\\). \\(\\textbf{P}\\) hence subsumes all problems for which there exists a decision algorithm which can be implemented by a Turing machine whose time complexity is of polynomial order of growth. \\(\\textbf{SPACE}(f(n))\\) and \\(\\textbf{PSPACE}\\) - or polynomial space - is defined similarly. Several other complexity classes we will consider below (e.g. \\(\\textbf{NP}\\), \\(\\textbf{BPP}\\), \\(\\textbf{BQP}\\)) are defined by changing the reference model of computation, the definition of what it means for a machine to accept or reject an input, or both. With these conventions in place, we can now record several respects in which the meaning assigned to the word 'complexity' in computational complexity theory differs from that which is assigned to this term in several other fields. In computational complexity theory, it is problems - i.e. infinite sets of finite combinatorial objects like natural numbers, formulas, graphs - which are assigned 'complexities'. As we have just seen, such assignments are based on the time or space complexity of the most efficient algorithms by which membership in a problem can be decided. A distinct notion of complexity is studied in Kolmogorov complexity theory (e.g., Li and Vit&aacute;nyi 1997 ). Rather than studying the complexity of sets of mathematical objects, this subject attempts to develop a notion of complexity which is applicable to individual combinatorial objects - e.g. specific natural numbers, formulas, graphs, etc. For instance, the Kolmogorov complexity of a finite string \\(x \\in \\{0,1\\}^*\\) is defined to be the size of the smallest program for a fixed universal Turing machine which outputs \\(x\\) given the empty string as input. In this setting, the 'complexity' of an object is thus viewed as a measure of the extent to which its description can be compressed algorithmically. Another notion of complexity is studied in descriptive complexity theory (e.g., Immerman 1999 ). Like computational complexity theory, descriptive complexity theory also seeks to classify the complexity of infinite sets of combinatorial objects. However, the 'complexity' of a problem is now measured in terms of the logical resources which are required to define its instances relative to the class of all finite structures for an appropriate signature. As we will see in Section 4.4 this approach often yields alternative characterizations of the same classes studied in computational complexity theory. Yet another subject related to computational complexity theory is algorithmic analysis (e.g. Knuth (1973) , Cormen, Leiserson, and Rivest 2005 ). Like computational complexity theory, algorithmic analysis studies the complexity of problems and also uses the time and space measures \\(t_M(n)\\) and \\(s_M(x)\\) defined above. The methodology of algorithmic analysis is different from that of computational complexity theory in that it places primary emphasis on gauging the efficiency of specific algorithms for solving a given problem. On the other hand, in seeking to classify problems according to their degree of intrinsic difficulty, complexity theory must consider the efficiency of all algorithms for solving a problem. Complexity theorists thus make greater use of complexity classes such as \\(\\textbf{P},\\textbf{NP}\\), and \\(\\textbf{PSPACE}\\) whose definitions are robust across different choices of reference model. In algorithmic analysis, on the other hand, algorithms are often characterized relative to the finer-grained hierarchy of running times \\(\\log_2(n), n, n \\cdot \\log_2(n), n^2, n^3, \\ldots\\) within \\(\\textbf{P}\\).",
+      "relatedEntries": [
+        "church-turing",
+        "computability",
+        "computer-science",
+        "philosophy-mathematics",
+        "qt-quantcomp",
+        "recursive-functions",
+        "turing-machine"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "church-turing"
+        },
+        {
+          "slug": "computability"
+        },
+        {
+          "slug": "computer-science"
+        },
+        {
+          "slug": "philosophy-mathematics"
+        },
+        {
+          "slug": "qt-quantcomp"
+        },
+        {
+          "slug": "recursive-functions"
+        },
+        {
+          "slug": "turing-machine"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 208,
+      "bibliography": [
+        {
+          "raw": "Aaronson, S., 2003, \"Is P Versus NP Formally Independent?\" Bulletin of the EATCS , 81: 109-136."
+        },
+        {
+          "raw": "---, 2005, \" NP -complete problems and physical reality,\" ACM Sigact News , 36(1): 30-52."
+        },
+        {
+          "raw": "---, 2013b, \"Why Philosophers Should Care About Computational Complexity,\" in J. Copeland, C. Posy, & O. Shagrir (eds.), Computability: Turing, G&ouml;del, Church, and Beyond , pp. 261-328, Cambridge, Massachusetts: MIT Press."
+        },
+        {
+          "raw": "Ackermann, W., 1928, \"&Uuml;ber die Erf&uuml;llbarkeit gewisser Z&auml;hlausdr&uuml;cke,\" Mathematische Annalen , 100(1): 638-649."
+        },
+        {
+          "raw": "Agrawal, M., Kayal, N., and Saxena, N., 2004, \"PRIMES in P ,\" Annals of Mathematics. Second Series , 160(2): 781-793."
+        },
+        {
+          "raw": "Allender, E., and McCartin, C., 2000, \"Basic Complexity,\" in R. Downey & D. Hirschfeldt (eds.), Aspects of Complexity , pp. 1-28, Berlin: Walter de Gruyter."
+        },
+        {
+          "raw": "Arora, S., and Barak, B., 2009, Computational Complexity: A Modern Approach , Cambridge, England: Cambridge University Press."
+        },
+        {
+          "raw": "Artemov, S., and Kuznets, R., 2014, \"Logical Omniscience as infeasibility,\" Annals of Pure and Applied Logic , 165: 6-25."
+        },
+        {
+          "raw": "Baker, T., Gill, J., and Solovay, S., 1975, \"Relativizations of the \\(\\textbf{P} = \\textbf{NP}?\\) question,\" SIAM Journal on Computing , 4(4): 431-442."
+        },
+        {
+          "raw": "Balc&aacute;zar, J., Diaz, J., and Gabarr&oacute;, J., 1988, Structural Complexity Vol. I, Berlin: Springer Verlag."
+        },
+        {
+          "raw": "Bellantoni, S., and Cook, S., 1992, \"A new recursion-theoretic characterization of the polytime functions,\" Computational Complexity , 2(2): 97-110."
+        },
+        {
+          "raw": "Bellman, R., 1962, \"Dynamic Programming Treatment of the Travelling Salesman Problem,\" Journal of the ACM , 9: 61-63."
+        },
+        {
+          "raw": "Ben-David, S., and Halevi, S., 1992, On the Independence of P Versus NP (No. 714), Technion."
+        },
+        {
+          "raw": "Bennett, J., 1962, On Spectra (PhD thesis), Princeton."
+        },
+        {
+          "raw": "Bernays, P., 1935, \"Sur Le Platonisme Dans Les Math&eacute;matiques.\" L'enseignement Mathematique , 34: 52-69."
+        },
+        {
+          "raw": "Bernays, P., and Sch&ouml;nfinkel, M., 1928, \"Zum Entscheidungsproblem der Mathematischen Logik,\" Mathematische Annalen , 99(1): 342-372."
+        },
+        {
+          "raw": "Bonet, M., Buss, S., and Pitassi, T., 1995, \"Are there hard examples for Frege systems?\" in Feasible Mathematics II , pp. 30-56, Berlin: Springer."
+        },
+        {
+          "raw": "Brookshear, J., Smith, D., Brylow, D., Mukherjee, S., and Bhattacharjee, A., 2006, Computer Science: An Overview 9th ed., Boston: Addison-Wesley."
+        },
+        {
+          "raw": "Buss, S., 1986, Bounded Arithmetic , Naples: Bibliopolis."
+        },
+        {
+          "raw": "---, 1987, \"The Boolean formula value problem is in ALOGTIME ,\" in Proceedings of the Nineteenth Annual ACM Symposium on Theory of Computing , pp. 123-131."
+        },
+        {
+          "raw": "---, 1999, \"Propositional Proof Complexity an Introduction,\" in Computational Logic , pp. 127-178, Springer."
+        },
+        {
+          "raw": "---, 2012, \"Towards NP-P via Proof Complexity and Search,\" Annals of Pure and Applied Logic , 163(7): 906-917."
+        },
+        {
+          "raw": "Carbone, A., and Semmes, S., 1997, \"Making Proofs Without Modus Ponens: An Introduction to the Combinatorics and Complexity of Cut Elimination,\" Bulletin of the American Mathematical Society , 34(2): 131-159."
+        },
+        {
+          "raw": "Chagrov, A., 1985, \"On the Complexity of Propositional Logics,\" in Complexity Problems in Mathematical Logic , pp. 80-90, Kalinin: Kalinin State University."
+        },
+        {
+          "raw": "Chandra, A., and Stockmeyer, L., 1976, \"Alternation,\" in 17th Annual Symposium on Foundations of Computer Science, 1976 , pp. 98-108."
+        },
+        {
+          "raw": "Chazelle, B., and Monier, L., 1983, \"Unbounded hardware is equivalent to deterministic Turing machines,\" Theoretical Computer Science , 24(2): 123-130."
+        },
+        {
+          "raw": "Cherniak, C., 1981, \"Feasible Inferences,\" Philosophy of Science , 48: 248-268."
+        },
+        {
+          "raw": "---, 1984, \"Computational Complexity and the Universal Acceptance of Logic,\" The Journal of Philosophy , 81(12): 739-758."
+        },
+        {
+          "raw": "---, 1986, Minimal Rationality , Cambridge, Massachusetts: MIT Press."
+        },
+        {
+          "raw": "Chernoff, H., 1981, \"A Note on an Inequality Involving the Normal Distribution,\" The Annals of Probability , 9: 533-535."
+        },
+        {
+          "raw": "Cherubin, R., and Mannucci, M., 2011, \"A Very Short History of Ultrafinitism,\" in Juliette Kennedy & Roman Kossak (eds.), Set Theory, Arithmetic, and Foundations of Mathematics: Theorems, Philosophies , Vol. 36, pp. 180-199, Cambridge, England: Cambridge University Press."
+        },
+        {
+          "raw": "Church, A., 1936a, \"A note on the Entscheidungsproblem ,\" The Journal of Symbolic Logic , 1(01): 40-41."
+        },
+        {
+          "raw": "---, 1936b, \"An unsolvable problem of elementary number theory,\" American Journal of Mathematics , 58(2): 345-363."
+        },
+        {
+          "raw": "Clarke, E., Emerson, E., and Sistla, A., 1986, \"Automatic Verification of Finite-State Concurrent Systems Using Temporal Logic Specifications,\" ACM Transactions on Programming Languages and Systems , 8(2): 244-263."
+        },
+        {
+          "raw": "Cobham, A., 1965, \"The Intrinsic Computational Difficulty of Functions,\" Proceedings of the Third International Congress for Logic, Methodology and Philosophy of Science, Amsterdam , North-Holland."
+        },
+        {
+          "raw": "Cook, S., 1971, \"The complexity of theorem-proving procedures,\" Proceedings of the Third Annual ACM Symposium on Theory of Computing , ACM."
+        },
+        {
+          "raw": "---, 1973, \"A hierarchy for nondeterministic time complexity,\" Journal of Computer System Science , 7(4):343-353."
+        },
+        {
+          "raw": "---, 2006, \"The P versus NP problem,\" in J. Carlson, A. Jaffe, & A. Wiles (eds.), The Millennium Prize Problem , pp. 88-104, Providence: American Mathematical Society."
+        },
+        {
+          "raw": "Cook, S., and Kolokolova, A., 2001, \"A second-order system for polytime reasoning using Gradel's theorem,\" in Logic in Computer Science, 2001. Proceedings. 16th Annual IEEE Symposium on , pp. 177-186."
+        },
+        {
+          "raw": "Cook, S., and Mitchell, D., 1997, \"Finding Hard Instances of the Satisfiability Problem,\" in Satisfiability Problem: Theory and Applications: DIMACS Workshop, March 11-13, 1996 , Vol. 35, pp. 1-17, American Mathematical Soc."
+        },
+        {
+          "raw": "Cook, S., and Nguyen, P., 2010, Logical foundations of proof complexity , Cambridge, England: Cambridge University Press."
+        },
+        {
+          "raw": "Cook, S., and Reckhow, R., 1973, \"Time bounded random access machines,\" Journal of Computer and System Sciences , 7(4): 354-375."
+        },
+        {
+          "raw": "---, 1979, \"The Relative Efficiency of Propositional Proof Systems,\" The Journal of Symbolic Logic , 44(01): 36-50."
+        },
+        {
+          "raw": "Cook, W., 2012, In pursuit of the Traveling Salesman: mathematics at the limits of computation , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Cormen, T., Leiserson, C., and Rivest, R., 2005, Introduction to Algorithms (Second Ed.), Cambridge, Massachusetts: MIT Press."
+        },
+        {
+          "raw": "Crandall, R., and Pomerance, C., 2005, Prime Numbers (Second Ed.), Berlin: Springer."
+        },
+        {
+          "raw": "Davis, Martin, and Putnam, Hilary, 1960, \"A Computing Procedure for Quantification Theory,\" Journal of the ACM (JACM) , 7(3): 201-215."
+        },
+        {
+          "raw": "DeMillo, R., and Lipton, R., 1980, \"The consistency of \\(\\textbf{P}= \\textbf{NP}\\) and related problems with fragments of number theory,\" in Proceedings of the Twelfth Annual ACM Symposium on Theory of Computing , pp. 45-57, ACM."
+        },
+        {
+          "raw": "Deutsch, D., 1985, \"Quantum theory, the Church-Turing principle and the universal quantum computer,\" Proceedings of the Royal Society of London. A. Mathematical and Physical Sciences , 400(1818): 97-117."
+        },
+        {
+          "raw": "Du, D., and Ko, K., 2000, Theory of Computational Complexity , New York: John Wiley."
+        },
+        {
+          "raw": "Dummett, M., 1975, \"Wang's Paradox,\" Synthese , 30(3/4): 301-324."
+        },
+        {
+          "raw": "Ebbinghaus, Heinz-Dieter, and Flum, J&ouml;rg, 1999, Finite Model Theory (Second Ed.), Berlin: Springer."
+        },
+        {
+          "raw": "Edmonds, J., 1965a, \"Minimum Partition of a Matroid into Independent Subsets,\" Journal of Research of the National Bureau of Standards-B. Mathematics and Mathematical Physics , 69: 67-72."
+        },
+        {
+          "raw": "---, 1965b, \"Paths, trees, and flowers,\" Canadian Journal of Mathematics , 17(3): 449-467."
+        },
+        {
+          "raw": "Emde Boas, P. van, 1990, \"Machine models and simulations,\" in J. Van Leeuwen (ed.), Handbook of theoretical computer science (vol. A): algorithms and complexity , pp. 1-66, Cambridge, Massachusetts: MIT Press."
+        },
+        {
+          "raw": "Emerson, E., and Jutla, C., 1988, \"The Complexity of Tree Automata and Logics of Programs,\" in 29th Annual Symposium on Foundations of Computer Science, 1988., pp. 328-337."
+        },
+        {
+          "raw": "Fagin, R., 1974, \"Generalized First-Order Spectra and Polynomial-Time Recognizable Sets,\" in R. Karp (ed.), Complexity of Computation: SIAM-AMS Proceedings , Vol. 7, pp. 27-41."
+        },
+        {
+          "raw": "Fagin, R., and Halpern, J., 1988, \"Belief, Awareness, and Limited Reasoning,\" Artificial Intelligence , 34(1): 39-76."
+        },
+        {
+          "raw": "Fagin, R., Halpern, J., Moses, Y., and Vardi, M., 1995, Reasoning About Knowledge , Cambridge, Massachusetts: MIT Press."
+        },
+        {
+          "raw": "Feynman, R., 1982, \"Simulating Physics with Computers,\" International Journal of Theoretical Physics , 21(6): 467-488."
+        },
+        {
+          "raw": "Fischer, M., and Ladner, R., 1979, \"Propositional Dynamic Logic of Regular Programs,\" Journal of Computer and System Sciences , 18(2): 194-211."
+        },
+        {
+          "raw": "Fischer, M., and Rabin, M., 1974, \"Super-exponential complexity of Presburger arithmetic,\" in R.M. Karp (ed.), Complexity of Computation , Vols. SIAM-AMS Symposium in Applied Mathematics, pp. 122-135."
+        },
+        {
+          "raw": "Fortnow, L., 2003, \"One Complexity Theorist's View of Quantum Computing,\" Theoretical Computer Science , 292(3): 597-610."
+        },
+        {
+          "raw": "---, 2009, \"The status of the P versus NP problem,\" Communications of the ACM , 52(9): 78-86."
+        },
+        {
+          "raw": "---, 2013, Golden Ticket: P , NP , and the Search for the Impossible , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Fortnow, L., and Homer, S., 2003, \"A short history of computational complexity,\" Bulletin of the EATCS , 80: 95-133."
+        },
+        {
+          "raw": "Fraenkel, A., and Lichtenstein, D., 1981, \"Computing a perfect strategy for \\(n \\times n\\) chess requires time exponential in \\(n\\),\" Journal of Combinatorial Theory, Series A , 31(2): 199-214."
+        },
+        {
+          "raw": "Gaifman, H., 2010, \"Vagueness, tolerance and contextual logic,\" Synthese , 174: 1-42."
+        },
+        {
+          "raw": "Gaifman, Haim, 2012, \"On Ontology and Realism in Mathematics,\" Review of Symbolic Logic , 5(3): 480-512."
+        },
+        {
+          "raw": "Gandy, R., 1980, \"Church's Thesis and principles for mechanisms,\" in H.J. Keisler J. Barwise & K. Kunen (eds.), The Kleene Symposium , Vol. 101, pp. 123-148, Amsterdam: North-Holland."
+        },
+        {
+          "raw": "Ganea, M., 2014, \"Finitistic Arithmetic and Classical Logic,\" Philosophia Mathematica , 22: 167-197."
+        },
+        {
+          "raw": "Garey, M., and Johnson, D., 1979, Computers and intractability. A guide to the theory of NP -completeness , New York: W.H. Freeman; Company."
+        },
+        {
+          "raw": "Gigerenzer, G., and Selten, R., 2002, Bounded Rationality: The Adaptive Toolbox , Cambridge, Massachusetts: MIT Press."
+        },
+        {
+          "raw": "Goldreich, O., 2010, P , NP , and NP -completeness: The basics of computational complexity , Cambridge, England: Cambridge University Press."
+        },
+        {
+          "raw": "G&ouml;del, K., 1932, \"Ein Spezialfall des Entscheidungsproblems der theoretischen Logik,\" Ergebnisse Eines Mathematischen Kolloquiums , 2: 27-28."
+        },
+        {
+          "raw": "---, 1986a, \"On Intuitionistic Arithmetic and Number Theory,\" in S. Feferman (ed.), Collected Works Volume 1 , pp. 287-295, New York: Oxford University Press."
+        },
+        {
+          "raw": "---, 1986b, \"On undecidable propositions of formal mathematical systems (with postscript dated 1964),\" in S. Feferman (ed.), Kurt G&ouml;del Collected Works. Vol. I. Publications 1929-1936 , pp. 346-371, New York: Oxford University Press."
+        },
+        {
+          "raw": "G&ouml;del, Kurt, 1956, \"Letter to von Neumann (1956),\" Reprinted in Sipser 1992 , p. 612."
+        },
+        {
+          "raw": "Greenlaw, R., Hoover, H., and Ruzzo, W., 1995, Limits to parallel computation: P -completeness theory , New York: Oxford University Press, USA."
+        },
+        {
+          "raw": "Grover, L., 1996, \"A Fast Quantum Mechanical Algorithm for Database Search,\" in Proceedings of the Twenty-Eighth Annual ACM Symposium on Theory of Computing , pp. 212-219, ACM."
+        },
+        {
+          "raw": "Gutin, G., and Punnen, A., 2002, The Traveling Salesman Problem and Its Variations Vol. 12, New York: Kluwer."
+        },
+        {
+          "raw": "Haken, A., 1985, \"The Intractability of Resolution,\" Theoretical Computer Science , 39: 297-308."
+        },
+        {
+          "raw": "Halpern, J., and Moses, Y., 1992, \"A Guide to Completeness and Complexity for Modal Logics of Knowledge and Belief,\" Artificial Intelligence , 54(3): 319-379."
+        },
+        {
+          "raw": "Harel, D., 2006, Algorithmics: The Spirit of Computing , Boston: Addison-Wesley."
+        },
+        {
+          "raw": "Harman, G., 1986, Change in View: Principles of Reasoning. , Cambridge, Massachusetts: Cambridge University Press."
+        },
+        {
+          "raw": "Hartmanis, J., 1993, \"G&ouml;del, von Neumann and the \\(\\textbf{P}= \\textbf{NP}\\)? Problem,\" in G., Rozenberg, & A. Salomaa (eds.), Current Trends in Theoretical Computer Science , pp. 445-450, Singapore: World Scientific."
+        },
+        {
+          "raw": "Hartmanis, J., and Stearns, R., 1965, \"On the computational complexity of algorithms,\" Transactions of the American Mathematical Society , 117(5): 285-306."
+        },
+        {
+          "raw": "H&aacute;jek, P., and Pudl&aacute;k, P., 1998, Metamathematics of First-Order Arithmetic , Berlin: Springer."
+        },
+        {
+          "raw": "Hemaspaandra, L., and Ogihara, M., 2002, The Complexity Theory Companion , Berlin: Springer Verlag."
+        },
+        {
+          "raw": "Hintikka, J., 1962, Knowledge and Belief: An Introduction to the Logic of the Two Notions , Ithaca: Cornell University Press."
+        },
+        {
+          "raw": "Homer, S., and Selman, A., 2011, Turing and the Development of Computational Complexity (No. 2011-06), SUNY Buffalo Department of Computer Science."
+        },
+        {
+          "raw": "Hopcroft, J., and Ulman, J., 1979, Introduction to Automata Theory, Languages and Computation , Reading, Massachusetts: Addison-Wesley."
+        },
+        {
+          "raw": "Immerman, N., 1982, \"Relational Queries Computable in Polynomial Time,\" in Proceedings of the Fourteenth Annual ACM Symposium on Theory of Computing , pp. 147-152, ACM."
+        },
+        {
+          "raw": "---, 1987, \"Languages That Capture Complexity Classes,\" SIAM Journal on Computing , 16(4): 760-778."
+        },
+        {
+          "raw": "---, 1999, Descriptive Complexity , New York: Springer Verlag."
+        },
+        {
+          "raw": "Impagliazzo, R., 1995, \"A personal view of average-case complexity,\" in Structure in Complexity Theory, Proceedings of Tenth Annual IEEE Conference , pp. 134-147."
+        },
+        {
+          "raw": "Impagliazzo, R., and Paturi, R., 1999, \"Complexity of \\(k\\)-SAT,\" in Computational Complexity, 1999. Proceedings. Fourteenth Annual IEEE Conference , pp. 237-240."
+        },
+        {
+          "raw": "Isles, D., 1992, \"What evidence is there that \\(2^{65536 }\\) is a natural number?\" Notre Dame Journal of Formal Logic , 33(4)."
+        },
+        {
+          "raw": "Iwan, S., 2000, \"On the Untenability of Nelson's Predicativism,\" Erkenntnis , 53(1-2): 147-154."
+        },
+        {
+          "raw": "Kahneman, D., 2003, \"A Perspective on Judgment and Choice: Mapping Bounded Rationality.\" American Psychologist , 58(9): 697-720."
+        },
+        {
+          "raw": "Kanovich, M., 1994, \"The complexity of Horn fragments of linear logic,\" Annals of Pure and Applied Logic , 69(2): 195-241."
+        },
+        {
+          "raw": "Kapovich, I., Myasnikov, A., Schupp, P., and Shpilrain, V., 2003, \"Generic-Case Complexity, Decision Problems in Group Theory, and Random Walks,\" Journal of Algebra , 264(2): 665-694."
+        },
+        {
+          "raw": "Karp, R., 1972, \"Reducibility Among Combinatorial Problems,\" in R.E. Miller & J.W. Thatcher (eds.), Complexity of computer computations , pp. 85-103, New York: Plenum Press."
+        },
+        {
+          "raw": "Kaye, R., 2000, \"Minesweeper is NP -complete,\" The Mathematical Intelligencer , 22(2): 9-15."
+        },
+        {
+          "raw": "Kent, C., and Hodgson, B., 1982, \"An arithmetical characterization of NP ,\" Theoretical Computer Science , 21(3): 255-267."
+        },
+        {
+          "raw": "Kleene, S., 1936, \"General recursive functions of natural numbers,\" Mathematische Annalen , 112(1): 727-742."
+        },
+        {
+          "raw": "---, 1951, Representation of Events in Nerve Nets and Finite Automata (No. RM-704), RAND Corporation."
+        },
+        {
+          "raw": "---, 1952, Introduction to Metamathematics Vol. 1, Amsterdam: North-Holland."
+        },
+        {
+          "raw": "Knuth, D., 1973, The Art of Computer Programming Vols. I-III, Reading, Massachusetts: Addison Wesley."
+        },
+        {
+          "raw": "Kozen, D., and Parikh, R., 1981, \"An elementary proof of the completeness of PDL,\" Theoretical Computer Science , 14(1): 113-118."
+        },
+        {
+          "raw": "Kuznets, R., 2000, \"On the Complexity of Explicit Modal Logics,\" in Computer Science Logic , pp. 371-383, Springer."
+        },
+        {
+          "raw": "Ladner, R., 1975, \"On the Structure of Polynomial Time Reducibility,\" Journal of the ACM , 22(1): 155-171."
+        },
+        {
+          "raw": "---, 1977, \"The Computational Complexity of Provability in Systems of Modal Propositional Logic,\" SIAM Journal on Computing , 6(3): 467-480."
+        },
+        {
+          "raw": "Lange, M., 2006, \"Model Checking Propositional Dynamic Logic with All Extras,\" Journal of Applied Logic , 4(1): 39-49."
+        },
+        {
+          "raw": "Lautemann, C., 1983, \" BPP and the polynomial hierarchy,\" Information Processing Letters , 17(4): 215-217."
+        },
+        {
+          "raw": "Leivant, D., 1994, \"A Foundational Delineation of Poly-Time,\" Information and Computation , 110(2): 391-420."
+        },
+        {
+          "raw": "Lenzen, W., 1978, \"Recent Work in Epistemic Logic,\" Acta Philosophica Fennica , 30: 1-219."
+        },
+        {
+          "raw": "Levesque, H., 1984, \"A Logic of Implicit and Explicit Belief,\" in Proceedings of the Fourth National Conference on Artificial Intelligence (AAAI-84) , pp. 198-202."
+        },
+        {
+          "raw": "Levin, L., 1973, \"Universal sorting problems (Corrected Translation Published in Trakhtenbrot 1984 ),\" Problems of Information Transmission , 9(3): 265-266."
+        },
+        {
+          "raw": "Lewis, H., 1980, \"Complexity Results for Classes of Quantificational Formulas,\" Journal of Computer and System Sciences , 21(3): 317-353."
+        },
+        {
+          "raw": "Lewis, H., and Papadimitriou, C., 1998, Elements of the Theory of Computation , Upper Saddle River, New Jersey: Prentice Hall."
+        },
+        {
+          "raw": "Li, M., and Vit&aacute;nyi, P., 1997, An Introduction to Kolmogorov Complexity and Its Applications (Second Ed.), New York: Springer."
+        },
+        {
+          "raw": "Lichtenstein, D., and Sipser, M., 1980, \"Go is polynomial-space hard,\" Journal of the ACM , 27(2): 393-401."
+        },
+        {
+          "raw": "Lincoln, P., 1995, \"Deciding Provability of Linear Logic Formulas,\" in Proceedings of the Workshop on Advances in Linear Logic , pp. 109-122, New York: Cambridge University Press."
+        },
+        {
+          "raw": "Lincoln, P., Mitchell, J., Scedrov, A., and Shankar, N., 1992, \"Decision Problems for Propositional Linear Logic,\" Annals of Pure and Applied Logic , 56(1): 239-311."
+        },
+        {
+          "raw": "Lipton, R., and Regan, K., 2013, People, Problems, and Proofs , Berlin: Springer."
+        },
+        {
+          "raw": "L&ouml;wenheim, L., 1967, \"On Possibilities in the Calculus of Relatives (1915),\" in van Heijenoort (ed.), From Frege to G&ouml;del : A Source Book in Mathematical Logic, 1879-1931 , pp. 232-251, Cambridge, Massachusetts: Harvard University Press."
+        },
+        {
+          "raw": "Magidor, O., 2011, \"Strict Finitism and the Happy Sorites,\" Journal of Philosophical Logic , 41: 1-21."
+        },
+        {
+          "raw": "Manders, K. L., and Adleman, L., 1978, \" NP -complete decision problems for binary quadratics,\" Journal of Computer and System Sciences , 16(2): 168-184."
+        },
+        {
+          "raw": "Manin, Y., 1980, Computable and Uncomputable , Moscow: Sovetskoye Radio."
+        },
+        {
+          "raw": "Marx, M., 2007, \"Complexity of Modal Logic,\" in P. Blackburn, J. van Benthem, & F. Wolter (eds.), Handbook of Modal Logic , pp. 140-179, Amsterdam: Elsevier."
+        },
+        {
+          "raw": "Mermin, N., 2007, Quantum Computer Science: An Introduction , Cambridge, England: Cambridge University Press."
+        },
+        {
+          "raw": "Miller, G., 1976, \"Riemann's Hypothesis and Tests for Primality,\" Journal of Computer and System Sciences , 13(3): 300-317."
+        },
+        {
+          "raw": "Milnikel, R., 2007, \"Derivability in certain subsystems of the Logic of Proofs is \\(\\Pi^P_2\\)-complete,\" Annals of Pure and Applied Logic , 145(3): 223-239."
+        },
+        {
+          "raw": "Moore, C., and Mertens, S., 2011, The Nature of Computation , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Morton, A., 2004, \"Epistemic Virtues, Metavirtues, and Computational Complexity,\" No&ucirc;s , 38(3): 481-502."
+        },
+        {
+          "raw": "---, 2012, Bounded Thinking: Intellectual Virtues for Limited Agents , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Moschovakis, Y., 1974, Elementary Induction on Abstract Structures , Amsterdam: North Holland."
+        },
+        {
+          "raw": "Mulmuley, K., and Sohoni, M., 2001, \"Geometric complexity theory I: An approach to \\(\\textbf{P}\\) vs. \\(\\textbf{NP}\\) and related problems,\" SIAM Journal on Computing , 31(2): 496-526."
+        },
+        {
+          "raw": "Mundhenk, M., and Wei&szlig;, F., 2010, \"The Complexity of Model Checking for Intuitionistic Logics and Their Modal Companions,\" in A. Ku&#269;era & I. Potapov (eds.), Reachability Problems , Vol. 6227, pp. 146-160, Berlin; Heidelberg: Springer."
+        },
+        {
+          "raw": "Negri, S., and Von Plato, J., 2001, Structural Proof Theory , Cambridge, England: Cambridge University Press."
+        },
+        {
+          "raw": "Nelson, E., 1986, Predicative Arithmetic Vol. 32, Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Nielsen, M. A., and Chuang, I., 2000, Quantum Computation and Quantum Information , Cambridge, England: Cambridge University Press."
+        },
+        {
+          "raw": "Odifreddi, P., 1999, Classical Recursion Theory. Vol. II Vol. 143, Amsterdam: North-Holland."
+        },
+        {
+          "raw": "Papadimitriou, C., 1994, Computational Complexity , New York: Addison-Wesley."
+        },
+        {
+          "raw": "Parikh, R., 1971, \"Existence and Feasibility in Arithmetic,\" Journal of Symbolic Logic , 36(3): 494-508."
+        },
+        {
+          "raw": "Pippenger, N., 1979, \"On Simultaneous Resource Bounds,\" in Foundations of Computer Science, 1979., 20th Annual Symposium on , pp. 307-311, IEEE."
+        },
+        {
+          "raw": "Post, E., 1947, \"Recursive unsolvability of a problem of Thue,\" Journal of Symbolic Logic , 12(1): 1-11."
+        },
+        {
+          "raw": "Pudl&aacute;k, Pavel, 2013, Logical Foundations of Mathematics and Computational Complexity: A Gentle Introduction , Berlin: Springer."
+        },
+        {
+          "raw": "Rabin, M., 1980, \"Probabilistic Algorithm for Testing Primality,\" Journal of Number Theory , 12(1): 128-138."
+        },
+        {
+          "raw": "Rabin, M., and Scott, D., 1959, \"Finite Automata and Their Decision Problems,\" IBM Journal of Research and Development , 3(2): 114-125."
+        },
+        {
+          "raw": "Rantala, V., 1982, \"Impossible Worlds Semantics and Logical Omniscience,\" Acta Philosophica Fennica , 35: 106-115."
+        },
+        {
+          "raw": "Razborov, A., and Rudich, S., 1994, \"Natural Proofs,\" in Proceedings of the Twenty-Sixth Annual ACM Symposium on Theory of Computing , pp. 204-213, ACM."
+        },
+        {
+          "raw": "Rivest, R., Shamir, A., and Adleman, L., 1978, \"A Method for Obtaining Digital Signatures and Public-Key Cryptosystems,\" Communications of the ACM , 21(2): 120-126."
+        },
+        {
+          "raw": "Robson, J., 1983, \"The complexity of Go,\" Information Processing: Proceedings of IFIP Congress ,"
+        },
+        {
+          "raw": "---, 1984, \"\\(N\\) by \\(N\\) checkers is EXPTIME complete,\" SIAM Journal on Computing , 13(2): 252-267."
+        },
+        {
+          "raw": "Rogers, H., 1987, Theory of Recursive Functions and Effective Computability (Second Ed.), Cambridge, Massachusetts: MIT Press."
+        },
+        {
+          "raw": "Rose, H., 1984, Subrecursion: functions and hierarchies , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Rubinstein, A., 1998, Modeling Bounded Rationality Vol. 1, Cambridge, Massachusetts: MIT press."
+        },
+        {
+          "raw": "Savitch, W., 1970, \"Relationship Between Deterministic and Non-Deterministic Tape Classes,\" Journal Computer System Science , 4: 177-192."
+        },
+        {
+          "raw": "Sazonov, V., 1995, \"On Feasible Numbers,\" in D. Leivant (ed.), Logic and Computational Complexity , Vol. 960, pp. 30-51, Berlin: Springer."
+        },
+        {
+          "raw": "Schorr, A., 1983, \"Physical Parallel Devices Are Not Much Faster Than Sequential Ones,\" Information Processing Letters , 17(2): 103-106."
+        },
+        {
+          "raw": "Schrijver, A., 2005, \"On the history of combinatorial optimization (till 1960),\" Discrete Optimization , 12: 1-68."
+        },
+        {
+          "raw": "Scott, A., and Sorkin, G., 2006, \"Solving sparse random instances of MAX CUT and MSC 2-CSP in linear expected time,\" Combinatorics, Probability and Computing , 15(1-2): 281-315."
+        },
+        {
+          "raw": "Segerlind, N., 2007, \"The Complexity of Propositional Proofs,\" Bulletin of Symbolic Logic , 13(4): 417-481."
+        },
+        {
+          "raw": "Seiferas, J., Fischer, M., and Meyer, A., 1973, \"Refinements of the Nondeterministic Time and Space Hierarchies,\" in 14th Annual Symposium on Switching and Automata Theory, 1973 , pp. 130-137."
+        },
+        {
+          "raw": "Shor, P., 1999, \"Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer,\" SIAM Review , 41(2): pp. 303-332."
+        },
+        {
+          "raw": "Sieg, W., 2009, \"On Computability,\" in Andrew Irvine (ed.), Philosophy of Mathematics , Vol. 4, pp. 549-630, Amsterdam: North-Holland."
+        },
+        {
+          "raw": "Simon, H., 1957, Models of Man: Social and Rational , New York: John Wiley."
+        },
+        {
+          "raw": "---, 1972, \"Theories of Bounded Rationality,\" Decision and Organization , 1: 161-176."
+        },
+        {
+          "raw": "Sipser, H., 2006, Introduction to the Theory of Computation , Boston: Thomson."
+        },
+        {
+          "raw": "Sipser, M., 1992, \"The history and status of the P versus NP question,\" in Proceedings of the Twenty-Fourth Annual ACM Symposium on Theory of Computing , pp. 603-618, ACM."
+        },
+        {
+          "raw": "Sistla, A., and Clarke, E., 1985, \"The Complexity of Propositional Linear Temporal Logics,\" Journal of the ACM , 32(3): 733-749."
+        },
+        {
+          "raw": "Skolem, T., 1956, \"An ordered set of arithmetic functions representing the least \\(\\epsilon\\)-number,\" Det Konigelige Norske Videnskabers Selskab Fordhandlinger , 29: 54-59."
+        },
+        {
+          "raw": "Slot, C., and Emde Boas, P. van, 1988, \"The Problem of Space Invariance for Sequential Machines,\" Information and Computation , 77(2): 93-122."
+        },
+        {
+          "raw": "Stalnaker, R., 1991, \"The problem of logical omniscience, I,\" Synthese , 89(3): 425-440."
+        },
+        {
+          "raw": "---, 1999, \"The Problem of Logical Omniscience, II,\" in Context and Content , pp. 255-283, Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Statman, R., 1979, \"Intuitionistic Propositional Logic Is Polynomial-Space Complete,\" Theoretical Computer Science , 9(1): 67-72."
+        },
+        {
+          "raw": "Stearns, R., Hartmanis, J., and Lewis, P., 1965, \"Hierarchies of memory limited computations,\" in Sixth Annual Symposium on Switching Circuit Theory and Logical Design , pp. 179-190."
+        },
+        {
+          "raw": "Stockmeyer, L., 1977, \"The Polynomial-Time Hierarchy,\" Theoretical Computer Science , 3(1): 1-22."
+        },
+        {
+          "raw": "Stockmeyer, L., and Meyer, A., 1973, \"Word Problems Requiring Exponential Time (Preliminary Report),\" in Proceedings of the Fifth Annual ACM Symposium on Theory of Computing , pp. 1-9, ACM."
+        },
+        {
+          "raw": "Trakhtenbrot, B., 1984, \"A survey of Russian approaches to perebor (brute-force searches) algorithms,\" Annals of the History of Computing , 6(4): 384-400."
+        },
+        {
+          "raw": "Troelstra, A., and Schwichtenberg, H., 2000, Basic Proof Theory 2nd ed., Cambridge, England: Cambridge University Press."
+        },
+        {
+          "raw": "Turing, A., 1937, \"On computable numbers, with an application to the Entscheidungsproblem ,\" Proceedings of the London Mathematical Society , 2(1): 230."
+        },
+        {
+          "raw": "Tversky, A., and Kahneman, D., 1974, \"Judgment Under Uncertainty: Heuristics and Biases,\" Science , 185(4157): 1124-1131."
+        },
+        {
+          "raw": "Urquhart, A., 1984, \"The Undecidability of Entailment and Relevant Implication,\" The Journal of Symbolic Logic , 49(4): pp. 1059-1073."
+        },
+        {
+          "raw": "Van Bendegem, J., 2012, \"A Defense of Strict Finitism,\" Constructivist Foundations , 7(2): 141-149."
+        },
+        {
+          "raw": "Van Dantzig, D., 1955, \"Is \\(10^{10^{10}}\\) a finite number?\" Dialectica , 9(3-4): 273-277."
+        },
+        {
+          "raw": "Van Den Dries, L., and Levitz, H., 1984, \"On Skolem's exponential functions below \\(2^{2^x}\\),\" Transactions of the American Mathematical Society , 286(1): 339-349."
+        },
+        {
+          "raw": "Van Leeuwen, J., 1990, Handbook of theoretical computer science Vol. A, Amsterdam: Elsevier."
+        },
+        {
+          "raw": "Vardi, M., 1982, \"The Complexity of Relational Query Languages,\" in Proceedings of the Fourteenth Annual ACM Symposium on Theory of Computing , pp. 137-146."
+        },
+        {
+          "raw": "Vardi, M., and Stockmeyer, L., 1985, \"Improved Upper and Lower Bounds for Modal Logics of Programs,\" in Proceedings of the Seventeenth Annual ACM Symposium on Theory of Computing , pp. 240-251."
+        },
+        {
+          "raw": "Visser, Albert, 2009, \"The predicative Frege hierarchy,\" Annals of Pure and Applied Logic , 160(2): 129-153."
+        },
+        {
+          "raw": "Vit&aacute;nyi, P., 1986, \"Nonsequential Computation and Laws of Nature,\" in F. Makedon, K. Mehlhorn, T. Papatheodorou, & P. Spirakis (eds.), VLSI Algorithms and Architectures , Vol. 227, pp. 108-120, Berlin; Heidelberg: Springer."
+        },
+        {
+          "raw": "Vollmer, H., 1999, Introduction to Circuit Complexity: A Uniform Approach , New York: Springer-Verlag."
+        },
+        {
+          "raw": "Vop&#283;nka, P., 1979, Mathematics in the Alternative Set Theory , Leipzig: Teubner."
+        },
+        {
+          "raw": "Wagner, K., and Wechsung, G., 1986, Computational Complexity , Dordrecht: Reidel."
+        },
+        {
+          "raw": "Wang, H., 1958, \"Eighty years of foundational studies,\" Dialectica , 12: 466-497."
+        },
+        {
+          "raw": "Watrous, J., 2009, \"Quantum Computational Complexity,\" in Encyclopedia of Complexity and Systems Science , pp. 7174-7201, Berlin: Springer."
+        },
+        {
+          "raw": "---, 2006b, \" P , NP and mathematics-a computational complexity perspective,\" in Proceedings of the 2006 International Congress of Mathematicians , pp. 665-712."
+        },
+        {
+          "raw": "Williams, H., 1998, &Eacute;douard Lucas and Primality Testing , New York: Wiley."
+        },
+        {
+          "raw": "Wolper, P., 1986, \"Expressing Interesting Properties of Programs in Propositional Temporal Logic,\" in Proceedings of the 13th ACM SIGACT-SIGPLAN Symposium on Principles of Programming Languages , pp. 184-193."
+        },
+        {
+          "raw": "Wrathall, C., 1978, \"Rudimentary Predicates and Relative Computation,\" SIAM Journal on Computing , 7(2): 194-209."
+        },
+        {
+          "raw": "Yanofsky, N., and Mannucci, M., 2007, Quantum Computing for Computer Scientists , Cambridge, England: Cambridge University Press."
+        },
+        {
+          "raw": "Yessenin-Volpin, A., 1961, \"Le Programme Ultra-Intuitionniste Des Fondements Des Math&eacute;matiques.\" in Infinitistic Methods, Proceedings of the Symposium on the Foundations of Mathematics, pp. 201-223, Oxford: Pergamon Press."
+        },
+        {
+          "raw": "---, 1970, \"The Ultra-Intuitionistic Criticism and the Antitraditional Program for the Foundations of Mathematics,\" in A. Kino, J. Myhill, & R. Vesley (eds.), Intuitionism and Proof Theory , pp. 3-45, Amsterdam: North-Holland."
+        },
+        {
+          "raw": "Yablonski, S. 1959, \"On the impossibility of eliminating perebor in solving some problems of circuit theory,\" Dokl. A.N. SSSR 124: 44-47"
+        },
+        {
+          "raw": "Zambella, D., 1996, \"Notes on Polynomially Bounded Arithmetic,\" The Journal of Symbolic Logic , 61(3): 942-966."
+        }
+      ],
+      "publishedAt": "2015-07-26T14:00:00.000Z",
+      "revisedAt": "2016-07-19T14:00:00.000Z"
+    }
+  }
+}

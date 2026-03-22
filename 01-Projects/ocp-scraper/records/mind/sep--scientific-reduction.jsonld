@@ -1,0 +1,746 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/scientific-reduction",
+  "meta": {
+    "title": "Scientific Reduction",
+    "description": "The English verb 'reduce' derives from the Latin ' reducere ', whose literal meaning 'to bring back', informs its metaphorical use in philosophy. If one asserts that the mental reduces to the physical, that heat reduces to kinetic molecular energy, or that one theory reduces to another theory, one implies that in some relevant sense the reduced theory can be brought back to the reducing theory, the mental can be brought back to the physical, or heat can be brought back to molecular kinetic energy. The term 'reduction' as used in philosophy expresses the idea that if an entity \\(x\\) reduces to an entity \\(y\\) then \\(y\\) is in a sense prior to \\(x\\), or is more basic than \\(x\\), or is more fundamental than \\(x\\). This is a necessary, not a sufficient condition for reduction. One may accept that some physiological state is more fundamental than, or prior to some mental state, like a pain experience, but deny that this mental state is reducible. J.J.C. Smart provided an influential, tentative description of the reduction relation according to which an entity \\(x\\) reduces to an entity \\(y\\) only if \\(x\\) does not exist 'over and above' \\(y\\) (Smart 1959: 143). Smart frames the question as one of existence, an ontological question : What really exists? How many basic kinds of things exist? Approaching the issue from a different slant, the philosophical notion of 'reduction' can be cashed out in terms of an explanatory relation . If \\(x\\) reduces to \\(y\\), then it can in a relevantly strong sense be explained in terms of \\(y\\). Take an example from Ernest Nagel. Describing the reduction of headaches, he writes that when the detailed physical, chemical, and physiological conditions for the occurrence of headaches are ascertained &hellip; an explanation will have been found for the occurrence of headaches (Nagel 1961: 366) Alternatively, reductions can be conceived of as consisting in a specific form of assimilation --a description that can also be found in Nagel (1961): [In a reduction, a] set of distinctive traits of some subject matter is assimilated to what is patently a set of quite dissimilar traits. (Nagel 1961: 339f.) Reductivists are generally realists about the reduced phenomena and their views are in that respect conservative . They are committed to the reality of the reducing base and thus to the reality of whatever reduces to that base. If thoughts reduce to brain states and if these brain states are real, then so too are thoughts. Though conservative realism is the norm, some reductionists take a more anti-realist view. In such cases the reducing phenomena are taken to replace the prior phenomena which are in turn eliminated . The idea of mental illness as a type of psycho-neural disorder replaced the idea of demon possession. Demons and their voices have no role or reality in the new theory. The oxygen theory of combustion replaced the phlogiston theory and phlogiston was eliminated. Whether to count such eliminativist views as a variety of reduction is a matter of terminological choice. Replacement has sometimes been classed as a form of reduction (Kemeny & Oppenheim 1956), and it corresponds to an everyday sense in which theories are described as 'reductive'. There is clearly a reductive aspect to the eliminativist's claim that nothing is real other than the replacing phenomena, e.g., that when it comes to mental phenomena, there is nothing real other than brain states. Nonetheless most reductive views are realist, so 'reduction' hereafter should be understood in the conservative sense that entails the realism of the reduced phenomena unless otherwise noted. Though the term 'reduction' in this use may not correspond to everyday use nor to its use in scientific discourse, its technical meaning is not fixed by mere stipulation. 'Reduction' is a term of ordinary language, and, building upon its common metaphoric meaning philosophers use it to designate relations of particular philosophical importance in a number of closely related fields, especially in the philosophy of science, the philosophy of mind, and metaphysics. To make this idea more precise, it has been suggested, from a metaphysical perspective, that reduction is linked to constitution, identity, supervenience, or ground. From a philosophy of science perspective, ontic reduction talk has sometimes been regarded with suspicion. Here, reduction is often reconstructed as an inter-theory relation. Different accounts of scientific reduction have shaped debates about diverse topics including scientific unification, the relation between (folk-)psychology and neuroscience, the metaphysics of the mind, the status of biology vis &agrave; vis chemistry, and the relation between allegedly teleological explanations and causal explanations. Understanding the relevant notions is thus a prerequisite for understanding key issues in contemporary analytic philosophy. Moreover, the notion of reduction itself has become a target of recent philosophical discussion, especially in the philosophy of science and in metaphysics.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:43:43.061Z",
+    "dateModified": "2026-03-22T05:43:43.061Z",
+    "datePublished": "2014-04-07T14:00:00.000Z",
+    "keywords": [
+      "causal explanation science",
+      "dependence ontological",
+      "dualism",
+      "functionalism",
+      "fundamentality",
+      "grounding",
+      "metaphysical explanation",
+      "mind identity",
+      "multiple realizability",
+      "physics interrelate",
+      "reduction biology",
+      "scientific explanation 20th",
+      "scientific unity",
+      "supervenience"
+    ]
+  },
+  "problemSolved": {
+    "statement": "The English verb 'reduce' derives from the Latin ' reducere ', whose literal meaning 'to bring back', informs its metaphorical use in philosophy. If one asserts that the mental reduces to the physical, that heat reduces to kinetic molecular energy, or that one theory reduces to another theory, one implies that in some relevant sense the reduced theory can be brought back to the reducing theory, the mental can be brought back to the physical, or heat can be brought back to molecular kinetic energy. The term 'reduction' as used in philosophy expresses the idea that if an entity \\(x\\) reduces to an entity \\(y\\) then \\(y\\) is in a sense prior to \\(x\\), or is more basic than \\(x\\), or is more fundamental than \\(x\\). This is a necessary, not a sufficient condition for reduction. One may accept that some physiological state is more fundamental than, or prior to some mental state, like a pain experience, but deny that this mental state is reducible. J.J.C. Smart provided an influential, tentative description of the reduction relation according to which an entity \\(x\\) reduces to an entity \\(y\\) only if \\(x\\) does not exist 'over and above' \\(y\\) (Smart 1959: 143). Smart frames the question as one of existence, an ontological question : What really exists? How many basic kinds of things exist? Approaching the issue from a different slant, the philosophical notion of 'reduction' can be cashed out in terms of an explanatory relation . If \\(x\\) reduces to \\(y\\), then it can in a relevantly strong sense be explained in terms of \\(y\\). Take an example from Ernest Nagel. Describing the reduction of headaches, he writes that when the detailed physical, chemical, and physiological conditions for the occurrence of headaches are ascertained &hellip; an explanation will have been found for the occurrence of headaches (Nagel 1961: 366) Alternatively, reductions can be conceived of as consisting in a specific form of assimilation --a description that can also be found in Nagel (1961): [In a reduction, a] set of distinctive traits of some subject matter is assimilated to what is patently a set of quite dissimilar traits. (Nagel 1961: 339f.) Reductivists are generally realists about the reduced phenomena and their views are in that respect conservative . They are committed to the reality of the reducing base and thus to the reality of whatever reduces to that base. If thoughts reduce to brain states and if these brain states are real, then so too are thoughts. Though conservative realism is the norm, some reductionists take a more anti-realist view. In such cases the reducing phenomena are taken to replace the prior phenomena which are in turn eliminated . The idea of mental illness as a type of psycho-neural disorder replaced the idea of demon possession. Demons and their voices have no role or reality in the new theory. The oxygen theory of combustion replaced the phlogiston theory and phlogiston was eliminated. Whether to count such eliminativist views as a variety of reduction is a matter of terminological choice. Replacement has sometimes been classed as a form of reduction (Kemeny & Oppenheim 1956), and it corresponds to an everyday sense in which theories are described as 'reductive'. There is clearly a reductive aspect to the eliminativist's claim that nothing is real other than the replacing phenomena, e.g., that when it comes to mental phenomena, there is nothing real other than brain states. Nonetheless most reductive views are realist, so 'reduction' hereafter should be understood in the conservative sense that entails the realism of the reduced phenomena unless otherwise noted. Though the term 'reduction' in this use may not correspond to everyday use nor to its use in scientific discourse, its technical meaning is not fixed by mere stipulation. 'Reduction' is a term of ordinary language, and, building upon its common metaphoric meaning philosophers use it to designate relations of particular philosophical importance in a number of closely related fields, especially in the philosophy of science, the philosophy of mind, and metaphysics. To make this idea more precise, it has been suggested, from a metaphysical perspective, that reduction is linked to constitution, identity, supervenience, or ground. From a philosophy of science perspective, ontic reduction talk has sometimes been regarded with suspicion. Here, reduction is often reconstructed as an inter-theory relation. Different accounts of scientific reduction have shaped debates about diverse topics including scientific unification, the relation between (folk-)psychology and neuroscience, the metaphysics of the mind, the status of biology vis &agrave; vis chemistry, and the relation between allegedly teleological explanations and causal explanations. Understanding the relevant notions is thus a prerequisite for understanding key issues in contemporary analytic philosophy. Moreover, the notion of reduction itself has become a target of recent philosophical discussion, especially in the philosophy of science and in metaphysics.",
+    "context": "Opening section: 1. Historical background | Related entries: dependence-ontological, dualism, functionalism, fundamentality, grounding, metaphysical-explanation, mind-identity, multiple-realizability, physics-interrelate, reduction-biology, scientific-unity, scientific-explanation-20th, causal-explanation-science, supervenience",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "mind",
+    "metaphysics",
+    "logic",
+    "philosophy-of-science"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry scientific-reduction",
+        "uri": "https://plato.stanford.edu/entries/scientific-reduction/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "2 author(s), 14 related entries, bibliography size 155"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2014-04-07T14:00:00.000Z and revised 2025-04-03T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2025-04-03T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/scientific-reduction/",
+        "description": "SEP entry for scientific-reduction"
+      }
+    ],
+    "solutionApproach": "1. Historical background"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/dependence-ontological",
+      "ocp:sep/dualism",
+      "ocp:sep/functionalism",
+      "ocp:sep/fundamentality",
+      "ocp:sep/grounding",
+      "ocp:sep/metaphysical-explanation",
+      "ocp:sep/mind-identity",
+      "ocp:sep/multiple-realizability",
+      "ocp:sep/physics-interrelate",
+      "ocp:sep/reduction-biology",
+      "ocp:sep/scientific-unity",
+      "ocp:sep/scientific-explanation-20th",
+      "ocp:sep/causal-explanation-science",
+      "ocp:sep/supervenience"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "van Riel, Raphael",
+        "type": "human"
+      },
+      {
+        "name": "Van Gulick, Robert",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/scientific-reduction/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 116,
+      "validation_diversity": 0.59,
+      "context_breadth": 0.51,
+      "temporal_stability": 1,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.93
+    },
+    "confidence": "proven",
+    "authority": "high",
+    "status": "draft",
+    "trustScore": 0.629
+  },
+  "extensions": {
+    "sep": {
+      "slug": "scientific-reduction",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/scientific-reduction/",
+      "preamble": "The English verb 'reduce' derives from the Latin ' reducere ', whose literal meaning 'to bring back', informs its metaphorical use in philosophy. If one asserts that the mental reduces to the physical, that heat reduces to kinetic molecular energy, or that one theory reduces to another theory, one implies that in some relevant sense the reduced theory can be brought back to the reducing theory, the mental can be brought back to the physical, or heat can be brought back to molecular kinetic energy. The term 'reduction' as used in philosophy expresses the idea that if an entity \\(x\\) reduces to an entity \\(y\\) then \\(y\\) is in a sense prior to \\(x\\), or is more basic than \\(x\\), or is more fundamental than \\(x\\). This is a necessary, not a sufficient condition for reduction. One may accept that some physiological state is more fundamental than, or prior to some mental state, like a pain experience, but deny that this mental state is reducible. J.J.C. Smart provided an influential, tentative description of the reduction relation according to which an entity \\(x\\) reduces to an entity \\(y\\) only if \\(x\\) does not exist 'over and above' \\(y\\) (Smart 1959: 143). Smart frames the question as one of existence, an ontological question : What really exists? How many basic kinds of things exist? Approaching the issue from a different slant, the philosophical notion of 'reduction' can be cashed out in terms of an explanatory relation . If \\(x\\) reduces to \\(y\\), then it can in a relevantly strong sense be explained in terms of \\(y\\). Take an example from Ernest Nagel. Describing the reduction of headaches, he writes that when the detailed physical, chemical, and physiological conditions for the occurrence of headaches are ascertained &hellip; an explanation will have been found for the occurrence of headaches (Nagel 1961: 366) Alternatively, reductions can be conceived of as consisting in a specific form of assimilation --a description that can also be found in Nagel (1961): [In a reduction, a] set of distinctive traits of some subject matter is assimilated to what is patently a set of quite dissimilar traits. (Nagel 1961: 339f.) Reductivists are generally realists about the reduced phenomena and their views are in that respect conservative . They are committed to the reality of the reducing base and thus to the reality of whatever reduces to that base. If thoughts reduce to brain states and if these brain states are real, then so too are thoughts. Though conservative realism is the norm, some reductionists take a more anti-realist view. In such cases the reducing phenomena are taken to replace the prior phenomena which are in turn eliminated . The idea of mental illness as a type of psycho-neural disorder replaced the idea of demon possession. Demons and their voices have no role or reality in the new theory. The oxygen theory of combustion replaced the phlogiston theory and phlogiston was eliminated. Whether to count such eliminativist views as a variety of reduction is a matter of terminological choice. Replacement has sometimes been classed as a form of reduction (Kemeny & Oppenheim 1956), and it corresponds to an everyday sense in which theories are described as 'reductive'. There is clearly a reductive aspect to the eliminativist's claim that nothing is real other than the replacing phenomena, e.g., that when it comes to mental phenomena, there is nothing real other than brain states. Nonetheless most reductive views are realist, so 'reduction' hereafter should be understood in the conservative sense that entails the realism of the reduced phenomena unless otherwise noted. Though the term 'reduction' in this use may not correspond to everyday use nor to its use in scientific discourse, its technical meaning is not fixed by mere stipulation. 'Reduction' is a term of ordinary language, and, building upon its common metaphoric meaning philosophers use it to designate relations of particular philosophical importance in a number of closely related fields, especially in the philosophy of science, the philosophy of mind, and metaphysics. To make this idea more precise, it has been suggested, from a metaphysical perspective, that reduction is linked to constitution, identity, supervenience, or ground. From a philosophy of science perspective, ontic reduction talk has sometimes been regarded with suspicion. Here, reduction is often reconstructed as an inter-theory relation. Different accounts of scientific reduction have shaped debates about diverse topics including scientific unification, the relation between (folk-)psychology and neuroscience, the metaphysics of the mind, the status of biology vis &agrave; vis chemistry, and the relation between allegedly teleological explanations and causal explanations. Understanding the relevant notions is thus a prerequisite for understanding key issues in contemporary analytic philosophy. Moreover, the notion of reduction itself has become a target of recent philosophical discussion, especially in the philosophy of science and in metaphysics.",
+      "firstSectionTitle": "1. Historical background",
+      "firstSectionText": "Conflicts between reductionist views and their monist, dualist and pluralist metaphysical rivals have loomed large in the history of philosophy. The classical debate between materialism and mind-body dualism is the most familiar of many such disputes. The Cartesian dualist is committed to distinct types of substances (minds and bodies) each with its own essence. Different versions of dualism--interactive, epiphenomenal, parallelist - disagree about whether the two causally interact, but they all assert the ontological difference between the mind and the body. Neither reduces to the other. They are distinct, and both are real. In contrast to dualism, reductionism, thus construed, is a form of monism. Reductive physicalists are monists in that they accept only physical entities, properties or states. But not all monists are reductionists. Unlike reductionism, neutral monism does not privilege mind or matter. Most contemporary reductionists and eliminativists are committed to materialism or physicalism --the view that the physical or material provides the fundamental reductive base. However reductionism per se is ontologically neutral, it does not entail any specific ontological positions. Indeed reductionism could be true in a nonphysical world as long as this world had some base and everything in that world reduced to that base. Some historical reductivists have been resolutely opposed to materialism and physicalism. According to Bishop Berkeley's phenomenal idealism things like ordinary tables and chairs reduce to collections of ideas; he denied the existence of matter. On Berkeley's reductive view everything real reduces to minds and ideas. Idealism, as proposed by Fichte (cf. Lachs 1972) can also be given a reductive interpretation. On this view, the non-mental does not exist over and above the mental. The non-mental can be fully explained in terms of the mental (in the case of Fichte: the self), and it can be ultimately assimilated to the mental. According to this interpretation, everything is ultimately mental. Idealists are reductionists whose reductive base is mental. Idealism does not have many contemporary supporters, but there are current reductive theories that are logically independent of physicalism though consistent with it. Nominalism, for example, can be regarded as a reductive theory about kinds. The nominalist argues that the supposed reality of abstract objects--whether properties and kinds or numbers and sets--can be reduced to facts about concrete objects and our ways of talking about them. French structuralists can be seen as reductionists about subjects, or subjectivism; they suggest that the functioning of individual intentions and goals reduces to the inner workings of larger discourses. And perhaps, some forms of panpsychism, which take complex objects (or concepts of such objects) to reduce to fundamental objects (or concepts of such objects), are similar to idealism in that they postulate mental properties, objects or concepts to be fundamental (cf. Chalmers 2020 for a discussion of the relation between panpsychism and idealism). In sum, though most contemporary reductionists are also physicalists, there are many actual reductionist positions that are independent of materialism and physicalism. Such positions have played an important role in the history of philosophy, and some are actively supported today even as forms of scientific reduction. Modern debates about reduction have several sources. They go back to the early years of logical empiricism. Neurath (1931) and Carnap (1934) described reduction as a relation of translation, or at least of unification of all knowledge within one common language. This unificationist program was endorsed due to general semantic, epistemic and logical considerations. Philosophers of science have proposed several explications of the notion of reduction, often with an eye on broader conceptions not only of unification, but also of explanation and scientific change. Today, it is widely acknowledged that general scientific unification by reduction is not something we can hope for in the near future. Perhaps, though straightforward reductions are rare, reductionism might still play a role as a regulative ideal (Schaffner 1993); the notion of reduction can, on this view, be used to characterize one extreme of a spectrum of possible relations between different stages of scientific developments. It comes with a specific normative power: If a reduction can be effected, it should be effected. Materialist explications of and arguments for reduction differ. Philosophers of mind concerned with specific questions about whether the mental just is physiological or even physical in nature have asked what notions of reduction might be relevant and how they might apply to particular cases in psychology and neuroscience. They have tried to defend the view that ultimately, we will be in a position to explain mental facts in terms of physiological facts. Smart (1959) argued that we should endorse a form of reductionism about the mental: because of Ockham's razor. It seems to me that science is increasingly giving us a viewpoint whereby organisms are able to be seen as physicochemical mechanisms. (Smart 1959, 142) This view became highly influential in the second half of the 20th century, due to considerations about artificial intelligence and progress made in the neurosciences. Materialist critics of reductionism (non-reductive physicalists) have argued that the classifications, properties, or kinds of the mind-sciences (and perhaps other special sciences) cannot successfully be reduced, although all actual occurrences or tokens of these kinds are identical to material objects, or events involving material objects and processes only. The philosophy of science strand is the topic of section 2 , and the philosophy of mind debate is discussed in section 3 . More recently, philosophers of science have adopted a different approach entirely, discussing reduction and related topics - in particular: emergence - from a more science-oriented perspective. This difference in perspective raises subtle questions about topic identity, that is: whether the topic of reduction remains the same across these debates. We will return to a more science-oriented perspective and its implications in the final section 6 . Until then, we will neglect this difference even when presenting positions that have been inspired by a science-oriented perspective.",
+      "relatedEntries": [
+        "dependence-ontological",
+        "dualism",
+        "functionalism",
+        "fundamentality",
+        "grounding",
+        "metaphysical-explanation",
+        "mind-identity",
+        "multiple-realizability",
+        "physics-interrelate",
+        "reduction-biology",
+        "scientific-unity",
+        "scientific-explanation-20th",
+        "causal-explanation-science",
+        "supervenience"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "dependence-ontological"
+        },
+        {
+          "slug": "dualism"
+        },
+        {
+          "slug": "functionalism"
+        },
+        {
+          "slug": "fundamentality"
+        },
+        {
+          "slug": "grounding"
+        },
+        {
+          "slug": "metaphysical-explanation"
+        },
+        {
+          "slug": "mind-identity"
+        },
+        {
+          "slug": "multiple-realizability"
+        },
+        {
+          "slug": "physics-interrelate"
+        },
+        {
+          "slug": "reduction-biology"
+        },
+        {
+          "slug": "scientific-unity"
+        },
+        {
+          "slug": "scientific-explanation-20th"
+        },
+        {
+          "slug": "causal-explanation-science"
+        },
+        {
+          "slug": "supervenience"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 155,
+      "bibliography": [
+        {
+          "raw": "Achinstein, T.A., 1983, The Nature of Explanation , New York: Oxford University Press."
+        },
+        {
+          "raw": "Ager, T.A., J.L. Aronson, & R. Weingard, 1974, \"Are Bridge Laws Really Necessary?\", No&ucirc;s , 8(2): 119-134."
+        },
+        {
+          "raw": "Audi, P., 2012, \"A Clarification and Defense of the Notion of Grounding\", in F. Correia & B. Schnieder (eds.), Metaphysical Grounding: Understanding the Structure of Reality , Cambridge: Cambridge University Press, pp. 101-121."
+        },
+        {
+          "raw": "Balzer, W., 1984, \"On the Comparison of Classical and Special Relativistic Space-Time\", in W. Balzer, D.A. Pearce, & H.J. Schmidt (eds.), Reduction in Science: Structure, Examples, Philosophical Problems , Dordrecht: D. Reidel, pp. 331-357."
+        },
+        {
+          "raw": "Bechtel, W., 1994, \"Levels of descriptions and explanation in cognitive science\", Minds and Machines , 4: 1-25."
+        },
+        {
+          "raw": "---, 2007, \"Reducing psychology while maintaining its autonomy via mechanistic explanation\", in M. Schouten & H. Looren de Jong (eds.), The Matter of the Mind: Philosophical Essays on Psychology, Neuroscience and Reduction , Oxford: Basil Blackwell."
+        },
+        {
+          "raw": "Bechtel, W. & A. Abrahamsen, 2005, \"Explanation: A Mechanistic Alternative\", Studies in History and Philosophy of the Biological and Biomedical Sciences , 36: 421-441."
+        },
+        {
+          "raw": "Bechtel, W. & R. Richardson, 1993, \"Emergent phenomena and complex systems\", in J. Kim, A. Beckermann, & H. Flohr (eds.), Emergence or Reduction? Essays on the prospects of nonreductive physicalism , Berlin: de Gruyter, pp. 257-288."
+        },
+        {
+          "raw": "Beckermann, A., 2009, \"What is Property Physicalism?\", in S. Walter, B.P. McLaughlin, & A. Beckermann (eds.), The Oxford Handbook of Philosophy of Mind , Oxford: Oxford University Press, pp. 152-172."
+        },
+        {
+          "raw": "Bickle, J., 1992, \"Mental Anomaly and the New Mind-Brain Reductionism\", Philosophy of Science , 59: 217-230."
+        },
+        {
+          "raw": "---, 1998, Psychoneural Reduction: The New Wave , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 2003, Philosophy and Neuroscience: A Ruthlessly Reductive Account , Dordrecht: Kluwer."
+        },
+        {
+          "raw": "---, 2008, \"Real Reduction in Real Neuroscience: Metascience, Not Philosophy of Science (and Certainly Not Metaphysics!)\", in J. Hohwy & J. Kallestrup (eds.), Being Reduced , Oxford: Oxford University Press, pp. 34-51."
+        },
+        {
+          "raw": "Berkeley, G., 1948-1957, The Works of George Berkeley, Bishop of Cloyne , 9 volumes, A.A. Luce & T.E. Jessop (eds.), London: Thomas Nelson and Sons."
+        },
+        {
+          "raw": "Block, N., 2015, \"The Canberra Plan Neglects Ground\", in T. Horgan, M. Sabat&eacute;s, and D. Sosa (eds.), Qualia and Mental Causation in a Physical World: Themes from the Philosophy of Jaegwon Kim , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Block, N. & R. Stalnaker, 1999, \"Conceptual Analysis, Dualism, and the Explanatory Gap\", Philosophical Review , 108: 1-46."
+        },
+        {
+          "raw": "Brigandt, I. & A. Love, 2012, \"Reductionism in Biology\", The Stanford Encyclopedia of Philosophy (Summer 2012 Edition), E. N. Zalta (ed.), URL= https://plato.stanford.edu/archives/sum2012/entries/reduction-biology/ >."
+        },
+        {
+          "raw": "Butterfield, J., 2011a, \"Emergence, Reduction and Supervenience: A Varied Landscape\", Foundations of Physics , 41: 920-959."
+        },
+        {
+          "raw": "---, 2011b, \"Less is Different: Emergence and Reduction Reconciled\", Foundations of Physics , 41: 1065-1135."
+        },
+        {
+          "raw": "Cameron, R. P., 2008, \"Turtles All the Way Down: Regress, Priority and Fundamentality\", Philosophical Quarterly , 58(230): 1-14. doi:10.1111/j.1467-9213.2007.509.x"
+        },
+        {
+          "raw": "Carnap, R., 1934, The Unity of Science , London: Kegan Paul, Trench, Trubner, and Co."
+        },
+        {
+          "raw": "---, 1938 [1991], \"Logical Foundations of the Unity of Science\", in International Encyclopaedia of Unified Science (Volumes I), Chicago: University of Chicago Press; reprinted in R. Boyd, Ph. Gasper and J.D. Trout (eds.), The Philosophy of Science , Cambridge, MA: MIT Press, 393-404."
+        },
+        {
+          "raw": "Cartwright, N., 1999, The Dappled World: A Study of the Boundaries of Science , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Causey, R., 1972a, \"Attribute Identities in Microreductions\", Journal of Philosophy , 64: 407-422."
+        },
+        {
+          "raw": "---, 1972b, \"Uniform Microreductions\", Synthese , 25: 176-218."
+        },
+        {
+          "raw": "---, 1974, \"Unified Theories and Unified Science\", in R.S. Cohen et al. (eds.), PSA 1974 , Dordrecht: D. Reidel Publishing Co., 1976, pp. 3-13."
+        },
+        {
+          "raw": "---, 1977, Unity of Science , Dordrecht, NL: Reidel."
+        },
+        {
+          "raw": "Chalmers, D., 1996, The Conscious Mind , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2020, \"Idealism and the Mind-Body Problem\", The Routledge Handbook of Panpsychism , William Seager (ed.), New York: Routledge, 353-73."
+        },
+        {
+          "raw": "Churchland, Patricia, 1986, Neurophilosophy , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Churchland, Paul M., 1979, Scientific Realism and the Plasticity of Mind , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 1981, \"Eliminative Materialism and the Propositional Attitudes\", The Journal of Philosophy , 78: 67-90."
+        },
+        {
+          "raw": "---, 1985, \"Reduction, Qualia and the Direct Introspection of Brain States\", Journal of Philosophy , 82: 8-28."
+        },
+        {
+          "raw": "Clapp, L., 2001, \"Disjunctive properties and multiple realizations\", The Journal of Philosophy , 98: 111-136."
+        },
+        {
+          "raw": "Correia, F., 2008, \"Ontological Dependence\", Philosophy Compass , 3(5): 1013-1032,"
+        },
+        {
+          "raw": "Correia, F. & Schnieder, B. (eds.) 2012, Metaphysical Grounding: Understanding the Structure of Reality , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Craver, C., 2005, \"Beyond Reduction: Mechanisms, Multifield Integration and the Unity of Neuroscience\", Studies in the History and Philosophy of Biological and Biomedical Sciences , 36: 373-395."
+        },
+        {
+          "raw": "---, 2007, Explaining the Brain: Mechanisms and the Mosaic Unity of Neuroscience , Oxford: Oxford University Press/Clarendon Press."
+        },
+        {
+          "raw": "Cummins, R., 1975, \"Functional analysis\", Journal of Philosophy , 72: 741-765."
+        },
+        {
+          "raw": "---, 1983, The nature of psychological explanation , Cambridge, MA: Bradford/MIT Press."
+        },
+        {
+          "raw": "---, 2000, \"'How Does It Work?' versus 'What Are the Laws?': Two Conceptions of Psychological Explanation\", in F. Keil & R. Wilson (eds.), Explanation and Cognition , Cambridge, MA: MIT Press, pp. 117-144."
+        },
+        {
+          "raw": "Darden, L. & N. Maull, 1977, \"Interfield Theories\", Philosophy of Science , 44: 43-64."
+        },
+        {
+          "raw": "Dizadji-Bahmani, F., R. Frigg, & S. Hartmann, 2010, \"Who is Afraid of Nagelian Reduction?\", Erkenntnis 73(3): 393-412."
+        },
+        {
+          "raw": "Dupr&eacute;, J., 1993, The Disorder of Things. Metaphysical Foundations of the Disunity of Science , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "En&ccedil;, B., 1976, \"Identity Statements and Microreductions\", Journal of Philosophy , 73: 285-306."
+        },
+        {
+          "raw": "Endicott, R., 1998, \"Collapse of the New Wave\", The Journal of Philosophy , 95: 53-72."
+        },
+        {
+          "raw": "---, 2001, \"Post-Structuralist Angst - Critical Notice: John Bickle, Psychoneural Reduction: The New Wave\", Philosophy of Science , 68: 377-393."
+        },
+        {
+          "raw": "---, 2022, \"Functionalism with a third step: a larger and less reductive picture\", ProtoSociology , 39: 89-106."
+        },
+        {
+          "raw": "Esfeld, M.A. & C. Sachse, 2007, \"Theory reduction by means of functional sub-types\", International Studies in the Philosophy of Sciences , 21: 1-17."
+        },
+        {
+          "raw": "---, 2011, Conservative Reductionism , London: Routledge."
+        },
+        {
+          "raw": "Fazekas, P., 2009, \"Reconsidering the Role of Bridge-Laws in Intertheoretical Reductions\", Erkenntnis , 71: 303-22."
+        },
+        {
+          "raw": "Feigl, H., 1967, The \"Mental\" and the \"Physical\". The Essay and a Postscript , Minneapolis: University of Minnesota Press."
+        },
+        {
+          "raw": "Feyerabend, P.K., 1962, \"Explanation, Reduction, and Empiricism\", in G. Maxwell & H. Feigl (eds.), Scientific Explanation, Space and Time (Minnesota Studies in the Philosophy of Science: Volume III), Minneapolis: University of Minnesota Press, pp. 28-97. [ Feyerabend 1962 available online ]"
+        },
+        {
+          "raw": "---, 1966, \"The Structure of Science\", Review of The Structure of Science , by Ernest Nagel. British Journal for the Philosophy of Science , 17: 237-49."
+        },
+        {
+          "raw": "Fine, K., 2001, \"The Question of Realism\", Philosopher's Imprint , 1: 1-30."
+        },
+        {
+          "raw": "---, 2012 \"The Pure Logic of Ground\", Review of Symbolic Logic , 5: 1-25."
+        },
+        {
+          "raw": "Fodor, J.A., 1974, \"Special Sciences: Or the Disunity of Science as a Working Hypothesis\", Synthese , 28: 97-115."
+        },
+        {
+          "raw": "---, 1981, Representations: Philosophical Essays on the Foundations of Cognitive Science , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 1997, \"Special Sciences: Still Autonomous After All These Years\", Philosophical Perspectives (Volume 11: Mind, Causation, and World), No&ucirc;s (Supplement): 31: 149-163."
+        },
+        {
+          "raw": "Friedman, K., 1982, \"Is Intertheoretic Reduction Feasible?\", The British Journal for the Philosophy of Science , 33: 17-40."
+        },
+        {
+          "raw": "Gillett, C., 2016, Reduction and Emergence in Philosophy and Science , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Glennan, S., 1996, \"Mechanisms and the Nature of Causation\", Erkenntnis , 44: 49-71."
+        },
+        {
+          "raw": "Hempel, C.G. & P. Oppenheim, 1948, \"Studies in the Logic of Explanation\", Philosophy of Science , 15: 135-175."
+        },
+        {
+          "raw": "Hoering, W., 1984, \"Anomalies of reduction\", in W. Balzer, D.A. Pearce, & H.J. Schmidt (eds.), Reduction in Science. Structure, Examples, Philosophical Problems , Dordrecht: D. Reidel, pp. 33-50."
+        },
+        {
+          "raw": "Hooker, C., 1981, \"Towards a General Theory of Reduction. Part I: Historical and Scientific Setting. Part II: Identity in Reduction. Part III: Cross-Categorial Reduction\", Dialogue , 20: 38-59, 201-236, 496-529."
+        },
+        {
+          "raw": "Hoyningen-Huene, P., 1989, \"Epistemological Reductionism in Biology: Intuitions, Explications, and Objections\", in F. Wuketits & P. Hoyningen-Huene (eds.), Reductionism and Systems Theory in the Life Sciences: Some Problems and Perspectives , Dordrecht: Kluwer, pp. 29- 44."
+        },
+        {
+          "raw": "Hull, D.L., 1976, \"Informal Aspects of Theory Reduction\", in R.S. Cohen & A. Michalos (eds.), PSA 1974: Proceedings of the Biennial Meeting of the Philosophy of Science Association , Dordrecht: D. Reidel, pp. 653-70."
+        },
+        {
+          "raw": "Jackson, F., 2005, \"The Case for a Priori Physicalism\", in A. Beckermann & Ch. Nimtz (eds.), Philosophy--Science--Scientific Philosophy, Main Lectures and Colloquia of GAP 5, Fifth International Congress of the Society for Analytical Philosophy , Frankfurt/M: mentis, pp. 251-265."
+        },
+        {
+          "raw": "Jackson, F., R. Pargetter, & E. Prior, 1982, \"Functionalism and type-type identity theories\", Philosophical Studies , 42: 209-225."
+        },
+        {
+          "raw": "Jenkins, C.S., 2011: \"Is Metaphysical Dependence Irreflexive?\" The Monist , 94: 267-276."
+        },
+        {
+          "raw": "Kauffman, S.A., 1970, \"Articulation of parts explanation in biology and the rational search for them\", in PSA: Proceedings of the Biennial Meeting of the Philosophy of Science Association , 1970: 257-272."
+        },
+        {
+          "raw": "Kemeny, J.G. & P. Oppenheim, 1956, \"On Reduction\", Philosophical Studies , 7: 6-19."
+        },
+        {
+          "raw": "Kim, J., 1982, \"Psychophysical Supervenience\", Philosophical Studies , 41: 51-70."
+        },
+        {
+          "raw": "---, 1990, \"Supervenience as a Philosophical Concept\", Metaphilosophy , 21: 1-27; reprinted in Kim 1993: 131-160."
+        },
+        {
+          "raw": "---, 1992, \"Multiple Realization and the Metaphysics of Reduction\", Philosophy and Phenomenological Research , 52: 1-26."
+        },
+        {
+          "raw": "---, 1993, Supervenience and Mind. Selected Philosophical Essays , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 1998, Mind in a Physical World. An Essay on the Mind-Body Problem and Mental Causation , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "---, 2008, \"Reduction and Reductive Explanation. Is One Possible Without the Other?\", in J. Kallestrup & J. Hohwy (eds.), Being Reduced. New Essays on Reduction, Explanation and Causation , Oxford: Oxford University Press, pp. 93-114."
+        },
+        {
+          "raw": "Kitcher, P., 1989, \"Explanatory Unification and the Causal Structure of the World\", in: P. Kitcher and W. Salmon (eds.), Scientific Explanation , Minneapolis: University of Minnesota Press, pp. 410-505."
+        },
+        {
+          "raw": "Klein, C., 2009, \"Reduction without Reductionism: A Defence of Nagel on Connectability\", Philosophical Quarterly , 59: 39-53."
+        },
+        {
+          "raw": "Lachs, J. 1972, \"Fichte's Idealism\", American Philosophical Quarterly , 9(4); 311-318."
+        },
+        {
+          "raw": "Levine, J., 1993, \"On Leaving Out What It's Like\", in G. Humphreys & M. Davies (eds.), Consciousness: Psychological and Philosophical Essays , Oxford, UK: Blackwell, pp. 121-136."
+        },
+        {
+          "raw": "---, 1998, \"Conceivability and the Metaphysics of Mind\", No&ucirc;s , 32: 449-480."
+        },
+        {
+          "raw": "Lewis, D., 1969, \"Review of Art, Mind, and Religion\", The Journal of Philosophy , 66: 23-35."
+        },
+        {
+          "raw": "---, 1972, \"Psychophysical and Theoretical Identifications\", Australasian Journal of Philosophy , 3: 249-258."
+        },
+        {
+          "raw": "Loar, B., 1981, Mind and Meaning , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Lycan, W., 1987, Consciousness , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Machamer, P., L. Darden, & C.F. Craver, 2000, \"Thinking about Mechanisms\", Philosophy of Science , 67: 1-25."
+        },
+        {
+          "raw": "Marras, A., 2005, \"Consciousness and Reduction\", The British Journal for the Philosophy of Science , 56: 335-361."
+        },
+        {
+          "raw": "McCauley, R., 1981, \"Hypothetical Identities and Ontological Economizing: Comments on Causey's program for the Unity of Science\", Philosophy of Science , 48: 218-227."
+        },
+        {
+          "raw": "Melnyk, A., 2003, A Physicalist Manifesto: Thoroughly Modern Materialism , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Moulines, C.U., 1984, \"Ontological Reduction in the Natural Sciences\", in W. Balzer, D.A. Pearce, & H.J. Schmidt (eds.), Reduction in Science: Structure, Examples, Philosophical Problems , Dordrecht: D. Reidel, pp. 51-70."
+        },
+        {
+          "raw": "Mulligan, K., 2006, \"Ascent, Propositions and other Formal Objects\", Grazer Philosophische Studien , 72: 29-48."
+        },
+        {
+          "raw": "Nagel, E., 1935, \"The Logic of Reduction in the Sciences\", Erkenntnis , 5: 46-52."
+        },
+        {
+          "raw": "---, 1949, \"The Meaning of Reduction in the Natural Sciences\", in R.C. Stouffer (ed.), Science and Civilization , Madison: University of Wisconsin Press, pp. 99-135."
+        },
+        {
+          "raw": "---, 1961, The Structure of Science. Problems in the Logic of Explanation , New York: Harcourt, Brace & World, Inc."
+        },
+        {
+          "raw": "---, 1970, \"Issues in the Logic of Reductive Explanations\", in H.E. Kiefer & K.M. Munitz (eds.), Mind, Science, and History , Albany, NY: SUNY Press, pp. 117-137."
+        },
+        {
+          "raw": "Neurath, O., 1931, \"Physicalism: The Philosophy of the Vienna Circle\", The Monist , 41: 618-623. Reprinted in R.S. Cohen, & M. Neurath (eds.), Philosophical Papers 1913-1946 , Dordrecht: D. Reidel Publishing Company, 1983, pp. 48-51."
+        },
+        {
+          "raw": "Oppenheim, P. & H. Putnam, 1958, \"The Unity of Science as a Working Hypothesis\", in G. Maxwell, H. Feigl, & M. Scriven (eds.), Concepts, theories, and the mind-body problem , Minneapolis: Minnesota University Press, pp. 3-36."
+        },
+        {
+          "raw": "Palacios, P., 2023: \"Intertheoretic Reduction beyond the Nagelian model\", in C. Soto (ed.), Current Debates in Philosophy of Science: In Honor of Roberto Torretti , Cham: Springer."
+        },
+        {
+          "raw": "---, 2022, Emergence and Reduction in Physics , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Paul, L.A., 2012, \"Building the World From its Fundamental Constituents\", Philosophical Studies , 158(2): 221-256. doi:10.1007/s11098-012-9885-8."
+        },
+        {
+          "raw": "Place, U., 1956: \"Is Consciousness a Brain Process\", British Journal of Psychology , 47: 44-50."
+        },
+        {
+          "raw": "Putnam, H., 1965, \"How Not to Talk about Meaning,\" in Boston Studies in the Philosophy of Science , vol. 2, In Honor of Philip Frank: Proceedings of the Boston Colloquium for the Philosophy of Science , 1962-1964, R.S. Cohen & M.W. Wartofsky (eds), New York: Humanities Press, pp. 205-22."
+        },
+        {
+          "raw": "---, 1967, \"Psychological Predicates\", in D.D. Merrill & W.H. Capitan (eds.), Art, Mind, and Religion , Pittsburgh: University of Pittsburgh Press, pp. 37-48."
+        },
+        {
+          "raw": "---, 1970, \"On properties\", in Nicholas Rescher et al. (ed.), Essays in Honor of Carl G. Hempel , Dordrecht: D. Reidel; reprinted in Hilary Putnam, Philosophical Papers (Volume 1), Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 1978, Meaning and the Moral Sciences , London: Routledge and Kegan Paul."
+        },
+        {
+          "raw": "Richardson, R.C., 1979, \"Functionalism and Reductionism\", Philosophy of Science , 45: 533-558."
+        },
+        {
+          "raw": "Rosaler, J., 2019, \"Reduction as an a posteriori relation\", The British Journal for the Philosophy of Science , 70(1): 269-299."
+        },
+        {
+          "raw": "Rosen, G., 2010, \"Metaphysical Dependence: Grounding and Reduction\", in B. Hale & A. Hoffman (eds.), Modality: Metaphysics, Logic, and Epistemology , Oxford: Oxford University Press, pp. 109-136."
+        },
+        {
+          "raw": "Rosenberg, A., 2006, Darwinian reductionism: or, how to stop worrying and love molecular biology , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Sachse, C., 2007, Reductionism in the philosophy of science , Frankfurt/M: Ontos-Verlag."
+        },
+        {
+          "raw": "Salmon, W., 1989, Four Decades of Explanation , Minneapolis: University of Minnesota Press."
+        },
+        {
+          "raw": "Sarkar, S., 1992, \"Models of Reduction and Categories of Reductionism\", Synthese , 91: 167-194."
+        },
+        {
+          "raw": "---, 2015 \"Nagel on Reduction\", Studies in the History and Philosophy of Science (Part A), 53: 43-56."
+        },
+        {
+          "raw": "Scerri, E. & L. McIntyre, 1997, \"The Case for the Philosophy of Chemistry\", Synthese 111: 213-232."
+        },
+        {
+          "raw": "Schaffer, J., 2003, \"Is There a Fundamental Level?\" No&ucirc;s , 37(3): 498-517. doi:10.1111/1468-0068.00448"
+        },
+        {
+          "raw": "---, 2009, \"On What Grounds What\", in D. Manley, D. Chalmers & R. Wasserman (eds.), Metametaphysics: New Essays on the Foundations of Ontology , Oxford: Oxford University Press, pp. 347-383."
+        },
+        {
+          "raw": "---, 2012,\"Grounding, Transitivity and Contrastivity\", in F. Correia & B. Schnieder (eds.), Metaphysical Grounding: Understanding the Structure of Reality , Cambridge: Cambridge University Press, pp. 122-138."
+        },
+        {
+          "raw": "Schaffner, K., 1967, \"Approaches to Reduction\", Philosophy of Science , 34: 137-147."
+        },
+        {
+          "raw": "---, 1993, Discovery and Explanation in Biology and Medicine , Chicago: The University of Chicago Press."
+        },
+        {
+          "raw": "---, 2006, \"Reduction: the Cheshire Cat Problem and a Return to Roots\", Synthese , 151: 377-402."
+        },
+        {
+          "raw": "---, 2012, \"Ernest Nagel and Reduction\", Journal of Philosophy , CIX: 534-565."
+        },
+        {
+          "raw": "Scheibe, E., 1999, Die Reduktion Physikalischer Theorien: Inkommensurabilit&auml;t und Grenzfallreduktion (vol.II) , Berlin/Heidelberg/New York: Springer."
+        },
+        {
+          "raw": "Schnieder, B., 2011, \"A Logic for 'Because'\", Review of Symbolic Logic , 4: 445-465."
+        },
+        {
+          "raw": "Shoemaker, S., 2007, Physical Realization , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2002, \"Reduction, Emergence, and Explanation\", in M. Silberstein & P. Machamer (eds.), The Blackwell Guide to the Philosophy of Science , Oxford: Blackwell, pp. 80-107."
+        },
+        {
+          "raw": "Sklar, L., 1967, \"Types of inter-theoretic reduction\", British Journal for Philosophy of Science , 5: 464-482."
+        },
+        {
+          "raw": "Smart, J., 1959, \"Sensations and Brain Processes\", Philosophical Review , 68: 141-156."
+        },
+        {
+          "raw": "---, 1963, \"Materialism\", Journal of Philosophy , 60: 651-662."
+        },
+        {
+          "raw": "Sneed, J., 1971, The Logical Structure of Mathematical Physics , Dordrecht: D. Reidel."
+        },
+        {
+          "raw": "Sober, E., 1990, \"Putting the Function Back Into Functionalism\", in G. Lycan (ed.), Mind and Cognition: A Reader , Oxford: Blackwell, pp. 97-106."
+        },
+        {
+          "raw": "Stegm&uuml;ller, W., 1979, The Structuralist View of Theories. A Possible Analogue of the Bourbaki Programme in Physical Science , Berlin/Heidelberg/New York: Springer."
+        },
+        {
+          "raw": "---, 1986, Theorie und Erfahrung: Dritter Teilband. Die Entwicklung des neueren Strukturalismus seit 1973 , Vol. 3, Berlin/Heidelberg/New York: Springer."
+        },
+        {
+          "raw": "Suppes, P., 1967, \"What is a scientific theory\", in S. Morgenbesser (ed.), Philosophy of Science today , New York: Basic Books, pp. 55-67."
+        },
+        {
+          "raw": "Tahko, T., 2018, \"Fundamentality and Ontological Minimality\", in Bliss & Priest 2018b: 237-253"
+        },
+        {
+          "raw": "Torretti, R., 1990, Creative Understanding , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Trogdon, K., 2013, \"An Introduction to Grounding\", in M. Hoeltje, B. Schnieder & A. Steinberg (eds.), Varieties of Dependence: Ontological Dependence, Grounding, Supervenience, Response-Dependence , Munich: Philosophia Verlag, pp. 97-122."
+        },
+        {
+          "raw": "van Fraassen, B., 1980, The Scientific Image , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Van Gulick, R., 1980, \"Functionalism, information and content\", Nature and System , 2: 139-62. Reprinted in W. Lycan (ed.), Mind and Cognition , Oxford: Basil Blackwell, 1990: 107-129. Reprinted in J. Berm&uacute;dez & F. McPherson (eds.), Philosophical Psychology: Contemporary Readings , London: Routledge, 2006."
+        },
+        {
+          "raw": "---, 1992, \"Nonreductive Materialism and the Nature of Intertheoretical Constraint\", in A. Beckermann, H. Flohr, & J. Kim (eds.), Emergence or Reduction? Essays on the Prospects of Non-Reductive Physicalism , Berlin: de Gruyter, pp. 157-179."
+        },
+        {
+          "raw": "---, 1999, \"Conceiving beyond our means: the limits of thought experiments\", in S. Hameroff, A. Kazniak, and D. Chalmers (eds), Toward a Science of Consciousness III , Cambridge MA: MIT Press."
+        },
+        {
+          "raw": "---, 2001, \"Reduction, Emergence and Other Recent Options on the Mind/Body Problem: A Philosophic Overview\", Journal of Consciousness Studies , 8: 1-34."
+        },
+        {
+          "raw": "---, 2010, \"Non-Reductive Physicalism and the Theleo-Pragmatic Theory of Mind\", Philosophia Naturalis , 47-48(1-2): 103-124."
+        },
+        {
+          "raw": "van Riel, R., 2010, \"Identity-Based Reduction and Reductive Explanation\", Philosophia Naturalis , 47-48(1-2): 183-219."
+        },
+        {
+          "raw": "---, 2011, \"Nagelian Reduction Beyond the Nagel-Model\", Philosophy of Science , 78(3): 353-375."
+        },
+        {
+          "raw": "---, 2013, \"Identity, Asymmetry, and the Relevance of Meanings for Models of Reduction\", The British Journal for the Philosophy of Science , 64(4): 747-761 doi:10.1093/bjps/axs028"
+        },
+        {
+          "raw": "---, 2014, The Concept of Reduction , Dordrecht: Springer."
+        },
+        {
+          "raw": "Walter, S., 2006, \"Multiple Realizability and Reduction: A Defense of the Disjunctive Move\", Metaphysica , 9: 43-65."
+        },
+        {
+          "raw": "Wilson, J., 2014, \"No Work for a Theory of Grounding\", Inquiry: An Interdisciplinary Journal of Philosophy , 57: 535-579."
+        },
+        {
+          "raw": "Wimsatt, W., 1972, \"Complexity and Organization\", in K.F. Schaffner & R.S. Cohen (eds.), PSA 1972: Proceedings of the Biennial Meeting of the Philosophy of Science Association , Dordrecht: Reidel, pp. 67-86."
+        },
+        {
+          "raw": "---, 1976, \"Reductive Explanation: A Functional Account\", in G. Pearce, A.C. Michalos, C.A. Hooker, & R.S. Cohen (eds.), PSA: Proceedings of the Biennial Meeting of the Philosophy of Science Association , 1974: 671-710."
+        },
+        {
+          "raw": "---, 1994, \"The Ontology of Complex Systems: Levels of Organization, Perspectives and Causal Thickets\", Canadian Journal of Philosophy (Supplementary Volume), 20: 207-274."
+        },
+        {
+          "raw": "Winther, R.G., 2009, \"Schaffner's Model of Theory Reduction: Critique and Reconstruction\", Philosophy of Science , 76: 119-142."
+        },
+        {
+          "raw": "Yablo, S., 1999, \"Concepts and consciousness\", Philosophy and Phenomenological Research , 59: 455-464."
+        }
+      ],
+      "publishedAt": "2014-04-07T14:00:00.000Z",
+      "revisedAt": "2025-04-03T13:00:00.000Z"
+    }
+  }
+}

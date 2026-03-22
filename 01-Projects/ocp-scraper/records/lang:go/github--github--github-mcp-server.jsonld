@@ -1,0 +1,255 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/github--github-mcp-server",
+  "meta": {
+    "title": "GitHub MCP Server",
+    "description": "GitHub's official MCP Server",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:37:00.066Z",
+    "dateModified": "2026-03-22T05:37:00.066Z",
+    "keywords": [
+      "github",
+      "mcp",
+      "mcp-server"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "The GitHub MCP Server connects AI tools directly to GitHub's platform. This gives AI agents, assistants, and chatbots the ability to read repositories and code files, manage issues and PRs, analyze code, and automate workflows. All through natural language interactions.",
+    "context": "The GitHub MCP Server connects AI tools directly to GitHub's platform. This gives AI agents, assistants, and chatbots the ability to read repositories and code files, manage issues and PRs, analyze code, and automate workflows. All through natural language interactions.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "28131 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "3789 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T05:37:00.066Z"
+  },
+  "implementation": {
+    "type": "service",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/github/github-mcp-server",
+        "description": "GitHub repository: github/github-mcp-server"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "github.com/go-chi/chi/v5",
+        "version": "v5.2.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-chi/chi/v5"
+      },
+      {
+        "name": "github.com/go-viper/mapstructure/v2",
+        "version": "v2.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-viper/mapstructure/v2"
+      },
+      {
+        "name": "github.com/google/go-github/v82",
+        "version": "v82.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/go-github/v82"
+      },
+      {
+        "name": "github.com/google/jsonschema-go",
+        "version": "v0.4.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/jsonschema-go"
+      },
+      {
+        "name": "github.com/josephburnett/jd/v2",
+        "version": "v2.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/josephburnett/jd/v2"
+      },
+      {
+        "name": "github.com/lithammer/fuzzysearch",
+        "version": "v1.1.8",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/lithammer/fuzzysearch"
+      },
+      {
+        "name": "github.com/microcosm-cc/bluemonday",
+        "version": "v1.0.27",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/microcosm-cc/bluemonday"
+      },
+      {
+        "name": "github.com/modelcontextprotocol/go-sdk",
+        "version": "v1.3.1-0.20260220105450-b17143f71798",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/modelcontextprotocol/go-sdk"
+      },
+      {
+        "name": "github.com/muesli/cache2go",
+        "version": "v0.0.0-20221011235721-518229cd8021",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/muesli/cache2go"
+      },
+      {
+        "name": "github.com/shurcooL/githubv4",
+        "version": "v0.0.0-20240727222349-48295856cce7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/shurcooL/githubv4"
+      },
+      {
+        "name": "github.com/shurcooL/graphql",
+        "version": "v0.0.0-20230722043721-ed46e5a46466",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/shurcooL/graphql"
+      },
+      {
+        "name": "github.com/spf13/cobra",
+        "version": "v1.10.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/cobra"
+      },
+      {
+        "name": "github.com/spf13/pflag",
+        "version": "v1.0.10",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/pflag"
+      },
+      {
+        "name": "github.com/spf13/viper",
+        "version": "v1.21.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/viper"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.11.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      },
+      {
+        "name": "github.com/yosida95/uritemplate/v3",
+        "version": "v3.0.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/yosida95/uritemplate/v3"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "github",
+        "type": "human",
+        "uri": "https://github.com/github"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 35709,
+      "validation_diversity": 0.68,
+      "context_breadth": 0.42,
+      "temporal_stability": 0.92,
+      "test_coverage": 0.67,
+      "documentation_quality": 0.5
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.712
+  }
+}

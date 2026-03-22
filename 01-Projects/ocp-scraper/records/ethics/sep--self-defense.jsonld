@@ -1,0 +1,653 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/self-defense",
+  "meta": {
+    "title": "Self-Defense",
+    "description": "Killing and harming others are paradigmatic wrongs. And yet there is at least one intuitive exception to this prohibition--namely, killing or harming in self-defense, or in defense of others. Consider: Murder : Attacker is culpably trying to kill Victim because he is jealous of Victim's success. Victim can save his own life only by lethally throwing a grenade at Attacker. With the exception of strict pacifists, there is broad consensus in morality and law that defensive harm can be permissible in cases like this. However, as we shall see, it is surprisingly difficult to explain the grounds and limits of this permission.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:33:20.217Z",
+    "dateModified": "2026-03-22T05:33:20.217Z",
+    "datePublished": "2021-06-28T14:00:00.000Z",
+    "keywords": [
+      "causation law",
+      "doing allowing",
+      "double effect",
+      "ethics deontological",
+      "legal punishment",
+      "moral responsibility",
+      "paternalism",
+      "war"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Killing and harming others are paradigmatic wrongs. And yet there is at least one intuitive exception to this prohibition--namely, killing or harming in self-defense, or in defense of others. Consider: Murder : Attacker is culpably trying to kill Victim because he is jealous of Victim's success. Victim can save his own life only by lethally throwing a grenade at Attacker. With the exception of strict pacifists, there is broad consensus in morality and law that defensive harm can be permissible in cases like this. However, as we shall see, it is surprisingly difficult to explain the grounds and limits of this permission.",
+    "context": "Opening section: 1. Liability Justifications | Related entries: causation-law, doing-allowing, double-effect, ethics-deontological, moral-responsibility, paternalism, legal-punishment, war",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "ethics",
+    "metaphysics",
+    "logic",
+    "political-philosophy"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry self-defense",
+        "uri": "https://plato.stanford.edu/entries/self-defense/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "2 author(s), 8 related entries, bibliography size 136"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2021-06-28T14:00:00.000Z and revised 2021-06-28T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2021-06-28T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/self-defense/",
+        "description": "SEP entry for self-defense"
+      }
+    ],
+    "solutionApproach": "1. Liability Justifications"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/causation-law",
+      "ocp:sep/doing-allowing",
+      "ocp:sep/double-effect",
+      "ocp:sep/ethics-deontological",
+      "ocp:sep/moral-responsibility",
+      "ocp:sep/paternalism",
+      "ocp:sep/legal-punishment",
+      "ocp:sep/war"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Frowe, Helen",
+        "type": "human"
+      },
+      {
+        "name": "Parry, Jonathan",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/self-defense/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 93,
+      "validation_diversity": 0.53,
+      "context_breadth": 0.42,
+      "temporal_stability": 0.62,
+      "test_coverage": 0.78,
+      "documentation_quality": 0.9
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.539
+  },
+  "extensions": {
+    "sep": {
+      "slug": "self-defense",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/self-defense/",
+      "preamble": "Killing and harming others are paradigmatic wrongs. And yet there is at least one intuitive exception to this prohibition--namely, killing or harming in self-defense, or in defense of others. Consider: Murder : Attacker is culpably trying to kill Victim because he is jealous of Victim's success. Victim can save his own life only by lethally throwing a grenade at Attacker. With the exception of strict pacifists, there is broad consensus in morality and law that defensive harm can be permissible in cases like this. However, as we shall see, it is surprisingly difficult to explain the grounds and limits of this permission.",
+      "firstSectionTitle": "1. Liability Justifications",
+      "firstSectionText": "On a standard view, the moral wrongness of killing and injuring is grounded in persons' having stringent moral rights against such treatment. If defensive harming is at least sometimes morally permissible, it needs to be explained how the use of force can be consistent with these rights. Two broad types of justification are common in the literature. The first holds that a person's right against harm, though weighty, is not absolute and may be permissibly infringed if necessary to achieve a sufficiently important good. This is known as a lesser-evil justification. To illustrate, consider Trolley : Trolley : A runaway trolley is lethally heading towards five innocent people. A bystander, Engineer, can divert the trolley away from the five down a side-track. The diverted trolley will kill Workman. (Thomson 1985. Based on a case in Foot 1967) Although they are sensitive to outcomes, lesser-evil justifications are not straightforward consequentialist permissions. Crucially, the harmed party retains their right not to be killed, and this exerts significant normative force. It explains why the justification obtains only when there is a substantial disparity between the harm caused and good achieved, and not simply when harming is overall net beneficial. The persistence of the right also accounts for the widespread intuition that those who are harmed on lesser-evil grounds are owed compensation. More controversially, some argue that those subjected to lesser-evil harms are permitted to forcibly resist in defense of their rights (we return to this question in &sect;5 ) By contrast, in cases like Murder a second type of justification obtains. The permission to kill Attacker cannot be explained by his right's being overridden by the greater good, since killing him does not save more lives. Moreover, Attacker has no standing to complain about being harmed, nor a claim to compensation ex post (and he certainly does not have a permission to fight back.) Instead, the permission to kill Attacker is explained by his lack of a right not to be killed in the circumstances. This is known as a liability justification for harming. There is disagreement about precisely what it means to be liable to a harm. Some theorists understand liability as involving the forfeiture of one's usual rights. Others argue that our rights are already specified in such a way as to accommodate liability: Attacker does not forfeit his right when he attacks Victim; rather, he never had a right not to be killed under those circumstances (Draper 2016: 92). We might also think that liability is not limited to cases of forfeited rights, but rather identifies costs that we lack rights against bearing quite generally. A person's being liable to pay her taxes, for example, does not seem to depend on her having forfeited her usual right to keep all of her income (Tadros 2016a: 110-118). On this broader view, one is liable to a harm insofar as one has a duty to bear it, irrespective of how that duty arose (for additional discussions of the nature of liability, see Dempsey 2016; Renzo 2017; Lang 2014, 2017; Ferzan 2016). One of the key questions in the literature on defensive harm concerns the conditions under which a person is liable. It is helpful to distinguish two areas of debate. The first focuses on the relevance (if any) of facts about individuals' agency, such as their beliefs, evidence, intentions, culpability, and degree of moral responsibility. The second focuses on the relevance (if any) of causal relations between an individual and a threat of harm. In this sub-section, we will canvass some of the main positions on the agential conditions of liability. For ease of exposition, we will focus on causally straightforward cases, in which an individual poses a direct threat to others. We will consider the causation debate in &sect;1.3 . The culpability account holds that a person is liable for posing an unjust threat only if they are blameworthy (or are otherwise open to moral criticism) for doing so (Ferzan 2005, 2012). This account gets the intuitively correct result in Murder : Attacker is liable to defensive harm since he acts on the basis of a culpable intention to kill Victim. However, other cases yield more controversial results: Conscientious Driver : Driver, who always drives carefully and keeps her car well-maintained, faultlessly loses control of her car. She will hit and kill Victim unless Victim blows up the car, and Driver, with a grenade (McMahan 2005a: 393-394). (Driver is usually described as a (minimally) morally responsible threatener .) Ray Gun : Falling Person is helplessly blown by the wind down a well, at the bottom of which Victim is trapped. Falling Person will crush Victim to death unless Victim vaporizes her with his ray gun. If he does not vaporize her, Falling Person will survive her fall (Nozick 1974: 34). (Falling Person is typically described as an innocent or non-responsible threatener .) According to the culpability account, Driver is not liable because she acts permissibly given her evidence, despite the risk she poses, and so is not culpable. Falling Person is not liable because she is not acting, and thus cannot be acting culpably. Yet many find it implausibly restrictive that Victim may not kill in self-defense in these cases. On the assumption that killing one person in defense of another is permissible only if the former is liable, a more permissive account of liability seems called for (we consider challenges to this assumption in &sect;2 ). The causal account of liability is most closely associated with Judith Jarvis Thomson. It holds that there is a single explanation of the permissibility of harming both culpable threateners, such as Attacker, and innocent threateners, such as Falling Person--namely, that each will violate Victim's right not to be harmed unless Victim harms them (Thomson 1991). While most people grant that Attacker threatens to violate Victim's right, the claim that Falling Person also threatens to violate Victim's right is controversial. Thomson argues that this follows from the fact that Falling Person in Ray Gun lacks a right to kill Victim. According to Thomson, this entails that Falling Person is under a duty not to kill Victim. Falling Person will fail in this duty--and thereby violate Victim's right--just in case she does kill Victim. Since she is threatening to violate Victim's right not to be killed, Falling Person lacks a right not to be killed. Hence, Victim may kill Falling Person to save his own life, even granting that Falling Person is morally innocent. The causal account captures the intuitive permissibility of using defensive force against Falling Person in Ray Gun . It also permits killing morally responsible (but non-culpable) threateners such as Driver. But this broader scope of defensive permissions is secured, at least on Thomson's construction, by endorsing the controversial view that one need not exercise agency in order to violate a right. Merely causing Victim's death, when one lacks a right to do so, suffices. It also holds that one can be under a duty to refrain from doing something even if one is unable to refrain. Several commentators argue that Thomson's view entails, implausibly, that falling stones can violate rights (McMahan 1994: 276, 2005a: 388; Otsuka 1994: 80; Zohar 1993: 608; Rodin 2002: 85-87). Stones lack rights to kill. Thus (it seems) Thomson must think stones under a duty not to kill. If so, they too must fail in this duty, and therefore violate rights, when they kill. There seems to be at least some scope for Thomson to resist this move (Kamm 1992: 47). Those who believe that Falling Person has a right not to be killed must believe that, unlike a stone, Falling Person is a moral agent, assuming that only moral agents have rights. Restricted to moral agents, Thomson's view avoids labelling stones rights-violators. Moreover, it is plausible that one can fail in a duty without exercising one's agency, and also plausible that one can fail in a duty even if one is unable to fulfill that duty. For example, if I forget to meet you for lunch, despite promising to do so, I fail in my duty to keep my promise even if my forgetting is not a result of my agency, and I have no control over my forgetting. However, Thomson's reliance on causal roles makes it hard for her to prohibit harming at least some innocent people whom she herself considers it impermissible to harm. Plausibly, someone who maliciously blocks Victim's escape from a fire is liable to defensive harm. If Thomson grants this, she must also grant the permissibility of harming a person who innocently blocks one's escape (Frowe 2014a: 25-26). If the malicious obstructor plays the right kind of causal role to violate Victim's rights, and violating rights does not require agency, then both innocent and malicious obstructors must be liable to defensive harm. Yet Thomson, in line with most people's intuitions, explicitly rejects the permissibility of defensively harming innocent obstructors (Thomson 1991: 290). The responsibility account holds that a person is liable for posing an unjust threat only if they are morally responsible for doing so (McMahan 1994, 2005a; Otsuka 1994; 2016). Michael Otsuka suggests that a threatener is morally responsible if she is (1) of sound mind, (2) in control of her actions, and (3) aware of the dangerousness of what she is doing. (Otsuka 2016: 52) A person can be morally responsible for a threat without being culpable. For example, consider cases of mistaken defense: Mistake : Homeowner sees on the news that a dangerous murderer has escaped from the local prison. Victim, the murderer's innocent identical twin, breaks down in his car near Homeowner's house. Unaware of his brother's escape, Victim rings the doorbell, intending to ask to use the phone. Homeowner mistakes Victim for his murderous brother, and takes aim at Victim with her shotgun. (McMahan 2005a: 387) Victim has done nothing to forfeit his rights against being harmed: He poses no threat to Homeowner and lacks any intention to appear threatening. However, Homeowner's evidence is that Victim poses a lethal threat to her. Victim is epistemically indistinguishable from a genuine threatener. Given this, Homeowner is not culpable or blameworthy for the fact that she threatens Victim. Nonetheless, it seems plausible that Homeowner is morally responsible for an objectively unjust threat to Victim. Defenders of the responsibility account hold that this renders Homeowner liable to defensive harm, which explains why Victim (or a third-party) is permitted to defensively kill her. More controversially, Jeff McMahan argues that Driver in Conscientious Driver is morally responsible, though not culpable, for the threat she poses to Victim. Driver knows that driving is a risky activity and nonetheless chose to engage in it. Although driving is permissible relative to her evidence --she has no reason to think that she will lose control of the car--it is nonetheless impermissible relative to the facts , given that driving on this occasion will endanger Victim's life. McMahan argues that Driver's knowledge of the riskiness of driving, combined with the wrongness of this instance of driving, makes her liable to defensive harm. (McMahan 2005a: 394). Proponents of the responsibility account often ground these verdicts in a particular conception of distributive justice, according to which fairness requires individuals to bear the costs of their own risk-imposing activities (McMahan 2005a; Otsuka 1994; see also Montague 1981; Draper 2009, 2016; Gordon-Solmon 2018). On this view, we should treat agents like Driver and Homeowner as engaging in moral gambles. If a gamble turns out badly and the agent ends up threatening harm to an innocent person, it is fairer that the gambler suffer harm, rather than the victims, because they are responsible for the fact that a harm now has to be borne by somebody (even if taking the gamble was justified according to the agent's evidence). Hence, the agent who took the gamble forfeits her right not to be harmed for the sake of her victim. McMahan also argues that if two or more people bear responsibility for a threat of unjust harm, it is fair to make the most responsible person bear the full costs of preventing that harm, if defensive costs cannot be divided between them. On this view, liability has an important comparative dimension, and slight differences in responsibility can make a decisive difference to liability (McMahan 2011a: 551). In contrast to agents like Homeowner and Driver, Falling Person is not plausibly morally responsible for the threat she poses, since she has been helplessly blown down the well by the wind. Despite her obvious causal connection to the threat to Victim's life, the responsibility account holds that she is not liable to be defensively killed by Victim. Michael Otsuka supports this conclusion, arguing that since Falling Person is no more morally responsible for the fact that Victim's life is in danger than a bystander, she has the same moral status as an innocent bystander. If killing bystanders is impermissible, then killing Falling Person is also impermissible (Otsuka 1994). The responsibility account yields a similarly restrictive verdict in the case of individuals who threaten as a result of temporary delusions or mental illness. Insofar as threateners are not morally responsible for their actions, they retain their usual rights against being harmed, even if they will otherwise kill other innocent people. The responsibility account thus permits killing a narrower range of threateners than the causal account, but a broader range than the culpability account. We now turn to some worries for the responsibility account. One challenge is posed by cases such as Cell Phone : Cell Phone : Unbeknown to Caller, a terrorist has rigged Caller's cell phone such that when Caller next makes a phone call, he will detonate a bomb that will kill Victim. McMahan argues that Caller is not liable to be killed because, unlike Driver, Caller has no reason at all to suspect that using his activity will endanger an innocent person. Since Caller does not knowingly risk harming Victim he is not morally responsible for posing a threat. But, despite McMahan's suggestion that there is a difference in kind between cases like Driver and Caller, it seems more like a difference in degree (McMahan 2005a: 397). It is, clearly, not impossible that the phone is rigged. The difference is rather that, on Caller's evidence, the chances of its being rigged are tiny, whereas Driver's evidence suggests that she has a somewhat greater (but still very small) chance of harming an innocent person. McMahan's account of moral responsibility thus depends on the idea that small differences in foreseeability are very morally significant. Driver is liable to be killed to save Victim; Caller is not. More generally, some worry that the responsibility account rests on too thin a notion of moral responsibility. According to this objection, merely engaging in a foreseeably risky activity, and having bizarre bad luck, is not morally significant enough to defeat the weighty constraint on killing (Lazar 2009; see also, Burri 2020). This point seems especially forceful in cases in which a person's evidence is that she is required , rather than merely permitted, to use force (Christie 2015: 75; Tadros 2011: 232-234). To illustrate, consider a variation on Mistake in which Victim's twin is a notorious child-killer, and thus Homeowner's evidence is that Victim will murder her child unless she uses force. Parents are plausibly required to defend their children against prospective murderers. Of course, Victim is not, in fact, a child-killer. But in this case, it is not obvious that we can point to Homeowner's moral gamble to explain why it is fair that she forfeits her right not to be harmed. Gambles are typically optional: it is the fact that gamblers choose to engage in them, even though they could have done otherwise, that makes it fair for gamblers to bear the costs when their gambles turn out badly. By contrast, it seems unfair that Homeowner forfeits her rights by doing what her evidence tells her she is morally required to do (for a contrary view, see Quong 2020: 52-54). One might also dispute the particular verdicts that proponents of the responsibility account believe help to vindicate their account. The claim that Driver is liable has proved particularly contentious. One objection holds that there is no obvious asymmetry between Driver and Victim in terms of responsibility and fairness. Rather, both agents bear moral responsibility for the fact that a lethal cost must be borne by someone, assuming that Pedestrian could foresee that she might be threatened by an out-of-control car whilst walking by the road. Given this, why should we conclude that Driver ought to bear the full cost rather than, say, toss a coin? (Lazar 2009: 715; see also, Ferzan 2012: 676-683). A different objection holds that Driver is not liable because he does not in fact threaten Victim's rights. Jonathan Quong argues that we should distinguish between cases like Driver and Homeowner. Though each case involves an agent who acts permissibly relative to their evidence, there is an important moral difference between them. Quong argues that, given the overall benefits of permitting people to prudently drive, the practice of prudent driving is morally justified despite the risks it imposes. This assessment shapes our moral rights, such that we lack rights that other people refrain from prudent driving. Thus, the evidence-relative permissibility of Driver's action does not depend on her mistaken assumption that Victim lacks a right not to be endangered by her. By contrast, Quong argues, the evidence-relative permissibility of Homeowner's endangering Victim does depend on her mistaken assumption that Victim is liable to be killed. Homeowner treats Victim as if he lacks a right that he in fact possesses, and thereby fails to accord Victim the moral concern he is owned. Quong argues that it is this fact about how Homeowner treats Victim that grounds Homeowner's liability to defensive harm (Quong 2012: 68; 2020: Chs. 2&6). As these various challenges show, it is possible to accept the responsibility account's central tenet that liability is grounded in moral responsibility for unjust threats, while nonetheless disagreeing about the correct account of moral responsibility, whether liability to defensive harm is a matter of distributive fairness, and/or the scope of our moral rights against harm. One question is whether an agent can be liable only to harms that avert threats to which she causally contributes (the \"local view\"), or if her liability can instead extend to (at least some) harms that avert threats independently posed by others (the \"global\" view). The local view tracks the idea that individuals should only be liable for threats that they are (in some sense) responsible for. But there are cases that cast doubt on this intuition. Consider: Simultaneous Hit Men : Evelyn hires a hit man to kill Wayne. Fred has also hired a hit man to kill Wayne. Both hit men arrive at the same time. Because of where they are standing, Wayne's only means of defense is to use Fred as a shield against Evelyn's hit man (killing Fred) and Evelyn as a shield against Fred's hit man (killing Evelyn). (Adapted from Tadros 2011: 192.) The local view implies that Wayne's use of defensive forces is impermissible, because he lethally uses Evelyn and Fred to prevent threats that neither are causally responsible for. But this seems very counter-intuitive, supporting a more global view (Tadros 2011: Ch.12) However, an important challenge for the global view is whether it can impose a principled limit on the range of threats for which an individual can be liable. In Simultaneous Hit Men , the two threats are concurrent and qualitatively similar. But if we reject the idea that agents can be liable only to avert threats to which they causally contribute, then it is hard to see why agents are not potentially liable with respect to all manner of threats that are distant in space and time (McMahan 2005a: 763. For a defense of this implication, see &Oslash;verland 2011). Intuitively, it looks like we want a view that is global, but not too global, but a middle position might not be tenable. Sometimes an agent does not pose a direct threat themselves, but instead contributes to threats posed by others. To what extent is an agent's position in the causal chain morally relevant to liability, holding other factors equal? One possibility appeals to the idea that there is a morally significant difference between doing harm and enabling others to cause harm. Applied to the question of defensive harm, one suggestion is that liability (or at least liability to being killed ) attaches only to direct threateners and does not transmit \"down the chain\" to contributors (Rodin 2008: 50, n.14; Haque 2017: 71-72). But this view seems quite restrictive: Arrows : Andy is firing lethal poisoned arrows at Victim. Annabel makes the arrows and passes them to Annika. Annika dips the arrows in poison and passes them to Andy. Victim can only defend herself by lethally shooting Annika or Annabel (Based on a case in Frowe 2014a: 167) If liability (or liability to be killed ) only attaches to direct threateners, then it looks like Annika and Annabel are not liable and so Victim is not permitted to defend herself. But this looks counter-intuitive: Annika and Annabel seem to be morally on a par with Andy. To deal with this kind of case, defenders of the \"no transmission\" idea need to add an exemption. For example, they might stipulate that liability transmits only if the causally remote agents are (in some sense) working together with the causally proximate agents to pose a threat (Rodin 2011b: 449; Haque 2017: 66). However, it is a matter of ongoing debate whether these modifications are successful (see Frowe 2014a: 167-172; 2019, forthcoming; Haque 2019). A more modest view holds that both indirect and direct threateners can be similarly liable, but that the conditions of liability are more demanding in the case of indirect threateners. One defense of this asymmetry appeals to the idea that doing harm is harder to justify than enabling others to cause harm (Draper 2016: 143-144; Hosein 2019: 193-195). To illustrate, consider: Gun 1 : Bad Guy threatens to kill Victim unless Victim shoots and kills an innocent person. Gun 2 : Bad Guy's gun is locked in a safe. Bad Guy threatens to kill Victim unless Victim gives Bad Guy the code for the safe. If Victim gives up the code, Bad Guy will use the gun to kill an innocent person. (Based on a case in Draper 2016: 143). Many find it intuitive that it is impermissible for Victim to cause the death of an innocent person in the first case, but permissible in the second (or, at very least, that there is a significant moral difference between the two) (Draper 2016: 143-144). If we combine this putative asymmetry with the assumption that agents who are justified in causing harm are immune from liability (we discuss this assumption in &sect;5 ), then it follows that there are cases in which an indirect threatener is not liable for enabling a threat, though she would have been liable had she posed that threat directly. (Note that this asymmetry is compatible with the view that enablers and direct threateners who lack justifications are equally liable [Frowe 2019: 629]). Of course, this view depends on the plausibility of the underlying claim that there is a relevant moral asymmetry between doing and enabling harm (for discussion, see Rickless 2011; Hanna 2015; Tadros 2018; Barry & &Oslash;verland 2016: Chs.5-6; Hurka 2005: 47-50). If we think that the distinction between direct and indirect threateners marks a morally significant point in the causal chain, this raises the further question of whether we can also draw morally relevant distinction within the class of indirect threateners. For example, one possibility is that the liability of indirect threateners is sensitive to the degree of their remoteness from the threat (for discussion, see Tadros 2016a: 126-130). A further issue is whether the size or degree of an individual's causal contribution to a threat affects their liability. An affirmative answer seems quite intuitive. For example, several writers argue that civilian contributions to unjust wars are too causally insignificant to generate liability (or at least liability to defensive killing ) (Fabre 2009a: 60-61; McMahan 2009: 225) More precisely, the idea here is that (i) individuals can causally contribute to threats to a greater or lesser degree, and (ii) that the harm to which an individual is liable is sensitive to the degree of contribution. Much of the debate takes (i) for granted and focuses on the plausibility of (ii). Some authors have challenged (ii) by highlighting cases in which killing intuitively \"small-scale\" contributors is intuitively permissible (Frowe 2014a: 78, 175). For example: Bathtub : Bad Guy wants to drown Victim in the bathtub and offers a $20 reward for helpers. Bad Guy holds Victim down, while 110 Helpers each pour one liter of water into the bath. 100 liters are sufficient to kill Victim. (For a similar case, see Draper 2016: 82) Each Helper contributes a tiny portion of the water that kills Victim, and each Helper's contribution makes no difference to whether Victim is killed (the threat is overdetermined.) Yet it seems plausible that Victim is permitted to kill (at least) one Helper if doing so is necessary for escape. More recently, attention has turned to whether (i) is defensible. The challenge here is two-fold. First, we might doubt the coherence of the view that causal contributions come in degrees (Sartorio 2020). Second, even if we can identify a metaphysically respectable account of scalar causal contribution, it is not clear that it will possess the kind of moral significance capable of determining liability (Tadros 2018; Beebee & Kaiserman 2020). However, work on the metaphysics of scalar causation is undergoing something of a renaissance. So perhaps we should not be overly skeptical about the prospects for vindicating the intuition that moral responsibility and liability are (in some way) sensitive to causal thresholds (for discussion, see Kaiserman 2017, 2018; Beebee & Kaiserman 2020; Bernstein 2017). The preceding debates concern different ways in which causal connections might be relevant to liability. But, more radically, we might challenge the assumption that any causal connection to a threat is necessary for liability. Call this assumption the causal requirement . Here we set out three challenges to this requirement. The first is the case of futile attempters . Consider the following case: Firing Squad : Victim is a prisoner of war about to be wrongfully executed by a five riflemen execution squad. Only one of the rifles has real bullets, but none of the riflemen know which this is. Unbeknownst to them, Victim has a gun. Pre-emptively killing any of the riflemen will scare off the rest and allow Victim to escape. (Adapted from Christie 2020: 380) If causation is necessary for liability, only the rifleman with real bullets can be liable. But this seems counter-intuitive. If Victim can escape only by killing one of the causally ineffective riflemen, it seems hard to believe that this would be much harder to justify than killing the causally effective rifleman (Christie 2020: 382). This suggests that merely attempting to pose a threat may be enough for liability to harm, at least if the attempter is culpable (Tadros 2016a: 121-124). The second challenge to the causal requirement concerns omissions . Consider: River : Jimmy accidentally falls into the river and will soon drown. Sally can easily pull Jimmy to safety, but she refrains because she doesn't want to get her shoes wet. Jimmy can throw a rock at Sally, causing her to fall into the water and allowing Jimmy to drag himself to safety using Sally's body. If he does this, one of Sally's fingers will be eaten by piranhas. Let's assume that Sally is not initially required to rescue Jimmy at the cost of one of her fingers. However, some writers argue that Sally's failure to discharge her duty to rescue Jimmy at a low cost to herself renders her morally responsible for his current predicament. This responsibility renders her liable to bear considerably greater costs for Jimmy's sake (such as the loss of a finger), and Jimmy (as well as third-parties) may impose the costs of rescue on her (Barry & &Oslash;verland 2016: Ch.3; Barry 2018: 649; Tadros 2014a: 365. For the contrary view, that liability for failing to discharge a duty is restricted to the cost required by the initial duty, see Haque 2017: 70-71). A third family of challenges to the causal requirement focus on the moral significance of certain relationships between causal and non-causal agent s (Bazargan 2013; Tadros 2014b). One view holds that non-causal complicity can render an agent liable. Consider: Redundant Lookout : A gang carry out a bank robbery. One gang member--Bob--is tasked with acting as a lookout (though the gang would still have proceeded with the robbery in the absence of a lookout). However, Bob falls asleep immediately. During the robbery, the gang threaten to kill Witness. Passer-By spots the situation and realizes that the only way to save Witness is to shoot Bob, which will cause the robbers to flee. (Adapted from Bazargan 2013: 182-183) Though Bob does not causally contribute to the threat to Witness, he nonetheless seems a legitimate target of defense. As Saba Bazargan argues (drawing on Kutz 2000), Bob is morally connected to the threat to Witness because Bob shares participatory intentions with the other gang members: an intention to \"do his part\" in the cooperative act of robbing the bank. On this view, an agent can be liable to harm to prevent threats posed by other members of a cooperative project in which she intentionally participates, even if her participation is not causally efficacious (Bazargan 2013: 184.) One noteworthy implication of non-causal cases is that they can be appropriated in support of a version of the culpability account of liability (see &sect;1.2.1 ). As we saw, the chief complaint against the culpability account is that it is too restrictive, rendering too many threateners non-liable. This objection suggests that culpability is not necessary for liability. However, the cases of attempters, omitters, and conspirators might be taken as evidence that culpability can be sufficient for liability (for related discussion, see Ferzan 2005, 2012: 689-696; McMahan 2005b: 751-768).",
+      "relatedEntries": [
+        "causation-law",
+        "doing-allowing",
+        "double-effect",
+        "ethics-deontological",
+        "moral-responsibility",
+        "paternalism",
+        "legal-punishment",
+        "war"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "causation-law"
+        },
+        {
+          "slug": "doing-allowing"
+        },
+        {
+          "slug": "double-effect"
+        },
+        {
+          "slug": "ethics-deontological"
+        },
+        {
+          "slug": "moral-responsibility"
+        },
+        {
+          "slug": "paternalism"
+        },
+        {
+          "slug": "legal-punishment"
+        },
+        {
+          "slug": "war"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 136,
+      "bibliography": [
+        {
+          "raw": "Alexander, Larry, 2005, \"Lesser Evils: A Closer Look at the Paradigmatic Justification\", Law and Philosophy , 24(6): 611-643. doi:10.1007/s10982-005-0844-9"
+        },
+        {
+          "raw": "Altman, Andrew and Christopher Heath Wellman, 2008, \"From Humanitarian Intervention to Assassination: Human Rights and Political Violence\", Ethics , 118(2): 228-257. doi:10.1086/526543"
+        },
+        {
+          "raw": "Barry, Christian, 2018, \"Material Contribution, Responsibility, and Liability\", Journal of Moral Philosophy , 15(6): 637-650. doi:10.1163/17455243-20180001"
+        },
+        {
+          "raw": "Barry, Christian and Gerhard &Oslash;verland, 2016, Responding to Global Poverty: Harm, Responsibility, and Agency , Cambridge: Cambridge University Press. doi:10.1017/CBO9781139381758"
+        },
+        {
+          "raw": "Bazargan, Saba, 2013, \"Complicitous Liability in War\", Philosophical Studies , 165(1): 177-195. doi:10.1007/s11098-012-9927-2"
+        },
+        {
+          "raw": "---, 2014, \"Killing Minimally Responsible Threats\", Ethics , 125(1): 114-136. doi:10.1086/677023"
+        },
+        {
+          "raw": "Bazargan-Forward, Saba, 2018, \"Vesting Agent-Relative Permissions in a Proxy\", Law and Philosophy , 37(6): 671-695. doi:10.1007/s10982-018-9335-7"
+        },
+        {
+          "raw": "Bazargan, Saba and Samuel C. Rickless (eds.), 2017, The Ethics of War: Essays , New York: Oxford University Press. doi:10.1093/acprof:oso/9780199376148.001.0001"
+        },
+        {
+          "raw": "Beebee, Helen and Alex Kaiserman, 2020, \"Causal Contribution in War\", Journal of Applied Philosophy , 37(3): 364-377. doi:10.1111/japp.12341"
+        },
+        {
+          "raw": "Bernstein, Sara, 2017, \"Causal Proportions and Moral Responsibility\", Oxford Studies in Agency and Responsibility, Volume 4 , David Shoemaker (ed.), Oxford: Oxford University Press, 165-182."
+        },
+        {
+          "raw": "Bolinger, Ren&eacute;e Jorgensen, 2017, \"Reasonable Mistakes and Regulative Norms: Racial Bias in Defensive Harm\", Journal of Political Philosophy , 25(2): 196-217. doi:10.1111/jopp.12120"
+        },
+        {
+          "raw": "---, 2021, \"Demographic Statistics in Defensive Decisions\", Synthese , 198(5): 4833-4850. doi:10.1007/s11229-019-02372-w"
+        },
+        {
+          "raw": "---, forthcoming, \"The Moral Grounds of Reasonably Mistaken Self&#8208;Defense\", Philosophy and Phenomenological Research , first online: 29 June 2020. doi:10.1111/phpr.12705"
+        },
+        {
+          "raw": "Brownlee, Kimberley, 2019, \"Acting Defensively for the Sake of Our Attacker\", Journal of Moral Philosophy , 16(2): 105-130. doi:10.1163/17455243-20180011"
+        },
+        {
+          "raw": "Burri, Susanne, 2020, \"Morally Permissible Risk Imposition and Liability to Defensive Harm\", Law and Philosophy , 39(4): 381-408. doi:10.1007/s10982-019-09368-0"
+        },
+        {
+          "raw": "Christie, Lars, 2015, Harming One to Save Another: Liability and Lethal Luck , Oslo: University of Oslo Press."
+        },
+        {
+          "raw": "---, 2020, \"Causation and Liability to Defensive Harm\", Journal of Applied Philosophy , 37(3): 378-392. doi:10.1111/japp.12377"
+        },
+        {
+          "raw": "Coons, Christian and Michael Weber (eds.), 2016, The Ethics of Self-Defense , New York: Oxford University Press. doi:10.1093/acprof:oso/9780190206086.001.0001"
+        },
+        {
+          "raw": "Davis, Nancy A., 1984, \"Abortion and Self-Defense\", Philosophy & Public Affairs , 13(3): 175-207."
+        },
+        {
+          "raw": "Dempsey, Michelle Madden, 2016, \"Against Liability\", in Coons and Weber 2016: 211-232. doi:10.1093/acprof:oso/9780190206086.003.0011"
+        },
+        {
+          "raw": "Draper, Kai, 2009, \"Defense\", Philosophical Studies , 145(1): 69-88. doi:10.1007/s11098-009-9387-5"
+        },
+        {
+          "raw": "---, 2016, War and Individual Rights: The Foundations of Just War Theory , New York: Oxford University Press. doi:10.1093/acprof:oso/9780199388899.001.0001"
+        },
+        {
+          "raw": "Dworkin, Gerald, 2002 [2020], \"Paternalism\", The Stanford Encyclopedia of Philosophy (Fall 2020 Edition), Edward N. Zalta (ed.), URL= https://plato.stanford.edu/archives/fall2020/entries/paternalism/ >"
+        },
+        {
+          "raw": "Fabre, C&eacute;cile, 2007, \"Mandatory Rescue Killings\", Journal of Political Philosophy , 15(4): 363-384. doi:10.1111/j.1467-9760.2007.00282.x"
+        },
+        {
+          "raw": "---, 2009a, \"Guns, Food, and Liability to Attack in War\", Ethics , 120(1): 36-63. doi:10.1086/649218"
+        },
+        {
+          "raw": "---, 2009b, \"Permissible Rescue Killings\", Proceedings of the Aristotelian Society , 109(1pt2): 149-164. doi:10.1111/j.1467-9264.2009.00262.x"
+        },
+        {
+          "raw": "---, 2012, Cosmopolitan War , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199567164.001.0001"
+        },
+        {
+          "raw": "Ferzan, Kimberly Kessler, 2005, \"Justifying Self-Defense\", Law and Philosophy , 24(6): 711-749. doi:10.1007/s10982-005-0833-z"
+        },
+        {
+          "raw": "---, 2012, \"Culpable Aggression: The Basis for Moral Liability to Defensive Killing\", Ohio State Journal of Criminal Law , 9(2): 669-697."
+        },
+        {
+          "raw": "---, 2013, \"Provocateurs\", Criminal Law and Philosophy , 7(3): 597-622. doi:10.1007/s11572-013-9213-1"
+        },
+        {
+          "raw": "---, 2016, \"Forfeiture and Self-Defense\", in Coons and Weber 2016: 233-253. doi:10.1093/acprof:oso/9780190206086.003.0012"
+        },
+        {
+          "raw": "Finlay, Christopher J., 2010, \"Legitimacy and Non-State Political Violence\", Journal of Political Philosophy , 18(3): 287-312. doi:10.1111/j.1467-9760.2009.00345.x"
+        },
+        {
+          "raw": "Firth, Joanna Mary and Jonathan Quong, 2012, \"Necessity, Moral Liability, and Defensive Harm\", Law and Philosophy , 31(6): 673-701. doi:10.1007/s10982-012-9135-4"
+        },
+        {
+          "raw": "Foot, Philippa, 1967, \"The Problem of Abortion and the Doctrine of Double Effect\", The Oxford Review , 5: 5-15."
+        },
+        {
+          "raw": "Frowe, Helen, 2010, \"A Practical Account of Self-Defence\", Law and Philosophy , 29(3): 245-272. doi:10.1007/s10982-009-9062-1"
+        },
+        {
+          "raw": "---, 2014a, Defensive Killing , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199609857.001.0001"
+        },
+        {
+          "raw": "---, 2014b, \"Judging Armed Humanitarian Intervention\", in The Ethics of Armed Humanitarian Intervention , Don E. Scheid (ed.), Cambridge: Cambridge University Press, pp. 95-112."
+        },
+        {
+          "raw": "---, 2015, \"Review of The Ethics of Preventive War , edited by Deen K. Chatterjee\", Ethics , 126(1): 215-220. doi:10.1086/682178"
+        },
+        {
+          "raw": "---, 2018, \"Lesser-Evil Justifications for Harming: Why We're Required to Turn the Trolley\", The Philosophical Quarterly , 68(272): 460-480. doi:10.1093/pq/pqx065"
+        },
+        {
+          "raw": "---, 2019, \"Civilian Liability\", Ethics , 129(4): 625-650. doi:10.1086/702975"
+        },
+        {
+          "raw": "---, forthcoming, \"Intervening Agency and Civilian Liability\", Criminal Law and Philosophy , first online: 27 January 2021. doi:10.1007/s11572-020-09555-4"
+        },
+        {
+          "raw": "Frowe, Helen and Gerald Lang (eds.), 2014, How We Fight: Ethics in War , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199673438.001.0001"
+        },
+        {
+          "raw": "Gardner, John, 2011, \"What Is Tort Law For? Part 1. The Place of Corrective Justice\", Law and Philosophy , 30(1): 1-50. doi:10.1007/s10982-010-9086-6"
+        },
+        {
+          "raw": "---, 2013, \"Criminals in Uniform\", in The Constitution of the Criminal Law , R. A. Duff, Lindsay Farmer, S. E. Marshall, Massimo Renzo, and Victor Tadros (eds.), Oxford: Oxford University Press, 97-118. doi:10.1093/acprof:oso/9780199673872.003.0006"
+        },
+        {
+          "raw": "Gordon-Solmon, Kerah, 2017, \"Self-Defence Against Multiple Threats\", Journal of Moral Philosophy , 14(2): 125-133. doi:10.1163/17455243-46810044"
+        },
+        {
+          "raw": "---, 2018, \"What Makes a Person Liable to Defensive Harm?\", Philosophy and Phenomenological Research , 97(3): 543-567. doi:10.1111/phpr.12369"
+        },
+        {
+          "raw": "---, 2019, \"Not as a Means: Killing as a Side Effect in Self&#8208;defense\", Pacific Philosophical Quarterly , 100(4): 1074-1090. doi:10.1111/papq.12288"
+        },
+        {
+          "raw": "Hanna, Jason, 2015, \"Enabling Harm, Doing Harm, and Undoing One's Own Behavior\", Ethics , 126(1): 68-90. doi:10.1086/682190"
+        },
+        {
+          "raw": "Haque, Adil Ahmad, 2017, Law and Morality at War , New York: Oxford University Press. doi:10.1093/acprof:oso/9780199687398.001.0001"
+        },
+        {
+          "raw": "---, 2019, \"Reply to Parry and Viehoff, Finlay, Ferzan, and Frowe\", Ethics , 129(4): 651-683. doi: 10.1086/703126"
+        },
+        {
+          "raw": "Hecht, Lisa, 2019, \"Provocateurs and Their Rights to Self-Defence\", Criminal Law and Philosophy , 13(1): 165-185. doi:10.1007/s11572-018-9464-y"
+        },
+        {
+          "raw": "Hosein, Adam Omar, 2014, \"Are Justified Aggressors a Threat to the Rights Theory of Self-Defense?\", in Frowe and Lang 2014: 87-103. doi:10.1093/acprof:oso/9780199673438.003.0006"
+        },
+        {
+          "raw": "---, 2019, \"Spare No One? A Review Essay\", Criminal Law and Philosophy , 13(1): 187-203. doi:10.1007/s11572-018-9455-z"
+        },
+        {
+          "raw": "Hurka, Thomas, 2005, \"Proportionality in the Morality of War\", Philosophy & Public Affairs , 33(1): 34-66. doi:10.1111/j.1088-4963.2005.00024.x"
+        },
+        {
+          "raw": "Kagan, Shelly, 1989, The Limits of Morality , New York: Oxford University Press. doi:10.1093/0198239165.001.0001"
+        },
+        {
+          "raw": "Kaiserman, Alex, 2017, \"Partial Liability\", Legal Theory , 23(1): 1-26. doi:10.1017/S1352325217000040"
+        },
+        {
+          "raw": "---, 2018, \"'More of a Cause': Recent Work on Degrees of Causation and Responsibility\", Philosophy Compass , 13(7): e12498. doi:10.1111/phc3.12498"
+        },
+        {
+          "raw": "Kamm, F.M., 1992, Creation and Abortion: A Study in Moral and Legal Philosophy , New York: Oxford University Press."
+        },
+        {
+          "raw": "---, 2011, Ethics for Enemies: Terror, Torture, and War , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199608782.001.0001"
+        },
+        {
+          "raw": "---, 2014, \"Self-Defense, Resistance, and Suicide: The Taliban Women\", in Frowe and Lang 2014: 75-86. doi:10.1093/acprof:oso/9780199673438.003.0005"
+        },
+        {
+          "raw": "Kutz, Christopher, 2000, Complicity: Ethics and Law for a Collective Age , (Cambridge Studies in Philosophy and Law), Cambridge: Cambridge University Press. doi:10.1017/CBO9780511663758"
+        },
+        {
+          "raw": "Lang, Gerald, 2014, \"Why Not Forfeiture?\", in Frowe and Lang 2014: 38-61. doi:10.1093/acprof:oso/9780199673438.003.0003"
+        },
+        {
+          "raw": "---, 2017, \"What Follows from Defensive Non-Liability?\", Proceedings of the Aristotelian Society , 117(3): 231-252. doi:10.1093/arisoc/aox013"
+        },
+        {
+          "raw": "Lazar, Seth, 2009, \"Responsibility, Risk, and Killing in Self&#8208;Defense\", Ethics , 119(4): 699-728. doi:10.1086/605727"
+        },
+        {
+          "raw": "---, 2012, \"Necessity in Self-Defense and War\", Philosophy & Public Affairs , 40(1): 3-44. doi:10.1111/j.1088-4963.2012.01214.x"
+        },
+        {
+          "raw": "---, 2013, \"Associative Duties and the Ethics of Killing in War\", Journal of Practical Ethics , 1(1): 3-48."
+        },
+        {
+          "raw": "---, 2015, Sparing Civilians , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780198712985.001.0001"
+        },
+        {
+          "raw": "---, 2016, \"Authorization and The Morality of War\", Australasian Journal of Philosophy , 94(2): 211-226. doi:10.1080/00048402.2015.1050680"
+        },
+        {
+          "raw": "---, 2018, \"In Dubious Battle: Uncertainty and the Ethics of Killing\", Philosophical Studies , 175(4): 859-883. doi:10.1007/s11098-017-0896-3"
+        },
+        {
+          "raw": "---, 2019a, \"Deontological Decision Theory and the Grounds of Subjective Permissibility\", Oxford Studies in Normative Ethics, Volume 9 , Mark Timmons (ed.), Oxford: Oxford University Press, 204-222."
+        },
+        {
+          "raw": "---, 2019b, \"Risky Killing: How Risks Worsen Violations of Objective Rights\", Journal of Moral Philosophy , 16(1): 1-26. doi:10.1163/17455243-46810076"
+        },
+        {
+          "raw": "Levine, Susan, 1984, \"The Moral Permissibility of Killing a&#8239;'Material Aggressor' In Self-Defense\", Philosophical Studies , 45(1): 69-78. doi:10.1007/BF00372991"
+        },
+        {
+          "raw": "Mapel, David R., 2010, \"Moral Liability to Defensive Killing and Symmetrical Self-defense\", The Journal of Political Philosophy 18(2): 198-217. doi: 10.1111/j.1467-9760.2009.00340.x"
+        },
+        {
+          "raw": "McMahan, Jeff, 1994, \"Self-Defense and the Problem of the Innocent Attacker\", Ethics , 104(2): 252-290. doi:10.1086/293600"
+        },
+        {
+          "raw": "---, 2005a, \"The Basis of Moral Liability to Defensive Killing\", Philosophical Issues , 15: 386-405. doi:10.1111/j.1533-6077.2005.00073.x"
+        },
+        {
+          "raw": "---, 2005b, \"Self-Defense and Culpability\", Law and Philosophy , 24(6): 751-774. doi:10.1007/s10982-005-0841-z"
+        },
+        {
+          "raw": "---, 2008, \"Debate: Justification and Liability in War\", Journal of Political Philosophy , 16(2): 227-244. doi:10.1111/j.1467-9760.2007.00301.x"
+        },
+        {
+          "raw": "---, 2009, Killing in War , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199548668.001.0001"
+        },
+        {
+          "raw": "---, 2010, \"Humanitarian Intervention, Consent, and Proportionality\", in Ethics and Humanity: Themes from the Philosophy of Jonathan Glover , N. Ann Davis, Richard Keshen and Jeff McMahan (eds.), New York: Oxford University Press, 44-73."
+        },
+        {
+          "raw": "---, 2011a, \"Who Is Morally Liable to Be Killed in War\", Analysis , 71(3): 544-559. doi:10.1093/analys/anr072"
+        },
+        {
+          "raw": "---, 2011b, \"Duty, Obedience, Desert, and Proportionality in War: A Response\", Ethics , 122(1): 135-167. doi:10.1086/662631"
+        },
+        {
+          "raw": "---, 2013, \"The Conditions of Liability to Preventive Attack\", in The Ethics of Preventive War , Deen K. Chatterjee (ed.), Cambridge: Cambridge University Press, 121-144. doi:10.1017/CBO9781139023948.011"
+        },
+        {
+          "raw": "---, 2014a, \"Proportionality and Just Cause: A Comment on Kamm\", Journal of Moral Philosophy, 11(4): 428-453. doi: 10.1163/17455243-01104005"
+        },
+        {
+          "raw": "---, 2014b, \"Proportionate Defense\", Journal of Transnational Law and Policy , 23 :1-36."
+        },
+        {
+          "raw": "---, 2016, \"The Limits of Self-Defense\", in Coons and Weber 2016: 185-210. doi: 10.1007/s42048-020-00062-8"
+        },
+        {
+          "raw": "---, 2017, \"Liability, Proportionality, and the Number of Aggressors\", in Bazargan and Rickless 2017: 3-27. doi:10.1093/acprof:oso/9780199376148.003.0001"
+        },
+        {
+          "raw": "Montague, Phillip, 1981, \"Self-Defense and Choosing between Lives\", Philosophical Studies , 40(2): 207-219. doi:10.1007/BF00353792"
+        },
+        {
+          "raw": "Nozick, Robert, 1974, Anarchy, State and Utopia , New York: Basic Books."
+        },
+        {
+          "raw": "Oberman, Kieran, 2019, \"War and Poverty\", Philosophical Studies , 176(1): 197-217. doi:10.1007/s11098-017-1012-4"
+        },
+        {
+          "raw": "---, 2020, \"Killing and Rescuing: Why Necessity Must Be Rethought\", The Philosophical Review , 129(3): 433-463. doi:10.1215/00318108-8311248"
+        },
+        {
+          "raw": "Otsuka, Michael, 1994, \"Killing the Innocent in Self-Defense\", Philosophy & Public Affairs , 23(1): 74-94. doi:10.1111/j.1088-4963.1994.tb00005.x"
+        },
+        {
+          "raw": "---, 2016, \"The Moral-Responsibility Account of Liability to Defensive Killing\", in Coons and Weber 2016: 51-68. doi:10.1093/acprof:oso/9780190206086.003.0003"
+        },
+        {
+          "raw": "&Oslash;verland, Gerhard, 2011, \"Moral Taint: On the Transfer of the Implications of Moral Culpability\", Journal of Applied Philosophy , 28(2): 122-136. doi:10.1111/j.1468-5930.2011.00521.x"
+        },
+        {
+          "raw": "Parfit, Derek, 2017, On What Matters, Volume 3 , Oxford: Oxford University Press. doi:10.1093/oso/9780198778608.001.0001"
+        },
+        {
+          "raw": "Parry, Jonathan, 2017, \"Defensive Harm, Consent, and Intervention\", Philosophy & Public Affairs , 45(4): 356-396. doi:10.1111/papa.12099"
+        },
+        {
+          "raw": "Quong, Jonathan, 2009, \"Killing in Self&#8208;Defense\", Ethics , 119(3): 507-537. doi:10.1086/597595"
+        },
+        {
+          "raw": "---, 2012, \"Liability to Defensive Harm\", Philosophy & Public Affairs , 40(1): 45-77. doi:10.1111/j.1088-4963.2012.01217.x"
+        },
+        {
+          "raw": "---, 2016, \"Agent-Relative Prerogatives to Do Harm\", Criminal Law and Philosophy , 10(4): 815-829. doi:10.1007/s11572-014-9345-y"
+        },
+        {
+          "raw": "---, 2020, The Morality of Defensive Force , New York: Oxford University Press. doi:10.1093/oso/9780198851103.001.0001"
+        },
+        {
+          "raw": "Renzo, Massimo, 2017, \"Rights Forfeiture and Liability to Harm\", Journal of Political Philosophy , 25(3): 324-342. doi:10.1111/jopp.12116"
+        },
+        {
+          "raw": "Rickless, Samuel C., 2011, \"The Moral Status of Enabling Harm\", Pacific Philosophical Quarterly , 92(1): 66-86. doi:10.1111/j.1468-0114.2010.01385.x"
+        },
+        {
+          "raw": "Rodin, David, 2002, War and Self-Defense , New York: Oxford University Press. doi:10.1093/0199257744.001.0001"
+        },
+        {
+          "raw": "---, 2008, \"The Moral Inequality of Soldiers: Why Jus in Bello Asymmetry is Half Right,\" in Just and Unjust Warriors: The Moral and Legal Status of Soldiers , David Rodin and Henry Shue (eds.), New York: Oxford University Press, 44-68."
+        },
+        {
+          "raw": "---, 2011a, \"Justifying Harm\", Ethics , 122(1): 74-110. doi:10.1086/662295"
+        },
+        {
+          "raw": "---, 2011b, \"Morality and Law in War\", in The Changing Character of War , Hew Strachan and Sibylle Scheipers (eds.), Oxford: Oxford University Press, 446-463. doi:10.1093/acprof:osobl/9780199596737.003.0025"
+        },
+        {
+          "raw": "---, 2017, \"The Lesser Evil Obligation\", in Bazargan and Rickless 2017: 28-45. doi:10.1093/acprof:oso/9780199376148.003.0002"
+        },
+        {
+          "raw": "Sartorio, Carolina, 2020, \"More of a Cause?\", Journal of Applied Philosophy , 37(3): 346-363. doi:10.1111/japp.12370"
+        },
+        {
+          "raw": "Scheffler, Samuel, 1982, The Rejection of Consequentialism: A Philosophical Investigation of the Considerations Underlying Rival Moral Conceptions , Oxford: Oxford University Press. doi:10.1093/0198235119.001.0001"
+        },
+        {
+          "raw": "Schwartz, Daniel, 2020, \"Necessity Historically Considered\", Journal of Moral Philosophy , 17(6): 591-605. doi:10.1163/17455243-20203185"
+        },
+        {
+          "raw": "Steinhoff, Uwe, 2008, \"Debate: Jeff McMahan on the Moral Inequality of Combatants\", Journal of Political Philosophy , 16(2): 220-226. doi:10.1111/j.1467-9760.2007.00304.x"
+        },
+        {
+          "raw": "---, 2019, Self-Defense, Necessity, and Punishment: A Philosophical Analysis , New York: Routledge. doi:10.4324/9780367814441"
+        },
+        {
+          "raw": "Tadros, Victor, 2011, The Ends of Harm: The Moral Foundations of Criminal Law , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199554423.001.0001"
+        },
+        {
+          "raw": "---, 2014a, \"Resource Wars\", Law and Philosophy , 33(3): 361-389. doi:10.1007/s10982-013-9193-2"
+        },
+        {
+          "raw": "---, 2014b, \"Orwell's Battle with Brittain: Vicarious Liability for Unjust Aggression\", Philosophy & Public Affairs , 42(1): 42-77. doi:10.1111/papa.12025"
+        },
+        {
+          "raw": "---, 2016a, \"Causation, Culpability, and Liability\", in Coons and Weber 2016: 110-130. doi:10.1093/acprof:oso/9780190206086.003.0006"
+        },
+        {
+          "raw": "---, 2016b, \"Unjust Wars Worth Fighting For\", Journal of Practical Ethics , 4(1): 52-78. [ Tadros 2016b available online ]"
+        },
+        {
+          "raw": "---, 2016c, Wrongs and Crimes , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199571376.001.0001"
+        },
+        {
+          "raw": "---, 2018, \"Causal Contributions and Liability\", Ethics , 128(2): 402-431. doi:10.1086/694275"
+        },
+        {
+          "raw": "Thomson, Judith Jarvis, 1985, \"The Trolley Problem\", Yale Law Journal , 94(6): 1395-1415."
+        },
+        {
+          "raw": "---, 1991, \"Self-Defense\", Philosophy & Public Affairs , 20(4): 283-310."
+        },
+        {
+          "raw": "Tomlin, Patrick, 2019, \"Subjective Proportionality\", Ethics , 129(2): 254-283. doi:10.1086/700031"
+        },
+        {
+          "raw": "---, 2020, \"Distributive Justice for Aggressors\", Law and Philosophy , 39(4): 351-379. doi:10.1007/s10982-019-09373-3"
+        },
+        {
+          "raw": "Uniacke, Suzanne, 2011, \"Proportionality and Self-Defense\", Law and Philosophy , 30(3): 253-272. doi:10.1007/s10982-010-9090-x"
+        },
+        {
+          "raw": "van der Vossen, Bas, 2016, \"Uncertain Rights against Defense\", Social Philosophy and Policy , 32(2): 129-145. doi:10.1017/S0265052516000133"
+        },
+        {
+          "raw": "Waldron, Jeremy, 2000, \"Self-Defense: Agent-Neutral and Agent-Relative Accounts\", California Law Review , 88(3): 711-749. doi:10.2307/3481190"
+        },
+        {
+          "raw": "Walen, Alec and David Wasserman, 2012, \"Agents, Impartiality, and the Priority of Claims over Duties: Diagnosing Why Thomson Still Gets the Trolley Problem Wrong by Appeal to the 'Mechanics of Claims'\", Journal of Moral Philosophy , 9(4): 545-571. doi:10.1163/174552412X628959"
+        },
+        {
+          "raw": "Zohar, Noam J., 1993, \"Collective War and Individualistic Ethics: Against the Conscription of 'Self-Defense'\", Political Theory , 21(4): 606-622. doi:10.1177/0090591793021004003"
+        },
+        {
+          "raw": "Arneson, Richard J., 2018, \"Self-Defense and Culpability: Fault Forfeits First\", San Diego Law Review , 55(2): 231-264."
+        },
+        {
+          "raw": "Benbaji, Yitzhak, 2005, \"Culpable Bystanders, Innocent Threats and the Ethics of Self-Defense\", Canadian Journal of Philosophy , 35(4): 585-622. doi:10.1080/00455091.2005.10716603"
+        },
+        {
+          "raw": "Bowen, Joseph, 2016, \"Necessity and Liability: On an Honour-Based Justification for Defensive Harming\", The Journal of Practical Ethics , 4(2): 79-93. [ Bowen 2016 available online ]"
+        },
+        {
+          "raw": "Burri, Susanne, 2015, \"The Toss-Up Between a Profiting, Innocent Threat and His Victim\", Journal of Political Philosophy , 23(2): 146-165. doi:10.1111/jopp.12041"
+        },
+        {
+          "raw": "Doggett, Tyler, 2011, \"Recent Work on the Ethics of Self-Defense\", Philosophy Compass , 6(4): 220-233. doi:10.1111/j.1747-9991.2010.00382.x"
+        },
+        {
+          "raw": "---, 2018, \"Killing Innocent People\", No&ucirc;s , 52(3): 645-666. doi:10.1111/nous.12188"
+        },
+        {
+          "raw": "Ferzan, Kimberly Kessler, 2017, \"The Bluff: The Power of Insincere Actions\", Legal Theory , 23(3): 168-202. doi:10.1017/S135232521700026X"
+        },
+        {
+          "raw": "Gardner, John and Fran&ccedil;ois Tanguay-Renaud, 2011, \"Desert and Avoidability in Self-Defense\", Ethics , 122(1): 111-134. doi:10.1086/662294"
+        },
+        {
+          "raw": "Statman, Daniel, 2008, \"On the Success Condition for Legitimate Self&#8208;Defense\", Ethics , 118(4): 659-686. doi:10.1086/589531"
+        }
+      ],
+      "publishedAt": "2021-06-28T14:00:00.000Z",
+      "revisedAt": "2021-06-28T14:00:00.000Z"
+    }
+  }
+}

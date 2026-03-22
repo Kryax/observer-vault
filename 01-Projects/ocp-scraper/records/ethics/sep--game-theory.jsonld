@@ -1,0 +1,785 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/game-theory",
+  "meta": {
+    "title": "Game Theory",
+    "description": "Game theory is the study of the ways in which interacting choices of economic agents produce outcomes with respect to the preferences (or utilities ) of those agents, where the outcomes in question might have been intended by none of the agents. The meaning of this statement will not be clear to the non-expert until each of the italicized words and phrases has been explained and featured in some examples. Doing this will be the main business of this article. First, however, we provide some historical and philosophical context in order to motivate the reader for the technical work ahead.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:17:11.476Z",
+    "dateModified": "2026-03-22T05:17:11.476Z",
+    "datePublished": "1997-01-24T13:00:00.000Z",
+    "keywords": [
+      "economics",
+      "game ethics",
+      "game evolutionary",
+      "logic games",
+      "preferences",
+      "prisoner dilemma"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Game theory is the study of the ways in which interacting choices of economic agents produce outcomes with respect to the preferences (or utilities ) of those agents, where the outcomes in question might have been intended by none of the agents. The meaning of this statement will not be clear to the non-expert until each of the italicized words and phrases has been explained and featured in some examples. Doing this will be the main business of this article. First, however, we provide some historical and philosophical context in order to motivate the reader for the technical work ahead.",
+    "context": "Opening section: 1. Philosophical and Historical Motivation | Related entries: economics, game-ethics, game-evolutionary, logic-games, preferences, prisoner-dilemma",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "ethics",
+    "logic"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry game-theory",
+        "uri": "https://plato.stanford.edu/entries/game-theory/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 6 related entries, bibliography size 186"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 1997-01-24T13:00:00.000Z and revised 2023-09-02T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2023-09-02T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/game-theory/",
+        "description": "SEP entry for game-theory"
+      }
+    ],
+    "solutionApproach": "1. Philosophical and Historical Motivation"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/economics",
+      "ocp:sep/game-ethics",
+      "ocp:sep/game-evolutionary",
+      "ocp:sep/logic-games",
+      "ocp:sep/preferences",
+      "ocp:sep/prisoner-dilemma"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Ross, Don",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/game-theory/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 121,
+      "validation_diversity": 0.39,
+      "context_breadth": 0.37,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.89
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.517
+  },
+  "extensions": {
+    "sep": {
+      "slug": "game-theory",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/game-theory/",
+      "preamble": "Game theory is the study of the ways in which interacting choices of economic agents produce outcomes with respect to the preferences (or utilities ) of those agents, where the outcomes in question might have been intended by none of the agents. The meaning of this statement will not be clear to the non-expert until each of the italicized words and phrases has been explained and featured in some examples. Doing this will be the main business of this article. First, however, we provide some historical and philosophical context in order to motivate the reader for the technical work ahead.",
+      "firstSectionTitle": "1. Philosophical and Historical Motivation",
+      "firstSectionText": "Game theory in the form known to economists, social scientists, and biologists, was given its first general mathematical formulation by John von Neumann and Oskar Morgenstern ( 1944 ). For reasons to be discussed later, limitations in their formal framework initially made the theory applicable only under special and limited conditions. This situation has dramatically changed, in ways we will examine as we go along, over the past seven decades, as the framework has been deepened and generalized. Refinements are still being made, and we will review a few outstanding problems that lie along the advancing front edge of these developments towards the end of the article. However, since at least the late 1970s it has been possible to say with confidence that game theory is the most important and useful tool in the analyst's kit whenever she confronts situations in which what counts as one agent's best action (for her) depends on expectations about what one or more other agents will do, and what counts as their best actions (for them) similarly depend on expectations about her. Despite the fact that game theory has been rendered mathematically and logically systematic only since 1944, game-theoretic insights can be found among commentators going back to ancient times. For example, in two of Plato's texts, the Laches and the Symposium , Socrates recalls an episode from the Battle of Delium that some commentators have interpreted (probably anachronistically) as involving the following situation. Consider a soldier at the front, waiting with his comrades to repulse an enemy attack. It may occur to him that if the defense is likely to be successful, then it isn't very probable that his own personal contribution will be essential. But if he stays, he runs the risk of being killed or wounded--apparently for no point. On the other hand, if the enemy is going to win the battle, then his chances of death or injury are higher still, and now quite clearly to no point, since the line will be overwhelmed anyway. Based on this reasoning, it would appear that the soldier is better off running away regardless of who is going to win the battle. But if all of the soldiers reason this way--as they all apparently should , since they're all in identical situations--then this will certainly bring about the outcome in which the battle is lost. Of course, this point, since it has occurred to us as analysts, can occur to the soldiers too. Does this give them a reason for staying at their posts? Just the contrary: the greater the soldiers' fear that the battle will be lost, the greater their incentive to get themselves out of harm's way. And the greater the soldiers' belief that the battle will be won, without the need of any particular individual's contributions, the less reason they have to stay and fight. If each soldier anticipates this sort of reasoning on the part of the others, all will quickly reason themselves into a panic, and their horrified commander will have a rout on his hands before the enemy has even engaged. Long before game theory had come along to show analysts how to think about this sort of problem systematically, it had occurred to some actual military leaders and influenced their strategies. Thus the Spanish conqueror Cortez, when landing in Mexico with a small force who had good reason to fear their capacity to repel attack from the far more numerous Aztecs, removed the risk that his troops might think their way into a retreat by burning the ships on which they had landed. With retreat having thus been rendered physically impossible, the Spanish soldiers had no better course of action than to stand and fight--and, furthermore, to fight with as much determination as they could muster. Better still, from Cortez's point of view, his action had a discouraging effect on the motivation of the Aztecs. He took care to burn his ships very visibly, so that the Aztecs would be sure to see what he had done. They then reasoned as follows: Any commander who could be so confident as to willfully destroy his own option to be prudent if the battle went badly for him must have good reasons for such extreme optimism. It cannot be wise to attack an opponent who has a good reason (whatever, exactly, it might be) for being sure that he can't lose. The Aztecs therefore retreated into the surrounding hills, and Cortez had the easiest possible victory. These two situations, at Delium and as manipulated by Cortez, have a common and interesting underlying logic. Notice that the soldiers are not motivated to retreat just , or even mainly, by their rational assessment of the dangers of battle and by their self-interest. Rather, they discover a sound reason to run away by realizing that what it makes sense for them to do depends on what it will make sense for others to do, and that all of the others can notice this too. Even a quite brave soldier may prefer to run rather than heroically, but pointlessly, die trying to stem the oncoming tide all by himself. Thus we could imagine, without contradiction, a circumstance in which an army, all of whose members are brave, flees at top speed before the enemy makes a move. If the soldiers really are brave, then this surely isn't the outcome any of them wanted; each would have preferred that all stand and fight. What we have here, then, is a case in which the interaction of many individually rational decision-making processes--one process per soldier--produces an outcome intended by no one. (Many armies try to avoid this problem just as Cortez did. Since they can't usually make retreat physically impossible, they make it economically irrational: for most of history, it was standard military practice to execute deserters. In that context standing and fighting is each soldier's individually rational course of action after all, because the expected cost of running is at least as high as the cost of staying.) Another classic source that invites this sequence of reasoning is found in Shakespeare's Henry V . During the Battle of Agincourt Henry decided to slaughter his French prisoners, in full view of the enemy and to the surprise of his subordinates, who describe the action as being out of moral character. The reasons Henry gives allude to non-strategic considerations: he is afraid that the prisoners may free themselves and threaten his position. However, a game theorist might have furnished him with supplementary strategic (and similarly prudential, though perhaps not moral) justification. His own troops observe that the prisoners have been killed, and observe that the enemy has observed this. Therefore, they know what fate will await them at the enemy's hand if they don't win. Metaphorically, but very effectively, their boats have been burnt. The slaughter of the prisoners plausibly sent a signal to the soldiers of both sides, thereby changing their incentives in ways that favoured English prospects for victory. These examples might seem to be relevant only for those who find themselves in situations of cut-throat competition. Perhaps, one might think, it is important for generals, politicians, mafiosi, sports coaches and others whose jobs involve strategic manipulation of others, but the philosopher should only deplore its amorality. Such a conclusion would be highly premature, however. The study of the logic that governs the interrelationships amongst incentives, strategic interactions and outcomes has been fundamental in modern political philosophy, since centuries before anyone had an explicit name for this sort of logic. Philosophers share with social scientists the need to be able to represent and systematically model not only what they think people normatively ought to do, but what they often actually do in interactive situations. Hobbes's Leviathan is often regarded as the founding work in modern political philosophy, the text that began the continuing round of analyses of the function and justification of the state and its restrictions on individual liberties. The core of Hobbes's reasoning can be given straightforwardly as follows. The best situation for all people is one in which each is free to do as she pleases. (One may or may not agree with this as a matter of psychology or ideology, but it is Hobbes's assumption.) Often, such free people will wish to cooperate with one another in order to carry out projects that would be impossible for an individual acting alone. But if there are any immoral or amoral agents around, they will notice that their interests might at least sometimes be best served by getting the benefits from cooperation and not returning them. Suppose, for example, that you agree to help me build my house in return for my promise to help you build yours. After my house is finished, I can make your labour free to me simply by reneging on my promise. I then realize, however, that if this leaves you with no house, you will have an incentive to take mine. This will put me in constant fear of you, and force me to spend valuable time and resources guarding myself against you. I can best minimize these costs by striking first and killing you at the first opportunity. Of course, you can anticipate all of this reasoning by me, and so have good reason to try to beat me to the punch. Since I can anticipate this reasoning by you , my original fear of you was not paranoid; nor was yours of me. In fact, neither of us actually needs to be immoral to get this chain of mutual reasoning going; we need only think that there is some possibility that the other might try to cheat on bargains. Once a small wedge of doubt enters any one mind, the incentive induced by fear of the consequences of being preempted --hit before hitting first--quickly becomes overwhelming on both sides. If either of us has any resources of our own that the other might want, this murderous logic can take hold long before we are so silly as to imagine that we could ever actually get as far as making deals to help one another build houses in the first place. Left to their own devices, agents who are at least sometimes narrowly self-interested can repeatedly fail to derive the benefits of cooperation, and instead be trapped in a state of 'war of all against all', in Hobbes's words. In these circumstances, human life, as he vividly and famously put it, will be \"solitary, poor, nasty, brutish and short.\" Hobbes's proposed solution to this problem was tyranny. The people can hire an agent--a government--whose job is to punish anyone who breaks any promise. So long as the threatened punishment is sufficiently dire then the cost of reneging on promises will exceed the cost of keeping them. The logic here is identical to that used by an army when it threatens to shoot deserters. If all people know that these incentives hold for most others, then cooperation will not only be possible, but can be the expected norm, so that the war of all against all becomes a general peace. Hobbes pushes the logic of this argument to a very strong conclusion, arguing that it implies not only a government with the right and the power to enforce cooperation, but an 'undivided' government in which the arbitrary will of a single ruler must impose absolute obligation on all. Few contemporary political theorists think that the particular steps by which Hobbes reasons his way to this conclusion are both sound and valid. Working through these issues here, however, would carry us away from our topic into details of contractarian political philosophy. What is important in the present context is that these details, as they are in fact pursued in contemporary debates, involve sophisticated interpretation of the issues using the resources of modern game theory (see, for example, Hampton 1986 ). Furthermore, Hobbes's most basic point, that the fundamental justification for the coercive authority and practices of governments is peoples' own need to protect themselves from what game theorists call 'social dilemmas', is accepted by many, if not most, political theorists. Notice that Hobbes has not argued that tyranny is a desirable thing in itself. The structure of his argument is that the logic of strategic interaction leaves only two general political outcomes possible: tyranny and anarchy. Sensible agents then choose tyranny as the lesser of two evils. The reasoning of the Athenian soldiers, of Cortez, and of Hobbes's political agents has a common logic, one derived from their situations. In each case, the aspect of the environment that is most important to the agents' achievement of their preferred outcomes is the set of expectations and possible reactions to their strategies by other agents. The distinction between acting parametrically on a passive world and acting non-parametrically on a world that tries to act in anticipation of these actions is fundamental. If you want to kick a rock down a hill, you need only concern yourself with the rock's mass relative to the force of your blow, the extent to which it is bonded with its supporting surface, the slope of the ground on the other side of the rock, and the expected impact of the collision on your foot. The values of all of these variables are independent of your plans and intentions, since the rock has no interests of its own and takes no actions to attempt to assist or thwart you. By contrast, if you wish to kick a person down the hill, then unless that person is unconscious, bound or otherwise incapacitated, you will likely not succeed unless you can disguise your plans until it's too late for him to take either evasive or forestalling action. Furthermore, his probable responses should be expected to visit costs upon you, which you would be wise to consider. Finally, the relative probabilities of his responses will depend on his expectations about your probable responses to his responses. (Consider the difference it will make to both of your reasoning if one or both of you are armed, or one of you is bigger than the other, or one of you is the other's boss.) The logical issues associated with the second sort of situation (kicking the person as opposed to the rock) are typically much more complicated, as a simple hypothetical example will illustrate. Suppose first that you wish to cross a river that is spanned by three bridges. (Assume that swimming, wading or boating across are impossible.) The first bridge is known to be safe and free of obstacles; if you try to cross there, you will succeed. The second bridge lies beneath a cliff from which large rocks sometimes fall. The third is inhabited by deadly cobras. Now suppose you wish to rank-order the three bridges with respect to their preferability as crossing-points. Unless you get positive enjoyment from risking your life--which, without violating any economist's conception of rationality, you might well (a complication we'll take up later in this article)--then your decision problem here is straightforward. The first bridge is obviously best, since it is safest. To rank-order the other two bridges, you require information about their relative levels of danger. If you can study the frequency of rock-falls and the movements of the cobras for awhile, you might be able to calculate that the probability of your being crushed by a rock at the second bridge is 10% and of being struck by a cobra at the third bridge is 20%. Your reasoning here is strictly parametric because neither the rocks nor the cobras are trying to influence your actions, by, for example, concealing their typical patterns of behaviour because they know you are studying them. It is obvious what you should do here: cross at the safe bridge. Now let us complicate the situation a bit. Suppose that the bridge with the rocks is immediately before you, while the safe bridge is a day's difficult hike upstream. Your decision-making situation here is slightly more complicated, but it is still strictly parametric. You have to decide whether the cost of the long hike is worth exchanging for the penalty of a 10% chance of being hit by a rock. However, this is all you must decide, and your probability of a successful crossing is entirely up to you; the environment is not interested in your plans. However, if we now complicate the situation by adding a non-parametric element, it becomes more challenging. Suppose that you are a fugitive of some sort, and waiting on the other side of the river with a gun is your pursuer. She will catch and shoot you, let us suppose, only if she waits at the bridge you try to cross; otherwise, you will escape. As you reason through your choice of bridge, it occurs to you that she is over there trying to anticipate your reasoning. It will seem that, surely, choosing the safe bridge straight away would be a mistake, since that is just where she will expect you, and your chances of death rise to certainty. So perhaps you should risk the rocks, since these odds are much better. But wait &hellip; if you can reach this conclusion, your pursuer, who is just as well-informed as you are, can anticipate that you will reach it, and will be waiting for you if you evade the rocks. So perhaps you must take your chances with the cobras; that is what she must least expect. But, then, no &hellip; if she expects that you will expect that she will least expect this, then she will most expect it. This dilemma, you realize with dread, is general: you must do what your pursuer least expects; but whatever you most expect her to least expect is automatically what she will most expect. You appear to be trapped in indecision. But what should console you somewhat here is that, on the other side of the river, your pursuer is trapped in exactly the same quandary, unable to decide which bridge to wait at because as soon as she imagines committing to one, she will notice that if she can find a best reason to pick a bridge, you can anticipate that same reason and then avoid her. We know from experience that, in situations such as this, people do not usually stand and dither in circles forever. As we'll see later, there is a unique best solution available to each player. However, until the 1940s neither philosophers nor economists knew how to find it mathematically. As a result, economists were forced to treat non-parametric influences as if they were complications on parametric ones. This is likely to strike the reader as odd, since, as our example of the bridge-crossing problem was meant to show, non-parametric features are often fundamental features of decision-making problems. Part of the explanation for game theory's relatively late entry into the field lies in the problems with which economists had historically been concerned. Classical economists, such as Adam Smith and David Ricardo, were mainly interested in the question of how agents in very large markets--whole nations--could interact so as to bring about maximum monetary wealth for themselves. Smith's basic insight, that efficiency is best maximized by agents first differentiating their potential contributions and then freely seeking mutually advantageous bargains, was mathematically verified in the twentieth century. However, the demonstration of this fact applies only in conditions of 'perfect competition,' that is, when individuals or firms face no costs of entry or exit into markets, when there are no economies of scale, and when no agents' actions have unintended side-effects on other agents' well-being. Economists always recognized that this set of assumptions is purely an idealization for purposes of analysis, not a possible state of affairs anyone could try (or should want to try) to institutionally establish. But until the mathematics of game theory matured near the end of the 1970s, economists had to hope that the more closely a market approximates perfect competition, the more efficient it will be. No such hope, however, can be mathematically or logically justified in general; indeed, as a strict generalization the assumption was shown to be false as far back as the 1950s. This article is not about the foundations of economics, but it is important for understanding the origins and scope of game theory to know that perfectly competitive markets have built into them a feature that renders them susceptible to parametric analysis. Because agents face no entry costs to markets, they will open shop in any given market until competition drives all profits to zero. This implies that if production costs are fixed and demand is exogenous, then agents have no options about how much to produce if they are trying to maximize the differences between their costs and their revenues. These production levels can be determined separately for each agent, so none need pay attention to what the others are doing; each agent treats her counterparts as passive features of the environment. The other kind of situation to which classical economic analysis can be applied without recourse to game theory is that of a monopoly facing many customers. Here, as long as no customer has a share of demand large enough to exert strategic leverage, non-parametric considerations drop out and the firm's task is only to identify the combination of price and production quantity at which it maximizes profit. However, both perfect and monopolistic competition are very special and unusual market arrangements. Prior to the advent of game theory, therefore, economists were severely limited in the class of circumstances to which they could straightforwardly apply their models. Philosophers share with economists a professional interest in the conditions and techniques for the maximization of welfare. In addition, philosophers have a special concern with the logical justification of actions, and often actions are justified by reference to their expected outcomes. (One tradition in moral philosophy, utilitarianism, is based on the idea that all morally significant actions are best justified in this way.) Without game theory, both of these problems resist analysis wherever non-parametric aspects are relevant. We will demonstrate this shortly by reference to the most famous (though not the most typical) game, the so-called Prisoner's Dilemma , and to other, more typical, games. In doing this, we will need to introduce, define and illustrate the basic elements and techniques of game theory.",
+      "relatedEntries": [
+        "economics",
+        "game-ethics",
+        "game-evolutionary",
+        "logic-games",
+        "preferences",
+        "prisoner-dilemma"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "economics"
+        },
+        {
+          "slug": "game-ethics"
+        },
+        {
+          "slug": "game-evolutionary"
+        },
+        {
+          "slug": "logic-games"
+        },
+        {
+          "slug": "preferences"
+        },
+        {
+          "slug": "prisoner-dilemma"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 186,
+      "bibliography": [
+        {
+          "raw": "Ainslie, G. (1992) . Picoeconomics , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "--- (2001) . Breakdown of Will , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Alexander, J.M. (2023) . Evolutionary Game Theory , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Amadae, S. (2016) . Prisoners of Reason , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Andersen, S., Harrison, G., Lau, M., and Rutstrom, E. (2008) . Eliciting risk and time preferences. Econometrica , 76: 583-618."
+        },
+        {
+          "raw": "--- (2014) . Dual criteria decisions. Journal of Economic Psychology , forthcoming."
+        },
+        {
+          "raw": "Aumann, R. (1974) . Subjectivity and Correlation in Randomized Strategies. Journal of Mathematical Economics , 1: 67-96."
+        },
+        {
+          "raw": "--- (1987) . Correlated Equilibrium as an Expression of Bayesian Rationality. Econometrica , 55: 1-18."
+        },
+        {
+          "raw": "Bacharach, M. (2006) . Beyond Individual Choice: Teams and Frames in Game Theory , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Baird, D., Gertner, R., and Picker, R. (1994) . Game Theory and the Law , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Bell, W., (1991) . Searching Behaviour , London: Chapman and Hall."
+        },
+        {
+          "raw": "Bicchieri, C. (1993) . Rationality and Coordination , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "--- (2006) . The Grammar of Society , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "--- (2017) . Norms in the Wild . Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Bickhard, M. (2008) . Social Ontology as Convention. Topoi , 27: 139-149."
+        },
+        {
+          "raw": "Binmore, K. (1987) . Modeling Rational Players I. Economics and Philosophy , 3: 179-214."
+        },
+        {
+          "raw": "--- (1994) . Game Theory and the Social Contract (v. 1): Playing Fair , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "--- (1998). Game Theory and the Social Contract (v. 2): Just Playing , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "--- (2007) . Does Game Theory Work? The Bargaining Challenge , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "--- (2008) . Do Conventions Need to be Common Knowledge? Topoi 27: 17-27."
+        },
+        {
+          "raw": "--- (2009) . Rational Decisions , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Binmore, K., Kirman, A., and Tani, P. (eds.) (1993) . Frontiers of Game Theory , Cambridge, MA: MIT Press"
+        },
+        {
+          "raw": "Binmore, K., and Klemperer, P. (2002) . The Biggest Auction Ever: The Sale of British 3G Telcom Licenses. Economic Journal , 112: C74-C96."
+        },
+        {
+          "raw": "Bishop, B.(2009) . The Big Sort . New York: Mariner."
+        },
+        {
+          "raw": "Boyd, R., and Richerson, P. (1985) . Culture and the Evolutionary Process , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Camerer, C. (1995) . Individual Decision Making. In J. Kagel and A. Roth, eds., Handbook of Experimental Economics , 587-703. Princeton: Princeton University Press."
+        },
+        {
+          "raw": "--- (2003) . Behavioral Game Theory: Experiments in Strategic Interaction , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Camerer, C., Loewenstein, G., and Prelec, D. (2005) . Neuroeconomics: How Neuroscience Can Inform Economics. Journal of Economic Literature , 40: 9-64."
+        },
+        {
+          "raw": "Chakravarty, S., Mitra, M., and Sarkar, P. (2015) . A Course on Cooperative Game Theory , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Chew, S., and MacCrimmon, K. (1979) . Alpha-nu Choice Theory: A Generalization of Expected Utility Theory. Working Paper No. 686, University of Columbia Faculty of Commerce and Business Administration."
+        },
+        {
+          "raw": "Chiappori, P.-A. (2017) . Matching With Transfers: The Economics of Love and Marriage , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Clark, A. (1997) . Being There , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "--- (2016) . Surfing Uncertainty , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Danielson, P. (1992) . Artificial Morality , London: Routledge"
+        },
+        {
+          "raw": "--- (ed.) (1998) . Modelling Rationality, Morality and Evolution , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Dennett, D. (1987) . The Intentional Stance , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "--- (1995) . Darwin's Dangerous Idea , New York: Simon and Schuster."
+        },
+        {
+          "raw": "Dixit, A., and Nalebuff, B. (1991) . Thinking Strategically , New York: Norton."
+        },
+        {
+          "raw": "--- (2008) . The Art of Strategy , New York: Norton."
+        },
+        {
+          "raw": "Dixit, A., Skeath, S., and Reiley, D. (2014) . Games of Strategy , fourth edition. New York: W. W. Norton and Company."
+        },
+        {
+          "raw": "Dugatkin, L., and Reeve, H., eds. (1998) . Game Theory and Animal Behavior , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Dukas, R., ed. (1998) . Cognitive Ecology. , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Durlauf, S., and Young, H.P., eds. (2001) . Social Dynamics , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Ellsberg, D. (2017) . The Doomsday Machine , New York: Bloomsbury."
+        },
+        {
+          "raw": "Erickson, P. (2015) . The World the Game Theorists Made , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Frank, R. (1988) . Passions Within Reason , New York: Norton."
+        },
+        {
+          "raw": "Fudenberg, D., and Levine, D. (1998) . The Theory of Learning in Games , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "--- (2008) . A Long-Run Collaboration on Long-Run Games . Singapore: World Scientific."
+        },
+        {
+          "raw": "--- (2016) . Whither Game Theory? Towards a Theory of Learning in Games. Journal of Economic Perspectives , 30(4): 151-170"
+        },
+        {
+          "raw": "Fudenberg, D., and Tirole, J. (1991) . Game Theory , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Gale, D., and Shapley, L. (1962) . College Admissions and the Stability of Marriage. American Mathematical Monthly , 69 :9-15."
+        },
+        {
+          "raw": "Gauthier, D. (1986) . Morals By Agreement , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Gershkov, A., and Moldovanu, B. (2014) . Dynamic Allocation and Pricing: A Mechanism Design Approach , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Ghemawat, P. (1997) . Games Businesses Play , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Gilbert, M. (1989) . On Social Facts , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Gintis, G.(2004) . Towards the Unity of the Human Behavioral Sciences. Philosophy, Politics and Economics , 31: 37-57."
+        },
+        {
+          "raw": "--- (2005) . Behavioral Ethics Meets Natural Justice. Politics, Philosophy and Economics , 5: 5-32."
+        },
+        {
+          "raw": "Glimcher, P. (2003) . Decisions, Uncertainty and the Brain , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Glimcher, P., Kable, J., and Louie, K. (2007) . Neuroeconomic Studies of Impulsivity: Now or Just as Soon as Possible? American Economic Review (Papers and Proceedings) , 97: 142-147."
+        },
+        {
+          "raw": "Godfrey-Smith, P. (1996) . Complexity and the Function of Mind in Nature . Cambridge, UK: Cambridge University Press."
+        },
+        {
+          "raw": "Goeree, J., Holt, C., and Palfrey, T. (2016) . Quantal Response Equilibrium , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Guala, F. (2005) . The Methodology of Experimental Economics , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "--- (2016) . Understanding Institutions , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Hammerstein, P. (2003) . Why is Reciprocity so Rare in Social Animals? A Protestant Appeal. In P. Hammerstein, ed., Genetic and Cultural Evolution of Cooperation , 83-93. Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Hampton, J. (1986) , Hobbes and the Social Contract Tradition . Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Hardin, R. (1995) . One For All , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Harrison, G.W. (2008) . Neuroeconomics: A Critical Reconsideration. Economics and Philosophy 24: 303-344."
+        },
+        {
+          "raw": "Harrison, G.W., and Rutstrom, E. (2008) . Risk aversion in the laboratory. In Risk Aversion in Experiments , J. Cox and G. Harrison eds., Bingley, UK: Emerald, 41-196."
+        },
+        {
+          "raw": "Harrison, G.W., and Ross, D. (2010) . The Methodologies of Neuroeconomics. Journal of Economic Methodology , 17: 185-196."
+        },
+        {
+          "raw": "--- (2016) . The Psychology of Human Risk Preferences and Vulnerability to Scare-mongers: Experimental Economic Tools for Hypothesis Formulation and Testing. Journal of Cognition and Culture , 16: 383-414."
+        },
+        {
+          "raw": "Harsanyi, J. (1967) . Games With Incomplete Information Played by 'Bayesian' Players, Parts I-III. Management Science 14: 159-182."
+        },
+        {
+          "raw": "--- (1977) . Rational Behavior and Bargaining Equilibrium in Games and Social Situations , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Henrich, J., Boyd, R., Bowles, S., Camerer, C., Fehr, E., and Gintis, H., eds. (2004) . Foundations of Human Sociality: Economic Experiments and Ethnographic Evidence From 15 Small-Scale Societies , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Henrich, J. , Boyd, R., Bowles, S., Camerer, C., Fehr, E., Gintis, H., McElreath, R., Alvard, M., Barr, A., Ensminger, J., Henrich, N., Hill, K., Gil-White, F., Gurven, M., Marlowe, F., Patton, J., and Tracer, D. (2005). 'Economic Man' in Cross-Cultural Perspective. Behavioral and Brain Sciences , 28: 795-815."
+        },
+        {
+          "raw": "Hendricks, V., and Hansen, P., eds. (2007) . Game Theory: 5 Questions , Copenhagen: Automatic Press."
+        },
+        {
+          "raw": "Hofbauer, J., and Sigmund, K. (1998) . Evolutionary Games and Population Dynamics , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Hofmeyr, A., and Ross, D. (2019) . Team Agency and Conditional Games. In M. Nagatsu, ed., Philosophy and Social Science: An Interdisciplinary Dialogue , London: Bloomsbury, 67-92."
+        },
+        {
+          "raw": "Hollis, M. (1998) . Trust Within Reason , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Hollis, M., and Sugden, R. (1993) . Rationality in Action. Mind , 102: 1-35."
+        },
+        {
+          "raw": "Hurwicz, L., and Reiter, S. (2006) . Designing Economic Mechanisms , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Hutto, D. (2008) . Folk Psychological Narratives , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Kagel, J., and Roth, A., eds. (1995) . Handbook of Experimental Economics , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Keeney, R., and Raiffa, H. (1976) . Decisions With Multiple Objectives , New York: Wiley."
+        },
+        {
+          "raw": "King-Casas, B., Tomlin, D., Anen, C., Camerer, C., Quartz, S., and Montague, P.R. (2005) . Getting to Know You: Reputation and Trust in a Two-Person Economic Exchange. Science , 308: 78-83."
+        },
+        {
+          "raw": "Klemperer, P. (2004) . Auctions: Theory and Practice , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Koons, R. (1992) . Paradoxes of Belief and Strategic Rationality , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Krebs, J., and Davies, N. (1984) . Behavioral Ecology: An Evolutionary Approach , Second edition. Sunderland: Sinauer."
+        },
+        {
+          "raw": "Kreps, D. (1990) . A Course in Microeconomic Theory , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Kruschke, J. (2014) . Doing Bayesian Data Analysis , 2nd Edition. Cambridge, MA: Academic Press."
+        },
+        {
+          "raw": "Kuhn, H., ed., (1997) . Classics in Game Theory , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Kuran, T. (1995) . Private Truths, Public Lies . Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "LaCasse, C., and Ross, D. (1994) . 'The Microeconomic Interpretation of Games'. PSA 1994, Volume 1 , D. Hull, S. Forbes and R. Burien (eds.), East Lansing, MI: Philosophy of Science Association, pp. 479-387."
+        },
+        {
+          "raw": "Ledyard, J. (1995) . Public Goods: A Survey of Experimental Research. In J. Kagel and A. Roth, eds., Handbook of Experimental Economics , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Lewis, D. (1969) . Convention , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Lichtenstein, S., and Slovic, P., eds. (2006) . The Construction of Preference , Cambridge, UK: Cambridge University Press."
+        },
+        {
+          "raw": "Maynard Smith, J. (1982) . Evolution and the Theory of Games , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "McClure, S., Laibson, D., Loewenstein, G., and Cohen, J. (2004) . Separate Neural Systems Value Immediate and Delayed Monetary Rewards. Science , 306: 503-507."
+        },
+        {
+          "raw": "McElreath, R. (2020) . Statistical Rethinking , 2nd Edition. London: Chapman & Hall."
+        },
+        {
+          "raw": "McGeer, V. (2001) . Psycho-practice, Psycho-theory, and the Contrastive Case of Autism: How Processes of Mind Become Second Nature, Journal of Consciousness Studies , 8: 109-132."
+        },
+        {
+          "raw": "---(2002). Enculturating Folk-Psychologists, Synthese , 199: 1039-1063."
+        },
+        {
+          "raw": "McKelvey, R., and Palfrey, T. (1995) . Quantal Response Equilibria for Normal Form Games. Games and Economic Behavior 10: 6-38."
+        },
+        {
+          "raw": "--- (1998) . Quantal Response Equilibria for Extensive Form Games. Experimental Economics 1: 9-41."
+        },
+        {
+          "raw": "McMillan, J. (1991) . Games, Strategies and Managers , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Millikan, R. (1984) . Language, Thought and Other Biological Categories , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Montague,P. R., and Berns, G. (2002) . Neural Economics and the Biological Substrates of Valuation. Neuron , 36: 265-284."
+        },
+        {
+          "raw": "Mueller, D. (1997) . Perspectives on Public Choice , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "--- (1951) . 'Non-cooperative Games.' Annals of Mathematics Journal , 54: 286-295."
+        },
+        {
+          "raw": "--- (1953) . Two-Person Cooperative Games. Econometrica , 21: 128-140."
+        },
+        {
+          "raw": "Nichols, S., and Stich, S. (2003). Mindreading , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Noe, R., van Hoof, J., and Hammerstein, P., eds. (2001) . Economics in Nature , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Nozick, R. (1998) . Socratic Puzzles , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "O'Connor, C. (2019) . The Origins of Unfairness , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Ofek, H. (2001) . Second Nature . Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Ormerod, P. (1994) . The Death of Economics , New York: Wiley."
+        },
+        {
+          "raw": "Parr, T., Pezzulo, G., & Friston, K. (2022) . Active Inference . Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Pettit, P., and Sugden, R. (1989) . The Backward Induction Paradox. Journal of Philosophy , 86: 169-182."
+        },
+        {
+          "raw": "Planer, R., & Sterelny, K. (2021) . From Signal to Symbol . Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Platt, M., and Glimcher, P. (1999) . Neural Correlates of Decision Variables in Parietal Cortex. Nature , 400: 233-238."
+        },
+        {
+          "raw": "Plott, C., and Smith, V. (1978) . An Experimental Examination of Two Exchange Institutions. Review of Economic Studies , 45: 133-153."
+        },
+        {
+          "raw": "Poundstone, W. (1992) . Prisoner's Dilemma , New York: Doubleday."
+        },
+        {
+          "raw": "Prelec, D. (1998) . The Probability Weighting Function. Econometrica , 66: 497-527."
+        },
+        {
+          "raw": "Quiggin,J. (1982) . A Theory of Anticipated Utility. Journal of Economic Behavior and Organization , 3: 323-343."
+        },
+        {
+          "raw": "Rawls, J. (1971) . A Theory of Justice , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Robbins, L. (1931) . An Essay on the Nature and Significance of Economic Science , London: Macmillan."
+        },
+        {
+          "raw": "--- (2006) . Evolutionary Game Theory and the Normative Theory of Institutional Design: Binmore and Behavioral Economics. Politics, Philosophy and Economics , 5(1): 51-79."
+        },
+        {
+          "raw": "--- (2014) . Philosophy of Economics , Houndmills, Basingstoke: Palgrave Macmillan."
+        },
+        {
+          "raw": "Ross, D., and Dumouchel, P. (2004) . Emotions as Strategic Signals. Rationality and Society , 16: 251-286."
+        },
+        {
+          "raw": "Ross, D., and LaCasse, C. (1995) . 'Towards a New Philosophy of Positive Economics'. Dialogue , 34: 467-493."
+        },
+        {
+          "raw": "Ross, D., and Stirling, W. (2021) . Economics, Social Neuroscience, and Mindshaping. In J. Harbeckeand C. Herrmann-Pillath, eds., Social Neuroeconomics , London: Routledge, 174-201."
+        },
+        {
+          "raw": "Ross, D., Stirling, W., and Tummolini, L. (2023) . Strategic Theory of Norms for Empirical Applications in Political Science and Political Economy. In H. Kincaid and J. van Bouwel, eds., The Oxford Handbook of Philosophy of Political Science , Oxford: Oxford University Press, 86-121."
+        },
+        {
+          "raw": "Roth, A. (2015) . Who Gets What and Why? , New York: Houghton Mifflin Harcourt."
+        },
+        {
+          "raw": "Sally, J. (1995) . Conversation and Cooperation in Social Dilemmas: A Meta-analysis of Experiments From 1958 to 1992. Rationality and Society , 7: 58-92."
+        },
+        {
+          "raw": "Samuelson, L. (1997) . Evolutionary Games and Equilibrium Selection , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "--- (2005) . Economic Theory and Experimental Economics. Journal of Economic Literature , 43: 65-107."
+        },
+        {
+          "raw": "--- (2016) . Game Theory in Economics and Beyond. Journal of Economic Perspectives , 30(4): 107-130."
+        },
+        {
+          "raw": "Samuelson, P. (1938) . 'A Note on the Pure Theory of Consumers' Behaviour.' Economica , 5: 61-71."
+        },
+        {
+          "raw": "Savage, L. (1954) . The Foundations of Statistics , New York: Wiley."
+        },
+        {
+          "raw": "Schelling, T. (1960) . Schelling, T (1960). Strategy of Conflict , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "--- (1978) . Micromotives and Macrobehavior , New York: Norton. Second edition 2006."
+        },
+        {
+          "raw": "--- (1980) . The Intimate Contest for Self-Command. Public Interest , 60: 94-118."
+        },
+        {
+          "raw": "--- (1984) . Choice and Consequence , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "--- (2006) . Strategies of Commitment , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Selten, R. (1975) . 'Re-examination of the Perfectness Concept for Equilibrium Points in Extensive Games.' International Journal of Game Theory , 4: 22-55."
+        },
+        {
+          "raw": "Sigmund, K. (1993) . Games of Life , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Shapley, L. (1953) . A Value of n-Person Games. In H, Kuhn and A. Tucker, eds., Contributions to the Theory of Games II , 307-317. Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Skyrms, B. (1996) . Evolution of the Social Contract , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "--- (2004) . The Stag Hunt and the Evolution of Social Structure , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Smith, V. (1962) . An Experimental Study of Competitive Market Behavior. Journal of Political Economy , 70: 111-137."
+        },
+        {
+          "raw": "--- (1964) . Effect of Market Organization on Competitive Equilibrium. Quarterly Journal of Economics , 78: 181-201."
+        },
+        {
+          "raw": "--- (1965) . Experimental Auction Markets and the Walrasian Hypothesis. Journal of Political Economy , 73: 387-393."
+        },
+        {
+          "raw": "--- (1976) . Bidding and Auctioning Institutions: Experimental Results. In Y. Amihud, ed., Bidding and Auctioning for Procurement and Allocation , 43-64. New York: New York University Press."
+        },
+        {
+          "raw": "--- (1982) . Microeconomic Systems as an Experimental Science. American Economic Review , 72: 923-955."
+        },
+        {
+          "raw": "--- (2008) . Rationality in Economics , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Sober, E., and Wilson, D.S. (1998) . Unto Others , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Sterelny, K. (2003) . Thought in a Hostile World , Oxford: Blackwell."
+        },
+        {
+          "raw": "Stirling, W. (2012) . Theory of Conditional Games , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Stratmann, T. (1997) . Logrolling. In D. Mueller, ed., Perspectives on Public Choice , Cambridge: Cambridge University Press, 322-341."
+        },
+        {
+          "raw": "Strotz, R. (1956) . Myopia and Inconsistency in Dynamic Utility Maximization. The Review of Economic Studies , 23: 165-180."
+        },
+        {
+          "raw": "Sugden, R. (1993) . Thinking as a Team: Towards an Explanation of Nonselfish Behavior. Social Philosophy and Policy 10: 69-89."
+        },
+        {
+          "raw": "--- (2000) . Team Preferences. Economics and Philosophy 16: 175-204."
+        },
+        {
+          "raw": "--- (2003) . The Logic of Team Reasoning. Philosophical Explorations 6: 165-181."
+        },
+        {
+          "raw": "--- (2018) . The Community of Advantage , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Thurstone, L. (1931) . The Indifference Function. Journal of Social Psychology , 2: 139-167."
+        },
+        {
+          "raw": "Tomasello, M. , M. Carpenter, J. Call, T. Behne and H. Moll (2004). Understanding and Sharing Intentions: The Origins of Cultural Cognition. Behavioral and Brain Sciences , 28: 675-691."
+        },
+        {
+          "raw": "Vallentyne, P. (ed.). (1991) . Contractarianism and Rational Choice , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "von Neumann, J., and Morgenstern, O., (1944) . The Theory of Games and Economic Behavior , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "---, (1947) . The Theory of Games and Economic Behavior , second edition, Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Weibull, J. (1995) . Evolutionary Game Theory , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Wilcox, N. (2008) . Stochastic Models for Binary Discrete Choice Under Risk: A Critical Primer and Econometric Comparison. In J. Cox and G. Harrison, eds., Risk Aversion and Experiments , Bingley, UK: Emeraldn, 197-292."
+        },
+        {
+          "raw": "Wrangham, R. (2009) . Catching Fire . London: Profile."
+        },
+        {
+          "raw": "Yaari, M. (1987) . The Dual Theory of Choice Under Risk. Econometrica , 55: 95-115."
+        },
+        {
+          "raw": "Young, H.P. (1998) . Individual Strategy and Social Structure , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Zawidzki, T. (2013) . Mindshaping , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "The most accessible textbook that covers all of the main branches of game theory is Dixit, Skeath and Reiley (2014) . A student entirely new to the field should work through this before moving on to anything else."
+        },
+        {
+          "raw": "Game theory has countless applications, of which this article has been able to suggest only a few. Readers in search of more, but not wishing to immerse themselves in mathematics, can find a number of good sources. Dixit and Nalebuff (1991) and (2008) are especially strong on political and social examples. McMillan (1991) emphasizes business applications."
+        },
+        {
+          "raw": "The great historical breakthrough that officially launched game theory is von Neumann and Morgenstern (1944) , which those with scholarly interest in game theory should read with classic papers of John Nash (1950a, 1950b, 1951) . A very useful collection of key foundational papers, all classics, is Kuhn (1997) . For a contemporary mathematical treatment that is unusually philosophically sophisticated, Binmore (2005c) (**) is in a class by itself. The second half of Kreps (1990) (**) is the best available starting point for a tour of the philosophical worries surrounding equilibrium selection for normativists. Koons (1992) takes these issues further. Fudenberg and Tirole (1991) remains the most thorough and complete mathematical text available. Gintis (2009b) (**) provides a text crammed with terrific problem exercises, which is also unique in that it treats evolutionary game theory as providing the foundational basis for game theory in general. Recent developments in fundamental theory are well represented in Binmore, Kirman and Tani (1993) . Anyone who wants to apply game theory to real human choices, which are generally related stochastically rather than deterministically to axioms of optimization, needs to understand quantal response theory (QRE) as a solution concept. The original development of this is found in McKelvey and Palfrey (1995) and McKelvey and Palfrey (1998) . Goeree, Holt, and Palfrey (2016) provide a comprehensive and up-to-date review of QRE and its leading applications."
+        },
+        {
+          "raw": "The philosophical foundations of the basic game-theoretic concepts as economists understand them are presented in LaCasse and Ross (1994) . Ross and LaCasse (1995) outline the relationships between games and the axiomatic assumptions of microeconomics and macroeconomics. Philosophical puzzles at this foundational level are critically discussed in Bicchieri (1993) . Lewis (1969) puts game-theoretic equilibrium concepts to wider application in philosophy, though making some foundational assumptions that economists generally do not share. His program is carried a good deal further, and without the contested assumptions, by Skyrms (1996) (**) and (2004) . (See also Nozick [1998] .) Gauthier (1986) launches a literature not surveyed in this article, in which the possibility of game-theoretic foundations for contractarian ethics is investigated. This work is critically surveyed in Vallentyne (1991) , and extended into a dynamic setting in Danielson (1992) . Binmore (1994, 1998) (**), however, sharply criticizes this project as inconsistent with natural psychology. Philosophers will also find Hollis (1998) to be of interest."
+        },
+        {
+          "raw": "In a class by themselves for insight, originality, readability and cross-disciplinary importance are the works of the Nobel laureate Thomas Schelling. He is the fountainhead of the huge literature that applies game theory to social and political issues of immediate relevance, and shows how lightly it is possible to wear one's mathematics if the logic is sufficiently sure-footed. There are four volumes, all essential: Schelling (1960) (**), Schelling (1978 / 2006) (**), Schelling (1984) (**), Schelling (2006) (**)."
+        },
+        {
+          "raw": "Hardin (1995) is one of many examples of the application of game theory to problems in applied political theory. Baird, Gertner and Picker (1994) review uses of game theory in legal theory and jurisprudence. Mueller (1997) surveys applications in public choice. Ghemawat (1997) provides case studies intended to serve as a methodological template for practical application of game theory to business strategy problems. Poundstone (1992) provides a lively history of the Prisoner's Dilemma and its use by Cold War strategists. Amadae (2016) tells the same story, based on original scholarly sleuthing, with less complacency concerning its implications. The memoir of Ellsberg (2017) largely confirms Amadae's perspective. Durlauf and Young (2001) is a useful collection on applications to social structures and social change."
+        },
+        {
+          "raw": "Evolutionary game theory owes its explicit genesis to Maynard Smith (1982) (**). For a text that integrates game theory directly with biology, see Hofbauer and Sigmund (1998) (**). Sigmund (1993) presents this material in a less technical and more accessible format. Some exciting applications of evolutionary game theory to a range of philosophical issues, on which this article has drawn heavily, is Skyrms (1996) (**). These issues and others are critically discussed from various angles in Danielson (1998) . Mathematical foundations for evolutionary games are presented in Weibull (1995) , and pursued further in Samuelson (1997) . These foundations are examined with special attention to issues for philosophers by Alexander (2023) . As noted above, Gintis (2009b) (**) now provides an introductory textbook that takes evolutionary modeling to be foundational to all of game theory. H.P. Young (1998) gives sophisticated models of the evolutionary dynamics of cultural norms through the game-theoretic interactions of agents with limited cognitive capacities but dispositions to imitate one another. Fudenberg and Levine (1998) gives the technical foundations for modeling of this kind."
+        },
+        {
+          "raw": "Many philosophers will also be interested in Binmore ( 1994 1998 , 2005a ) (**), which shows that application of game-theoretic analysis can underwrite a Rawlsian conception of justice that does not require recourse to Kantian presuppositions about what rational agents would desire behind a veil of ignorance concerning their identities and social roles. (In addition, Binmore offers excursions into a range of other issues both central and peripheral to both the foundations and the frontiers of game theory; these books are particularly rich on problems that interest philosophers.) Almost everyone will be interested in Frank (1988) (**), where evolutionary game theory is used to illuminate basic features of human nature and emotion; though readers of this can find criticism of Frank's model in Ross and Dumouchel (2004) . O'Connor (2019) uses evolutionary game theory to understand the deep roots and persistence of human inequality, particularly between the sexes. Her book is an exemplary instance of the essential value of game theory to core questions in general social science and social philosophy."
+        },
+        {
+          "raw": "Behavioral and experimental applications of game theory are surveyed in Kagel and Roth (1995) . Camerer (2003) (**) is a comprehensive and more recent study of this literature, and cannot be missed by anyone interested in these issues. A shorter survey that emphasizes philosophical and methodological criticism is Samuelson (2005) . Philosophical foundations are also carefully examined in Guala (2005) ."
+        },
+        {
+          "raw": "Two volumes from leading theorists that offer comprehensive views on the philosophical foundations of game theory were published in 2009. These are Binmore (2009) (**) and Gintis (2009a) (**). Both are indispensable to philosophers who aim to participate in critical discussions of foundational issues."
+        },
+        {
+          "raw": "A volume of interviews with nineteen leading game theorists, eliciting their views on motivations and foundational topics, is Hendricks and Hansen (2007) ."
+        },
+        {
+          "raw": "Game-theoretic dynamics of the sub-person receive deep but accessible reflection in Ainslie (2001) . Seminal texts in neuroeconomics, with extensive use of and implications for behavioral game theory, are Montague and Berns (2002) , Glimcher 2003 (**), and Camerer, Loewenstein and Prelec (2005) . Ross (2005a) studies the game-theoretic foundations of microeconomics in general, but especially behavioral economics and neuroeconomics, from the perspective of cognitive science and in close alignment with Ainslie."
+        },
+        {
+          "raw": "The theory of cooperative games is consolidated in Chakravarty, Mitra and Sarkar (2015) . An accessible and non-technical review of applications of matching theory, by the economist whose work on it earned a Nobel Prize, is Roth (2015) ."
+        }
+      ],
+      "publishedAt": "1997-01-24T13:00:00.000Z",
+      "revisedAt": "2023-09-02T14:00:00.000Z"
+    }
+  }
+}

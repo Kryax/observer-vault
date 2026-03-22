@@ -1,0 +1,499 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/category-mistakes",
+  "meta": {
+    "title": "Category Mistakes",
+    "description": "Category mistakes are sentences such as 'The number two is blue', 'The theory of relativity is eating breakfast', or 'Green ideas sleep furiously'. Such sentences are striking in that they are highly odd or infelicitous, and moreover infelicitous in a distinctive sort of way. For example, they seem to be infelicitous in a different way to merely trivially false sentences such as '\\(2 + 2 = 5\\)' or obviously ungrammatical strings such as 'The ran this'. The majority of contemporary discussions of the topic are devoted to explaining what makes category mistakes infelicitous, and a wide variety of accounts have been proposed including syntactic, semantic, and pragmatic explanations. Indeed, this is part of what makes category mistakes a particularly important topic: a theory of what makes category mistakes unacceptable can potentially shape our theories of syntax, semantics, or pragmatics and the boundaries between them. As Camp (2016, 611-612) explains: \"Category mistakes &hellip; are theoretically interesting precisely because they are marginal: as by-products of our linguistic and conceptual systems lacking any obvious function, they reveal the limits of, and interactions among, those systems. Do syntactic or semantic restrictions block 'is green' from taking 'Two' as a subject? Does the compositional machinery proceed smoothly, but fail to generate a coherent proposition or delimit a coherent possibility? Or is the proposition it produces simply one that our paltry minds cannot grasp, or that fails to arouse our interest? One's answers to these questions depend on, and constrain, one's conceptions of syntax, semantics, and pragmatics, of language and thought, and of the relations among them and between them and the world.\" Moreover, the question of how to account for the infelicity of category mistakes has implications for a variety of other philosophical questions. For example, in metaphysics, it is often argued that a statue must be distinct from the lump of clay from which it is made because 'The statue is Romanesque' is true, while 'The lump of clay is Romanesque' is not--indeed, the latter ascription arguably constitutes a category mistake. Correspondingly, an assessment of this argument depends on one's account of category mistakes (see &sect;4.3 below). After a brief discussion of how to characterize category mistakes (&sect;1) and of the history of the debate (&sect;2), the majority of this entry focuses on the question of how to account for the infelicity of category mistakes (&sect;3). We conclude with some of the implications of the debate on category mistakes for other issues in both philosophy of language and metaphysics (&sect;4).",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:09:05.883Z",
+    "dateModified": "2026-03-22T05:09:05.883Z",
+    "datePublished": "2019-07-04T14:00:00.000Z",
+    "keywords": [
+      "categories",
+      "compositionality",
+      "meaning",
+      "pragmatics",
+      "presupposition",
+      "ryle"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Category mistakes are sentences such as 'The number two is blue', 'The theory of relativity is eating breakfast', or 'Green ideas sleep furiously'. Such sentences are striking in that they are highly odd or infelicitous, and moreover infelicitous in a distinctive sort of way. For example, they seem to be infelicitous in a different way to merely trivially false sentences such as '\\(2 + 2 = 5\\)' or obviously ungrammatical strings such as 'The ran this'. The majority of contemporary discussions of the topic are devoted to explaining what makes category mistakes infelicitous, and a wide variety of accounts have been proposed including syntactic, semantic, and pragmatic explanations. Indeed, this is part of what makes category mistakes a particularly important topic: a theory of what makes category mistakes unacceptable can potentially shape our theories of syntax, semantics, or pragmatics and the boundaries between them. As Camp (2016, 611-612) explains: \"Category mistakes &hellip; are theoretically interesting precisely because they are marginal: as by-products of our linguistic and conceptual systems lacking any obvious function, they reveal the limits of, and interactions among, those systems. Do syntactic or semantic restrictions block 'is green' from taking 'Two' as a subject? Does the compositional machinery proceed smoothly, but fail to generate a coherent proposition or delimit a coherent possibility? Or is the proposition it produces simply one that our paltry minds cannot grasp, or that fails to arouse our interest? One's answers to these questions depend on, and constrain, one's conceptions of syntax, semantics, and pragmatics, of language and thought, and of the relations among them and between them and the world.\" Moreover, the question of how to account for the infelicity of category mistakes has implications for a variety of other philosophical questions. For example, in metaphysics, it is often argued that a statue must be distinct from the lump of clay from which it is made because 'The statue is Romanesque' is true, while 'The lump of clay is Romanesque' is not--indeed, the latter ascription arguably constitutes a category mistake. Correspondingly, an assessment of this argument depends on one's account of category mistakes (see &sect;4.3 below). After a brief discussion of how to characterize category mistakes (&sect;1) and of the history of the debate (&sect;2), the majority of this entry focuses on the question of how to account for the infelicity of category mistakes (&sect;3). We conclude with some of the implications of the debate on category mistakes for other issues in both philosophy of language and metaphysics (&sect;4).",
+    "context": "Opening section: 1. Characterizing Category Mistakes | Related entries: categories, compositionality, meaning, pragmatics, presupposition, ryle",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "general-philosophy"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry category-mistakes",
+        "uri": "https://plato.stanford.edu/entries/category-mistakes/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 6 related entries, bibliography size 91"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2019-07-04T14:00:00.000Z and revised 2025-01-06T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2025-01-06T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/category-mistakes/",
+        "description": "SEP entry for category-mistakes"
+      }
+    ],
+    "solutionApproach": "1. Characterizing Category Mistakes"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/categories",
+      "ocp:sep/compositionality",
+      "ocp:sep/meaning",
+      "ocp:sep/pragmatics",
+      "ocp:sep/presupposition",
+      "ocp:sep/ryle"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Magidor, Ofra",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/category-mistakes/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 73,
+      "validation_diversity": 0.39,
+      "context_breadth": 0.37,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.89
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.5
+  },
+  "extensions": {
+    "sep": {
+      "slug": "category-mistakes",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/category-mistakes/",
+      "preamble": "Category mistakes are sentences such as 'The number two is blue', 'The theory of relativity is eating breakfast', or 'Green ideas sleep furiously'. Such sentences are striking in that they are highly odd or infelicitous, and moreover infelicitous in a distinctive sort of way. For example, they seem to be infelicitous in a different way to merely trivially false sentences such as '\\(2 + 2 = 5\\)' or obviously ungrammatical strings such as 'The ran this'. The majority of contemporary discussions of the topic are devoted to explaining what makes category mistakes infelicitous, and a wide variety of accounts have been proposed including syntactic, semantic, and pragmatic explanations. Indeed, this is part of what makes category mistakes a particularly important topic: a theory of what makes category mistakes unacceptable can potentially shape our theories of syntax, semantics, or pragmatics and the boundaries between them. As Camp (2016, 611-612) explains: \"Category mistakes &hellip; are theoretically interesting precisely because they are marginal: as by-products of our linguistic and conceptual systems lacking any obvious function, they reveal the limits of, and interactions among, those systems. Do syntactic or semantic restrictions block 'is green' from taking 'Two' as a subject? Does the compositional machinery proceed smoothly, but fail to generate a coherent proposition or delimit a coherent possibility? Or is the proposition it produces simply one that our paltry minds cannot grasp, or that fails to arouse our interest? One's answers to these questions depend on, and constrain, one's conceptions of syntax, semantics, and pragmatics, of language and thought, and of the relations among them and between them and the world.\" Moreover, the question of how to account for the infelicity of category mistakes has implications for a variety of other philosophical questions. For example, in metaphysics, it is often argued that a statue must be distinct from the lump of clay from which it is made because 'The statue is Romanesque' is true, while 'The lump of clay is Romanesque' is not--indeed, the latter ascription arguably constitutes a category mistake. Correspondingly, an assessment of this argument depends on one's account of category mistakes (see &sect;4.3 below). After a brief discussion of how to characterize category mistakes (&sect;1) and of the history of the debate (&sect;2), the majority of this entry focuses on the question of how to account for the infelicity of category mistakes (&sect;3). We conclude with some of the implications of the debate on category mistakes for other issues in both philosophy of language and metaphysics (&sect;4).",
+      "firstSectionTitle": "1. Characterizing Category Mistakes",
+      "firstSectionText": "One might have expected this entry to start with a definition of 'category mistake'. However, giving an explicit informative definition of category mistakes is no easy task. A typical dictionary definition looks like this: \"The error of assigning to something a quality or action which can only properly be assigned to things of another category, for example treating abstract concepts as though they had a physical location\" (Stevenson 2010). But such definitions are at best too vague to be useful, and at worst simply incorrect. For example, if 'properly assigned' is interpreted as meaning 'truly assigned', then the definition is at risk of massively over-generating: the sentence 'Two is odd' assigns to something (the number two) a quality (being odd) that can only be truly assigned to things of another category (odd numbers), but the sentence clearly isn't a category mistake. Alternatively, if 'properly assigned' is understood as 'grammatically assigned', then we would classify obviously ungrammatical strings such as 'the boys eats' as category mistakes. Other definitions suffer from not being sufficiently theoretically neutral, relying on specific controversial accounts of category mistakes. For example, one might try to define category mistakes as sentences that are syntactically well-formed but meaningless. But as we shall see both parts of this proposed definition depend on controversial assumptions about the nature of category mistakes: that they are syntactically well-formed (cf. &sect;3.1) and that they are meaningless (cf. &sect;3.2.1). Moreover, even if we are willing to eschew theoretical neutrality, note that most of the accounts discussed do not offer an obvious way to distinguish category mistakes from other linguistic phenomena. For example, according to the truthvaluelessness view (&sect;3.2.3) category mistakes are contentful but truth-valueless. Yet at least according to many philosophers, so are some instances of vague sentences such as 'John is tall'. And according to the presuppositional approach (&sect;3.4), category mistakes suffer from a presupposition failure, but then so do sentences that are not category mistakes such as 'The king of France is bald'. Perhaps the question of how to define category mistakes will receive a more satisfactory answer in the future or perhaps (following a general trend in analytic philosophy against conceptual analysis) we should eschew the project of defining category mistakes altogether. At any rate, extant debates on the topic of category mistakes have focused largely on the question of how to account for their infelicity rather than on the question of how to define the concept or distinguish category mistakes from other phenomena. The remainder of this entry will follow suit. Even without offering an explicit definition, there is a phenomenological way of characterizing category mistakes. As noted at the outset, there seems to be a distinctive kind of infelicity which we can recognize by example: the sort of infelicity present in paradigmatic category mistakes such as 'The number two is blue'. We can thus characterize category mistakes as sentences that are infelicitous in a similar manner to these paradigmatic examples. While this kind of phenomenological characterization may not seem theoretically informative, on reflection it reveals several interesting features of category mistakes. First, category mistakes can be created using a wide range of syntactic types: for example, adjectives ('Two is green'); adverbs ('John sleeps furiously'); or prepositional phrases ('The theory of relativity is under the table'). Second, the infelicity characteristic of category mistakes seems to occur in a range of complex constructions (for example, 'The number two isn't blue' or 'Either the number two is blue or it is prime'). Third, whether the sort of infelicity in question is present can depend on context, in various different ways. For example, an utterance of 'That is green' seems infelicitous in a context where the demonstrative refers (or appears to refer) to the number two, but entirely innocuous in a context in which it refers to a pen. And an utterance of 'The priest is pregnant' can be infelicitous in a context where speakers assume that all priests are male, but entirely innocuous in a context where it is assumed that there are female priests. As we shall see, these features play a role in the ensuing debate.",
+      "relatedEntries": [
+        "categories",
+        "compositionality",
+        "meaning",
+        "pragmatics",
+        "presupposition",
+        "ryle"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "categories"
+        },
+        {
+          "slug": "compositionality"
+        },
+        {
+          "slug": "meaning"
+        },
+        {
+          "slug": "pragmatics"
+        },
+        {
+          "slug": "presupposition"
+        },
+        {
+          "slug": "ryle"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 91,
+      "bibliography": [
+        {
+          "raw": "Abrus&aacute;n, M., 2011a, \"Triggering verbal presuppositions\", Proceedings of SALT , 20: 684-701."
+        },
+        {
+          "raw": "---, 2011b,, \"Predicting the presuppositions of soft triggers\", Linguistics and Philosophy , 34: 491-535."
+        },
+        {
+          "raw": "---, 2016, \"Coercion and pragmatic presuppositions\", Inquiry , 59: 529-541."
+        },
+        {
+          "raw": "Almotahari, M., 2014, \"The identity of a material thing and its matter\", Philosophical Quarterly , 64: 387-406."
+        },
+        {
+          "raw": "Asher, N., 2011, Lexical Meaning in Context , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Barker, C., and Jacobson, P., eds., 2007, Direct Compositionality , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Beall, J.C., and van Fraassen, B.C., 2003, Possibilities and paradox , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Beaver, D.I., 1997, \"Presupposition\", in Johan van Benthem and Alice ter Meulen (eds.), Handbook of Logic and Language , Amsterdam: Elsevier: 939-1008."
+        },
+        {
+          "raw": "Bergmann, M., 1977, \"Logic and sortal incorrectness\", Review of Metaphysics , 31: 61-79."
+        },
+        {
+          "raw": "Bogucki, K., 2023, \"The Riddle of Understanding Nonsense\", Organon , 30: 372-411."
+        },
+        {
+          "raw": "Brady, R., and Routley, R., 1973, \"Don't care are made to care\", Australasian Journal of Philosophy , 51: 211-25."
+        },
+        {
+          "raw": "Camp, E., 2004, \"The generality constraint and categorical restrictions\", Philosophical Quarterly , 54: 210-31."
+        },
+        {
+          "raw": "---, 2016, \" Category Mistakes , by Ofra Magidor\", Mind , 125: 611-615."
+        },
+        {
+          "raw": "Chatzikyriakidis, S. and Luo, Z., 2020, Formal Semantics in Modern Type Theories , London: Wiley."
+        },
+        {
+          "raw": "Chomsky, N., 1957, Syntactic Structures , The Hague: Mouton."
+        },
+        {
+          "raw": "---, 1965, Aspects of the Theory of Syntax , Cambridge, MA: MIT press."
+        },
+        {
+          "raw": "Collins, J., 2017, \"The copredication argument\", Inquiry , 60: 675-702."
+        },
+        {
+          "raw": "Cooper, R., 1983, Quantification and Syntactic Theory , Dordrecht: Reidel."
+        },
+        {
+          "raw": "Davidson, D., 2001, \"On saying that\", in Davidson, D., Inquiries into Truth and Interpretation , Oxford: Clarendon Press: 93-108."
+        },
+        {
+          "raw": "Drange, T., 1966, Type Crossings , The Hague: Mouton."
+        },
+        {
+          "raw": "Elbourne, P., 2016, \"Multi sentential category mistakes\", Inquiry , 59: 542-558."
+        },
+        {
+          "raw": "Ewing, A.C., 1937, \"Meaningfulness\", Mind , 46: 347-64."
+        },
+        {
+          "raw": "Fine, K., 2003, \"The non-identity of a material thing and its matter\", Mind , 112: 195-234."
+        },
+        {
+          "raw": "Field, H., 2003, \"No fact of the matter\", Australasian Journal of Philosophy , 81: 457-80."
+        },
+        {
+          "raw": "Fodor, J., and Katz, J., 1963, \"The structure of a semantic theory\", Language , 39: 170-210."
+        },
+        {
+          "raw": "Friend, Stacie, 2007, \"Fictional Characters\", Philosophy Compass , 2(2): 141-156."
+        },
+        {
+          "raw": "Glock, H.J., 2015, \"Nonsense made intelligible\", Erekenntnis , 80: 111-136."
+        },
+        {
+          "raw": "Goddard, L., 1966, \"Predicates, relations, and categories\", Australasian Journal of Philosophy , 44: 139-71."
+        },
+        {
+          "raw": "---, 1968, \"Towards a logic of significance\", Notre Dame Journal of Formal Logic , 9: 219-41."
+        },
+        {
+          "raw": "Gotham, M., 2015, \"Copredication, Quantification and Individuation\", Ph.D thesis, Department of Linguistics, University College London."
+        },
+        {
+          "raw": "Gotham, M., 2017, \"Composing criteria of individuation in copredication\", Journal of Semantics , 34(2): 333-371."
+        },
+        {
+          "raw": "Haack, R.J., 1971, \"No need for nonsense\", Australasian Journal of Philosophy , 49: 71-7."
+        },
+        {
+          "raw": "---, 1975, \"Still No need for nonsense\", Australasian Journal of Philosophy , 53:161-4."
+        },
+        {
+          "raw": "Harris, R.A., 1993, The Linguistics Wars , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Heim, I., and Kratzer, A., 1998, Semantics in Generative Grammar , Oxford: Blackwell."
+        },
+        {
+          "raw": "Jacobson, P., 2012, \"Direct compositionality\", in Wolfram Hinzen, Edouard Machery, and Markus Werning (eds.), The Oxford Handbook of Compositionality , Oxford: Oxford University Press: 109-128."
+        },
+        {
+          "raw": "Katz, J.J., 1964, \"Semi-sentences\", in Jerry Fodor and Jerrold Katz (eds.), The Structure of Linguistic Theory , New Jersey: Prentice Hall: 400-416."
+        },
+        {
+          "raw": "---, 1970, \"Interpretative semantics vs. Generative semantics\", Foundations of Language , 6: 220-59."
+        },
+        {
+          "raw": "Kinoshita, E., Mineshima, K., and Bekki, D., 2017, \"An analysis of selectional restrictions with dependent type semantics\", in S. Kuranashi et. al (eds.), New Frontiers in Artificial Intelligence : JSAI-isAI 2016 , Springer: 19-32."
+        },
+        {
+          "raw": "Lambert, K., 1968, \"On the no type theory of significance\", Australasian Journal of Philosophy , 46: 79-86."
+        },
+        {
+          "raw": "Lappin, S., 1981, Sorts, Ontology, and Metaphor , Berlin & New York: de Gruyter."
+        },
+        {
+          "raw": "Lewis, D., 1978, \"Truth in fiction\", American Philosophical Quarterly , 15: 37-46."
+        },
+        {
+          "raw": "Libert, A.R., 2016, \"Adpositions and Presuppositions\", SpringerPlus , 5: 858."
+        },
+        {
+          "raw": "Liebesman, D. & Magidor, O., forthcoming-a, \"Copredication\", Elsevier Encyclopaedia of Language and Linguistics , third edition."
+        },
+        {
+          "raw": "Ludlow, P., 2011, The Philosophy of Generative Linguistics , New York: Oxford University Press."
+        },
+        {
+          "raw": "Malik, L., 2021, \"Criteria for identifying category mistakes\", Philosophia OSAKA , 16: 21-37."
+        },
+        {
+          "raw": "Magidor, O., 2009, \"Category mistakes are meaningful\", Linguistics and Philosophy , 32: 553-581."
+        },
+        {
+          "raw": "---, 2011, \"Arguments by Leibniz's Law in metaphysics\", Philosophy Compass , 6: 180-195."
+        },
+        {
+          "raw": "---, 2013, Category Mistakes , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2016, \"Response to Abrus&aacute;n, Shaw, and Elbourne\", Inquiry , 59: 559-586."
+        },
+        {
+          "raw": "---, 2017, \"Category mistakes and figurative language\", Philosophical Studies , 174: 65-78."
+        },
+        {
+          "raw": "Mankowitz, P., 2018, \"Triggering domain restriction\", Mind and Language , 34: 563-84."
+        },
+        {
+          "raw": "---, forthcoming, \"Category mistakes electrified\", Review of Philosophy and Psychology ."
+        },
+        {
+          "raw": "Martin, J., 1975, \"A many valued semantics for category mistakes\", Synthese , 31: 63-83."
+        },
+        {
+          "raw": "McCawley, J., 1971, \"Interpretative semantics meets Frankenstein\", Foundations of Language , 7: 285-96."
+        },
+        {
+          "raw": "Murphy, E., 2024, \"Predicate order and coherence in copredication\", Inquiry , 67(6): 1744-1780."
+        },
+        {
+          "raw": "Nolan, D., 2015, \"Personification and impossible fiction\", The British Journal of Aesthetics , 55: 57-69."
+        },
+        {
+          "raw": "Ortega-Andr&eacute;s, M., & Vicente, A., 2019, \"Polysemy and co-predication\", Glossa , 4: 1-23."
+        },
+        {
+          "raw": "Oza, M., forthcoming, \"Nonsense: a user's guide\", Inquiry ."
+        },
+        {
+          "raw": "Pap, A., 1960, \"Types and meaninglessness\", Mind , 69: 41-54."
+        },
+        {
+          "raw": "Pieroski, P. M., 2005, \"Meaning before truth\", in Gerhard Preyer & Georg Peter (eds.), Contextualism in philosophy: Knowledge, meaning, and truth , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2018, Conjoining meanings: Semantics without truth values , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Prandi, M., 2016, \"Selectional restrictions as ultimate presuppositions of natural ontology\", Topoi , 35: 73-81."
+        },
+        {
+          "raw": "Prior, A.N., 1954, \"Entities\", Australasian Journal of Philosophy , 32: 159-68."
+        },
+        {
+          "raw": "Quine, W.V.O., 1960, Word and Object , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Ric&oelig;ur, P., 1978, The Rule of Metaphor: the Creation of Meaning in Language , London: Routledge."
+        },
+        {
+          "raw": "Roberts, C. and Simons, M., 2024, \"Preconditions and projection: Explaining non-anaphoric presupposition\", Linguistics and Philosophy , 47: 703-748."
+        },
+        {
+          "raw": "Routley, R., 1966, \"On significance theory\", Australasian Journal of Philosophy , 44: 172-209."
+        },
+        {
+          "raw": "---, 1969, \"The need for nonsense\", Australasian Journal of Philosophy , 47: 367-384."
+        },
+        {
+          "raw": "Ryle, G., 1938, \"Categories\", Proceedings of the Aristotelian Society , 38: 189-206."
+        },
+        {
+          "raw": "---, 1949, The Concept of Mind , London: Hutchinson University Library."
+        },
+        {
+          "raw": "Sauerland, U. & von Stechow , A., 2001, \"The syntax-semantics interface\", in Neil Smelser & Paul Baltes (eds.), International Encyclopaedia of the Social & Behavioural Sciences , Oxford: Pergamon: 15412-15418."
+        },
+        {
+          "raw": "Shaw, J., 2015, \"Anomaly and quantification\", No&ucirc;s , 49: 147-176."
+        },
+        {
+          "raw": "---, 2016, \"Magidor on anomaly and truth-value gaps\", Inquiry , 59: 513-528."
+        },
+        {
+          "raw": "Silverstein, S., 1964, The Giving Tree , Harper & Collins."
+        },
+        {
+          "raw": "Smart, J.J., 1953, \"A note on categories\", British Journal for the Philosophy of Science , 4: 227-8."
+        },
+        {
+          "raw": "Sommers, F., 1963, \"Types and ontology\", Philosophical Review , 72: 327-63."
+        },
+        {
+          "raw": "Stern, J., 2000, Metaphor in context , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 2006, \"Metaphor, Literal, Literalism\", Mind & Language , 21: 243-279."
+        },
+        {
+          "raw": "Stalnaker, R., 1973, \"Presuppositions\", Journal of Philosophical Logic , 2: 447-457."
+        },
+        {
+          "raw": "Stevenson, A. (ed.), 2010, Oxford Dictionary of English , third edition, Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Strawson, P., 1952, Introduction to Logical Theory , London: Methuen."
+        },
+        {
+          "raw": "---, 1970, \"Categories\", in Oscar Wood and George Pitcher (eds.), Ryle: A Collection of Critical Essays , New York: Doubleday: 181-212."
+        },
+        {
+          "raw": "Thomason, R., 1972, \"A semantic theory of sortal incorrectness\", Journal of Philosophical Logic , 1: 209-258."
+        },
+        {
+          "raw": "Thomasson, A., 2002, \"Phenomenology and the development of analytic philosophy\", The Souther Journal of Philosophy , 40: 189-206."
+        },
+        {
+          "raw": "Turbayne, C., 1962, The Myth of Metaphor , New Haven: Yale University Press."
+        },
+        {
+          "raw": "von Fintel, K., 2008, \"What is presupposition accommodation, again\", Philosophical Perspectives , 22: 137-170."
+        },
+        {
+          "raw": "Westerhoff, J., 2002, \"Defining ontological category\", Proceedings of the Aristotelean Society , 102: 337-343."
+        },
+        {
+          "raw": "Williamson, T., 1994, Vagueness , London: Routledge."
+        },
+        {
+          "raw": "---, 2000, Knowledge and its Limits , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Ziff, P., 1964, \"On understanding 'understanding utterances'\", in Jerry Fodor and Jerrold Katz (eds.), The Structure of Linguistic Theory , New Jersey: Prentice Hall: 390-399."
+        }
+      ],
+      "publishedAt": "2019-07-04T14:00:00.000Z",
+      "revisedAt": "2025-01-06T13:00:00.000Z"
+    }
+  }
+}

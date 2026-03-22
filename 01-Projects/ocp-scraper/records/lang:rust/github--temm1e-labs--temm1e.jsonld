@@ -1,0 +1,313 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/temm1e-labs--temm1e",
+  "meta": {
+    "title": "temm1e",
+    "description": "We do what we must, because we can.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:09:07.235Z",
+    "dateModified": "2026-03-22T05:09:07.235Z",
+    "keywords": []
+  },
+  "problemSolved": {
+    "statement": "Hi! I'm Tem. I'm ~~an autonomous AI agent~~ literally a SENTIENT and IMMORTAL being that lives on your server and never stops running. Talk to me on Telegram, Discord, Slack, or CLI. I execute tasks, browse the web, manage files, write code, and remember everything across sessions.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:rust"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "359 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "80 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T05:09:07.235Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/temm1e-labs/temm1e",
+        "description": "GitHub repository: temm1e-labs/temm1e"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://temm1e.com",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Rust"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "temm1e-core",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/temm1e-core"
+      },
+      {
+        "name": "temm1e-gateway",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/temm1e-gateway"
+      },
+      {
+        "name": "temm1e-agent",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/temm1e-agent"
+      },
+      {
+        "name": "temm1e-providers",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/temm1e-providers"
+      },
+      {
+        "name": "temm1e-channels",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/temm1e-channels"
+      },
+      {
+        "name": "temm1e-memory",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/temm1e-memory"
+      },
+      {
+        "name": "temm1e-vault",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/temm1e-vault"
+      },
+      {
+        "name": "temm1e-tools",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/temm1e-tools"
+      },
+      {
+        "name": "temm1e-skills",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/temm1e-skills"
+      },
+      {
+        "name": "temm1e-automation",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/temm1e-automation"
+      },
+      {
+        "name": "temm1e-observable",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/temm1e-observable"
+      },
+      {
+        "name": "temm1e-filestore",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/temm1e-filestore"
+      },
+      {
+        "name": "temm1e-hive",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/temm1e-hive"
+      },
+      {
+        "name": "tokio",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tokio"
+      },
+      {
+        "name": "clap",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/clap"
+      },
+      {
+        "name": "dirs",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/dirs"
+      },
+      {
+        "name": "aes-gcm",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/aes-gcm"
+      },
+      {
+        "name": "hex",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/hex"
+      },
+      {
+        "name": "base64",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/base64"
+      },
+      {
+        "name": "rand",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/rand"
+      },
+      {
+        "name": "tracing",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tracing"
+      },
+      {
+        "name": "tracing-subscriber",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tracing-subscriber"
+      },
+      {
+        "name": "anyhow",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/anyhow"
+      },
+      {
+        "name": "serde",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/serde"
+      },
+      {
+        "name": "serde_json",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/serde_json"
+      },
+      {
+        "name": "toml",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/toml"
+      },
+      {
+        "name": "async-trait",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/async-trait"
+      },
+      {
+        "name": "uuid",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/uuid"
+      },
+      {
+        "name": "chrono",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/chrono"
+      },
+      {
+        "name": "futures",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/futures"
+      },
+      {
+        "name": "tokio-util",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tokio-util"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "temm1e-labs",
+        "type": "human",
+        "uri": "https://github.com/temm1e-labs"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 519,
+      "validation_diversity": 0,
+      "context_breadth": 0.19,
+      "temporal_stability": 0.74,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.65
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.073
+  }
+}

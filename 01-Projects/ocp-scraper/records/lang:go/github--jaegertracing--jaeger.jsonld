@@ -1,0 +1,846 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/jaegertracing--jaeger",
+  "meta": {
+    "title": "Jaeger - a Distributed Tracing System",
+    "description": "CNCF Jaeger, a Distributed Tracing Platform",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:37:11.548Z",
+    "dateModified": "2026-03-22T05:37:11.548Z",
+    "keywords": [
+      "cncf",
+      "distributed-tracing",
+      "hacktoberfest",
+      "jaeger",
+      "observability",
+      "opentelemetry",
+      "tracing"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "💥💥💥 Jaeger v2 is out! Read the [blog post](https://medium.com/jaegertracing/jaeger-v2-released-09a6033d1b10) and [try it out](https://www.jaegertracing.io/docs/latest/getting-started/).",
+    "context": "💥💥💥 Jaeger v2 is out! Read the [blog post](https://medium.com/jaegertracing/jaeger-v2-released-09a6033d1b10) and [try it out](https://www.jaegertracing.io/docs/latest/getting-started/).",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "22600 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "2815 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T05:37:11.548Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/jaegertracing/jaeger",
+        "description": "GitHub repository: jaegertracing/jaeger"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://www.jaegertracing.io/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "github.com/ClickHouse/ch-go",
+        "version": "v0.71.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/ClickHouse/ch-go"
+      },
+      {
+        "name": "github.com/ClickHouse/clickhouse-go/v2",
+        "version": "v2.43.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/ClickHouse/clickhouse-go/v2"
+      },
+      {
+        "name": "github.com/apache/cassandra-gocql-driver/v2",
+        "version": "v2.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/apache/cassandra-gocql-driver/v2"
+      },
+      {
+        "name": "github.com/asaskevich/govalidator",
+        "version": "v0.0.0-20230301143203-a9d515a09cc2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/asaskevich/govalidator"
+      },
+      {
+        "name": "github.com/davecgh/go-spew",
+        "version": "v1.1.2-0.20180830191138-d8f796af33cc",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/davecgh/go-spew"
+      },
+      {
+        "name": "github.com/dgraph-io/badger/v4",
+        "version": "v4.9.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/dgraph-io/badger/v4"
+      },
+      {
+        "name": "github.com/elastic/go-elasticsearch/v9",
+        "version": "v9.3.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/elastic/go-elasticsearch/v9"
+      },
+      {
+        "name": "github.com/fsnotify/fsnotify",
+        "version": "v1.9.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/fsnotify/fsnotify"
+      },
+      {
+        "name": "github.com/go-logr/zapr",
+        "version": "v1.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-logr/zapr"
+      },
+      {
+        "name": "github.com/gogo/protobuf",
+        "version": "v1.3.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gogo/protobuf"
+      },
+      {
+        "name": "github.com/gorilla/handlers",
+        "version": "v1.5.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gorilla/handlers"
+      },
+      {
+        "name": "github.com/jaegertracing/jaeger-idl",
+        "version": "v0.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jaegertracing/jaeger-idl"
+      },
+      {
+        "name": "github.com/kr/pretty",
+        "version": "v0.3.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/kr/pretty"
+      },
+      {
+        "name": "github.com/modelcontextprotocol/go-sdk",
+        "version": "v1.4.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/modelcontextprotocol/go-sdk"
+      },
+      {
+        "name": "github.com/olivere/elastic/v7",
+        "version": "v7.0.32",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/olivere/elastic/v7"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/connector/spanmetricsconnector",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/connector/spanmetricsconnector"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/kafkaexporter",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/exporter/kafkaexporter"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/prometheusexporter",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/exporter/prometheusexporter"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/basicauthextension",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/extension/basicauthextension"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/healthcheckv2extension",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/extension/healthcheckv2extension"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/pprofextension",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/extension/pprofextension"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/sigv4authextension",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/extension/sigv4authextension"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/extension/storage",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/extension/storage"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatatest"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatautil",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/pkg/pdatautil"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/jaeger",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/jaeger"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/attributesprocessor",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/processor/attributesprocessor"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/filterprocessor",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/processor/filterprocessor"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/processor/tailsamplingprocessor",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/processor/tailsamplingprocessor"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/jaegerreceiver",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/jaegerreceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/kafkareceiver",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/kafkareceiver"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/receiver/zipkinreceiver",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/receiver/zipkinreceiver"
+      },
+      {
+        "name": "github.com/pmezard/go-difflib",
+        "version": "v1.0.1-0.20181226105442-5d4384ee4fb2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/pmezard/go-difflib"
+      },
+      {
+        "name": "github.com/prometheus/client_golang",
+        "version": "v1.23.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/client_golang"
+      },
+      {
+        "name": "github.com/prometheus/client_model",
+        "version": "v0.6.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/client_model"
+      },
+      {
+        "name": "github.com/prometheus/common",
+        "version": "v0.67.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/common"
+      },
+      {
+        "name": "github.com/spf13/cobra",
+        "version": "v1.10.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/cobra"
+      },
+      {
+        "name": "github.com/spf13/pflag",
+        "version": "v1.0.10",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/pflag"
+      },
+      {
+        "name": "github.com/spf13/viper",
+        "version": "v1.21.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/viper"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.11.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/client",
+        "version": "v1.54.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/client"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/component",
+        "version": "v1.54.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/component"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/component/componentstatus",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/component/componentstatus"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/component/componenttest",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/component/componenttest"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/config/configauth",
+        "version": "v1.54.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/config/configauth"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/config/configgrpc",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/config/configgrpc"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/config/confighttp",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/config/confighttp"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/config/confighttp/xconfighttp",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/config/confighttp/xconfighttp"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/config/confignet",
+        "version": "v1.54.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/config/confignet"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/config/configoptional",
+        "version": "v1.54.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/config/configoptional"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/config/configretry",
+        "version": "v1.54.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/config/configretry"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/config/configtls",
+        "version": "v1.54.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/config/configtls"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/confmap",
+        "version": "v1.54.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/confmap"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/confmap/provider/envprovider",
+        "version": "v1.54.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/confmap/provider/envprovider"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/confmap/provider/fileprovider",
+        "version": "v1.54.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/confmap/provider/fileprovider"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/confmap/provider/httpprovider",
+        "version": "v1.54.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/confmap/provider/httpprovider"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/confmap/provider/httpsprovider",
+        "version": "v1.54.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/confmap/provider/httpsprovider"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/confmap/provider/yamlprovider",
+        "version": "v1.54.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/confmap/provider/yamlprovider"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/confmap/xconfmap",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/confmap/xconfmap"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/connector",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/connector"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/connector/forwardconnector",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/connector/forwardconnector"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/consumer",
+        "version": "v1.54.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/consumer"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/consumer/consumertest",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/consumer/consumertest"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/exporter",
+        "version": "v1.54.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/exporter"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/exporter/debugexporter",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/exporter/debugexporter"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/exporter/exporterhelper",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/exporter/exporterhelper"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/exporter/exportertest",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/exporter/exportertest"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/exporter/nopexporter",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/exporter/nopexporter"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/exporter/otlpexporter",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/exporter/otlpexporter"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/exporter/otlphttpexporter",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/exporter/otlphttpexporter"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/extension",
+        "version": "v1.54.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/extension"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/extension/zpagesextension",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/extension/zpagesextension"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/featuregate",
+        "version": "v1.54.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/featuregate"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/otelcol",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/otelcol"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/pdata",
+        "version": "v1.54.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/pdata"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/processor",
+        "version": "v1.54.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/processor"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/processor/batchprocessor",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/processor/batchprocessor"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/processor/memorylimiterprocessor",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/processor/memorylimiterprocessor"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/processor/processorhelper",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/processor/processorhelper"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/processor/processortest",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/processor/processortest"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/receiver",
+        "version": "v1.54.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/receiver"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/receiver/nopreceiver",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/receiver/nopreceiver"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/receiver/otlpreceiver",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/receiver/otlpreceiver"
+      },
+      {
+        "name": "go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc",
+        "version": "v0.67.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
+      },
+      {
+        "name": "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp",
+        "version": "v0.67.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
+      },
+      {
+        "name": "go.opentelemetry.io/contrib/samplers/jaegerremote",
+        "version": "v0.36.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/contrib/samplers/jaegerremote"
+      },
+      {
+        "name": "go.opentelemetry.io/otel",
+        "version": "v1.42.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/exporters/otlp/otlptrace",
+        "version": "v1.42.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/exporters/otlp/otlptrace"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc",
+        "version": "v1.42.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp",
+        "version": "v1.42.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/exporters/prometheus",
+        "version": "v0.64.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/exporters/prometheus"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/exporters/stdout/stdouttrace",
+        "version": "v1.42.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/exporters/stdout/stdouttrace"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/metric",
+        "version": "v1.42.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/metric"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/sdk",
+        "version": "v1.42.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/sdk"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/sdk/metric",
+        "version": "v1.42.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/sdk/metric"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/trace",
+        "version": "v1.42.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/trace"
+      },
+      {
+        "name": "go.uber.org/automaxprocs",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.uber.org/automaxprocs"
+      },
+      {
+        "name": "go.uber.org/goleak",
+        "version": "v1.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.uber.org/goleak"
+      },
+      {
+        "name": "go.uber.org/zap",
+        "version": "v1.27.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.uber.org/zap"
+      },
+      {
+        "name": "golang.org/x/sys",
+        "version": "v0.42.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/sys"
+      },
+      {
+        "name": "google.golang.org/grpc",
+        "version": "v1.79.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/grpc"
+      },
+      {
+        "name": "google.golang.org/protobuf",
+        "version": "v1.36.11",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/protobuf"
+      },
+      {
+        "name": "github.com/cenkalti/backoff/v5",
+        "version": "v5.0.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/cenkalti/backoff/v5"
+      },
+      {
+        "name": "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/core/xidutils",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-telemetry/opentelemetry-collector-contrib/pkg/core/xidutils"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/config/configmiddleware",
+        "version": "v1.54.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/config/configmiddleware"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/config/configtelemetry",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/config/configtelemetry"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/extension/extensionauth",
+        "version": "v1.54.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/extension/extensionauth"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/extension/extensioncapabilities",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/extension/extensioncapabilities"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/pdata/xpdata",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/pdata/xpdata"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/pipeline",
+        "version": "v1.54.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/pipeline"
+      },
+      {
+        "name": "go.opentelemetry.io/collector/service",
+        "version": "v0.148.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/collector/service"
+      },
+      {
+        "name": "go.yaml.in/yaml/v3",
+        "version": "v3.0.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.yaml.in/yaml/v3"
+      },
+      {
+        "name": "golang.org/x/exp",
+        "version": "v0.0.0-20260218203240-3dfff04db8fa",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/exp"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "jaegertracing",
+        "type": "human",
+        "uri": "https://github.com/jaegertracing"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 28230,
+      "validation_diversity": 0.89,
+      "context_breadth": 0.58,
+      "temporal_stability": 1,
+      "test_coverage": 0.67,
+      "documentation_quality": 0.6
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.833
+  }
+}

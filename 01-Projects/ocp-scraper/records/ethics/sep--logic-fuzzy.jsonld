@@ -1,0 +1,602 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/logic-fuzzy",
+  "meta": {
+    "title": "Fuzzy Logic",
+    "description": "Fuzzy logic is intended to model logical reasoning with vague or imprecise statements like \"Petr is young (rich, tall, hungry, etc.)\". It refers to a family of many-valued logics , where the truth-values are interpreted as degrees of truth. The truth-value of a logically compound proposition, like \"Carles is tall and Chris is rich\", is determined by the truth-value of its components. In other words, like in classical logic, one imposes truth-functionality. Fuzzy logic emerged in the context of the theory of fuzzy sets, introduced by Lotfi Zadeh (1965). A fuzzy set assigns a degree of membership, typically a real number from the interval \\([0,1]\\), to elements of a universe. Fuzzy logic arises by assigning degrees of truth to propositions. The standard set of truth-values (degrees) is the real unit interval \\([0,1]\\), where \\(0\\) represents \"totally false\", \\(1\\) represents \"totally true\", and the other values refer to partial truth, i.e., intermediate degrees of truth. \"Fuzzy logic\" is often understood in a very wide sense which includes all kinds of formalisms and techniques referring to the systematic handling of degrees of some kind (see, e.g., Nguyen & Walker 2000). In particular in engineering contexts (fuzzy control, fuzzy classification, soft computing) it is aimed at efficient computational methods tolerant to suboptimality and imprecision (see, e.g., Ross 2010). This entry focuses on fuzzy logic in a restricted sense, established as a discipline of mathematical logic following the seminal monograph by Petr H&aacute;jek (1998) and nowadays usually referred to as \"mathematical fuzzy logic\". For details about the history of different variants of fuzzy logic we refer to B&#283;lohl&aacute;vek, Dauben, & Klir 2017. Mathematical fuzzy logic focuses on logics based on a truth-functional account of partial truth and studies them in the spirit of classical mathematical logic, investigating syntax, model-theoretic semantics, proof systems, completeness, etc., both, at the propositional and the predicate level (see Cintula, Ferm&uuml;ller, H&aacute;jek, & Noguera 2011 and 2015).",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:40:15.188Z",
+    "dateModified": "2026-03-22T05:40:15.188Z",
+    "datePublished": "2016-11-14T13:00:00.000Z",
+    "keywords": [
+      "logic algebraic propositional",
+      "logic manyvalued",
+      "logic substructural",
+      "proof theory development",
+      "vagueness"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Fuzzy logic is intended to model logical reasoning with vague or imprecise statements like \"Petr is young (rich, tall, hungry, etc.)\". It refers to a family of many-valued logics , where the truth-values are interpreted as degrees of truth. The truth-value of a logically compound proposition, like \"Carles is tall and Chris is rich\", is determined by the truth-value of its components. In other words, like in classical logic, one imposes truth-functionality. Fuzzy logic emerged in the context of the theory of fuzzy sets, introduced by Lotfi Zadeh (1965). A fuzzy set assigns a degree of membership, typically a real number from the interval \\([0,1]\\), to elements of a universe. Fuzzy logic arises by assigning degrees of truth to propositions. The standard set of truth-values (degrees) is the real unit interval \\([0,1]\\), where \\(0\\) represents \"totally false\", \\(1\\) represents \"totally true\", and the other values refer to partial truth, i.e., intermediate degrees of truth. \"Fuzzy logic\" is often understood in a very wide sense which includes all kinds of formalisms and techniques referring to the systematic handling of degrees of some kind (see, e.g., Nguyen & Walker 2000). In particular in engineering contexts (fuzzy control, fuzzy classification, soft computing) it is aimed at efficient computational methods tolerant to suboptimality and imprecision (see, e.g., Ross 2010). This entry focuses on fuzzy logic in a restricted sense, established as a discipline of mathematical logic following the seminal monograph by Petr H&aacute;jek (1998) and nowadays usually referred to as \"mathematical fuzzy logic\". For details about the history of different variants of fuzzy logic we refer to B&#283;lohl&aacute;vek, Dauben, & Klir 2017. Mathematical fuzzy logic focuses on logics based on a truth-functional account of partial truth and studies them in the spirit of classical mathematical logic, investigating syntax, model-theoretic semantics, proof systems, completeness, etc., both, at the propositional and the predicate level (see Cintula, Ferm&uuml;ller, H&aacute;jek, & Noguera 2011 and 2015).",
+    "context": "Opening section: 1. Fuzzy connectives based on t-norms | Related entries: logic-algebraic-propositional, logic-manyvalued, logic-substructural, proof-theory-development, vagueness",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "ethics",
+    "logic",
+    "philosophy-of-science"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry logic-fuzzy",
+        "uri": "https://plato.stanford.edu/entries/logic-fuzzy/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "6 author(s), 5 related entries, bibliography size 120"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2016-11-14T13:00:00.000Z and revised 2021-11-10T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2021-11-10T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/logic-fuzzy/",
+        "description": "SEP entry for logic-fuzzy"
+      }
+    ],
+    "solutionApproach": "1. Fuzzy connectives based on t-norms"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/logic-algebraic-propositional",
+      "ocp:sep/logic-manyvalued",
+      "ocp:sep/logic-substructural",
+      "ocp:sep/proof-theory-development",
+      "ocp:sep/vagueness"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Cintula, Petr",
+        "type": "human"
+      },
+      {
+        "name": "Ferm",
+        "type": "human"
+      },
+      {
+        "name": "uuml",
+        "type": "human"
+      },
+      {
+        "name": "ller",
+        "type": "human"
+      },
+      {
+        "name": "Christian G.",
+        "type": "human"
+      },
+      {
+        "name": "Noguera, Carles",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/logic-fuzzy/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 102,
+      "validation_diversity": 0.67,
+      "context_breadth": 0.35,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.88
+    },
+    "confidence": "tested",
+    "authority": "high",
+    "status": "draft",
+    "trustScore": 0.593
+  },
+  "extensions": {
+    "sep": {
+      "slug": "logic-fuzzy",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/logic-fuzzy/",
+      "preamble": "Fuzzy logic is intended to model logical reasoning with vague or imprecise statements like \"Petr is young (rich, tall, hungry, etc.)\". It refers to a family of many-valued logics , where the truth-values are interpreted as degrees of truth. The truth-value of a logically compound proposition, like \"Carles is tall and Chris is rich\", is determined by the truth-value of its components. In other words, like in classical logic, one imposes truth-functionality. Fuzzy logic emerged in the context of the theory of fuzzy sets, introduced by Lotfi Zadeh (1965). A fuzzy set assigns a degree of membership, typically a real number from the interval \\([0,1]\\), to elements of a universe. Fuzzy logic arises by assigning degrees of truth to propositions. The standard set of truth-values (degrees) is the real unit interval \\([0,1]\\), where \\(0\\) represents \"totally false\", \\(1\\) represents \"totally true\", and the other values refer to partial truth, i.e., intermediate degrees of truth. \"Fuzzy logic\" is often understood in a very wide sense which includes all kinds of formalisms and techniques referring to the systematic handling of degrees of some kind (see, e.g., Nguyen & Walker 2000). In particular in engineering contexts (fuzzy control, fuzzy classification, soft computing) it is aimed at efficient computational methods tolerant to suboptimality and imprecision (see, e.g., Ross 2010). This entry focuses on fuzzy logic in a restricted sense, established as a discipline of mathematical logic following the seminal monograph by Petr H&aacute;jek (1998) and nowadays usually referred to as \"mathematical fuzzy logic\". For details about the history of different variants of fuzzy logic we refer to B&#283;lohl&aacute;vek, Dauben, & Klir 2017. Mathematical fuzzy logic focuses on logics based on a truth-functional account of partial truth and studies them in the spirit of classical mathematical logic, investigating syntax, model-theoretic semantics, proof systems, completeness, etc., both, at the propositional and the predicate level (see Cintula, Ferm&uuml;ller, H&aacute;jek, & Noguera 2011 and 2015).",
+      "firstSectionTitle": "1. Fuzzy connectives based on t-norms",
+      "firstSectionText": "The standard set of truth-values for fuzzy logics is the real unit interval \\([0,1]\\) with its natural ordering \\(\\leq\\), ranging from total falsity (represented by \\(0\\)) to total truth (represented by \\(1\\)) through a continuum of intermediate degrees of truth (see Sections 5 and 7 for alternative interpretations of truth constants and alternative sets of truth-values). A fundamental assumption of (mainstream) mathematical fuzzy logic is that connectives are to be interpreted truth-functionally over the set of degrees of truth. Such truth functions are assumed, in the standard setting, to behave classically on the extremal values \\(0\\) and \\(1\\). A very natural behavior of conjunction, disjunction, and negation is achieved by imposing \\(x \\land y = \\min\\{x,y\\}\\), \\(x \\lor y = \\max\\{x,y\\}\\), and \\(\\neg x = 1 - x\\) for each \\(x,y \\in [0,1]\\). These three truth functions yield the original semantics of fuzzy logic proposed by Joseph Goguen (1975), later studied formally by, e.g., Gehrke, Walker, & Walker (1997). Many researchers still refer to it as \"the fuzzy logic\". However, it has soon become apparent that this semantic framework is too poor to (1) encode/model numerous interesting aspects of reasoning and (2) to support a fully fledged theory of mathematical logic. Another, non-idempotent, conjunction \\(\\&\\) is typically added to account for the intuition that applying a partially true hypothesis twice might lead to a different degree of truth than using it only once. Such a conjunction is usually interpreted by a binary operation on \\([0,1]\\), which is not necessarily idempotent, but still associative, commutative, non-decreasing in both arguments and has \\(1\\) as neutral element. These operations are called t-norms ( triangular norms ) and their mathematical properties have been thoroughly studied (see Klement, Mesiar, & Pap 2000). Prominent examples of t-norms are the already mentioned function \\(\\min\\), the standard product \\(\\cdot\\) of real numbers, and the &#321;ukasiewicz t-norm: \\(x *_{&#321;} y=\\max\\{x+y-1,0\\}\\). These three t-norms are actually continuous functions and any other continuous t-norm can be described as an ordinal sum of these three basic ones (Ling 1965; Mostert & Shields 1957). Interestingly, each left-continuous t-norm determines a suitable choice for implication. Indeed, it is known that a t-norm \\(\\ast\\) is left-continuous if, and only if, there is a unique binary operation \\(\\Rightarrow_\\ast\\) on \\([0,1]\\) satisfying the so-called residuation condition: \\[ x \\ast y \\leq z\\ \\text{ if and only if }\\ x \\leq y \\Rightarrow_\\ast z. \\] The function \\(\\Rightarrow_\\ast\\) is known as residuum of \\(\\ast\\) , and it can be shown that \\(x \\Rightarrow_\\ast y = \\max\\{z \\mid x \\ast z \\leq y\\}\\). The residua of the three mentioned prominent t-norms are: \\(x \\Rightarrow_\\min y = 1\\) if \\(x\\leq y\\) and \\(y\\) otherwise; \\(x \\Rightarrow_\\cdot y = 1\\) if \\(x\\leq y\\) and \\(\\frac{y}{x}\\) otherwise; and \\(x \\Rightarrow_{&#321;} y = \\min\\{1, 1 - x+y\\}\\). In the general t-norm setting, the negation is interpreted using the residuum. Namely, for a given left-continuous t-norm \\(\\ast\\) we set \\(\\neg_\\ast x = x\\Rightarrow_\\ast 0\\). For the &#321;ukasiewicz t-norm we obtain the negation \\(\\neg_{&#321;} x = 1 - x\\) (known as &#321;ukasiewicz negation or the standard involutive negation) whereas for the minimum and the product t-norms we obtain the same negation (known as G&ouml;del negation): \\(\\neg_\\mathrm{G} 0 = 1\\) and \\(0\\) otherwise.",
+      "relatedEntries": [
+        "logic-algebraic-propositional",
+        "logic-manyvalued",
+        "logic-substructural",
+        "proof-theory-development",
+        "vagueness"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "logic-algebraic-propositional"
+        },
+        {
+          "slug": "logic-manyvalued"
+        },
+        {
+          "slug": "logic-substructural"
+        },
+        {
+          "slug": "proof-theory-development"
+        },
+        {
+          "slug": "vagueness"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 120,
+      "bibliography": [
+        {
+          "raw": "Aguzzoli, Stefano, Simone Bova, and Brunella Gerla, 2011, \"Free algebras and functional representation for fuzzy logics\", in Cintula, Petr, Petr H&aacute;jek, and Carles Noguera (eds.), Handbook of Mathematical Fuzzy Logic , Volume 2, (Mathematical Logic and Foundations, Volume 38), London: College Publications, pages 713-791."
+        },
+        {
+          "raw": "Avron, Arnon, 1991, \"Hypersequents, Logical Consequence and Intermediate Logics for Concurrency\", Annals of Mathematics and Artificial Intelligence , 4(3-4): 225-248. doi:10.1007/BF01531058"
+        },
+        {
+          "raw": "Baaz, Matthias, 1996, \"Infinite-Valued G&ouml;del Logic with 0-1-Projections and Relativisations\", in H&aacute;jek, Petr (ed.), G&ouml;del'96: Logical Foundations of Mathematics, Computer Science, and Physics , (Lecture Notes in Logic, Volume 6), Brno: Springer, pages 23-33."
+        },
+        {
+          "raw": "Baaz, Matthias, Petr H&aacute;jek, Franco Montagna, and Helmut Veith, 2002, \"Complexity of T-Tautologies\", Annals of Pure and Applied Logic , 113(1-3): 3-11."
+        },
+        {
+          "raw": "Baaz, Matthias and Norbert Preining, 2011, \"G&ouml;del-Dummett Logics\", in Cintula, Petr, Petr H&aacute;jek, and Carles Noguera (eds.), Handbook of Mathematical Fuzzy Logic , Volume 2, (Mathematical Logic and Foundations, Volume 38), London: College Publications, pages 585-625."
+        },
+        {
+          "raw": "Badia, Guillermo and Carles Noguera, 2021, \"Lindstr&ouml;m theorems in graded model theory\", Annals of Pure and Applied Logic , 172(3): 102916. doi: 10.1016/j.apal.2020.102916"
+        },
+        {
+          "raw": "---, 2021, \"A General Omitting Types Theorem in Mathematical Fuzzy Logic\", IEEE Transactions on Fuzzy Systems , 29(6): 1386-1394. doi: 10.1109/TFUZZ.2020.2975146"
+        },
+        {
+          "raw": "B&#283;hounek, Libor, 2009, \"Fuzzy Logics Interpreted as Logics of Resources\", in Peli&scaron;, Michal (ed.), The Logica Yearbook 2008 , London: College Publications, pages 9-21."
+        },
+        {
+          "raw": "---, 2014, \"In Which Sense Is Fuzzy Logic a Logic For Vagueness?\", in &#321;ukasiewicz, Thomas, Rafael Pe&ntilde;aloza, and Anni-Yasmin Turhan (eds.), PRUV 2014: Logics for Reasoning About Preferences, Uncertainty, and Vagueness , (CEUR Workshop Proceedings, Volume 1205), Dresden: CEUR."
+        },
+        {
+          "raw": "B&#283;hounek, Libor and Petr Cintula, 2005, \"Fuzzy Class Theory\", Fuzzy Sets and Systems , 154(1): 34-55."
+        },
+        {
+          "raw": "---, 2006, \"Fuzzy Logics as the Logics of Chains\", Fuzzy Sets and Systems , 157(5): 604-610."
+        },
+        {
+          "raw": "B&#283;hounek, Libor and Zuzana Hanikov&aacute;, 2014, \"Set Theory and Arithmetic in Fuzzy Logic\", in Montagna, Franco (ed.), Petr H&aacute;jek on Mathematical Fuzzy Logic , (Outstanding Contributions to Logic, Volume 6), Cham: Springer, pages 63-89."
+        },
+        {
+          "raw": "B&#283;lohl&aacute;vek, Radim, Joseph W. Dauben, and George J. Klir, 2017, Fuzzy Logic and Mathematics: A Historical Perspective , Oxford: Oxford University Press. doi:10.1093/oso/9780190200015.001.0001"
+        },
+        {
+          "raw": "B&#283;lohl&aacute;vek, Radim and Vil&eacute;m Vychodil, 2005, Fuzzy Equational Logic , (Studies in Fuzziness and Soft Computing, Volume 186), Berlin and Heidelberg: Springer."
+        },
+        {
+          "raw": "Bobillo, Fernando, Marco Cerami, Francesc Esteva, &Agrave;ngel Garc&iacute;a-Cerda&ntilde;a, Rafael Pe&ntilde;aloza, and Umberto Straccia, 2015, \"Fuzzy Description Logics\", in Cintula, Petr, Christian G. Ferm&uuml;ller, and Carles Noguera (eds.), Handbook of Mathematical Fuzzy Logic , Volume 3, (Mathematical Logic and Foundations, Volume 58), London: College Publications, pages 1105-1181."
+        },
+        {
+          "raw": "Bou, F&eacute;lix, Francesc Esteva, Llu&iacute;s Godo, and Ricardo Oscar Rodr&iacute;guez, 2011, \"On the Minimum Many-Valued Modal Logic Over a Finite Residuated Lattice\", Journal of Logic and Computation , 21(5): 739-790."
+        },
+        {
+          "raw": "Busaniche, Manuela and Franco Montagna, 2011, \"H&aacute;jek's Logic BL and BL-Algebras\", in Cintula, Petr, Petr H&aacute;jek, and Carles Noguera (eds.), Handbook of Mathematical Fuzzy Logic , Volume 1, (Mathematical Logic and Foundations, Volume 37), London: College Publications, pages 355-447."
+        },
+        {
+          "raw": "Ciabattoni, Agata, Nikolaos Galatos, and Kazushige Terui, 2012, \"Algebraic Proof Theory for Substructural Logics: Cut-Elimination and Completions\", Annals of Pure and Applied Logic , 163(3): 266-290."
+        },
+        {
+          "raw": "Caicedo, Xavier, George Metcalfe, Ricardo Oscar Rodr&iacute;guez, and Jonas Rogger, 2017, \"Decidability of order-based modal logics\", Journal of Computer and System Sciences , 88: 53-74. doi:10.1016/j.jcss.2017.03.012"
+        },
+        {
+          "raw": "Caicedo, Xavier and Ricardo Oscar Rodr&iacute;guez, 2010, \"Standard G&ouml;del Modal Logics\", Studia Logica , 94(2): 189-214."
+        },
+        {
+          "raw": "---, 2015, \"Bi-modal G&ouml;del logic over [0, 1]-valued Kripke frames\", Journal of Logic and Computation , 25(1): 37-55. doi: 10.1093/logcom/exs036"
+        },
+        {
+          "raw": "Cicalese, Ferdinando and Franco Montagna, 2015, \"Ulam-R&eacute;nyi Game Based Semantics For Fuzzy Logics\", in Cintula, Petr, Christian G. Ferm&uuml;ller, and Carles Noguera (eds.), Handbook of Mathematical Fuzzy Logic , Volume 3, (Mathematical Logic and Foundations, Volume 58), London: College Publications, pages 1029-1062."
+        },
+        {
+          "raw": "Cignoli, Roberto, Itala M. D'Ottaviano, and Daniele Mundici, 1999, Algebraic Foundations of Many-Valued Reasoning , (Trends in Logic, Volume 7), Dordrecht: Kluwer."
+        },
+        {
+          "raw": "Cintula, Petr, 2006, \"Weakly Implicative (Fuzzy) Logics I: Basic Properties\", Archive for Mathematical Logic , 45(6): 673-704."
+        },
+        {
+          "raw": "Cintula, Petr, Denisa Diaconescu, and George Metcalfe, 2019, \"Skolemization and Herbrand theorems for lattice-valued logics\", Theoretical Computer Science , 768: 54-75. doi: 10.1016/j.tcs.2019.02.007"
+        },
+        {
+          "raw": "Cintula, Petr, Francesc Esteva, Joan Gispert, Llu&iacute;s Godo, Franco Montagna, and Carles Noguera, 2009, \"Distinguished Algebraic Semantics for T-norm Based Fuzzy Logics: Methods and Algebraic Equivalencies\", Annals of Pure and Applied Logic , 160(1): 53-81."
+        },
+        {
+          "raw": "Cintula, Petr, Christian G. Ferm&uuml;ller, and Carles Noguera (eds.), 2015, Handbook of Mathematical Fuzzy Logic , volume 3, (Studies in Logic, Volume 58), London: College Publications."
+        },
+        {
+          "raw": "Cintula, Petr, Rostislav Hor&#269;&iacute;k, Carles Noguera, 2013, \"Non-Associative Substructural Logics and their Semilinear Extensions: Axiomatization and Completeness Properties\", The Review of Symbolic Logic , 6(3): 394-423. doi:10.1017/S1755020313000099"
+        },
+        {
+          "raw": "---, 2014, \"The Quest for the Basic Fuzzy Logic\", in Montagna, Franco (ed.), Petr H&aacute;jek on Mathematical Fuzzy Logic , (Outstanding Contributions to Logic, Volume 6), Cham: Springer, pages 245-290. doi:10.1007/978-3-319-06233-4_12"
+        },
+        {
+          "raw": "Cintula, Petr, Paula Mench&oacute;n, and Carles Noguera, 2019, \"Toward a general frame semantics for modal many-valued logics\", Soft Computing , 23(7): 2233-2241. doi: 10.1007/s00500-018-3369-5"
+        },
+        {
+          "raw": "Cintula, Petr and Carles Noguera, 2011, \"A General Framework for Mathematical Fuzzy Logic\", in Cintula, Petr, Petr H&aacute;jek, and Carles Noguera (eds.), Handbook of Mathematical Fuzzy Logic , Volume 1, (Mathematical Logic and Foundations, Volume 37), London: College Publications, pages 103-207."
+        },
+        {
+          "raw": "Cintula, Petr and George Metcalfe, 2009, \"Structural Completeness in Fuzzy Logics\", Notre Dame Journal of Formal Logic , 50(2): 153-183."
+        },
+        {
+          "raw": "Dellunde, Pilar, 2012, \"Preserving Mappings in Fuzzy Predicate Logics\", Journal of Logic and Computation , 22(6): 1367-1389."
+        },
+        {
+          "raw": "Dellunde, Pilar, &Agrave;ngel Garc&iacute;a-Cerda&ntilde;a, and Carles Noguera, 2018, \"Back-and-forth systems for fuzzy first-order models\", Fuzzy Sets and Systems , 345: 83-98."
+        },
+        {
+          "raw": "Di Nola, Antonio and Giangiacomo Gerla, 1986, \"Fuzzy Models of First-Order Languages\", Zeitschrift f&uuml;r Mathematische Logik und Grundlagen der Mathematik , 32(19-24): 331-340."
+        },
+        {
+          "raw": "Dummett, Michael, 1959, \"A Propositional Calculus with Denumerable Matrix\", Journal of Symbolic Logic , 24(2): 97-106. doi:10.2307/2964753"
+        },
+        {
+          "raw": "Esteva, Francesc, Joan Gispert, Llu&iacute;s Godo, and Carles Noguera, 2007, \"Adding Truth-Constants to Logics of Continuous T-norms: Axiomatization and Completeness Results\", Fuzzy Sets and Systems , 158(6): 597-618. doi:10.1016/j.fss.2006.11.010"
+        },
+        {
+          "raw": "Esteva, Francesc and Llu&iacute;s Godo, 2001, \"Monoidal T-norm Based Logic: Towards a Logic for Left-Continuous T-norms\", Fuzzy Sets and Systems , 124(3): 271-288. doi:10.1016/S0165-0114(01)00098-7"
+        },
+        {
+          "raw": "Esteva, Francesc, Llu&iacute;s Godo, and &Agrave;ngel Garc&iacute;a-Cerda&ntilde;a, 2003, \"On the Hierarchy of T-norm Based Residuated Fuzzy Logics\", in Fitting, Melvin and Ewa Or&#322;owska (eds.), Beyond Two: Theory and Applications of Multiple-Valued Logic , (Studies in Fuzziness and Soft Computing, Volume 114), Heidelberg: Springer, pages 251-272."
+        },
+        {
+          "raw": "Esteva, Francesc, Llu&iacute;s Godo, Petr H&aacute;jek, and Mirko Navara, 2000, \"Residuated Fuzzy Logics with an Involutive Negation\", Archive for Mathematical Logic , 39(2): 103-124. doi:10.1007/s001530050006"
+        },
+        {
+          "raw": "Esteva, Francesc, Llu&iacute;s Godo, and Enrico Marchioni, 2011, \"Fuzzy Logics with Enriched Language\", in Cintula, Petr, Petr H&aacute;jek, and Carles Noguera (eds.), Handbook of Mathematical Fuzzy Logic , Volume 2, (Mathematical Logic and Foundations, Volume 38), London: College Publications, pages 627-711."
+        },
+        {
+          "raw": "Esteva, Francesc, Llu&iacute;s Godo, and Franco Montagna, 2001, \"The \\(L\\Pi\\) and \\(L\\Pi\\frac12\\) Logics: Two Complete Fuzzy Systems Joining &#321;ukasiewicz and Product Logics\", Archive for Mathematical Logic , 40(1): 39-67. doi:10.1007/s001530050173"
+        },
+        {
+          "raw": "---, 2003, \"Axiomatization of Any Residuated Fuzzy Logic Defined by a Continuous T-norm\", in Taner Bilgi&ccedil;, Bernard De Baets, and Okyay Kaynak (eds.), Fuzzy Sets and Systems: IFSA 2003 , (Lecture Notes in Computer Science, Volume 2715), Berlin/Heidelberg: Springer, pages 172-179. doi:10.1007/3-540-44967-1_20"
+        },
+        {
+          "raw": "Fedel, Martina, Hykel Hosni, and Franco Montagna, 2011, \"A Logical Characterization of Coherence for Imprecise Probabilities\", International Journal of Approximate Reasoning , 52(8): 1147-1170, doi: 10.1016/j.ijar.2011.06.004."
+        },
+        {
+          "raw": "Ferm&uuml;ller, Christian G., 2015, \"Semantic Games for Fuzzy Logics\", Cintula, Petr, Christian G. Ferm&uuml;ller, and Carles Noguera (eds.), 2015, Handbook of Mathematical Fuzzy Logic , volume 3, (Studies in Logic, Volume 58), London: College Publications, pages 969-1028."
+        },
+        {
+          "raw": "Ferm&uuml;ller, Christian G. and George Metcalfe, 2009, \"Giles's Game and Proof Theory for &#321;ukasiewicz Logic\", Studia Logica , 92(1): 27-61. doi:10.1007/s11225-009-9185-2"
+        },
+        {
+          "raw": "Ferm&uuml;ller, Christian G. and Christoph Roschger, 2014, \"Randomized Game Semantics for Semi-Fuzzy Quantifiers\", Logic Journal of the Interest Group of Pure and Applied Logic , 22(3): 413-439. doi:10.1093/jigpal/jzt049"
+        },
+        {
+          "raw": "Flaminio, Tommaso, Llu&iacute;s Godo, and Enrico Marchioni, 2011, \"Reasoning About Uncertainty of Fuzzy Events: An Overview\", in Cintula, Petr, Christian G. Ferm&uuml;ller, Llu&iacute;s Godo, and Petr H&aacute;jek(eds.), Understanding Vagueness: Logical, Philosophical, and Linguistic Perspectives , (Studies in Logic, Volume 36), London: College Publications, pages 367-400."
+        },
+        {
+          "raw": "Flaminio, Tommaso and Tom&aacute;&#353; Kroupa, 2015, \"States of MV-Algebras\", in Cintula, Petr, Christian G. Ferm&uuml;ller, and Carles Noguera (eds.), Handbook of Mathematical Fuzzy Logic , Volume 3, (Mathematical Logic and Foundations, Volume 58), London: College Publications, pages 1183-1236."
+        },
+        {
+          "raw": "Font, Josep Maria, 2016, Abstract Algebraic Logic: An Introductory Textbook , (Mathematical Logic and Foundations, Volume 60), London: College Publications."
+        },
+        {
+          "raw": "Galatos, Nikolaos, Peter Jipsen, Tomasz Kowalski, and Hiroakira Ono, 2007, Residuated Lattices: An Algebraic Glimpse at Substructural Logics , (Studies in Logic and the Foundations of Mathematics, Volume 151), Amsterdam: Elsevier."
+        },
+        {
+          "raw": "Garc&iacute;a-Cerda&ntilde;a, &Agrave;ngel, Eva Armengol, and Francesc Esteva, 2010, \"Fuzzy Description Logics and T-norm Based Fuzzy Logics\", International Journal of Approximate Reasoning , 51(6): 632-655."
+        },
+        {
+          "raw": "Gehrke, Mai, Carol L. Walker, and Elbert A. Walker, 1997, \"A Mathematical Setting for Fuzzy Logics\", International Journal of Uncertainty, Fuzziness, and Knowledge-Based Systems , 5(3): 223-238. doi:10.1142/S021848859700021X"
+        },
+        {
+          "raw": "Gerla, Giangiacomo, 2001, Fuzzy Logic--Mathematical Tool for Approximate Reasoning , (Trends in Logic, Volume 11), New York: Kluwer and Plenum Press."
+        },
+        {
+          "raw": "Giles, Robin, 1974, \"A Non-Classical Logic for Physics\", Studia Logica , 33(4): 397-415. doi:10.1007/BF02123379"
+        },
+        {
+          "raw": "G&ouml;del, Kurt, 1932, \"Zum intuitionistischen Aussagenkalk&uuml;l\", Anzeiger Akademie Der Wissenschaften Wien , 69: 65-66."
+        },
+        {
+          "raw": "Godo, Llu&iacute;s, Francesc Esteva, and Petr H&aacute;jek, 2000, \"Reasoning About Probability Using Fuzzy Logic\", Neural Network World , 10(5): 811-823."
+        },
+        {
+          "raw": "Goguen, Joseph A., 1969, \"The Logic of Inexact Concepts\", Synthese , 19(3-4): 325-373."
+        },
+        {
+          "raw": "Gottwald, Siegfried, 2001, A Treatise On Many-Valued Logics , (Studies in Logic and Computation, Volume 9), Baldock: Research Studies Press Ltd."
+        },
+        {
+          "raw": "H&aacute;jek, Petr, 1998, Metamathematics of Fuzzy Logic , (Trends in Logic, Volume 4), Dordrecht: Kluwer."
+        },
+        {
+          "raw": "---, 2001, \"On Very True\", Fuzzy Sets and Systems , 124(3): 329-333."
+        },
+        {
+          "raw": "---, 2005, \"Making Fuzzy Description Logic More General\", Fuzzy Sets and Systems , 154(1): 1-15."
+        },
+        {
+          "raw": "H&aacute;jek, Petr and Petr Cintula, 2006, \"On Theories and Models in Fuzzy Predicate Logics\", Journal of Symbolic Logic , 71(3): 863-880."
+        },
+        {
+          "raw": "H&aacute;jek, Petr and Zuzana Hanikov&aacute;, 2003, \"A Development of Set Theory in Fuzzy Logic\", in Fitting, Melvin and Ewa Or&#322;owska (eds.), Beyond Two: Theory and Applications of Multiple-Valued Logic , (Studies in Fuzziness and Soft Computing, Volume 114), Heidelberg: Springer, pages 273-285."
+        },
+        {
+          "raw": "H&aacute;jek, Petr, Franco Montagna, Carles Noguera, 2011, \"Arithmetical Complexity of First-Order Fuzzy Logics\", in Cintula, Petr, Petr H&aacute;jek, and Carles Noguera(eds.), Handbook of Mathematical Fuzzy Logic , Volume 2, (Mathematical Logic and Foundations, Volume 38), London: College Publications, pages 853-908."
+        },
+        {
+          "raw": "H&aacute;jek, Petr and Vil&eacute;m Nov&aacute;k, 2003, \"The Sorites Paradox and Fuzzy Logic\", International Journal of General Systems , 32(4): 373-383. doi:10.1080/0308107031000152522"
+        },
+        {
+          "raw": "H&aacute;jek, Petr, Jeff Paris, and John C. Shepherdson, 2000, \"The Liar Paradox and Fuzzy Logic\", Journal of Symbolic Logic , 65(1): 339-346."
+        },
+        {
+          "raw": "Hanikov&aacute;, Zuzana, 2011, \"Computational Complexity of Propositional Fuzzy Logics\", in Cintula, Petr, Petr H&aacute;jek, and Carles Noguera (eds.), Handbook of Mathematical Fuzzy Logic , Volume 2, (Mathematical Logic and Foundations, Volume 38), London: College Publications, pages 793-851."
+        },
+        {
+          "raw": "---, 2014, \"Varieties Generated by Standard BL-Algebras\", Order , 31(1): 15-33. doi:10.1007/s11083-013-9285-5"
+        },
+        {
+          "raw": "Hansoul, Georges and Bruno Teheux, 2013, \"Extending &#321;ukasiewicz Logics with a Modality: Algebraic Approach to Relational Semantics\", Studia Logica , 101(3): 505-545, doi: 10.1007/s11225-012-9396-9."
+        },
+        {
+          "raw": "Hay, Louise Schmir, 1963, \"Axiomatization of the Infinite-Valued Predicate Calculus\", Journal of Symbolic Logic , 28(1): 77-86. doi:10.2307/2271339"
+        },
+        {
+          "raw": "Hisdal, Ellen, 1988, \"Are Grades of Membership Probabilities?\" Fuzzy Sets and Systems , 25(3): 325-348. doi:10.1016/0165-0114(88)90018-8"
+        },
+        {
+          "raw": "Hor&#269;&iacute;k, Rostislav, 2011, \"Algebraic Semantics: Semilinear FL-Algebras\", in Cintula, Petr, Petr H&aacute;jek, and Carles Noguera (eds.), Handbook of Mathematical Fuzzy Logic , Volume 1, (Mathematical Logic and Foundations, Volume 37), London: College Publications, pages 283-353."
+        },
+        {
+          "raw": "Horn, Alfred, 1969, \"Logic with Truth Values in a Linearly Ordered Heyting Algebra\", The Journal of Symbolic Logic , 34(3): 395-408."
+        },
+        {
+          "raw": "Jenei, S&aacute;ndor and Franco Montagna, 2002, \"A Proof of Standard Completeness for Esteva and Godo's Logic MTL\", Studia Logica , 70(2): 183-192. doi:10.1023/A:1015122331293"
+        },
+        {
+          "raw": "Je&#345;&aacute;bek, Emil, 2010, \"Bases of Admissible Rules of &#321;ukasiewicz Logic\", Journal of Logic and Computation , 20(6): 1149-1163."
+        },
+        {
+          "raw": "---, 2003, \"A Proof of Standard Completeness for Non-Commutative Monoidal T-norm Logic\", Neural Network World , 13(5): 481-489."
+        },
+        {
+          "raw": "Klement, Erich Peter, Radko Mesiar, and Endre Pap, 2000, Triangular Norms , (Trends in Logic, Volume 8), Dordrecht: Kluwer."
+        },
+        {
+          "raw": "Lawry, Jonathan, 1998, \"A Voting Mechanism for Fuzzy Logic\", International Journal of Approximate Reasoning , 19(3-4): 315-333. doi:10.1016/S0888-613X(98)10013-0"
+        },
+        {
+          "raw": "Le&#351;tean, Ioana and Antonio Di Nola, 2011, \"&#321;ukasiewicz Logic and MV-Algebras\", in Cintula, Petr, Petr H&aacute;jek, and Carles Noguera (eds.), Handbook of Mathematical Fuzzy Logic , Volume 2, (Mathematical Logic and Foundations, Volume 38), London: College Publications, pages 469-583."
+        },
+        {
+          "raw": "Ling, Cho-Hsin, 1965, \"Representation of Associative Functions\", Publicationes Mathematicae Debrecen , 12: 189-212."
+        },
+        {
+          "raw": "&#321;ukasiewicz, Jan, 1920, \"O Logice Tr&oacute;jwarto&#347;ciowej\", Ruch Filozoficzny , 5: 170-171. English translation, \"On Three-Valued Logic\", in McCall, Storrs (ed.), 1967, Polish Logic 1920-1939 , Oxford: Clarendon Press, pages 16-18, and in Jan &#321;ukasiewicz, 1970, Selected Works , Borkowski, Ludwik (ed.), Amsterdam: North-Holland, pages 87-88."
+        },
+        {
+          "raw": "&#321;ukasiewicz, Jan and Alfred Tarski, 1930, \"Untersuchungen &uuml;ber den Aussagenkalk&uuml;l\", Comptes Rendus Des S&eacute;ances de La Soci&eacute;t&eacute; Des Sciences et Des Lettres de Varsovie, Cl. III , 23(iii): 30-50."
+        },
+        {
+          "raw": "Marra, Vincenzo and Luca Spada, 2013, \"Duality, Projectivity, and Unification in &#321;ukasiewicz Logic and MV-Algebras\", Annals of Pure and Applied Logic , 164(3): 192-210."
+        },
+        {
+          "raw": "McNaughton, Robert, 1951, \"A Theorem About Infinite-Valued Sentential Logic\", Journal of Symbolic Logic , 16(1): 1-13. doi:10.2307/2268660"
+        },
+        {
+          "raw": "Metcalfe, George, 2011, \"Proof Theory for Mathematical Fuzzy Logic\", Cintula, Petr, Petr H&aacute;jek, and Carles Noguera (eds.), 2011a, Handbook of Mathematical Fuzzy Logic , volume 1 (Studies in Logic, Volume 37), London: College Publications, pages 209-282."
+        },
+        {
+          "raw": "Metcalfe, George and Franco Montagna, 2007, \"Substructural Fuzzy Logics\", Journal of Symbolic Logic , 72(3): 834-864. doi:10.2178/jsl/1191333844"
+        },
+        {
+          "raw": "Metcalfe, George, Nicola Olivetti, and Dov M. Gabbay, 2008, Proof Theory for Fuzzy Logics , (Applied Logic Series, Volume 36), Dordrecht: Springer Netherlands."
+        },
+        {
+          "raw": "Montagna, Franco, 2001, \"Three Complexity Problems in Quantified Fuzzy Logic\", Studia Logica , 68(1): 143-152. doi:10.1023/A:1011958407631"
+        },
+        {
+          "raw": "Montagna, Franco and Carles Noguera, 2010, \"Arithmetical Complexity of First-Order Predicate Fuzzy Logics Over Distinguished Semantics\", Journal of Logic and Computation , 20(2): 399-424. doi:10.1093/logcom/exp052"
+        },
+        {
+          "raw": "Montagna, Franco, Carles Noguera, and Rostislav Hor&#269;&iacute;k, 2006, \"On Weakly Cancellative Fuzzy Logics\", Journal of Logic and Computation , 16(4): 423-450."
+        },
+        {
+          "raw": "Montagna, Franco and Hiroakira Ono, \"Kripke Semantics, Undecidability and Standard Completeness for Esteva and Godo's Logic MTL\\(\\forall\\)\", Studia Logica , 71(2): 227-245."
+        },
+        {
+          "raw": "Mostert, Paul S. and Allen L. Shields, 1957, \"On the Structure of Semigroups on a Compact Manifold with Boundary\", The Annals of Mathematics, Second Series , 65(1): 117-143. doi:10.2307/1969668"
+        },
+        {
+          "raw": "Mundici, Daniele, 1987, \"Satisfiability in Many-Valued Sentential Logic is NP-Complete\", Theoretical Computer Science , 52(1-2): 145-153."
+        },
+        {
+          "raw": "---, 1992, \"The Logic of Ulam's Game with Lies\", in Bicchieri, Cristina and Maria Luisa Dalla Chiara (eds.), Knowledge, Belief, and Strategic Interaction ( Castiglioncello , 1989 ), Cambridge: Cambridge University Press, 275-284."
+        },
+        {
+          "raw": "---, 2011, Advanced &#321;ukasiewicz Calculus and MV-Algebras , (Trends in Logic, Volume 35), New York: Springer."
+        },
+        {
+          "raw": "Nov&aacute;k, Vil&eacute;m, 2004, \"On Fuzzy Type Theory\", Fuzzy Sets and Systems , 149(2): 235-273."
+        },
+        {
+          "raw": "---, 2015, \"Fuzzy Logic with Evaluated Syntax\", in Cintula, Petr, Christian G. Ferm&uuml;ller, and Carles Noguera (eds.), Handbook of Mathematical Fuzzy Logic , Volume 3, (Mathematical Logic and Foundations, Volume 58), London: College Publications, pages 1063-1104."
+        },
+        {
+          "raw": "Nov&aacute;k, Vil&eacute;m, Irina Perfilieva, and Ji&#345;&iacute; Mo&#269;ko&#345;, 2000, Mathematical Principles of Fuzzy Logic , Dordrecht: Kluwer."
+        },
+        {
+          "raw": "Nguyen, Hung T. and Elbert A. Walker, 2005, A First Course in Fuzzy Logic (third edition), Chapman and Hall/CRC."
+        },
+        {
+          "raw": "Paris, Jeff, 1997, \"A Semantics for Fuzzy Logic\", Soft Computing , 1(3): 143-147. doi:10.1007/s005000050015"
+        },
+        {
+          "raw": "---, 2000, \"Semantics for Fuzzy Logic Supporting Truth Functionality\", in Vil&eacute;m Nov&aacute;k and Irina Perfilieva (eds.), Discovering the World with Fuzzy Logic , (Studies in Fuzziness and Soft Computing. Volume 57), Heidelberg: Springer, pages 82-104."
+        },
+        {
+          "raw": "Pavelka, Jan, 1979, \"On Fuzzy Logic I, II, and III\", Zeitschrift f&uuml;r Mathematische Logik und Grundlagen der Mathematik , 25: 45-52, 119-134, and 447-464."
+        },
+        {
+          "raw": "Ragaz, Matthias Emil, 1981, Arithmetische Klassifikation von Formelmengen der unendlichwertigen Logik (PhD thesis), Swiss Federal Institute of Technology, Z&uuml;rich. doi:10.3929/ethz-a-000226207"
+        },
+        {
+          "raw": "Rodr&iacute;guez, Ricardo Oscar and Amanda Vidal, 2021, \"Axiomatization of Crisp G&ouml;del Modal Logic\", Studia Logica , 109(2): 367-395. doi: 10.1007/s11225-020-09910-5"
+        },
+        {
+          "raw": "Ross, Timothy J., 2016, Fuzzy Logic with Engineering Applications (fourth edition), Hoboken, NJ: Wiley."
+        },
+        {
+          "raw": "Ruspini, Enrique H., 1991, \"On the Semantics of Fuzzy Logic\", International Journal of Approximate Reasoning , 5(1): 45-88. doi:10.1016/0888-613X(91)90006-8"
+        },
+        {
+          "raw": "Scarpellini, Bruno, 1962, \"Die Nichtaxiomatisierbarkeit des unendlichwertigen Pr&auml;dikatenkalk&uuml;ls von &#321;ukasiewicz\", Journal of Symbolic Logic , 27(2): 159-170. doi:10.2307/2964111"
+        },
+        {
+          "raw": "Smith, Nicholas J.J., 2005, \"Vagueness as Closeness\", Australasian Journal of Philosophy , 83(2): 157-183. doi:10.1080/00048400500110826"
+        },
+        {
+          "raw": "---, 2008, Vagueness and Degrees of Truth , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2015, \"Fuzzy Logics in Theories of Vagueness\", in Cintula, Petr, Christian G. Ferm&uuml;ller, and Carles Noguera (eds.), Handbook of Mathematical Fuzzy Logic , Volume 3, (Mathematical Logic and Foundations, Volume 58), London: College Publications, pages 1237-1281."
+        },
+        {
+          "raw": "Straccia, Umberto, 1998, \"A Fuzzy Description Logic\", in Mostow, Jack and Chuck Rich (eds.), Proceedings of the 15th National Conference on Artificial Intelligence (AAAI 1998) , Menlo Park: AAAI Press, pages 594-599."
+        },
+        {
+          "raw": "Teheux, Bruno, 2016, \"Modal definability based on &#321;ukasiewicz validity relations\", Studia Logica , 104(2): 343-363. doi: 10.1007/s11225-015-9643-y"
+        },
+        {
+          "raw": "Takeuti, Gaisi and Satako Titani, 1984, \"Intuitionistic Fuzzy Logic and Intuitionistic Fuzzy Set Theory\", Journal of Symbolic Logic , 49(3): 851-866."
+        },
+        {
+          "raw": "---, 1992, \"Fuzzy Logic and Fuzzy Set Theory\", Archive for Mathematical Logic , 32(1): 1-32."
+        },
+        {
+          "raw": "Vetterlein, Thomas, 2015, \"Algebraic Semantics: The Structure of Residuated Chains\", in Cintula, Petr, Christian G. Ferm&uuml;ller, and Carles Noguera (eds.), Handbook of Mathematical Fuzzy Logic , Volume 3, (Mathematical Logic and Foundations, Volume 58), London: College Publications, pages 929-967."
+        },
+        {
+          "raw": "Vidal, Amanda, 2021, \"On transitive modal many-valued logics\", Fuzzy Sets and Systems , 407: 97-114. doi: 10.1016/j.fss.2020.01.011"
+        },
+        {
+          "raw": "Vidal, Amanda, Francesc Esteva, and Llu&iacute;s Godo, 2017, \"On modal extensions of Product fuzzy logic\", Journal of Logic and Computation , 27(1): 299-336. doi: 10.1093/logcom/exv046"
+        },
+        {
+          "raw": "Zadeh, Lotfi A., 1965, \"Fuzzy Sets\", Information and Control , 8(3): 338-353. doi:10.1016/S0019-9958(65)90241-X"
+        },
+        {
+          "raw": "---, 1975, \"Fuzzy logic and approximate reasoning\", Synthese , 30: 407-428. doi: 10.1007/BF00485052"
+        }
+      ],
+      "publishedAt": "2016-11-14T13:00:00.000Z",
+      "revisedAt": "2021-11-10T13:00:00.000Z"
+    }
+  }
+}

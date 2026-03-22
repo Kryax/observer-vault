@@ -1,0 +1,673 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/pseudo-science",
+  "meta": {
+    "title": "Science and Pseudo-Science",
+    "description": "The problem of distinguishing between science and pseudoscience is part of the larger task of determining which beliefs are epistemically warranted. This entry clarifies the specific nature of pseudoscience in relation to other categories of non-scientific doctrines and practices, including science denial(ism) and resistance to facts. The major proposed criteria for defining and identifying pseudoscience are discussed and some of their weaknesses are pointed out. There is much more agreement on particular cases than on the general criteria that such judgments should be based upon. This is an indication that there is still much important philosophical work to be done on the relation between science and pseudoscience.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:46:04.077Z",
+    "dateModified": "2026-03-22T05:46:04.077Z",
+    "datePublished": "2008-09-02T14:00:00.000Z",
+    "keywords": [
+      "creationism",
+      "evolution",
+      "freud",
+      "lakatos",
+      "logical positivism",
+      "natural selection",
+      "popper",
+      "skepticism",
+      "thomas kuhn",
+      "vienna circle"
+    ]
+  },
+  "problemSolved": {
+    "statement": "The problem of distinguishing between science and pseudoscience is part of the larger task of determining which beliefs are epistemically warranted. This entry clarifies the specific nature of pseudoscience in relation to other categories of non-scientific doctrines and practices, including science denial(ism) and resistance to facts. The major proposed criteria for defining and identifying pseudoscience are discussed and some of their weaknesses are pointed out. There is much more agreement on particular cases than on the general criteria that such judgments should be based upon. This is an indication that there is still much important philosophical work to be done on the relation between science and pseudoscience.",
+    "context": "Opening section: 1. The importance of disclosing false science | Related entries: creationism, evolution, freud, thomas-kuhn, lakatos, logical-positivism, natural-selection, popper, skepticism, vienna-circle",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "epistemology",
+    "logic",
+    "philosophy-of-science"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry pseudo-science",
+        "uri": "https://plato.stanford.edu/entries/pseudo-science/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "2 author(s), 10 related entries, bibliography size 139"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2008-09-02T14:00:00.000Z and revised 2025-07-27T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2025-07-27T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/pseudo-science/",
+        "description": "SEP entry for pseudo-science"
+      }
+    ],
+    "solutionApproach": "1. The importance of disclosing false science"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/creationism",
+      "ocp:sep/evolution",
+      "ocp:sep/freud",
+      "ocp:sep/thomas-kuhn",
+      "ocp:sep/lakatos",
+      "ocp:sep/logical-positivism",
+      "ocp:sep/natural-selection",
+      "ocp:sep/popper",
+      "ocp:sep/skepticism",
+      "ocp:sep/vienna-circle"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Hansson",
+        "type": "human"
+      },
+      {
+        "name": "Sven Ove",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/pseudo-science/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 104,
+      "validation_diversity": 0.56,
+      "context_breadth": 0.46,
+      "temporal_stability": 1,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.91
+    },
+    "confidence": "tested",
+    "authority": "high",
+    "status": "draft",
+    "trustScore": 0.603
+  },
+  "extensions": {
+    "sep": {
+      "slug": "pseudo-science",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/pseudo-science/",
+      "preamble": "The problem of distinguishing between science and pseudoscience is part of the larger task of determining which beliefs are epistemically warranted. This entry clarifies the specific nature of pseudoscience in relation to other categories of non-scientific doctrines and practices, including science denial(ism) and resistance to facts. The major proposed criteria for defining and identifying pseudoscience are discussed and some of their weaknesses are pointed out. There is much more agreement on particular cases than on the general criteria that such judgments should be based upon. This is an indication that there is still much important philosophical work to be done on the relation between science and pseudoscience.",
+      "firstSectionTitle": "1. The importance of disclosing false science",
+      "firstSectionText": "We can have both theoretical and practical reasons for distinguishing between real and false science (Mahner 2007, 516). From a theoretical point of view, this distinction is an illuminating perspective that contributes to the philosophy of science in much the same way that the study of fallacies contributes to our knowledge of informal logic and rational argumentation. From a practical point of view, the distinction is important for decision guidance in both private and public life. Since science is our most reliable source of knowledge in a wide range of areas, we need to distinguish scientific knowledge from statements that are falsely claimed to be scientific. There are many areas in which reliance on such statements can have disastrous consequences: Climate policy : The scientific consensus on ongoing anthropogenic climate change leaves no room for reasonable doubt (Cook et al. 2016; Powell 2019). Science denial has considerably delayed climate action, and it is still one of the major factors that impede efficient measures to reduce climate change (Oreskes and Conway 2010; Lewandowsky et al. 2019). Decision-makers and the public need to know how to distinguish between competent climate science and science-mimicking disinformation on the climate. Healthcare : Medical science develops and evaluates treatments according to evidence of their effectiveness and safety. Pseudoscience in healthcare gives rise to ineffective and sometimes dangerous interventions and often lures people away from science-based healthcare. Pseudoscience in preventive medicine makes its victims refrain from vaccination and other efficient means to reduce the risk of disease. Healthcare providers, insurers, government authorities and - most importantly - patients and the general public need guidance on how to distinguish between medical science and medical pseudoscience. Environmental policies : In order to be on the safe side against potential disasters it may be legitimate to take preventive measures when there is valid but yet insufficient evidence of an environmental hazard. This must be distinguished from taking measures against an alleged hazard for which there is no valid evidence at all. Therefore, decision-makers in environmental policy must be able to distinguish between scientific and pseudoscientific claims. Expert testimony : It is essential for the rule of law that courts get the facts right. The reliability of different types of evidence must be correctly determined, and expert testimony must be based on the best available knowledge. Sometimes it is in the interest of litigants to present non-scientific claims as solid science. Therefore courts must be able to distinguish between science and pseudoscience. Philosophers can contribute efficiently to the defence of science against pseudoscience in such contexts (Pennock 2011; Ruse 2021). Science education : The promoters of some pseudosciences (notably creationism) try to introduce their teachings in school curricula. Teachers and school authorities need to have clear criteria of inclusion that protect students against unreliable and disproved teachings. Journalism : When there is scientific uncertainty, or relevant disagreement in the scientific community, this should be covered and explained in media reports on the issues in question. Equally importantly, differences of opinion between on the one hand legitimate scientific experts and on the other hand proponents of scientifically unsubstantiated claims should be described as what they are. Public understanding of topics such as climate change and vaccination has been considerably hampered by organised campaigns that succeeded in making media portray standpoints that have been thoroughly disproved in science as legitimate scientific standpoints (Boykoff and Boykoff 2004; Boykoff 2008). The media need tools and practices to distinguish between legitimate scientific controversies and attempts to peddle pseudoscientific claims as science. Some discussants have claimed that the very concept of pseudoscience is unnecessary. In their view it would be sufficient, for instance, to note that creationism is wrong, without also asserting that it is a pseudoscience. The major problem with this standpoint is that it erases important differences between pseudoscience and other forms of erroneous beliefs about scientific issues. Contrary to most other types of misbeliefs, pseudoscience comes with immunizing strategies and defence mechanisms that protect it against counterevidence and critical scrutiny (Boudry and Braeckman 2011). This can be illustrated by comparing a typical creationist who believes that humans lived along with Tyrannosaurus rex to a typical paleontologist who has misidentified a femur from an Early Jurassic dinosaur and believes that it belonged to a mammal. The mistaken paleontologist will take colleagues' arguments seriously and discuss them at depth. (S)he will in all probability be convinced by their arguments if they are strong enough. In contrast, the typical creationist will steer away from the crucial counterarguments. She will make use of the inbuilt subterfuges and evasive strategies of creationism to avoid serious reconsideration of her beliefs (Freudenburg et al. 2008; Nieminen and Mustonen 2014). This type of manoeuvre makes pseudoscience impervious to counterarguments. In consequence, normal scientific argumentation usually has little or no impact on pseudoscientific beliefs (Hornsey 2020). Since pseudoscience has to be dealt with differently from other forms of erroneous beliefs, we need to criteria to identify it.",
+      "relatedEntries": [
+        "creationism",
+        "evolution",
+        "freud",
+        "thomas-kuhn",
+        "lakatos",
+        "logical-positivism",
+        "natural-selection",
+        "popper",
+        "skepticism",
+        "vienna-circle"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "creationism"
+        },
+        {
+          "slug": "evolution"
+        },
+        {
+          "slug": "freud"
+        },
+        {
+          "slug": "thomas-kuhn"
+        },
+        {
+          "slug": "lakatos"
+        },
+        {
+          "slug": "logical-positivism"
+        },
+        {
+          "slug": "natural-selection"
+        },
+        {
+          "slug": "popper"
+        },
+        {
+          "slug": "skepticism"
+        },
+        {
+          "slug": "vienna-circle"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 139,
+      "bibliography": [
+        {
+          "raw": "Agassi, Joseph, 1991. \"Popper's Demarcation of Science Refuted\", Methodology and Science , 24: 1-7."
+        },
+        {
+          "raw": "Baigrie, B.S., 1988. \"Siegel on the Rationality of Science\", Philosophy of Science , 55: 435-441."
+        },
+        {
+          "raw": "Bartley III, W. W., 1968. \"Theories of Demarcation Between Science and Metaphysics\", pp. 40-64 in Imre Lakatos and Alan Musgrave (eds.), Problems in the Philosophy of Science, Proceedings of the International Colloquium in the Philosophy of Science, London 1965 (Volume 3), Amsterdam: North-Holland Publishing Company."
+        },
+        {
+          "raw": "Blancke, Stefaan, Maarten Boudry and Massimo Pigliucci, 2017. \"Why Do Irrational Beliefs Mimic Science? The Cultural Evolution of Pseudoscience\", Theoria , 83(1): 78-97."
+        },
+        {
+          "raw": "Boudry, Maarten, 2022. \"Diagnosing Pseudoscience--by Getting Rid of the Demarcation Problem\", Journal for General Philosophy of Science , 53(22): 83-101."
+        },
+        {
+          "raw": "Boudry, Maarten, Stefaan Blancke, and Johan Braeckman, 2010. \"How Not to Attack Intelligent Design Creationism: Philosophical Misconceptions About Methodological Naturalism.\" Foundations of Science , 153: 227-244."
+        },
+        {
+          "raw": "Boudry, Maarten and Johan Braeckman,(2011). \"Immunizing Strategies and Epistemic Defense Mechanisms\", Philosophia , 39(1): 145-161."
+        },
+        {
+          "raw": "Boykoff, M. T., 2008. \"Lost in Translation? United States Television News Coverage of Anthropogenic Climate Change, 1995-2004\", Climatic Change , 86: 1-11."
+        },
+        {
+          "raw": "Boykoff, M. T. and J. M. Boykoff, 2004. \"Balance as Bias: Global Warming and the U.S. Prestige Press\", Global Environmental Change , 14: 125-136."
+        },
+        {
+          "raw": "Bright, Liam Kofi and Remco Heesen, 2023. \"To Be Scientific Is To Be Communist\", Social Epistemology , 37(3): 249-258."
+        },
+        {
+          "raw": "Bunge, Mario, 1982. \"Demarcating Science from Pseudoscience\", Fundamenta Scientiae , 3: 369-388."
+        },
+        {
+          "raw": "---, 2001. \"Diagnosing pseudoscience\", in Mario Bunge, Philosophy in Crisis. The Need for Reconstruction , Amherst, N.Y.; Prometheus Books, pp. 161-189."
+        },
+        {
+          "raw": "Burningham, K., and G. Cooper, 1999. \"Being Constructive: Social Constructionism and the Environment\", Sociology , 33(2): 297-316."
+        },
+        {
+          "raw": "Buttel, Frederick H. and Peter J. Taylor, 1992. \"Environmental Sociology and Global Environmental Change: A Critical Assessment\", Society and Natural Resources , 5(3): 211-230."
+        },
+        {
+          "raw": "Carlson, Shawn, 1985. \"A Double Blind Test of Astrology\", Nature , 318: 419-425."
+        },
+        {
+          "raw": "Cioffi, Frank, 1985. \"Psychoanalysis, Pseudoscience and Testability\", pp 13-44 in Gregory Currie and Alan Musgrave, (eds.) Popper and the Human Sciences , Dordrecht: Martinus Nijhoff Publishers."
+        },
+        {
+          "raw": "Cook, John, Naomi Oreskes, Peter T. Doran, William RL Anderegg, Bart Verheggen, Ed W. Maibach, J. Stuart Carlton, et al., 2016. \"Consensus on Consensus: A Synthesis of Consensus Estimates on Human-Caused Global Warming\", Environmental Research Letters , 11: 048002."
+        },
+        {
+          "raw": "Culver, Roger and Ianna, Philip, 1988. Astrology: True or False , Buffalo: Prometheus Books."
+        },
+        {
+          "raw": "Dawes, Gregory W., 2018. \"Identifying Pseudoscience: A Social Process Criterion\", Journal for General Philosophy of Science , 49(3): 283-298."
+        },
+        {
+          "raw": "Debray, St&eacute;phanie. 2023. \"La D&eacute;finition de la Pseudoscience chez Sven Ove Hansson: Enjeux, Limites, Perspectives\", Lato Sensu , 10(1): 13-23."
+        },
+        {
+          "raw": "Derksen, A.A., 1993. \"The Seven Sins of Pseudoscience\", Journal for General Philosophy of Science , 24: 17-42."
+        },
+        {
+          "raw": "---, 2001. \"The Seven Strategies of the Sophisticated Pseudoscience: A Look into Freud's Rhetorical Tool Box\", Journal for General Philosophy of Science , 32: 329-350."
+        },
+        {
+          "raw": "Dolby, R.G.A., 1987. \"Science and Pseudoscience: The Case of Creationism\", Zygon , 22: 195-212."
+        },
+        {
+          "raw": "Dunlap, Riley E., and Peter J. Jacques, 2013. \"Climate Change Denial Books and Conservative Think Tanks: Exploring the Connection\", American Behavioral Scientist , 57(6): 699-731."
+        },
+        {
+          "raw": "Dupr&eacute;, John, 1993. The Disorder of Things: Metaphysical Foundations of the Disunity of Science , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Dutch, Steven I, 1982. \"Notes on the Nature of Fringe Science\", Journal of Geological Education , 30: 6-13."
+        },
+        {
+          "raw": "Fasce, Angelo, 2017. \"What Do We Mean When We Speak of Pseudoscience? The Development of a Demarcation Criterion Based on the Analysis of Twenty-one Previous Attempts\", Disputatio. Philosophical Research Bulletin , 6(7): 459-488."
+        },
+        {
+          "raw": "Feleppa, Robert, 1990. \"Kuhn, Popper, and the Normative Problem of Demarcation\", pp. 140-155 in Patrick Grim (ed.) Philosophy of Science and the Occult , 2 edition, Albany: State University of New York Press."
+        },
+        {
+          "raw": "Fernandez-Beanato, Damian, 2020a. \"Cicero's Demarcation of Science: A Report of Shared Criteria\", Studies in History and Philosophy of Science (Part A), 83: 97-102."
+        },
+        {
+          "raw": "---, 2020b. \"The Multicriterial Approach to the Problem of Demarcation\", Journal for General Philosophy of Science , 51: 375-390."
+        },
+        {
+          "raw": "Frankfurt, Harry G., 1986. \"On Bullshit\", Raritan 6(2): 81-100."
+        },
+        {
+          "raw": "---, 2005. On Bullshit , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Freudenburg, William R., Robert Gramling and Debra J. Davidson, 2008. \"Scientific Certainty Argumentation Methods (SCAMs): Science and the Politics of Doubt\", Sociological Inquiry , 78(1): 2-38."
+        },
+        {
+          "raw": "Fuller, Steve, 1985. \"The Demarcation of Science: a Problem Whose Demise Has Been Greatly Exaggerated\", Pacific Philosophical Quarterly , 66: 329-341."
+        },
+        {
+          "raw": "Gardner, Martin, 1957. Fads and Fallacies in the Name of Science , Dover 1957; expanded version of his In the Name of Science , 1952."
+        },
+        {
+          "raw": "Gleberzon, William, 1983. \"Academic Freedom and Holocaust Denial Literature: Dealing With Infamy\", Interchange , 14(4): 62-69."
+        },
+        {
+          "raw": "Glymour, Clark and Stalker, Douglas, 1990. \"Winning Through Pseudoscience\", pp 92-103 in Patrick Grim (ed.) Philosophy of Science and the Occult , 2 edition, Albany: State University of New York Press."
+        },
+        {
+          "raw": "Grove , J.W., 1985. \"Rationality at Risk: Science Against Pseudoscience\", Minerva , 23: 216-240."
+        },
+        {
+          "raw": "Gruenberger, Fred J., 1964. \"A Measure for Crackpots\", Science , 145: 1413-1415."
+        },
+        {
+          "raw": "Guldentops, Guy, 2020. \"Nicolaus Ellenbog's 'Apologia for the Astrologers': A Benedictine's View on Astral Determinism\", Bulletin de Philosophie M&eacute;di&eacute;vale , 62: 251-334."
+        },
+        {
+          "raw": "Hansson, Sven Ove, 1983. Vetenskap och ovetenskap , Stockholm: Tiden."
+        },
+        {
+          "raw": "---, 1996. \"Defining Pseudoscience\", Philosophia Naturalis , 33: 169-176."
+        },
+        {
+          "raw": "---, 2006. \"Falsificationism Falsified\", Foundations of Science , 11: 275-286."
+        },
+        {
+          "raw": "---, 2013. \"Defining Pseudoscience and Science\", pp. 61-77 in Pigliucci and Boudry (eds.) 2013."
+        },
+        {
+          "raw": "---, 2017. \"Science Denial as a Form of Pseudoscience\", Studies in History and Philosophy of Science , 63: 39-47."
+        },
+        {
+          "raw": "---, 2018. \"How Connected are the Major Forms of Irrationality? An Analysis of Pseudoscience, Science Denial, Fact Resistance and Alternative Facts\", M&egrave;tode Science Study Journal , 8: 125-131."
+        },
+        {
+          "raw": "---, 2020. \"Social Constructivism and Climate Science Denial\", European Journal for Philosophy of Science , 10: 37."
+        },
+        {
+          "raw": "---, 2025. \"Demarcating, Defining and Diagnosing Pseudoscience\", Philosophy of Science , in press."
+        },
+        {
+          "raw": "Hecht, David K., 2018. \"Pseudoscience and the Pursuit of Truth\", in Allison B. Kaufman and James C. Kaufman (eds.) Pseudoscience. The Conspiracy Against Science , Cambridge, Mass.: MIT Press, pp. 3-20."
+        },
+        {
+          "raw": "Hirvonen, Ilmari and Janne Karisto, 2022. \"Demarcation Without Dogmas\", Theoria , 88(3): 701-720."
+        },
+        {
+          "raw": "Hornsey, Matthew J., 2020. \"Why Facts Are Not Enough: Understanding and Managing the Motivated Rejection of Science\", Current Directions in Psychological Science , 29(6): 583-591."
+        },
+        {
+          "raw": "Hoyninengen-Huene, Paul, 2013. Systematicity. The Nature of Science , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Irzik, G&uuml;rol, and Robert Nola, 2011. \"A Family Resemblance Approach to the Nature of Science for Science Education\", Science and Education , 20(7): 591-607."
+        },
+        {
+          "raw": "Jolley, Daniel, and Karen M. Douglas, 2014. \"The Effects of Anti-Vaccine Conspiracy Theories on Vaccination Intentions\", PloS One , 9(2): e89177."
+        },
+        {
+          "raw": "Keeley, Brian L., 1999. \"Of Conspiracy Theories\", The Journal of Philosophy , 96(3): 109-126."
+        },
+        {
+          "raw": "Kitcher, Philip, 1982. Abusing Science. The Case Against Creationism , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Krystal, Arthur, 1999. \"At Large and at Small: What Do You Know?\", American Scholar , 68(2): 7-13."
+        },
+        {
+          "raw": "Kuhn, Thomas S., 1974. \"Logic of Discovery or Psychology of Research?\", pp. 798-819 in P.A. Schilpp, The Philosophy of Karl Popper , The Library of Living Philosophers, vol xiv, book ii. La Salle: Open Court."
+        },
+        {
+          "raw": "Lakatos, Imre, 1970. \"Falsification and the Methodology of Research program\", pp 91-197 in Imre Lakatos and Alan Musgrave (eds.) Criticism and the Growth of Knowledge . Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 1974a. \"Popper on Demarcation and Induction\", pp. 241-273 in P.A. Schilpp, The Philosophy of Karl Popper (The Library of Living Philosophers, Volume 14, Book 1). La Salle: Open Court."
+        },
+        {
+          "raw": "---, 1974b. \"Science and Pseudoscience\", Conceptus , 8: 5-9."
+        },
+        {
+          "raw": "---, 1981. \"Science and Pseudoscience\", pp. 114-121 in S. Brown, et al . (eds.) Conceptions of Inquiry: A Reader , London: Methuen."
+        },
+        {
+          "raw": "Langmuir, Irving, [1953] 1989. \"Pathological Science\", Physics Today , 42(10): 36-48."
+        },
+        {
+          "raw": "Laudan, Larry, 1983. \"The Demise of the Demarcation Problem\", in R.S. Cohan and L. Laudan (eds.), Physics, Philosophy, and Psychoanalysis , Dordrecht: Reidel, pp. 111-127."
+        },
+        {
+          "raw": "Lewandowsky, Stephan, Toby D. Pilditch, Jens K. Madsen, Naomi Oreskes, and James S. Risbey, 2019. \"Influence and Seepage: An Evidence-Resistant Minority Can Affect Public Opinion and Scientific Belief Formation\", Cognition , 188: 124-139."
+        },
+        {
+          "raw": "Liebenberg, L., 2013. The Origin of Science. The Evolutionary Roots of Scientific Reasoning and Its Implications for Citizen Science , Cape Town: CyberTracker."
+        },
+        {
+          "raw": "Lugg, Andrew, 1987. \"Bunkum, Flim-Flam and Quackery: Pseudoscience as a Philosophical Problem\", Dialectica , 41: 221-230."
+        },
+        {
+          "raw": "---, 1992. \"Pseudoscience as Nonsense\", Methodology and Science , 25: 91-101."
+        },
+        {
+          "raw": "Mahner, Martin, 2007. \"Demarcating Science from Non-Science\", pp 515-575 in Theo Kuipers (ed.) Handbook of the Philosophy of Science: General Philosophy of Science - Focal Issues , Amsterdam: Elsevier."
+        },
+        {
+          "raw": "---, 2013. \"Science and Pseudoscience. How to Demarcate After the (Alleged) Demise of the Demarcation Problem\", pp. 29-43 in Pigliucci and Boudry (eds.) 2013."
+        },
+        {
+          "raw": "Mayo, Deborah G., 1996. \"Ducks, Rabbits and Normal Science: Recasting the Kuhn's-Eye View of Popper's Demarcation of Science\", British Journal for the Philosophy of Science , 47: 271-290."
+        },
+        {
+          "raw": "Merton, Robert K., [1942] 1973. \"Science and Technology in a Democratic Order\", Journal of Legal and Political Sociology , 1: 115-126, 1942; reprinted as \"The Normative Structure of Science\", in Robert K. Merton, The Sociology of Science. Theoretical and Empirical Investigations , Chicago: University of Chicago Press, pp. 267-278."
+        },
+        {
+          "raw": "Moberger, Victor, 2020. \"Bullshit, Pseudoscience and Pseudophilosophy\", Theoria , 86(5): 595-611."
+        },
+        {
+          "raw": "Morris, Robert L., 1987. \"Parapsychology and the Demarcation Problem\", Inquiry , 30: 241-251."
+        },
+        {
+          "raw": "Nieminen, Petteri and Anne-Mari Mustonen, 2014. \"Argumentation and Fallacies in Creationist Writings Against Evolutionary Theory\", Evolution: Education and Outreach , 7: 1-14."
+        },
+        {
+          "raw": "Oreskes, Naomi, 2019. \"Systematicity is Necessary But Not Sufficient: On the Problem of Facsimile Science\", Synthese , 196(3): 881-905."
+        },
+        {
+          "raw": "Oreskes, Naomi and Erik M. Conway, 2010. Merchants of Doubt: How a Handful of Scientists Obscured the Truth on Issues from Tobacco Smoke to Global Warming , New York: Bloomsbury Press."
+        },
+        {
+          "raw": "Park, Wonyong and Richard Brock, 2023. \"Is There a Limit to Resemblances? Teaching About Science and Pseudoscience from a Family Resemblance Perspective\", Science and Education , 32(5): 1265-1286."
+        },
+        {
+          "raw": "Pennock, Robert T., 2010. \"The Postmodern Sin of Intelligent Design Creationism\" Science and Education , 19(6-8): 757-778."
+        },
+        {
+          "raw": "---, 2011. \"Can't Philosophers Tell the Difference Between Science and Religion?: Demarcation Revisited\", Synthese , 178(2): 177-206."
+        },
+        {
+          "raw": "Pigliucci, Massimo, 2013. \"The Demarcation Problem. A (Belated) Response to Laudan\", in Pigliucci and Boudry (eds.) 2013, pp. 9-28."
+        },
+        {
+          "raw": "Pigliucci, Massimo and Maarten Boudry (eds.), 2013. Philosophy of Pseudoscience. Reconsidering the Demarcation Problem. Chicago: Chicago University Press."
+        },
+        {
+          "raw": "Popper, Karl R., 1933. \"Ein Kriterium des empirischen Charakters theoretischer Systeme\", Erkenntnis , 3: 426-428."
+        },
+        {
+          "raw": "---, 1935. Logik der Forschung. Zur Erkenntnistheorie der modernen Naturwissenschaft , Wien: Springer."
+        },
+        {
+          "raw": "---, 1957. \"Philosophy of Science: a Personal Report\", in Cecil Alec Mace (ed.) British Philosophy in the Mid-Century , London: George Allen and Unwin, pp. 155-191."
+        },
+        {
+          "raw": "---, 1959. The Logic of Scientific Discovery , London: Hutchinson."
+        },
+        {
+          "raw": "---, 1962. Conjectures and Refutations. The Growth of Scientific Knowledge , New York: Basic Books."
+        },
+        {
+          "raw": "---, 1974 \"Reply to My Critics\", in P.A. Schilpp, The Philosophy of Karl Popper (The Library of Living Philosophers, Volume XIV, Book 2), La Salle: Open Court, pp. 961-1197."
+        },
+        {
+          "raw": "---, 1976. Unended Quest London: Fontana."
+        },
+        {
+          "raw": "---, 1978. \"Natural Selection and the Emergence of the Mind\", Dialectica , 32: 339-355."
+        },
+        {
+          "raw": "---, [1989] 1994. \"Falsifizierbarkeit, zwei Bedeutungen von\", pp. 82-86 in Helmut Seiffert and Gerard Radnitzky, Handlexikon zur Wissenschaftstheorie , 2 edition, M&uuml;nchen: Ehrenwirth GmbH Verlag."
+        },
+        {
+          "raw": "Powell, James, 2019. \"Scientists Reach 100% Consensus on Anthropogenic Global Warming\", Bulletin of Science, Technology and Society , 37(4): 183-184."
+        },
+        {
+          "raw": "Prescott, Victor and Gillian D. Triggs, 2008. International Frontiers and Boundaries. Law, Politics and Geography , Leiden: Martinus Nijhoff."
+        },
+        {
+          "raw": "Radner, Daisie and Michael Radner, 1982. Science and Unreason , Belmont CA: Wadsworth."
+        },
+        {
+          "raw": "Reisch, George A., 1998. \"Pluralism, Logical Empiricism, and the Problem of Pseudoscience\", Philosophy of Science , 65: 333-348."
+        },
+        {
+          "raw": "Resnik, David B., and Kevin C. Elliott, 2023. \"Science, Values, and the New Demarcation Problem\", Journal for General Philosophy of Science 54(2): 259-286."
+        },
+        {
+          "raw": "Rothbart, Daniel, 1990 \"Demarcating Genuine Science from Pseudoscience\", in Patrick Grim, ed, Philosophy of Science and the Occult , 2nd edition, Albany: State University of New York Press, pp. 111-122."
+        },
+        {
+          "raw": "Ruse, Michael, 1977. \"Karl Popper's Philosophy of Biology\", Philosophy of Science , 44: 638-661."
+        },
+        {
+          "raw": "---, 2000. \"Is Evolutionary Biology a Different Kind of Science?\", Aquinas , 43: 251-282."
+        },
+        {
+          "raw": "Ruse, Michael (ed.), (1996). But is it science? The Philosophical Question in the Creation/Evolution Controversy , Amherst, NY: Prometheus Books."
+        },
+        {
+          "raw": "---, 2021. \"The Arkansas Creationism Trial Forty Years On\", in Zuzana Parusnikov&aacute; and David Merritt (eds.) Karl Popper's Science and Philosophy , Cham: Springer, pp. 257-276."
+        },
+        {
+          "raw": "Schindler, Samuel, 2018. Theoretical Virtues in Science: Uncovering Reality Through Theory , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Scott, P., Richards, E., and Martin, B., 1990. \"Captives of Controversy. The Myth of the Neutral Social Researcher in Contemporary Scientific Controversies\", Science, Technology, and Human Values , 15(4): 474-494."
+        },
+        {
+          "raw": "Settle, Tom, 1971. \"The Rationality of Science versus the Rationality of Magic\", Philosophy of the Social Sciences , 1: 173-194."
+        },
+        {
+          "raw": "Siitonen, Arto, 1984. \"Demarcation of Science From the Point of View of Problems and Problem-Stating\", Philosophia Naturalis , 21: 339-353."
+        },
+        {
+          "raw": "Thagard, Paul R., 1978. \"Why Astrology Is a Pseudoscience\", Philosophy of Science Association ( PSA 1978 ), 1: 223-234."
+        },
+        {
+          "raw": "---, 1988. Computational Philosophy of Science , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Thurs, Daniel P. and Ronald L. Numbers, 2013. \"Science, Pseudoscience and Science Falsely So-Called\", in Pigliucci and Boudry (eds.) 2013, pp. 121-144."
+        },
+        {
+          "raw": "Torcello, Lawrence, 2016. \"The Ethics of Belief, Cognition, and Climate Change Pseudoskepticism: Implications for Public Discourse\", Topics in Cognitive Science , 8: 19-48."
+        },
+        {
+          "raw": "Vollmer, Gerhard, 1993. Wissenschaftstheorie im Einsatz, Beitr&auml;ge zu einer selbstkritischen Wissenschaftsphilosophie Stuttgart: Hirzel Verlag."
+        },
+        {
+          "raw": "Wazeck, Milena, 2009. Einsteins Gegner. Die &ouml;ffentliche Kontroverse um die Relativit&auml;tstheorie in den 1920er Jahren . Frankfurt: campus."
+        },
+        {
+          "raw": "Williams, Nigel, 2005. \"Heavyweight Attack on Climate-Change Denial\", Current Biology , 15(4): R109-R110."
+        },
+        {
+          "raw": "Hansson, Sven Ove, 1991. \"Is Anthroposophy Science?\", Conceptus 25: 37-49."
+        },
+        {
+          "raw": "---, 2022. \"Anthroposophical climate science denial\", Critical Research on Religion 10(3): 281-297."
+        },
+        {
+          "raw": "Staudenmaier, Peter, 2014. Between Occultism and Nazism. Anthroposophy and the Politics of Race in the Fascist Era , Leiden: Brill."
+        },
+        {
+          "raw": "James, Edward W, 1990. \"On Dismissing Astrology and Other Irrationalities\", in Patrick Grim (ed.) Philosophy of Science and the Occult , 2nd edition, State University of New York Press, Albany, pp. 28-36."
+        },
+        {
+          "raw": "Kanitscheider, Bernulf, 1991. \"A Philosopher Looks at Astrology\", Interdisciplinary Science Reviews , 16: 258-266."
+        },
+        {
+          "raw": "Afzali, Mansoor, Gonul Colak and Sami V&auml;h&auml;maa, 2025. \"Climate Change Denial and Corporate Environmental Responsibility\", Journal of Business Ethics , 196(1): 31-59."
+        },
+        {
+          "raw": "Hansson, Sven Ove, 2020. \"Social constructionism and climate science denial\", European Journal for Philosophy of Science , 10(3): 1-27."
+        },
+        {
+          "raw": "McKinnon, Catriona, 2016. \"Should We Tolerate Climate Change Denial?\", Midwest Studies in Philosophy , 40(1): 205-216."
+        },
+        {
+          "raw": "Slater, Matthew H., Joanna K. Huxster, Julia E. Bresticker and Victor LoPiccolo, 2020. \" Denialism as Applied Skepticism: Philosophical and Empirical Considerations\", Erkenntnis 85(4): 871-890."
+        },
+        {
+          "raw": "Torcello, Lawrence, 2016. \"The Ethics of Belief, Cognition, and Climate Change Pseudoskepticism: Implications for Public Discourse\", Topics in Cognitive Science , 8(1): 19-48."
+        },
+        {
+          "raw": "Lambert, Kevin, 2006. \"Fuller's folly, Kuhnian paradigms, and intelligent design\", Social Studies of Science , 36(6): 835-842."
+        },
+        {
+          "raw": "Pennock, Robert T., 2010. \"The postmodern sin of intelligent design creationism\", Science and Education , 19(6-8): 757-778."
+        },
+        {
+          "raw": "---, 2011. \"Can't philosophers tell the difference between science and religion?: Demarcation revisited\", Synthese , 178(2): 177-206."
+        },
+        {
+          "raw": "Pennock, Robert T. and Michael Ruse (eds.), 2009. But is it science? The philosophical question in the creation/evolution controversy , updated edition, Prometheus Books."
+        },
+        {
+          "raw": "Pigliucci, Massimo, 2007. \"The evolution-creation wars: why teaching more science just is not enough\", McGill Journal of Education , 42(2): 285-306."
+        },
+        {
+          "raw": "Matthews, Michael R., 2019. Feng Shui: Teaching about science and pseudoscience , Springer."
+        },
+        {
+          "raw": "Lipstadt, Deborah E., 1993. Denying the Holocaust: the growing assault on truth and memory , New York : Free Press."
+        },
+        {
+          "raw": "Edwards, Paul, 1996. Reincarnation: A Critical Examination , Amherst NY: Prometheus."
+        },
+        {
+          "raw": "Flew, Antony, 1980. \"Parapsychology: Science or Pseudoscience\", Pacific Philosophical Quarterly , 61: 100-114."
+        },
+        {
+          "raw": "Hales, Steven D., 2001. \"Evidence and the afterlife\", Philosophia , 28(1-4): 335-346."
+        },
+        {
+          "raw": "Boudry, Maarten, and Filip Buekens, 2011. \"The epistemic predicament of a pseudoscience: Social constructivism confronts Freudian psychoanalysis\", Theoria , 77(2): 159-179."
+        },
+        {
+          "raw": "Cioffi, Frank, 1998. Freud and the Question of Pseudoscience . Chicago: Open Court."
+        },
+        {
+          "raw": "---, 2013. \"Pseudoscience. The case of Freud's sexual etiology of the neuroses\", in Pigliucci and Boudry (eds.) 2013, pp. 321-340."
+        },
+        {
+          "raw": "Gr&uuml;nbaum, Adolf, 1979. \"Is Freudian psychoanalytic theory pseudoscientific by Karl Popper's criterion of demarcation?\", American Philosophical Quarterly , 16: 131-141."
+        },
+        {
+          "raw": "Jerkert, Jesper, 2013. \"Why alternative medicine can be scientifically evaluated. Countering the evasions of pseudoscience\", in Pigliucci and Boudry (eds.) 2013, pp. 305-320."
+        },
+        {
+          "raw": "Smith, Kevin, 2012a. \"Against homeopathy-a utilitarian perspective\", Bioethics , 26(8): 398-409."
+        },
+        {
+          "raw": "---, 2012b. \"Homeopathy is unscientific and unethical\", Bioethics , 26(9): 508-512."
+        }
+      ],
+      "publishedAt": "2008-09-02T14:00:00.000Z",
+      "revisedAt": "2025-07-27T14:00:00.000Z"
+    }
+  }
+}

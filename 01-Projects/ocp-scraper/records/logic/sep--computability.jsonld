@@ -1,0 +1,379 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/computability",
+  "meta": {
+    "title": "Computability and Complexity",
+    "description": "A mathematical problem is computable if it can be solved in principle by a computing device. Some common synonyms for \"computable\" are \"solvable\", \"decidable\", and \"recursive\". Hilbert believed that all mathematical problems were solvable, but in the 1930's G&ouml;del, Turing, and Church showed that this is not the case. There is an extensive study and classification of which mathematical problems are computable and which are not. In addition, there is an extensive classification of computable problems into computational complexity classes according to how much computation--as a function of the size of the problem instance--is needed to answer that instance. It is striking how clearly, elegantly, and precisely these classifications have been drawn.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:46:15.660Z",
+    "dateModified": "2026-03-22T05:46:15.660Z",
+    "datePublished": "2004-06-23T14:00:00.000Z",
+    "keywords": [
+      "church logic",
+      "church turing",
+      "computational complexity",
+      "goedel",
+      "qt quantcomp",
+      "recursive functions",
+      "set theory",
+      "turing",
+      "turing machine"
+    ]
+  },
+  "problemSolved": {
+    "statement": "A mathematical problem is computable if it can be solved in principle by a computing device. Some common synonyms for \"computable\" are \"solvable\", \"decidable\", and \"recursive\". Hilbert believed that all mathematical problems were solvable, but in the 1930's G&ouml;del, Turing, and Church showed that this is not the case. There is an extensive study and classification of which mathematical problems are computable and which are not. In addition, there is an extensive classification of computable problems into computational complexity classes according to how much computation--as a function of the size of the problem instance--is needed to answer that instance. It is striking how clearly, elegantly, and precisely these classifications have been drawn.",
+    "context": "Opening section: 1. What can be computed in principle? Introduction and History | Related entries: church-logic, church-turing, computational-complexity, goedel, qt-quantcomp, recursive-functions, set-theory, turing, turing-machine",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "logic"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry computability",
+        "uri": "https://plato.stanford.edu/entries/computability/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 9 related entries, bibliography size 45"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2004-06-23T14:00:00.000Z and revised 2021-10-17T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2021-10-17T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/computability/",
+        "description": "SEP entry for computability"
+      }
+    ],
+    "solutionApproach": "1. What can be computed in principle? Introduction and History"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/church-logic",
+      "ocp:sep/church-turing",
+      "ocp:sep/computational-complexity",
+      "ocp:sep/goedel",
+      "ocp:sep/qt-quantcomp",
+      "ocp:sep/recursive-functions",
+      "ocp:sep/set-theory",
+      "ocp:sep/turing",
+      "ocp:sep/turing-machine"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Immerman, Neil",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/computability/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 53,
+      "validation_diversity": 0.43,
+      "context_breadth": 0.44,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.72,
+      "documentation_quality": 0.82
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.508
+  },
+  "extensions": {
+    "sep": {
+      "slug": "computability",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/computability/",
+      "preamble": "A mathematical problem is computable if it can be solved in principle by a computing device. Some common synonyms for \"computable\" are \"solvable\", \"decidable\", and \"recursive\". Hilbert believed that all mathematical problems were solvable, but in the 1930's G&ouml;del, Turing, and Church showed that this is not the case. There is an extensive study and classification of which mathematical problems are computable and which are not. In addition, there is an extensive classification of computable problems into computational complexity classes according to how much computation--as a function of the size of the problem instance--is needed to answer that instance. It is striking how clearly, elegantly, and precisely these classifications have been drawn.",
+      "firstSectionTitle": "1. What can be computed in principle? Introduction and History",
+      "firstSectionText": "In the 1930's, well before there were computers, various mathematicians from around the world invented precise, independent definitions of what it means to be computable. Alonzo Church defined the Lambda calculus, Kurt G&ouml;del defined Recursive functions, Stephen Kleene defined Formal systems, Markov defined what became known as Markov algorithms, Emil Post and Alan Turing defined abstract machines now known as Post machines and Turing machines. Surprisingly, all of these models are exactly equivalent: anything computable in the lambda calculus is computable by a Turing machine and similarly for any other pairs of the above computational systems. After this was proved, Church expressed the belief that the intuitive notion of \"computable in principle\" is identical to the above precise notions. This belief, now called the \"Church-Turing Thesis\", is uniformly accepted by mathematicians. Part of the impetus for the drive to codify what is computable came from the mathematician David Hilbert. Hilbert believed that all of mathematics could be precisely axiomatized. Once this was done, there would be an \"effective procedure\", i.e., an algorithm that would take as input any precise mathematical statement, and, after a finite number of steps, decide whether the statement was true or false. Hilbert was asking for what would now be called a decision procedure for all of mathematics. As a special case of this decision problem, Hilbert considered the validity problem for first-order logic. First-order logic is a mathematical language in which most mathematical statements can be formulated. Every statement in first-order logic has a precise meaning in every appropriate logical structure, i.e., it is true or false in each such structure. Those statements that are true in every appropriate structure are called valid . Those statements that are true in some structure are called satisfiable . Notice that a formula, \\(\\varphi\\), is valid iff its negation, \\(\\neg \\varphi\\), is not satisfiable. Hilbert called the validity problem for first-order logic, the entscheidungsproblem . In a textbook, Principles of Mathematical Logic by Hilbert and Ackermann, the authors wrote, \"The Entscheidungsproblem is solved when we know a procedure that allows for any given logical expression to decide by finitely many operations its validity or satisfiability.&hellip; The entscheidungsproblem must be considered the main problem of mathematical logic.\" (B&ouml;erger, Gr&auml;del, & Gurevich 1997). In his 1930 Ph.D. thesis, G&ouml;del presented a complete axiomatization of first-order logic, based on the Principia Mathematica by Whitehead and Russell (G&ouml;del 1930). G&ouml;del proved his Completeness Theorem, namely that a formula is provable from the axioms if and only if it is valid. G&ouml;del's Completeness theorem was a step towards the resolution of Hilbert's entscheidungsproblem . In particular, since the axioms are easily recognizable, and rules of inference very simple, there is a mechanical procedure that can list out all proofs. Note that each line in a proof is either an axiom, or follows from previous lines by one of the simple rules. For any given string of characters, we can tell if it is a proof. Thus we can systematically list all strings of characters of length 1, 2, 3, and so on, and check whether each of these is a proof. If so, then we can add the proof's last line to our list of theorems. In this way, we can list out all theorems, i.e., exactly all the valid formulas of first-order logic, can be listed out by a simple mechanical procedure. More precisely, the set of valid formulas is the range of a computable function. In modern terminology we say that the set of valid formulas of first-order logic is recursively enumerable (r.e.) . G&ouml;del's Completeness theorem was not sufficient, however, to give a positive solution to the entscheidungsproblem . Given a formula, \\(\\varphi\\), if \\(\\varphi\\) is valid then the above procedure would eventually list it out and thus could answer, \"Yes, \\(\\varphi\\) is valid.\" However, if \\(\\varphi\\) were not valid then we might never find this fact out. What was missing was a procedure to list out all the non-valid formulas, or equivalently to list out all satisfiable formulas. A year later, in 1931, G&ouml;del shocked the mathematical world by proving his Incompleteness Theorem: there is no complete and computable axiomatization of the first-order theory of the natural numbers. That is, there is no reasonable list of axioms from which we can prove exactly all true statements of number theory (G&ouml;del 1931). A few years later, Church and Turing independently proved that the entscheidungsproblem is unsolvable. Church did this by using the methods of G&ouml;del's Incompleteness Theorem to show that the set of satisfiable formulas of first-order logic is not r.e., i.e., they cannot be systematically listed out by a function computable by the lambda calculus. Turing introduced his machines and proved many interesting theorems some of which we will discuss in the next section. In particular, he proved the unsolvability of the halting problem . He obtained the unsolvability of the entscheidungsproblem as a corollary. Hilbert was very disappointed because his program towards a decision procedure for all of mathematics was proved impossible. However, as we will see in more detail in the rest of this article, a vast amount was learned about the fundamental nature of computation.",
+      "relatedEntries": [
+        "church-logic",
+        "church-turing",
+        "computational-complexity",
+        "goedel",
+        "qt-quantcomp",
+        "recursive-functions",
+        "set-theory",
+        "turing",
+        "turing-machine"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "church-logic"
+        },
+        {
+          "slug": "church-turing"
+        },
+        {
+          "slug": "computational-complexity"
+        },
+        {
+          "slug": "goedel"
+        },
+        {
+          "slug": "qt-quantcomp"
+        },
+        {
+          "slug": "recursive-functions"
+        },
+        {
+          "slug": "set-theory"
+        },
+        {
+          "slug": "turing"
+        },
+        {
+          "slug": "turing-machine"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 45,
+      "bibliography": [
+        {
+          "raw": "Allender, E., M. Bauland, N. Immerman, H. Schnoor and H. Vollmer, 2009, \"The Complexity of Satisfiability Problems: Refining Schaefer's Theorem\", Journal of Computer and System Science 75(4): 245-254."
+        },
+        {
+          "raw": "Arora, Sanjeev and Boaz Barak, 2009, Computational Complexity: A Modern Approach , New York: Cambridge University Press."
+        },
+        {
+          "raw": "B&ouml;erger, Egon, Erich Gr&auml;del, and Yuri Gurevich, 1997, The Classical Decision Problem , Heidelberg: Springer."
+        },
+        {
+          "raw": "Bulatov, Andrei, 2017, \"A Dichotomy Theorem for Nonuniform CSPs\", IEEE 58th Annual Symposium on Foundations of Computer Science , 319-330."
+        },
+        {
+          "raw": "---, 2018, \"Constraint Satisfaction Problems: Complexity and Algorithms\", SIGLOG News 4(5): 3-24."
+        },
+        {
+          "raw": "Church, Alonzo, 1933, \"A Set of Postulates for the Foundation of Logic (Second Paper)\", Annals of Mathematics (Second Series), 33: 839-864."
+        },
+        {
+          "raw": "---, 1936a, \"An Unsolvable Problem of Elementary Number Theory,\" American Journal of Mathematics , 58: 345-363."
+        },
+        {
+          "raw": "---, 1936b, \"A Note on the Entscheidungsproblem,\" Journal of Symbolic Logic , 1: 40-41; correction 1, 101-102."
+        },
+        {
+          "raw": "Cobham, Alan, 1964, \"The Intrinsic Computational Difficulty of Functions,\" Proceedings of the 1964 Congress for Logic, Mathematics, and Philosophy of Science , Amsterdam: North-Holland, pp. 24-30."
+        },
+        {
+          "raw": "Cook, Stephen, 1971, \"The Complexity of Theorem Proving Procedures,\" Proceedings of the Third Annual ACM STOC Symposium , Shaker Heights, Ohio, pp. 151-158."
+        },
+        {
+          "raw": "Davis, Martin, 2000, The Universal Computer: the Road from Leibniz to Turing , New York: W. W. Norton & Company."
+        },
+        {
+          "raw": "Edmonds, Jack, 1965, \"Paths, Trees and Flowers,\" Canadian Journal of Mathematics , 17: 449-467."
+        },
+        {
+          "raw": "Enderton, Herbert B., 1972, A Mathematical Introduction to Logic , New York: Academic Press."
+        },
+        {
+          "raw": "Fagin, Ronald, 1974, \"Generalized First-Order Spectra and Polynomial-Time Recognizable Sets,\" in Complexity of Computation , R. Karp (ed.), SIAM-AMS Proc , 7: 27-41."
+        },
+        {
+          "raw": "Feder, Tomas and Moshe Vardi, 1999, \"The Computational Structure of Monotone Monadic SNP and Constraint Satisfaction: A Study Through Datalog and Group Theory\", SIAM Journal of Computing 28: 57-104."
+        },
+        {
+          "raw": "Garey, Michael and David S. Johnson, 1979, Computers and Intractability , New York: Freeman."
+        },
+        {
+          "raw": "G&ouml;del, Kurt, 1930, \"The Completeness of the Axioms of the Functional Calculus,\" in van Heijenoort 1967: 582-591."
+        },
+        {
+          "raw": "---, 1931, \"On Formally Undecidable Propositions of Principia Mathematica and Related Systems I,\" in van Heijenoort, 1967: 592-617."
+        },
+        {
+          "raw": "Hartmanis, Juris, 1989, \"Overview of computational Complexity Theory\" in J. Hartmanis (ed.), Computational Complexity Theory , Providence: American Mathematical Society, pp. 1-17."
+        },
+        {
+          "raw": "Hilbert and Ackermann, 1928/1938, Grundz&uuml;ge der theoretischen Logik , Springer. English translation of the 2nd edition: Principles of Mathematical Logic , New York: Chelsea Publishing Company, 1950."
+        },
+        {
+          "raw": "Hodges, Andrew, 1992, Alan Turing: the Enigma , London: Random House."
+        },
+        {
+          "raw": "Hofstadter, Douglas, 1979, G&ouml;del, Escher, Bach: an Eternal Golden Braid , New York: Basic Books."
+        },
+        {
+          "raw": "Hopcroft, John E., 1984, \"Turing Machines\", Scientific American , 250(5): 70-80."
+        },
+        {
+          "raw": "Immerman, Neil, 1999, Descriptive Complexity , New York: Springer."
+        },
+        {
+          "raw": "Jeavons, P.G., D.A. Cohen and M. Gyssens, 1997, \"Closure Properties of Constraints\", Journal of the ACM , 44: 527-548."
+        },
+        {
+          "raw": "Jones, Neil, 1973, \"Reducibility Among Combinatorial Problems in Log n Space\", Proc. Seventh Annual Princeton Conf. Info. Sci. and Systems , 547-551."
+        },
+        {
+          "raw": "Karp, Richard, 1972, \"Reducibility Among Combinatorial Problems,\", in Complexity of Computations , R.E. Miller and J.W. Thatcher (eds.), New York: Plenum Press, pp. 85-104."
+        },
+        {
+          "raw": "Kleene, Stephen C., 1935, \"A Theory of Positive Integers in Formal Logic,\" American Journal of Mathematics , 57: 153-173, 219-244."
+        },
+        {
+          "raw": "---, 1950, Introduction to Metamathematics , Princeton: Van Nostrand."
+        },
+        {
+          "raw": "Ladner, Richard, 1975, \"On the structure of polynomial time reducibility\", Journal of the ACM , 155-171."
+        },
+        {
+          "raw": "Levin, Leonid, 1973, \"Universal search problems,\" Problemy Peredachi Informatsii , 9(3): 265-266; partial English translation in B.A.Trakhtenbrot, 1984, \"A Survey of Russian Approaches to Perebor (Brute-force Search) Algorithms,\" IEEE Annals of the History of Computing , 6(4): 384-400."
+        },
+        {
+          "raw": "Markov, A.A., 1960, \"The Theory of Algorithms,\" American Mathematical Society Translations (Series 2), 15: 1-14."
+        },
+        {
+          "raw": "Meyer, Albert and Dennis Ritchie, 1967, \"The Complexity of Loop Programs,\" Proceedings of the 22nd National ACM Conference , Washington, D.C., 465-470."
+        },
+        {
+          "raw": "Nordstr&ouml;m, Jakob, 2015, \"On the Interplay Between Proof Complexity and SAT Solving,\" SIGLOG News, 2(3): 18-44."
+        },
+        {
+          "raw": "Papadimitriou, Christos H., 1994, Computational Complexity , Reading, MA: Addison-Wesley."
+        },
+        {
+          "raw": "P&eacute;ter, R&oacute;zsa. 1967, Recursive Functions , translated by Istv&aacute;n F&ouml;ldes, New York: Academic Press."
+        },
+        {
+          "raw": "Post, Emil, 1936, \"Finite Combinatory Processes - Formulation I,\" Journal of Symbolic Logic , 1: 103-105."
+        },
+        {
+          "raw": "Rogers, Hartley Jr., 1967, Theory of Recursive Functions and Effective Computability , New York: McGraw-Hill."
+        },
+        {
+          "raw": "Schaefer, Thomas, 1978, \"The Complexity of Satisfiability Problems\", Proceedings of the Tenth Annual ACM STOC Symposium , 216-226."
+        },
+        {
+          "raw": "Skolem, Thoralf, 1923, \"The foundations of elementary arithmetic established by means of the recursive mode of thought,\" in van Heijenoort 1967: 302-33."
+        },
+        {
+          "raw": "Turing, A. M., 1936-7, \"On Computable Numbers, with an Application to the Entscheidungsproblem\", Proceedings of the London Mathematical Society , 2(42): 230-265 [ Preprint available online ]."
+        },
+        {
+          "raw": "Valiant, Leslie, 1982, \"Reducibility By Algebraic Projections\", L'Enseignement mathematique , 28(3-4): 253-268."
+        },
+        {
+          "raw": "van Heijenoort, Jean, (ed.), 1967, From Frege To G&ouml;del: A Source Book in Mathematical Logic, 1879-1931 , Cambridge, Massachusetts: Harvard University Press."
+        },
+        {
+          "raw": "Whitehead, Alfred North and Bertrand Russell, 1910-1913, Principia Mathematica , first edition, Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Zhuk, Dmitriy, 2020, \"A Proof of CSP Dichotomy Conjecture\", Journal of the ASM , 30: 1-78."
+        }
+      ],
+      "publishedAt": "2004-06-23T14:00:00.000Z",
+      "revisedAt": "2021-10-17T13:00:00.000Z"
+    }
+  }
+}

@@ -1,0 +1,800 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/qt-quantcomp",
+  "meta": {
+    "title": "Quantum Computing",
+    "description": "Combining physics, mathematics and computer science, quantum computing and its sister discipline of quantum information have developed in the past few decades from visionary ideas to two of the most fascinating areas of quantum theory. General interest and excitement in quantum computing was initially triggered by P. W. Shor (1994) who showed how a quantum algorithm apparently can factor large numbers into primes far more efficiently than any known classical algorithm. Shor's algorithm was soon followed by several other algorithms for solving combinatorial and algebraic problems, and in the years since the theoretical study of quantum computational systems has achieved tremendous progress. Although no proof exists yet for the general superiority of quantum computers over classical computers, the implementation of Shor's algorithm on a large scale quantum computer would render ineffective currently widely used cryptosystems that rely on the premise that no efficient algorithm for factoring exists. Consequently, experimentalists around the world are engaged in attempts to tackle the technological difficulties that prevent the realisation of a large scale quantum computer. The philosophical interest in quantum computing is manifold. From a social-historical perspective, quantum computing is a domain where experimentalists find themselves ahead of their fellow theorists. Indeed, quantum mysteries such as entanglement and nonlocality were historically considered to be of \"merely philosophical\" interest until physicists discovered that these mysteries might be harnessed to devise new efficient algorithms. But while the technology for harnessing the power of hundreds of qubits (the basic unit of information in the quantum computer) is now within reach, only a handful of quantum algorithms exist, and the question of whether these can truly outperform any conceivable classical alternative is still, for theoreticians, open. From a foundational point of view, reflecting on features of the design and implementation of efficient quantum algorithms may help us to better understand just what it is that makes quantum systems quantum, and it may illuminate fundamental concepts such as measurement and causality . Further, the idea that abstract mathematical concepts such as computability and complexity may not only be translated into physics, but also re-written by physics bears directly on the autonomous character of computer science and the status of its theoretical entities--the so-called \"computational kinds\". As such it is also relevant to the long-standing philosophical debate on the relationship between mathematics and the physical world.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:16:49.645Z",
+    "dateModified": "2026-03-22T05:16:49.645Z",
+    "datePublished": "2006-12-02T13:00:00.000Z",
+    "keywords": [
+      "bell theorem",
+      "church turing",
+      "computability",
+      "computational complexity",
+      "qm",
+      "qm collapse",
+      "qm decoherence",
+      "qt entangle",
+      "qt epr",
+      "qt issues",
+      "turing",
+      "turing machine"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Combining physics, mathematics and computer science, quantum computing and its sister discipline of quantum information have developed in the past few decades from visionary ideas to two of the most fascinating areas of quantum theory. General interest and excitement in quantum computing was initially triggered by P. W. Shor (1994) who showed how a quantum algorithm apparently can factor large numbers into primes far more efficiently than any known classical algorithm. Shor's algorithm was soon followed by several other algorithms for solving combinatorial and algebraic problems, and in the years since the theoretical study of quantum computational systems has achieved tremendous progress. Although no proof exists yet for the general superiority of quantum computers over classical computers, the implementation of Shor's algorithm on a large scale quantum computer would render ineffective currently widely used cryptosystems that rely on the premise that no efficient algorithm for factoring exists. Consequently, experimentalists around the world are engaged in attempts to tackle the technological difficulties that prevent the realisation of a large scale quantum computer. The philosophical interest in quantum computing is manifold. From a social-historical perspective, quantum computing is a domain where experimentalists find themselves ahead of their fellow theorists. Indeed, quantum mysteries such as entanglement and nonlocality were historically considered to be of \"merely philosophical\" interest until physicists discovered that these mysteries might be harnessed to devise new efficient algorithms. But while the technology for harnessing the power of hundreds of qubits (the basic unit of information in the quantum computer) is now within reach, only a handful of quantum algorithms exist, and the question of whether these can truly outperform any conceivable classical alternative is still, for theoreticians, open. From a foundational point of view, reflecting on features of the design and implementation of efficient quantum algorithms may help us to better understand just what it is that makes quantum systems quantum, and it may illuminate fundamental concepts such as measurement and causality . Further, the idea that abstract mathematical concepts such as computability and complexity may not only be translated into physics, but also re-written by physics bears directly on the autonomous character of computer science and the status of its theoretical entities--the so-called \"computational kinds\". As such it is also relevant to the long-standing philosophical debate on the relationship between mathematics and the physical world.",
+    "context": "Opening section: 1. A Brief History of the Field | Related entries: bell-theorem, church-turing, computability, computational-complexity, qm, qm-collapse, qm-decoherence, qt-issues, qt-entangle, qt-epr, turing, turing-machine",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "general-philosophy"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry qt-quantcomp",
+        "uri": "https://plato.stanford.edu/entries/qt-quantcomp/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "2 author(s), 12 related entries, bibliography size 178"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2006-12-02T13:00:00.000Z and revised 2024-03-04T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2024-03-04T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/qt-quantcomp/",
+        "description": "SEP entry for qt-quantcomp"
+      }
+    ],
+    "solutionApproach": "1. A Brief History of the Field"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/bell-theorem",
+      "ocp:sep/church-turing",
+      "ocp:sep/computability",
+      "ocp:sep/computational-complexity",
+      "ocp:sep/qm",
+      "ocp:sep/qm-collapse",
+      "ocp:sep/qm-decoherence",
+      "ocp:sep/qt-issues",
+      "ocp:sep/qt-entangle",
+      "ocp:sep/qt-epr",
+      "ocp:sep/turing",
+      "ocp:sep/turing-machine"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Cuffaro, Michael",
+        "type": "human"
+      },
+      {
+        "name": "Hagar, Amit",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/qt-quantcomp/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 126,
+      "validation_diversity": 0.57,
+      "context_breadth": 0.48,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.92
+    },
+    "confidence": "tested",
+    "authority": "high",
+    "status": "draft",
+    "trustScore": 0.613
+  },
+  "extensions": {
+    "sep": {
+      "slug": "qt-quantcomp",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/qt-quantcomp/",
+      "preamble": "Combining physics, mathematics and computer science, quantum computing and its sister discipline of quantum information have developed in the past few decades from visionary ideas to two of the most fascinating areas of quantum theory. General interest and excitement in quantum computing was initially triggered by P. W. Shor (1994) who showed how a quantum algorithm apparently can factor large numbers into primes far more efficiently than any known classical algorithm. Shor's algorithm was soon followed by several other algorithms for solving combinatorial and algebraic problems, and in the years since the theoretical study of quantum computational systems has achieved tremendous progress. Although no proof exists yet for the general superiority of quantum computers over classical computers, the implementation of Shor's algorithm on a large scale quantum computer would render ineffective currently widely used cryptosystems that rely on the premise that no efficient algorithm for factoring exists. Consequently, experimentalists around the world are engaged in attempts to tackle the technological difficulties that prevent the realisation of a large scale quantum computer. The philosophical interest in quantum computing is manifold. From a social-historical perspective, quantum computing is a domain where experimentalists find themselves ahead of their fellow theorists. Indeed, quantum mysteries such as entanglement and nonlocality were historically considered to be of \"merely philosophical\" interest until physicists discovered that these mysteries might be harnessed to devise new efficient algorithms. But while the technology for harnessing the power of hundreds of qubits (the basic unit of information in the quantum computer) is now within reach, only a handful of quantum algorithms exist, and the question of whether these can truly outperform any conceivable classical alternative is still, for theoreticians, open. From a foundational point of view, reflecting on features of the design and implementation of efficient quantum algorithms may help us to better understand just what it is that makes quantum systems quantum, and it may illuminate fundamental concepts such as measurement and causality . Further, the idea that abstract mathematical concepts such as computability and complexity may not only be translated into physics, but also re-written by physics bears directly on the autonomous character of computer science and the status of its theoretical entities--the so-called \"computational kinds\". As such it is also relevant to the long-standing philosophical debate on the relationship between mathematics and the physical world.",
+      "firstSectionTitle": "1. A Brief History of the Field",
+      "firstSectionText": "A mathematical model for a universal computer was defined long before the invention of quantum computers and is called the Turing machine . It consists of (a) an unbounded tape divided (in one dimension) into cells, (b) a \"read-write head\" capable of reading or writing one of a finite number of symbols from or to a cell at a specific location, and (c) an instruction table (instantiating a transition function) which, given the machine's initial \"state of mind\" (one of a finite number of such states that can be visited any number of times in the course of a computation) and the input read from the tape in that state, determines (i) the symbol to be written to the tape at the current head position, (ii) the subsequent displacement (to the left or to the right) of the head, and (iii) the machine's final state. In 1936 Turing (1936) showed that since one can encode the instruction table of any given Turing machine \\(T\\) as a binary number \\(\\#(T)\\), there exists a universal Turing machine \\(U\\) which, upon reading a given \\(\\#(T)\\) from its tape, can simulate the operation of \\(T\\) on any input. In mathematics, an effective method , informally speaking, is a method consisting of a finite number of precise finite-length instructions, guaranteed to produce some desired result in a finite number of steps if followed exactly by a human being using nothing other than paper and pencil (Papayannopoulos 2023). That the Turing machine model formally captures the concept of effective calculability in its entirety is the essence of the Church-Turing thesis . Since the thesis involves both a precise mathematical notion (i.e., that of a Turing machine) and an informal and intuitive notion (i.e., that of an effective method), however, strictly speaking it cannot be proved or disproved but is arguably best thought of as an explication in Carnap's sense (Carnap 1962, ch. I). Simple cardinality considerations show, in any case, that not all functions are Turing-computable (the set of all Turing machines is countable, while the set of all functions from the natural numbers to the natural numbers is not), and the discovery of this fact came as a complete surprise in the 1930s (Davis 1958). But as interesting and important as the question of whether a given function is computable by Turing machine--the purview of computability theory (Boolos, Burgess, & Jeffrey 2007)--is, it is not the only question that interests computer scientists. Beginning especially in the 1960s (Cobham 1965; Edmonds 1965; Hartmanis & Stearns 1965), the question of the cost of computing a function also came to be of great importance. This cost, also known as computational complexity , is measured naturally in terms of the physical resources (in particular time and space, given in terms of computational steps and memory locations, respectively) required in order to solve the computational problem at hand. Computer scientists classify computational problems according to the way their cost function behaves as a function of their input size, \\(n\\) (the number of bits required to store the input). Tractable , or efficiently solvable, problems are those that can be solved in \"polynomial time\"; i.e., in a number of time steps that is bounded by a polynomial function of the size of the input, while intractable problems are those which cannot, i.e., that require \"exponential\" time. For a deterministic Turing machine (DTM) like the ones we have been discussing so far, its behaviour at any given time is wholly determined by its state plus whatever its input happens to be. In other words such machines have a unique transition function. We can generalise the Turing model, however, by allowing a machine to instantiate more than one transition function simultaneously. A nondeterministic Turing machine (NTM), upon being presented with a given input in a given state, is allowed to 'choose' which of its transition functions to follow, and we say that it solves a given problem whenever, given some input, there exists at least one path through its state space leading to a solution. Exactly how an NTM \"chooses\" whether to follow one transition function rather than another at a given moment in time is left undefined (Turing originally conceived these choices as those of an external operator). In particular, we do not assume that any probabilities are attached to these choices. In a probabilistic Turing machine (PTM), by contrast, we characterise the computer's choices by associating a particular probability with each of its possible transitions. Probabilistic and deterministic Turing machines (DTMs) have different success criteria. A successful deterministic algorithm for a given problem is guaranteed to yield the correct answer given its input. Of a successful probabilistic algorithm, on the other hand, we only demand that it yield a correct answer with \"high\" probability (minimally, we demand that it be strictly greater than 1/2). It was generally believed, until relatively recently, that for some problems (see, e.g. Rabin 1976) probabilistic algorithms are dramatically more efficient than any deterministic alternative; in other words that the set or \"class\" of problems efficiently solvable by PTM is larger than the class of problems efficiently solvable by DTM. It is now generally believed that the PTM model does not, in fact, offer a computational advantage in this sense over the DTM model (Arora & Barak 2009, ch. 20). Probabilistic (Turing) computation is nevertheless interesting to consider, because abstractly a quantum computer is just a variation on the PTM that does appear to offer computational advantages over deterministic computation, although as already mentioned this conjecture still awaits a proof. The class \\(\\mathbf{P}\\) (for Polynomial) is the class containing all the computational decision problems that can be solved by a DTM in polynomial time. The class NP (for Non-deterministic Polynomial) is the class containing all the computational decision problems that can be solved by an NTM in polynomial time. The most famous problems in NP are called \" NP -complete\", where \"complete\" designates the fact that these problems stand or fall together: Either they are all tractable, or none of them is! If we knew how to solve an NP -complete problem efficiently (i.e., with polynomial cost) we could use it to efficiently solve any other problem in NP (Cook 1971). Today we know of hundreds of examples of NP -complete problems (Garey & Johnson 1979), all of which are reducible one to another with no more than a polynomial slowdown. Since the best known algorithm for any of these problems is exponential, the widely believed conjecture is that there is no polynomial algorithm that can solve them. Clearly \\(\\mathbf{P} \\subseteq \\mathbf{NP}\\). Proving or disproving the conjecture that \\(\\mathbf{P} \\ne \\mathbf{NP}\\), however, remains perhaps one of the most important open questions in computer science. The class BPP (bounded probabilistic polynomial) is the class of problems that can be solved in polynomial time with \"high\" probability (see above) by a PTM. Finally, the class BQP is the class of problems that can be solved in polynomial time with \"high\" probability by a quantum computer. From the perspective of computer science, answering the question of whether quantum computers are more powerful than classical computers amounts to determining whether BPP \\(\\subsetneq\\) BQP is true (see Cuffaro 2018b). Although the original Church-Turing thesis involves the abstract mathematical notion of computability, physicists as well as computer scientists often interpret it as saying something about the scope and limitations of physical computing machines. Wolfram (1985) claims that any physical system can be simulated (to any degree of approximation) by a universal Turing machine, and that complexity bounds on Turing machine simulations have physical significance. For example, if the computation of the minimum energy of some system of \\(n\\) particles requires at least an exponentially increasing number of steps in \\(n\\), then the actual relaxation of this system to its minimum energy state will also take exponential time. Aharonov (1999) strengthens this thesis (in the context of showing its putative incompatibility with quantum mechanics) when she says that a PTM can simulate any reasonable physical device at polynomial cost. In order for the \"physical Church-Turing thesis\" to make sense one has to relate physical space and time parameters to their computational counterparts: memory capacity and number of computation steps, respectively. There are various ways to do that, leading to different formulations of the thesis (see Copeland 2018; Gandy 1980; Pitowsky 1990; Sieg & Byrnes 1999). For example, one can encode the set of instructions of a universal Turing machine and the state of its infinite tape in the binary development of the position coordinates of a single particle. Consequently, one can physically 'realise' a universal Turing machine as a billiard ball with hyperbolic mirrors (Moore 1990; Pitowsky 1996). It should be stressed that strictly speaking there is no relation between the original Church-Turing thesis and its physical version (Pitowsky & Shagrir 2003), and while the former concerns the concept of computation that is relevant to logic (since it is strongly tied to the notion of proof which requires validation ), it does not analytically entail that all computations should be subject to validation. Indeed, there is a long historical tradition of analog computations (Dewdney 1984; Maley 2023; Papayannopoulos 2020), and the output of these computations is validated either by repetitive \"runs\" or by validating the physical theory that presumably governs the behaviour of the analog computer. Do physical processes exist which contradict the physical Church-Turing thesis? Apart from analog computation, there exist at least two main kinds of example purporting to show that the notion of recursion, or Turing-computability, is not a natural physical property (Hogarth 1994; Pitowsky 1990; Pour-el & Richards 1981). Although the physical systems involved (a specific initial condition for the wave equation in three dimensions and an exotic solution to Einstein's field equations, respectively) are somewhat contrived, a school of \"hypercomputation\" that aspires to extend the limited examples of physical \"hypercomputers\" and in so doing to physically \"compute\" the non-Turing-computable has nevertheless emerged (Andr&eacute;ka, Madar&aacute;sz, N&eacute;meti, N&eacute;meti, & Sz&eacute;kely 2018; Copeland 2002, 2011; Davis 2003). Quantum hypercomputation is less frequently discussed in the literature (see, e.g., Adamyan, Calude, & Pavlov 2004), but arguably the most concrete attempt to harness quantum theory to compute the non-computable is the suggestion to use the quantum adiabatic algorithm (see below) to solve Hilbert's Tenth Problem (Kieu 2002, 2004)--a Turing-undecidable problem equivalent to the halting problem--though this alleged quantum adiabatic hypercomputer has been criticised as unphysical (see Hagar & Korolev 2007; Hodges 2005 [Other Internet Resources]). Setting aside hypercomputers, even if we restrict ourselves only to Turing-computable functions, one can still find many proposals in the literature that purport to display \"short-cuts\" in computational resources. Consider, e.g., the DNA model of computation that was claimed (Adleman 1994; Lipton 1995) to solve NP -complete problems in polynomial time. A closer inspection shows that the cost of the computation in this model is still exponential since the number of molecules in the physical system grows exponentially with the size of the problem. Or take an allegedly instantaneous solution to another NP -complete problem using a construction of rods and balls (Vergis, Steiglitz, & Dickinson 1986) that unfortunately ignores the accumulating time-delays in the rigid rods that result in an exponential overall slowdown. It appears that these and other similar models cannot serve as counter-examples to the physical Church-Turing thesis (as far as complexity is concerned) since they all require some exponential physical resource. Note, however, that all these models are described using classical physics, hence the unavoidable question: Can the shift to quantum physics allow us to find computational short-cuts? The quest for the quantum computer began with the possibility of giving a positive answer to this question. As early as 1969 Steven Wiesner suggested quantum information processing as a possible way to better accomplish cryptologic tasks. But the first four published papers on quantum information (Wiesner published his only in 1983), belong to Alexander Holevo (1973), R. P. Poplavskii (1975), Roman Ingarden (1976), and Yuri Manin (1980). Better known are contributions made in the early 1980s by Charles H. Bennett of the IBM Thomas J. Watson Research Center, Paul A. Benioff of Argonne National Laboratory in Illinois, David Deutsch of the University of Oxford, and Richard P. Feynman of the California Institute of Technology. The idea emerged when scientists were investigating the fundamental physical limits of computation: If technology continued to abide by \"Moore's Law\" (the observation made in 1965 by Gordon Moore, co-founder of Intel, that the number of transistors per square inch on integrated circuits had doubled every 18 months since the integrated circuit was invented), then the continually shrinking size of circuitry packed onto silicon chips would eventually reach a point where individual elements would be no larger than a few atoms. But since the physical laws that govern the behaviour and properties of the putative circuit at the atomic scale are inherently quantum-mechanical in nature, not classical, the natural question arose whether a new kind of computer could be devised based on the principles of quantum physics. Inspired by Ed Fredkin's ideas on reversible computation (see Hagar 2016), Feynman was among the first to attempt to provide an answer to this question by producing an abstract model in 1982 that showed how a quantum system could be used to do computations. He also explained how such a machine would be able to act as a simulator for quantum physics, conjecturing that any classical computer could do the same task only inefficiently. In 1985, David Deutsch proposed the first universal quantum Turing machine, which paved the way to the quantum circuit model (Deutsch 1989) and the development of quantum algorithms. The 1990s saw the discovery of the Deutsch-Josza algorithm (1992) and of Simon's algorithm (1994). The latter supplied the basis for Shor's factoring algorithm. Published in 1994, this algorithm marked a \"phase transition\" in the development of quantum computing and sparked a tremendous interest even outside the physics community. In that year the first experimental realisation of the quantum CNOT (controlled-not) gate with trapped ions was proposed by Cirac & Zoller (1995). In 1995, Peter Shor and Andrew Steane proposed (independently) the first scheme for quantum error-correction. In that same year the first realisation of a quantum logic gate was done in Boulder, Colorado, following Cirac and Zoller's proposal. In 1996, Lov Grover from Bell Labs invented a quantum search algorithm which yields a provable (though only quadratic) \"speed-up\" compared to its classical counterparts. A year later the first model for quantum computation based on nuclear magnetic resonance (NMR) techniques was proposed. This technique was realised in 1998 with a 2-qubit register, and was scaled up to 7 qubits in the Los Alamos National Lab in 2000. The adiabatic and cluster-state models of quantum computing were discovered in 2000 and 2002, respectively (Farhi, Goldstone, Gutmann, & Sipser 2000; Raussendorf & Briegel 2002) and in 2011 D-Wave systems announced the creation of \"D-Wave one,\" an adiabatic quantum computer system running on a 128-qubit processor (Johnson, Amin, Gildert, et al. 2011). The late 2010s saw the beginning of the Noisy Intermediate Scale Quantum Computing (NISQ) era (Preskill 2018), and in 2019 scientists affiliated with Google LLC announced (Arute, Arya, Babbush, & coauthors 2019) that they had achieved \"quantum computational supremacy\" (Aaronson 2019 [Other Internet Resources])--the actual existence of a (in this case, NISQ) quantum computer capable of solving a specific problem for which no efficient classical algorithm is known--at least until 2022 when a classical algorithm to outperform Google LLC's quantum computer was discovered (Pan, Chen, & Zhang 2022), not to mention subsequent theoretical results demonstrating the inherent limitations of Google LLC's approach (Aharonov, Gao, Landau, Liu, & Vazirani 2023). Despite the tremendous growth of the field since the discovery of Shor's algorithm, the basic questions remain open even today: (1) theoretically, can quantum algorithms efficiently solve classically intractable problems? (2) operationally, can we actually realise a large scale quantum computer to run these algorithms?",
+      "relatedEntries": [
+        "bell-theorem",
+        "church-turing",
+        "computability",
+        "computational-complexity",
+        "qm",
+        "qm-collapse",
+        "qm-decoherence",
+        "qt-issues",
+        "qt-entangle",
+        "qt-epr",
+        "turing",
+        "turing-machine"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "bell-theorem"
+        },
+        {
+          "slug": "church-turing"
+        },
+        {
+          "slug": "computability"
+        },
+        {
+          "slug": "computational-complexity"
+        },
+        {
+          "slug": "qm"
+        },
+        {
+          "slug": "qm-collapse"
+        },
+        {
+          "slug": "qm-decoherence"
+        },
+        {
+          "slug": "qt-issues"
+        },
+        {
+          "slug": "qt-entangle"
+        },
+        {
+          "slug": "qt-epr"
+        },
+        {
+          "slug": "turing"
+        },
+        {
+          "slug": "turing-machine"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 178,
+      "bibliography": [
+        {
+          "raw": "---, 2013b, \"Why Philosophers Should Care about Computational Complexity,\" in B. J. Copeland, C. J. Posy, & O. Shagrir (eds.), Computability: Turing, G&ouml;del, Church, and Beyond , pp. 261-327, Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Adamyan, V. A., Calude, C. S., and Pavlov, B. S., 2004, \"Transcending the Limits of Turing Computability,\" in Quantum Information and Complexity , pp. 119-137."
+        },
+        {
+          "raw": "Adlam, Emily, 2023, \"Is There Causation in Fundamental Physics? New Insights from Process Matrices and Quantum Causal Modelling,\" Synthese , 201: 152."
+        },
+        {
+          "raw": "Adleman, L. M., 1994, \"Molecular Computation of Solutions to Combinatorial Problems,\" Science , 266: 1021-1024."
+        },
+        {
+          "raw": "Aharonov, D., 1999, \"Quantum Computation,\" in Annual Reviews of Computational Physics VI , pp. 259-346, Singapore: World Scientific."
+        },
+        {
+          "raw": "Aharonov, D., and Ben-Or, M., 1997, \"Fault-Tolerant Computation with Constant Error,\" in Proceedings of the Twenty-Ninth ACM Symposium on the Theory of Computing , Vol. 176."
+        },
+        {
+          "raw": "Aharonov, D., Jones, V., and Landau, Z., 2009, \"A Polynomial Quantum Algorithm for Approximating the Jones Polynomial,\" Algorithmica , 55: 395-421."
+        },
+        {
+          "raw": "Aharonov, Dorit, Gao, Xun, Landau, Zeph, Liu, Yunchao, and Vazirani, Umesh, 2023, \"A Polynomial-Time Classical Algorithm for Noisy Random Circuit Sampling,\" in Proceedings of the 55th Annual ACM Symposium on Theory of Computing , pp. 945-957, New York, NY, USA: Association for Computing Machinery."
+        },
+        {
+          "raw": "Aharonov, D., Van Dam, W., Kempe, J., Landau, Z., Lloyd, S., and Regev, O., 2008, \"Adiabatic Quantum Computation Is Equivalent to Standard Quantum Computation,\" SIAM Review , 50: 755-787."
+        },
+        {
+          "raw": "Albash, T., and Lidar, D. A., 2018, \"Adiabatic Quantum Computation,\" Reviews of Modern Physics , 90: 015002-1-01502-64."
+        },
+        {
+          "raw": "Alicki, R., Lidar, D., and Zinardi, P., 2006, \"Internal Consistency of Fault Tolerant Quantum Error Correction,\" Phys. Rev. A , 73: 052311."
+        },
+        {
+          "raw": "All&eacute;aume, R., Branciard, C., Bouda, J., Debuisschert, T., Dianati, M., Gisin, N., &hellip; others, 2014, \"Using Quantum Key Distribution for Cryptographic Purposes: A Survey,\" Theoretical Computer Science , 560: 62-81."
+        },
+        {
+          "raw": "Allen, J. A., Barrett, J., Horsman, D. C., Lee, C. M., and Spekkens, R. W., 2017, \"Quantum Common Causes and Quantum Causal Models,\" Physical Review X , 7: 031021."
+        },
+        {
+          "raw": "Andr&eacute;ka, H., Madar&aacute;sz, J. X., N&eacute;meti, I., N&eacute;meti, P., and Sz&eacute;kely, G., 2018, \"Relativistic Computation,\" in Cuffaro & Fletcher (2018), pp. 195-218."
+        },
+        {
+          "raw": "Arora, S., and Barak, B., 2009, Computational Complexity: A Modern Approach , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Arute, F., Arya, K., Babbush, R., and coauthors, 2019, \"Quantum Supremacy Using a Programmable Superconducting Processor,\" Nature , 574: 505-510."
+        },
+        {
+          "raw": "Barenco, A., Bennett, C. H., Cleve, R., DiVincenzo, D. P., Margolus, N., Shor, P., &hellip; Weinfurter, H., 1995, \"Elementary Gates for Quantum Computation,\" Phys. Rev. A , 52: 3457-3467."
+        },
+        {
+          "raw": "Bassi, A., Adler, S. L., and Ippoliti, E., 2004, \"Towards Quantum Superpositions of a Mirror: Stochastic Collapse Analysis,\" Phys. Rev. Lett. , 94: 030401."
+        },
+        {
+          "raw": "Bennett, C. H., Bernstein, E., Brassard, G., and Vazirani, U., 1997, \"Strengths and Weaknesses of Quantum Computing,\" SIAM Journal on Computing , 26: 1510-1523."
+        },
+        {
+          "raw": "Bensaude-Vincent, B., 2009, \"The Chemists' Style of Thinking,\" Berichte Zur Wissenschaftsgeschichte , 32: 365-378."
+        },
+        {
+          "raw": "Bernien, H., Schwartz, S., Keesling, A., Levine, H., Omran, A., Pichler, H., &hellip; others, 2017, \"Probing Many-Body Dynamics on a 51-Atom Quantum Simulator,\" Nature , 551: 579."
+        },
+        {
+          "raw": "Bernstein, E., and Vazirani, U., 1997, \"Quantum Complexity Theory,\" SIAM Journal on Computing , 26: 1411-1473."
+        },
+        {
+          "raw": "Biham, E., Brassard, G., Kenigsberg, D., and Mor, T., 2004, \"Quantum Computing Without Entanglement,\" Theoretical Computer Science , 320: 15-33."
+        },
+        {
+          "raw": "Boolos, George S., Burgess, John P., and Jeffrey, Richard C., 2007, Computability and Logic , 5th edition, Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Brown, B. J., and Roberts, S., 2020, \"Universal Fault-Tolerant Measurement-Based Quantum Computation,\" Physical Review Research , 2: 033305."
+        },
+        {
+          "raw": "Brown, Christopher Devlin, 2023, \"Quantum Computation and the Untenability of a 'No Fundamental Mentality' Constraint on Physicalism,\" Synthese , 201: 10."
+        },
+        {
+          "raw": "Bub, J., 2006a, \"Quantum Computation from a Quantum Logical Perspective.\""
+        },
+        {
+          "raw": "---, 2006b, \"Quantum Information and Computing,\" in J. Butterfield & J. Earman (eds.), Handbook of the Philosophy of Science, Philosophy of Physics, Part A , pp. 555-660, Amsterdam: Elsevier."
+        },
+        {
+          "raw": "---, 2010, \"Quantum Computation: Where Does the Speed-up Come From?\" in A. Bokulich & G. Jaeger (eds.), Philosophy of Quantum Information and Entanglement , pp. 231-246, Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 2016, Bananaworld, Quantum Mechanics for Primates , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Bub, J., and Pitowsky, I., 2010, \"Two Dogmas about Quantum Mechanics,\" in Simon Saunders, Jonathan Barrett, Adrian Kent, & David Wallace (eds.), Many Worlds? Everett, Quantum Theory, and Reality , pp. 433-459, Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Carnap, Rudolf, 1962, Logical Foundations of Probability , 2nd edition, Chicago: The University of Chicago Press."
+        },
+        {
+          "raw": "Chiribella, G., and Spekkens, R. W., 2016, Quantum Theory: Informational Foundations and Foils , Dordrecht: Springer."
+        },
+        {
+          "raw": "Cirac, J. I., and Zoller, P., 1995, \"Quantum Computations with Cold Trapped Ions,\" Phys. Rev. Lett. , 74: 4091-4094."
+        },
+        {
+          "raw": "Cobham, A., 1965, \"The Intrinsic Computational Difficulty of Functions,\" in Yehoshua Bar-Hillel (ed.), Logic, Methodology and Philosophy of Science: Proceedings of the 1964 International Congress , pp. 24-30, Amsterdam: North-Holland."
+        },
+        {
+          "raw": "Cook, S. A., 1971, \"The Complexity of Theorem-Proving Procedures,\" in Proceedings of the Third Annual ACM Symposium on Theory of Computing , pp. 151-158, New York: ACM."
+        },
+        {
+          "raw": "Copeland, B. J., 2002, \"Hypercomputation,\" Minds and Machines , 12: 461-502."
+        },
+        {
+          "raw": "---, 2011, \"Do Accelerating Turing Machines Compute the Uncomputable?\" Minds & Machines , 21: 221-239."
+        },
+        {
+          "raw": "---, 2018, \"Zuse's Thesis, Gandy's Thesis, and Penrose's Thesis,\" in Cuffaro & Fletcher (2018), pp. 39-59."
+        },
+        {
+          "raw": "Costa, F., and Shrapnel, S., 2016, \"Quantum Causal Modelling,\" New Journal of Physics , 18: 063032."
+        },
+        {
+          "raw": "Cubitt, Toby S., Perez-Garcia, David, and Wolf, Michael M., 2015, \"Undecidability of the Spectral Gap,\" Nature , 528: 207-211."
+        },
+        {
+          "raw": "Cuffaro, M. E., 2012, \"Many Worlds, the Cluster-State Quantum Computer, and the Problem of the Preferred Basis,\" Studies in History and Philosophy of Modern Physics , 43: 35-42."
+        },
+        {
+          "raw": "---, 2015, \"How-Possibly Explanations in (Quantum) Computer Science,\" Philosophy of Science , 82: 737-748."
+        },
+        {
+          "raw": "---, 2017, \"On the Significance of the Gottesman-Knill Theorem,\" The British Journal for the Philosophy of Science , 68: 91-121."
+        },
+        {
+          "raw": "---, 2018a, \"Reconsidering No-Go-Theorems from a Practical Perspective,\" The British Journal for the Philosophy of Science , 69: 633-655."
+        },
+        {
+          "raw": "---, 2018b, \"Universality, Invariance, and the Foundations of Computational Complexity in the Light of the Quantum Computer,\" in S. O. Hansson (ed.), Technology and Mathematics: Philosophical and Historical Investigations , pp. 253-282, Cham: Springer."
+        },
+        {
+          "raw": "---, 2020, \"Information Causality, the Tsirelson Bound, and the 'Being-Thus' of Things,\" Studies in History and Philosophy of Modern Physics , 72: 266-277."
+        },
+        {
+          "raw": "---, 2022, \"The Philosophy of Quantum Computing,\" in E. Miranda (ed.), Quantum Computing in the Arts and Humanities , pp. 107-152, Dordrecht: Springer."
+        },
+        {
+          "raw": "---, 2023, \"The Measurement Problem Is a Feature, Not a Bug - Schematising the Observer and the Concept of an Open System on an Informational, or (Neo-)Bohrian, Approach,\" Entropy , 25: 1410."
+        },
+        {
+          "raw": "Cuffaro, M. E., and Fletcher, S. C. (eds.), 2018, Physical Perspectives on Computation, Computational Perspectives on Physics , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Dalla Chiara, Maria Luisa, Giuntini, Roberto, Leporini, Roberto, and Sergioli, Giuseppe, 2018, Quantum Computation and Logic: How Quantum Computers Have Inspired Logical Investigations , Cham: Springer."
+        },
+        {
+          "raw": "Davis, M., 1958, The Undecidable , New York: Dover."
+        },
+        {
+          "raw": "---, 2003, \"The Myth of Hypercomputation,\" in C. Teuscher (ed.), Alan Turing, Life and Legacy of a Great Thinker , pp. 195-212, New York: Springer."
+        },
+        {
+          "raw": "de Beaudrap, Niel, and Horsman, Dominic, 2020, \"The ZX Calculus Is a Language for Surface Code Lattice Surgery,\" Quantum , 4: 218."
+        },
+        {
+          "raw": "Deutsch, D., 1985, \"Quantum Theory, the Church-Turing Principle and the Universal Quantum Computer,\" Proc. Roy. Soc. Lond. A , 400: 97-117."
+        },
+        {
+          "raw": "---, 1989, \"Quantum Computational Networks,\" Proc. Roy. Soc. Lond. A , 425: 73-90."
+        },
+        {
+          "raw": "---, 1997, The Fabric of Reality , New York: Penguin."
+        },
+        {
+          "raw": "---, 2013, \"The Philosophy of Constructor Theory,\" Synthese , 190: 4331-4359."
+        },
+        {
+          "raw": "Deutsch, D., and Jozsa, R., 1992, \"Rapid Solution of Problems by Quantum Computation,\" Proc. Roy. Soc. Lond. A , 439: 553-558."
+        },
+        {
+          "raw": "Dewdney, A. K., 1984, \"On the Spaghetti Computer and Other Analog Gadgets for Problem Solving,\" Scientific American , 250: 19-26."
+        },
+        {
+          "raw": "DiVincenzo, D., 1995, \"Two-Bit Gates Are Universal for Quantum Computation,\" Phys. Rev. A , 51: 1015-1022."
+        },
+        {
+          "raw": "---, 2000, \"The Physical Implementation of Quantum Computation,\" Fortschritte Der Physik , 48: 771-783."
+        },
+        {
+          "raw": "Dunlap, Lucas, 2022, \"Is the Information-Theoretic Interpretation of Quantum Mechanics an Ontic Structural Realist View?\" Studies in History and Philosophy of Science , 91: 41-48."
+        },
+        {
+          "raw": "Duwell, A., 2007, \"The Many-Worlds Interpretation and Quantum Computation,\" Philosophy of Science , 74: 1007-1018."
+        },
+        {
+          "raw": "---, 2018, \"How to Make Orthogonal Positions Parallel: Revisiting the Quantum Parallelism Thesis,\" in Cuffaro & Fletcher (2018), pp. 83-102."
+        },
+        {
+          "raw": "---, 2020, \"Understanding Quantum Phenomena and Quantum Theories,\" Studies in History and Philosophy of Modern Physics , 72: 278-291."
+        },
+        {
+          "raw": "---, 2021, Physics and Computation , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Edmonds, J., 1965, \"Paths, Trees, and Flowers,\" Canadian Journal of Mathematics , 17: 449-467."
+        },
+        {
+          "raw": "Farhi, E., Goldstone, J., Gutmann, S., Lapan, J., Lundgren, A., and Preda, D., 2001, \"A Quantum Adiabatic Evolution Algorithm Applied to Random Instances of an NP-Complete Problem,\" Science , 292: 472-475."
+        },
+        {
+          "raw": "Felline, L., 2016, \"It's a Matter of Principle: Scientific Explanation in Information&#8208;theoretic Reconstructions of Quantum Theory,\" Dialectica , 70: 549-575."
+        },
+        {
+          "raw": "---, 2020, \"The Measurement Problem and Two Dogmas about Quantum Mechanics,\" in M. Hemmo & O. Shenker (eds.), Quantum, Probability, Logic: Itamar Pitowsky's Work and Influence , pp. 285-304, Cham: Springer."
+        },
+        {
+          "raw": "Feynman, R. P., 1982, \"Simulating Physics with Computers,\" International Journal of Theoretical Physics , 21: 467-488."
+        },
+        {
+          "raw": "Fodor, J., 1974, \"Special Sciences,\" Synthese , 2: 97-115."
+        },
+        {
+          "raw": "Fodor, J., and Pylyshyn, Z., 1988, \"Connectionism and Cognitive Architecture, a Critical Analysis,\" Cognition , 28: 3-71."
+        },
+        {
+          "raw": "Fortnow, L., 1994, \"The Role of Relativization in Complexity Theory,\" Bulletin of the European Association for Theoretical Computer Science , 52: 229-244."
+        },
+        {
+          "raw": "---, 2003, \"One Complexity Theorist's View of Quantum Computing,\" Theoretical Computer Science , 292: 597-610."
+        },
+        {
+          "raw": "Freedman, M. H., 1998, \"P/NP and the Quantum Field Computer,\" Proc. Natl. Acad. Sci. , 95: 98-101."
+        },
+        {
+          "raw": "Freedman, M. H., Kitaev, A., and Wang, Z., 2002, \"Simulation of Topological Field Theories by Quantum Computers,\" Communications in Mathematical Physics , 227: 587-603."
+        },
+        {
+          "raw": "Fuchs, Christopher A., 2002, \"Quantum Mechanics as Quantum Information (and Only a Little More).\""
+        },
+        {
+          "raw": "Gandy, R., 1980, \"Church's Thesis and Principles for Mechanisms,\" in J. Barwise, H. J. Keisler, & K. Kunen (eds.), The Kleene Symposium , pp. 123-148, Amsterdam: Elsevier."
+        },
+        {
+          "raw": "Garey, M. R., and Johnson, D. S., 1979, Computers and Intractability: A Guide to the Theory of NP-Completeness , New York: WH Freeman."
+        },
+        {
+          "raw": "Geroch, R., 2009, Perspectives in Computation , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Giblin, P., 1993, Primes and Programming , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Gottesman, D., and Chuang, I., 1999, \"Demonstrating the Viability of Universal Quantum Computation Using Teleportation and Single-Qubit Operations,\" Nature , 402: 390-393."
+        },
+        {
+          "raw": "Grover, L. K., 1996, \"A Fast Quantum Mechanical Algorithm for Database Search,\" in Proceedings of the Twenty-Eighth Annual ACM Symposium on Theory of Computing , pp. 212-219, New York, NY, USA: Association for Computing Machinery."
+        },
+        {
+          "raw": "Hagar, A., 2003, \"A Philosopher Looks at Quantum Information Theory,\" Philosophy of Science , 70: 752-775."
+        },
+        {
+          "raw": "---, 2007, \"Quantum Algorithms: Philosophical Lessons,\" Minds & Machines , 17: 233-247."
+        },
+        {
+          "raw": "---, 2009, \"Active Fault-Tolerant Quantum Error Correction: The Curse of the Open System,\" Philosophy of Science , 76: 506-535."
+        },
+        {
+          "raw": "---, 2016, \"Ed Fredkin and the Physics of Information: An Inside Story of an Outsider Scientist,\" Information and Culture , 51: 419-443."
+        },
+        {
+          "raw": "Hagar, A., and Hemmo, M., 2006, \"Explaining the Unobserved: Why Quantum Mechanics Ain't Only about Information,\" Foundations of Physics , 36: 1295-1324."
+        },
+        {
+          "raw": "Hagar, A., and Korolev, A., 2007, \"Quantum Hypercomputation - Hype or Computation?\" Philosophy of Science , 74: 347-363."
+        },
+        {
+          "raw": "Hangleiter, D., Carolan, J., and Th&eacute;bault, K. P. Y., 2022, Analogue Quantum Simulation: A New Instrument for Scientific Understanding , Cham: Springer."
+        },
+        {
+          "raw": "Hartmanis, J., and Stearns, R. E., 1965, \"On the Computational Complexity of Algorithms,\" Transactions of the American Mathematical Society , 117: 285-306."
+        },
+        {
+          "raw": "Hausman, D. M., and Woodward, J., 1999, \"Independence, Invariance, and the Causal Markov Condition,\" The British Journal for the Philosophy of Science , 50: 521-583."
+        },
+        {
+          "raw": "Henderson, L., 2020, \"Quantum Reaxiomatisations and Information-Theoretic Interpretations of Quantum Theory,\" Studies in History and Philosophy of Modern Physics , 72: 292-300."
+        },
+        {
+          "raw": "Hermann, G., 2017, \"Natural-Philosophical Foundations of Quantum Mechanics (1935),\" in E. Crull & G. Bacciagaluppi (eds.), E. Crull (trans.), Grete Hermann: Between Physics and Philosophy , pp. 239-278, Dordrecht: Springer."
+        },
+        {
+          "raw": "Hewitt-Horsman, C., 2009, \"An Introduction to Many Worlds in Quantum Computation,\" Foundations of Physics , 39: 869-902."
+        },
+        {
+          "raw": "Hogarth, M., 1994, \"Non-Turing Computers and Non-Turing Computability,\" in PSA: Proceedings of the Biennial Meeting of the Philosophy of Science Association , pp. 126-138, Philosophy of Science Association."
+        },
+        {
+          "raw": "Holevo, A. S., 1973, \"Bounds for the Quantity of Information Transmitted by a Quantum Communication Channel,\" Problemy Peredachi Informatsii , 9: 3-11. English translation in Problems of Information Transmission 9: 177-183, 1973."
+        },
+        {
+          "raw": "Horsman, C., Fowler, A. G., Devitt, S., and Van Meter, R., 2012, \"Surface Code Quantum Computing by Lattice Surgery,\" New Journal of Physics , 14: 123011."
+        },
+        {
+          "raw": "Howard, M., Wallman, J., Veitch, V., and Emerson, J., 2014, \"Contextuality Supplies the 'Magic' for Quantum Computation,\" Nature , 510: 351-355."
+        },
+        {
+          "raw": "Ingarden, R. S., 1976, \"Quantum Information Theory,\" Rep. Math. Phys. , 10: 43-72."
+        },
+        {
+          "raw": "Janas, Michael, Cuffaro, Michael E., and Janssen, Michel, 2022, Understanding Quantum Raffles: Quantum Mechanics on an Informational Approach: Structure and Interpretation , Cham: Springer-Verlag."
+        },
+        {
+          "raw": "Johnson, M., Amin, M., Gildert, S.others, 2011, \"Quantum Annealing with Manufactured Spins,\" Nature , 473: 194-198."
+        },
+        {
+          "raw": "Jozsa, R., 1997, \"Entanglement and Quantum Computation,\" in S. A. Huggett, L. J. Mason, K. P. Tod, S. T. Tsou, & N. M. J. Woodhouse (eds.), The Geometric Universe , pp. Ch. 27, Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Kieu, T. D., 2002, \"Quantum Hypercomputability,\" Minds and Machines , 12: 541-561."
+        },
+        {
+          "raw": "---, 2004, \"A Reformulation of Hilbert's Tenth Problem Through Quantum Mechanics,\" Proc. Royal Soc. A , 460: 1535-1545."
+        },
+        {
+          "raw": "Koberinski, Adam, and M&uuml;ller, Markus P., 2018, \"Quantum Theory as a Principle Theory: Insights from an Information Theoretic Reconstruction,\" in Cuffaro & Fletcher (2018), pp. 257-280."
+        },
+        {
+          "raw": "Ladyman, J., 2018, \"Intension in the Physics of Computation: Lessons from the Debate about Landauer's Principle,\" in Cuffaro & Fletcher (2018), pp. 219-239."
+        },
+        {
+          "raw": "Lahtinen, Ville, and Pachos, Jiannis K., 2017, \"A Short Introduction to Topological Quantum Computation,\" SciPost Physics , 3: 021."
+        },
+        {
+          "raw": "Lau, Jonathan Wei Zhong, Lim, Kian Hwee, Shrotriya, Harshank, and Kwek, Leong Chuan, 2022, \"NISQ Computing: Where Are We and Where Do We Go?\" Association of Asia Pacific Physical Societies Bulletin , 32: 27."
+        },
+        {
+          "raw": "Leung, D. W., 2004, \"Quantum Computation by Measurements,\" International Journal of Quantum Information , 2: 33-43."
+        },
+        {
+          "raw": "Levin, L., 2003, \"Polynomial Time and Extravagant Models,\" Problems of Information Transmission , 39: 2594-2597."
+        },
+        {
+          "raw": "---, 1999, \"Good Dynamics Versus Bad Kinematics: Is Entanglement Needed for Quantum Computation?\" Phys. Rev. Lett. , 87: 047901."
+        },
+        {
+          "raw": "Lipton, R., 1995, \"Using DNA to Solve NP-Complete Problems,\" Science , 268: 542-545."
+        },
+        {
+          "raw": "Lorenz, Robin, 2022, \"Quantum Causal Models: The Merits of the Spirit of Reichenbach's Principle for Understanding Quantum Causal Structure,\" Synthese , 200: 424."
+        },
+        {
+          "raw": "Lupacchini, Rossella, 2018, \"Church's Thesis, Turing's Limits, and Deutsch's Principle,\" in Cuffaro & Fletcher (2018), op. cit., pp. 60-82."
+        },
+        {
+          "raw": "Maley, Corey J., 2023, \"Analogue Computation and Representation,\" The British Journal for the Philosophy of Science , 74: 739-769."
+        },
+        {
+          "raw": "Manin, Y., 1980, Computable and Uncomputable , Moscow: Sovetskoye Radio."
+        },
+        {
+          "raw": "Marletto, Chiara, 2022, \"The Information-Theoretic Foundation of Thermodynamic Work Extraction,\" Journal of Physics Communications , 6: 055012."
+        },
+        {
+          "raw": "Marletto, Chiara, Vedral, Vlatko, Knoll, Laura T., Piacentini, Fabrizio, Bernardi, Ettore, Rebufello, Enrico, &hellip; Genovese, Marco, 2022, \"Emergence of Constructor-Based Irreversibility in Quantum Systems: Theory and Experiment,\" Physical Review Letters , 128: 080401."
+        },
+        {
+          "raw": "Mart&iacute;n-L&oacute;pez, Enrique, Laing, Anthony, Lawson, Thomas, Alvarez, Roberto, Zhou, Xiao-Qi, and O'Brien, Jeremy L., 2012, \"Experimental Realization of Shor's Quantum Factoring Algorithm Using Qubit Recycling,\" Nature Photonics , 6: 773-776."
+        },
+        {
+          "raw": "Mermin, David N., 2007, Quantum Computer Science: An Introduction , Cambridge University Press."
+        },
+        {
+          "raw": "Messiah, A., 1961, Quantum Mechanics Vol. II, New York: Interscience Publishers."
+        },
+        {
+          "raw": "Moore, C., 1990, \"Unpredictability and Undecidability in Dynamical Systems,\" Phys. Rev. Lett. , 64: 2354-2357."
+        },
+        {
+          "raw": "Myers, J., 1997, \"Can a Universal Quantum Computer Be Fully Quantum?\" Phys. Rev. Lett. , 78: 1823-1824."
+        },
+        {
+          "raw": "Myrvold, W. C., 2011, \"Statistical Mechanics and Thermodynamics: A Maxwellian View,\" Studies in History and Philosophy of Modern Physics , 42: 237-243."
+        },
+        {
+          "raw": "---, 2016, \"Lessons of Bell's Theorem: Nonlocality, Yes; Action at a Distance, Not Necessarily,\" in Mary Bell & Shan Gao (eds.), Quantum Nonlocality and Reality: 50 Years of Bell's Theorem , pp. 238-260, Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 2010, \"From Physics to Information Theory and Back,\" in Alisa Bokulich & Gregg Jaeger (eds.), Philosophy of Quantum Information and Entanglement , pp. 181-207, Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Nielsen, M., 2003, \"Quantum Computation by Measurement and Quantum Memory,\" Phys. Lett. A , 308: 96-100."
+        },
+        {
+          "raw": "Nielsen, M. A., and Chuang, I. L., 2010, Quantum Computation and Quantum Information 10th anniversary., Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Nielsen, M. A., and Dawson, C. M., 2005, \"Fault-Tolerant Quantum Computation with Cluster States,\" Physical Review A , 71: 042323."
+        },
+        {
+          "raw": "Pan, Feng, Chen, Keyang, and Zhang, Pan, 2022, \"Solving the Sampling Problem of the Sycamore Quantum Circuits,\" Physical Review Letters , 129: 090502."
+        },
+        {
+          "raw": "Papayannopoulos, Philippos, 2020, \"Computing and Modelling: Analog Vs. Analogue,\" Studies in History and Philosophy of Science , 83: 103-120."
+        },
+        {
+          "raw": "---, 2023, \"On Algorithms, Effective Procedures, and Their Definitions,\" Philosophia Mathematica , 31: 291-329."
+        },
+        {
+          "raw": "Pearle, P., 1997, \"True Collapse and False Collapse,\" in D. H. Feng & B. L. Hu (eds.), Quantum Classical Correspondence: Proceedings of the 4th Drexel Symposium on Quantum Nonintegrability, Philadelphia, PA, USA, September 8-11, 1994 , pp. 51-68, Cambridge: International Press."
+        },
+        {
+          "raw": "Pitowsky, I., 1990, \"The Physical Church Thesis and Physical Computational Complexity,\" Iyyun: The Jerusalem Philosophical Quarterly , 39: 81-99."
+        },
+        {
+          "raw": "---, 1996, \"Laplace's Demon Consults an Oracle: The Computational Complexity of Prediction,\" Studies in History and Philosophy of Modern Physics , 27: 161-180."
+        },
+        {
+          "raw": "---, 2002, \"Quantum Speed-up of Computations,\" Philosophy of Science , 69: S168-S177."
+        },
+        {
+          "raw": "Pitowsky, I., and Shagrir, O., 2003, \"Physical Hypercomputation and the Church-Turing Thesis,\" Minds and Machines , 13: 87-101."
+        },
+        {
+          "raw": "Poplavskii, R. P., 1975, \"Thermodynamical Models of Information Processing (in Russian),\" Uspekhi Fizicheskikh Nauk , 115: 465-501."
+        },
+        {
+          "raw": "Pour-el, M., and Richards, I., 1981, \"The Wave Equation with Computable Initial Data Such That Its Unique Solution Is Not Computable,\" Advances in Mathematics , 29: 215-239."
+        },
+        {
+          "raw": "Preskill, J., 2018, \"Quantum Computing in the NISQ Era and Beyond,\" Quantum , 2: 79."
+        },
+        {
+          "raw": "Pylyshyn, Z., 1984, Computation and Cognition: Toward a Foundation for Cognitive Science , Cambridge: MIT Press."
+        },
+        {
+          "raw": "Rabin, M., 1976, \"Probabilistic Algorithms,\" in J. Traub (ed.), Algorithms and Complexity: New Directions and Recent Results , pp. 23-39, New York: Academic Press."
+        },
+        {
+          "raw": "Raussendorf, R., and Briegel, H. J., 2002, \"Computational Model Underlying the One-Way Quantum Computer,\" Quantum Information and Computation , 2: 443-486."
+        },
+        {
+          "raw": "Raussendorf, R., Browne, D. E., and Briegel, H. J., 2003, \"Measurement-Based Quantum Computation on Cluster States,\" Physical Review A , 68: 022312."
+        },
+        {
+          "raw": "Raussendorf, R., Harrington, J., and Goyal, K., 2008, \"Topological Fault-Tolerance in Cluster State Quantum Computation,\" New Journal of Physics , 9: 1-24."
+        },
+        {
+          "raw": "Reichardt, B. W., 2004, \"The Quantum Adiabatic Optimization Algorithm and Local Minima,\" in Proceedings of the Thirty-Sixth Annual ACM Symposium on Theory of Computing , pp. 502-510."
+        },
+        {
+          "raw": "Rivest, R. L., Shamir, A., and Adleman, L., 1978, \"A Method for Obtaining Digital Signatures and Public-Key Cryptosystems,\" Communications of the ACM , 21: 120-126."
+        },
+        {
+          "raw": "Schlick, M., 1961, \"Causality in Contemporary Physics I (1931),\" The British Journal for the Philosophy of Science , 12: 177-193."
+        },
+        {
+          "raw": "---, 1962, \"Causality in Contemporary Physics II (1931),\" The British Journal for the Philosophy of Science , 12: 281-298."
+        },
+        {
+          "raw": "Schmitz, Timothy, 2023, \"On Epistemically Useful Physical Computation,\" Philosophy of Science , 90: 974-984."
+        },
+        {
+          "raw": "Shor, P., 1995, \"Scheme for Reducing Decoherence in Quantum Computer Memory,\" Phys. Rev. A. , 52: 2493-2496."
+        },
+        {
+          "raw": "---, 1994, \"Algorithms for Quantum Computation: Discrete Logarithms and Factoring,\" Foundations of Computer Science, 1994 Proceedings., 35th Annual Symposium on , 124-134."
+        },
+        {
+          "raw": "Shor, P., and DiVincenzo, D., 1996, \"Fault Tolerant Error Correction with Efficient Quantum Codes,\" Phys. Rev. Lett. , 77: 3260-3263."
+        },
+        {
+          "raw": "Shrapnel, S., 2017, \"Discovering Quantum Causal Models,\" The British Journal for the Philosophy of Science , 70: 1-25."
+        },
+        {
+          "raw": "Sieg, W., and Byrnes, J., 1999, \"An Abstract Model for Parallel Computations,\" The Monist , 82: 150-164."
+        },
+        {
+          "raw": "Simon, D. R., 1994, \"On the Power of Quantum Computation,\" in 1994 Proceedings of the 35th Annual Symposium on Foundations of Computer Science , pp. 116-123, Los Alamitos, CA: IEEE Press."
+        },
+        {
+          "raw": "Skosana, Unathi, and Tame, Mark, 2021, \"Demonstration of Shor's Factoring Algorithm for N = 21 on IBM Quantum Processors,\" Scientific Reports , 11: 16599."
+        },
+        {
+          "raw": "Spekkens, R. W., 2007, \"Evidence for the Epistemic View of Quantum States: A Toy Theory,\" Phys. Rev. A , 75: 032110."
+        },
+        {
+          "raw": "Sprevak, Mark, 2022, \"Not All Computational Methods Are Effective Methods,\" Philosophies , 7: 113."
+        },
+        {
+          "raw": "Steane, A. M., 1996, \"Multiple Particle Interference and Quantum Error Correction,\" Proc. Roy. Soc. Lond. A , 452: 2551-2577."
+        },
+        {
+          "raw": "---, 2003, \"A Quantum Computer Only Needs One Universe,\" Studies in History and Philosophy of Modern Physics , 34: 469-478."
+        },
+        {
+          "raw": "Tabakin, F., 2017, \"Model Dynamics for Quantum Computing,\" Annals of Physics , 383: 33-78."
+        },
+        {
+          "raw": "Tacchino, F., Chiesa, A., Carretta, S., and Gerace, D., 2020, \"Quantum Computers as Universal Quantum Simulators: State-of-Art and Perspectives,\" Advanced Quantum Technologies , 3: 1900052."
+        },
+        {
+          "raw": "Timpson, C. G., 2013, Quantum Information Theory & the Foundations of Quantum Mechanics , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Turing, A. M., 1936, \"On Computable Numbers, with an Application to the Entscheidungsproblem,\" Proceedings of the London Mathematical Society. Second Series , s2-42: 230-265."
+        },
+        {
+          "raw": "Unruh, W. G., 1995, \"Maintaining Coherence in Quantum Computers,\" Phys. Rev. A , 51: 992-997."
+        },
+        {
+          "raw": "Van Meter, R., and Horsman, C., 2013, \"A Blueprint for Building a Quantum Computer,\" Communications of the ACM , 56: 16-25."
+        },
+        {
+          "raw": "Vergis, A., Steiglitz, K., and Dickinson, B., 1986, \"The Complexity of Analog Computation,\" Mathematics and Computers in Simulation , 28: 91-113."
+        },
+        {
+          "raw": "Vidal, G., 2003, \"Efficient Classical Simulation of Slightly Entangled Quantum Computations,\" Phys. Rev. Lett. , 91: 147902."
+        },
+        {
+          "raw": "Wallace, D., 2012, The Emergent Multiverse , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2014, \"Thermodynamics as Control Theory,\" Entropy , 16: 699-725."
+        },
+        {
+          "raw": "Wiesner, S., 1983, \"Conjugate Coding,\" Sigact News , 18: 78-88."
+        },
+        {
+          "raw": "Witten, E., 1989, \"Quantum Field Theory and the Jones Polynomial,\" Comm. Math. Phys. , 121: 351-399."
+        },
+        {
+          "raw": "Wolfram, S., 1985, \"Undecidability and Intractability in Theoretical Physics,\" Phys. Rev. Lett. , 54: 735."
+        },
+        {
+          "raw": "Woodward, J., 2007, \"Causation with a Human Face,\" in H. Price & R. Corry (eds.), Causation, Physics, and the Constitution of Reality: Russell's Republic Revisited , Oxford: Oxford University Press."
+        }
+      ],
+      "publishedAt": "2006-12-02T13:00:00.000Z",
+      "revisedAt": "2024-03-04T13:00:00.000Z"
+    }
+  }
+}

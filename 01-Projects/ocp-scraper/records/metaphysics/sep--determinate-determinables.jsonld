@@ -1,0 +1,675 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/determinate-determinables",
+  "meta": {
+    "title": "Determinables and Determinates",
+    "description": "Determinables and determinates are in the first instance type-level properties that stand in a distinctive specification relation: the 'determinable-determinate' relation (for short, 'determination'). For example, color is a determinable having red , blue , and other specific shades of color as determinates; shape is a determinable having rectangular , oval , and other specific (including many irregular) shapes as determinates; mass is a determinable having specific mass values as determinates. Reflecting that determinables admit of different degrees or levels of specification, characterization of a property as determinable or determinate is typically relative; for example, red is a determinate of color and a determinable of scarlet . The determination relation appears to differ from other specification relations. In contrast with the genus-species and conjunct-conjunction relations, where the more specific property can be understood as a conjunction of the less specific property and some independent property or properties, a determinate is not naturally treated in conjunctive terms ( red is not a conjunctive property having color and some other property or properties as conjuncts); and in contrast with the disjunction-disjunct relation, where disjuncts may be dissimilar and compatible (as with red or round ), determinates of a determinable (at a given level of specificity) are both similar and incompatible ( red and blue are similar in both being colors; nothing can be simultaneously and uniformly both red and blue ). Supporting this latter contrast is that (as per Sorites phenomena, and ordinary perceptual experience of macro-objects) our perceptions of properties such as color and shape do not appear to be of maximal determinates, as would be the case if determinables were disjunctions of determinates (since every instance of a disjunction is an instance of one of its disjuncts). Of course, appearances can be deceiving, and there are strategies for treating determinables and their mode of specification in deflationary terms. Whether these strategies succeed or fail is no small matter. For the seemingly distinctive character of determinables and determination may enter into the best case for the claim that there are genuine features of reality that are less than maximally specific--a claim which, if true, has profound implications for a wide range of philosophical issues. What follows is organized into five sections. In &sect;1, we trace key points of the historical trajectory whereby determination came to be seen as a distinctive form of specification. In &sect;2, we present the commonly advanced features of determinables, determinates, and their relation; here also we discuss extensions of the (realistically construed) relation to ontological categories beyond properties. In &sect;3, we sketch the main anti-realist, reductionist, and non-reductionist accounts of determinables and determinates, saying how these aim to accommodate the seeming features of determinables and determinates, and flagging key concerns and responses; here also we discuss certain accounts of the structure or logic of determination. In &sect;4, we consider reasons for and against thinking that determinates are metaphysically prior to determinables. In &sect;5, we present three applications of these notions, on which the distinctive features of determinables and/or determinates are seen as key to understanding physical laws of nature, mental/higher-level causation, and metaphysical (including quantum) indeterminacy.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:41:58.934Z",
+    "dateModified": "2026-03-22T05:41:58.934Z",
+    "datePublished": "2017-02-06T13:00:00.000Z",
+    "keywords": [
+      "aristotle",
+      "aristotle categories",
+      "aristotle metaphysics",
+      "color",
+      "grounding",
+      "mental causation",
+      "prior",
+      "properties",
+      "sorites paradox",
+      "species",
+      "vagueness",
+      "wilson"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Determinables and determinates are in the first instance type-level properties that stand in a distinctive specification relation: the 'determinable-determinate' relation (for short, 'determination'). For example, color is a determinable having red , blue , and other specific shades of color as determinates; shape is a determinable having rectangular , oval , and other specific (including many irregular) shapes as determinates; mass is a determinable having specific mass values as determinates. Reflecting that determinables admit of different degrees or levels of specification, characterization of a property as determinable or determinate is typically relative; for example, red is a determinate of color and a determinable of scarlet . The determination relation appears to differ from other specification relations. In contrast with the genus-species and conjunct-conjunction relations, where the more specific property can be understood as a conjunction of the less specific property and some independent property or properties, a determinate is not naturally treated in conjunctive terms ( red is not a conjunctive property having color and some other property or properties as conjuncts); and in contrast with the disjunction-disjunct relation, where disjuncts may be dissimilar and compatible (as with red or round ), determinates of a determinable (at a given level of specificity) are both similar and incompatible ( red and blue are similar in both being colors; nothing can be simultaneously and uniformly both red and blue ). Supporting this latter contrast is that (as per Sorites phenomena, and ordinary perceptual experience of macro-objects) our perceptions of properties such as color and shape do not appear to be of maximal determinates, as would be the case if determinables were disjunctions of determinates (since every instance of a disjunction is an instance of one of its disjuncts). Of course, appearances can be deceiving, and there are strategies for treating determinables and their mode of specification in deflationary terms. Whether these strategies succeed or fail is no small matter. For the seemingly distinctive character of determinables and determination may enter into the best case for the claim that there are genuine features of reality that are less than maximally specific--a claim which, if true, has profound implications for a wide range of philosophical issues. What follows is organized into five sections. In &sect;1, we trace key points of the historical trajectory whereby determination came to be seen as a distinctive form of specification. In &sect;2, we present the commonly advanced features of determinables, determinates, and their relation; here also we discuss extensions of the (realistically construed) relation to ontological categories beyond properties. In &sect;3, we sketch the main anti-realist, reductionist, and non-reductionist accounts of determinables and determinates, saying how these aim to accommodate the seeming features of determinables and determinates, and flagging key concerns and responses; here also we discuss certain accounts of the structure or logic of determination. In &sect;4, we consider reasons for and against thinking that determinates are metaphysically prior to determinables. In &sect;5, we present three applications of these notions, on which the distinctive features of determinables and/or determinates are seen as key to understanding physical laws of nature, mental/higher-level causation, and metaphysical (including quantum) indeterminacy.",
+    "context": "Opening section: 1. Historical treatments | Related entries: aristotle, aristotle-categories, aristotle-metaphysics, color, grounding, mental-causation, prior, properties, sorites-paradox, species, vagueness, wilson",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "metaphysics",
+    "history-of-philosophy",
+    "philosophy-of-science"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry determinate-determinables",
+        "uri": "https://plato.stanford.edu/entries/determinate-determinables/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 12 related entries, bibliography size 137"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2017-02-06T13:00:00.000Z and revised 2023-01-17T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2023-01-17T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/determinate-determinables/",
+        "description": "SEP entry for determinate-determinables"
+      }
+    ],
+    "solutionApproach": "1. Historical treatments"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/aristotle",
+      "ocp:sep/aristotle-categories",
+      "ocp:sep/aristotle-metaphysics",
+      "ocp:sep/color",
+      "ocp:sep/grounding",
+      "ocp:sep/mental-causation",
+      "ocp:sep/prior",
+      "ocp:sep/properties",
+      "ocp:sep/sorites-paradox",
+      "ocp:sep/species",
+      "ocp:sep/vagueness",
+      "ocp:sep/wilson"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Wilson, Jessica",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/determinate-determinables/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 102,
+      "validation_diversity": 0.46,
+      "context_breadth": 0.48,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.92
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.565
+  },
+  "extensions": {
+    "sep": {
+      "slug": "determinate-determinables",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/determinate-determinables/",
+      "preamble": "Determinables and determinates are in the first instance type-level properties that stand in a distinctive specification relation: the 'determinable-determinate' relation (for short, 'determination'). For example, color is a determinable having red , blue , and other specific shades of color as determinates; shape is a determinable having rectangular , oval , and other specific (including many irregular) shapes as determinates; mass is a determinable having specific mass values as determinates. Reflecting that determinables admit of different degrees or levels of specification, characterization of a property as determinable or determinate is typically relative; for example, red is a determinate of color and a determinable of scarlet . The determination relation appears to differ from other specification relations. In contrast with the genus-species and conjunct-conjunction relations, where the more specific property can be understood as a conjunction of the less specific property and some independent property or properties, a determinate is not naturally treated in conjunctive terms ( red is not a conjunctive property having color and some other property or properties as conjuncts); and in contrast with the disjunction-disjunct relation, where disjuncts may be dissimilar and compatible (as with red or round ), determinates of a determinable (at a given level of specificity) are both similar and incompatible ( red and blue are similar in both being colors; nothing can be simultaneously and uniformly both red and blue ). Supporting this latter contrast is that (as per Sorites phenomena, and ordinary perceptual experience of macro-objects) our perceptions of properties such as color and shape do not appear to be of maximal determinates, as would be the case if determinables were disjunctions of determinates (since every instance of a disjunction is an instance of one of its disjuncts). Of course, appearances can be deceiving, and there are strategies for treating determinables and their mode of specification in deflationary terms. Whether these strategies succeed or fail is no small matter. For the seemingly distinctive character of determinables and determination may enter into the best case for the claim that there are genuine features of reality that are less than maximally specific--a claim which, if true, has profound implications for a wide range of philosophical issues. What follows is organized into five sections. In &sect;1, we trace key points of the historical trajectory whereby determination came to be seen as a distinctive form of specification. In &sect;2, we present the commonly advanced features of determinables, determinates, and their relation; here also we discuss extensions of the (realistically construed) relation to ontological categories beyond properties. In &sect;3, we sketch the main anti-realist, reductionist, and non-reductionist accounts of determinables and determinates, saying how these aim to accommodate the seeming features of determinables and determinates, and flagging key concerns and responses; here also we discuss certain accounts of the structure or logic of determination. In &sect;4, we consider reasons for and against thinking that determinates are metaphysically prior to determinables. In &sect;5, we present three applications of these notions, on which the distinctive features of determinables and/or determinates are seen as key to understanding physical laws of nature, mental/higher-level causation, and metaphysical (including quantum) indeterminacy.",
+      "firstSectionTitle": "1. Historical treatments",
+      "firstSectionText": "The following historical trajectory motivates the characteristic features and certain treatments of determinables and determinates; those interested in cutting to the contemporary chase can skip to &sect;2 with little loss of continuity. The terminology of determinables and determinates stems from ancient and scholastic treatment of the definition of a species, as analyzable into two parts: a genus, or generic part of an essence--the pars determinabilis essentiae , and the differentia, or differentiating part of an essence--the pars determinans essentiae . As we'll see, the terminology and its original application eventually went separate ways, with the genus-species relation standardly being treated in conjunctive terms (with a given species being identified with the conjunction of a genus and one or more differentia), and determination being treated as a distinctive non-conjunctive specification relation. Some recent commentators have suggested that the notion of determination has a precursor in ancient times. For example, Granger (1984) has proposed that Aristotle's preferred treatment of the relation between kinds and forms (a.k.a. genus and species) involves key features of determination. Granger suggests that Aristotle's conception of a form/species evolves from a conjunctive conception (as in Topics VI.3. 140a27-29) to one on which differentia entail their associated kind/genus rather than conjunctively supplementing it. Granger motivates the non-conjunctive conception on grounds that \"Aristotle clearly maintains that [...] the genus does not exist apart from its species, or exists merely as matter\" (1984: 15); in turn, he takes this conception to indicate that genus and differentia are best viewed in terms of determinable and determinate. [&hellip;] A determinate [&hellip;] is not a conjunction of its determinable and something else logically distinct from its determinable. (1984: 19) Salmieri (2008) offers further support for this interpretation, citing another important feature of determination--namely, that determinates differ specifically in respect of their determinable. As Salmieri puts it, Certain things are not merely other than one another--as blue is other to both loud and inflation --but are different from or \"opponent to\" one another, as blue is different from red . (2008: 78) And he sees this distinction as operative in Aristotle's ( Metaphysics I.3-4) remarks: But difference (&delta;&iota;&alpha;&phi;&omicron;&rho;&alpha;&#768;) and otherness (&#7952;&tau;&epsilon;&rho;&#972;&tau;&eta;&sigmaf;) are distinct (&#7936;&#769;&lambda;&lambda;&omicron;). For, while the other and that which it is other than are not necessarily other in something (for everything that is some being is either other or the same), the different differs from something in something, so that it's necessary for there to be something the same in which they differ. This same thing is a kind or form; for every different thing differs either {i} in kind or {ii} in form [...]. (1054b22-31 cf. 1018a9-15; translation quoted from Salmieri 2008, 79) The previous features--non-conjunctive entailment of the less by the more specific, the specification's being somehow \"in respect of\" the less specific, and the more specific features' being opponent to one other--are indeed characteristic features of determination, contrasting with other specification relations (modulo deflationary strategies; we won't always carry this qualification forward). As such, there is at least a case here for Salmieri's claim that \"we ought to recognise Aristotle as the originator of this distinction\" (2008: 79). Throughout the scholastic and modern periods the genus-species and genus-differentia relations are often treated in what Prior (1949) calls \"a confused blending\" of the conjunct-conjunction and determination relations. In the modern period motivations for distinguishing the latter relations become increasingly salient. One motivation stems from Leibniz's observation that a conjunctive treatment of the genus-species relation does not fix a direction of specification, since one can as easily take the differentia to be the genus, as vice versa (see Nouveaux Essais , III, iii, 10, Langley's translation, 313). Johnson (1924) interprets Descartes and Spinoza as attempting to ensure asymmetry by means of attributes and modes (see Descartes, Principles of Philosophy I.53; Spinoza, Ethics 1p8s1 and Ep. 50), which Johnson suggests are \"almost equivalent\" to the notions of determinable and determinate: What I call a determinable is almost equivalent to what they call an attribute, and my determinate almost equivalent to their mode of an attribute. (1924: III, v. 1) Prior (1949) similarly sees Spinoza as aiming to ensure asymmetry by means of something like determination: If Leibniz brought consistency into the medieval view of the distinctness of genus and differentia by making the relation between them symmetrical, Spinoza brought consistency into the medieval view of the asymmetry of the relation between them by denying their distinctness. Spinoza's \"modes\" are not new qualities added to his \"attributes\", or qualities formed by the addition of something else to them, but determinations of them. (1949: 7) Prior also sees Locke as relying on the distinctive incompatibility of same-level determinates as making sense of why \"any subject may have of each sort of primary qualities but one particular at once\", and similarly for \"all sensible ideas peculiar to each sense\" (Locke, Essay , IV iii 5). In the work of Locke and other empiricists, we also see precursors of certain contemporary anti-realist or reductivist accounts on which determinable attributions either indeterminately refer to determinate properties (as Berkeley [1710] suggests, more generally, for 'abstract' terms), or on which determinable attributions are (merely) ways of classifying determinates. Prior's description of Locke's view might be seen as compatible with either approach: Though we speak of an object as colored, what is there being referred to is not really a quality of the object but a quality of one of its qualities; what is meant is that one of its qualities belongs to the class \"colors\". (Prior 1949: 8-9) The terminology of 'determinables' and 'determinates' as indicative of a distinctive relation is first found in Volume I, Chapter XI--'The Determinable'--of W. E. Johnson's Logic (1921): I propose to call such terms as color and shape determinables in relation to such terms as red and circular which will be called determinates; and, in introducing this new terminology, to examine the distinction between the relation of red to color and the relation of Plato to man &hellip;. (1921: I, xi, 1) Johnson's discussion is also the first systematic attempt to characterize the key features of determinables, determinates, and their relation (see esp. 1921: 173-185), though as below, he is not always clear about whether these features apply to properties or rather to predicates. See Prior (1949) and Poli (2004) for detailed discussion of Johnson's views and his influence on later authors. Some of these features are familiar, including that determination is a specification relation: To predicate color or shape of an object obviously characterises it less determinately than to predicate of it red or circular; (Johnson 1921: I, xi, 1) that this specification is non-conjunctive: there is a genuine difference between that process of increased determination which conjunctivally introduces foreign adjectives, and that other process by which without increasing, so to speak, the number of adjectives, we define them more determinately; (Johnson 1921: I, xi, 3) that same-level determinates are incompatible: if any determinate adjective characterises a given substantive, then it is impossible that any other determinate under the same determinable should characterise the same substantive; (Johnson 1921: I, xi, 4) and that same-level determinates are moreover \"opponent\": the unique and peculiar kind of difference that subsists between the several determinates under the same determinable [&hellip;] does not subsist between any one of them and an adjective under some other determinable. (Johnson 1921: I, xi, 1) Johnson moreover develops these features, suggesting, for example, that opponent differences often reflect that determinates are comparable: many determinates under the same determinable [are such] that the differences between different pairs of determinates can be compared with one another [&hellip;]; e.g. the difference between red and yellow is greater than that between red and orange. (Johnson 1921: I, xi, 4) Attention to determinate comparability leads Johnson to suggest that determinables may be determined along multiple \"dimensions\": [A] color may vary according to its hue, brightness and saturation; so that the precise determination of a color requires us to define three variables which are more or less independent of one another in their capacity of co-variation; but in one important sense they are not independent of one another, since they could not be manifested in separation. The determinate color is therefore single, though complex &hellip;. (1921: I, xi, 4) That determinables may have multiple determination dimensions is an important observation, which plays a foundational role in Funkhouser's (2006) model of determination (see &sect;3.6.1 ). Two other aspects of Johnson's discussion are worth noting. First, he denies that determinables are in any sense shared by determinates: \"the ground for grouping determinates under one and the same determinable is not any partial agreement between them\" but rather \"the special kind of difference\" (1921: I, xi, 1) distinguishing opposing determinates. As we'll see, this is a choice point for contemporary accounts. Second, Johnson assumes that while limits in our perceptual or instrumental capabilities require that we characterize objects in determinable terms, it is nonetheless a universally adopted postulate that the characters of things which we can only characterise more or less indeterminately, are, in actual fact, absolutely determinate. (1921: I, xi, 5) The assumption that determinable characterization reflects (mere) epistemic, perceptual, or representational limits remains common, and pushes towards giving one or other deflationary account of determinables. This is another choice point: on some contemporary accounts determinables are both real and irreducible to determinates. In this sub-section, we discuss certain comparatively recent contributions which influentially shaped the present understanding of determination. Prior's (1949) two-part discussion of determinables and determinates is historically rich and philosophically subtle. Interestingly, he suggests that the difference between determinates is brute, admitting no explanation: we can say that the red and the blue agree in being colored, but of their difference we can only say either that their color is different, or that one is red and the other blue. (1949: 5-6) Some have seen this sort of statement as broadly contradictory, in suggesting that what makes determinates similar (e.g., color ) is also that in virtue of which they are different (\"of their difference we can only say &hellip; that their color is different\"); see &sect;3.2 . Prior also considers and rejects Johnson's assumption that determinates are similar only in respect to their unique form of difference, rather suggesting (c.f. Salmieri's discussion of Aristotle, above) that determinates are similar \"in respect of\" that determinable: [I]t seems to me that determinates under the same determinable have a class unity [&hellip;]. Determinates under the same determinable have the common relational property [&hellip;] of characterising whatever they do characterise in a certain respect. Redness, blueness, etc., all characterise objects, as we say, \"in respect of their color\"; triangularity, squareness, etc., \"in respect of their shape\". And this is surely quite fundamental to the notion of being a determinate under a determinable. (1949: 13) That determinates characterize objects in respect of their determinables is indeed a key feature of determination, though there remains disagreement about how best to metaphysically articulate this feature (e.g., as involving shared determinables or not). Prior takes this feature to push against deflationary approaches on which determinables exist, at best, merely to classify the having of determinate properties. On the contrary, he maintains, if determinates are unified by characterizing objects in a certain respect, then the \"respects in which objects are to be characterised\", to which determinable adjectives refer, are related to the objects not less but more intimately than the determinate qualities which \"characterise\" them. (1949: 13) Moving on, Searle (1959) usefully highlights that determination appears to contrast not just with the conjunct-conjunction relation, but also with the disjunction-disjunct relation: [C]learly not any two terms which stand in the relation of greater to less specific ipso stand in the relation of determinate to determinable: \"yellow\" is in some sense more specific than \"yellow or angry\" but it is not a determinate of \"yellow or angry\" in the sense in which it is a determinate of \"color\". (1959: 141-2) Searle also offers an explicit criterion of determination: For any two terms \\(A\\) and \\(B\\), \\(A\\) is a determinate of \\(B\\) if and only if \\(A\\) is a non-conjunctive specifier of \\(B\\), and \\(A\\) is logically related to all other non-conjunctive specifiers of \\(B\\) [where] any two terms are logically [i.e., conceptually] related if either entails the other or either entails the negation of the other. (1959: 148) Interestingly, this criterion doesn't rule out that \\(B\\) is a disjunction of its determinates ('non-conjunctive specifiers'), so long as the determinates stand in the requisite conceptual entailment relations. Note also that Searle moves fluidly between talk of determinable properties and talk of determinable 'terms'; until recently, this sort of slide was common. Searle notes, as well, that the structure of determinables and determinates in the same family may give rise to \"levels\" of determinates ordered by degree of specificity; as he says, \"we would like some way of showing that e.g., 'red' and 'yellow' are on the same level as determinates of 'color' whereas 'scarlet' is on a different and lower level\" (1959: 145). Here too he offers a criterion: Two terms \\(A\\) and \\(B\\) are same level determinates of \\(C\\) if and only if they are both determinates of \\(C\\) and neither is a specifier of the other. (1959: 149) (Here the notion of a 'specifier' is one according to which X specifies Y iff X entails Y , but Y does not entail X .) Seale's criterion is flawed, however, since while it correctly deems red and yellow same-level determinates, and correctly deems red and scarlet different-level determinates, it incorrectly deems red and buttercup same-level determinates. Next, Armstrong's investigations into the metaphysics of properties (in, e.g., his 1978a,b, 1989, 1997, and 2010) are notable, first, in treating determination as an explicitly metaphysical relation, and second, in raising to salience the important question of whether determinables are ontologically reducible to determinates, asked against the commonly accepted background assumption that reality itself is maximally determinate. As we'll see, Armstrong's own position on this score swings from reductionism (1987) to non-reductionism (1997), and back again (2010). Finally, Yablo's (1992) is notable in offering a modal account of (perhaps better: necessary condition on) determination as a relation of asymmetric dependence, and in extending determination to particulars (events) as well as properties. Since asymmetric necessitation now serves as a common minimal characterization of determination, it's worth seeing how Yablo motivates this approach. He starts by observing a parallel between intuitive characterizations of identity and of determination, as holding between properties: \\(P\\) is identical to \\(Q\\) iff: for a thing to be \\(P\\) is for it to be \\(Q\\). \\(P\\) determines \\(Q\\) iff: for a thing to be \\(P\\) is for it to be \\(Q\\), not simpliciter , but in a specific way. The parallel is useful in suggesting that determination is, like identity, a particularly intimate relation, in that determinable and determinate types and/or tokens may not be wholly distinct, and also in suggesting a modal treatment of determination. Hence just as the characterization of identity is illuminated by the following modal condition (stemming from the principle of the indiscernibility of identicals): so too is the characterization of determination illuminated by the following modal condition: The parallel also suggests that an account of determination needn't impose conditions on conceptual entailment relations (as Searle's did): just as Kripke's (1980) results undermine the need for a conceptual entailment requirement on identity (e.g., water might be identical with H\\(_2\\)O even if 'water' and 'H\\(_2\\)O' don't conceptually entail each other), \"we should discount the traditional doctrine's conceptual component and reconceive determination in wholly metaphysical terms\" (Yablo 1992: 253). That said, as Yablo admits, asymmetric necessitation alone is insufficient to characterize determination (since, e.g., allowing conjunctions to determine their conjuncts). We will later consider various ways of filling in the modal condition, including Yablo's own essence-based approach ( &sect;3.5.1 ). Yablo's discussion is also notable in highlighting an important seeming feature of determinables and determinates, according to which they do not causally compete: [No causal exclusion principle can] apply to determinates and their determinables--for we know that they are not causal rivals. [&hellip;] any credible reconstruction of the exclusion principle must respect the truism that determinates do not contend with their determinables for causal influence. (1992: 259) This feature is key to a recently popular strategy for solving the problem of mental (and more generally, higher-level) causation--an intriguing application which raised to salience the potential usefulness of determination for metaphysical and other philosophical purposes (see &sect;5.2).",
+      "relatedEntries": [
+        "aristotle",
+        "aristotle-categories",
+        "aristotle-metaphysics",
+        "color",
+        "grounding",
+        "mental-causation",
+        "prior",
+        "properties",
+        "sorites-paradox",
+        "species",
+        "vagueness",
+        "wilson"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "aristotle"
+        },
+        {
+          "slug": "aristotle-categories"
+        },
+        {
+          "slug": "aristotle-metaphysics"
+        },
+        {
+          "slug": "color"
+        },
+        {
+          "slug": "grounding"
+        },
+        {
+          "slug": "mental-causation"
+        },
+        {
+          "slug": "prior"
+        },
+        {
+          "slug": "properties"
+        },
+        {
+          "slug": "sorites-paradox"
+        },
+        {
+          "slug": "species"
+        },
+        {
+          "slug": "vagueness"
+        },
+        {
+          "slug": "wilson"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 137,
+      "bibliography": [
+        {
+          "raw": "Akiba, Ken, 2004, \"Vagueness in the World\", No&ucirc;s , 38(3): 407-29. doi:10.1111/j.0029-4624.2004.00476.x"
+        },
+        {
+          "raw": "Antony, Louise M, 2003, \"Who's Afraid of Disjunctive Properties?\" Philosophical Issues , 13(1): 1-21. doi:10.1111/1533-6077.00001"
+        },
+        {
+          "raw": "Aristotle, Metaphysics , in J.A. Barnes (ed.), The Complete Works of Aristotle: The Revised Oxford Translation , Oxford: Oxford University Press, 1984."
+        },
+        {
+          "raw": "---, 1989, Universals: An Opinionated Introduction , Boulder, Colorado: Westview Press."
+        },
+        {
+          "raw": "---, 1997, A World of States of Affairs , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 2010, Sketch for a Systematic Metaphysics , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Bacon, John, 1995, Universals and Property Instances: The Alphabet of Being , Oxford: Blackwell."
+        },
+        {
+          "raw": "Barnes, Elizabeth, 2010, \"Ontic Vagueness: A Guide for the Perplexed\", No&ucirc;s , 44(4): 601-627. doi:10.1111/j.1468-0068.2010.00762.x"
+        },
+        {
+          "raw": "Barnes, Elizabeth, and J. Robert G. Williams, 2011, \"A Theory of Metaphysical Indeterminacy\", in Oxford Studies in Metaphysics , Volume 6, K. Bennett and D. W. Zimmerman (eds), Oxford: Oxford University Press, 103-48. doi:10.1093/acprof:oso/9780199603039.003.0003"
+        },
+        {
+          "raw": "Batterman, Robert, 1998, \"Why Equilibrium Statistical Mechanics Works: Universality and the Renormalization Group\", Philosophy of Science , 65(2): 183-208. doi:10.1086/392634"
+        },
+        {
+          "raw": "Berkeley, George, 1710, \"A Treatise Concerning the Principles of Human Knowledge\", reprinted in 1948-1957, The Works of George Berkeley , vol. 2, A.A. Luce and T.E. Jessop (eds), London: Thomas Nelson, pages 21-115."
+        },
+        {
+          "raw": "Bernstein, Sara, 2014, \"Two Problems for Proportionality About Omissions\", Dialectica , 68(3): 429-41. doi:10.1111/1746-8361.12071"
+        },
+        {
+          "raw": "Bigelow, John, and Robert Pargetter, 1990, Science and Necessity , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Bokulich, Alisa, 2014, \"Metaphysical Indeterminacy, Properties, and Quantum Theory\", Res Philosophica , 91(3): 449-475. doi:10.11612/resphil.2014.91.3.11"
+        },
+        {
+          "raw": "Brentano, Franz, 1982, Descriptive Psychology , London: Routledge, 1995."
+        },
+        {
+          "raw": "Calosi, Claudio, 2019, \"Determinables, Location, and Indeterminacy\", Synthese , 198(5): 4191-4202."
+        },
+        {
+          "raw": "Calosi, Claudio and Cristian Mariani, 2021, \"Quantum Indeterminacy\", Philosophy Compass , 16: e12731."
+        },
+        {
+          "raw": "Calosi, Claudio and Jessica Wilson, 2019, \"Quantum Metaphysical Indeterminacy\", Philosophical Studies , 176(10): 2599-2627."
+        },
+        {
+          "raw": "---, 2021, \"Quantum Indeterminacy and the Double-Slit Experiment\", Philosophical Studies , 178: 3291-3317."
+        },
+        {
+          "raw": "---, forthcoming, \"Quantum Indeterminacy in the Multiverse\", in Valia Allori (ed.), Quantum Mechanics and Fundamentality , Berlin: Springer."
+        },
+        {
+          "raw": "Christensen, Jonas, 2014, \"Determinable Properties and Overdetermination of Causal Powers\", Philosophia , 42(3): 695-711. doi:10.1007/s11406-014-9517-y"
+        },
+        {
+          "raw": "Clapp, Lenny, 2001, \"Disjunctive Properties: Multiple Realizations\", Journal of Philosophy , 98(3): 111-36. doi:10.2307/2678378"
+        },
+        {
+          "raw": "Clarke, Randolph, 1999, \"Nonreductive Physicalism and the Causal Powers of the Mental\", Erkenntnis , 51(2): 295-322. doi:10.1023/A:1005581414518"
+        },
+        {
+          "raw": "Cook Wilson, John, 1926, Statement and Inference , 2 volumes, Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Correia, Fabrice, 2005, Existential Dependence and Cognate Notions , Munich: Philosophia Verlag."
+        },
+        {
+          "raw": "Cruse, David A., 1995, Lexical Semantics , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Darby, George, 2010, \"Quantum Mechanics and Metaphysical Indeterminacy\", Australasian Journal of Philosophy , 88(2): 227-245. doi:10.1080/00048400903097786"
+        },
+        {
+          "raw": "Denby, David A., 2001, \"Determinable Nominalism\", Philosophical Studies , 102(3): 297-327. doi:10.1023/A:1010314926955"
+        },
+        {
+          "raw": "Descartes, Ren&eacute;, 1644, Principles of Philosophy , V. R. Miller and R.P. Miller (trans.), Dordrecht: Reidel, 1983."
+        },
+        {
+          "raw": "Dosanjh, Ranpal, 2021, \"Token-Distinctness and the Disjunctive Strategy\", Erkenntnis , 86(3): 715-732."
+        },
+        {
+          "raw": "Dowe, Phil, 2010, \"Proportionality and Omissions\", Analysis , 70(3): 446-451. doi:10.1093/analys/anq033"
+        },
+        {
+          "raw": "Eddon, Maya, 2007, \"Armstrong on Quantities and Resemblance\", Philosophical Studies , 136(3): 385-404. doi:10.1007/s11098-005-5384-5"
+        },
+        {
+          "raw": "Ehring, Douglas, 1996, \"Mental Causation, Determinables, and Property Instances\", No&ucirc;s , 30(4): 461-480. doi:10.2307/2216114"
+        },
+        {
+          "raw": "Elder, Crawford L., 1996, \"Realism and Determinable Properties\", Philosophy and Phenomenological Research , 56(1): 149-159. doi:10.2307/2108471"
+        },
+        {
+          "raw": "Fales, Evan, 1990, Causation and Universals , London: Routledge."
+        },
+        {
+          "raw": "Fine, Kit, 1994, \"Essence and Modality: The Second Philosophical Perspectives Lecture \", Philosophical Perspectives , 8: 1-16. doi:10.2307/2214160"
+        },
+        {
+          "raw": "---, 2011, \"An Abstract Characterization of the Determinate/Determinable Distinction\", Philosophical Perspectives , 25(1): 161-87. doi:10.1111/j.1520-8583.2011.00224.x"
+        },
+        {
+          "raw": "---, 2012a, \"A Difficulty for the Possible Worlds Analysis of Counterfactuals\", Synthese , 189(1): 29-57. doi:10.1007/s11229-012-0094-y"
+        },
+        {
+          "raw": "---, 2012b, \"Counterfactuals Without Possible Worlds\", Journal of Philosophy , 109(3): 221-246. doi:10.5840/jphil201210938"
+        },
+        {
+          "raw": "Fletcher, Samuel and David Taylor, 2021, \"Quantum Indeterminacy and the Eigenstate-Eigenvalue Link\", Synthese , 199: 11181-11212. doi:10.1007/s11229-021-03285-3"
+        },
+        {
+          "raw": "French, Steven, 2014, The Structure of the World: Metaphysics and Representation , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Funkhouser, Eric, 2006, \"The Determinable-Determinate Relation\", No&ucirc;s , 40(3): 548-569. doi:10.1111/j.1468-0068.2006.00623.x"
+        },
+        {
+          "raw": "---, 2014, The Logical Structure of Kinds , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Gillett, Carl and Bradley Rives, 2005, \"The Nonexistence of Determinables: Or, a World of Absolute Determinates as Default Hypothesis\", No&ucirc;s , 39(3): 483-504. doi:10.1111/j.0029-4624.2005.00510.x"
+        },
+        {
+          "raw": "Glick, David, 2017, \"Against Quantum Indeterminacy\", Thought , 6(3): 204-213."
+        },
+        {
+          "raw": "Granger, Edgar Herbert, 1984, \"Aristotle on Genus and Differentia\", Journal of the History of Philosophy , 22(1): 1-23. doi:10.1353/hph.1984.0001"
+        },
+        {
+          "raw": "Ho, Chien-Hsing, 2020, \"Ontic Indeterminacy: Chinese Madhyamaka in the Contemporary Context\", Australasian Journal of Philosophy , 98(3): 419-433."
+        },
+        {
+          "raw": "Hellie, Benj, 2005, \"Noise and perceptual indiscriminability\", Mind , 114(455): 481-508."
+        },
+        {
+          "raw": "Heil, John, 2003, \"Levels of Reality\", Ratio , 16(3): 205-21. doi:10.1111/1467-9329.00218"
+        },
+        {
+          "raw": "Hooker, Cliff A., 1981, \"Towards a General Theory of Reduction\", Dialogue \"Part I: Historical and Scientific Setting\", 20(1): 38-59. doi:10.1017/S0012217300023088"
+        },
+        {
+          "raw": "\"Part II: Identity in Reduction\", 20(2): 201-236. doi:10.1017/S0012217300023301"
+        },
+        {
+          "raw": "\"Part III: Cross-Categorical Reduction\", 20(3): 496-529. doi:10.1017/S0012217300023593"
+        },
+        {
+          "raw": "Horgan, Terence, 1989, \"Mental Quausation\", Philosophical Perspectives 3, Philosophy of Mind and Action Theory, 47-76. doi:10.2307/2214263"
+        },
+        {
+          "raw": "---, 1993, \"From Supervenience to Superdupervenience: Meeting the Demands of a Material World\", Mind , 102(408): 555-586. doi:10.1093/mind/102.408.555"
+        },
+        {
+          "raw": "H&uuml;bner, Karolina and R&oacute;bert M&aacute;ty&aacute;si, 2022. \"Spinoza on Expression and Grounds of Intelligibility\", Philosophical Quarterly , 72(3): 628-651."
+        },
+        {
+          "raw": "Hume, David, 1739-40, A Treatise of Human Nature , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Hurley, Susan L., 1989, Natural Reasons: Personality and Polity , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Jenkins, Carrie S., 2011, \"Is Metaphysical Dependence Irreflexive?\" The Monist , 94(2): 267-276. doi:10.5840/monist201194213"
+        },
+        {
+          "raw": "Johansson, Ingvar, 2000, \"Determinables as Universals\", The Monist , 83(1): 101-121. doi:/10.5840/monist20008312"
+        },
+        {
+          "raw": "---, 2004, Ontological Investigations: An Inquiry into the Categories of Nature, Man and Society , Frankfurt: Ontos Verlag."
+        },
+        {
+          "raw": "Johnson, William Ernest, 1921, Logic (Part 1), Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 1924, Logic (Part III: The Logical Foundations of Science), Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Kallestrup, Jesper, 2020, \"From Epistemic Basing to Epistemic Grounding\", in Well-founded Belief: New Essays on the Epistemic Basing Relation , J. A. Carter and P. Bondy (eds), Routledge, 251-274."
+        },
+        {
+          "raw": "Kim, Jaegwon, 1989, \"The Myth of Nonreductive Materialism\", Proceedings and Addresses of the American Philosophical Association , 63: 31-47. doi:10.2307/3130081"
+        },
+        {
+          "raw": "---, 1993, \"The Non-Reductivist's Troubles with Mental Causation\", in Mental Causation , J. Heil and A. Mele (eds), Oxford: Oxford University Press, 189-210."
+        },
+        {
+          "raw": "Kistler, Max, 2005, \"Necessary Laws\", in Natures Principles , J. Faye, P. Needham, U. Scheffler, and M. Urchs (eds), Springer, 201-227. doi:10.1007/1-4020-3258-7_8"
+        },
+        {
+          "raw": "Koslicki, Kathrin, 2016, \"Where Grounding and Causation Part Ways: Comments on Jonathan Schaffer\", Philosophical Studies , 173(1): 101-112. doi:10.1007/s11098-014-0436-3"
+        },
+        {
+          "raw": "Kripke, Saul, 1980, Naming and Necessity , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Lee, Matthew Brandon and Paul Silva Jr., 2022, \"Toward a Lockean Unification of Formal and Traditional Epistemology\", Episteme , 19(1): 111-129. doi:10.1017/epi.2020.11"
+        },
+        {
+          "raw": "Leibniz, Gottfried Wilhelm, 1704, Nouveaux Essais sur l ' entendement humain (New Essays on Human Understanding), translation from Alfred Gideon Langley, 1896, New York: Macmillan."
+        },
+        {
+          "raw": "Lewis, David, 1983, \"New Work for a Theory of Universals\", Australasian Journal of Philosophy , 61(4): 343-377. doi:10.1080/00048408312341131"
+        },
+        {
+          "raw": "---, 1986, On the Plurality of Worlds , London: Blackwell."
+        },
+        {
+          "raw": "Locke, John, 1690, An Essay Concerning Human Understanding , Oxford: Clarendon, 1975."
+        },
+        {
+          "raw": "MacBride, Fraser, 2005, \"Lewis's Animadversions on the Truthmaker Principle\", in Truthmakers: The Contemporary Debate , H. Beebee and J. Dodd (eds), Oxford: Oxford University Press, 117-40. doi:10.1093/acprof:oso/9780199283569.003.0008"
+        },
+        {
+          "raw": "MacDonald, Cynthia, and Graham MacDonald, 1986, \"Mental Causes and Explanation of Action\", Philosophical Quarterly , 36(143): 145-158. doi:10.2307/2219765"
+        },
+        {
+          "raw": "Mamlouk, A. M. and Thomas Martinetz, 2004, \"On the Dimensions of the Olfactory Perception Space\", Neurocomputing , 58-60: 1019-1025, [ reprint available online ]."
+        },
+        {
+          "raw": "Massin, Olivier, 2013, \"Determinables and Brute Similarities\", in Johanssonian Investigations: Essays in Honour of Ingvar Johansson on His Seventieth Birthday , C. Svennerlind, J. Alm&auml;ng, R. Ingthorsson (eds), Heusenstamm: Ontos Verlag, pages 388-420. doi:10.1515/9783110322507.388"
+        },
+        {
+          "raw": "McDaniel, Kris, 2010, \"A Return to the Analogy of Being\", Philosophy and Phenomenological Research , 81(3): 688-717. doi:10.1111/j.1933-1592.2010.00378.x"
+        },
+        {
+          "raw": "McLaughlin, Brian P., 2007, \"Mental Causation and Shoemaker-Realization\", Erkenntnis , 67(2): 149-172. doi:10.1007/s10670-007-9069-7"
+        },
+        {
+          "raw": "McLaughlin, Brian and Karen Bennett, 2005, \"Supervenience\", The Stanford Encyclopedia of Philosophy (Fall 2005 Edition), Edward N. Zalta (ed.), URL = https://plato.stanford.edu/archives/fall2005/entries/supervenience/ >."
+        },
+        {
+          "raw": "Meinertsen, Bo R., 2021, \"Mellors Question: Are Determinables Properties of Properties or of Particulars?\", American Philosophical Quarterly , 58(3): 291-305."
+        },
+        {
+          "raw": "Mellor, D. H., 1995, The Facts of Causation , London: Routledge."
+        },
+        {
+          "raw": "Melnyk, Andrew, 2006, \"Realization and the Formulation of Physicalism\", Philosophical Studies , 131(1): 127-155. doi:10.1007/s11098-005-5986-y"
+        },
+        {
+          "raw": "Mill, John S., 1843/1973, A System of Logic , Toronto: University of Toronto Press."
+        },
+        {
+          "raw": "Morganti, Matteo, 2011, \"The Partial Identity Account of Partial Similarity Revisited\", Philosophia , 39(3): 527-546. doi:10.1007/s11406-010-9290-5"
+        },
+        {
+          "raw": "Mulligan, Kevin, 1992, Language, Truth and Ontology , Dordrecht: Kluwer."
+        },
+        {
+          "raw": "---, 2006, \"Ascent, Propositions and Other Formal Objects\", in Propositions: Semantic and Ontological Issues (Grazer Philosophische Studien 72), M. Carrara and E. Sacchi (eds), Amsterdam: Rodopi, pages 29-48."
+        },
+        {
+          "raw": "---, 2014, \"Formal Concepts\", in The History and Philosophy of Polish Logic: Essays in Honour of Jan Wole&#324;ski , K. Mulligan, K. Kijania-Placek, and T. Placek (eds), London: Palgrave Macmillan UK, pages 205-23."
+        },
+        {
+          "raw": "Paul, Laurie A., 2002, \"Logical Parts\", No&ucirc;s , 36(4): 578-596. doi:10.1111/1468-0068.00402"
+        },
+        {
+          "raw": "---, 2012, \"Building the World from Its Fundamental Constituents\", Philosophical Studies , 158(2): 221-256. doi:10.1007/s11098-012-9885-8"
+        },
+        {
+          "raw": "Pearl, Judea, 2000, Causality , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Poli, Roberto, 2004, \"W. E. Johnson's Determinable-Determinate Opposition and His Theory of Abstraction\", in F. Coniglione, R. Poli, and R. Rollinger (eds), Idealization XI: Historical Studies on Abstraction and Idealization , Pozna&#324; Studies in the Philosophy of the Sciences and the Humanities 82/11, 163-196. doi:10.1163/9789004333215_009"
+        },
+        {
+          "raw": "Prior, Arthur N., 1949, \"Determinables, Determinates, and Determinants (I,II)\", Mind , 58(229): 1-20, 58(230): 178-94. doi:10.1093/mind/LVIII.229.1 and doi:10.1093/mind/LVIII.230.178"
+        },
+        {
+          "raw": "Robertson Ishii, Teresa and Philip Atkins, \"Essential vs. Accidental Properties\", The Stanford Encyclopedia of Philosophy (Winter 2020 Edition), Edward N. Zalta (ed.), URL = https://plato.stanford.edu/archives/win2020/entries/essential-accidental/ >."
+        },
+        {
+          "raw": "Rodriguez-Pereyra, Gonzalo, 2002, Resemblance Nominalism: A Solution to the Problem of Universals , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2015, \"Grounding is Not a Strict Order\", Journal of the American Philosophical Association , 1(3): 517-534."
+        },
+        {
+          "raw": "Rosen, Gideon, 2010, \"Metaphysical Dependence: Grounding and Reduction\", in Modality: Metaphysics, Logic, and Epistemology , B. Hale and A. Hoffmann (eds), Oxford: Oxford University Press, 109-36. doi:10.1093/acprof:oso/9780199565818.003.0007"
+        },
+        {
+          "raw": "Rosen, Gideon and Nicholas J. J. Smith, 2004, \"Worldly Indeterminacy: A Rough Guide\", Australasian Journal of Philosophy , 82(1): 185-198. doi:10.1080/713659795"
+        },
+        {
+          "raw": "Salmieri, Gregory, 2008, \"Aristotle and the Problem of Concepts\", Ph.D. Dissertation, Pittsburgh, PA: University of Pittsburgh. [ Salmieri 2008 available online ]"
+        },
+        {
+          "raw": "Sanford, David H., 2014, \"Determinates vs. Determinables\", The Stanford Encyclopedia of Philosophy (Winter 2014 Edition), Edward N. Zalta (ed.), URL = https://plato.stanford.edu/archives/win2014/entries/determinate-determinables/ >."
+        },
+        {
+          "raw": "Schaffer, Jonathan, 2004, \"Quiddistic Knowledge\", in Lewisian Themes , in F. Jackson and G. Priest (eds), Oxford: Oxford University Press, 210-230."
+        },
+        {
+          "raw": "---, 2012, \"Grounding, Transitivity, and Contrastivity\", in Metaphysical Grounding: Understanding the Structure of Reality , Fabrice Correia and Benjamin Schnieder (eds), Cambridge: Cambridge University Press, 122-138."
+        },
+        {
+          "raw": "---, 2016a, \"Ground Rules: Lessons from Wilson\", in Scientific Composition and Metaphysical Ground , K. Aizawa and C. Gillett (eds), London: Palgrave-Macmillan, 143-169. doi:10.1057/978-1-137-56216-6_6"
+        },
+        {
+          "raw": "---, 2016b, \"Grounding in the Image of Causation\", Philosophical Studies , 173(1): 49-100. doi:10.1007/s11098-014-0438-1"
+        },
+        {
+          "raw": "Schroeren, David, 2021, \"Quantum Metaphysical Indeterminacy and the Ontological Foundations of Orthodoxy\", Studies in History and Philosophy of Science (Part A), 90: 235-246."
+        },
+        {
+          "raw": "Searle, John, 1959, \"Determinables and the Notion of Resemblance\", The Aristotelian Society, Supplement , 33(1): 141-58. doi:10.1093/aristoteliansupp/33.1.125"
+        },
+        {
+          "raw": "Segelberg, Ivar, 1999, Three Essays in Phenomenology and Ontology , H. Hochberg and S. Ringstro&ouml;m-Hochberg (trans.), Stockholm: Thales."
+        },
+        {
+          "raw": "Shoemaker, Sydney, 1980, \"Causality and Properties\", in Time and Cause , P. van Inwagen (ed), Dordrecht: D. Reidel, 109-135."
+        },
+        {
+          "raw": "---, 2001, \"Realization and Mental Causation\", in Proceedings of the 20th World Congress in Philosophy , Cambridge: Philosophy Documentation Center, 23-33."
+        },
+        {
+          "raw": "---, 2007, Physical Realization , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Skow, Bradford, 2010, \"Deep Metaphysical Indeterminacy\", Philosophical Quarterly , 60(241): 851-858. doi:10.1111/j.1467-9213.2010.672.x"
+        },
+        {
+          "raw": "Spinoza, Benedictus, 1677/1885, The Collected Writings of Spinoza (Volume 1: The Ethics), Edwin Curley (trans.), Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Spirtes, Peter, Clark Glymour, and Richard Scheines, 1993, Causation, Prediction, and Search , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Stazicker, James, 2018, \"The Visual Presence of Determinable Properties\", in F. Dorsch and F. Macpherson (eds.), Phenomenal Presence , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Stout, George Frederick, 1930, Studies in Philosophy and Psychology , London: MacMillan."
+        },
+        {
+          "raw": "Strevens, Michael, 2004, \"The Causal and Unification Accounts of Explanation Unified--Causally\", No&ucirc;s , 38(1): 154-176. doi:10.1111/j.1468-0068.2004.00466.x"
+        },
+        {
+          "raw": "Sturgeon, Scott (2008). \"Reason and the Grain of Belief\", No&ucirc;s , 42(1), 139-65."
+        },
+        {
+          "raw": "Tappolet, Christine, 2004, \"Through Thick and Thin: Good and Its Determinates\", Dialectica , 58(2): 207-221. doi:10.1111/j.1746-8361.2004.tb00297.x"
+        },
+        {
+          "raw": "Torza, Alessandro, 2020, \"Quantum Metaphysical Indeterminacy and Worldly Incompleteness\", Synthese , 197: 4251-4264."
+        },
+        {
+          "raw": "Unger, Peter, 1980, \"The Problem of the Many\", Midwest Studies in Philosophy , 5(1): 411-468. doi:10.1111/j.1475-4975.1980.tb00416.x"
+        },
+        {
+          "raw": "van der Schaar, Maria Sandra, 1991, G.F. Stout's Theory of Judgment and Proposition Proefschrift Ter Verkrijging van de Graad van Doktor , Ph.D. Dissertation, Leiden University."
+        },
+        {
+          "raw": "von Wachter, Daniel, 2000, \"A World of Fields\", Poznan Studies in the Philosophy of the Sciences and the Humanities , 76: 305-326."
+        },
+        {
+          "raw": "Walter, Sven, 2007, \"Determinables, Determinates, and Causal Relevance\", The Canadian Journal of Philosophy , 37(2): 217-243. doi:10.1353/cjp.2007.0020"
+        },
+        {
+          "raw": "Wilson, Alastair, 2020, The Nature of Contingency: Quantum Physics as Modal Realism , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Wilson, Jessica M., 1999, \"How Superduper Does a Physicalist Supervenience Need to Be?\" Philosophical Quarterly , 49(194): 33-52. doi:10.1111/1467-9213.00127"
+        },
+        {
+          "raw": "---, 2005, \"Supervenience-Based Formulations of Physicalism\", No&ucirc;s , 39(3): 426-459. doi:10.1111/j.0029-4624.2005.00508.x"
+        },
+        {
+          "raw": "---, 2009, \"Determination, Realization, and Mental Causation\", Philosophical Studies , 145(1): 149-169. doi:10.1007/s11098-009-9384-8"
+        },
+        {
+          "raw": "---, 2010, \"What Is Hume's Dictum, and Why Believe It?\" Philosophy and Phenomenological Research , 80(3): 595-637. doi:10.1111/j.1933-1592.2010.00342.x"
+        },
+        {
+          "raw": "---, 2012, \"Fundamental Determinables\", Philosophers' Imprint , 12(4): 1-17. [ Wilson 2012 available online ]"
+        },
+        {
+          "raw": "---, 2013, \"A Determinable-Based Account of Metaphysical Indeterminacy\", Inquiry , 56(4): 359-385. doi:10.1080/0020174X.2013.816251"
+        },
+        {
+          "raw": "---, 2014, \"No Work for a Theory of Grounding\", Inquiry , 57(5-6): 535-579. doi:10.1080/0020174X.2014.907542"
+        },
+        {
+          "raw": "---, 2016, \"The Unity and Priority Arguments for Grounding\", in Scientific Composition and Metaphysical Ground , K. Aizawa and C. Gillett (eds), London: Palgrave-Macmillan, 171-204. doi:10.1057/978-1-137-56216-6_7"
+        },
+        {
+          "raw": "---, 2021, Metaphysical Emergence , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Wolff, J. E., 2015, \"Spin as a Determinable\", Topoi , 34(2): 379-86. doi:10.1007/s11245-015-9319-2"
+        },
+        {
+          "raw": "---, 2020, The Metaphysics of Quantities , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Worley, Sara, 1997, \"Determination and Mental Causation\", Erkenntnis , 46(3): 281-304. doi:10.1023/A:1005301816477"
+        },
+        {
+          "raw": "Yablo, Stephen, 1992, \"Mental Causation\", The Philosophical Review , 101(2): 245-280. doi:10.2307/2185535"
+        }
+      ],
+      "publishedAt": "2017-02-06T13:00:00.000Z",
+      "revisedAt": "2023-01-17T13:00:00.000Z"
+    }
+  }
+}

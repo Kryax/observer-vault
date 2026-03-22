@@ -1,0 +1,380 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/truth-revision",
+  "meta": {
+    "title": "The Revision Theory of Truth",
+    "description": "Consider the following sentence: It has long been known that the sentence, (1), produces a paradox, the so-called liar's paradox : it seems impossible consistently to maintain that (1) is true, and impossible consistently to maintain that (1) is not true: if (1) is true, then (1) says, truly, that (1) is not true so that (1) is not true; on the other hand, if (1) is not true, then what (1) says is the case, i.e., (1) is true. (For details, see Section 1, below.) Given such a paradox, one might be sceptical of the notion of truth, or at least of the prospects of giving a scientifically respectable account of truth. Alfred Tarski's great accomplishment was to show how to give -- contra this scepticism -- a formal definition of truth for a wide class of formalized languages. Tarski did not , however, show how to give a definition of truth for languages (such as English) that contain their own truth predicates . He thought that this could not be done, precisely because of the liar's paradox. More generally, Tarski reckoned that any language with its own truth predicate would be inconsistent, as long as it obeyed the rules of standard classical logic, and had the ability to refer to its own sentences. As we will see in our remarks on Theorem 2.1 in Section 2.3, Tarski was not quite right: there are consistent classical interpreted languages that refer to their own sentences and have their own truth predicates. (This point originates in Gupta 1982 and is strengthened in Gupta and Belnap 1993.) Given the close connection between meaning and truth , it is widely held that any semantics for a language \\(L\\), i.e., any theory of meaning for \\(L\\), will be closely related to a theory of truth for \\(L\\): indeed, it is commonly held that something like a Tarskian theory of truth for \\(L\\) will be a central part of a semantics for \\(L\\). Thus, the impossibility of giving a Tarskian theory of truth for languages with their own truth predicates threatens the project of giving a semantics for languages with their own truth predicates. We had to wait until the work of Kripke 1975 and of Martin & Woodruff 1975 for a systematic formal proposal of a semantics for languages with their own truth predicates. The basic thought is simple: take the offending sentences, such as (1), to be neither true nor false . Kripke, in particular, shows how to implement this thought for a wide variety of languages, in effect employing a semantics with three values, true , false and neither . It is safe to say that Kripkean approaches have replaced Tarskian pessimism as the new orthodoxy concerning languages with their own truth predicates. One of the main rivals to the three-valued semantics is the Revision Theory of Truth, or RTT, independently conceived by Hans Herzberger and Anil Gupta, and first presented in publication in Herzberger 1982a and 1982b, Gupta 1982 and Belnap 1982 -- the first monographs on the topic are Yaq&#363;b 1993 and the locus classicus , Gupta & Belnap 1993. The RTT is designed to model the kind of reasoning that the liar sentence leads to, within a two-valued context . (See Section 5.2 on the question of whether the RTT is genuinely two-valued.) The central idea is the idea of a revision process : a process by which we revise hypotheses about the truth-value of one or more sentences. The present article's purpose is to outline the Revision Theory of Truth. We proceed as follows:",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T05:17:00.575Z",
+    "dateModified": "2026-03-22T05:17:00.575Z",
+    "datePublished": "1995-12-14T13:00:00.000Z",
+    "keywords": [
+      "curry paradox",
+      "definitions",
+      "liar paradox",
+      "tarski truth",
+      "truth",
+      "truth axiomatic"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Consider the following sentence: It has long been known that the sentence, (1), produces a paradox, the so-called liar's paradox : it seems impossible consistently to maintain that (1) is true, and impossible consistently to maintain that (1) is not true: if (1) is true, then (1) says, truly, that (1) is not true so that (1) is not true; on the other hand, if (1) is not true, then what (1) says is the case, i.e., (1) is true. (For details, see Section 1, below.) Given such a paradox, one might be sceptical of the notion of truth, or at least of the prospects of giving a scientifically respectable account of truth. Alfred Tarski's great accomplishment was to show how to give -- contra this scepticism -- a formal definition of truth for a wide class of formalized languages. Tarski did not , however, show how to give a definition of truth for languages (such as English) that contain their own truth predicates . He thought that this could not be done, precisely because of the liar's paradox. More generally, Tarski reckoned that any language with its own truth predicate would be inconsistent, as long as it obeyed the rules of standard classical logic, and had the ability to refer to its own sentences. As we will see in our remarks on Theorem 2.1 in Section 2.3, Tarski was not quite right: there are consistent classical interpreted languages that refer to their own sentences and have their own truth predicates. (This point originates in Gupta 1982 and is strengthened in Gupta and Belnap 1993.) Given the close connection between meaning and truth , it is widely held that any semantics for a language \\(L\\), i.e., any theory of meaning for \\(L\\), will be closely related to a theory of truth for \\(L\\): indeed, it is commonly held that something like a Tarskian theory of truth for \\(L\\) will be a central part of a semantics for \\(L\\). Thus, the impossibility of giving a Tarskian theory of truth for languages with their own truth predicates threatens the project of giving a semantics for languages with their own truth predicates. We had to wait until the work of Kripke 1975 and of Martin & Woodruff 1975 for a systematic formal proposal of a semantics for languages with their own truth predicates. The basic thought is simple: take the offending sentences, such as (1), to be neither true nor false . Kripke, in particular, shows how to implement this thought for a wide variety of languages, in effect employing a semantics with three values, true , false and neither . It is safe to say that Kripkean approaches have replaced Tarskian pessimism as the new orthodoxy concerning languages with their own truth predicates. One of the main rivals to the three-valued semantics is the Revision Theory of Truth, or RTT, independently conceived by Hans Herzberger and Anil Gupta, and first presented in publication in Herzberger 1982a and 1982b, Gupta 1982 and Belnap 1982 -- the first monographs on the topic are Yaq&#363;b 1993 and the locus classicus , Gupta & Belnap 1993. The RTT is designed to model the kind of reasoning that the liar sentence leads to, within a two-valued context . (See Section 5.2 on the question of whether the RTT is genuinely two-valued.) The central idea is the idea of a revision process : a process by which we revise hypotheses about the truth-value of one or more sentences. The present article's purpose is to outline the Revision Theory of Truth. We proceed as follows:",
+    "context": "Opening section: 1. Semiformal introduction | Related entries: curry-paradox, definitions, liar-paradox, tarski-truth, truth, truth-axiomatic",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "general-philosophy"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry truth-revision",
+        "uri": "https://plato.stanford.edu/entries/truth-revision/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "2 author(s), 6 related entries, bibliography size 50"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 1995-12-14T13:00:00.000Z and revised 2023-06-05T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2023-06-05T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/truth-revision/",
+        "description": "SEP entry for truth-revision"
+      }
+    ],
+    "solutionApproach": "1. Semiformal introduction"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/curry-paradox",
+      "ocp:sep/definitions",
+      "ocp:sep/liar-paradox",
+      "ocp:sep/tarski-truth",
+      "ocp:sep/truth",
+      "ocp:sep/truth-axiomatic"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Kremer, Philip",
+        "type": "human"
+      },
+      {
+        "name": "Rivello, Edoardo",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/truth-revision/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 56,
+      "validation_diversity": 0.5,
+      "context_breadth": 0.37,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.76,
+      "documentation_quality": 0.81
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.518
+  },
+  "extensions": {
+    "sep": {
+      "slug": "truth-revision",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/truth-revision/",
+      "preamble": "Consider the following sentence: It has long been known that the sentence, (1), produces a paradox, the so-called liar's paradox : it seems impossible consistently to maintain that (1) is true, and impossible consistently to maintain that (1) is not true: if (1) is true, then (1) says, truly, that (1) is not true so that (1) is not true; on the other hand, if (1) is not true, then what (1) says is the case, i.e., (1) is true. (For details, see Section 1, below.) Given such a paradox, one might be sceptical of the notion of truth, or at least of the prospects of giving a scientifically respectable account of truth. Alfred Tarski's great accomplishment was to show how to give -- contra this scepticism -- a formal definition of truth for a wide class of formalized languages. Tarski did not , however, show how to give a definition of truth for languages (such as English) that contain their own truth predicates . He thought that this could not be done, precisely because of the liar's paradox. More generally, Tarski reckoned that any language with its own truth predicate would be inconsistent, as long as it obeyed the rules of standard classical logic, and had the ability to refer to its own sentences. As we will see in our remarks on Theorem 2.1 in Section 2.3, Tarski was not quite right: there are consistent classical interpreted languages that refer to their own sentences and have their own truth predicates. (This point originates in Gupta 1982 and is strengthened in Gupta and Belnap 1993.) Given the close connection between meaning and truth , it is widely held that any semantics for a language \\(L\\), i.e., any theory of meaning for \\(L\\), will be closely related to a theory of truth for \\(L\\): indeed, it is commonly held that something like a Tarskian theory of truth for \\(L\\) will be a central part of a semantics for \\(L\\). Thus, the impossibility of giving a Tarskian theory of truth for languages with their own truth predicates threatens the project of giving a semantics for languages with their own truth predicates. We had to wait until the work of Kripke 1975 and of Martin & Woodruff 1975 for a systematic formal proposal of a semantics for languages with their own truth predicates. The basic thought is simple: take the offending sentences, such as (1), to be neither true nor false . Kripke, in particular, shows how to implement this thought for a wide variety of languages, in effect employing a semantics with three values, true , false and neither . It is safe to say that Kripkean approaches have replaced Tarskian pessimism as the new orthodoxy concerning languages with their own truth predicates. One of the main rivals to the three-valued semantics is the Revision Theory of Truth, or RTT, independently conceived by Hans Herzberger and Anil Gupta, and first presented in publication in Herzberger 1982a and 1982b, Gupta 1982 and Belnap 1982 -- the first monographs on the topic are Yaq&#363;b 1993 and the locus classicus , Gupta & Belnap 1993. The RTT is designed to model the kind of reasoning that the liar sentence leads to, within a two-valued context . (See Section 5.2 on the question of whether the RTT is genuinely two-valued.) The central idea is the idea of a revision process : a process by which we revise hypotheses about the truth-value of one or more sentences. The present article's purpose is to outline the Revision Theory of Truth. We proceed as follows:",
+      "firstSectionTitle": "1. Semiformal introduction",
+      "firstSectionText": "Let's take a closer look at the sentence (1), given above: It will be useful to make the paradoxical reasoning explicit. First, suppose that: It seems an intuitive principle concerning truth that, for any sentence \\(p\\), we have the so-called T-biconditional (Here we are using 'iff' as an abbreviation for 'if and only if'.) In particular, we should have Thus, from (2) and (4), we get Then we can apply the identity, to conclude that (1) is true. This all shows that if (1) is not true, then (1) is true. Similarly, we can also argue that if (1) is true then (1) is not true. So (1) seems to be both true and not true: hence the paradox. As stated above, the three-valued approach to the paradox takes the liar sentence, (1), to be neither true nor false. Exactly how, or even whether, this move blocks the above reasoning is a matter for debate. The RTT is not designed to block reasoning of the above kind, but to model it -- or most of it. As stated above, the central idea is the idea of a revision process : a process by which we revise hypotheses about the truth-value of one or more sentences. Consider the reasoning regarding the liar sentence, (1) above. Suppose that we hypothesize that (1) is not true. Then, with an application of the relevant T-biconditional, we might revise our hypothesis as follows: We could continue the revision process, by revising our hypothesis once again, as follows: As the revision process continues, we flip back and forth between taking the liar sentence to be true and not true. Informally, we might reason as follows. Either (7) is true or (7) is not true. Thus, either (8) is true or (9) is true. Thus, (7) is true. Thus (8) is true and (9) is not true, and (7) is still true. Iterating the process once again, we get (8) is true, (9) is not true, and (7) is true. More formally, consider any initial hypothesis, \\(h_0\\), about the truth values of (7), (8) and (9). Either \\(h_0\\) says that (7) is true or \\(h_0\\) says that (7) is not true. In either case, we can use the T-biconditional to generate our revised hypothesis \\(h_1\\): if \\(h_0\\) says that (7) is true, then \\(h_1\\) says that '(7) is true' is true, i.e. that (8) is true; and if \\(h_0\\) says that (7) is not true, then \\(h_1\\) says that '(7) is not true' is true, i.e. that (9) is true. So \\(h_1\\) says that either (8) is true or (9) is true. So \\(h_2\\) says that '(8) is true or (9) is true' is true. In other words, \\(h_2\\) says that (7) is true. So no matter what hypothesis \\(h_0\\) we start with, two iterations of the revision process lead to a hypothesis that (7) is true. Similarly, three or more iterations of the revision process, lead to the hypothesis that (7) is true, (8) is true and (9) is not true -- regardless of our initial hypothesis. In Section 3, we will reconsider this example in a more formal context. One thing to note is that, in Example 1.1, the revision process yields stable truth values for all three sentences. The notion of a sentence stably true in all revision sequences will be a central notion for the RTT. The revision-theoretic treatment contrasts, in this case, with the three-valued approach: on most ways of implementing the three-valued idea, all three sentences, (7), (8) and (9), turn out to be neither true nor false. In this case, the RTT arguably better captures the correct informal reasoning than does the three-valued approach: the RTT assigns to the sentences (7), (8) and (9) the truth-values that were assigned to them by the informal reasoning given at the beginning of the example.",
+      "relatedEntries": [
+        "curry-paradox",
+        "definitions",
+        "liar-paradox",
+        "tarski-truth",
+        "truth",
+        "truth-axiomatic"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "curry-paradox"
+        },
+        {
+          "slug": "definitions"
+        },
+        {
+          "slug": "liar-paradox"
+        },
+        {
+          "slug": "tarski-truth"
+        },
+        {
+          "slug": "truth"
+        },
+        {
+          "slug": "truth-axiomatic"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 50,
+      "bibliography": [
+        {
+          "raw": "Antonelli, G.A., 1994a, \"The complexity of revision\", Notre Dame Journal of Formal Logic , 35: 204-218."
+        },
+        {
+          "raw": "---, 1994b, \"Non-well-founded sets via revision rules\", Journal of Philosophical Logic , 23: 633-679."
+        },
+        {
+          "raw": "---, 2002, \"The complexity of revision, revised\", Notre Dame Journal of Formal Logic , 43: 75-78."
+        },
+        {
+          "raw": "Asmus C.M., 2013, \"Vagueness and revision sequences\", Synthese , 190: 953-974."
+        },
+        {
+          "raw": "Belnap, N., 1982, \"Gupta's rule of revision theory of truth\", Journal of Philosophical Logic , 11: 103-116."
+        },
+        {
+          "raw": "---, 2006, \"Prosentence, Revision, Truth, and Paradox\", Philosophy and Phenomenological Research , 73: 705-712."
+        },
+        {
+          "raw": "Berker S., 2011, \"Gupta's gambit\", Philosophical Studies , 152: 17-39."
+        },
+        {
+          "raw": "Bruni, R., 2013, \"Analytic calculi for circular concepts by finite revision\", Studia Logica , 101(5): 915-932."
+        },
+        {
+          "raw": "---, 2015, \"Some remarks on the finite theory of revision\", in Unifying the Philosophy of Truth , Achourioti et al . (eds.), Dordrecht: Springer, 169-187."
+        },
+        {
+          "raw": "---, 2019, \"Addressing circular definitions via systems of proofs\", in Mathesis Universalis, Computability and Proof (Synthese Library 412), Centrone et al . (eds.), Cham: Springer, 75-100."
+        },
+        {
+          "raw": "Bruni, R., and Sillari, G., 2018, \"A rational way of playing: Revision theory for strategic interaction\", Journal of Philosophical Logic , 47(3): 419-448."
+        },
+        {
+          "raw": "Campbell-Moore, C., 2019, \"Limits in the revision theory\", Journal of Philosophical Logic , 48(1): 11-35."
+        },
+        {
+          "raw": "---, 2021, \"Indeterminate Truth and Credences\", in Modes of Truth (Routledge Studies in Contemporary Philosophy), London: Routledge, 182-208."
+        },
+        {
+          "raw": "Campbell-Moore, C., Horsten, L., and Leitgeb, H., 2019, \"Probability for the revision theory of truth\", Journal of Philosophical Logic , 48(1): 87-112."
+        },
+        {
+          "raw": "Chapuis, A., 1996, \"Alternate revision theories of truth\", Journal of Philosophical Logic , 25: 399-423."
+        },
+        {
+          "raw": "---, 2003, \"An application of circular definitions: rational decision\", in L&ouml;we, Malzkorn, and R&auml;sch (eds.), Foundations of the Formal Sciences II: Applications of Mathematical Logic in Philosophy and Linguistics , Dordrecht: Kluwer, 47-54."
+        },
+        {
+          "raw": "Cook, R. T., 2019, \"Revising Benardete's Zeno\", Journal of Philosophical Logic , 48(1): 37-56."
+        },
+        {
+          "raw": "Field H., 2008, Saving Truth from Paradox , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Fjellstad, A., 2020, \"Herzberger's limit rule with labelled sequent calculus\", Studia Logica , 108(4): 815-855."
+        },
+        {
+          "raw": "Gupta, A., 1982, \"Truth and paradox\", Journal of Philosophical Logic , 11: 1-60."
+        },
+        {
+          "raw": "---, 2006, Empiricism and Experience , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Gupta, A., and Belnap, N., 1993, The Revision Theory of Truth , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Gupta, A., and Standefer, S., 2017, \"Conditionals in theories of truth\", Journal of Philosophical Logic , 46(1): 27-63."
+        },
+        {
+          "raw": "Halbach, V., 2011, Axiomatic Theories of Truth , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Hammer, E., 2003, \"The Revision Theory of Truth\", The Stanford Encyclopedia of Philosophy (Spring 2003 Edition), Edward N. Zalta (ed.), URL = https://plato.stanford.edu/archives/spr2003/entries/truth-revision/ >."
+        },
+        {
+          "raw": "Herzberger, H.G., 1982, \"Notes on naive semantics\", Journal of Philosophical Logic , 11: 61-102."
+        },
+        {
+          "raw": "---, 1982, \"Naive semantics and the liar paradox\", Journal of Philosophy , 79: 479-497."
+        },
+        {
+          "raw": "Horsten, L., 2011, The Tarskian Turn: Deflationism and Axiomatic Truth , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Horsten, L., Leigh, G.E., Leitgeb, H., and Welch, P., 2012, \"Revision Revisited\", The Review of Symbolic Logic , 5: 642-665."
+        },
+        {
+          "raw": "Hsiung, M., 2017, \"Boolean paradoxes and revision periods\", Studia Logica , 105(5): 881-914."
+        },
+        {
+          "raw": "---, 2022, \"Designing Paradoxes: A Revision-theoretic Approach\", Journal of Philosophical Logic , 51: 739-789."
+        },
+        {
+          "raw": "Kremer, M., 1988, \"Kripke and the logic of truth\", Journal of Philosophical Logic , 17: 225-78."
+        },
+        {
+          "raw": "Kremer, P., 1993, \"The Gupta-Belnap systems \\(\\mathbf{S}^{\\#}\\) and \\(\\mathbf{S}^*\\) are not axiomatisable\", Notre Dame Journal of Formal Logic , 34: 583-596."
+        },
+        {
+          "raw": "---, 2010, \"How Truth Behaves When There's No Vicious Reference\", Journal of Philosophical Logic , 39: 345-367."
+        },
+        {
+          "raw": "Kripke, S., 1975, \"Outline of a theory of truth\", Journal of Philosophy , 72: 690-716."
+        },
+        {
+          "raw": "K&uuml;hnberger, K., L&ouml;we, B., M&ouml;llerfeld, M., and Welch, P., 2005, \"Comparing inductive and circular definitions: parameters, complexity and games\", Studia Logica , 81: 79-98."
+        },
+        {
+          "raw": "L&ouml;we, B., 2001 \"Revision sequences and computers with an infinite amount of time\", Journal of Logic and Computation , 11: 25-40."
+        },
+        {
+          "raw": "L&ouml;we, B., and Welch, P., 2001, \"Set-theoretic absoluteness and the revision theory of truth\", Studia Logica , 68(1): 21-41."
+        },
+        {
+          "raw": "Martin, R., and Woodruff, P., 1975, \"On representing 'True-in-L' in L\", Philosophia , 5: 217-221."
+        },
+        {
+          "raw": "Pinder, M., 2018, \"How to find an attractive solution to the liar paradox\", Philosophical Studies , 175(7): 1661-1680."
+        },
+        {
+          "raw": "Restall, G., 2005, \"Minimalists about Truth Can (and Should) Be Epistemicists, and it Helps if They Are Revision Theorists too\", in Deflation and Paradox , JC Beall and B. Armour-Garb (eds.), Oxford: Oxford University Press, 97-106."
+        },
+        {
+          "raw": "Rossi, L., 2019, \"A unified theory of truth and paradox\", The Review of Symbolic Logic , 12(2): 209-254."
+        },
+        {
+          "raw": "Standefer, S., 2015a, \"Solovay-type theorems for circular definitions\", The Review of Symbolic Logic , 8(3): 467-487."
+        },
+        {
+          "raw": "---, 2015b, \"On artifacts and truth-preservation\", Australasian Journal of Logic , 12(3): 135-158."
+        },
+        {
+          "raw": "---, 2016, \"Contraction and revision\", Australasian Journal of Logic , 13(3): 58-77."
+        },
+        {
+          "raw": "Wang, W., 2011, \"Theories of abstract objects without ad hoc restriction\", Erkenntnis 74: 1-15."
+        },
+        {
+          "raw": "Welch, P., 2001, \"On Gupta-Belnap revision theories of truth, Kripkean fixed points, and the Next stable set\", Bulletin for Symbolic Logic , 7: 345-360."
+        },
+        {
+          "raw": "Wintein, S., 2014, \"Alternative Ways for Truth to Behave When There's no Vicious Reference\", Journal of Philosophical Logic 43: 665-690."
+        },
+        {
+          "raw": "Yaq&#363;b, A., 1993, The Liar Speaks the Truth : A Defense of the Revision Theory of Truth , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2008, \"Two types of deflationist\", Synthese , 165: 77-106."
+        }
+      ],
+      "publishedAt": "1995-12-14T13:00:00.000Z",
+      "revisedAt": "2023-06-05T14:00:00.000Z"
+    }
+  }
+}
