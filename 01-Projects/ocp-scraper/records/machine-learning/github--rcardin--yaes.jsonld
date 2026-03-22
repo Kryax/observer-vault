@@ -1,0 +1,161 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/rcardin--yaes",
+  "meta": {
+    "title": "Yet Another Effect System (λÆS)",
+    "description": "An experimental effect system in Scala 3 that tracks effects through context functions",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T18:01:43.538Z",
+    "dateModified": "2026-03-22T18:01:43.538Z",
+    "keywords": [
+      "algebraic-effects",
+      "direct-style",
+      "effect-system",
+      "monad",
+      "scala3"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "<img align=\"right\" src=\"./logo.svg\" width=\"230\" alt=\"logo\" />",
+    "context": "<img align=\"right\" src=\"./logo.svg\" width=\"230\" alt=\"logo\" />\n\nλÆS is an experimental effect system in Scala inspired by the ideas behind Algebraic Effects. Using Scala 3 [context parameters](https://docs.scala-lang.org/scala3/reference/contextual/using-clauses.html) and [context functions](https://docs.scala-lang.org/scala3/reference/contextual/context-functions.html), it provides a way to define and handle effects in a modular and composable manner.\n\nYou can visit the dedicated [website](https://rcardin.github.io/yaes/) 🌐.\n\nHere is the talk I gave at the **Scalar 2025** about the main concepts behind the library:\n<br clear=\"both\" />\n\n[![Watch the video](https://img.youtube.com/vi/TXUxCsPpZp0/maxresdefault.jpg)](https://youtu.be/TXUxCsPpZp0)\n\nAvailable modules are:\n * `yaes-core`: The main effects of the λÆS library.\n * `yaes-data`: A set of data structures that can be used with the λÆS library.\n * `yaes-cats`: Integration with Cats and Cats Effect, providing interoperability and typeclass instances.\n * `yaes-slf4j`: SLF4J integration for the `Log` effect, enabling any SLF4J-compatible logging backend.\n\nWhat's new in λÆS when compared to other effect systems? Well, you can choose to use a monadic style like the following:\n\n```scala 3\nimport in.rcard.yaes.Random.*\nimport in.rcard.yaes.Raise.*\nimport in.rcard.yaes.Yaes.*\n\ndef drunkFlip(using Random, Raise[String]): String = for {\n  caught <- Random.nextBoolean\n  heads  <- if (caught) Random.nextBoolean else Raise.raise(\"We dropped the coin\")\n} yield if (heads) \"Heads\" else \"Tails\"\n```\n\nOr a more direct style like this:\n\n```scala 3\nimport in.rcard.yaes.Random.*\nimport in.rcard.yaes.Raise.*\n\ndef drunkFlip(using Random, Raise[String]): String = {\n  val caught = Random.nextBoolean\n  if (caught) {\n    val heads = Random.nextBoolean\n    if (heads) \"Heads\" else \"Tails\"\n  } else {\n    Raise.raise(\"We dropped the coin\")\n  }\n}\n```\n\nIn λÆS types like `Random` and `Raise` are *Effects*. A *Side Effect* is an unpredictable interaction, usually with an external system. An Effect System manages *Side Effects* by tracking and wrapping them into *Effects*. An *Effect* describes the type of the *Side Effect* and the return type of an effectful computation. We manage *Side Effect* behavior by putting them in a kind of box.\nCalling the above `drunkFlip` function will not execute the effects. Instead, it will return a value that represents something that can be run but hasn’t yet. This is called deferred execution. \n\nAn Effect System provides all the tools to manage and execute Effectful computations in a deferred manner. In λÆS, such tools are called *Handlers*.\n\n```scala 3\nimport in.rcard.yaes.Random.*\nimport in.rcard.yaes.Raise.*\n\nval result: String = Raise.run { \n  Random.run { \n    drunkFlip\n  }\n}\n```\n\nIn the above code, we are running the `drunkFlip` function with the `Random` and `Raise` effects. The `Raise.run` and `Random.run` functions are defined using *Handlers* that will execute the deferred effects. The approach reminds the one defined in the Algebraic Effects and Handlers theory. The example shows how to handle the `Raise` and `Random` effects one at a time. However, we're free to handle only one effect at a time:\n\n```scala 3\nimport in.rcard.yaes.Random.*\n\nval result: Raise[String] ?=> String = Random.run { \n  drunkFlip\n}\n```\n\nThe above code shows how to handle only the `Random` effect. The `Raise` effect is still present. It's a powerful feature that allows for a fine-grained management of the effects.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "lang:scala"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "128 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "7 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T18:01:43.538Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/rcardin/yaes",
+        "description": "GitHub repository: rcardin/yaes"
+      }
+    ],
+    "language": "Scala"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "rcardin",
+        "type": "human",
+        "uri": "https://github.com/rcardin"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 142,
+      "validation_diversity": 0.3,
+      "context_breadth": 0.28,
+      "temporal_stability": 0.81,
+      "test_coverage": 0,
+      "documentation_quality": 0.5
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.219
+  }
+}

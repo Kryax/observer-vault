@@ -1,0 +1,300 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/dicklesworthstone--asupersync",
+  "meta": {
+    "title": "Asupersync",
+    "description": "Async runtime for Rust where correctness is structural: region-owned tasks, cancel-correct protocols, capability-gated effects, and deterministic replay testing",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T18:01:41.185Z",
+    "dateModified": "2026-03-22T18:01:41.185Z",
+    "keywords": [
+      "async",
+      "concurrency",
+      "runtime",
+      "rust",
+      "structured-concurrency"
+    ],
+    "license": "NOASSERTION"
+  },
+  "problemSolved": {
+    "statement": "| Guarantee | What It Means |\n|-----------|---------------|\n| **No orphan tasks** | Every spawned task is owned by a region; region close waits for all children |\n| **Cancel-correctness** | Cancellation is request → drain → finalize, never silent data loss |\n| **Bounded cleanup** | Cleanup budgets are *sufficient conditions*, not hopes |\n| **No silent drops** | Two-phase effects (reserve/commit) make data loss impossible for primitives |\n| **Deterministic testing** | Lab runtime: virtual time, deterministic scheduling, trace replay |\n| **Adaptive preemption fairness** | Deterministic EXP3/Hedge policy tunes cancel streak limits with regret-bounded updates |\n| **Drain progress certificates** | Variance-adaptive Azuma/Freedman bounds classify drain phase and confidence to quiescence |\n| **Spectral early warnings** | Wait-graph spectral monitor combines conformal bounds and anytime-valid evidence |\n| **Capability security** | All effects flow through explicit `Cx`; no ambient authority |",
+    "context": "<div align=\"center\">\n\n<img src=\"asupersync_diagram.webp\" alt=\"Asupersync Architecture - Regions, Tasks, and Quiescence\" width=\"700\">\n\n[![CI](https://github.com/Dicklesworthstone/asupersync/actions/workflows/ci.yml/badge.svg)](https://github.com/Dicklesworthstone/asupersync/actions/workflows/ci.yml)\n[![License: MIT+Rider](https://img.shields.io/badge/License-MIT%2BOpenAI%2FAnthropic%20Rider-blue.svg)](./LICENSE)\n[![Rust](https://img.shields.io/badge/Rust-nightly-orange.svg)](https://www.rust-lang.org/)\n[![Status: Active Development](https://img.shields.io/badge/Status-Active%20Development-brightgreen)](https://github.com/Dicklesworthstone/asupersync)\n[![Live Demo](https://img.shields.io/badge/Live_Demo-WASM_Interactive-blueviolet)](https://dicklesworthstone.github.io/asupersync/asupersync_web_demo.html)\n\n**Spec-first, cancel-correct, capability-secure async for Rust**\n\n<h3><a href=\"https://dicklesworthstone.github.io/asupersync/asupersync_web_demo.html\">Try the Live Interactive WASM Demo</a></h3>\n\n<h3>Quick Install</h3>\n\n```bash\ncargo add asupersync --git https://github.com/Dicklesworthstone/asupersync\n```\n\n</div>\n\n---",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "testing",
+    "lang:rust"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "131 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "16 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T18:01:41.185Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/Dicklesworthstone/asupersync",
+        "description": "GitHub repository: Dicklesworthstone/asupersync"
+      }
+    ],
+    "language": "Rust"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "thiserror",
+        "version": "2.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/thiserror"
+      },
+      {
+        "name": "crossbeam-queue",
+        "version": "0.3",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/crossbeam-queue"
+      },
+      {
+        "name": "parking_lot",
+        "version": "0.12",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/parking_lot"
+      },
+      {
+        "name": "slab",
+        "version": "0.4",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/slab"
+      },
+      {
+        "name": "smallvec",
+        "version": "1.15",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/smallvec"
+      },
+      {
+        "name": "pin-project",
+        "version": "1.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/pin-project"
+      },
+      {
+        "name": "rmp-serde",
+        "version": "1.3",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/rmp-serde"
+      },
+      {
+        "name": "serde",
+        "version": "1.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/serde"
+      },
+      {
+        "name": "serde_json",
+        "version": "1.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/serde_json"
+      },
+      {
+        "name": "memchr",
+        "version": "2.8",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/memchr"
+      },
+      {
+        "name": "getrandom",
+        "version": "0.4",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/getrandom"
+      },
+      {
+        "name": "bincode",
+        "version": "2.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/bincode"
+      },
+      {
+        "name": "franken-decision",
+        "version": "0.2.9",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/franken-decision"
+      },
+      {
+        "name": "franken-evidence",
+        "version": "0.2.9",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/franken-evidence"
+      },
+      {
+        "name": "franken-kernel",
+        "version": "0.2.9",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/franken-kernel"
+      },
+      {
+        "name": "tempfile",
+        "version": "3.25",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tempfile"
+      },
+      {
+        "name": "base64",
+        "version": "0.22.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/base64"
+      },
+      {
+        "name": "sha1",
+        "version": "0.10",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/sha1"
+      },
+      {
+        "name": "sha2",
+        "version": "0.10",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/sha2"
+      },
+      {
+        "name": "hmac",
+        "version": "0.12",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/hmac"
+      },
+      {
+        "name": "hashbrown",
+        "version": "0.15",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/hashbrown"
+      },
+      {
+        "name": "futures-lite",
+        "version": "2.6",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/futures-lite"
+      },
+      {
+        "name": "crossbeam-deque",
+        "version": "0.8.6",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/crossbeam-deque"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Dicklesworthstone",
+        "type": "human",
+        "uri": "https://github.com/Dicklesworthstone"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 163,
+      "validation_diversity": 0,
+      "context_breadth": 0.32,
+      "temporal_stability": 0.82,
+      "test_coverage": 0.83,
+      "documentation_quality": 0.5
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.08
+  }
+}

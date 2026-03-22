@@ -1,0 +1,271 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/h2337--tsink",
+  "meta": {
+    "title": "Prometheus text exposition",
+    "description": "A lightweight time-series database written in Rust. Embed it, run it as a server, or scale it as a cluster. ",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T18:01:36.470Z",
+    "dateModified": "2026-03-22T18:01:36.470Z",
+    "keywords": [
+      "database",
+      "embedded-database",
+      "rust",
+      "time-series",
+      "timeseries",
+      "timeseries-database",
+      "tsdb"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "- **Three deployment modes** — embed the library directly in your Rust or Python application, run a standalone server binary, or form a replicated cluster. Same engine everywhere.\n- **Robust engine** — segmented WAL with crash-safe sync, LSM-style leveled compaction, adaptive delta/XOR/zstd encoding, mmap zero-copy reads, and configurable memory backpressure.\n- **Tiered storage** — hot, warm, and cold tiers with automatic lifecycle management and optional object-store backing.\n- **Drop-in protocol support** — accepts Prometheus remote write/read, InfluxDB line protocol, OTLP, StatsD, and Graphite out of the box.\n- **Built-in PromQL** — query your data with a native PromQL parser and evaluator. No external query layer needed.\n- **Secure by default** — TLS (rustls, no OpenSSL), RBAC with OIDC, multi-tenant isolation, and mTLS between cluster nodes.\n- **Zero external dependencies at runtime** — single static binary for the server; `protoc` is vendored at build time.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "data-management",
+    "lang:rust"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "284 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "8 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T18:01:36.470Z"
+  },
+  "implementation": {
+    "type": "service",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/h2337/tsink",
+        "description": "GitHub repository: h2337/tsink"
+      }
+    ],
+    "language": "Rust"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "thiserror",
+        "version": "2.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/thiserror"
+      },
+      {
+        "name": "parking_lot",
+        "version": "0.12",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/parking_lot"
+      },
+      {
+        "name": "crossbeam-channel",
+        "version": "0.5",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/crossbeam-channel"
+      },
+      {
+        "name": "num_cpus",
+        "version": "1.17",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/num_cpus"
+      },
+      {
+        "name": "crc32fast",
+        "version": "1.5",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/crc32fast"
+      },
+      {
+        "name": "xxhash-rust",
+        "version": "0.8",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/xxhash-rust"
+      },
+      {
+        "name": "rayon",
+        "version": "1.11",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/rayon"
+      },
+      {
+        "name": "serde",
+        "version": "1.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/serde"
+      },
+      {
+        "name": "serde_json",
+        "version": "1.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/serde_json"
+      },
+      {
+        "name": "bincode",
+        "version": "1.3.3",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/bincode"
+      },
+      {
+        "name": "memmap2",
+        "version": "0.9",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/memmap2"
+      },
+      {
+        "name": "tracing",
+        "version": "0.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tracing"
+      },
+      {
+        "name": "regex",
+        "version": "1.12",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/regex"
+      },
+      {
+        "name": "regex-syntax",
+        "version": "0.8",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/regex-syntax"
+      },
+      {
+        "name": "chrono",
+        "version": "0.4",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/chrono"
+      },
+      {
+        "name": "async-channel",
+        "version": "2.5",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/async-channel"
+      },
+      {
+        "name": "roaring",
+        "version": "0.11",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/roaring"
+      },
+      {
+        "name": "zstd",
+        "version": "0.13",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/zstd"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "h2337",
+        "type": "human",
+        "uri": "https://github.com/h2337"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 300,
+      "validation_diversity": 0.16,
+      "context_breadth": 0.37,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.6
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.377
+  }
+}
