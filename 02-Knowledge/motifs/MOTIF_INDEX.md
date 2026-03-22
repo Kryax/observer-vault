@@ -17,11 +17,11 @@ cssclasses:
 |--------|-------|
 | Total motifs | 34 |
 | Tier 0 (Observation) | 14 |
-| Tier 1 (Cross-Domain) | 10 |
-| Tier 2 (Structural Operator) | 8 |
+| Tier 1 (Cross-Domain) | 9 |
+| Tier 2 (Structural Operator) | 9 |
 | Tier 3 (Meta-Structural) | 0 |
 | Tier 3 drafts | 5 |
-| Tier 2 candidates | 4 |
+| Tier 2 candidates | 5 |
 
 ## Motif Registry
 
@@ -35,9 +35,9 @@ cssclasses:
 | **Observer-Feedback Loop** | **2** | **0.9** | **8** | **triangulated** | **1-2** | **recurse** | [observer-feedback-loop.md](observer-feedback-loop.md) |
 | **Ratchet with Asymmetric Friction** | **2** | **0.9** | **12** | **triangulated** | **1** | **recurse** | [ratchet-with-asymmetric-friction.md](ratchet-with-asymmetric-friction.md) |
 | **Progressive Formalization** | **2** | **0.85** | **10** | **triangulated** | **1** | **integrate** | [progressive-formalization.md](progressive-formalization.md) |
+| **Reconstruction Burden** | **2** | **0.9** | **14** | **triangulated** | **1** | **differentiate** | [reconstruction-burden.md](reconstruction-burden.md) |
 | Trust-as-Curation | 1 | 0.7 | 8 | triangulated | 0-1 | integrate | [trust-as-curation.md](trust-as-curation.md) |
 | Reflexive Structural Transition | 1 | 0.8 | 10 | triangulated | 2 | recurse | [reflexive-structural-transition.md](reflexive-structural-transition.md) |
-| Reconstruction Burden | 1 | 0.8 | 14 | triangulated | 1 | differentiate | [reconstruction-burden.md](reconstruction-burden.md) |
 | Boundary Drift | 1 | 0.9 | 9 | triangulated | 1 | differentiate | [boundary-drift.md](boundary-drift.md) |
 | Structural Coupling as Ground State | 1 | 0.9 | 10 | triangulated | 0 | integrate | [structural-coupling-ground-state.md](structural-coupling-ground-state.md) |
 | Recursive Generativity | 1 | 0.5 | 5 | triangulated | 3 | recurse | [recursive-generativity.md](recursive-generativity.md) |
@@ -74,12 +74,12 @@ cssclasses:
 | Observer-Feedback Loop | 8 | 0.9 | 2026-03-19 | Slow triad alien domain expansion: 4 new alien domains (biology/adaptive immunity, jurisprudence/common law, clinical medicine/psychiatric nosology, anthropology/ethnographic framework evolution). 8 domains, all 5 validation protocol conditions satisfied. Triangulation gap closed via batch 1 bottom-up scrape (hermeneutic circle instance). |
 | Ratchet with Asymmetric Friction | 12 | 0.9 | 2026-03-22 | Three-batch alien domain expansion: 10 new domains across neuroscience, chemistry/materials, music/aesthetics, urban planning, game theory, ecology (+ 1 partial: thermodynamics). 12 domains, all 5 validation protocol conditions satisfied. Zero-consumer test passes across all full instances. Strongest alien instances: cross-linking polymerization (chemistry) and ecological succession/niche construction. |
 | Progressive Formalization | 10 | 0.85 | 2026-03-22 | Three-batch alien domain expansion: 8 new external domains (formal logic, scientific method, common law, mathematics, music, linguistics, game theory, ecology). 10 domains, all 5 validation protocol conditions satisfied. Content-preservation test ("crystal remembers the liquid") passes across all instances. Strongest alien instances: formal logic (2,500-year documented trajectory) and ecological succession. |
+| Reconstruction Burden | 14 | 0.9 | 2026-03-23 | 14 domains, all 5 validation protocol conditions pass (batch 4 run 2). Canonical instance: Landauer's principle. Strongest alien domains: physics/thermodynamics, governance/statutory interpretation, audio/video codec design. |
 
 ## Tier 2 Candidates
 
 | Name | Domains | Confidence | Gap | File |
 |------|---------|-----------|-----|------|
-| Reconstruction Burden | 14 | 0.8 | **T2-ready:** All 5 validation protocol conditions pass (batch 4 run 2). Awaiting Adam's approval. | [reconstruction-burden.md](reconstruction-burden.md) |
 | Trust-as-Curation | 8 | 0.7 | Needs 1+ additional strong alien-domain bottom-up instance for T2 promotion | [trust-as-curation.md](trust-as-curation.md) |
 | Reflexive Structural Transition | 10 | 0.8 | Biology-specificity refuted; needs formal T2 validation protocol review | [reflexive-structural-transition.md](reflexive-structural-transition.md) |
 | Boundary Drift | 9 | 0.9 | Needs formal adversarial testing (condition 4) — is this just "things change"? | [boundary-drift.md](boundary-drift.md) |
@@ -90,7 +90,7 @@ cssclasses:
 
 **Status: OPEN**
 
-Meta-analysis (Tier 3 motif detection) requires 3+ Tier 2 motifs. Current Tier 2 count: **8**.
+Meta-analysis (Tier 3 motif detection) requires 3+ Tier 2 motifs. Current Tier 2 count: **9**.
 
 | Tier 2 Motif | Domains | Promoted | Status |
 |-------------|---------|----------|--------|
@@ -102,8 +102,9 @@ Meta-analysis (Tier 3 motif detection) requires 3+ Tier 2 motifs. Current Tier 2
 | Observer-Feedback Loop | 8 | 2026-03-19 | validated |
 | Ratchet with Asymmetric Friction | 12 | 2026-03-22 | canonical |
 | Progressive Formalization | 10 | 2026-03-22 | canonical |
+| Reconstruction Burden | 14 | 2026-03-23 | validated |
 
-**Gate opened 2026-03-04.** With 8 Tier 2 structural operators, motif-of-motif detection (Tier 3) has a rich operator space. All three primary axes are represented at Tier 2: integrate (DSG, ISC, PF), differentiate (CPA, ESMB, BBOP), recurse (OFL, Ratchet). Batch 3 relationship mapping (2026-03-22) identified 42 inter-motif relationships and 3 Tier 3 candidates.
+**Gate opened 2026-03-04.** With 9 Tier 2 structural operators, motif-of-motif detection (Tier 3) has a rich operator space. All three primary axes are represented at Tier 2: integrate (DSG, ISC, PF), differentiate (CPA, ESMB, BBWOP, RB), recurse (OFL, Ratchet). Batch 3 relationship mapping (2026-03-22) identified 42 inter-motif relationships and 3 Tier 3 candidates.
 
 ## Meta-Motifs (Tier 3)
 

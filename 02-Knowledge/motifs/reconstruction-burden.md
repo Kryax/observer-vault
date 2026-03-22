@@ -1,8 +1,8 @@
 ---
 name: "Reconstruction Burden from Lossy Boundary Operations"
-tier: 1
-status: provisional
-confidence: 0.8
+tier: 2
+status: validated
+confidence: 0.9
 source: triangulated
 domain_count: 14
 derivative_order: 1
@@ -10,7 +10,7 @@ primary_axis: differentiate
 created: 2026-03-22
 updated: 2026-03-22
 cssclasses:
-  - status-provisional
+  - status-validated
 ---
 
 # Reconstruction Burden from Lossy Boundary Operations
