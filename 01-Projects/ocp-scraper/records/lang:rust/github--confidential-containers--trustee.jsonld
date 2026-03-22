@@ -1,0 +1,158 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/confidential-containers--trustee",
+  "meta": {
+    "title": "Trusted Components for Attestation and Secret Management",
+    "description": "Attestation and Secret Delivery Components",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:45:05.558Z",
+    "dateModified": "2026-03-11T04:45:05.558Z",
+    "keywords": [
+      "attestation",
+      "confidential-computing",
+      "key-management"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fconfidential-containers%2Fkbs.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fconfidential-containers%2Fkbs?ref=badge_shield)\n[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/confidential-containers/trustee/badge)](https://scorecard.dev/viewer/?uri=github.com/confidential-containers/trustee)",
+    "context": "[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fconfidential-containers%2Fkbs.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fconfidential-containers%2Fkbs?ref=badge_shield)\n[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/confidential-containers/trustee/badge)](https://scorecard.dev/viewer/?uri=github.com/confidential-containers/trustee)\n\nThis repository contains tools and components for attesting confidential guests and providing secrets to them.\nCollectively, these components are known as Trustee.\nTrustee typically operates on behalf of the guest owner and interact remotely with\n[guest components](https://github.com/confidential-containers/guest-components).\n\nTrustee was developed for the Confidential Containers project, but can be used with a wide variety\nof applications and hardware platforms.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:rust"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "144 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "145 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:45:05.558Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/confidential-containers/trustee",
+        "description": "GitHub repository: confidential-containers/trustee"
+      }
+    ],
+    "language": "Rust"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "confidential-containers",
+        "type": "human",
+        "uri": "https://github.com/confidential-containers"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 434,
+      "validation_diversity": 0.61,
+      "context_breadth": 0.34,
+      "temporal_stability": 0.81,
+      "test_coverage": 0.37,
+      "documentation_quality": 0.48
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.535
+  }
+}

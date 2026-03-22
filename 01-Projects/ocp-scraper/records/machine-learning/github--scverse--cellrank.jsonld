@@ -1,0 +1,278 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/scverse--cellrank",
+  "meta": {
+    "title": "CellRank 2: Unified fate mapping in multiview single-cell data",
+    "description": "CellRank: dynamics from multi-view single-cell data",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T02:04:20.037Z",
+    "dateModified": "2026-03-11T02:04:20.037Z",
+    "keywords": [
+      "bioinformatics",
+      "cell-fate-determination",
+      "cell-fate-transitions",
+      "data-science",
+      "fuzzy-clustering-analyses",
+      "genetics",
+      "machine-learning",
+      "manifold-learning",
+      "markov-chains",
+      "rna-velocity",
+      "single-cell-genomics",
+      "single-cell-rna-seq",
+      "trajectory-generation"
+    ],
+    "license": "BSD-3-Clause"
+  },
+  "problemSolved": {
+    "statement": "<!-- image-start -->\n<picture>\n  <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://raw.githubusercontent.com/scverse/cellrank/main/docs/_static/img/dark_mode_overview.png\">\n  <img alt=\"CellRank overview\" src=\"https://raw.githubusercontent.com/scverse/cellrank/main/docs/_static/img/light_mode_overview.png\" width=\"600px\" align=\"center\">\n</picture>\n<!-- image-end -->",
+    "context": "<!-- image-start -->\n<picture>\n  <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://raw.githubusercontent.com/scverse/cellrank/main/docs/_static/img/dark_mode_overview.png\">\n  <img alt=\"CellRank overview\" src=\"https://raw.githubusercontent.com/scverse/cellrank/main/docs/_static/img/light_mode_overview.png\" width=\"600px\" align=\"center\">\n</picture>\n<!-- image-end -->\n\n**CellRank** is a modular framework to study cellular dynamics based on Markov state modeling of\nmulti-view single-cell data. See our [documentation], and the [CellRank 1] and [CellRank 2] manuscripts to learn more.\nRead a summary of the CellRank papers [here](https://cellrank.readthedocs.io/en/latest/about/cite.html#cellrank-papers).\n\n⚠️ **Please refer to [our citation guide](https://cellrank.readthedocs.io/en/latest/about/cite.html) to cite our software correctly.**\n\nCellRank scales to large cell numbers, is fully compatible with the [scverse] ecosystem, and is easy to use.\nIn the backend, it is powered by [pyGPCCA] ([Reuter et al. (2018)]). Feel\nfree to open an [issue] if you encounter a bug, need our help, or just want to make a comment/suggestion.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "data-management",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "432 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "53 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T02:04:20.037Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/scverse/cellrank",
+        "description": "GitHub repository: scverse/cellrank"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://cellrank.readthedocs.io/en/latest/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "anndata",
+        "version": ">=0.11",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/anndata/"
+      },
+      {
+        "name": "docrep",
+        "version": ">=0.3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/docrep/"
+      },
+      {
+        "name": "joblib",
+        "version": ">=1.4",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/joblib/"
+      },
+      {
+        "name": "matplotlib",
+        "version": ">=3.9",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/matplotlib/"
+      },
+      {
+        "name": "networkx",
+        "version": ">=3.4",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/networkx/"
+      },
+      {
+        "name": "numba",
+        "version": ">=0.60",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numba/"
+      },
+      {
+        "name": "numpy",
+        "version": ">=2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numpy/"
+      },
+      {
+        "name": "pandas",
+        "version": ">=2.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pandas/"
+      },
+      {
+        "name": "pygam",
+        "version": ">=0.10",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pygam/"
+      },
+      {
+        "name": "pygpcca",
+        "version": ">=1.0.4",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pygpcca/"
+      },
+      {
+        "name": "rich",
+        "version": ">=13",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/rich/"
+      },
+      {
+        "name": "scanpy",
+        "version": ">=1.11",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scanpy/"
+      },
+      {
+        "name": "scikit-learn",
+        "version": ">=1.6",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scikit-learn/"
+      },
+      {
+        "name": "scipy",
+        "version": ">=1.14",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scipy/"
+      },
+      {
+        "name": "seaborn",
+        "version": ">=0.13",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/seaborn/"
+      },
+      {
+        "name": "session-info2",
+        "version": ">=0.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/session-info2/"
+      },
+      {
+        "name": "wrapt",
+        "version": ">=1.16",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/wrapt/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "scverse",
+        "type": "human",
+        "uri": "https://github.com/scverse"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 538,
+      "validation_diversity": 0.38,
+      "context_breadth": 0.57,
+      "temporal_stability": 1,
+      "test_coverage": 0.47,
+      "documentation_quality": 0.63
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.551
+  }
+}

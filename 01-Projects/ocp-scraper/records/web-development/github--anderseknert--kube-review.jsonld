@@ -1,0 +1,195 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/anderseknert--kube-review",
+  "meta": {
+    "title": "kube-review",
+    "description": "Create Kubernetes AdmissionReview requests from Kubernetes resource manifests",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:49:54.493Z",
+    "dateModified": "2026-03-11T04:49:54.493Z",
+    "keywords": [
+      "admission-controller",
+      "admission-review",
+      "admission-webhook",
+      "k8s",
+      "kube-review",
+      "kubectl",
+      "kubernetes",
+      "mutating-admission-webhook",
+      "opa",
+      "open-policy-agent",
+      "policy-as-code",
+      "validating-admission-webhook"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "Simple command line utility to transform a provided Kubernetes resource into a Kubernetes AdmissionReview request, as\nsent from the Kubernetes API server when [dynamic admission control](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/)\n(i.e. webhook) is configured.",
+    "context": "Simple command line utility to transform a provided Kubernetes resource into a Kubernetes AdmissionReview request, as\nsent from the Kubernetes API server when [dynamic admission control](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/)\n(i.e. webhook) is configured.\n\n**deployment.yaml**\n```yaml\napiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: nginx\n  labels:\n    app: nginx\nspec:\n  selector:\n    matchLabels:\n      app: nginx\n  template:\n    metadata:\n      labels:\n        app: nginx\n    spec:\n      containers:\n      - image: nginx\n        name: nginx\n        ports:\n        - containerPort: 8080\n```\n**Command**\n```shell\n$ kube-review create deployment.yaml\n```\n**Output**\n```json\n{\n  \"kind\": \"AdmissionReview\",\n  \"apiVersion\": \"admission.k8s.io/v1\",\n  \"request\": {\n    \"uid\": \"2024ee9c-c374-413c-838d-e62bcb4826be\",\n    \"kind\": {\n      \"group\": \"apps\",\n      \"version\": \"v1\",\n      \"kind\": \"Deployment\"\n    },\n    \"resource\": {\n      \"group\": \"apps\",\n      \"version\": \"v1\",\n      \"resource\": \"deployments\"\n    },\n    \"requestKind\": {\n      \"group\": \"apps\",\n      \"version\": \"v1\",\n      \"kind\": \"Deployment\"\n    },\n    \"requestResource\": {\n      \"group\": \"apps\",\n      \"version\": \"v1\",\n      \"resource\": \"deployments\"\n    },\n    \"name\": \"nginx\",\n    \"operation\": \"CREATE\",\n    \"userInfo\": {\n      \"username\": \"kube-review\",\n      \"uid\": \"611a19d7-6aa5-47d2-bba3-8c5df2bffbc7\"\n    },\n    \"object\": {\n      \"kind\": \"Deployment\",\n      \"apiVersion\": \"apps/v1\",\n      \"metadata\": {\n        \"name\": \"nginx\",\n        \"creationTimestamp\": null,\n        \"labels\": {\n          \"app\": \"nginx\"\n        }\n      },\n      \"spec\": {\n        \"selector\": {\n          \"matchLabels\": {\n            \"app\": \"nginx\"\n          }\n        },\n        \"template\": {\n          \"metadata\": {\n            \"creationTimestamp\": null,\n            \"labels\": {\n              \"app\": \"nginx\"\n            }\n          },\n          \"spec\": {\n            \"containers\": [\n              {\n                \"name\": \"nginx\",\n                \"image\": \"nginx\",\n                \"ports\": [\n                  {\n                    \"containerPort\": 8080\n                  }\n                ],\n                \"resources\": {}\n              }\n            ]\n          }\n        },\n        \"strategy\": {}\n      },\n      \"status\": {}\n    },\n    \"oldObject\": null,\n    \"dryRun\": true,\n    \"options\": {\n      \"kind\": \"CreateOptions\",\n      \"apiVersion\": \"meta.k8s.io/v1\"\n    }\n  }\n}\n```",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "devops",
+    "containerization",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "160 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "6 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:49:54.493Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/anderseknert/kube-review",
+        "description": "GitHub repository: anderseknert/kube-review"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "github.com/spf13/cobra",
+        "version": "v1.10.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/cobra"
+      },
+      {
+        "name": "k8s.io/api",
+        "version": "v0.34.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/api"
+      },
+      {
+        "name": "k8s.io/apimachinery",
+        "version": "v0.34.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/apimachinery"
+      },
+      {
+        "name": "k8s.io/client-go",
+        "version": "v0.34.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/client-go"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "anderseknert",
+        "type": "human",
+        "uri": "https://github.com/anderseknert"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 172,
+      "validation_diversity": 0.2,
+      "context_breadth": 0.48,
+      "temporal_stability": 0.99,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.45
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.413
+  }
+}

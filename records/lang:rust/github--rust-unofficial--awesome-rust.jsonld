@@ -1,0 +1,266 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/rust-unofficial--awesome-rust",
+  "meta": {
+    "title": "Awesome Rust [![lint badge](https://github.com/rust-unofficial/awesome-rust/actions/workflows/lint.yml/badge.svg)](https://github.com/rust-unofficial/awesome-rust/actions/workflows/lint.yml) [![build badge](https://github.com/rust-unofficial/awesome-rust/actions/workflows/rust.yml/badge.svg?branch=main)](https://github.com/rust-unofficial/awesome-rust/actions/workflows/rust.yml) [![Track Awesome List](https://www.trackawesomelist.com/badge.svg)](https://www.trackawesomelist.com/rust-unofficial/awesome-rust/)",
+    "description": "A curated list of Rust code and resources.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-13T11:20:58.330Z",
+    "dateModified": "2026-03-13T11:20:58.330Z",
+    "keywords": [
+      "awesome",
+      "rust"
+    ],
+    "license": "CC0-1.0"
+  },
+  "problemSolved": {
+    "statement": "A curated list of Rust code and resources.",
+    "context": "A curated list of Rust code and resources.\n\nIf you want to contribute, please read [this](CONTRIBUTING.md).",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:rust"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "56132 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "3216 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-13T11:20:58.330Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/rust-unofficial/awesome-rust",
+        "description": "GitHub repository: rust-unofficial/awesome-rust"
+      }
+    ],
+    "language": "Rust"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "pulldown-cmark",
+        "version": "0.8",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/pulldown-cmark"
+      },
+      {
+        "name": "futures",
+        "version": "0.3",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/futures"
+      },
+      {
+        "name": "reqwest",
+        "version": "0.12",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/reqwest"
+      },
+      {
+        "name": "tokio",
+        "version": "1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tokio"
+      },
+      {
+        "name": "serde",
+        "version": "1.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/serde"
+      },
+      {
+        "name": "serde_yaml",
+        "version": "0.8",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/serde_yaml"
+      },
+      {
+        "name": "hyper",
+        "version": "0.14",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/hyper"
+      },
+      {
+        "name": "anyhow",
+        "version": "1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/anyhow"
+      },
+      {
+        "name": "thiserror",
+        "version": "2",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/thiserror"
+      },
+      {
+        "name": "lazy_static",
+        "version": "1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/lazy_static"
+      },
+      {
+        "name": "env_logger",
+        "version": "0.8",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/env_logger"
+      },
+      {
+        "name": "log",
+        "version": "0.4",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/log"
+      },
+      {
+        "name": "regex",
+        "version": "1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/regex"
+      },
+      {
+        "name": "scraper",
+        "version": "0.12",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/scraper"
+      },
+      {
+        "name": "chrono",
+        "version": "0.4",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/chrono"
+      },
+      {
+        "name": "chrono-humanize",
+        "version": "0.2",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/chrono-humanize"
+      },
+      {
+        "name": "diffy",
+        "version": "0.3",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/diffy"
+      },
+      {
+        "name": "serde_json",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/serde_json"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "rust-unofficial",
+        "type": "human",
+        "uri": "https://github.com/rust-unofficial"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 62564,
+      "validation_diversity": 1,
+      "context_breadth": 0.38,
+      "temporal_stability": 1,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.5
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.777
+  }
+}

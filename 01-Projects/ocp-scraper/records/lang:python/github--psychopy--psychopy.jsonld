@@ -1,0 +1,462 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/psychopy--psychopy",
+  "meta": {
+    "title": "PsychoPy",
+    "description": "For running psychology and neuroscience experiments",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T02:04:07.362Z",
+    "dateModified": "2026-03-11T02:04:07.362Z",
+    "keywords": [
+      "experiment",
+      "experiment-control",
+      "experimental-design",
+      "linguistics",
+      "neuroscience",
+      "psycholinguistics",
+      "psychology",
+      "psychophysics",
+      "psychopy",
+      "python",
+      "science"
+    ],
+    "license": "GPL-3.0"
+  },
+  "problemSolved": {
+    "statement": "[![PyPI version](https://img.shields.io/pypi/v/psychopy.svg)](https://pypi.python.org/pypi/PsychoPy)\n[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](code-of-conduct.md)",
+    "context": "[![PyPI version](https://img.shields.io/pypi/v/psychopy.svg)](https://pypi.python.org/pypi/PsychoPy)\n[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](code-of-conduct.md)  \n\n---\n\nPsychoPy is an open-source package for creating experiments in behavioral science. It aims to provide a single package that is:\n\n* precise enough for psychophysics\n* easy enough for teaching\n* flexible enough for everything else\n* able to run experiments in a local Python script or online in JavaScript\n\nTo meet these goals PsychoPy provides a choice of interface - you can use a\nsimple graphical user interface called Builder, or write your experiments in\nPython code. The entire application and library are written in Python and is\nplatform independent.\n\n**Note:** this repository now contains _only_ the PsychoPy _library_. The code for the application user interface \nis now in separate repositories for \n[PsychoPy Studio](https://github.com/psychopy/psychopy-studio) (for the modern web-based GUI) \nand [PsychoPy App](https://github.com/psychopy/psychopy-app) (for the legacy wxPython GUI).\n\nThere is a range of documentation at:\n\n* [PsychoPy Homepage](https://www.psychopy.org)\n* [Youtube](https://www.youtube.com/playlist?list=PLFB5A1BE51964D587)\n* The textbook, [Building Experiments in PsychoPy](https://uk.sagepub.com/en-gb/eur/building-experiments-in-psychopy/book253480)\n* [The discourse user forum](https://discourse.psychopy.org)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "1960 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "968 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T02:04:07.362Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/psychopy/psychopy",
+        "description": "GitHub repository: psychopy/psychopy"
+      },
+      {
+        "type": "documentation",
+        "uri": "http://www.psychopy.org",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "numpy",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numpy/"
+      },
+      {
+        "name": "scipy",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scipy/"
+      },
+      {
+        "name": "matplotlib",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/matplotlib/"
+      },
+      {
+        "name": "pyglet",
+        "version": "== 1.4.11; platform_system == \"Windows\"",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyglet/"
+      },
+      {
+        "name": "pyglet",
+        "version": "== 1.5.27; platform_system != \"Windows\"",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyglet/"
+      },
+      {
+        "name": "pillow",
+        "version": ">=9.4.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pillow/"
+      },
+      {
+        "name": "pyqt6",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyqt6/"
+      },
+      {
+        "name": "pandas",
+        "version": ">=1.5.3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pandas/"
+      },
+      {
+        "name": "questplus",
+        "version": ">=2023.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/questplus/"
+      },
+      {
+        "name": "openpyxl",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/openpyxl/"
+      },
+      {
+        "name": "xmlschema",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/xmlschema/"
+      },
+      {
+        "name": "soundfile",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/soundfile/"
+      },
+      {
+        "name": "imageio",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/imageio/"
+      },
+      {
+        "name": "imageio-ffmpeg",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/imageio-ffmpeg/"
+      },
+      {
+        "name": "psychtoolbox",
+        "version": "<3.0.20; platform_machine!='arm64'",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/psychtoolbox/"
+      },
+      {
+        "name": "pywinhook",
+        "version": "; platform_system == \"Windows\"",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pywinhook/"
+      },
+      {
+        "name": "zope.event",
+        "version": "==5.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/zope.event/"
+      },
+      {
+        "name": "zope.interface",
+        "version": "==7.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/zope.interface/"
+      },
+      {
+        "name": "gevent",
+        "version": "==25.5.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/gevent/"
+      },
+      {
+        "name": "MeshPy",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/MeshPy/"
+      },
+      {
+        "name": "psutil",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/psutil/"
+      },
+      {
+        "name": "pyzmq",
+        "version": ">=22.2.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyzmq/"
+      },
+      {
+        "name": "ujson",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/ujson/"
+      },
+      {
+        "name": "msgpack",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/msgpack/"
+      },
+      {
+        "name": "msgpack-numpy",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/msgpack-numpy/"
+      },
+      {
+        "name": "pyyaml",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyyaml/"
+      },
+      {
+        "name": "freetype-py",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/freetype-py/"
+      },
+      {
+        "name": "python-bidi",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/python-bidi/"
+      },
+      {
+        "name": "arabic-reshaper",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/arabic-reshaper/"
+      },
+      {
+        "name": "websockets",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/websockets/"
+      },
+      {
+        "name": "requests",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/requests/"
+      },
+      {
+        "name": "astunparse",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/astunparse/"
+      },
+      {
+        "name": "esprima",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/esprima/"
+      },
+      {
+        "name": "jedi",
+        "version": ">= 0.16",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/jedi/"
+      },
+      {
+        "name": "pyserial",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyserial/"
+      },
+      {
+        "name": "pyparallel",
+        "version": "; platform_system != \"Darwin\"",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyparallel/"
+      },
+      {
+        "name": "ffpyplayer",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/ffpyplayer/"
+      },
+      {
+        "name": "opencv-python",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/opencv-python/"
+      },
+      {
+        "name": "python-vlc",
+        "version": "== 3.0.11115; platform_system == \"Windows\"",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/python-vlc/"
+      },
+      {
+        "name": "python-vlc",
+        "version": ">= 3.0.12118; platform_system != \"Windows\"",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/python-vlc/"
+      },
+      {
+        "name": "pypiwin32",
+        "version": "; platform_system == \"Windows\"",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pypiwin32/"
+      },
+      {
+        "name": "pyobjc-core",
+        "version": "> 8.0; platform_system == \"Darwin\"",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyobjc-core/"
+      },
+      {
+        "name": "pyobjc-framework-Quartz",
+        "version": "> 8.0; platform_system == \"Darwin\"",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyobjc-framework-Quartz/"
+      },
+      {
+        "name": "pyobjc",
+        "version": "> 8.0; platform_system == \"Darwin\"",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyobjc/"
+      },
+      {
+        "name": "pyobjc-framework-ScriptingBridge",
+        "version": "> 8.0; platform_system == \"Darwin\"",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyobjc-framework-ScriptingBridge/"
+      },
+      {
+        "name": "zeroconf",
+        "version": "; platform_system == \"Darwin\"",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/zeroconf/"
+      },
+      {
+        "name": "python-xlib",
+        "version": "; platform_system == \"Linux\"",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/python-xlib/"
+      },
+      {
+        "name": "distro",
+        "version": "; platform_system == \"Linux\"",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/distro/"
+      },
+      {
+        "name": "tables",
+        "version": "!=3.9.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tables/"
+      },
+      {
+        "name": "packaging",
+        "version": ">=24.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/packaging/"
+      },
+      {
+        "name": "moviepy",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/moviepy/"
+      },
+      {
+        "name": "pyarrow",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyarrow/"
+      },
+      {
+        "name": "beautifulsoup4",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/beautifulsoup4/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "psychopy",
+        "type": "human",
+        "uri": "https://github.com/psychopy"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 3896,
+      "validation_diversity": 0.82,
+      "context_breadth": 0.7,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.17,
+      "documentation_quality": 0.48
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.681
+  }
+}

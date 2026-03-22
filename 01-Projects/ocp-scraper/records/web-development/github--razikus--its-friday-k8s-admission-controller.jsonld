@@ -1,0 +1,164 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/razikus--its-friday-k8s-admission-controller",
+  "meta": {
+    "title": "NO MORE DEPLOYMENTS IN FRIDAY (now written in Rust!)",
+    "description": "Stop deployments in friday. DEFINITELY",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:50:20.819Z",
+    "dateModified": "2026-03-11T04:50:20.819Z",
+    "keywords": [
+      "admission-controller",
+      "fun",
+      "k8s",
+      "kubernetes",
+      "rust",
+      "validationadmissionwebhook"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "It does what it says. Blocks new deployments in friday on admission controller level.",
+    "context": "It does what it says. Blocks new deployments in friday on admission controller level.\n\nHow often do you break this rule?\n\nHow often did you actually DEPLOYED in friday?\n\nInstallation \n```\nhelm install itsfriday https://github.com/Razikus/its-friday-k8s-admission-controller/releases/download/0.1.0/itsfriday-0.1.0.tgz -n itsfriday --create-namespace\n\n```",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "devops",
+    "containerization",
+    "lang:rust"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "63 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "4 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:50:20.819Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/Razikus/its-friday-k8s-admission-controller",
+        "description": "GitHub repository: Razikus/its-friday-k8s-admission-controller"
+      }
+    ],
+    "language": "Rust"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Razikus",
+        "type": "human",
+        "uri": "https://github.com/Razikus"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 71,
+      "validation_diversity": 0.1,
+      "context_breadth": 0.3,
+      "temporal_stability": 0.62,
+      "test_coverage": 0.2,
+      "documentation_quality": 0.35
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.25
+  }
+}

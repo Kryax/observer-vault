@@ -1,0 +1,331 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/gyulyvgc--sniffnet",
+  "meta": {
+    "title": "sniffnet",
+    "description": "Comfortably monitor your Internet traffic 🕵️‍♂️",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:49:57.784Z",
+    "dateModified": "2026-03-11T04:49:57.784Z",
+    "keywords": [
+      "application",
+      "gui",
+      "iced",
+      "linux",
+      "macos",
+      "network",
+      "network-analysis",
+      "network-monitoring",
+      "networking",
+      "packet-analyser",
+      "packet-capture",
+      "packet-sniffer",
+      "pcap",
+      "rust",
+      "rust-crate",
+      "security",
+      "tool",
+      "utility",
+      "windows"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "- 💻 choose a **network adapter** of your PC to inspect\n- 🏷️ select a set of **filters** to apply to the observed traffic\n- 📖 view overall **statistics** about your Internet traffic\n- 📈 view **real-time charts** about traffic intensity\n- 📌 keep an eye on your network even when the application is **minimized**\n- 📁 **import** and **export** comprehensive capture reports as **PCAP files**\n- 🔎 identify **6000+ upper layer services**, protocols, trojans, and worms\n- 🌐 find out **domain name** and **ASN** of the hosts you are exchanging traffic with\n- 🏠 identify connections in your **local network**\n- 🌍 discover the **geographical location** of remote hosts\n- ⭐ save your **favorite** network hosts\n- 🕵️‍♂️ search and **inspect** each of your network connections in real time\n- 🔉 set custom **notifications** to inform you when defined network events occur\n- 🎨 choose the **style** that fits you the most, including custom themes support\n- ...and more!",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "security",
+    "networking",
+    "lang:rust"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "32940 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "1209 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:49:57.784Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/GyulyVGC/sniffnet",
+        "description": "GitHub repository: GyulyVGC/sniffnet"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://sniffnet.net",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Rust"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "async-channel",
+        "version": "2.5.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/async-channel"
+      },
+      {
+        "name": "chrono",
+        "version": "0.4.44",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/chrono"
+      },
+      {
+        "name": "clap",
+        "version": "4.5.60",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/clap"
+      },
+      {
+        "name": "confy",
+        "version": "2.0.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/confy"
+      },
+      {
+        "name": "ctrlc",
+        "version": "3.5.2",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/ctrlc"
+      },
+      {
+        "name": "dns-lookup",
+        "version": "3.0.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/dns-lookup"
+      },
+      {
+        "name": "etherparse",
+        "version": "0.19.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/etherparse"
+      },
+      {
+        "name": "iced",
+        "version": "0.14.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/iced"
+      },
+      {
+        "name": "listeners",
+        "version": "0.5.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/listeners"
+      },
+      {
+        "name": "maxminddb",
+        "version": "0.27.3",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/maxminddb"
+      },
+      {
+        "name": "pcap",
+        "version": "2.4.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/pcap"
+      },
+      {
+        "name": "phf",
+        "version": "0.13.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/phf"
+      },
+      {
+        "name": "phf_shared",
+        "version": "0.13.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/phf_shared"
+      },
+      {
+        "name": "picon",
+        "version": "0.1.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/picon"
+      },
+      {
+        "name": "plotters",
+        "version": "0.3.7",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/plotters"
+      },
+      {
+        "name": "plotters-iced2",
+        "version": "0.14.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/plotters-iced2"
+      },
+      {
+        "name": "reqwest",
+        "version": "0.13.2",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/reqwest"
+      },
+      {
+        "name": "rfd",
+        "version": "0.17.2",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/rfd"
+      },
+      {
+        "name": "rodio",
+        "version": "0.22.2",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/rodio"
+      },
+      {
+        "name": "semver",
+        "version": "1.0.27",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/semver"
+      },
+      {
+        "name": "serde",
+        "version": "1.0.228",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/serde"
+      },
+      {
+        "name": "serde_json",
+        "version": "1.0.149",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/serde_json"
+      },
+      {
+        "name": "splines",
+        "version": "5.0.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/splines"
+      },
+      {
+        "name": "tokio",
+        "version": "1.50.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tokio"
+      },
+      {
+        "name": "toml",
+        "version": "1.0.6",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/toml"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "GyulyVGC",
+        "type": "human",
+        "uri": "https://github.com/GyulyVGC"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 35358,
+      "validation_diversity": 0.61,
+      "context_breadth": 0.7,
+      "temporal_stability": 0.98,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.6
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.752
+  }
+}

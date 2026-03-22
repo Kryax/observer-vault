@@ -1,0 +1,195 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:arxiv/2602.20846v1",
+  "meta": {
+    "title": "Body-Reservoir Governance in Repeated Games: Embodied Decision-Making, Dynamic Sentinel Adaptation, and Complexity-Regularized Optimization",
+    "description": "Standard game theory explains cooperation in repeated games through conditional strategies such as Tit-for-Tat (TfT), but these require continuous computation that imposes physical costs on embodied agents. We propose a three-layer Body-Reservoir Governance (BRG) architecture: (1) a body reservoir (echo state network) whose $d$-dimensional state performs implicit inference over interaction history, serving as both decision-maker and anomaly detector, (2) a cognitive filter providing costly strategic tools activated on demand, and (3) a metacognitive governance layer with receptivity parameter $α\\in [0,1]$. At full body governance ($α=1$), closed-loop dynamics satisfy a self-consistency equation: cooperation is expressed as the reservoir's fixed point, not computed. Strategy complexity cost is defined as the KL divergence between the reservoir's state distribution and its habituated baseline. Body governance reduces this cost, with action variance decreasing up to $1600\\times$ with dimension $d$. A dynamic sentinel generates a composite discomfort signal from the reservoir's own state, driving adaptive $α(t)$: near baseline during cooperation, rapidly dropping upon defection to activate cognitive retaliation. Overriding the body incurs thermodynamic cost proportional to internal state distortion. The sentinel achieves the highest payoff across all conditions, outperforming static body governance, TfT, and EMA baselines. A dimension sweep ($d \\in \\{5,\\ldots,100\\}$) shows implicit inference scales with bodily richness ($23\\times$ to $1600\\times$ variance reduction), attributable to reservoir dynamics. A phase diagram in $(d, τ_{\\mathrm{env}})$ space reveals governance regime transitions near $d \\approx 20$. The framework reinterprets cooperation as the minimum-dissipation response of an adapted dynamical system -- emergent from embodied dynamics rather than computed.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T06:36:46.583Z",
+    "dateModified": "2026-03-11T06:36:46.583Z",
+    "datePublished": "2026-02-24T12:36:41.000Z",
+    "keywords": [
+      "cs.GT",
+      "cs.MA",
+      "cs.NE",
+      "nlin.AO"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Standard game theory explains cooperation in repeated games through conditional strategies such as Tit-for-Tat (TfT), but these require continuous computation that imposes physical costs on embodied agents. We propose a three-layer Body-Reservoir Governance (BRG) architecture: (1) a body reservoir (echo state network) whose $d$-dimensional state performs implicit inference over interaction history, serving as both decision-maker and anomaly detector, (2) a cognitive filter providing costly strategic tools activated on demand, and (3) a metacognitive governance layer with receptivity parameter $α\\in [0,1]$. At full body governance ($α=1$), closed-loop dynamics satisfy a self-consistency equation: cooperation is expressed as the reservoir's fixed point, not computed. Strategy complexity cost is defined as the KL divergence between the reservoir's state distribution and its habituated baseline. Body governance reduces this cost, with action variance decreasing up to $1600\\times$ with dimension $d$. A dynamic sentinel generates a composite discomfort signal from the reservoir's own state, driving adaptive $α(t)$: near baseline during cooperation, rapidly dropping upon defection to activate cognitive retaliation. Overriding the body incurs thermodynamic cost proportional to internal state distortion. The sentinel achieves the highest payoff across all conditions, outperforming static body governance, TfT, and EMA baselines. A dimension sweep ($d \\in \\{5,\\ldots,100\\}$) shows implicit inference scales with bodily richness ($23\\times$ to $1600\\times$ variance reduction), attributable to reservoir dynamics. A phase diagram in $(d, τ_{\\mathrm{env}})$ space reveals governance regime transitions near $d \\approx 20$. The framework reinterprets cooperation as the minimum-dissipation response of an adapted dynamical system -- emergent from embodied dynamics rather than computed.",
+    "context": "arXiv categories: cs.GT, cs.MA, cs.NE, nlin.AO | 44 pages, 9 figures, 2 tables",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "software",
+    "physics"
+  ],
+  "validation": {
+    "method": "automated-analysis",
+    "evidence": [
+      {
+        "type": "arxiv-record",
+        "description": "Indexed from arXiv paper 2602.20846v1",
+        "uri": "https://arxiv.org/abs/2602.20846v1"
+      },
+      {
+        "type": "category-classification",
+        "description": "Classified in arXiv categories: cs.GT, cs.MA, cs.NE, nlin.AO"
+      },
+      {
+        "type": "submission-recency",
+        "description": "Published 2026-02-24T12:36:41.000Z and last updated 2026-02-24T12:36:41.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-02-24T12:36:41.000Z"
+  },
+  "implementation": {
+    "type": "algorithm",
+    "refs": [
+      {
+        "type": "publication",
+        "uri": "https://arxiv.org/abs/2602.20846v1",
+        "description": "arXiv abstract page for 2602.20846v1"
+      },
+      {
+        "type": "publication",
+        "uri": "https://arxiv.org/pdf/2602.20846v1",
+        "description": "arXiv PDF"
+      }
+    ],
+    "solutionApproach": "44 pages, 9 figures, 2 tables"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Yuki Nakamura",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "arXiv",
+        "type": "system",
+        "uri": "https://arxiv.org"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://arxiv.org/abs/2602.20846v1",
+      "https://arxiv.org/pdf/2602.20846v1"
+    ],
+    "generatedBy": "ocp-scraper/arxiv-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 39,
+      "validation_diversity": 0.44,
+      "context_breadth": 0.8,
+      "temporal_stability": 0.85,
+      "test_coverage": 0.45,
+      "documentation_quality": 1
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.54
+  },
+  "extensions": {
+    "arxiv": {
+      "id": "2602.20846v1",
+      "source": "arXiv",
+      "categories": [
+        "cs.GT",
+        "cs.MA",
+        "cs.NE",
+        "nlin.AO"
+      ],
+      "comment": "44 pages, 9 figures, 2 tables",
+      "absUrl": "https://arxiv.org/abs/2602.20846v1",
+      "pdfUrl": "https://arxiv.org/pdf/2602.20846v1"
+    }
+  }
+}

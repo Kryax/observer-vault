@@ -1,0 +1,167 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/aourednik--historical-basemaps",
+  "meta": {
+    "title": "Historical boundaries of world countries and cultural regions",
+    "description": "Collection of georeferenced boundaries of world countries and cultural regions for use in mapping historical data on global or continental scale",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:48:30.091Z",
+    "dateModified": "2026-03-11T04:48:30.091Z",
+    "keywords": [
+      "basemap",
+      "borders",
+      "geography",
+      "geojson",
+      "gis",
+      "history",
+      "map",
+      "mapping",
+      "maps",
+      "prehistory",
+      "svg"
+    ],
+    "license": "GPL-3.0"
+  },
+  "problemSolved": {
+    "statement": "![world 1880 DRAFT ROUGH](img/historicalmaps-leaflet.png)",
+    "context": "![world 1880 DRAFT ROUGH](img/historicalmaps-leaflet.png)\n\n> \"For most of the past 5,000 years, kingdoms and empires were exceptional islands of political hierarchy, surrounded by much larger territories whose inhabitants systematically avoided fixed, overarching systems of authority.\" - Graeber and Wengrow, 2021, _The Dawn of Everything_\n\nThis historical boundaries project aims at providing ready-to-use base maps for mapping historical data. It is __work in progress__: verify the maps by comparison to other sources before using in academic work. If you see errors, report them in the \"issues\" section.\n\nIf you use the maps, think about giving back by [contributing](CONTRIBUTING.md).",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "data-management",
+    "lang:javascript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "677 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "122 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:48:30.091Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/aourednik/historical-basemaps",
+        "description": "GitHub repository: aourednik/historical-basemaps"
+      }
+    ],
+    "language": "JavaScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "aourednik",
+        "type": "human",
+        "uri": "https://github.com/aourednik"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 921,
+      "validation_diversity": 0.36,
+      "context_breadth": 0.61,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.5
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.523
+  }
+}

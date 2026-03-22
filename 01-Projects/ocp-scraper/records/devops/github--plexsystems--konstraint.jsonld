@@ -1,0 +1,231 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/plexsystems--konstraint",
+  "meta": {
+    "title": "Konstraint",
+    "description": "A policy management tool for interacting with Gatekeeper",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:50:32.383Z",
+    "dateModified": "2026-03-11T04:50:32.383Z",
+    "keywords": [
+      "conftest",
+      "gatekeeper",
+      "kubernetes",
+      "opa",
+      "open-policy-agent",
+      "policy",
+      "rego"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "[![Go Report Card](https://goreportcard.com/badge/github.com/plexsystems/konstraint)](https://goreportcard.com/report/github.com/plexsystems/konstraint)\n[![GitHub release](https://img.shields.io/github/release/plexsystems/konstraint.svg)](https://github.com/plexsystems/konstraint/releases)",
+    "context": "[![Go Report Card](https://goreportcard.com/badge/github.com/plexsystems/konstraint)](https://goreportcard.com/report/github.com/plexsystems/konstraint)\n[![GitHub release](https://img.shields.io/github/release/plexsystems/konstraint.svg)](https://github.com/plexsystems/konstraint/releases)\n\n![logo](images/logo.png)\n\nKonstraint is a CLI tool to assist with the creation and management of templates and constraints when using [Gatekeeper](https://github.com/open-policy-agent/gatekeeper).",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "devops",
+    "containerization",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "391 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "51 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:50:32.383Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/plexsystems/konstraint",
+        "description": "GitHub repository: plexsystems/konstraint"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "github.com/go-sprout/sprout",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-sprout/sprout"
+      },
+      {
+        "name": "github.com/google/go-cmp",
+        "version": "v0.7.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/go-cmp"
+      },
+      {
+        "name": "github.com/open-policy-agent/frameworks/constraint",
+        "version": "v0.0.0-20250211011819-96e4f3b8e083",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-policy-agent/frameworks/constraint"
+      },
+      {
+        "name": "github.com/open-policy-agent/opa",
+        "version": "v1.5.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-policy-agent/opa"
+      },
+      {
+        "name": "github.com/sirupsen/logrus",
+        "version": "v1.9.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/sirupsen/logrus"
+      },
+      {
+        "name": "github.com/spf13/cobra",
+        "version": "v1.9.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/cobra"
+      },
+      {
+        "name": "github.com/spf13/viper",
+        "version": "v1.20.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/viper"
+      },
+      {
+        "name": "golang.org/x/text",
+        "version": "v0.26.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/text"
+      },
+      {
+        "name": "k8s.io/apiextensions-apiserver",
+        "version": "v0.33.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/apiextensions-apiserver"
+      },
+      {
+        "name": "k8s.io/apimachinery",
+        "version": "v0.33.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/apimachinery"
+      },
+      {
+        "name": "sigs.k8s.io/yaml",
+        "version": "v1.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/sigs.k8s.io/yaml"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "plexsystems",
+        "type": "human",
+        "uri": "https://github.com/plexsystems"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 493,
+      "validation_diversity": 0.48,
+      "context_breadth": 0.45,
+      "temporal_stability": 0.82,
+      "test_coverage": 0.37,
+      "documentation_quality": 0.65
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.538
+  }
+}

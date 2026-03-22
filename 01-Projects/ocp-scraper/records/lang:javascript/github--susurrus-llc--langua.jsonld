@@ -1,0 +1,310 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/susurrus-llc--langua",
+  "meta": {
+    "title": "Langua",
+    "description": "A suite of language tools",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T02:04:14.808Z",
+    "dateModified": "2026-03-11T02:04:14.808Z",
+    "keywords": [
+      "conlang",
+      "conlanging",
+      "conlangs",
+      "derivation",
+      "dictionary",
+      "language",
+      "languages",
+      "lexicon",
+      "lexicon-construction",
+      "linguistics",
+      "morphology",
+      "sound-change",
+      "soundchange",
+      "syntax",
+      "syntax-tree",
+      "vocabulary",
+      "words"
+    ],
+    "license": "AGPL-3.0"
+  },
+  "problemSolved": {
+    "statement": "Langua is a suite of language tools that can be used for testing, experimentation, learning, analysis, or creation. There are several main tools: [Gen](#gen), [Morph](#morph), [Deriv](#deriv), [Frequen](#frequen), [Tree](#tree), and [Lex](#lex).",
+    "context": "[![Build](https://github.com/Susurrus-LLC/langua/actions/workflows/build.yml/badge.svg)](./actions)\n[![Codacy Badge](https://app.codacy.com/project/badge/Grade/41a3616c2dfa484da0e2eb52d47ee444)](https://www.codacy.com/gh/Susurrus-LLC/langua/dashboard?utm_source=github.com&utm_medium=referral&utm_content=Susurrus-LLC/langua&utm_campaign=Badge_Grade)\n[![Codacy Coverage Badge](https://api.codacy.com/project/badge/Coverage/41a3616c2dfa484da0e2eb52d47ee444)](https://www.codacy.com/app/Langua/langua?utm_source=github.com&utm_medium=referral&utm_content=Susurrus-LLC/langua&utm_campaign=Badge_Coverage)\n[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)\n[![](https://img.shields.io/github/release/Susurrus-LLC/langua.svg)](https://github.com/Susurrus-LLC/langua/releases)\n[![](https://img.shields.io/github/license/Susurrus-LLC/langua.svg)](https://github.com/Susurrus-LLC/langua/blob/master/LICENSE)\n\n1. [Overview](#overview)\n1. [Deployment](#deployment)\n1. [Versioning](#versioning)\n1. [Development Roadmap](#development-roadmap)\n1. [Contributing](#contributing)\n1. [Authors](#authors)\n1. [Acknowledgments](#acknowledgments)\n1. [License](#license)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:javascript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "55 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "6 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T02:04:14.808Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/Susurrus-LLC/langua",
+        "description": "GitHub repository: Susurrus-LLC/langua"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://susurrus-llc.github.io/langua/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "JavaScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "@fortawesome/fontawesome-free",
+        "version": "^6.2.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@fortawesome/fontawesome-free"
+      },
+      {
+        "name": "classnames",
+        "version": "^2.3.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/classnames"
+      },
+      {
+        "name": "file-saver",
+        "version": "^2.0.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/file-saver"
+      },
+      {
+        "name": "gatsby",
+        "version": "^4.6.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/gatsby"
+      },
+      {
+        "name": "gatsby-image",
+        "version": "^3.11.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/gatsby-image"
+      },
+      {
+        "name": "gatsby-plugin-google-fonts",
+        "version": "^1.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/gatsby-plugin-google-fonts"
+      },
+      {
+        "name": "gatsby-plugin-manifest",
+        "version": "^4.25.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/gatsby-plugin-manifest"
+      },
+      {
+        "name": "gatsby-plugin-offline",
+        "version": "^5.25.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/gatsby-plugin-offline"
+      },
+      {
+        "name": "gatsby-plugin-react-helmet",
+        "version": "^5.25.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/gatsby-plugin-react-helmet"
+      },
+      {
+        "name": "gatsby-plugin-sass",
+        "version": "^5.24.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/gatsby-plugin-sass"
+      },
+      {
+        "name": "gatsby-plugin-sharp",
+        "version": "^4.25.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/gatsby-plugin-sharp"
+      },
+      {
+        "name": "gatsby-source-filesystem",
+        "version": "^4.25.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/gatsby-source-filesystem"
+      },
+      {
+        "name": "gatsby-transformer-sharp",
+        "version": "^4.25.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/gatsby-transformer-sharp"
+      },
+      {
+        "name": "js-schema",
+        "version": "^1.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/js-schema"
+      },
+      {
+        "name": "node-sass",
+        "version": "^8.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/node-sass"
+      },
+      {
+        "name": "normalize.css",
+        "version": "^8.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/normalize.css"
+      },
+      {
+        "name": "prop-types",
+        "version": "^15.8.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/prop-types"
+      },
+      {
+        "name": "react",
+        "version": "^17.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react"
+      },
+      {
+        "name": "react-dom",
+        "version": "^17.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-dom"
+      },
+      {
+        "name": "react-helmet",
+        "version": "^6.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-helmet"
+      },
+      {
+        "name": "react-toastify",
+        "version": "^9.1.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-toastify"
+      },
+      {
+        "name": "react-vis",
+        "version": "^1.11.7",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-vis"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Susurrus-LLC",
+        "type": "human",
+        "uri": "https://github.com/Susurrus-LLC"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 67,
+      "validation_diversity": 0.3,
+      "context_breadth": 0.48,
+      "temporal_stability": 0.7,
+      "test_coverage": 0,
+      "documentation_quality": 0.6
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.233
+  }
+}

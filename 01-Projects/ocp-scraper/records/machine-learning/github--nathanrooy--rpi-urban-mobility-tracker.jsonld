@@ -1,0 +1,176 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/nathanrooy--rpi-urban-mobility-tracker",
+  "meta": {
+    "title": "Raspberry Pi Urban Mobility Tracker (DeepSORT + MobileNet)",
+    "description": "The easiest way to count pedestrians, cyclists, and vehicles on edge computing devices or live video feeds.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:47:05.124Z",
+    "dateModified": "2026-03-11T04:47:05.124Z",
+    "keywords": [
+      "bike-counting",
+      "car-counting",
+      "coral-tpu",
+      "deep-learning",
+      "deep-sort",
+      "deep-sort-tracking",
+      "deepsort",
+      "edge-computing",
+      "edge-tpu",
+      "object-tracking",
+      "pedestrian-counting",
+      "pedestrian-safety",
+      "pedestrians",
+      "raspberry-pi",
+      "tensorflow",
+      "tensorflow-lite",
+      "urban-design"
+    ],
+    "license": "GPL-3.0"
+  },
+  "problemSolved": {
+    "statement": "The Raspberry Pi Urban Mobility Tracker is the simplest way to track and count pedestrians, cyclists, scooters, and vehicles. For more information, see the original blog post [<a target=\"_blank\" href=\"https://nathanrooy.github.io/posts/2019-02-06/raspberry-pi-deep-learning-traffic-tracker/\">here</a>].",
+    "context": "The Raspberry Pi Urban Mobility Tracker is the simplest way to track and count pedestrians, cyclists, scooters, and vehicles. For more information, see the original blog post [<a target=\"_blank\" href=\"https://nathanrooy.github.io/posts/2019-02-06/raspberry-pi-deep-learning-traffic-tracker/\">here</a>].\n\n<span>\n  <img src='docs/vid05.webp'>\n  <img src='docs/vid02.webp'>\n</span>\n<span>\n  <img src='docs/vid03.webp'>\n  <img src='docs/vid04.webp'>\n</span>",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "developer-tools",
+    "media",
+    "lang:jupyter notebook"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "131 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "36 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:47:05.124Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/nathanrooy/rpi-urban-mobility-tracker",
+        "description": "GitHub repository: nathanrooy/rpi-urban-mobility-tracker"
+      }
+    ],
+    "solutionApproach": "See usage section in README",
+    "language": "Jupyter Notebook"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "nathanrooy",
+        "type": "human",
+        "uri": "https://github.com/nathanrooy"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 203,
+      "validation_diversity": 0.16,
+      "context_breadth": 0.56,
+      "temporal_stability": 0.6,
+      "test_coverage": 0,
+      "documentation_quality": 0.75
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.21
+  }
+}

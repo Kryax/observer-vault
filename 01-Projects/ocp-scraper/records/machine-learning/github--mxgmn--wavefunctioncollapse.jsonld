@@ -1,0 +1,163 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/mxgmn--wavefunctioncollapse",
+  "meta": {
+    "title": "WaveFunctionCollapse",
+    "description": "Bitmap & tilemap generation from a single example with the help of ideas from quantum mechanics",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:24:04.760Z",
+    "dateModified": "2026-03-11T04:24:04.760Z",
+    "keywords": [
+      "algorithm",
+      "csharp",
+      "gamedev",
+      "machine-learning",
+      "procedural-generation",
+      "wfc"
+    ],
+    "license": "NOASSERTION"
+  },
+  "problemSolved": {
+    "statement": "This program generates bitmaps that are locally similar to the input bitmap.\n<p align=\"center\"><img alt=\"main collage\" src=\"images/wfc.png\"></p>\n<p align=\"center\"><img alt=\"main gif\" src=\"images/wfc.gif\"></p>",
+    "context": "This program generates bitmaps that are locally similar to the input bitmap.\n<p align=\"center\"><img alt=\"main collage\" src=\"images/wfc.png\"></p>\n<p align=\"center\"><img alt=\"main gif\" src=\"images/wfc.gif\"></p>\n\nLocal similarity means that\n\n* (C1) The output should contain only those NxN patterns of pixels that are present in the input.\n* (Weak C2) Distribution of NxN patterns in the input should be similar to the distribution of NxN patterns over a sufficiently large number of outputs. In other words, probability to meet a particular pattern in the output should be close to the density of such patterns in the input.\n\nIn the examples a typical value of N is 3.\n<p align=\"center\"><img alt=\"local similarity\" src=\"images/patterns.png\"></p>\n\nWFC initializes output bitmap in a completely unobserved state, where each pixel value is in superposition of colors of the input bitmap (so if the input was black & white then the unobserved states are shown in different shades of grey). The coefficients in these superpositions are real numbers, not complex numbers, so it doesn't do the actual quantum mechanics, but it was inspired by QM. Then the program goes into the observation-propagation cycle:\n\n* On each observation step an NxN region is chosen among the unobserved which has the lowest Shannon entropy. This region's state then collapses into a definite state according to its coefficients and the distribution of NxN patterns in the input.\n* On each propagation step new information gained from the collapse on the previous step propagates through the output.\n\nOn each step the number of non-zero coefficients decreases and in the end we have a completely observed state, the wave function has collapsed.\n\nIt may happen that during propagation all the coefficients for a certain pixel become zero. That means that the algorithm has run into a contradiction and can not continue. The problem of determining whether a certain bitmap allows other nontrivial bitmaps satisfying condition (C1) is NP-hard, so it's impossible to create a fast solution that always finishes. In practice, however, the algorithm runs into contradictions surprisingly rarely.\n\nWave Function Collapse algorithm has been implemented in\n[C++](https://github.com/math-fehr/fast-wfc),\n[Python](https://github.com/ikarth/wfc_2019f),\n[Kotlin](https://github.com/j-roskopf/WFC),\n[Rust](https://github.com/Elwqnn/wfc),\n[Julia](https://github.com/roberthoenig/WaveFunctionCollapse.jl),\n[Go](https://github.com/shawnridgeway/wfc),\n[Haxe](https://github.com/Mitim-84/WFC-Gen),\n[Java](https://github.com/sjcasey21/wavefunctioncollapse),\n[Clojure](https://github.com/sjcasey21/wavefunctioncollapse-clj),\n[Free Pascal](https://github.com/PascalCorpsman/mini_projects/tree/main/miniprojects/Wave_function_collapse/Overlap_model),\n[Dart](https://github.com/rick-dalley/wfc),\n[p5js](https://github.com/D-T-666/wave-function-collapse-p5),\n[JavaScript](https://github.com/kchapelier/wavefunctioncollapse)\nand adapted to [Unity](https://selfsame.itch.io/unitywfc),\n[Unreal Engine 5](https://docs.unrealengine.com/5.0/en-US/BlueprintAPI/WaveFunctionCollapse/)\nand [Houdini](https://www.sidefx.com/tutorials/wfc-dungeon-generator/).\nYou can [build WFC from source](https://github.com/mxgmn/WaveFunctionCollapse#how-to-build),\ndownload an official [release](https://github.com/mxgmn/WaveFunctionCollapse/releases) for Windows,\ndownload an interactive graphical version from [itch.io](https://exutumno.itch.io/wavefunctioncollapse)\nor [run it in the browser](http://www.kchapelier.com/wfc-example/overlapping-model.html).\nWFC generates levels in [Bad North](https://www.badnorth.com/),\n[Caves of Qud](https://store.steampowered.com/app/333640/Caves_of_Qud/),\n[Dead Static Drive](https://twitter.com/deadstaticdrive),\n[Townscaper](https://store.steampowered.com/app/1291340/Townscaper/),\n[Matrix Awakens](https://www.youtube.com/watch?v=usJrcwN6T4I),\n[several](https://arcadia-clojure.itch.io/proc-skater-2016)\n[smaller](https://arcadia-clojure.itch.io/swapland)\n[games](https://marian42.itch.io/wfc) and many prototypes.\nIt led to [new](https://escholarship.org/uc/item/3rm1w0mn)\n[research](https://hal.inria.fr/hal-01706539v3/document).\nFor [more](https://twitter.com/OskSta/status/784847588893814785)\n[related](https://twitter.com/dwtw/status/810166761270243328)\n[work](https://github.com/mewo2/oisin),\n[explanations](https://trasevol.dog/2017/09/01/di19/),\n[interactive demos](http://oskarstalberg.com/game/wave/wave.html),\n[guides](https://www.dropbox.com/s/zeiat1w8zre9ro8/Knots%20breakdown.png?dl=0),\n[tutorials](http://www.procjam.com/tutorials/wfc/)\nand [examples](https://twitter.com/ExUtumno/status/895684431477747715)\nsee the [ports, forks and spinoffs section](https://github.com/mxgmn/WaveFunctionCollapse#notable-ports-forks-and-spinoffs).\n\nWatch a video demonstration of WFC algorithm on YouTube: [https://youtu.be/DOQTr2Xmlz0](https://youtu.be/DOQTr2Xmlz0)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "game-development",
+    "lang:c#"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "24755 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "1321 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:24:04.760Z"
+  },
+  "implementation": {
+    "type": "algorithm",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/mxgmn/WaveFunctionCollapse",
+        "description": "GitHub repository: mxgmn/WaveFunctionCollapse"
+      }
+    ],
+    "language": "C#"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "mxgmn",
+        "type": "human",
+        "uri": "https://github.com/mxgmn"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 27397,
+      "validation_diversity": 0.43,
+      "context_breadth": 0.54,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.5
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.627
+  }
+}

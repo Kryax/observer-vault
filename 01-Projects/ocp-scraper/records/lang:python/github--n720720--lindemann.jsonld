@@ -1,0 +1,233 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/n720720--lindemann",
+  "meta": {
+    "title": "lindemann",
+    "description": "lindemann is a python package to calculate the Lindemann index of a lammps trajectory ",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:20:06.921Z",
+    "dateModified": "2026-03-11T04:20:06.921Z",
+    "keywords": [
+      "analysis",
+      "cheminformatics",
+      "chemistry",
+      "chemoinformatics",
+      "gromacs",
+      "lammps",
+      "lammps-trajectory",
+      "lindemann",
+      "lindemann-index",
+      "md-simulation",
+      "molecular-dynamics",
+      "ovito",
+      "phase-transition",
+      "phase-transitions",
+      "simulation",
+      "temperature-ramps",
+      "transition-phase"
+    ],
+    "license": "GPL-3.0"
+  },
+  "problemSolved": {
+    "statement": "lindemann — problem statement could not be extracted from README",
+    "context": "<div align=\"center\">\n\n[![Build status](https://github.com/N720720/lindemann/workflows/build/badge.svg?branch=master&event=push)](https://github.com/N720720/lindemann/actions?query=workflow%3Abuild)\n[![Python Version](https://img.shields.io/pypi/pyversions/lindemann.svg)](https://pypi.org/project/lindemann/)\n[![Dependencies Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)](https://github.com/N720720/lindemann/pulls?utf8=%E2%9C%93&q=is%3Apr%20author%3Aapp%2Fdependabot)\n\n[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)\n[![Security: bandit](https://img.shields.io/badge/security-bandit-green.svg)](https://github.com/PyCQA/bandit)  \n[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/N720720/lindemann/blob/master/.pre-commit-config.yaml)\n[![Semantic Versions](https://img.shields.io/badge/%F0%9F%9A%80-semantic%20versions-informational.svg)](https://github.com/N720720/lindemann/releases)\n[![License](https://img.shields.io/pypi/l/lindemann)](https://pypi/l/lindemann/)\n\n![](images/459_Atoms_brass.gif)\n\nlindemann is a Python package to calculate the Lindemann index of Molecular Dynamics simulation trajectorys, as well as the progression of the Lindemann index per frame or per atom and frame of temperature ramps for phase transition analysis.\n</div>",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "24 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "5 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:20:06.921Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/N720720/lindemann",
+        "description": "GitHub repository: N720720/lindemann"
+      }
+    ],
+    "solutionApproach": "See usage section in README",
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "psutil",
+        "version": "^5.9.8",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/psutil/"
+      },
+      {
+        "name": "intel-cmplr-lib-rt",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/intel-cmplr-lib-rt/"
+      },
+      {
+        "name": "pathlib",
+        "version": "^1.0.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pathlib/"
+      },
+      {
+        "name": "numpy",
+        "version": "^1.26.4",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numpy/"
+      },
+      {
+        "name": "numba",
+        "version": "^0.59.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numba/"
+      },
+      {
+        "name": "matplotlib",
+        "version": "^3.9.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/matplotlib/"
+      },
+      {
+        "name": "ovito",
+        "version": "^3.10.6",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/ovito/"
+      },
+      {
+        "name": "rich",
+        "version": "^13.7.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/rich/"
+      },
+      {
+        "name": "typer",
+        "version": "^0.12.3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/typer/"
+      },
+      {
+        "name": "importlib-metadata",
+        "version": "^7.1.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/importlib-metadata/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "N720720",
+        "type": "human",
+        "uri": "https://github.com/N720720"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 34,
+      "validation_diversity": 0.2,
+      "context_breadth": 0.47,
+      "temporal_stability": 0.54,
+      "test_coverage": 0,
+      "documentation_quality": 0.8
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.195
+  }
+}

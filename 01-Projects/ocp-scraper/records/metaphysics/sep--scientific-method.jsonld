@@ -1,0 +1,897 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/scientific-method",
+  "meta": {
+    "title": "Scientific Method",
+    "description": "Science is an enormously successful human enterprise. The study of scientific method is the attempt to discern the activities by which that success is achieved. Among the activities often identified as characteristic of science are systematic observation and experimentation, inductive and deductive reasoning, and the formation and testing of hypotheses and theories. How these are carried out in detail can vary greatly, but characteristics like these have been looked to as a way of demarcating scientific activity from non-science, where only enterprises which employ some canonical form of scientific method or methods should be considered science (see also the entry on science and pseudo-science ). Others have questioned whether there is anything like a fixed toolkit of methods which is common across science and only science. Some reject privileging one view of method as part of rejecting broader views about the nature of science, such as naturalism (Dupr&eacute; 2004); some reject any restriction in principle (pluralism). Scientific method should be distinguished from the aims and products of science, such as knowledge, predictions, or control. Methods are the means by which those goals are achieved. Scientific method should also be distinguished from meta-methodology, which includes the values and justifications behind a particular characterization of scientific method (i.e., a methodology) -- values such as objectivity, reproducibility, simplicity, or past successes. Methodological rules are proposed to govern method and it is a meta-methodological question whether methods obeying those rules satisfy given values. Finally, method is distinct, to some degree, from the detailed and contextual practices through which methods are implemented. The latter might range over: specific laboratory techniques; mathematical formalisms or other specialized languages used in descriptions and reasoning; technological or other material means; ways of communicating and sharing results, whether with other scientists or with the public at large; or the conventions, habits, enforced customs, and institutional controls over how and what science is carried out. While it is important to recognize these distinctions, their boundaries are fuzzy. Hence, accounts of method cannot be entirely divorced from their methodological and meta-methodological motivations or justifications, Moreover, each aspect plays a crucial role in identifying methods. Disputes about method have therefore played out at the detail, rule, and meta-rule levels. Changes in beliefs about the certainty or fallibility of scientific knowledge, for instance (which is a meta-methodological consideration of what we can hope for methods to deliver), have meant different emphases on deductive and inductive reasoning, or on the relative importance attached to reasoning over observation (i.e., differences over particular methods.) Beliefs about the role of science in society will affect the place one gives to values in scientific method. The issue which has shaped debates over scientific method the most in the last half century is the question of how pluralist do we need to be about method? Unificationists continue to hold out for one method essential to science; nihilism is a form of radical pluralism, which considers the effectiveness of any methodological prescription to be so context sensitive as to render it not explanatory on its own. Some middle degree of pluralism regarding the methods embodied in scientific practice seems appropriate. But the details of scientific practice vary with time and place, from institution to institution, across scientists and their subjects of investigation. How significant are the variations for understanding science and its success? How much can method be abstracted from practice? This entry describes some of the attempts to characterize scientific method or methods, as well as arguments for a more context-sensitive approach to methods embedded in actual scientific practices.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T04:14:25.556Z",
+    "dateModified": "2026-03-22T04:14:25.556Z",
+    "datePublished": "2015-11-12T13:00:00.000Z",
+    "keywords": [
+      "al kindi",
+      "albert great",
+      "aquinas",
+      "arabic islamic greek",
+      "arabic islamic influence",
+      "arabic islamic natural",
+      "aristotle",
+      "berkeley",
+      "biology experiment",
+      "boyle",
+      "cambridge platonists",
+      "confirmation",
+      "descartes",
+      "enlightenment",
+      "epistemology",
+      "epistemology bayesian",
+      "epistemology social",
+      "feyerabend",
+      "francis bacon",
+      "galileo",
+      "grosseteste",
+      "hempel",
+      "henry more",
+      "hume",
+      "hume newton",
+      "induction problem",
+      "kant",
+      "leibniz",
+      "locke",
+      "mill",
+      "neurath",
+      "newton",
+      "newton philosophy",
+      "ockham",
+      "operationalism",
+      "peirce",
+      "plato",
+      "popper",
+      "pseudo science",
+      "rationality historicist",
+      "reichenbach",
+      "roger bacon",
+      "schlick",
+      "science theory observation",
+      "scientific discovery",
+      "scientific knowledge social",
+      "scientific reproducibility",
+      "scientific unity",
+      "simulations science",
+      "skepticism medieval",
+      "spacetime theories",
+      "thomas kuhn",
+      "vienna circle",
+      "whewell",
+      "zabarella"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Science is an enormously successful human enterprise. The study of scientific method is the attempt to discern the activities by which that success is achieved. Among the activities often identified as characteristic of science are systematic observation and experimentation, inductive and deductive reasoning, and the formation and testing of hypotheses and theories. How these are carried out in detail can vary greatly, but characteristics like these have been looked to as a way of demarcating scientific activity from non-science, where only enterprises which employ some canonical form of scientific method or methods should be considered science (see also the entry on science and pseudo-science ). Others have questioned whether there is anything like a fixed toolkit of methods which is common across science and only science. Some reject privileging one view of method as part of rejecting broader views about the nature of science, such as naturalism (Dupr&eacute; 2004); some reject any restriction in principle (pluralism). Scientific method should be distinguished from the aims and products of science, such as knowledge, predictions, or control. Methods are the means by which those goals are achieved. Scientific method should also be distinguished from meta-methodology, which includes the values and justifications behind a particular characterization of scientific method (i.e., a methodology) -- values such as objectivity, reproducibility, simplicity, or past successes. Methodological rules are proposed to govern method and it is a meta-methodological question whether methods obeying those rules satisfy given values. Finally, method is distinct, to some degree, from the detailed and contextual practices through which methods are implemented. The latter might range over: specific laboratory techniques; mathematical formalisms or other specialized languages used in descriptions and reasoning; technological or other material means; ways of communicating and sharing results, whether with other scientists or with the public at large; or the conventions, habits, enforced customs, and institutional controls over how and what science is carried out. While it is important to recognize these distinctions, their boundaries are fuzzy. Hence, accounts of method cannot be entirely divorced from their methodological and meta-methodological motivations or justifications, Moreover, each aspect plays a crucial role in identifying methods. Disputes about method have therefore played out at the detail, rule, and meta-rule levels. Changes in beliefs about the certainty or fallibility of scientific knowledge, for instance (which is a meta-methodological consideration of what we can hope for methods to deliver), have meant different emphases on deductive and inductive reasoning, or on the relative importance attached to reasoning over observation (i.e., differences over particular methods.) Beliefs about the role of science in society will affect the place one gives to values in scientific method. The issue which has shaped debates over scientific method the most in the last half century is the question of how pluralist do we need to be about method? Unificationists continue to hold out for one method essential to science; nihilism is a form of radical pluralism, which considers the effectiveness of any methodological prescription to be so context sensitive as to render it not explanatory on its own. Some middle degree of pluralism regarding the methods embodied in scientific practice seems appropriate. But the details of scientific practice vary with time and place, from institution to institution, across scientists and their subjects of investigation. How significant are the variations for understanding science and its success? How much can method be abstracted from practice? This entry describes some of the attempts to characterize scientific method or methods, as well as arguments for a more context-sensitive approach to methods embedded in actual scientific practices.",
+    "context": "Opening section: 1. Overview and organizing themes | Related entries: al-kindi, albert-great, aquinas, arabic-islamic-natural, arabic-islamic-greek, arabic-islamic-influence, aristotle, francis-bacon, roger-bacon, berkeley, biology-experiment, boyle, cambridge-platonists, confirmation, descartes, enlightenment, epistemology, epistemology-bayesian, epistemology-social, feyerabend, galileo, grosseteste, hempel, hume, hume-newton, induction-problem, kant, thomas-kuhn, leibniz, locke, mill, henry-more, neurath, newton, newton-philosophy, ockham, operationalism, peirce, plato, popper, rationality-historicist, reichenbach, scientific-reproducibility, schlick, pseudo-science, science-theory-observation, scientific-unity, scientific-discovery, scientific-knowledge-social, simulations-science, skepticism-medieval, spacetime-theories, vienna-circle, whewell, zabarella",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "metaphysics",
+    "epistemology",
+    "history-of-philosophy",
+    "philosophy-of-science",
+    "general-philosophy"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry scientific-method",
+        "uri": "https://plato.stanford.edu/entries/scientific-method/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "2 author(s), 55 related entries, bibliography size 123"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2015-11-12T13:00:00.000Z and revised 2021-05-31T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2021-05-31T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/scientific-method/",
+        "description": "SEP entry for scientific-method"
+      }
+    ],
+    "solutionApproach": "1. Overview and organizing themes"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/al-kindi",
+      "ocp:sep/albert-great",
+      "ocp:sep/aquinas",
+      "ocp:sep/arabic-islamic-natural",
+      "ocp:sep/arabic-islamic-greek",
+      "ocp:sep/arabic-islamic-influence",
+      "ocp:sep/aristotle",
+      "ocp:sep/francis-bacon",
+      "ocp:sep/roger-bacon",
+      "ocp:sep/berkeley",
+      "ocp:sep/biology-experiment",
+      "ocp:sep/boyle",
+      "ocp:sep/cambridge-platonists",
+      "ocp:sep/confirmation",
+      "ocp:sep/descartes",
+      "ocp:sep/enlightenment",
+      "ocp:sep/epistemology",
+      "ocp:sep/epistemology-bayesian",
+      "ocp:sep/epistemology-social",
+      "ocp:sep/feyerabend",
+      "ocp:sep/galileo",
+      "ocp:sep/grosseteste",
+      "ocp:sep/hempel",
+      "ocp:sep/hume",
+      "ocp:sep/hume-newton",
+      "ocp:sep/induction-problem",
+      "ocp:sep/kant",
+      "ocp:sep/thomas-kuhn",
+      "ocp:sep/leibniz",
+      "ocp:sep/locke",
+      "ocp:sep/mill",
+      "ocp:sep/henry-more",
+      "ocp:sep/neurath",
+      "ocp:sep/newton",
+      "ocp:sep/newton-philosophy",
+      "ocp:sep/ockham",
+      "ocp:sep/operationalism",
+      "ocp:sep/peirce",
+      "ocp:sep/plato",
+      "ocp:sep/popper",
+      "ocp:sep/rationality-historicist",
+      "ocp:sep/reichenbach",
+      "ocp:sep/scientific-reproducibility",
+      "ocp:sep/schlick",
+      "ocp:sep/pseudo-science",
+      "ocp:sep/science-theory-observation",
+      "ocp:sep/scientific-unity",
+      "ocp:sep/scientific-discovery",
+      "ocp:sep/scientific-knowledge-social",
+      "ocp:sep/simulations-science",
+      "ocp:sep/skepticism-medieval",
+      "ocp:sep/spacetime-theories",
+      "ocp:sep/vienna-circle",
+      "ocp:sep/whewell",
+      "ocp:sep/zabarella"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Hepburn, Brian",
+        "type": "human"
+      },
+      {
+        "name": "Andersen, Hanne",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/scientific-method/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 141,
+      "validation_diversity": 0.63,
+      "context_breadth": 0.57,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.94
+    },
+    "confidence": "proven",
+    "authority": "high",
+    "status": "draft",
+    "trustScore": 0.658
+  },
+  "extensions": {
+    "sep": {
+      "slug": "scientific-method",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/scientific-method/",
+      "preamble": "Science is an enormously successful human enterprise. The study of scientific method is the attempt to discern the activities by which that success is achieved. Among the activities often identified as characteristic of science are systematic observation and experimentation, inductive and deductive reasoning, and the formation and testing of hypotheses and theories. How these are carried out in detail can vary greatly, but characteristics like these have been looked to as a way of demarcating scientific activity from non-science, where only enterprises which employ some canonical form of scientific method or methods should be considered science (see also the entry on science and pseudo-science ). Others have questioned whether there is anything like a fixed toolkit of methods which is common across science and only science. Some reject privileging one view of method as part of rejecting broader views about the nature of science, such as naturalism (Dupr&eacute; 2004); some reject any restriction in principle (pluralism). Scientific method should be distinguished from the aims and products of science, such as knowledge, predictions, or control. Methods are the means by which those goals are achieved. Scientific method should also be distinguished from meta-methodology, which includes the values and justifications behind a particular characterization of scientific method (i.e., a methodology) -- values such as objectivity, reproducibility, simplicity, or past successes. Methodological rules are proposed to govern method and it is a meta-methodological question whether methods obeying those rules satisfy given values. Finally, method is distinct, to some degree, from the detailed and contextual practices through which methods are implemented. The latter might range over: specific laboratory techniques; mathematical formalisms or other specialized languages used in descriptions and reasoning; technological or other material means; ways of communicating and sharing results, whether with other scientists or with the public at large; or the conventions, habits, enforced customs, and institutional controls over how and what science is carried out. While it is important to recognize these distinctions, their boundaries are fuzzy. Hence, accounts of method cannot be entirely divorced from their methodological and meta-methodological motivations or justifications, Moreover, each aspect plays a crucial role in identifying methods. Disputes about method have therefore played out at the detail, rule, and meta-rule levels. Changes in beliefs about the certainty or fallibility of scientific knowledge, for instance (which is a meta-methodological consideration of what we can hope for methods to deliver), have meant different emphases on deductive and inductive reasoning, or on the relative importance attached to reasoning over observation (i.e., differences over particular methods.) Beliefs about the role of science in society will affect the place one gives to values in scientific method. The issue which has shaped debates over scientific method the most in the last half century is the question of how pluralist do we need to be about method? Unificationists continue to hold out for one method essential to science; nihilism is a form of radical pluralism, which considers the effectiveness of any methodological prescription to be so context sensitive as to render it not explanatory on its own. Some middle degree of pluralism regarding the methods embodied in scientific practice seems appropriate. But the details of scientific practice vary with time and place, from institution to institution, across scientists and their subjects of investigation. How significant are the variations for understanding science and its success? How much can method be abstracted from practice? This entry describes some of the attempts to characterize scientific method or methods, as well as arguments for a more context-sensitive approach to methods embedded in actual scientific practices.",
+      "firstSectionTitle": "1. Overview and organizing themes",
+      "firstSectionText": "This entry could have been given the title Scientific Methods and gone on to fill volumes, or it could have been extremely short, consisting of a brief summary rejection of the idea that there is any such thing as a unique Scientific Method at all. Both unhappy prospects are due to the fact that scientific activity varies so much across disciplines, times, places, and scientists that any account which manages to unify it all will either consist of overwhelming descriptive detail, or trivial generalizations. The choice of scope for the present entry is more optimistic, taking a cue from the recent movement in philosophy of science toward a greater attention to practice: to what scientists actually do. This \"turn to practice\" can be seen as the latest form of studies of methods in science, insofar as it represents an attempt at understanding scientific activity, but through accounts that are neither meant to be universal and unified, nor singular and narrowly descriptive. To some extent, different scientists at different times and places can be said to be using the same method even though, in practice, the details are different. Whether the context in which methods are carried out is relevant, or to what extent, will depend largely on what one takes the aims of science to be and what one's own aims are. For most of the history of scientific methodology the assumption has been that the most important output of science is knowledge and so the aim of methodology should be to discover those methods by which scientific knowledge is generated. Science was seen to embody the most successful form of reasoning (but which form?) to the most certain knowledge claims (but how certain?) on the basis of systematically collected evidence (but what counts as evidence, and should the evidence of the senses take precedence, or rational insight?) Section 2 surveys some of the history, pointing to two major themes. One theme is seeking the right balance between observation and reasoning (and the attendant forms of reasoning which employ them); the other is how certain scientific knowledge is or can be. Section 3 turns to 20 century debates on scientific method. In the second half of the 20 century the epistemic privilege of science faced several challenges and many philosophers of science abandoned the reconstruction of the logic of scientific method. Views changed significantly regarding which functions of science ought to be captured and why. For some, the success of science was better identified with social or cultural features. Historical and sociological turns in the philosophy of science were made, with a demand that greater attention be paid to the non-epistemic aspects of science, such as sociological, institutional, material, and political factors. Even outside of those movements there was an increased specialization in the philosophy of science, with more and more focus on specific fields within science. The combined upshot was very few philosophers arguing any longer for a grand unified methodology of science. Sections 3 and 4 surveys the main positions on scientific method in 20 century philosophy of science, focusing on where they differ in their preference for confirmation or falsification or for waiving the idea of a special scientific method altogether. In recent decades, attention has primarily been paid to scientific activities traditionally falling under the rubric of method, such as experimental design and general laboratory practice, the use of statistics, the construction and use of models and diagrams, interdisciplinary collaboration, and science communication. Sections 4-6 attempt to construct a map of the current domains of the study of methods in science. As these sections illustrate, the question of method is still central to the discourse about science. Scientific method remains a topic for education, for science policy, and for scientists. It arises in the public domain where the demarcation or status of science is at issue. Some philosophers have recently returned, therefore, to the question of what it is that makes science a unique cultural product. This entry will close with some of these recent attempts at discerning and encapsulating the activities by which scientific knowledge is achieved.",
+      "relatedEntries": [
+        "al-kindi",
+        "albert-great",
+        "aquinas",
+        "arabic-islamic-natural",
+        "arabic-islamic-greek",
+        "arabic-islamic-influence",
+        "aristotle",
+        "francis-bacon",
+        "roger-bacon",
+        "berkeley",
+        "biology-experiment",
+        "boyle",
+        "cambridge-platonists",
+        "confirmation",
+        "descartes",
+        "enlightenment",
+        "epistemology",
+        "epistemology-bayesian",
+        "epistemology-social",
+        "feyerabend",
+        "galileo",
+        "grosseteste",
+        "hempel",
+        "hume",
+        "hume-newton",
+        "induction-problem",
+        "kant",
+        "thomas-kuhn",
+        "leibniz",
+        "locke",
+        "mill",
+        "henry-more",
+        "neurath",
+        "newton",
+        "newton-philosophy",
+        "ockham",
+        "operationalism",
+        "peirce",
+        "plato",
+        "popper",
+        "rationality-historicist",
+        "reichenbach",
+        "scientific-reproducibility",
+        "schlick",
+        "pseudo-science",
+        "science-theory-observation",
+        "scientific-unity",
+        "scientific-discovery",
+        "scientific-knowledge-social",
+        "simulations-science",
+        "skepticism-medieval",
+        "spacetime-theories",
+        "vienna-circle",
+        "whewell",
+        "zabarella"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "al-kindi"
+        },
+        {
+          "slug": "albert-great"
+        },
+        {
+          "slug": "aquinas"
+        },
+        {
+          "slug": "arabic-islamic-natural"
+        },
+        {
+          "slug": "arabic-islamic-greek"
+        },
+        {
+          "slug": "arabic-islamic-influence"
+        },
+        {
+          "slug": "aristotle"
+        },
+        {
+          "slug": "francis-bacon"
+        },
+        {
+          "slug": "roger-bacon"
+        },
+        {
+          "slug": "berkeley"
+        },
+        {
+          "slug": "biology-experiment"
+        },
+        {
+          "slug": "boyle"
+        },
+        {
+          "slug": "cambridge-platonists"
+        },
+        {
+          "slug": "confirmation"
+        },
+        {
+          "slug": "descartes"
+        },
+        {
+          "slug": "enlightenment"
+        },
+        {
+          "slug": "epistemology"
+        },
+        {
+          "slug": "epistemology-bayesian"
+        },
+        {
+          "slug": "epistemology-social"
+        },
+        {
+          "slug": "feyerabend"
+        },
+        {
+          "slug": "galileo"
+        },
+        {
+          "slug": "grosseteste"
+        },
+        {
+          "slug": "hempel"
+        },
+        {
+          "slug": "hume"
+        },
+        {
+          "slug": "hume-newton"
+        },
+        {
+          "slug": "induction-problem"
+        },
+        {
+          "slug": "kant"
+        },
+        {
+          "slug": "thomas-kuhn"
+        },
+        {
+          "slug": "leibniz"
+        },
+        {
+          "slug": "locke"
+        },
+        {
+          "slug": "mill"
+        },
+        {
+          "slug": "henry-more"
+        },
+        {
+          "slug": "neurath"
+        },
+        {
+          "slug": "newton"
+        },
+        {
+          "slug": "newton-philosophy"
+        },
+        {
+          "slug": "ockham"
+        },
+        {
+          "slug": "operationalism"
+        },
+        {
+          "slug": "peirce"
+        },
+        {
+          "slug": "plato"
+        },
+        {
+          "slug": "popper"
+        },
+        {
+          "slug": "rationality-historicist"
+        },
+        {
+          "slug": "reichenbach"
+        },
+        {
+          "slug": "scientific-reproducibility"
+        },
+        {
+          "slug": "schlick"
+        },
+        {
+          "slug": "pseudo-science"
+        },
+        {
+          "slug": "science-theory-observation"
+        },
+        {
+          "slug": "scientific-unity"
+        },
+        {
+          "slug": "scientific-discovery"
+        },
+        {
+          "slug": "scientific-knowledge-social"
+        },
+        {
+          "slug": "simulations-science"
+        },
+        {
+          "slug": "skepticism-medieval"
+        },
+        {
+          "slug": "spacetime-theories"
+        },
+        {
+          "slug": "vienna-circle"
+        },
+        {
+          "slug": "whewell"
+        },
+        {
+          "slug": "zabarella"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 123,
+      "bibliography": [
+        {
+          "raw": "Aikenhead, G.S., 1987, \"High-school graduates' beliefs about science-technology-society. III. Characteristics and limitations of scientific knowledge\", Science Education , 71(4): 459-487."
+        },
+        {
+          "raw": "Allchin, D., H.M. Andersen and K. Nielsen, 2014, \"Complementary Approaches to Teaching Nature of Science: Integrating Student Inquiry, Historical Cases, and Contemporary Cases in Classroom Practice\", Science Education , 98: 461-486."
+        },
+        {
+          "raw": "Anderson, C., 2008, \"The end of theory: The data deluge makes the scientific method obsolete\", Wired magazine , 16(7): 16-07"
+        },
+        {
+          "raw": "Arabatzis, T., 2006, \"On the inextricability of the context of discovery and the context of justification\", in Revisiting Discovery and Justification , J. Schickore and F. Steinle (eds.), Dordrecht: Springer, pp. 215-230."
+        },
+        {
+          "raw": "Barnes, J. (ed.), 1984, The Complete Works of Aristotle, Vols I and II , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Barnes, B. and D. Bloor, 1982, \"Relativism, Rationalism, and the Sociology of Knowledge\", in Rationality and Relativism , M. Hollis and S. Lukes (eds.), Cambridge: MIT Press, pp. 1-20."
+        },
+        {
+          "raw": "Bauer, H.H., 1992, Scientific Literacy and the Myth of the Scientific Method , Urbana: University of Illinois Press."
+        },
+        {
+          "raw": "Bechtel, W. and R.C. Richardson, 1993, Discovering complexity , Princeton, NJ: Princeton University Press."
+        },
+        {
+          "raw": "Berkeley, G., 1734, The Analyst in De Motu and The Analyst: A Modern Edition with Introductions and Commentary , D. Jesseph (trans. and ed.), Dordrecht: Kluwer Academic Publishers, 1992."
+        },
+        {
+          "raw": "Blachowicz, J., 2009, \"How science textbooks treat scientific method: A philosopher's perspective\", The British Journal for the Philosophy of Science , 60(2): 303-344."
+        },
+        {
+          "raw": "Bloor, D., 1991, Knowledge and Social Imagery , Chicago: University of Chicago Press, 2 edition."
+        },
+        {
+          "raw": "Boyle, R., 1682, New experiments physico-mechanical, touching the air , Printed by Miles Flesher for Richard Davis, bookseller in Oxford."
+        },
+        {
+          "raw": "Bridgman, P.W., 1927, The Logic of Modern Physics , New York: Macmillan."
+        },
+        {
+          "raw": "---, 1956, \"The Methodological Character of Theoretical Concepts\", in The Foundations of Science and the Concepts of Science and Psychology , Herbert Feigl and Michael Scriven (eds.), Minnesota: University of Minneapolis Press, pp. 38-76."
+        },
+        {
+          "raw": "Burian, R., 1997, \"Exploratory Experimentation and the Role of Histochemical Techniques in the Work of Jean Brachet, 1938-1952\", History and Philosophy of the Life Sciences , 19(1): 27-45."
+        },
+        {
+          "raw": "---, 2007, \"On microRNA and the need for exploratory experimentation in post-genomic molecular biology\", History and Philosophy of the Life Sciences , 29(3): 285-311."
+        },
+        {
+          "raw": "Carnap, R., 1928, Der logische Aufbau der Welt , Berlin: Bernary, transl. by R.A. George, The Logical Structure of the World , Berkeley: University of California Press, 1967."
+        },
+        {
+          "raw": "---, 1956, \"The methodological character of theoretical concepts\", Minnesota studies in the philosophy of science , 1: 38-76."
+        },
+        {
+          "raw": "Carrol, S., and D. Goodstein, 2009, \"Defining the scientific method\", Nature Methods , 6: 237."
+        },
+        {
+          "raw": "Churchman, C.W., 1948, \"Science, Pragmatics, Induction\", Philosophy of Science , 15(3): 249-268."
+        },
+        {
+          "raw": "Cooper, J. (ed.), 1997, Plato: Complete Works , Indianapolis: Hackett."
+        },
+        {
+          "raw": "Darden, L., 1991, Theory Change in Science: Strategies from Mendelian Genetics , Oxford: Oxford University Press"
+        },
+        {
+          "raw": "Dewey, J., 1910, How we think , New York: Dover Publications (reprinted 1997)."
+        },
+        {
+          "raw": "Douglas, H., 2009, Science, Policy, and the Value-Free Ideal , Pittsburgh: University of Pittsburgh Press."
+        },
+        {
+          "raw": "Dupr&eacute;, J., 2004, \"Miracle of Monism \", in Naturalism in Question , Mario De Caro and David Macarthur (eds.), Cambridge, MA: Harvard University Press, pp. 36-58."
+        },
+        {
+          "raw": "Elliott, K.C., 2007, \"Varieties of exploratory experimentation in nanotoxicology\", History and Philosophy of the Life Sciences , 29(3): 311-334."
+        },
+        {
+          "raw": "Elliott, K. C., and T. Richards (eds.), 2017, Exploring inductive risk: Case studies of values in science , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Falcon, Andrea, 2005, Aristotle and the science of nature: Unity without uniformity , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Feyerabend, P., 1978, Science in a Free Society , London: New Left Books"
+        },
+        {
+          "raw": "---, 1988, Against Method , London: Verso, 2 edition."
+        },
+        {
+          "raw": "Fisher, R.A., 1955, \"Statistical Methods and Scientific Induction\", Journal of The Royal Statistical Society. Series B (Methodological) , 17(1): 69-78."
+        },
+        {
+          "raw": "Foster, K. and P.W. Huber, 1999, Judging Science. Scientific Knowledge and the Federal Courts , Cambridge: MIT Press."
+        },
+        {
+          "raw": "Fox Keller, E., 2003, \"Models, Simulation, and 'computer experiments'\", in The Philosophy of Scientific Experimentation , H. Radder (ed.), Pittsburgh: Pittsburgh University Press, 198-215."
+        },
+        {
+          "raw": "Gilbert, G., 1976, \"The transformation of research findings into scientific knowledge\", Social Studies of Science , 6: 281-306."
+        },
+        {
+          "raw": "Gimbel, S., 2011, Exploring the Scientific Method , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Goodman, N., 1965, Fact , Fiction, and Forecast , Indianapolis: Bobbs-Merrill."
+        },
+        {
+          "raw": "Haack, S., 1995, \"Science is neither sacred nor a confidence trick\", Foundations of Science , 1(3): 323-335."
+        },
+        {
+          "raw": "---, 2003, Defending science--within reason , Amherst: Prometheus."
+        },
+        {
+          "raw": "---, 2005a, \"Disentangling Daubert: an epistemological study in theory and practice\", Journal of Philosophy, Science and Law , 5, Haack 2005a available online . doi:10.5840/jpsl2005513"
+        },
+        {
+          "raw": "---, 2005b, \"Trial and error: The Supreme Court's philosophy of science\", American Journal of Public Health , 95: S66-S73."
+        },
+        {
+          "raw": "---, 2010, \"Federal Philosophy of Science: A Deconstruction-and a Reconstruction\", NYUJL & Liberty , 5: 394."
+        },
+        {
+          "raw": "Hangel, N. and J. Schickore, 2017, \"Scientists' conceptions of good research practice\", Perspectives on Science , 25(6): 766-791"
+        },
+        {
+          "raw": "Harper, W.L., 2011, Isaac Newton's Scientific Method: Turning Data into Evidence about Gravity and Cosmology , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Hempel, C., 1950, \"Problems and Changes in the Empiricist Criterion of Meaning\", Revue Internationale de Philosophie , 41(11): 41-63."
+        },
+        {
+          "raw": "---, 1951, \"The Concept of Cognitive Significance: A Reconsideration\", Proceedings of the American Academy of Arts and Sciences , 80(1): 61-77."
+        },
+        {
+          "raw": "---, 1965, Aspects of scientific explanation and other essays in the philosophy of science , New York-London: Free Press."
+        },
+        {
+          "raw": "---, 1966, Philosophy of Natural Science , Englewood Cliffs: Prentice-Hall."
+        },
+        {
+          "raw": "Holmes, F.L., 1987, \"Scientific writing and scientific discovery\", Isis , 78(2): 220-235."
+        },
+        {
+          "raw": "Howard, D., 2003, \"Two left turns make a right: On the curious political career of North American philosophy of science at midcentury\", in Logical Empiricism in North America , G.L. Hardcastle & A.W. Richardson (eds.), Minneapolis: University of Minnesota Press, pp. 25-93."
+        },
+        {
+          "raw": "Hoyningen-Huene, P., 2008, \"Systematicity: The nature of science\", Philosophia , 36(2): 167-180."
+        },
+        {
+          "raw": "---, 2013, Systematicity. The Nature of Science , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Howie, D., 2002, Interpreting probability: Controversies and developments in the early twentieth century , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Hughes, R., 1999, \"The Ising Model, Computer Simulation, and Universal Physics\", in Models as Mediators , M. Morgan and M. Morrison (eds.), Cambridge: Cambridge University Press, pp. 97-145"
+        },
+        {
+          "raw": "Hume, D., 1739, A Treatise of Human Nature , D. Fate Norton and M.J. Norton (eds.), Oxford: Oxford University Press, 2000."
+        },
+        {
+          "raw": "Humphreys, P., 1995, \"Computational science and scientific method\", Minds and Machines , 5(1): 499-512."
+        },
+        {
+          "raw": "ICMJE, 2013, \"Recommendations for the Conduct, Reporting, Editing, and Publication of Scholarly Work in Medical Journals\", International Committee of Medical Journal Editors, available online , accessed August 13 2014"
+        },
+        {
+          "raw": "Jeffrey, R.C., 1956, \"Valuation and Acceptance of Scientific Hypotheses\", Philosophy of Science , 23(3): 237-246."
+        },
+        {
+          "raw": "Kaufmann, W.J., and L.L. Smarr, 1993, Supercomputing and the Transformation of Science , New York: Scientific American Library."
+        },
+        {
+          "raw": "Knorr-Cetina, K., 1981, The Manufacture of Knowledge , Oxford: Pergamon Press."
+        },
+        {
+          "raw": "Krohs, U., 2012, \"Convenience experimentation\", Studies in History and Philosophy of Biological and BiomedicalSciences , 43: 52-57."
+        },
+        {
+          "raw": "Kuhn, T.S., 1962, The Structure of Scientific Revolutions , Chicago: University of Chicago Press"
+        },
+        {
+          "raw": "Latour, B. and S. Woolgar, 1986, Laboratory Life: The Construction of Scientific Facts , Princeton: Princeton University Press, 2 edition."
+        },
+        {
+          "raw": "Laudan, L., 1968, \"Theories of scientific method from Plato to Mach\", History of Science , 7(1): 1-63."
+        },
+        {
+          "raw": "Lenhard, J., 2006, \"Models and statistical inference: The controversy between Fisher and Neyman-Pearson\", The British Journal for the Philosophy of Science , 57(1): 69-91."
+        },
+        {
+          "raw": "Leonelli, S., 2012, \"Making Sense of Data-Driven Research in the Biological and the Biomedical Sciences\", Studies in the History and Philosophy of the Biological and Biomedical Sciences , 43(1): 1-3."
+        },
+        {
+          "raw": "Levi, I., 1960, \"Must the scientist make value judgments?\", Philosophy of Science , 57(11): 345-357"
+        },
+        {
+          "raw": "Lindley, D., 1991, Theory Change in Science: Strategies from Mendelian Genetics , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Lipton, P., 2004, Inference to the Best Explanation , London: Routledge, 2 edition."
+        },
+        {
+          "raw": "Marks, H.M., 2000, The progress of experiment: science and therapeutic reform in the United States, 1900-1990 , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Mazzochi, F., 2015, \"Could Big Data be the end of theory in science?\", EMBO reports , 16: 1250-1255."
+        },
+        {
+          "raw": "Mayo, D.G., 1996, Error and the Growth of Experimental Knowledge , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "McComas, W.F., 1996, \"Ten myths of science: Reexamining what we think we know about the nature of science\", School Science and Mathematics , 96(1): 10-16."
+        },
+        {
+          "raw": "Medawar, P.B., 1963/1996, \"Is the scientific paper a fraud\", in The Strange Case of the Spotted Mouse and Other Classic Essays on Science , Oxford: Oxford University Press, 33-39."
+        },
+        {
+          "raw": "Mill, J.S., 1963, Collected Works of John Stuart Mill , J. M. Robson (ed.), Toronto: University of Toronto Press"
+        },
+        {
+          "raw": "NAS, 1992, Responsible Science: Ensuring the integrity of the research process , Washington DC: National Academy Press."
+        },
+        {
+          "raw": "Nersessian, N.J., 1987, \"A cognitive-historical approach to meaning in scientific theories\", in The process of science , N. Nersessian (ed.), Berlin: Springer, pp. 161-177."
+        },
+        {
+          "raw": "---, 2008, Creating Scientific Concepts , Cambridge: MIT Press."
+        },
+        {
+          "raw": "Newton, I., 1726, Philosophiae naturalis Principia Mathematica (3 edition), in The Principia: Mathematical Principles of Natural Philosophy: A New Translation , I.B. Cohen and A. Whitman (trans.), Berkeley: University of California Press, 1999."
+        },
+        {
+          "raw": "---, 1704, Opticks or A Treatise of the Reflections, Refractions, Inflections & Colors of Light , New York: Dover Publications, 1952."
+        },
+        {
+          "raw": "Neyman, J., 1956, \"Note on an Article by Sir Ronald Fisher\", Journal of the Royal Statistical Society. Series B (Methodological) , 18: 288-294."
+        },
+        {
+          "raw": "Nickles, T., 1987, \"Methodology, heuristics, and rationality\", in Rational changes in science: Essays on Scientific Reasoning , J.C. Pitt (ed.), Berlin: Springer, pp. 103-132."
+        },
+        {
+          "raw": "Nicod, J., 1924, Le probl&egrave;me logique de l'induction , Paris: Alcan. (Engl. transl. \"The Logical Problem of Induction\", in Foundations of Geometry and Induction , London: Routledge, 2000.)"
+        },
+        {
+          "raw": "Nola, R. and H. Sankey, 2000a, \"A selective survey of theories of scientific method\", in Nola and Sankey 2000b: 1-65."
+        },
+        {
+          "raw": "---, 2007, Theories of Scientific Method , Stocksfield: Acumen."
+        },
+        {
+          "raw": "Norton, S., and F. Suppe, 2001, \"Why atmospheric modeling is good science\", in Changing the Atmosphere: Expert Knowledge and Environmental Governance , C. Miller and P. Edwards (eds.), Cambridge, MA: MIT Press, 88-133."
+        },
+        {
+          "raw": "O'Malley, M., 2007, \"Exploratory experimentation and scientific practice: Metagenomics and the proteorhodopsin case\", History and Philosophy of the Life Sciences , 29(3): 337-360."
+        },
+        {
+          "raw": "O'Malley, M., C. Haufe, K. Elliot, and R. Burian, 2009, \"Philosophies of Funding\", Cell , 138: 611-615."
+        },
+        {
+          "raw": "Oreskes, N., K. Shrader-Frechette, and K. Belitz, 1994, \"Verification, Validation and Confirmation of Numerical Models in the Earth Sciences\", Science , 263(5147): 641-646."
+        },
+        {
+          "raw": "Osborne, J., S. Simon, and S. Collins, 2003, \"Attitudes towards science: a review of the literature and its implications\", International Journal of Science Education , 25(9): 1049-1079."
+        },
+        {
+          "raw": "Parascandola, M., 1998, \"Epidemiology--2 -Rate Science\", Public Health Reports , 113(4): 312-320."
+        },
+        {
+          "raw": "Parker, W., 2008a, \"Franklin, Holmes and the Epistemology of Computer Simulation\", International Studies in the Philosophy of Science , 22(2): 165-83."
+        },
+        {
+          "raw": "---, 2008b, \"Computer Simulation through an Error-Statistical Lens\", Synthese , 163(3): 371-84."
+        },
+        {
+          "raw": "Pearson, K. 1892, The Grammar of Science , London: J.M. Dents and Sons, 1951"
+        },
+        {
+          "raw": "Pearson, E.S., 1955, \"Statistical Concepts in Their Relation to Reality\", Journal of the Royal Statistical Society , B, 17: 204-207."
+        },
+        {
+          "raw": "Pickering, A., 1984, Constructing Quarks: A Sociological History of Particle Physics , Edinburgh: Edinburgh University Press."
+        },
+        {
+          "raw": "Popper, K.R., 1959, The Logic of Scientific Discovery , London: Routledge, 2002"
+        },
+        {
+          "raw": "---, 1963, Conjectures and Refutations , London: Routledge, 2002."
+        },
+        {
+          "raw": "---, 1985, Unended Quest: An Intellectual Autobiography , La Salle: Open Court Publishing Co.."
+        },
+        {
+          "raw": "Rudner, R., 1953, \"The Scientist Qua Scientist Making Value Judgments\", Philosophy of Science , 20(1): 1-6."
+        },
+        {
+          "raw": "Rudolph, J.L., 2005, \"Epistemology for the masses: The origin of 'The Scientific Method' in American Schools\", History of Education Quarterly , 45(3): 341-376"
+        },
+        {
+          "raw": "Schickore, J., 2008, \"Doing science, writing science\", Philosophy of Science , 75: 323-343."
+        },
+        {
+          "raw": "Schickore, J. and N. Hangel, 2019, \"'It might be this, it should be that&hellip;' uncertainty and doubt in day-to-day science practice\", European Journal for Philosophy of Science , 9(2): 31. doi:10.1007/s13194-019-0253-9"
+        },
+        {
+          "raw": "Shamoo, A.E. and D.B. Resnik, 2009, Responsible Conduct of Research , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Shank, J.B., 2008, The Newton Wars and the Beginning of the French Enlightenment , Chicago: The University of Chicago Press."
+        },
+        {
+          "raw": "Shapin, S. and S. Schaffer, 1985, Leviathan and the air-pump , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Smith, G.E., 2002, \"The Methodology of the Principia\", in The Cambridge Companion to Newton , I.B. Cohen and G.E. Smith (eds.), Cambridge: Cambridge University Press, 138-173."
+        },
+        {
+          "raw": "Snyder, L.J., 1997a, \"Discoverers' Induction\", Philosophy of Science , 64: 580-604."
+        },
+        {
+          "raw": "---, 1997b, \"The Mill-Whewell Debate: Much Ado About Induction\", Perspectives on Science , 5: 159-198."
+        },
+        {
+          "raw": "---, 1999, \"Renovating the Novum Organum: Bacon, Whewell and Induction\", Studies in History and Philosophy of Science , 30: 531-557."
+        },
+        {
+          "raw": "Sober, E., 2008, Evidence and Evolution. The logic behind the science , Cambridge: Cambridge University Press"
+        },
+        {
+          "raw": "Sprenger, J. and S. Hartmann, 2019, Bayesian philosophy of science , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Steinle, F., 1997, \"Entering New Fields: Exploratory Uses of Experimentation\", Philosophy of Science (Proceedings), 64: S65-S74."
+        },
+        {
+          "raw": "---, 2002, \"Experiments in History and Philosophy of Science\", Perspectives on Science , 10(4): 408-432."
+        },
+        {
+          "raw": "Strasser, B.J., 2012, \"Data-driven sciences: From wonder cabinets to electronic databases\", Studies in History and Philosophy of Science Part C: Studies in History and Philosophy of Biological and Biomedical Sciences , 43(1): 85-87."
+        },
+        {
+          "raw": "Succi, S. and P.V. Coveney, 2018, \"Big data: the end of the scientific method?\", Philosophical Transactions of the Royal Society A , 377: 20180145. doi:10.1098/rsta.2018.0145"
+        },
+        {
+          "raw": "Suppe, F., 1998, \"The Structure of a Scientific Paper\", Philosophy of Science , 65(3): 381-405."
+        },
+        {
+          "raw": "Swijtink, Z.G., 1987, \"The objectification of observation: Measurement and statistical methods in the nineteenth century\", in The probabilistic revolution. Ideas in History, Vol. 1 , L. Kruger (ed.), Cambridge MA: MIT Press, pp. 261-285."
+        },
+        {
+          "raw": "Waters, C.K., 2007, \"The nature and context of exploratory experimentation: An introduction to three case studies of exploratory research\", History and Philosophy of the Life Sciences , 29(3): 275-284."
+        },
+        {
+          "raw": "Weinberg, S., 1995, \"The methods of science&hellip; and those by which we live\", Academic Questions , 8(2): 7-13."
+        },
+        {
+          "raw": "Weissert, T., 1997, The Genesis of Simulation in Dynamics: Pursuing the Fermi-Pasta-Ulam Problem , New York: Springer Verlag."
+        },
+        {
+          "raw": "William H., 1628, Exercitatio Anatomica de Motu Cordis et Sanguinis in Animalibus , in On the Motion of the Heart and Blood in Animals , R. Willis (trans.), Buffalo: Prometheus Books, 1993."
+        },
+        {
+          "raw": "Winsberg, E., 2010, Science in the Age of Computer Simulation , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Wivagg, D. & D. Allchin, 2002, \"The Dogma of the Scientific Method\", The American Biology Teacher , 64(9): 645-646"
+        }
+      ],
+      "publishedAt": "2015-11-12T13:00:00.000Z",
+      "revisedAt": "2021-05-31T14:00:00.000Z"
+    }
+  }
+}

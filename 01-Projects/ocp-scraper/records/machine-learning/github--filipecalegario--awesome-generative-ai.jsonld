@@ -1,0 +1,172 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/filipecalegario--awesome-generative-ai",
+  "meta": {
+    "title": "Awesome Generative AI [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)[![Track Awesome List](https://www.trackawesomelist.com/badge.svg)](https://www.trackawesomelist.com/filipecalegario/awesome-generative-deep-art/) <!-- omit in toc -->",
+    "description": "A curated list of Generative AI tools, works, models, and references",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T02:59:39.336Z",
+    "dateModified": "2026-03-22T02:59:39.336Z",
+    "keywords": [
+      "ai-art",
+      "awesome",
+      "awesome-list",
+      "chatgpt",
+      "dall-e",
+      "dalle2",
+      "embeddings",
+      "generative-ai",
+      "gpt-4",
+      "llm",
+      "llm-agent",
+      "midjourney",
+      "openai",
+      "prompt-engineering",
+      "semantic-search",
+      "stable-diffusion",
+      "text-to-image",
+      "txt2img"
+    ],
+    "license": "CC0-1.0"
+  },
+  "problemSolved": {
+    "statement": "Welcome to our Awesome List of Generative AI resources! This repository is a curated collection of references in the dynamic field of Generative AI, equipped with various sources such as academic papers, technical articles, online courses, tutorials, and software.",
+    "context": "> A curated list of Generative AI projects, tools, artworks, and models\n\n- [Generative AI Area](#generative-ai-area)\n  - [Generative AI history, timelines, maps, and definitions](#generative-ai-history-timelines-maps-and-definitions)\n  - [Ethics, Philosophical questions and Discussions about Generative AI](#ethics-philosophical-questions-and-discussions-about-generative-ai)\n  - [Critical Views about Generative AI](#critical-views-about-generative-ai)\n  - [Generative AI Processes and Artifacts](#generative-ai-processes-and-artifacts)\n  - [Generative AI Tools Directories](#generative-ai-tools-directories)\n  - [Courses and Educational Materials](#courses-and-educational-materials)\n  - [Human-AI Interaction](#human-ai-interaction)\n  - [Papers Collection](#papers-collection)\n  - [Online Tools and Applications](#online-tools-and-applications)\n- [Code and Programming](#code-and-programming)\n  - [Vibe Coding](#vibe-coding)\n  - [AI-Powered Code Generation](#ai-powered-code-generation)\n- [Text](#text)\n  - [Everything to Markdown to LLMs](#everything-to-markdown-to-llms)\n  - [Small Language Models](#small-language-models)\n  - [Large Language Models (LLMs)](#large-language-models-llms)\n    - [Model Context Protocol](#model-context-protocol)\n    - [Programming Frameworks for LLMs](#programming-frameworks-for-llms)\n    - [Prompt Engineering](#prompt-engineering)\n      - [Prompt Optimizers](#prompt-optimizers)\n      - [Prompt Engineering for Text-to-text](#prompt-engineering-for-text-to-text)\n      - [Prompt Engineering for Text-to-image](#prompt-engineering-for-text-to-image)\n    - [Mamba](#mamba)\n    - [Running LLMs Locally](#running-llms-locally)\n    - [Function Calling](#function-calling)\n    - [GPTs and Assistant API](#gpts-and-assistant-api)\n    - [Retrieval-Augmented Generation (RAG)](#retrieval-augmented-generation-rag)\n    - [Embeddings and Semantic Search](#embeddings-and-semantic-search)\n    - [Autonomous LLM Agents](#autonomous-llm-agents)\n      - [Multi-agents](#multi-agents)\n    - [LLM Evaluation](#llm-evaluation)\n    - [LLMOps](#llmops)\n    - [AI Engineering](#ai-engineering)\n    - [Attacks on LLMs](#attacks-on-llms)\n    - [LangChain](#langchain)\n    - [ChatGPT](#chatgpt)\n    - [Text-related Generative Tools](#text-related-generative-tools)\n  - [Research AI Tools](#research-ai-tools)\n    - [AI Tools for Research](#ai-tools-for-research)\n    - [AI Tools for Searching](#ai-tools-for-searching)\n- [Image](#image)\n  - [Image Synthesis](#image-synthesis)\n    - [Inbox: Stable Diffusion](#inbox-stable-diffusion)\n      - [Stable Diffusion Deployed Web Tools](#stable-diffusion-deployed-web-tools)\n      - [Web UI for Stable Diffusion via Google Colab](#web-ui-for-stable-diffusion-via-google-colab)\n      - [References Collection about Stable Diffusion](#references-collection-about-stable-diffusion)\n    - [Hypertechniques](#hypertechniques)\n      - [ControlNet](#controlnet)\n      - [Textual Inversion](#textual-inversion)\n      - [DreamBooth](#dreambooth)\n      - [Deforum](#deforum)\n    - [Creative Uses of Generative AI Image Synthesis Tools](#creative-uses-of-generative-ai-image-synthesis-tools)\n  - [Image Upscaling](#image-upscaling)\n  - [Image Restoration](#image-restoration)\n  - [Image Segmentation](#image-segmentation)\n- [Video and Animation](#video-and-animation)\n- [Audio and Music](#audio-and-music)\n- [Speech](#speech)\n  - [Text-to-speech (TTS) and avatars](#text-to-speech-tts-and-avatars)\n    - [Podcast generators](#podcast-generators)\n  - [Speech-to-text (STT) and spoken content analysis](#speech-to-text-stt-and-spoken-content-analysis)\n- [Games](#games)\n- [Multimodal](#multimodal)\n  - [Multimodal Embedding Space](#multimodal-embedding-space)\n- [Datasets](#datasets)\n- [Misc](#misc)\n  - [AI and Education](#ai-and-education)\n  - [People and works](#people-and-works)\n    - [Interesting Twitter Accounts](#interesting-twitter-accounts)\n    - [Interesting Instagram Accounts, Posts and Reels](#interesting-instagram-accounts-posts-and-reels)\n    - [Interesting Youtube Channels](#interesting-youtube-channels)\n    - [Interesting GitHub Repositories](#interesting-github-repositories)\n    - [Artists and Artworks](#artists-and-artworks)\n    - [Galleries](#galleries)\n  - [Related Awesome Lists](#related-awesome-lists)\n  - [Bio experiments](#bio-experiments)\n  - [Jobs in Generative AI](#jobs-in-generative-ai)\n  - [Improving Google Colab experience](#improving-google-colab-experience)\n  - [Auxiliary tools and concepts](#auxiliary-tools-and-concepts)\n    - [Dimension reduction techniques](#dimension-reduction-techniques)\n  - [Roadmaps, Tracks, Rails](#roadmaps-tracks-rails)\n  - [Stargazers over time](#stargazers-over-time)\n  - [Contribute](#contribute)\n  - [License](#license)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "3397 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "672 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T02:59:39.336Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/filipecalegario/awesome-generative-ai",
+        "description": "GitHub repository: filipecalegario/awesome-generative-ai"
+      }
+    ]
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "filipecalegario",
+        "type": "human",
+        "uri": "https://github.com/filipecalegario"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 4741,
+      "validation_diversity": 0.67,
+      "context_breadth": 0.68,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.5
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.68
+  }
+}

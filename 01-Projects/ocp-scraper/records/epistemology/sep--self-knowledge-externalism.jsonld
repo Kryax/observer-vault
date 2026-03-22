@@ -1,0 +1,1081 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/self-knowledge-externalism",
+  "meta": {
+    "title": "Externalism and Self-Knowledge",
+    "description": "Externalism in the philosophy of mind contends that the meaning or content of a thought is partly determined by the environment. The view has garnered attention since it denies the traditional assumption, associated with Descartes, that thought content is fixed independently of the external world. Apparently under this assumption, Descartes also believed that he could know the content of his thoughts while suspending all judgment about his environs. (Indeed, such knowledge was thought indubitable.) Yet if externalism is correct, this may well be a mistake. As we shall see, externalism can suggest that Descartes is unable to know that his own thought represents, say, elm trees (vs. beech trees) without knowing that it is elms (and not beeches) that the thought is connected to in the world. But if such worldly knowledge is a prerequisite, then Descartes could not know the content of this thought just \"from the armchair,\" so to speak. So there seems to be a conflict between externalism and such armchair knowledge of one's own thought contents (for short: \"armchair self-knowledge\"). The question whether this conflict is real is what drives the contemporary debate on externalism and self-knowledge. Officially, we can put the issue in terms of an apparent tension between the following: The issue is that EXT seemingly implies that knowing about content requires knowing about the environment. And since the latter is empirical, so too would be the former, contra SK. Now it is usually thought that, if EXT is incompatible with SK, this would be a serious problem for EXT (though some think internalism also conflicts with SK; see McLaughlin & Tye 1998a, Farkas 2003, Bar-On 2006, p. 434). Yet some think the incompatibility threatens SK instead of EXT (see section 2.4 ). Regardless, the interest in the debate goes beyond EXT, for it pertains to many central concerns of philosophers, such as the nature of knowledge and the relation between mind and world. The debate also touches on more specialized topics, including memory, concept acquisition, epistemic responsibility, and transcendental arguments. In the standard terminology, the dispute is between incompatibilists who affirm the conflict between EXT and SK, and compatibilists who deny it. Incompatibilists have pressed the conflict mainly in two ways. The first way, discussed in section 2, is by a reductio ad absurdum: Incompatibilists argue that EXT plus SK entail the absurdity that one can know just from the armchair contingent facts about the external world. The second way, discussed in section 3, features a thought experiment about \"slow switching\" between two environments. Incompatibilists argue that such thought experiments show that EXT precludes SK. In section 4, we will end with some lesser-known issues for externalist self-knowledge.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T03:19:46.338Z",
+    "dateModified": "2026-03-22T03:19:46.338Z",
+    "datePublished": "2013-05-08T14:00:00.000Z",
+    "keywords": [
+      "content externalism",
+      "introspection",
+      "self knowledge",
+      "skepticism content externalism"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Externalism in the philosophy of mind contends that the meaning or content of a thought is partly determined by the environment. The view has garnered attention since it denies the traditional assumption, associated with Descartes, that thought content is fixed independently of the external world. Apparently under this assumption, Descartes also believed that he could know the content of his thoughts while suspending all judgment about his environs. (Indeed, such knowledge was thought indubitable.) Yet if externalism is correct, this may well be a mistake. As we shall see, externalism can suggest that Descartes is unable to know that his own thought represents, say, elm trees (vs. beech trees) without knowing that it is elms (and not beeches) that the thought is connected to in the world. But if such worldly knowledge is a prerequisite, then Descartes could not know the content of this thought just \"from the armchair,\" so to speak. So there seems to be a conflict between externalism and such armchair knowledge of one's own thought contents (for short: \"armchair self-knowledge\"). The question whether this conflict is real is what drives the contemporary debate on externalism and self-knowledge. Officially, we can put the issue in terms of an apparent tension between the following: The issue is that EXT seemingly implies that knowing about content requires knowing about the environment. And since the latter is empirical, so too would be the former, contra SK. Now it is usually thought that, if EXT is incompatible with SK, this would be a serious problem for EXT (though some think internalism also conflicts with SK; see McLaughlin & Tye 1998a, Farkas 2003, Bar-On 2006, p. 434). Yet some think the incompatibility threatens SK instead of EXT (see section 2.4 ). Regardless, the interest in the debate goes beyond EXT, for it pertains to many central concerns of philosophers, such as the nature of knowledge and the relation between mind and world. The debate also touches on more specialized topics, including memory, concept acquisition, epistemic responsibility, and transcendental arguments. In the standard terminology, the dispute is between incompatibilists who affirm the conflict between EXT and SK, and compatibilists who deny it. Incompatibilists have pressed the conflict mainly in two ways. The first way, discussed in section 2, is by a reductio ad absurdum: Incompatibilists argue that EXT plus SK entail the absurdity that one can know just from the armchair contingent facts about the external world. The second way, discussed in section 3, features a thought experiment about \"slow switching\" between two environments. Incompatibilists argue that such thought experiments show that EXT precludes SK. In section 4, we will end with some lesser-known issues for externalist self-knowledge.",
+    "context": "Opening section: 1. Why Externalism? | Related entries: content-externalism, introspection, self-knowledge, skepticism-content-externalism",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "epistemology"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry self-knowledge-externalism",
+        "uri": "https://plato.stanford.edu/entries/self-knowledge-externalism/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 4 related entries, bibliography size 289"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2013-05-08T14:00:00.000Z and revised 2024-09-05T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2024-09-05T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/self-knowledge-externalism/",
+        "description": "SEP entry for self-knowledge-externalism"
+      }
+    ],
+    "solutionApproach": "1. Why Externalism?"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/content-externalism",
+      "ocp:sep/introspection",
+      "ocp:sep/self-knowledge",
+      "ocp:sep/skepticism-content-externalism"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Parent, T.",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/self-knowledge-externalism/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 170,
+      "validation_diversity": 0.35,
+      "context_breadth": 0.31,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.87
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.491
+  },
+  "extensions": {
+    "sep": {
+      "slug": "self-knowledge-externalism",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/self-knowledge-externalism/",
+      "preamble": "Externalism in the philosophy of mind contends that the meaning or content of a thought is partly determined by the environment. The view has garnered attention since it denies the traditional assumption, associated with Descartes, that thought content is fixed independently of the external world. Apparently under this assumption, Descartes also believed that he could know the content of his thoughts while suspending all judgment about his environs. (Indeed, such knowledge was thought indubitable.) Yet if externalism is correct, this may well be a mistake. As we shall see, externalism can suggest that Descartes is unable to know that his own thought represents, say, elm trees (vs. beech trees) without knowing that it is elms (and not beeches) that the thought is connected to in the world. But if such worldly knowledge is a prerequisite, then Descartes could not know the content of this thought just \"from the armchair,\" so to speak. So there seems to be a conflict between externalism and such armchair knowledge of one's own thought contents (for short: \"armchair self-knowledge\"). The question whether this conflict is real is what drives the contemporary debate on externalism and self-knowledge. Officially, we can put the issue in terms of an apparent tension between the following: The issue is that EXT seemingly implies that knowing about content requires knowing about the environment. And since the latter is empirical, so too would be the former, contra SK. Now it is usually thought that, if EXT is incompatible with SK, this would be a serious problem for EXT (though some think internalism also conflicts with SK; see McLaughlin & Tye 1998a, Farkas 2003, Bar-On 2006, p. 434). Yet some think the incompatibility threatens SK instead of EXT (see section 2.4 ). Regardless, the interest in the debate goes beyond EXT, for it pertains to many central concerns of philosophers, such as the nature of knowledge and the relation between mind and world. The debate also touches on more specialized topics, including memory, concept acquisition, epistemic responsibility, and transcendental arguments. In the standard terminology, the dispute is between incompatibilists who affirm the conflict between EXT and SK, and compatibilists who deny it. Incompatibilists have pressed the conflict mainly in two ways. The first way, discussed in section 2, is by a reductio ad absurdum: Incompatibilists argue that EXT plus SK entail the absurdity that one can know just from the armchair contingent facts about the external world. The second way, discussed in section 3, features a thought experiment about \"slow switching\" between two environments. Incompatibilists argue that such thought experiments show that EXT precludes SK. In section 4, we will end with some lesser-known issues for externalist self-knowledge.",
+      "firstSectionTitle": "1. Why Externalism?",
+      "firstSectionText": "Given the tension with SK, why should we accept EXT in the first place? One reason is that EXT is more or less entailed by many contemporary theories of content. For instance, several theories say (in short) that a concept has its content in virtue of certain causal relations the concept bears to an environmental referent (Dretske 1981, Millikan 1984; 1989, Fodor 1987; 1990; also, cf. Kripke 1972 and Evans 1982, ch. 6). Others see mental content as posited when interpreting a subject vis-&agrave;-vis objects in her environment (Davidson 1973; 1987, Dennett 1975). Still others see content as determined by the inferences that feature the relevant concept. Such an inference, moreover, is often defined partly by the environmental object which normally prompts the inference, or in which the inference normally terminates (Sellars 1954). Predictably, such theories face various difficulties--so none provide a decisive case for EXT. Yet the foremost arguments for the view are not so parochial. These arguments instead rest on various thought experiments, purporting to show that internally identical subjects can host different thought contents, solely because of environmental differences (Putnam 1973; 1975, McGinn 1977, Stich 1978, Burge 1979; 1982; 1986). If the thought experiments are right about this, then internal states do not wholly determine thought content. The environment would play a part as well. The most famous experiment imagines a remote planet called \"Twin Earth,\" a planet which is superficially indiscernible from Earth (so that even its events parallel the events on Earth). But there is one key difference: The compound H 2 O occurs nowhere on Twin Earth. In its place is a different compound that looks, tastes, etc., exactly the same, which we may call \"XYZ\". Now consider Oscar, a normal adult English speaker, along with his Twin Earth doppelg&auml;nger, Twin Oscar. (Ignore that people are mostly H 2 O; that's an accident of this example.) The externalist intuition is that, even if these \"twins\" are unschooled in chemistry, Oscar uses 'water' to refer to H 2 O yet Twin Oscar uses 'water' to refer to XYZ. After all, when Oscar asserts \"water is scrumptious,\" this is directed at water, yet Twin Oscar's parallel assertion is in reference to XYZ, a.k.a. twin water. Moreover, suppose we accept the Fregean view that the meaning of a term determines what the term refers to (or in Carnap's words, that \"intension determines extension\"). Then, given the different referents, the twins' terms must have different meanings as well. But Oscar and Twin Oscar are physical duplicates; so it appears the meaning of 'water' is not wholly fixed by speakers' internal states. Rather, the environment also figures into it. This claim about linguistic meaning is then extended to the content of mental representations for natural kinds like water, and for non-natural kinds like sofas (where the latter are defined by social convention) (McGinn 1977, Stich 1978, Burge 1979; 1982; 1986). Consider that when Oscar says \"sofas are delightful,\" he expresses a thought that references sofas. But suppose that Twin Oscar's community defines a \"sofa\" slightly differently, so that broad, overstuffed armchairs count as \"sofas.\" Consequently, when Twin Oscar asserts \"sofas are delightful,\" he differs from Oscar in expressing a thought that refers to (among other things) broad, overstuffed armchairs. But again, if content determines reference, the difference in reference demonstrates a difference in intension or content, in spite of identical internal states. Thus we arrive at EXT. Some might find these science fiction stories extravagant, and it may be unclear whether they teach us anything about the real world. Yet there are actual examples which also illustrate the point (Ludlow 1995b; see also Butler 1997, Tye 1998). Consider that 'chicory' and 'endive' have their denotations switched between Standard American English and British English. The two types of salad green also seem identical to the untrained eye (or palate, as the case may be). Thus a Brit and an American, both untrained, might be internally the same in all relevant respects, yet refer to different greens when asserting \"chicory is scrumptious.\" So 'chicory' will express a concept with different content, despite the subjects being internally alike. (Notably, 'water' itself might vary in content among different locations in the actual world. What flows from taps contains different admixtures in different municipalities. Cf. Malt 1994.) Nevertheless, some philosophers reject these considerations for a variety of reasons (Zemach 1976, Mellor 1977, Searle 1983, ch. 8, Bach 1988; 1998, Crane 1991, Rosenberg 1994, Chomsky 1995; 2000, Segal 2000, Martinich & Stroll 2007, ch. 5, Farkas 2008, Pollock 2015; see also Fine 1975). Other philosophers do not reject EXT as much as restrict it: They posit a kind of content--so called \"narrow\" content--which is determined independently of the environment. (See Block 1986, Loar 1988, Georgalis 1994; 1999, Chalmers 1996; 2002, Jackson 1998, Siewart 1998, Horgan & Tienson 2002, Wikforss 2007, Mendola 2008; see also the entry on narrow content . See in addition Yli-Vakkuri & Hawthorne 2018 for a thorough but pessimistic examination of the notion.) As one illustration, two-dimensionalists characterize narrow content as a function that takes an environment as input and outputs the \"wide\" content of the concept in that environment, i.e., the content of which EXT is true (Chalmers 1996; 2002). And putatively, the problem with armchair self-knowledge does not arise with narrow content. (For more, see Fernandez 2004 as well as the entry on two-dimensional semantics .) The debate on whether EXT is unrestrictedly true is important, but this is not the place to discuss it. (Yet see the entry on externalism about mental content .) For our purposes, the main point is that EXT is not without support, and so there is some reason to hold onto the view despite the apparent tension with SK.",
+      "relatedEntries": [
+        "content-externalism",
+        "introspection",
+        "self-knowledge",
+        "skepticism-content-externalism"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "content-externalism"
+        },
+        {
+          "slug": "introspection"
+        },
+        {
+          "slug": "self-knowledge"
+        },
+        {
+          "slug": "skepticism-content-externalism"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 289,
+      "bibliography": [
+        {
+          "raw": "Anderson, C. Anthony & J. Owens (eds.), 1990, Propositional Attitudes: The Role of Content in Logic, Language, and Mind , Stanford: CSLI Publications."
+        },
+        {
+          "raw": "Armstrong, D., 1968, A Materialist Theory of the Mind , London: Routledge."
+        },
+        {
+          "raw": "Bach, K., 1988, \"Burge's New Thought Experiment: Back to the Drawing Room,\" Journal of Philosophy , 85(2): 88-97."
+        },
+        {
+          "raw": "---, 1997, \"Do Belief Reports Report Beliefs?,\" Pacific Philosophical Quarterly , 78: 215-241."
+        },
+        {
+          "raw": "Baker, L., 2007, \"Social Externalism and First-Person Authority,\" Erkenntnis , 67(2): 287-300."
+        },
+        {
+          "raw": "Ball, D., 2007, \"Twin Earth Externalism and Concept Possession,\" Australasian Journal of Philosophy , 85(3): 457-472."
+        },
+        {
+          "raw": "Bar-On, D., 2004, Speaking My Mind: Expression and Self-Knowledge , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2006, \"Externalism and Self-Knowledge: Content, Use, and Expression,\" No&ucirc;s , 38(3): 430-455."
+        },
+        {
+          "raw": "---, 2011, \"Neo-Expressivism: Avowal's Security and Privileged Access,\" in Hatzimoysis (ed.) 2011, pp. 189-201."
+        },
+        {
+          "raw": "---, 2012a, \"Externalism and Skepticism: Recognition, Expression, and Self-Knowledge,\" in A. Coliva (ed.) 2012a, pp. 189-211."
+        },
+        {
+          "raw": "---, 2012b, \"Expression, Truth, and Reality: Some Variations on a Theme from Wright,\" in A. Coliva (ed.) 2012b, pp. 162-194."
+        },
+        {
+          "raw": "---, 2013, \"Externalism and Skepticism: Recognition, Expression, and Self-Knowledge,\" Journal of Philosophy , 110: 293-330."
+        },
+        {
+          "raw": "Bar-On, D. & D. Long, 2001, \"Avowals and First-Person Privilege,\" Philosophy and Phenomenological Research , 62(2): 311-335."
+        },
+        {
+          "raw": "Beebee, H., 2001, \"Transfer of Warrant, Begging the Question, and Semantic Externalism,\" Philosophical Quarterly , 51(204): 356-374."
+        },
+        {
+          "raw": "Bernecker, S., 1996, \"Externalism and the Attitudinal Component of Self-Knowledge,\" No&ucirc;s , 30(2): 262-275."
+        },
+        {
+          "raw": "---, 1998, \"Self-Knowledge and Closure,\" in P. Ludlow & N. Martin (eds.) 1998, pp. 333-350."
+        },
+        {
+          "raw": "---, 2000, \"Knowing the World by Knowing One's Mind,\" Synthese , 123(1): 1-34."
+        },
+        {
+          "raw": "---, 2004a, \"Memory and Externalism,\" Philosophical and Phenomenological Research , 69(3): 605-632."
+        },
+        {
+          "raw": "---, 2004b, \"Believing that You Know and Knowing that You Believe,\" in R. Schantz (ed.) 2004, pp. 369-376."
+        },
+        {
+          "raw": "---, 2010, Memory: A Philosophical Study , New York: Oxford University Press."
+        },
+        {
+          "raw": "Besson, C., 2012, \"Externalism and Empty Natural Kind Terms,\" Erkenntnis , 70: 403-425."
+        },
+        {
+          "raw": "Bilgrami, A., 1992, \"Can Externalism be Reconciled with Self-Knowledge?,\" Philosophical Topics , 20: 233-267."
+        },
+        {
+          "raw": "---, 2003, \"A Trilemma for Redeployment,\" Philosophical Issues , 13: 22-30."
+        },
+        {
+          "raw": "---, 2006, Self-Knowledge and Resentment , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Block, N., 1986, \"Advertisement for a Semantics for Psychology,\" Midwest Studies in Philosophy (Volume 10), P. French (ed.), Minneapolis, University of Minnesota Press, pp. 615-678."
+        },
+        {
+          "raw": "Bo&euml;r, S. & W. Lycan, 1986, Knowing Who , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Boghossian, P., 1989, \"Content and Self-Knowledge,\" Philosophical Topics , 17: 5-26."
+        },
+        {
+          "raw": "---, 1992a, \"Externalism and Inference,\" in E. Villanueva (ed.) 1992, pp. 11-28."
+        },
+        {
+          "raw": "---, 1992b, \"Reply to Schiffer,\" in E. Villanueva (ed.) 1992, pp. 39-42."
+        },
+        {
+          "raw": "---, 1994, \"The Transparency of Mental Content,\" Philosophical Perspectives , 8: 33-50."
+        },
+        {
+          "raw": "---, 1997, \"What the Externalist Can Know A Priori,\" Proceedings of the Aristotelian Society , 97: 161-175."
+        },
+        {
+          "raw": "---, 1998, \"Reply to Commentators,\" in E. Villanueva (ed.) 1998, pp. 253-260."
+        },
+        {
+          "raw": "---, 2010, \"The Transparency of Mental Content Revisited,\" Philosophical Studies , 155(3): 457-465."
+        },
+        {
+          "raw": "Boghossian, P. & C. Peacocke (eds.), 2000, New Essays on the A Priori , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Bonjour, L., 1991, \"Is Thought a Symbolic Process?,\" Synthese , 89: 331-352."
+        },
+        {
+          "raw": "Braun, D., 2006, \"Now You Know Who Hong Oak Yung Is,\" Philosophical Issues , 16: 24-42."
+        },
+        {
+          "raw": "Brewer, B., 1999, Perception and Reason , New York: Oxford University Press."
+        },
+        {
+          "raw": "---, 2000a, \"Externalism and A Priori Knowledge of Empirical Facts,\" in P. Boghossian & C. Peacocke (eds.) 2000, pp. 415-434."
+        },
+        {
+          "raw": "---, 2000b, \"Self-Knowledge and Externalism,\" in Proceedings of the Twentieth World Congress of Philosophy , 5: 39-47."
+        },
+        {
+          "raw": "Brown, J., 1995, \"The Incompatibility of Anti-Individualism and Privileged Access,\" Analysis , 55(3): 149-156."
+        },
+        {
+          "raw": "---, 1999, \"Boghossian on Externalism and Privileged Access,\" Analysis , 59(1): 52-59."
+        },
+        {
+          "raw": "---, 2001, \"Anti-Individualism and Agnosticism,\" Analysis , 61(3): 213-224."
+        },
+        {
+          "raw": "---, 2004, Anti-Individualism and Knowledge , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 2007, \"Externalism in Mind and Epistemology,\" in S. Goldberg (ed.) 2007, pp. 13-34."
+        },
+        {
+          "raw": "Brueckner, A., 1990, \"Scepticism about Knowledge of Content,\" Mind , 99: 447-452."
+        },
+        {
+          "raw": "---, 1992, \"What an Anti-Individualist Knows A Priori,\" Analysis , 52: 111-118."
+        },
+        {
+          "raw": "---, 1994, \"Knowledge of Content and Knowledge of the World,\" The Philosophical Review , 103: 327-343."
+        },
+        {
+          "raw": "---, 1995, \"The Characteristic Thesis of Anti-Individualism,\" Analysis , 55(3): 146-148."
+        },
+        {
+          "raw": "---, 1997a, \"Externalism and Memory,\" Pacific Philosophical Quarterly , 78(1): 1-12."
+        },
+        {
+          "raw": "---, 1997b, \"Is Scepticism about Self-Knowledge Coherent?,\" Analysis , 57: 287-290."
+        },
+        {
+          "raw": "---, 1999, \"Difficulties in Generating Skepticism about Knowledge of Content,\" Analysis , 59(1): 59-62."
+        },
+        {
+          "raw": "---, 2000, \"Ambiguity and Knowledge of Content,\" Analysis , 60(3): 257-260."
+        },
+        {
+          "raw": "---, 2002, \"The Consistency of Content-Externalism and Justification-Internalism,\" Australasian Journal of Philosophy , 80(4): 512-515."
+        },
+        {
+          "raw": "---, 2003, \"The Coherence of Skepticism about Self-Knowledge,\" Analysis , 63(1): 41-48."
+        },
+        {
+          "raw": "---, 2004a, \"McKinsey Redux,\" in R. Schantz (ed.) 2004, pp. 377-387."
+        },
+        {
+          "raw": "---, 2007, \"Scepticism about Self-Knowledge Redux,\" Analysis , 67(4): 311-315."
+        },
+        {
+          "raw": "---, 2010, \"The Resiliency of the McKinsey Problem,\" in Essays on Skepticism , New York: Oxford University Press, pp. 259-265."
+        },
+        {
+          "raw": "Brueckner, A., & G. Ebbs, 2012, Debating Self-Knowledge , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Burge, T., 1979, \"Individualism and the Mental,\" Midwest Studies in Philosophy , 4: 73-121."
+        },
+        {
+          "raw": "---, 1982, \"Other Bodies,\"in Thought and Object , A. Woodfield (ed.), New York: Oxford University Press, pp. 97-120."
+        },
+        {
+          "raw": "---, 1986, \"Intellectual Norms and the Foundations of Mind,\" Journal of Philosophy , 84: 697-720."
+        },
+        {
+          "raw": "---, 1988, \"Individualism and Self-Knowledge,\" Journal of Philosophy , 85(1): 649-663."
+        },
+        {
+          "raw": "---, 1993, \"Content Preservation,\" The Philosophical Review , 102: 457-488."
+        },
+        {
+          "raw": "---, 1996, \"Our Entitlement to Self-Knowledge,\" Proceedings of the Aristotelian Society , 96: 91-116."
+        },
+        {
+          "raw": "---, 1998, \"Memory and Self-Knowledge,\" in P. Ludlow & N. Martin (eds.) 1998, pp. 351-370."
+        },
+        {
+          "raw": "---, 2003, \"Replies to Commentators,\" in M. Frapolli & E. Romero (eds.) 2003, pp. 243-296."
+        },
+        {
+          "raw": "Butler, K., 1997, \"Externalism, Internalism, and Knowledge of Content,\" Philosophy and Phenomenological Research , 57(4): 773-800."
+        },
+        {
+          "raw": "Byrne, A., 2018, Transparency and Self-knowledge , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Carruthers, P., 2011, The Opacity of Mind , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Cassam, Q., 1994, \"Introduction,\" in Self-Knowledge , Q. Cassam (ed.), Oxford: Oxford University Press, pp. 1-18."
+        },
+        {
+          "raw": "Chalmers, D., 1996, The Conscious Mind , New York: Oxford University Press."
+        },
+        {
+          "raw": "---, 2004, \"The Foundations of Two-Dimensional Semantics,\" in Two-Dimensional Semantics: Foundations and Applications , M. Garcia-Carpintero & J. Macia (eds.), New York: Oxford University Press, pp. 55-140."
+        },
+        {
+          "raw": "Chase, J., 2001, \"Is Externalism about Content Consistent with Internalism about Justification?,\" Australian Journal of Philosophy , 79(2): 227-246."
+        },
+        {
+          "raw": "Chomsky, N., 1995, \"Language and Nature,\" Mind , 104(413): 1-61."
+        },
+        {
+          "raw": "---, 2000, New Horizons in the Study of Language and Mind , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Clark, A. & D. Chalmers, 1998, \"The Extended Mind,\" Analysis , 58: 7-19."
+        },
+        {
+          "raw": "Coliva, A., 2009, \"Self-Knowledge and Commitments,\" Synthese , 171(3): 365-375."
+        },
+        {
+          "raw": "Corb&iacute;, J., 1998, \"A Challenge to Boghossian's Incompatibilist Argument,\" in E. Villanueva (ed.) 1998, pp. 231-242."
+        },
+        {
+          "raw": "Crane, T., 1991, \"All the Difference in the World,\" Philosophical Quarterly , 41(162): 1-25."
+        },
+        {
+          "raw": "Davidson, D., 1973, \"Radical Interpretation,\" Dialectica , 27: 314-328."
+        },
+        {
+          "raw": "---, 1987, \"Knowing One's Own Mind,\" Proceedings and Addresses of the American Philosophical Association , 60: 441-458."
+        },
+        {
+          "raw": "---, 1988, \"Reply to Burge,\" The Journal of Philosophy , 85(1): 664-665."
+        },
+        {
+          "raw": "Davies, M., 1998, \"Externalism, Architecturalism, and Epistemic Warrant,\" in C. Wright, et al. (eds.) 1998, pp. 321-362."
+        },
+        {
+          "raw": "---, 2000, \"Externalism and Armchair Knowledge,\" in New Essays on the A Priori , P. Boghossian & C. Peacocke (eds.) 2000, pp. 384-414."
+        },
+        {
+          "raw": "---, 2003a, \"The Problem of Armchair Knowledge,\" in S. Nuccetelli (ed.) 1999, pp. 1-56."
+        },
+        {
+          "raw": "---, 2003b, \"Externalism, Self-Knowledge, and Transmission\" in M. Frapolli & E. Romero (eds.) 2003, pp. 105-130."
+        },
+        {
+          "raw": "Dennett, D., 1975, \"True Believers: The Intentional Strategy and Why It Works,\" in Scientific Explanation: Papers Based on Herbert Spencer Lectures Given in the University of Oxford , A. F. Heath (ed.), Oxford: Clarendon Press, pp. 53-75."
+        },
+        {
+          "raw": "DeRose, K., 2009, The Case for Contextualism I , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Dretske, F., 1970, \"Epistemic Operators,\" Journal of Philosophy , 67: 1007-1023."
+        },
+        {
+          "raw": "---, 1981, Knowledge and the Flow of Information , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 1995, Naturalizing the Mind , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 2003a, \"Externalism and Self-Knowledge,\" in S. Nuccetelli (ed.) 2003, pp. 131-142."
+        },
+        {
+          "raw": "---, 2003b, \"How Do You Know You are Not a Zombie?,\" in B. Gertler (ed.) 2003, pp. 1-14."
+        },
+        {
+          "raw": "---, 2004, \"Knowing What You Think vs. Knowing That You Think It,\" in R. Schantz (ed.) 2004, pp. 389-400."
+        },
+        {
+          "raw": "Dupr&eacute;, J., 1981, \"Natural Kinds and Biological Taxa,\" Philosophical Review , 90(1): 66-90."
+        },
+        {
+          "raw": "Ebbs, G., 1996, \"Can We Take Our Words at Face Value?,\" Philosophy and Phenomenological Research , 56(3): 499-530."
+        },
+        {
+          "raw": "---, 2001, \"Is Skepticism about Self-Knowledge Coherent?,\" Philosophical Studies , 105(1): 43-58."
+        },
+        {
+          "raw": "---, 2003, \"A Puzzle about Doubt,\" in S. Nuccetelli (ed.) 2003, pp. 143-169."
+        },
+        {
+          "raw": "---, 2005, \"Why Scepticism about Self-Knowledge is Self-Undermining,\" Analysis , 65(287): 237-244."
+        },
+        {
+          "raw": "---, 2011, \"Anti-Individualism, Self-Knowledge, and Epistemic Possibility: Further Reflections on a Puzzle about Doubt,\" in A. Hatzimoysis (ed.) 2011, 53-80."
+        },
+        {
+          "raw": "Ellis, J., 2007, \"Content Externalism and Phenomenal Character: A New Worry about Privileged Access,\" Synthese , 159: 47-60."
+        },
+        {
+          "raw": "Evans, G., 1982, The Varieties of Reference , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Falvey, K. & J. Owens, 1994, \"Externalism, Self-Knowledge, and Skepticism,\" Philosophical Review , 103: 107-37."
+        },
+        {
+          "raw": "Farkas, K., 2003, \"What is Externalism?,\" Philosophical Studies , 112: 187-208."
+        },
+        {
+          "raw": "---, 2008, The Subject's Point of View , New York: Oxford University Press."
+        },
+        {
+          "raw": "Fernandez, J., 2004, \"Externalism and Self-Knowledge: A Puzzle in Two Dimensions,\" European Journal of Philosophy , 121: 17-37."
+        },
+        {
+          "raw": "Fine, A., 1975, \"How to Compare Theories: Reference and Change,\" No&ucirc;s , 9: 17-32."
+        },
+        {
+          "raw": "Finkelstein, D., 2003, Expression and the Inner , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Fodor, J., 1975, The Language of Thought , New York: Thomas Y. Crowell."
+        },
+        {
+          "raw": "---, 1980, \"Methodological Solipsism Considered as a Research Program in Psychology,\" Behavioral and Brain Sciences , 3: 63-73."
+        },
+        {
+          "raw": "---, 1987, Psychosemantics , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 1990, A Theory of Content and Other Essays , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Frapolli, M. & E. Romero (eds.), 2003, Meaning, Basic Self-Knowledge, and Mind: Essays on Tyler Burge , Stanford: CSLI Publications."
+        },
+        {
+          "raw": "Gallois, A., 2008, The World Without, the Mind Within: An Essay on First-Person Authority , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Gallois, A. & J. O'Leary-Hawthorne, 1996, \"Externalism and Scepticism,\" Philosophical Studies , 81: 1-26."
+        },
+        {
+          "raw": "Georgalis, N., 1994, \"Asymmetry of Access to Intentional States,\" Erkenntnis , 40(2): 185-211."
+        },
+        {
+          "raw": "---, 1999, \"Rethinking Burge's Thought Experiment,\" Synthese , 118(2): 145-164."
+        },
+        {
+          "raw": "Gerken, M., 2008, \"Is Internalism about Knowledge Consistent with Content Externalism?,\" Philosophia , 36: 87-96."
+        },
+        {
+          "raw": "---, 2013, Epistemic Reasoning and the Mental , Basingstoke: Palgrave Macmillan."
+        },
+        {
+          "raw": "Gertler, B. (ed.), 2003, Privileged Access: Philosophical Accounts of Self-Knowledge , Aldershot, UK: Ashgate Publishing."
+        },
+        {
+          "raw": "---, 2004, \"We Can't Know A Priori that H 2 O Exists, but Can We Know that Water Does?,\" Analysis , 64(1): 44-47."
+        },
+        {
+          "raw": "---, 2015, \"Internalism, Externalism, and Accessibilism, \" in S. Goldberg (ed.) 2015a, pp. 119-141."
+        },
+        {
+          "raw": "Gibbons, J., 1996, \"Externalism and Knowledge of Content,\" Philosophical Review , 105: 287-310."
+        },
+        {
+          "raw": "---, 2001, \"Externalism and Knowledge of the Attitudes,\" Philosophical Quarterly , 51(202): 13-28."
+        },
+        {
+          "raw": "Goldberg, S., 1997, \"Self-Ascription, Self-Knowledge, and the Memory Argument,\" Analysis , 57: 211-219."
+        },
+        {
+          "raw": "---, 1999a, \"Word-Ambiguity, World-Switching, and Knowledge of Content: Reply to Brueckner,\" Analysis , 59(3): 212-217."
+        },
+        {
+          "raw": "---, 1999b, \"The Relevance of Discriminatory Knowledge of Content,\" Pacific Philosophical Quarterly , 80: 136-156."
+        },
+        {
+          "raw": "---, 2000a, \"Word-Ambiguity, World-Switching, and Semantic Intentions,\" Analysis , 60(3): 260-264."
+        },
+        {
+          "raw": "---, 2000b, \"Externalism and Self-Knowledge of Content: A New Incompatibilist Strategy,\" Philosophical Studies , 100(1): 51-78."
+        },
+        {
+          "raw": "---, 2005a, \"The Dialectical Context of the Memory Argument,\" Canadian Journal of Philosophy , 35(1): 135-148."
+        },
+        {
+          "raw": "---, 2005b, \"(Nonstandard) Lessons from World-Switching Cases,\" Philosophia , 32(1): 95-131."
+        },
+        {
+          "raw": "---, 2006a, \"Brown on Knowledge and Discriminability,\" Pacific Philosophical Quarterly , 87: 301-314."
+        },
+        {
+          "raw": "---, 2006b, \"An Anti-Individualistic Semantics for 'Empty' Natural Kind Terms,\" Grazer Philosophische Studien , 70(1): 147-168."
+        },
+        {
+          "raw": "---, 2007a, \"Anti-Individualism, Content Preservation, and Discursive Justification,\" No&ucirc;s , 41(2): 178-203."
+        },
+        {
+          "raw": "---, 2007b, \"Semantic Externalism and Epistemic Illusions,\" in S. Goldberg (ed.) 2007, pp. 235-252."
+        },
+        {
+          "raw": "--- (ed.), 2007, Internalism and Externalism in Semantics and Epistemology , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "--- (ed.), 2015b, \"Introduction,\" in S. Goldberg (ed.) 2015a, pp. 1-15."
+        },
+        {
+          "raw": "Goldman, A., 1976, \"Discrimination and Perceptual Knowledge,\" Journal of Philosophy , 73: 771-791."
+        },
+        {
+          "raw": "---, 1986, Epistemology and Cognition , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Gopnik, A., 1983, \"How We Can Know Our Minds: The Illusion of First Person Knowledge of Intentionality,\" Brain and Behavioral Science , 16: 1-14."
+        },
+        {
+          "raw": "Hale, B., 2000, \"Transmission and Closure,\" in E. Sosa & E. Villanueva (eds.) 2000, pp. 172-190."
+        },
+        {
+          "raw": "Hatzimoysis, A. (ed.), 2011, Self-Knowledge , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Haukioja, J., 2006, \"Semantic Externalism and A Priori Self-Knowledge,\" Ratio , 19: 176-190."
+        },
+        {
+          "raw": "Hawthorne, J., 2007, \"A Priority and Externalism,\" in S. Goldberg (ed.) 2007, pp. 201-218."
+        },
+        {
+          "raw": "Heal, J., 1998, \"Externalism and Memory,\" Proceedings of the Aristotelian Society (Supplementary Volume), 72: 95-109."
+        },
+        {
+          "raw": "---, 2002, \"On First Person Authority,\" Proceedings of the Aristotelian Society , 102: 1-19."
+        },
+        {
+          "raw": "Heil, J., 1988, \"Privileged Access,\" Mind , 97(386): 238-251."
+        },
+        {
+          "raw": "---, 1992, The Nature of True Minds , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Hohwy, J., 2002, \"Privileged Self-Knowledge and Externalism: A Contextualist Approach,\" Pacific Philosophical Quarterly , 83: 235-252."
+        },
+        {
+          "raw": "Horgan, T., and J. Tienson, 2002, \"The Intentionality of Phenomenology and the Phenomenology of Intentionality,\" in Philosophy of Mind: Classical and Contemporary Readings , D. Chalmers (ed.), New York: Oxford University Press, pp. 520-532."
+        },
+        {
+          "raw": "Jackman, H., 2015, \"Externalism, Metasemantic Contextualism, and Self-Knowledge\", in S. Goldberg (ed.) 2015a, pp. 228-247."
+        },
+        {
+          "raw": "Jackson, F., 1996, From Metaphysics to Ethics , New York: Oxford University Press."
+        },
+        {
+          "raw": "Jacob, P., 2004, \"Do We Know Our Own Minds Yet?,\" in R. Schantz (ed.) 2004, pp. 401-418."
+        },
+        {
+          "raw": "Kallestrup, J., 2011, \"Recent Work on McKinsey's Paradox,\" Analysis Reviews , 71(1): 157-171."
+        },
+        {
+          "raw": "Korman, D., 2006, \"What Externalists Should Say about Dry Earth,\" Journal of Philosophy , 103(10): 503-520."
+        },
+        {
+          "raw": "Kraay, K., 2002, \"Externalism, Memory, and Self-Knowledge,\" Erkenntnis , 56: 297-317."
+        },
+        {
+          "raw": "Kriegel, U., 2010, \"Interpretation: Its Scope and Limits,\" in New Waves in Metaphysics , A. Hazlett (ed.), London: Palgrave-McMillan, pp. 111-135."
+        },
+        {
+          "raw": "Kripke, S., 1972, \"Naming and Necessity,\" in D. Davidson & G. Harman (eds.), Semantics of Natural Language , Dordrecht: Reidel, pp. 253-355 & 763-769. Reprinted, S. Kripke, Naming and Necessity , Cambridge, MA: Harvard University Press, 1980."
+        },
+        {
+          "raw": "---, 1979, \"A Puzzle about Belief,\" in Meaning and Use , A. Margalit (ed.), Dordrecht: D. Reidel, pp. 239-83."
+        },
+        {
+          "raw": "Levine, J., 2003, \"Knowing What Its Like,\" in B. Gertler (ed.) 2003, pp. 45-54."
+        },
+        {
+          "raw": "Loar, B., 1988, \"Social Content and Psychological Content,\" in Contents of Thought , R. Grimm and D. Merrill (eds.), Tucson: University of Arizona Press, pp. 99-110."
+        },
+        {
+          "raw": "Ludlow, P., 1995a, \"Social Externalism, Self-Knowledge, and Memory,\" Analysis , 55(3): 157-159."
+        },
+        {
+          "raw": "---, 1995b, \"Externalism, Self-Knowledge, and the Prevalence of Slow-Switching,\" Analysis , 55: 45-49."
+        },
+        {
+          "raw": "---, 1996, \"Social Externalism and Memory: A Problem?\" Acta Analytica , 14: 69-76."
+        },
+        {
+          "raw": "---, 1997, \"On the Relevance of Slow-Switching,\" Analysis , 57: 285-286."
+        },
+        {
+          "raw": "---, 1999, \"First-Person Authority and Memory,\" in Interpretations and Causes: New Perspectives on Donald Davidson's Philosophy , M. de Caro (ed.), Dordrecht: Kluwer, pp. 159-170."
+        },
+        {
+          "raw": "---, 2003, \"Externalism, Logical Form, and Linguistic Intentions,\" in Epistemology of Language , A. Barber (ed.), New York: Oxford University Press, pp. 399-414."
+        },
+        {
+          "raw": "---, 2004, \"What was I Thinking? Social Externalism, Self-Knowledge, and Shifting Memory Targets,\" in R. Schantz (ed.) 2004, pp. 419-425."
+        },
+        {
+          "raw": "---, 2011, Philosophy of Generative Linguistics , New York: Oxford University Press."
+        },
+        {
+          "raw": "Ludlow, P. & N. Martin, 1993, \"The Fallibility of First-Person Knowledge of Intentionality,\" Behavioral and Brain Sciences , 16(1): 60-60."
+        },
+        {
+          "raw": "---, (eds.), 1998, Externalism and Self-Knowledge , Stanford: CSLI Publications."
+        },
+        {
+          "raw": "Lycan, W., 1987, Consciousness , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 1996, Consciousness and Experience , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 2001, \"The Case for Phenomenal Externalism,\" Philosophical Perspectives (Volume 15: Metaphysics), Atascadero, CA: Ridgeview Publishing."
+        },
+        {
+          "raw": "Macdonald, C., 1995, \"Externalism and First-Person Authority,\" Synthese , 104(199): 99-122."
+        },
+        {
+          "raw": "Malt, B., 1994, \"Water is not H 2 O,\" Cognitive Psychology , 27: 41-57."
+        },
+        {
+          "raw": "Martin, N., 1994, An Externalist Account of Self-Knowledge and its Implications , Ph.D. Thesis, Dept. of Philosophy, SUNY Stony Brook."
+        },
+        {
+          "raw": "Martinich, A. & A. Stroll, 2007, Much Ado About Nonexistence: Fiction and Reference , Lanham, MD: Rowman & Littlefield."
+        },
+        {
+          "raw": "Marvan, T. (ed.), 2006, What Determines Content? The Internalism/Externalism Dispute , Newcastle: Cambridge Scholars Press."
+        },
+        {
+          "raw": "McCulloch, G., 1999, \"Content Externalism and Cartesian Skepticism, A Reply to Brueckner,\" in Transcendental Arguments: Problems and Prospects , pp. 251-270."
+        },
+        {
+          "raw": "McGeer, V., 1996, \"Is 'Self-Knowledge' an Empirical Problem? Renegotiating the Space of Philosophical Explanation,\" Journal of Philosophy , 93(10): 483-515."
+        },
+        {
+          "raw": "McGinn, C., 1977, \"Charity, Interpretation, and Belief,\" Journal of Philosophy , 74: 521-535."
+        },
+        {
+          "raw": "---, 1989, Mental Content , New York: Blackwell."
+        },
+        {
+          "raw": "McKinsey, M., 1991, \"Anti-Individualism and Privileged Access,\" Analysis , 51: 9-16."
+        },
+        {
+          "raw": "---, 1994, \"Accepting the Consequences of Anti-Individualism,\" Analysis , 54(2): 124-128."
+        },
+        {
+          "raw": "---, 2002, \"Forms of Externalism and Privileged Access,\" in Philosophical Perspectives , 16: 199-224."
+        },
+        {
+          "raw": "---, 2003, \"Transmission of Warrant and the Closure of A Priority,\" in S. Nuccetelli (ed.) 2003, pp. 97-116."
+        },
+        {
+          "raw": "---, 2007, \"Externalism and Privileged Access are Inconsistent,\" in Contemporary Debates in the Philosophy of Mind , B. McLaughlin & J. Cohen (eds.), New York: Wiley-Blackwell, pp. 53-65."
+        },
+        {
+          "raw": "McLaughlin, B., 2000, \"Self-Knowledge, Externalism, and Skepticism,\" Proceedings of the Aristotelian Society , 74(74): 93-118."
+        },
+        {
+          "raw": "---, 2003, \"McKinsey's Challenge, Warrant Transmission, and Skepticism,\" in S. Nuccetelli (ed.) 2003, pp. 79-96."
+        },
+        {
+          "raw": "---, 2004, \"Anti-Individualism and Minimal Self-Knowledge: A Dissolution of Ebbs' Puzzle,\" in R. Schantz (ed.) 2004, pp. 427-440."
+        },
+        {
+          "raw": "McLaughlin, B. & M. Tye, 1998a, \"Externalism, Twin Earth, and Self-Knowledge,\" in C. Wright, et al. (eds.) 1998, pp. 285-320."
+        },
+        {
+          "raw": "---, 1998b, \"The Brown-McKinsey Charge of Inconsistency,\" in P. Ludlow & N. Martin (eds.) 1998, pp. 207-214."
+        },
+        {
+          "raw": "---, 1998c, \"Is Content-Externalism Compatible with Privileged Access?,\" Philosophical Review , 107(3): 349-380."
+        },
+        {
+          "raw": "Mellor, D., 1977, \"Natural Kinds,\" British Journal for the Philosophy of Science , 28: 299-312."
+        },
+        {
+          "raw": "Mendola, J. 2008, Anti-Externalism , New York: Oxford University Press."
+        },
+        {
+          "raw": "Miller, R., 1997, \"Externalist Self-Knowledge and the Scope of the Apriori,\" Analysis , 57(1): 67-75."
+        },
+        {
+          "raw": "Millikan, R., 1984, Language, Thought, and Other Biological Categories: New Foundations for Realism , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 1989, \"Biosemantics,\" Journal of Philosophy , 86: 281-297."
+        },
+        {
+          "raw": "---, 1993, \"White Queen Psychology; or, the Last Myth of the Given,\" in White Queen Psychology and Other Essays for Alice , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Moran, R., 2001, Authority and Estrangement: An Essay on Self-Knowledge , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Morvarid, M., 2015, \"The Epistemological Bases of the Slow Switching Argument,\" European Journal of Philosophy , 23: 17-38."
+        },
+        {
+          "raw": "Nagasawa, Y., 2000, \" 'Very-Slow-Switching' and Memory (A Critical Note on Ludlow's Paper),\" Acta Analytica , 15(25): 173-175."
+        },
+        {
+          "raw": "Neta, R., 2003, \"Skepticism, Contextualism, and Semantic Self-Knowledge,\" Philosophy and Phenomenological Research , 67(2): 396-411."
+        },
+        {
+          "raw": "Nisbett, R. & L. Ross, 1980, Human Inference: Strategies and Shortcomings of Social Judgment , Englewood Cliffs, NJ: Prentice-Hall."
+        },
+        {
+          "raw": "Nisbett, R. & T. Wilson, 1977, \"Telling More than We Can Know: Verbal Reports on Mental Processes,\" Psychological Review , 8: 231-259."
+        },
+        {
+          "raw": "Nozick, R., 1981, Philosophical Explanations , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Nuccetelli, S., 1999, \"What Anti-Individualists Cannot Know A Priori,\" Analysis , 59: 48-51."
+        },
+        {
+          "raw": "---, (ed.) 2003, New Essays on Semantic Externalism and Self-Knowledge , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "O'Brien, L., 2007, Self-Knowing Agents , New York: Oxford University Press."
+        },
+        {
+          "raw": "Owens, J. 1990, \"Cognitive Access and Semantic Puzzles,\" in C. Anthony Anderson and J. Owens (eds.) 1990, pp. 147-174."
+        },
+        {
+          "raw": "---, 1992, \"Psychological Supervenience: Its Epistemological Foundation,\" Synthese , 90: 89-117."
+        },
+        {
+          "raw": "Parent, T., 2007, \"Infallibilism about Self-Knowledge,\" Philosophical Studies , 133: 411-424."
+        },
+        {
+          "raw": "---, 2015a, \"Self-Knowledge and Externalism about Empty Concepts,\" Analytic Philosophy , 56: 158-168."
+        },
+        {
+          "raw": "---, 2015b, \"Externalism and 'Knowing What' One Thinks,\" Synthese , 192: 1337-1350."
+        },
+        {
+          "raw": "---, 2016, \"The Empirical Case against Infallibilism,\" Review of Philosophy and Psychology , 7: 223-242."
+        },
+        {
+          "raw": "---, 2017, Self-Reflection for the Opaque Mind , New York: Routledge."
+        },
+        {
+          "raw": "Peacocke, C., 1996, \"Entitlement, Self-Knowledge and Conceptual Redeployment,\" Proceedings of the Aristotelian Society , 96: 117-158."
+        },
+        {
+          "raw": "P&eacute;rez-Otero, M., 2014, \"Boghossian's Inference Argument against Content Externalism Reversed,\" Philosophy and Phenomenological Research , 89: 159-181."
+        },
+        {
+          "raw": "Pollock, J., 2015, \"Social Externalism and the Problem of Communication,\" Philosophical Studies , 172: 3229-3251."
+        },
+        {
+          "raw": "Pritchard, D., 2002, \"McKinsey, Skepticism, and the Transmission of Warrant across Known Entailment,\" Synthese , 130: 279-302."
+        },
+        {
+          "raw": "Pritchard, D. & J. Kallestrup, 2004, \"An Argument for the Inconsistency of Content Externalism and Epistemic Internalism,\" Philosophia , 31: 345-354."
+        },
+        {
+          "raw": "Pryor, J., 2007, \"What's Wrong with McKinsey-style Reasoning?,\" in S. Goldberg (ed.) 2007, pp. 177-200."
+        },
+        {
+          "raw": "Putnam, H., 1973, \"Meaning and Reference,\" Journal of Philosophy , 70(19): 699-711."
+        },
+        {
+          "raw": "---, 1975, \"The Meaning of 'Meaning',\" in Mind, Language, and Reality: Philosophical Papers (Volume 2), Cambridge: Cambridge University Press, pp. 215-271."
+        },
+        {
+          "raw": "---, 1981, \"Brains in a Vat,\" in Reason, Truth, and History , Cambridge: Cambridge University Press, pp. 1-21."
+        },
+        {
+          "raw": "Recanati, F., 2012, Mental Files , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Roche, M. & W. Roche, 2021, \"Authority without Privilege: How to be a Dretskean Conciliatory Skeptic on Self-Knowledge,\" Synthese , 198(2): 1071-1087."
+        },
+        {
+          "raw": "Rosenberg, J., 1994, Beyond Formalism: Naming and Necessity for Human Beings , Philadelphia: Temple University Press."
+        },
+        {
+          "raw": "Rowlands, M., 2003, Externalism: Putting Mind and World Back Together Again , Montreal: McGill-Queen's University Press."
+        },
+        {
+          "raw": "Ryle, G., 1963, The Concept of Mind , London: Penguin."
+        },
+        {
+          "raw": "Sainsbury, R., 2000, \"Warrant-Transmission, Defeaters, and Disquotation,\" in E. Sosa & E. Villanueva (eds.) 2000, pp. 191-200."
+        },
+        {
+          "raw": "Sawyer, S., 1998, \"Privileged Access to the World,\" Australasian Journal of Philosophy , 76(4): 523-533."
+        },
+        {
+          "raw": "---, 2003, \"Sufficient Absences,\" Analysis , 63(3): 202-208."
+        },
+        {
+          "raw": "---, 2006, \"Externalism, Apriority, and Transmission of Warrant\", in T. Marvan (ed.) 2006, 142-153."
+        },
+        {
+          "raw": "---, 2015, \"Contrastive Self-Knowledge and the McKinsey Paradox\", in S. Goldberg (ed.) 2015a, pp. 75-94."
+        },
+        {
+          "raw": "Schantz, R. (ed.), 2004, The Externalist Challenge , Berlin: Walter de Gruyter."
+        },
+        {
+          "raw": "Schiffer, S., 1992, \"Boghossian on Externalism and Inference,\" in E. Villanueva (ed.) 1992, 29-38."
+        },
+        {
+          "raw": "Schroeter, L., 2007, \"The Illusion of Transparency\", Australasian Journal of Philosophy , 85: 597-618"
+        },
+        {
+          "raw": "Searle, J., 1983, Intentionality: An Essay in the Philosophy of Mind , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Segal, G., 2000, A Slim Book about Narrow Content , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Sellars, W. 1954, \"Some Reflections on Language Games,\" Philosophy of Science , 21: 204-228."
+        },
+        {
+          "raw": "Shoemaker, S., 1988, \"On Knowing One's Own Mind,\" Philosophical Perspectives , 2: 183-209."
+        },
+        {
+          "raw": "---, 1996, The First Person Perspective and Other Essays , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Siewart, C., 1998, The Significance of Consciousness , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Smithies, D. & D. Stoljar (eds.), 2012, Introspection and Consciousness , New York: Oxford University Press."
+        },
+        {
+          "raw": "Snowdon, P., 2012, \"How to Think about Phenomenal Self-Knowledge,\" in A. Coliva (ed.) 2012b, pp. 243-262."
+        },
+        {
+          "raw": "Sosa, E. & E. Villanueva (eds.), 2000, Skepticism ( Philosophical Issues : Volume 10), Boston: Blackwell."
+        },
+        {
+          "raw": "Stalnaker, R., 1990, \"Narrow Content,\" in C. Anthony Anderson & J. Owens (eds.) 1990, pp. 131-146."
+        },
+        {
+          "raw": "---, 2008, Our Knowledge of the Internal World , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Stich, S., 1978, \"Autonomous Psychology and the Belief-Desire Thesis,\" The Monist , 61: 573-591."
+        },
+        {
+          "raw": "Stoneham, T., 1999, \"Boghossian on Empty Natural Kind Concepts,\" Proceedings of the Aristotelian Society , 99: 119-122."
+        },
+        {
+          "raw": "Tye, M., 1995, Ten Problems of Consciousness , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 1998, \"Externalism and Memory,\" Proceedings of the Aristotelian Society (Supplementary Volume), 72: 77-94."
+        },
+        {
+          "raw": "Vahid, H., 2003, \"Externalism, Slow-Switching, and Privileged Self-Knowledge,\" Philosophy and Phenomenological Research , 66(2): 370-388."
+        },
+        {
+          "raw": "Villanueva, E. (ed.), 1992, Rationality in Epistemology (Philosophical Issues: Volume 2), Atascadero, CA: Ridgeview."
+        },
+        {
+          "raw": "---, (ed.) 1998, Concepts (Philosophical Issues, Volume 9), Atascadero, CA: Ridgeview."
+        },
+        {
+          "raw": "Warfield, T., 1992, \"Privileged Self-Knowledge and Externalism are Compatible,\" Analysis , 52(4): pp. 232-237."
+        },
+        {
+          "raw": "---, 1995, \"Knowing the World and Knowing Our Own Minds,\" Philosophy and Phenomenological Research , 55(3): 525-545."
+        },
+        {
+          "raw": "---, 1997, \"Externalism, Self-Knowledge, and the Irrelevance of Slow-Switching,\" Analysis , 57(4): 282-284."
+        },
+        {
+          "raw": "Wikforss, &Aring;., 2004, \"Semantic Externalism and Incomplete Understanding,\" Philosophical Quarterly , 54: 287-294."
+        },
+        {
+          "raw": "---, 2006, \"Content Externalism and Fregean Sense,\" in T. Marvan (ed.) 2006, pp. 163-179."
+        },
+        {
+          "raw": "---, 2007, \"Semantic Externalism and Psychological Externalism,\" Philosophy Compass , 3(1): 158-181."
+        },
+        {
+          "raw": "---, 2007, \"The Insignificance of Transparency,\" in S. Goldberg (ed.) 2015a, pp. 142-164."
+        },
+        {
+          "raw": "Williamson, T., 2000, Knowledge and Its Limits , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Wright, C., 1985, \"Facts and Certainty,\" Proceedings of the British Academy , 71: 429-472."
+        },
+        {
+          "raw": "---, 1989, \"Wittgenstein's Later Philosophy of Mind: Sensation, Privacy, and Intention,\" Journal of Philosophy , 86(11): 622-634."
+        },
+        {
+          "raw": "---, 1998, \"Self-Knowledge: The Wittgensteinian Legacy,\" in C. Wright, et al. (eds.) 1998, pp. 13-46."
+        },
+        {
+          "raw": "---, 2000a, \"Cogency and Question-Begging: Some Reflections on McKinsey's Paradox and Putnam's Proof,\" in E. Sosa & E. Villanueva (eds.) 2000, pp. 140-163."
+        },
+        {
+          "raw": "---, 2000b, \"Replies,\" in E. Sosa & E. Villanueva (eds.) 2000, pp. 201-219."
+        },
+        {
+          "raw": "---, 2003, \"Some Reflections on the Acquisition of Warrant by Inference,\" in S. Nuccetelli (ed.) 2003, pp. 57-77."
+        },
+        {
+          "raw": "---, 2011, \"McKinsey One More Time,\" in A. Hatzimoysis (ed.) 2011, pp. 80-104."
+        },
+        {
+          "raw": "---, 2012, \"Warrant Transmission and Entitlement,\" in A. Coliva (ed.) 2102b, pp. 451-486."
+        },
+        {
+          "raw": "---, 2015, \"Self-Knowledge: The Reality of Privileged Access\", in S. Goldberg (ed.) 2015a, pp. 49-74."
+        },
+        {
+          "raw": "Wright, C., B. Smith & C. Macdonald (eds.), 1998, Knowing Our Own Minds , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Yli-Vakkuri, J. & J. Hawthorne, 2018, Narrow Content , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Zemach, E., 1976, \"Putnam's Theory on the Reference of Substance Terms,\" Journal of Philosophy , 73: 116-127."
+        },
+        {
+          "raw": "Zimmerman, A., 2006, \"Basic Self-Knowledge: Answering Peacocke's Criticisms of Constitutivism,\" Philosophical Studies , 128: 337-379."
+        },
+        {
+          "raw": "---, 2008, \"Self-Knowledge: Rationalism vs. Empiricism,\" Philosophy Compass , 3(2): 325-352."
+        },
+        {
+          "raw": "Barber, A. (ed.), 2003, Epistemology of Language , New York: Oxford University Press."
+        },
+        {
+          "raw": "Boghossian, P., 2008, Content and Justification: Philosophical Papers , New York: Oxford University Press."
+        },
+        {
+          "raw": "Burge, T., 2006, Foundations of Mind: Philosophical Essays Vol. 2 , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Brueckner, A., 2010, Essays on Skepticism , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Cassam, Q. (ed.), 1994, Self-Knowledge , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Davidson, D., 2002, Subjective, Intersubjective, Objective , New York: Oxford University Press."
+        },
+        {
+          "raw": "Hahn, M. & B. Ramberg (eds.), 2004, Reflections and Replies: Essays on the Philosophy of Tyler Burge , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Pessin, A. & S. Goldberg (eds.), 1996, The Twin Earth Chronicles , Armonk, NY: M.E. Sharpe."
+        },
+        {
+          "raw": "Wright, C., 2001, Rails to Infinity: Essays on Wittgenstein's Philosophical Investigations, Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Many works cited and further readings are found in the anthologies above: Boghossian & Peacocke (eds.) 2000, Coliva (ed.) 2012a, Coliva (ed.) 2012b, Frapolli (ed.) 2003, Gertler (ed.) 2003, Goldberg (ed.) 2007, Goldberg (ed.) 2015a, Hatzimoysis (ed.) 2011, Ludlow & Martin (eds.) 1998, Marvan (ed.) 2006, Nuccetelli (ed.) 2003, Schantz (ed.) 2004, Smithies & Stoljar (eds.) 2012, Villanueva (ed.) 1992, 1998, and Wright, et al. (eds.) 1998. Other relevant collections include:"
+        }
+      ],
+      "publishedAt": "2013-05-08T14:00:00.000Z",
+      "revisedAt": "2024-09-05T14:00:00.000Z"
+    }
+  }
+}

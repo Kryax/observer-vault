@@ -1,0 +1,207 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:arxiv/2603.08273v1",
+  "meta": {
+    "title": "Less is More: Robust Zero-Communication 3D Pursuit-Evasion via Representational Parsimony",
+    "description": "Asymmetric 3D pursuit-evasion in cluttered voxel environments is difficult under communication latency, partial observability, and nonholonomic maneuver limits. While many MARL methods rely on richer inter-agent coupling or centralized signals, these dependencies can become fragility sources when communication is delayed or noisy. Building on an inherited path-guided decentralized pursuit scaffold, we study a robustness-oriented question: can representational parsimony improve communication-free coordination? We instantiate this principle with (i) a parsimonious actor observation interface that removes team-coupled channels (83-D to 50-D), and (ii) Contribution-Gated Credit Assignment (CGCA), a locality-aware credit structure for communication-denied cooperation. In Stage-5 evaluation (4 pursuers vs. 1 evader), our configuration reaches 0.753 +/- 0.091 success and 0.223 +/- 0.066 collision, outperforming the 83-D FULL OBS counterpart (0.721 +/- 0.071, 0.253 +/- 0.089). It further shows graceful degradation under speed/yaw/noise/delay stress tests and resilient zero-shot transfer on urban-canyon maps (about 61% success at density 0.24). These results support a practical paradigm shift: explicitly severing redundant cross-agent channels can suppress compounding error cascades and improve robustness in latency-prone deployment.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T06:38:58.032Z",
+    "dateModified": "2026-03-11T06:38:58.032Z",
+    "datePublished": "2026-03-09T11:44:04.000Z",
+    "keywords": [
+      "cs.RO",
+      "cs.MA"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Asymmetric 3D pursuit-evasion in cluttered voxel environments is difficult under communication latency, partial observability, and nonholonomic maneuver limits. While many MARL methods rely on richer inter-agent coupling or centralized signals, these dependencies can become fragility sources when communication is delayed or noisy. Building on an inherited path-guided decentralized pursuit scaffold, we study a robustness-oriented question: can representational parsimony improve communication-free coordination? We instantiate this principle with (i) a parsimonious actor observation interface that removes team-coupled channels (83-D to 50-D), and (ii) Contribution-Gated Credit Assignment (CGCA), a locality-aware credit structure for communication-denied cooperation. In Stage-5 evaluation (4 pursuers vs. 1 evader), our configuration reaches 0.753 +/- 0.091 success and 0.223 +/- 0.066 collision, outperforming the 83-D FULL OBS counterpart (0.721 +/- 0.071, 0.253 +/- 0.089). It further shows graceful degradation under speed/yaw/noise/delay stress tests and resilient zero-shot transfer on urban-canyon maps (about 61% success at density 0.24). These results support a practical paradigm shift: explicitly severing redundant cross-agent channels can suppress compounding error cascades and improve robustness in latency-prone deployment.",
+    "context": "arXiv categories: cs.RO, cs.MA | 7 pages, 10 figures. This work has been submitted to the IEEE for possible publication",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "software",
+    "robotics"
+  ],
+  "validation": {
+    "method": "automated-analysis",
+    "evidence": [
+      {
+        "type": "arxiv-record",
+        "description": "Indexed from arXiv paper 2603.08273v1",
+        "uri": "https://arxiv.org/abs/2603.08273v1"
+      },
+      {
+        "type": "category-classification",
+        "description": "Classified in arXiv categories: cs.RO, cs.MA"
+      },
+      {
+        "type": "submission-recency",
+        "description": "Published 2026-03-09T11:44:04.000Z and last updated 2026-03-09T11:44:04.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-09T11:44:04.000Z"
+  },
+  "implementation": {
+    "type": "algorithm",
+    "refs": [
+      {
+        "type": "publication",
+        "uri": "https://arxiv.org/abs/2603.08273v1",
+        "description": "arXiv abstract page for 2603.08273v1"
+      },
+      {
+        "type": "publication",
+        "uri": "https://arxiv.org/pdf/2603.08273v1",
+        "description": "arXiv PDF"
+      }
+    ],
+    "solutionApproach": "7 pages, 10 figures. This work has been submitted to the IEEE for possible publication"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Jialin Ying",
+        "type": "human"
+      },
+      {
+        "name": "Zhihao Li",
+        "type": "human"
+      },
+      {
+        "name": "Zicheng Dong",
+        "type": "human"
+      },
+      {
+        "name": "Guohua Wu",
+        "type": "human"
+      },
+      {
+        "name": "Yihuan Liao",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "arXiv",
+        "type": "system",
+        "uri": "https://arxiv.org"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://arxiv.org/abs/2603.08273v1",
+      "https://arxiv.org/pdf/2603.08273v1"
+    ],
+    "generatedBy": "ocp-scraper/arxiv-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 39,
+      "validation_diversity": 0.68,
+      "context_breadth": 0.9,
+      "temporal_stability": 0.79,
+      "test_coverage": 0.45,
+      "documentation_quality": 1
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.626
+  },
+  "extensions": {
+    "arxiv": {
+      "id": "2603.08273v1",
+      "source": "arXiv",
+      "categories": [
+        "cs.RO",
+        "cs.MA"
+      ],
+      "comment": "7 pages, 10 figures. This work has been submitted to the IEEE for possible publication",
+      "absUrl": "https://arxiv.org/abs/2603.08273v1",
+      "pdfUrl": "https://arxiv.org/pdf/2603.08273v1"
+    }
+  }
+}

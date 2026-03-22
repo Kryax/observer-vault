@@ -1,0 +1,284 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/antvis--l7",
+  "meta": {
+    "title": "L7",
+    "description": "🌎 Large-scale WebGL-powered Geospatial Data Visualization analysis engine.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:50:19.926Z",
+    "dateModified": "2026-03-11T04:50:19.926Z",
+    "keywords": [
+      "3d",
+      "amap",
+      "antv",
+      "data-visualization",
+      "geojson",
+      "geospatial",
+      "gis",
+      "javascript",
+      "map",
+      "mapbox",
+      "maps",
+      "point",
+      "polygon",
+      "webgl"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "🌎 Large-scale WebGL-powered Geospatial Data Visualization analysis engine.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "data-management",
+    "lang:typescript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "3974 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "661 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:50:19.926Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/antvis/L7",
+        "description": "GitHub repository: antvis/L7"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://l7.antv.antgroup.com",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "TypeScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "@antv/g-device-api",
+        "version": "^1.6.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@antv/g-device-api"
+      },
+      {
+        "name": "@turf/turf",
+        "version": "^6.5.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@turf/turf"
+      },
+      {
+        "name": "@types/pixelmatch",
+        "version": "^5.2.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@types/pixelmatch"
+      },
+      {
+        "name": "@types/react",
+        "version": "^18.2.74",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@types/react"
+      },
+      {
+        "name": "@types/react-dom",
+        "version": "^18.2.23",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@types/react-dom"
+      },
+      {
+        "name": "@types/stats.js",
+        "version": "^0.17.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@types/stats.js"
+      },
+      {
+        "name": "antd",
+        "version": "^5.16.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/antd"
+      },
+      {
+        "name": "geotiff",
+        "version": "^2.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/geotiff"
+      },
+      {
+        "name": "kdbush",
+        "version": "^4.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/kdbush"
+      },
+      {
+        "name": "lil-gui",
+        "version": "^0.19.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/lil-gui"
+      },
+      {
+        "name": "maplibre-gl",
+        "version": "^3.5.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/maplibre-gl"
+      },
+      {
+        "name": "pixelmatch",
+        "version": "5.3.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/pixelmatch"
+      },
+      {
+        "name": "pmtiles",
+        "version": "^2.7.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/pmtiles"
+      },
+      {
+        "name": "pngjs",
+        "version": "^6.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/pngjs"
+      },
+      {
+        "name": "react",
+        "version": "^18.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react"
+      },
+      {
+        "name": "react-dom",
+        "version": "^18.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-dom"
+      },
+      {
+        "name": "stats.js",
+        "version": "^0.17.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/stats.js"
+      },
+      {
+        "name": "three",
+        "version": "0.182.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/three"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "antvis",
+        "type": "human",
+        "uri": "https://github.com/antvis"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 5296,
+      "validation_diversity": 0.63,
+      "context_breadth": 0.68,
+      "temporal_stability": 0.94,
+      "test_coverage": 0.2,
+      "documentation_quality": 0.3
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.631
+  }
+}

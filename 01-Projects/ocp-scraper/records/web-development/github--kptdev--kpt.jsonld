@@ -1,0 +1,402 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/kptdev--kpt",
+  "meta": {
+    "title": "kpt: Automate Kubernetes Configuration Editing",
+    "description": "Automate Kubernetes Configuration Editing",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:50:17.989Z",
+    "dateModified": "2026-03-11T04:50:17.989Z",
+    "keywords": [
+      "cli",
+      "config-as-data",
+      "configuration-management",
+      "containers",
+      "customization",
+      "deployment",
+      "gitops",
+      "kpt",
+      "krm",
+      "kubectl",
+      "kubernetes",
+      "kustomize",
+      "openapi",
+      "packaging-tool",
+      "policy-as-code",
+      "schema",
+      "shift-left",
+      "validation"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "kpt is a package-centric toolchain that enables a WYSIWYG configuration authoring, automation, and delivery experience,\nwhich simplifies managing Kubernetes platforms and KRM-driven infrastructure (e.g.,\n[Config Connector](https://github.com/GoogleCloudPlatform/k8s-config-connector), [Crossplane](https://crossplane.io)) at\nscale by manipulating declarative [Configuration as Data](docs/design-docs/06-config-as-data.md).",
+    "context": "kpt is a package-centric toolchain that enables a WYSIWYG configuration authoring, automation, and delivery experience,\nwhich simplifies managing Kubernetes platforms and KRM-driven infrastructure (e.g.,\n[Config Connector](https://github.com/GoogleCloudPlatform/k8s-config-connector), [Crossplane](https://crossplane.io)) at\nscale by manipulating declarative [Configuration as Data](docs/design-docs/06-config-as-data.md).\n\n*Configuration as Data* is an approach to management of configuration which:\n\n* makes configuration data the source of truth, stored separately from the live\n  state\n* uses a uniform, serializable data model to represent configuration\n* separates code that acts on the configuration from the data and from packages\n  / bundles of the data\n* abstracts configuration file structure and storage from operations that act\n  upon the configuration data; clients manipulating configuration data don’t\n  need to directly interact with storage (git, container images).\n\nSee [the FAQ](https://kpt.dev/faq/) for more details about how kpt is different from alternatives.\n\nUse our [public Dosu space](https://github.dosu.com/kptdev/kpt) to ask anything about kpt.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "backend",
+    "machine-learning",
+    "devops",
+    "containerization",
+    "developer-tools",
+    "data-management",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "1860 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "255 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:50:17.989Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/kptdev/kpt",
+        "description": "GitHub repository: kptdev/kpt"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://kpt.dev",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "github.com/Masterminds/semver/v3",
+        "version": "v3.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Masterminds/semver/v3"
+      },
+      {
+        "name": "github.com/bytecodealliance/wasmtime-go",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/bytecodealliance/wasmtime-go"
+      },
+      {
+        "name": "github.com/cpuguy83/go-md2man/v2",
+        "version": "v2.0.7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/cpuguy83/go-md2man/v2"
+      },
+      {
+        "name": "github.com/go-errors/errors",
+        "version": "v1.5.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-errors/errors"
+      },
+      {
+        "name": "github.com/google/go-cmp",
+        "version": "v0.7.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/go-cmp"
+      },
+      {
+        "name": "github.com/google/go-containerregistry",
+        "version": "v0.20.6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/go-containerregistry"
+      },
+      {
+        "name": "github.com/google/shlex",
+        "version": "v0.0.0-20191202100458-e7afc7fbc510",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/shlex"
+      },
+      {
+        "name": "github.com/kptdev/krm-functions-catalog/functions/go/apply-setters",
+        "version": "v0.2.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/kptdev/krm-functions-catalog/functions/go/apply-setters"
+      },
+      {
+        "name": "github.com/kptdev/krm-functions-sdk/go/fn",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/kptdev/krm-functions-sdk/go/fn"
+      },
+      {
+        "name": "github.com/otiai10/copy",
+        "version": "v1.14.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/otiai10/copy"
+      },
+      {
+        "name": "github.com/philopon/go-toposort",
+        "version": "v0.0.0-20170620085441-9be86dbd762f",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/philopon/go-toposort"
+      },
+      {
+        "name": "github.com/pkg/errors",
+        "version": "v0.9.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/pkg/errors"
+      },
+      {
+        "name": "github.com/prep/wasmexec",
+        "version": "v0.0.0-20220807105708-6554945c1dec",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prep/wasmexec"
+      },
+      {
+        "name": "github.com/regclient/regclient",
+        "version": "v0.11.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/regclient/regclient"
+      },
+      {
+        "name": "github.com/spf13/cobra",
+        "version": "v1.10.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/cobra"
+      },
+      {
+        "name": "github.com/spf13/pflag",
+        "version": "v1.0.10",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/pflag"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.11.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      },
+      {
+        "name": "github.com/xlab/treeprint",
+        "version": "v1.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/xlab/treeprint"
+      },
+      {
+        "name": "golang.org/x/mod",
+        "version": "v0.29.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/mod"
+      },
+      {
+        "name": "golang.org/x/text",
+        "version": "v0.31.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/text"
+      },
+      {
+        "name": "gopkg.in/yaml.v2",
+        "version": "v2.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gopkg.in/yaml.v2"
+      },
+      {
+        "name": "gotest.tools",
+        "version": "v2.2.0+incompatible",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gotest.tools"
+      },
+      {
+        "name": "k8s.io/api",
+        "version": "v0.34.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/api"
+      },
+      {
+        "name": "k8s.io/apiextensions-apiserver",
+        "version": "v0.34.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/apiextensions-apiserver"
+      },
+      {
+        "name": "k8s.io/apimachinery",
+        "version": "v0.34.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/apimachinery"
+      },
+      {
+        "name": "k8s.io/cli-runtime",
+        "version": "v0.34.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/cli-runtime"
+      },
+      {
+        "name": "k8s.io/client-go",
+        "version": "v0.34.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/client-go"
+      },
+      {
+        "name": "k8s.io/component-base",
+        "version": "v0.34.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/component-base"
+      },
+      {
+        "name": "k8s.io/klog/v2",
+        "version": "v2.130.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/klog/v2"
+      },
+      {
+        "name": "k8s.io/kube-openapi",
+        "version": "v0.0.0-20250910181357-589584f1c912",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/kube-openapi"
+      },
+      {
+        "name": "k8s.io/kubectl",
+        "version": "v0.34.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/k8s.io/kubectl"
+      },
+      {
+        "name": "sigs.k8s.io/cli-utils",
+        "version": "v0.37.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/sigs.k8s.io/cli-utils"
+      },
+      {
+        "name": "sigs.k8s.io/controller-runtime",
+        "version": "v0.22.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/sigs.k8s.io/controller-runtime"
+      },
+      {
+        "name": "sigs.k8s.io/kustomize/api",
+        "version": "v0.20.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/sigs.k8s.io/kustomize/api"
+      },
+      {
+        "name": "sigs.k8s.io/kustomize/kyaml",
+        "version": "v0.20.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/sigs.k8s.io/kustomize/kyaml"
+      },
+      {
+        "name": "sigs.k8s.io/yaml",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/sigs.k8s.io/yaml"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "kptdev",
+        "type": "human",
+        "uri": "https://github.com/kptdev"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 2370,
+      "validation_diversity": 0.69,
+      "context_breadth": 0.64,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.2,
+      "documentation_quality": 0.6
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.643
+  }
+}

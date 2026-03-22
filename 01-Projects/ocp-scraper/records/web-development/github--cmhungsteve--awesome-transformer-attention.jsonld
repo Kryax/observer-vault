@@ -1,0 +1,172 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/cmhungsteve--awesome-transformer-attention",
+  "meta": {
+    "title": "Ultimate-Awesome-Transformer-Attention [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)",
+    "description": "An ultimately comprehensive paper list of Vision Transformer/Attention, including papers, codes, and related websites",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T02:58:37.088Z",
+    "dateModified": "2026-03-22T02:58:37.088Z",
+    "keywords": [
+      "attention-mechanism",
+      "attention-mechanisms",
+      "awesome-list",
+      "computer-vision",
+      "deep-learning",
+      "detr",
+      "papers",
+      "self-attention",
+      "transformer",
+      "transformer-architecture",
+      "transformer-awesome",
+      "transformer-cv",
+      "transformer-models",
+      "transformer-with-cv",
+      "transformers",
+      "vision-transformer",
+      "visual-transformer",
+      "vit"
+    ]
+  },
+  "problemSolved": {
+    "statement": "- [Citation](#citation)\n- [Survey](#survey)\n- [Image Classification / Backbone](#image-classification--backbone)\n    - [Replace Conv w/ Attention](#replace-conv-w-attention)\n        - [Pure Attention](#pure-attention)\n        - [Conv-stem + Attention](#conv-stem--attention)\n        - [Conv + Attention](#conv--attention)\n    - [Vision Transformer](#vision-transformer)\n        - [General Vision Transformer](#general-vision-transformer)\n        - [Efficient Vision Transformer](#efficient-vision-transformer)\n        - [Conv + Transformer](#conv--transformer)\n        - [Training + Transformer](#training--transformer)\n        - [Robustness + Transformer](#robustness--transformer)\n        - [Model Compression + Transformer](#model-compression--transformer)\n    - [Attention-Free](#attention-free)\n        - [MLP-Series](#mlp-series)\n        - [Other Attention-Free](#other-attention-free)\n    - [Analysis for Transformer](#analysis-for-transformer)\n- [Detection](#detection)\n    - [Object Detection](#object-detection)\n    - [3D Object Detection](#3d-object-detection)\n    - [Multi-Modal Detection](#multi-modal-detection)\n    - [HOI Detection](#hoi-detection)\n    - [Salient Object Detection](#salient-object-detection)\n    - [Other Detection Tasks](#other-detection-tasks)\n- [Segmentation](#segmentation)\n    - [Semantic Segmentation](#semantic-segmentation)\n    - [Depth Estimation](#depth-estimation)\n    - [Object Segmentation](#object-segmentation)\n    - [Other Segmentation Tasks](#other-segmentation-tasks)\n- [Video (High-level)](#video-high-level)\n    - [Action Recognition](#action-recognition)\n    - [Action Detection/Localization](#action-detectionlocalization)\n    - [Action Prediction/Anticipation](#action-predictionanticipation)\n    - [Video Object Segmentation](#video-object-segmentation)\n    - [Video Instance Segmentation](#video-instance-segmentation)\n    - [Other Video Tasks](#other-video-tasks)\n- [References](#references)\n \n------ (The following papers are moved to [README_multimodal.md](README_multimodal.md)) ------",
+    "context": "This repo contains a comprehensive paper list of **Vision Transformer & Attention**, including papers, codes, and related websites. <br>\nThis list is maintained by [Min-Hung Chen](https://minhungchen.netlify.app/). (*Actively* keep updating)\n\nIf you find some ignored papers, **feel free to [*create pull requests*](https://github.com/cmhungsteve/Awesome-Transformer-Attention/blob/main/How-to-PR.md), [*open issues*](https://github.com/cmhungsteve/Awesome-Transformer-Attention/issues/new), or [*email* me](mailto:vitec6@gmail.com)**. <br> \nContributions in any form to make this list more comprehensive are welcome.\n\nIf you find this repository useful, please consider **[citing](#citation)** and **★STARing** this list. <br>\nFeel free to share this list with others! \n\n**[Update: January, 2024]** Added all the related papers from *NeurIPS 2023*! <br>\n**[Update: December, 2023]** Added all the related papers from *ICCV 2023*! <br>\n**[Update: September, 2023]** Split the multi-modal paper list to [README_multimodal.md](README_multimodal.md) <br>\n**[Update: June, 2023]** Added all the related papers from *ICML 2023*! <br>\n**[Update: June, 2023]** Added all the related papers from *CVPR 2023*! <br>\n**[Update: February, 2023]** Added all the related papers from *ICLR 2023*! <br>\n**[Update: December, 2022]** Added attention-free papers from [Networks Beyond Attention (GitHub)](https://github.com/FocalNet/Networks-Beyond-Attention) made by [Jianwei Yang](https://github.com/jwyang) <br>\n**[Update: November, 2022]** Added all the related papers from *NeurIPS 2022*! <br>\n**[Update: October, 2022]** Split the 2nd half of the paper list to [README_2.md](README_2.md) <br>\n**[Update: October, 2022]** Added all the related papers from *ECCV 2022*! <br>\n**[Update: September, 2022]** Added the [Transformer tutorial slides](http://lucasb.eyer.be/transformer) made by [Lucas Beyer](https://twitter.com/giffmana)! <br>\n**[Update: June, 2022]** Added all the related papers from *CVPR 2022*!\n\n---",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "machine-learning"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "5024 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "496 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T02:58:37.088Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/cmhungsteve/Awesome-Transformer-Attention",
+        "description": "GitHub repository: cmhungsteve/Awesome-Transformer-Attention"
+      }
+    ]
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "cmhungsteve",
+        "type": "human",
+        "uri": "https://github.com/cmhungsteve"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 6016,
+      "validation_diversity": 0.47,
+      "context_breadth": 0.67,
+      "temporal_stability": 0.71,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.5
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.6
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/nolar--kopf",
+  "meta": {
+    "title": "Kubernetes Operator Pythonic Framework (Kopf)",
+    "description": "A Python framework to write Kubernetes operators in just a few lines of code",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:48:20.286Z",
+    "dateModified": "2026-03-11T04:48:20.286Z",
+    "keywords": [
+      "admission-controller",
+      "admission-controllers",
+      "admission-webhook",
+      "asyncio",
+      "framework",
+      "kopf",
+      "kubernetes",
+      "kubernetes-concepts",
+      "kubernetes-operator",
+      "kubernetes-operators",
+      "operator",
+      "operator-framework",
+      "operators",
+      "python",
+      "python-framework",
+      "python3"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "[![GitHub](https://img.shields.io/github/stars/nolar/kopf?style=flat&label=GitHub%E2%AD%90%EF%B8%8F)](https://github.com/nolar/kopf)\n[![CI](https://github.com/nolar/kopf/actions/workflows/thorough.yaml/badge.svg)](https://github.com/nolar/kopf/actions/workflows/thorough.yaml)\n[![Supported Python versions](https://img.shields.io/pypi/pyversions/kopf.svg)](https://pypi.org/project/kopf/)\n[![codecov](https://codecov.io/gh/nolar/kopf/branch/main/graph/badge.svg)](https://codecov.io/gh/nolar/kopf)\n[![coverage](https://coveralls.io/repos/github/nolar/kopf/badge.svg?branch=main)](https://coveralls.io/github/nolar/kopf?branch=main)",
+    "context": "[![GitHub](https://img.shields.io/github/stars/nolar/kopf?style=flat&label=GitHub%E2%AD%90%EF%B8%8F)](https://github.com/nolar/kopf)\n[![CI](https://github.com/nolar/kopf/actions/workflows/thorough.yaml/badge.svg)](https://github.com/nolar/kopf/actions/workflows/thorough.yaml)\n[![Supported Python versions](https://img.shields.io/pypi/pyversions/kopf.svg)](https://pypi.org/project/kopf/)\n[![codecov](https://codecov.io/gh/nolar/kopf/branch/main/graph/badge.svg)](https://codecov.io/gh/nolar/kopf)\n[![coverage](https://coveralls.io/repos/github/nolar/kopf/badge.svg?branch=main)](https://coveralls.io/github/nolar/kopf?branch=main)\n\n**Kopf** —Kubernetes Operator Pythonic Framework— is a framework and a library\nto make Kubernetes operators development easier, just in a few lines of Python code.\n\nThe main goal is to bring the Domain-Driven Design to the infrastructure level,\nwith Kubernetes being an orchestrator/database of the domain objects (custom resources),\nand the operators containing the domain logic (with no or minimal infrastructure logic).\n\nThe project was originally started as `zalando-incubator/kopf` in March 2019,\nand then forked as `nolar/kopf` in August 2020: but it is the same codebase,\nthe same packages, the same developer(s).",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "devops",
+    "containerization",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "2554 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "190 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:48:20.286Z"
+  },
+  "implementation": {
+    "type": "framework",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/nolar/kopf",
+        "description": "GitHub repository: nolar/kopf"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://docs.kopf.dev/",
+        "description": "Project homepage"
+      }
+    ],
+    "solutionApproach": "See usage section in README",
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "python-json-logger",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/python-json-logger/"
+      },
+      {
+        "name": "jsonpatch",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/jsonpatch/"
+      },
+      {
+        "name": "iso8601",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/iso8601/"
+      },
+      {
+        "name": "pyyaml",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyyaml/"
+      },
+      {
+        "name": "click",
+        "version": ">=8.2.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/click/"
+      },
+      {
+        "name": "aiohttp",
+        "version": ">=3.11.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/aiohttp/"
+      },
+      {
+        "name": "aiohttp",
+        "version": ">=3.9.0; python_version >= '3.12'",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/aiohttp/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "nolar",
+        "type": "human",
+        "uri": "https://github.com/nolar"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 2934,
+      "validation_diversity": 0.62,
+      "context_breadth": 0.63,
+      "temporal_stability": 0.94,
+      "test_coverage": 0.17,
+      "documentation_quality": 0.85
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.629
+  }
+}

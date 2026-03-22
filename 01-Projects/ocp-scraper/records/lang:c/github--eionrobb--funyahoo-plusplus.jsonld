@@ -1,0 +1,161 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/eionrobb--funyahoo-plusplus",
+  "meta": {
+    "title": "FunYahoo++",
+    "description": "A replacement Yahoo prpl (protocol plugin) for Pidgin/libpurple",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T02:03:55.057Z",
+    "dateModified": "2026-03-11T02:03:55.057Z",
+    "keywords": [
+      "libpurple",
+      "pidgin",
+      "protocol",
+      "protocol-plugin",
+      "replacement-yahoo-prpl",
+      "yahoo"
+    ],
+    "license": "GPL-3.0"
+  },
+  "problemSolved": {
+    "statement": "A replacement Yahoo prpl (protocol plugin) for Pidgin/libpurple",
+    "context": "A replacement Yahoo prpl (protocol plugin) for Pidgin/libpurple\n\nIn 2016 Yahoo decided that they would give next-to-no notice that they were retiring their old protocol in favour of a brand new protocol that doesn't do nearly as much as the old one.  Whilst Microsoft were kind enough to give people a couple of years to plan transitions for MSN, compare that with the 2 months that Yahoo were so generous to provide.\n\nUnfortunately I drew the short straw and ended up writing this plugin in a rush at the last minute in order to scrape something together for unfortunate Yahoo users to use.\n\nThis is not a slight change from the old protocol to a new one, instead, it's a completly different protocol with the Yahoo name slapped on it.  Thus there are [several features that the new protocol doesn't have](https://web.archive.org/web/20160730080614/https://help.yahoo.com/kb/yahoo-messenger-for-web/SLN26860.html):\n  * Typing notifications\n  * Away/Idle statuses\n  * Your old buddy list\n  * Bold/italic/underline formatting\n\n[Please don't hate me because they're missing.](https://web.archive.org/web/20160417093742/https://yahoo.uservoice.com/forums/320961)\n\nIf you're having trouble logging in, try logging into http://messenger.yahoo.com once. It seems to initialize your account in some way.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:c"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "59 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "11 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T02:03:55.057Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/EionRobb/funyahoo-plusplus",
+        "description": "GitHub repository: EionRobb/funyahoo-plusplus"
+      }
+    ],
+    "language": "C"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "EionRobb",
+        "type": "human",
+        "uri": "https://github.com/EionRobb"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 81,
+      "validation_diversity": 0.26,
+      "context_breadth": 0.34,
+      "temporal_stability": 0.46,
+      "test_coverage": 0,
+      "documentation_quality": 0.43
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.199
+  }
+}

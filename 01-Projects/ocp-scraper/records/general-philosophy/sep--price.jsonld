@@ -1,0 +1,755 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/price",
+  "meta": {
+    "title": "Henry Habberley Price",
+    "description": "Henry Habberley Price, who published as H. H. Price, was born in 1899. From 1935 to 1959 he was Wykeham Professor of Logic at Oxford University. Price was a major figure in his lifetime well-known especially for the \"clarity and elegance of style\", which, according to Martha Kneale (1996: xix), make his works readable in spite of changing fashions in philosophy. Many people's acquaintance nowadays with Price's philosophical work derives from his being a target in Austin's (1962) famous attack on the sense-datum theory. This restricted acquaintance with his output is one reason that Price has been ignored in recent philosophy. Mainstream philosophy neglected him after the Second World War, perhaps partly because, when articulating his ideas, he mainly engaged with philosophers of the past, such as Locke and Hume. His thought was, however, valued by fellow philosophers such as Broad, Moore, Ayer, and generations of his students at Oxford, including Sellars, Armstrong, and Anscombe. Although Price is seen mainly as a philosopher of perception, only two of his six books are about perception and he had a major influence, also publishing many articles, on a variety of topics, including some we cannot focus on here, e.g., our evidence of other minds (1938; 1930b: 195) and psychical research (1940c; 1953b; 1972; 1995; an interest he claims to share with Neo-Platonists [1968a: 447]). We can only provide a sketch of his rich contributions. After briefly sketching his life (&sect;1), we discuss his philosophy's general features (&sect;2), contributions to the studies of perception (&sect;3), properties (&sect;5.1), recognition (&sect;5), belief (&sect;6), religious belief (&sect;6.8), his revival and serious study of Hume (&sect;4), and some remarkable anticipations (&sect;7).",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T03:10:48.187Z",
+    "dateModified": "2026-03-22T03:10:48.187Z",
+    "datePublished": "2023-11-03T13:00:00.000Z",
+    "keywords": [
+      "austin jl",
+      "grice",
+      "sellars",
+      "sense data",
+      "strawson",
+      "wilson"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Henry Habberley Price, who published as H. H. Price, was born in 1899. From 1935 to 1959 he was Wykeham Professor of Logic at Oxford University. Price was a major figure in his lifetime well-known especially for the \"clarity and elegance of style\", which, according to Martha Kneale (1996: xix), make his works readable in spite of changing fashions in philosophy. Many people's acquaintance nowadays with Price's philosophical work derives from his being a target in Austin's (1962) famous attack on the sense-datum theory. This restricted acquaintance with his output is one reason that Price has been ignored in recent philosophy. Mainstream philosophy neglected him after the Second World War, perhaps partly because, when articulating his ideas, he mainly engaged with philosophers of the past, such as Locke and Hume. His thought was, however, valued by fellow philosophers such as Broad, Moore, Ayer, and generations of his students at Oxford, including Sellars, Armstrong, and Anscombe. Although Price is seen mainly as a philosopher of perception, only two of his six books are about perception and he had a major influence, also publishing many articles, on a variety of topics, including some we cannot focus on here, e.g., our evidence of other minds (1938; 1930b: 195) and psychical research (1940c; 1953b; 1972; 1995; an interest he claims to share with Neo-Platonists [1968a: 447]). We can only provide a sketch of his rich contributions. After briefly sketching his life (&sect;1), we discuss his philosophy's general features (&sect;2), contributions to the studies of perception (&sect;3), properties (&sect;5.1), recognition (&sect;5), belief (&sect;6), religious belief (&sect;6.8), his revival and serious study of Hume (&sect;4), and some remarkable anticipations (&sect;7).",
+    "context": "Opening section: 1. Life | Related entries: austin-jl, grice, sellars, sense-data, strawson, wilson",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "general-philosophy"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry price",
+        "uri": "https://plato.stanford.edu/entries/price/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "2 author(s), 6 related entries, bibliography size 175"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2023-11-03T13:00:00.000Z and revised 2023-11-03T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2023-11-03T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/price/",
+        "description": "SEP entry for price"
+      }
+    ],
+    "solutionApproach": "1. Life"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/austin-jl",
+      "ocp:sep/grice",
+      "ocp:sep/sellars",
+      "ocp:sep/sense-data",
+      "ocp:sep/strawson",
+      "ocp:sep/wilson"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Schipper, Arthur",
+        "type": "human"
+      },
+      {
+        "name": "Snowdon, Paul",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/price/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 110,
+      "validation_diversity": 0.5,
+      "context_breadth": 0.37,
+      "temporal_stability": 0.62,
+      "test_coverage": 0.78,
+      "documentation_quality": 0.89
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.521
+  },
+  "extensions": {
+    "sep": {
+      "slug": "price",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/price/",
+      "preamble": "Henry Habberley Price, who published as H. H. Price, was born in 1899. From 1935 to 1959 he was Wykeham Professor of Logic at Oxford University. Price was a major figure in his lifetime well-known especially for the \"clarity and elegance of style\", which, according to Martha Kneale (1996: xix), make his works readable in spite of changing fashions in philosophy. Many people's acquaintance nowadays with Price's philosophical work derives from his being a target in Austin's (1962) famous attack on the sense-datum theory. This restricted acquaintance with his output is one reason that Price has been ignored in recent philosophy. Mainstream philosophy neglected him after the Second World War, perhaps partly because, when articulating his ideas, he mainly engaged with philosophers of the past, such as Locke and Hume. His thought was, however, valued by fellow philosophers such as Broad, Moore, Ayer, and generations of his students at Oxford, including Sellars, Armstrong, and Anscombe. Although Price is seen mainly as a philosopher of perception, only two of his six books are about perception and he had a major influence, also publishing many articles, on a variety of topics, including some we cannot focus on here, e.g., our evidence of other minds (1938; 1930b: 195) and psychical research (1940c; 1953b; 1972; 1995; an interest he claims to share with Neo-Platonists [1968a: 447]). We can only provide a sketch of his rich contributions. After briefly sketching his life (&sect;1), we discuss his philosophy's general features (&sect;2), contributions to the studies of perception (&sect;3), properties (&sect;5.1), recognition (&sect;5), belief (&sect;6), religious belief (&sect;6.8), his revival and serious study of Hume (&sect;4), and some remarkable anticipations (&sect;7).",
+      "firstSectionTitle": "1. Life",
+      "firstSectionText": "Price was born on 17 May 1899 and died on 26 November 1984. He was born in Neath, a small, then industrial town in South Wales, and educated at the famous public school Winchester College, whose students are called Wykehamists. He studied Literae Humaniores (\"Greats\", covering Ancient History, Ancient Literature, and Philosophy) at New College, Oxford, where the cleverest Wykehamists go, both colleges being founded by William of Wykeham in the fourteenth century. He had the perfect Wykehamist career: being Wykeham Professor of Logic from the remarkably young age of 35 in 1935 until his retirement in 1959 (Harrison 1993: 479). He had a very distinguished academic career (Quinton 1995a: 676; 1995b: 252), receiving many honours and prestigious invitations and was known as an excellent philosophy lecturer (Mitchell 2009: 45-46). He was a constructive philosopher, attempting constantly to develop approaches and not satisfied with the demolition of extant views. Famously, Price is credited with punching a hole in the isolation of Oxford philosophy in the inter-war period by discussing philosophy with Moore and Broad in Cambridge, especially on perception, and importing the new approach to philosophy developed there with, in Quinton's (1995a: 675) words, \"style, rigour, and authority\" (see also 1995c: 708; Mabbott 1986: 78). He was extremely polite, usually trying to formulate the views of other philosophers and students, especially if he disagreed with them, in the best way possible (Price [1945: 2] discusses this in his balanced response to critics of clarificatory philosophy). For example, he finds some merit in the traditional imagistic model of thought (1951-1952; 1969). His impact on students was significant. Anscombe recalls, \"of all the people I heard at Oxford, he was the one who excited my respect; the one I found worth listening to\" (1981: viii; Mac Cumhaill & Wiseman 2022: 76f). He supervised several philosophers who went on to have distinguished careers themselves, including Wilfrid Sellars (for some reflections, see Sellars 1975: 285) and D.M. Armstrong.",
+      "relatedEntries": [
+        "austin-jl",
+        "grice",
+        "sellars",
+        "sense-data",
+        "strawson",
+        "wilson"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "austin-jl"
+        },
+        {
+          "slug": "grice"
+        },
+        {
+          "slug": "sellars"
+        },
+        {
+          "slug": "sense-data"
+        },
+        {
+          "slug": "strawson"
+        },
+        {
+          "slug": "wilson"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 175,
+      "bibliography": [
+        {
+          "raw": "1932, Perception , London: Methuen & Co.; reprinted, 1954, with a new preface responding to criticisms."
+        },
+        {
+          "raw": "1953a, Thinking and Experience , London: Hutchinson University Library; Chapter 1's discussion of universals and resemblance is often anthologised, e.g., van Inwagen & Zimmerman 1998 [2008: chapter 6]."
+        },
+        {
+          "raw": "1969, Belief: The Gifford Lectures Delivered at the University of Aberdeen in 1960 , (Muirhead Library of Philosophy 1959-60), London: Allen & Unwin."
+        },
+        {
+          "raw": "1972, Essays in the Philosophy of Religion: Based on the Sarum Lectures, 1971 , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "1995, Philosophical Interactions with Parapsychology , Frank B. Dilley (ed.), London: Palgrave Macmillan. doi:10.1007/978-1-349-24108-8"
+        },
+        {
+          "raw": "1936, Truth and Corrigibility , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "1924, \"Reality and Sensible Appearance\", Mind , 33(129): 20-43. doi:10.1093/mind/XXXIII.129.20"
+        },
+        {
+          "raw": "1926a, \"A Realist View of Illusion and Error\", The Monist , 36(2): 340-354. doi:10.5840/monist19263627"
+        },
+        {
+          "raw": "1926b, \"Symposium: The Nature of Sensible Appearances\", with G. Hicks, G. E. Moore, and L. S. Stebbing, Aristotelian Society Supplementary Volume , 6: 162-178. doi:10.1093/aristoteliansupp/6.1.142"
+        },
+        {
+          "raw": "1927, \"Mill's View of the External World\", Proceedings of the Aristotelian Society , 27: 109-140. doi:10.1093/aristotelian/27.1.109"
+        },
+        {
+          "raw": "1928, \"On The So-Called Space of Sight\", Proceedings of the Aristotelian Society , 28: 97-116. doi:10.1093/aristotelian/28.1.97"
+        },
+        {
+          "raw": "1929, \"Symposium: Negation\", with J. D. Mabbott and G. Ryle, Aristotelian Society Supplementary Volume , 9: 97-111. doi:10.1093/aristoteliansupp/9.1.67"
+        },
+        {
+          "raw": "1930a, \"The Appeal to Common Sense (I)\", Philosophy , 5(17): 24-35. doi:10.1017/S0031819100010731"
+        },
+        {
+          "raw": "1930b, \"The Appeal to Common Sense (II)\", Philosophy , 5(18): 191-202. doi:10.1017/S0031819100013255"
+        },
+        {
+          "raw": "1935, \"Logical Positivism and Theology\", Philosophy , 10(39): 313-331. doi:10.1017/S0031819100016776"
+        },
+        {
+          "raw": "1936, \"Symposium: Memory-Knowledge\", with J. Laird and J. N. Wright, Aristotelian Society Supplementary Volume , 15: 16-33. doi:10.1093/aristoteliansupp/15.1.16"
+        },
+        {
+          "raw": "1938, \"Our Evidence for the Existence of Other Minds\", Philosophy , 13(52): 425-456. doi:10.1017/S0031819100014200"
+        },
+        {
+          "raw": "1939 [1995], \"Haunting and the 'Psychic Ether' Hypothesis - I\", Proceedings of the Society for Psychical Research , 45(160), Presidential Address, 307-323; reprinted in Price 1995: 17-34."
+        },
+        {
+          "raw": "1940b, \"The Permanent Significance of Hume's Philosophy\", Philosophy , 15(57): 7-37. doi:10.1017/S0031819100035646"
+        },
+        {
+          "raw": "1940c, \"Some Philosophical Questions about Telepathy and Clairvoyance\", Philosophy , 15(60): 363-385. doi:10.1017/S0031819100036603"
+        },
+        {
+          "raw": "1941, \"Critical Notices: The Foundations of Empirical Knowledge by A.J. Ayers\", Mind , 50(199): 280-293. doi:10.1093/mind/L.199.280"
+        },
+        {
+          "raw": "1943, \"Critical Notices: A Treatise on Knowledge by A. H. Smith\", Mind , 52(208): 331-344. doi:10.1093/mind/LII.208.331"
+        },
+        {
+          "raw": "1943-1944, \"Touch and Organic Sensation: The Presidential Address\", Proceedings of the Aristotelian Society , 44: i-xxx. doi:10.1093/aristotelian/44.1.i"
+        },
+        {
+          "raw": "1945, \"The Inaugural Address: 'Clarity Is Not Enough'\", Aristotelian Society Supplementary Volume , 19: 1-31. doi:10.1093/aristoteliansupp/19.1.1"
+        },
+        {
+          "raw": "1946, \"Thinking and Representation (The Hertz Philosophical Lecture, read 6 February 1946)\", Proceedings of the British Academy , 32: 83-122."
+        },
+        {
+          "raw": "1951, \"Critical Notice: Knowledge and Perception: Essays and Lectures by H.A. Prichard\", Mind , 60(237): 103-121. doi:10.1093/mind/LX.237.103"
+        },
+        {
+          "raw": "1951-1952, \"Image Thinking\", Proceedings of the Aristotelian Society , 52: 135-166. doi:10.1093/aristotelian/52.1.135"
+        },
+        {
+          "raw": "1952a, \"Seeming\", in \"Symposium: 'Sseming[sic]'\", with Karl Britton and A. Quinton, Aristotelian Society Supplementary Volume , 26: 215-234. doi:10.1093/aristoteliansupp/26.1.195"
+        },
+        {
+          "raw": "1952b, \"New Books: Analysis of the Problem of Perception in British Empiricism by Justus Hartnack\", Mind , 60(240): 550-583."
+        },
+        {
+          "raw": "1952c, \"Memory\", The Philosophical Quarterly , 2(9): 350-355. doi:10.2307/2216815"
+        },
+        {
+          "raw": "1953c, \"Survival and the Idea of 'Another World'\", Proceedings of the Society for Psychical Research , 60: 1-25; reprinted in Price 1995: 237-262."
+        },
+        {
+          "raw": "1954a, \"Preface to 1954 Reprint\" of Perception (1932), pp. vii-ix."
+        },
+        {
+          "raw": "1954b, \"The Inaugural Address: Belief and Will\", Proceedings of the Aristotelian Society , Supplementary Volumes , Volume 58, Belief and Will, 1-26. doi:10.1093/aristoteliansupp/28.1.1"
+        },
+        {
+          "raw": "1956, \"The Argument from Illusion\", in H.D. Lewis (ed.), Contemporary British Philosophy , London: George Allen and Unwin, pp. 391-400."
+        },
+        {
+          "raw": "1959a, \"The Nature and Status of Sense-Data in Broad's Epistemology\", in P.A. Schilpp (ed.), The Philosophy of C.D. Broad , New York: Tudor Publishing Company, pp. 457-485."
+        },
+        {
+          "raw": "1959b, \"Review: Perceiving: A Philosophical Study by Roderick Chisholm\", The British Journal for the Philosophy of Science , 10(38): 147-153. doi:10.1093/bjps/X.38.147"
+        },
+        {
+          "raw": "1959c, \"Comment on: 'Price's Theory of the Concept'\", The Review of Metaphysics , 12(3): 481-485."
+        },
+        {
+          "raw": "1960, \"Sir Russell Brain on Modes of Apprehension\", The British Journal for the Philosophy of Science , 11(41): 71-76. doi:10.1093/bjps/XI.41.71"
+        },
+        {
+          "raw": "1964a, \"Appearing and Appearances\", American Philosophical Quarterly , 1(1): 3-19."
+        },
+        {
+          "raw": "1964b, \"Symposium: Half-Belief\", with R. B. Braithwaite, Aristotelian Society Supplementary Volume , 38: 149-174. doi:10.1093/aristoteliansupp/38.1.149"
+        },
+        {
+          "raw": "1964c, \"Faith and Belief\", in Hick 1964: 3-25. doi:10.1007/978-1-349-81670-5_1"
+        },
+        {
+          "raw": "1964d, \"Reply to Hartshorne\", in Hick 1964: 33-37. doi:10.1007/978-1-349-81670-5_2"
+        },
+        {
+          "raw": "1965, \"Belief 'In' and Belief 'That'\", Religious Studies , October, 1(1): 5-27. doi:10.1017/S0034412500002304"
+        },
+        {
+          "raw": "1968a, \"The Problem of Life after Death\", Religious Studies , 3(2): 447-459. Reprinted in Price 1995: 220-236. doi:10.1017/S0034412500003140"
+        },
+        {
+          "raw": "1968b, \"Survival and the Idea of Another World\", in J.R. Smythies (ed.), Brain and Mind , London: Routledge and Kegan Paul."
+        },
+        {
+          "raw": "Aldwinckle, Russell Foster, 1972, Death in the Secular City: A Study of the Notion of Life after Death in Contemporary Theology and Philosophy , London: Allen & Unwin. doi:10.4324/9781003334484"
+        },
+        {
+          "raw": "Anscombe, G.E.M., 1981, \"Introduction\", in her Metaphysics and the Philosophy of Mind , Oxford: Oxford University Press, pp. vii-x."
+        },
+        {
+          "raw": "Armstrong, David Malet, 1978, Nominalism & Realism: Universals & Scientific Realism Volume I , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 1989, Universals: An Opinionated Introduction , Boulder/San Francisco/London: Westview Press."
+        },
+        {
+          "raw": "Austen, Jane, 1811, Sense and Sensibility , London: Egerton."
+        },
+        {
+          "raw": "Austin, J. L., 1962, Sense and Sensibilia , G. J. Warnock (ed.), Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Ayers, Robert H., 1971, \"Review: Survival and Disembodied Existence by Terence Penelhum\", The Modern Schoolman , 48(4): 395-398. doi:10.5840/schoolman1971484174"
+        },
+        {
+          "raw": "Badham, Paul, 1976, Christian Beliefs about Life after Death , (Library of Philosophy and Religion), London: Macmillan."
+        },
+        {
+          "raw": "Baldwin, Thomas, 1992, \"The Projective Theory of Sensory Content\", in Crane 1992b: 177-195 (ch. 8). doi:10.1017/CBO9780511554582.009"
+        },
+        {
+          "raw": "Bauer, F.R., 1967, H.H. Price's Theory of Sense Perception , PhD Dissertation, University of Ottawa."
+        },
+        {
+          "raw": "Beck, Lewis White, 1953, \"Review of Thinking and Experience by H. H. Price\", The Journal of Philosophy , 50(18): 558-561. doi:10.2307/2021687"
+        },
+        {
+          "raw": "Berkeley, George, 1710, A Treatise Concerning the Principles of Human Knowledge , Dublin: Jeremy Pepyat."
+        },
+        {
+          "raw": "Bernecker, Sven, 2008, The Metaphysics of Memory , Dordrecht: Springer Netherlands. doi:10.1007/978-1-4020-8220-7"
+        },
+        {
+          "raw": "---, 2010, Memory: A Philosophical Study , Oxford/New York: Oxford University Press. doi:10.1093/acprof:oso/9780199577569.001.0001"
+        },
+        {
+          "raw": "Bradie, Michael P., 1976, \"The Causal Theory of Perception\", Synthese , 33(1): 41-74. doi:10.1007/BF00484709"
+        },
+        {
+          "raw": "Brandt, Richard B., 1954, \"Thinking and Experience\", The Review of Metaphysics , 7(4): 632-643."
+        },
+        {
+          "raw": "Braithwaite, R.B., 1955, An Empiricist's View of the Nature of Religious Belief , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Broad, C. D., 1954, \"Critical Notes: Thinking and Experience by H. H. Price\", Mind , 63(251): 390-403. doi:10.1093/mind/LXIII.251.390"
+        },
+        {
+          "raw": "Burgener, R.J.C., 1957, \"Price's Theory of the Concept\", The Review of Metaphysics , 11(1): 143-159."
+        },
+        {
+          "raw": "Butchvarov, Panayot, 1979, Being qua Being: A Theory of Identity, Existence, and Predication , Bloomington, IN: Indiana University Press."
+        },
+        {
+          "raw": "---, 1998, \"The Relativity of Reallys \", in The Philosophy of P.F. Strawson , Lewis Edwin Hahn (ed.), Chicago, IL: Open Court, pp. 91-105."
+        },
+        {
+          "raw": "Carnap, Rudolf, 1950, \"Empiricism, Semantics, and Ontology\", Revue Internationale de Philosophie , 4(11): 20-40."
+        },
+        {
+          "raw": "Chisholm, R.M., 1963, \"The Theory of Appearing\", in Philosophical Analysis , Max Black (ed.), Englewood Cliffs, NJ: Prentice-Hall, pp. 97-11."
+        },
+        {
+          "raw": "Church, Ralph W., 1943, \"Review of Hume's Theory of the External World by H. H. Price\", The Philosophical Review , 52(3): 317-318. doi:10.2307/2180932"
+        },
+        {
+          "raw": "Crane, Tim, 1992a, \"Introduction\", in Crane (ed.) 1992b: 1-17. doi:10.1017/CBO9780511554582.002"
+        },
+        {
+          "raw": "--- (ed.), 1992b, The Contents of Experience: Essays on Perception , Cambridge/New York: Cambridge University Press. doi:10.1017/CBO9780511554582"
+        },
+        {
+          "raw": "---, 2000, \"The Origins of Qualia\", in Crane and Patterson 2000: 169-195 (ch. 7)."
+        },
+        {
+          "raw": "---, 2005 [2015], \"The Problem of Perception\", The Stanford Encyclopedia of Philosophy (Summer 2015 Edition), Edward N. Zalta (ed.), URL = https://plato.stanford.edu/archives/sum2015/entries/perception-problem/ >."
+        },
+        {
+          "raw": "---, 2013, \"The Given\", in Mind, Reason and Being-in-the-World: The McDowell-Dreyfus Debate , Joseph K. Schear (ed.), London: Routledge, pp. 229-249."
+        },
+        {
+          "raw": "Crane, Tim and Sarah Patterson (eds.), 2000, History of the Mind-Body Problem , London: Routledge. doi:10.4324/9780203471029"
+        },
+        {
+          "raw": "Descartes, Ren&eacute;, 1641 [1984], Meditationes de Prima Philosophia , Paris. Translated as Meditations on First Philosophy , in The Philosophical Writings of Descartes , John Cottingham, Robert Stoothoff, and Dugald Murdoch (trans.), Cambridge: Cambridge University Press, 1984, volume 2, 1-62."
+        },
+        {
+          "raw": "deVries, Willem A., 2005, Wilfrid Sellars , (Philosophy Now), Chesham, UK: Acumen. doi:10.4324/9781315712161"
+        },
+        {
+          "raw": "Dilley, Frank B., 1995, \"Editor's Introduction\", in Price 1995: ix-xix."
+        },
+        {
+          "raw": "Ducasse, C. J., 1961, The Belief in a Life after Death , London: Charles C. Thomas."
+        },
+        {
+          "raw": "Findlay, John Niemeyer, 1954, \"Review of Thinking and Experience by H. H. Price\", in Philosophy , Volume 29, Issue 108, January, pp. 70-77."
+        },
+        {
+          "raw": "Fish, William, 2010, Philosophy of Perception: A Contemporary Introduction , New York: Routledge."
+        },
+        {
+          "raw": "Garvey, Brian (ed.), 2014, J.L. Austin on Language , London: Palgrave Macmillan UK. doi:10.1057/9781137329998"
+        },
+        {
+          "raw": "Grice, H. P., 1957, \"Meaning\", The Philosophical Review , 66(3): 377-388. doi:10.2307/2182440"
+        },
+        {
+          "raw": "---, 1961, \"The Causal Theory of Perception (I)\", Aristotelian Society Supplementary Volume , 35: 121-152. doi:10.1093/aristoteliansupp/35.1.121; reprinted in Swartz 1965: 438-472."
+        },
+        {
+          "raw": "Grossmann, Reinhardt, 1965, The Structure of Mind , Madison, WI: University of Wisconsin Press."
+        },
+        {
+          "raw": "---, 1990, The Fourth Way: A Theory of Knowledge , Bloomington, IN: Indiana University Press."
+        },
+        {
+          "raw": "Hamlyn, D. W., 1961, Sensation and Perception: A History of the Philosophy of Perception , (International Library of Philosophy and Scientific Method), New York: Humanities Press."
+        },
+        {
+          "raw": "---, 1970, The Theory of Knowledge , London: Macmillan."
+        },
+        {
+          "raw": "---, 1984, Metaphysics , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Harris, Errol E., 1987, Formal, Transcendental, and Dialectical Thinking: Logic and Reality , Albany, NY: State University of New York Press."
+        },
+        {
+          "raw": "Harrison, Jonathan, 1993, \"Henry Habberley Price: 1899-1984\", Proceedings of the British Academy , 80: 473-491. [ Harrison 1993 available online (PDF) ]"
+        },
+        {
+          "raw": "Hartshorne, Charles, 1964, \"Is God's Existence a State of Affairs?\", in Hick 1964: 26-33. doi:10.1007/978-1-349-81670-5_2"
+        },
+        {
+          "raw": "Hick, John (ed.), 1964, Faith and the Philosophers , New York: St. Martin's Press. doi:10.1007/978-1-349-81670-5"
+        },
+        {
+          "raw": "---, 1968, Christianity at the Centre , London: Palgrave Macmillan."
+        },
+        {
+          "raw": "---, 2002, John Hick: An Autobiography , Oxford: Oneworld."
+        },
+        {
+          "raw": "Hicks, Michael R., 2020, \"Sellars, Price, and the Myth of the Given\", Journal for the History of Analytical Philosophy , 8(7): article 1. doi:10.15173/jhap.v8i7.4270"
+        },
+        {
+          "raw": "Hinton, John Michael, 1973, Experiences: An Inquiry into Some Ambiguities , (Clarendon Library of Logic and Philosophy), Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Hofstadter, Albert, 1941, \"Review of Hume's Theory of the External World by H. H. Price\", The Journal of Philosophy , 38(22): 609-613. doi:10.2307/2017079"
+        },
+        {
+          "raw": "Honderich, Ted (ed.), 1995, The Oxford Companion to Philosophy , Oxford/New York: Oxford University Press."
+        },
+        {
+          "raw": "Hume, David, 1739-1740, A Treatise of Human Nature: Being an Attempt to Introduce the Experimental Method of Reasoning into Moral Subjects , London: John Noon."
+        },
+        {
+          "raw": "---, 1748, An Enquiry concerning Human Understanding , London: A. Millar."
+        },
+        {
+          "raw": "Jackson, Frank, 1977, Perception: A Representative Theory , Cambridge/New York: Cambridge University Press."
+        },
+        {
+          "raw": "---, 1982, \"Epiphenomenal Qualia\", The Philosophical Quarterly , 32(127): 127-136. doi:10.2307/2960077"
+        },
+        {
+          "raw": "Johnston, Mark, 2018, \"Sensory Disclosure: Neither a Propositional, Nor a Factive, Attitude\", in Non-Propositional Intentionality , Alex Grzankowski and Michelle Montague (eds.), Oxford: Oxford University Press, pp. 152-191 (ch. 7)."
+        },
+        {
+          "raw": "Kim, Jaegwon, 1977, \"Perception and Reference without Causality\", The Journal of Philosophy , 74(10): 606-620. doi:10.2307/2025913"
+        },
+        {
+          "raw": "Kneale, Martha, 1996, \"Introduction\", in H. H. Price, The Collected Works of Henry H. Price , Thoemmes Continuum, pp. v-xx."
+        },
+        {
+          "raw": "L., A.-L., 1954, \"Review: Thinking and Experience by H. H. Price\", Revue Philosophique de la France et de l'&Eacute;tranger , 144: 285-288."
+        },
+        {
+          "raw": "Laing, B. M., 1941, \"Review: Hume's Theory of the External World by H. H. Price\", Philosophy , 16(63): 316-318. doi:10.1017/S0031819100002618"
+        },
+        {
+          "raw": "Langsam, Harold, 1997, \"The Theory of Appearing Defended\", Philosophical Studies , 87(1): 33-59. doi:10.1023/A:1002994402591"
+        },
+        {
+          "raw": "Lean, Martin, 1953, Sense-Perception and Matter , London: Routledge & Kegan Paul."
+        },
+        {
+          "raw": "Lemos, Noah Marcelino, 2004, Common Sense: A Contemporary Defense , (Cambridge Studies in Philosophy), Cambridge/New York: Cambridge University Press. doi:10.1017/CBO9780511498800"
+        },
+        {
+          "raw": "Lewis, Hywel D., 1973, The Self and Immortality , London: Macmillan."
+        },
+        {
+          "raw": "Litzenburg, Thomas V., 1967, \"'Faith-In' and 'In-Faith'--Reply to Professor H. H. Price\", Religious Studies , 2(2): 247-254. doi:10.1017/S0034412500002808"
+        },
+        {
+          "raw": "Locatelli, Roberta, 2014, \" Sense and Sensibilia and the Significance of Linguistic Phenomenology\", in Garvey 2014: 141-157. doi:10.1057/9781137329998_9"
+        },
+        {
+          "raw": "Locke, John, 1689, An Essay Concerning Human Understanding , London: The Baffet. [ Locke 1689 available online ]"
+        },
+        {
+          "raw": "Mabbott, John, 1986, Oxford Memories , Oxford: Thornton's Press."
+        },
+        {
+          "raw": "Mac Cumhaill, Clare and Rachael Wiseman, 2022, Metaphysical Animals: How Four Women Brought Philosophy Back to Life , London: Chatto & Windus."
+        },
+        {
+          "raw": "Malcolm, Norman, 1954, \"Review of Thinking and Experience by H. H. Price\", The Philosophical Review , 63(1): 93-98. doi:10.2307/2182120"
+        },
+        {
+          "raw": "---, 1964, \"Is it a Religious Belief that 'God Exists'?\", in Hick 1964: 103-110. doi:10.1007/978-1-349-81670-5_5"
+        },
+        {
+          "raw": "Martin, Michael G. F., 1992, \"Sight and Touch\", in Crane 1992b: 196-215 (ch. 9). doi:10.1017/CBO9780511554582.010"
+        },
+        {
+          "raw": "---, 2000, \"Beyond Dispute: Sense-Data, Intentionality, and the Mind-Body Problem\", in Crane and Patterson 2000: 195-231 (ch. 8)."
+        },
+        {
+          "raw": "McDowell, John, 1983, \"Criteria, Defeasibility, and Knowledge\", Proceedings of the British Academy , 68: 455-479. Read 24 November 1982. [ McDowell 1983 available online (PDF) ]"
+        },
+        {
+          "raw": "Mitchell, Basil, 1971, \"Introduction\", in The Philosophy of Religion , Basil Mitchell (ed.), Oxford: Oxford University Press, pp. 1-12."
+        },
+        {
+          "raw": "---, 2009, Looking Back: On Faith, Philosophy and Friends in Oxford , Durham: The Memoir Club."
+        },
+        {
+          "raw": "Moore, G. E., 1903, \"The Refutation of Idealism\", Mind , 12(4): 433-453. Reprinted in his, 1922, Philosophical Studies , London: Routledge & Kegan Paul, pp. 1-30. doi:10.1093/mind/XII.4.433"
+        },
+        {
+          "raw": "---, 1925, \"A Defence of Common Sense\", in Contemporary British Philosophy , Second Series, J. H. Muirhead (ed.), London: Allen & Unwin, and New York: Macmillan. Reprinted in G. E. Moore, 1959, Philosophical Papers , pp. 32-59, and Roderick M. Chisholm (ed.), Realism and the Background of Phenomenology , Atascadero, CA: Ridgeview, pp. 255-282."
+        },
+        {
+          "raw": "---, 1942, \"Relation of 'Sense-Data' to Physical Objects\", in The Philosophy of G.E. Moore , Paul Arthur Schilpp (ed.), Evanston, IL: Northwestern University Press, pp. 627-652."
+        },
+        {
+          "raw": "---, 1957 [1965], \"Visual Sense-Data\", in British Philosophy in the Mid-Century , C. A. Mace (ed.), London: Allen & Unwin, 203-212. Reprinted in Swartz 1965: 130-137."
+        },
+        {
+          "raw": "Mundle, C.W.K., 1954, \"Thinking and Experience\", Philosophical Quarterly , 4(15): 156-165. doi:10.2307/2216385"
+        },
+        {
+          "raw": "Murdoch, Iris, 1940, \"Iris Murdoch letter to Patrick O'Regan, Blackpool\", July, 1940, The Peter Conradi Archive, Kingston School of Art, KUAS6/1/42/4."
+        },
+        {
+          "raw": "Murray, A. R. M., 1933, \"Critical Notices: Perception by H. H. Price\", Mind , 42(168): 507-523. doi:10.1093/mind/XLII.168.507"
+        },
+        {
+          "raw": "Nagel, Thomas, 1974, \"What Is It Like to Be a Bat?\", The Philosophical Review , 83(4): 435-450. doi:10.2307/2183914"
+        },
+        {
+          "raw": "Newman, John Henry, 1870, An Essay in Aid of a Grammar of Assent , London: Longman's."
+        },
+        {
+          "raw": "Ogden, C. K. and I. A. Richards, 1923 [1946], The Meaning of Meaning: A Study of the Influence of Language upon Thought and of the Science of Symbolism , (International Library of Psychology, Philosophy, and Scientific Method), New York: Harcourt, Brace & Company. Eighth edition, 1946, New York: Harcourt."
+        },
+        {
+          "raw": "O'Shea, James R., 2007, Wilfrid Sellars: Naturalism with a Normative Turn , Cambridge, UK: Polity."
+        },
+        {
+          "raw": "Paseau, A. C., 2015, \"Six Similarity Theories of Properties\", in Nominalism about Properties: New Essays , Ghislain Guigon and Gonzalo Rodriguez-Pereyra (eds.), New York/London: Routledge, pp. 95-120 (ch. 6)."
+        },
+        {
+          "raw": "Passmore, John Arthur, 1957, A Hundred Years of Philosophy , London: Duckworth."
+        },
+        {
+          "raw": "Penelhum, Terence, 1970, Survival and Disembodied Existence , London: Routledge & Kegan Paul."
+        },
+        {
+          "raw": "---, 1975, Hume , London: Macmillan."
+        },
+        {
+          "raw": "Quinton, Anthony, 1952, \"Seeming\" in \"Symposium: 'Sseming[sic]'\", with Karl Britton and H. H. Price, Aristotelian Society Supplementary Volume , 26: 235-252. doi:10.1093/aristoteliansupp/26.1.195"
+        },
+        {
+          "raw": "---, 1973, The Nature of Things , London: Routledge & Kegan Paul."
+        },
+        {
+          "raw": "---, 1995a, \"Oxford Philosophy\", in Honderich 1995: 674-676."
+        },
+        {
+          "raw": "---, 1995b, \"English Philosophy\", in Honderich 1995: 247-252."
+        },
+        {
+          "raw": "---, 1995c, \"Philosophy, History of Centres and Departments of\", in Honderich 1995: 706-708."
+        },
+        {
+          "raw": "Raleigh, Thomas, 2009, \"Understanding How Experience 'Seems'\", European Journal of Analytic Philosophy , 5(2): 67-78. [ Raleigh 2009 available online (PDF) ]"
+        },
+        {
+          "raw": "Ramsey, Frank Plumpton, 1929, \"General Propositions and Causality\", in Ramsey, 1931, The Foundations of Mathematics and other Logical Essays , London: Routledge & Kegan Paul, pp. 237-55 (ch. 9b)."
+        },
+        {
+          "raw": "Raphael, D. Daiches, 1955, \"Universals, Resemblance, and Identity\", Proceedings of the Aristotelian Society , 55(1): 109-132. doi:10.1093/aristotelian/55.1.109"
+        },
+        {
+          "raw": "Robinson, Howard, 1994, Perception , London: Routledge. doi:10.4324/9780203164358"
+        },
+        {
+          "raw": "Robinson, Richard, 1972, \"The Concept of Incorrigibility\", Canadian Journal of Philosophy , 1(4): 427-441. doi:10.1080/00455091.1972.10716030"
+        },
+        {
+          "raw": "Rodriguez-Pereyra, Gonzalo, 2002, Resemblance Nominalism: A Solution to the Problem of Universals , Oxford/New York: Clarendon Press."
+        },
+        {
+          "raw": "Rowe, M. W., 2023, J. L. Austin: Philosopher and D-Day Intelligence Officer , Oxford: Oxford University Press. doi:10.1093/oso/9780198707585.001.0001"
+        },
+        {
+          "raw": "Russell, Bertrand, 1954 [1999], \"Do Science and Religion Conflict?\", The Journal of the British Astronomical Association , 64(Jan 1954): 94-96. Review of Price 1953b. Reprinted in Russell on Religion: Selections from the Writings of Bertrand Russell , Louis Greenspan and Stefan Andersson (eds), London: Routledge, pp. 147-150 (ch. 13)."
+        },
+        {
+          "raw": "Ryle, Gilbert, 1949, The Concept of Mind , London: Hutchinson."
+        },
+        {
+          "raw": "Salmon, Nathan, 1986, Frege's Puzzle , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Sellars, Wilfrid, 1956 [1997], \"Empiricism and the Philosophy of Mind\", in The Foundations of Science and the Concepts of Psychology and Psychoanalysis , Herbert Feigl and Michael Scriven (eds), (Minnesota Studies in the Philosophy of Science, 1), Minneapolis, MN: University of Minnesota Press. Reprinted in Empiricism and the Philosophy of Mind , Cambridge, MA: Harvard University Press, 1997."
+        },
+        {
+          "raw": "---, 1975, \"Autobiographical Reflections: (February, 1973)\", in Action, Knowledge and Reality: Studies in Honor of Wilfred Sellars , Hector-Neri Casta&ntilde;eda (ed.), New York: Bobbs-Merrill, pp. 277-93."
+        },
+        {
+          "raw": "Sleeper, R. W., 1966, \"On Believing\", Religious Studies , 2(1): 75-93. doi:10.1017/S0034412500002602"
+        },
+        {
+          "raw": "Smith, Alic Halford, 1943, A Treatise on Knowledge , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Snowdon, Paul Francis, 1981, \"Perception, Vision and Causation\", Proceedings of the Aristotelian Society , 81: 175-192. doi:10.1093/aristotelian/81.1.175"
+        },
+        {
+          "raw": "---, 1990, \"The Objects of Perceptual Experience (I)\", Aristotelian Society Supplementary Volume , 64: 121-150. doi:10.1093/aristoteliansupp/64.1.121"
+        },
+        {
+          "raw": "---, 1992, \"How to Interpret 'Direct Perception'\", in Crane 1992b: 48-78. doi:10.1017/CBO9780511554582.004"
+        },
+        {
+          "raw": "---, 2009 [2017], \"Peter Frederick Strawson\", The Stanford Encyclopedia of Philosophy (Winter 2017 Edition), Edward N. Zalta (ed.), URL = https://plato.stanford.edu/archives/win2017/entries/strawson/ >."
+        },
+        {
+          "raw": "---, 2014, \"Austin on the Philosophy of Perception\", in Garvey 2014: 161-176. doi:10.1057/9781137329998_10"
+        },
+        {
+          "raw": "Sosa, Ernest, 2015, Judgment and Agency , Oxford/New York: Oxford University Press. doi:10.1093/acprof:oso/9780198719694.001.0001"
+        },
+        {
+          "raw": "Stebbing, L. Susan, 1930, A Modern Introduction to Logic , London: Methuen."
+        },
+        {
+          "raw": "Strawson, Peter Frederick, 1952, Introduction to Logical Theory , London: Methuen."
+        },
+        {
+          "raw": "---, 1966, Bounds of Sense , London: Methuen."
+        },
+        {
+          "raw": "---, 1985, Skepticism & Naturalism , New York: Columbia University Press."
+        },
+        {
+          "raw": "Swartz, Robert J. (ed.), 1965, Perceiving, Sensing, and Knowing: A Book of Readings from Twentieth-Century Sources in the Philosophy of Perception , Garden City, NY: Anchor Books."
+        },
+        {
+          "raw": "Triplett, Timm, 2014, \"Sellars's Misconstrual of the Defenders of the Given\", History of Philosophy Quarterly , 31(1): 79-99."
+        },
+        {
+          "raw": "---, 2023, \"Hicks on Sellars, Price, and the Myth of the Given\", Journal for the History of Analytical Philosophy , 11(1): article 1. doi:10.15173/jhap.v11i1.5038"
+        },
+        {
+          "raw": "van Inwagen, Peter and Dean W. Zimmerman (eds), 1998 [2008], Metaphysics: The Big Questions , Oxford: Blackwell. Revised and expanded, 2008."
+        },
+        {
+          "raw": "Warnock, Geoffrey J., 1995, \"Price, Henry Habberley\", in Honderich 1995: 717."
+        },
+        {
+          "raw": "Wittgenstein, Ludwig, 1953, Philosophical Investigations , G. E. M. Anscombe (trans.), Oxford: Basil Blackwell."
+        },
+        {
+          "raw": "Wolterstorff, Nicholas, 2005, \"Obligation, Entitlement, and Rationality\", in Contemporary Debates in Epistemology , Matthias Steup and Ernest Sosa (eds.), Malden, MA: Blackwell, pp. 326-337."
+        }
+      ],
+      "publishedAt": "2023-11-03T13:00:00.000Z",
+      "revisedAt": "2023-11-03T13:00:00.000Z"
+    }
+  }
+}

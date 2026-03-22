@@ -1,0 +1,350 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/lvwzhen--law-cn-ai",
+  "meta": {
+    "title": "AI 法律助手",
+    "description": "⚖️ AI 法律助手",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:21:13.888Z",
+    "dateModified": "2026-03-11T04:21:13.888Z",
+    "keywords": [
+      "chatgpt",
+      "law",
+      "openai"
+    ]
+  },
+  "problemSolved": {
+    "statement": "法律文件来源：https://github.com/LawRefBook/Laws",
+    "context": "法律文件来源：https://github.com/LawRefBook/Laws\n\n项目模板：https://github.com/supabase-community/nextjs-openai-doc-search\n\n这个项目从 `pages` 目录中获取所有的 `.mdx` 文件，并将其处理成自定义上下文，以在[OpenAI 文本自动补全](https://platform.openai.com/docs/guides/completion)提示中使用。",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "lang:mdx"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "4908 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "661 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:21:13.888Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/lvwzhen/law-cn-ai",
+        "description": "GitHub repository: lvwzhen/law-cn-ai"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://law.ai2045.com/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "MDX"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "@radix-ui/react-dialog",
+        "version": "^1.0.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@radix-ui/react-dialog"
+      },
+      {
+        "name": "@radix-ui/react-label",
+        "version": "^2.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@radix-ui/react-label"
+      },
+      {
+        "name": "@supabase/supabase-js",
+        "version": "^2.13.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@supabase/supabase-js"
+      },
+      {
+        "name": "@types/node",
+        "version": "18.15.10",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@types/node"
+      },
+      {
+        "name": "@types/react",
+        "version": "18.0.30",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@types/react"
+      },
+      {
+        "name": "@types/react-dom",
+        "version": "18.0.11",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@types/react-dom"
+      },
+      {
+        "name": "class-variance-authority",
+        "version": "^0.4.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/class-variance-authority"
+      },
+      {
+        "name": "clsx",
+        "version": "^1.2.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/clsx"
+      },
+      {
+        "name": "cmdk",
+        "version": "^0.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/cmdk"
+      },
+      {
+        "name": "common-tags",
+        "version": "^1.8.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/common-tags"
+      },
+      {
+        "name": "eslint",
+        "version": "8.36.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/eslint"
+      },
+      {
+        "name": "eslint-config-next",
+        "version": "13.2.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/eslint-config-next"
+      },
+      {
+        "name": "github-slugger",
+        "version": "^2.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/github-slugger"
+      },
+      {
+        "name": "gpt3-tokenizer",
+        "version": "^1.1.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/gpt3-tokenizer"
+      },
+      {
+        "name": "lucide-react",
+        "version": "^0.128.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/lucide-react"
+      },
+      {
+        "name": "mdast",
+        "version": "^3.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/mdast"
+      },
+      {
+        "name": "mdast-util-from-markdown",
+        "version": "^1.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/mdast-util-from-markdown"
+      },
+      {
+        "name": "mdast-util-mdx",
+        "version": "^2.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/mdast-util-mdx"
+      },
+      {
+        "name": "mdast-util-to-markdown",
+        "version": "^1.5.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/mdast-util-to-markdown"
+      },
+      {
+        "name": "mdast-util-to-string",
+        "version": "^3.1.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/mdast-util-to-string"
+      },
+      {
+        "name": "micromark-extension-mdxjs",
+        "version": "^1.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/micromark-extension-mdxjs"
+      },
+      {
+        "name": "next",
+        "version": "13.2.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/next"
+      },
+      {
+        "name": "openai",
+        "version": "^3.2.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/openai"
+      },
+      {
+        "name": "react",
+        "version": "18.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react"
+      },
+      {
+        "name": "react-dom",
+        "version": "18.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-dom"
+      },
+      {
+        "name": "sse.js",
+        "version": "^0.6.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/sse.js"
+      },
+      {
+        "name": "tailwind-merge",
+        "version": "^1.10.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/tailwind-merge"
+      },
+      {
+        "name": "tailwindcss-animate",
+        "version": "^1.0.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/tailwindcss-animate"
+      },
+      {
+        "name": "typescript",
+        "version": "5.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/typescript"
+      },
+      {
+        "name": "unist-builder",
+        "version": "^3.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/unist-builder"
+      },
+      {
+        "name": "unist-util-filter",
+        "version": "^4.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/unist-util-filter"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "lvwzhen",
+        "type": "human",
+        "uri": "https://github.com/lvwzhen"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 6230,
+      "validation_diversity": 0.1,
+      "context_breadth": 0.4,
+      "temporal_stability": 0.61,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.6
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.339
+  }
+}

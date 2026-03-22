@@ -1,0 +1,299 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/orhun--gpg-tui",
+  "meta": {
+    "title": "clone the AUR repository",
+    "description": "Manage your GnuPG keys with ease! 🔐",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:44:08.844Z",
+    "dateModified": "2026-03-11T04:44:08.844Z",
+    "keywords": [
+      "cli",
+      "gnupg",
+      "gpg",
+      "gpg-configuration",
+      "gpg-key",
+      "gpg-keys",
+      "gpg-signatures",
+      "gpg-tui",
+      "hacktoberfest",
+      "key-management",
+      "linux",
+      "openpgp",
+      "rust",
+      "terminal",
+      "tui",
+      "tui-app",
+      "tui-rs"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "**gpg-tui** is a [Terminal User Interface](https://en.wikipedia.org/wiki/Text-based_user_interface) for [GnuPG](https://gnupg.org/).",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "developer-tools",
+    "lang:rust"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "1667 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "43 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:44:08.844Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/orhun/gpg-tui",
+        "description": "GitHub repository: orhun/gpg-tui"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://blog.orhun.dev/introducing-gpg-tui/",
+        "description": "Project homepage"
+      }
+    ],
+    "solutionApproach": "See usage section in README",
+    "language": "Rust"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "gpgme",
+        "version": "0.11.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/gpgme"
+      },
+      {
+        "name": "ratatui",
+        "version": "0.30.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/ratatui"
+      },
+      {
+        "name": "anyhow",
+        "version": "1.0.102",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/anyhow"
+      },
+      {
+        "name": "chrono",
+        "version": "0.4.44",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/chrono"
+      },
+      {
+        "name": "unicode-width",
+        "version": "0.2.2",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/unicode-width"
+      },
+      {
+        "name": "copypasta-ext",
+        "version": "0.4.4",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/copypasta-ext"
+      },
+      {
+        "name": "colorsys",
+        "version": "0.7.3",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/colorsys"
+      },
+      {
+        "name": "shellexpand",
+        "version": "3.1.2",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/shellexpand"
+      },
+      {
+        "name": "toml",
+        "version": "1.0.6",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/toml"
+      },
+      {
+        "name": "dirs-next",
+        "version": "2.0.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/dirs-next"
+      },
+      {
+        "name": "clap_complete",
+        "version": "4.5.66",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/clap_complete"
+      },
+      {
+        "name": "tinytemplate",
+        "version": "1.2.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tinytemplate"
+      },
+      {
+        "name": "better-panic",
+        "version": "0.3.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/better-panic"
+      },
+      {
+        "name": "ratatui-splash-screen",
+        "version": "0.1.5",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/ratatui-splash-screen"
+      },
+      {
+        "name": "env_logger",
+        "version": "0.11.9",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/env_logger"
+      },
+      {
+        "name": "log",
+        "version": "0.4.29",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/log"
+      },
+      {
+        "name": "crossterm",
+        "version": "0.29.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/crossterm"
+      },
+      {
+        "name": "clap",
+        "version": "4.5.60",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/clap"
+      },
+      {
+        "name": "serde",
+        "version": "1.0.228",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/serde"
+      },
+      {
+        "name": "tui-logger",
+        "version": "0.18.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tui-logger"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "orhun",
+        "type": "human",
+        "uri": "https://github.com/orhun"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 1753,
+      "validation_diversity": 0.39,
+      "context_breadth": 0.56,
+      "temporal_stability": 1,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.75
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.586
+  }
+}

@@ -1,0 +1,344 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/originalankur--maptoposter",
+  "meta": {
+    "title": "City Map Poster Generator",
+    "description": "Transform your favorite cities into beautiful, minimalist designs. MapToPoster lets you create and export visually striking map posters with code.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:50:23.927Z",
+    "dateModified": "2026-03-11T04:50:23.927Z",
+    "keywords": [
+      "design",
+      "maps",
+      "matplotlib-pyplot",
+      "openstreetmap",
+      "osmnx",
+      "poster",
+      "python",
+      "visualdesign"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "```text\n┌─────────────────┐     ┌──────────────┐     ┌─────────────────┐\n│   CLI Parser    │────▶│  Geocoding   │────▶│  Data Fetching  │\n│   (argparse)    │     │  (Nominatim) │     │    (OSMnx)      │\n└─────────────────┘     └──────────────┘     └─────────────────┘\n                                                     │\n                        ┌──────────────┐             ▼\n                        │    Output    │◀────┌─────────────────┐\n                        │  (matplotlib)│     │   Rendering     │\n                        └──────────────┘     │  (matplotlib)   │\n                                             └─────────────────┘\n```",
+    "context": "Generate beautiful, minimalist map posters for any city in the world.\n\n<img src=\"posters/singapore_neon_cyberpunk_20260118_153328.png\" width=\"250\">\n<img src=\"posters/dubai_midnight_blue_20260118_140807.png\" width=\"250\">",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "11809 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "1034 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:50:23.927Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/originalankur/maptoposter",
+        "description": "GitHub repository: originalankur/maptoposter"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "certifi",
+        "version": "==2026.1.4",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/certifi/"
+      },
+      {
+        "name": "charset-normalizer",
+        "version": "==3.4.4",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/charset-normalizer/"
+      },
+      {
+        "name": "contourpy",
+        "version": "==1.3.3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/contourpy/"
+      },
+      {
+        "name": "cycler",
+        "version": "==0.12.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/cycler/"
+      },
+      {
+        "name": "fonttools",
+        "version": "==4.61.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/fonttools/"
+      },
+      {
+        "name": "geographiclib",
+        "version": "==2.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/geographiclib/"
+      },
+      {
+        "name": "geopandas",
+        "version": "==1.1.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/geopandas/"
+      },
+      {
+        "name": "geopy",
+        "version": "==2.4.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/geopy/"
+      },
+      {
+        "name": "idna",
+        "version": "==3.11",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/idna/"
+      },
+      {
+        "name": "kiwisolver",
+        "version": "==1.4.9",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/kiwisolver/"
+      },
+      {
+        "name": "lat-lon-parser",
+        "version": "==1.3.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/lat-lon-parser/"
+      },
+      {
+        "name": "matplotlib",
+        "version": "==3.10.8",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/matplotlib/"
+      },
+      {
+        "name": "networkx",
+        "version": "==3.6.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/networkx/"
+      },
+      {
+        "name": "numpy",
+        "version": "==2.4.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numpy/"
+      },
+      {
+        "name": "osmnx",
+        "version": "==2.0.7",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/osmnx/"
+      },
+      {
+        "name": "packaging",
+        "version": "==25.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/packaging/"
+      },
+      {
+        "name": "pandas",
+        "version": "==2.3.3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pandas/"
+      },
+      {
+        "name": "pillow",
+        "version": "==12.1.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pillow/"
+      },
+      {
+        "name": "pyogrio",
+        "version": "==0.12.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyogrio/"
+      },
+      {
+        "name": "pyparsing",
+        "version": "==3.3.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyparsing/"
+      },
+      {
+        "name": "pyproj",
+        "version": "==3.7.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyproj/"
+      },
+      {
+        "name": "python-dateutil",
+        "version": "==2.9.0.post0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/python-dateutil/"
+      },
+      {
+        "name": "pytz",
+        "version": "==2025.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pytz/"
+      },
+      {
+        "name": "requests",
+        "version": "==2.32.5",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/requests/"
+      },
+      {
+        "name": "scipy",
+        "version": "==1.16.3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scipy/"
+      },
+      {
+        "name": "shapely",
+        "version": "==2.1.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/shapely/"
+      },
+      {
+        "name": "six",
+        "version": "==1.17.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/six/"
+      },
+      {
+        "name": "tqdm",
+        "version": "==4.67.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tqdm/"
+      },
+      {
+        "name": "tzdata",
+        "version": "==2025.3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tzdata/"
+      },
+      {
+        "name": "urllib3",
+        "version": "==2.6.3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/urllib3/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "originalankur",
+        "type": "human",
+        "uri": "https://github.com/originalankur"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 13877,
+      "validation_diversity": 0.4,
+      "context_breadth": 0.62,
+      "temporal_stability": 0.82,
+      "test_coverage": 0.47,
+      "documentation_quality": 0.5
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.612
+  }
+}

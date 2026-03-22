@@ -1,0 +1,611 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/knowledge-analysis",
+  "meta": {
+    "title": "The Analysis of Knowledge",
+    "description": "For any person, there are some things they know, and some things they don't. What exactly is the difference? What does it take to know something? It's not enough just to believe it--we don't know the things we're wrong about. Knowledge seems to be more like a way of getting at the truth. The analysis of knowledge concerns the attempt to articulate in what exactly this kind of \"getting at the truth\" consists. More particularly, the project of analysing knowledge is to state conditions that are individually necessary and jointly sufficient for propositional knowledge, thoroughly answering the question: \"What does it take to know something?\" By \"propositional knowledge\", we mean knowing that something is the case , i.e., knowledge of a proposition. For example, if Susan knows that Alyssa is a musician, she has knowledge of the proposition that Alyssa is a musician. Propositional knowledge should be distinguished from knowledge by \"acquaintance\", for example when we say that Susan knows Alyssa , or that she knows Vancouver . (Knowing Susan may involve knowing some propositions about Susan, but it is only the latter kind of knowledge that is our focus here.) \"Knows that\" is the canonical English expression for indicating propositional knowledge. We also often attribute propositional knowledge with so-called \"knows-wh\" locutions: Sooyung might know whether the shop is open, for instance, or Juan might know who won the election. These cases also involve propositional knowledge: one knows these things by knowing the proposition that is the answer to the embedded question. Sooyung can know whether the shop is open by knowing that the shop is not open. There is some controversy over the particular status of knowledge-how (i.e., \"Ahmed knows how to ride a bicycle\")--see Stanley 2011 and his opponents discussed therein. The propositional knowledge that is the analysandum of the analysis of knowledge literature is paradigmatically expressed in English by sentences of the form \" S knows that P \", where \" S \" refers to the knowing subject, and \" P \" expresses the proposition that is known. A proposed analysis consists of a statement of the following form: \" S knows that P if and only if J ,\" where J indicates that S satisfies the analysans--paradigmatically, a list of conditions that are individually necessary and jointly sufficient for S to have knowledge that P . It is not enough merely to pick out the actual extension of knowledge. Even if, in actual fact, all cases of S knowing that P are cases in which S satisfies J , and all cases of the latter are cases of the former, J might fail as an analysis of knowledge. For example, it might be that there are possible cases of knowledge without J , or vice versa. A proper analysis of knowledge should at least be a necessary truth. Consequently, hypothetical thought experiments provide appropriate test cases for various analyses, as we shall see below. Even a necessary biconditional linking knowledge to some state J would probably not be sufficient for an analysis of knowledge, although just what more is required is a matter of some controversy. According to one version of the project, to analyze knowledge is literally to identify the components that make up knowledge--compare a chemist who analyzes a sample to learn its chemical composition. On this interpretation of the project of analyzing knowledge, the defender of a successful analysis of knowledge will be committed to something like the metaphysical claim that what it is for S to know that P is for some list of conditions involving S and the proposition that P to obtain. Other theorists think of the analysis of knowledge as distinctively conceptual --to analyse knowledge is to limn the structure of the concept of knowledge. On one version of this approach, the concept knowledge is literally composed of more basic concepts, linked together by something like Boolean operators. Some contributors to the literature write in terms of definitions of knowledge. Consequently, an analysis is subject not only to extensional accuracy, but to facts about the cognitive representation of knowledge and other epistemic notions. In practice, many epistemologists engaging in the project of analyzing knowledge leave these metaphilosophical interpretive questions unresolved; attempted analyses, and counterexamples thereto, are often proposed without its being made explicit whether the claims are intended as metaphysical or conceptual ones. In many cases, this lack of specificity may be legitimate, since all parties tend to agree that an analysis of knowledge ought at least to be extensionally correct in all metaphysically possible worlds. As we shall see, many theories have been defended and, especially, refuted on those terms. The attempt to analyze knowledge has received a considerable amount of attention from epistemologists, particularly in the late 20 century, but no analysis has been widely accepted. Some contemporary epistemologists reject the assumption that knowledge is susceptible to analysis.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T03:21:29.881Z",
+    "dateModified": "2026-03-22T03:21:29.881Z",
+    "datePublished": "2001-02-05T13:00:00.000Z",
+    "keywords": [
+      "closure epistemic",
+      "contextualism epistemology",
+      "epistemology naturalized",
+      "epistemology social",
+      "epistemology virtue",
+      "justep coherence",
+      "justep foundational",
+      "justep intext",
+      "skepticism content externalism"
+    ]
+  },
+  "problemSolved": {
+    "statement": "For any person, there are some things they know, and some things they don't. What exactly is the difference? What does it take to know something? It's not enough just to believe it--we don't know the things we're wrong about. Knowledge seems to be more like a way of getting at the truth. The analysis of knowledge concerns the attempt to articulate in what exactly this kind of \"getting at the truth\" consists. More particularly, the project of analysing knowledge is to state conditions that are individually necessary and jointly sufficient for propositional knowledge, thoroughly answering the question: \"What does it take to know something?\" By \"propositional knowledge\", we mean knowing that something is the case , i.e., knowledge of a proposition. For example, if Susan knows that Alyssa is a musician, she has knowledge of the proposition that Alyssa is a musician. Propositional knowledge should be distinguished from knowledge by \"acquaintance\", for example when we say that Susan knows Alyssa , or that she knows Vancouver . (Knowing Susan may involve knowing some propositions about Susan, but it is only the latter kind of knowledge that is our focus here.) \"Knows that\" is the canonical English expression for indicating propositional knowledge. We also often attribute propositional knowledge with so-called \"knows-wh\" locutions: Sooyung might know whether the shop is open, for instance, or Juan might know who won the election. These cases also involve propositional knowledge: one knows these things by knowing the proposition that is the answer to the embedded question. Sooyung can know whether the shop is open by knowing that the shop is not open. There is some controversy over the particular status of knowledge-how (i.e., \"Ahmed knows how to ride a bicycle\")--see Stanley 2011 and his opponents discussed therein. The propositional knowledge that is the analysandum of the analysis of knowledge literature is paradigmatically expressed in English by sentences of the form \" S knows that P \", where \" S \" refers to the knowing subject, and \" P \" expresses the proposition that is known. A proposed analysis consists of a statement of the following form: \" S knows that P if and only if J ,\" where J indicates that S satisfies the analysans--paradigmatically, a list of conditions that are individually necessary and jointly sufficient for S to have knowledge that P . It is not enough merely to pick out the actual extension of knowledge. Even if, in actual fact, all cases of S knowing that P are cases in which S satisfies J , and all cases of the latter are cases of the former, J might fail as an analysis of knowledge. For example, it might be that there are possible cases of knowledge without J , or vice versa. A proper analysis of knowledge should at least be a necessary truth. Consequently, hypothetical thought experiments provide appropriate test cases for various analyses, as we shall see below. Even a necessary biconditional linking knowledge to some state J would probably not be sufficient for an analysis of knowledge, although just what more is required is a matter of some controversy. According to one version of the project, to analyze knowledge is literally to identify the components that make up knowledge--compare a chemist who analyzes a sample to learn its chemical composition. On this interpretation of the project of analyzing knowledge, the defender of a successful analysis of knowledge will be committed to something like the metaphysical claim that what it is for S to know that P is for some list of conditions involving S and the proposition that P to obtain. Other theorists think of the analysis of knowledge as distinctively conceptual --to analyse knowledge is to limn the structure of the concept of knowledge. On one version of this approach, the concept knowledge is literally composed of more basic concepts, linked together by something like Boolean operators. Some contributors to the literature write in terms of definitions of knowledge. Consequently, an analysis is subject not only to extensional accuracy, but to facts about the cognitive representation of knowledge and other epistemic notions. In practice, many epistemologists engaging in the project of analyzing knowledge leave these metaphilosophical interpretive questions unresolved; attempted analyses, and counterexamples thereto, are often proposed without its being made explicit whether the claims are intended as metaphysical or conceptual ones. In many cases, this lack of specificity may be legitimate, since all parties tend to agree that an analysis of knowledge ought at least to be extensionally correct in all metaphysically possible worlds. As we shall see, many theories have been defended and, especially, refuted on those terms. The attempt to analyze knowledge has received a considerable amount of attention from epistemologists, particularly in the late 20 century, but no analysis has been widely accepted. Some contemporary epistemologists reject the assumption that knowledge is susceptible to analysis.",
+    "context": "Opening section: 1. Knowledge as Justified True Belief | Related entries: contextualism-epistemology, closure-epistemic, epistemology-naturalized, epistemology-social, epistemology-virtue, justep-coherence, justep-foundational, justep-intext, skepticism-content-externalism",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "epistemology"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry knowledge-analysis",
+        "uri": "https://plato.stanford.edu/entries/knowledge-analysis/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "2 author(s), 9 related entries, bibliography size 121"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2001-02-05T13:00:00.000Z and revised 2026-01-20T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-01-20T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/knowledge-analysis/",
+        "description": "SEP entry for knowledge-analysis"
+      }
+    ],
+    "solutionApproach": "1. Knowledge as Justified True Belief"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/contextualism-epistemology",
+      "ocp:sep/closure-epistemic",
+      "ocp:sep/epistemology-naturalized",
+      "ocp:sep/epistemology-social",
+      "ocp:sep/epistemology-virtue",
+      "ocp:sep/justep-coherence",
+      "ocp:sep/justep-foundational",
+      "ocp:sep/justep-intext",
+      "ocp:sep/skepticism-content-externalism"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Ichikawa, Jonathan",
+        "type": "human"
+      },
+      {
+        "name": "Steup, Matthias",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/knowledge-analysis/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 94,
+      "validation_diversity": 0.55,
+      "context_breadth": 0.44,
+      "temporal_stability": 1,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.91
+    },
+    "confidence": "tested",
+    "authority": "high",
+    "status": "draft",
+    "trustScore": 0.591
+  },
+  "extensions": {
+    "sep": {
+      "slug": "knowledge-analysis",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/knowledge-analysis/",
+      "preamble": "For any person, there are some things they know, and some things they don't. What exactly is the difference? What does it take to know something? It's not enough just to believe it--we don't know the things we're wrong about. Knowledge seems to be more like a way of getting at the truth. The analysis of knowledge concerns the attempt to articulate in what exactly this kind of \"getting at the truth\" consists. More particularly, the project of analysing knowledge is to state conditions that are individually necessary and jointly sufficient for propositional knowledge, thoroughly answering the question: \"What does it take to know something?\" By \"propositional knowledge\", we mean knowing that something is the case , i.e., knowledge of a proposition. For example, if Susan knows that Alyssa is a musician, she has knowledge of the proposition that Alyssa is a musician. Propositional knowledge should be distinguished from knowledge by \"acquaintance\", for example when we say that Susan knows Alyssa , or that she knows Vancouver . (Knowing Susan may involve knowing some propositions about Susan, but it is only the latter kind of knowledge that is our focus here.) \"Knows that\" is the canonical English expression for indicating propositional knowledge. We also often attribute propositional knowledge with so-called \"knows-wh\" locutions: Sooyung might know whether the shop is open, for instance, or Juan might know who won the election. These cases also involve propositional knowledge: one knows these things by knowing the proposition that is the answer to the embedded question. Sooyung can know whether the shop is open by knowing that the shop is not open. There is some controversy over the particular status of knowledge-how (i.e., \"Ahmed knows how to ride a bicycle\")--see Stanley 2011 and his opponents discussed therein. The propositional knowledge that is the analysandum of the analysis of knowledge literature is paradigmatically expressed in English by sentences of the form \" S knows that P \", where \" S \" refers to the knowing subject, and \" P \" expresses the proposition that is known. A proposed analysis consists of a statement of the following form: \" S knows that P if and only if J ,\" where J indicates that S satisfies the analysans--paradigmatically, a list of conditions that are individually necessary and jointly sufficient for S to have knowledge that P . It is not enough merely to pick out the actual extension of knowledge. Even if, in actual fact, all cases of S knowing that P are cases in which S satisfies J , and all cases of the latter are cases of the former, J might fail as an analysis of knowledge. For example, it might be that there are possible cases of knowledge without J , or vice versa. A proper analysis of knowledge should at least be a necessary truth. Consequently, hypothetical thought experiments provide appropriate test cases for various analyses, as we shall see below. Even a necessary biconditional linking knowledge to some state J would probably not be sufficient for an analysis of knowledge, although just what more is required is a matter of some controversy. According to one version of the project, to analyze knowledge is literally to identify the components that make up knowledge--compare a chemist who analyzes a sample to learn its chemical composition. On this interpretation of the project of analyzing knowledge, the defender of a successful analysis of knowledge will be committed to something like the metaphysical claim that what it is for S to know that P is for some list of conditions involving S and the proposition that P to obtain. Other theorists think of the analysis of knowledge as distinctively conceptual --to analyse knowledge is to limn the structure of the concept of knowledge. On one version of this approach, the concept knowledge is literally composed of more basic concepts, linked together by something like Boolean operators. Some contributors to the literature write in terms of definitions of knowledge. Consequently, an analysis is subject not only to extensional accuracy, but to facts about the cognitive representation of knowledge and other epistemic notions. In practice, many epistemologists engaging in the project of analyzing knowledge leave these metaphilosophical interpretive questions unresolved; attempted analyses, and counterexamples thereto, are often proposed without its being made explicit whether the claims are intended as metaphysical or conceptual ones. In many cases, this lack of specificity may be legitimate, since all parties tend to agree that an analysis of knowledge ought at least to be extensionally correct in all metaphysically possible worlds. As we shall see, many theories have been defended and, especially, refuted on those terms. The attempt to analyze knowledge has received a considerable amount of attention from epistemologists, particularly in the late 20 century, but no analysis has been widely accepted. Some contemporary epistemologists reject the assumption that knowledge is susceptible to analysis.",
+      "firstSectionTitle": "1. Knowledge as Justified True Belief",
+      "firstSectionText": "Much of the 20 century literature on the analysis of knowledge began with a critique of a three-part \"traditional\" analysis of knowledge. Although this analysis does derive from ideas articulated throughout the history of epistemology, it's a bit of a convenient fiction to say that this so-called \"traditional\" analysis was ever widely accepted; it was primarily articulated in the 20 century by its attackers. See Kaplan 1985, Dutant 2015, Antognazza 2015, and Le Morvan 2017 on the mismatch between the canonical story and the actual intellectual history. There are three components to the traditional analysis of knowledge. (For this reason, it is sometimes referred to as a \"tripartite\" analysis of knowledge.) According to this analysis, justified true belief is necessary and sufficient for knowledge. The tripartite analysis of knowledge is often abbreviated as the \"JTB\" analysis, for \"justified true belief\". Let's consider the three conditions in turn. Most epistemologists agree that what is false cannot be known. For example, eighty-four is not a prime number. Consequently, it could never be the case that anyone knows that eighty-four is a prime number. One can only know things that are true. For this reason, the traditional theory of knowledge includes, as one of the components for the analysans for S knows that P , the condition that it is true that P . (Sometimes, the explicit invocation of truth is left out, and the relevant condition is listed simply as P . See Nozick (1981: 680, n. 6).) Sometimes, when people are very confident of something that turns out to be wrong, it can be natural to describe them as \"knowing\" that false proposition. Suppose, for example, that late in a sports match, the home team is so far behind that many spectators are very confident that they will lose. If they turn around in the final seconds to achieve a miraculous comeback and win the game, some people might be inclined to say that, prior to the comeback, many spectators \"knew\" that the home team would lose. Allan Hazlett (2010) argues on the basis of data like this that \"knows\" is not a factive verb. Hazlett's diagnosis is deeply controversial; most epistemologists will treat such knowledge ascriptions as a kind of exaggeration, and not as literally true. The analysis of knowledge is about identifying the circumstances under which someone really does know a given proposition--not necessarily about the circumstances under which it might be conversationally acceptable to say that they know. Relatedly, the idea that a proposition is true does not require that anyone can know or prove that it is true. Not all truths are established truths. If you flip a coin and never check how it landed, it may be true that it landed heads, even if nobody has any way to tell. Truth is a metaphysical , as opposed to epistemological , notion: truth is a matter of how things are , not how they can be shown to be. So when we say that only true things can be known, we're not (yet) saying anything about how anyone can access the truth. As we'll see, the other conditions have important roles to play here. Knowledge is a kind of relationship with the truth--to know something is to have a certain kind of access to a fact. The belief condition is only slightly more controversial than the truth condition. The general idea behind the belief condition is that you can only know what you believe. Failing to believe something precludes knowing it. \"Belief\" in the context of the JTB theory means full belief, or outright belief. In a weak sense, one might \"believe\" something by virtue of being pretty confident that it's probably true--in this weak sense, someone who considered the home team the favourite to win the game, even while recognizing a nontrivial possibility of their losing, might be said to have believed that the home team would win. Outright belief is stronger. To believe outright that P , it isn't enough to have a pretty high confidence in P ; it is something closer to a commitment or a being sure, or having settled the question. In the paper that explicitly laid out the \"justified true belief\" analysis, Edmund Gettier (1963) actually listed three slightly different tripartite analyses, which differed in how this condition was articulated: one was given in terms of \"believes\", one in terms of \"accepts\", and one in terms of \"is sure that\". Epistemologists have tended to follow Gettier in treating these as effectively equivalent. For further discussion, see McGlynn 2014: 25-9 and Ichikawa 2017-a: &sect;7.1. Although initially it might seem obvious that knowing that P requires believing that P , a few philosophers have argued that knowledge without belief is indeed possible. Suppose Walter comes home after work to find out that his house has burned down. He says: \"I don't believe it.\" Critics of the belief condition might argue that Walter knows that his house has burned down (he sees that it has), but, as his words indicate, he does not believe it. The standard response is that Walter's avowal of disbelief is not literally true; what Walter wishes to convey by saying, \"I don't believe it\", is not that he really does not believe that his house has burned down, but rather that he finds it hard to come to terms with what he sees. If he genuinely didn't believe it, some of his subsequent actions, such as phoning his insurance company, would be rather mysterious. Colin Radford (1966) gave a more substantive critique of the belief condition. Suppose Albert is quizzed on English history. One of the questions is: \"When did Queen Elizabeth die?\" Albert doesn't think he knows, but answers the question correctly. Moreover, he gives correct answers to many other questions to which he didn't think he knew the answer. Let us focus on Albert's answer to the question about Elizabeth: Radford makes the following two claims about this example: Radford's intuitions about cases like these do not seem to be idiosyncratic; Blake Myers-Schutz & Eric Schwitzgebel (2013) find evidence suggesting that many ordinary speakers tend to react in the way Radford suggests. In support of (a), Radford emphasizes that Albert thinks he doesn't know the answer to the question. He doesn't trust his answer because he takes it to be a mere guess. In support of (b), Radford argues that Albert's answer is not at all just a lucky guess. The fact that he answers most of the questions correctly indicates that he has actually learned, and never forgotten, such historical facts. Since he takes (a) and (b) to be true, Radford holds that belief is not necessary for knowledge. But both of these intuitions are controversial. Some epistemologists might deny (a), arguing that Albert does have a tacit belief that (E), even though it's not one that he thinks amounts to knowledge. See e.g., David Rose & Jonathan Schaffer (2013). Alternatively, one might deny (b), arguing that Albert's correct answer is not an expression of knowledge, perhaps because it is insufficiently confident. See Nagel 2010 and Ichikawa 2024 on ways in which uncertainty can undermine knowledge by undermining belief. Maria Antognazza (2020) offers quite a different kind of challenge to the belief condition on knowledge: she rejects the orthodox philosophical understanding of belief, according to which it is a kind of doxastic commitment that does not depend on whether or not it amounts to an apprehension of reality, holding instead that belief, by its nature, is a cognitive representation supported only indirectly by experience. Belief, according to Antognazza, is fundamentally unlike knowledge, in that by definition, one can only believe that which is not directly apprehended. This isn't merely a denial that belief is a necessary condition for knowledge; on her view, believing P is actually incompatible with knowing P . This is not a mainstream or widely held approach to belief in contemporary epistemology, but Antognazza argues that it is supported by considerations in the philosophy of mind, and representative of important historical epistemological traditions. Why is a third condition necessary? Why not say that knowledge is true belief? The standard answer rationale has to do wtih cases where a belief might be true even though it is formed improperly. Suppose that William flips a coin and confidently believes--on no particular basis--that it will land tails. If, coincidentally, the coin does indeed land tails, then William's belief was true; but such a lucky guess, intuitively, can't count as knowledge. For William to know, his belief must be grounded in adequate evidential support. Contemporary epistemologists often use \"justification\" as the name for the kind of support that is needed here. Recognition of the need for something like this condition is often traced to Plato's Theaetetus , where Socrates points out that \"true opinion\" is in general insufficient for knowledge. For example, if a lawyer employs sophistry to induce a jury into a belief that happens to be true, this belief is insufficiently well-grounded to constitute knowledge. Although \"justification\" is the standard contemporary name for the condition in question, this label is a relatively recent (20 century) development, and the name can carry some potentially misleading connotations, especially for those not already versed in the literature. In an ordinary sense, something might count as \"justified\" only after someone has successfully undertaken the project of justifying it. Understood in this way, the idea that a true belief must be justified in order to count as knowledge would mean that in order for S to know that P , S must have already given a positive defense of their belief that P , one demonstrating that their belief is appropriate. Epistemologists who endorse a justification condition on knowledge do not typically mean their condition to be understood in such a strong way. Rather, they typically intend to suggest only that a S 's belief that P is knowledge only if their belief is in fact appropriately supported by S 's evidence. This might be so, even if S has not engaged in a project of actively justifying their belief. Consider, for example, an ordinary person's belief that five plus five equals ten. Most people have never attempted to justify this belief, and probably would be at a loss as to how to go about justifying it. But for most people, that belief would qualify as an instance of knowledge. For this reason, it is important, in understanding the role of the justification condition in the analysis of knowledge, not to assume that justification is a dialectical activity in which the believer must have engaged. Some epistemologists prefer to use different labels for this condition for this reason, such as the idea that a belief is rational or warranted or evidentially well-supported . Jonathan Ichikawa (2024: ch. 3) gives an additional critique of the \"justification\" label for this condition, arguing that this word carries a negative presupposition to the effect that belief should, by default, be considered suspect. Ichikawa argues that, for this reason, the idea that beliefs need to be \"justified\" furthers unwarranted skeptical biases. There is considerable disagreement among epistemologists concerning what the relevant sort of justification here is. Internalists about justification think that whether a belief is justified depends wholly on states, that are, in some sense, internal to the subject. According to one common such sense of \"internal\", only those features of a subject's experience which are directly or introspectively available count as \"internal\"--call this \"access internalism\". According to another, only intrinsic states of the subject are \"internal\"--call this \"state internalism\". See the Internalist vs. Externalist Conceptions of Epistemic Justification entry (Pappas 2023) for more detail. Earl Conee and Richard Feldman (2001) present an example of an internalist view. They have it that S 's belief that P is justified if and only if believing that P is the attitude towards P that best fits S 's evidence, where the latter is understood to depend only on S 's internal mental states. Conee and Feldman call their view \"evidentialism\", and characterize this as the thesis that justification is wholly a matter of the subject's evidence. Given their (not unsubstantial) assumption that what evidence a subject has is an internal matter, evidentialism implies internalism. Externalists about justification think that factors external to the subject can be relevant for justification. For example, process reliabilists think that justified beliefs are those which are formed by a cognitive process which tends to produce a high proportion of true beliefs relative to false ones. We shall return to the question of how reliabilist approaches bear on the analysis of knowledge in &sect;6.1 . It is worth noting that one might distinguish between two importantly different notions of justification, standardly referred to as \"propositional justification\" and \"doxastic justification\" (sometimes \" ex ante \" justification and \" ex post \" justification, respectively). Unlike that between internalist and externalist approaches to justification, the distinction between propositional and doxastic justification does not represent a conflict to be resolved; it is a distinction between two distinct properties that are sometimes called \"justification\". Propositional justification concerns whether a subject has sufficient reason to believe a given proposition; doxastic justification concerns whether a given belief is held appropriately. One common way of relating the two is to suggest that propositional justification is the more fundamental, and that doxastic justification is a matter of a subject having a belief that is appropriately responsive to or based on their propositional justification. The precise relation between propositional and doxastic justification is subject to controversy, but it is uncontroversial that the two notions can come apart. Suppose that Ingrid ignores a great deal of excellent evidence indicating that a given neighborhood is dangerous, but superstitiously comes to believe that the neighborhood is dangerous when she sees a black cat crossing the street. Since forming beliefs on the basis of superstition is not an epistemically appropriate way of forming beliefs, Ingrid's belief is not doxastically justified; nevertheless, she does have good reason to believe as she does, so she does have propositional justification for the proposition that the neighborhood is dangerous. Since knowledge is a particularly successful kind of belief, doxastic justification is a stronger candidate for being closely related to knowledge; the JTB theory is typically thought to invoke doxastic justification (but cf. Lowy 1978).",
+      "relatedEntries": [
+        "contextualism-epistemology",
+        "closure-epistemic",
+        "epistemology-naturalized",
+        "epistemology-social",
+        "epistemology-virtue",
+        "justep-coherence",
+        "justep-foundational",
+        "justep-intext",
+        "skepticism-content-externalism"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "contextualism-epistemology"
+        },
+        {
+          "slug": "closure-epistemic"
+        },
+        {
+          "slug": "epistemology-naturalized"
+        },
+        {
+          "slug": "epistemology-social"
+        },
+        {
+          "slug": "epistemology-virtue"
+        },
+        {
+          "slug": "justep-coherence"
+        },
+        {
+          "slug": "justep-foundational"
+        },
+        {
+          "slug": "justep-intext"
+        },
+        {
+          "slug": "skepticism-content-externalism"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 121,
+      "bibliography": [
+        {
+          "raw": "Almeder, Robert, 1999, Harmless Naturalism: The Limits of Science and the Nature of Philosophy , Chicago and La Salle: Open Court."
+        },
+        {
+          "raw": "Alston, William P., 1991, Perceiving God: The Epistemology of Religious Experience , Ithaca: Cornell University Press."
+        },
+        {
+          "raw": "Antognazza, Maria Rosa, 2015, \"The Benefit to Philosophy of the Study of its History\", British Journal for the History of Philosophy , 23(1):161-184. doi:10.1080/09608788.2014.974020"
+        },
+        {
+          "raw": "---, 2020, \"The Distinction in Kind between Knowledge and Belief\", Proceedings of the Aristotelian Society , 120(3): 2020:277-308. doi:10.1093/arisoc/aoaa013"
+        },
+        {
+          "raw": "Armstrong, D.M., 1973, Belief, Truth, and Knowledge , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Becker, Kelly, and Tim Black (eds.), 2012, The Sensitivity Principle in Epistemology . New York: Cambridge University Press."
+        },
+        {
+          "raw": "Bird, Alexander, 2007, \"Justified Judging\", Philosophy and Phenomenological Research , 74(1): 81-110. doi:10.1111/j.1933-1592.2007.00004.x"
+        },
+        {
+          "raw": "Blome-Tillmann, Michael, 2009a, \"Contextualism, Subject-Sensitive Invariantism, and the Interaction of 'Knowledge'-Ascriptions with Modal and Temporal Operators\", Philosophy and Phenomenological Research , 79(2): 315-331. doi:10.1111/j.1933-1592.2009.00280.x"
+        },
+        {
+          "raw": "---, 2009-b, \"Knowledge and Presuppositions\", Mind , 118(470): 241-294. doi:10.1093/mind/fzp032"
+        },
+        {
+          "raw": "Boh, Ivan, 1985, \"Belief, Justification and Knowledge: Some Late Medieval Epistemic Concerns\", Journal of the Rocky Mountain Medieval and Renaissance Association , 6: 87-103."
+        },
+        {
+          "raw": "Bogardus, Tomas, 2014, \"Knowledge under Threat\", Philosophy and Phenomenological Research , 88(2): 289-313. doi:10.1111/j.1933-1592.2011.00564.x"
+        },
+        {
+          "raw": "Brown, J., 2006, \"Contextualism and Warranted Assertability Manoeuvres\", Philosophical Studies , 130(3): 407-435. doi:10.1007/s11098-004-5747-3"
+        },
+        {
+          "raw": "Chisholm, Roderick, 1989, Theory of Knowledge , 3 edition, Englewood Cliffs: Prentice Hall."
+        },
+        {
+          "raw": "Clark, Michael, 1963, \"Knowledge and Grounds: A Comment on Mr. Gettier's Paper\", Analysis , 24(2): 46-48. doi:10.2307/3327068"
+        },
+        {
+          "raw": "Clarke, Roger, 2013, \"Belief Is Credence One (in Context)\", Philosophers' Imprint , 13: 1-18."
+        },
+        {
+          "raw": "Cohen, Stewart, 1988 \"How to Be a Fallibilist\", Philosophical Perspectives , Epistemology, 2: 91-123. doi:10.2307/2214070"
+        },
+        {
+          "raw": "Comesa&ntilde;a, Juan, 2005, \"Unsafe Knowledge\", Synthese , 146(3): 395-404. doi:10.1007/s11229-004-6213-7"
+        },
+        {
+          "raw": "Conee, Earl, and Richard Feldman, 2004, Evidentialism: Essays in Epistemology , Oxford: Oxford University Press. doi:10.1093/0199253722.001.0001"
+        },
+        {
+          "raw": "---, 2001, \"Internalism Defended\", American Philosophical Quarterly , 38(1): 1-18. Reprinted in Conee and Feldman 2004, pp. 53-82. doi:10.1093/0199253722.003.0004"
+        },
+        {
+          "raw": "Craig, Edward, 1990, Knowledge and the State of Nature: An Essay in Conceptual Synthesis , Oxford: Oxford University Press. doi:10.1093/0198238797.001.0001"
+        },
+        {
+          "raw": "Das, Nilanjan, 2021a, \"&#346;r&#299;har&#7779;a\", The Stanford Encyclopedia of Philosophy (Winter 2021 Edition), Edward N. Zalta (ed.), URL = ."
+        },
+        {
+          "raw": "---, 2021b, \"Ga&#7749;ge&#347;a\", Journal of Indian Philosophy , 49(2): 153-202. doi: 10.1007/s10781-021-09461-6"
+        },
+        {
+          "raw": "DeRose, Keith, 1995, \"Solving the Skeptical Problem\", The Philosophical Review , 104(1): 1-52. doi:10.2307/2186011"
+        },
+        {
+          "raw": "---, 2000, \"Ought We to Follow Our Evidence?\" Philosophy and Phenomenological Research , 60(3): 697-706. doi:10.2307/2653824"
+        },
+        {
+          "raw": "---, 2009, The Case for Contextualism , New York: Oxford University Press. doi:10.1093/acprof:oso/9780199564460.001.0001"
+        },
+        {
+          "raw": "Dougherty, Trent (ed.), 2011, Evidentialism and Its Discontents , New York: Oxford University Press. doi:10.1093/acprof:oso/9780199563500.001.0001"
+        },
+        {
+          "raw": "Dretske, Fred, 1981, Knowledge and the Flow of Information , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 1985, \"Pr&eacute;cis of Knowledge and the Flow of Information \", in Hilary Kornblith (ed.), Naturalizing Epistemology , Cambridge, MA: MIT Press, pp. 169-187."
+        },
+        {
+          "raw": "---, 1989, \"The Need to Know\", in Marjorie Clay and Keith Lehrer (eds.), Knowledge and Skepticism , Boulder: Westview Press, pp. 89-100."
+        },
+        {
+          "raw": "---, 2005, \"The Case against Closure\", in Matthias Steup and Ernest Sosa (eds). Contemporary Debates in Epistemology , 1 edition, Malden, MA: Blackwell, pp. 13-25."
+        },
+        {
+          "raw": "Dreyfus, George B.J., 1997, Recognizing Reality: Dharmakirti's Philosophy and Its Tibetan Interpretations , Albany, NY: SUNY Press."
+        },
+        {
+          "raw": "Dutant, Julien, 2015, \"The Legend of the Justified True Belief Analysis\", Philosophical Perspectives , 29(1): 95-145. doi:10.1111/phpe.12061"
+        },
+        {
+          "raw": "Fantl, Jeremy, and Matthew McGrath, 2009, Knowledge in an Uncertain World , New York: Oxford University Press. doi:10.1093/acprof:oso/9780199550623.001.0001"
+        },
+        {
+          "raw": "Feldman, Richard, and Earl Conee, 1985, \"Evidentialism\", Philosophical Studies , 48(1): 15-34. doi:10.1007/BF00372404"
+        },
+        {
+          "raw": "Fodor, Jerry, 1998, Concepts: Where Cognitive Science Went Wrong , New York: Oxford University Press. doi:10.1093/0198236360.001.0001"
+        },
+        {
+          "raw": "Gardiner, Georgi, 2020, \"Relevance and Risk: How the Relevant Alternatives Framework Models the Epistemology of Risk,\" Synthese , 199 (1-2): 481-511. doi:10.1007/s11229-020-02668-2"
+        },
+        {
+          "raw": "Gerken, Mikkel, 2017, On Folk Epistemology , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Gettier, Edmund L., 1963, \"Is Justified True Belief Knowledge?\", Analysis , 23(6): 121-123. doi:10.2307/3326922"
+        },
+        {
+          "raw": "Gibbons, John, 2013, The Norm of Belief , Oxford University Press. doi:10.1093/acprof:oso/9780199673391.001.0001"
+        },
+        {
+          "raw": "Goldman, Alvin I., 1967, \"A Causal Theory of Knowing\", Journal of Philosophy , 64(12): 357-372. doi:10.2307/2024268"
+        },
+        {
+          "raw": "---, 1976, \"Discrimination and Perceptual Knowledge\", Journal of Philosophy , 73(20): 771-791. doi:10.2307/2025679"
+        },
+        {
+          "raw": "---, 1979, \"What Is Justified Belief?\" in Justification and Knowledge , George S. Pappas (ed.), Dordrecht: D. Reidel, pp. 1-25."
+        },
+        {
+          "raw": "---, 1986, Epistemology and Cognition , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "---, 1999, \"Internalism Exposed\", Journal of Philosophy , 96(6): 271-293. doi:10.2307/2564679"
+        },
+        {
+          "raw": "---, 2009, \"Internalism, Externalism, and the Architecture of Justification\", Journal of Philosophy , 106(6): 309-338. doi:10.5840/jphil2009106611"
+        },
+        {
+          "raw": "Goldman, Alvin I., and Bob Beddor, 2021, \"Reliabilist Epistemology\", The Stanford Encyclopedia of Philosophy (Summer 2021 Edition), Edward N. Zalta (ed.), URL = ."
+        },
+        {
+          "raw": "Goldman, Alvin I., and Erik J. Olsson, 2009, \"Reliabilism and the Value of Knowledge\", in Adrian Haddock, Alan Millar, and Duncan Pritchard (eds.), Epistemic Value , New York: Oxford University Press, pp. 19-41. doi:10.1093/acprof:oso/9780199231188.001.0001"
+        },
+        {
+          "raw": "Greco, John, 2009, \"Knowledge and Success from Ability\", Philosophical Studies , 142(1): 17-26. doi:10.1007/s11098-008-9307-0"
+        },
+        {
+          "raw": "Greenough, Patrick, and Dirk Kindermann, 2017, \"The Semantic Error Problem for Epistemic Contextualism\", in Ichikawa 2017-b, pp. 305-320."
+        },
+        {
+          "raw": "Greenough, Patrick, and Duncan Pritchard (eds.), 2009, Williamson on Knowledge , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199287512.001.0001"
+        },
+        {
+          "raw": "Hazlett, Allan, 2010, \"The Myth of Factive Verbs\", Philosophy and Phenomenological Research , 80(3): 497-522. doi:10.1111/j.1933-1592.2010.00338.x"
+        },
+        {
+          "raw": "Hawthorne, John, 2002, \"Deeply Contingent A Priori Knowledge\", Philosophy and Phenomenological Research , 65(2): 247-269. doi:10.1111/j.1933-1592.2002.tb00201.x"
+        },
+        {
+          "raw": "---, 2003, Knowledge and Lotteries , New York: Oxford University Press. doi:10.1093/0199269556.001.0001"
+        },
+        {
+          "raw": "Hirvel&auml;, Jaakko, 2025, \"Metaphysics of Risk and Luck,\" No&ucirc;s , 59(2) :335-348. doi:10.111/nous.12516"
+        },
+        {
+          "raw": "Ichikawa, Jonathan, 2011, \"Quantifiers, Knowledge, and Counterfactuals\", Philosophy and Phenomenological Research , 82(2): 287-313. doi:10.1111/j.1933-1592.2010.00427.x"
+        },
+        {
+          "raw": "---, 2017-a, Contextualising Knowledge: Epistemology and Semantics , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "--- (ed.), 2017-b, Routledge Handbook of Epistemic Contextualism , New York: Taylor & Francis."
+        },
+        {
+          "raw": "---, 2024, Epistemic Courage , Oxford University Press."
+        },
+        {
+          "raw": "Ichikawa, Jonathan, and Benjamin Jarvis, 2013, The Rules of Thought , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Ichikawa, Jonathan, Benjamin Jarvis, and Katherine Rubin, 2012, \"Pragmatic Encroachment and Belief-Desire Psychology\", Analytic Philosophy , 53(4): 327-342. doi:10.1111/j.2153-960X.2012.00564.x"
+        },
+        {
+          "raw": "Ichikawa, Jonathan, and Carrie Jenkins, 2017, \"On Putting Knowledge 'First', in J. Adam Carter, Emma C. Gordon, and Benjamin Jarvis (eds.), Knowledge First: Approaches in Epistemology and Mind , Oxford: Oxford University Press, pp. 113-131. doi: 10.1093/oso/9780198716310.003.0006"
+        },
+        {
+          "raw": "Jackson, Elizabeth G., 2020, \"The Relationship Between Belief and Credence\", Philosophy Compass , 15(6): 1-13. doi:10.1111/phc3.12668"
+        },
+        {
+          "raw": "Kaplan, David, 1977, \"Demonstratives\", paper presented at a symposium on Demonstratives at the March 1977 meetings of the Pacific Division of the American Philosophical Association. Printed in Joseph Almog, John Perry & Howard Wettstein (eds.), 1989, Themes From Kaplan , Oxford: Oxford University Press, pp. 481-563."
+        },
+        {
+          "raw": "Kaplan, Mark, 1985, \"It's Not What You Know That Counts\", Journal of Philosophy , 82(7): 350-63. doi:10.2307/2026524"
+        },
+        {
+          "raw": "Kornblith, Hilary, 2002, Knowledge and Its Place in Nature , Oxford: Oxford University Press. doi:10.1093/0199246319.001.0001"
+        },
+        {
+          "raw": "---, 2008, \"Knowledge Needs No Justification\", in Quentin Smith (ed.), Epistemology: New Essays , Oxford: Oxford University Press, pp. 5-23. doi:10.1093/acprof:oso/9780199264933.003.0002"
+        },
+        {
+          "raw": "Kripke, Saul A., 2011, \"Nozick on Knowledge\", in Philosophical Troubles: Collected Papers, Volume 1 , Oxford: Oxford University Press, pp. 162-224. doi:10.1093/acprof:oso/9780199730155.003.0007"
+        },
+        {
+          "raw": "Le Morvan, Pierre, 2017, \"Knowledge before Gettier\", British Journal for the History of Philosophy , 25(6): 1216-1238. doi: 10.1080/09608788.2017.1320968"
+        },
+        {
+          "raw": "Lewis, David K., 1973, Counterfactuals , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "---, 1996, \"Elusive Knowledge\", Australasian Journal of Philosophy , 74(4): 549-567. doi:10.1080/00048409612347521"
+        },
+        {
+          "raw": "Littlejohn, Clayton, 2012, Justification and the Truth-Connection , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Lowy, Catherine, 1978, \"Gettier's Notion of Justification\", Mind , 87(345): 105-108. doi:10.1093/mind/LXXXVII.1.105"
+        },
+        {
+          "raw": "Lyons, Jack C., 2009, Perception and Basic Beliefs: Zombies, Modules and the Problem of the External World , New York: Oxford University Press. doi:10.1093/acprof:oso/9780195373578.001.0001"
+        },
+        {
+          "raw": "McGlynn, Aidan, 2014, Knowledge First? , Basingstoke: Palgrave. doi:10.1057/9781137026460"
+        },
+        {
+          "raw": "McKinnon, Rachel, 2013, \"Getting Luck Properly under Control\", Metaphilosophy , 44(4): 496-511. doi:10.1111/meta.12044"
+        },
+        {
+          "raw": "Merricks, Trenton, 1995, \"Warrant Entails Truth\", Philosophy and Phenomenological Research , 55(4): 841-855. doi:10.2307/2108335"
+        },
+        {
+          "raw": "Miracchi, Lisa, 2015, \"Competence to Know\", Philosophical Studies , 172(1): 29-56. doi:10.1007/s11098-014-0325-9"
+        },
+        {
+          "raw": "Myers-Schulz, Blake, and Eric Schwitzgebel, 2013, \"Knowing That P without Believing That P \", No&ucirc;s , 47(2): 371-384. doi:10.1111/nous.12022"
+        },
+        {
+          "raw": "Nagel, Jennifer, 2010, \"Epistemic Anxiety and Adaptive Invariantism\", Philosophical Perspectives , 24(1): 407-435. doi:10.1111/j.1520-8583.2010.00198.x"
+        },
+        {
+          "raw": "---, 2013, \"Knowledge as a Mental State\", Oxford Studies in Epistemology , 4: 275-310. doi:10.1093/acprof:oso/9780199672707.003.0010"
+        },
+        {
+          "raw": "Navarro, Jes&uacute;s, 2023, \"Epistemic Luck and Epistemic Risk\", Erkenntnis , 88(3): 929-950. doi: 10.1007/s10670-021-00387-9"
+        },
+        {
+          "raw": "Neta, Ram & Rohrbaugh, Guy, 2004, \"Luminosity and the Safety of Knowledge,\" Pacific Philosophical Quarterly , 85: 396-406. doi: 10.1111/j.1468-0114.2004.00207.x"
+        },
+        {
+          "raw": "Nozick, Robert, 1981, Philosophical Explanations , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Owens, David, 2000, Reason without Freedom: The Problem of Epistemic Normativity , London: Routledge."
+        },
+        {
+          "raw": "Pappas, George, \"Internalist vs. Externalist Conceptions of Epistemic Justification\", The Stanford Encyclopedia of Philosophy (Spring 2023 Edition), Edward N. Zalta & Uri Nodelman (eds.), URL = ."
+        },
+        {
+          "raw": "Phillips, Stephen H., and N.S. Ramanuja Tatacharya (trans.), 2004, Epistemology of Perception: Ga&#7749;ge&#347;a's \"Tattvacint&#257;ma&#7751;i\" , New York: American Institute of Buddhist Studies."
+        },
+        {
+          "raw": "Plantinga, Alvin, 1993, Warrant and Proper Function , Oxford: Oxford University Press. doi:10.1093/0195078640.001.0001"
+        },
+        {
+          "raw": "---, 1996, \"Respondeo\", in Jonathan L. Kvanvig (ed.), Warrant in Contemporary Epistemology. Essays in Honor of Plantinga's Theory of Knowledge , Lanham, MD: Rowman and Littlefield, pp. 307-378."
+        },
+        {
+          "raw": "Pollock, John J., 1986, Contemporary Theories of Knowledge , Totowa, NJ: Rowman and Littlefield."
+        },
+        {
+          "raw": "Pritchard, Duncan, 2005, Epistemic Luck , New York: Oxford University Press. doi:10.1093/019928038X.001.0001"
+        },
+        {
+          "raw": "---, 2016, \"Epistemic Risk\", Journal of Philosophy , 113(11): 550-571. doi:10.5840/jphil20161131137"
+        },
+        {
+          "raw": "Pritchard, Duncan, Alan Millar, and Adrian Haddock, 2010, The Nature and Value of Knowledge: Three Investigations , New York: Oxford University Press. doi:10.1093/acprof:oso/9780199586264.001.0001"
+        },
+        {
+          "raw": "Radford, Colin, 1966, \"Knowledge--By Examples\", Analysis , 27(1): 1-11. doi:10.2307/3326979"
+        },
+        {
+          "raw": "Rose, David, and Jonathan Schaffer, 2013, \"Knowledge Entails Dispositional Belief\", Philosophical Studies , 166(Supplement 1): 19-50. doi:10.1007/s11098-012-0052-z"
+        },
+        {
+          "raw": "Roush, Sherrilyn, 2005, Tracking Truth: Knowledge, Evidence, and Science , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2012, \"Sensitivity and Closure,\" in Kelly Becker and Tim Black (eds.), The Sensitivity Principle in Epistemology , New York: Cambridge University Press, pp. 242-268"
+        },
+        {
+          "raw": "Russell, Bertrand, 1923, Human Knowledge: Its Scope and Limits , London: George Allen and Unwin Ltd."
+        },
+        {
+          "raw": "Rysiew, Patrick, 2001, \"The Context-Sensitivity of Knowledge Attributions\", No&ucirc;s , 35(4): 477-514. doi:10.1111/0029-4624.00349"
+        },
+        {
+          "raw": "---, 2023, \"Epistemic Contextualism\", The Stanford Encyclopedia of Philosophy (Winter 2023 Edition), Edward N. Zalta and Uri Nodelman (eds.), URL = ."
+        },
+        {
+          "raw": "Schaffer, Jonathan, 2004, \"From Contextualism to Contrastivism\", Philosophical Studies , 119(1-2): 73-104. doi:10.1023/B:PHIL.0000029351.56460.8c"
+        },
+        {
+          "raw": "Schiffer, Stephen, 1996, \"Contextualist Solutions to Scepticism\", Proceedings of the Aristotelian Society , 96(1): 317-333. doi:10.1093/aristotelian/96.1.317"
+        },
+        {
+          "raw": "Schulz, Moritz, 2021, \"Strong Knowledge, Weak Belief?\", Synthese , 199(3-4): 8741-8753. doi:10.1007/s11229-021-03180-x"
+        },
+        {
+          "raw": "Shope, Robert K., 1983, The Analysis of Knowing: A Decade of Research , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Siscoe, Robert Weston, 2021, \"Belief, Rational and Justified\", Mind , 130(517): 59-83. doi:10.1093/mind/fzaa021"
+        },
+        {
+          "raw": "Sosa, Ernest, 1999, \"How to Defeat Opposition to Moore\", Philosophical Perspectives , 13: 141-153. doi:10.1111/0029-4624.33.s13.7"
+        },
+        {
+          "raw": "---, 2007, A Virtue Epistemology: Apt Belief and Reflective Knowledge (Volume I), New York: Oxford University Press. doi:10.1093/acprof:oso/9780199297023.001.0001"
+        },
+        {
+          "raw": "Stanley, Jason, 2005, Knowledge and Practical Interests , New York: Oxford University Press. doi:10.1093/0199288038.001.0001"
+        },
+        {
+          "raw": "---, 2011, Know How , New York: Oxford University Press. doi:10.1093/acprof:oso/9780199695362.001.0001"
+        },
+        {
+          "raw": "Steglich-Petersen, Asbj&oslash;rn, 2010, \"Luck as an Epistemic Notion\", Synthese , 176 (3): 361-377. doi:10.1007/s11229-009-9569-x"
+        },
+        {
+          "raw": "Stine, G.C., 1976, \"Skepticism, Relevant Alternatives, and Deductive Closure\", Philosophical Studies , 29(4): 249-261. doi:10.1007/BF00411885"
+        },
+        {
+          "raw": "Sturgeon, Scott, 1993, \"The Gettier Problem\", Analysis , 53(3): 156-164. doi:10.2307/3328464"
+        },
+        {
+          "raw": "Sutton, Jonathan, 2007, Without Justification , Cambridge, MA: The MIT Press."
+        },
+        {
+          "raw": "Unger, Peter, 1968, \"An Analysis of Factual Knowledge\", Journal of Philosophy , 65(6): 157-170. doi:10.2307/2024203"
+        },
+        {
+          "raw": "Weatherson, Brian, 2012, \"Knowledge, Bets, and Interests\", in Jessica Brown and Mikkel Gerken (eds.), Knowledge Ascriptions , New York: Oxford University Press, pp. 75-103. doi:10.1093/acprof:oso/9780199693702.003.0004"
+        },
+        {
+          "raw": "---, 2024, Knowledge: A Human Interest Story , Open Book Publishers."
+        },
+        {
+          "raw": "Williamson, Timothy, 2000, Knowledge and Its Limits , Oxford: Oxford University Press. doi:10.1093/019925656X.001.0001"
+        },
+        {
+          "raw": "---, 2005, \"Knowledge, Context, and the Agent's Point of View\", in Gerhard Preyer and Georg Peter (eds.), Contextualism in Philosophy: Knowledge, Meaning, and Truth , Oxford: Oxford University Press, pp. 91-114."
+        },
+        {
+          "raw": "---, 2009, \"Reply to Alvin Goldman\", in Greenough & Pritchard 2009, pp. 305-312. doi:10.1093/acprof:oso/9780199287512.003.0017"
+        },
+        {
+          "raw": "Worsnip, Alex, 2017, \"Contextualism and Knowledge Norms\", in Ichikawa 2017-b, pp. 177-189."
+        },
+        {
+          "raw": "Wright, Crispin, 2004, \"Warrant for Nothing (And Foundations for Free)?\" Aristotelian Society Supplementary Volume , 78(1): 167-212. doi:10.1111/j.0309-7013.2004.00121.x"
+        },
+        {
+          "raw": "Zagzebski, Linda, 1994, \"The Inescapability of Gettier Problems\", The Philosophical Quarterly , 44(174): 65-73. doi:10.2307/2220147"
+        }
+      ],
+      "publishedAt": "2001-02-05T13:00:00.000Z",
+      "revisedAt": "2026-01-20T13:00:00.000Z"
+    }
+  }
+}

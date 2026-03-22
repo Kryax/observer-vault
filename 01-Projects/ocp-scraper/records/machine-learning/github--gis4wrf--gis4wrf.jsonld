@@ -1,0 +1,181 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/gis4wrf--gis4wrf",
+  "meta": {
+    "title": "GIS4WRF",
+    "description": "QGIS toolkit 🧰 for pre- and post-processing 🔨, visualizing 🔍, and running simulations 💻 in the Weather Research and Forecasting (WRF) model 🌀",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:46:38.155Z",
+    "dateModified": "2026-03-11T04:46:38.155Z",
+    "keywords": [
+      "academia",
+      "air-quality",
+      "atmospheric-modelling",
+      "atmospheric-science",
+      "forecasting-models",
+      "gis",
+      "grib",
+      "meteorology",
+      "netcdf",
+      "nwp",
+      "plotting",
+      "python",
+      "qgis-plugin",
+      "scientific-computations",
+      "scientific-computing",
+      "simulation",
+      "urban-planning",
+      "weather",
+      "wps",
+      "wrf"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "| Build and Tests | Documentation | Article DOI | Software DOI |\n|-----------------|---------------|-------------|--------------|\n[![CI](https://github.com/GIS4WRF/gis4wrf/actions/workflows/ci.yml/badge.svg)](https://github.com/GIS4WRF/gis4wrf/actions/workflows/ci.yml) | [![docs](https://img.shields.io/badge/docs-gis4wrf.github.io-blue.svg)](https://gis4wrf.github.io) | [![DOI](https://img.shields.io/badge/DOI-10.1016%2Fj.envsoft.2018.10.018-brightgreen.svg)](https://doi.org/10.1016/j.envsoft.2018.10.018) | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1288569.svg)](https://doi.org/10.5281/zenodo.1288569) |",
+    "context": "| Build and Tests | Documentation | Article DOI | Software DOI |\n|-----------------|---------------|-------------|--------------|\n[![CI](https://github.com/GIS4WRF/gis4wrf/actions/workflows/ci.yml/badge.svg)](https://github.com/GIS4WRF/gis4wrf/actions/workflows/ci.yml) | [![docs](https://img.shields.io/badge/docs-gis4wrf.github.io-blue.svg)](https://gis4wrf.github.io) | [![DOI](https://img.shields.io/badge/DOI-10.1016%2Fj.envsoft.2018.10.018-brightgreen.svg)](https://doi.org/10.1016/j.envsoft.2018.10.018) | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1288569.svg)](https://doi.org/10.5281/zenodo.1288569) |\n\nGIS4WRF is a free and open source [QGIS](https://qgis.org/) plug-in to help researchers and practitioners with their [Advanced Research Weather Research and Forecasting](https://www.mmm.ucar.edu/weather-research-and-forecasting-model) modelling workflows. GIS4WRF can be used to pre-process input data, run simulations, and visualize or post-process results. We offer MPI-enabled pre-built binary distributions for Windows, macOS and Linux through [WRF-CMake](https://github.com/WRF-CMake/WRF). For information on how to install GIS4WRF, or check out the main documentation and tutorials, please refer to the [GIS4WRF website](https://gis4wrf.github.io).\n\n<p align=\"center\"><img src=\"https://gis4wrf.github.io/assets/images/gis4wrf-demo.gif\"></p>\n<p align=\"center\">Configure, run and visualize a WRF simulation in GIS4WRF</p>",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "182 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "39 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:46:38.155Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/GIS4WRF/gis4wrf",
+        "description": "GitHub repository: GIS4WRF/gis4wrf"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://gis4wrf.github.io",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "GIS4WRF",
+        "type": "human",
+        "uri": "https://github.com/GIS4WRF"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 260,
+      "validation_diversity": 0.23,
+      "context_breadth": 0.56,
+      "temporal_stability": 0.52,
+      "test_coverage": 0.33,
+      "documentation_quality": 0.53
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.41
+  }
+}

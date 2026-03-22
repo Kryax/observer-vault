@@ -1,0 +1,209 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/materialyzeai--matgl",
+  "meta": {
+    "title": "Materials Graph Library <img src=\"https://github.com/materialyzeai/matgl/blob/main/assets/MatGL.png?raw=true\" alt=\"matgl\" width=\"30%\" style=\"float: right\">",
+    "description": "Graph deep learning library for materials",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:22:27.473Z",
+    "dateModified": "2026-03-11T04:22:27.473Z",
+    "keywords": [
+      "deep",
+      "graph",
+      "learning",
+      "materials-informatics",
+      "materials-science"
+    ],
+    "license": "BSD-3-Clause"
+  },
+  "problemSolved": {
+    "statement": "MatGL (Materials Graph Library) is a graph deep learning library for materials science. Mathematical graphs are a\nnatural representation for a collection of atoms. Graph deep learning models have been shown to consistently deliver\nexceptional performance as surrogate models for the prediction of materials properties. The goal is for MatGL to serve\nas an extensible platform to develop and share materials graph deep learning models.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "513 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "107 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:22:27.473Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/materialyzeai/matgl",
+        "description": "GitHub repository: materialyzeai/matgl"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "ase",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/ase/"
+      },
+      {
+        "name": "torch",
+        "version": "<=2.10.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/torch/"
+      },
+      {
+        "name": "torchdata",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/torchdata/"
+      },
+      {
+        "name": "lightning",
+        "version": "<=2.6.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/lightning/"
+      },
+      {
+        "name": "pydantic",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pydantic/"
+      },
+      {
+        "name": "boto3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/boto3/"
+      },
+      {
+        "name": "numpy",
+        "version": "<3.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numpy/"
+      },
+      {
+        "name": "torch-geometric",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/torch-geometric/"
+      },
+      {
+        "name": "pymatgen-core",
+        "version": ">=2026.2.24",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pymatgen-core/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "materialyzeai",
+        "type": "human",
+        "uri": "https://github.com/materialyzeai"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 727,
+      "validation_diversity": 0.47,
+      "context_breadth": 0.4,
+      "temporal_stability": 0.98,
+      "test_coverage": 0.47,
+      "documentation_quality": 0.65
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.553
+  }
+}

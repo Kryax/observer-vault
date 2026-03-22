@@ -1,0 +1,164 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/tsinghua-fib-lab--drl-urban-planning",
+  "meta": {
+    "title": "DRL urban planning",
+    "description": "A deep reinforcement learning (DRL) based approach for spatial layout of land use and roads in urban communities. (Nature Computational Science)",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:45:02.600Z",
+    "dateModified": "2026-03-11T04:45:02.600Z",
+    "keywords": [
+      "graph-neural-networks",
+      "reinforcement-learning",
+      "spatial-planning",
+      "urban-planning"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "![Loading Model Overview](assets/pipeline_v3.png \"Model Overview\")\n---",
+    "context": "![Loading Model Overview](assets/pipeline_v3.png \"Model Overview\")\n---\n\nIn this project, we propose a reinforcement-learning-based framework for assisting urban planners in the complex task of optimizing the spatial design of urban communities.\nOur proposed model can generate land and road layout with superior spatial efficiency, and improve the productivity of human planners with a human-AI collaborative workflow.\n\nThis project was initially described in the [research article in *Nature Computational Science*](https://www.nature.com/articles/s43588-023-00503-5):\n\nYu Zheng, Yuming Lin, Liang Zhao, Tinghai Wu, Depeng Jin, Yong Li. **Spatial planning of urban communities via deep reinforcement learning**. Nat Comput Sci (2023). https://doi.org/10.1038/s43588-023-00503-5\n\nFull text (PDF) is available at [this link](https://rdcu.be/dlRPZ).",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:jupyter notebook"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "291 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "50 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:45:02.600Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/tsinghua-fib-lab/DRL-urban-planning",
+        "description": "GitHub repository: tsinghua-fib-lab/DRL-urban-planning"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://rdcu.be/dlRPZ",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Jupyter Notebook"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "tsinghua-fib-lab",
+        "type": "human",
+        "uri": "https://github.com/tsinghua-fib-lab"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 391,
+      "validation_diversity": 0,
+      "context_breadth": 0.33,
+      "temporal_stability": 0.7,
+      "test_coverage": 0.47,
+      "documentation_quality": 0.6
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.079
+  }
+}

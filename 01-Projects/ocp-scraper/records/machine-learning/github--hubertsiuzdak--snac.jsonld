@@ -1,0 +1,166 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/hubertsiuzdak--snac",
+  "meta": {
+    "title": "SNAC 🍿",
+    "description": "Multi-Scale Neural Audio Codec (SNAC) compresses audio into discrete codes at a low bitrate",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T03:08:05.949Z",
+    "dateModified": "2026-03-22T03:08:05.949Z",
+    "keywords": [
+      "audio",
+      "audio-codec",
+      "deep-learning"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "SNAC encodes audio into hierarchical tokens similarly to SoundStream, EnCodec, and DAC (see the image\non the left). However, SNAC introduces a simple change where coarse tokens are sampled less frequently,\ncovering a broader time span (see the image on the right).",
+    "context": "Multi-**S**cale **N**eural **A**udio **C**odec (SNAC) compresses audio into discrete codes at a low bitrate. For more information, read the paper: https://arxiv.org/abs/2410.14411\n\n| 🎸 Music samples                                                                                         | 🗣️ Speech samples                                                                                       |\n|----------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|\n| <video src='https://github.com/hubertsiuzdak/snac/assets/35269911/e8adac68-d3f1-4fc1-8cf9-f48d9bcd95ed'> | <video src='https://github.com/hubertsiuzdak/snac/assets/35269911/65ac2547-c711-49d4-8a5d-64d52e6d6ba1'> |\n\n🎧 More audio samples available at https://hubertsiuzdak.github.io/snac/",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "media",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "755 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "43 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T03:08:05.949Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/hubertsiuzdak/snac",
+        "description": "GitHub repository: hubertsiuzdak/snac"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://hubertsiuzdak.github.io/snac/",
+        "description": "Project homepage"
+      }
+    ],
+    "solutionApproach": "See usage section in README",
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "hubertsiuzdak",
+        "type": "human",
+        "uri": "https://github.com/hubertsiuzdak"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 841,
+      "validation_diversity": 0.1,
+      "context_breadth": 0.28,
+      "temporal_stability": 0.67,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.68
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.3
+  }
+}

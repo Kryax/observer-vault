@@ -1,0 +1,159 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/dede1751--carp",
+  "meta": {
+    "title": "<div align=\"center\"> Carp </div>",
+    "description": "Rust didactic UCI chess engine",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T02:50:32.515Z",
+    "dateModified": "2026-03-22T02:50:32.515Z",
+    "keywords": [
+      "chess",
+      "chess-engine",
+      "nnue",
+      "rust"
+    ],
+    "license": "GPL-3.0"
+  },
+  "problemSolved": {
+    "statement": "<div align=\"center\"> Carp </div> — problem statement could not be extracted from README",
+    "context": "<div align=\"center\">\n\n  [![Build][build-badge]][build-link]\n  [![License][license-badge]][license-link]\n  [![Release][release-badge]][release-link]\n  [![Commits][commits-badge]][commits-link]\n  \n  [![lichess-badge]][lichess-link]\n  \n</div>\n\nCarp is a UCI-compatible didactic engine written in Rust, using a bitboard-based piece-centric approach.\\\nThe engine is built on top of a conventional Negamax search and uses a simple NNUE evaluation.\n\nThe main goal of this project is to learn the basics of both Rust and Chess Programming.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:rust"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "51 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "2 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T02:50:32.515Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/dede1751/carp",
+        "description": "GitHub repository: dede1751/carp"
+      }
+    ],
+    "language": "Rust"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "dede1751",
+        "type": "human",
+        "uri": "https://github.com/dede1751"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 55,
+      "validation_diversity": 0.16,
+      "context_breadth": 0.19,
+      "temporal_stability": 0.7,
+      "test_coverage": 0.37,
+      "documentation_quality": 0.45
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.283
+  }
+}

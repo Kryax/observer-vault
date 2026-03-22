@@ -1,0 +1,796 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/self-reference",
+  "meta": {
+    "title": "Self-Reference and Paradox",
+    "description": "In the context of language, self-reference is used to denote a statement that refers to itself or its own referent. The most famous example of a self-referential sentence is the liar sentence : \"This sentence is not true.\" Self-reference is often used in a broader context as well. For instance, a picture could be considered self-referential if it contains a copy of itself (see the animated image above); and a piece of literature could be considered self-referential if it includes a reference to the work itself. In philosophy, self-reference is of specific interest in relation to the analysis of language, but also to the analysis of the mind. Self-reference is also a field of special interest in mathematics and computer science, in particular in relation to the foundations of these sciences. We also talk about self-reference when using the first-person pronoun \"I\" like in \"I feel pain\" or \"I know this song\". Self-reference in the sense of an agent referring to herself as well as how self-attribution and self-identification differs from attributing to or identifying others is covered in several other entries of this encyclopedia, including self-knowledge , knowledge of the self , self-consciousness , Descartes' epistemology , and introspection . A major part of the philosophical interest in self-reference is centered around the paradoxes. A paradox is a seemingly sound piece of reasoning, based on apparently true assumptions, that still leads to a contradiction (Quine, 1976). Consider again the liar sentence from above. It is a sentence \\(L\\) expressing \"The sentence \\(L\\) is not true.\" We are led to a contradiction when trying to determine whether \\(L\\) is true or not. If we first assume \\(L\\) to be true, then it must be expressing a true statement about the world. As \\(L\\) expresses \"The sentence \\(L\\) is not true,\" we now have that \\(L\\) is not true, which is a contradiction. Suppose, conversely, that \\(L\\) is not true. Then the expression \"The sentence \\(L\\) is not true\" is true. But the expression in the quotes is exactly the statement expressed by \\(L\\), so \\(L\\) must be true, again a contradiction. Hence, independently of whether we assume \\(L\\) to be true or not, we are led to a contradiction. Thus we now have a contradiction obtained by a seemingly sound piece of reasoning based on apparently true assumptions. It hence qualifies as a paradox. This paradox is known as the liar paradox . The liar sentence leads to a paradox because it is self-referential, but self-reference is not a sufficient condition for paradoxicality. The truth-teller sentence \"This sentence is true\" is not paradoxical, and neither is the sentence \"This sentence contains four words\" (it is false, though). Most paradoxes of self-reference may be categorised as either semantic , set-theoretic or epistemic . The semantic paradoxes, like the liar paradox, are primarily relevant to theories of truth. The set-theoretic paradoxes are relevant to the foundations of mathematics, and the epistemic paradoxes are relevant to epistemology. Even though these paradoxes are different in the subject matter they relate to, they share the same underlying structure, and may often be tackled using the same mathematical means. In the present entry, we will first introduce a number of the most well-known paradoxes of self-reference, and discuss their common underlying structure. Subsequently, we will discuss the profound consequences that these paradoxes have on a number of different areas: theories of truth, set theory, epistemology, foundations of mathematics, computability. Finally, we will present the most prominent approaches to solving the paradoxes.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T04:16:16.287Z",
+    "dateModified": "2026-03-22T04:16:16.287Z",
+    "datePublished": "2008-07-14T14:00:00.000Z",
+    "keywords": [
+      "buridan",
+      "computability",
+      "curry paradox",
+      "dialetheism",
+      "epistemic game",
+      "epistemic paradoxes",
+      "fitch paradox",
+      "goedel",
+      "goedel incompleteness",
+      "insolubles",
+      "liar paradox",
+      "logic epistemic",
+      "logic manyvalued",
+      "logic paraconsistent",
+      "logic provability",
+      "mathematics inconsistent",
+      "paradoxes contemporary logic",
+      "philosophy mathematics",
+      "quine nf",
+      "russell paradox",
+      "set theory",
+      "settheory alternative",
+      "settheory early",
+      "tarski truth",
+      "truth",
+      "truth axiomatic",
+      "truth deflationary",
+      "truth revision",
+      "turing",
+      "turing machine",
+      "type theory"
+    ]
+  },
+  "problemSolved": {
+    "statement": "In the context of language, self-reference is used to denote a statement that refers to itself or its own referent. The most famous example of a self-referential sentence is the liar sentence : \"This sentence is not true.\" Self-reference is often used in a broader context as well. For instance, a picture could be considered self-referential if it contains a copy of itself (see the animated image above); and a piece of literature could be considered self-referential if it includes a reference to the work itself. In philosophy, self-reference is of specific interest in relation to the analysis of language, but also to the analysis of the mind. Self-reference is also a field of special interest in mathematics and computer science, in particular in relation to the foundations of these sciences. We also talk about self-reference when using the first-person pronoun \"I\" like in \"I feel pain\" or \"I know this song\". Self-reference in the sense of an agent referring to herself as well as how self-attribution and self-identification differs from attributing to or identifying others is covered in several other entries of this encyclopedia, including self-knowledge , knowledge of the self , self-consciousness , Descartes' epistemology , and introspection . A major part of the philosophical interest in self-reference is centered around the paradoxes. A paradox is a seemingly sound piece of reasoning, based on apparently true assumptions, that still leads to a contradiction (Quine, 1976). Consider again the liar sentence from above. It is a sentence \\(L\\) expressing \"The sentence \\(L\\) is not true.\" We are led to a contradiction when trying to determine whether \\(L\\) is true or not. If we first assume \\(L\\) to be true, then it must be expressing a true statement about the world. As \\(L\\) expresses \"The sentence \\(L\\) is not true,\" we now have that \\(L\\) is not true, which is a contradiction. Suppose, conversely, that \\(L\\) is not true. Then the expression \"The sentence \\(L\\) is not true\" is true. But the expression in the quotes is exactly the statement expressed by \\(L\\), so \\(L\\) must be true, again a contradiction. Hence, independently of whether we assume \\(L\\) to be true or not, we are led to a contradiction. Thus we now have a contradiction obtained by a seemingly sound piece of reasoning based on apparently true assumptions. It hence qualifies as a paradox. This paradox is known as the liar paradox . The liar sentence leads to a paradox because it is self-referential, but self-reference is not a sufficient condition for paradoxicality. The truth-teller sentence \"This sentence is true\" is not paradoxical, and neither is the sentence \"This sentence contains four words\" (it is false, though). Most paradoxes of self-reference may be categorised as either semantic , set-theoretic or epistemic . The semantic paradoxes, like the liar paradox, are primarily relevant to theories of truth. The set-theoretic paradoxes are relevant to the foundations of mathematics, and the epistemic paradoxes are relevant to epistemology. Even though these paradoxes are different in the subject matter they relate to, they share the same underlying structure, and may often be tackled using the same mathematical means. In the present entry, we will first introduce a number of the most well-known paradoxes of self-reference, and discuss their common underlying structure. Subsequently, we will discuss the profound consequences that these paradoxes have on a number of different areas: theories of truth, set theory, epistemology, foundations of mathematics, computability. Finally, we will present the most prominent approaches to solving the paradoxes.",
+    "context": "Opening section: 1. Paradoxes of Self-Reference | Related entries: buridan, computability, curry-paradox, dialetheism, epistemic-paradoxes, fitch-paradox, epistemic-game, goedel, goedel-incompleteness, insolubles, liar-paradox, logic-epistemic, logic-manyvalued, logic-paraconsistent, logic-provability, philosophy-mathematics, mathematics-inconsistent, paradoxes-contemporary-logic, quine-nf, russell-paradox, set-theory, settheory-alternative, settheory-early, tarski-truth, truth, truth-axiomatic, truth-deflationary, truth-revision, turing, turing-machine, type-theory",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "ethics",
+    "logic",
+    "philosophy-of-science",
+    "general-philosophy"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry self-reference",
+        "uri": "https://plato.stanford.edu/entries/self-reference/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 31 related entries, bibliography size 139"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2008-07-14T14:00:00.000Z and revised 2024-07-18T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2024-07-18T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/self-reference/",
+        "description": "SEP entry for self-reference"
+      }
+    ],
+    "solutionApproach": "1. Paradoxes of Self-Reference"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/buridan",
+      "ocp:sep/computability",
+      "ocp:sep/curry-paradox",
+      "ocp:sep/dialetheism",
+      "ocp:sep/epistemic-paradoxes",
+      "ocp:sep/fitch-paradox",
+      "ocp:sep/epistemic-game",
+      "ocp:sep/goedel",
+      "ocp:sep/goedel-incompleteness",
+      "ocp:sep/insolubles",
+      "ocp:sep/liar-paradox",
+      "ocp:sep/logic-epistemic",
+      "ocp:sep/logic-manyvalued",
+      "ocp:sep/logic-paraconsistent",
+      "ocp:sep/logic-provability",
+      "ocp:sep/philosophy-mathematics",
+      "ocp:sep/mathematics-inconsistent",
+      "ocp:sep/paradoxes-contemporary-logic",
+      "ocp:sep/quine-nf",
+      "ocp:sep/russell-paradox",
+      "ocp:sep/set-theory",
+      "ocp:sep/settheory-alternative",
+      "ocp:sep/settheory-early",
+      "ocp:sep/tarski-truth",
+      "ocp:sep/truth",
+      "ocp:sep/truth-axiomatic",
+      "ocp:sep/truth-deflationary",
+      "ocp:sep/truth-revision",
+      "ocp:sep/turing",
+      "ocp:sep/turing-machine",
+      "ocp:sep/type-theory"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Bolander, Thomas",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/self-reference/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 122,
+      "validation_diversity": 0.52,
+      "context_breadth": 0.57,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.94
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.617
+  },
+  "extensions": {
+    "sep": {
+      "slug": "self-reference",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/self-reference/",
+      "preamble": "In the context of language, self-reference is used to denote a statement that refers to itself or its own referent. The most famous example of a self-referential sentence is the liar sentence : \"This sentence is not true.\" Self-reference is often used in a broader context as well. For instance, a picture could be considered self-referential if it contains a copy of itself (see the animated image above); and a piece of literature could be considered self-referential if it includes a reference to the work itself. In philosophy, self-reference is of specific interest in relation to the analysis of language, but also to the analysis of the mind. Self-reference is also a field of special interest in mathematics and computer science, in particular in relation to the foundations of these sciences. We also talk about self-reference when using the first-person pronoun \"I\" like in \"I feel pain\" or \"I know this song\". Self-reference in the sense of an agent referring to herself as well as how self-attribution and self-identification differs from attributing to or identifying others is covered in several other entries of this encyclopedia, including self-knowledge , knowledge of the self , self-consciousness , Descartes' epistemology , and introspection . A major part of the philosophical interest in self-reference is centered around the paradoxes. A paradox is a seemingly sound piece of reasoning, based on apparently true assumptions, that still leads to a contradiction (Quine, 1976). Consider again the liar sentence from above. It is a sentence \\(L\\) expressing \"The sentence \\(L\\) is not true.\" We are led to a contradiction when trying to determine whether \\(L\\) is true or not. If we first assume \\(L\\) to be true, then it must be expressing a true statement about the world. As \\(L\\) expresses \"The sentence \\(L\\) is not true,\" we now have that \\(L\\) is not true, which is a contradiction. Suppose, conversely, that \\(L\\) is not true. Then the expression \"The sentence \\(L\\) is not true\" is true. But the expression in the quotes is exactly the statement expressed by \\(L\\), so \\(L\\) must be true, again a contradiction. Hence, independently of whether we assume \\(L\\) to be true or not, we are led to a contradiction. Thus we now have a contradiction obtained by a seemingly sound piece of reasoning based on apparently true assumptions. It hence qualifies as a paradox. This paradox is known as the liar paradox . The liar sentence leads to a paradox because it is self-referential, but self-reference is not a sufficient condition for paradoxicality. The truth-teller sentence \"This sentence is true\" is not paradoxical, and neither is the sentence \"This sentence contains four words\" (it is false, though). Most paradoxes of self-reference may be categorised as either semantic , set-theoretic or epistemic . The semantic paradoxes, like the liar paradox, are primarily relevant to theories of truth. The set-theoretic paradoxes are relevant to the foundations of mathematics, and the epistemic paradoxes are relevant to epistemology. Even though these paradoxes are different in the subject matter they relate to, they share the same underlying structure, and may often be tackled using the same mathematical means. In the present entry, we will first introduce a number of the most well-known paradoxes of self-reference, and discuss their common underlying structure. Subsequently, we will discuss the profound consequences that these paradoxes have on a number of different areas: theories of truth, set theory, epistemology, foundations of mathematics, computability. Finally, we will present the most prominent approaches to solving the paradoxes.",
+      "firstSectionTitle": "1. Paradoxes of Self-Reference",
+      "firstSectionText": "Paradoxes of self-reference have been known since antiquity. The discovery of the liar paradox is often credited to Eubulides the Megarian who lived in the 4th century BC. The liar paradox belongs to the category of semantic paradoxes, since it is based on the semantic notion of truth. Other well-known semantic paradoxes include Grelling's paradox, Berry's paradox, and Richard's paradox. Grelling's paradox involves a predicate defined as follows. Say a predicate is heterological if it is not true of itself, that is, if it does not itself have the property it expresses. Then the predicate \"German\" is heterological, since it is not itself a German word, but the predicate \"deutsch\" is not heterological. The question that leads to the paradox is now: It is easy to see that we obtain a contradiction independently of whether we answer \"yes\" or \"no\" to this question (the argument runs more or less like in the liar paradox). Grelling's paradox is self-referential, since the definition of the predicate heterological refers to all predicates, including the predicate heterological itself. Definitions such as this which depends on a set of entities, at least one of which is the entity being defined, are called impredicative . Berry's paradox is another paradox based on an impredicative definition, or rather, an impredicative description. Some phrases of the English language are descriptions of natural numbers, for example, \"the sum of five and seven\" is a description of the number 12. Berry's paradox arises when trying to determine the denotation of the following description: The contradiction is that this description containing 93 symbols denotes a number which, by definition, cannot be denoted by any description containing less than 100 symbols. The description is of course impredicative, since it implicitly refers to all descriptions, including itself. Richard's paradox considers phrases of the English language defining real numbers rather than natural numbers. For example, \"the ratio between the circumference and diameter of a circle\" is a phrase defining the number \\(\\pi\\). Assume an enumeration of all such phrases is given (e.g. by putting them into lexicographical order). Now consider the phrase: This phrase defines a real number, so it must be among the enumerated phrases, say number \\(k\\) in this enumeration. But, at the same time, by definition, it differs from the number denoted by the \\(k\\)th phrase in the \\(k\\)th decimal place. Thus we have a contradiction. The defining phrase is obviously impredicative. The particular construction employed in this paradox is called diagonalisation . Diagonalisation is a general construction and proof method originally invented by Georg Cantor (1891) to prove the uncountability of the power set of the natural numbers. It was also used as a basis for Cantor's paradox, one of the set-theoretic paradoxes to be considered next. The best-known set-theoretic paradoxes are Russell's paradox and Cantor's paradox. Russell's paradox arises from considering the Russell set \\(R\\) of all sets that are not members of themselves, that is, the set defined defined by \\(R = \\{ x \\mid x \\not\\in x \\}\\). The contradiction is then derived by asking whether \\(R\\) is a member of itself, that is, whether \\(R \\in R\\) holds. If \\(R \\in R\\) then \\(R\\) is a member of itself, and thus \\(R \\not\\in R\\), by definition of \\(R\\). If, on the other hand, \\(R \\not\\in R\\) then \\(R\\) is not a member of itself, and thus \\(R \\in R\\), again by definition of \\(R\\). Cantor's paradox is based on an application of Cantor's theorem. Cantor's theorem states that given any finite or infinite set \\(S\\), the power set of \\(S\\) has strictly larger cardinality (greater size) than \\(S\\). The theorem is proved by a form of diagonalisation, the same idea underlying Richard's paradox. Cantor's paradox considers the set of all sets. Let us call this set the universal set and denote it by \\(U\\). The power set of \\(U\\) is denoted \\(\\wp(U)\\). Since \\(U\\) contains all sets it will in particular contain all elements of \\(\\wp(U)\\). Thus \\(\\wp(U)\\) must be a subset of \\(U\\) and must thus have a cardinality (size) which is less than or equal to the cardinality of \\(U\\). However, this immediately contradicts Cantor's theorem. The Hypergame paradox is a more recent addition to the list of set-theoretic paradoxes, invented by Zwicker (1987). Let us call a two-player game well-founded if it is bound to terminate in a finite number of moves. Tournament chess is an example of a well-founded game. We now define hypergame to be the game in which player 1 in the first move chooses a well-founded game to be played, and player 2 subsequently makes the first move in the chosen game. All remaining moves are then moves of the chosen game. Hypergame must be a well-founded game, since any play will last exactly one move more than some given well-founded game. However, if hypergame is well-founded then it must be one of the games that can be chosen in the first move of hypergame, that is, player 1 can choose hypergame in the first move. This allows player 2 to choose hypergame in the subsequent move, and the two players can continue choosing hypergame ad infinitum . Thus hypergame cannot be well-founded, contradicting our previous conclusion. The most well-know epistemic paradox is the paradox of the knower (Kaplan & Montague, 1960; Montague, 1963). This paradox has many equivalent formulations, one of them based on the sentence \"This sentence is not known by anyone.\" Let us call this sentence the knower sentence , abbreviated \\(KS. KS\\) is obviously quite similar to the liar sentence, except the central concept involved is knowledge rather than truth. The reasoning leading to a contradiction from \\(KS\\) is a bit more complex than in the liar paradox. First \\(KS\\) is shown to be true by the following piece of reasoning: The piece of reasoning just carried out to prove the truth of \\(KS\\) should be available to any agent (person) with sufficient reasoning capabilities. That is, an agent should be able to prove the truth of \\(KS\\), and thus come to know that \\(KS\\) holds. However, if \\(KS\\) is known by someone, then what it expresses is not the case, and thus it cannot be true. This is a contradiction, and thus we have a paradox. The role of self-reference in this paradox is obvious, as it is based on a sentence, \\(KS\\), referring directly to itself. The paradox of the knower is just one of many epistemic paradoxes involving self-reference. See the entry on epistemic paradoxes for further information on the class of epistemic paradoxes. A quite recent epistemic paradox, cast in the setting of beliefs and assumptions in a two-player game, is the Brandenburger-Keisler paradox (Brandenburger & Keisler, 2006), described in detail in the entry on epistemic foundations of game theory . For a detailed discussion and history of the paradoxes of self-reference in general, see the entry on paradoxes and contemporary logic . The paradoxes above are all quite similar in structure. In the case of the paradoxes of Grelling and Russell, this can be seen as follows. Define the extension of a predicate to be the set of objects it is true of. For a predicate \\(P\\) we denote its extension by ext\\((P)\\). Grelling's paradox involves the predicate heterological, which is true of all those predicates that are not true of themselves. Thus the extension of the predicate heterological is the set \\(\\{ P \\mid P \\not\\in\\) ext\\((P) \\}\\). Compare this to the Russell set \\(R\\) given by \\(\\{ x \\mid x \\not\\in x \\}\\). The only significant difference between these two sets is that the first is defined on predicates whereas the second is defined on sets. The proofs of contradictions based on these two sets also share the same structure, as seen below (where \"het\" abbreviates \"heterological\"): We have here two paradoxes of an almost identical structure belonging to two distinct classes of paradoxes: one is semantic and the other set-theoretic. What this teaches us is that even if paradoxes seem different by involving different subject matters, they might be almost identical in their underlying structure. Thus in many cases it makes most sense to study the paradoxes of self-reference under one, rather than study, say, the semantic and set-theoretic paradoxes separately. Russell and Cantor's paradoxes are also more similar than they appear at first. Cantor's paradox is based on an application of Cantor's theorem to the universal set \\(U\\) (cf. Section 1.2 above). Below we give the proof of Cantor's theorem for an arbitrary set \\(S\\). We need to prove that \\(\\wp(S)\\) has greater cardinality than \\(S\\). Assume to obtain a contradiction that this is not the case. Then there must exist a (potentially partial) map \\(f\\) from \\(S\\) onto \\(\\wp(S)\\). Now consider the set \\(C = \\{ x \\in dom(f) \\mid x \\not\\in f(x) \\}\\). Clearly \\(C \\subseteq S\\), so \\(C \\in \\wp(S)\\). Since \\(f\\) is onto \\(\\wp(S)\\), there must then exist a set \\(c \\in dom(f)\\) such that \\(f(c)=C\\). However, we now obtain a contradiction, since the following holds: Note the similarity between this sequence of equivalences and the corresponding sequences of equivalences derived for Russell's and Grelling's paradoxes above. Now consider the special case of Cantor's theorem where \\(S\\) is the universal set. Then we can simply choose \\(f\\) to be the identity function on \\(\\wp(S)\\), since \\(S\\) is the universal set and hence \\( \\wp(S) \\subseteq S\\) (any set must be a subset of the universal set). So \\(f\\) is the partial function \\(f: \\wp(S) \\to \\wp(S)\\) defined by \\(f(x) = x\\). But then \\(C\\) above becomes the Russell set, and the sequence of equivalences become the proof of contradiction in Russell's paradox! Thus Cantor's paradox is nothing more than a slight variant of Russell's paradox; the core argument leading to the contradiction is the same in both. Priest (1994) gives even firmer evidence to the similarity between the paradoxes of self-reference by showing that they all fit into what he originally called the Qualified Russell's Schema , now termed the Inclosure Schema . The idea behind it goes back to Russell himself (1905) who also considered the paradoxes of self-reference to have a common underlying structure. Given two predicates predicates \\(P\\) and \\(Q\\), and a possibly partial function \\(\\delta\\), the Inclosure Schema consists of the following two conditions: If these conditions are satisfied we have the following contradiction: Since \\(w\\) is trivially a subset of \\(w\\) and since \\(Q(w)\\) holds by condition 1, we have both \\(\\delta(w) \\not\\in w\\) and \\(\\delta(w) \\in w\\), by 2a and 2b, respectively. Thus any triple \\((P,Q,\\delta)\\) satisfying the Inclosure Schema will produce a paradox. Priest shows how most of the well-known paradoxes of self-reference fit into the schema. Below we will consider only a few of these paradoxes, starting with Russell's paradox. In this case we define the triple \\((P,Q,\\delta)\\) as follows: Then \\(w\\) in the Inclosure Schema becomes the Russell set and the contradiction obtained from the schema becomes Russell's paradox. In the case of Richard's paradox we define the triple by: Here \\(w = \\{ x \\mid P(x) \\}\\) becomes the set of all reals definable by phrases in English. For any denumerable subset \\(y\\) of \\(w, \\delta(y)\\) is a real that by construction will differ from all reals in \\(y\\) (it differs from the \\(n\\)th real in \\(y\\) on the \\(n\\)th decimal place). Letting \\(y\\) equal \\(w\\) we thus get \\(\\delta(w) \\not\\in w\\). However, at the same time \\(\\delta(w)\\) is definable by a phrase in English, so \\(\\delta(w) \\in w\\), and we have a contradiction. This contradiction is Richard's paradox. The liar paradox also fits Russell's schema, albeit in a slightly less direct way: Here \\(w = \\{ x \\mid P(x) \\}\\) becomes the set of true sentences, and \\(\\delta(w)\\) becomes a version of the liar sentence: \"this sentence does not belong to the set of true sentences\". From the above it can be concluded that all, or at least most, paradoxes of self-reference share a common underlying structure--independent of whether they are semantic, set-theoretic or epistemic. Priest (1994) argues that they should then also share a common solution. Priest calls this the principle of uniform solution : \"same kind of paradox, same kind of solution.\" Whether the Inclosure Schema can in full generality count as a necessary and sufficient condition for self-referential paradoxicality is however disputable (Slater, 2002; Abad, 2008; Badici, 2008; Zhong, 2012, and others), hence not all authors agree on the principle of uniform solution either. The sorites paradox is a paradox that on the surface does not involve self-reference at all. However, Priest (2010b, 2013) argues that it still fits the inclosure schema and can hence be seen as a paradox of self-reference, or at least a paradox that should have the same kind of solution as the paradoxes of self-reference. This has led Colyvan (2009), Priest (2010) and Weber (2010b) to all advance a dialetheic approach to solving the Sorites paradox. This approach to the Sorites paradox has been attacked by Beall (2014a, 2014b) and defended by Weber et al. (2014). Cobreros et al. (2015) investigate the notion of permissive consequence with an aim to give a unified treatment of the paradoxes of vagueness (like the sorites paradox) and the paradoxes of self-reference. The permissive consequence relation is a weakened version of the classical consequence relation in the setting of multi-valued logic: it only requires that when the premises take value 1 (are true-only), then the conclusion must not take value 0 (is not false-only). An even more recent unified diagnosis of semantic and soritical paradoxes is by Bruni & Rossi (2023), identifying their source in a general form of indiscernibility. Most paradoxes considered so far involve negation in an essential way, e.g. sentences saying of themselves that they are not true or knowable. The central role of negation will become even clearer when we formalise the paradoxes of self-reference in Section 2 below. Curry's paradox is a similar paradox of self-reference that however does not directly involve negation. A semantic variant of Curry's paradox comes from the following Curry sentence \\(C\\): \"If this sentence is true then \\(F\\)\", where \\(F\\) can be any statement, for instance an obviously false one. Suppose the Curry sentence \\(C\\) is true. Then it expresses a true fact, that is, if \\(C\\) is true then \\(F\\). However, we already assumed \\(C\\) to be true, so we can infer \\(F\\), using Modus Ponens. We have now proved that if we assume \\(C\\) to be true, then \\(F\\) follows. This is exactly what the Curry sentence itself expresses. In other words, we have proved that the Curry sentence itself is true! But then we also have that \\(F\\) is true, and this is a paradox, since \\(F\\) can be any statement, including things that are obviously false. We can for instance easily prove that Santa Claus exists by simply letting \\(F\\) be the sentence \"Santa Claus exists\" (Boolos, 1993; Smullyan, 2006). In a classical logical setting where the implication \\(C \\rightarrow F\\) is equivalent to \\(\\neg C \\vee F\\), Curry's paradox still implicitly involves negation, but Curry's paradox is still independently interesting since it goes through with fewer assumptions about the underlying logic than the liar paradox. See the entry on Curry's paradox for more details. Most classical paradoxes of self-reference involve direct self-reference as in the liar paradox where a sentence refers directly to itself. However, it is easy to construct paradoxes that only employ indirect self-reference, i.e., sentences that refer to other sentences that refer to yet other sentences in such a way as to form a loop back to the original sentence. One example is the postcard paradox , often attributed to Philip Jourdain (1879-1919), though according to Roy Sorensen (2003, p. 332), the true inventor is G.G. Berry (1867-1928), the Oxford librarian to whom also the earlier mentioned Berry's paradox is accredited. In the postcard paradox, the front side of a postcard reads \"the sentence on the back side is true\", whereas the back side reads \"the sentence on the front side is false\". For the sentence on the front to be true, the sentence on the back needs to be true, but for the sentence on the back to be true, the sentence on the front needs to be false. This is a contradiction, achieved similarly as in the liar paradox. There are even much earlier examples of indirect self-reference in the literature: Sophism 9 in John Buridan's 14th century Sophismata (Buridan [SD], Hughes 1982) is structurally equivalent to the postcard paradox. In 1985, Yablo succeeded in constructing a semantic paradox that does not involve self-reference at all, not even indirect self-reference. Instead, it consists of an infinite chain of sentences, each sentence expressing the untruth of all the subsequent ones. More precisely, for each natural number \\(i\\) we define \\(S_i\\) to be the sentence \"for all \\(j\\gt i, S_j\\) is not true\". We can then derive a contradiction as follows: First we prove that none of the sentences \\(S_i\\) can be true. Assume to obtain a contradiction that \\(S_i\\) is true for some \\(i\\). Then it is true that \"for all \\(j\\gt i, S_j\\) is not true\". Thus none of the sentences \\(S_j\\) for \\(j\\gt i\\) are true. In particular, \\(S_{i+1}\\) is not true. \\(S_{i+1}\\) is the sentence \"for all \\(j\\gt i+1, S_j\\) is not true\". Since this sentence is not true, there must be some \\(k\\gt i+1\\) for which \\(S_k\\) is true. However, this contradicts that none of the sentences \\(S_j\\) with \\(j\\gt i\\) are true. We have now proved that none of the sentences \\(S_i\\) are true. Then, in particular, we have that for all \\(j\\gt 0\\), S\\(_j\\) is not true. This is exactly what is expressed by S\\(_0\\), so S\\(_0\\) must be true. This is again a contradiction. Yablo calls this paradox the \\(\\omega\\) -liar , but others usually refer to it as Yablo's paradox . Note that none of the sentences \\(S_i\\) refer to themselves (not even indirectly), but only to the ones that occur later in the sequence. Yablo's paradox is semantic, but as shown by Yablo (2006), similar set-theoretic paradoxes involving no self-reference can be formulated in certain set theories. Yablo's paradox demonstrates that we can have logical paradoxes without self-reference--only a certain kind of non-wellfoundedness is needed to obtain a contradiction. There are obviously structural differences between the ordinary paradoxes of self-reference and Yablo's paradox: The ordinary paradoxes of self-reference involve a cyclic structure of reference, whereas Yablo's paradox involve an acyclic, but non-wellfounded, structure of reference. More precisely, we can think the referential structure underlying a paradox as a directed graph. The vertices of this graph are sentences, and there is a directed edge from sentence \\(S\\) to sentence \\(T\\) if \\(S\\) refers directly to \\(T\\). The referential structure of the liar is then a graph with a single reflexive loop. The referential structure of the postcard paradox is a cyclic graph with 2 vertices each having an edge to the other vertex. All paradoxes of direct or indirect self-reference have cyclic structures of reference (their underlying graphs are cyclic). It is different with Yablo's paradox. The referential structure in Yablo's paradox is isomorphic to the usual less-than ordering on the natural numbers, which is a strict total order (contains no cycles). Even though there is this difference, Yablo's paradox still share most properties with the ordinary paradoxes of self-reference. When solving paradoxes we might thus choose to consider them all under one, and refer to them as paradoxes of non-wellfoundedness . In the following we will however stick to the term paradoxes of self-reference , even though most of what we say will apply to Yablo's paradox and related paradoxes of non-wellfoundedness as well. Given the insight that not only cyclic structures of reference can lead to paradox, but also certain types of non-wellfounded structures, it becomes interesting to study further these structures of reference and their potential in characterising the necessary and sufficient conditions for paradoxicality. This line of work was initiated by Gaifman (1988, 1992, 2000), and later pursued by Cook (2004), Walicki (2009) and others. Significant amounts of newer work on self-reference has gone into trying to make a complete graph-theoretical characterisation of which structures of reference admit paradoxes, including Rabern and Macauley (2013), Cook (2014) and Dyrkolbotn and Walicki (2014). A complete characterisation is still an open problem (Rabern, Rabern and Macauley, 2013), but it seems to be a relatively widespread conjecture that all paradoxical graphs of reference are either cyclic or contain a Yablo-like structure. The conjecture has been confirmed for certain sub-classes of infinite graphs (Walicki, 2019), but it is still open whether it holds for arbitrary graphs. If the conjecture is indeed true, it means that in terms of structures of reference, all paradoxes of reference are either liar-like or Yablo-like. What it exactly means for a structure (graph) to be Yablo-like can be defined in several different, but equivalent, ways, including: 1) the graph contains the reference graph of the Yablo paradox, \\( (\\omega,\\lt) \\), as a finitary minor (Beringer & Schindler, 2017); 2) the graph contains a ray (an infinite path) on which there are infinitely many vertices each having infinitely many disjoint paths to infinitely many other vertices on the ray (Walicki, 2019). Even though the structure of reference involved in Yablo's paradox does not contain any cycles (each sentence only refers to later sentences in the sequence), it is still being discussed whether the paradox is self-referential or not (Cook, 2014; Halbach and Zhang, 2017). Yablo (1993) himself argues that it is non-self-referential, whereas Priest (1997) argues that it is self-referential. Butler (2017) claims that even if Priest is correct, there will be other Yablo-like paradoxes that are not self-referential in the sense of Priest. In the analysis of Yablo's paradox, it is essential to note that it involves an infinite sequence of sentences, where each sentence refers to infinitely many other sentences. To formalise it in a setting of propositional logic, it is hence necessary to use infinitary propositional logic (see the entry on infinitary logic ). Any finitary variant of Yablo's sequence--where every sentence only refers to finitely many later sentences in the sequence--must necessarily be consistent (non-paradoxical) due to the compactness theorem in propositional logic (every finite subset of sentences in the sequence induces a well-founded reference relation and the sentences can hence consistently be assigned truth-values bottom-up). In finitary first- and second-order arithmetic, one can instead attempt to formalise Yablo's paradox by a unary predicate \\(S(x)\\) where, for every natural numbers \\(i\\), \\(S({\\inumeral})\\) represents the formalisation of the \\(i\\)th sentence \\(S_i\\) of the Yablo sequence (where \\(\\inumeral{ }\\) is the numeral representing \\(i)\\). How and whether the Yablo paradox can truthfully be represented this way, and how it relates to compactness of the underlying logic, has been investigated by Picollo (2013). Yablo's paradox has also inspired the creation of similar paradoxes involving non-wellfounded, acyclic structures of reference in other areas than truth, e.g. the \"Yabloesque\" variant of the Brandenburger-Keisler paradox of epistemic game theory by Ba&#351;kent (2016), a variant concerning provability by Cie&#347;li&#324;ski and Urbaniak (2013), and a variant in the context of G&ouml;del's incompleteness theorems by Leach-Krouse (2014).",
+      "relatedEntries": [
+        "buridan",
+        "computability",
+        "curry-paradox",
+        "dialetheism",
+        "epistemic-paradoxes",
+        "fitch-paradox",
+        "epistemic-game",
+        "goedel",
+        "goedel-incompleteness",
+        "insolubles",
+        "liar-paradox",
+        "logic-epistemic",
+        "logic-manyvalued",
+        "logic-paraconsistent",
+        "logic-provability",
+        "philosophy-mathematics",
+        "mathematics-inconsistent",
+        "paradoxes-contemporary-logic",
+        "quine-nf",
+        "russell-paradox",
+        "set-theory",
+        "settheory-alternative",
+        "settheory-early",
+        "tarski-truth",
+        "truth",
+        "truth-axiomatic",
+        "truth-deflationary",
+        "truth-revision",
+        "turing",
+        "turing-machine",
+        "type-theory"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "buridan"
+        },
+        {
+          "slug": "computability"
+        },
+        {
+          "slug": "curry-paradox"
+        },
+        {
+          "slug": "dialetheism"
+        },
+        {
+          "slug": "epistemic-paradoxes"
+        },
+        {
+          "slug": "fitch-paradox"
+        },
+        {
+          "slug": "epistemic-game"
+        },
+        {
+          "slug": "goedel"
+        },
+        {
+          "slug": "goedel-incompleteness"
+        },
+        {
+          "slug": "insolubles"
+        },
+        {
+          "slug": "liar-paradox"
+        },
+        {
+          "slug": "logic-epistemic"
+        },
+        {
+          "slug": "logic-manyvalued"
+        },
+        {
+          "slug": "logic-paraconsistent"
+        },
+        {
+          "slug": "logic-provability"
+        },
+        {
+          "slug": "philosophy-mathematics"
+        },
+        {
+          "slug": "mathematics-inconsistent"
+        },
+        {
+          "slug": "paradoxes-contemporary-logic"
+        },
+        {
+          "slug": "quine-nf"
+        },
+        {
+          "slug": "russell-paradox"
+        },
+        {
+          "slug": "set-theory"
+        },
+        {
+          "slug": "settheory-alternative"
+        },
+        {
+          "slug": "settheory-early"
+        },
+        {
+          "slug": "tarski-truth"
+        },
+        {
+          "slug": "truth"
+        },
+        {
+          "slug": "truth-axiomatic"
+        },
+        {
+          "slug": "truth-deflationary"
+        },
+        {
+          "slug": "truth-revision"
+        },
+        {
+          "slug": "turing"
+        },
+        {
+          "slug": "turing-machine"
+        },
+        {
+          "slug": "type-theory"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 139,
+      "bibliography": [
+        {
+          "raw": "Abad, Jordi Valor, 2008, \"The inclosure scheme and the solution to the paradoxes of self-reference\", Synthese , 160(2): 183-202."
+        },
+        {
+          "raw": "Abramsky, Samson, and Jonathan Zvesper, 2015, \"From Lawvere to Brandenburger-Keisler: Interactive forms of diagonalization and self-reference\", Journal of Computer and System Sciences , 81(5): 799-812."
+        },
+        {
+          "raw": "Achourioti, T. et al. (eds.), 2015, Unifying the Philosophy of Truth , vol. 36 of Logic, Epistemology, and the Unity of Science, Springer."
+        },
+        {
+          "raw": "Badici, Emil, 2008, \"The liar paradox and the inclosure schema 1\", Australasian Journal of Philosophy , 86(4): 583-596."
+        },
+        {
+          "raw": "Ba&#351;kent, Can, 2016, \"A Yabloesque paradox in epistemic game theory\", Synthese 1-24."
+        },
+        {
+          "raw": "Bartlett, S.J. (ed.), 1992, Reflexivity--A Source-Book in Self-Reference , Amsterdam: North-Holland Publishing Co."
+        },
+        {
+          "raw": "Bartlett, S.J. and Peter Suber (eds.), 1987, Self-Reference--Reflections on Reflexivity , Dordrecht: Martinus Nijhoff Publishers."
+        },
+        {
+          "raw": "Barwise, J. and J. Etchemendy, 1987, The Liar--An Essay on Truth and Circularity , New York: Oxford University Press."
+        },
+        {
+          "raw": "Barwise, J. and L. Moss, 1996, Vicious Circles--On the Mathematics of Non-Wellfounded Phenomena , Stanford: CSLI Publications."
+        },
+        {
+          "raw": "Beall, Jc, 2009, Spandrels of truth , OUP Oxford."
+        },
+        {
+          "raw": "---, 2003, Liars and Heaps: New Essays on Paradox , Oxford: Clarendon."
+        },
+        {
+          "raw": "---, 2007, Revenge of the Liar: New essays on the paradox , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2014a, \"Finding tolerance without gluts\", Mind 123(491): 791-811."
+        },
+        {
+          "raw": "---, 2014b, \"End of inclosure\", Mind 123(491): 829-849."
+        },
+        {
+          "raw": "Beringer, T. and Schindler, T., 2017, \"A Graph-Theoretic Analysis of the Semantic Paradoxes\", The Bulletin of Symbolic Logic , 24(4): 442-892."
+        },
+        {
+          "raw": "Bernardi, Claudio, 2001, \"Fixed points and unfounded chains\", Annals of Pure and Applied Logic , 109(3): 163-178."
+        },
+        {
+          "raw": "Bolander, Thomas, 2002, \"Self-reference and logic\", Phi News , 1: 9-44."
+        },
+        {
+          "raw": "---, 2004, \"Logical Theories for Agent Introspection \", Ph.D. Thesis, Technical University of Denmark, Denmark."
+        },
+        {
+          "raw": "Bolander, T. and V.F. Hendricks and S.A. Pedersen (eds.), 2006, Self-Reference , Stanford: CSLI Publications."
+        },
+        {
+          "raw": "Boolos, G., 1993, The Logic of Provability , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Brandenburger, Adam and Keisler, H. Jerome, 2006, \"An impossibility theorem on beliefs in games\", Studia Logica , 84(2): 211-240."
+        },
+        {
+          "raw": "Bruni, Riccardo and Lorenzo Rossi, 2023, \"Truth Meets Vagueness. Unifying the Semantic and the Soritical Paradoxes\", Journal of Philosophical Logic , 52: 1637-1671."
+        },
+        {
+          "raw": "Buridan, John, [SD], Summulae de Dialectica-An annotated translation, with a philosophical introduction by Gyula Klima , New Haven and London: Yale University Press, 2001."
+        },
+        {
+          "raw": "Butler, Jesse M., 2017, \"An entirely non-self-referential Yabloesque paradox\", Synthese 1-13."
+        },
+        {
+          "raw": "Cantini, Andrea, 2009, \"Paradoxes, self-reference and truth in the 20th century\", Handbook of the History of Logic , 5: 875-1013."
+        },
+        {
+          "raw": "---, 1996, Logical Frameworks for Truth and Abstraction--An Axiomatic Study , Amsterdam: North-Holland Publishing Co."
+        },
+        {
+          "raw": "---, 2009, \"Paradoxes, self-reference and truth in the 20th century\", Handbook of the History of Logic , vol. V, Amsterdam: Elsevier, pp. 875-1013."
+        },
+        {
+          "raw": "---, 2015, \"On stratified truth\", in Unifying the philosophy of truth , Netherlands: Springer."
+        },
+        {
+          "raw": "Cantor, Georg, 1895, \"Beitr&auml;ge zur Begr&uuml;ndung der transfiniten Mengenlehre\", Mathematische Annalen , 46(4): 481-512."
+        },
+        {
+          "raw": "---, 1891, \"&Uuml;ber eine Elementare Frage der Mannigfaltigkeitslehre,\" Jahresbericht der Deutschen Mathematiker-Vereinigung , 1: 75-78."
+        },
+        {
+          "raw": "Cie&#347;li&#324;ski, C. and R. Urbaniak, 2013, \"G&ouml;delizing the Yablo Sequence\", Journal of Philosophical Logic 42(5): 679-695."
+        },
+        {
+          "raw": "Caret, Colin R. and Zach Weber, 2015, \"A Note on Contraction-Free Logic for Validity\", Topoi 34(1): 63-74."
+        },
+        {
+          "raw": "Chapuis, A. and A. Gupta, 2000, Circularity, Definition and Truth , New Delhi: Indian Council of Philosophical Research."
+        },
+        {
+          "raw": "Cobreros, Pablo, Paul &Eacute;gr&eacute;, David Ripley, and Robert van Rooij, 2013, \"Reaching Transparent Truth\", Mind 122(488): 841-866."
+        },
+        {
+          "raw": "---, 2015, \"Vagueness, Truth and Permissive Consequence\", in T. Achourioti et al . (eds.), Unifying the Philosophy of Truth , Dordrecht: Springer, 409-430."
+        },
+        {
+          "raw": "Colyvan, Mark, 2009, \"Vagueness and Truth\", in Dyke, Heather (ed.): From Truth to Reality: New Essays in Logic and Metaphysics , Oxford: Routledge."
+        },
+        {
+          "raw": "Cook, Roy, 2007, \"Embracing revenge: on the indefinite extensibility of language\", Revenge of the Liar: New Essays on the Paradox , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2004, \"Patterns of paradox\", The Journal of Symbolic Logic , 69(3): 767-774."
+        },
+        {
+          "raw": "---, 2009, \"What is a truth value and how many are there?\", Studia Logica , 92(2): 183-201."
+        },
+        {
+          "raw": "---, 2013, Paradoxes , Polity Press."
+        },
+        {
+          "raw": "---, 2014, The Yablo paradox: An essay on circularity , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Dyrkolbotn, S. and M. Walicki, 2014, \"Propositional discourse logic\", Synthese , 191(5): 863-899."
+        },
+        {
+          "raw": "Erickson, G. W. and J. A. Fossa, 1998, Dictionary of Paradox , Lanham: University Press of America."
+        },
+        {
+          "raw": "Feferman, S., 1984, \"Kurt G&ouml;del: conviction and caution\", Philosophia Naturalis , 21: 546-562."
+        },
+        {
+          "raw": "---, 1984a, \"Toward useful type-free theories I\", The Journal of Symbolic Logic , 49: 75-111."
+        },
+        {
+          "raw": "---, 1991, \"Reflecting on incompleteness\", The Journal of Symbolic Logic , 56: 1-49."
+        },
+        {
+          "raw": "Field, Hartry, 2003, \"A revenge-immune solution to the semantic paradoxes\", Journal of Philosophical Logic , 32(2): 139-177."
+        },
+        {
+          "raw": "---, 2008, Saving truth from paradox , Oxford University Press, USA."
+        },
+        {
+          "raw": "Fitting, M., 1986, \"Notes on the mathematical aspects of Kripke's theory of truth\", Notre Dame Journal of Formal Logic , 27(1): 75-88."
+        },
+        {
+          "raw": "---, 1997, \"A theory of truth that prefers falsehood\", The Journal of Philosophical Logic , 26(5): 477-500."
+        },
+        {
+          "raw": "---, 2006, \"Bilattices are nice things.\", in Bolander, Hendricks, Pedersen (eds.), Self-reference , Stanford: CSLI Publications."
+        },
+        {
+          "raw": "Forster, T. E., 1995, Set Theory with a Universal Set , New York: The Clarendon Press."
+        },
+        {
+          "raw": "French, Rohan, 2016, \"Structural reflexivity and the paradoxes of self-reference\", Ergo, an Open Access Journal of Philosophy 3."
+        },
+        {
+          "raw": "Gaifman, Haim, 1988, \"Operational pointer semantics: Solution to self-referential puzzles i\", in Proceedings of the 2nd Conference on Theoretical Aspects of Reasoning about Knowledge , Morgan Kaufmann Publishers Inc., 43-59."
+        },
+        {
+          "raw": "---, 1992, \"Pointers to truth\", The Journal of Philosophy , 89(5): 223-261."
+        },
+        {
+          "raw": "---, 2000, \"Pointers to propositions\", in A. Chapuis and A. Gupta, Circularity, definition and truth , Indian Council of Philosophical Research, 79-121."
+        },
+        {
+          "raw": "Gilmore, P. C., 1974, \"The consistency of partial set theory without extensionality\", Axiomatic set theory (Proc. Sympos. Pure Math., Vol. XIII, Part II) , pp. 147-153, Providence RI: Amer. Math. Soc."
+        },
+        {
+          "raw": "G&ouml;del, K., 1931, \"&Uuml;ber formal unentscheidbare Satze der Principia Mathematica und verwandter Systeme I\", Monatshefte f&uuml;r Mathematik und Physik , 38: 173-198."
+        },
+        {
+          "raw": "Grabmayr, Balthasar, Volker Halbach, and Lingyuan Ye, 2023, \"Varieties of Self-Reference in Metamathematics\". Journal of Philosophical Logic , 52: 1005-1052."
+        },
+        {
+          "raw": "Grabmayr, Balthasar, and Albert Visser, 2023, \"Self-reference upfront: A study of self-referential G&ouml;del numberings\". The Review of Symbolic Logic , 16(2): 385-424."
+        },
+        {
+          "raw": "Gupta, A. and N. Belnap, 1993, The Revision Theory of Truth , Cambridge MA: MIT Press."
+        },
+        {
+          "raw": "Gupta, A. and S. Standefer, 2017, \"Conditionals in theories of truth\", Journal of Philosophical Logic 46(1): 27-63."
+        },
+        {
+          "raw": "Halbach, Volker, 2008, \"On a side effect of solving Fitch's paradox by typing knowledge\", Analysis , 68(298): 114-120."
+        },
+        {
+          "raw": "---, 2011, Axiomatic theories of truth , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Halbach, Volker, and Albert Visser, 2014a, \"Self-reference in Arithmetic I\", The Review of Symbolic Logic 7(4): 671-691."
+        },
+        {
+          "raw": "---, 2014b, \"Self-reference in arithmetic II\", The Review of Symbolic Logic 7(4): 692-712."
+        },
+        {
+          "raw": "Halbach, Volker, and Shuoying Zhang, 2017, \"Yablo Without G&ouml;del\", Analysis 77(1): 53-59."
+        },
+        {
+          "raw": "Hsiung, Ming, 2017, \"Boolean Paradoxes and Revision Periods\", Studia Logica , 105(5): 881-914."
+        },
+        {
+          "raw": "---, 2022, \"From Paradoxicality to Paradox\", Erkenntnis , first online 06 December 2022. doi:10.1007/s10670-022-00640-9"
+        },
+        {
+          "raw": "van Heijenort, J., 1967, From Frege to G&ouml;del. A source book in mathematical logic, 1879-1931 , Cambridge (MA): Harvard University Press."
+        },
+        {
+          "raw": "Horsten, Leon, 2011, The Tarskian Turn: Deflationism and Axiomatic Truth , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Hughes, G.E., 1982, John Buridan on self-reference-Chapter Eight of Buridan's 'Sophismata', with a Translation, an Introduction, and a Philosophical Commentary , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Kaplan, David, and Richard Montague, 1960, \"A paradox regained\", Notre Dame Journal of Formal Logic , 1(3): 79-90"
+        },
+        {
+          "raw": "Kripke, S., 1975, \"Outline of a Theory of Truth\", The Journal of Philosophy , 72: 690-716."
+        },
+        {
+          "raw": "---, 2023, \"G&ouml;del's theorem and direct self-reference\". The Review of Symbolic Logic , 16(2): 650-654."
+        },
+        {
+          "raw": "Leach-Krouse, Graham, 2014, \"Yablifying the Rosser sentence\", Journal of Philosophical Logic 43(5): 827-834."
+        },
+        {
+          "raw": "Leitgeb, Hannes, 2008, \"On the probabilistic convention t\", The Review of Symbolic Logic , 1(02): 218-224."
+        },
+        {
+          "raw": "Mares, Edwin and Francesco Paoli, 2014, \"Logical Consequence and the Paradoxes\", Journal of Philosophical Logic , 43(2-3): 439-469."
+        },
+        {
+          "raw": "Martin, R. L., 1984, Recent Essays on Truth and the Liar Paradox , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Martin, R. L. and P. W. Woodruff, 1975, \"On representing 'True-in-L' in L\", Philosophia , 5: 213-217."
+        },
+        {
+          "raw": "McGee, V., 1990, Truth, Vagueness, and Paradox--An Essay on the Logic of Truth , Indianapolis: Hackett Publishing Co."
+        },
+        {
+          "raw": "---, 1992, \"Maximal consistent sets of instances of Tarski's Schema (T)\", The Journal of Philosophical Logic , 21(3): 235-241."
+        },
+        {
+          "raw": "Montague, R., 1963, \"Syntactical treatment of modality, with corollaries on reflection principles and finite axiomatizability\", Acta Philosophica Fennica , 16: 153-167."
+        },
+        {
+          "raw": "Morreau, Michael and Sarit Kraus, 1998, \"Syntactical treatments of propositional attitudes\", Artificial Intelligence , 106(1): 161-177."
+        },
+        {
+          "raw": "Murzi, Julien, and Massimiliano Carrara, 2015, \"Paradox and logical revision. A short introduction\", Topoi 34(1): 7-14."
+        },
+        {
+          "raw": "Odintsov, Sergei P. and Heinrich Wansing, 2015, \"The logic of generalized truth values and the logic of bilattices.\" Studia Logica , 103(1): 91-112."
+        },
+        {
+          "raw": "Pacuit, Eric, 2007, \"Understanding the Brandenburger-Keisler paradox\", Studia Logica , 86(3): 435-454."
+        },
+        {
+          "raw": "Pelling, Charlie, 2011, \"A self-referential paradox for the truth account of assertion\", Analysis , 71(4): 688-688."
+        },
+        {
+          "raw": "Perlis, D. and V. S. Subrahmanian, 1994, \"Meta-languages, Reflection Principles and Self-Reference\", Handbook of Logic in Artificial Intelligence and Logic Programming , 2: 323-358."
+        },
+        {
+          "raw": "Picollo, Lavinia, 2013, \"Yablo's paradox in second-order languages: Consistency and unsatisfiability\", Studia Logica , 101(3): 601-617."
+        },
+        {
+          "raw": "---, 2018, \"Reference in arithmetic\". The Review of Symbolic Logic , 11(3): 573-603."
+        },
+        {
+          "raw": "---, 2020, \"Alethic reference\". Journal of Philosophical Logic , 49(3): 417-438."
+        },
+        {
+          "raw": "Priest, Graham, 2010a, \"Badici on inclosures and the liar paradox\", Australasian Journal of Philosophy , 88(2): 359-366."
+        },
+        {
+          "raw": "---, 2010b, \"Inclosures, vagueness, and self-reference\", Notre Dame Journal of Formal Logic , 51(1): 69-84."
+        },
+        {
+          "raw": "---, 2013, \"Vague Inclosures\", in Paraconsistency: Logic and Applications , Netherlands: Springer."
+        },
+        {
+          "raw": "---, 1987, In Contradiction--A Study of the Transconsistent , Dordrecht: Martinus Nijhoff Publishers."
+        },
+        {
+          "raw": "---, 1994, \"The Structure of the Paradoxes of Self-Reference\", Mind , 103: 25-34."
+        },
+        {
+          "raw": "---, 1995, Beyond the Limits of Thought , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 1997, \"Yablo's paradox\", Analysis 57(4): 236-242."
+        },
+        {
+          "raw": "Quine, W.V., 1937, \"New foundations for mathematical logic\", American Mathematical Monthly , 44: 70-80."
+        },
+        {
+          "raw": "---, 1976, The Ways of Paradox and Other Essays , Cambridge, Massachusetts: Harvard University Press."
+        },
+        {
+          "raw": "Rabern, Landon, and Brian Rabern and Matthew Macauley, 2013, \"Dangerous reference graphs and semantic paradoxes\", Journal of Philosophical Logic 42(5): 727-765."
+        },
+        {
+          "raw": "de Revi&egrave;res, J., and H.J. Levesque, 1988, \"The consistency of syntactical treatments of knowledge\", Computational Intelligence , 4: 31-41."
+        },
+        {
+          "raw": "Rosado Haddock, G. E., 2001, \"Recent truth theories: A case study\", Axiomathes , 12(1): 87-115."
+        },
+        {
+          "raw": "Russell, B., 1905, \"On some difficulties in the theory of transfinite numbers and order types\", Proceedings of the London Mathematical Society , 4: 29-53."
+        },
+        {
+          "raw": "Schindler, Thomas, 2017, \"Some Notes on Truths and Comprehension\", Journal of Philosophical Logic 1-31."
+        },
+        {
+          "raw": "Schlenker, Philippe, 2010, \"Super liars\", The Review of Symbolic Logic , 1(1): 1-41."
+        },
+        {
+          "raw": "Shapiro, Lionel, 2015, \"Naive Structure, Contraction and Paradox\", Topoi , 34(1): 75-87."
+        },
+        {
+          "raw": "Sheard, M., 1994, \"A guide to truth predicates in the modern era\", The Journal of Symbolic Logic , 59(3): 1032-1054."
+        },
+        {
+          "raw": "Simmons, K., 1993, Universality and the Liar--An Essay on Truth and the Diagonal Argument , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Slater, Hartley, 2002, \"The Fallacy in Russell's Schema\", Russell: the Journal of Bertrand Russell Studies , 22(2): 4."
+        },
+        {
+          "raw": "---, 2010, \"What Priest (amongst many others) has been missing\", Ratio , 23(2): 184-198."
+        },
+        {
+          "raw": "Smullyan, R. M., 1992, G&ouml;del's Incompleteness Theorems , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 1994, Diagonalization and self-reference , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2006, \"Self-Reference in All Its Glory!\", in Bolander, Hendricks, Pedersen (eds.), Self-reference , Stanford: CSLI Publications."
+        },
+        {
+          "raw": "Snapper, Jeff, 2012, \"The liar paradox in new clothes\", Analysis , 72(2): 319-322."
+        },
+        {
+          "raw": "Sorensen, Roy A., 2003, A Brief History of the Paradox: Philosophy and the Labyrinths of the Mind . New York: Oxford University Press."
+        },
+        {
+          "raw": "Tarski, A., 1935, \"Der Wahrheitsbegriff in den formalisierten Sprachen\", Studia Philosophica , 1: 261-405."
+        },
+        {
+          "raw": "---, 1968, Undecidable Theories , Amsterdam: North-Holland Publishing Co."
+        },
+        {
+          "raw": "Thomason, R., 1980, \"A note of syntactical treatments of modality\", Synthese , 44: 391-395."
+        },
+        {
+          "raw": "Tourville, Nicholas, and Roy T. Cook, \"Embracing the Technicalities: Expressive Completeness and Revenge\", The Review of Symbolic Logic , 9(2): 325-358."
+        },
+        {
+          "raw": "Turing, A.M., 1936, \"On Computable Numbers, With an Application to the Entscheidungsproblem\", Proceedings of the London Mathematical Society , 42(2): 230-265; correction ibid ., 43: 544-546 (1937)."
+        },
+        {
+          "raw": "Tucker, Dustin and Richmond H. Thomason, 2011, \"Paradoxes of intensionality\", The Review of Symbolic Logic , 4(03): 394-411."
+        },
+        {
+          "raw": "Urbaniak, Rafa&#322;, 2009, \"Leitgeb, 'about,' Yablo\", Logique & Analyse , 207: 239-254."
+        },
+        {
+          "raw": "Visser, A., 1989, \"Semantics and the liar paradox\", Handbook of Philosophical Logic (Vol. IV), Dordrecht: Kluwer, pp. 617-706."
+        },
+        {
+          "raw": "---, 2019, \"From Tarski to G&ouml;del - or how to derive the second incompleteness theorem from the undefinability of truth without self-reference\", Journal of Logic and Computation , 29(5): 595-604."
+        },
+        {
+          "raw": "Walicki, Micha&#322;, 2009, \"Reference, paradoxes and truth\", Synthese , 171(1): 195-226."
+        },
+        {
+          "raw": "---, 2019, \"Kernels of digraphs with finitely many ends\", Discrete Mathematics 342: 473-486."
+        },
+        {
+          "raw": "Weber, Zach, 2010a, \"Explanation and solution in the inclosure argument\", Australasian Journal of Philosophy , 88(2): 353-357."
+        },
+        {
+          "raw": "---, 2010b, \"A Paraconsistent Model of Vagueness\", Mind 119: 1026-1045."
+        },
+        {
+          "raw": "Weber, Zach, et al., 2014, \"Tolerating gluts\", Mind 123(491): 813-828."
+        },
+        {
+          "raw": "Wintein, Stefan, 2012, \"Assertoric semantics and the computational power of self-referential truth\", Journal of philosophical logic , 41(2): 317-345."
+        },
+        {
+          "raw": "Yablo, Stephen, 1985, \"Truth and reflection\", Journal of Philosophical Logic , 14(3): 297-349."
+        },
+        {
+          "raw": "---, 1993, \"Paradox without self-reference\", Analysis , 53: 251-252."
+        },
+        {
+          "raw": "---, 2006, \"Circularity and Paradox\", in Bolander, Hendricks, Pedersen (eds.), Self-reference , Stanford: CSLI Publications."
+        },
+        {
+          "raw": "Zardini, Elia, 2011, \"Truth without contra(di)ction\", Review of Symbolic Logic , 4(4): 498-535."
+        },
+        {
+          "raw": "---, 2021, \"Substructural approaches to paradox: an introduction to the special issue\", Synthese , 199(3): 493-525."
+        },
+        {
+          "raw": "Zhong, Haixia, 2012, \"Definability and the structure of logical paradoxes\", Australasian Journal of Philosophy , 90(4): 779-788."
+        },
+        {
+          "raw": "Zwicker, W.S., 1987, \"Playing Games with Games: The Hypergame Paradox,\" The American Mathematical Monthly , 94(6): 507-514."
+        }
+      ],
+      "publishedAt": "2008-07-14T14:00:00.000Z",
+      "revisedAt": "2024-07-18T14:00:00.000Z"
+    }
+  }
+}

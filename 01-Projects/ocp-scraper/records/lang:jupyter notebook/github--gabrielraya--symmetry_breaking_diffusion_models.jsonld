@@ -1,0 +1,163 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/gabrielraya--symmetry_breaking_diffusion_models",
+  "meta": {
+    "title": "Spontaneous Symmetry Breaking in Generative Diffusion Models",
+    "description": "Official repository of \"Spontaneous symmetry breaking in generative diffusion models\"",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:19:56.765Z",
+    "dateModified": "2026-03-11T04:19:56.765Z",
+    "keywords": [
+      "diffusion-models",
+      "phase-transition",
+      "ssb"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "This repository is the official implementation of the NeurIPS 2023 paper [Spontaneous Symmetry Breaking in Generative Diffusion Models](https://arxiv.org/abs/2305.19693).  For a detailed video explanation, see our [video paper presentation](https://www.youtube.com/watch?v=IG0NNE9bpWU).",
+    "context": "This repository is the official implementation of the NeurIPS 2023 paper [Spontaneous Symmetry Breaking in Generative Diffusion Models](https://arxiv.org/abs/2305.19693).  For a detailed video explanation, see our [video paper presentation](https://www.youtube.com/watch?v=IG0NNE9bpWU).\n\n\n---\n\n<p align=\"justify\">\nWe show that the dynamics of diffusion models exhibit a \"spontaneous symmetry breaking\" phenomenon, dividing the generative dynamics\nin two distinct phases: 1) A linear steady-state dynamics around a central fixed-point and 2) an attractor dynamics directed\ntowards the data manifold. These two \"phases\" are separated by the change in stability of the central fixed-point, with the\nresulting window of instability being responsible for the diversity of the generated samples. In an intuitive sense, the dynamics of a generated sample passes from a phase of equal potentiality,\nwhere any (synthetic) datum could be generated, to a denoising phase where the (randomly) \"selected\" datum is fully denoised.\nAn overview of spontaneous symmetry breaking in diffusion models is illustrated in the figure below:\n</p> \n\n<p float=\"center\">\n  <img src=\"./imgs/main_image_hq.png\" alt=\"Image 1\" style=\"width:100%\">\n</p>\n\n<p align=\"justify\">\nThis phenomenon is clearly observable in the one-dimensional case. A symmetry-breaking event, marked by a significant change in the potential well's shape, occurs upon reaching a critical value. This triggers a split in the potential well, signifying a shift in the dynamics and effectively illustrating these two generative phases.\n</p>\n<p align=\"center\">\n  <img src=\"./imgs/one-dimensional.gif\" alt=\"Image 1\" width=\"75%\" />\n</p>\n<p align=\"justify\">\nOur findings challenge the current dominant conception that the generative process of diffusion models is\nessentially comprised of a single denoising phase. In particular, we show that\nan accurate simulation of the early dynamics does not significantly contribute to the final generation, since early fluctuations\nare reverted to the central fixed point. To leverage this insight, we propose a Gaussian late initialization scheme, which \nsignificantly improves model performance, achieving up to 3x FID improvements on fast samplers, while also increasing sample\ndiversity, e.g. racial composition of generated CelebA images (samples below for 5 denoising steps), as illustrated below: \n</p> \n\n<p float=\"center\">\n  <img src=\"./imgs/ddim_samples_diversity_5_800_tc_4.png\" alt=\"Image 1\" style=\"width:40%\">\n  <img src=\"./imgs/gslddim_samples_diversity_5_500_tc_4.png\" alt=\"Image 2\" style=\"width:40%\">\n  <img src=\"./imgs/diversity_plot.png\" alt=\"Image 3\" style=\"width:18%\">\n</p>\n\nOur work offers a new way to understand the generative dynamics of diffusion models that has the potential to bring \nabout higher performance and less biased fast-samplers.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:jupyter notebook"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "43 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "2 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:19:56.765Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/gabrielraya/symmetry_breaking_diffusion_models",
+        "description": "GitHub repository: gabrielraya/symmetry_breaking_diffusion_models"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://gabrielraya.com/blog/2023/symmetry-breaking-diffusion-models/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Jupyter Notebook"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "gabrielraya",
+        "type": "human",
+        "uri": "https://github.com/gabrielraya"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 47,
+      "validation_diversity": 0,
+      "context_breadth": 0.15,
+      "temporal_stability": 0.69,
+      "test_coverage": 0.17,
+      "documentation_quality": 0.6
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.055
+  }
+}

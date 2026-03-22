@@ -1,0 +1,366 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/mxab--nacp",
+  "meta": {
+    "title": "NACP - Nomad Admission Control Proxy",
+    "description": "Admission Controller as a proxy for Nomad. Define OPA rules for validation and mutation or plugin remotes",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:50:25.955Z",
+    "dateModified": "2026-03-11T04:50:25.955Z",
+    "keywords": [
+      "admission-controller",
+      "devsecops",
+      "nomad",
+      "notary",
+      "notation",
+      "opa"
+    ],
+    "license": "MPL-2.0"
+  },
+  "problemSolved": {
+    "statement": "[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=mxab_nacp&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=mxab_nacp)",
+    "context": "[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=mxab_nacp&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=mxab_nacp)\n\nA proxy infront of the Nomad API that allows to perform mutation and validation on the job data.\n\n\n\n![nacp](https://user-images.githubusercontent.com/1607547/224442234-685950f7-43ff-4570-91d1-fe004827caef.png)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "46 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "5 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:50:25.955Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/mxab/nacp",
+        "description": "GitHub repository: mxab/nacp"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "github.com/docker/docker",
+        "version": "v28.3.3+incompatible",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/docker/docker"
+      },
+      {
+        "name": "github.com/docker/go-connections",
+        "version": "v0.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/docker/go-connections"
+      },
+      {
+        "name": "github.com/evanphx/json-patch",
+        "version": "v0.5.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/evanphx/json-patch"
+      },
+      {
+        "name": "github.com/hashicorp/go-hclog",
+        "version": "v1.6.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/go-hclog"
+      },
+      {
+        "name": "github.com/hashicorp/go-multierror",
+        "version": "v1.1.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/go-multierror"
+      },
+      {
+        "name": "github.com/hashicorp/hcl/v2",
+        "version": "v2.24.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/hcl/v2"
+      },
+      {
+        "name": "github.com/hashicorp/nomad",
+        "version": "v1.10.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/nomad"
+      },
+      {
+        "name": "github.com/hashicorp/nomad/api",
+        "version": "v0.0.0-20250829163458-87be37e8cced",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/nomad/api"
+      },
+      {
+        "name": "github.com/mitchellh/copystructure",
+        "version": "v1.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mitchellh/copystructure"
+      },
+      {
+        "name": "github.com/notaryproject/notation-core-go",
+        "version": "v1.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/notaryproject/notation-core-go"
+      },
+      {
+        "name": "github.com/notaryproject/notation-go",
+        "version": "v1.3.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/notaryproject/notation-go"
+      },
+      {
+        "name": "github.com/open-policy-agent/opa",
+        "version": "v1.8.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-policy-agent/opa"
+      },
+      {
+        "name": "github.com/oras-project/oras-credentials-go",
+        "version": "v0.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/oras-project/oras-credentials-go"
+      },
+      {
+        "name": "github.com/samber/slog-multi",
+        "version": "v1.4.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/samber/slog-multi"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.11.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      },
+      {
+        "name": "github.com/testcontainers/testcontainers-go",
+        "version": "v0.38.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/testcontainers/testcontainers-go"
+      },
+      {
+        "name": "go.opentelemetry.io/contrib/bridges/otelslog",
+        "version": "v0.13.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/contrib/bridges/otelslog"
+      },
+      {
+        "name": "go.opentelemetry.io/contrib/instrumentation/net/http/httptrace/otelhttptrace",
+        "version": "v0.63.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/contrib/instrumentation/net/http/httptrace/otelhttptrace"
+      },
+      {
+        "name": "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp",
+        "version": "v0.63.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
+      },
+      {
+        "name": "go.opentelemetry.io/contrib/processors/minsev",
+        "version": "v0.11.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/contrib/processors/minsev"
+      },
+      {
+        "name": "go.opentelemetry.io/otel",
+        "version": "v1.38.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/exporters/otlp/otlplog/otlploghttp",
+        "version": "v0.14.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/exporters/otlp/otlplog/otlploghttp"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetrichttp",
+        "version": "v1.38.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetrichttp"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp",
+        "version": "v1.38.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/log",
+        "version": "v0.14.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/log"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/log/logtest",
+        "version": "v0.14.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/log/logtest"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/metric",
+        "version": "v1.38.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/metric"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/sdk",
+        "version": "v1.38.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/sdk"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/sdk/log",
+        "version": "v0.14.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/sdk/log"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/sdk/metric",
+        "version": "v1.38.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/sdk/metric"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/trace",
+        "version": "v1.38.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/trace"
+      },
+      {
+        "name": "golang.org/x/crypto",
+        "version": "v0.41.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/crypto"
+      },
+      {
+        "name": "oras.land/oras-go/v2",
+        "version": "v2.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/oras.land/oras-go/v2"
+      },
+      {
+        "name": "github.com/armon/go-metrics",
+        "version": "v0.4.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/armon/go-metrics"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "mxab",
+        "type": "human",
+        "uri": "https://github.com/mxab"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 56,
+      "validation_diversity": 0.23,
+      "context_breadth": 0.31,
+      "temporal_stability": 0.79,
+      "test_coverage": 0.2,
+      "documentation_quality": 0.5
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.333
+  }
+}

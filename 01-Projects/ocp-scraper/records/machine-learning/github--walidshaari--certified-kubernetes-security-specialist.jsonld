@@ -1,0 +1,179 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/walidshaari--certified-kubernetes-security-specialist",
+  "meta": {
+    "title": "Certified Kubernetes Security Specialist - CKS",
+    "description": "Curated resources help you prepare for the CNCF/Linux Foundation CKS 2021 \"Kubernetes Certified Security Specialist\" Certification exam.  Please provide feedback or requests by raising issues, or making a pull request. All feedback for improvements are welcome. thank you.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:50:21.251Z",
+    "dateModified": "2026-03-11T04:50:21.251Z",
+    "keywords": [
+      "apparmor",
+      "certification",
+      "cks",
+      "ckss",
+      "exam-objectives",
+      "falco",
+      "kernel-hardening",
+      "kube-bench",
+      "kube-hunter",
+      "kubernetes",
+      "kubernetes-security",
+      "mitre-attack",
+      "open-policy-agent",
+      "os-footprint",
+      "pod",
+      "pod-security-policy",
+      "policy",
+      "seccomp",
+      "security",
+      "trivy"
+    ],
+    "license": "CC-BY-SA-4.0"
+  },
+  "problemSolved": {
+    "statement": "- [X] [Cluster Setup - 10%](#cluster-setup---10)\n  - [X] [Cluster Hardening - 15%](#cluster-hardening---15)\n  - [X] [System Hardening - 15%](#system-hardening---15)\n  - [X] [Minimize Microservice Vulnerabilities - 20%](#minimize-microservice-vulnerabilities---20)\n  - [X] [Supply Chain Security - 20%](#supply-chain-security---20)\n  - [X] [Monitoring, Logging and Runtime Security - 20%](#monitoring-logging-and-runtime-security---20)",
+    "context": "<p align=\"center\">\n  <img width=\"360\" src=\"kubernetes-security-specialist-logo-300x285.png\">\n</p>\n\nOnline curated resources that will help you prepare for taking the Kubernetes Certified Kubernetes Security Specialist **CKS** Certification exam.\n\n- Please raise an issue, or make a pull request for fixes, new additions, or updates.\n\nResources are primarly cross referenced back to the [allowed CKS sites](#urls-allowed-in-the-extra-single-tab) during the exam as per CNCF/Linux Foundation exam allowed search rules. Videos and other third party resources e.g. blogs will be provided as an optional complimentary material and any 3rd party material not allowed in the exam will be designated with :triangular_flag_on_post: in the curriculum sections below.\n\nEnsure you have the right version of Kubernetes documentation selected (e.g. v1.26 as of January 2023) especially for API objects and annotations, however for third party tools, you might find that you can still find references for them in old releases and blogs [e.g. Falco install](https://github.com/kubernetes/website/issues/24184).\n\n* Icons/emoji legend\n  - :clipboard:  Expand to see more content\n  - :confused:   Verify, not best resource yet\n  - :large_blue_circle: Good overall refence, can be used in the exam\n  - :triangular_flag_on_post: External third-party resource, can not be used during exam\n  - :pencil:  To-do, item that needs further checking(todo list for future research/commits)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "security",
+    "devops",
+    "containerization",
+    "lang:ags script"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "2105 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "557 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:50:21.251Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/walidshaari/Certified-Kubernetes-Security-Specialist",
+        "description": "GitHub repository: walidshaari/Certified-Kubernetes-Security-Specialist"
+      }
+    ],
+    "language": "AGS Script"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "walidshaari",
+        "type": "human",
+        "uri": "https://github.com/walidshaari"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 3219,
+      "validation_diversity": 0.47,
+      "context_breadth": 0.67,
+      "temporal_stability": 0.72,
+      "test_coverage": 0.47,
+      "documentation_quality": 0.65
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.625
+  }
+}

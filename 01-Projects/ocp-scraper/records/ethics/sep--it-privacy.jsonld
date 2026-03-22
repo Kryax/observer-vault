@@ -1,0 +1,595 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/it-privacy",
+  "meta": {
+    "title": "Privacy and Information Technology",
+    "description": "Human beings value their privacy and the protection of their personal sphere of life. They value some control over who knows what about them. They certainly do not want their personal information to be accessible to just anyone at any time. But recent advances in information technology threaten privacy and have reduced the amount of control over personal data and open up the possibility of a range of negative consequences as a result of access to personal data. In the second half of the 20 century data protection regimes have been put in place as a response to increasing levels of processing of personal data. The 21 century has become the century of big data and advanced information technology (e.g. forms of deep learning and generative AI), the rise of big tech companies and the platform economy, which comes with the storage and processing of exabytes of data. The revelations of Edward Snowden, and more recently the Cambridge Analytica case (Cadwalladr & Graham-Harrison 2018) have demonstrated that worries about negative consequences are real. The technical capabilities to collect, store and search large quantities of data concerning telephone conversations, Internet searches and electronic payment are now in place and are routinely used by government agencies and corporate actors alike. The rise of China and the large scale of use and spread of advanced digital technologies for surveillance and control have only added to the concern of many. For business firms, personal data about customers and potential customers are now also a key asset. The scope and purpose of the personal data centred business models of Big Tech (Google, Amazon, Facebook, Microsoft, Apple) has been described in detail by Shoshana Zuboff (2019) under the label \"surveillance capitalism\". At the same time, the meaning and value of privacy remains the subject of considerable controversy. The combination of increasing power of new technology and the declining clarity and agreement on privacy give rise to problems concerning law, policy and ethics. Many of these conceptual debates and issues are situated in the context of interpretation and analysis of the General Data Protection Regulation (GDPR) that was adopted by the EU in spring 2018 as the successor of the EU 1995 Directives, with application far beyond the borders of the European Union. The focus of this article is on exploring the relationship between information technology and privacy. We will both illustrate the specific threats that IT and innovations in IT pose for privacy and indicate how IT itself might be able to overcome these privacy concerns by being developed in ways that can be termed \"privacy-sensitive\", \"privacy enhancing\" or \"privacy respecting\". We will also discuss the role of emerging technologies in the debate, and account for the way in which moral debates are themselves affected by IT.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T03:19:46.036Z",
+    "dateModified": "2026-03-22T03:19:46.036Z",
+    "datePublished": "2014-11-19T13:00:00.000Z",
+    "keywords": [
+      "computing responsibility",
+      "ethics search",
+      "ethics social networking",
+      "information",
+      "it moral values",
+      "privacy"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Human beings value their privacy and the protection of their personal sphere of life. They value some control over who knows what about them. They certainly do not want their personal information to be accessible to just anyone at any time. But recent advances in information technology threaten privacy and have reduced the amount of control over personal data and open up the possibility of a range of negative consequences as a result of access to personal data. In the second half of the 20 century data protection regimes have been put in place as a response to increasing levels of processing of personal data. The 21 century has become the century of big data and advanced information technology (e.g. forms of deep learning and generative AI), the rise of big tech companies and the platform economy, which comes with the storage and processing of exabytes of data. The revelations of Edward Snowden, and more recently the Cambridge Analytica case (Cadwalladr & Graham-Harrison 2018) have demonstrated that worries about negative consequences are real. The technical capabilities to collect, store and search large quantities of data concerning telephone conversations, Internet searches and electronic payment are now in place and are routinely used by government agencies and corporate actors alike. The rise of China and the large scale of use and spread of advanced digital technologies for surveillance and control have only added to the concern of many. For business firms, personal data about customers and potential customers are now also a key asset. The scope and purpose of the personal data centred business models of Big Tech (Google, Amazon, Facebook, Microsoft, Apple) has been described in detail by Shoshana Zuboff (2019) under the label \"surveillance capitalism\". At the same time, the meaning and value of privacy remains the subject of considerable controversy. The combination of increasing power of new technology and the declining clarity and agreement on privacy give rise to problems concerning law, policy and ethics. Many of these conceptual debates and issues are situated in the context of interpretation and analysis of the General Data Protection Regulation (GDPR) that was adopted by the EU in spring 2018 as the successor of the EU 1995 Directives, with application far beyond the borders of the European Union. The focus of this article is on exploring the relationship between information technology and privacy. We will both illustrate the specific threats that IT and innovations in IT pose for privacy and indicate how IT itself might be able to overcome these privacy concerns by being developed in ways that can be termed \"privacy-sensitive\", \"privacy enhancing\" or \"privacy respecting\". We will also discuss the role of emerging technologies in the debate, and account for the way in which moral debates are themselves affected by IT.",
+    "context": "Opening section: 1. Conceptions of privacy and the value of privacy | Related entries: computing-responsibility, ethics-search, information, it-moral-values, privacy, ethics-social-networking",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "ethics"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry it-privacy",
+        "uri": "https://plato.stanford.edu/entries/it-privacy/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "4 author(s), 6 related entries, bibliography size 119"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2014-11-19T13:00:00.000Z and revised 2024-10-03T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2024-10-03T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/it-privacy/",
+        "description": "SEP entry for it-privacy"
+      }
+    ],
+    "solutionApproach": "1. Conceptions of privacy and the value of privacy"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/computing-responsibility",
+      "ocp:sep/ethics-search",
+      "ocp:sep/information",
+      "ocp:sep/it-moral-values",
+      "ocp:sep/privacy",
+      "ocp:sep/ethics-social-networking"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "van den Hoven, Jeroen",
+        "type": "human"
+      },
+      {
+        "name": "Blaauw, Martijn",
+        "type": "human"
+      },
+      {
+        "name": "Pieters, Wolter",
+        "type": "human"
+      },
+      {
+        "name": "Warnier, Martijn",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/it-privacy/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 96,
+      "validation_diversity": 0.68,
+      "context_breadth": 0.37,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.89
+    },
+    "confidence": "tested",
+    "authority": "high",
+    "status": "draft",
+    "trustScore": 0.604
+  },
+  "extensions": {
+    "sep": {
+      "slug": "it-privacy",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/it-privacy/",
+      "preamble": "Human beings value their privacy and the protection of their personal sphere of life. They value some control over who knows what about them. They certainly do not want their personal information to be accessible to just anyone at any time. But recent advances in information technology threaten privacy and have reduced the amount of control over personal data and open up the possibility of a range of negative consequences as a result of access to personal data. In the second half of the 20 century data protection regimes have been put in place as a response to increasing levels of processing of personal data. The 21 century has become the century of big data and advanced information technology (e.g. forms of deep learning and generative AI), the rise of big tech companies and the platform economy, which comes with the storage and processing of exabytes of data. The revelations of Edward Snowden, and more recently the Cambridge Analytica case (Cadwalladr & Graham-Harrison 2018) have demonstrated that worries about negative consequences are real. The technical capabilities to collect, store and search large quantities of data concerning telephone conversations, Internet searches and electronic payment are now in place and are routinely used by government agencies and corporate actors alike. The rise of China and the large scale of use and spread of advanced digital technologies for surveillance and control have only added to the concern of many. For business firms, personal data about customers and potential customers are now also a key asset. The scope and purpose of the personal data centred business models of Big Tech (Google, Amazon, Facebook, Microsoft, Apple) has been described in detail by Shoshana Zuboff (2019) under the label \"surveillance capitalism\". At the same time, the meaning and value of privacy remains the subject of considerable controversy. The combination of increasing power of new technology and the declining clarity and agreement on privacy give rise to problems concerning law, policy and ethics. Many of these conceptual debates and issues are situated in the context of interpretation and analysis of the General Data Protection Regulation (GDPR) that was adopted by the EU in spring 2018 as the successor of the EU 1995 Directives, with application far beyond the borders of the European Union. The focus of this article is on exploring the relationship between information technology and privacy. We will both illustrate the specific threats that IT and innovations in IT pose for privacy and indicate how IT itself might be able to overcome these privacy concerns by being developed in ways that can be termed \"privacy-sensitive\", \"privacy enhancing\" or \"privacy respecting\". We will also discuss the role of emerging technologies in the debate, and account for the way in which moral debates are themselves affected by IT.",
+      "firstSectionTitle": "1. Conceptions of privacy and the value of privacy",
+      "firstSectionText": "Discussions about privacy are intertwined with the use of technology. The publication that began the debate about privacy in the Western world was occasioned by the introduction of the newspaper printing press and photography. Samuel D. Warren and Louis Brandeis wrote their article on privacy in the Harvard Law Review (Warren & Brandeis 1890) partly in protest against the intrusive activities of the journalists of those days. They argued that there is a \"right to be left alone\" based on a principle of \"inviolate personality\". Since the publication of that article, the debate about privacy has been fueled by claims regarding the right of individuals to determine the extent to which others have access to them (Westin 1967) and claims regarding the right of society to know about individuals. Information being a cornerstone of access to individuals, the privacy debate has co-evolved with - and in response to - the development of information technology. It is therefore difficult to conceive of the notions of privacy and discussions about data protection as separate from the way computers, the Internet, mobile computing and the many applications of these basic technologies have evolved. Inspired by subsequent developments in U.S. law, a distinction can be made between (1) constitutional (or decisional) privacy and (2) tort (or informational) privacy (DeCew 1997). The first refers to the freedom to make one's own decisions without interference by others in regard to matters seen as intimate and personal, such as the decision to use contraceptives or to have an abortion. The second is concerned with the interest of individuals in exercising control over access to information about themselves and is most often referred to as \"informational privacy\". Think here, for instance, about information disclosed on Facebook or other social media. All too easily, such information might be beyond the control of the individual. Statements about privacy can be either descriptive or normative, depending on whether they are used to describe the way people define situations and conditions of privacy and the way they value them, or are used to indicate that there ought to be constraints on the use of information or information processing. These conditions or constraints typically involve personal information regarding individuals, or ways of information processing that may affect individuals. Informational privacy in a normative sense refers typically to a non-absolute moral right of persons to have direct or indirect control over access to (1) information about oneself, (2) situations in which others could acquire information about oneself, and (3) technology that can be used to generate, process or disseminate information about oneself. The debates about privacy are almost always revolving around new technology, ranging from genetics and the extensive study of bio-markers, brain imaging, drones, wearable sensors and sensor networks, social media, smart phones, closed circuit television, to government cybersecurity programs, direct marketing, RFID tags, Big Data, head-mounted displays and search engines. There are basically two reactions to the flood of new technology and its impact on personal information and privacy: the first reaction, held by many people in IT industry and in R&D, is that we have zero privacy in the digital age and that there is no way we can protect it, so we should get used to the new world and get over it (Sprenger 1999). The other reaction is that our privacy is more important than ever and that we can and we must attempt to protect it. In the literature on privacy, there are many competing accounts of the nature and value of privacy (Negley 1966; R&ouml;ssler 2005). On one end of the spectrum, reductionist accounts argue that privacy claims are really about other values and other things that matter from a moral point of view. According to these views the value of privacy is reducible to these other values or sources of value (Thomson 1975). Proposals that have been defended along these lines mention property rights, security, autonomy, intimacy or friendship, democracy, liberty, dignity, or utility and economic value. Reductionist accounts hold that the importance of privacy should be explained and its meaning clarified in terms of those other values and sources of value (Westin 1967). The opposing view holds that privacy is valuable in itself and its value and importance are not derived from other considerations (see for a discussion R&ouml;ssler 2004). Views that construe privacy and the personal sphere of life as a human right would be an example of this non-reductionist conception. More recently a type of privacy account has been proposed in relation to new information technology, which acknowledges that there is a cluster of related moral claims underlying appeals to privacy, but maintains that there is no single essential core of privacy concerns. This approach is referred to as cluster accounts (DeCew 1997; Solove 2006; van den Hoven 1999; Allen 2011; Nissenbaum 2004). New accounts of privacy have been developed on the basis of neo-republican conceptions of freedom. They deal with the problems of accumulation of 'data based' power in the 21st century by the principle agents of surveillance capitalism and data driven surveillance by state actors, taking their inspiration from Philip Pettit's account of freedom as non-domination (Pettit 2001). These neo-republican accounts explain why individuals feel and are vulnerable when parties have access to a wealth of information about them, even when they do not act upon it in ways that negatively affect both the individual's negative or positive freedom. Access to personal data forms a basis for wielding arbitrary power over data subjects. A slave of a good master may have nothing to complain about at a given point in time, but is aware of the fact that things could change, when the master decides. Data Protection shields individuals from data-driven domination and the use of arbitrary power. See for this account (Roberts 2015) and for a neo-republican account of state surveillance (Smith 2020). From a descriptive perspective, a recent further addition to the body of privacy accounts are epistemic accounts, where the notion of privacy is analyzed primarily in terms of knowledge or other epistemic states. Having privacy means that others don't know certain private propositions; lacking privacy means that others do know certain private propositions (Blaauw 2013). An important aspect of this conception of having privacy is that it is seen as a relation (Rubel 2011; Matheson 2007; Blaauw 2013) with three argument places: a subject ( S ), a set of propositions ( P ) and a set of individuals ( I ). Here S is the subject who has (a certain degree of) privacy. P is composed of those propositions the subject wants to keep private (call the propositions in this set 'personal propositions'), and I is composed of those individuals with respect to whom S wants to keep the personal propositions private. Another distinction that is useful to make is the one between a European and a US American approach. A bibliometric study (Heersmink et al. 2011) suggests that the two approaches are separate in the literature. The first conceptualizes issues of informational privacy in terms of 'data protection', the second in terms of 'privacy'. In discussing the relationship of privacy matters with technology, the notion of data protection is most helpful, since it leads to a relatively clear conceptual picture of what the object of protection is and by which technical means the data can be protected. At the same time it invites answers to the question why the data ought to be protected, pointing to a number of distinctive moral grounds and reasons on the basis of which technical, legal and institutional protection of personal data can be justified. Informational privacy is thus recast in terms of the protection of personal data (van den Hoven 2008). This account shows how Privacy, Technology and Data Protection are related, without conflating Privacy and Data Protection. Personal information or data is information or data that is linked or can be linked to individual persons. Examples include explicitly stated characteristics such as a person's date of birth, sexual preference, whereabouts, religion, but also the IP address of your computer or metadata pertaining to these kinds of information. In addition, personal data can also be more implicit in the form of behavioural data, for example from social media, that can be linked to individuals. Personal data can be contrasted with data that is considered sensitive, valuable or important for other reasons, such as secret recipes, financial data, or military intelligence. Data used to secure other information, such as passwords, are not considered here. Although such security measures (passwords) may contribute to privacy, their protection is only instrumental to the protection of other (more private) information, and the quality of such security measures is therefore out of the scope of our considerations here. A relevant distinction that has been made in philosophical semantics is that between the referential and the attributive use of descriptive labels of persons (van den Hoven 2008). Personal data is defined in the law as data that can be linked with a natural person. There are two ways in which this link can be made; a referential mode and a non-referential mode. The law is primarily concerned with the 'referential use' of descriptions or attributes, the type of use that is made on the basis of a (possible) acquaintance relationship of the speaker with the object of his knowledge. \"The murderer of Kennedy must be insane\", uttered while pointing to him in court is an example of a referentially used description. This can be contrasted with descriptions that are used attributively as in \"the murderer of Kennedy must be insane, whoever he is\". In this case, the user of the description is not - and may never be - acquainted with the person he is talking about or intends to refer to. If the legal definition of personal data is interpreted referentially, much of the data that could at some point in time be brought to bear on persons would be unprotected; that is, the processing of this data would not be constrained on moral grounds related to privacy or personal sphere of life, since it does not \"refer\" to persons in a straightforward way and therefore does not constitute \"personal data\" in a strict sense. The following types of moral reasons for the protection of personal data and for providing direct or indirect control over access to those data by others can be distinguished (van den Hoven 2008): These considerations all provide good moral reasons for limiting and constraining access to personal data and providing individuals with control over their data. Acknowledging that there are moral reasons for protecting personal data, data protection laws are in force in almost all countries. The basic moral principle underlying these laws is the requirement of informed consent for processing by the data subject, providing the subject (at least in principle) with control over potential negative effects as discussed above. Furthermore, processing of personal information requires that its purpose be specified, its use be limited, individuals be notified and allowed to correct inaccuracies, and the holder of the data be accountable to oversight authorities (OECD 1980). Because it is impossible to guarantee compliance of all types of data processing in all these areas and applications with these rules and laws in traditional ways, so-called \"privacy-enhancing technologies\" (PETs) and identity management systems are expected to replace human oversight in many cases. The challenge with respect to privacy in the 21st century is to assure that technology is designed in such a way that it incorporates privacy requirements in the software, architecture, infrastructure, and work processes in a way that makes privacy violations unlikely to occur. The new generations of privacy regulations (with the EU's central GDPR) now require standardly a \"privacy by design\" approach. Article 25 of the GDPR Data protection act explicitly states that 'by design' and 'by default' are mandatory. The data ecosystems and socio-technical systems, supply chains, organisations, including incentive structures, business processes, and technical hardware and software, training of personnel, should all be designed in such a way that the likelihood of privacy violations is as low as possible. See (Colonna 2022) for a discussion of responsibilities for privacy by design.",
+      "relatedEntries": [
+        "computing-responsibility",
+        "ethics-search",
+        "information",
+        "it-moral-values",
+        "privacy",
+        "ethics-social-networking"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "computing-responsibility"
+        },
+        {
+          "slug": "ethics-search"
+        },
+        {
+          "slug": "information"
+        },
+        {
+          "slug": "it-moral-values"
+        },
+        {
+          "slug": "privacy"
+        },
+        {
+          "slug": "ethics-social-networking"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 119,
+      "bibliography": [
+        {
+          "raw": "Abelson, H., Anderson, R., Bellovin, S. M., Benaloh, J., Blaze, M., Diffie, W., & Rivest, R. L., 2015, \"Keys under doormats: mandating insecurity by requiring government access to all data and communications\", Journal of Cybersecurity , 1(1): 69-79."
+        },
+        {
+          "raw": "Abiri, R., Borhani, S., Kilmarx, J., Esterwood, C., Jiang, Y., & Zhao, X., 2020, \"A usability study of low-cost wireless brain-computer interface for cursor control using online linear mode\", IEEE transactions on human-machine systems, 50(4): 287-297."
+        },
+        {
+          "raw": "Abowd, J. M., & Vilhuber, L., 2008, \"How protective are synthetic data?\", in J. Domingo-Ferrer & Y. Saygun (eds.), Privacy in Statistical Databases (LNCS, volume 5262), Berlin, Heidelberg: Springer, pp. 239-246f."
+        },
+        {
+          "raw": "Acar, A., Aksu, H., Uluagac, A. S., & Conti, M., 2018, \"A survey on homomorphic encryption schemes: Theory and implementation\", ACM Computing Surveys (CSUR), 51(4): 79."
+        },
+        {
+          "raw": "Allen, A., 2011, Unpopular Privacy: What Must We Hide? Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Anderson, R.J., 2008, Security Engineering: A guide to building dependable distributed systems , Indianapolis, IN: Wiley."
+        },
+        {
+          "raw": "Angelov, P. P., Soares, E. A., Jiang, R., Arnold, N. I., & Atkinson, P. M., 2021, \"Explainable artificial intelligence: an analytical review\", Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery , 11(5): e1424."
+        },
+        {
+          "raw": "Baars, D., 2016, Towards Self-Sovereign Identity using Blockchain Technology , Ph.D. Thesis, University of Twente."
+        },
+        {
+          "raw": "Back, A., U. M&ouml;ller, & A. Stiglic, 2001, \"Traffic analysis attacks and trade-offs in anonymity providing systems\", in Information Hiding , Berlin: Springer, pp. 245-257."
+        },
+        {
+          "raw": "Al Badawi, A., Veeravalli, B., Mun, C. F., & Aung, K. M. M., 2018, \"High-performance FV somewhat homomorphic encryption on GPUs: An implementation using CUDA\", IACR Transactions on Cryptographic Hardware and Embedded Systems , 2: 70-95. doi: 10.13154/tches.v2018.i2.70-95"
+        },
+        {
+          "raw": "Bellman, S., E.J. Johnson, & G.L. Lohse, 2001, \"On site: to opt-in or opt-out?: it depends on the question\", Communications of the ACM , 44(2): 25-27."
+        },
+        {
+          "raw": "Benevenuto, F., T. Rodrigues, M. Cha, & V. Almeida, 2012, \"Characterizing user navigation and interactions in online social networks\", Information Sciences , 195: 1-24."
+        },
+        {
+          "raw": "Blaauw. M.J., 2013, \"The Epistemic Account of Privacy\", Episteme , 10(2): 167-177."
+        },
+        {
+          "raw": "Boenink, M., T. Swierstra, & D. Stemerding, 2010, \"Anticipating the interaction between technology and morality: a scenario study of experimenting with humans in bionanotechnology\", Studies in Ethics, Law, and Technology , 4(2): 1-38. doi:10.2202/1941-6008.1098"
+        },
+        {
+          "raw": "Brey, P., 2005, \"Freedom and privacy in ambient intelligence\", Ethics and Information Technology , 7(3): 157-166."
+        },
+        {
+          "raw": "Brown, C. M. L., 2024, \"Neurorights, Mental Privacy, and Mind Reading\" Neuroethics , 17(2): 1-19."
+        },
+        {
+          "raw": "de Bruijn, H., Warnier, M., & Janssen, M., 2022. \"The perils and pitfalls of explainable AI: Strategies for explaining algorithmic decision-making\", Government information quarterly , 39(2): 101666."
+        },
+        {
+          "raw": "Bruynseels, K & M.J van den Hoven, 2015, \"How to do Things with personal Big Biodata\", in B. Roessler and D. Mokrokinska (eds.), Social Dimensions of Privacy: Interdisciplinary Perspectives , Cambridge: Cambridge University Press, pp. 122-40."
+        },
+        {
+          "raw": "Cadwalladr, C., and Graham-Harrison, E., 2018, \"The Cambridge analytica files\", The Guardian , 21: 6-7."
+        },
+        {
+          "raw": "Cavoukian, A., 2009, Privacy by Design , Ottowa: Information and Privacy Commissioner of Ontario, Canada. [ Cavoukian 2009 available online (PDF)]."
+        },
+        {
+          "raw": "---, 2010, \"Privacy by Design: The Definitive workshop\", Identity in the Information Society , 3(2): 121-126."
+        },
+        {
+          "raw": "Ceross, A., and A. Simpson, 2018, \"Rethinking the Proposition of Privacy Engineering\", in Proceedings of New Security Paradigms Workshop (NSPW '18, Windsor, UK), New York: Association for Computing Machinery, 89-102. doi:10.1145/3285002.3285006"
+        },
+        {
+          "raw": "Choi, H., Park, J., & Jung, Y., 2018, \"The role of privacy fatigue in online privacy behavior\", Computers in Human Behavior , 81, 42-51."
+        },
+        {
+          "raw": "Clarke, R., 2009, \"Privacy impact assessment: Its origins and development\", Computer law & security review , 25(2): 123-135."
+        },
+        {
+          "raw": "Clarke, I., O. Sandberg, B. Wiley, & T. Hong, 2001, \"Freenet: A distributed anonymous information storage and retrieval system\", in Designing Privacy Enhancing Technologies , Berlin: Springer, pp. 46-66."
+        },
+        {
+          "raw": "Colesky, M., J.-H. Hoepman, and C. Hillen, 2016, \"A critical analysis of privacy design strategies\", IEEE Security and Privacy Workshops (SPW), first online O4 August 2016, doi:10.1109/SPW.2016.23"
+        },
+        {
+          "raw": "Colonna, L., 2022, \"Addressing the Responsibility Gap in Data Protection by Design: Towards a More Future-oriented, Relational, and Distributed Approach\", Tilburg Law Review , 27(1)."
+        },
+        {
+          "raw": "Curzon, J., Kosa, T. A., Akalu, R., & El-Khatib, K., 2021, \"Privacy and artificial intelligence\", IEEE Transactions on Artificial Intelligence , 2(2), 96-108."
+        },
+        {
+          "raw": "Custers, B., et al., 2018, \"Consent and privacy\", The Routledge Handbook of the Ethics of Consent , London: Routledge, pp. 247-258."
+        },
+        {
+          "raw": "Dahl, J. Y., & A.R. S&aelig;tnan, 2009, \"It all happened so slowly: On controlling function creep in forensic DNA databases\", International journal of law, crime and justice , 37(3): 83-103."
+        },
+        {
+          "raw": "Danezis, G., C. Diaz, & C. Troncoso, 2007, \"Two-sided statistical disclosure attack\", in Proceedings of the 7th international conference on Privacy enhancing technologies , Berlin: Springer, pp. 30-44."
+        },
+        {
+          "raw": "DeCew, Judith Wagner, 1997, Pursuit of Privacy: Law, Ethics, and the Rise of Technology , Ithaca, NY: Cornell University Press."
+        },
+        {
+          "raw": "Dechesne, F., M. Warnier, & J. van den Hoven, 2013, \"Ethical requirements for reconfigurable sensor technology: a challenge for value sensitive design\", Ethics and Information Technology , 15(3): 173-181."
+        },
+        {
+          "raw": "Delaune, S., S. Kremer, & M. Ryan, 2006, \"Coercion-resistance and receipt-freeness in electronic voting\", in the Proceedings of the 19th IEEE Computer Security Foundations Workshop , IEEE Computer Society Press, pages 28-39. [ Delaune et al. 2006 available online ]"
+        },
+        {
+          "raw": "Dingledine, R., N. Mathewson, & P. Syverson, 2004, \"Tor: The second-generation onion router\", in Proceedings of the 13th conference on USENIX Security Symposium (Volume 13), Berkeley, CA: USENIX Association, pp. 303-320 [ Dingledine et al. 2004 available online (pdf) ]"
+        },
+        {
+          "raw": "Do&scaron;ilovi&#263;, F. K., Br&#269;i&#263;, M., & Hlupi&#263;, N., 2018, \"Explainable artificial intelligence: A survey\" In 41st International convention on information and communication technology, electronics and microelectronics (MIPRO) pp. 0210-0215, IEEE."
+        },
+        {
+          "raw": "Douceur, J., 2002, \"The Sybil attack\", in Peer-to-peer Systems , Berlin: Springer, pp. 251-260."
+        },
+        {
+          "raw": "Drew, L., 2023, \"Decoding the business of brain-computer interfaces\", Nature Electronics , 6(2), 90-95."
+        },
+        {
+          "raw": "Dwork, C., 2006, \"Differential Privacy\", in M. Bugliesi, B. Preneel, V. Sassone, and I. Wegener (eds.), Automata, Languages and Programming , ICALP 2006 (Lecture Notes in Computer Science: 4052), Springer, Berlin, Heidelberg."
+        },
+        {
+          "raw": "Ellison, N. B., 2007, \"Social network sites: Definition, history, and scholarship\", Journal of Computer-Mediated Communication , 13(1): 210-230."
+        },
+        {
+          "raw": "Evans, N.S., R. Dingledine, & C. Grothoff, 2009, \"A practical congestion attack on Tor using long paths\", in Proceedings of the 18th conference on USENIX security symposium , Berkeley, CA: USENIX Association, pp. 33-50. [ Evans et al. 2009 available online ]"
+        },
+        {
+          "raw": "Falgoust, M., 2016, \"Data Science and Designing for Privacy\", Techn&eacute;: Research in Philosophy and Technology , 20 (1): 51-68."
+        },
+        {
+          "raw": "Floridi, L., 2008, \"Artificial intelligence's new frontier: Artificial companions and the fourth revolution\", Metaphilosophy , 39(4-5): 651-655."
+        },
+        {
+          "raw": "Friedewald, M. & O. Raabe, 2011, \"Ubiquitous computing: An overview of technology impacts\", Telematics and Informatics , 28(2): 55-65."
+        },
+        {
+          "raw": "Friedman, B., P.H. Kahn, Jr, & A. Borning, 2006, \"Value sensitive design and information systems\", in Human-computer interaction in management information systems: Foundations , P. Zhang & D. Galletta (eds.), Armonk: M.E. Sharp, 4."
+        },
+        {
+          "raw": "Gentry, C., 2009, \"Fully homomorphic encryption using ideal lattices\", in Proceedings of the 41st annual ACM symposium on Theory of computing , ACM, pp. 169-178."
+        },
+        {
+          "raw": "Gerber, N., P. Gerber, and M. Volkamer. \"Explaining the privacy paradox: A systematic review of literature investigating privacy attitude and behavior\", Computers & security 77 (2018): 226-261."
+        },
+        {
+          "raw": "Goyal, V., O. Pandey, A. Sahai, & B. Waters, 2006, \"Attribute-based encryption for fine-grained access control of encrypted data\", in Proceedings of the 13th ACM conference on Computer and communications security , ACM, pp. 89-98."
+        },
+        {
+          "raw": "G&uuml;rses, S., A. Kundnani, & J. Van Hoboken, 2016, \"Crypto and empire: the contradictions of counter-surveillance advocacy\", Media, Culture & Society , 38(4): 576-590."
+        },
+        {
+          "raw": "Gutwirth, S. & P. De Hert, 2008, \"Regulating profiling in a democratic constitutional state\", in Hildebrandt and Gutwirth 2008: 271-302."
+        },
+        {
+          "raw": "den Haak, B., 2012, \"Integrating user customization and authentication: the identity crisis\", Security & Privacy, IEEE , 10(5): 82-85."
+        },
+        {
+          "raw": "Hassan, J., Shehzad, D., Habib, U., Aftab, M. U., Ahmad, M., Kuleev, R., & Mazzara, M., 2022, \"The rise of cloud computing: data protection, privacy, and open research challenges - a systematic literature review (SLR)\", Computational intelligence and neuroscience , 2022: 8303504. doi:10.1155/2022/8303504"
+        },
+        {
+          "raw": "Heersmink, R., J. van den Hoven, N.J. van Eck, & J. van den Berg, 2011. \"Bibliometric mapping of computer and information ethics\", Ethics and information technology , 13(3): 241-249."
+        },
+        {
+          "raw": "Hildebrandt, M., 2008, \"Defining Profiling: A New Type of Knowledge?\" in Hildebrandt and Gutwirth 2008: 17-45."
+        },
+        {
+          "raw": "Hildebrandt, M. & S. Gutwirth (eds.), 2008, Profiling the European Citizen: Cross-disciplinary Perspectives , Dordrecht: Springer Netherlands."
+        },
+        {
+          "raw": "Hill, G., 2023 \"The emerging artificial intelligence (AI) and national uniform legislation\", Australian Law Journal , 97(5), 303-306."
+        },
+        {
+          "raw": "Hoare, T., 2003, \"The verifying compiler: A grand challenge for computing research\", in Proceedings of the 12th international conference on Compiler construction , Berlin: Springer, pp. 262-272."
+        },
+        {
+          "raw": "Hoffmann, C. P., C. Lutz, and G. Ranzini., 2016, \"Privacy cynicism: A new approach to the privacy paradox\" Cyberpsychology: Journal of Psychosocial Research on Cyberspace , 10(4)."
+        },
+        {
+          "raw": "Hone, K. & J.H.P. Eloff, 2002, \"Information security policy - what do international information security standards say?\", Computers & Security , 21(5): 402-409."
+        },
+        {
+          "raw": "van den Hoven, J., 1999, \"Privacy and the Varieties of Informational Wrongdoing\", Australian Journal of Professional and Applied Ethics , 1(1): 30-44."
+        },
+        {
+          "raw": "---, 2008, \"Information technology, privacy, and the protection of personal data\", in Information technology and moral philosophy , J. Van Den Hoven and J. Weckert (eds.), Cambridge: Cambridge University Press, pp. 301-322."
+        },
+        {
+          "raw": "van den Hoven, J., G.J. Lokhorst, & I. Van de Poel, 2012, \"Engineering and the problem of moral overload\", Science and engineering ethics , 18(1): 143-155."
+        },
+        {
+          "raw": "van den Hoven, J., Vermaas, P., & Van de Poel, I. (eds.), 2015, Handbook of Ethics, Values and Technological Design , Dordrecht: Springer."
+        },
+        {
+          "raw": "Ienca, M., Fins, J. J., Jox, R. J., Jotterand, F., Voeneky, S., Andorno, R., Ball, T., Castelluccia, C., Chavarriaga, R., Chneiweiss, H., Ferretti, A., Friedrich, O., Hurst, S., Merkel, G., Molnar-Gabor, F., Rickli, J., Scheibner, J., Vayena, E., Yuste, R. & Kellmeyer, P., 2022, \"Towards a governance framework for brain data\" Neuroethics , 15(2): 20."
+        },
+        {
+          "raw": "Karame, G., and Capkun, S., 2018, \"Blockchain Security and Privacy\", IEEE Security Privacy , 16(4), 11-12."
+        },
+        {
+          "raw": "Ko, M.N., G.P. Cheek, M. Shehab, & R. Sandhu, 2010, \"Social-networks connect services\", Computer , 43(8): 37-43."
+        },
+        {
+          "raw": "Kokolakis, S., 2017, \"Privacy attitudes and privacy behaviour: A review of current research on the privacy paradox phenomenon\", Computers & security , 64: 122-134."
+        },
+        {
+          "raw": "Krishnamurthy, B. & C.E. Wills, 2009. \"On the leakage of personally identifiable information via online social networks\", in WOSN '09: Proceedings of the 2nd ACM workshop on Online Social Networks , New York: Association for Computing Machinery, pp. 7-12."
+        },
+        {
+          "raw": "Lawner, K. J., 2002, \"Post-September 11th International Surveillance Activity - A Failure of Intelligence: The Echelon Interception System & (and) the Fundamental Right to Privacy in Europe\", Pace International Law Review , 14(2): 435-480."
+        },
+        {
+          "raw": "Leenes, R., and E. Kosta, 2015, \"Taming the cookie monster with dutch law-a tale of regulatory failure\", Computer Law & Security Review 31(3): 317-335."
+        },
+        {
+          "raw": "LeFevre, K., D.J. DeWitt, & R. Ramakrishnan, 2005, \"Incognito: Efficient full-domain k-anonymity\", in Proceedings of the 2005 ACM SIGMOD International Conference on Management of Data , New York: Association of Computing Machinery, pp. 49-60."
+        },
+        {
+          "raw": "Lessig, Lawrence, 1999, Code and Other Laws of Cyberspace , New York: Basic Books."
+        },
+        {
+          "raw": "Liu, W., Zhang, Y., Yang, H., & Meng, Q., 2024, \"A survey on differential privacy for medical data analysis\". Annals of Data Science , 11(2): 733-747."
+        },
+        {
+          "raw": "Loeckx, J., K. Sieber, & R.D. Stansifer, 1985, The foundations of program verification , Chichester: John Wiley & Sons."
+        },
+        {
+          "raw": "Matheson, David, 2007, \"Unknowableness and Informational Privacy\", Journal of Philosophical Research , 32: 251-67."
+        },
+        {
+          "raw": "Mayer, J.R. & J.C. Mitchell, 2012, \"Third-party web tracking: Policy and technology\", in Security and Privacy (SP) 2012 IEEE Symposium on , IEEE, pp. 413-427."
+        },
+        {
+          "raw": "Michener, J., 1999, \"System insecurity in the Internet age\", Software , IEEE, 16(4): 62-69."
+        },
+        {
+          "raw": "Motlagh, N. H., Bagaa, M., & Taleb, T., 2017, \"UAV-based IoT platform: A crowd surveillance use case\", IEEE Communications Magazine , 55(2): 128-134."
+        },
+        {
+          "raw": "Nagenborg, M., 2009, \"Designing spheres of informational justice\", Ethics and Information Technology , 11(3): 175-179."
+        },
+        {
+          "raw": "Narayanan, A., Bonneau, J., Felten, E., Miller, A., & Goldfeder, S., 2016, Bitcoin and cryptocurrency technologies: a comprehensive introduction , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Negley, G., 1966, \"Philosophical Views on the Value of Privacy\", Law and Contemporary Problems , 31: 319-325."
+        },
+        {
+          "raw": "Nissenbaum, Helen, 2004, \"Privacy as Contextual Integrity\", Washington Law Review , 79: 101-139."
+        },
+        {
+          "raw": "OECD, 1980 [2013], The OECD Privacy Framework , 2013, available in PDF ; revised and expanded from the original Guidelines on the Protection of Privacy and Transborder Flows of Personal Data , Organization for Economic Co-operation and Development, [ 1980 version available online ]"
+        },
+        {
+          "raw": "van Ooijen, I., Segijn, C. M., & Opree, S. J., 2022, \"Privacy cynicism and its role in privacy decision-making\", Communication Research , 51(2). doi:10.1177/00936502211060984"
+        },
+        {
+          "raw": "Palmer, D.E., 2005, \"Pop-ups, cookies, and spam: toward a deeper analysis of the ethical significance of internet marketing practices\", Journal of business ethics , 58(1-3): 271-280."
+        },
+        {
+          "raw": "Pettit, P., 2001, A theory of freedom: from the psychology to the politics of agency , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Pieters, W., 2011, \"Explanation and trust: what to tell the user in security and AI?\", Ethics and information technology , 13(1): 53-64."
+        },
+        {
+          "raw": "---, 2013, \"On thinging things and serving services: technological mediation and inseparable goods\", Ethics and information technology , 15(3): 195-208."
+        },
+        {
+          "raw": "---, 2017, \"Beyond individual-centric privacy: Information technology in social systems\" The Information Society , 33(5): 271-281."
+        },
+        {
+          "raw": "Pieters, W. & A. van Cleeff, 2009, \"The precautionary principle in a world of digital dependencies\", Computer , 42(6): 50-56."
+        },
+        {
+          "raw": "Van de Poel, I., 2013, \"Translating values into design requirements\", in D. P. Michelfelder, N. McCarthy, and D. E. Goldberg (eds.), Philosophy and engineering: Reflections on practice, principles and process , Dordrecht: Springer, pp. 253-266."
+        },
+        {
+          "raw": "---, 2020, \"Values and design\" in D. P. Michelfelder & N. Doorn (eds.), The Routledge Handbook of the Philosophy of Engineering , London: Routledge, pp. 300-314."
+        },
+        {
+          "raw": "Raghunathan, T. E., 2021, \"Synthetic data\", Annual Review of Statistics and its Application , 8(1): 129-140."
+        },
+        {
+          "raw": "Regan, P. M., 2015, \"Privacy and the common good: revisited\", Social dimensions of privacy: Interdisciplinary perspectives , Cambridge: Cambridge University Press, pp. 50-70. doi:10.1017/CBO9781107280557.004"
+        },
+        {
+          "raw": "Roberts, A., 2015, \"A Republican Account of the Value of Privacy\", European Journal of Political Theory , 14(3): 320-344"
+        },
+        {
+          "raw": "R&ouml;ssler, Beate (ed.), 2004, Privacies: Philosophical Evaluations , Stanford, CA: Stanford University Press."
+        },
+        {
+          "raw": "R&ouml;ssler, Beate, 2005, The value of privacy , Cambridge: Polity Press."
+        },
+        {
+          "raw": "---, 2001 [2005], The Value of Privacy , Cambridge: Polity Press; original German version Der Wert des Privaten , Frankfurt am Main: Suhrkamp Verlag, 2001."
+        },
+        {
+          "raw": "Rubel, Alan, 2011, \"The Particularized Judgment Account of Privacy\", Res Publica , 17(3): 275-90."
+        },
+        {
+          "raw": "Ruiter, J. & M. Warnier, 2011, \"Privacy Regulations for Cloud Computing: Compliance and Implementation in Theory and Practice\", in Computers, Privacy and Data Protection: an Element of Choice , S. Gutwirth, Y. Poullet, P. De Hert, and R. Leenes (eds.), Dordrecht: Springer Netherlands, pp. 361-376."
+        },
+        {
+          "raw": "Smith, P. T., 2020, \"A neo-republican theory of just state surveillance\", Moral Philosophy and Politics , 7(1): 49-71."
+        },
+        {
+          "raw": "Solove, D., 2006, \"A Taxonomy of Privacy\", University of Pennsylvania Law Review , 154: 477-564."
+        },
+        {
+          "raw": "Som, C., L.M. Hilty, & A.R. K&ouml;hler, 2009, \"The precautionary principle as a framework for a sustainable information society\", Journal of business ethics , 85(3): 493-505."
+        },
+        {
+          "raw": "Song, D.X., D. Wagner, & A. Perrig, 2000, \"Practical techniques for searches on encrypted data\", in Proceedings of the 2000 IEEE Symposium on Security and Privacy (S&P 2000), Berkeley, CA, pp. 44-55. doi:10.1109/SECPRI.2000.848445."
+        },
+        {
+          "raw": "Sprenger, Polly, 1999, \"Sun on Privacy: 'Get Over It'\", Wired , 26 January 1999. [ Sprenger 1999 available online ]"
+        },
+        {
+          "raw": "Sweeney, L., 2002, \"K-anonymity: A model for protecting privacy\", International Journal of Uncertainty, Fuzziness and Knowledge-Based Systems , 10(05): 557-570."
+        },
+        {
+          "raw": "Tavani, H.T., 2004, \"Genomic research and data-mining technology: Implications for personal privacy and informed consent\", Ethics and information technology , 6(1): 15-28."
+        },
+        {
+          "raw": "Taylor, L., L. Floridi, and B. Van der Sloot (eds.), 2017, Group privacy: New challenges of data technologies (Philosophical Studies Series: Vol. 126), Dordrecht: Springer."
+        },
+        {
+          "raw": "Thomson, Judith Jarvis, 1975, \"The Right to Privacy\", Philosophy and Public Affairs , 4: 295-314."
+        },
+        {
+          "raw": "Turilli, M. & L. Floridi, 2009, \"The ethics of information transparency\", Ethics and Information Technology , 11(2): 105-112."
+        },
+        {
+          "raw": "Timms, R. & Spurrett, D., 2023, \"Hostile Scaffolding\" Philosophical Papers , 52(1): 53-82. doi:10.1080/05568641.2023.2231652"
+        },
+        {
+          "raw": "Veluwenkamp, H., & van den Hoven, J., 2023, \"Design for values and conceptual engineering\", Ethics and Information Technology , 25(1): 2."
+        },
+        {
+          "raw": "Waldman, A. E., 2020, \"Cognitive biases, dark patterns, and the 'privacy paradox'\", Current opinion in psychology , 31: 105-109."
+        },
+        {
+          "raw": "Wang, Y., Wang, J., and Chen, X., 2016, \"Secure searchable encryption: a survey\", Journal of Communications and Information Networks , 1(4): 52-65."
+        },
+        {
+          "raw": "Warnier, M., Dechesne, F., and Brazier, F.M.T., 2015, \"Design for the Value of Privacy\", in J. van den Hoven, P. Vermaas, I. van de Poel (eds.), Handbook of Ethics, Values, and Technological Design , Dordrecht: Springer, 431-445."
+        },
+        {
+          "raw": "Warren, Samuel D. & Louis D. Brandeis, 1890, \"The Right to Privacy\", Harvard Law Review , 4(5): 193-220. [ Warren and Brandeis 1890 available online ]"
+        },
+        {
+          "raw": "Westin, Alan F., 1967, Privacy and Freedom , New York: Atheneum."
+        },
+        {
+          "raw": "Yli-Huumo, J., Ko, D., Choi, S., Park, S., and Smolander, K., 2016, \"Where is current research on blockchain technology? - a systematic review\", PloS One , 11(10): e0163477. doi:10.1371/journal.pone.0163477"
+        },
+        {
+          "raw": "Zuboff, S., 2019, The age of surveillance capitalism: the fight for the future at the new frontier of power , London: Profile Books."
+        }
+      ],
+      "publishedAt": "2014-11-19T13:00:00.000Z",
+      "revisedAt": "2024-10-03T14:00:00.000Z"
+    }
+  }
+}

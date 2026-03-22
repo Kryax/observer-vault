@@ -1,0 +1,180 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/auburn--fastnoiselite",
+  "meta": {
+    "title": "FastNoise Lite",
+    "description": "Fast Portable Noise Library - C# C++ C Java HLSL GLSL JavaScript Rust Go ",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:24:18.127Z",
+    "dateModified": "2026-03-11T04:24:18.127Z",
+    "keywords": [
+      "cellular-noise",
+      "cubic-noise",
+      "fractal-algorithms",
+      "hacktoberfest",
+      "noise",
+      "noise-2d",
+      "noise-3d",
+      "noise-algorithms",
+      "noise-generator",
+      "noise-library",
+      "perlin",
+      "perlin-noise",
+      "procedural",
+      "procedural-generation",
+      "shader",
+      "simplex",
+      "simplex-algorithm",
+      "terrain-generation",
+      "voronoi"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "[Web Preview App](https://auburn.github.io/FastNoiseLite)",
+    "context": "[Web Preview App](https://auburn.github.io/FastNoiseLite)\n\nFastNoise Lite is an extremely portable open source noise generation library with a large selection of noise algorithms. This library focuses on high performance while avoiding platform/language specific features, allowing for easy ports to as many possible languages.\n\nThis project is an evolution of the [original FastNoise](https://github.com/Auburn/FastNoiseLite/tree/FastNoise-Legacy) library and shares the same goal: An easy to use library that can quickly be integrated into a project and provides performant modern noise generation. See a breakdown of changes from the transition to FastNoise Lite [here](https://github.com/Auburn/FastNoiseLite/pull/49)\n\nIf you are looking for a more extensive noise generation library consider using [FastNoise2](https://github.com/Auburn/FastNoise2). It provides large performance gains thanks to SIMD and uses a node graph structure to allow complex noise configurations with lots of flexibility.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "lang:rust"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "3340 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "364 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:24:18.127Z"
+  },
+  "implementation": {
+    "type": "algorithm",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/Auburn/FastNoiseLite",
+        "description": "GitHub repository: Auburn/FastNoiseLite"
+      },
+      {
+        "type": "documentation",
+        "uri": "http://auburn.github.io/FastNoiseLite/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Rust"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Auburn",
+        "type": "human",
+        "uri": "https://github.com/Auburn"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 4068,
+      "validation_diversity": 0.5,
+      "context_breadth": 0.66,
+      "temporal_stability": 1,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.7
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.668
+  }
+}

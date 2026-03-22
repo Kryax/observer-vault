@@ -1,0 +1,237 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/antoinejeannot--jurisprudence",
+  "meta": {
+    "title": "✨ Jurisprudence, release v2025.03.20 🏛️",
+    "description": "French Jurisprudences at your fingertips @ every 72h",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:19:54.493Z",
+    "dateModified": "2026-03-11T04:19:54.493Z",
+    "keywords": [
+      "decisions",
+      "france",
+      "french",
+      "huggingface-datasets",
+      "jurisprudence",
+      "law",
+      "legal",
+      "opendata",
+      "rulings"
+    ],
+    "license": "NOASSERTION"
+  },
+  "problemSolved": {
+    "statement": "Jurisprudence is an open-source project that automates the collection and distribution of French legal decisions. It leverages the Judilibre API provided by the Cour de Cassation to:",
+    "context": "Jurisprudence is an open-source project that automates the collection and distribution of French legal decisions. It leverages the Judilibre API provided by the Cour de Cassation to:\n\n- Fetch rulings from major French courts (Cour de Cassation, Cour d'Appel, Tribunal Judiciaire)\n- Process and convert the data into easily accessible formats\n- Publish & version updated datasets on Hugging Face every few days.\n\nIt aims to democratize access to legal information, enabling researchers, legal professionals and the public to easily access and analyze French court decisions.\nWhether you're conducting legal research, developing AI models, or simply interested in French jurisprudence, this project might provide a valuable, open resource for exploring the French legal landscape.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "data-management",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "16 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "2 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:19:54.493Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/antoinejeannot/jurisprudence",
+        "description": "GitHub repository: antoinejeannot/jurisprudence"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://huggingface.co/datasets/antoinejeannot/jurisprudence",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "click",
+        "version": ">=8.1.7",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/click/"
+      },
+      {
+        "name": "datasets",
+        "version": ">=2.21.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/datasets/"
+      },
+      {
+        "name": "duckdb",
+        "version": ">=1.1.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/duckdb/"
+      },
+      {
+        "name": "httpx",
+        "version": ">=0.27.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/httpx/"
+      },
+      {
+        "name": "huggingface-hub",
+        "version": ">=0.24.6",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/huggingface-hub/"
+      },
+      {
+        "name": "jinja2",
+        "version": ">=3.1.4",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/jinja2/"
+      },
+      {
+        "name": "pyarrow",
+        "version": ">=17.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyarrow/"
+      },
+      {
+        "name": "pydantic",
+        "version": ">=2.9.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pydantic/"
+      },
+      {
+        "name": "rich",
+        "version": ">=13.8.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/rich/"
+      },
+      {
+        "name": "tenacity",
+        "version": ">=9.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tenacity/"
+      },
+      {
+        "name": "tiktoken",
+        "version": ">=0.7.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tiktoken/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "antoinejeannot",
+        "type": "human",
+        "uri": "https://github.com/antoinejeannot"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 20,
+      "validation_diversity": 0.23,
+      "context_breadth": 0.39,
+      "temporal_stability": 0.76,
+      "test_coverage": 0.17,
+      "documentation_quality": 0.6
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.321
+  }
+}

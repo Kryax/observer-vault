@@ -1,0 +1,327 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/javascript-obfuscator--javascript-obfuscator",
+  "meta": {
+    "title": "JavaScript obfuscator",
+    "description": "A powerful obfuscator for JavaScript and Node.js",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:47:12.976Z",
+    "dateModified": "2026-03-11T04:47:12.976Z",
+    "keywords": [
+      "browser",
+      "control-flow",
+      "cryptography",
+      "encoding",
+      "flattening",
+      "flow",
+      "javascript",
+      "javascript-obfuscator",
+      "js-obfuscator",
+      "literal",
+      "mangle",
+      "nodejs",
+      "obfuscate",
+      "obfuscation",
+      "obfuscator",
+      "protection",
+      "security",
+      "string",
+      "typescript",
+      "uglify"
+    ],
+    "license": "BSD-2-Clause"
+  },
+  "problemSolved": {
+    "statement": "Use `ProApiClient.hasProFeatures()` to check if options require the Pro API:",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "security",
+    "cryptography",
+    "lang:typescript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "15893 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "1720 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:47:12.976Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/javascript-obfuscator/javascript-obfuscator",
+        "description": "GitHub repository: javascript-obfuscator/javascript-obfuscator"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://obfuscator.io",
+        "description": "Project homepage"
+      }
+    ],
+    "solutionApproach": "See usage section in README",
+    "language": "TypeScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "@javascript-obfuscator/escodegen",
+        "version": "2.3.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@javascript-obfuscator/escodegen"
+      },
+      {
+        "name": "@javascript-obfuscator/estraverse",
+        "version": "5.4.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@javascript-obfuscator/estraverse"
+      },
+      {
+        "name": "@vercel/blob",
+        "version": ">=0.23.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@vercel/blob"
+      },
+      {
+        "name": "acorn",
+        "version": "8.15.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/acorn"
+      },
+      {
+        "name": "assert",
+        "version": "2.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/assert"
+      },
+      {
+        "name": "chalk",
+        "version": "4.1.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/chalk"
+      },
+      {
+        "name": "chance",
+        "version": "1.1.13",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/chance"
+      },
+      {
+        "name": "class-validator",
+        "version": "0.14.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/class-validator"
+      },
+      {
+        "name": "commander",
+        "version": "12.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/commander"
+      },
+      {
+        "name": "conf",
+        "version": "15.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/conf"
+      },
+      {
+        "name": "eslint-scope",
+        "version": "8.4.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/eslint-scope"
+      },
+      {
+        "name": "eslint-visitor-keys",
+        "version": "4.2.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/eslint-visitor-keys"
+      },
+      {
+        "name": "fast-deep-equal",
+        "version": "3.1.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/fast-deep-equal"
+      },
+      {
+        "name": "inversify",
+        "version": "6.1.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/inversify"
+      },
+      {
+        "name": "js-string-escape",
+        "version": "1.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/js-string-escape"
+      },
+      {
+        "name": "md5",
+        "version": "2.3.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/md5"
+      },
+      {
+        "name": "mkdirp",
+        "version": "3.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/mkdirp"
+      },
+      {
+        "name": "multimatch",
+        "version": "5.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/multimatch"
+      },
+      {
+        "name": "process",
+        "version": "0.11.10",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/process"
+      },
+      {
+        "name": "reflect-metadata",
+        "version": "0.2.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/reflect-metadata"
+      },
+      {
+        "name": "source-map-support",
+        "version": "0.5.21",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/source-map-support"
+      },
+      {
+        "name": "string-template",
+        "version": "1.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/string-template"
+      },
+      {
+        "name": "stringz",
+        "version": "2.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/stringz"
+      },
+      {
+        "name": "tslib",
+        "version": "2.8.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/tslib"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "javascript-obfuscator",
+        "type": "human",
+        "uri": "https://github.com/javascript-obfuscator"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 19333,
+      "validation_diversity": 0.55,
+      "context_breadth": 0.7,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.75
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.719
+  }
+}

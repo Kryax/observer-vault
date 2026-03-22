@@ -1,0 +1,336 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/mitmproxy--mitmproxy",
+  "meta": {
+    "title": "mitmproxy",
+    "description": "An interactive TLS-capable intercepting HTTP proxy for penetration testers and software developers.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:48:14.109Z",
+    "dateModified": "2026-03-11T04:48:14.109Z",
+    "keywords": [
+      "debugging",
+      "http",
+      "http2",
+      "man-in-the-middle",
+      "mitmproxy",
+      "proxy",
+      "python",
+      "security",
+      "ssl",
+      "tls",
+      "websocket"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "[![Continuous Integration Status](https://github.com/mitmproxy/mitmproxy/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/mitmproxy/mitmproxy/actions?query=branch%3Amain)\n[![Codacy Badge](https://app.codacy.com/project/badge/Grade/a38b0325dfb944839c0c8da354f70b1b)](https://app.codacy.com/gh/mitmproxy/mitmproxy/dashboard)\n[![autofix.ci: enabled](https://shields.mitmproxy.org/badge/autofix.ci-yes-success?logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmIiB2aWV3Qm94PSIwIDAgMTI4IDEyOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCB0cmFuc2Zvcm09InNjYWxlKDAuMDYxLC0wLjA2MSkgdHJhbnNsYXRlKC0yNTAsLTE3NTApIiBkPSJNMTMyNSAtMzQwcS0xMTUgMCAtMTY0LjUgMzIuNXQtNDkuNSAxMTQuNXEwIDMyIDUgNzAuNXQxMC41IDcyLjV0NS41IDU0djIyMHEtMzQgLTkgLTY5LjUgLTE0dC03MS41IC01cS0xMzYgMCAtMjUxLjUgNjJ0LTE5MSAxNjl0LTkyLjUgMjQxcS05MCAxMjAgLTkwIDI2NnEwIDEwOCA0OC41IDIwMC41dDEzMiAxNTUuNXQxODguNSA4MXExNSA5OSAxMDAuNSAxODAuNXQyMTcgMTMwLjV0MjgyLjUgNDlxMTM2IDAgMjU2LjUgLTQ2IHQyMDkgLTEyNy41dDEyOC41IC0xODkuNXExNDkgLTgyIDIyNyAtMjEzLjV0NzggLTI5OS41cTAgLTEzNiAtNTggLTI0NnQtMTY1LjUgLTE4NC41dC0yNTYuNSAtMTAzLjVsLTI0MyAtMzAwdi01MnEwIC0yNyAzLjUgLTU2LjV0Ni41IC01Ny41dDMgLTUycTAgLTg1IC00MS41IC0xMTguNXQtMTU3LjUgLTMzLjV6TTEzMjUgLTI2MHE3NyAwIDk4IDE0LjV0MjEgNTcuNXEwIDI5IC0zIDY4dC02LjUgNzN0LTMuNSA0OHY2NGwyMDcgMjQ5IHEtMzEgMCAtNjAgNS41dC01NCAxMi41bC0xMDQgLTEyM3EtMSAzNCAtMiA2My41dC0xIDU0LjVxMCA2OSA5IDEyM2wzMSAyMDBsLTExNSAtMjhsLTQ2IC0yNzFsLTIwNSAyMjZxLTE5IC0xNSAtNDMgLTI4LjV0LTU1IC0yNi41bDIxOSAtMjQydi0yNzZxMCAtMjAgLTUuNSAtNjB0LTEwLjUgLTc5dC01IC01OHEwIC00MCAzMCAtNTMuNXQxMDQgLTEzLjV6TTEyNjIgNjE2cS0xMTkgMCAtMjI5LjUgMzQuNXQtMTkzLjUgOTYuNWw0OCA2NCBxNzMgLTU1IDE3MC41IC04NXQyMDQuNSAtMzBxMTM3IDAgMjQ5IDQ1LjV0MTc5IDEyMXQ2NyAxNjUuNWg4MHEwIC0xMTQgLTc3LjUgLTIwNy41dC0yMDggLTE0OXQtMjg5LjUgLTU1LjV6TTgwMyA1OTVxODAgMCAxNDkgMjkuNXQxMDggNzIuNWwyMjEgLTY3bDMwOSA4NnE0NyAtMzIgMTA0LjUgLTUwdDExNy41IC0xOHE5MSAwIDE2NSAzOHQxMTguNSAxMDMuNXQ0NC41IDE0Ni41cTAgNzYgLTM0LjUgMTQ5dC05NS41IDEzNHQtMTQzIDk5IHEtMzcgMTA3IC0xMTUuNSAxODMuNXQtMTg2IDExNy41dC0yMzAuNSA0MXEtMTAzIDAgLTE5Ny41IC0yNnQtMTY5IC03Mi41dC0xMTcuNSAtMTA4dC00MyAtMTMxLjVxMCAtMzQgMTQuNSAtNjIuNXQ0MC41IC01MC41bC01NSAtNTlxLTM0IDI5IC01NCA2NS41dC0yNSA4MS41cS04MSAtMTggLTE0NSAtNzB0LTEwMSAtMTI1LjV0LTM3IC0xNTguNXEwIC0xMDIgNDguNSAtMTgwLjV0MTI5LjUgLTEyM3QxNzkgLTQ0LjV6Ii8+PC9zdmc+)](https://autofix.ci)\n[![Coverage Status](https://shields.mitmproxy.org/codecov/c/github/mitmproxy/mitmproxy/main.svg?label=codecov)](https://codecov.io/gh/mitmproxy/mitmproxy)\n[![Latest Version](https://shields.mitmproxy.org/pypi/v/mitmproxy.svg)](https://pypi.python.org/pypi/mitmproxy)\n[![Supported Python versions](https://shields.mitmproxy.org/pypi/pyversions/mitmproxy.svg)](https://pypi.python.org/pypi/mitmproxy)",
+    "context": "[![Continuous Integration Status](https://github.com/mitmproxy/mitmproxy/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/mitmproxy/mitmproxy/actions?query=branch%3Amain)\n[![Codacy Badge](https://app.codacy.com/project/badge/Grade/a38b0325dfb944839c0c8da354f70b1b)](https://app.codacy.com/gh/mitmproxy/mitmproxy/dashboard)\n[![autofix.ci: enabled](https://shields.mitmproxy.org/badge/autofix.ci-yes-success?logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmIiB2aWV3Qm94PSIwIDAgMTI4IDEyOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCB0cmFuc2Zvcm09InNjYWxlKDAuMDYxLC0wLjA2MSkgdHJhbnNsYXRlKC0yNTAsLTE3NTApIiBkPSJNMTMyNSAtMzQwcS0xMTUgMCAtMTY0LjUgMzIuNXQtNDkuNSAxMTQuNXEwIDMyIDUgNzAuNXQxMC41IDcyLjV0NS41IDU0djIyMHEtMzQgLTkgLTY5LjUgLTE0dC03MS41IC01cS0xMzYgMCAtMjUxLjUgNjJ0LTE5MSAxNjl0LTkyLjUgMjQxcS05MCAxMjAgLTkwIDI2NnEwIDEwOCA0OC41IDIwMC41dDEzMiAxNTUuNXQxODguNSA4MXExNSA5OSAxMDAuNSAxODAuNXQyMTcgMTMwLjV0MjgyLjUgNDlxMTM2IDAgMjU2LjUgLTQ2IHQyMDkgLTEyNy41dDEyOC41IC0xODkuNXExNDkgLTgyIDIyNyAtMjEzLjV0NzggLTI5OS41cTAgLTEzNiAtNTggLTI0NnQtMTY1LjUgLTE4NC41dC0yNTYuNSAtMTAzLjVsLTI0MyAtMzAwdi01MnEwIC0yNyAzLjUgLTU2LjV0Ni41IC01Ny41dDMgLTUycTAgLTg1IC00MS41IC0xMTguNXQtMTU3LjUgLTMzLjV6TTEzMjUgLTI2MHE3NyAwIDk4IDE0LjV0MjEgNTcuNXEwIDI5IC0zIDY4dC02LjUgNzN0LTMuNSA0OHY2NGwyMDcgMjQ5IHEtMzEgMCAtNjAgNS41dC01NCAxMi41bC0xMDQgLTEyM3EtMSAzNCAtMiA2My41dC0xIDU0LjVxMCA2OSA5IDEyM2wzMSAyMDBsLTExNSAtMjhsLTQ2IC0yNzFsLTIwNSAyMjZxLTE5IC0xNSAtNDMgLTI4LjV0LTU1IC0yNi41bDIxOSAtMjQydi0yNzZxMCAtMjAgLTUuNSAtNjB0LTEwLjUgLTc5dC01IC01OHEwIC00MCAzMCAtNTMuNXQxMDQgLTEzLjV6TTEyNjIgNjE2cS0xMTkgMCAtMjI5LjUgMzQuNXQtMTkzLjUgOTYuNWw0OCA2NCBxNzMgLTU1IDE3MC41IC04NXQyMDQuNSAtMzBxMTM3IDAgMjQ5IDQ1LjV0MTc5IDEyMXQ2NyAxNjUuNWg4MHEwIC0xMTQgLTc3LjUgLTIwNy41dC0yMDggLTE0OXQtMjg5LjUgLTU1LjV6TTgwMyA1OTVxODAgMCAxNDkgMjkuNXQxMDggNzIuNWwyMjEgLTY3bDMwOSA4NnE0NyAtMzIgMTA0LjUgLTUwdDExNy41IC0xOHE5MSAwIDE2NSAzOHQxMTguNSAxMDMuNXQ0NC41IDE0Ni41cTAgNzYgLTM0LjUgMTQ5dC05NS41IDEzNHQtMTQzIDk5IHEtMzcgMTA3IC0xMTUuNSAxODMuNXQtMTg2IDExNy41dC0yMzAuNSA0MXEtMTAzIDAgLTE5Ny41IC0yNnQtMTY5IC03Mi41dC0xMTcuNSAtMTA4dC00MyAtMTMxLjVxMCAtMzQgMTQuNSAtNjIuNXQ0MC41IC01MC41bC01NSAtNTlxLTM0IDI5IC01NCA2NS41dC0yNSA4MS41cS04MSAtMTggLTE0NSAtNzB0LTEwMSAtMTI1LjV0LTM3IC0xNTguNXEwIC0xMDIgNDguNSAtMTgwLjV0MTI5LjUgLTEyM3QxNzkgLTQ0LjV6Ii8+PC9zdmc+)](https://autofix.ci)\n[![Coverage Status](https://shields.mitmproxy.org/codecov/c/github/mitmproxy/mitmproxy/main.svg?label=codecov)](https://codecov.io/gh/mitmproxy/mitmproxy)\n[![Latest Version](https://shields.mitmproxy.org/pypi/v/mitmproxy.svg)](https://pypi.python.org/pypi/mitmproxy)\n[![Supported Python versions](https://shields.mitmproxy.org/pypi/pyversions/mitmproxy.svg)](https://pypi.python.org/pypi/mitmproxy)\n\n``mitmproxy`` is an interactive, SSL/TLS-capable intercepting proxy with a console\ninterface for HTTP/1, HTTP/2, and WebSockets.\n\n``mitmdump`` is the command-line version of mitmproxy. Think tcpdump for HTTP.\n\n``mitmweb`` is a web-based interface for mitmproxy.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "security",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "42605 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "4482 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:48:14.109Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/mitmproxy/mitmproxy",
+        "description": "GitHub repository: mitmproxy/mitmproxy"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://mitmproxy.org",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "aioquic",
+        "version": ">=1.2.0,<=1.2.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/aioquic/"
+      },
+      {
+        "name": "argon2-cffi",
+        "version": ">=23.1.0,<=25.1.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/argon2-cffi/"
+      },
+      {
+        "name": "asgiref",
+        "version": ">=3.2.10,<=3.11.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/asgiref/"
+      },
+      {
+        "name": "bcrypt",
+        "version": ">=5.0.0,<=5.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/bcrypt/"
+      },
+      {
+        "name": "Brotli",
+        "version": ">=1.0,<=1.2.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/Brotli/"
+      },
+      {
+        "name": "certifi",
+        "version": ">=2019.9.11",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/certifi/"
+      },
+      {
+        "name": "cryptography",
+        "version": ">=42.0,<=46.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/cryptography/"
+      },
+      {
+        "name": "flask",
+        "version": ">=3.0,<=3.1.3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/flask/"
+      },
+      {
+        "name": "h11",
+        "version": ">=0.16.0,<=0.16.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/h11/"
+      },
+      {
+        "name": "h2",
+        "version": ">=4.3.0,<=4.3.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/h2/"
+      },
+      {
+        "name": "hyperframe",
+        "version": ">=6.0,<=6.1.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/hyperframe/"
+      },
+      {
+        "name": "kaitaistruct",
+        "version": ">=0.10,<=0.11",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/kaitaistruct/"
+      },
+      {
+        "name": "ldap3",
+        "version": ">=2.8,<=2.9.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/ldap3/"
+      },
+      {
+        "name": "mitmproxy_rs",
+        "version": ">=0.12.6,<0.13",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/mitmproxy_rs/"
+      },
+      {
+        "name": "msgpack",
+        "version": ">=1.0.0,<=1.1.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/msgpack/"
+      },
+      {
+        "name": "pydivert",
+        "version": ">=2.0.3,<=2.1.0; sys_platform == 'win32'",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pydivert/"
+      },
+      {
+        "name": "pyOpenSSL",
+        "version": ">=24.3,<=25.3.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyOpenSSL/"
+      },
+      {
+        "name": "pyparsing",
+        "version": ">=2.4.2,<=3.3.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyparsing/"
+      },
+      {
+        "name": "pyperclip",
+        "version": ">=1.9.0,<=1.11.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyperclip/"
+      },
+      {
+        "name": "ruamel.yaml",
+        "version": ">=0.18.10,<=0.19.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/ruamel.yaml/"
+      },
+      {
+        "name": "sortedcontainers",
+        "version": ">=2.3,<=2.4.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/sortedcontainers/"
+      },
+      {
+        "name": "tornado",
+        "version": ">=6.5.0,<=6.5.4",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tornado/"
+      },
+      {
+        "name": "typing-extensions",
+        "version": ">=4.13.2,<=4.14; python_version < '3.13'",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/typing-extensions/"
+      },
+      {
+        "name": "urwid",
+        "version": ">=2.6.14,<=3.0.5",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/urwid/"
+      },
+      {
+        "name": "wsproto",
+        "version": ">=1.0,<=1.3.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/wsproto/"
+      },
+      {
+        "name": "publicsuffix2",
+        "version": ">=2.20190812,<=2.20191221",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/publicsuffix2/"
+      },
+      {
+        "name": "zstandard",
+        "version": ">=0.25,<=0.25.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/zstandard/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "mitmproxy",
+        "type": "human",
+        "uri": "https://github.com/mitmproxy"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 51569,
+      "validation_diversity": 0.92,
+      "context_breadth": 0.7,
+      "temporal_stability": 1,
+      "test_coverage": 0.47,
+      "documentation_quality": 0.48
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.846
+  }
+}

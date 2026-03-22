@@ -1,0 +1,174 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/anthony-wang--bestpractices",
+  "meta": {
+    "title": "BestPractices",
+    "description": "Things that you should (and should not) do in your Materials Informatics research.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:23:40.871Z",
+    "dateModified": "2026-03-11T04:23:40.871Z",
+    "keywords": [
+      "best-practices",
+      "common-pitfalls",
+      "data-science",
+      "example-code",
+      "interactive-notebooks",
+      "jupyter",
+      "jupyter-notebooks",
+      "machine-learning",
+      "materials-informatics",
+      "materials-science",
+      "neural-networks",
+      "python"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "Things that you should (and should *not*) do in your Materials Informatics research.",
+    "context": "Things that you should (and should *not*) do in your Materials Informatics research.\n\nThis is a repository containing the relevant Python code and Jupyter notebooks to the publication \"Machine Learning for Materials Scientists: An Introductory Guide toward Best Practices\".\n\nThese notebooks are included to illustrate a hypothetical Machine Learning project in materials science created following best practices.\nThe goal of this project is to predict the heat capacity of materials given a chemical composition and condition (the measurement temperature).\n\nTo read the main publication for which these notebooks are made, please see:\n\nWang, Anthony Yu-Tung; Murdock, Ryan J.; Kauwe, Steven K.; Oliynyk, Anton O.; Gurlo, Aleksander; Brgoch, Jakoah; Persson, Kristin A.; Sparks, Taylor D., [Machine Learning for Materials Scientists: An Introductory Guide toward Best Practices](https://doi.org/10.1021/acs.chemmater.0c01907), *Chemistry of Materials* **2020**, *32 (12)*: 4954–4965. DOI: [10.1021/acs.chemmater.0c01907](https://doi.org/10.1021/acs.chemmater.0c01907).",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "data-management",
+    "lang:jupyter notebook"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "201 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "80 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:23:40.871Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/anthony-wang/BestPractices",
+        "description": "GitHub repository: anthony-wang/BestPractices"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://doi.org/10.1021/acs.chemmater.0c01907",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Jupyter Notebook"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "anthony-wang",
+        "type": "human",
+        "uri": "https://github.com/anthony-wang"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 361,
+      "validation_diversity": 0.16,
+      "context_breadth": 0.59,
+      "temporal_stability": 0.64,
+      "test_coverage": 0.47,
+      "documentation_quality": 0.6
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.401
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/antigenomics--vdjdb-db",
+  "meta": {
+    "title": "VDJDB: A curated database of T-cell receptor sequences of known antigen specificity",
+    "description": "🗂️ Git-based TCR database storage & management. Submissions welcome!",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T09:35:04.628Z",
+    "dateModified": "2026-03-11T09:35:04.628Z",
+    "keywords": [
+      "antigen",
+      "bioinformatics",
+      "database",
+      "immunology",
+      "t-cell"
+    ],
+    "license": "NOASSERTION"
+  },
+  "problemSolved": {
+    "statement": "First make sure that you clone both [vdjdb-db repo](https://github.com/antigenomics/vdjdb-db) and [vdjdb-motifs repo](https://github.com/antigenomics/vdjdb-motifs) to the same folder, say ``~/vcs``.",
+    "context": "![Splash](images/vdjdb-splash.png)\n\nThe primary goal of VDJdb is to facilitate access to existing information on T-cell receptor antigen specificities, i.e. the ability to recognize certain epitopes in certain MHC contexts.\n\nOur mission is to both aggregate the scarce TCR specificity information available so far and to create a curated repository to store such data.\n\nIn addition to routine database updates providing the most up-to-date information, we make our best to ensure data consistency and fight irregularities in TCR specificity reporting with a complex database validation scheme:\n\n* We take into account all available information on experimental setup used to identify antigen-specific TCR sequences and assign a single confidence score to highligh most reliable records at the database generation stage.\n* Each database record is also automatically checked against a database of V/J segment germline sequences to ensure standardized and consistent reporting of V-J junctions and CDR3 sequences that define T-cell clones.\n\nThis repository hosts the submissions to database and scripts to check, fix and build the database itself.\n\nTo build database directly from submissions, go to ``src`` directory and run ``groovy -cp . BuildDatabase.groovy`` script (requires [Groovy](http://www.groovy-lang.org/)).\n\nTo query the database for your immune repertoire sample(s) use the [vdjmatch](https://github.com/antigenomics/vdjmatch) software.\n\nA web-based GUI for the database can be found in [VDJdb-web](https://github.com/antigenomics/vdjdb-web) repository.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "data-management",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "152 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "27 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T09:35:04.628Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/antigenomics/vdjdb-db",
+        "description": "GitHub repository: antigenomics/vdjdb-db"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://vdjdb.com",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "antigenomics",
+        "type": "human",
+        "uri": "https://github.com/antigenomics"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 206,
+      "validation_diversity": 0.43,
+      "context_breadth": 0.34,
+      "temporal_stability": 0.82,
+      "test_coverage": 0,
+      "documentation_quality": 0.6
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.261
+  }
+}

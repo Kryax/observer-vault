@@ -1,0 +1,491 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/maplibre--maputnik",
+  "meta": {
+    "title": "Maputnik",
+    "description": "An open source visual editor for the 'MapLibre Style Specification'",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:47:08.486Z",
+    "dateModified": "2026-03-11T04:47:08.486Z",
+    "keywords": [
+      "cartography",
+      "geo",
+      "geospatial",
+      "gis",
+      "hacktoberfest",
+      "maplibre",
+      "maplibre-gl-js",
+      "mapping",
+      "maps",
+      "maputnik",
+      "vector-tiles"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "[![GitHub CI status](https://github.com/maplibre/maputnik/workflows/ci/badge.svg)][github-action-ci]\n[![License](https://img.shields.io/badge/license-MIT-blue.svg)][license]",
+    "context": "[![GitHub CI status](https://github.com/maplibre/maputnik/workflows/ci/badge.svg)][github-action-ci]\n[![License](https://img.shields.io/badge/license-MIT-blue.svg)][license]\n\n[github-action-ci]: https://github.com/maplibre/maputnik/actions?query=workflow%3Aci\n[license]:          https://tldrlegal.com/license/mit-license\n\nA free and open visual editor for the [MapLibre GL styles](https://maplibre.org/maplibre-style-spec/)\ntargeted at developers and map designers.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:typescript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "2503 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "454 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:47:08.486Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/maplibre/maputnik",
+        "description": "GitHub repository: maplibre/maputnik"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://www.maplibre.org/maputnik",
+        "description": "Project homepage"
+      }
+    ],
+    "solutionApproach": "See usage section in README",
+    "language": "TypeScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "@codemirror/lang-json",
+        "version": "^6.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/lang-json"
+      },
+      {
+        "name": "@codemirror/lint",
+        "version": "^6.9.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/lint"
+      },
+      {
+        "name": "@codemirror/state",
+        "version": "^6.5.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/state"
+      },
+      {
+        "name": "@codemirror/theme-one-dark",
+        "version": "^6.1.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/theme-one-dark"
+      },
+      {
+        "name": "@codemirror/view",
+        "version": "^6.39.16",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@codemirror/view"
+      },
+      {
+        "name": "@dnd-kit/core",
+        "version": "^6.3.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@dnd-kit/core"
+      },
+      {
+        "name": "@dnd-kit/sortable",
+        "version": "^10.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@dnd-kit/sortable"
+      },
+      {
+        "name": "@dnd-kit/utilities",
+        "version": "^3.2.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@dnd-kit/utilities"
+      },
+      {
+        "name": "@mapbox/mapbox-gl-rtl-text",
+        "version": "^0.3.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@mapbox/mapbox-gl-rtl-text"
+      },
+      {
+        "name": "@maplibre/maplibre-gl-geocoder",
+        "version": "^1.9.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@maplibre/maplibre-gl-geocoder"
+      },
+      {
+        "name": "@maplibre/maplibre-gl-inspect",
+        "version": "^1.8.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@maplibre/maplibre-gl-inspect"
+      },
+      {
+        "name": "@maplibre/maplibre-gl-style-spec",
+        "version": "^24.7.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@maplibre/maplibre-gl-style-spec"
+      },
+      {
+        "name": "array-move",
+        "version": "^4.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/array-move"
+      },
+      {
+        "name": "buffer",
+        "version": "^6.0.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/buffer"
+      },
+      {
+        "name": "classnames",
+        "version": "^2.5.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/classnames"
+      },
+      {
+        "name": "codemirror",
+        "version": "^6.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/codemirror"
+      },
+      {
+        "name": "color",
+        "version": "^5.0.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/color"
+      },
+      {
+        "name": "detect-browser",
+        "version": "^5.3.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/detect-browser"
+      },
+      {
+        "name": "downshift",
+        "version": "^9.3.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/downshift"
+      },
+      {
+        "name": "events",
+        "version": "^3.3.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/events"
+      },
+      {
+        "name": "file-saver",
+        "version": "^2.0.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/file-saver"
+      },
+      {
+        "name": "i18next",
+        "version": "^25.8.14",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/i18next"
+      },
+      {
+        "name": "i18next-browser-languagedetector",
+        "version": "^8.2.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/i18next-browser-languagedetector"
+      },
+      {
+        "name": "i18next-resources-to-backend",
+        "version": "^1.2.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/i18next-resources-to-backend"
+      },
+      {
+        "name": "json-stringify-pretty-compact",
+        "version": "^4.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/json-stringify-pretty-compact"
+      },
+      {
+        "name": "json-to-ast",
+        "version": "^2.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/json-to-ast"
+      },
+      {
+        "name": "lodash",
+        "version": "^4.17.23",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/lodash"
+      },
+      {
+        "name": "lodash.capitalize",
+        "version": "^4.2.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/lodash.capitalize"
+      },
+      {
+        "name": "lodash.clamp",
+        "version": "^4.0.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/lodash.clamp"
+      },
+      {
+        "name": "lodash.clonedeep",
+        "version": "^4.5.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/lodash.clonedeep"
+      },
+      {
+        "name": "lodash.get",
+        "version": "^4.4.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/lodash.get"
+      },
+      {
+        "name": "lodash.isequal",
+        "version": "^4.5.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/lodash.isequal"
+      },
+      {
+        "name": "lodash.throttle",
+        "version": "^4.1.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/lodash.throttle"
+      },
+      {
+        "name": "maplibre-gl",
+        "version": "^5.19.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/maplibre-gl"
+      },
+      {
+        "name": "maputnik-design",
+        "version": "github:maputnik/design#172b06c",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/maputnik-design"
+      },
+      {
+        "name": "ol",
+        "version": "^10.8.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/ol"
+      },
+      {
+        "name": "ol-mapbox-style",
+        "version": "^13.3.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/ol-mapbox-style"
+      },
+      {
+        "name": "pmtiles",
+        "version": "^4.4.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/pmtiles"
+      },
+      {
+        "name": "prop-types",
+        "version": "^15.8.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/prop-types"
+      },
+      {
+        "name": "react",
+        "version": "^19.2.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react"
+      },
+      {
+        "name": "react-accessible-accordion",
+        "version": "^5.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-accessible-accordion"
+      },
+      {
+        "name": "react-aria-menubutton",
+        "version": "^8.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-aria-menubutton"
+      },
+      {
+        "name": "react-aria-modal",
+        "version": "^5.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-aria-modal"
+      },
+      {
+        "name": "react-collapse",
+        "version": "^5.1.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-collapse"
+      },
+      {
+        "name": "react-color",
+        "version": "^2.19.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-color"
+      },
+      {
+        "name": "react-dom",
+        "version": "^19.2.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-dom"
+      },
+      {
+        "name": "react-i18next",
+        "version": "^16.5.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-i18next"
+      },
+      {
+        "name": "react-icons",
+        "version": "^5.5.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-icons"
+      },
+      {
+        "name": "react-markdown",
+        "version": "^10.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-markdown"
+      },
+      {
+        "name": "reconnecting-websocket",
+        "version": "^4.4.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/reconnecting-websocket"
+      },
+      {
+        "name": "slugify",
+        "version": "^1.6.6",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/slugify"
+      },
+      {
+        "name": "string-hash",
+        "version": "^1.1.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/string-hash"
+      },
+      {
+        "name": "url",
+        "version": "^0.11.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/url"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "maplibre",
+        "type": "human",
+        "uri": "https://github.com/maplibre"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 3411,
+      "validation_diversity": 0.63,
+      "context_breadth": 0.67,
+      "temporal_stability": 1,
+      "test_coverage": 0.67,
+      "documentation_quality": 0.75
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.738
+  }
+}

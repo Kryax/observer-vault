@@ -1,0 +1,959 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/information",
+  "meta": {
+    "title": "Information",
+    "description": "Philosophy of Information deals with the philosophical analysis of the notion of information both from a historical and a systematic perspective. With the emergence of the empiricist theory of knowledge in early modern philosophy, the development of various mathematical theories of information in the twentieth century and the rise of information technology, the concept of \"information\" has conquered a central place in the sciences and in society. This interest also led to the emergence of a separate branch of philosophy that analyzes information in all its guises (Adriaans & van Benthem 2008a,b; Lenski 2010; Floridi 2002, 2011, 2019). Information has become a central category in both the sciences and the humanities and the reflection on information influences a broad range of philosophical disciplines varying from logic (Dretske 1981; van Benthem & van Rooij 2003; van Benthem 2006, see the entry on logic and information ), epistemology (Simondon 1989) to ethics (Floridi 1999) and esthetics (Schmidhuber 1997a; Adriaans 2008) to ontology (Zuse 1969; Wheeler 1990; Schmidhuber 1997b; Wolfram 2002; Hutter 2010). Philosophy of information is a sub-discipline of philosophy , intricately related to the philosophy of logic and mathematics. Philosophy of semantic information (Floridi 2011, D'Alfonso 2012, Adams & de Moraes, 2016) again is a sub-discipline of philosophy of information (see the informational map in the entry on semantic conceptions of information ). From this perspective philosophy of information is interested in the investigation of the subject at the most general level: data, well-formed data, environmental data etc. Philosophy of semantic information adds the dimensions of meaning and truthfulness , Long (2014), Lundgren (2019). It is possible to interpret quantitative theories of information in the framework of a philosophy of semantic information (see section 6.5 for an in-depth discussion). Several authors have proposed a more or less coherent philosophy of information as an attempt to rethink philosophy from a new perspective: e.g., quantum physics (Mugur-Sch&auml;chter 2002), logic (Brenner 2008), communication and message systems (Capurro & Holgate 2011) and meta-philosophy (Wu 2010, 2016). The work of Luciano Floridi on semantic information (Floridi 2011, 2013, 2014, 2019; D'Alfonso 2012; Adams & de Moraes 2016, see the entry on semantic conceptions of information ) deserves special mention. In a number of papers and books Floridi has developed a systematic coherent transcendental philosophy of information, which defines him as one of the rare modern system builders in the continental tradition. The corner stone of his project is the inclusion of truthfulness in the definition of information. This choice works as a demarcation criterion: the more technical quantitative concepts of information and computation do not deal with truthfulness and consequently lie outside of the core of philosophy of semantic information. The resulting concept of information is also closer to the naive notion we use in everyday life. In contrast with this is the approach of Adriaans & van Benthem 2008a,b. Under the slogan information is what information does , they take a more pragmatic, less essentialistic, approach to the subject. The analysis of the philosophical consequences of technical developments in the theory of information and computation is at the core of their research program. From this perspective, philosophy of information emerges as a technical discipline with deep roots in the history of philosophy and consequences for various disciplines like methodology, epistemology and ethics. One might distinguish a school of thinking about information rooted in the research traditions of logic (Van Benthem) or complexity theory (Vitanyi) from an alternative approach represented by researchers like Bostrom and Floridi. Whatever one's interpretation of the nature of philosophy of information is, it seems to imply an ambitious research program consisting of many sub-projects varying from the reinterpretation of the history of philosophy in the context of modern theories of information, to an in depth analysis of the role of information in science, the humanities and society as a whole.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T03:19:51.888Z",
+    "dateModified": "2026-03-22T03:19:51.888Z",
+    "datePublished": "2012-10-25T13:00:00.000Z",
+    "keywords": [
+      "aristotle causality",
+      "church turing",
+      "continuum hypothesis",
+      "epistemic paradoxes",
+      "frege hilbert",
+      "frege theorem",
+      "goedel incompleteness",
+      "information biological",
+      "information entropy",
+      "information semantic",
+      "logic information",
+      "logic substructural",
+      "ockham",
+      "philosophy mathematics",
+      "plato metaphysics",
+      "port royal logic",
+      "properties",
+      "qt entangle",
+      "rationalism empiricism",
+      "recursive functions",
+      "rigid designators",
+      "russell paradox",
+      "set theory",
+      "settheory alternative",
+      "time thermo"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Philosophy of Information deals with the philosophical analysis of the notion of information both from a historical and a systematic perspective. With the emergence of the empiricist theory of knowledge in early modern philosophy, the development of various mathematical theories of information in the twentieth century and the rise of information technology, the concept of \"information\" has conquered a central place in the sciences and in society. This interest also led to the emergence of a separate branch of philosophy that analyzes information in all its guises (Adriaans & van Benthem 2008a,b; Lenski 2010; Floridi 2002, 2011, 2019). Information has become a central category in both the sciences and the humanities and the reflection on information influences a broad range of philosophical disciplines varying from logic (Dretske 1981; van Benthem & van Rooij 2003; van Benthem 2006, see the entry on logic and information ), epistemology (Simondon 1989) to ethics (Floridi 1999) and esthetics (Schmidhuber 1997a; Adriaans 2008) to ontology (Zuse 1969; Wheeler 1990; Schmidhuber 1997b; Wolfram 2002; Hutter 2010). Philosophy of information is a sub-discipline of philosophy , intricately related to the philosophy of logic and mathematics. Philosophy of semantic information (Floridi 2011, D'Alfonso 2012, Adams & de Moraes, 2016) again is a sub-discipline of philosophy of information (see the informational map in the entry on semantic conceptions of information ). From this perspective philosophy of information is interested in the investigation of the subject at the most general level: data, well-formed data, environmental data etc. Philosophy of semantic information adds the dimensions of meaning and truthfulness , Long (2014), Lundgren (2019). It is possible to interpret quantitative theories of information in the framework of a philosophy of semantic information (see section 6.5 for an in-depth discussion). Several authors have proposed a more or less coherent philosophy of information as an attempt to rethink philosophy from a new perspective: e.g., quantum physics (Mugur-Sch&auml;chter 2002), logic (Brenner 2008), communication and message systems (Capurro & Holgate 2011) and meta-philosophy (Wu 2010, 2016). The work of Luciano Floridi on semantic information (Floridi 2011, 2013, 2014, 2019; D'Alfonso 2012; Adams & de Moraes 2016, see the entry on semantic conceptions of information ) deserves special mention. In a number of papers and books Floridi has developed a systematic coherent transcendental philosophy of information, which defines him as one of the rare modern system builders in the continental tradition. The corner stone of his project is the inclusion of truthfulness in the definition of information. This choice works as a demarcation criterion: the more technical quantitative concepts of information and computation do not deal with truthfulness and consequently lie outside of the core of philosophy of semantic information. The resulting concept of information is also closer to the naive notion we use in everyday life. In contrast with this is the approach of Adriaans & van Benthem 2008a,b. Under the slogan information is what information does , they take a more pragmatic, less essentialistic, approach to the subject. The analysis of the philosophical consequences of technical developments in the theory of information and computation is at the core of their research program. From this perspective, philosophy of information emerges as a technical discipline with deep roots in the history of philosophy and consequences for various disciplines like methodology, epistemology and ethics. One might distinguish a school of thinking about information rooted in the research traditions of logic (Van Benthem) or complexity theory (Vitanyi) from an alternative approach represented by researchers like Bostrom and Floridi. Whatever one's interpretation of the nature of philosophy of information is, it seems to imply an ambitious research program consisting of many sub-projects varying from the reinterpretation of the history of philosophy in the context of modern theories of information, to an in depth analysis of the role of information in science, the humanities and society as a whole.",
+    "context": "Opening section: 1. Concepts of Information | Related entries: aristotle-causality, church-turing, epistemic-paradoxes, frege-hilbert, frege-theorem, goedel-incompleteness, information-biological, information-semantic, information-entropy, logic-information, logic-substructural, philosophy-mathematics, ockham, plato-metaphysics, port-royal-logic, properties, qt-entangle, rationalism-empiricism, recursive-functions, rigid-designators, russell-paradox, set-theory, settheory-alternative, continuum-hypothesis, time-thermo",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "metaphysics",
+    "logic",
+    "history-of-philosophy",
+    "philosophy-of-science",
+    "general-philosophy"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry information",
+        "uri": "https://plato.stanford.edu/entries/information/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 25 related entries, bibliography size 205"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2012-10-25T13:00:00.000Z and revised 2023-10-31T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2023-10-31T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/information/",
+        "description": "SEP entry for information"
+      }
+    ],
+    "solutionApproach": "1. Concepts of Information"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/aristotle-causality",
+      "ocp:sep/church-turing",
+      "ocp:sep/epistemic-paradoxes",
+      "ocp:sep/frege-hilbert",
+      "ocp:sep/frege-theorem",
+      "ocp:sep/goedel-incompleteness",
+      "ocp:sep/information-biological",
+      "ocp:sep/information-semantic",
+      "ocp:sep/information-entropy",
+      "ocp:sep/logic-information",
+      "ocp:sep/logic-substructural",
+      "ocp:sep/philosophy-mathematics",
+      "ocp:sep/ockham",
+      "ocp:sep/plato-metaphysics",
+      "ocp:sep/port-royal-logic",
+      "ocp:sep/properties",
+      "ocp:sep/qt-entangle",
+      "ocp:sep/rationalism-empiricism",
+      "ocp:sep/recursive-functions",
+      "ocp:sep/rigid-designators",
+      "ocp:sep/russell-paradox",
+      "ocp:sep/set-theory",
+      "ocp:sep/settheory-alternative",
+      "ocp:sep/continuum-hypothesis",
+      "ocp:sep/time-thermo"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Adriaans, Pieter",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/information/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 149,
+      "validation_diversity": 0.52,
+      "context_breadth": 0.57,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.94
+    },
+    "confidence": "proven",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.623
+  },
+  "extensions": {
+    "sep": {
+      "slug": "information",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/information/",
+      "preamble": "Philosophy of Information deals with the philosophical analysis of the notion of information both from a historical and a systematic perspective. With the emergence of the empiricist theory of knowledge in early modern philosophy, the development of various mathematical theories of information in the twentieth century and the rise of information technology, the concept of \"information\" has conquered a central place in the sciences and in society. This interest also led to the emergence of a separate branch of philosophy that analyzes information in all its guises (Adriaans & van Benthem 2008a,b; Lenski 2010; Floridi 2002, 2011, 2019). Information has become a central category in both the sciences and the humanities and the reflection on information influences a broad range of philosophical disciplines varying from logic (Dretske 1981; van Benthem & van Rooij 2003; van Benthem 2006, see the entry on logic and information ), epistemology (Simondon 1989) to ethics (Floridi 1999) and esthetics (Schmidhuber 1997a; Adriaans 2008) to ontology (Zuse 1969; Wheeler 1990; Schmidhuber 1997b; Wolfram 2002; Hutter 2010). Philosophy of information is a sub-discipline of philosophy , intricately related to the philosophy of logic and mathematics. Philosophy of semantic information (Floridi 2011, D'Alfonso 2012, Adams & de Moraes, 2016) again is a sub-discipline of philosophy of information (see the informational map in the entry on semantic conceptions of information ). From this perspective philosophy of information is interested in the investigation of the subject at the most general level: data, well-formed data, environmental data etc. Philosophy of semantic information adds the dimensions of meaning and truthfulness , Long (2014), Lundgren (2019). It is possible to interpret quantitative theories of information in the framework of a philosophy of semantic information (see section 6.5 for an in-depth discussion). Several authors have proposed a more or less coherent philosophy of information as an attempt to rethink philosophy from a new perspective: e.g., quantum physics (Mugur-Sch&auml;chter 2002), logic (Brenner 2008), communication and message systems (Capurro & Holgate 2011) and meta-philosophy (Wu 2010, 2016). The work of Luciano Floridi on semantic information (Floridi 2011, 2013, 2014, 2019; D'Alfonso 2012; Adams & de Moraes 2016, see the entry on semantic conceptions of information ) deserves special mention. In a number of papers and books Floridi has developed a systematic coherent transcendental philosophy of information, which defines him as one of the rare modern system builders in the continental tradition. The corner stone of his project is the inclusion of truthfulness in the definition of information. This choice works as a demarcation criterion: the more technical quantitative concepts of information and computation do not deal with truthfulness and consequently lie outside of the core of philosophy of semantic information. The resulting concept of information is also closer to the naive notion we use in everyday life. In contrast with this is the approach of Adriaans & van Benthem 2008a,b. Under the slogan information is what information does , they take a more pragmatic, less essentialistic, approach to the subject. The analysis of the philosophical consequences of technical developments in the theory of information and computation is at the core of their research program. From this perspective, philosophy of information emerges as a technical discipline with deep roots in the history of philosophy and consequences for various disciplines like methodology, epistemology and ethics. One might distinguish a school of thinking about information rooted in the research traditions of logic (Van Benthem) or complexity theory (Vitanyi) from an alternative approach represented by researchers like Bostrom and Floridi. Whatever one's interpretation of the nature of philosophy of information is, it seems to imply an ambitious research program consisting of many sub-projects varying from the reinterpretation of the history of philosophy in the context of modern theories of information, to an in depth analysis of the role of information in science, the humanities and society as a whole.",
+      "firstSectionTitle": "1. Concepts of Information",
+      "firstSectionText": "The term \"information\" in colloquial speech is currently predominantly used as an abstract mass-noun used to denote any amount of data, code or text that is stored, sent, received or manipulated in any medium. The lack of preciseness and the universal usefulness of the term \"information\" go hand in hand. In our society, in which we explore reality by means of instruments and installations of ever increasing complexity (telescopes, cyclotrons) and communicate via more advanced media (newspapers, radio, television, SMS, the Internet), it is useful to have an abstract mass-noun for the \"stuff\" that is created by the instruments and that \"flows\" through these media. Historically this general meaning emerged rather late and seems to be associated with the rise of mass media and intelligence agencies (Devlin & Rosenberg 2008; Adriaans & van Benthem 2008b). In present colloquial speech the term information is used in various loosely defined and often even conflicting ways. Most people, for instance, would consider the following inference prima facie to be valid: If I get the information that p then I know that p . The same people would probably have no problems with the statement that \"Secret services sometimes distribute false information\", or with the sentence \"The information provided by the witnesses of the accident was vague and conflicting\". The first statement implies that information necessarily is true, while the other statements allow for the possibility that information is false, conflicting and vague . In everyday communication these inconsistencies do not seem to create great trouble and in general it is clear from the pragmatic context what type of information is designated. These examples suffice to argue that references to our intuitions as speakers of the English language are of little help in the development of a rigorous philosophical theory of information. There seems to be no pragmatic pressure in everyday communication to converge to a more exact definition of the notion of information. In the twentieth century various proposals for formalisation of concepts of information were made. The proposed concepts cluster around two central properties: Information is extensive. Central is the concept of additivity : the combination of two independent datasets with the same amount of information contains twice as much information as the separate individual datasets. The mathematical operation of taking the logarithm captures this notion of extensiveness exactly as it reduces multiplication to addition: \\(\\log a \\times b = \\log a + \\log b\\). The notion of extensiveness emerges naturally in our interactions with the world around us when we count and measure objects and structures. Basic conceptions of more abstract mathematical entities, like sets, multisets and sequences, were developed early in history on the basis of structural rules for the manipulation of symbols (Schmandt-Besserat 1992). The mathematical formalisation of extensiveness in terms of the log function took place in the context of research in to thermodynamics in the nineteenth and early twentieth century. The different notions of entropy defined in physics are mirrored in various proposals for concepts of information. We mention Boltzmann Entropy (Boltzmann, 1866) closely related to the Hartley Function (Hartley 1928), Gibbs Entropy (Gibbs 1906) formally equivalent to Shannon entropy and various generalizations like Tsallis Entropy (Tsallis 1988) and R&eacute;nyi Entropy (R&eacute;nyi 1961). When coded in terms of more advanced multi-dimensional numbers systems (complex numbers, quaternions, octonions) the concept of extensiveness generalizes in to more subtle notions of additivity that do not meet our everyday intuitions. Yet they play an important role in recent developments of information theory based on quantum physics (Von Neumann 1932; Redei & St&ouml;ltzner 2001, see entry on quantum entanglement and information ). Information reduces uncertainty. The amount of information we get grows linearly with the amount by which it reduces our uncertainty until the moment that we have received all possible information and the amount of uncertainty is zero. The relation between uncertainty and information was probably first formulated by the empiricists (Locke 1689; Hume 1748). Hume explicitly observes that a choice from a larger selection of possibilities gives more information. This observation reached its canonical mathematical formulation in the function proposed by Hartley (1928) that defines the amount of information we get when we select an element from a finite set. The only mathematical function that unifies these two intuitions about extensiveness and probability is the one that defines the information in terms of the negative log of the probability: \\(I(A)= -\\log P(A)\\) (Shannon 1948; Shannon & Weaver 1949, R&eacute;nyi 1961). We give a concise overview of some relevant definitions: The overview shows a domain of research in development in which the context of justification is not yet fully separated from the context of discovery. Many proposals have an engineering flavour and rely on narratives (sending messages, selecting elements from a set, Turing machines as abstract models human computers) that do not do justice to the fundamental nature of the underlying concepts. Other proposals have deeper roots in philosphy but are formulated in such a way that embedding in scientific research is problematic. Take three influential proposals and their definiens for information (Shannon-probability; Kolmogorov-computation; Floridi-truth) and observe that they have next to nothing in common. Some are even conflicting (truth vs. probability, deterministic computing vs. probability). A similar situation exists in the context of thermodynamics and information theory: they use the same formulas to describe fundamentally different phenomena (distribution velocities of particles in a gas vs. distribution of probabilities over sets of messages). Until recently the possibility of a unification of these theories was generally doubted (Adriaans & van Benthem 2008a), but after two decades of research, perspectives for unification seem better. Various quantitative concepts of information are associated with different narratives (counting, receiving messages, gathering information, computing) rooted in the same basic mathematical framework. Many problems in philosophy of information center around related problems in philosophy of mathematics. Conversions and reductions between various formal models have been studied (Cover & Thomas 2006; Gr&uuml;nwald & Vit&aacute;nyi 2008; Bais & Farmer 2008). The situation that seems to emerge is not unlike the concept of energy: there are various formal sub-theories about energy (kinetic, potential, electrical, chemical, nuclear) with well-defined transformations between them. Apart from that, the term \"energy\" is used loosely in colloquial speech. The emergence of a coherent theory to measure information quantitatively in the twentieth century is closely related to the development of the theory of computing. Central in this context are the notions of Universality , Turing equivalence and Invariance: because the concept of a Turing system defines the notion of a universal programmable computer, all universal models of computation seem to have the same power. This implies that all possible measures of information definable for universal models of computation (Recursive Functions, Turing Machine, Lambda Calculus etc.) are invariant modulo an additive constant. Adriaans (2020, 2021) proposed a unifying research program implied by this insight under the name of Differential Information Theory (DIT): a purely mathematical non-algorithmic descriptive theory of information , based on 1) measuring information in natural numbers using the log function (see section 5.1.7 for an in-depth discussion) and 2) the concept of the information efficiency of recursive functions. Other quantitative proposals such a Shannon information and Kolmogorov complexity can be placed in this purely descriptive framework as forms of Applied Information Theory involving semi-physical systems existing in domains where a concept of time exists. A big advantage of DIT is the fact that recursive functions are defined axiomatically. This allow for the development of a theory of information as a rigid discipline in line with central concepts of mathematics and physics. Using differential information theory the creation and destruction of information of computational, stochastic (and mixed processes like game playing, or creative processes) can be studied.",
+      "relatedEntries": [
+        "aristotle-causality",
+        "church-turing",
+        "epistemic-paradoxes",
+        "frege-hilbert",
+        "frege-theorem",
+        "goedel-incompleteness",
+        "information-biological",
+        "information-semantic",
+        "information-entropy",
+        "logic-information",
+        "logic-substructural",
+        "philosophy-mathematics",
+        "ockham",
+        "plato-metaphysics",
+        "port-royal-logic",
+        "properties",
+        "qt-entangle",
+        "rationalism-empiricism",
+        "recursive-functions",
+        "rigid-designators",
+        "russell-paradox",
+        "set-theory",
+        "settheory-alternative",
+        "continuum-hypothesis",
+        "time-thermo"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "aristotle-causality"
+        },
+        {
+          "slug": "church-turing"
+        },
+        {
+          "slug": "epistemic-paradoxes"
+        },
+        {
+          "slug": "frege-hilbert"
+        },
+        {
+          "slug": "frege-theorem"
+        },
+        {
+          "slug": "goedel-incompleteness"
+        },
+        {
+          "slug": "information-biological"
+        },
+        {
+          "slug": "information-semantic"
+        },
+        {
+          "slug": "information-entropy"
+        },
+        {
+          "slug": "logic-information"
+        },
+        {
+          "slug": "logic-substructural"
+        },
+        {
+          "slug": "philosophy-mathematics"
+        },
+        {
+          "slug": "ockham"
+        },
+        {
+          "slug": "plato-metaphysics"
+        },
+        {
+          "slug": "port-royal-logic"
+        },
+        {
+          "slug": "properties"
+        },
+        {
+          "slug": "qt-entangle"
+        },
+        {
+          "slug": "rationalism-empiricism"
+        },
+        {
+          "slug": "recursive-functions"
+        },
+        {
+          "slug": "rigid-designators"
+        },
+        {
+          "slug": "russell-paradox"
+        },
+        {
+          "slug": "set-theory"
+        },
+        {
+          "slug": "settheory-alternative"
+        },
+        {
+          "slug": "continuum-hypothesis"
+        },
+        {
+          "slug": "time-thermo"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 205,
+      "bibliography": [
+        {
+          "raw": "Aaronson, Scott, 2013, \"Why Philosophers Should Care About Computational Complexity\", in Computability: Turing, G&ouml;del, Church, and Beyond , Brian Jack Copeland, Carl J. Posy, and Oron Shagrir (eds.), Cambridge, MA: The MIT Press. [ Aaronson 2013 preprint available online ]"
+        },
+        {
+          "raw": "Abramsky, Samson and Achim Jung, 1994, \"Domain theory\", in Handbook of Logic in Computer Science (vol. 3): Semantic Structure , Samson Abramsky, Dov M. Gabbay, and Thomas S. E. Maibaum (eds.),. Oxford University Press. pp. 1-168."
+        },
+        {
+          "raw": "Adams, Fred and Jo&atilde;o Antonio de Moraes, 2016, \"Is There a Philosophy of Information?\", Topoi , 35(1): 161-171. doi:10.1007/s11245-014-9252-9"
+        },
+        {
+          "raw": "Adriaans, Pieter, 2007, \"Learning as Data Compression\", in Computation and Logic in the Real World , S. Barry Cooper, Benedikt L&ouml;we, and Andrea Sorbi (eds.), (Lecture Notes in Computer Science: Volume 4497), Berlin, Heidelberg: Springer Berlin Heidelberg, 11-24. doi:10.1007/978-3-540-73001-9_2"
+        },
+        {
+          "raw": "---, 2008, \"Between Order and Chaos: The Quest for Meaningful Information\", Theory of Computing Systems (Special Issue: Computation and Logic in the Real World; Guest Editors: S. Barry Cooper, Elvira Mayordomo and Andrea Sorbi), 45(4): 650-674. doi:10.1007/s00224-009-9173-y"
+        },
+        {
+          "raw": "---, 2020, \"A computational theory of meaning\", in Advances in Info-Metrics: Information and Information Processing across Disciplines , Min Chen, Michael Dunn, Amos Golan and Aman Ullah (eds.), New York: Oxford University Press, 32-78. doi:10.1093/oso/9780190636685.003.0002"
+        },
+        {
+          "raw": "Adriaans, Pieter and Peter van Emde Boas, 2011, \"Computation, Information, and the Arrow of Time\", in Computability in Context: Computation and Logic in the Real World , by S Barry Cooper and Andrea Sorbi (eds), London: Imperial College Press, 1-17. doi:10.1142/9781848162778_0001"
+        },
+        {
+          "raw": "Adriaans, Pieter and Johan van Benthem, 2008a, \"Introduction: Information Is What Information Does\", in Adriaans & van Benthem 2008b: 3-26. doi:10.1016/B978-0-444-51726-5.50006-6"
+        },
+        {
+          "raw": "--- (eds.), 2008b, Philosophy of Information , (Handbook of the Philosophy of Science 8), Amsterdam: Elsevier. doi:10.1016/C2009-0-16481-4"
+        },
+        {
+          "raw": "Adriaans, Pieter and Paul M.B. Vit&aacute;nyi, 2009, \"Approximation of the Two-Part MDL Code\", IEEE Transactions on Information Theory , 55(1): 444-457. doi:10.1109/TIT.2008.2008152"
+        },
+        {
+          "raw": "Adriaans, Pieter and Dolf Zantinge, 1996, Data Mining , Harlow, England: Addison-Wesley."
+        },
+        {
+          "raw": "Agrawal, Manindra, Neeraj Kayal, and Nitin Saxena, 2004, \"PRIMES Is in P\", Annals of Mathematics , 160(2): 781-793. doi:10.4007/annals.2004.160.781"
+        },
+        {
+          "raw": "Albrecht, Andreas and Daniel Phillips, 2014, \"Origin of Probabilities and Their Application to the Multiverse\", Physical Review D , 90(12): 123514. doi:10.1103/PhysRevD.90. 123514"
+        },
+        {
+          "raw": "Antunes, Lu&iacute;s and Lance Fortnow, 2003, \"Sophistication Revisited\", in Proceedings of the 30th International Colloquium on Automata, Languages and Programming (Lecture Notes in Computer Science: Volume 2719), Jos C. M. Baeten, Jan Karel Lenstra, Joachim Parrow, and Gerhard J. Woeginger (eds.), Berlin: Springer, pp. 267-277. doi:10.1007/3-540-45061-0_23"
+        },
+        {
+          "raw": "Antunes, Luis, Lance Fortnow, Dieter van Melkebeek, and N.V. Vinodchandran, 2006, \"Computational Depth: Concept and Applications\", Theoretical Computer Science , 354(3): 391-404. doi:10.1016/j.tcs.2005.11.033"
+        },
+        {
+          "raw": "Aquinas, St. Thomas, 1265-1274, Summa Theologiae ."
+        },
+        {
+          "raw": "Arbuthnot, John, 1692, Of the Laws of Chance, or, a method of Calculation of the Hazards of Game, Plainly demonstrated, And applied to Games as present most in Use , translation of Huygens' De Ratiociniis in Ludo Aleae , 1657."
+        },
+        {
+          "raw": "Aristotle. Aristotle in 23 Volumes , Vols. 17, 18, translated by Hugh Tredennick, Cambridge, MA: Harvard University Press; London, William Heinemann Ltd. 1933, 1989."
+        },
+        {
+          "raw": "Austen, Jane, 1815, Emma , London: Richard Bentley and Son."
+        },
+        {
+          "raw": "Bar-Hillel, Yehoshua and Rudolf Carnap, 1953, \"Semantic Information\", The British Journal for the Philosophy of Science , 4(14): 147-157. doi:10.1093/bjps/IV.14.147"
+        },
+        {
+          "raw": "Bais, F. Alexander and J. Doyne Farmer, 2008, \"The Physics of Information\", Adriaans and van Benthem 2008b: 609-683. doi:10.1016/B978-0-444-51726-5.50020-0"
+        },
+        {
+          "raw": "Barron, Andrew, Jorma Rissanen, and Bin Yu, 1998, \"The Minimum Description Length Principle in Coding and Modeling\", IEEE Transactions on Information Theory , 44(6): 2743-2760. doi:10.1109/18.720554"
+        },
+        {
+          "raw": "Barwise, Jon and John Perry, 1983, Situations and Attitudes , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Bell, Gordon, Tony Hey, and Alex Szalay, 2009, \"Computer Science: Beyond the Data Deluge\", Science , 323(5919): 1297-1298. doi:10.1126/science.1170411"
+        },
+        {
+          "raw": "Bennett, C. H., 1988, \"Logical Depth and Physical Complexity\", in Rolf Herken (ed.), The Universal Turing Machine: A Half-Century Survey , Oxford: Oxford University Press, pp. 227-257."
+        },
+        {
+          "raw": "Berkeley, George, 1732, Alciphron: Or the Minute Philosopher , Edinburgh: Thomas Nelson, 1948-57."
+        },
+        {
+          "raw": "Bernoulli, Danielis, 1738, Hydrodynamica , Argentorati: sumptibus Johannis Reinholdi Dulseckeri. [ Bernoulli 1738 available online ]"
+        },
+        {
+          "raw": "Birkhoff, George David, 1950, Collected Mathematical Papers , New York: American Mathematical Society."
+        },
+        {
+          "raw": "Bloem, Peter, Steven de Rooij, and Pieter Adriaans, 2015, \"Two Problems for Sophistication\", in Algorithmic Learning Theory , (Lecture Notes in Computer Science 9355), Kamalika Chaudhuri, Claudio Gentile, and Sandra Zilles (eds.), Cham: Springer International Publishing, 379-394. doi:10.1007/978-3-319-24486-0_25"
+        },
+        {
+          "raw": "Boltzmann, Ludwig, 1866, \"&Uuml;ber die Mechanische Bedeutung des Zweiten Hauptsatzes der W&auml;rmetheorie\", Wiener Berichte , 53: 195-220."
+        },
+        {
+          "raw": "Boole, George, 1847, Mathematical Analysis of Logic: Being an Essay towards a Calculus of Deductive Reasoning , Cambridge: Macmillan, Barclay, & Macmillan. [ Boole 1847 available online ]."
+        },
+        {
+          "raw": "---, 1854, An Investigation of the Laws of Thought: On which are Founded the Mathematical Theories of Logic and Probabilities , London: Walton and Maberly."
+        },
+        {
+          "raw": "Bostrom, Nick, 2003, \"Are We Living in a Computer Simulation?\", The Philosophical Quarterly , 53(211): 243-255. doi:10.1111/1467-9213.00309"
+        },
+        {
+          "raw": "Bott, R. and J. Milnor, 1958, \"On the Parallelizability of the Spheres\", Bulletin of the American Mathematical Society , 64(3): 87-89. doi:10.1090/S0002-9904-1958-10166-4"
+        },
+        {
+          "raw": "Bovens, Luc and Stephan Hartmann, 2003, Bayesian Epistemology , Oxford: Oxford University Press. doi:10.1093/0199269750.001.0001"
+        },
+        {
+          "raw": "Brenner, Joseph E., 2008, Logic in Reality , Dordrecht: Springer Netherlands. doi:10.1007/978-1-4020-8375-4"
+        },
+        {
+          "raw": "Briggs, Henry, 1624, Arithmetica Logarithmica , London: Gulielmus Iones."
+        },
+        {
+          "raw": "Capurro, Rafael, 1978, Information. Ein Beitrag zur etymologischen und ideengeschichtlichen Begr&uuml;ndung des Informationsbegriffs (Information: A contribution to the foundation of the concept of information based on its etymology and in the history of ideas), Munich, Germany: Saur. [ Capurro 1978 available online ]."
+        },
+        {
+          "raw": "---, 2009, \"Past, Present, and Future of the Concept of Information\", TripleC: Communication, Capitalism & Critique , 7(2): 125-141. doi:10.31269/triplec.v7i2.113"
+        },
+        {
+          "raw": "Capurro, Rafael and Birger Hj&oslash;rland, 2003, \"The Concept of Information\", in Blaise Cronin (ed.), Annual Review of Information Science and Technology (ARIST) , 37: 343-411 (Chapter 8). doi:10.1002/aris.1440370109"
+        },
+        {
+          "raw": "Capurro, Rafael and John Holgate (eds.), 2011, Messages and Messengers: Angeletics as an Approach to the Phenomenology of Communication ( Von Boten Und Botschaften , (Schriftenreihe Des International Center for Information Ethics 5), M&uuml;nchen: Fink."
+        },
+        {
+          "raw": "Carnap, Rudolf, 1928, Scheinprobleme in der Philosophie (Pseudoproblems of Philosophy), Berlin: Weltkreis-Verlag."
+        },
+        {
+          "raw": "---, 1945, \"The Two Concepts of Probability: The Problem of Probability\", Philosophy and Phenomenological Research , 5(4): 513-532. doi:10.2307/2102817"
+        },
+        {
+          "raw": "---, 1947, Meaning and Necessity , Chicago: The University of Chicago Press."
+        },
+        {
+          "raw": "---, 1950, Logical Foundations of Probability , Chicago: The University of Chicago Press."
+        },
+        {
+          "raw": "Chaitin, Gregory J., 1969, \"On the Length of Programs for Computing Finite Binary Sequences: Statistical Considerations\", Journal of the ACM , 16(1): 145-159. doi:10.1145/321495.321506"
+        },
+        {
+          "raw": "---, 1987, Algorithmic Information Theory , Cambridge: Cambridge University Press. doi:10.1017/CBO9780511608858"
+        },
+        {
+          "raw": "Chater, Nick and Paul Vit&aacute;nyi, 2003, \"Simplicity: A Unifying Principle in Cognitive Science?\", Trends in Cognitive Sciences , 7(1): 19-22. doi:10.1016/S1364-6613(02)00005-0"
+        },
+        {
+          "raw": "Church, Alonzo, 1936, \"An Unsolvable Problem of Elementary Number Theory\", American Journal of Mathematics 58(2): 345-363. doi:10.2307/2371045"
+        },
+        {
+          "raw": "Cilibrasi, Rudi and Paul M.B. Vitanyi, 2005, \"Clustering by Compression\", IEEE Transactions on Information Theory , 51(4): 1523-1545. doi:10.1109/TIT.2005.844059"
+        },
+        {
+          "raw": "Clausius, R., 1850, \"Ueber die bewegende Kraft der W&auml;rme und die Gesetze, welche sich daraus f&uuml;r die W&auml;rmelehre selbst ableiten lassen\", Annalen der Physik und Chemie , 155(3): 368-397. doi:10.1002/andp.18501550306"
+        },
+        {
+          "raw": "Conan Doyle, Arthur, 1892, \"The Adventure of the Noble Bachelor\", in The Adventures of Sherlock Holmes , London: George Newnes Ltd, story 10."
+        },
+        {
+          "raw": "Cover, Thomas M. and Joy A. Thomas, 2006, Elements of Information Theory , second edition, New York: John Wiley & Sons."
+        },
+        {
+          "raw": "Crawford, James M. and Larry D. Auton, 1993, \"Experimental Results on the Crossover Point in Satisfiability Problems\", Proceedings of the Eleventh National Conference on Artificial Intelligence , AAAI Press, pp. 21-27. [ Crawford & Auton 1993 available online ]"
+        },
+        {
+          "raw": "Crutchfield, James P. and Karl Young, 1989, \"Inferring Statistical Complexity\", Physical Review Letters , 63(2): 105-108. doi:10.1103/PhysRevLett.63.105"
+        },
+        {
+          "raw": "---, 1990, \"Computation at the Onset of Chaos\", in Entropy, Complexity, and the Physics of Information , W. Zurek, editor, SFI Studies in the Sciences of Complexity, VIII, Reading, MA: Addison-Wesley, pp. 223-269. [ Crutchfield & Young 1990 available online ]"
+        },
+        {
+          "raw": "D'Alfonso, Simon, 2012, \"Towards a Framework for Semantic Information\", Ph.D. Thesis, Department of Philosophy, School of Historical and Philosophical Studies, The University of Melbourne. D'Alfonso 2012 available online"
+        },
+        {
+          "raw": "Davis, Martin, 2006, \"Why There Is No Such Discipline as Hypercomputation\", Applied Mathematics and Computation , 178(1): 4-7. doi:10.1016/j.amc.2005.09.066"
+        },
+        {
+          "raw": "Defoe, Daniel, 1719, The Life and Strange Surprising Adventures of Robinson Crusoe of York, Mariner: who lived Eight and Twenty Years, all alone in an uninhabited Island on the coast of America, near the Mouth of the Great River of Oroonoque; Having been cast on Shore by Shipwreck, wherein all the Men perished but himself. With An Account how he was at last as strangely deliver'd by Pirates. Written by Himself , London: W. Taylor. [ Defoe 1719 available online ]"
+        },
+        {
+          "raw": "De Leo, Stefano, 1996, \"Quaternions and Special Relativity\", Journal of Mathematical Physics , 37(6): 2955-2968. doi:10.1063/1.531548"
+        },
+        {
+          "raw": "Dershowitz, Nachum and Yuri Gurevich, 2008, \"A Natural Axiomatization of Computability and Proof of Church's Thesis\", Bulletin of Symbolic Logic , 14(3): 299-350. doi:10.2178/bsl/1231081370"
+        },
+        {
+          "raw": "Descartes, Ren&eacute;, 1641, Meditationes de Prima Philosophia (Meditations on First Philosophy), Paris."
+        },
+        {
+          "raw": "---, 1647, Discours de la M&eacute;thode (Discourse on Method), Leiden."
+        },
+        {
+          "raw": "Devlin, Keith and Duska Rosenberg, 2008, \"Information in the Study of Human Interaction\", Adriaans and van Benthem 2008b: 685-709. doi:10.1016/B978-0-444-51726-5.50021-2"
+        },
+        {
+          "raw": "Dictionnaire du Moyen Fran&ccedil;ais (1330-1500), 2015, \"Information\", in Dictionnaire du Moyen Fran&ccedil;ais (1330-1500) , volume 16, 313-315. [ Dictionnaire du Moyen Fran&ccedil;ais available online ]"
+        },
+        {
+          "raw": "Domingos, Pedro, 1998, \"Occam's Two Razors: The Sharp and the Blunt\", in Proceedings of the Fourth International Conference on Knowledge Discovery and Data Mining (KDD-98), New York: AAAI Press, pp. 37-43. [ Domingos 1998 available online ]"
+        },
+        {
+          "raw": "Downey, Rodney G. and Denis R. Hirschfeldt, 2010, Algorithmic Randomness and Complexity , (Theory and Applications of Computability), New York: Springer New York. doi:10.1007/978-0-387-68441-3"
+        },
+        {
+          "raw": "Dretske, Fred, 1981, Knowledge and the Flow of Information , Cambridge, MA: The MIT Press."
+        },
+        {
+          "raw": "Dufort, Paul A. and Charles J. Lumsden, 1994, \"The Complexity and Entropy of Turing Machines\", in Proceedings Workshop on Physics and Computation . PhysComp '94, Dallas, TX: IEEE Computer Society Press, 227-232. doi:10.1109/PHYCMP.1994.363677"
+        },
+        {
+          "raw": "Dunn, Jon Michael, 2001, \"The Concept of Information and the Development of Modern Logic\", in Zwischen traditioneller und moderner Logik: Nichtklassiche Ansatze ( Non-classical Approaches in the Transition from Traditional to Modern Logic ), Werner Stelzner and Manfred St&ouml;ckler (eds.), Paderborn: Mentis, 423-447."
+        },
+        {
+          "raw": "---, 2008, \"Information in Computer Science\", in Adriaans and van Benthem 2008b: 581-608. doi:10.1016/B978-0-444-51726-5.50019-4"
+        },
+        {
+          "raw": "Dijksterhuis, E. J., 1986, The Mechanization of the World Picture: Pythagoras to Newton , Princeton, NJ: Princeton University Press."
+        },
+        {
+          "raw": "Duns Scotus, John [1265/66-1308 CE], Opera Omnia (The Wadding edition), Luke Wadding (ed.), Lyon, 1639; reprinted Hildesheim: Georg Olms Verlagsbuchhandlung, 1968."
+        },
+        {
+          "raw": "Durand-Lose, J&eacute;r&ocirc;me, 2002, \"Computing Inside the Billiard Ball Model\", in Collision-Based Computing , Andrew Adamatzky (ed.), London: Springer London, 135-160. doi:10.1007/978-1-4471-0129-1_6"
+        },
+        {
+          "raw": "Edwards, Paul, 1967, The Encyclopedia of Philosophy , 8 volumes, New York: Macmillan Publishing Company."
+        },
+        {
+          "raw": "Fayyad, Usama, Gregory Piatetsky-Shapiro, and Padhraic Smyth, 1996, \"From Data Mining to Knowledge Discovery in Databases\", AI Magazine , 17(3): 37-37."
+        },
+        {
+          "raw": "Fisher, R. A., 1925, \"Theory of Statistical Estimation\", Mathematical Proceedings of the Cambridge Philosophical Society , 22(05): 700-725. doi:10.1017/S0305004100009580"
+        },
+        {
+          "raw": "Floridi, Luciano, 1999, \"Information Ethics: On the Philosophical Foundation of Computer Ethics\", Ethics and Information Technology , 1(1): 33-52. doi:10.1023/A:1010018611096"
+        },
+        {
+          "raw": "---, 2002, \"What Is the Philosophy of Information?\" Metaphilosophy , 33(1-2): 123-145. doi:10.1111/1467-9973.00221"
+        },
+        {
+          "raw": "--- (ed.), 2003, The Blackwell Guide to the Philosophy of Computing and Information , Oxford: Blackwell. doi:10.1002/9780470757017"
+        },
+        {
+          "raw": "---, 2010, \"The Philosophy of Information as a Conceptual Framework\", Knowledge, Technology & Policy , 23(1-2): 253-281. doi:10.1007/s12130-010-9112-x"
+        },
+        {
+          "raw": "---, 2011, The Philosophy of Information , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199232383.001.0001"
+        },
+        {
+          "raw": "---, 2019, The logic of information: a theory of philosophy as conceptual design , Oxford: Oxford University Press. doi:10.1093/oso/9780198833635.001.0001"
+        },
+        {
+          "raw": "Fredkin, Edward and Tommaso Toffoli, 1982, \"Conservative Logic\", International Journal of Theoretical Physics , 21(3-4): 219-253. doi:10.1007/BF01857727"
+        },
+        {
+          "raw": "Frege, Gottlob, 1879, Begriffsschrift: eine der arithmetischen nachgebildete Formelsprache des reinen Denkens , Halle."
+        },
+        {
+          "raw": "---, 1892, \"&Uuml;ber Sinn und Bedeutung\", Zeitschrift f&uuml;r Philosophie und philosophische Kritik , NF 100."
+        },
+        {
+          "raw": "Furey, C., 2015, \"Charge Quantization from a Number Operator\", Physics Letters B , 742(March): 195-199. doi:10.1016/j.physletb.2015.01.023"
+        },
+        {
+          "raw": "Galileo Galilei, 1623 [1960], Il Saggiatore (in Italian), Rome; translated as The Assayer , by Stillman Drake and C. D. O'Malley, in The Controversy on the Comets of 1618 , Philadelphia: University of Pennsylvania Press, 1960, 151-336."
+        },
+        {
+          "raw": "Garey, Michael R. and David S. Johnson, 1979, Computers and Intractability: A Guide to the Theory of NP-Completeness , (A Series of Books in the Mathematical Sciences), San Francisco: W. H. Freeman."
+        },
+        {
+          "raw": "Gell-Mann, Murray and Seth Lloyd, 2003, \"Effective Computing\". SFI Working Paper 03-12-068, Santa Fe, NM: Santa Fe Institute. [ Gell-Mann & Lloyd 2003 available online ]"
+        },
+        {
+          "raw": "Gibbs, J. Willard, 1906, The Scientific Papers of J. Willard Gibbs in Two Volumes , 1. Longmans, Green, and Co."
+        },
+        {
+          "raw": "Godefroy, Fr&eacute;d&eacute;ric G., 1881, Dictionnaire de l'ancienne langue fran&ccedil;aise et de tous ses dialectes du 9e au 15e si&egrave;cle , Paris: F. Vieweg."
+        },
+        {
+          "raw": "G&ouml;del, Kurt, 1931, \"&Uuml;ber formal unentscheidbare S&auml;tze der Principia Mathematica und verwandter Systeme I\", Monatshefte f&uuml;r Mathematik und Physik , 38-38(1): 173-198. doi:10.1007/BF01700692"
+        },
+        {
+          "raw": "Goodstein, R. L., 1957, \"The Definition of Number\", The Mathematical Gazette , 41(337): 180-186. doi:10.2307/3609188"
+        },
+        {
+          "raw": "Gr&uuml;nwald, Peter D., 2007, The Minimum Description Length Principle , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Gr&uuml;nwald, Peter D. and Paul M.B. Vit&aacute;nyi, 2008, \"Algorithmic Information Theory\", in Adriaans and van Benthem 2008b: 281-317. doi:10.1016/B978-0-444-51726-5.50013-3"
+        },
+        {
+          "raw": "Groot, Adrianus Dingeman de, 1961 [1969], Methodology: Foundations of Inference and Research in the Behavioral Sciences ( Methodologie: grondslagen van onderzoek en denken in de gedragswetenschappen ), The Hague: Mouton."
+        },
+        {
+          "raw": "Hamkins, J., and Lewis, A., 2000, Infinite time Turing machines. Journal of Symbolic Logic , 65(2), 567-604. doi:10.2307/2586556"
+        },
+        {
+          "raw": "Harremo&euml;s, Peter and Flemming Tops&oslash;e, 2008, \"The Quantitative Theory of Information\", in Adriaans and van Benthem 2008b: 171-216. doi:10.1016/B978-0-444-51726-5.50011-X"
+        },
+        {
+          "raw": "Hartley, R.V.L., 1928, \"Transmission of Information\", Bell System Technical Journal , 7(3): 535-563. doi:10.1002/j.1538-7305.1928.tb01236.x"
+        },
+        {
+          "raw": "Hazard, Paul, 1935, La Crise de La Conscience Europ&eacute;enne (1680-1715) , Paris: Boivin."
+        },
+        {
+          "raw": "Hey, Anthony J. G., Stewart Tansley, and Kristin Tolle (eds.), 2009, The Fourth Paradigm: Data-Intensive Scientific Discovery , Redmond, WA: Microsoft Research. [ Hey et al. 2009 available online ]"
+        },
+        {
+          "raw": "Hintikka, Jaakko, 1962, Knowledge and Belief: An Introduction to the Logic of the Two Notions , (Contemporary Philosophy), Ithaca, NY: Cornell University Press."
+        },
+        {
+          "raw": "---, 1973, Logic, Language Games and Information: Kantian Themes in the Philosophy of Logic , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Hume, David, 1739-40, A Treatise of Human Nature . Reprinted, L.A. Selby-Bigge (ed.), Oxford: Clarendon Press, 1896. [ Hume 1739-40 [1896] available online ]"
+        },
+        {
+          "raw": "---, 1748, An Enquiry concerning Human Understanding . Reprinted in Enquiries Concerning the Human Understanding and Concerning the Principles of Morals , 1777 which was reprinted, L.A. Selby-Bigge (ed.), Oxford: Clarendon Press, 1888 (second edition 1902). [ Hume 1748 [1902] available online ]"
+        },
+        {
+          "raw": "Hutter, Marcus, 2005, Universal Artificial Intellegence: Sequential Decisions Based on Algorithmic Probability , (Texts in Theoretical Computer Science, an EATCS Series), Berlin, Heidelberg: Springer Berlin Heidelberg. doi:10.1007/b138233"
+        },
+        {
+          "raw": "---, 2007a, \"On Universal Prediction and Bayesian Confirmation\", Theoretical Computer Science , 384(1): 33-48. doi:10.1016/j.tcs.2007.05.016"
+        },
+        {
+          "raw": "---, 2007b, \"Algorithmic Information Theory: a brief non-technical guide to the field\", Scholarpedia , 2(3): art. 2519. doi:10.4249/scholarpedia.2519"
+        },
+        {
+          "raw": "---, 2010, \"A Complete Theory of Everything (will be subjective)\", Algorithms , 3(4): 329-350. doi:10.3390/a3040329"
+        },
+        {
+          "raw": "Hutter, Marcus, John W. Lloyd, Kee Siong Ng, and William T.B. Uther, 2013, \"Probabilities on Sentences in an Expressive Logic\", Journal of Applied Logic , special issue: Combining Probability and Logic: Papers from Progic 2011 , Jeffrey Helzner (ed.), 11(4): 386-420. doi:10.1016/j.jal.2013.03.003."
+        },
+        {
+          "raw": "Ibn Tufail, Hayy ibn Yaqdhan , translated as Philosophus Autodidactus , published by Edward Pococke the Younger in 1671."
+        },
+        {
+          "raw": "Kahn, David, 1967, The Code-Breakers, The Comprehensive History of Secret Communication from Ancient Times to the Internet , New York: Scribner."
+        },
+        {
+          "raw": "Kant, Immanuel, 1781, Kritik der reinen Vernunft (Critique of Pure Reason), Germany."
+        },
+        {
+          "raw": "Kervaire, Michel A., 1958, \"Non-Parallelizability of the n-Sphere for n > 7\", Proceedings of the National Academy of Sciences of the United States of America , 44(3): 280-283. doi:10.1073/pnas.44.3.280"
+        },
+        {
+          "raw": "al-Khw&#257;rizm&#299;, Mu&#7717;ammad ibn M&#363;s&#257;, ca. 820 CE, Hisab al-jabr w'al-muqabala, Kitab al-Jabr wa-l-Muqabala ( The Compendious Book on Calculation by Completion and Balancing ), Translated by Frederic Rosen, London: Murray, 1831. [ al-Khwarizmi translation available online ]"
+        },
+        {
+          "raw": "Kolmogorov, A.N., 1965, \"Three Approaches to the Quantitative Definition of Information\", Problems of Information Transmission , 1(1): 1-7. Reprinted 1968 in International Journal of Computer Mathematics , 2(1-4): 157-168. doi:10.1080/00207166808803030"
+        },
+        {
+          "raw": "Koppel, Moshe, 1987, \"Complexity, Depth, and Sophistication\", Complex Systems , 1(6): 1087-1091. [ Koppel 1987 available online ]"
+        },
+        {
+          "raw": "Kripke, Saul A., 1959, \"A Completeness Theorem in Modal Logic\", The Journal of Symbolic Logic , 24(1): 1-14. doi:10.2307/2964568"
+        },
+        {
+          "raw": "---, 1971, \"Identity and Necessity\", in Milton K. Munitz (ed.), Identity and Individuation , New York: New York University Press, pp. 135-164."
+        },
+        {
+          "raw": "---, 2007b, \"Explanation in Philosophy of Science\", in Kuipers 2007a."
+        },
+        {
+          "raw": "Landauer, Rolf, 1961, \"Irreversibility and heat generation in the computing process\", IBM Journal of Research and Development , 5(3): 183-191. doi:10.1147/rd.53.0183"
+        },
+        {
+          "raw": "---, 1991, \"Information is Physical\", Physics Today , 44(5): 23-29. doi: 10.1063/1.881299"
+        },
+        {
+          "raw": "Langton, Chris G., 1990, \"Computation at the Edge of Chaos: Phase Transitions and Emergent Computation\", Physica D: Nonlinear Phenomena , 42(1-3): 12-37. doi:10.1016/0167-2789(90)90064-V"
+        },
+        {
+          "raw": "Laplace, Pierre Simon, Marquis de, 1814 [1902], A Philosophical Essay on Probabilities , F.W. Truscott and F.L. Emory (trans.), New York: J. Wiley; London: Chapman & Hall."
+        },
+        {
+          "raw": "Lenski, Wolfgang, 2010, \"Information: A Conceptual Investigation\", Information 2010 , 1(2): 74-118. doi:10.3390/info1020074"
+        },
+        {
+          "raw": "Levin, Leonid A., 1973, \"Universal Sequential Search Problems\", Problems of Information Transmission , 9(3): 265-266."
+        },
+        {
+          "raw": "---,1974, \"Laws of Information Conservation (Non-Growth) and Aspects of the Foundation of Probability Theory\", Problems of Information Transmission , 10(3): 206-210."
+        },
+        {
+          "raw": "---, 1984, \"Randomness Conservation Inequalities; Information and Independence in Mathematical Theories\", Information and Control , 61(1): 15-37. doi:10.1016/S0019-9958(84)80060-1"
+        },
+        {
+          "raw": "Li, Ming and Paul Vit&aacute;nyi, 2019, An Introduction to Kolmogorov Complexity and Its Applications , (Texts in Computer Science), New York: Springer New York. doi:10.1007/978-0-387-49820-1"
+        },
+        {
+          "raw": "Lloyd, Seth, 2000, \"Ultimate Physical Limits to Computation\", Nature , 406(6799): 1047-1054. doi:10.1038/35023282"
+        },
+        {
+          "raw": "Lloyd, Seth and Y. Jack Ng, 2004, \"Black Hole Computers\", Scientific American , 291(5): 52-61. doi:10.1038/scientificamerican1104-52"
+        },
+        {
+          "raw": "Locke, John, 1689, An Essay Concerning Human Understanding , J. W. Yolton (ed.), London: Dent; New York: Dutton, 1961. [ Locke 1689 available online ]"
+        },
+        {
+          "raw": "Long, B.R., 2014, \"Information is intrinsically semantic but alethically neutral\", Synthese , 191: 3447-3467. doi:10.1007/s11229-014-0457-7"
+        },
+        {
+          "raw": "---, 2019, \"A Scientific Metaphysics and Ockham's Razor\", Axiomathes , 5: 1-31. doi:10.1007/s10516-019-09430-5"
+        },
+        {
+          "raw": "Lundgren, B., 2019, \"Does semantic information need to be truthful?\", Synthese , 196: 2885-2906. doi:10.1007/s11229-017-1587-5"
+        },
+        {
+          "raw": "Maat, Jaap, 2004, Philosophical Languages in the Seventeenth Century: Dalgarno, Wilkins, Leibniz , The New Synthese Historical Library (Book 54), Springer."
+        },
+        {
+          "raw": "McAllister, James W., 2003, \"Effective Complexity as a Measure of Information Content\", Philosophy of Science , 70(2): 302-307. doi:10.1086/375469"
+        },
+        {
+          "raw": "Mill, John Stuart, 1843, A System of Logic , London."
+        },
+        {
+          "raw": "Montague, Richard, 2008, \"Universal Grammar\", Theoria , 36(3): 373-398. doi:10.1111/j.1755-2567.1970.tb00434.x"
+        },
+        {
+          "raw": "Mugur-Sch&auml;chter, Mioara, 2003, \"Quantum Mechanics Versus a Method of Relativized Conceptualization\", in Quantum Mechanics, Mathematics, Cognition and Action , Mioara Mugur-Sch&auml;chter and Alwyn van der Merwe (eds.), Dordrecht: Springer Netherlands, 109-307. doi:10.1007/0-306-48144-8_7"
+        },
+        {
+          "raw": "Napier, John, 1614, Mirifici Logarithmorum Canonis Descriptio ( The Description of the Wonderful Canon of Logarithms ), Edinburgh: Andre Hart. Translated and annotated by Ian Bruce, www.17centurymaths.com. [ Napier 1614 [Bruce translation] available online ]."
+        },
+        {
+          "raw": "Nielsen, Michael A. and Isaac L. Chuang, 2000, Quantum Computation and Quantum Information , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Nies, Andr&eacute;, 2009, Computability and Randomness , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199230761.001.0001"
+        },
+        {
+          "raw": "Nyquist, H., 1924, \"Certain Factors Affecting Telegraph Speed\", Bell System Technical Journal , 3(2): 324-346. doi:10.1002/j.1538-7305.1924.tb01361.x"
+        },
+        {
+          "raw": "Ong, Walter J., 1958, Ramus, Method, and the Decay of Dialogue, From the Art of Discourse to the Art of Reason , Cambridge MA: Harvard University Press."
+        },
+        {
+          "raw": "Parikh, Rohit and Ramaswamy Ramanujam, 2003, \"A Knowledge Based Semantics of Messages\", Journal of Logic, Language and Information , 12(4): 453-467. doi:10.1023/A:1025007018583"
+        },
+        {
+          "raw": "Peirce, Charles S., 1868, \"Upon Logical Comprehension and Extension\", Proceedings of the American Academy of Arts and Sciences , 7: 416-432. doi:10.2307/20179572"
+        },
+        {
+          "raw": "---, 1886 [1993], \" Letter Peirce to A. Marquand\", Reprinted in Writings of Charles S. Peirce: A Chronological Edition, Volume 5: 1884-1886 , Indianapolis: Indiana University Press, pp. 424-427. See also Arthur W. Burks, 1978, \"Book Review: 'The New Elements of Mathematics' by Charles S. Peirce, Carolyn Eisele (editor)\", Bulletin of the American Mathematical Society , 84(5): 913-919. doi:10.1090/S0002-9904-1978-14533-9"
+        },
+        {
+          "raw": "Popper, Karl, 1934, The Logic of Scientific Discovery , ( Logik der Forschung ), English translation 1959, London: Hutchison. Reprinted 1977."
+        },
+        {
+          "raw": "Putnam, Hilary, 1988, Representation and reality , Cambridge, MA: The MIT Press."
+        },
+        {
+          "raw": "Quine, W.V.O., 1951, \"Main Trends in Recent Philosophy: Two Dogmas of Empiricism\", The Philosophical Review , 60(1): 20-43. Reprinted in his 1953 From a Logical Point of View , Cambridge, MA: Harvard University Press. doi:10.2307/2181906"
+        },
+        {
+          "raw": "Rathmanner, Samuel and Marcus Hutter, 2011, \"A Philosophical Treatise of Universal Induction\", Entropy , 13(6): 1076-1136. doi:10.3390/e13061076"
+        },
+        {
+          "raw": "R&eacute;dei, Mikl&oacute;s and Michael St&ouml;ltzner (eds.), 2001, John von Neumann and the Foundations of Quantum Physics , (Vienna Circle Institute Yearbook, 8), Dordrecht: Kluwer."
+        },
+        {
+          "raw": "R&eacute;nyi, Alfr&eacute;d, 1961, \"On Measures of Entropy and Information\", in Proceedings of the Fourth Berkeley Symposium on Mathematical Statistics and Probability, Volume 1: Contributions to the Theory of Statistics , Berkeley, CA: The Regents of the University of California, pp. 547-561. [ R&eacute;nyi 1961 available online ]"
+        },
+        {
+          "raw": "Rissanen, J., 1978, \"Modeling by Shortest Data Description\", Automatica , 14(5): 465-471. doi:10.1016/0005-1098(78)90005-5"
+        },
+        {
+          "raw": "---, 1989, Stochastic Complexity in Statistical Inquiry , (World Scientific Series in Computer Science, 15), Singapore: World Scientific."
+        },
+        {
+          "raw": "Rooy, Robert van, 2004, \"Signalling Games Select Horn Strategies\", Linguistics and Philosophy , 27(4): 493-527. doi:10.1023/B:LING.0000024403.88733.3f"
+        },
+        {
+          "raw": "Russell, Bertrand, 1905, \"On Denoting\", Mind , new series, 14(4): 479-493. doi:10.1093/mind/XIV.4.479"
+        },
+        {
+          "raw": "Schmandt-Besserat, Denise, 1992, Before Writing (Volume I: From Counting to Cuneiform), Austin, TX: University of Texas Press."
+        },
+        {
+          "raw": "Schmidhuber, J&uuml;urgen, 1997a, \"Low-Complexity Art\", Leonardo , 30(2): 97-103. doi:10.2307/1576418"
+        },
+        {
+          "raw": "---, 1997b, \"A Computer Scientist's View of Life, the Universe, and Everything\", in Foundations of Computer Science , (Lecture Notes in Computer Science, 1337), Christian Freksa, Matthias Jantzen, and R&uuml;diger Valk (eds.), Berlin, Heidelberg: Springer Berlin Heidelberg, 201-208. doi:10.1007/BFb0052088"
+        },
+        {
+          "raw": "Schnelle, H., 1976, \"Information\", in Joachim Ritter (ed.), Historisches W&ouml;rterbuch der Philosophie , IV [Historical dictionary of philosophy, IV] (pp. 116-117). Stuttgart, Germany: Schwabe."
+        },
+        {
+          "raw": "Searle, John R., 1990, \"Is the Brain a Digital Computer?\", Proceedings and Addresses of the American Philosophical Association , 64(3): 21-37. doi:10.2307/3130074"
+        },
+        {
+          "raw": "Seiffert, Helmut, 1968, Information &uuml;ber die Information [Information about information] Munich: Beck."
+        },
+        {
+          "raw": "Shannon, Claude E., 1948, \"A Mathematical Theory of Communication\", Bell System Technical Journal , 27(3): 379-423 & 27(4): 623-656. doi:10.1002/j.1538-7305.1948.tb01338.x & doi:10.1002/j.1538-7305.1948.tb00917.x"
+        },
+        {
+          "raw": "Shannon, Claude E. and Warren Weaver, 1949, The Mathematical Theory of Communication , Urbana, IL: University of Illinois Press."
+        },
+        {
+          "raw": "Shor, Peter W., 1997, \"Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer\", SIAM Journal on Computing , 26(5): 1484-1509. doi:10.1137/S0097539795293172"
+        },
+        {
+          "raw": "Simon, J.C. and Olivier Dubois, 1989, \"Number of Solutions of Satisfiability Instances - Applications to Knowledge Bases\", International Journal of Pattern Recognition and Artificial Intelligence , 3(1): 53-65. doi:10.1142/S0218001489000061"
+        },
+        {
+          "raw": "Simondon, Gilbert, 1989, L'individuation Psychique et Collective: &Agrave; La Lumi&egrave;re des Notions de Forme, Information, Potentiel et M&eacute;tastabilit&eacute; (L'Invention Philosophique) , Paris: Aubier."
+        },
+        {
+          "raw": "Singh, Simon, 1999, The Code Book: The Science of Secrecy from Ancient Egypt to Quantum Cryptography , New York: Anchor Books."
+        },
+        {
+          "raw": "Solomonoff, R. J., 1960, \"A Preliminary Report on a General Theory of Inductive Inference\". Report ZTB-138, Cambridge, MA: Zator. [ Solomonoff 1960 available online ]"
+        },
+        {
+          "raw": "---, 1964a, \"A Formal Theory of Inductive Inference. Part I\", Information and Control , 7(1): 1-22. doi:10.1016/S0019-9958(64)90223-2"
+        },
+        {
+          "raw": "---, 1964b, \"A Formal Theory of Inductive Inference. Part II\", Information and Control , 7(2): 224-254. doi:10.1016/S0019-9958(64)90131-7"
+        },
+        {
+          "raw": "---, 1997, \"The Discovery of Algorithmic Probability\", Journal of Computer and System Sciences , 55(1): 73-88. doi:10.1006/jcss.1997.1500"
+        },
+        {
+          "raw": "Stalnaker, Richard, 1984, Inquiry , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Stifel, Michael, 1544, Arithmetica integra , Nuremberg: Johan Petreium."
+        },
+        {
+          "raw": "Tarski, Alfred, 1944, \"The Semantic Conception of Truth: And the Foundations of Semantics\", Philosophy and Phenomenological Research , 4(3): 341-376. doi:10.2307/2102968"
+        },
+        {
+          "raw": "Tsallis, Constantino, 1988, \"Possible Generalization of Boltzmann-Gibbs Statistics\", Journal of Statistical Physics , 52(1-2): 479-487. doi:10.1007/BF01016429"
+        },
+        {
+          "raw": "Turing, A. M., 1937, \"On Computable Numbers, with an Application to the Entscheidungsproblem\", Proceedings of the London Mathematical Society , s2-42(1): 230-265. doi:10.1112/plms/s2-42.1.230"
+        },
+        {
+          "raw": "Valiant, Leslie G., 2009, \"Evolvability\", Journal of the ACM , 56(1): Article 3. doi:10.1145/1462153.1462156"
+        },
+        {
+          "raw": "van Benthem, Johan F.A.K., 1990, \"Kunstmatige Intelligentie: Een Voortzetting van de Filosofie met Andere Middelen\", Algemeen Nederlands Tijdschrift voor Wijsbegeerte , 82: 83-100."
+        },
+        {
+          "raw": "---, 2006, \"Epistemic Logic and Epistemology: The State of Their Affairs\", Philosophical Studies , 128(1): 49-76. doi:10.1007/s11098-005-4052-0"
+        },
+        {
+          "raw": "van Benthem, Johan and Robert van Rooy, 2003, \"Connecting the Different Faces of Information\", Journal of Logic, Language and Information , 12(4): 375-379. doi:10.1023/A:1025026116766"
+        },
+        {
+          "raw": "van Peursen, Cornelis Anthonie, 1987, \"Christian Wolff's Philosophy of Contingent Reality\", Journal of the History of Philosophy , 25(1): 69-82. doi:10.1353/hph.1987.0005"
+        },
+        {
+          "raw": "van Rooij, Robert, 2003, \"Questioning to resolve decision problems\", Linguistics and Philosophy , 26: 727-763."
+        },
+        {
+          "raw": "Vereshchagin, Nikolai K. and Paul M.B. Vit&aacute;nyi, 2004, \"Kolmogorov's Structure Functions and Model Selection\", IEEE Transactions on Information Theory , 50(12): 3265-3290. doi:10.1109/TIT.2004.838346"
+        },
+        {
+          "raw": "Verlinde, Erik, 2011, \"On the Origin of Gravity and the Laws of Newton\", Journal of High Energy Physics , 2011(4). doi:10.1007/JHEP04(2011)029"
+        },
+        {
+          "raw": "---, 2017, \"Emergent Gravity and the Dark Universe\", SciPost Physics , 2(3): 016. doi:10.21468/SciPostPhys.2.3.016"
+        },
+        {
+          "raw": "Vigo, Ronaldo, 2011, \"Representational Information: A New General Notion and Measure of Information\", Information Sciences , 181(21): 4847-4859. doi:10.1016/j.ins.2011.05.020"
+        },
+        {
+          "raw": "---, 2012, \"Complexity over Uncertainty in Generalized Representational Information Theory (GRIT): A Structure-Sensitive General Theory of Information\", Information , 4(1): 1-30. doi:10.3390/info4010001"
+        },
+        {
+          "raw": "Vit&aacute;nyi, Paul M., 2006, \"Meaningful Information\", IEEE Transactions on Information Theory , 52(10): 4617-4626. doi:10.1109/TIT.2006.881729 [ Vit&aacute;nyi 2006 available online ]."
+        },
+        {
+          "raw": "Vogel, Cornelia Johanna de, 1968, Plato: De filosoof van het transcendente , Baarn: Het Wereldvenster."
+        },
+        {
+          "raw": "Von Neumann, John, 1932, Mathematische Grundlagen der Quantenmechanik , Berlin: Springer."
+        },
+        {
+          "raw": "Wallace, C. S., 2005, Statistical and Inductive Inference by Minimum Message Length , Berlin: Springer. doi:10.1007/0-387-27656-4"
+        },
+        {
+          "raw": "Wheeler, John Archibald, 1990, \"Information, Physics, Quantum: The Search for Links\", in Complexity, Entropy and the Physics of Information , Wojciech H. Zurek (ed.), Boulder, CO: Westview Press, 309-336. [ Wheeler 1990 available online ]"
+        },
+        {
+          "raw": "Whitehead, Alfred and Bertrand Russell, 1910, 1912, 1913, Principia Mathematica , 3 vols, Cambridge: Cambridge University Press; 2nd edn, 1925 (Vol. 1), 1927 (Vols 2, 3)."
+        },
+        {
+          "raw": "Wilkins, John, 1668, \"An Essay towards a Real Character, and a Philosophical Language\", London. [ Wilkins 1668 available online ]"
+        },
+        {
+          "raw": "Windelband, Wilhelm, 1903, Lehrbuch der Geschichte der Philosophie , T&uuml;bingen: J.C.B. Mohr."
+        },
+        {
+          "raw": "Wolff, J. Gerard, 2006, Unifying Computing and Cognition , Menai Bridge: CognitionResearch.org.uk."
+        },
+        {
+          "raw": "Wolfram, Stephen, 2002, A New Kind of Science , Champaign, IL: Wolfram Media."
+        },
+        {
+          "raw": "Wolpert, David H. and William Macready, 2007, \"Using Self-Dissimilarity to Quantify Complexity\", Complexity , 12(3): 77-85. doi:10.1002/cplx.20165"
+        },
+        {
+          "raw": "Wu, Kun, 2010, \"The Basic Theory of the Philosophy of Information\", in Proceedings of the 4th International Conference on the Foundations of Information Science , Beijing, China, Pp. 21-24."
+        },
+        {
+          "raw": "---, 2016, \"The Interaction and Convergence of the Philosophy and Science of Information\", Philosophies , 1(3): 228-244. doi:10.3390/philosophies1030228"
+        },
+        {
+          "raw": "Zuse, Konrad, 1969, Rechnender Raum , Braunschweig: Friedrich Vieweg & Sohn. Translated as Calculating Space , MIT Technical Translation AZT-70-164-GEMIT, MIT (Proj. MAC), Cambridge, MA, Feb. 1970. English revised by A. German and H. Zenil 2012. [ Zuse 1969 [2012] available online ]"
+        }
+      ],
+      "publishedAt": "2012-10-25T13:00:00.000Z",
+      "revisedAt": "2023-10-31T13:00:00.000Z"
+    }
+  }
+}

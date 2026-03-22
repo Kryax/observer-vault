@@ -1,0 +1,199 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:arxiv/2603.09127v1",
+  "meta": {
+    "title": "Chaotic Dynamics in Multi-LLM Deliberation",
+    "description": "Collective AI systems increasingly rely on multi-LLM deliberation, but their stability under repeated execution remains poorly characterized. We model five-agent LLM committees as random dynamical systems and quantify inter-run sensitivity using an empirical Lyapunov exponent ($\\hatλ$) derived from trajectory divergence in committee mean preferences. Across 12 policy scenarios, a factorial design at $T=0$ identifies two independent routes to instability: role differentiation in homogeneous committees and model heterogeneity in no-role committees. Critically, these effects appear even in the $T=0$ regime where practitioners often expect deterministic behavior. In the HL-01 benchmark, both routes produce elevated divergence ($\\hatλ=0.0541$ and $0.0947$, respectively), while homogeneous no-role committees also remain in a positive-divergence regime ($\\hatλ=0.0221$). The combined mixed+roles condition is less unstable than mixed+no-role ($\\hatλ=0.0519$ vs $0.0947$), showing non-additive interaction. Mechanistically, Chair-role ablation reduces $\\hatλ$ most strongly, and targeted protocol variants that shorten memory windows further attenuate divergence. These results support stability auditing as a core design requirement for multi-LLM governance systems.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T06:38:43.040Z",
+    "dateModified": "2026-03-11T06:38:43.040Z",
+    "datePublished": "2026-03-10T02:59:11.000Z",
+    "keywords": [
+      "cs.AI",
+      "cs.MA"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Collective AI systems increasingly rely on multi-LLM deliberation, but their stability under repeated execution remains poorly characterized. We model five-agent LLM committees as random dynamical systems and quantify inter-run sensitivity using an empirical Lyapunov exponent ($\\hatλ$) derived from trajectory divergence in committee mean preferences. Across 12 policy scenarios, a factorial design at $T=0$ identifies two independent routes to instability: role differentiation in homogeneous committees and model heterogeneity in no-role committees. Critically, these effects appear even in the $T=0$ regime where practitioners often expect deterministic behavior. In the HL-01 benchmark, both routes produce elevated divergence ($\\hatλ=0.0541$ and $0.0947$, respectively), while homogeneous no-role committees also remain in a positive-divergence regime ($\\hatλ=0.0221$). The combined mixed+roles condition is less unstable than mixed+no-role ($\\hatλ=0.0519$ vs $0.0947$), showing non-additive interaction. Mechanistically, Chair-role ablation reduces $\\hatλ$ most strongly, and targeted protocol variants that shorten memory windows further attenuate divergence. These results support stability auditing as a core design requirement for multi-LLM governance systems.",
+    "context": "arXiv categories: cs.AI, cs.MA | Main text: 6 pages, 4 figures; Supplementary Information: 14 pages, 7 supplementary figures",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "machine-learning",
+    "software"
+  ],
+  "validation": {
+    "method": "automated-analysis",
+    "evidence": [
+      {
+        "type": "arxiv-record",
+        "description": "Indexed from arXiv paper 2603.09127v1",
+        "uri": "https://arxiv.org/abs/2603.09127v1"
+      },
+      {
+        "type": "category-classification",
+        "description": "Classified in arXiv categories: cs.AI, cs.MA"
+      },
+      {
+        "type": "submission-recency",
+        "description": "Published 2026-03-10T02:59:11.000Z and last updated 2026-03-10T02:59:11.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T02:59:11.000Z"
+  },
+  "implementation": {
+    "type": "algorithm",
+    "refs": [
+      {
+        "type": "publication",
+        "uri": "https://arxiv.org/abs/2603.09127v1",
+        "description": "arXiv abstract page for 2603.09127v1"
+      },
+      {
+        "type": "publication",
+        "uri": "https://arxiv.org/pdf/2603.09127v1",
+        "description": "arXiv PDF"
+      }
+    ],
+    "solutionApproach": "Main text: 6 pages, 4 figures; Supplementary Information: 14 pages, 7 supplementary figures"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Hajime Shimao",
+        "type": "human"
+      },
+      {
+        "name": "Warut Khern-am-nuai",
+        "type": "human"
+      },
+      {
+        "name": "Sung Joo Kim",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "arXiv",
+        "type": "system",
+        "uri": "https://arxiv.org"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://arxiv.org/abs/2603.09127v1",
+      "https://arxiv.org/pdf/2603.09127v1"
+    ],
+    "generatedBy": "ocp-scraper/arxiv-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 39,
+      "validation_diversity": 0.56,
+      "context_breadth": 0.9,
+      "temporal_stability": 0.79,
+      "test_coverage": 0.45,
+      "documentation_quality": 1
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.59
+  },
+  "extensions": {
+    "arxiv": {
+      "id": "2603.09127v1",
+      "source": "arXiv",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "comment": "Main text: 6 pages, 4 figures; Supplementary Information: 14 pages, 7 supplementary figures",
+      "absUrl": "https://arxiv.org/abs/2603.09127v1",
+      "pdfUrl": "https://arxiv.org/pdf/2603.09127v1"
+    }
+  }
+}

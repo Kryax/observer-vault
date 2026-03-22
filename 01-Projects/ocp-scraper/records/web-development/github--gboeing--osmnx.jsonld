@@ -1,0 +1,220 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/gboeing--osmnx",
+  "meta": {
+    "title": "OSMnx",
+    "description": "Download, model, analyze, and visualize street networks and other geospatial features from OpenStreetMap.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:47:06.535Z",
+    "dateModified": "2026-03-11T04:47:06.535Z",
+    "keywords": [
+      "geography",
+      "geospatial",
+      "gis",
+      "mapping",
+      "networks",
+      "networkx",
+      "openstreetmap",
+      "osm",
+      "osmnx",
+      "overpass-api",
+      "python",
+      "routing",
+      "spatial",
+      "spatial-analysis",
+      "spatial-data",
+      "street-networks",
+      "transport",
+      "transportation",
+      "urban",
+      "urban-planning"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "[![PyPI Version](https://badge.fury.io/py/osmnx.svg)](https://pypi.org/project/osmnx/)\n[![PyPI Downloads](https://static.pepy.tech/personalized-badge/osmnx?period=total&units=international_system&left_color=grey&right_color=brightgreen&left_text=downloads)](https://pepy.tech/project/osmnx)\n[![Documentation Status](https://readthedocs.org/projects/osmnx/badge/?version=latest)](https://osmnx.readthedocs.io/)\n[![Build Status](https://github.com/gboeing/osmnx/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/gboeing/osmnx/actions/workflows/ci.yml)\n[![Coverage Status](https://codecov.io/gh/gboeing/osmnx/branch/main/graph/badge.svg)](https://codecov.io/gh/gboeing/osmnx)",
+    "context": "[![PyPI Version](https://badge.fury.io/py/osmnx.svg)](https://pypi.org/project/osmnx/)\n[![PyPI Downloads](https://static.pepy.tech/personalized-badge/osmnx?period=total&units=international_system&left_color=grey&right_color=brightgreen&left_text=downloads)](https://pepy.tech/project/osmnx)\n[![Documentation Status](https://readthedocs.org/projects/osmnx/badge/?version=latest)](https://osmnx.readthedocs.io/)\n[![Build Status](https://github.com/gboeing/osmnx/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/gboeing/osmnx/actions/workflows/ci.yml)\n[![Coverage Status](https://codecov.io/gh/gboeing/osmnx/branch/main/graph/badge.svg)](https://codecov.io/gh/gboeing/osmnx)\n\n**OSMnx** is a Python package to easily download, model, analyze, and visualize street networks and other geospatial features from OpenStreetMap. You can download and model walking, driving, or biking networks with a single line of code then analyze and visualize them. You can just as easily work with urban amenities/points of interest, building footprints, transit stops, elevation data, street orientations, speed/travel time, and routing.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "backend",
+    "data-management",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "5595 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "860 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:47:06.535Z"
+  },
+  "implementation": {
+    "type": "service",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/gboeing/osmnx",
+        "description": "GitHub repository: gboeing/osmnx"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://osmnx.readthedocs.io",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "geopandas",
+        "version": ">=1.0.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/geopandas/"
+      },
+      {
+        "name": "networkx",
+        "version": ">=2.5",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/networkx/"
+      },
+      {
+        "name": "numpy",
+        "version": ">=1.24",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numpy/"
+      },
+      {
+        "name": "pandas",
+        "version": ">=1.5",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pandas/"
+      },
+      {
+        "name": "requests",
+        "version": ">=2.30",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/requests/"
+      },
+      {
+        "name": "shapely",
+        "version": ">=2.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/shapely/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "gboeing",
+        "type": "human",
+        "uri": "https://github.com/gboeing"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 7315,
+      "validation_diversity": 0.66,
+      "context_breadth": 0.69,
+      "temporal_stability": 1,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.53
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.698
+  }
+}

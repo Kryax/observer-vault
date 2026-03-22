@@ -1,0 +1,221 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/halfrost--leetcode-go",
+  "meta": {
+    "title": "LeetCode in Go",
+    "description": "✅ Solutions to LeetCode by Go, 100% test coverage, runtime beats 100% / LeetCode 题解",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T02:59:32.349Z",
+    "dateModified": "2026-03-22T02:59:32.349Z",
+    "keywords": [
+      "acm-icpc",
+      "algo",
+      "algorithm",
+      "algorithm-competitions",
+      "algorithms",
+      "algorithms-and-data-structures",
+      "dynamic-programming",
+      "facebook",
+      "go",
+      "golang",
+      "interview-questions",
+      "leetcode",
+      "leetcode-go",
+      "leetcode-golang",
+      "leetcode-solutions",
+      "math",
+      "pattern"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "[LeetCode Online Judge](https://leetcode.com/) is a website containing many **algorithm questions**. Most of them are real interview questions of **Google, Facebook, LinkedIn, Apple**, etc. and it always help to sharp our algorithm Skills. Level up your coding skills and quickly land a job. This is the best place to expand your knowledge and get prepared for your next interview. This repo shows my solutions in Go with the code style strictly follows the [Google Golang Style Guide](https://github.com/golang/go/wiki/CodeReviewComments). Please feel free to reference and **STAR** to support this repo, thank you!",
+    "context": "[LeetCode Online Judge](https://leetcode.com/) is a website containing many **algorithm questions**. Most of them are real interview questions of **Google, Facebook, LinkedIn, Apple**, etc. and it always help to sharp our algorithm Skills. Level up your coding skills and quickly land a job. This is the best place to expand your knowledge and get prepared for your next interview. This repo shows my solutions in Go with the code style strictly follows the [Google Golang Style Guide](https://github.com/golang/go/wiki/CodeReviewComments). Please feel free to reference and **STAR** to support this repo, thank you!\n\n\n<p align='center'>\n<img src='./logo.png'>\n</p>\n\n![](./website/static/wechat-qr-code.png)\n\n<p align='center'>\n<a href=\"https://github.com/halfrost/leetcode-go/releases/\" rel=\"nofollow\"><img alt=\"GitHub All Releases\" src=\"https://img.shields.io/github/downloads/halfrost/LeetCode-Go/total?label=PDF%20downloads\"></a>\n<img src=\"https://img.shields.io/badge/Total%20Word%20Count-738884-success\">\n<a href=\"https://github.com/halfrost/leetcode-go/actions\" rel=\"nofollow\"><img src=\"https://github.com/halfrost/leetcode-go/workflows/Deploy%20leetcode-cookbook/badge.svg?branch=master\"></a>\n<a href=\"https://travis-ci.org/github/halfrost/LeetCode-Go\" rel=\"nofollow\"><img src=\"https://travis-ci.org/halfrost/LeetCode-Go.svg?branch=master\"></a>\n<a href=\"https://goreportcard.com/report/github.com/halfrost/LeetCode-Go\" rel=\"nofollow\"><img src=\"https://goreportcard.com/badge/github.com/halfrost/LeetCode-Go\"></a>\n<img src=\"https://img.shields.io/badge/runtime%20beats-100%25-success\">\n<a href=\"https://codecov.io/gh/halfrost/LeetCode-Go\"><img src=\"https://codecov.io/gh/halfrost/LeetCode-Go/branch/master/graph/badge.svg\" /></a>\n<!--<img alt=\"GitHub go.mod Go version\" src=\"https://img.shields.io/github/go-mod/go-version/halfrost/LeetCode-Go?color=26C2F0\">-->\n<img alt=\"Support Go version\" src=\"https://img.shields.io/badge/Go-v1.15-26C2F0\">\n<img src=\"https://visitor-badge.laobi.icu/badge?page_id=halfrost.LeetCode-Go\">\n</p>\n\n<p align='center'>\n<a href=\"https://github.com/halfrost/leetcode-go/blob/master/LICENSE\"><img alt=\"GitHub\" src=\"https://img.shields.io/github/license/halfrost/LeetCode-Go?label=License\"></a>\n<img src=\"https://img.shields.io/badge/License-CC-000000.svg\">\n<a href=\"https://leetcode.com/halfrost/\"><img src=\"https://img.shields.io/badge/@halfrost-8751-yellow.svg\">\n<img src=\"https://img.shields.io/badge/language-Golang-26C2F0.svg\">\n<a href=\"https://halfrost.com\"><img src=\"https://img.shields.io/badge/Blog-Halfrost--Field-80d4f9.svg?style=flat\"></a>\n<a href=\"http://weibo.com/halfrost\"><img src=\"https://img.shields.io/badge/weibo-@halfrost-f974ce.svg?style=flat&colorA=f4292e\"></a>\n<a href=\"https://twitter.com/halffrost\"><img src=\"https://img.shields.io/badge/twitter-@halffrost-F8E81C.svg?style=flat&colorA=009df2\"></a>\n<a href=\"https://www.zhihu.com/people/halfrost/activities\"><img src=\"https://img.shields.io/badge/%E7%9F%A5%E4%B9%8E-@halfrost-fd6f32.svg?style=flat&colorA=0083ea\"></a>\n<img src=\"https://img.shields.io/badge/made%20with-=1-blue.svg\">\n<a href=\"https://github.com/halfrost/LeetCode-Go/pulls\"><img src=\"https://img.shields.io/badge/PR-Welcome-brightgreen.svg\"></a>\n</p>\n\n支持 Progressive Web Apps 和 Dark Mode 的题解电子书《LeetCode Cookbook》 <a href=\"https://books.halfrost.com/leetcode/\" rel=\"nofollow\">Online Reading</a>\n\n<p align='center'>\n<a href=\"https://books.halfrost.com/leetcode/\"><img src=\"https://img.halfrost.com/Leetcode/Cookbook_Safari_0.png\"></a>\n<a href=\"https://books.halfrost.com/leetcode/\"><img src=\"https://img.halfrost.com/Leetcode/Cookbook_Chrome_PWA.png\"></a>\n</p>\n\n离线版本的电子书《LeetCode Cookbook》PDF <a href=\"https://github.com/halfrost/LeetCode-Go/releases/\" rel=\"nofollow\">Download here</a>\n\n<p align='center'>\n<a href=\"https://github.com/halfrost/LeetCode-Go/releases/\"><img src=\"https://img.halfrost.com/Leetcode/Cookbook.png\"></a>\n</p>\n\n通过 iOS / Android 浏览器安装 PWA 版《LeetCode Cookbook》至设备桌面随时学习\n\n<p align='center'>\n<a href=\"https://books.halfrost.com/leetcode/\"><img src=\"https://img.halfrost.com/Leetcode/Cookbook_PWA_iPad.png\"></a>\n<a href=\"https://books.halfrost.com/leetcode/\"><img src=\"https://img.halfrost.com/Leetcode/Cookbook_PWA_iPad_example1__.png\"></a>\n<a href=\"https://books.halfrost.com/leetcode/\"><img src=\"https://img.halfrost.com/Leetcode/Cookbook_PWA_iPad_example2__.png\"></a>\n</p>",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "data-management",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "33812 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "5759 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T02:59:32.349Z"
+  },
+  "implementation": {
+    "type": "algorithm",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/halfrost/LeetCode-Go",
+        "description": "GitHub repository: halfrost/LeetCode-Go"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://books.halfrost.com/leetcode",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "github.com/BurntSushi/toml",
+        "version": "v1.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/BurntSushi/toml"
+      },
+      {
+        "name": "github.com/halfrost/LeetCode-Go/ctl/models",
+        "version": "v0.0.0-20220910225043-e3bb5aff34d0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/halfrost/LeetCode-Go/ctl/models"
+      },
+      {
+        "name": "github.com/halfrost/LeetCode-Go/ctl/util",
+        "version": "v0.0.0-20220910225043-e3bb5aff34d0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/halfrost/LeetCode-Go/ctl/util"
+      },
+      {
+        "name": "github.com/halfrost/LeetCode-Go/structures",
+        "version": "v0.0.0-20220910233101-aa0e2c897b18",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/halfrost/LeetCode-Go/structures"
+      },
+      {
+        "name": "github.com/halfrost/LeetCode-Go/template",
+        "version": "v0.0.0-20220910233504-e2a72e6212ce",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/halfrost/LeetCode-Go/template"
+      },
+      {
+        "name": "github.com/mozillazg/request",
+        "version": "v0.8.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mozillazg/request"
+      },
+      {
+        "name": "github.com/spf13/cobra",
+        "version": "v1.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/cobra"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "halfrost",
+        "type": "human",
+        "uri": "https://github.com/halfrost"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 45330,
+      "validation_diversity": 0.58,
+      "context_breadth": 0.7,
+      "temporal_stability": 0.72,
+      "test_coverage": 0.83,
+      "documentation_quality": 0.6
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.76
+  }
+}

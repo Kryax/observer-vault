@@ -1,0 +1,890 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/perception-problem",
+  "meta": {
+    "title": "The Problem of Perception",
+    "description": "The Problem of Perception is a pervasive and traditional problem about our ordinary conception of perceptual experience. The problem is created by the phenomena of perceptual illusion and hallucination: if these kinds of error are possible, how can perceptual experience be what we ordinarily understand it to be: something that enables direct perception of the world? These possibilities of error challenge the intelligibility of our ordinary conception of perceptual experience; the major theories of experience are responses to this challenge.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T03:07:34.627Z",
+    "dateModified": "2026-03-22T03:07:34.627Z",
+    "datePublished": "2005-03-07T13:00:00.000Z",
+    "keywords": [
+      "brentano",
+      "color",
+      "consciousness",
+      "consciousness intentionality",
+      "consciousness representational",
+      "intensional trans verbs",
+      "intentionality",
+      "mental representation",
+      "perception contents",
+      "perception disjunctive",
+      "perception episprob",
+      "phenomenology",
+      "qualia",
+      "qualia inverted",
+      "sense data"
+    ]
+  },
+  "problemSolved": {
+    "statement": "The Problem of Perception is a pervasive and traditional problem about our ordinary conception of perceptual experience. The problem is created by the phenomena of perceptual illusion and hallucination: if these kinds of error are possible, how can perceptual experience be what we ordinarily understand it to be: something that enables direct perception of the world? These possibilities of error challenge the intelligibility of our ordinary conception of perceptual experience; the major theories of experience are responses to this challenge.",
+    "context": "Opening section: 1. Our Ordinary Conception of Perceptual Experience | Related entries: brentano, color, consciousness, consciousness-intentionality, consciousness-representational, intensional-trans-verbs, intentionality, mental-representation, perception-episprob, perception-contents, perception-disjunctive, phenomenology, qualia, qualia-inverted, sense-data",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "mind"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry perception-problem",
+        "uri": "https://plato.stanford.edu/entries/perception-problem/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "2 author(s), 15 related entries, bibliography size 202"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2005-03-07T13:00:00.000Z and revised 2021-08-17T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2021-08-17T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/perception-problem/",
+        "description": "SEP entry for perception-problem"
+      }
+    ],
+    "solutionApproach": "1. Our Ordinary Conception of Perceptual Experience"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/brentano",
+      "ocp:sep/color",
+      "ocp:sep/consciousness",
+      "ocp:sep/consciousness-intentionality",
+      "ocp:sep/consciousness-representational",
+      "ocp:sep/intensional-trans-verbs",
+      "ocp:sep/intentionality",
+      "ocp:sep/mental-representation",
+      "ocp:sep/perception-episprob",
+      "ocp:sep/perception-contents",
+      "ocp:sep/perception-disjunctive",
+      "ocp:sep/phenomenology",
+      "ocp:sep/qualia",
+      "ocp:sep/qualia-inverted",
+      "ocp:sep/sense-data"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Crane, Tim",
+        "type": "human"
+      },
+      {
+        "name": "French, Craig",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/perception-problem/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 141,
+      "validation_diversity": 0.6,
+      "context_breadth": 0.52,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.93
+    },
+    "confidence": "proven",
+    "authority": "high",
+    "status": "draft",
+    "trustScore": 0.636
+  },
+  "extensions": {
+    "sep": {
+      "slug": "perception-problem",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/perception-problem/",
+      "preamble": "The Problem of Perception is a pervasive and traditional problem about our ordinary conception of perceptual experience. The problem is created by the phenomena of perceptual illusion and hallucination: if these kinds of error are possible, how can perceptual experience be what we ordinarily understand it to be: something that enables direct perception of the world? These possibilities of error challenge the intelligibility of our ordinary conception of perceptual experience; the major theories of experience are responses to this challenge.",
+      "firstSectionTitle": "1. Our Ordinary Conception of Perceptual Experience",
+      "firstSectionText": "A.D. Smith claims that what most authors have in mind in talking about the Problem of Perception is the \"question of whether we can ever directly perceive the physical world\", where \"the physical world\" is understood in a realist way: as having \"an existence that is not in any way dependent upon its being... perceived or thought about\" (2002: 1). The arguments at the heart of the Problem of Perception challenge this direct realist perspective on perceptual experience. But since this perspective is embedded within our ordinary conception of perceptual experience, the problem gets to the heart of our ordinary ways of thinking. So, what is our ordinary conception of perceptual experience? And how does it embed a direct realist perspective? We conceive of perceptual experiences as occurrences with phenomenal character. The phenomenal character of an experience is what it is like for a subject to undergo it (Nagel (1974)). Our ordinary conception of perceptual experience emerges from first-personal reflection on its character, rather than from scientific investigation; it is a conception of experience from a \"purely phenomenological point of view\" (Broad 1952: 3-4). We'll present this conception by outlining what phenomenological reflection suggests first about the objects ( &sect;1.2 ), structure ( &sect;1.3 ), and character ( &sect;1.5 ) of experience, and then about the relation between veridical, illusory, and hallucinatory experiences, and in particular whether these cases form a common kind ( &sect;1.6 ). Let's begin with P.F. Strawson's idea that \"mature sensible experience (in general) presents itself as, in Kantian phrase, an immediate consciousness of the existence of things outside us\" (1979: 97), and similarly McDowell's idea that perceptual experience appears to be an \"openness to the world\" (1994: 111), conceived of as openness to mind-independent reality (1994: 25-26). These ideas reflect the basic phenomenological observation that perceptual experiences have objects, and more specifically direct objects: objects that are simply perceived or experienced, but not in virtue of the perception or experience of distinct, more \"immediate\", objects. Various authors appeal to a notion of directness in outlining our ordinary conception of perceptual experience, and the Problem of Perception. A dissenting voice is Austin (1962), and for recent critical discussion see Martin (2017). For further discussion of how to understand notions of direct and indirect perception, see Jackson (1977), Snowdon (1992), Foster (2000), Smith (2002), and Martin (2005). This starting point gives rise to the following questions (cf. Martin 1998: 176): Let's turn to the answers to these questions suggested by Strawson and McDowell's remarks (for a more critical stance on these remarks see Mackie (2020)). Strawson begins his argument by asking how someone might typically respond to a request for a description of their current visual experience. He says that it is natural to give the following kind of answer: \"I see the red light of the setting sun filtering through the black and thickly clustered branches of the elms; I see the dappled deer grazing in groups on the vivid green grass&hellip;\" (1979: 97). There are two ideas implicit in this answer. First, the description talks about objects which are things distinct from experience. Second, the description is \"rich\", describing the nature of the experience not merely in terms of simple shapes and colours; but in terms of the familiar things we encounter in the \"lived world\" in all their complexity (see also Heidegger (1977: 156)). So, we can highlight the following answer to the Objects Question: There are three things to clarify about this. First, it incorporates realism in that it appeals to the notion of a mind-independent object of experience: one that doesn't depend for its existence upon experience. Second, it concerns familiar or ordinary objects, things that we admit as part of common-sense ontology. Third, \"object of experience\" is understood broadly to encompass perceptible entities in mind-independent reality including ordinary material objects, but also features and other entities (e.g., events, quantities of stuff). When we talk of \"ordinary objects\", \"the world\" etc, we take this as shorthand for: familiar or ordinary mind-independent perceptible entities. Some writers have defended a thesis known as the transparency of experience (see Harman (1990); Speaks (2009); Tye (1992, 1995, 2000); Thau (2002); and for critical discussions, Martin (2002a), Smith (2008), Stoljar (2004) and Soteriou (2013)). Transparency is normally defined as the thesis that introspecting what it is like for a subject to have an experience does not reveal awareness of experiences themselves, but only of their mind-independent objects. There are two claims here: (i) introspection reveals the mind-independent objects of experience, and (ii) introspection does not reveal any features of anything else. Transparency is similar to Ordinary Objects . The latter claim does involve something like (i). But it does not involve (ii). And it is not obvious that (ii) is part of our ordinary conception of perceptual experience. After all, we readily admit that an ordinary scene (e.g., a snow-covered churchyard) can look very different when one removes one's glasses: one's visual experience then becomes blurred. But this phenomenal difference does not seem to derive from any apparent difference in the objects of experience. Rather, it seems to be a difference in the way in which those objects are experienced. (See Tye (2000) and Gow (2019) for different responses. For further discussion, see Crane (2000), Smith (2008), Allen (2013), and French (2014). For a different challenge to (ii) and its ilk see Richardson (2010) and Soteriou (2013: Chapter 5), and French (2018)). What, then, about the Structure Question? Strawson speaks of the manner in which we directly experience objects as a matter of \"immediate consciousness\", and McDowell talks of our \"openness\" to objects. Other notions commonly invoked here include the idea that we are directly \"acquainted\" with objects, we directly \"apprehend\" them, they are \"given\" to us, or directly \"present to the mind\". What these notions all aim to capture is the intuitive idea that perceptual experience of an object involves a special intimate perceptual relation to an object, a relation which differentiates perceptual experiences from non-perceptual states of mind which are similarly directed on the world (e.g., non-sensory, non-perceptual thoughts). One function of this relation is to make objects present in such a way that they can shape or mould the character of one's experience. In virtue of this, perceptions of the world are unlike (non-perceptual) thoughts about the world: they are constrained by the objects actually given. One's perception of a snow-covered churchyard is responsive to how the churchyard is now, as one is perceiving it. But one's (non-perceptual) thought need not be: in the middle of winter, one can imagine the churchyard as it is in spring, and one can think of it in all sorts of ways which are not the ways it presently is. In what follows we will use the notion of perceptual presentation to capture this perceptual relation. We can thus highlight the following answer to the structure question: In what follows, we use \"direct presentation\" for short. Putting the pieces together, our ordinary conception of perceptual experience involves: If direct perceptual presentation of an ordinary object is a way of directly perceiving it, then this gives us: We can now shed light on the phenomenal character of perceptual experience. Consider, then, the following question: We began with the basic phenomenological observation that perceptual experiences are directly of things. A similarly basic observation is that what it is like for us to experience is at least partly a matter of such things appearing certain ways to us. When we reflect upon what determines what it is like to have an experience, we naturally begin with what is presented to us, and how it is presented. This is why it is so natural for Strawson to describe his experience in terms of what he perceives, and for Martin to say that \"our awareness of what an experience is like is inextricably bound up with knowledge of what is presented to one in having such experience\" (1998: 173). Further, when we reflect upon what determines what it is like for us to experience, we naturally begin with the ordinary objects that are presented to us, and how they are presented or appear. This is why it is so natural for Strawson to describe his experience in terms of such objects, and why many find (at least component (i) of) Transparency intuitive. So, we can highlight the following answer to the Character Question: Perceptual experiences are not just veridical experiences: there are illusions and hallucinations too. What does phenomenological reflection say about how these cases relate to each other? More specifically: In the context of the Problem of Perception, these cases are usually distinguished as follows: a veridical experience is an experience in which an ordinary object is perceived, and where the object appears as it is; an illusory experience is an experience in which an ordinary object is perceived, and where the object appears other than it is; a hallucination is an experience which seems to the subject exactly like a veridical perception of an ordinary object but where there is no such perceived or presented object. (For illusions and hallucinations which don't fit these forms, see Johnston (2011), and Batty and Macpherson (2016)). Clearly, there are differences between these categories, but from a phenomenological point of view, these experiences seem the same in at least this sense: for any veridical perception of an ordinary object, we can imagine a corresponding illusion or hallucination which cannot be told apart or distinguished, by introspection, from the veridical perception. This suggests the following answer to the Common Kind Question: Thus, a veridical, illusory, and hallucinatory experience, all alike in being experiences (as) of a churchyard covered in white snow, are not merely superficially similar, they are fundamentally the same: these experiences have the same nature, fundamentally the same kind of experiential event is occurring in each case. Any differences between them are external to their nature as experiences (e.g., to do with how they are caused).",
+      "relatedEntries": [
+        "brentano",
+        "color",
+        "consciousness",
+        "consciousness-intentionality",
+        "consciousness-representational",
+        "intensional-trans-verbs",
+        "intentionality",
+        "mental-representation",
+        "perception-episprob",
+        "perception-contents",
+        "perception-disjunctive",
+        "phenomenology",
+        "qualia",
+        "qualia-inverted",
+        "sense-data"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "brentano"
+        },
+        {
+          "slug": "color"
+        },
+        {
+          "slug": "consciousness"
+        },
+        {
+          "slug": "consciousness-intentionality"
+        },
+        {
+          "slug": "consciousness-representational"
+        },
+        {
+          "slug": "intensional-trans-verbs"
+        },
+        {
+          "slug": "intentionality"
+        },
+        {
+          "slug": "mental-representation"
+        },
+        {
+          "slug": "perception-episprob"
+        },
+        {
+          "slug": "perception-contents"
+        },
+        {
+          "slug": "perception-disjunctive"
+        },
+        {
+          "slug": "phenomenology"
+        },
+        {
+          "slug": "qualia"
+        },
+        {
+          "slug": "qualia-inverted"
+        },
+        {
+          "slug": "sense-data"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 202,
+      "bibliography": [
+        {
+          "raw": "Allen, Keith, 2015, \"Hallucination and Imagination\", Australasian Journal of Philosophy , 93: 287-302."
+        },
+        {
+          "raw": "Ali, Rami, 2018, \"Does Hallucinating Involve Perceiving\", Philosophical Studies , 175: 601-627."
+        },
+        {
+          "raw": "Anscombe, G.E.M., 1965, \"The Intentionality of Sensation: a Grammatical Feature\", in R.J. Butler (ed.), Analytical Philosophy: First Series , 143-58, Oxford: Blackwell. [Reprinted in her Metaphysics and the Philosophy of Mind: Collected Papers, Vol. II . Oxford: Blackwell; also in No&euml; and Thompson (eds.) 2002]."
+        },
+        {
+          "raw": "Antony, Louise, 2011, \"The Openness of Illusions\", Philosophical Issues , 21: 25-44."
+        },
+        {
+          "raw": "Armstrong, D.M., 1968, A Materialist Theory of the Mind , London: Routledge and Kegan Paul."
+        },
+        {
+          "raw": "Austin, J.L., 1962, Sense and Sensibilia , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Barnes, W.H.F., 1944-45, \"The Myth of Sense-Data\", Proceedings of the Aristotelian Society , 45: 89-117."
+        },
+        {
+          "raw": "Batty, Clare, 2011, \"Smelling Lessons\", Philosophical Studies , 153: 171-164."
+        },
+        {
+          "raw": "Batty, Clare, and Macpherson, Fiona, (2016), \"Redefining Illusion and Hallucination in Light of New Cases\", Philosophical Issues , 26: 263-296."
+        },
+        {
+          "raw": "Block, Ned, 1997, \"Inverted Earth\", in Ned Block, Owen Flanagan and G&uuml;ven G&uuml;zeldere (eds.), The Nature of Consciousness , 677-94, Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 2004, \"Mental Paint\", in Martin Hahn and Bj&oslash;rn Ramberg (eds.) Reflections and Replies: 10 Essays on the Philosophy of Tyler Burge , 165-201, Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 2007, \"Wittgenstein and Qualia\", Philosophical Perspectives , 21: 73-115."
+        },
+        {
+          "raw": "---, 2010, \"Attention and Mental Paint\", Philosophical Issues , 20: 23-63."
+        },
+        {
+          "raw": "Breckenridge, Wylie, 2018, Visual Experience: A Semantic Approach , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Brewer, Bill, 2000, Perception and Reason , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2008, \"How to Account for Illusion\", in Haddock and Macpherson (eds.) 2008."
+        },
+        {
+          "raw": "---, 2011, Perception and its Objects , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Broad, C. D., 1923, Scientific Thought , London: Kegan Paul, Trench, Trubner & Co."
+        },
+        {
+          "raw": "---, 1952, \"Some Elementary Reflexions on Sense-Perception\", Philosophy , 27: 3-17."
+        },
+        {
+          "raw": "---, 1965, \"The Theory of Sensa\", in Swartz (ed.) 1965, 85-129 [edited selection from Broad 1923]."
+        },
+        {
+          "raw": "Brogaard, Berit (ed.), 2014, Does Perception Have Content? , New York: Oxford University Press."
+        },
+        {
+          "raw": "Burge, Tyler, 1991, \"Vision and Intentional Content\", in E. LePore and R. Van Gulick (eds.) John Searle and his Critics , 195-214, Oxford: Blackwell."
+        },
+        {
+          "raw": "---, 2005, \"Disjunctivism and Perceptual Psychology\", Philosophical Topics , 33: 1-78."
+        },
+        {
+          "raw": "Burnyeat, Myles, 1979, \"Conflicting Appearances\", Proceedings of the British Academy , 65: 69-111."
+        },
+        {
+          "raw": "Butchvarov, Panayot, 1980, \"Adverbial Theories of Consciousness\", Midwest Studies in Philosophy , 5: 261-80."
+        },
+        {
+          "raw": "Byrne, Alex 2001, \"Intentionalism Defended\", Philosophical Review , 110: 199-240."
+        },
+        {
+          "raw": "---, forthcoming, \"Concepts, Beliefs and Perception\", in C. Demmerling & D. Schr&ouml;der (eds.), Concepts in Thought, Action, and Emotion: New Essays , New York: Routledge."
+        },
+        {
+          "raw": "Byrne, Alex, and Logue, Heather, 2008, \"Either/Or\", in Haddock and Macpherson (eds.), 57-94."
+        },
+        {
+          "raw": "--- (eds.), 2009, Disjunctivism , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Campbell, John, 2002, Reference and Consciousness , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2009, \"Consciousness and Reference\", in McLaughlin et al (eds.) 2009."
+        },
+        {
+          "raw": "---, 2014, Berkeley's Puzzle (with Quassim Cassam), Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Chalmers, David, 1996, The Conscious Mind , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2006, \"Perception and the Fall from Eden\", in Gendler and Hawthorne (eds.) 2006, 49-125."
+        },
+        {
+          "raw": "Chisholm, R, 1957, Perceiving: A Philosophical Study , Ithaca: Cornell University Press."
+        },
+        {
+          "raw": "Craig, E.J., 1976, \"Sensory Experience and the Foundations of Knowledge\", Synthese , 33."
+        },
+        {
+          "raw": "Crane, Tim 1998a, \"Content, Non-Conceptual\", in E.J. Craig (ed.), Routledge Encyclopedia of Philosophy , London: Routledge."
+        },
+        {
+          "raw": "---, 1998b, \"Intentionality\", in E.J. Craig (ed.), Routledge Encyclopedia of Philosophy , London: Routledge."
+        },
+        {
+          "raw": "---, 2000, \"Introspection, Intentionality, and the Transparency of Experience\", Philosophical Topics , 28: 49-67."
+        },
+        {
+          "raw": "---, 2001, Elements of Mind , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2006, \"Is there a Perceptual Relation?\", in Gendler and Hawthorne (eds.) 2006, 126-46."
+        },
+        {
+          "raw": "---, 2009, \"Is Perception a Propositional Attitude?\", Philosophical Quarterly , 59: 452-69."
+        },
+        {
+          "raw": "---, (ed.) 1992, The Contents of Experience , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Crane, Tim and Sarah Patterson (eds.) 2000, History of the Mind-Body Problem , London: Routledge."
+        },
+        {
+          "raw": "Crane, Tim and Katalin Farkas (eds.) 2004, Metaphysics: a Guide and Anthology , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Crowther, Tom, 2006, \"Two Conceptions of Conceptualism and Nonconceptualism\", Erkenntnis , 65: 245-276."
+        },
+        {
+          "raw": "---, 2009, \"Watching, Sight, and the Temporal Shape of Perceptual Activity\", Philosophical Review , 118: 1-27."
+        },
+        {
+          "raw": "Cussins, Adrian, 1990, \"The Connectionist Construction of Concepts\", in M. Boden (ed.) The Philosophy of Artificial Intelligence , 368-440, Oxford: Oxford University Press."
+        },
+        {
+          "raw": "D'Ambrosio, Justin, 2019, \"A New Perceptual Adverbialism\", The Journal of Philosophy , 116: 413-446."
+        },
+        {
+          "raw": "Dancy, Jonathan (ed.) 1988, Perceptual Knowledge , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 1995, \"Arguments from Illusion\", The Philosophical Quarterly , 45: 421-38."
+        },
+        {
+          "raw": "Davies, M. 1992 \"Perceptual Content and Local Supervenience\", Proceedings of the Aristotelian Society 92: 21-45."
+        },
+        {
+          "raw": "Dennett, Daniel, 1991, Consciousness Explained , New York: Little, Brown."
+        },
+        {
+          "raw": "Dretske, Fred, 1969, Seeing and Knowing , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "---, 1981, Knowledge and the Flow of Information , Oxford: Blackwell."
+        },
+        {
+          "raw": "---, 1995, Naturalizing the Mind Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Ducasse, C.J., 1942. \"Moore's Refutation of Idealism\", in P.Schilpp (ed.) The Philosophy of G.E. Moore , 223-52, Chicago: Northwestern University Press."
+        },
+        {
+          "raw": "Egan, Andy, 2006, \"Appearance Properties?\", No&uuml;s , 40 3:495-521."
+        },
+        {
+          "raw": "Evans, Gareth, 1982, The Varieties of Reference , Oxford: Clarendon Press"
+        },
+        {
+          "raw": "Farkas, Katalin, 2006, \"Indiscriminability and the Sameness of Appearance\", Proceedings of the Aristotelian Society 106: 39-59."
+        },
+        {
+          "raw": "Fish, William, 2009, Perception, Hallucination, and Illusion , New York: Oxford University Press."
+        },
+        {
+          "raw": "---, 2010, Philosophy of Perception: A Contemporary Introduction , New York: Routledge."
+        },
+        {
+          "raw": "Foster, John, 2000, The Nature of Perception , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "French, Craig, 2014, \"Naive Realist Perspectives on Seeing Blurrily\", Ratio , 27: 393-413."
+        },
+        {
+          "raw": "---, 2018, \"Na&iuml;ve Realism and Diaphaneity\", Proceedings of the Aristotelian Society , 118: 149-175."
+        },
+        {
+          "raw": "French, Craig, and Walters, Lee, 2018, \"The Invalidity of the Argument from Illusion\", American Philosophical Quarterly , 54: 357-364."
+        },
+        {
+          "raw": "French, Craig, and Phillips, Ian, 2020, \"Austerity and Illusion\", Philosophers' Imprint , 20(15): 1-19."
+        },
+        {
+          "raw": "Fulkerson, Matthew, 2014, The First Sense: A Philosophical Study of Human Touch Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Gendler, Tamar Szab&oacute; and John Hawthorne, eds., 2006, Perceptual Experience , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Genone, James, 2014, \"Appearance and Illusion\", Mind , 123: 339-376."
+        },
+        {
+          "raw": "Gl&uuml;er, Kathrin, 2009, \"In Defence of a Doxastic Account of Experience\", Mind and Language, 24: 297-327."
+        },
+        {
+          "raw": "Gow, Laura, 2019, \"Everything is Clear: All Perceptual Experiences are Transparent\", European Journal of Philosophy , 27: 412-425."
+        },
+        {
+          "raw": "Grice, H.P., 1961, \"The Causal Theory of Perception\", Proceedings of the Aristotelian Society Supplementary Volume 35: 121-52. Selection reprinted in Dancy 1988."
+        },
+        {
+          "raw": "Gunther, York (ed.), 2002, Essays on Non-Conceptual Content , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Guttenplan, Samuel (ed.), 1995, A Companion to the Philosophy of Mind , Oxford: Blackwell."
+        },
+        {
+          "raw": "Haddock, Adrian and Macpherson, Fiona, (eds.) 2008, Disjunctivism: Perception, Action, Knowledge , Oxford University Press."
+        },
+        {
+          "raw": "Harman, Gilbert, 1990, \"The Intrinsic Quality of Experience\", in J. Tomberlin ed. Philosophical Perspectives , 31-52, 4 Atascadero: Ridgeview 1990, reprinted in Ned Block, Owen Flanagan and Guven G&uuml;zeldere eds. The Nature of Consciousness , 663-76, Cambridge, Mass.: MIT Press 1997."
+        },
+        {
+          "raw": "Heck, Richard, 2000, \"Non-conceptual Content and the Space of Reasons\", Philosophical Review , 109: 483-523."
+        },
+        {
+          "raw": "Heidegger, Martin, \"The Origin of the Work of Art\", translated by David Farrell Krell, in Martin Heidegger: Basic Writings , New York: Harper and Row 1977."
+        },
+        {
+          "raw": "Hellie, Benj, 2013, \"The Mulitdisjunctive Conception of Hallucination\", in Macpherson and Platchias (eds.) 2013."
+        },
+        {
+          "raw": "Hilbert, David R. and Mark Eli Kalderon, 2000, \"Color and the Inverted Spectrum\", in S. Davis (ed.) Color Perception: Philosophical, Psychological, Artistic and Computational Perspectives , Vancouver Studies in Cognitive Science Volume 9 New York and Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Hinton, J.M., 1973, Experiences , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Husserl, Edmund, 1900-01, Logical Investigations translated by J.N. Findlay, 2 volumes, revised edition by D. Moran, London: Routledge 2001."
+        },
+        {
+          "raw": "Jackson, Frank, 1975, \"On the Adverbial Analysis of Visual Experience\", Metaphilosophy , 6: 127-135."
+        },
+        {
+          "raw": "---, 1977, Perception: A Representative Theory . Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Jackson, F. and Smith, M, 2005, The Oxford Handbook of Contemporary Philosophy . Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Johnston, Mark, 2004, \"The Obscure Object of Hallucination\", Philosophical Studies , 103: 113-83."
+        },
+        {
+          "raw": "---, 2011, \"On a Neglected Epistemic Virtue\", Philosophical Issues , 21: 165-218."
+        },
+        {
+          "raw": "Kalderon, Mark, 2011, \"Color Illusion\", No&ucirc;s , 45: 751-775."
+        },
+        {
+          "raw": "Kim, Jaegwon, 1993, Supervenience and Mind , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Kriegel, Uriah, 2013, Phenomenal Intentionality , New York: Oxford University Press."
+        },
+        {
+          "raw": "Lewis, C.I., 1929, Mind and the World Order , London: Constable."
+        },
+        {
+          "raw": "Logue, Heather, 2012a, \"Why Naive Realism?\", Proceedings of the Aristotelian Society , 112: 211-237."
+        },
+        {
+          "raw": "---, 2012b, \"What Should the Naive Realist Say About Total Hallucinations?\", Philosophical Perspectives , 26: 173-199."
+        },
+        {
+          "raw": "---, 2013, \"Good News for the Disjunctivist about (one of) the Bad Cases\", Philosophy and Phenomenological Research , 86: 105-133."
+        },
+        {
+          "raw": "Loar, Brian, 2002, \"Transparent Experience\", in A. Jokic and Q.Smith eds. Consciousness: New Philosophical Perspectives , 77-96, Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Lycan, W.G., 1996, Consciousness and Experience Cambridge, Mass.: MIT Press."
+        },
+        {
+          "raw": "---, 1999, Mind and Cognition , Second Edition. Oxford: Blackwell."
+        },
+        {
+          "raw": "Mackie, Penelope, 2020, \"Perception, Mind-Independence, and Berkeley\", Australasian Journal of Philosophy , 98(3): 449-464."
+        },
+        {
+          "raw": "Macpherson, Fiona, 2011, \"Individuating the Senses\", in Macpherson (ed.) 2011a."
+        },
+        {
+          "raw": "---, 2013, \"The Philosophy and Psychology of Hallucination: An Introduction\", in F. Macpherson and D. Platchias 2013, 1-38."
+        },
+        {
+          "raw": "Macpherson, Fiona and Dimitris Platchias, (eds.) 2013, Hallucination , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Marcus, Eric 2006. \"Intentionalism and the Imaginability of the Inverted Spectrum\", Philosophical Quarterly 56: 321-339"
+        },
+        {
+          "raw": "Martin, M.G.F., 1992, \"Sight and Touch\", in Crane (ed.) 1992, 196-215."
+        },
+        {
+          "raw": "---, 1993, \"The Rational Role of Experience\", Proceedings of the Aristotelian Society, 93: 71-88."
+        },
+        {
+          "raw": "---, 1995, \"Perceptual Content\", in Guttenplan (ed.) 1995, 459-62."
+        },
+        {
+          "raw": "---, 1998, \"Setting Things Before the Mind\", in A. O'Hear (ed.) Contemporary Issues in the Philosophy of Mind , 157-80, Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 2000, \"Beyond Dispute: Sense-Data, Intentionality and the Mind-Body Problem\", in Crane and Patterson (eds.) 2000, 195-231."
+        },
+        {
+          "raw": "---, 2002a, \"The Transparency of Experience\", Mind and Language , 17: 376-425."
+        },
+        {
+          "raw": "---, 2002b, \"Particular Thoughts and Singular Thought\", in A. O'Hear (ed.), Logic, Thought, and Language , Cambridge: Cambridge University Press, 173-214."
+        },
+        {
+          "raw": "---, 2004, \"The Limits of Self-Awareness\", Philosophical Studies , 120: 37-89."
+        },
+        {
+          "raw": "---, 2005, \"Perception\" in Jackson and Smith (eds.) 2005, 701-738."
+        },
+        {
+          "raw": "---, 2006, \"On Being Alienated\", in Gendler and Hawthorne (eds.) 2006, 354-410."
+        },
+        {
+          "raw": "---, 2010, \"What's in a Look?\", in B. Nanay (ed.) 2010, 160-225."
+        },
+        {
+          "raw": "---, 2017, \"Elusive Objects\", Topoi , 36: 247-271."
+        },
+        {
+          "raw": "Masrour, Farid, 2020, \"On the Possibility of Hallucinations\", Mind , 129: 737-768."
+        },
+        {
+          "raw": "Matilal, Bimal Krishna, 1986, Perception: An Essay on Classical Indian Theories of Knowledge , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "McCulloch, Greg, 2003, The Life of the Mind , London: Routledge."
+        },
+        {
+          "raw": "McDowell, John, 1982, \"Criteria, Defeasibility & Knowledge\", Proceedings of the British Academy 1982 , 455-79. Reprinted in Dancy (ed.) 1988."
+        },
+        {
+          "raw": "---, 1987, \"Singular Thought and the Extent of Inner Space\", in McDowell and Pettit (eds.) 1987. Reprinted in McDowell 1998."
+        },
+        {
+          "raw": "---, 1994, Mind and World , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "---, 1998, Meaning, Knowledge and Reality , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "---, 2008, \"Avoiding the Myth of the Given\", in Jakob Lindgaard (ed.), John McDowell: Experience, Norm, and Nature, 1-14, Oxford: Blackwell."
+        },
+        {
+          "raw": "McGinn, Colin, 1989, Mental Content , Oxford: Blackwell."
+        },
+        {
+          "raw": "McLaughlin, Brian, A. Beckermann and S. Walter (eds.), 2009, Oxford Handbook to the Philosophy of Mind , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Merleau-Ponty, Maurice, 1945, The Phenomenology of Perception , translated by Colin Smith, London: Routledge 2002."
+        },
+        {
+          "raw": "Millikan, Ruth Garrett, 1987, Language, Thought and Other Biological Categories , Cambridge, Mass.: MIT Press."
+        },
+        {
+          "raw": "Moore, G.E., 1905, \"The Refutation of Idealism\", in Philosophical Studies . London: Routledge & Kegan Paul. Reprinted in Moore 1993, 23-44."
+        },
+        {
+          "raw": "---, 1910, \"Sense Data\", Reprinted in Moore 1993, 45-58."
+        },
+        {
+          "raw": "---, 1993, Selected Writings , edited by Thomas Baldwin London: Routledge."
+        },
+        {
+          "raw": "Moran, Alex, 2019, \"Na&iuml;ve Realism, Hallucination, and Causation: A New Response to the Screening Off Problem\", Australasian Journal of Philosophy , 97: 368-382."
+        },
+        {
+          "raw": "Nagel, Thomas, 1974, \"What is it Like to be a Bat?\", Philosophical Review , 83: 435-50."
+        },
+        {
+          "raw": "Nanay, Bence (ed.), 2010, Perceiving the World . New York: Oxford University Press."
+        },
+        {
+          "raw": "No&euml;, Alva and Evan Thompson (eds.), 2002, Vision and Mind: Selected Readings in the Philosophy of Perception Cambridge, Mass.: MIT Press."
+        },
+        {
+          "raw": "Nudds, Matthew, 2001, \"Experiencing the Production of Sounds\" , European Journal of Philosophy , 9: 210-29."
+        },
+        {
+          "raw": "---, 2003, \"The significance of the senses\", Proceedings of the Aristotelian Society , 104: 31-51."
+        },
+        {
+          "raw": "---, 2009, \"Recent Work in Perception: Na&iuml;ve Realism and its Opponents\", Analysis , 69: 334-6."
+        },
+        {
+          "raw": "---, 2013, \"Naive Realism and Hallucinations\", in Macpherson and Platchias (eds.) 2013."
+        },
+        {
+          "raw": "Nudds, Matthew and O'Callaghan Casey, (eds.) 2009, Sounds and Perception, Oxford: Oxford University Press."
+        },
+        {
+          "raw": "O'Callaghan, Casey, 2007, Sounds: a Philosophical Theory , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2019, A Multisensory Philosophy of Perception , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "O'Shaughnessy, Brian, 1980, The Will: A Dual Aspect Theory , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 1989, \"The Sense of Touch\", Australasian Journal of Philosophy , 67: 37-58."
+        },
+        {
+          "raw": "---, 2000, Consciousness and the World Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2003, \"Sense Data\", in Barry Smith (ed.) John Searle Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Pautz, Adam, 2010, \"Why Explain Experience in Terms of Content?\", in Nanay (ed.) 2010."
+        },
+        {
+          "raw": "---, 2021, Perception , London: Routledge."
+        },
+        {
+          "raw": "Peacocke, Christopher, 1983, Sense and Content , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 1992, A Study of Concepts Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Perkins, Moreland, 1983, Sensing the World , Indianapolis: Hackett."
+        },
+        {
+          "raw": "Pessin, Andrew and Sanford Goldberg, (eds.), 1996, The Twin Earth Chronicles , New York: M.E. Sharpe."
+        },
+        {
+          "raw": "Pettit, Philip and John McDowell (eds.), 1986, Subject, Thought and Context , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Pitcher, George, 1970, A Theory of Perception , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Price, H.H., 1932, Perception . London: Methuen."
+        },
+        {
+          "raw": "Putnam, Hilary, 1999, The Threefold Cord , New York: Columbia University Press."
+        },
+        {
+          "raw": "Raleigh, Thomas, 2014, \"A New Approach to 'Perfect' Hallucination\", Journal of Consciousness Studies , 21: 81-110."
+        },
+        {
+          "raw": "Richardson, Louise, 2010, \"Seeing Empty Space\", European Journal of Philosophy , 18: 227-243."
+        },
+        {
+          "raw": "---, 2013a, \"Sniffing and Smelling\", Philosophical Studies , 162: 401-419."
+        },
+        {
+          "raw": "---, 2013b, \"Flavour, Taste and Smell\", Mind and Language , 28: 322-341."
+        },
+        {
+          "raw": "Robinson, Howard, 1985, \"The General Form of the Argument for Berkeleian Idealism\", in Essays on Berkeley: A Tercentennial Celebration , edited by J. Foster and H. Robinson, 163-86. Oxford: Clarendon Press."
+        },
+        {
+          "raw": "---, 1994, Perception , London: Routledge"
+        },
+        {
+          "raw": "---, 2013, \"The Failure of Disjunctivism to Deal with \"Philosophers' Hallucinations\"\", in Macpherson and Platchias (eds) 2013."
+        },
+        {
+          "raw": "Russell, Bertrand. 1912, The Problems of Philosophy Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Sainsbury, Mark, 2010, \"Intentionality without Exotica\", in Robin Jeshion, (ed.), Singular Thought: New Essays, 300-18, Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Schellenberg, Susanna, 2018, The Unity of Perception: Content, Consciousness, Evidence . Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Searle, John, 1983, Intentionality , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Segal, Gabriel, 1989, \"Seeing What is Not There\", Philosophical Review , 98: 189-214."
+        },
+        {
+          "raw": "Sethi, Umrao, 2020, \"Sensible Overdetermination\", Philosophical Quarterly , 70(280): 588-616."
+        },
+        {
+          "raw": "Shoemaker, Sydney, 1990 \"Qualities and Qualia: What's in the Mind?\", Philosophy and Phenomenological Research 50 (Supplement): 109-31."
+        },
+        {
+          "raw": "---, 1996, \"Color, Subjective Reactions, and Qualia\", in Enrique Villanueva (ed.), Philosophical Issues, 55-66, Atascadero: Ridgeview."
+        },
+        {
+          "raw": "Siegel, Susanna, 2004, \"Indiscriminability and the Phenomenal\", Philosophical Studies , 120: 91-112."
+        },
+        {
+          "raw": "---, 2008, \"The Epistemic Conception of Hallucination\", in Haddock and Macpherson (eds.) 2008."
+        },
+        {
+          "raw": "---, 2010, The Contents of Visual Experience New York: Oxford University Press."
+        },
+        {
+          "raw": "Silins, Nico, 2011, \"Seeing Through the 'Veil of Perception'&thinsp;\", Mind , 120: 329-367."
+        },
+        {
+          "raw": "Smith, A.D., 2002, The Problem of Perception , Cambridge, Mass.: Harvard University Press"
+        },
+        {
+          "raw": "---, 2008, \"Translucent Experiences\", Philosophical Studies , 140: 197-212."
+        },
+        {
+          "raw": "Smith, Barry, C, 2015, \"The Chemical Senses\", in Mohan Matthen (ed.), The Oxford Handbook of the Philosophy of Perception , 314-352, Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Snowdon, P.F., 1979-80, \"Perception, Vision and Causation\", Proceedings of the Aristotelian Society , 81: 175-92."
+        },
+        {
+          "raw": "---, 1990, \"The Objects of Perceptual Experience\", Proceedings of the Aristotelian Society Supplementary Volume , 64: 121-150."
+        },
+        {
+          "raw": "---, 1992, \"How to Interpret 'Direct Perception'\", in Crane 1992, 48-78."
+        },
+        {
+          "raw": "---, 2005, \"Some Reflections on an Argument from Hallucination\", Philosophical Topics 33.1: 285-305."
+        },
+        {
+          "raw": "Soteriou, Matthew, 2000, \"The Particularity of Visual Experience\", European Journal of Philosophy , 8: 173-89."
+        },
+        {
+          "raw": "---, 2013, The Mind's Construction: The Ontology of Mind and Mental Action , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2014, Disjunctivism , London: Routledge."
+        },
+        {
+          "raw": "Speaks, Jeff, 2005, \"Is there a problem about non-conceptual content?\", Philosophical Review , 114: 359-98."
+        },
+        {
+          "raw": "---, 2009, \"Transparency, Intentionalism, and the Nature of Perceptual Content\", Philosophy and Phenomenological Research 79: 539-573."
+        },
+        {
+          "raw": "---, 2015, The Phenomenal and the Representational , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Spener, Maja, 2003, Gilding or Staining the Mind: Phenomenology and the Metaphysics of Visual Experience , PhD thesis, University of London."
+        },
+        {
+          "raw": "Stokes, Dustin, Matthen, Mohan, and Briggs, Stephen (eds.), 2015, Perception and Its Modalities , New York: Oxford University Press."
+        },
+        {
+          "raw": "Strawson, P.F., 1979, \"Perception and its Objects\", in G. Macdonald (ed.) Perception and Identity: Essays Presented to A.J. Ayer with His Replies , London: Macmillan; reprinted in No&euml; and Thompson (eds.) 2002. Page references to reprint."
+        },
+        {
+          "raw": "Stoljar, Daniel, 2004, \"The Argument from Diaphanousness\", in M. Ezcurdia, R. Stainton and C. Viger (eds.) New Essays in the Philosophy of Language and Mind , Canadian Journal of Philosophy (Supplementary Volume), 341-90, Calgary: University of Calgary Press."
+        },
+        {
+          "raw": "Sturgeon, Scott, 2008, \"Disjunctivism about Visual Experience\", in Haddock and Macpherson (eds.) 2008."
+        },
+        {
+          "raw": "Swartz, R.J. 1965, Perceiving, Sensing and Knowing , Los Angeles and Berkeley: University of California Press."
+        },
+        {
+          "raw": "Thau, Michael, 2002, Consciousness and Cognition , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Tye, Michael, 1984, \"The Adverbial Theory of Visual Experience\", Philosophical Review , 93: 195-225."
+        },
+        {
+          "raw": "---, 1992, \"Visual Qualia and Visual Content\", in Crane (ed.) 1992, 158-76."
+        },
+        {
+          "raw": "---, 1995, Ten Problems of Consciousness , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 2000, Consciousness, Color and Content , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Valberg, J.J., 1992, The Puzzle of Experience . Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Zahavi, Dan, 2003, Husserl's Phenomenology Stanford: Stanford University Press."
+        },
+        {
+          "raw": "Any serious attempt to master the literature on the problem of perception should include a reading of Anscombe (1965), Armstrong (1968: Chapter 10), Dretske (1969), Jackson (1977), Martin (2002), Moore (1905), Peacocke (1983: Chapter 1), Robinson (1994), Russell (1912), Smith (2002), Snowdon (1992), Strawson (1979), Tye (1992), and Valberg (1992a). Useful collections: Swartz (1965), Dancy (1988), No&euml; and Thompson (2002), Gendler and Hawthorne (2006), Haddock and Macpherson (2008), Byrne and Logue (2009), Nanay (2010), and Brogaard (2014). Matilal (1986) explores how issues around the Problem of Perception and theories of experience play out in Classical Indian philosophy."
+        },
+        {
+          "raw": "For discussion of how the problem of perception, somewhat differently construed, arises in the senses other than vision, see Perkins (1983). There is much literature on non-visual perception, not all of it addressing the problem of perception, but much of it will be relevant to considering the problem of perception in non-visual modalities: on sounds, see Nudds (2001), O'Callaghan (2007), Nudds and O'Callaghan (2009); on smell, see Batty (2011), Richardson (2013a, 2013b); on touch, see O'Shaughnessy (1989), Martin (1992) and Fulkerson (2014); for the senses in general, see Nudds (2003), Macpherson (2011, 2011a) and Stokes, Matthen, and Briggs (2015)). On multisensory perception, see O'Callaghan (2019)."
+        }
+      ],
+      "publishedAt": "2005-03-07T13:00:00.000Z",
+      "revisedAt": "2021-08-17T14:00:00.000Z"
+    }
+  }
+}

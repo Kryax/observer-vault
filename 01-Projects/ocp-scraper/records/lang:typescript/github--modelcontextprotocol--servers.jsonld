@@ -1,0 +1,184 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/modelcontextprotocol--servers",
+  "meta": {
+    "title": "Model Context Protocol servers",
+    "description": "Model Context Protocol Servers",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T02:49:08.742Z",
+    "dateModified": "2026-03-22T02:49:08.742Z",
+    "keywords": [],
+    "license": "NOASSERTION"
+  },
+  "problemSolved": {
+    "statement": "This repository is a collection of *reference implementations* for the [Model Context Protocol](https://modelcontextprotocol.io/) (MCP), as well as references to community-built servers and additional resources.",
+    "context": "This repository is a collection of *reference implementations* for the [Model Context Protocol](https://modelcontextprotocol.io/) (MCP), as well as references to community-built servers and additional resources.\n\n> [!IMPORTANT]\n> If you are looking for a list of MCP servers, you can browse published servers on [the MCP Registry](https://registry.modelcontextprotocol.io/). The repository served by this README is dedicated to housing just the small number of reference servers maintained by the MCP steering group.\n\n> [!WARNING]\n> The servers in this repository are intended as **reference implementations** to demonstrate MCP features and SDK usage. They are meant to serve as educational examples for developers building their own MCP servers, not as production-ready solutions. Developers should evaluate their own security requirements and implement appropriate safeguards based on their specific threat model and use case.\n\nThe servers in this repository showcase the versatility and extensibility of MCP, demonstrating how it can be used to give Large Language Models (LLMs) secure, controlled access to tools and data sources.\nTypically, each MCP server is implemented with an MCP SDK:\n\n- [C# MCP SDK](https://github.com/modelcontextprotocol/csharp-sdk)\n- [Go MCP SDK](https://github.com/modelcontextprotocol/go-sdk)\n- [Java MCP SDK](https://github.com/modelcontextprotocol/java-sdk)\n- [Kotlin MCP SDK](https://github.com/modelcontextprotocol/kotlin-sdk)\n- [PHP MCP SDK](https://github.com/modelcontextprotocol/php-sdk)\n- [Python MCP SDK](https://github.com/modelcontextprotocol/python-sdk)\n- [Ruby MCP SDK](https://github.com/modelcontextprotocol/ruby-sdk)\n- [Rust MCP SDK](https://github.com/modelcontextprotocol/rust-sdk)\n- [Swift MCP SDK](https://github.com/modelcontextprotocol/swift-sdk)\n- [TypeScript MCP SDK](https://github.com/modelcontextprotocol/typescript-sdk)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:typescript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "81719 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "10011 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T02:49:08.742Z"
+  },
+  "implementation": {
+    "type": "service",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/modelcontextprotocol/servers",
+        "description": "GitHub repository: modelcontextprotocol/servers"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://modelcontextprotocol.io",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "TypeScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "@modelcontextprotocol/server-everything",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@modelcontextprotocol/server-everything"
+      },
+      {
+        "name": "@modelcontextprotocol/server-memory",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@modelcontextprotocol/server-memory"
+      },
+      {
+        "name": "@modelcontextprotocol/server-filesystem",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@modelcontextprotocol/server-filesystem"
+      },
+      {
+        "name": "@modelcontextprotocol/server-sequential-thinking",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@modelcontextprotocol/server-sequential-thinking"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "modelcontextprotocol",
+        "type": "human",
+        "uri": "https://github.com/modelcontextprotocol"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 101741,
+      "validation_diversity": 1,
+      "context_breadth": 0.3,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.6
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.751
+  }
+}

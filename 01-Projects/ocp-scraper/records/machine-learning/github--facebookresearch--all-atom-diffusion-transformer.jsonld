@@ -1,0 +1,167 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/facebookresearch--all-atom-diffusion-transformer",
+  "meta": {
+    "title": "All-atom Diffusion Transformers",
+    "description": "Official implementation of All Atom Diffusion Transformers (ICML 2025)",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:21:32.516Z",
+    "dateModified": "2026-03-11T04:21:32.516Z",
+    "keywords": [
+      "diffusion",
+      "generation",
+      "latent-diffusion",
+      "materials",
+      "molecules",
+      "transformer"
+    ],
+    "license": "NOASSERTION"
+  },
+  "problemSolved": {
+    "statement": "[![arXiv](https://img.shields.io/badge/PDF-arXiv-blue)](https://www.arxiv.org/abs/2503.03965)\n[![Code](https://img.shields.io/badge/Code-GitHub-red)](https://github.com/facebookresearch/all-atom-diffusion-transformer/)\n[![Weights](https://img.shields.io/badge/Weights-HuggingFace-yellow)](https://huggingface.co/chaitjo/all-atom-diffusion-transformer)\n[![X](https://img.shields.io/badge/X_thread-@chaitjo-blue)](https://x.com/chaitjo/status/1899114667219304525)\n[![YouTube](https://img.shields.io/badge/Talk-YouTube-red)](https://www.youtube.com/watch?v=NiY4NLzemnU)\n[![Slides](https://img.shields.io/badge/Slides-chaitjo.com-green)](https://www.chaitjo.com/publication/joshi-2025-allatom/All_Atom_Diffusion_Transformers_Slides.pdf)\n<a target=\"_blank\" href=\"https://colab.research.google.com/drive/1wHXsP0SHZ-Lx6Brgg-osuvTFrWw3M7oW?usp=sharing\">\n  <img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/>\n</a>",
+    "context": "[![arXiv](https://img.shields.io/badge/PDF-arXiv-blue)](https://www.arxiv.org/abs/2503.03965)\n[![Code](https://img.shields.io/badge/Code-GitHub-red)](https://github.com/facebookresearch/all-atom-diffusion-transformer/)\n[![Weights](https://img.shields.io/badge/Weights-HuggingFace-yellow)](https://huggingface.co/chaitjo/all-atom-diffusion-transformer)\n[![X](https://img.shields.io/badge/X_thread-@chaitjo-blue)](https://x.com/chaitjo/status/1899114667219304525)\n[![YouTube](https://img.shields.io/badge/Talk-YouTube-red)](https://www.youtube.com/watch?v=NiY4NLzemnU)\n[![Slides](https://img.shields.io/badge/Slides-chaitjo.com-green)](https://www.chaitjo.com/publication/joshi-2025-allatom/All_Atom_Diffusion_Transformers_Slides.pdf)\n<a target=\"_blank\" href=\"https://colab.research.google.com/drive/1wHXsP0SHZ-Lx6Brgg-osuvTFrWw3M7oW?usp=sharing\">\n  <img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/>\n</a>\n\n\nCode for the paper [*\"All-atom Diffusion Transformers: Unified generative modelling of molecules and materials\"*](https://www.arxiv.org/abs/2503.03965), by [Chaitanya K. Joshi](https://www.chaitjo.com/), [Xiang Fu](https://xiangfu.co/), [Yi-Lun Liao](https://www.linkedin.com/in/yilunliao), [Vahe Gharakhanyan](https://gvahe.github.io/), [Benjamin Kurt Miller](https://www.mathben.com/), [Anuroop Sriram*](https://anuroopsriram.com/), and [Zachary W. Ulissi*](https://zulissi.github.io/) from FAIR Chemistry at Meta, published at ICML 2025 (* Joint last author).\n\nAll-atom Diffusion Transformers (ADiTs) jointly generate both periodic materials and non-periodic molecular systems using a unified latent diffusion framework:\n- An autoencoder maps a unified, all-atom representations of molecules and materials to a shared latent embedding space; and\n- A diffusion model is trained to generate new latent embeddings that the autoencoder can decode to sample new molecules or materials.\n\n![](ADiT.png)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "296 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "36 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:21:32.516Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/facebookresearch/all-atom-diffusion-transformer",
+        "description": "GitHub repository: facebookresearch/all-atom-diffusion-transformer"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://www.arxiv.org/abs/2503.03965",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "facebookresearch",
+        "type": "human",
+        "uri": "https://github.com/facebookresearch"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 368,
+      "validation_diversity": 0.26,
+      "context_breadth": 0.4,
+      "temporal_stability": 0.92,
+      "test_coverage": 0.47,
+      "documentation_quality": 0.6
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.446
+  }
+}

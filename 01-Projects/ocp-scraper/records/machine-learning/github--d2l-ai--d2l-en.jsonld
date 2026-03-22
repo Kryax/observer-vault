@@ -1,0 +1,180 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/d2l-ai--d2l-en",
+  "meta": {
+    "title": "D2L.ai: Interactive Deep Learning Book with Multi-Framework Code, Math, and Discussions",
+    "description": "Interactive deep learning book with multi-framework code, math, and discussions. Adopted at 500 universities from 70 countries including Stanford, MIT, Harvard, and Cambridge.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T02:04:24.305Z",
+    "dateModified": "2026-03-11T02:04:24.305Z",
+    "keywords": [
+      "book",
+      "computer-vision",
+      "data-science",
+      "deep-learning",
+      "gaussian-processes",
+      "hyperparameter-optimization",
+      "jax",
+      "kaggle",
+      "keras",
+      "machine-learning",
+      "mxnet",
+      "natural-language-processing",
+      "notebook",
+      "python",
+      "pytorch",
+      "recommender-system",
+      "reinforcement-learning",
+      "tensorflow"
+    ],
+    "license": "NOASSERTION"
+  },
+  "problemSolved": {
+    "statement": "This open source book is made available under the Creative Commons Attribution-ShareAlike 4.0 International License. See [LICENSE](LICENSE) file.",
+    "context": "[![Continuous Integration](https://github.com/d2l-ai/d2l-en/actions/workflows/ci.yml/badge.svg)](https://github.com/d2l-ai/d2l-en/actions/workflows/ci.yml)\n\n[Book website](https://d2l.ai/) | [STAT 157 Course at UC Berkeley](http://courses.d2l.ai/berkeley-stat-157/index.html)\n\n<h5 align=\"center\"><i>The best way to understand deep learning is learning by doing.</i></h5>\n\n<p align=\"center\">\n  <img width=\"200\"  src=\"static/frontpage/_images/eq.jpg\">\n  <img width=\"200\"  src=\"static/frontpage/_images/figure.jpg\">\n  <img width=\"200\"  src=\"static/frontpage/_images/code.jpg\">\n  <img width=\"200\"  src=\"static/frontpage/_images/notebook.gif\">\n</p>\n\nThis open-source book represents our attempt to make deep learning approachable, teaching you the concepts, the context, and the code. The entire book is drafted in Jupyter notebooks, seamlessly integrating exposition figures, math, and interactive examples with self-contained code.\n\nOur goal is to offer a resource that could\n1. be freely available for everyone;\n1. offer sufficient technical depth to provide a starting point on the path to actually becoming an applied machine learning scientist;\n1. include runnable code, showing readers how to solve problems in practice;\n1. allow for rapid updates, both by us and also by the community at large;\n1. be complemented by a forum for interactive discussion of technical details and to answer questions.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "data-management",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "28384 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "4985 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T02:04:24.305Z"
+  },
+  "implementation": {
+    "type": "framework",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/d2l-ai/d2l-en",
+        "description": "GitHub repository: d2l-ai/d2l-en"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://D2L.ai",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "d2l-ai",
+        "type": "human",
+        "uri": "https://github.com/d2l-ai"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 38354,
+      "validation_diversity": 0.84,
+      "context_breadth": 0.7,
+      "temporal_stability": 0.72,
+      "test_coverage": 0.47,
+      "documentation_quality": 0.5
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.792
+  }
+}

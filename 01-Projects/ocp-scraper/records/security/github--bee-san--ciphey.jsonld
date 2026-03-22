@@ -1,0 +1,265 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/bee-san--ciphey",
+  "meta": {
+    "title": "🤔 What is this?",
+    "description": "⚡ Automatically decrypt encryptions without knowing the key or cipher, decode encodings, and crack hashes ⚡",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:47:04.659Z",
+    "dateModified": "2026-03-11T04:47:04.659Z",
+    "keywords": [
+      "artificial-intelligence",
+      "cipher",
+      "cpp",
+      "cryptography",
+      "ctf",
+      "ctf-tools",
+      "cyberchef-magic",
+      "decryption",
+      "deep-neural-network",
+      "encodings",
+      "encryptions",
+      "hacking",
+      "hacktoberfest",
+      "hashes",
+      "natural-language-processing",
+      "pentesting",
+      "python"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "- **50+ encryptions/encodings supported** such as binary, Morse code and Base64. Classical ciphers like the Caesar cipher, Affine cipher and the Vigenere cipher. Along with modern encryption like repeating-key XOR and more. **[For the full list, click here](https://github.com/Ciphey/Ciphey/wiki/Supported-Ciphers)**\n- **Custom Built Artificial Intelligence with Augmented Search (AuSearch) for answering the question \"what encryption was used?\"** Resulting in decryptions taking less than 3 seconds.\n- **Custom built natural language processing module** Ciphey can determine whether something is plaintext or not. Whether that plaintext is JSON, a CTF flag, or English, Ciphey can get it in a couple of milliseconds.\n- **Multi Language Support** at present, only German & English (with AU, UK, CAN, USA variants).\n- **Supports encryptions and hashes** Which the alternatives such as CyberChef Magic do not.\n- **[C++ core](https://github.com/Ciphey/CipheyCore)** Blazingly fast.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "security",
+    "cryptography",
+    "testing",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "21216 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "1420 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:47:04.659Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/bee-san/Ciphey",
+        "description": "GitHub repository: bee-san/Ciphey"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "rich",
+        "version": ">=4,<11",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/rich/"
+      },
+      {
+        "name": "pyyaml",
+        "version": ">=5.3.1,<7.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyyaml/"
+      },
+      {
+        "name": "pylint",
+        "version": "^2.6.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pylint/"
+      },
+      {
+        "name": "flake8",
+        "version": ">=3.8.4,<5.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/flake8/"
+      },
+      {
+        "name": "cipheydists",
+        "version": "^0.3.35",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/cipheydists/"
+      },
+      {
+        "name": "cipheycore",
+        "version": "^0.3.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/cipheycore/"
+      },
+      {
+        "name": "appdirs",
+        "version": "^1.4.4",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/appdirs/"
+      },
+      {
+        "name": "typing_inspect",
+        "version": ">=0.6,<0.8",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/typing_inspect/"
+      },
+      {
+        "name": "base58",
+        "version": "^2.0.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/base58/"
+      },
+      {
+        "name": "base91",
+        "version": "^1.0.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/base91/"
+      },
+      {
+        "name": "pybase62",
+        "version": ">=0.4.3,<0.6.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pybase62/"
+      },
+      {
+        "name": "click",
+        "version": ">=7.1.2,<9.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/click/"
+      },
+      {
+        "name": "mock",
+        "version": "^4.0.3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/mock/"
+      },
+      {
+        "name": "pywhat",
+        "version": "3.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pywhat/"
+      },
+      {
+        "name": "xortool-ciphey",
+        "version": "^0.1.16",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/xortool-ciphey/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "bee-san",
+        "type": "human",
+        "uri": "https://github.com/bee-san"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 24056,
+      "validation_diversity": 0.56,
+      "context_breadth": 0.7,
+      "temporal_stability": 0.72,
+      "test_coverage": 0.8,
+      "documentation_quality": 0.6
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.738
+  }
+}

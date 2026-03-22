@@ -1,0 +1,206 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:arxiv/2603.09972v1",
+  "meta": {
+    "title": "From Data Statistics to Feature Geometry: How Correlations Shape Superposition",
+    "description": "A central idea in mechanistic interpretability is that neural networks represent more features than they have dimensions, arranging them in superposition to form an over-complete basis. This framing has been influential, motivating dictionary learning approaches such as sparse autoencoders. However, superposition has mostly been studied in idealized settings where features are sparse and uncorrelated. In these settings, superposition is typically understood as introducing interference that must be minimized geometrically and filtered out by non-linearities such as ReLUs, yielding local structures like regular polytopes. We show that this account is incomplete for realistic data by introducing Bag-of-Words Superposition (BOWS), a controlled setting to encode binary bag-of-words representations of internet text in superposition. Using BOWS, we find that when features are correlated, interference can be constructive rather than just noise to be filtered out. This is achieved by arranging features according to their co-activation patterns, making interference between active features constructive, while still using ReLUs to avoid false positives. We show that this kind of arrangement is more prevalent in models trained with weight decay and naturally gives rise to semantic clusters and cyclical structures which have been observed in real language models yet were not explained by the standard picture of superposition. Code for this paper can be found at https://github.com/LucasPrietoAl/correlations-feature-geometry.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T08:48:53.564Z",
+    "dateModified": "2026-03-11T08:48:53.564Z",
+    "datePublished": "2026-03-10T17:59:02.000Z",
+    "keywords": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CV"
+    ]
+  },
+  "problemSolved": {
+    "statement": "A central idea in mechanistic interpretability is that neural networks represent more features than they have dimensions, arranging them in superposition to form an over-complete basis. This framing has been influential, motivating dictionary learning approaches such as sparse autoencoders. However, superposition has mostly been studied in idealized settings where features are sparse and uncorrelated. In these settings, superposition is typically understood as introducing interference that must be minimized geometrically and filtered out by non-linearities such as ReLUs, yielding local structures like regular polytopes. We show that this account is incomplete for realistic data by introducing Bag-of-Words Superposition (BOWS), a controlled setting to encode binary bag-of-words representations of internet text in superposition. Using BOWS, we find that when features are correlated, interference can be constructive rather than just noise to be filtered out. This is achieved by arranging features according to their co-activation patterns, making interference between active features constructive, while still using ReLUs to avoid false positives. We show that this kind of arrangement is more prevalent in models trained with weight decay and naturally gives rise to semantic clusters and cyclical structures which have been observed in real language models yet were not explained by the standard picture of superposition. Code for this paper can be found at https://github.com/LucasPrietoAl/correlations-feature-geometry.",
+    "context": "arXiv categories: cs.LG, cs.AI, cs.CV",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "machine-learning"
+  ],
+  "validation": {
+    "method": "automated-analysis",
+    "evidence": [
+      {
+        "type": "arxiv-record",
+        "description": "Indexed from arXiv paper 2603.09972v1",
+        "uri": "https://arxiv.org/abs/2603.09972v1"
+      },
+      {
+        "type": "category-classification",
+        "description": "Classified in arXiv categories: cs.LG, cs.AI, cs.CV"
+      },
+      {
+        "type": "submission-recency",
+        "description": "Published 2026-03-10T17:59:02.000Z and last updated 2026-03-10T17:59:02.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T17:59:02.000Z"
+  },
+  "implementation": {
+    "type": "algorithm",
+    "refs": [
+      {
+        "type": "publication",
+        "uri": "https://arxiv.org/abs/2603.09972v1",
+        "description": "arXiv abstract page for 2603.09972v1"
+      },
+      {
+        "type": "publication",
+        "uri": "https://arxiv.org/pdf/2603.09972v1",
+        "description": "arXiv PDF"
+      }
+    ]
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Lucas Prieto",
+        "type": "human"
+      },
+      {
+        "name": "Edward Stevinson",
+        "type": "human"
+      },
+      {
+        "name": "Melih Barsbey",
+        "type": "human"
+      },
+      {
+        "name": "Tolga Birdal",
+        "type": "human"
+      },
+      {
+        "name": "Pedro A. M. Mediano",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "arXiv",
+        "type": "system",
+        "uri": "https://arxiv.org"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://arxiv.org/abs/2603.09972v1",
+      "https://arxiv.org/pdf/2603.09972v1"
+    ],
+    "generatedBy": "ocp-scraper/arxiv-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 34,
+      "validation_diversity": 0.75,
+      "context_breadth": 1,
+      "temporal_stability": 0.79,
+      "test_coverage": 0.35,
+      "documentation_quality": 0.96
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.635
+  },
+  "extensions": {
+    "arxiv": {
+      "id": "2603.09972v1",
+      "source": "arXiv",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "absUrl": "https://arxiv.org/abs/2603.09972v1",
+      "pdfUrl": "https://arxiv.org/pdf/2603.09972v1"
+    }
+  }
+}

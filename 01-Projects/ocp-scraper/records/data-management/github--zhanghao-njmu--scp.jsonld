@@ -1,0 +1,180 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/zhanghao-njmu--scp",
+  "meta": {
+    "title": "SCP: Single-Cell Pipeline",
+    "description": "An end-to-end Single-Cell Pipeline designed to facilitate comprehensive analysis and exploration of single-cell data.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T02:04:13.017Z",
+    "dateModified": "2026-03-11T02:04:13.017Z",
+    "keywords": [
+      "anndata",
+      "scanpy",
+      "scatac-seq",
+      "scrna-pipeline",
+      "scrna-seq",
+      "scrna-seq-analysis",
+      "seurat",
+      "seurat-objects",
+      "shiny-app",
+      "shiny-apps",
+      "shinyapps",
+      "single-cell",
+      "single-cell-analysis",
+      "single-cell-atac-seq",
+      "single-cell-genomics",
+      "single-cell-omics",
+      "single-cell-pipeline",
+      "single-cell-rna-seq",
+      "single-cell-sequencing"
+    ],
+    "license": "GPL-3.0"
+  },
+  "problemSolved": {
+    "statement": "<!-- badges: start -->",
+    "context": "<!-- badges: start -->\n\n[![version](https://img.shields.io/github/r-package/v/zhanghao-njmu/SCP)](https://github.com/zhanghao-njmu/SCP)\n[![codesize](https://img.shields.io/github/languages/code-size/zhanghao-njmu/SCP.svg)](https://github.com/zhanghao-njmu/SCP)\n[![license](https://img.shields.io/github/license/zhanghao-njmu/SCP)](https://github.com/zhanghao-njmu/SCP)\n\n<!-- badges: end -->\n\nSCP provides a comprehensive set of tools for single-cell data\nprocessing and downstream analysis.\n\nThe package includes the following facilities:\n\n- Integrated single-cell quality control methods.\n- Pipelines embedded with multiple methods for normalization, feature\n  reduction, and cell population identification (standard Seurat\n  workflow).\n- Pipelines embedded with multiple integration methods for scRNA-seq or\n  scATAC-seq data, including Uncorrected,\n  [Seurat](https://github.com/satijalab/seurat),\n  [scVI](https://github.com/scverse/scvi-tools),\n  [MNN](http://www.bioconductor.org/packages/release/bioc/html/batchelor.html),\n  [fastMNN](http://www.bioconductor.org/packages/release/bioc/html/batchelor.html),\n  [Harmony](https://github.com/immunogenomics/harmony),\n  [Scanorama](https://github.com/brianhie/scanorama),\n  [BBKNN](https://github.com/Teichlab/bbknn),\n  [CSS](https://github.com/quadbiolab/simspec),\n  [LIGER](https://github.com/welch-lab/liger),\n  [Conos](https://github.com/kharchenkolab/conos),\n  [ComBat](https://bioconductor.org/packages/release/bioc/html/sva.html).\n- Multiple single-cell downstream analyses such as identification of\n  differential features, enrichment analysis, GSEA analysis,\n  identification of dynamic features,\n  [PAGA](https://github.com/theislab/paga), [RNA\n  velocity](https://github.com/theislab/scvelo),\n  [Palantir](https://github.com/dpeerlab/Palantir),\n  [Monocle2](http://cole-trapnell-lab.github.io/monocle-release),\n  [Monocle3](https://cole-trapnell-lab.github.io/monocle3), etc.\n- Multiple methods for automatic annotation of single-cell data and\n  methods for projection between single-cell datasets.\n- High-quality data visualization methods.\n- Fast deployment of single-cell data into SCExplorer, a [shiny\n  app](https://shiny.rstudio.com/) that provides an interactive\n  visualization interface.\n\nThe functions in the SCP package are all developed around the [Seurat\nobject](https://github.com/mojaveazure/seurat-object) and are compatible\nwith other Seurat functions.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "data-management",
+    "lang:r"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "629 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "123 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T02:04:13.017Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/zhanghao-njmu/SCP",
+        "description": "GitHub repository: zhanghao-njmu/SCP"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://zhanghao-njmu.github.io/SCP/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "R"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "zhanghao-njmu",
+        "type": "human",
+        "uri": "https://github.com/zhanghao-njmu"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 875,
+      "validation_diversity": 0,
+      "context_breadth": 0.61,
+      "temporal_stability": 0.75,
+      "test_coverage": 0.17,
+      "documentation_quality": 0.4
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.082
+  }
+}

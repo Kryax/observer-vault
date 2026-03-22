@@ -1,0 +1,166 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/mxgmn--markovjunior",
+  "meta": {
+    "title": "MarkovJunior",
+    "description": "Probabilistic language based on pattern matching and constraint propagation, 153 examples",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:24:09.002Z",
+    "dateModified": "2026-03-11T04:24:09.002Z",
+    "keywords": [
+      "algorithms",
+      "cellular-automata",
+      "csharp",
+      "gamedev",
+      "language",
+      "markovjunior",
+      "probabilistic-programming",
+      "procedural-generation",
+      "voxel"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "MarkovJunior is a probabilistic programming language where programs are combinations of rewrite rules and inference is performed via constraint propagation. MarkovJunior is named after mathematician [Andrey Andreyevich Markov](https://en.wikipedia.org/wiki/Andrey_Markov,_Jr.), who defined and studied what is now called [Markov algorithms](https://en.wikipedia.org/wiki/Markov_algorithm).\n<p align=\"center\">\n<img src=\"images/top-iso.gif\"/>\n<img src=\"images/top-mv.gif\"/>\n</p>",
+    "context": "MarkovJunior is a probabilistic programming language where programs are combinations of rewrite rules and inference is performed via constraint propagation. MarkovJunior is named after mathematician [Andrey Andreyevich Markov](https://en.wikipedia.org/wiki/Andrey_Markov,_Jr.), who defined and studied what is now called [Markov algorithms](https://en.wikipedia.org/wiki/Markov_algorithm).\n<p align=\"center\">\n<img src=\"images/top-iso.gif\"/>\n<img src=\"images/top-mv.gif\"/>\n</p>\n\nIn its basic form, a MarkovJunior program is an ordered list of rewrite rules. For example, [MazeBacktracker](models/MazeBacktracker.xml) (animation on the left below) is a list of 2 rewrite rules:\n1. `RBB=GGR` or \"replace red-black-black with green-green-red\".\n2. `RGG=WWR` or \"replace red-green-green with white-white-red\".\n\nOn each execution step MJ interpreter finds the first rule in the list that has a match on the grid, finds all matches for that rule and applies that rule for a random match. In the [maze backtracker](https://en.wikipedia.org/wiki/Maze_generation_algorithm#Depth-first_search) example, interpreter first applies a bunch of `RBB=GGR` rules. But eventually the green self-avoiding walk gets stuck. At this point the first rule has no matches, so interpreter applies the second rule `RGG=WWR` until the walk gets unstuck. Then it can apply the first rule again, and so on. Interpreter stops when there are no matches for any rule.\n<p align=\"center\">\n<img src=\"images/MazeBacktracker.gif\"/>\n<img src=\"images/multisokoban.gif\"/>\n</p>\n\nProbabilistic inference in MarkovJunior allows to impose constraints on the future state, and generate only those runs that lead to the constrained future. For example, inference in Sokoban rules `{RWB=BRW RB=BR}` makes a group of (red) agents organize (white) crates into specified shapes.\n\nUsing these ideas, we construct [many probabilistic generators](models/) of dungeons, architecture, puzzles and fun simulations.\n<p align=\"center\"><a href=\"images/top-1764.png\"/><img src=\"images/top-882.png\"/></a></p>\n\nAdditional materials:\n1. [Xml syntax overview](syntax.md).\n2. Higher resolution screenshots and more seeds: [ModernHouse](https://github.com/mxgmn/Blog/blob/master/ModernHouse.md), [SeaVilla](https://github.com/mxgmn/Blog/blob/master/SeaVilla.md), [Apartemazements](https://github.com/mxgmn/Blog/blob/master/Apartemazements.md), [CarmaTower](https://github.com/mxgmn/Blog/blob/master/CarmaTower.md), [Escheresque](https://github.com/mxgmn/Blog/blob/master/Escheresque.md), [PillarsOfEternity](https://github.com/mxgmn/Blog/blob/master/PillarsOfEternity.md), [Surface](https://github.com/mxgmn/Blog/blob/master/RandomSurface.md), [Knots](https://twitter.com/ExUtumno/status/895688856304992256).\n3. Unofficial [technical notes](https://gist.github.com/dogles/a926ab890552cc7e45400a930398449d) by Dan Ogles and [code documentation](https://github.com/kaya3/MarkovJunior-docs) by Andrew Kay.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "game-development",
+    "lang:c#"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "8046 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "344 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:24:09.002Z"
+  },
+  "implementation": {
+    "type": "algorithm",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/mxgmn/MarkovJunior",
+        "description": "GitHub repository: mxgmn/MarkovJunior"
+      }
+    ],
+    "language": "C#"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "mxgmn",
+        "type": "human",
+        "uri": "https://github.com/mxgmn"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 8734,
+      "validation_diversity": 0.23,
+      "context_breadth": 0.61,
+      "temporal_stability": 0.87,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.5
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.516
+  }
+}

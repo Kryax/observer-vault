@@ -1,0 +1,198 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/cuny-cl--wikipron",
+  "meta": {
+    "title": "WikiPron",
+    "description": "Massively multilingual pronunciation mining",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T02:04:56.704Z",
+    "dateModified": "2026-03-11T02:04:56.704Z",
+    "keywords": [
+      "computational-linguistics",
+      "g2p",
+      "language",
+      "linguistics",
+      "nlp",
+      "phonetics",
+      "phonology",
+      "pronunciation",
+      "python-api",
+      "scraped-data",
+      "speech"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "[![PyPI\nversion](https://badge.fury.io/py/wikipron.svg)](https://pypi.org/project/wikipron)\n[![Supported Python\nversions](https://img.shields.io/pypi/pyversions/wikipron.svg)](https://pypi.org/project/wikipron)\n[![CircleCI](https://circleci.com/gh/CUNY-CL/wikipron/tree/master.svg?style=shield)](https://circleci.com/gh/CUNY-CL/wikipron/tree/master)\n[![Paper](http://img.shields.io/badge/paper-ACL:2020.lrec--1.521-B31B1B.svg)](https://www.aclweb.org/anthology/2020.lrec-1.521/)\n[![Conference](http://img.shields.io/badge/LREC-2020-4b44ce.svg)](https://lrec2020.lrec-conf.org/en/)",
+    "context": "[![PyPI\nversion](https://badge.fury.io/py/wikipron.svg)](https://pypi.org/project/wikipron)\n[![Supported Python\nversions](https://img.shields.io/pypi/pyversions/wikipron.svg)](https://pypi.org/project/wikipron)\n[![CircleCI](https://circleci.com/gh/CUNY-CL/wikipron/tree/master.svg?style=shield)](https://circleci.com/gh/CUNY-CL/wikipron/tree/master)\n[![Paper](http://img.shields.io/badge/paper-ACL:2020.lrec--1.521-B31B1B.svg)](https://www.aclweb.org/anthology/2020.lrec-1.521/)\n[![Conference](http://img.shields.io/badge/LREC-2020-4b44ce.svg)](https://lrec2020.lrec-conf.org/en/)\n\nWikiPron is a command-line tool and Python API for mining multilingual\npronunciation data from Wiktionary, as well as a database of pronunciation\ndictionaries mined using this tool.\n\n-   [Command-line tool](#command-line-tool)\n-   [Python API](#python-api)\n-   [Data](#data)\n-   [Models](#models)\n-   [Development](#development)\n\nIf you use WikiPron in your research, please cite the following:\n\nJackson L. Lee, Lucas F.E. Ashby, M. Elizabeth Garza, Yeonju Lee-Sikka, Sean\nMiller, Alan Wong, Arya D. McCarthy, and Kyle Gorman (2020). [Massively\nmultilingual pronunciation mining with\nWikiPron](https://www.aclweb.org/anthology/2020.lrec-1.521/). In *Proceedings of\nthe 12th Language Resources and Evaluation Conference*, pages 4223-4228.\n\\[[bibtex](https://www.aclweb.org/anthology/2020.lrec-1.521.bib)\\]",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "backend",
+    "data-management",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "363 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "77 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T02:04:56.704Z"
+  },
+  "implementation": {
+    "type": "service",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/CUNY-CL/wikipron",
+        "description": "GitHub repository: CUNY-CL/wikipron"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "lxml_html_clean",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/lxml_html_clean/"
+      },
+      {
+        "name": "python-iso639",
+        "version": ">= 2022.11.27",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/python-iso639/"
+      },
+      {
+        "name": "requests",
+        "version": ">= 2.32.3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/requests/"
+      },
+      {
+        "name": "requests-html",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/requests-html/"
+      },
+      {
+        "name": "segments",
+        "version": ">= 2.2.0, < 3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/segments/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "CUNY-CL",
+        "type": "human",
+        "uri": "https://github.com/CUNY-CL"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 517,
+      "validation_diversity": 0.53,
+      "context_breadth": 0.59,
+      "temporal_stability": 1,
+      "test_coverage": 0.47,
+      "documentation_quality": 0.65
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.613
+  }
+}

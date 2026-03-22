@@ -1,0 +1,171 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/juliamolsim--dftk.jl",
+  "meta": {
+    "title": "Density-functional toolkit",
+    "description": "Density-functional toolkit",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:20:32.502Z",
+    "dateModified": "2026-03-11T04:20:32.502Z",
+    "keywords": [
+      "ab-initio",
+      "computational-chemistry",
+      "density-functional-theory",
+      "electronic-structure",
+      "julia",
+      "kohn-sham",
+      "materials-science",
+      "mathematical-analysis",
+      "numerical-analysis",
+      "plane-wave",
+      "toolkit"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "| **Documentation**                                                                                             | **Build Status**                                |  **License**                     |\n|:------------------------------------------------------------------------------------------------------------- |:----------------------------------------------- |:-------------------------------- |\n| [![][docs-img]][docs-url] [![][ddocs-img]][ddocs-url] [![][chat-img]][chat-url] [![][matrix-img]][matrix-url] | [![][ci-img]][ci-url] [![][ccov-img]][ccov-url] | [![][license-img]][license-url]  |",
+    "context": "| **Documentation**                                                                                             | **Build Status**                                |  **License**                     |\n|:------------------------------------------------------------------------------------------------------------- |:----------------------------------------------- |:-------------------------------- |\n| [![][docs-img]][docs-url] [![][ddocs-img]][ddocs-url] [![][chat-img]][chat-url] [![][matrix-img]][matrix-url] | [![][ci-img]][ci-url] [![][ccov-img]][ccov-url] | [![][license-img]][license-url]  |\n\n[ddocs-img]: https://img.shields.io/badge/docs-dev-blue.svg\n[ddocs-url]: https://docs.dftk.org/dev\n\n[docs-img]: https://img.shields.io/badge/docs-stable-blue.svg\n[docs-url]: https://docs.dftk.org/stable\n\n[chat-img]: https://img.shields.io/badge/chat-on_zulip-808493.svg?logo=zulip\n[chat-url]: https://juliamolsim.zulipchat.com/#narrow/stream/332493-dftk\n\n[matrix-img]: https://img.shields.io/badge/chat-on_matrix-000000.svg?logo=matrix\n[matrix-url]: https://matrix.epfl.ch/#/#/room/#dftk:epfl.ch\n\n[ci-img]: https://github.com/JuliaMolSim/DFTK.jl/workflows/CI/badge.svg?branch=master&event=push\n[ci-url]: https://github.com/JuliaMolSim/DFTK.jl/actions\n\n[ccov-img]: https://codecov.io/gh/JuliaMolSim/DFTK.jl/branch/master/graph/badge.svg?token=A23M0VZ8PQ\n[ccov-url]: https://codecov.io/gh/JuliaMolSim/DFTK.jl\n\n[license-img]: https://img.shields.io/github/license/JuliaMolSim/DFTK.jl.svg?maxAge=2592000\n[license-url]: https://github.com/JuliaMolSim/DFTK.jl/blob/master/LICENSE\n\n\n\nThe density-functional toolkit, **DFTK** for short, is a collection of\nJulia routines for plane-wave density-functional theory (DFT).\nThe unique feature of this code is its emphasis on simplicity and flexibility\nwith the goal of facilitating algorithmic and numerical developments as well as\ninterdisciplinary collaboration in solid-state research.\n\nIn only around 10k lines of code DFTK already has\na [sizeable set of features](https://docs.dftk.org/stable/features/)\nincluding GPU support or parallelisation using MPI.\nOur performance is of the same order of magnitude\nas other plane-wave DFT packages and  systems of 1000 electrons\ncan be routinely treated.\n\nFor getting started with DFTK, see [our documentation](https://docs.dftk.org):\n- [Installation instructions](https://docs.dftk.org/stable/guide/installation/)\n- [Tutorial](https://docs.dftk.org/stable/guide/tutorial/)\n- [Basic DFT examples](https://docs.dftk.org/stable/examples/metallic_systems/)\n\nNote that at least **Julia 1.10** is required.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:julia"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "515 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "104 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:20:32.502Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/JuliaMolSim/DFTK.jl",
+        "description": "GitHub repository: JuliaMolSim/DFTK.jl"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://docs.dftk.org",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Julia"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "JuliaMolSim",
+        "type": "human",
+        "uri": "https://github.com/JuliaMolSim"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 723,
+      "validation_diversity": 0.58,
+      "context_breadth": 0.6,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.17,
+      "documentation_quality": 0.48
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.562
+  }
+}

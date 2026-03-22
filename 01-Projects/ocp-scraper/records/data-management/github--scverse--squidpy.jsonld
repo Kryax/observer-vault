@@ -1,0 +1,347 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/scverse--squidpy",
+  "meta": {
+    "title": "Squidpy - Spatial Single Cell Analysis in Python",
+    "description": "Spatial Single Cell Analysis in Python",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T02:04:17.332Z",
+    "dateModified": "2026-03-11T02:04:17.332Z",
+    "keywords": [
+      "data-visualization",
+      "image-analysis",
+      "single-cell-genomics",
+      "single-cell-rna-seq",
+      "spatial-analysis",
+      "spatial-transcriptomics",
+      "squidpy"
+    ],
+    "license": "BSD-3-Clause"
+  },
+  "problemSolved": {
+    "statement": "Squidpy is the scverse toolkit for scalable analysis and visualization of spatial molecular data.\nIt builds on [scanpy](https://scanpy.readthedocs.io/en/stable/) and [anndata](https://anndata.readthedocs.io/en/stable/), providing streamlined APIs for feature extraction, spatial statistics, and interactive exploration of tissue sections together with microscopy images.",
+    "context": "Squidpy is the scverse toolkit for scalable analysis and visualization of spatial molecular data.\nIt builds on [scanpy](https://scanpy.readthedocs.io/en/stable/) and [anndata](https://anndata.readthedocs.io/en/stable/), providing streamlined APIs for feature extraction, spatial statistics, and interactive exploration of tissue sections together with microscopy images.\n\n![Squidpy overview](https://raw.githubusercontent.com/scverse/squidpy/main/docs/_static/img/figure1.png)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "data-management",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "552 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "108 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T02:04:17.332Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/scverse/squidpy",
+        "description": "GitHub repository: scverse/squidpy"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://squidpy.readthedocs.io/en/stable/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "aiohttp",
+        "version": ">=3.8.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/aiohttp/"
+      },
+      {
+        "name": "anndata",
+        "version": ">=0.9",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/anndata/"
+      },
+      {
+        "name": "cycler",
+        "version": ">=0.11",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/cycler/"
+      },
+      {
+        "name": "dask",
+        "version": ">=2021.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/dask/"
+      },
+      {
+        "name": "dask-image",
+        "version": ">=0.5",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/dask-image/"
+      },
+      {
+        "name": "docrep",
+        "version": ">=0.3.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/docrep/"
+      },
+      {
+        "name": "fast-array-utils",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/fast-array-utils/"
+      },
+      {
+        "name": "fsspec",
+        "version": ">=2021.11",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/fsspec/"
+      },
+      {
+        "name": "imagecodecs",
+        "version": ">=2025.8.2,<2026",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/imagecodecs/"
+      },
+      {
+        "name": "matplotlib",
+        "version": ">=3.3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/matplotlib/"
+      },
+      {
+        "name": "matplotlib-scalebar",
+        "version": ">=0.8",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/matplotlib-scalebar/"
+      },
+      {
+        "name": "networkx",
+        "version": ">=2.6",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/networkx/"
+      },
+      {
+        "name": "numba",
+        "version": ">=0.56.4",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numba/"
+      },
+      {
+        "name": "numpy",
+        "version": ">=1.23",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numpy/"
+      },
+      {
+        "name": "omnipath",
+        "version": ">=1.0.7",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/omnipath/"
+      },
+      {
+        "name": "pandas",
+        "version": ">=2.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pandas/"
+      },
+      {
+        "name": "pillow",
+        "version": ">=8",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pillow/"
+      },
+      {
+        "name": "pooch",
+        "version": ">=1.6",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pooch/"
+      },
+      {
+        "name": "pyyaml",
+        "version": ">=6",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyyaml/"
+      },
+      {
+        "name": "scanpy",
+        "version": ">=1.9.3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scanpy/"
+      },
+      {
+        "name": "scikit-image",
+        "version": ">=0.25",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scikit-image/"
+      },
+      {
+        "name": "scikit-learn",
+        "version": ">=0.24",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scikit-learn/"
+      },
+      {
+        "name": "spatialdata",
+        "version": ">=0.7.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/spatialdata/"
+      },
+      {
+        "name": "spatialdata-plot",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/spatialdata-plot/"
+      },
+      {
+        "name": "statsmodels",
+        "version": ">=0.12",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/statsmodels/"
+      },
+      {
+        "name": "tifffile",
+        "version": "!=2022.4.22",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tifffile/"
+      },
+      {
+        "name": "tqdm",
+        "version": ">=4.50.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tqdm/"
+      },
+      {
+        "name": "validators",
+        "version": ">=0.18.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/validators/"
+      },
+      {
+        "name": "xarray",
+        "version": ">=2024.10",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/xarray/"
+      },
+      {
+        "name": "zarr",
+        "version": ">=3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/zarr/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "scverse",
+        "type": "human",
+        "uri": "https://github.com/scverse"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 768,
+      "validation_diversity": 0.56,
+      "context_breadth": 0.48,
+      "temporal_stability": 0.88,
+      "test_coverage": 0,
+      "documentation_quality": 0.8
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.327
+  }
+}

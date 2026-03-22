@@ -1,0 +1,201 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:arxiv/2603.09961v1",
+  "meta": {
+    "title": "BEACON: Language-Conditioned Navigation Affordance Prediction under Occlusion",
+    "description": "Language-conditioned local navigation requires a robot to infer a nearby traversable target location from its current observation and an open-vocabulary, relational instruction. Existing vision-language spatial grounding methods usually rely on vision-language models (VLMs) to reason in image space, producing 2D predictions tied to visible pixels. As a result, they struggle to infer target locations in occluded regions, typically caused by furniture or moving humans. To address this issue, we propose BEACON, which predicts an ego-centric Bird's-Eye View (BEV) affordance heatmap over a bounded local region including occluded areas. Given an instruction and surround-view RGB-D observations from four directions around the robot, BEACON predicts the BEV heatmap by injecting spatial cues into a VLM and fusing the VLM's output with depth-derived BEV features. Using an occlusion-aware dataset built in the Habitat simulator, we conduct detailed experimental analysis to validate both our BEV space formulation and the design choices of each module. Our method improves the accuracy averaged across geodesic thresholds by 22.74 percentage points over the state-of-the-art image-space baseline on the validation subset with occluded target locations. Our project page is: https://xin-yu-gao.github.io/beacon.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T05:34:54.825Z",
+    "dateModified": "2026-03-11T05:34:54.825Z",
+    "datePublished": "2026-03-10T17:56:16.000Z",
+    "keywords": [
+      "cs.RO",
+      "cs.AI",
+      "cs.CV"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Language-conditioned local navigation requires a robot to infer a nearby traversable target location from its current observation and an open-vocabulary, relational instruction. Existing vision-language spatial grounding methods usually rely on vision-language models (VLMs) to reason in image space, producing 2D predictions tied to visible pixels. As a result, they struggle to infer target locations in occluded regions, typically caused by furniture or moving humans. To address this issue, we propose BEACON, which predicts an ego-centric Bird's-Eye View (BEV) affordance heatmap over a bounded local region including occluded areas. Given an instruction and surround-view RGB-D observations from four directions around the robot, BEACON predicts the BEV heatmap by injecting spatial cues into a VLM and fusing the VLM's output with depth-derived BEV features. Using an occlusion-aware dataset built in the Habitat simulator, we conduct detailed experimental analysis to validate both our BEV space formulation and the design choices of each module. Our method improves the accuracy averaged across geodesic thresholds by 22.74 percentage points over the state-of-the-art image-space baseline on the validation subset with occluded target locations. Our project page is: https://xin-yu-gao.github.io/beacon.",
+    "context": "arXiv categories: cs.RO, cs.AI, cs.CV | 8 pages. Project page: https://xin-yu-gao.github.io/beacon",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "machine-learning",
+    "robotics"
+  ],
+  "validation": {
+    "method": "automated-analysis",
+    "evidence": [
+      {
+        "type": "arxiv-record",
+        "description": "Indexed from arXiv paper 2603.09961v1",
+        "uri": "https://arxiv.org/abs/2603.09961v1"
+      },
+      {
+        "type": "category-classification",
+        "description": "Classified in arXiv categories: cs.RO, cs.AI, cs.CV"
+      },
+      {
+        "type": "submission-recency",
+        "description": "Published 2026-03-10T17:56:16.000Z and last updated 2026-03-10T17:56:16.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T17:56:16.000Z"
+  },
+  "implementation": {
+    "type": "algorithm",
+    "refs": [
+      {
+        "type": "publication",
+        "uri": "https://arxiv.org/abs/2603.09961v1",
+        "description": "arXiv abstract page for 2603.09961v1"
+      },
+      {
+        "type": "publication",
+        "uri": "https://arxiv.org/pdf/2603.09961v1",
+        "description": "arXiv PDF"
+      }
+    ],
+    "solutionApproach": "8 pages. Project page: https://xin-yu-gao.github.io/beacon"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Xinyu Gao",
+        "type": "human"
+      },
+      {
+        "name": "Gang Chen",
+        "type": "human"
+      },
+      {
+        "name": "Javier Alonso-Mora",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "arXiv",
+        "type": "system",
+        "uri": "https://arxiv.org"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://arxiv.org/abs/2603.09961v1",
+      "https://arxiv.org/pdf/2603.09961v1"
+    ],
+    "generatedBy": "ocp-scraper/arxiv-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 39,
+      "validation_diversity": 0.63,
+      "context_breadth": 1,
+      "temporal_stability": 0.79,
+      "test_coverage": 0.45,
+      "documentation_quality": 1
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.625
+  },
+  "extensions": {
+    "arxiv": {
+      "id": "2603.09961v1",
+      "source": "arXiv",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "comment": "8 pages. Project page: https://xin-yu-gao.github.io/beacon",
+      "absUrl": "https://arxiv.org/abs/2603.09961v1",
+      "pdfUrl": "https://arxiv.org/pdf/2603.09961v1"
+    }
+  }
+}

@@ -1,0 +1,391 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/3dstreet--3dstreet",
+  "meta": {
+    "title": "3DStreet",
+    "description": "🚲🚶🚌 Web-based 3D visualization of streets using A-Frame",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:44:58.104Z",
+    "dateModified": "2026-03-11T04:44:58.104Z",
+    "keywords": [
+      "3d-visualization",
+      "aframe",
+      "streetmix",
+      "threejs",
+      "urban-planning",
+      "visualization",
+      "webxr"
+    ],
+    "license": "NOASSERTION"
+  },
+  "problemSolved": {
+    "statement": "[![Version](http://img.shields.io/npm/v/3dstreet.svg)](https://npmjs.org/package/3dstreet)\n[![License](http://img.shields.io/npm/l/3dstreet.svg)](LICENSE)\n[![Build Status](https://github.com/3DStreet/3dstreet/actions/workflows/ci.yml/badge.svg)](https://github.com/3DStreet/3dstreet/actions/workflows/ci.yml)",
+    "context": "[![Version](http://img.shields.io/npm/v/3dstreet.svg)](https://npmjs.org/package/3dstreet)\n[![License](http://img.shields.io/npm/l/3dstreet.svg)](LICENSE)\n[![Build Status](https://github.com/3DStreet/3dstreet/actions/workflows/ci.yml/badge.svg)](https://github.com/3DStreet/3dstreet/actions/workflows/ci.yml)\n\n3DStreet is an open-source geospatial design application for creating urban planning scenes with detailed street configurations. Based on three.js and A-Frame, 3DStreet empowers users to rapidly prototype custom urban design scenarios using procedural street design tools combined with a rich library of accurately scaled and oriented creative-commons licensed 3D models. \n\n3DStreet creates immersive 3D visualizations using built-in street generation templates, or from 2D [Streetmix.net](https://streetmix.net) street cross-sections and supports real-world context through built-in integrations to geospatial data sources such as Google 3D Tiles, Open Street Map, and on-site Augmented Reality using WebXR. 3DStreet has an active global user base and has been used by tens of thousands of students, professionals, and advocates worldwide to create visualizations of proposed scenarios for street safety improvements.\n\nOur long-term vision is to improve street safety and address climate change by empowering community-led planning, made possible by open-source tools like 3DStreet that provide a level playing field for geospatial design for both community members and engineering professionals.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "lang:javascript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "312 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "43 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:44:58.104Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/3DStreet/3dstreet",
+        "description": "GitHub repository: 3DStreet/3dstreet"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://3dstreet.app",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "JavaScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "@fortawesome/free-regular-svg-icons",
+        "version": "^6.7.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@fortawesome/free-regular-svg-icons"
+      },
+      {
+        "name": "@fortawesome/free-solid-svg-icons",
+        "version": "^6.7.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@fortawesome/free-solid-svg-icons"
+      },
+      {
+        "name": "@gltf-transform/core",
+        "version": "^3.10.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@gltf-transform/core"
+      },
+      {
+        "name": "@gltf-transform/extensions",
+        "version": "^3.10.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@gltf-transform/extensions"
+      },
+      {
+        "name": "@gltf-transform/functions",
+        "version": "^3.10.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@gltf-transform/functions"
+      },
+      {
+        "name": "@img-comparison-slider/react",
+        "version": "^8.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@img-comparison-slider/react"
+      },
+      {
+        "name": "@react-google-maps/api",
+        "version": "^2.20.8",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@react-google-maps/api"
+      },
+      {
+        "name": "@sentry/react",
+        "version": "^10.40.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@sentry/react"
+      },
+      {
+        "name": "@sparkjsdev/spark",
+        "version": "github:sparkjsdev/spark#v2.0.0-preview",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@sparkjsdev/spark"
+      },
+      {
+        "name": "@stripe/react-stripe-js",
+        "version": "^4.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@stripe/react-stripe-js"
+      },
+      {
+        "name": "@stripe/stripe-js",
+        "version": "^3.5.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@stripe/stripe-js"
+      },
+      {
+        "name": "3d-tiles-renderer",
+        "version": "^0.4.21",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/3d-tiles-renderer"
+      },
+      {
+        "name": "aframe-atlas-uvs-component",
+        "version": "^3.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/aframe-atlas-uvs-component"
+      },
+      {
+        "name": "aframe-cursor-teleport-component",
+        "version": "^1.6.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/aframe-cursor-teleport-component"
+      },
+      {
+        "name": "aframe-extras",
+        "version": "^7.6.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/aframe-extras"
+      },
+      {
+        "name": "classnames",
+        "version": "^2.5.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/classnames"
+      },
+      {
+        "name": "date-fns",
+        "version": "^2.30.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/date-fns"
+      },
+      {
+        "name": "expr-eval",
+        "version": "^2.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/expr-eval"
+      },
+      {
+        "name": "firebase",
+        "version": "^11.10.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/firebase"
+      },
+      {
+        "name": "firebase-admin",
+        "version": "^12.7.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/firebase-admin"
+      },
+      {
+        "name": "firebase-functions",
+        "version": "^5.1.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/firebase-functions"
+      },
+      {
+        "name": "gl-matrix",
+        "version": "^3.4.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/gl-matrix"
+      },
+      {
+        "name": "jsoncrush",
+        "version": "^1.1.8",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/jsoncrush"
+      },
+      {
+        "name": "jszip",
+        "version": "^3.10.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/jszip"
+      },
+      {
+        "name": "lodash-es",
+        "version": "^4.17.23",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/lodash-es"
+      },
+      {
+        "name": "nanoid",
+        "version": "^5.1.6",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/nanoid"
+      },
+      {
+        "name": "posthog-js",
+        "version": "^1.356.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/posthog-js"
+      },
+      {
+        "name": "prop-types",
+        "version": "^15.8.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/prop-types"
+      },
+      {
+        "name": "radix-ui",
+        "version": "^1.4.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/radix-ui"
+      },
+      {
+        "name": "react",
+        "version": "^18.3.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react"
+      },
+      {
+        "name": "react-dom",
+        "version": "^18.3.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-dom"
+      },
+      {
+        "name": "react-markdown",
+        "version": "^10.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-markdown"
+      },
+      {
+        "name": "react-select",
+        "version": "^5.10.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react-select"
+      },
+      {
+        "name": "stripe",
+        "version": "^15.12.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/stripe"
+      },
+      {
+        "name": "three",
+        "version": "0.172.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/three"
+      },
+      {
+        "name": "uuid",
+        "version": "^9.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/uuid"
+      },
+      {
+        "name": "zustand",
+        "version": "^5.0.11",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/zustand"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "3DStreet",
+        "type": "human",
+        "uri": "https://github.com/3DStreet"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 398,
+      "validation_diversity": 0.48,
+      "context_breadth": 0.44,
+      "temporal_stability": 0.82,
+      "test_coverage": 0,
+      "documentation_quality": 0.6
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.293
+  }
+}

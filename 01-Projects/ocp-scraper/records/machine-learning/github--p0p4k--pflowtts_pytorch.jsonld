@@ -1,0 +1,166 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/p0p4k--pflowtts_pytorch",
+  "meta": {
+    "title": "Dry run",
+    "description": "Unofficial implementation of NVIDIA P-Flow TTS paper",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T03:08:08.016Z",
+    "dateModified": "2026-03-22T03:08:08.016Z",
+    "keywords": [
+      "deep-learning",
+      "flow-matching",
+      "pflow",
+      "pytorch",
+      "text-to-speech",
+      "tts"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "- [x] (11/12/2023) Currently it is an experimental repo with many features substituted with quick architecture implementations I found online. I will add the original architectures soon.\n- [x] (11/12/2023) Check out `notebooks` for a quick dry run and architecture testing of the model.\n- [x] ~(11/12/2023) Training fails on my dataset at the moment, will debug and fix it soon. But the training the code runs error-free.~\n- [x] (11/13/2023) \n    - fixed big mistake in monotonic align build\n    - lot of combinations possible within model\n    - architecture big picture is same like paper, but internals are different\n    - if model doesnt converge, will eventually settle to paper's exact architecture\n- [x] (11/13/2023) Tensorboard screenshot\n    ![Alt text](init_tensorboard_11_13_23.png)\n- [x] (11/13/2023)\n    - added installation instructions\n- [x] (11/13/2023)\n    - looks like the model is learning and is on the right track. \n    ![Alt text](val_out_tboard.png)\n- [x] (11/14/2023)\n    ![Alt text](20k_tboard.png)\n- [x] (11/14/2023)\n    - added Google Colab notebook for quick run\n- [x] (11/16/2023)\n    - added sample audio\n    - some architecture changes\n    - we know the model learns, now we need to try multispeaker and check for prosody.\n- [x] (11/17/2023)\n    - added 3 new branches ->\n        - dev/stochastic -> some changes to posterior sampling and text encoder (prior) to make it stochastic\n        - dev/encodec -> predicts encodec continuous latent instead of mel spectrogram; if works, use encodec for decoding instead of hifi-gan\n        - exp/end2end -> end to end training of pflow with hi-fi gan to generate audio directly from text and speech prompt input; if it works, vits-tts will be obsolete.\n- [x] (11/17/2023)\n    - 24 epochs encodec sample (although robotic, it is a proof of concept) [encodec_poc.wav](encodec_poc.wav)\n- [x] (11/20/2023)\n    - Model is more or less ready.\n    - Added 3 choices for estimators, need to make them into hyperparameters and add them to the config file.\n    - Thanks to [@zidsi](https://github.com/zidsi) for pointing out typos in the code.\n- [x] (11/23/2023)\n    - Added newer samples with better prosody and pronunciation. Check out `samples` folder. (LJSpeech trained for 300k steps) _Paper recommends 800k steps._\n- [x] (12/02/2023)\n    - Added guidance for euler solver as recommended by the paper. Improves the quality of the audio drastically. Thanks to @robbit on discord for pointing this out.\n- [x] (12/03/2023)\n    - Added descript-codec branch for the curious. (not tested yet)\n- [x] (01/17/2024)\n    - Added minimum wav sample size (in seconds) parameter in the configs (data/[dataset].yaml), `min_sample_size` (default is 4s; so that prompt is at least 3s and prediction is at least 1s)\n    - Added `prompt_size` in the configs (models/pflow.yaml) to control the size of the prompt. It is number of mel frames to be used as prompt from the wav sample at traning. (default is ~3s; 3*22050//256 = 258; rounded to 264 in configs) \n    - Added `dur_p_use_log` in the configs (models/pflow.yaml) to control whether to use log of duration prediction or not for loss calculation. (default is False now) My hypothesis is that log durations mse loss doesn't work well for longer pauses etc (due to nature of log function). So, we just `e` power the log durations before calculating the loss. Alternative way can be using relu instead of log.\n    - Added `transfer_ckpt_path` in the configs (train.yaml) to control the path of the ckpt to be used for transfer learning. (default is None) If None, then the model is trained from scratch. If not None, then the model is loaded from the ckpt path and trained from step 0. In case, `ckpt_path` is also not None, then the model is loaded from `ckpt_path` and trained from the step it was saved at. `transfer_ckpt_path` can handle layer size mismatches between the ckpt and the model.\n- [x] (01/28/2024)\n    - Added ONNX export support based on Matcha-TTS repo. (not tested yet, will test soon) {draft}\n- [x] (01/30/2024)\n    - ONNX tested and works well. Use the arguments in `export.py` and `inference.py` to export and test the model. (the arguemnts are self-explanatory)\n- [x] (03/18/2024)\n    - added pos embeddings in speech text encoder.\n- [x] Anyone is welcome to contribute to this repo. Please feel free to open an issue or a PR.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "230 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "32 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T03:08:08.016Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/p0p4k/pflowtts_pytorch",
+        "description": "GitHub repository: p0p4k/pflowtts_pytorch"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://neurips.cc/virtual/2023/poster/69899",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "p0p4k",
+        "type": "human",
+        "uri": "https://github.com/p0p4k"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 294,
+      "validation_diversity": 0.16,
+      "context_breadth": 0.39,
+      "temporal_stability": 0.62,
+      "test_coverage": 0.17,
+      "documentation_quality": 0.7
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.332
+  }
+}

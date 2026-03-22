@@ -1,0 +1,217 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/jerbouma--financetoolkit",
+  "meta": {
+    "title": "Table of Contents",
+    "description": "Transparent and Efficient Financial Analysis",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T02:49:00.250Z",
+    "dateModified": "2026-03-22T02:49:00.250Z",
+    "keywords": [
+      "commodities",
+      "economics",
+      "equities",
+      "factor-analysis",
+      "finance",
+      "financial-analysis",
+      "financial-data",
+      "financial-statements",
+      "fundamental-analysis",
+      "fundamentals",
+      "investing",
+      "investments",
+      "market-data",
+      "openbb",
+      "options",
+      "performance-analysis",
+      "risk-management",
+      "sector-analysis",
+      "stock-data",
+      "technical-analysis"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "1. [Installation](#installation)\n2. [Basic Usage](#basic-usage)\n3. [Functionality and Metrics](#core-functionality-and-metrics)\n4. [Questions & Answers](#questions--answers)\n5. [Contributing](#contributing)\n6. [Mentions](#mentions)\n7. [Contact](#contact)",
+    "context": "1. [Installation](#installation)\n2. [Basic Usage](#basic-usage)\n3. [Functionality and Metrics](#core-functionality-and-metrics)\n4. [Questions & Answers](#questions--answers)\n5. [Contributing](#contributing)\n6. [Mentions](#mentions)\n7. [Contact](#contact)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "data-management",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "4536 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "515 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T02:49:00.250Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/JerBouma/FinanceToolkit",
+        "description": "GitHub repository: JerBouma/FinanceToolkit"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://www.jeroenbouma.com/projects/financetoolkit",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "pandas",
+        "version": ">=2.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pandas/"
+      },
+      {
+        "name": "scikit-learn",
+        "version": ">=1.6",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scikit-learn/"
+      },
+      {
+        "name": "requests",
+        "version": ">=2.32",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/requests/"
+      },
+      {
+        "name": "yfinance",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/yfinance/"
+      },
+      {
+        "name": "openpyxl",
+        "version": ">=3.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/openpyxl/"
+      },
+      {
+        "name": "tqdm",
+        "version": ">=4.67",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tqdm/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "JerBouma",
+        "type": "human",
+        "uri": "https://github.com/JerBouma"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 5566,
+      "validation_diversity": 0.33,
+      "context_breadth": 0.67,
+      "temporal_stability": 1,
+      "test_coverage": 0.47,
+      "documentation_quality": 0.75
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.595
+  }
+}

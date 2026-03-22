@@ -1,0 +1,165 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/saeyslab--nichenetr",
+  "meta": {
+    "title": "nichenetr",
+    "description": "NicheNet: predict active ligand-target links between interacting cells",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T02:04:15.445Z",
+    "dateModified": "2026-03-11T02:04:15.445Z",
+    "keywords": [
+      "cell-cell-communication",
+      "data-integration",
+      "gene-expression",
+      "intercellular-communication",
+      "ligand-receptor",
+      "ligand-target",
+      "network-inference",
+      "rna-seq",
+      "single-cell-omics",
+      "single-cell-rna-seq"
+    ]
+  },
+  "problemSolved": {
+    "statement": "<details>\n<summary>\n<h3>\nBackground\n</h3>\n</summary>",
+    "context": "<!-- badges: start -->\n\n[![R build\nstatus](https://github.com/saeyslab/nichenetr/workflows/R-CMD-check-bioc/badge.svg)](https://github.com/saeyslab/nichenetr/actions)\n[![Coverage\nStatus](https://codecov.io/gh/saeyslab/nichenetr/branch/master/graph/badge.svg)](https://codecov.io/gh/saeyslab/nichenetr)\n[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3260758.svg)](https://doi.org/10.5281/zenodo.3260758)\n[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7074291.svg)](https://doi.org/10.5281/zenodo.7074291)\n<!-- badges: end -->\n\n**nichenetr: the R implementation of the NicheNet method.** The goal of\nNicheNet is to study intercellular communication from a computational\nperspective. NicheNet uses human or mouse gene expression data of\ninteracting cells as input and combines this with a prior model that\nintegrates existing knowledge on ligand-to-target signaling paths. This\nallows to predict ligand-receptor interactions that might drive gene\nexpression changes in cells of interest.\n\nWe describe the NicheNet algorithm in the following paper: [NicheNet:\nmodeling intercellular communication by linking ligands to target\ngenes](https://www.nature.com/articles/s41592-019-0667-5).\n\nTo help users **customize NicheNet** to their specific biological use-case, we have recently published a **best practices workflow** cultivated over four years of experience and user feedback  \n[Unraveling cell-cell communication with NicheNet by inferring active\nligands from transcriptomics\ndata](https://www.nature.com/articles/s41596-024-01121-9). In the\nstep-by-step protocol, we describe both a ‘sender-agnostic’ approach\nthat considers ligands from the entire microenvironment and a\n‘sender-focused’ approach that only considers ligands from cell\npopulations of interest. We also include a new downstream procedure for\nprioritizing cell type-specific ligand-receptor pairs. The code to\nreproduce this protocol and the resulting figures can be found on\n<https://github.com/saeyslab/nichenet_protocol>.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "data-management",
+    "lang:r"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "622 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "134 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T02:04:15.445Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/saeyslab/nichenetr",
+        "description": "GitHub repository: saeyslab/nichenetr"
+      }
+    ],
+    "language": "R"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "saeyslab",
+        "type": "human",
+        "uri": "https://github.com/saeyslab"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 890,
+      "validation_diversity": 0.32,
+      "context_breadth": 0.61,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.43
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.5
+  }
+}

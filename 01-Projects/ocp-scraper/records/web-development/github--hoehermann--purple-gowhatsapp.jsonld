@@ -1,0 +1,209 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/hoehermann--purple-gowhatsapp",
+  "meta": {
+    "title": "purple-gowhatsapp",
+    "description": "Pidgin/libpurple plug-in for WhatsApp.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T02:03:47.506Z",
+    "dateModified": "2026-03-11T02:03:47.506Z",
+    "keywords": [
+      "instant-messaging",
+      "libpurple",
+      "libpurple-plugin",
+      "pidgin",
+      "pidgin-plugin",
+      "pidgin-plugins",
+      "whatsapp",
+      "whatsapp-api",
+      "whatsapp-web"
+    ],
+    "license": "GPL-3.0"
+  },
+  "problemSolved": {
+    "statement": "A libpurple/Pidgin plugin for WhatsApp powered by [whatsmeow](https://github.com/tulir/whatsmeow). whatsmeow is written by Tulir Asokan.",
+    "context": "A libpurple/Pidgin plugin for WhatsApp powered by [whatsmeow](https://github.com/tulir/whatsmeow). whatsmeow is written by Tulir Asokan.\n\n![Instant Message](/docs/instant_message.png?raw=true \"Instant Message Screenshot\")",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "backend",
+    "lang:c"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "352 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "41 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T02:03:47.506Z"
+  },
+  "implementation": {
+    "type": "service",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/hoehermann/purple-gowhatsapp",
+        "description": "GitHub repository: hoehermann/purple-gowhatsapp"
+      }
+    ],
+    "language": "C"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "github.com/alfg/mp4",
+        "version": "v0.0.0-20210728035756-55ea58c08aeb",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/alfg/mp4"
+      },
+      {
+        "name": "github.com/lib/pq",
+        "version": "v1.10.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/lib/pq"
+      },
+      {
+        "name": "github.com/mdp/qrterminal/v3",
+        "version": "v3.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mdp/qrterminal/v3"
+      },
+      {
+        "name": "github.com/skip2/go-qrcode",
+        "version": "v0.0.0-20200617195104-da1b6568686e",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/skip2/go-qrcode"
+      },
+      {
+        "name": "go.mau.fi/whatsmeow",
+        "version": "v0.0.0-20260129212019-7787ab952245",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.mau.fi/whatsmeow"
+      },
+      {
+        "name": "google.golang.org/protobuf",
+        "version": "v1.36.11",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/protobuf"
+      },
+      {
+        "name": "modernc.org/sqlite",
+        "version": "v1.34.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/modernc.org/sqlite"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "hoehermann",
+        "type": "human",
+        "uri": "https://github.com/hoehermann"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 434,
+      "validation_diversity": 0.28,
+      "context_breadth": 0.52,
+      "temporal_stability": 0.94,
+      "test_coverage": 0,
+      "documentation_quality": 0.53
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.26
+  }
+}

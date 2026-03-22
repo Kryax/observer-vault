@@ -1,0 +1,167 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/kkyon--simple-it-english",
+  "meta": {
+    "title": "SITE: Simple IT English",
+    "description": "Simple-IT-English: smart wordbook from community for community",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T02:54:46.402Z",
+    "dateModified": "2026-03-22T02:54:46.402Z",
+    "keywords": [
+      "bigdata",
+      "dictonary",
+      "english-learning",
+      "english-word",
+      "simple-it-english",
+      "site"
+    ],
+    "license": "CC0-1.0"
+  },
+  "problemSolved": {
+    "statement": "English is the only language of IT community.\nI know how pain to learn english and remember the english words as a non-native speaker. \nMany talent engineers were kept out from community because lack of english skill.\nMost public IT english words books is not related to IT community ,or too academic.\nI try to create a basic english dictionary from community and for programmer/software engineer .\nThe assumption is developers are able to :",
+    "context": "English is the only language of IT community.\nI know how pain to learn english and remember the english words as a non-native speaker. \nMany talent engineers were kept out from community because lack of english skill.\nMost public IT english words books is not related to IT community ,or too academic.\nI try to create a basic english dictionary from community and for programmer/software engineer .\nThe assumption is developers are able to : \n\n1. [ x ] Read&Write posts in Stackoverflow.com\n\n1. [ x ] Read [hackernews](https://news.ycombinator.com/)\n\n1. [  ] Read&Write comments and readme in github.com.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "data-management",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "312 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "35 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T02:54:46.402Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/kkyon/Simple-IT-English",
+        "description": "GitHub repository: kkyon/Simple-IT-English"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://kkyon.github.io/Simple-IT-English",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "kkyon",
+        "type": "human",
+        "uri": "https://github.com/kkyon"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 382,
+      "validation_diversity": 0.1,
+      "context_breadth": 0.39,
+      "temporal_stability": 0.64,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.6
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.308
+  }
+}

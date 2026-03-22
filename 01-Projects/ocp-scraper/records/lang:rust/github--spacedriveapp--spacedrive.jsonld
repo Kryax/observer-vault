@@ -1,0 +1,186 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/spacedriveapp--spacedrive",
+  "meta": {
+    "title": "Clone the repository",
+    "description": "Spacedrive is an open source cross-platform file explorer, powered by a virtual distributed filesystem written in Rust.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:48:24.454Z",
+    "dateModified": "2026-03-11T04:48:24.454Z",
+    "keywords": [
+      "cross-platform",
+      "distributed-systems",
+      "encryption",
+      "file-manager",
+      "open-source",
+      "rust",
+      "storage",
+      "typescript"
+    ],
+    "license": "AGPL-3.0"
+  },
+  "problemSolved": {
+    "statement": "| Feature                 | Description                                                                  |\n| ----------------------- | ---------------------------------------------------------------------------- |\n| **Cross-Platform**      | macOS, Windows, Linux, iOS, Android                                          |\n| **Multi-Device Index**  | Unified view of files across all your devices                                |\n| **Content Addressing**  | Find optimal file copies automatically (local-first, then LAN, then cloud)   |\n| **Smart Deduplication** | Identify identical files regardless of name or location                      |\n| **Cloud Integration**   | Index S3, Google Drive, Dropbox as first-class volumes                       |\n| **P2P Networking**      | Direct device connections with automatic NAT traversal (Iroh + QUIC)         |\n| **Semantic Tags**       | Graph-based tagging with hierarchies, aliases, and contextual disambiguation |\n| **Action Preview**      | Simulate any operation before execution                                      |\n| **Offline-First**       | Full functionality without internet, syncs when devices reconnect            |\n| **Local Backup**        | P2P backup between your own devices (iOS photo backup available now)         |\n| **Extension System**    | WASM-based plugins for domain-specific functionality                         |",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:rust"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "37291 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "1228 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:48:24.454Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/spacedriveapp/spacedrive",
+        "description": "GitHub repository: spacedriveapp/spacedrive"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://spacedrive.com",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Rust"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "class-variance-authority",
+        "version": "^0.7.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/class-variance-authority"
+      },
+      {
+        "name": "gray-matter",
+        "version": "^4.0.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/gray-matter"
+      },
+      {
+        "name": "react",
+        "version": "19.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/react"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "spacedriveapp",
+        "type": "human",
+        "uri": "https://github.com/spacedriveapp"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 39747,
+      "validation_diversity": 0.69,
+      "context_breadth": 0.62,
+      "temporal_stability": 0.99,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.6
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.765
+  }
+}

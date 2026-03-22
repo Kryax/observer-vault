@@ -1,0 +1,165 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/rodzill4--material-maker",
+  "meta": {
+    "title": "Material Maker",
+    "description": "A procedural textures authoring and 3D model painting tool based on the Godot game engine",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:24:16.170Z",
+    "dateModified": "2026-03-11T04:24:16.170Z",
+    "keywords": [
+      "glsl",
+      "godot-engine",
+      "godotengine",
+      "material-maker",
+      "painting",
+      "procedural-generation",
+      "texture-synthesis",
+      "textures"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "This is a tool based on [Godot Engine](https://godotengine.org/) that can\nbe used to create textures procedurally and paint 3D models.",
+    "context": "This is a tool based on [Godot Engine](https://godotengine.org/) that can\nbe used to create textures procedurally and paint 3D models.\n\nIts user interface is based on Godot's GraphEdit node: textures and brushes are\ndescribed as interconnected nodes.\n\n![Screenshot](material_maker/doc/images/screenshot.png)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "game-development",
+    "lang:gdscript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "5189 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "309 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:24:16.170Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/RodZill4/material-maker",
+        "description": "GitHub repository: RodZill4/material-maker"
+      }
+    ],
+    "language": "GDScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "RodZill4",
+        "type": "human",
+        "uri": "https://github.com/RodZill4"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 5807,
+      "validation_diversity": 0.53,
+      "context_breadth": 0.57,
+      "temporal_stability": 0.94,
+      "test_coverage": 0,
+      "documentation_quality": 0.43
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.347
+  }
+}

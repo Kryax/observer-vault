@@ -1,0 +1,165 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/pixelguys--cubyz",
+  "meta": {
+    "title": "Cubyz",
+    "description": "Voxel sandbox game with a large render distance, procedurally generated content and some cool graphical effects.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:24:19.958Z",
+    "dateModified": "2026-03-11T04:24:19.958Z",
+    "keywords": [
+      "3d-game",
+      "cubyz",
+      "game",
+      "procedural-generation",
+      "sandbox",
+      "sandbox-game",
+      "voxel",
+      "voxel-game",
+      "zig"
+    ],
+    "license": "GPL-3.0"
+  },
+  "problemSolved": {
+    "statement": "Cubyz is written in <img src=\"https://github.com/PixelGuys/Cubyz/assets/43880493/04dc89ca-3ef2-4167-9e1a-e23f25feb67c\" width=\"20\" height=\"20\">\n[Zig](https://ziglang.org/), a rather small language with some cool features and a focus on readability.",
+    "context": "Cubyz is a 3D voxel sandbox game (inspired by Minecraft).\n\nCubyz has a bunch of interesting/unique features such as:\n- Level of Detail (→ This enables far view distances.)\n- 3D Chunks (→ There is no height or depth limit.)\n- Procedural Crafting (→ There are infinite possibilites for tool crafting.)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "game-development",
+    "lang:zig"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "3329 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "196 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:24:19.958Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/PixelGuys/Cubyz",
+        "description": "GitHub repository: PixelGuys/Cubyz"
+      }
+    ],
+    "language": "Zig"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "PixelGuys",
+        "type": "human",
+        "uri": "https://github.com/PixelGuys"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 3721,
+      "validation_diversity": 0.56,
+      "context_breadth": 0.59,
+      "temporal_stability": 0.88,
+      "test_coverage": 0,
+      "documentation_quality": 0.5
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.351
+  }
+}

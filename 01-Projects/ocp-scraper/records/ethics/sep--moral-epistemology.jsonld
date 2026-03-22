@@ -1,0 +1,754 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/moral-epistemology",
+  "meta": {
+    "title": "Moral Epistemology",
+    "description": "How is moral knowledge possible? This question is central in moral epistemology and marks a cluster of problems. The most important are the following. Arguably, these issues, as central and broad as they are, do not cover all of moral epistemology. To keep the subject manageable, this entry is limited in the following five ways. First, the entry ignores global skepticism, which doubts the possibility of anyone's having any knowledge at all. Thus, it ignores the threat of an unstoppable regress in justifications and Cartesian evil demon scenarios. Nor does it take up the debates between foundationalists and coherentists about the structure of justification. These issues (with an exception to be noted) do not raise problems special to moral epistemology. But see the entry for Moral Skepticism. Second, in keeping with the last restriction, the entry takes for granted that our capacity to have other kinds of knowledge is not in question. Indeed, the six problems above arise in part because of the implications of having other kinds of knowledge. Third, the entry assumes that moral knowledge entails (roughly) justified true moral belief. This assumption commits me to the position that moral knowledge is incompatible with non-cognitivism (the view that moral claims lack cognitive value, such as truth-value). A non-cognitivist, however, may seek to explain how the attitudes or prescriptions expressed in moral claims are justified. (See Hare 1981, Campbell 1985, Gibbard 1990, and Blackburn 1998 for theories of moral justification compatible with non-cognitivism and the entry on moral skepticism for a discussion of moral justification in general.) Indeed, an expressivist may invoke a deflationary conception of truth to support the idea that we can speak of justified moral beliefs that are \"true\" -- without implying that justified moral beliefs accurately represent moral reality. Moral justification is discussed below, however, only as it pertains to putatively reliable representations of moral reality. Fourth, many important epistemological issues arise in the context of considering specific normative theories or types of normative theory. (Can virtue ethics explain how we can know what course of action is morally acceptable for a situation demanding the exercise of conflicting virtues?) The focus in this entry is on issues that are special to moral epistemology but not tied to a particular type of normative theory. The feminist criticism cited, though it arises from specific normative concerns, is no exception, since it raises general worries about how moral knowledge is possible. Fifth, the discussion of the history of moral epistemology is limited to philosophers, such as Kant and Hume, who have had the most to say about these issues and whose responses have been most influential. Other historical positions and additional analysis of the possibility of a priori moral knowledge will be covered in other SEP entries. My plan is to examine in turn each of the six clusters of challenges to the possibility of moral knowledge in Sections 1-6 and then, in Sections 7-10, to reflect on the underlying assumption that moral knowledge consists in the justified true moral belief of a single individual.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T03:10:48.563Z",
+    "dateModified": "2026-03-22T03:10:48.563Z",
+    "datePublished": "2003-02-03T13:00:00.000Z",
+    "keywords": [
+      "feminism epistemology",
+      "intuitionism ethics",
+      "moral epistemology",
+      "moral non naturalism",
+      "moral particularism",
+      "moral realism",
+      "morality biology",
+      "naturalism moral",
+      "reflective equilibrium",
+      "skepticism moral",
+      "voluntarism theological"
+    ]
+  },
+  "problemSolved": {
+    "statement": "How is moral knowledge possible? This question is central in moral epistemology and marks a cluster of problems. The most important are the following. Arguably, these issues, as central and broad as they are, do not cover all of moral epistemology. To keep the subject manageable, this entry is limited in the following five ways. First, the entry ignores global skepticism, which doubts the possibility of anyone's having any knowledge at all. Thus, it ignores the threat of an unstoppable regress in justifications and Cartesian evil demon scenarios. Nor does it take up the debates between foundationalists and coherentists about the structure of justification. These issues (with an exception to be noted) do not raise problems special to moral epistemology. But see the entry for Moral Skepticism. Second, in keeping with the last restriction, the entry takes for granted that our capacity to have other kinds of knowledge is not in question. Indeed, the six problems above arise in part because of the implications of having other kinds of knowledge. Third, the entry assumes that moral knowledge entails (roughly) justified true moral belief. This assumption commits me to the position that moral knowledge is incompatible with non-cognitivism (the view that moral claims lack cognitive value, such as truth-value). A non-cognitivist, however, may seek to explain how the attitudes or prescriptions expressed in moral claims are justified. (See Hare 1981, Campbell 1985, Gibbard 1990, and Blackburn 1998 for theories of moral justification compatible with non-cognitivism and the entry on moral skepticism for a discussion of moral justification in general.) Indeed, an expressivist may invoke a deflationary conception of truth to support the idea that we can speak of justified moral beliefs that are \"true\" -- without implying that justified moral beliefs accurately represent moral reality. Moral justification is discussed below, however, only as it pertains to putatively reliable representations of moral reality. Fourth, many important epistemological issues arise in the context of considering specific normative theories or types of normative theory. (Can virtue ethics explain how we can know what course of action is morally acceptable for a situation demanding the exercise of conflicting virtues?) The focus in this entry is on issues that are special to moral epistemology but not tied to a particular type of normative theory. The feminist criticism cited, though it arises from specific normative concerns, is no exception, since it raises general worries about how moral knowledge is possible. Fifth, the discussion of the history of moral epistemology is limited to philosophers, such as Kant and Hume, who have had the most to say about these issues and whose responses have been most influential. Other historical positions and additional analysis of the possibility of a priori moral knowledge will be covered in other SEP entries. My plan is to examine in turn each of the six clusters of challenges to the possibility of moral knowledge in Sections 1-6 and then, in Sections 7-10, to reflect on the underlying assumption that moral knowledge consists in the justified true moral belief of a single individual.",
+    "context": "Opening section: 1. Sociological: Moral Disagreement and Social Diversity | Related entries: feminism-epistemology, moral-epistemology, intuitionism-ethics, morality-biology, moral-non-naturalism, moral-particularism, moral-realism, skepticism-moral, naturalism-moral, reflective-equilibrium, voluntarism-theological",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "ethics",
+    "epistemology",
+    "logic",
+    "philosophy-of-science"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry moral-epistemology",
+        "uri": "https://plato.stanford.edu/entries/moral-epistemology/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 11 related entries, bibliography size 165"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2003-02-03T13:00:00.000Z and revised 2024-05-11T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2024-05-11T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/moral-epistemology/",
+        "description": "SEP entry for moral-epistemology"
+      }
+    ],
+    "solutionApproach": "1. Sociological: Moral Disagreement and Social Diversity"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/feminism-epistemology",
+      "ocp:sep/moral-epistemology",
+      "ocp:sep/intuitionism-ethics",
+      "ocp:sep/morality-biology",
+      "ocp:sep/moral-non-naturalism",
+      "ocp:sep/moral-particularism",
+      "ocp:sep/moral-realism",
+      "ocp:sep/skepticism-moral",
+      "ocp:sep/naturalism-moral",
+      "ocp:sep/reflective-equilibrium",
+      "ocp:sep/voluntarism-theological"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Campbell, Richmond",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/moral-epistemology/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 115,
+      "validation_diversity": 0.45,
+      "context_breadth": 0.47,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.91
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.566
+  },
+  "extensions": {
+    "sep": {
+      "slug": "moral-epistemology",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/moral-epistemology/",
+      "preamble": "How is moral knowledge possible? This question is central in moral epistemology and marks a cluster of problems. The most important are the following. Arguably, these issues, as central and broad as they are, do not cover all of moral epistemology. To keep the subject manageable, this entry is limited in the following five ways. First, the entry ignores global skepticism, which doubts the possibility of anyone's having any knowledge at all. Thus, it ignores the threat of an unstoppable regress in justifications and Cartesian evil demon scenarios. Nor does it take up the debates between foundationalists and coherentists about the structure of justification. These issues (with an exception to be noted) do not raise problems special to moral epistemology. But see the entry for Moral Skepticism. Second, in keeping with the last restriction, the entry takes for granted that our capacity to have other kinds of knowledge is not in question. Indeed, the six problems above arise in part because of the implications of having other kinds of knowledge. Third, the entry assumes that moral knowledge entails (roughly) justified true moral belief. This assumption commits me to the position that moral knowledge is incompatible with non-cognitivism (the view that moral claims lack cognitive value, such as truth-value). A non-cognitivist, however, may seek to explain how the attitudes or prescriptions expressed in moral claims are justified. (See Hare 1981, Campbell 1985, Gibbard 1990, and Blackburn 1998 for theories of moral justification compatible with non-cognitivism and the entry on moral skepticism for a discussion of moral justification in general.) Indeed, an expressivist may invoke a deflationary conception of truth to support the idea that we can speak of justified moral beliefs that are \"true\" -- without implying that justified moral beliefs accurately represent moral reality. Moral justification is discussed below, however, only as it pertains to putatively reliable representations of moral reality. Fourth, many important epistemological issues arise in the context of considering specific normative theories or types of normative theory. (Can virtue ethics explain how we can know what course of action is morally acceptable for a situation demanding the exercise of conflicting virtues?) The focus in this entry is on issues that are special to moral epistemology but not tied to a particular type of normative theory. The feminist criticism cited, though it arises from specific normative concerns, is no exception, since it raises general worries about how moral knowledge is possible. Fifth, the discussion of the history of moral epistemology is limited to philosophers, such as Kant and Hume, who have had the most to say about these issues and whose responses have been most influential. Other historical positions and additional analysis of the possibility of a priori moral knowledge will be covered in other SEP entries. My plan is to examine in turn each of the six clusters of challenges to the possibility of moral knowledge in Sections 1-6 and then, in Sections 7-10, to reflect on the underlying assumption that moral knowledge consists in the justified true moral belief of a single individual.",
+      "firstSectionTitle": "1. Sociological: Moral Disagreement and Social Diversity",
+      "firstSectionText": "People disagree about all kinds of things, from whether any milk is left in the refrigerator to whether there is global warming. Some of these disagreements are easily settled; others take a long time, even a hundred years or more, to reach resolution. Moral disagreement is no exception. That disagreement exists regarding moral questions is a sociological fact that is beyond question. Moral disagreements, however, appear to be particularly recalcitrant to resolution. Take the morality of euthanasia or that of capital punishment. Each has been a subject of moral disagreement for a long time. Moreover, it appears that people often disagree even when they agree on non-moral facts. People can, for example, disagree about whether capital punishment is ever morally justified, even when they agree that it has no general deterrence value, because one party believes it is a punishment that \"fits\" certain crimes, no matter what its other consequences may be. It would be a mistake to exaggerate the extent of moral disagreement. There is considerable psychological and anthropological evidence that a small number of core moral values are espoused universally, such as: benevolence (avoiding harm to others and offering aid when the costs are not high); fairness (reciprocating help and sharing goods); loyalty (especially to family and community); respect for authority (of one's parents and community leaders, when it is exercised responsibly); personal purity in body and mind (notably as it reflects moral character); and freedom (especially from oppressive control by others). See Haidt 2012; Haidt & Joseph 2004. Thus, when there is no conflict in moral values, as in Peter Singer's famous example of rescuing a toddler from drowning in a shallow pond by wading into it and ruining one's new suit, there is universal agreement about what a person ought to do across all cultures (Singer 1972). Nevertheless, these values are often interpreted and applied differently not only across cultures but also across time within roughly the same cultures. For instance, until recently the dominant view in the United States and Europe has been that homosexuality is a morally impure state but now the dominant view is that gay sex is not inherently morally impure or unacceptable. What accounts for this change? Moreover, the core moral values can conflict, as when loyalty to family or religious authority demands that one not show benevolence toward a despised outsider. What if the toddler to be rescued is from the wrong tribe? Or take the extreme divide separating the politically left and right over issues of freedom and fairness. Though each side espouses the core values listed, they interpret them differently and give them different priorities in cases of moral conflict. It is far from clear how these kinds of moral disputes can ever be resolved. These considerations lead to the following worry. If it is a sociological fact that moral disagreements are generally more recalcitrant to resolution than disputes which do not involve differences about moral value -- as I will assume for the sake of argument -- what explains this fact? A possible explanation is that there is no fact of the matter about whether the practice in question is morally right. People agree or disagree in their moral attitudes, but there are no moral truths about which they can be mistaken. Hence, nothing about which they have conflicting attitudes is or can be a proper object of knowledge. In short, moral disagreements often resist resolution, however intelligent, informed, and respectful the disputants may be, because moral knowledge is impossible. The style of argument here is that of inference to the best explanation (Harman 1965). Even if the sociological premise is granted, the conclusion is not guaranteed to be true. Rather we have reason to believe the conclusion, assuming the premise is true, provided that no other explanation better accounts for the truth of the premise. This style of argument can be successful when no other explanation can account for the truth of the premise. It may seem, however, that there are plausible alternative explanations that are compatible with the possibility of moral knowledge. Two main kinds of explanation are particularly salient. One explanation arises from cases of moral disagreement where the prospects of resolution appear most remote. When the disputants are from different cultures and their disagreement reflects a divergence in values between the cultures in which the disputants were raised, there may appear to be insufficient common ground on which to effect a resolution. A moral relativist can explain this commonplace observation with a theory of moral knowledge. A moral relativist can say that the lack of resolution is to be explained by the fact that the moral knowledge expressed by each disputant is relative to the culture in which the person learned his or her values. Thus, when someone from a culture in which women must veil their faces in public defends this practice as morally appropriate and indeed required, the relativist would interpret the defense as expressing knowledge of what is acceptable and not acceptable in his or her culture. Similarly, when the person coming from a culture in which the practice is not appropriate or required disagrees, he or she is simply expressing knowledge of what is acceptable morally in his or her culture. Each has moral knowledge, despite the clash in their opinions, but their knowledge has to be understood relative to the culture in which the knowledge has its roots. The brief description of moral relativism just given belies the immense variety of forms in which it can be stated. Moral relativism can be formulated to take account of differences in moral outlook between different people within the same society to explain the difficulty of reaching resolution when the general culture of the disputants is the same. It can also be formulated to avoid reference to an overarching non-relative moral claim and to allow criticism of one's own culture. (See Harman 1975, 1978, and 1985; Lyons 1976; Wong 1984; Wiggins 1988; Sayre-McCord 1991; Braybrooke et al . 1995; Copp 1995.) Nevertheless, can any view that makes moral truth relative to culture or personal point of view save the possibility of moral knowledge? An objection to relativism made famous by G. E. Moore is telling in the present context (Moore 1912). If the meaning of the claims were as described, so that each disputant would be saying something true or possibly true of his or her own culture (or point of view), there would be the notable logical consequence that they would not be disagreeing with each other. Rather they would be talking about different things. Moore takes it to be obvious that real disputants would be disagreeing, since each claim should be taken to be the contradictory of the other. Hence, since relativism implies that no moral disagreement exists in this case, he rejects moral relativism as being unable to account for the fact of moral disagreement. As a general objection to moral relativism, the objection is unsuccessful, since it is possible to formulate moral relativism without the assumption that moral judgments express true or false claims. Thus, Charles Stevenson, who takes them to be expressions of attitude, holds that people can disagree in attitude even if their moral views have no truth-value and cannot be logically inconsistent in the sense that Moore intended (Stevenson 1944 and 1963). The objection is successful, however, against the attempt to save the possibility of moral knowledge by interpreting the moral claims as being true or false claims about different cultures or points of view. If each disputant, in taking issue with the other, is disagreeing about what is true, then the disputants cannot be making claims about different things and hence cannot have knowledge of the kind the moral relativist supposes. If they did, neither could be disagreeing about the truth of the other's moral claim. In the next section we will return to the position that moral claims are merely expressions of attitude, a position consistent with the fact of moral disagreement. For now we should concede that moral relativism does not offer a satisfactory explanation of how moral knowledge is possible in cases of radical moral disagreement between people of different cultures of subcultures. Is there another way we might explain the fact of moral disagreement without conceding the impossibility of moral knowledge? Any theory that implies that moral knowledge is possible must face this question, but in general a range of considerations is available that might provide an alternative explanation depending on the nature of the disagreement. They divide into three kinds: (a) disagreements about non-moral facts, (b) factors that distort judgment, and (c) disagreements about certain complex empirical facts that are also moral facts. In the first category are disagreements about religious facts, such as whether God exists. We will consider below the relevance of theology to moral epistemology. For the present it is sufficient to note that people with deep moral disagreements, say regarding abortion, euthanasia, and capital punishment, may have different religious views. To the extent that these can be considered non-moral views, for example, that God's will is unambiguously expressed in the Bible, these differences may be able to explain the moral disagreement. Moreover, if it is possible to know whether these non-moral views are true, then we may be able explain moral disagreement without conceding the impossibility of moral knowledge. Other kinds of disagreements also fall into category (a). People with different moral outlooks frequently disagree about the psychological nature of humans and other animals or about large-scale economic and social theories relevant to assessing the consequences of economic and social policy. Disagreements about these difficult non-moral questions, assuming that these are issues about which objective knowledge is possible, could explain the absence of moral agreement. Unless these explanations can be eliminated, the inference from persistent moral disagreement to the impossibility of moral knowledge is on shaky ground. In category (b) we can place such things as having personal bias because of the implications of the issue at hand, being in the grip of a social ideology, and feeling abnormally depressed or fearful. A person, for example, who faces the death penalty for a crime, or someone who has strong feelings of vengeance, may not be able to form an objective view of the morality of capital punishment. Again we have a possible alternative way to explain moral disagreement. Finally, in category (c), if moral facts are extremely complex empirical facts (see the discussion of moral naturalism below), it is possible for moral disagreement to persist for the same reason that disagreement over complex scientific questions can persist.(For further discussion regarding moral disagreement see Miller 1992. For recent empirical work suggesting that moral disagreement cannot be explained away by one of the above means, see Doris and Plakias 2008.) Although the possibility of these alternative explanations does not establish that moral knowledge is possible, anyone arguing to the opposite conclusion by inference to the best explanation needs to make a plausible case that they can all be eliminated. Moreover, as defenders of moral knowledge point out, unless such a case is made out, the default position should be that we know some moral truths. Defenders note that moral language is formulated as if moral claims can be true and that we worry about whether to believe certain moral claims just as if truth is at stake. When challenged we appeal to evidence just as we do in the instance of straightforwardly factual claims, and we make logical inferences that conform to logical systems based on claims having truth-values. Though these points are not decisive, they underline the importance of eliminating alternative explanations of moral disagreement before concluding that moral knowledge is impossible.",
+      "relatedEntries": [
+        "feminism-epistemology",
+        "moral-epistemology",
+        "intuitionism-ethics",
+        "morality-biology",
+        "moral-non-naturalism",
+        "moral-particularism",
+        "moral-realism",
+        "skepticism-moral",
+        "naturalism-moral",
+        "reflective-equilibrium",
+        "voluntarism-theological"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "feminism-epistemology"
+        },
+        {
+          "slug": "moral-epistemology"
+        },
+        {
+          "slug": "intuitionism-ethics"
+        },
+        {
+          "slug": "morality-biology"
+        },
+        {
+          "slug": "moral-non-naturalism"
+        },
+        {
+          "slug": "moral-particularism"
+        },
+        {
+          "slug": "moral-realism"
+        },
+        {
+          "slug": "skepticism-moral"
+        },
+        {
+          "slug": "naturalism-moral"
+        },
+        {
+          "slug": "reflective-equilibrium"
+        },
+        {
+          "slug": "voluntarism-theological"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 165,
+      "bibliography": [
+        {
+          "raw": "Allman, John and James Woodward, 2008, \"What Are Moral Intuitions and Why Should We Care about Them? A Neurobiological Perspective\", Philosophical Issues , 18: 164-85."
+        },
+        {
+          "raw": "Altham, J. E. J., 1987, \"The Legacy of Emotivism\", in Fact, Science, and Morality , G. MacDonald and C. Wright, (eds.), Oxford: Blackwell."
+        },
+        {
+          "raw": "Anderson, Elizabeth, 1995, \"Feminist Epistemology: An Interpretation and Defense\", Hypatia , 10: 50-84."
+        },
+        {
+          "raw": "---, 2010, The Imperative of Integration , Princeton, NJ: Princeton University Press."
+        },
+        {
+          "raw": "---, 2016, \"The Social Epistemology of Morality: Learning the Forgotten History of the Abolition of Slavery\", in M. S. Brady & M. Fricker (eds.), The Epistemic Life of Groups: Essays in the Epistemology of Collections , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Andrews, Kristin, 2020,\"Naive Normativity: The Social Foundation of moral Cognition\", Journal of the American Philosophical Association , 6(1): 36-56."
+        },
+        {
+          "raw": "Anscombe, G. E. M., 1963, Intention , 2nd ed., Ithaca, NY: Cornell University Press."
+        },
+        {
+          "raw": "Alcoff, Linda Martin, 1996, Real Knowing: New Versions of the Coherence Theory , Ithaca, NY: Cornell University Press."
+        },
+        {
+          "raw": "Antony, Louise, 1993, \"Quine as Feminist: The Radical Import of Naturalized Epistemology\", in L. Antony and C. Witt (eds.), A Mind of One's Own: Feminist Essays on Reason and Objectivity , Boulder: Westview."
+        },
+        {
+          "raw": "Ayer, A. J., 1946, Language, Truth, and Logic , (2nd ed.), New York: Dover; first edition published in 1935."
+        },
+        {
+          "raw": "Babbitt, Susan, 1996, Impossible Dreams: Rationality, Integrity, and Moral Imagination , Boulder: Westview."
+        },
+        {
+          "raw": "---, 2014, Humanism and Embodiment: From Cause and Effect to Secularism , London: Bloomsbury Academic."
+        },
+        {
+          "raw": "Bach, Theodore, 2012, \"Gender as a Natural Kind with an Historical Essence\", Ethics , 122: 231-72."
+        },
+        {
+          "raw": "Berker, Selim, 2009, \"The Normative Insignificance of Neuroscience\", Philosophy and Public Affairs , 37(4): 293-329."
+        },
+        {
+          "raw": "Blackburn, Simon, 1984, Spreading the Word , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 1998, Ruling Passions: A Theory of Practical Reasoning , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Bloom, Paul, 2013, Just Babies: The Origins of Good and Evil , New York: Crown Publishers."
+        },
+        {
+          "raw": "Bowles, Samuel and Herbert Giants, 2011, A Cooperative Species: Human Reciprocity and Its Evolution , Princeton, NJ: Princeton University Press."
+        },
+        {
+          "raw": "Boyd, Richard N., 1988, \"How To Be a Moral Realist\", in Geoffrey Sayre-McCord (ed), Essays on Moral Realism Ithaca and London: Cornell University Press, pp. 181-228."
+        },
+        {
+          "raw": "Brandt, Richard, 1959, Ethical Theory: The Problems of Normative and Critical Ethics , Englewood Cliffs: Prentice-Hall."
+        },
+        {
+          "raw": "---, 1979, A Theory of the Good and the Right , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Braybrooke, David, 2001, Natural Law Modernized , Toronto: University of Toronto Press."
+        },
+        {
+          "raw": "Braybrooke, David, Bryson Brown, and Peter K. Schotch, 1995, Logic on the Track of Social Change , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Brink, David O., 1989, Moral Realism and the Foundations of Ethics , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Buchanan, Allen and Russell Powell, 2018, The Evolution of Moral Progress: A Biocultural Theory , New York, NY: Oxford University Press."
+        },
+        {
+          "raw": "Campbell, Richmond, 1985, \"Sociobiology and the Possibility of Ethical Naturalism\", in Morality, Reason, and Truth , D. Copp and D. Zimmerman, (eds.), Totowa, N.J.: Rowman & Allanheld."
+        },
+        {
+          "raw": "---, 1996, \"Can Biology Make Ethics Objective?\", Biology and Philosophy , 11: 21-31."
+        },
+        {
+          "raw": "---, 1998, Illusions of Paradox: A Feminist Epistemology Naturalized , Lanham, MD: Rowman & Littlefield."
+        },
+        {
+          "raw": "---, 2001, \"The Bias Paradox in Feminist Epistemology\", in Engendering Rationalities , S. Morgan and N. Tuana, (eds.), New York: SUNY."
+        },
+        {
+          "raw": "---, 2003, \"Feminist Epistemology Naturalized\", in Feminist Interpretations of Quine , L. H. Nelson and J. Nelson, (eds.), University Park, PA: The Pennsylvania State University."
+        },
+        {
+          "raw": "---, 2007, \"What Is Moral Judgment?\", The Journal of Philosophy , 104: 321-49."
+        },
+        {
+          "raw": "---, 2009, \"The Origin of Moral Reasons\", in Lars-Goran Johansson, Jan Osterberg, and Rysiek Sliwinski, (eds.), Logic, Ethics, and All That Jazz: Essays in Honour of Jordan Howard Sobel Uppsala Philosophical Studies 57, Philosophy Department, Uppsala University, Uppsala, pp. 67-97."
+        },
+        {
+          "raw": "---,2014, \"Reflective Equilibrium and Moral Consistency Reasoning\", Australasian Journal of Philosophy , 92: 433-51."
+        },
+        {
+          "raw": "---, 2017, \"Learning from Moral Inconsistency\", Cognition , 167: 46-57."
+        },
+        {
+          "raw": "Campbell, Richmond and Bruce Hunter, 2000, \"Introduction\", in Moral Epistemology Naturalized , R. Campbell and B. Hunter, (eds.), Canadian Journal of Philosophy (Supplementary Volume): 1-28."
+        },
+        {
+          "raw": "Campbell, Richmond and Victor Kumar, 2012, \"Moral Reasoning on the Ground\", Ethics , 122: 273-312."
+        },
+        {
+          "raw": "---, 2013, \"Pragmatic Naturalism and Moral Objectivity\", Analysis , 73: 446-55."
+        },
+        {
+          "raw": "Casebeer, William D., 2003 Natural Ethical Facts: Evolution, Connectionism, and Moral Cognition , Cambridge, Mass: MIT Press."
+        },
+        {
+          "raw": "Chandler, John, 1984, \"Is the Divine Command Theory Defensible?\", Religious Studies , 20: 443-452."
+        },
+        {
+          "raw": "Churchland, Paul, 1998, \"Toward a Cognitive Neurobiology of the Moral Virtues\", Topoi , 17: 83-96."
+        },
+        {
+          "raw": "Code, Lorraine, 1991, What Can She Know? Feminist Theory and the Construction of Knowledge , Ithaca: Cornell University Press."
+        },
+        {
+          "raw": "Collier, John and Michael Stingl, 2020, Evolutionary Moral Realism , London and New York: Routledge."
+        },
+        {
+          "raw": "Committee on the Ethical and Legal Issues Relating to the Inclusion of Women in Clinical Studies, 1994, in Women and Health Research Vol. 1: Ethical and Legal Issues of Including Women in Clinical Studies , A. C. Mastroianni, R. Faden, and D. Federman, (eds.), Washington, D.C.: National Academy Press."
+        },
+        {
+          "raw": "Copp, David, 1985, \"Considered Judgments and Moral Justification\", in Morality, Reason, and Truth , D. Copp and D. Zimmerman, (eds.), Totowa, NJ: Rowman & Allanheld."
+        },
+        {
+          "raw": "---, 1995, Morality, Normativity, and Society , New York: Oxford University Press."
+        },
+        {
+          "raw": "---, 2000, \"Four Epistemological Challenges to Ethical Naturalism: Naturalized Epistemology and the First-Person Perspective\", in Moral Epistemology Naturalized, R. Campbell and B. Hunter, (eds.), Canadian Journal of Philosophy (Supplementary Volume): 31-74."
+        },
+        {
+          "raw": "---, 2001, \"Realist Expressivism: A Neglected Option for Moral Realism\", Social Philosophy and Policy , 18: 1-43."
+        },
+        {
+          "raw": "---, 2008, \"Darwinian Skepticism about Moral Realism\", Philosophical Issues , 18: 186-206."
+        },
+        {
+          "raw": "Copp, David and David Sobel, 2001, \"Against Direction of Fit Accounts of Belief and Desire\", Analysis , 61: 44-53."
+        },
+        {
+          "raw": "Cushman, Fiery, Liane Young, and Mark Hauser, 2006, \"The Role of Conscious Reasoning and Intuition in Moral Judgment\", Psychological Science , 17 (12): 1082-89."
+        },
+        {
+          "raw": "Damasio, Antonio, 1994, Descartes Error: Emotion, Reason, and the Human Brain , New York; Putnam/Boston: Norton."
+        },
+        {
+          "raw": "Dancy, Jonathan, 1993, Moral Reasons , Cambridge: Blackwell."
+        },
+        {
+          "raw": "Daniels, Norman, 1979, \"Wide Reflective Equilibrium and Theory Acceptance in Ethics\", in Morality, Reason, and Truth , D. Copp and D. Zimmerman, (eds.), Totowa, NJ: Rowman & Allanheld."
+        },
+        {
+          "raw": "Darwin, Charles, 1982 [1871], The Descent of Man, and Selection in Relation to Sex , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Davidson, Donald, 1963, \"Actions, Reasons, and Causes\", Journal of Philosophy , 60: 685-699."
+        },
+        {
+          "raw": "---, 2001, Essays on Actions and Events , 2 ed., Oxford: Clarendon Press."
+        },
+        {
+          "raw": "de Lazari-Radek, Katarzyna and Peter Singer, 2014, The Point of View of the Universe: Sidgwick and Contemporary Ethics , New York: Oxford University Press."
+        },
+        {
+          "raw": "de Sousa, Ronald, 1987, The Rationality of Emotion , Cambridge, Mass: MIT Press"
+        },
+        {
+          "raw": "de Waal, Francis, 2006, \"Morally Evolved: Primate Social Instincts, Human Morality, and the Rise and Fall of 'Veneer Theory'&thinsp;\", in Francis de Waal (ed.), Primates and Philosophers: How Morality Evolved , Princeton, Princeton University Press."
+        },
+        {
+          "raw": "Dewey, John, 1922, Human Nature and Conduct: An Introduction to Social Psychology , New York: Modern Library."
+        },
+        {
+          "raw": "Dewey, John and James Tufts, 1932, Ethics , 2nd ed., New York: Holt."
+        },
+        {
+          "raw": "Doris, John M. and Alexandra Plakias, 2008, \"How to Argue about Disagreement: Evaluative Diversity and Moral Realism\", in Walter Sinnott-Armstrong (ed.) Moral Psychology , Vol. 2, The Cognitive Science of Morality: Intuition and Diversity , Cambridge, Mass: MIT Press"
+        },
+        {
+          "raw": "Dotson, Kristie, 2011, \"Tracking Epistemic Violence, Tracking Practices of Silencing\", Hypatia , 26: 236-257."
+        },
+        {
+          "raw": "Duran, Jane, 1994, Knowledge in Context: Naturalized Epistemology and Sociolinguistics , Landam, MD: Rowman & Littlefield."
+        },
+        {
+          "raw": "Fenske, Wayne, 1997, \"Noncognitivism: A New Defense\", Journal of Value Inquiry , 31: 301-309."
+        },
+        {
+          "raw": "Fine, Cordelia, 2017, Testosterone Rex: Myths of Sex, Science, and Society , New York, NY: Norton."
+        },
+        {
+          "raw": "Fricker, Miranda, 2007, Epistemic Injustice , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Gauthier, David, 1986, Morals by Agreement , Oxford: Clarendon."
+        },
+        {
+          "raw": "Gibbard, Allan, 1990, Wise Choices, Apt Feelings , Cambridge: Harvard University Press."
+        },
+        {
+          "raw": "Gigerenzer, Gerd, 2008, \"Moral Intuition = Fast and Frugal Heuristic?\", in Walter Sinnott-Armstrong (ed.), Moral Psychology , Vol. 2, The Cognitive Science of Morality: Intuition and Diversity , Cambridge, Mass: MIT Press."
+        },
+        {
+          "raw": "Goldman, Alvin I., 1999, Knowledge in a Social World , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Goodman, Nelson, 1955, Fact, Fiction, and Forecast , Cambridge: Harvard University Press."
+        },
+        {
+          "raw": "Greene, Joshua, 2008, \"The Secret Joke of Kant's Soul\", in Walter Sinnott-Armstrong (ed.), Moral Psychology , Vol. 2, The Evolution of Morality: Adaptations and Innateness , Cambridge, Mass: MIT Press."
+        },
+        {
+          "raw": "---, 2013, Moral Tribes: Emotion, Reason, and the Gap between Us and Them , New York: Penguin."
+        },
+        {
+          "raw": "Haidt, Jonathan, 2001, \"The Emotional Dog and Its Rational Tail: A Social Intuitionist Approach to Moral Judgment\", Psychological Review , 108: 814-34."
+        },
+        {
+          "raw": "---, 2012, The Righteous Mind: Why Good People Are Divided by Politics and Religion , New York: Pantheon Books."
+        },
+        {
+          "raw": "Haidt, Jonathan and Craig Joseph, 2004, \"Intuitive Ethics: How Innately Prepared Intuitions Generate Culturally Variable Virtues\", Daedalus , (Fall): 55-66."
+        },
+        {
+          "raw": "Harbin, Ami, 2023, Fearing Together: Ethics for Insecurity , New York: Oxford University Press."
+        },
+        {
+          "raw": "Hare, R. M., 1952, The Language of Morals , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "---, 1981, Moral Thinking: Its Levels, Method, and Point , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Harman, Gilbert, 1965, \"Inference to the Best Explanation\", Philosophical Review , 74: 88-95."
+        },
+        {
+          "raw": "---, 1975, \"Moral Relativism Defended\", The Philosophical Review , 84: 3-22."
+        },
+        {
+          "raw": "---, 1977, The Nature of Morality: An Introduction to Ethics , New York: Oxford University Press."
+        },
+        {
+          "raw": "---, 1978, \"What Is Moral Relativism?\", in Values and Morals , A. I. Goldman and J. Kim (eds.), Dordrecht: D. Reidel."
+        },
+        {
+          "raw": "---, 1985, \"Is There a Single True Morality?\", in Morality, Reason, and Truth , D. Copp and D. Zimmerman, Totowa, N.J.: Rowman & Allanheld."
+        },
+        {
+          "raw": "Hardwig, John, 1991, \"The Role of Trust in Knowledge\", Journal of Philosophy , 88: 693-708."
+        },
+        {
+          "raw": "Hrdy, Sarah Blaffer, 2009, Mothers and Others: The Evolutionary Origins of Mutual Understanding , Cambridge, MA: Harvard University Press"
+        },
+        {
+          "raw": "Hume, David, 1978, A Treatise of Human Nature , 2 ed., L. A. Selby-Bigge, (ed.), Oxford: Oxford University Press. (First edition published in 1739-40.)"
+        },
+        {
+          "raw": "---, 1902, An Enquiry Concerning Human Understanding , 2 ed., L. A. Selby-Bigge, (ed.), Oxford: Oxford University Press. (First edition published in 1748.)"
+        },
+        {
+          "raw": "Jaggar, Alison, 1983, Feminist Politics and Human Nature , Totowa, N.J.: Rowman & Allanheld."
+        },
+        {
+          "raw": "---, 1989, \"Love and Emotion in Feminist Epistemology\", in Gender/Body/Knowledge , S. Bordo and A. Jaggar, (eds.), New Brunswick, N. J.: Rutgers University Press."
+        },
+        {
+          "raw": "James, Williams, 1907, Pragmatism: A New Name for Some Old Ways of Thinking , New York: Longmans (Harvard Book Collections)."
+        },
+        {
+          "raw": "Joyce, Richard, 2006, The Evolution of Morality , Cambridge, Mass: MIT Press."
+        },
+        {
+          "raw": "Kahane, Guy, 2011, \"Evolutionary Debunking Arguments\", No&ucirc;s , 45 (1): 103-25."
+        },
+        {
+          "raw": "Kant, Immanuel, 1785, Groundwork of the Metaphysics of Morals , in H. J. Paton (ed., trans.), The Moral Law: Kant's Groundwork of the Metaphysic of Morals , Oxford: Hutchinson, 1956."
+        },
+        {
+          "raw": "Kim, Jaegwon, 1978, \"Supervenience and Nomological Incommensurables\", American Philosophical Quarterly , 15: 149-56."
+        },
+        {
+          "raw": "---, 1988, \"What Is 'Naturalized Epistemology'?\", in Philosophical Perspectives, 2, Epistemology , J. E. Tomberlin, (ed.), Atascadero, Calif.: Ridgeview. (Reprinted in Naturalizing Epistemology , H. Kornblith, ed.)"
+        },
+        {
+          "raw": "Kitcher, Philip, 1984, \"1953 and All That: A Tale of Two Sciences\", Philosophical Review , 93: 335-374."
+        },
+        {
+          "raw": "---, 1993, \"The Evolution of Human Altruism\", Journal of Philosophy , 90: 497-519."
+        },
+        {
+          "raw": "---, 2012, Preludes to Pragmatism: Toward a Reconstruction of Philosophy , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Kornblith, Hilary, 2002, Knowledge and its Place in Nature , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "---, 1993, Inductive Inference and Its Natural Ground: An Essay in Naturalistic Epistemology , Cambridge: MIT Press."
+        },
+        {
+          "raw": "---, ed., 1994, Naturalizing Epistemology , 2 ed., Cambridge: MIT Press."
+        },
+        {
+          "raw": "Kumar, Victor, 2015, \"Moral Judgment as a Natural Kind\", Philosophical Studies , 172: 2887-2910."
+        },
+        {
+          "raw": "---, forthcoming, \"The Ethical Significance of Cognitive Science\", in S. Leslie and S. Cullen (eds.), Current Controversies in Philosophy of Cognitive Science , New York: Routledge."
+        },
+        {
+          "raw": "Kumar, Victor and Richmond Campbell, 2012, \"On the Normative Significance of Experimental Psychology\", Philosophical Psychology , 25: 311-30."
+        },
+        {
+          "raw": "---, 2016, \"Honor and Moral Revolution\", Ethical Theory and Moral Practice . 19: 147-159."
+        },
+        {
+          "raw": "---, 2022, A Better Ape: The Evolution of the Moral Mind and How it Made us Human , New York: Oxford University Press."
+        },
+        {
+          "raw": "Little, Margaret Olivia, 1997, \"Virtue as Knowledge: Objections from Philosophy of Mind\", Nous , 31: 59-79."
+        },
+        {
+          "raw": "Longino, Helen, 1990, Science as Social Knowledge , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Lyons, David, 1976, \"Ethical Relativism and the Problem of Incoherence\", Ethics , 86: 107-121."
+        },
+        {
+          "raw": "Mackie, John L., 1977, Ethics: Inventing Right and Wrong , New York: Penguin."
+        },
+        {
+          "raw": "Manne, Kate, 2018, Down Girl: The Logic of Misogyny , New York, NY: Oxford University Press."
+        },
+        {
+          "raw": "Mastroianni, Anna C., Ruth Faden, and Daniel Bederman, eds., 1994, Women and Health Research. Vol. 1: Ethical and Legal Issues of Including Women in Clinical Studies , Washington, D.C.: National Academy Press."
+        },
+        {
+          "raw": "McNaughton, David, 1988, Moral Vision , New York: Blackwell."
+        },
+        {
+          "raw": "Mercier, Hugo and Dan Sperber, 2017, The Enigma of Reason , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Miller, Richard W., 1992, Moral Differences: Truth, Justice and Conscience in a World of Conflict , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Mills, Charles W., 2017, Black Rights/White Wrongs: The Critique of Racial Liberalism , New York, NY: Oxford University Press."
+        },
+        {
+          "raw": "Misak, Cheryl, 2013, The American Pragmatists , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Moore, G. E., 1903, Principia Ethica , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 1912, Ethics , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Nelson, Jack, 1996, \"The Last Dogma of Empiricism?\", in Feminism, Science, and Philosophy of Science , L. H. Nelson and J. Nelson, (eds.), Dordrecht: Kluwer."
+        },
+        {
+          "raw": "Nelson, Lynn Hankinson, 1990, Who Knows: From Quine to a Feminist Empiricism , Philadelphia: Temple University Press."
+        },
+        {
+          "raw": "---, 1996, \"Empiricism without Dogmas\", in Feminism, Science, and Philosophy of Science , L. H. Nelson and J. Nelson, (eds.), Dordrecht: Kluwer."
+        },
+        {
+          "raw": "Nelson, Lynn Hankinson, and Jack Nelson, (eds.), 1996, Feminism, Science, and the Philosophy of Science , Dordrecht: Kluwer."
+        },
+        {
+          "raw": "Nichols, Shaun, 2004, \"After Objectivity: An Empirical Study of Moral Judgment\", Philosophical Psychology , 17: 3-26."
+        },
+        {
+          "raw": "Nozick, Robert, 1974, State, Anarchy, and Utopia , New York: Basic Books."
+        },
+        {
+          "raw": "Okin, Susan Moller, 1989, Justice, Gender, and the Family , New York: Basic Books."
+        },
+        {
+          "raw": "Plato, Euthyphro , (1937): Translated by B. Jowett, in B. Jowett, (ed.), The Dialogues of Plato , New York: Random House."
+        },
+        {
+          "raw": "Quine, W. V., 1969a, \"Epistemology Naturalized\" in Ontological Relativity and Other Essays , W. V. Quine, New York: Columbia University Press."
+        },
+        {
+          "raw": "---, 1969b, \"Natural Kinds\" in Ontological Relativity and Other Essays , W. V. Quine, New York: Columbia University Press."
+        },
+        {
+          "raw": "---, 1981, Theories and Things , Cambridge: Harvard University Press."
+        },
+        {
+          "raw": "Railton, Peter, 1986, \"Moral Realism\", Philosophical Review , 95: 163-207."
+        },
+        {
+          "raw": "---, 2014, \"The Affective Dog and Its Rational Tale: Intuition and Attunement\", Ethics , 124: 813-59."
+        },
+        {
+          "raw": "Rawls, John, 1971, A Theory of Justice , Cambridge: Harvard University Press."
+        },
+        {
+          "raw": "Ridge, Michael, 2006, \"Ecumenical Expressivism: Finessing Frege\" Ethics , 116: 302-36."
+        },
+        {
+          "raw": "Ross, W. D., 1930, The Right and the Good , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Rottschaefer, William, 1998, The Biology and Psychology of Moral Agency , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Rowlands, Mark, 2012, Can Animals Be Moral? , London and New York: Oxford University Press."
+        },
+        {
+          "raw": "Ruse, Michael, 1986, Taking Darwin Seriously , Oxford: Basil Blackwell."
+        },
+        {
+          "raw": "Sayre-McCord, Geoffrey, 1988, \"Moral Theory and Explanatory Impotence\", Midwest Studies , 12: 433-57."
+        },
+        {
+          "raw": "---, 1991, \"Being a Realist about Relativism (In Ethics)\", Philosophical Studies , 61: 155-76."
+        },
+        {
+          "raw": "Schroeder, Timothy, 2004, Three Faces of Desire , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Shafer-Landau, Russ, 2003, Moral Realism: A Defence , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Sidgwick, Henry, 1907, The Methods of Ethics , New York: Macmillan."
+        },
+        {
+          "raw": "Singer, Peter, 1972, \"Famine, Affluence, and Morality\", Philosophy and Public Affairs , 1: 229-43."
+        },
+        {
+          "raw": "Smith, Michael, 1987, \"The Humean Theory of Motivation\", Mind , 96: 36-61."
+        },
+        {
+          "raw": "---, 1994, The Moral Problem , Oxford: Blackwell."
+        },
+        {
+          "raw": "Stevenson, Charles, 1944, Ethics and Language , New Haven: Yale University Press."
+        },
+        {
+          "raw": "---, 1963, Facts and Values , New Haven: Yale University Press."
+        },
+        {
+          "raw": "Street, Sharon, 2006, \"A Darwinian Dilemma for Realist Theories of Value\", Philosophical Studies 127: 109-66."
+        },
+        {
+          "raw": "Sturgeon, Nicholas, 1985, \"Moral Explanations\" in Morality, Reason, and Truth , D. Copp and D. Zimmerman, (eds.), Totowa, N. J.: Rowman & Allanheld."
+        },
+        {
+          "raw": "Thomas, Laurence, 1992-3, \"Moral Deference\", The Philosophical Forum , 24: 233-50."
+        },
+        {
+          "raw": "Tomasello, Michael, 2016, A Natural History of Human Morality , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Vincent, Sarah, Rebecca King, and Kristin Andrews, 2018, \"Normative Practices of Other Animals\", in A. Zimmerman, K. Jones, and M. Timmons, (eds.), The Routledge Handbook of Moral Epistemology , New York: Routledge."
+        },
+        {
+          "raw": "Walker, Margaret Urban, 1998. Moral Understandings: A Feminist Study in Ethics , New York: Routledge."
+        },
+        {
+          "raw": "Westmoreland, Robert, 1996, \"Two Recent Metaphysical Divine Command Theories of Ethics\", International Journal of Philosophy of Religion , 39: 15-31."
+        },
+        {
+          "raw": "White, Morton, 1981, What Is and What Ought To Be Done: An Essay on Ethics and Epistemology , New York: Oxford University Press."
+        },
+        {
+          "raw": "---, 1986, \"Normative Ethics, Normative Epistemology, and Quine's Holism\", in The Philosophy of W. V. Quine , L. E. Hahn and P. A. Lewis, (eds.), La Salle, Illinois: Open Court."
+        },
+        {
+          "raw": "Wiggins, David, 1988, \"Truth, Invention, and the Meaning of Life\", in Essays on Moral Realism , G. Sayre-McCord, (ed.), Ithaca, N.Y.: Cornell University Press."
+        },
+        {
+          "raw": "Williams, Bernard, 1974-5, \"The Truth in Relativism\", Proceedings of The Aristotelian Society , 75: 215-28."
+        },
+        {
+          "raw": "Wilson, Edward O., 1978, On Human Nature , New York: Bantam Books."
+        },
+        {
+          "raw": "Wong, David B., 1984, Moral Relativity , Berkeley: University of California Press."
+        },
+        {
+          "raw": "---, 2002, \"Reasons and Analogical Reasoning in Mengzi\", in X. Liu and P. Ivanhoe (eds.), Essays on the Moral Philosophy of Mengzi , Indianapolis: Hackett Publishing."
+        },
+        {
+          "raw": "Woodward, James and John Allman, 2007, \"Moral Intuition: Its Neural Substrate and Normative Significance\", Journal of physiology - Paris , 101: 179-202."
+        }
+      ],
+      "publishedAt": "2003-02-03T13:00:00.000Z",
+      "revisedAt": "2024-05-11T14:00:00.000Z"
+    }
+  }
+}

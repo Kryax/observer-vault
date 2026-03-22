@@ -1,0 +1,161 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/hujiulong--gcoord",
+  "meta": {
+    "title": "Gcoord",
+    "description": "地理坐标系转换工具",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:50:30.889Z",
+    "dateModified": "2026-03-11T04:50:30.889Z",
+    "keywords": [
+      "bd-09",
+      "gcj-02",
+      "geojson",
+      "javascript",
+      "map",
+      "wgs84"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "[![npm version](https://img.shields.io/npm/v/gcoord.svg)](https://www.npmjs.com/package/gcoord)\n[![codecov](https://codecov.io/gh/hujiulong/gcoord/branch/master/graph/badge.svg)](https://codecov.io/gh/hujiulong/gcoord)\n[![gzip size](http://img.badgesize.io/https://unpkg.com/gcoord/dist/gcoord.global.prod.js?compression=gzip)](https://unpkg.com/gcoord/dist/gcoord.global.prod.js)\n[![LICENSE](https://img.shields.io/npm/l/gcoord.svg)](https://www.npmjs.com/package/gcoord)\n[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)",
+    "context": "[![npm version](https://img.shields.io/npm/v/gcoord.svg)](https://www.npmjs.com/package/gcoord)\n[![codecov](https://codecov.io/gh/hujiulong/gcoord/branch/master/graph/badge.svg)](https://codecov.io/gh/hujiulong/gcoord)\n[![gzip size](http://img.badgesize.io/https://unpkg.com/gcoord/dist/gcoord.global.prod.js?compression=gzip)](https://unpkg.com/gcoord/dist/gcoord.global.prod.js)\n[![LICENSE](https://img.shields.io/npm/l/gcoord.svg)](https://www.npmjs.com/package/gcoord)\n[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)\n\n**gcoord**(**g**eographic **coord**inates)是一个处理地理坐标系的JS库，用来修正百度地图、高德地图及其它互联网地图坐标系不统一的问题。\n\n支持转换坐标数组和 GeoJSON 数据，无外部依赖，能在 nodejs、所有现代浏览器（IE8+）和 React Native 等环境中运行，gzip后仅3kb。\n\n更多信息可以阅读[地理坐标系](https://github.com/hujiulong/gcoord/wiki/%E5%9C%B0%E7%90%86%E5%9D%90%E6%A0%87%E7%B3%BB)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:typescript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "3258 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "402 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:50:30.889Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/hujiulong/gcoord",
+        "description": "GitHub repository: hujiulong/gcoord"
+      }
+    ],
+    "language": "TypeScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "hujiulong",
+        "type": "human",
+        "uri": "https://github.com/hujiulong"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 4062,
+      "validation_diversity": 0.3,
+      "context_breadth": 0.5,
+      "temporal_stability": 0.72,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.5
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.516
+  }
+}

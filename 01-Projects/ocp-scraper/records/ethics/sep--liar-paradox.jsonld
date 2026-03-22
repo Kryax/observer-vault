@@ -1,0 +1,667 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/liar-paradox",
+  "meta": {
+    "title": "Liar Paradox",
+    "description": "The first sentence in this essay is a lie. There is something odd about saying so, as has been known since ancient times. To see why, remember that all lies are untrue. Is the first sentence true? If it is, then it is a lie, and so it is not true. Conversely, suppose that it is not true. We (viz., the authors) have said it, and normally things are said with the intention of being believed. Saying something that way when it is untrue is a lie. But then, given what the sentence says, it is true after all! That there is some sort of puzzle to be found with sentences like the first one of this essay has been noted frequently throughout the history of philosophy. It was discussed in classical times, notably by the Megarians, but it was also mentioned by Aristotle and by Cicero. As one of the insolubilia, it was the subject of extensive investigation by medieval logicians such as Buridan. More recently, work on this problem has been an integral part of the development of modern mathematical logic, and it has become a subject of extensive research in its own right. The paradox is sometimes called the 'Epimenides paradox' as the tradition attributes a sentence like the first one in this essay to Epimenides of Crete, who is reputed to have said that all Cretans are always liars. That some Cretan has said so winds up in no less a source than New Testament! Lying is a complicated matter, but what's puzzling about sentences like the first one of this essay isn't essentially tied to intentions, social norms, or anything like that. Rather, it seems to have something to do with truth, or at least, some semantic notion related to truth. The puzzle is usually named 'the Liar paradox', though this really names a family of paradoxes that are associated with our type of puzzling sentence. The family is aptly named one of paradoxes , as they seem to lead to incoherent conclusions, such as: \"everything is true\". Indeed, the Liar seems to allow us to reach such conclusions on the basis of logic, plus some very obvious principles that have sometimes been counted as principles of logic. Thus, we have the rather surprising situation of something near or like logic alone leading us to incoherence. This is perhaps the most virulent strain of paradox, and dealing with it has been an important task in logic for about as long as there has been logic. In this essay, we will review the important members of the family of Liar paradoxes, and some of the important ideas about how these paradoxes might be resolved. The past few thousand years have yielded a great number of proposals, and we will not be able to examine all of them; instead, we will focus on a few that have, in recent discussions, proved to be important.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T04:16:21.281Z",
+    "dateModified": "2026-03-22T04:16:21.281Z",
+    "datePublished": "2011-01-19T13:00:00.000Z",
+    "keywords": [
+      "curry paradox",
+      "dialetheism",
+      "goedel",
+      "goedel incompleteness",
+      "logic manyvalued",
+      "logic provability",
+      "self reference",
+      "tarski",
+      "tarski truth",
+      "truth",
+      "truth axiomatic",
+      "truth revision",
+      "vagueness"
+    ]
+  },
+  "problemSolved": {
+    "statement": "The first sentence in this essay is a lie. There is something odd about saying so, as has been known since ancient times. To see why, remember that all lies are untrue. Is the first sentence true? If it is, then it is a lie, and so it is not true. Conversely, suppose that it is not true. We (viz., the authors) have said it, and normally things are said with the intention of being believed. Saying something that way when it is untrue is a lie. But then, given what the sentence says, it is true after all! That there is some sort of puzzle to be found with sentences like the first one of this essay has been noted frequently throughout the history of philosophy. It was discussed in classical times, notably by the Megarians, but it was also mentioned by Aristotle and by Cicero. As one of the insolubilia, it was the subject of extensive investigation by medieval logicians such as Buridan. More recently, work on this problem has been an integral part of the development of modern mathematical logic, and it has become a subject of extensive research in its own right. The paradox is sometimes called the 'Epimenides paradox' as the tradition attributes a sentence like the first one in this essay to Epimenides of Crete, who is reputed to have said that all Cretans are always liars. That some Cretan has said so winds up in no less a source than New Testament! Lying is a complicated matter, but what's puzzling about sentences like the first one of this essay isn't essentially tied to intentions, social norms, or anything like that. Rather, it seems to have something to do with truth, or at least, some semantic notion related to truth. The puzzle is usually named 'the Liar paradox', though this really names a family of paradoxes that are associated with our type of puzzling sentence. The family is aptly named one of paradoxes , as they seem to lead to incoherent conclusions, such as: \"everything is true\". Indeed, the Liar seems to allow us to reach such conclusions on the basis of logic, plus some very obvious principles that have sometimes been counted as principles of logic. Thus, we have the rather surprising situation of something near or like logic alone leading us to incoherence. This is perhaps the most virulent strain of paradox, and dealing with it has been an important task in logic for about as long as there has been logic. In this essay, we will review the important members of the family of Liar paradoxes, and some of the important ideas about how these paradoxes might be resolved. The past few thousand years have yielded a great number of proposals, and we will not be able to examine all of them; instead, we will focus on a few that have, in recent discussions, proved to be important.",
+    "context": "Opening section: 1. The Paradox and the Broader Phenomenon | Related entries: curry-paradox, dialetheism, goedel, goedel-incompleteness, logic-manyvalued, logic-provability, self-reference, tarski, tarski-truth, truth, truth-axiomatic, truth-revision, vagueness",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "ethics",
+    "logic"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry liar-paradox",
+        "uri": "https://plato.stanford.edu/entries/liar-paradox/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "3 author(s), 13 related entries, bibliography size 130"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2011-01-19T13:00:00.000Z and revised 2016-12-11T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2016-12-11T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/liar-paradox/",
+        "description": "SEP entry for liar-paradox"
+      }
+    ],
+    "solutionApproach": "1. The Paradox and the Broader Phenomenon"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/curry-paradox",
+      "ocp:sep/dialetheism",
+      "ocp:sep/goedel",
+      "ocp:sep/goedel-incompleteness",
+      "ocp:sep/logic-manyvalued",
+      "ocp:sep/logic-provability",
+      "ocp:sep/self-reference",
+      "ocp:sep/tarski",
+      "ocp:sep/tarski-truth",
+      "ocp:sep/truth",
+      "ocp:sep/truth-axiomatic",
+      "ocp:sep/truth-revision",
+      "ocp:sep/vagueness"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Beall, Jc",
+        "type": "human"
+      },
+      {
+        "name": "Glanzberg, Michael",
+        "type": "human"
+      },
+      {
+        "name": "Ripley, Ellie",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/liar-paradox/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 106,
+      "validation_diversity": 0.67,
+      "context_breadth": 0.5,
+      "temporal_stability": 0.84,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.92
+    },
+    "confidence": "proven",
+    "authority": "high",
+    "status": "draft",
+    "trustScore": 0.636
+  },
+  "extensions": {
+    "sep": {
+      "slug": "liar-paradox",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/liar-paradox/",
+      "preamble": "The first sentence in this essay is a lie. There is something odd about saying so, as has been known since ancient times. To see why, remember that all lies are untrue. Is the first sentence true? If it is, then it is a lie, and so it is not true. Conversely, suppose that it is not true. We (viz., the authors) have said it, and normally things are said with the intention of being believed. Saying something that way when it is untrue is a lie. But then, given what the sentence says, it is true after all! That there is some sort of puzzle to be found with sentences like the first one of this essay has been noted frequently throughout the history of philosophy. It was discussed in classical times, notably by the Megarians, but it was also mentioned by Aristotle and by Cicero. As one of the insolubilia, it was the subject of extensive investigation by medieval logicians such as Buridan. More recently, work on this problem has been an integral part of the development of modern mathematical logic, and it has become a subject of extensive research in its own right. The paradox is sometimes called the 'Epimenides paradox' as the tradition attributes a sentence like the first one in this essay to Epimenides of Crete, who is reputed to have said that all Cretans are always liars. That some Cretan has said so winds up in no less a source than New Testament! Lying is a complicated matter, but what's puzzling about sentences like the first one of this essay isn't essentially tied to intentions, social norms, or anything like that. Rather, it seems to have something to do with truth, or at least, some semantic notion related to truth. The puzzle is usually named 'the Liar paradox', though this really names a family of paradoxes that are associated with our type of puzzling sentence. The family is aptly named one of paradoxes , as they seem to lead to incoherent conclusions, such as: \"everything is true\". Indeed, the Liar seems to allow us to reach such conclusions on the basis of logic, plus some very obvious principles that have sometimes been counted as principles of logic. Thus, we have the rather surprising situation of something near or like logic alone leading us to incoherence. This is perhaps the most virulent strain of paradox, and dealing with it has been an important task in logic for about as long as there has been logic. In this essay, we will review the important members of the family of Liar paradoxes, and some of the important ideas about how these paradoxes might be resolved. The past few thousand years have yielded a great number of proposals, and we will not be able to examine all of them; instead, we will focus on a few that have, in recent discussions, proved to be important.",
+      "firstSectionTitle": "1. The Paradox and the Broader Phenomenon",
+      "firstSectionText": "Consider a sentence named 'FLiar', which says of itself (i.e., says of FLiar) that it is false. This seems to lead to contradiction as follows. If the sentence 'FLiar is false' is true, then given what it says, FLiar is false. But FLiar just is the sentence 'FLiar is false', so we can conclude that if FLiar is true, then FLiar is false. Conversely, if FLiar is false, then the sentence 'FLiar is false' is true. Again, FLiar just is the sentence 'FLiar is false', so we can conclude that if FLiar is false, then FLiar is true. We have thus shown that FLiar is false if and only if FLiar is true. But, now, if every sentence is true or false, FLiar itself is either true or false, in which case--given our reasoning above--it is both true and false. This is a contradiction. Contradictions, according to many logical theories (e.g., classical logic, intuitionistic logic, and many others) imply triviality, that is, that every sentence is true. An obvious response is to deny that every sentence is true or false, i.e., to deny the principle of bivalence. As we will discuss in &sect;4 , some descendants of this idea remain important in current work on the Liar. Even so, a simple variant Liar sentence shows that this immediate answer is not all there is to the story. Rather than work with falsehood, we can construct a Liar sentence with the complex predicate 'not true'. Consider a sentence named 'ULiar' (for 'un-true'), which says of itself that it is not true. The argument towards contradiction is similar to the FLiar case. In short: if ULiar is true, then it is not true; and if it is not true, then it is true. But, now, if every sentence is true or not true, ULiar itself is true or not true, in which case it is both true and not true. This is a contradiction. According to many logical theories, a contradiction implies triviality. The two forms of the Liar paradox we have so far reviewed rely on some explicit self-reference--sentences talking directly about themselves. Such explicit self-reference can be avoided, as is shown by our next family of Liar paradoxes. Consider a very concise (viz., one-sentence-each) dialog between siblings Max and Agnes. What Max said is true if and only if what Agnes said is true. But what Agnes said (viz., 'Max's claim is not true') is true if and only if what Max said is not true. Hence, what Max said is true if and only if what Max said is not true. But, now, if what Max said is true or not true, then it is both true and not true. And this, as in the FLiar and ULiar cases, is a contradiction, implying, according to many logical theories, absurdity. Liar paradoxes can also be formed using more complex sentence structures, rather than complex modes of reference. One that has been important involves Boolean compounds. Boolean compounds can enter into Liar sentences in many ways. One relatively simple one is as follows. Consider the following sentence named 'DLiar' (for 'Disjunctive'). First, observe that if DLiar is not true, then it must be true. If DLiar is not true, then by similar reasoning to what we saw above, we have that the left disjunct of DLiar is true. But a disjunction is true if one of its disjuncts is, so DLiar is true. Thus, if DLiar is not true, it is true and not true, and we have a contradiction. By reductio, then, it must be true; so one of its disjuncts must be true. If it's the first one, we have a contradiction, so it must be the second one; we can conclude that \\(1 = 0\\). We have thus proved that \\(1 = 0\\). Moreover, the sentence '\\(1 = 0\\)' played no real role in the above reasoning. We could replace it with any other sentence to get a proof of that sentence. We pause to mention DLiar as it is connected with another important paradox: Curry's paradox, which involves conditionals that say of themselves only that if they (the conditional itself) are true, so too is some absurdity (e.g., 'if this sentence is true, then \\(1 = 0\\)' or 'if this sentence is true, everything is true' or so on). At least in languages where the conditional is the material conditional, and so \\(A \\supset B\\) is equivalent to \\(\\neg A \\vee B\\), DLiar is equivalent to the Curry sentence 'DLiar is true \\(\\supset 1 = 0\\)'. Though this may set up some relations between the Liar and Curry's paradox, we pause to note an important difference. For the Curry paradox is most important where the conditional is more than the material conditional (or some modalized variant of it). In such settings, the Curry paradox does not wear negation on its sleeve, as DLiar does. For more information, consult the entry on Curry's paradox . The question of whether the Liar paradox really requires some sort of circularity has been the subject of extensive debate. Liar cycles (e.g., the Max-Agnes dialog) show that explicit self-reference is not necessary, but it is clear that such cycles themselves involve circular reference. Yablo (1993b) has argued that a more complicated kind of multi-sentence paradox produces a Liar without circularity. Yablo's paradox relies on an infinite sequence of claims \\(A_0\\), \\(A_1\\), \\(A_2\\), &hellip;, where each \\(A_i\\) says that all of the 'greater' \\(A_k\\) (i.e., the \\(A_k\\) such that \\(k \\gt i)\\) are untrue. (In other words, each claim says of the rest that they're all untrue.) Since we have an infinite sequence, this version of the Liar paradox appears to avoid the sort of circularity apparent in the previous examples; however, contradiction still seems to emerge. If \\(A_0\\) is true, then all of the 'greater' \\(A_k\\) are untrue, and a fortiori \\(A_1\\) is untrue. But, then, there is at least one true \\(A_k\\) with \\(k > 1\\), which contradicts \\(A_0\\). Conversely, if \\(A_0\\) is untrue, then there's at least one true \\(A_k\\) greater than \\(A_0\\). Letting \\(A_m\\) be such a one (i.e., a truth greater than \\(A_0)\\), we have it that \\(A_{m+1}\\) is untrue, in which case there's some truth greater than \\(A_{m+1}\\). But this contradicts \\(A_m\\). What we have, then, is that if \\(A_0\\) (the first claim in the infinite sequence) is true or untrue, then it is both. And this, as in the other cases, is a contradiction. Whether Yablo's paradox really avoids self-reference is much-debated. See, for instance, Barrio (2012), Beall (2001), Cook (2006, 2014), Ojea (2012), Picollo (2012), Priest (1997), Sorensen (1998), and Teijeiro (2012).",
+      "relatedEntries": [
+        "curry-paradox",
+        "dialetheism",
+        "goedel",
+        "goedel-incompleteness",
+        "logic-manyvalued",
+        "logic-provability",
+        "self-reference",
+        "tarski",
+        "tarski-truth",
+        "truth",
+        "truth-axiomatic",
+        "truth-revision",
+        "vagueness"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "curry-paradox"
+        },
+        {
+          "slug": "dialetheism"
+        },
+        {
+          "slug": "goedel"
+        },
+        {
+          "slug": "goedel-incompleteness"
+        },
+        {
+          "slug": "logic-manyvalued"
+        },
+        {
+          "slug": "logic-provability"
+        },
+        {
+          "slug": "self-reference"
+        },
+        {
+          "slug": "tarski"
+        },
+        {
+          "slug": "tarski-truth"
+        },
+        {
+          "slug": "truth"
+        },
+        {
+          "slug": "truth-axiomatic"
+        },
+        {
+          "slug": "truth-revision"
+        },
+        {
+          "slug": "vagueness"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 130,
+      "bibliography": [
+        {
+          "raw": "Achourioti, Theodore, Henri Galinon, Jos&eacute; Martinez Fern&aacute;ndez, and Kentaro Fujimoto (eds), 2015, Unifying the Philosophy of Truth , Berlin: Springer."
+        },
+        {
+          "raw": "Aczel, Peter, 1980, \"Frege structures and the notions of proposition, truth and set\", in The Kleene Symposium , J. Barwise, H.J. Keisler, and K. Kunen (eds), Amsterdam: North-Holland, 31-59."
+        },
+        {
+          "raw": "Anderson, Alan Ross, 1970, \"St. Paul's epistle to Titus\", in Martin 1970: 1-11."
+        },
+        {
+          "raw": "Asenjo, F.G., 1966, \"A calculus of antinomies\", Notre Dame Journal of Formal Logic , 7(1): 103-105. doi:10.1305/ndjfl/1093958482"
+        },
+        {
+          "raw": "Barrio, Eduardo, 2012, \"The Yablo paradox and circularity\", An&aacute;lisis Filos&oacute;fico , 32(1): 7-20."
+        },
+        {
+          "raw": "Barrio, Eduardo, Lucas Rosenblatt, and Diego Tajer, 2015, \"The logics of strict-tolerant logic\", Journal of Philosophical Logic , 44(5): 551-571. doi:10.1007/s10992-014-9342-6"
+        },
+        {
+          "raw": "Barwise, Jon and John Etchemendy, 1987, The Liar , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Beall, Jc, 2001, \"Is Yablo's paradox non-circular?\", Analysis , 61(3): 176-187. doi:10.1111/1467-8284.00292"
+        },
+        {
+          "raw": "---, 2005, \"Transparent disquotationalism\", in Beall and Armour-Garb 2005: 7-22."
+        },
+        {
+          "raw": "--- (ed.), 2008, Revenge of the Liar , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2009, Spandrels of Truth , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2011, \"Adding to relevant restricted quantification\", Australasian Journal of Logic , 10: 36-44. [ Beall 2011 available online ]"
+        },
+        {
+          "raw": "---, 2014, \"End of inclosure\", Mind , 123(491): 829-849. doi:10.1093/mind/fzu075"
+        },
+        {
+          "raw": "---, 2015, \"Free of detachment: logic, rationality, and gluts\", No&ucirc;s , 49: 410-423. doi:10.1111/nous.12029"
+        },
+        {
+          "raw": "Beall, Jc and Bradley Armour-Garb (eds), 2005, Deflationism and Paradox , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Beall, Jc, Ross T. Brady, Allen P. Hazen, Graham Priest, and Greg Restall, 2006, \"Relevant restricted quantification\", Journal of Philosophical Logic , 35(6): 587-598. doi:10.1007/s10992-005-9008-5"
+        },
+        {
+          "raw": "Beall, Jc and Michael Glanzberg, 2008, \"Where the paths meet: Remarks on truth and paradox\", in Midwest Studies in Philosophy Volume XXXII: Truth and its Deformities , P.A. French and H.K. Wettstein (eds), Boston: Wiley-Blackwell."
+        },
+        {
+          "raw": "Beall, Jc and Julien Murzi, 2013, \"Two flavors of Curry's paradox\", Journal of Philosophy , 110(3): 143-165. doi:10.5840/jphil2013110336"
+        },
+        {
+          "raw": "Bonnay, Denis, and Floris Tijmen van Vugt, 2015, \"Groundedness, truth, and dependence\", in Achourioti et al. 2015: 355-368. doi:10.1007/978-94-017-9673-6_18"
+        },
+        {
+          "raw": "Brady, Ross T., 1989, \"The non-triviality of dialectical set theory\", in Paraconsistent Logic: Essays on the Inconsistent , G. Priest, R. Routley, and J. Norman (eds), Munich: Philosophia Verlag, 437-470."
+        },
+        {
+          "raw": "Burge, Tyler, 1979, \"Semantical paradox\", Journal of Philosophy , 76(4): 169-198. doi:10.2307/2025724 Reprinted in Martin 1984: 83-117."
+        },
+        {
+          "raw": "Burgess, John P., 1986, \"The truth is never simple\", Journal of Symbolic Logic , 51(3): 663-681. doi:10.2307/2274021"
+        },
+        {
+          "raw": "Cantini, Andrea, 1996, Logical Frameworks for Truth and Abstraction: An Axiomatic Study , Amsterdam: Elsevier."
+        },
+        {
+          "raw": "Chihara, Charles, 1979, \"The semantic paradoxes: A diagnostic investigation\", Philosophical Review , 88(4): 590-618. doi:10.2307/2184846"
+        },
+        {
+          "raw": "Cobreros, Pablo, Paul Egr&eacute;, David Ripley, and Robert van Rooij, 2013, \"Reaching transparent truth\", Mind , 122(488): 841-866. doi:10.1093/mind/fzt110"
+        },
+        {
+          "raw": "---, 2015, \"Vagueness, truth, and permissive consequence\", in Achourioti et al. 2015: 409-430. doi:10.1007/978-94-017-9673-6_21"
+        },
+        {
+          "raw": "Cook, Roy, 2006, \"There are non-circular paradoxes (but Yablo's isn't one of them)\", The Monist , 89(1): 118-149. doi:10.5840/monist200689137"
+        },
+        {
+          "raw": "---, 2014, The Yablo Paradox , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Dowden, Bradley H., 1984, \"Accepting inconsistencies from the paradoxes\", Journal of Philosophical Logic , 13: 125-130. doi:10.1007/BF00453017"
+        },
+        {
+          "raw": "Dummett, Michael, 1959, \"Truth\", Proceedings of the Aristotelian Society , 59(1): 141-162. doi:10.1093/aristotelian/59.1.141 Reprinted in his 1978, Truth and Other Enigmas , Cambridge: Harvard University Press, 1-24."
+        },
+        {
+          "raw": "Eklund, Matti, 2002, \"Inconsistent languages\", Philosophy and Phenomenological Research , 64(2): 251-275. doi:10.1111/j.1933-1592.2002.tb00001.x"
+        },
+        {
+          "raw": "Feferman, Solomon, 1984, \"Toward useful type-free theories, I\", Journal of Symbolic Logic , 49(1): 75-111. doi:10.2307/2274093 Reprinted in Martin 1984: 237-287."
+        },
+        {
+          "raw": "---, 1991, \"Reflecting on incompleteness\", Journal of Symbolic Logic , 56(1): 1-49. doi:10.2307/2274902"
+        },
+        {
+          "raw": "Field, Hartry, 1994, \"Deflationist views of meaning and content\", Mind , 103(411): 249-285. doi:10.1093/mind/103.411.249"
+        },
+        {
+          "raw": "---, 2008, Saving Truth from Paradox , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2014, \"Naive truth and restricted quantification: Saving truth a whole lot better\", Review of Symbolic Logic , 7(1): 147-191. doi:10.1017/S1755020313000312"
+        },
+        {
+          "raw": "Fjellstad, Andreas, 2016, \"Naive modus ponens and failures of transitivity\", Journal of Philosophical Logic , 45(1): 65-72. doi:10.1007/s10992-015-9351-0"
+        },
+        {
+          "raw": "Frankowski, Szymon, 2004 \"Formalization of a plausible inference\", Bulletin of the Section of Logic , 33(1): 41-52."
+        },
+        {
+          "raw": "Friedman, Harvey and Michael Sheard, 1987, \"An axiomatic approach to self-referential truth\", Annals of Pure and Applied Logic , 33: 1-21. doi:10.1016/0168-0072(87)90073-X"
+        },
+        {
+          "raw": "French, Rohan, 2016, \"Structural reflexivity and the paradoxes of self-reference\", Ergo , 3(5): 113-131. doi:10.3998/ergo.12405314.0003.005"
+        },
+        {
+          "raw": "Gaifman, Haim, 1988, \"Operational pointer semantics: Solution to self-referential puzzles I\", in Proceedings of the Second Conference on Theoretical Aspects of Reasoning about Knowledge , M.Y. Vardi (ed.), Los Altos: Morgan Kaufmann, 43-59."
+        },
+        {
+          "raw": "---, 1992, \"Pointers to truth\", Journal of Philosophy , 89(5): 223-261. doi:10.2307/2027167"
+        },
+        {
+          "raw": "Gauker, Christopher, 2006, \"Against stepping back: A critique of contextualist approaches to the semantic paradoxes\", Journal of Philosophical Logic , 35(4): 393-422. doi:10.1007/s10992-006-9026-y"
+        },
+        {
+          "raw": "Girard, Jean-Yves, Paul Taylor, and Yves Lafont, 1989, Proofs and Types , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Glanzberg, Michael, 2001, \"The Liar in context\", Philosophical Studies , 103(3): 217-251. doi:10.1023/A:1010314719817"
+        },
+        {
+          "raw": "---, 2004a, \"A contextual-hierarchical approach to truth and the Liar paradox\", Journal of Philosophical Logic , 33(1): 27-88. doi:10.1023/B:LOGI.0000019227.09236.f5"
+        },
+        {
+          "raw": "---, 2004b, \"Quantification and realism\", Philosophy and Phenomenological Research , 69(3): 541-572. doi:10.1111/j.1933-1592.2004.tb00518.x"
+        },
+        {
+          "raw": "---, 2004c, \"Truth, reflection, and hierarchies\", Synthese , 142(3): 289-315. doi:10.1007/s11229-005-3718-7"
+        },
+        {
+          "raw": "---, 2006, \"Context and unrestricted quantification\", in Rayo and Uzquiano 2006: 45-74."
+        },
+        {
+          "raw": "---, 2015, \"Complexity and hierarchy in truth predicates\", in Achourioti et al. 2015: 211-243. doi:10.1007/978-94-017-9673-6_10"
+        },
+        {
+          "raw": "Grim, Patrick, 1991, The Incomplete Universe , Cambridge: MIT Press."
+        },
+        {
+          "raw": "Grishin, Viacheslav Nikolaevich, 1982, \"Predicate and set-theoretic calculi based on logic without contractions\", Mathematics of the USSR--Izvestiya , 18(1): 41-59. doi:10.1070/IM1982v018n01ABEH001382"
+        },
+        {
+          "raw": "Groeneveld, Willem, 1994, \"Dynamic semantics and circular propositions\", Journal of Philosophical Logic , 23(3): 267-306. doi:10.1007/BF01048483"
+        },
+        {
+          "raw": "Gupta, Anil, 1982, \"Truth and paradox\", Journal of Philosophical Logic , 11(1): 1-60. doi:10.1007/BF00302338 Reprinted in Martin 1984: 175-235."
+        },
+        {
+          "raw": "Gupta, Anil and Nuel Belnap, 1993, The Revision Theory of Truth , Cambridge: MIT Press."
+        },
+        {
+          "raw": "Halbach, Volker, 1997, \"Tarskian and Kripkean truth\", Journal of Philosophical Logic , 26(1): 69-80. doi:10.1023/A:1017977304199"
+        },
+        {
+          "raw": "---, 2011, Axiomatic Theories of Truth , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Halln&auml;s, Lars, 1991, \"Partial inductive definitions\", Theoretical Computer Science , 87(1): 115-142. doi:10.1016/S0304-3975(06)80007-1"
+        },
+        {
+          "raw": "Halln&auml;s, Lars and Peter Schroeder-Heister, 1991, \"A proof-theoretic approach to logic programming II: Programs as definitions\", Journal of Logic and Computation , 1(5): 635-660. doi:10.1093/logcom/1.5.635"
+        },
+        {
+          "raw": "Heck, Richard G., Jr., 1997, \"Tarski, truth, and semantics\", Philosophical Review , 106(4): 533-554. doi:10.2307/2998511"
+        },
+        {
+          "raw": "---, 2007, \"Self-reference and the languages of arithmetic\", Philosophia Mathematica , 15(1): 1-29. doi:10.1093/philmat/nkl028"
+        },
+        {
+          "raw": "---, 2012, \"A Liar paradox\", Thought , 1(1): 36-40. doi:10.1002/tht3.5"
+        },
+        {
+          "raw": "Herzberger, Hans G., 1967, \"The truth-conditional consistency of natural language\", Journal of Philosophy , 64(2): 29-35. doi:10.2307/2023768"
+        },
+        {
+          "raw": "---, 1970, \"Paradoxes of grounding in semantics\", Journal of Philosophy , 67(6): 146-167. doi:10.2307/2023885"
+        },
+        {
+          "raw": "---, 1982, \"Notes on naive semantics\", Journal of Philosophical Logic , 11(1): 61-102. doi:10.1007/BF00302339 Reprinted in Martin 1984: 133-174."
+        },
+        {
+          "raw": "Horsten, Leon, 2011, The Tarskian Turn: Deflationism and Axiomatic Truth , Cambridge: MIT Press."
+        },
+        {
+          "raw": "Horwich, Paul, 1990, Truth , Oxford: Basil Blackwell."
+        },
+        {
+          "raw": "Koons, Robert C., 1992, Paradoxes of Belief and Strategic Rationality , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Kripke, Saul, 1975, \"Outline of a theory of truth\", Journal of Philosophy , 72(19): 690-716. doi:10.2307/2023885 Reprinted in Martin 1984: 54-81."
+        },
+        {
+          "raw": "Leitgeb, Hannes, 1999, \"Truth and the Liar in De Morgan-valued models\", Notre Dame Journal of Formal Logic , 40(4): 496-514. doi:10.1305/ndjfl/1012429715"
+        },
+        {
+          "raw": "---, 2005, \"What truth depends on\", Journal of Philosophical Logic , 34(2): 155-192. doi:10.1007/s10992-004-3758-3"
+        },
+        {
+          "raw": "Littmann, Greg and Keith Simmons, 2004, \"A critique of dialetheism\", in Priest, Beall, and Armour-Garb 2004: 314-335."
+        },
+        {
+          "raw": "Malinowski, Grzegorz, 1990, \"Q-consequence operation\", Reports on Mathematical Logic , 24: 49-59."
+        },
+        {
+          "raw": "Martin, Robert L. (ed.), 1970, The Paradox of the Liar , Atascadero: Ridgeview."
+        },
+        {
+          "raw": "--- (ed.), 1984, Recent Essays on Truth and the Liar Paradox , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Martin, Robert L. and Peter W. Woodruff, 1975, \"On representing 'true-in-L' in L\", Philosophia , 5: 213-217. Reprinted in Martin 1984: 47-51."
+        },
+        {
+          "raw": "McGee, Vann, 1991, Truth, Vagueness, and Paradox , Indianapolis: Hackett."
+        },
+        {
+          "raw": "Meadows, Toby, 2013, \"Truth, dependence and supervaluation: Living with the ghost\", Journal of Philosophical Logic , 42(2): 221-240. doi:10.1007/s10992-011-9219-x"
+        },
+        {
+          "raw": "---, 2014, \"Fixed points for consequence relations\", Logique et Analyse , 57(227): 333-357."
+        },
+        {
+          "raw": "Ojea, Ignacio, 2012, \"The structural collapse approach reconsidered\", An&aacute;lisis Filos&oacute;fico , 32(1): 61-68."
+        },
+        {
+          "raw": "Parsons, Charles, 1974, \"The Liar paradox\", Journal of Philosophical Logic , 3(4): 381-412. doi:10.1007/BF00257482 Reprinted in his 1983 Mathematics in Philosophy , Ithaca: Cornell University Press, 221-250."
+        },
+        {
+          "raw": "Parsons, Terence, 1984, \"Assertion, denial, and the Liar paradox\", Journal of Philosophical Logic , 13(2): 137-152. doi:10.1007/BF00453019"
+        },
+        {
+          "raw": "Patterson, Douglas, 2007, \"Understanding the Liar\", in Beall 2007: 197-224."
+        },
+        {
+          "raw": "---, 2009, \"Inconsistency theories of semantic paradox\", Philosophy and Phenomenological Research , 79(2): 387-422. doi:10.1111/j.1933-1592.2009.00283.x"
+        },
+        {
+          "raw": "Petersen, Uwe, 2000, \"Logic without contraction as based on inclusion and unrestricted abstraction\", Studia Logica , 64(3): 365-403. doi:10.1023/A:1005293713265"
+        },
+        {
+          "raw": "Picollo, Lavinia, 2012, \"The old-fashioned Yablo paradox\", An&aacute;lisis Filos&oacute;fico , 32(1): 21-29."
+        },
+        {
+          "raw": "Priest, Graham, 1984, \"Logic of paradox revisited\", Journal of Philosophical Logic , 13(2): 153-179. doi:10.1007/BF00453020"
+        },
+        {
+          "raw": "---, 1997, \"Yablo's paradox\", Analysis , 57(4): 236-242. doi:10.1111/1467-8284.00081"
+        },
+        {
+          "raw": "---, 2006, In Contradiction , Oxford: Oxford University Press, second ed."
+        },
+        {
+          "raw": "---, 2008, An Introduction to Non-Classical Logic , Cambridge: Cambridge University Press, second edition."
+        },
+        {
+          "raw": "Priest, Graham, Jc Beall, and Bradley Armour-Garb (eds), 2004, The Law of Non-Contradiction , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Rahman, Shahid, Tero Tulenheimo, and Emmanuel Genot (eds.), 2008, Unity, Truth and the Liar: The Modern Relevance of Medieval Solutions to the Liar Paradox , Berlin: Springer Verlag."
+        },
+        {
+          "raw": "Rayo, Agust&iacute;n and Gabriel Uzquiano (eds.), 2006, Absolute Generality , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Read, Stephen, 2002, \"The Liar paradox from John Buridan back to Thomas Bradwardine\", Vivarium , 40(2): 189-218. doi:10.1163/156853402320901812"
+        },
+        {
+          "raw": "---, 2006, \"Symmetry and paradox\", History and Philosophy of Logic , 27(4): 307-318. doi:10.1080/01445340600593942"
+        },
+        {
+          "raw": "Restall, Greg, 1994, On Logics Without Contraction , Ph.D. Thesis, University of Queensland."
+        },
+        {
+          "raw": "---, 2008, \"Modal models for Bradwardine's theory of truth\", Review of Symbolic Logic , 1(2): 225-240. doi:10.1017/S1755020308080180"
+        },
+        {
+          "raw": "Ripley, David, 2012, \"Conservatively extending classical logic with transparent truth\", Review of Symbolic Logic , 5(2): 354-378. doi:10.1017/S1755020312000056"
+        },
+        {
+          "raw": "---, 2013a, \"Paradoxes and failures of cut\", Australasian Journal of Philosophy , 91(1): 139-164. doi:10.1080/00048402.2011.630010"
+        },
+        {
+          "raw": "---, 2013b, \"Revising up: Strengthening classical logic in the face of paradox\", Philosophers' Imprint , 13(5): 1-13. [ Ripley 2013b available online ]"
+        },
+        {
+          "raw": "---, 2015, \"Comparing substructural theories of truth\", Ergo , 2(13): 299-328. doi:10.3998/ergo.12405314.0002.013"
+        },
+        {
+          "raw": "Scharp, Kevin, 2013, Replacing Truth , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Schindler, Thomas, 2014, \"Axioms for grounded truth\", Review of Symbolic Logic , 7(1): 73-83. doi:10.1017/S1755020313000282"
+        },
+        {
+          "raw": "Schroeder-Heister, Peter, 1992, \"Cut-elimination in logics with definitional reflection\", in Nonclassical Logics and Information Processing , D. Pearce and H. Wansing (eds), Berlin: Springer, 146-171."
+        },
+        {
+          "raw": "---, 2004, \"On the notion of assumption in logical systems\", in Selected Papers Contributed to the Sessions of GAP5 , R. Bluhm and C. Nimtz (eds), Paderborn: Mentis, 27-48."
+        },
+        {
+          "raw": "Shapiro, Lionel, 2006, \"The rationale behind the revision theory\", Philosophical Studies , 129(3): 477-515. doi:10.1007/s11098-004-2497-1"
+        },
+        {
+          "raw": "---, 2011a, \"Deflating logical consequence\", Philosophical Quarterly , 61(243): 320-342. doi:10.1111/j.1467-9213.2010.678.x"
+        },
+        {
+          "raw": "---, 2011b, \"Expressibility and the Liar's revenge\", Australasian Journal of Philosophy , 89(2): 297-314. doi:10.1080/00048401003695156"
+        },
+        {
+          "raw": "---, 2015, \"Naive structure, contraction, and paradox\", Topoi , 34(1): 75-87. doi:10.1007/s11245-014-9235-x"
+        },
+        {
+          "raw": "Shapiro, Stewart, 2004, \"Simple truth, contradiction, and consistency\", in Priest, Beall, and Armour-Garb 2004: 336-354."
+        },
+        {
+          "raw": "Simmons, Keith, 1993, Universality and the Liar , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Soames, Scott, 1999, Understanding Truth , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Sorensen, Roy A., 1998, \"Yablo's paradox and kindred infinite Liars\", Mind , 107(425): 137-155. doi:10.1093/mind/107.425.137"
+        },
+        {
+          "raw": "---, 2003, A Brief History of Paradox , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Tarski, Alfred, 1935, \"Der Wahrheitsbegriff in den formalisierten Sprachen\", Studia Philosophica , 1: 261-405. References are to the translation by J.H. Woodger as \"The concept of truth in formalized languages\" in his 1983, Logic, Semantics, Metamathematics , Indianapolis: Hackett, second edition, Edited by J. Corcoran with translations by J.H. Woodger, 152-278."
+        },
+        {
+          "raw": "---, 1944, \"The semantic conception of truth: and the foundations of semantics\", Philosophy and Phenomenological Research , 4(3): 341-375. doi:10.2307/2102968"
+        },
+        {
+          "raw": "Teijeiro, Paula, 2012, \"Circularity is still scary\", An&aacute;lisis Filos&oacute;fico , 32(1): 31-35."
+        },
+        {
+          "raw": "Tennant, Neil, 1982, \"Proof and paradox\", Dialectica , 36(2-3): 265-296. doi:10.1111/j.1746-8361.1982.tb00820.x"
+        },
+        {
+          "raw": "van Fraassen, Bas C., 1968, \"Presupposition, implication, and self-reference\", Journal of Philosophy , 65(5): 136-152. doi:10.2307/2024557"
+        },
+        {
+          "raw": "---, 1970, \"Truth and paradoxical consequence\", in Martin 1970: 13-23."
+        },
+        {
+          "raw": "Visser, Albert, 1984, \"Four valued semantics and the Liar\", Journal of Philosophical Logic , 13(2): 181-212. doi:10.1007/BF00453021"
+        },
+        {
+          "raw": "Weir, Alan, 1998, \"Naive set theory, paraconsistency, and indeterminacy: Part I\", Logique et Analyse , 41(161-163): 219-266."
+        },
+        {
+          "raw": "---, 1999, \"Naive set theory, paraconsistency, and indeterminacy: Part II\", Logique et Analyse , 42(167-168): 283-340."
+        },
+        {
+          "raw": "---, 2005, \"Naive truth and sophisticated logic\", in Beall and Armour-Garb 2005: 218-249."
+        },
+        {
+          "raw": "---, 2015, \"A robust non-transitive logic\", Topoi , 34(1): 99-107. doi:10.1007/s11245-013-9176-9"
+        },
+        {
+          "raw": "Woodruff, Peter W., 1984, \"Paradox, truth, and logic part 1: Paradox and truth\", Journal of Philosophical Logic , 13(2): 213-232. doi:10.1007/BF00453022"
+        },
+        {
+          "raw": "Yablo, Stephen, 1993a, \"Hop, skip, and jump: The agonistic conception of truth\", Philosophical Perspectives , 7: 371-396. doi:10.2307/2214130"
+        },
+        {
+          "raw": "---, 1993b, \"Paradox without self-reference\", Analysis , 53(4): 251-252. doi:10.2307/3328245"
+        },
+        {
+          "raw": "Zardini, Elia, 2011, \"Truth without contra(di)ction\", Review of Symbolic Logic , 4(4): 498-535. doi:10.1017/S1755020311000177"
+        },
+        {
+          "raw": "---, 2013, \"Naive modus ponens \", Journal of Philosophical Logic , 42(4): 575-593. doi:10.1007/s10992-012-9239-1"
+        }
+      ],
+      "publishedAt": "2011-01-19T13:00:00.000Z",
+      "revisedAt": "2016-12-11T13:00:00.000Z"
+    }
+  }
+}

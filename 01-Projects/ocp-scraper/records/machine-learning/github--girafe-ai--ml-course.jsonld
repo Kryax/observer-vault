@@ -1,0 +1,293 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/girafe-ai--ml-course",
+  "meta": {
+    "title": "Machine Learning course",
+    "description": "Open Machine Learning course",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:21:17.024Z",
+    "dateModified": "2026-03-11T04:21:17.024Z",
+    "keywords": [
+      "computer-vision",
+      "course",
+      "deep-learning",
+      "machine-learning",
+      "materials",
+      "natural-language-processing",
+      "python",
+      "pytorch",
+      "reinforcement-learning",
+      "seminars"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "First semester of girafe-ai Machine Learning course",
+    "context": "First semester of girafe-ai Machine Learning course",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "lang:jupyter notebook"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "3434 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "1302 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:21:17.024Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/girafe-ai/ml-course",
+        "description": "GitHub repository: girafe-ai/ml-course"
+      }
+    ],
+    "language": "Jupyter Notebook"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "scikit-learn",
+        "version": "^0.24.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scikit-learn/"
+      },
+      {
+        "name": "matplotlib",
+        "version": "^3.3.4",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/matplotlib/"
+      },
+      {
+        "name": "pandas",
+        "version": "^1.2.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pandas/"
+      },
+      {
+        "name": "numpy",
+        "version": "^1.20.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numpy/"
+      },
+      {
+        "name": "scipy",
+        "version": "^1.6.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scipy/"
+      },
+      {
+        "name": "statsmodels",
+        "version": "^0.12.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/statsmodels/"
+      },
+      {
+        "name": "seaborn",
+        "version": "^0.11.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/seaborn/"
+      },
+      {
+        "name": "xgboost",
+        "version": "^1.3.3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/xgboost/"
+      },
+      {
+        "name": "opencv-python",
+        "version": "^4.5.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/opencv-python/"
+      },
+      {
+        "name": "torch",
+        "version": "^1.7.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/torch/"
+      },
+      {
+        "name": "torchvision",
+        "version": "^0.8.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/torchvision/"
+      },
+      {
+        "name": "torchsummary",
+        "version": "^1.5.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/torchsummary/"
+      },
+      {
+        "name": "ipywidgets",
+        "version": "^7.6.3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/ipywidgets/"
+      },
+      {
+        "name": "nltk",
+        "version": "^3.5",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/nltk/"
+      },
+      {
+        "name": "gensim",
+        "version": "^3.8.3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/gensim/"
+      },
+      {
+        "name": "spacy",
+        "version": "^3.1.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/spacy/"
+      },
+      {
+        "name": "subword-nmt",
+        "version": "^0.3.7",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/subword-nmt/"
+      },
+      {
+        "name": "pytorch-transformers",
+        "version": "^1.2.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pytorch-transformers/"
+      },
+      {
+        "name": "torchtext",
+        "version": "^0.8",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/torchtext/"
+      },
+      {
+        "name": "bokeh",
+        "version": "^2.3.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/bokeh/"
+      },
+      {
+        "name": "graphviz",
+        "version": "^0.16",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/graphviz/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "girafe-ai",
+        "type": "human",
+        "uri": "https://github.com/girafe-ai"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 6038,
+      "validation_diversity": 0.28,
+      "context_breadth": 0.7,
+      "temporal_stability": 1,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.48
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.536
+  }
+}

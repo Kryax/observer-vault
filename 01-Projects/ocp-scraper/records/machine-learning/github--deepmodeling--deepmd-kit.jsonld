@@ -1,0 +1,252 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/deepmodeling--deepmd-kit",
+  "meta": {
+    "title": "DeePMD-kit",
+    "description": "A deep learning package for many-body potential energy representation and molecular dynamics",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:20:05.209Z",
+    "dateModified": "2026-03-11T04:20:05.209Z",
+    "keywords": [
+      "ase",
+      "c",
+      "computational-chemistry",
+      "cpp",
+      "cuda",
+      "deep-learning",
+      "deepmd",
+      "ipi",
+      "jax",
+      "lammps",
+      "machine-learning-potential",
+      "materials-science",
+      "molecular-dynamics",
+      "nodejs",
+      "paddle",
+      "potential-energy",
+      "python",
+      "pytorch",
+      "rocm",
+      "tensorflow"
+    ],
+    "license": "LGPL-3.0"
+  },
+  "problemSolved": {
+    "statement": "DeePMD-kit is a package written in Python/C++, designed to minimize the effort required to build deep learning-based model of interatomic potential energy and force field and to perform molecular dynamics (MD). This brings new hopes to addressing the accuracy-versus-efficiency dilemma in molecular simulations. Applications of DeePMD-kit span from finite molecules to extended systems and from metallic systems to chemically bonded systems.",
+    "context": "[![GitHub release](https://img.shields.io/github/release/deepmodeling/deepmd-kit.svg?maxAge=86400)](https://github.com/deepmodeling/deepmd-kit/releases)\n[![offline packages](https://img.shields.io/github/downloads/deepmodeling/deepmd-kit/total?label=offline%20packages)](https://github.com/deepmodeling/deepmd-kit/releases)\n[![conda-forge](https://img.shields.io/conda/dn/conda-forge/deepmd-kit?color=red&label=conda-forge&logo=conda-forge)](https://anaconda.org/conda-forge/deepmd-kit)\n[![pip install](https://img.shields.io/pypi/dm/deepmd-kit?label=pip%20install)](https://pypi.org/project/deepmd-kit)\n[![docker pull](https://img.shields.io/docker/pulls/deepmodeling/deepmd-kit)](https://hub.docker.com/r/deepmodeling/deepmd-kit)\n[![Documentation Status](https://readthedocs.org/projects/deepmd/badge/)](https://deepmd.readthedocs.io/)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "1887 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "599 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:20:05.209Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/deepmodeling/deepmd-kit",
+        "description": "GitHub repository: deepmodeling/deepmd-kit"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://docs.deepmodeling.com/projects/deepmd/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "numpy",
+        "version": ">=1.21",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numpy/"
+      },
+      {
+        "name": "scipy",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scipy/"
+      },
+      {
+        "name": "pyyaml",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyyaml/"
+      },
+      {
+        "name": "dargs",
+        "version": ">= 0.4.7",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/dargs/"
+      },
+      {
+        "name": "typing_extensions",
+        "version": ">=4.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/typing_extensions/"
+      },
+      {
+        "name": "importlib_metadata",
+        "version": ">=1.4; python_version < \"3.8\"",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/importlib_metadata/"
+      },
+      {
+        "name": "h5py",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/h5py/"
+      },
+      {
+        "name": "h5py",
+        "version": ">=3.6.0,!=3.11.0; platform_system=='Linux' and platform_machine=='aarch64'",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/h5py/"
+      },
+      {
+        "name": "wcmatch",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/wcmatch/"
+      },
+      {
+        "name": "packaging",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/packaging/"
+      },
+      {
+        "name": "ml_dtypes",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/ml_dtypes/"
+      },
+      {
+        "name": "mendeleev",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/mendeleev/"
+      },
+      {
+        "name": "array-api-compat",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/array-api-compat/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "deepmodeling",
+        "type": "human",
+        "uri": "https://github.com/deepmodeling"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 3085,
+      "validation_diversity": 0.64,
+      "context_breadth": 0.68,
+      "temporal_stability": 0.94,
+      "test_coverage": 0.17,
+      "documentation_quality": 0.85
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.646
+  }
+}

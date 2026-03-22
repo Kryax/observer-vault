@@ -1,0 +1,477 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/caddyserver--caddy",
+  "meta": {
+    "title": "caddy",
+    "description": "Fast and extensible multi-platform HTTP/1-2-3 web server with automatic HTTPS",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:47:11.378Z",
+    "dateModified": "2026-03-11T04:47:11.378Z",
+    "keywords": [
+      "acme",
+      "automatic-https",
+      "caddy",
+      "caddyfile",
+      "go",
+      "golang",
+      "http",
+      "http-server",
+      "http3",
+      "https",
+      "privacy",
+      "reverse-proxy",
+      "security",
+      "tls",
+      "web-server"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "Caddy is most often used as an HTTPS server, but it is suitable for any long-running Go program. First and foremost, it is a platform to run Go applications. Caddy \"apps\" are just Go programs that are implemented as Caddy modules. Two apps -- `tls` and `http` -- ship standard with Caddy.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "security",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "70796 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "4667 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:47:11.378Z"
+  },
+  "implementation": {
+    "type": "service",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/caddyserver/caddy",
+        "description": "GitHub repository: caddyserver/caddy"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://caddyserver.com",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "github.com/BurntSushi/toml",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/BurntSushi/toml"
+      },
+      {
+        "name": "github.com/DeRuina/timberjack",
+        "version": "v1.3.9",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/DeRuina/timberjack"
+      },
+      {
+        "name": "github.com/KimMachineGun/automemlimit",
+        "version": "v0.7.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/KimMachineGun/automemlimit"
+      },
+      {
+        "name": "github.com/Masterminds/sprig/v3",
+        "version": "v3.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Masterminds/sprig/v3"
+      },
+      {
+        "name": "github.com/alecthomas/chroma/v2",
+        "version": "v2.23.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/alecthomas/chroma/v2"
+      },
+      {
+        "name": "github.com/aryann/difflib",
+        "version": "v0.0.0-20210328193216-ff5ff6dc229b",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aryann/difflib"
+      },
+      {
+        "name": "github.com/caddyserver/certmagic",
+        "version": "v0.25.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/caddyserver/certmagic"
+      },
+      {
+        "name": "github.com/caddyserver/zerossl",
+        "version": "v0.1.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/caddyserver/zerossl"
+      },
+      {
+        "name": "github.com/cloudflare/circl",
+        "version": "v1.6.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/cloudflare/circl"
+      },
+      {
+        "name": "github.com/dustin/go-humanize",
+        "version": "v1.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/dustin/go-humanize"
+      },
+      {
+        "name": "github.com/go-chi/chi/v5",
+        "version": "v5.2.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-chi/chi/v5"
+      },
+      {
+        "name": "github.com/google/cel-go",
+        "version": "v0.27.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/cel-go"
+      },
+      {
+        "name": "github.com/google/uuid",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/uuid"
+      },
+      {
+        "name": "github.com/klauspost/compress",
+        "version": "v1.18.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/klauspost/compress"
+      },
+      {
+        "name": "github.com/klauspost/cpuid/v2",
+        "version": "v2.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/klauspost/cpuid/v2"
+      },
+      {
+        "name": "github.com/mholt/acmez/v3",
+        "version": "v3.1.6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mholt/acmez/v3"
+      },
+      {
+        "name": "github.com/prometheus/client_golang",
+        "version": "v1.23.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/client_golang"
+      },
+      {
+        "name": "github.com/quic-go/quic-go",
+        "version": "v0.59.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/quic-go/quic-go"
+      },
+      {
+        "name": "github.com/smallstep/certificates",
+        "version": "v0.30.0-rc3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/smallstep/certificates"
+      },
+      {
+        "name": "github.com/smallstep/nosql",
+        "version": "v0.7.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/smallstep/nosql"
+      },
+      {
+        "name": "github.com/smallstep/truststore",
+        "version": "v0.13.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/smallstep/truststore"
+      },
+      {
+        "name": "github.com/spf13/cobra",
+        "version": "v1.10.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/cobra"
+      },
+      {
+        "name": "github.com/spf13/pflag",
+        "version": "v1.0.10",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/pflag"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.11.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      },
+      {
+        "name": "github.com/tailscale/tscert",
+        "version": "v0.0.0-20251216020129-aea342f6d747",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/tailscale/tscert"
+      },
+      {
+        "name": "github.com/yuin/goldmark",
+        "version": "v1.7.16",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/yuin/goldmark"
+      },
+      {
+        "name": "github.com/yuin/goldmark-highlighting/v2",
+        "version": "v2.0.0-20230729083705-37449abec8cc",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/yuin/goldmark-highlighting/v2"
+      },
+      {
+        "name": "go.opentelemetry.io/contrib/exporters/autoexport",
+        "version": "v0.65.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/contrib/exporters/autoexport"
+      },
+      {
+        "name": "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp",
+        "version": "v0.65.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
+      },
+      {
+        "name": "go.opentelemetry.io/contrib/propagators/autoprop",
+        "version": "v0.65.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/contrib/propagators/autoprop"
+      },
+      {
+        "name": "go.opentelemetry.io/otel",
+        "version": "v1.40.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/sdk",
+        "version": "v1.40.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/sdk"
+      },
+      {
+        "name": "go.step.sm/crypto",
+        "version": "v0.76.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.step.sm/crypto"
+      },
+      {
+        "name": "go.uber.org/automaxprocs",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.uber.org/automaxprocs"
+      },
+      {
+        "name": "go.uber.org/zap",
+        "version": "v1.27.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.uber.org/zap"
+      },
+      {
+        "name": "go.uber.org/zap/exp",
+        "version": "v0.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.uber.org/zap/exp"
+      },
+      {
+        "name": "golang.org/x/crypto",
+        "version": "v0.48.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/crypto"
+      },
+      {
+        "name": "golang.org/x/crypto/x509roots/fallback",
+        "version": "v0.0.0-20260213171211-a408498e5541",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/crypto/x509roots/fallback"
+      },
+      {
+        "name": "golang.org/x/net",
+        "version": "v0.51.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/net"
+      },
+      {
+        "name": "golang.org/x/sync",
+        "version": "v0.19.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/sync"
+      },
+      {
+        "name": "golang.org/x/term",
+        "version": "v0.40.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/term"
+      },
+      {
+        "name": "golang.org/x/time",
+        "version": "v0.14.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/time"
+      },
+      {
+        "name": "gopkg.in/yaml.v3",
+        "version": "v3.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gopkg.in/yaml.v3"
+      },
+      {
+        "name": "github.com/cespare/xxhash/v2",
+        "version": "v2.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/cespare/xxhash/v2"
+      },
+      {
+        "name": "github.com/libdns/libdns",
+        "version": "v1.1.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/libdns/libdns"
+      },
+      {
+        "name": "github.com/pires/go-proxyproto",
+        "version": "v0.11.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/pires/go-proxyproto"
+      },
+      {
+        "name": "github.com/prometheus/client_model",
+        "version": "v0.6.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/client_model"
+      },
+      {
+        "name": "go.opentelemetry.io/otel/trace",
+        "version": "v1.40.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.opentelemetry.io/otel/trace"
+      },
+      {
+        "name": "golang.org/x/sys",
+        "version": "v0.41.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/sys"
+      },
+      {
+        "name": "golang.org/x/text",
+        "version": "v0.34.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/text"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "caddyserver",
+        "type": "human",
+        "uri": "https://github.com/caddyserver"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 80130,
+      "validation_diversity": 0.86,
+      "context_breadth": 0.7,
+      "temporal_stability": 1,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.6
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.852
+  }
+}

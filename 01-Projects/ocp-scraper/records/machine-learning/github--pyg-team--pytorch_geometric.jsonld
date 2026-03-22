@@ -1,0 +1,212 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/pyg-team--pytorch_geometric",
+  "meta": {
+    "title": "pytorch_geometric",
+    "description": "Graph Neural Network Library for PyTorch",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T02:52:48.052Z",
+    "dateModified": "2026-03-22T02:52:48.052Z",
+    "keywords": [
+      "deep-learning",
+      "geometric-deep-learning",
+      "graph-convolutional-networks",
+      "graph-neural-networks",
+      "pytorch"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "PyG provides a multi-layer framework that enables users to build Graph Neural Network solutions on both low and high levels.\nIt comprises of the following components:",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "23589 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "3972 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T02:52:48.052Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/pyg-team/pytorch_geometric",
+        "description": "GitHub repository: pyg-team/pytorch_geometric"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://pyg.org",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "aiohttp",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/aiohttp/"
+      },
+      {
+        "name": "fsspec",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/fsspec/"
+      },
+      {
+        "name": "jinja2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/jinja2/"
+      },
+      {
+        "name": "numpy",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numpy/"
+      },
+      {
+        "name": "psutil",
+        "version": ">=5.8.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/psutil/"
+      },
+      {
+        "name": "pyparsing",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyparsing/"
+      },
+      {
+        "name": "requests",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/requests/"
+      },
+      {
+        "name": "tqdm",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tqdm/"
+      },
+      {
+        "name": "xxhash",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/xxhash/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "pyg-team",
+        "type": "human",
+        "uri": "https://github.com/pyg-team"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 31533,
+      "validation_diversity": 0.92,
+      "context_breadth": 0.5,
+      "temporal_stability": 0.94,
+      "test_coverage": 0,
+      "documentation_quality": 0.75
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.429
+  }
+}

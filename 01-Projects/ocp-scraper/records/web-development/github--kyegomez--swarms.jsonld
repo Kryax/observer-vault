@@ -1,0 +1,306 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/kyegomez--swarms",
+  "meta": {
+    "title": "Clone the repository",
+    "description": "The Enterprise-Grade Production-Ready Multi-Agent Orchestration Framework. Website: https://swarms.ai",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T02:54:42.753Z",
+    "dateModified": "2026-03-22T02:54:42.753Z",
+    "keywords": [
+      "agentic-ai",
+      "agentic-workflow",
+      "agents",
+      "ai",
+      "artificial-intelligence",
+      "chatgpt",
+      "gpt4",
+      "gpt4all",
+      "huggingface",
+      "langchain",
+      "langchain-python",
+      "machine-learning",
+      "multi-agent-systems",
+      "prompt-engineering",
+      "prompt-toolkit",
+      "prompting",
+      "swarms",
+      "tree-of-thoughts"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "Swarms delivers a comprehensive, enterprise-grade multi-agent infrastructure platform designed for production-scale deployments and seamless integration with existing systems. [Learn more about the swarms feature set here](https://docs.swarms.world/en/latest/swarms/features/)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "machine-learning",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "5925 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "768 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T02:54:42.753Z"
+  },
+  "implementation": {
+    "type": "framework",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/kyegomez/swarms",
+        "description": "GitHub repository: kyegomez/swarms"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://docs.swarms.world",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "setuptools",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/setuptools/"
+      },
+      {
+        "name": "asyncio",
+        "version": ">=3.4.3,<5.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/asyncio/"
+      },
+      {
+        "name": "toml",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/toml/"
+      },
+      {
+        "name": "pypdf",
+        "version": "5.1.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pypdf/"
+      },
+      {
+        "name": "loguru",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/loguru/"
+      },
+      {
+        "name": "pydantic",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pydantic/"
+      },
+      {
+        "name": "tenacity",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tenacity/"
+      },
+      {
+        "name": "psutil",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/psutil/"
+      },
+      {
+        "name": "python-dotenv",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/python-dotenv/"
+      },
+      {
+        "name": "PyYAML",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/PyYAML/"
+      },
+      {
+        "name": "networkx",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/networkx/"
+      },
+      {
+        "name": "aiofiles",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/aiofiles/"
+      },
+      {
+        "name": "rich",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/rich/"
+      },
+      {
+        "name": "numpy",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numpy/"
+      },
+      {
+        "name": "litellm",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/litellm/"
+      },
+      {
+        "name": "httpx",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/httpx/"
+      },
+      {
+        "name": "mcp",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/mcp/"
+      },
+      {
+        "name": "aiohttp",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/aiohttp/"
+      },
+      {
+        "name": "schedule",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/schedule/"
+      },
+      {
+        "name": "uvloop",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/uvloop/"
+      },
+      {
+        "name": "winloop",
+        "version": "*",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/winloop/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "kyegomez",
+        "type": "human",
+        "uri": "https://github.com/kyegomez"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 7461,
+      "validation_diversity": 0.58,
+      "context_breadth": 0.69,
+      "temporal_stability": 0.97,
+      "test_coverage": 0.47,
+      "documentation_quality": 0.6
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.705
+  }
+}

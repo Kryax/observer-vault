@@ -1,0 +1,824 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/rclone--rclone",
+  "meta": {
+    "title": "Rclone",
+    "description": "\"rsync for cloud storage\" - Google Drive, S3, Dropbox, Backblaze B2, One Drive, Swift, Hubic, Wasabi, Google Cloud Storage, Azure Blob, Azure Files, Yandex Files",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:48:16.792Z",
+    "dateModified": "2026-03-11T04:48:16.792Z",
+    "keywords": [
+      "azure-blob",
+      "azure-blob-storage",
+      "azure-files",
+      "backblaze-b2",
+      "cloud-storage",
+      "dropbox",
+      "encryption",
+      "ftp",
+      "fuse-filesystem",
+      "go",
+      "golang",
+      "google-cloud-storage",
+      "google-drive",
+      "onedrive",
+      "openstack-swift",
+      "rclone",
+      "s3",
+      "sftp",
+      "sync",
+      "webdav"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "Rclone *(\"rsync for cloud storage\")* is a command-line program to sync files and\ndirectories to and from different cloud storage providers.",
+    "context": "Rclone *(\"rsync for cloud storage\")* is a command-line program to sync files and\ndirectories to and from different cloud storage providers.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "55951 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "4962 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:48:16.792Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/rclone/rclone",
+        "description": "GitHub repository: rclone/rclone"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://rclone.org",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "bazil.org/fuse",
+        "version": "v0.0.0-20230120002735-62a210ff1fd5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/bazil.org/fuse"
+      },
+      {
+        "name": "github.com/Azure/azure-sdk-for-go/sdk/azcore",
+        "version": "v1.21.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azcore"
+      },
+      {
+        "name": "github.com/Azure/azure-sdk-for-go/sdk/azidentity",
+        "version": "v1.13.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity"
+      },
+      {
+        "name": "github.com/Azure/azure-sdk-for-go/sdk/storage/azblob",
+        "version": "v1.6.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/storage/azblob"
+      },
+      {
+        "name": "github.com/Azure/azure-sdk-for-go/sdk/storage/azfile",
+        "version": "v1.5.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/storage/azfile"
+      },
+      {
+        "name": "github.com/Azure/go-ntlmssp",
+        "version": "v0.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Azure/go-ntlmssp"
+      },
+      {
+        "name": "github.com/FilenCloudDienste/filen-sdk-go",
+        "version": "v0.0.37",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/FilenCloudDienste/filen-sdk-go"
+      },
+      {
+        "name": "github.com/Files-com/files-sdk-go/v3",
+        "version": "v3.3.40",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Files-com/files-sdk-go/v3"
+      },
+      {
+        "name": "github.com/Max-Sum/base32768",
+        "version": "v0.0.0-20230304063302-18e6ce5945fd",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/Max-Sum/base32768"
+      },
+      {
+        "name": "github.com/a1ex3/zstd-seekable-format-go/pkg",
+        "version": "v0.10.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/a1ex3/zstd-seekable-format-go/pkg"
+      },
+      {
+        "name": "github.com/a8m/tree",
+        "version": "v0.0.0-20240104212747-2c8764a5f17e",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/a8m/tree"
+      },
+      {
+        "name": "github.com/aalpar/deheap",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aalpar/deheap"
+      },
+      {
+        "name": "github.com/abbot/go-http-auth",
+        "version": "v0.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/abbot/go-http-auth"
+      },
+      {
+        "name": "github.com/anacrolix/dms",
+        "version": "v1.7.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/anacrolix/dms"
+      },
+      {
+        "name": "github.com/anacrolix/log",
+        "version": "v0.17.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/anacrolix/log"
+      },
+      {
+        "name": "github.com/atotto/clipboard",
+        "version": "v0.1.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/atotto/clipboard"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2",
+        "version": "v1.41.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/config",
+        "version": "v1.32.8",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/config"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/credentials",
+        "version": "v1.19.8",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/credentials"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/feature/s3/manager",
+        "version": "v1.22.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/feature/s3/manager"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/service/s3",
+        "version": "v1.96.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/s3"
+      },
+      {
+        "name": "github.com/aws/aws-sdk-go-v2/service/sts",
+        "version": "v1.41.6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/sts"
+      },
+      {
+        "name": "github.com/aws/smithy-go",
+        "version": "v1.24.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/aws/smithy-go"
+      },
+      {
+        "name": "github.com/buengese/sgzip",
+        "version": "v0.1.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/buengese/sgzip"
+      },
+      {
+        "name": "github.com/cloudinary/cloudinary-go/v2",
+        "version": "v2.14.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/cloudinary/cloudinary-go/v2"
+      },
+      {
+        "name": "github.com/cloudsoda/go-smb2",
+        "version": "v0.0.0-20250228001242-d4c70e6251cc",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/cloudsoda/go-smb2"
+      },
+      {
+        "name": "github.com/colinmarc/hdfs/v2",
+        "version": "v2.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/colinmarc/hdfs/v2"
+      },
+      {
+        "name": "github.com/coreos/go-semver",
+        "version": "v0.3.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/coreos/go-semver"
+      },
+      {
+        "name": "github.com/coreos/go-systemd/v22",
+        "version": "v22.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/coreos/go-systemd/v22"
+      },
+      {
+        "name": "github.com/diskfs/go-diskfs",
+        "version": "v1.7.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/diskfs/go-diskfs"
+      },
+      {
+        "name": "github.com/dop251/scsu",
+        "version": "v0.0.0-20220106150536-84ac88021d00",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/dop251/scsu"
+      },
+      {
+        "name": "github.com/dropbox/dropbox-sdk-go-unofficial/v6",
+        "version": "v6.0.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/dropbox/dropbox-sdk-go-unofficial/v6"
+      },
+      {
+        "name": "github.com/gabriel-vasile/mimetype",
+        "version": "v1.4.13",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gabriel-vasile/mimetype"
+      },
+      {
+        "name": "github.com/gdamore/tcell/v2",
+        "version": "v2.13.8",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/gdamore/tcell/v2"
+      },
+      {
+        "name": "github.com/go-chi/chi/v5",
+        "version": "v5.2.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-chi/chi/v5"
+      },
+      {
+        "name": "github.com/go-darwin/apfs",
+        "version": "v0.0.0-20211011131704-f84b94dbf348",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-darwin/apfs"
+      },
+      {
+        "name": "github.com/go-git/go-billy/v5",
+        "version": "v5.7.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/go-git/go-billy/v5"
+      },
+      {
+        "name": "github.com/golang-jwt/jwt/v5",
+        "version": "v5.3.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/golang-jwt/jwt/v5"
+      },
+      {
+        "name": "github.com/google/uuid",
+        "version": "v1.6.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/uuid"
+      },
+      {
+        "name": "github.com/hanwen/go-fuse/v2",
+        "version": "v2.9.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hanwen/go-fuse/v2"
+      },
+      {
+        "name": "github.com/internxt/rclone-adapter",
+        "version": "v0.0.0-20260220172730-613f4cc8b8fd",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/internxt/rclone-adapter"
+      },
+      {
+        "name": "github.com/jcmturner/gokrb5/v8",
+        "version": "v8.4.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jcmturner/gokrb5/v8"
+      },
+      {
+        "name": "github.com/jlaffaye/ftp",
+        "version": "v0.2.1-0.20240918233326-1b970516f5d3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jlaffaye/ftp"
+      },
+      {
+        "name": "github.com/josephspurrier/goversioninfo",
+        "version": "v1.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/josephspurrier/goversioninfo"
+      },
+      {
+        "name": "github.com/jzelinskie/whirlpool",
+        "version": "v0.0.0-20201016144138-0675e54bb004",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/jzelinskie/whirlpool"
+      },
+      {
+        "name": "github.com/klauspost/compress",
+        "version": "v1.18.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/klauspost/compress"
+      },
+      {
+        "name": "github.com/koofr/go-httpclient",
+        "version": "v0.0.0-20240520111329-e20f8f203988",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/koofr/go-httpclient"
+      },
+      {
+        "name": "github.com/koofr/go-koofrclient",
+        "version": "v0.0.0-20221207135200-cbd7fc9ad6a6",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/koofr/go-koofrclient"
+      },
+      {
+        "name": "github.com/lanrat/extsort",
+        "version": "v1.4.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/lanrat/extsort"
+      },
+      {
+        "name": "github.com/mattn/go-colorable",
+        "version": "v0.1.14",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mattn/go-colorable"
+      },
+      {
+        "name": "github.com/mattn/go-runewidth",
+        "version": "v0.0.20",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mattn/go-runewidth"
+      },
+      {
+        "name": "github.com/mholt/archives",
+        "version": "v0.1.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mholt/archives"
+      },
+      {
+        "name": "github.com/minio/minio-go/v7",
+        "version": "v7.0.98",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/minio/minio-go/v7"
+      },
+      {
+        "name": "github.com/mitchellh/go-homedir",
+        "version": "v1.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mitchellh/go-homedir"
+      },
+      {
+        "name": "github.com/moby/sys/mountinfo",
+        "version": "v0.7.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/moby/sys/mountinfo"
+      },
+      {
+        "name": "github.com/muesli/reflow",
+        "version": "v0.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/muesli/reflow"
+      },
+      {
+        "name": "github.com/ncw/swift/v2",
+        "version": "v2.0.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/ncw/swift/v2"
+      },
+      {
+        "name": "github.com/oracle/oci-go-sdk/v65",
+        "version": "v65.108.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/oracle/oci-go-sdk/v65"
+      },
+      {
+        "name": "github.com/patrickmn/go-cache",
+        "version": "v2.1.0+incompatible",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/patrickmn/go-cache"
+      },
+      {
+        "name": "github.com/peterh/liner",
+        "version": "v1.2.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/peterh/liner"
+      },
+      {
+        "name": "github.com/pkg/sftp",
+        "version": "v1.13.10",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/pkg/sftp"
+      },
+      {
+        "name": "github.com/pmezard/go-difflib",
+        "version": "v1.0.1-0.20181226105442-5d4384ee4fb2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/pmezard/go-difflib"
+      },
+      {
+        "name": "github.com/prometheus/client_golang",
+        "version": "v1.23.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/prometheus/client_golang"
+      },
+      {
+        "name": "github.com/putdotio/go-putio/putio",
+        "version": "v0.0.0-20200123120452-16d982cac2b8",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/putdotio/go-putio/putio"
+      },
+      {
+        "name": "github.com/quasilyte/go-ruleguard/dsl",
+        "version": "v0.3.23",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/quasilyte/go-ruleguard/dsl"
+      },
+      {
+        "name": "github.com/rclone/Proton-API-Bridge",
+        "version": "v1.0.1-0.20260127174007-77f974840d11",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/rclone/Proton-API-Bridge"
+      },
+      {
+        "name": "github.com/rclone/go-proton-api",
+        "version": "v1.0.1-0.20260127173028-eb465cac3b18",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/rclone/go-proton-api"
+      },
+      {
+        "name": "github.com/rclone/gofakes3",
+        "version": "v0.0.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/rclone/gofakes3"
+      },
+      {
+        "name": "github.com/rfjakob/eme",
+        "version": "v1.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/rfjakob/eme"
+      },
+      {
+        "name": "github.com/rivo/uniseg",
+        "version": "v0.4.7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/rivo/uniseg"
+      },
+      {
+        "name": "github.com/rogpeppe/go-internal",
+        "version": "v1.14.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/rogpeppe/go-internal"
+      },
+      {
+        "name": "github.com/shirou/gopsutil/v4",
+        "version": "v4.26.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/shirou/gopsutil/v4"
+      },
+      {
+        "name": "github.com/skratchdot/open-golang",
+        "version": "v0.0.0-20200116055534-eef842397966",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/skratchdot/open-golang"
+      },
+      {
+        "name": "github.com/spf13/cobra",
+        "version": "v1.10.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/cobra"
+      },
+      {
+        "name": "github.com/spf13/pflag",
+        "version": "v1.0.10",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/pflag"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.11.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      },
+      {
+        "name": "github.com/t3rm1n4l/go-mega",
+        "version": "v0.0.0-20251120131202-6845944c051c",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/t3rm1n4l/go-mega"
+      },
+      {
+        "name": "github.com/unknwon/goconfig",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/unknwon/goconfig"
+      },
+      {
+        "name": "github.com/willscott/go-nfs",
+        "version": "v0.0.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/willscott/go-nfs"
+      },
+      {
+        "name": "github.com/winfsp/cgofuse",
+        "version": "v1.6.1-0.20260126094232-f2c4fccdb286",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/winfsp/cgofuse"
+      },
+      {
+        "name": "github.com/wk8/go-ordered-map/v2",
+        "version": "v2.1.8",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/wk8/go-ordered-map/v2"
+      },
+      {
+        "name": "github.com/xanzy/ssh-agent",
+        "version": "v0.3.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/xanzy/ssh-agent"
+      },
+      {
+        "name": "github.com/youmark/pkcs8",
+        "version": "v0.0.0-20240726163527-a2c0da244d78",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/youmark/pkcs8"
+      },
+      {
+        "name": "github.com/yunify/qingstor-sdk-go/v3",
+        "version": "v3.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/yunify/qingstor-sdk-go/v3"
+      },
+      {
+        "name": "github.com/zeebo/blake3",
+        "version": "v0.2.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/zeebo/blake3"
+      },
+      {
+        "name": "github.com/zeebo/xxh3",
+        "version": "v1.1.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/zeebo/xxh3"
+      },
+      {
+        "name": "go.etcd.io/bbolt",
+        "version": "v1.4.3",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/go.etcd.io/bbolt"
+      },
+      {
+        "name": "goftp.io/server/v2",
+        "version": "v2.0.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/goftp.io/server/v2"
+      },
+      {
+        "name": "golang.org/x/crypto",
+        "version": "v0.48.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/crypto"
+      },
+      {
+        "name": "golang.org/x/net",
+        "version": "v0.51.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/net"
+      },
+      {
+        "name": "golang.org/x/oauth2",
+        "version": "v0.35.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/oauth2"
+      },
+      {
+        "name": "golang.org/x/sync",
+        "version": "v0.19.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/sync"
+      },
+      {
+        "name": "golang.org/x/sys",
+        "version": "v0.41.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/sys"
+      },
+      {
+        "name": "golang.org/x/text",
+        "version": "v0.34.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/text"
+      },
+      {
+        "name": "golang.org/x/time",
+        "version": "v0.14.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/time"
+      },
+      {
+        "name": "google.golang.org/api",
+        "version": "v0.267.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/google.golang.org/api"
+      },
+      {
+        "name": "gopkg.in/natefinch/lumberjack.v2",
+        "version": "v2.2.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gopkg.in/natefinch/lumberjack.v2"
+      },
+      {
+        "name": "gopkg.in/validator.v2",
+        "version": "v2.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gopkg.in/validator.v2"
+      },
+      {
+        "name": "gopkg.in/yaml.v3",
+        "version": "v3.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gopkg.in/yaml.v3"
+      },
+      {
+        "name": "storj.io/uplink",
+        "version": "v1.13.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/storj.io/uplink"
+      },
+      {
+        "name": "github.com/IBM/go-sdk-core/v5",
+        "version": "v5.21.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/IBM/go-sdk-core/v5"
+      },
+      {
+        "name": "github.com/ProtonMail/go-crypto",
+        "version": "v1.3.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/ProtonMail/go-crypto"
+      },
+      {
+        "name": "github.com/golang-jwt/jwt/v4",
+        "version": "v4.5.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/golang-jwt/jwt/v4"
+      },
+      {
+        "name": "github.com/pkg/xattr",
+        "version": "v0.4.12",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/pkg/xattr"
+      },
+      {
+        "name": "github.com/pquerna/otp",
+        "version": "v1.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/pquerna/otp"
+      },
+      {
+        "name": "golang.org/x/mobile",
+        "version": "v0.0.0-20260217195705-b56b3793a9c4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/mobile"
+      },
+      {
+        "name": "golang.org/x/term",
+        "version": "v0.40.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/term"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "rclone",
+        "type": "human",
+        "uri": "https://github.com/rclone"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 65875,
+      "validation_diversity": 1,
+      "context_breadth": 0.7,
+      "temporal_stability": 1,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.65
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.891
+  }
+}

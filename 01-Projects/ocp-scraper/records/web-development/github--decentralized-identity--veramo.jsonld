@@ -1,0 +1,169 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/decentralized-identity--veramo",
+  "meta": {
+    "title": "Veramo",
+    "description": "A JavaScript Framework for Verifiable Data",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:44:44.803Z",
+    "dateModified": "2026-03-11T04:44:44.803Z",
+    "keywords": [
+      "did",
+      "key-management",
+      "openapi",
+      "ssi",
+      "veramo",
+      "verifiable-credentials"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "Veramo is a JavaScript Framework for Verifiable Data that was designed to be flexible and modular which makes it an easy\nfit for a lot of complex workflows.",
+    "context": "Veramo is a JavaScript Framework for Verifiable Data that was designed to be flexible and modular which makes it an easy\nfit for a lot of complex workflows.\n\nCreate an agent, add plugins, run on a server or a frontend or mobile, or all of them combined. Veramo runs on Node,\nBrowsers, and React Native straight out of the box. Save time by using the same API across all platforms.\n\nVeramo is a core + some plugins. The core provides an entry point into the API, glues the plugins together and allows\nthem to interoperate. Depending on which plugins you use, your instance of Veramo (your agent) can perform a variety of\nroles:\n\n* Create and manage keys for signing and encryption\n* Create and manage Decentralized Identifiers (DID)\n* Issue Verifiable Credentials (VCs) and Presentations (VPs)\n* Verify such VCs and VPs\n* Present credentials using Selective Disclosure\n* Communicate with other agents using DIDComm (or other protocols)\n* Receive, filter, store and serve data\n* Control other agents remotely, or act as a proxy for them\n* ...whatever else you can think of",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "backend",
+    "data-management",
+    "lang:typescript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "528 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "136 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:44:44.803Z"
+  },
+  "implementation": {
+    "type": "framework",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/decentralized-identity/veramo",
+        "description": "GitHub repository: decentralized-identity/veramo"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://veramo.io",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "TypeScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "decentralized-identity",
+        "type": "human",
+        "uri": "https://github.com/decentralized-identity"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 800,
+      "validation_diversity": 0.59,
+      "context_breadth": 0.45,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.2,
+      "documentation_quality": 0.55
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.548
+  }
+}

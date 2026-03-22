@@ -1,0 +1,765 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/biomedicine",
+  "meta": {
+    "title": "Philosophy of Biomedicine",
+    "description": "Despite the simple name, biomedicine is not simply the area of overlap between biology and medicine. It is a framework, a set of philosophical commitments, a global institution woven into Western culture and its power dynamics, and more. Biomedicine is the umbrella theoretical framework for most health science and health technology work done in academic and government settings. Western medical practices and the surrounding healthcare infrastructure are principally biomedical. Health-related corporations are predominantly biomedical in orientation (with the exception of a few homeopathic producers and other scattered outliers). International medical aid mainly offers biomedical resources. Biomedicine, in other words, is the name for how most powerful global institutions envision the relations between biological sciences and medicine. The biomedical model is in fact so commonplace that it is easy to overlook how philosophically weighty (and contentious) its core commitments are: that health phenomena must be understood in terms of physical/biochemical entities and processes, that experimental techniques are the preferred means of acquiring and assessing health-related knowledge, and that human bodies are best understood as composed of a collection of subsidiary parts and processes (Krieger, 2011, p. 130). In addition to critiquing those core commitments, philosophers have also disputed connected issues regarding the meanings of health and disease, the nature of biomedical knowledge and expertise, the value of reductionist thinking, the value of biomedicine's global institutions, etc. Some philosophers have also proposed alternative frameworks for understanding the relations between biology and medicine. Though, relatively little literature is directed at biomedicine per se. The fact that the philosophical literature is so critical is in part because 1) biomedicine is so expansive that there is no shortage of flaws to identify, and 2) biomedicine is deeply embedded in the current global order, and hence is tied directly or indirectly to all of the goods and ills of that order. Biomedicine's expansiveness includes a set of epistemological commitments as well as a connected set of institutions. Moreover, much philosophical work directly or indirectly critiquing biomedicine leaves it unclear whether suggested improvements are small amendments or whether biomedicine as a whole is destabilized as a result of these weaknesses. Since \"medicine\" is often used interchangeably with \"biomedicine\", it is often difficult to distinguish processes, critiques, arguments, etc. about \"biomedicine\" from those about \"medicine\". This entry will, as much as possible, avoid duplicating the work done in the thorough Philosophy of Medicine entry. That entry focuses on elucidating the work done by that branch of philosophy, which according to entry authors Reiss and Ankeny, has \"dedicated journals and professional organizations, a relatively well-established canon of scholarly literature, and distinctive questions and problems\". Most of the \"medicine\" examined in \"philosophy of biomedicine\" is medicine pursued within a biomedicine framework, so there is much overlap. Yet, this entry will accomplish something other than what that entry does. This entry will review the philosophical literature (and some literature in allied fields, such as history of medicine) that scrutinizes the biomedical framework itself, in whole or in part. This chapter will also not provide a detailed history of medicine, including its innumerable social and institutional changes. Readers interested in an overview of the history of medicine to accompany this text can refer to Bynum (2008).",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T04:11:04.973Z",
+    "dateModified": "2026-03-22T04:11:04.973Z",
+    "datePublished": "2020-04-08T14:00:00.000Z",
+    "keywords": [
+      "disability",
+      "epistemology social",
+      "feminist social epistemology",
+      "foucault",
+      "health disease",
+      "international justice",
+      "measurement science",
+      "medicine",
+      "mental disorder",
+      "merleau ponty",
+      "phenomenology"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Despite the simple name, biomedicine is not simply the area of overlap between biology and medicine. It is a framework, a set of philosophical commitments, a global institution woven into Western culture and its power dynamics, and more. Biomedicine is the umbrella theoretical framework for most health science and health technology work done in academic and government settings. Western medical practices and the surrounding healthcare infrastructure are principally biomedical. Health-related corporations are predominantly biomedical in orientation (with the exception of a few homeopathic producers and other scattered outliers). International medical aid mainly offers biomedical resources. Biomedicine, in other words, is the name for how most powerful global institutions envision the relations between biological sciences and medicine. The biomedical model is in fact so commonplace that it is easy to overlook how philosophically weighty (and contentious) its core commitments are: that health phenomena must be understood in terms of physical/biochemical entities and processes, that experimental techniques are the preferred means of acquiring and assessing health-related knowledge, and that human bodies are best understood as composed of a collection of subsidiary parts and processes (Krieger, 2011, p. 130). In addition to critiquing those core commitments, philosophers have also disputed connected issues regarding the meanings of health and disease, the nature of biomedical knowledge and expertise, the value of reductionist thinking, the value of biomedicine's global institutions, etc. Some philosophers have also proposed alternative frameworks for understanding the relations between biology and medicine. Though, relatively little literature is directed at biomedicine per se. The fact that the philosophical literature is so critical is in part because 1) biomedicine is so expansive that there is no shortage of flaws to identify, and 2) biomedicine is deeply embedded in the current global order, and hence is tied directly or indirectly to all of the goods and ills of that order. Biomedicine's expansiveness includes a set of epistemological commitments as well as a connected set of institutions. Moreover, much philosophical work directly or indirectly critiquing biomedicine leaves it unclear whether suggested improvements are small amendments or whether biomedicine as a whole is destabilized as a result of these weaknesses. Since \"medicine\" is often used interchangeably with \"biomedicine\", it is often difficult to distinguish processes, critiques, arguments, etc. about \"biomedicine\" from those about \"medicine\". This entry will, as much as possible, avoid duplicating the work done in the thorough Philosophy of Medicine entry. That entry focuses on elucidating the work done by that branch of philosophy, which according to entry authors Reiss and Ankeny, has \"dedicated journals and professional organizations, a relatively well-established canon of scholarly literature, and distinctive questions and problems\". Most of the \"medicine\" examined in \"philosophy of biomedicine\" is medicine pursued within a biomedicine framework, so there is much overlap. Yet, this entry will accomplish something other than what that entry does. This entry will review the philosophical literature (and some literature in allied fields, such as history of medicine) that scrutinizes the biomedical framework itself, in whole or in part. This chapter will also not provide a detailed history of medicine, including its innumerable social and institutional changes. Readers interested in an overview of the history of medicine to accompany this text can refer to Bynum (2008).",
+    "context": "Opening section: 1. Biomedicine as a Framework for Medicine + Biology | Related entries: disability, epistemology-social, feminist-social-epistemology, foucault, health-disease, international-justice, measurement-science, medicine, mental-disorder, merleau-ponty, phenomenology",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "mind",
+    "epistemology",
+    "political-philosophy",
+    "philosophy-of-science",
+    "general-philosophy"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry biomedicine",
+        "uri": "https://plato.stanford.edu/entries/biomedicine/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "2 author(s), 11 related entries, bibliography size 167"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2020-04-08T14:00:00.000Z and revised 2025-07-14T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2025-07-14T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/biomedicine/",
+        "description": "SEP entry for biomedicine"
+      }
+    ],
+    "solutionApproach": "1. Biomedicine as a Framework for Medicine + Biology"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/disability",
+      "ocp:sep/epistemology-social",
+      "ocp:sep/feminist-social-epistemology",
+      "ocp:sep/foucault",
+      "ocp:sep/health-disease",
+      "ocp:sep/international-justice",
+      "ocp:sep/measurement-science",
+      "ocp:sep/medicine",
+      "ocp:sep/mental-disorder",
+      "ocp:sep/merleau-ponty",
+      "ocp:sep/phenomenology"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Valles, Sean",
+        "type": "human"
+      },
+      {
+        "name": "Friedman, Yael",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/biomedicine/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 119,
+      "validation_diversity": 0.57,
+      "context_breadth": 0.47,
+      "temporal_stability": 0.95,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.91
+    },
+    "confidence": "tested",
+    "authority": "high",
+    "status": "draft",
+    "trustScore": 0.61
+  },
+  "extensions": {
+    "sep": {
+      "slug": "biomedicine",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/biomedicine/",
+      "preamble": "Despite the simple name, biomedicine is not simply the area of overlap between biology and medicine. It is a framework, a set of philosophical commitments, a global institution woven into Western culture and its power dynamics, and more. Biomedicine is the umbrella theoretical framework for most health science and health technology work done in academic and government settings. Western medical practices and the surrounding healthcare infrastructure are principally biomedical. Health-related corporations are predominantly biomedical in orientation (with the exception of a few homeopathic producers and other scattered outliers). International medical aid mainly offers biomedical resources. Biomedicine, in other words, is the name for how most powerful global institutions envision the relations between biological sciences and medicine. The biomedical model is in fact so commonplace that it is easy to overlook how philosophically weighty (and contentious) its core commitments are: that health phenomena must be understood in terms of physical/biochemical entities and processes, that experimental techniques are the preferred means of acquiring and assessing health-related knowledge, and that human bodies are best understood as composed of a collection of subsidiary parts and processes (Krieger, 2011, p. 130). In addition to critiquing those core commitments, philosophers have also disputed connected issues regarding the meanings of health and disease, the nature of biomedical knowledge and expertise, the value of reductionist thinking, the value of biomedicine's global institutions, etc. Some philosophers have also proposed alternative frameworks for understanding the relations between biology and medicine. Though, relatively little literature is directed at biomedicine per se. The fact that the philosophical literature is so critical is in part because 1) biomedicine is so expansive that there is no shortage of flaws to identify, and 2) biomedicine is deeply embedded in the current global order, and hence is tied directly or indirectly to all of the goods and ills of that order. Biomedicine's expansiveness includes a set of epistemological commitments as well as a connected set of institutions. Moreover, much philosophical work directly or indirectly critiquing biomedicine leaves it unclear whether suggested improvements are small amendments or whether biomedicine as a whole is destabilized as a result of these weaknesses. Since \"medicine\" is often used interchangeably with \"biomedicine\", it is often difficult to distinguish processes, critiques, arguments, etc. about \"biomedicine\" from those about \"medicine\". This entry will, as much as possible, avoid duplicating the work done in the thorough Philosophy of Medicine entry. That entry focuses on elucidating the work done by that branch of philosophy, which according to entry authors Reiss and Ankeny, has \"dedicated journals and professional organizations, a relatively well-established canon of scholarly literature, and distinctive questions and problems\". Most of the \"medicine\" examined in \"philosophy of biomedicine\" is medicine pursued within a biomedicine framework, so there is much overlap. Yet, this entry will accomplish something other than what that entry does. This entry will review the philosophical literature (and some literature in allied fields, such as history of medicine) that scrutinizes the biomedical framework itself, in whole or in part. This chapter will also not provide a detailed history of medicine, including its innumerable social and institutional changes. Readers interested in an overview of the history of medicine to accompany this text can refer to Bynum (2008).",
+      "firstSectionTitle": "1. Biomedicine as a Framework for Medicine + Biology",
+      "firstSectionText": "Consult with a primary care physician when feeling ill. Perhaps they send you to a medical lab that will take a blood sample to run a biochemical analysis. After the results arrive, consult with a physician specialist whose expertise is the particular bodily organ or system where the ailment is localized. The specialist prescribes a drug that has been mass-produced in a factory, after a biology laboratory extracted the active ingredient from a natural source, or perhaps synthesized it from scratch. The drug's efficacy has been proven by testing the drug experimentally on two groups with the relevant disease, randomly sorted into an experimental group and a control group so that the drug's measurable bodily effects could be scrutinized and counted. This is biomedicine. It has quickly grown to be so pervasive around the globe that it is difficult to characterize biomedicine. As explored in this entry, and outlined in how the sections are divided in the entry, biomedicine has many facets. It is a very large and complex thing. It is a morphing historical product of the post-World War II West. It is a contemporary global social institution. It is an epistemology of medical research and practice (albeit with factions). It is a set of ontological and metaphysical commitments. And more. The US National Cancer Institute (NCI Other Internet Resources , accessed 13 March 2025) defines biomedicine as synonymous with \"allopathic medicine, conventional medicine, mainstream medicine, orthodox medicine, and Western medicine\". By contrast, Clarke et al. (2003) take an expansive view of the nature of biomedicine, contending that it is an evolving entity, a cohesive and developing whole that consists of elements ranging from the assertion that good health is a personal moral obligation to the increasing reliance on \"computerization and data banking\" (A. E. Clarke et al., 2003). Krieger offers a detailed examination of the history and philosophy of the \"biomedicine approach,\" and extracts three key epistemological tenets of the view. Among the many features of a biomedical perspective, three stand out as fundamental regarding its approach to investigating disease (Lock & Gordon, 1988; Fee & Krieger, 1993; Krieger, 1994; Lawrence & Weisz, 1998; Cambrosio & Keating, 2001; Bynum, 2008). They are: First, specific to biomedicine: the domain of disease and its causes is restricted to solely biological, chemical, and physical phenomena; Second, shared with many natural sciences: an emphasis on laboratory research and technology and, as translated to health research, a discounting of research questions that cannot be studied by randomized clinical trials (or their analogs, e.g., \"natural experiments\"); and Third: an embrace of \"reductionism,\" a philosophical and methodological stance (discussed more fully below) that holds that phenomena are best explained by the properties of their parts. (Krieger, 2011, p. 130). Kriger's account of biomedicine offers a compelling distillation of the epistemological commitments of biomedical science. Though since this is an entry on philosophy of biomedicine, the entry will be organized around philosophical dimensions and debates, rather than being organized directly around these core theoretical tenets (e.g. the upcoming section is on ontological and metaphysical commitments). Additionally, this entry will supplement the tenets identified by Krieger with discussion of connected issues, such as philosophical critiques of biomedicine as a social institution (Section 4). A longer discussion of reductionism is below, in Section 3.4) We use the terms \"framework\" and \"approach\" to describe biomedicine, in an attempt to avoid narrowly overcommitting to any particular philosophical system. Biomedicine may or may not qualify as one of Thomas Kuhn's \"paradigms\", in the way that the heliocentric model of the solar system is a paradigm--a complex worldview in which the viewpoints cannot be straightforwardly translated back-and-forth with an alternative paradigm (i.e. if we try to translate the concepts of biomedicine to the pre-biomedical concepts of humoral theory, discussed in Section 1.2 (Kuhn, 1962). Alternatively, biomedicine seems to qualify as one of Imre Lakatos' Research Programmes, a different way of conceiving of the way that research communities intellectually cohere (Lakatos, 1968). It's a question of how biomedicine serves as a means of organizing and guiding research. Without getting too lost in the technical criteria, biomedicine shares the Kuhnian paradigm quality of being incommensurable (or at least more or less so) with other conceptions of biology and health. Scholars of complementary medicine have spent enormous effort searching for ways that traditional medical practices--e.g. herbal treatments handed down over generations--can get a foothold in a medical world dominated by biomedicine. It is telling that there is no question that 'proof' of a treatment's efficacy requires starting from scratch, by examining the herb's chemical makeup, isolating and analyzing which chemical components are the active ingredients, and then testing safety and efficacy, all entirely within biomedicine's rules. Whatever explanations might have been offered by herbalists (e.g. 'it calms turmoil in the stomach') are irrelevant untranslatable knowledge. Biomedicine also shares the Lakatosian Research Programme quality of (largely implicitly) dictating what sorts of internal dispute about biomedicine is permissible. Within the biomedical Research Programme, one is invited to question whether a particular experimental design is suitable; one is not permitted to reject experimentation entirely. Biomedicine as a global institution coevolved with its characteristic philosophical positions. While key elements, such as laboratory biology, were present in the 19th century and even before, \"World War II is usually presented as a turning point in the 'biomedicalization' process\" (L&ouml;wy, 2011, p. 117). The term \"biomedicine\" was first used between the two world wars as a shorthand for some of the medical and scientific work being done on radioactive materials (Keating, Cambrosio, & Wilson III, 2003; L&ouml;wy, 2011, pp. 49-55). But biomedicine only came into its own during the period of economic and social transformation in industrialized Western countries that followed World War Two: In industrialized countries, the post-World War II era was also characterized by important increases in public funding for medical research, the extension of health insurance to large parts of the population (a process that, in nearly all the Western countries, the United States excepted, was also supported by the state), and the rapid growth of the pharmaceutical industry. (L&ouml;wy 2011: 117) If biomedicine is a recent historical development, then what exactly came before it? Many different frameworks for health existed before the rise of biomedicine, though many such frameworks exist now despite the dominance of biomedicine. Some have been distinctly influenced by or merged with biomedicine. For instance, osteopathic medicine has gradually gone from a full alternative system of medicine (focusing on manipulation of body via pressure, stretching and other means of readjustment of bodily structure in order to rebalance internal processes), to an alternative track of medical education/practice that has in large part converged with the biomedical/allopathic medicine track (McClain, 2017; Stark, 2013). Insofar as biomedicine formed in the West, it is helpful to see it in contrast to the medical and philosophical traditions that preceded it. That tradition is the Hippocratic tradition--the views attributed to Hippocrates and over two millennia of re-interpretations, riffs, amendments, and other alterations. At the core of Hippocratic medicine were two views. First, it made a commitment to methodological naturalism--a refusal to attribute disease processes to the work of gods and other supernatural beings (Conrad, Neve, Nutton, Porter, & Wear, 1995). Though, it is worth noting that for much of that history, elements of astrology, talismans, and some forms of magic were understood as essentially natural phenomena (e.g., the sun obviously affects health via sunburns and such, so it is not absurd to have inferred that planets could have their own subtle effects on bodies too). Second, it understood health as a matter of balance--and disease as a matter of imbalance--of the humors. Humoral theory was interpreted in many different ways, but centered on the idea that health and disease are attributable to the interactions of anatomical humors (blood, phlegm, yellow bile, and black bile), which were in turn directly tied to a much larger cosmology of the elements (e.g. blood is linked to air, the springtime, a combination of heat and moisture, the heart, and the astrological influence of the planet Jupiter) (Conrad et al., 1995). The humoral framework remained dominant until emerging scientific approaches began challenging its foundations--a shift that would eventually lead to what we now recognize as biomedicine. However, the actual impact of this biomedical framework has become a subject of intense debate. Thomas McKeown was an influential critic of the biomedical institution (including the work done during its early twentieth century prehistory), having authored the blockbuster volume The Role of Medicine: Dream, Mirage, or Nemesis (1976). McKeown reevaluated the historical record and available evidence to instead hypothesize that the social and economic changes in the West that improved public health conditions were more responsible for population health improvements than biomedicine's growth. Put bluntly, he argued that twentieth century modernity (economic development, improved nutrition, etc.) caused populations in the West to get healthier over time, then modernity went on to also cause the growth of contemporary medicine/biomedicine, but the medical advances themselves played a generally secondary role in supporting the health improvements. His work has inspired decades worth of debates over the validity of his bold claims, which have been largely overturned or largely vindicated, depending on whom one asks (Link & Phelan 2002). There is long-standing debate in health policy over exactly how successful the biomedical model has been over its relatively short historical trajectory. The growth of the biomedical model in Western countries occurred at the same time as other social and economic transformations (industrialization, urbanization, globalization, etc.) and at the same time as improvements in life expectancy and a large number of disease outcomes. The 'received view' of these historical relations is that social and economic changes allowed the growth of biomedicine, which in turn created new institutions, professional health care practices, and technologies that, in turn, caused vast improvements in health outcomes for the populations served by biomedical institutions. Penicillin is the go-to example for illustrating the positive health impacts of biomedicine (L&ouml;wy, 2011). It is a medicine extracted from nature (mold), made into a widely available 'magic bullet' thanks to biomedical techniques of identifying its active components, and manufacturing controlled doses of it at reasonable cost at massive scale. Suffering and death from bacterial infections were rapidly alleviated; once hopeless diseases were suddenly curable with a few benign pills.",
+      "relatedEntries": [
+        "disability",
+        "epistemology-social",
+        "feminist-social-epistemology",
+        "foucault",
+        "health-disease",
+        "international-justice",
+        "measurement-science",
+        "medicine",
+        "mental-disorder",
+        "merleau-ponty",
+        "phenomenology"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "disability"
+        },
+        {
+          "slug": "epistemology-social"
+        },
+        {
+          "slug": "feminist-social-epistemology"
+        },
+        {
+          "slug": "foucault"
+        },
+        {
+          "slug": "health-disease"
+        },
+        {
+          "slug": "international-justice"
+        },
+        {
+          "slug": "measurement-science"
+        },
+        {
+          "slug": "medicine"
+        },
+        {
+          "slug": "mental-disorder"
+        },
+        {
+          "slug": "merleau-ponty"
+        },
+        {
+          "slug": "phenomenology"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 167,
+      "bibliography": [
+        {
+          "raw": "Alexandrova, Anna, 2017, A Philosophy for the Science of Well-Being , New York: Oxford University Press."
+        },
+        {
+          "raw": "Amundson, Ron, 2000, \"Against Normal Function,\" Studies in History and Philosophy of Science Part C: Studies in History and Philosophy of Biological and Biomedical Sciences , 31(1): 33-53."
+        },
+        {
+          "raw": "Andersen, Holly, 2016, \"Reductionism in the Biomedical Sciences,\" in Miriam Solomon, Jeremy R. Simon, and Harold Kincaid (eds.), The Routledge Companion to Philosophy of Medicine , New York: Routledge, 130-142."
+        },
+        {
+          "raw": "Barnes, Elizabeth, 2023, Health Problems: Philosophical Puzzles About the Nature of Health , New York: Oxford University Press."
+        },
+        {
+          "raw": "Bell, Susan, and Anne Figert, 2015, \"Moving Sideways and Forging Ahead: Reimagining '-izations' in the Twenty-First Century,\" in Susan Bell (ed.), Reimagining (Bio)medicalization, Pharmaceuticals and Genetics , New York: Routledge, pp. 19-40."
+        },
+        {
+          "raw": "Berwick, D. M., 2005, \"Broadening the View of Evidence-Based Medicine,\" BMJ Quality & Safety , 14(5): 315-316."
+        },
+        {
+          "raw": "Bluhm, Robyn, 2005, \"From Hierarchy to Network: A Richer View of Evidence for Evidence-Based Medicine,\" Perspectives in Biology and Medicine , 48(4): 535-547."
+        },
+        {
+          "raw": "Bolton, Derek, 2020, \"The Biopsychosocial Model and the New Medical Humanism,\" Archives de Philosophie , 83(4): 13-40. doi:10.3917/aphi.834.0013."
+        },
+        {
+          "raw": "Bolton, Derek, and Grant Gillett, 2019, The Biopsychosocial Model of Health and Disease: New Philosophical and Scientific Developments , Cham: Springer Nature Switzerland."
+        },
+        {
+          "raw": "Boorse, Christopher, 2014, \"A Second Rebuttal on Health,\" Journal of Medicine and Philosophy , 39(6): 683-724."
+        },
+        {
+          "raw": "Borgerson, Kristin, 2005, \"Evidence-Based Alternative Medicine?\" Perspectives in Biology and Medicine , 48(4): 502-515."
+        },
+        {
+          "raw": "Borgerson, Kristin, 2009, \"Why Reading the Title Isn't Good Enough: An Evaluation of the 4S Approach to Evidence-Based Medicine,\" International Journal of Feminist Approaches to Bioethics , 2(2): 152-175."
+        },
+        {
+          "raw": "Bortolotti, Lisa, 2025, Epistemic Justice in Mental Healthcare: Recognising Agency and Promoting Virtues Across the Life Span , Cham: Palgrave Macmillan."
+        },
+        {
+          "raw": "Briggs, Charles, and Daniel Hallin, 2016, Making Health Public: How News Coverage Is Remaking Media, Medicine, and Contemporary Life , Oxon: Routledge."
+        },
+        {
+          "raw": "Broadbent, Alex, 2009, \"Causation and Models of Disease in Epidemiology,\" Studies in History and Philosophy of Biological and Biomedical Sciences , 40(4): 302-311."
+        },
+        {
+          "raw": "---, 2019, \"Evidence-Based Medicine,\" in Philosophy of Medicine , New York: Oxford University Press, 131-156."
+        },
+        {
+          "raw": "Buchman, Daniel, Anita Ho, and Daniel Goldberg, 2017, \"Investigating Trust, Expertise, and Epistemic Injustice in Chronic Pain,\" Journal of Bioethical Inquiry , 14(1): 31-42."
+        },
+        {
+          "raw": "Bueter, Anke, 2017, \"Androcentrism, Feminism, and Pluralism in Medicine,\" Topoi , 36(3): 521-530."
+        },
+        {
+          "raw": "---, 2019, \"Epistemic Injustice and Psychiatric Classification,\" Philosophy of Science , 86(5): 1064-1074."
+        },
+        {
+          "raw": "---, 2021, \"Diagnostic Overshadowing in Psychiatric-Somatic Comorbidity: A Case for Structural Testimonial Injustice,\" Erkenntnis , 88: 1135-1155."
+        },
+        {
+          "raw": "Butler, Judith, 2004, Undoing Gender , New York: Routledge."
+        },
+        {
+          "raw": "Bynum, William, 2008, The History of Medicine: A Very Short Introduction , New York: Oxford University Press."
+        },
+        {
+          "raw": "Byrne, Eleanor, 2020, \"Striking the Balance with Epistemic Injustice in Healthcare: The Case of Chronic Fatigue Syndrome/Myalgic Encephalomyelitis,\" Medicine, Health Care, and Philosophy , 23(3): 371-379."
+        },
+        {
+          "raw": "Callahan, Daniel, 2016, The Five Horsemen of the Modern World: Climate, Food, Water, Disease, and Obesity , New York: Columbia University Press."
+        },
+        {
+          "raw": "Campaner, Rafaella, 2010, \"Reductionist and Antireductionist Stances in the Health Sciences,\" in Thomas Uebel, Stephan Hartmann, Wenceslao Gonzalez, Marcel Weber, Dennis Dieks, and Friedrich Stadler (eds.), The Present Situation in the Philosophy of Science , Dordrecht: Springer, pp. 205-218."
+        },
+        {
+          "raw": "Campbell, Stephen, and Joseph Stramondo, 2017, \"The Complicated Relationship of Disability and Well-Being,\" Kennedy Institute of Ethics Journal , 27(2): 151-184."
+        },
+        {
+          "raw": "Carel, Havi, 2016, Phenomenology of Illness , New York: Oxford University Press."
+        },
+        {
+          "raw": "Carel, Havi, and Gita Gy&ouml;rffy, 2014, \"Seen but Not Heard: Children and Epistemic Injustice,\" Lancet , 384(9950): 1256-1257."
+        },
+        {
+          "raw": "Cassell, Eric, 2004, The Nature of Suffering and the Goals of Medicine , New York: Oxford University Press."
+        },
+        {
+          "raw": "---, 2012, The Nature of Healing: The Modern Practice of Medicine , New York: Oxford University Press."
+        },
+        {
+          "raw": "Casta&ntilde;eda, Heide, 2022, Migration and Health: Critical Perspectives , New York: Routledge."
+        },
+        {
+          "raw": "Chalmers, David, 1995, \"Facing Up to the Problem of Consciousness,\" Journal of Consciousness Studies , 2(3): 200-219."
+        },
+        {
+          "raw": "Chapman, Robert, 2023, Empire of Normality: Neurodiversity and Capitalism , Las Vegas: Pluto Press."
+        },
+        {
+          "raw": "Chapman, Robert, and Havi Carel, 2022, \"Neurodiversity, Epistemic Injustice, and the Good Human Life,\" Journal of Social Philosophy ."
+        },
+        {
+          "raw": "Charon, Rita, 2008, Narrative Medicine: Honoring the Stories of Illness , New York: Oxford University Press."
+        },
+        {
+          "raw": "Chin-Yee, Benjamin, and Ross Upshur, 2018, \"Clinical Judgement in the Era of Big Data and Predictive Analytics,\" Journal of Evaluation in Clinical Practice , 24(3): 638-645."
+        },
+        {
+          "raw": "Clarke, Adele, Janet Shim, Laura Mamo, Jennifer Ruth Fosket, and Jennifer Fishman, 2003, \"Biomedicalization: Technoscientific Transformations of Health, Illness, and U.S. Biomedicine,\" American Sociological Review , 68(2): 161-194. doi:10.2307/1519765."
+        },
+        {
+          "raw": "Clarke, Brendan, Donald Gillies, Phyllis Illari, Federica Russo, and Jon Williamson, 2014, \"Mechanisms and the Evidence Hierarchy,\" Topoi , 33(2): 339-360."
+        },
+        {
+          "raw": "Conrad, Lawrence, Michael Neve, Vivian Nutton, Roy Porter, and Andrew Wear, 1995, The Western Medical Tradition: 800 BC to AD 1800 , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Conrad, Peter, 1975, \"The Discovery of Hyperkinesis: Notes on the Medicalization of Deviant Behavior,\" Social Problems , 23(1): 12-21. doi:10.2307/799624."
+        },
+        {
+          "raw": "Cooper, Amy, 2019, State of Health: Pleasure and Politics in Venezuelan Health Care Under Ch&aacute;vez , Oakland: University of California Press."
+        },
+        {
+          "raw": "C&ocirc;t&eacute;, Catherine, 2024, \"A Critical and Systematic Literature Review of Epistemic Justice Applied to Healthcare: Recommendations for a Patient Partnership Approach,\" Medicine, Health Care and Philosophy , 27(3): 455-477.."
+        },
+        {
+          "raw": "de Melo-Mart&iacute;n, Immaculada, 2022, \"Vaccine Hesitancy: Some Concerns About Values and Trust, Comments on Vaccine Hesitancy by Maya J. Goldenberg,\" IJFAB: International Journal of Feminist Approaches to Bioethics , 15(2): 108-115."
+        },
+        {
+          "raw": "Dean, Megan, 2018, \"Eating Identities, 'Unhealthy' Eaters, and Damaged Agency,\" Feminist Philosophy Quarterly , 4(3): 1-32."
+        },
+        {
+          "raw": "Desai, Prakash, 1988, \"Medical Ethics in India,\" Journal of Medicine and Philosophy , 13(3): 231-255."
+        },
+        {
+          "raw": "Dings, Roy, and Derek Strijbos, 2025, \"Being in a Position to Know: Attuned Responsiveness as the Hallmark of Experiential Knowledge and Expertise in Mental Healthcare,\" Frontiers in Psychiatry , 15."
+        },
+        {
+          "raw": "Djulbegovic, Benjamin, and Gordon Guyatt, 2019, \"Evidence vs Consensus in Clinical Practice Guidelines,\" JAMA , 322(8): 725-726."
+        },
+        {
+          "raw": "Dotson, Kristie, 2011, \"Tracking Epistemic Violence, Tracking Practices of Silencing,\" Hypatia: A Journal of Feminist Philosophy , 26(2): 236-257."
+        },
+        {
+          "raw": "---, 2012, \"A Cautionary Tale: On Limiting Epistemic Oppression,\" Frontiers: A Journal of Women's Studies , 33(1): 24-47."
+        },
+        {
+          "raw": "---, 2014, \"Conceptualizing Epistemic Oppression,\" Social Epistemology , 28(2): 115-138."
+        },
+        {
+          "raw": "Dro&#380;d&#380;owicz, Anna, 2021, \"Epistemic Injustice in Psychiatric Practice: Epistemic Duties and the Phenomenological Approach,\" Journal of Medical Ethics , 47(12): e69."
+        },
+        {
+          "raw": "Eisenstein, Michael, 2019, \"Tea's Value as a Cancer Therapy Is Steeped in Uncertainty,\" Nature , 566: S6-S7."
+        },
+        {
+          "raw": "Engel, George L., 1977, \"The Need for a New Medical Model: A Challenge for Biomedicine,\" Science , 196(4286): 129-136. doi:10.1126/science.847460."
+        },
+        {
+          "raw": "---, 1978, \"The Biopsychosocial Model and the Education of Health Professionals,\" Annals of the New York Academy of Sciences , 310: 169-187. doi:10.1111/j.1749-6632.1978.tb22070.x."
+        },
+        {
+          "raw": "---, 1980, \"The Clinical Application of the Biopsychosocial Model,\" American Journal of Psychiatry , 137(5): 535-544. doi:10.1176/ajp.137.5.535."
+        },
+        {
+          "raw": "Evans, Robert G., Morris L. Barer, and Theodore R. Marmor (eds.), 1994, Why Are Some People Healthy and Others Not? The Determinants of Health of Populations , New York: Aldine De Gruyter."
+        },
+        {
+          "raw": "Evidence-Based Medicine Working Group, 1992, \"Evidence-Based Medicine: A New Approach to Teaching the Practice of Medicine,\" Journal of the American Medical Association , 268(17): 2420-2425."
+        },
+        {
+          "raw": "Fischer, Enno, and Saana Jukola, 2024, \"Bodies of Evidence: The 'Excited Delirium Syndrome' and the Epistemology of Cause-of-Death Inquiry,\" Studies in History and Philosophy of Science , 104: 38-47."
+        },
+        {
+          "raw": "Foucault, Michel, 1967, Madness and Civilisation: A History of Insanity in the Age of Reason , London: Tavistock."
+        },
+        {
+          "raw": "---, 1990, The History of Sexuality: An Introduction, Volume I , trans. Robert Hurley, New York: Vintage."
+        },
+        {
+          "raw": "---, 2002, The Birth of the Clinic: An Archaeology of Medical Perception , New York: Vintage."
+        },
+        {
+          "raw": "Fricker, Miranda, 2007, Epistemic Injustice: Power and the Ethics of Knowing , New York: Oxford University Press."
+        },
+        {
+          "raw": "Friedman, Yael, 2024, \"Conceptual Scaffolding for the Philosophy of Medicine,\" Medicine, Health Care and Philosophy , 28: 45-64."
+        },
+        {
+          "raw": "Garson, Justin, 2019, What Biological Functions Are and Why They Matter , New York: Cambridge University Press."
+        },
+        {
+          "raw": "Goldenberg, Maya J., 2006, \"On Evidence and Evidence-Based Medicine: Lessons from the Philosophy of Science,\" Social Science and Medicine , 62(11): 2621-2632."
+        },
+        {
+          "raw": "---, 2009, \"Iconoclast or Creed? Objectivism, Pragmatism, and the Hierarchy of Evidence,\" Perspectives in Biology and Medicine , 52(2): 168-187."
+        },
+        {
+          "raw": "---, 2021, Vaccine Hesitancy: Public Trust, Expertise, and the War on Science , Pittsburgh: University of Pittsburgh Press."
+        },
+        {
+          "raw": "Gonz&aacute;lez-Moreno, Mar&iacute;a, Cristian Saborido, and David Teira, 2015, \"Disease-Mongering Through Clinical Trials,\" Studies in History and Philosophy of Biological and Biomedical Sciences , 51: 11-18."
+        },
+        {
+          "raw": "Goodman, Kenneth W., 2002, Ethics and Evidence-Based Medicine: Fallibility and Responsibility in Clinical Science , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Greene, Jeremy, 2006, Prescribing by Numbers: Drugs and the Definition of Disease , Baltimore: Johns Hopkins University Press."
+        },
+        {
+          "raw": "Greenhalgh, Trisha, 2014, How to Read a Paper: The Basics of Evidence-Based Medicine , Oxford: John Wiley & Sons."
+        },
+        {
+          "raw": "Greenhalgh, Trisha, Rosamund Snow, Sara Ryan, Sian Rees, and Helen Salisbury, 2015, \"Six 'Biases' Against Patients and Carers in Evidence-Based Medicine,\" BMC Medicine , 13: 200."
+        },
+        {
+          "raw": "Hagner, Michael, 2003, \"Scientific Medicine,\" in Daniel Cahan (ed.), From Natural Philosophy to the Sciences: Writing the History of Nineteenth-Century Science , Chicago: University of Chicago Press, pp. 49-87."
+        },
+        {
+          "raw": "Hatzenbuehler, Mark L., Jo C. Phelan, and Bruce G. Link, 2013, \"Stigma as a Fundamental Cause of Population Health Inequalities,\" American Journal of Public Health , 103(5): 813-821."
+        },
+        {
+          "raw": "Hausman, Daniel M., 2015, Valuing Health: Well-Being, Freedom and Suffering , New York: Oxford University Press."
+        },
+        {
+          "raw": "Hofmann, Bj&oslash;rn, 2016, \"Medicalization and Overdiagnosis: Different but Alike,\" Medicine, Health Care and Philosophy , 19: 253-264. doi:10.1007/s11019-016-9693-6."
+        },
+        {
+          "raw": "Hofmann, Bj&oslash;rn, and Fredrik Svenaeus, 2018, \"How Medical Technologies Shape the Experience of Illness,\" Life Sciences, Society and Policy , 14(1): 3."
+        },
+        {
+          "raw": "Hogan, Andrew J., 2019, \"Moving Away from the 'Medical Model': The Development and Revision of the World Health Organization's Classification of Disability,\" Bulletin of the History of Medicine , 93(2): 241-269."
+        },
+        {
+          "raw": "Hookway, Christopher, 2010, \"Some Varieties of Epistemic Injustice: Reflections on Fricker,\" Episteme , 7(2): 151-163."
+        },
+        {
+          "raw": "Illich, Ivan, 1976, Medical Nemesis , New York: Random House."
+        },
+        {
+          "raw": "Ioannidis, John P. A., 2016, \"Evidence-Based Medicine Has Been Hijacked: A Report to David Sackett,\" Journal of Clinical Epidemiology , 73: 82-86."
+        },
+        {
+          "raw": "Irwin, A., and E. Scali, 2007, \"Action on the Social Determinants of Health: A Historical Perspective,\" Global Public Health , 2(3): 235-256."
+        },
+        {
+          "raw": "Jasanoff, Sheila, Stephen Hilgartner, J. Benjamin Hurlbut, Onur &Ouml;zg&ouml;de, and Margarita Rayzberg, 2021, \"Comparative Covid Response: Crisis, Knowledge, Politics (Interim Report),\" accessed July 2, 2025, from Harvard-Cornell Report 2020."
+        },
+        {
+          "raw": "Kantor, Leslie M., and Laura Lindberg, 2020, \"Pleasure and Sex Education: The Need for Broadening Both Content and Measurement,\" American Journal of Public Health , 110(2): 145-148."
+        },
+        {
+          "raw": "Kaplan, Jonathan M., 2019, \"Self-Care as Self-Blame Redux: Stress as Personal and Political,\" Kennedy Institute of Ethics Journal , 29(2): 97-123."
+        },
+        {
+          "raw": "Keating, Peter, and Alberto Cambrosio, 2003, Biomedical Platforms: Realigning the Normal and the Pathological in Late-Twentieth-Century Medicine (Vol. 4), Cambridge: MIT Press."
+        },
+        {
+          "raw": "Kendler, Kenneth S., 2016, \"Phenomenology of Schizophrenia and the Representativeness of Modern Diagnostic Criteria,\" JAMA Psychiatry , 73(10): 1082-1092."
+        },
+        {
+          "raw": "Keuck, Lara, 2024, \"Scope Validity in Medicine,\" in Maartje Schermer and Nicholas Binney (eds.), A Pragmatic Approach to Conceptualization of Health and Disease, Philosophy and Medicine , vol. 151, Cham: Springer, pp. 115-133."
+        },
+        {
+          "raw": "Kidd, Ian James, and Havi Carel, 2017, \"Epistemic Injustice and Illness,\" Journal of Applied Philosophy , 34(2): 172-190."
+        },
+        {
+          "raw": "---, 2018, \"Healthcare Practice, Epistemic Injustice, and Naturalism,\" in Simon Barker, Charlie Crerar, and Trystan Goetze (eds.), Harms and Wrongs in Epistemic Practice , Cambridge: Cambridge University Press, pp. 136-154."
+        },
+        {
+          "raw": "---, 2019, \"Pathocentric Epistemic Injustice and Conceptions of Health,\" in Benjamin R. Sherman and Stacey Goguen (eds.), Overcoming Epistemic Injustice: Social and Psychological Perspectives , New York: Rowman & Littlefield, pp. 153-162."
+        },
+        {
+          "raw": "Kingma, Elselijn, 2014, \"Naturalism About Health and Disease: Adding Nuance for Progress,\" Journal of Medicine and Philosophy , 39(6): 590-608."
+        },
+        {
+          "raw": "Krieger, Nancy, 2011, Epidemiology and the People's Health: Theory and Context , New York: Oxford University Press."
+        },
+        {
+          "raw": "---, 2017, \"Health Equity and the Fallacy of Treating Causes of Population Health as if They Sum to 100%,\" American Journal of Public Health , 107(4): 541-549."
+        },
+        {
+          "raw": "Krueger, James, 2015, \"Theoretical Health and Medical Practice,\" Philosophy of Science , 82(3): 491-508."
+        },
+        {
+          "raw": "Kuhn, Thomas S., 1962, The Structure of Scientific Revolutions , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Kukla, Quill R., 2022, \"What Counts as a Disease, and Why Does It Matter?\" The Journal of Philosophy of Disability , 2: 130-156."
+        },
+        {
+          "raw": "Kukla, Rebecca, 2014, \"Performative Force, Convention, and Discursive Injustice,\" Hypatia , 29(2): 440-457."
+        },
+        {
+          "raw": "Laforest, David, 2020, \"Health Biometrics and the Narrative Self,\" Public , 30(60): 166-174.."
+        },
+        {
+          "raw": "Lakatos, Imre, 1968, \"Criticism and the Methodology of Scientific Research Programmes,\" Proceedings of the Aristotelian Society , 69: 149-186."
+        },
+        {
+          "raw": "Latour, Bruno, 1987, Science in Action: How to Follow Scientists and Engineers Through Society , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Lee, Keekok, 2017, The Philosophical Foundations of Classical Chinese Medicine: Philosophy, Methodology, Science , Lanham, Maryland: Lexington Books."
+        },
+        {
+          "raw": "---, 2021, \"Epidemiology Is Ecosystem Science,\" Synthese , 198(Suppl 10): 2539-2567."
+        },
+        {
+          "raw": "Link, Bruce G., and Jo C. Phelan, 2002, \"McKeown and the Idea That Social Conditions Are Fundamental Causes of Disease,\" American Journal of Public Health , 92(5): 730-732. doi:10.2105/AJPH.92.5.730."
+        },
+        {
+          "raw": "Lohse, Simon, and Stefano Canali, 2021, \"Follow the Science? On the Marginal Role of the Social Sciences in the COVID-19 Pandemic,\" European Journal for Philosophy of Science , 11(4): 99."
+        },
+        {
+          "raw": "Lomborg, Stine, Henriette Langstrup, and Tariq Osman Andersen, 2020, \"Interpretation as Luxury: Heart Patients Living with Data Doubt, Hope, and Anxiety,\" Big Data and Society , 7(1): 2053951720924436. doi:10.1177/2053951720924436."
+        },
+        {
+          "raw": "L&ouml;wy, Ilana, 2011, \"Historiography of Biomedicine: 'Bio,' 'Medicine,' and In Between,\" Isis , 102(1): 116-122."
+        },
+        {
+          "raw": "---, 2016b, \"You Are Your Data: Self-Tracking Practices and Concepts of Data,\" in Stefan Selke (ed.), Lifelogging: Digital Self-Tracking and Lifelogging--Between Disruptive Technology and Cultural Transformation , Wiesbaden: Springer, pp. 61-79."
+        },
+        {
+          "raw": "Maas, Philipp, 2018, \"Indian Medicine and Ayurveda,\" in Alexander Jones and Liba Taub (eds.), The Cambridge History of Science, Chapter 27 , Cambridge: Cambridge University Press, pp. 532-550."
+        },
+        {
+          "raw": "Maglo, Koffi N., 2010, \"Genomics and the Conundrum of Race: Some Epistemic and Ethical Considerations,\" Perspectives in Biology and Medicine , 53(3): 357-372. doi:10.1353/pbm.0.0171."
+        },
+        {
+          "raw": "---, 2012, \"Group-Based and Personalized Care in an Age of Genomic and Evidence-Based Medicine: A Reappraisal,\" Perspectives in Biology and Medicine , 55(1): 137-154."
+        },
+        {
+          "raw": "Malsch, Ann-Kathrin, Alexander Killin, and Matthias I. Kaiser, 2024, \"Health-Oriented Environmental Categories, Individual Health Environments, and the Concept of Environment in Public Health,\" Health Care Analysis , 1-24."
+        },
+        {
+          "raw": "Marcum, James A., 2005, \"Biomechanical and Phenomenological Models of the Body, the Meaning of Illness and Quality of Care,\" Medicine, Health Care and Philosophy , 7(3): 311-320."
+        },
+        {
+          "raw": "---, 2008, \"Introduction: A Philosophy of Medicine?\" in Humanizing Modern Medicine: An Introductory Philosophy of Medicine , New York: Springer, pp.1-14."
+        },
+        {
+          "raw": "---, 2008, \"Patient as Body or Person,\" in Humanizing Modern Medicine: An Introductory Philosophy of Medicine , New York: Springer, pp. 49-61."
+        },
+        {
+          "raw": "Mason, Rebecca, 2011, \"Two Kinds of Unknowing,\" Hypatia , 26(2): 294-307."
+        },
+        {
+          "raw": "McClain, Elizabeth K., 2017, \"Changes in Osteopathic Medical Education: The Journey Continues,\" The Journal of the American Osteopathic Association , 117(4): 208-210."
+        },
+        {
+          "raw": "McClimans, Leah, 2015, \"Place of Birth: Ethics and Evidence,\" Topoi , 1-8."
+        },
+        {
+          "raw": "---, 2024, Patient-Centered Measurement: Ethics, Epistemology, and Dialogue in Contemporary Medicine , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "McKeown, Thomas, 1976, The Role of Medicine: Dream, Mirage, or Nemesis , London: Nuffield Provincial Hospitals Trust."
+        },
+        {
+          "raw": "Medina, Jos&eacute;, 2017, \"Varieties of Hermeneutical Injustice,\" in Ian James Kidd, Jos&eacute; Medina, and Gaile Pohlhaus Jr. (eds.), The Routledge Handbook of Epistemic Injustice , London: Routledge, pp. 41-52."
+        },
+        {
+          "raw": "Metzl, Jonathan M., and Anna Kirkland (eds.), 2010, Against Health: How Health Became the New Morality , New York: New York University Press."
+        },
+        {
+          "raw": "Midanik, Lorraine T., 2004, \"Biomedicalization and Alcohol Studies: Implications for Policy,\" Journal of Public Health Policy , 25: 211-228."
+        },
+        {
+          "raw": "Millum, Joseph, and Ezekiel J. Emanuel (eds.), 2012, Global Justice and Bioethics , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Muller, Se&aacute;n M., 2021, \"Masks, Mechanisms and Covid-19: The Limitations of Randomized Trials in Pandemic Policymaking,\" History and Philosophy of the Life Sciences , 43(2): 43."
+        },
+        {
+          "raw": "Nunn, Amy, 2009, The Politics and History of AIDS Treatment in Brazil , New York: Springer Science+Business Media."
+        },
+        {
+          "raw": "Owens, John, and Alan Cribb, 2019, \"'My Fitbit Thinks I Can Do Better!' Do Health-Promoting Wearable Technologies Support Personal Autonomy?\" Philosophy & Technology , 32(1): 23-38."
+        },
+        {
+          "raw": "Parsons, Annie, and Claire Hooker, 2010, \"Dignity and Narrative Medicine,\" Journal of Bioethical Inquiry , 7(4): 345-351."
+        },
+        {
+          "raw": "Pe&ntilde;a-Guzm&aacute;n, David M., and Joel Michael Reynolds, 2019, \"The Harm of Ableism: Medical Error and Epistemic Injustice,\" Kennedy Institute of Ethics Journal , 29(3): 205-242."
+        },
+        {
+          "raw": "Pinto, Andrew D., and Ross E. G. Upshur, 2009, \"Global Health Ethics for Students,\" Developing World Bioethics , 9(1): 1-10."
+        },
+        {
+          "raw": "Prainsack, Barbara, 2017, Personalized Medicine: Empowered Patients in the 21st Century? , New York: NYU Press."
+        },
+        {
+          "raw": "Rastogi, Sanjeev, 2014, \"Ayurvedic Principles of Food and Nutrition: Translating Theory into Evidence-Based Practice,\" in Sanjeev Rastogi (ed.), Ayurvedic Science of Food and Nutrition , New York: Springer, pp. 3-14."
+        },
+        {
+          "raw": "Ritunnano, Rosa, 2022, \"Overcoming Hermeneutical Injustice in Mental Health: A Role for Critical Phenomenology,\" Journal of the British Society for Phenomenology , 53(3): 243-260."
+        },
+        {
+          "raw": "Robinson, G. Canby, 1939, The Patient as a Person: A Study of the Social Aspects of Illness , New York: Commonwealth Fund."
+        },
+        {
+          "raw": "Rose, Nikolas, 2007, \"Beyond Medicalisation,\" The Lancet , 369(9562): 700-702. doi:10.1016/S0140-6736(07)60319-5."
+        },
+        {
+          "raw": "Rosenberg, Alex, 2006, Darwinian Reductionism: Or, How to Stop Worrying and Love Molecular Biology , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Sadler, John Z., Fabrice Jotterand, Simon Craddock Lee, and Stephen Inrig, 2009, \"Can Medicalization Be Good? Situating Medicalization Within Bioethics,\" Theoretical Medicine and Bioethics , 30(6): 411-425. doi:10.1007/s11017-009-9122-4."
+        },
+        {
+          "raw": "Sidel, Victor W., and Ruth Sidel, 1981, \"All Self-Care Is Not Solipsistic, but Selective Citation Surely Is: A Reply to Katz and Levin,\" International Journal of Health Services , 11(4): 653-657."
+        },
+        {
+          "raw": "Solomon, Miriam, 2011, \"Just a Paradigm: Evidence-Based Medicine in Epistemological Context,\" European Journal for Philosophy of Science , 1(3): 451-466."
+        },
+        {
+          "raw": "---, 2015, Making Medical Knowledge , New York: Oxford University Press."
+        },
+        {
+          "raw": "---, 2021, \"On the Concept of 'Psychiatric Disorder': Incorporating Psychological Injury,\" Philosophy, Psychiatry, & Psychology , 28(4): 329-339."
+        },
+        {
+          "raw": "Spencer, Lucienne J., 2023, \"Hermeneutical Injustice and Unworlding in Psychopathology,\" Philosophical Psychology , 1-26."
+        },
+        {
+          "raw": "Spencer, Lucienne J., and Havi Carel, 2021, \"'Isn't Everyone a Little OCD?' The Epistemic Harms of Wrongful Depathologization,\" Philosophy of Medicine , 2(1): 1-18."
+        },
+        {
+          "raw": "Spencer, Lucienne J., and Ian James Kidd, 2023, \"'The Hermeneutic Problem of Psychiatry' and the Co-Production of Meaning in Psychiatric Healthcare,\" Royal Institute of Philosophy Supplements , 94: 103-131."
+        },
+        {
+          "raw": "Stark, John E., 2013, \"An Historical Perspective on Principles of Osteopathy,\" International Journal of Osteopathic Medicine , 16(1): 3-10."
+        },
+        {
+          "raw": "Stegenga, Jacob, 2011, \"Is Meta-Analysis the Platinum Standard of Evidence?\" Studies in History and Philosophy of Biological and Biomedical Sciences , 42(4): 497-507."
+        },
+        {
+          "raw": "---, 2018, Medical Nihilism , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Svenaeus, Fredrik, 2019, \"A Defense of the Phenomenological Account of Health and Illness,\" The Journal of Medicine and Philosophy: A Forum for Bioethics and Philosophy of Medicine , 44(4): 459-478."
+        },
+        {
+          "raw": "---, 2023, \"The Phenomenology of Objectification in and Through Medical Practice and Technology Development,\" The Journal of Medicine and Philosophy , 48(2): 141-150."
+        },
+        {
+          "raw": "Szasz, Thomas, 1960, \"The Myth of Mental Illness,\" American Psychologist , 15(2): 113-118. doi:10.1037/h0046535."
+        },
+        {
+          "raw": "---, 2007, The Medicalization of Everyday Life: Selected Essays , Syracuse: Syracuse University Press."
+        },
+        {
+          "raw": "Tabery, James, 2023, Tyranny of the Gene: Personalized Medicine and Its Threat to Public Health , New York: Knopf."
+        },
+        {
+          "raw": "Tal, Eran, 2025, \"Models and Measurement,\" in Tarja Knuuttila, Natalia Carrillo, and Rami Koskinen (eds.), The Routledge Handbook of Philosophy of Scientific Modeling , London: Routledge, pp. 256-269."
+        },
+        {
+          "raw": "Tonelli, Mark R., and Timothy C. Callahan, 2001, \"Why Alternative Medicine Cannot Be Evidence-Based,\" Academic Medicine , 76(12): 1213-1220."
+        },
+        {
+          "raw": "Tonelli, Mark R., and Ross E. G. Upshur, 2019, \"A Philosophical Approach to Addressing Uncertainty in Medical Education,\" Academic Medicine , 94(4): 507-511. doi:10.1097/ACM.0000000000002512."
+        },
+        {
+          "raw": "Valles, Sean A., 2018, Philosophy of Population Health: Philosophy for a New Public Health Era , Abingdon, Oxon: Routledge."
+        },
+        {
+          "raw": "Vogt, Henrik, Bj&oslash;rn Hofmann, and Linn Getz, 2016, \"The New Holism: P4 Systems Medicine and the Medicalization of Health and Life Itself,\" Medicine, Health Care and Philosophy , 19(2): 307-323. doi:10.1007/s11019-016-9683-8."
+        },
+        {
+          "raw": "Vogt, Henrik, Elling Ulvestad, Thor Eirik Eriksen, and Linn Getz, 2014, \"Getting Personal: Can Systems Medicine Integrate Scientific and Humanistic Conceptions of the Patient?\" Journal of Evaluation in Clinical Practice , 20(6): 942-9952. doi:10.1111/jep.12251."
+        },
+        {
+          "raw": "Wanderer, Jeremy, 2017, \"Varieties of Testimonial Injustice,\" in Ian James Kidd, Jos&eacute; Medina, and Gaile Pohlhaus Jr. (eds.), The Routledge Handbook of Epistemic Injustice , London: Routledge, pp. 27-40."
+        },
+        {
+          "raw": "Wardrope, Alistair, 2015, \"Medicalization and Epistemic Injustice,\" Medicine, Health Care and Philosophy , 18(3): 341-352. doi:10.1007/s11019-014-9608-3."
+        },
+        {
+          "raw": "Wieten, Sarah, 2018, \"Expertise in Evidence-Based Medicine: A Tale of Three Models,\" Philosophy, Ethics, and Humanities in Medicine , 13(1): 2. doi:10.1186/s13010-018-0053-7."
+        },
+        {
+          "raw": "Wolfe, Charles T., 2015, \"Was Canguilhem a Biochauvinist? Goldstein, Canguilhem and the Project of Biophilosophy,\" in Darian Meacham (ed.), Medicine and Society: New Perspectives in Continental Philosophy , Dordrecht: Springer, pp. 197-212."
+        },
+        {
+          "raw": "Woods, Angela, 2011, \"The Limits of Narrative: Provocations for the Medical Humanities,\" Medical Humanities , 37(2): 73-78."
+        },
+        {
+          "raw": "Woods, Simon, 2017, \"Holism in Health Care: Patient as Person,\" in Thomas Schramme and Steven Edwards (eds.), Handbook of the Philosophy of Medicine , Dordrecht: Springer."
+        },
+        {
+          "raw": "Worrall, John, 2007, \"Why There's No Cause to Randomize,\" The British Journal for the Philosophy of Science , 58(3): 451-488. doi:10.1093/bjps/axm024."
+        },
+        {
+          "raw": "Y&uuml;ksekda&#287;, Yusuf, 2020, \"Individual Responsibilities in Partial Compliance: Skilled Health Worker Emigration from Under-Served Regions,\" Public Health Ethics , 13(1): 89-98. doi:10.1093/phe/phz016."
+        },
+        {
+          "raw": "Zola, Irving Kenneth, 1976, \"Medicine as an Institution of Social Control,\" Ekistics , 41(245): 210-214.x"
+        }
+      ],
+      "publishedAt": "2020-04-08T14:00:00.000Z",
+      "revisedAt": "2025-07-14T14:00:00.000Z"
+    }
+  }
+}

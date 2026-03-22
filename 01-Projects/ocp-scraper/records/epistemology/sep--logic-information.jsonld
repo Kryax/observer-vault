@@ -1,0 +1,704 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/logic-information",
+  "meta": {
+    "title": "Logic and Information",
+    "description": "At their most basic, logic is the study of consequence, and information is a commodity. Given this, the interrelationship between logic and information will centre on the informational consequences of logical actions or operations conceived broadly. The explicit inclusion of the notion of information as an object of logical study is a recent development. It was by the beginning of the present century that a sizable body of existing technical and philosophical work (with precursors that can be traced back to the 1930s) coalesced into the new emerging field of logic and information (see Dunn 2001). This entry is organised thematically, rather than chronologically. We survey major logical approaches to the study of information, as well as informational understandings of logics themselves. We proceed via three interrelated and complementary stances: information-as-range, information-as-correlation, and information-as-code. The core intuition motivating the Information-as-range stance, is that an informational state may be characterised by the range of possibilities or configurations that are compatible with the information available at that state. Acquiring new information corresponds to a reduction of that range, thus reducing uncertainty about the actual configuration of affairs. With this understanding, the setting of possible-world semantics for epistemic modal logics proves to be rewarding for the study of various semantic aspects of information. A prominent phenomenon here is information update , which may occur in both individual and social settings, due to the interaction between both agents and their environment via different types of epistemic actions . We will see that an epistemic action is any action that facilitates the flow of information, hence we will return to epistemic actions themselves throughout. The Information-as-correlation stance focuses on information flow as it is licensed within structured systems formed by systematically correlated components. For example: the number of rings of a tree trunk can give you information about the time when the tree was born, in virtue of certain regularities of nature that 'connect' the past and present of trees. Central themes of this stance include the aboutness, situatedness, and accessibility of information in structured information environments . The key concern of the third stance, Information-as-code , is the syntax-like structure of information pieces (their encoding ) and the inference and computation processes that are licensed by virtue (among other things) of that structure. A most natural logical setting to study these informational aspects is the algebraic proof theory underpinned by a range of substructural logics . Substructural logics have always been a natural home for informational analysis, and the recent developments in the area enrich the information-as-code stance. The three stances are by no means incompatible, but neither are they necessarily reducible to each other. This will be expanded on later in the entry, and some further topics of research will be illustrated, but for a preview of how the three stances can live together, take the case of a structured information system composed of several parts. Firstly, the correlations between the parts naturally allow for 'information flow' in the sense of the information-as-correlation stance. Secondly, they also give rise to a local ranges of possibilities, since the local information available at one part will be compatible with a certain range of global states of the system. Thirdly, the combinatorial, syntax-like, proof-theoretical aspects of information can be brought to this setting in various ways. One of them is treating the correlational flow of information as a sort of combinatorial system by which local information states are combined in syntactic-like ways, fitting a particular interpretation of substructural logic. One could also add code-like-structure to the modelling explicitly, for example by assigning local deductive calculi to either the components or local states of the system. We begin however with information as range",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T03:19:36.051Z",
+    "dateModified": "2026-03-22T03:19:36.051Z",
+    "datePublished": "2014-02-02T13:00:00.000Z",
+    "keywords": [
+      "common knowledge",
+      "dynamic epistemic",
+      "information",
+      "information semantic",
+      "nonwellfounded set theory",
+      "propositions structured",
+      "situations semantics",
+      "states of affairs"
+    ]
+  },
+  "problemSolved": {
+    "statement": "At their most basic, logic is the study of consequence, and information is a commodity. Given this, the interrelationship between logic and information will centre on the informational consequences of logical actions or operations conceived broadly. The explicit inclusion of the notion of information as an object of logical study is a recent development. It was by the beginning of the present century that a sizable body of existing technical and philosophical work (with precursors that can be traced back to the 1930s) coalesced into the new emerging field of logic and information (see Dunn 2001). This entry is organised thematically, rather than chronologically. We survey major logical approaches to the study of information, as well as informational understandings of logics themselves. We proceed via three interrelated and complementary stances: information-as-range, information-as-correlation, and information-as-code. The core intuition motivating the Information-as-range stance, is that an informational state may be characterised by the range of possibilities or configurations that are compatible with the information available at that state. Acquiring new information corresponds to a reduction of that range, thus reducing uncertainty about the actual configuration of affairs. With this understanding, the setting of possible-world semantics for epistemic modal logics proves to be rewarding for the study of various semantic aspects of information. A prominent phenomenon here is information update , which may occur in both individual and social settings, due to the interaction between both agents and their environment via different types of epistemic actions . We will see that an epistemic action is any action that facilitates the flow of information, hence we will return to epistemic actions themselves throughout. The Information-as-correlation stance focuses on information flow as it is licensed within structured systems formed by systematically correlated components. For example: the number of rings of a tree trunk can give you information about the time when the tree was born, in virtue of certain regularities of nature that 'connect' the past and present of trees. Central themes of this stance include the aboutness, situatedness, and accessibility of information in structured information environments . The key concern of the third stance, Information-as-code , is the syntax-like structure of information pieces (their encoding ) and the inference and computation processes that are licensed by virtue (among other things) of that structure. A most natural logical setting to study these informational aspects is the algebraic proof theory underpinned by a range of substructural logics . Substructural logics have always been a natural home for informational analysis, and the recent developments in the area enrich the information-as-code stance. The three stances are by no means incompatible, but neither are they necessarily reducible to each other. This will be expanded on later in the entry, and some further topics of research will be illustrated, but for a preview of how the three stances can live together, take the case of a structured information system composed of several parts. Firstly, the correlations between the parts naturally allow for 'information flow' in the sense of the information-as-correlation stance. Secondly, they also give rise to a local ranges of possibilities, since the local information available at one part will be compatible with a certain range of global states of the system. Thirdly, the combinatorial, syntax-like, proof-theoretical aspects of information can be brought to this setting in various ways. One of them is treating the correlational flow of information as a sort of combinatorial system by which local information states are combined in syntactic-like ways, fitting a particular interpretation of substructural logic. One could also add code-like-structure to the modelling explicitly, for example by assigning local deductive calculi to either the components or local states of the system. We begin however with information as range",
+    "context": "Opening section: 1. Information as Range | Related entries: common-knowledge, information, information-semantic, dynamic-epistemic, propositions-structured, nonwellfounded-set-theory, situations-semantics, states-of-affairs",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "epistemology",
+    "logic",
+    "political-philosophy",
+    "philosophy-of-science"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry logic-information",
+        "uri": "https://plato.stanford.edu/entries/logic-information/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "2 author(s), 8 related entries, bibliography size 153"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2014-02-02T13:00:00.000Z and revised 2023-08-02T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2023-08-02T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/logic-information/",
+        "description": "SEP entry for logic-information"
+      }
+    ],
+    "solutionApproach": "1. Information as Range"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/common-knowledge",
+      "ocp:sep/information",
+      "ocp:sep/information-semantic",
+      "ocp:sep/dynamic-epistemic",
+      "ocp:sep/propositions-structured",
+      "ocp:sep/nonwellfounded-set-theory",
+      "ocp:sep/situations-semantics",
+      "ocp:sep/states-of-affairs"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Martinez, Maricarmen",
+        "type": "human"
+      },
+      {
+        "name": "Sequoiah-Grayson, Sebastian",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/logic-information/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 109,
+      "validation_diversity": 0.53,
+      "context_breadth": 0.42,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.9
+    },
+    "confidence": "tested",
+    "authority": "high",
+    "status": "draft",
+    "trustScore": 0.579
+  },
+  "extensions": {
+    "sep": {
+      "slug": "logic-information",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/logic-information/",
+      "preamble": "At their most basic, logic is the study of consequence, and information is a commodity. Given this, the interrelationship between logic and information will centre on the informational consequences of logical actions or operations conceived broadly. The explicit inclusion of the notion of information as an object of logical study is a recent development. It was by the beginning of the present century that a sizable body of existing technical and philosophical work (with precursors that can be traced back to the 1930s) coalesced into the new emerging field of logic and information (see Dunn 2001). This entry is organised thematically, rather than chronologically. We survey major logical approaches to the study of information, as well as informational understandings of logics themselves. We proceed via three interrelated and complementary stances: information-as-range, information-as-correlation, and information-as-code. The core intuition motivating the Information-as-range stance, is that an informational state may be characterised by the range of possibilities or configurations that are compatible with the information available at that state. Acquiring new information corresponds to a reduction of that range, thus reducing uncertainty about the actual configuration of affairs. With this understanding, the setting of possible-world semantics for epistemic modal logics proves to be rewarding for the study of various semantic aspects of information. A prominent phenomenon here is information update , which may occur in both individual and social settings, due to the interaction between both agents and their environment via different types of epistemic actions . We will see that an epistemic action is any action that facilitates the flow of information, hence we will return to epistemic actions themselves throughout. The Information-as-correlation stance focuses on information flow as it is licensed within structured systems formed by systematically correlated components. For example: the number of rings of a tree trunk can give you information about the time when the tree was born, in virtue of certain regularities of nature that 'connect' the past and present of trees. Central themes of this stance include the aboutness, situatedness, and accessibility of information in structured information environments . The key concern of the third stance, Information-as-code , is the syntax-like structure of information pieces (their encoding ) and the inference and computation processes that are licensed by virtue (among other things) of that structure. A most natural logical setting to study these informational aspects is the algebraic proof theory underpinned by a range of substructural logics . Substructural logics have always been a natural home for informational analysis, and the recent developments in the area enrich the information-as-code stance. The three stances are by no means incompatible, but neither are they necessarily reducible to each other. This will be expanded on later in the entry, and some further topics of research will be illustrated, but for a preview of how the three stances can live together, take the case of a structured information system composed of several parts. Firstly, the correlations between the parts naturally allow for 'information flow' in the sense of the information-as-correlation stance. Secondly, they also give rise to a local ranges of possibilities, since the local information available at one part will be compatible with a certain range of global states of the system. Thirdly, the combinatorial, syntax-like, proof-theoretical aspects of information can be brought to this setting in various ways. One of them is treating the correlational flow of information as a sort of combinatorial system by which local information states are combined in syntactic-like ways, fitting a particular interpretation of substructural logic. One could also add code-like-structure to the modelling explicitly, for example by assigning local deductive calculi to either the components or local states of the system. We begin however with information as range",
+      "firstSectionTitle": "1. Information as Range",
+      "firstSectionText": "The understanding of information as range has its origins in Bar-Hillel and Carnap's theory of semantic information, Bar-Hillel and Carnap (1952). It is here that the inverse range principle is given its first articulation with regard to the informational content of a proposition. The inverse range principle states that there is an inverse relationship between the information contained by a proposition on the one hand, and the likelihood of that proposition being true on the other. That is, the more information carried by a proposition, the less likely it is that the proposition is true. Similarly, the more likely the truth of a proposition, the less information it carries. The likelihood of the truth of a proposition connects with information as range via a possible worlds semantics. For any contingent proposition, it will be supported by some possibilities (those where it is true) and not supported by others (those where it is false). Hence a proposition will be supported by a range of possibilities, an \"information range\". Now suppose that there is a probability distribution across the space of possibilities, and for the sake of simplicity suppose that the distribution is uniform. In this case, the more worlds that support a proposition, the likelier the proposition's truth, and, via the inverse relationship principle, the less information it carries. Although information as range has its origins in quantitative information theory, its role in contemporary qualitative logics of information cannot be overstated. Consider the following example due to Johan van Benthem (2011). A waiter in a cafe receives an order for your table--an espresso and a soda. When the waiter arrives at your table, he asks \"For whom is the soda?\". After your telling him that the soda is for you and his giving you your soda, the waiter does not need to ask about the espresso, he can just give it to your cafe-partner. This is because the information gained by the waiter from your telling him that you ordered the soda allows him to eliminate certain open possibilities from the total range of possibilities such that only one is left--your friend ordered the espresso. The waiter case brings several facts about logic and information to the fore. For one, language is used often to refine informational options in the very way explained in the paragraph above. More subtly however, and perhaps even prior to this, language is used to exchange information, and we bring with us sometimes many scenarios--specified informationally. These scenarios might be neither known nor believed, but merely entertained --those about which we wonder . Recent work on inquisitive semantics (Ciardelli et al. 2018) provides a logic of such information exchange based on informational specifications of such wonderings. Logics of information distinguish regularly between hard information and soft information . The terminology is a slight misnomer, as this distinction is not one between different types of information per se . Rather it is one between different types of information storage . Hard information is factive , and unrevisable. Hard information is often taken to correspond to knowledge . In contrast to hard information, soft information is non-necessarily-factive , hence revisable in the presence of new information. Soft information, in virtue of its revisability, corresponds very closely to belief . The terms knowledge and belief are conventional, but on the context of information flow, the hard/soft information reading is convenient on account of it bringing the informational phenomena to the foreground. At the very least the terminology is increasingly popular, so being clear on the distinction being one between types of information storage as opposed to types of information is important. Although both hard and soft information are important for our epistemic and doxastic success, in this section we will concentrate mainly on logics of hard information flow. In section 1.1 we will see how it is that classic epistemic logics exemplify the flow of hard information within the information as range framework. In section 1.2 we will extend our exposition from logics of hard information-gain to logics of the actions that facilitate the gain of such hard information, dynamic epistemic logics. At the end of Section 1.2, we will expound the important phenomenon of private information , before examining how it is that information as range is captured in various quantitative frameworks . In this section we will explore how it is that the elimination of possibilities corresponding to information-gain is the starting point for research on logics of knowledge and belief that fall under the heading of epistemic logics . We will begin with classic single-agent epistemic logic, before exploring multi-agent epistemic logics. In both cases, since we will be concentrating on logics of knowledge as opposed to logics of belief, the information-gained will be hard information. Consider the waiter example in more detail. Before receiving the hard information that the soda is for you (and for the sake of the example we are assuming that the waiting is dealing with hard information here), the waiter's knowledge-base is modelled by a pair of worlds (hereafter information states ) \\(x\\) and \\(y\\) such that in \\(x\\) you ordered the soda and your friend the espresso, and in \\(y\\) you ordered the espresso and your friend the soda. After receiving the hard information that the soda is for you, \\(y\\) is eliminated from the waiter's knowledge-base, leaving only \\(x\\). As such, the reduction of the range of possibilities corresponds to an information-gain for the waiter. Consider the truth condition for agent \\(\\alpha\\) knows that \\(\\phi\\), written \\(K_{\\alpha}\\phi\\): The accessibility relation \\(R_{\\alpha}\\) is an equivalence relation connecting \\(x\\) to all information states \\(y\\) such that \\(y\\) is indistinguishable from \\(x\\), given \\(\\alpha\\)'s hard information at that state \\(x\\). That is, given what the waiter knows when he is in that state. So, if \\(x\\) was the waiter's information state before being informed that you ordered the soda, \\(y\\) would have included the information that you ordered the espresso, as each option was as good as the other until the waiter was informed otherwise. There is an implicit assumption at work here--that some state \\(z\\) say, where you ordered both the soda and the espresso, is not in the waiter's information-range. That is, the waiter knows that \\(z\\) is not a possibility. Once informed however, the information states supporting your ordering the espresso are eliminated from the range of information corresponding to the waiter's knowledge. Basic modal logic extends propositional formulas with modal operators such as \\(K_{\\alpha}\\). If \\(\\mathbf{K}\\) is the set of all Kripke models then we have the following: In hard information terms, (A1) states that hard information is closed under (known) implications. Since the first conjunct states that all states accessible by \\(\\alpha\\) are \\(\\phi\\) states, \\(\\alpha\\) possesses the hard information that \\(\\phi\\), hence \\(\\alpha\\) also possesses the hard information that \\(\\psi\\). (A2) states that if \\(\\phi\\) holds in the set of all models, then \\(\\alpha\\) possesses the hard information that \\(\\phi\\). In other words, (A2) states that all tautologies are known/hard stored by the agent, and (A1) states that \\(\\alpha\\) knows the logical consequences of all propositions that \\(\\alpha\\) knows (be they tautologies or otherwise). That is, the axioms state that the agent is logical omniscient, or an ideal reasoner , a property of agents that we will return to in detail in the sections below. The framework explored so far concerns single-agent epistemic logic, but reasoning and information flow are very often multi-agent affairs . Consider again the waiter example. Importantly, the waiter is only able to execute the relevant reasoning procedure corresponding to a restriction of the range of information states on account of your announcement to him with regard to the espresso. That is, it is the verbal interaction between several agents that facilitates the information flow that enabled the logical reasoning to be undertaken. It is at this point that multi-agent epistemic logic raises new questions regarding the information in a group. \"Everybody in \\(G\\) possesses the hard information that \\(\\phi\\)\" (where \\(G\\) is any group of agents from a finite set of agents \\(G^*)\\) written as \\(E_G\\phi . E_G\\) is defined for each \\(G \\subseteq G^*\\) in the following manner: Group knowledge is importantly different from common knowledge (Lewis 1969; Fagin et al. 1995). Common knowledge is the condition of the group where everybody knows that everybody knows that everybody knows &hellip; that \\(\\phi\\). In other words, common knowledge concerns the hard information that each agent in the group possesses about the hard information possessed by the other members of the group. That everybody in \\(G\\) possesses the hard information that \\(\\phi\\) does not imply that \\(\\phi\\) is common knowledge. With group knowledge each agent in the group may possess the same hard information (hence achieving group knowledge) without necessarily possessing hard information about the hard information possessed by the other agents in the group. As noted by van Ditmarsh, van der Hoek, and Kooi (2008: 30), \"the number of iterations of the \\(E\\)-operator makes a real difference in practice\". \\(C_G\\phi\\)--the common knowledge that \\(\\phi\\) for members of \\(G\\), is defined as follows: To appreciate the difference between \\(E\\) and \\(C\\), consider the following \"spy example\" (originally Barwise 1988 with the envelope details due to Johan van Benthem). There are a group of competing spies at a formal dinner. All of them are tasked with the mission of acquiring some secret information from inside the restaurant. Furthermore, it is common knowledge amongst them that they want the information. Given this much, compare the following: Very obviously, the two scenarios will elicit very different types of behaviour from the spies. The first would be relatively subtle, the latter dramatically less so. See Vanderschraaf and Sillari (2009) for further details. A still more fine-grained use of S5 based epistemic logics is that of Zhou (2016). Zhou demonstrates that S5 based epistemic logic may be used to model the epistemic states of the agent from the perspective of the agent themselves. Hence Zhou refers to such an epistemic logic as internally epistemic . Zhou then uses a multi-valued logic to model the relationship between the agent's internal knowledge base and their external informational environment. In his (2019), van Benthem argues for an understanding of modal logics in general (both epistemic and otherwise) as ariing from an explicit approach to increasing a logic's conceptual nuance -- in the sense that they are explicit extensions of classical logic. They wear their new conceptual architechture on their sleaves, so to speak. This is in contrast to those logics to which van Benthem refers as resulting from an implicit approach. This implicit approach invloves a reinterpretation of the meaning of logical vocabulary, as is the case with intuitionistic logic and relevant logic as conceived of traditionally. van Benthem's method of translating between equivalient (in a sense) implicit and explicit approaches has as an instance that between Kit Fine's (2017) hyperintensional truth-maker semantics and informationalised modal logic. This is a promising foray into such translations between a range of information logics such as those addressed in this entry. See the full entry on Dynamic Epistemic Logic . As noted above, the waiter example from the beginning of this section is as much about information-gain via announcements, epistemic actions , as it is about information structures. In this section, we will outline how it is that the expressive power of multi-agent epistemic logic can be extended so as to capture epistemic actions. Hard information flow, that is, the flow of information between the knowledge states of two or more agents, can be facilitated by more than one epistemic action. Two canonical examples are announcements and observations . When \"announcement\" is restricted to true and public announcement , its result on the receiving agent's knowledge-base is similar to that of an observation (on the assumption that the agent believes the content of the announcement). The public announcement that \\(\\phi\\) will restrict the model of the agent's knowledge-base to the information states where \\(\\phi\\) is true, hence \"announce \\(\\phi\\)\" is an epistemic state transformer in the sense that it transforms the epistemic states of the agents in the group, (see van Ditmarsh, van der Hoek, and Kooi 2008: 74). Dynamic epistemic logics extend the language of non-dynamic epistemic logics with dynamic operators. In particular, public announcement logic (PAL) extends the language of epistemic logics with the dynamic announcement operator [\\(\\phi\\)], where [\\(\\phi]\\psi\\) is read \"after announcement \\(\\phi\\), it is the case that \\(\\psi\\)\". The key reduction axioms of PAL are as follows: RA1-RA5 capture the properties of the announcement operator by connecting what is true before the announcement with what is true after the announcement. The axioms are named 'reduction' axioms because the left-to-right hand direction reduces either the number of announcement operators or the complexity of the formulas within their scope. For an in depth discussion see Pacuit (2011). RA1 states that announcements are truthful. RA5 specifies the epistemic-state-transforming properties of the announcement operator. It states that \\(\\alpha\\) knows that \\(\\psi\\) after the announcement that \\(\\phi\\) iff \\(\\phi\\) implies that \\(\\alpha\\) knows that \\(\\psi\\) will be true after \\(\\phi\\) is announced in all \\(\\phi\\)-states. The \"after \\(\\phi\\) is announced\" condition is there to account for the fact that \\(\\psi\\) might change its truth-value after the announcement. The interaction between the dynamic announcement operator and the knowledge operator is described completely by RA5 (see van Benthem, van Eijck, and Kooi 2006). Just as adding the common knowledge operator \\(C\\) to multi-agent epistemic logic extends the expressive capabilities of multi-agent epistemic logic, adding \\(C\\) to PAL results in the more expressive public announcement logic with common knowledge , (PAC). The exact relationship between public announcements and common knowledge is captured by the announcement and common knowledge rule of the logic PAC as the following: Again, PAC is the dynamic logic of hard information. The epistemic logics dealing with soft information fall within the scope of belief revision theory (van Benthem 2004; Segerberg 1998). Recall that hard and soft information are not distinct types of information per se , rather they are distinct types of information storage . Hard-stored information is unrevisable, whereas soft-stored information is revisable. Variants of PAL that model soft information augment their models with plausibility-orderings on information-states (Baltag and Smets 2008). These orderings are known as preferential models in non-monotonic logic and belief-revision theory. The logics can be made dynamic in virtue of the orderings changing in the face of new information (which is the mark of soft information as opposed to hard information). Such plausibility-orderings may be modelled qualitatively via partial orders etc., or modelled quantitatively via probability-measures. Such quantitative measures provide a connection to a broader family of quantitative approaches to semantic information that we will examine below. Recent work by Allo (2017) ties the soft information of dynamic epistemic logic to non-monotonic logics. This is an intuitive move. Soft information is information that has been stored in a revisable way, hence the revisable nature of conclusions in non-monotonic arguments makes non-monotonic logics a natural fit. On this very topic, see also Chapter 13.7 of van Benthem (2011). Private information . Private information is an equally important aspect of our social interaction. Consider scenarios where the announcing agent is aware of the private communication whilst other members of the group are not, such as emails in Bcc. Consider also scenarios where the sending agent is not aware of the private communication, such as a surveillance operation. The system of dynamic epistemic logic (DEL) models events that turn on private (and public) information by modelling the agents' information concerning the events taking place in a given communicative scenario (see Baltag et al. 2008; van Ditmarsh et al. 2008; and Pacuit 2011). For an excellent overview and integration of all of the issues above, see the recent work of van Benthem (2016), where the author discusses multiple interrelated levels of logical dynamics, one level of update, and another of representation. For an extensive collection of papers extending this and related approaches, see Baltag and Smets (2014). Although research into public and private information, most especially with regard to information crossing the threshold from one to the other, has been carried out within the framework of dynamic epistemic logics, recent work explores public and private information and announcements within the framework of multi-valued logics. See Yang et al. (2021). The modal information theory approach to multi-agent information flow is the subject of a great amount of research. The semantics is not always carried out in relational terms (i.e., with Kripke Frames) but is done often algebraically (see Blackburn et al. 2001 for details of the algebraic approach to modal logic). For more details on algebraic as well as type-theoretic approaches, see the subsection on algebraic and other approaches to modal information theory in the supplementary document Abstract Approaches to Information Structure . Quantitative approaches to information as range also have their origins in the inverse relationship principle. To restate--the motivation being that the less likely the truth of a proposition as expressed in a logical language with respect to a particular domain, the greater the amount of information encoded by the relevant formula. This is in contrast to the information measures in the mathematical theory of communication (Shannon 1953 [1950]) where such measures are gotten via an inverse relationship on the expectation of the receiver \\(R\\) of the receipt of a signal from some source \\(S\\). Another important aspect of the classical theory of information, is that it is an entirely static theory--it is concerned with the informational content and measure of particular formulas, and not with information flow in any way at all. The formal details of classical information theory turn on the probability calculus. These details may be left aside here, as the obvious conceptual point is that logical truths have a truth-likelihood of 1, and therefore an information measure of 0. Bar-Hillel and Carnap did not take this to mean that logical truths, or deductions, were without information yield, only that their theory of semantic information was not designed to capture such a property. They referred to such a property with the term psychological information . See Floridi (2013) for further details. A quantitative attempt at specifying the information yield of deductions was undertaken by Jaakko Hintikka with his theory of surface information and depth information (Hintikka 1970, 1973). The theory of surface and depth information extends Bar-Hillel and Carnap's theory of semantic information from the monadic predicate calculus all the way up to the full polyadic predicate calculus. This itself is a considerable achievement, but although technically astounding, a serious restriction of this approach is that it is only a fragment of the deductions carried out within full first-order logic that yield a non-zero information measure. The rest of the deductions in the full polyadic predicate calculus, as well as all of those in the monadic predicate calculus and propositional calculus, measure 0, (see Sequoiah-Grayson 2008). For recent elaborations upon Hintikka's distinction between suface and depth information, both formal and philosophical, see Panahy (2023), Hernandez and Quiroz (2022 [Other Internet Resources]), Negro (2022), and Ramos Mendon&ccedil;a (2022). The obvious inverse situation with the theory of classical semantic information is that logical contradictions, having a truth-likelihood of 0, will deliver a maximal information measure of 1. Referred to in the literature as the Bar-Hillel-Carnap Semantic Paradox , the most developed quantitative approach to addressing it is the theory of strongly semantic information (Floridi 2004). The conceptual motivation behind strongly semantic information is that for a statement to yield information, it must help us to narrow down the set of possible worlds. That is, it must assist us in the search for the actual world, so to speak (Sequoiah-Grayson 2007). Such a contingency requirement on informativeness is violated by both logical truths and logical contradictions, both of which measure 0 on the theory of strongly semantic information. See Floridi (2013) for further details. See also Brady (2016) for recent work on the relationship between quantitative accounts of information and analyticity. For a new approach to connecting quantitative and qualitative measures of information, see Harrison-Trainor et al . (2018)",
+      "relatedEntries": [
+        "common-knowledge",
+        "information",
+        "information-semantic",
+        "dynamic-epistemic",
+        "propositions-structured",
+        "nonwellfounded-set-theory",
+        "situations-semantics",
+        "states-of-affairs"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "common-knowledge"
+        },
+        {
+          "slug": "information"
+        },
+        {
+          "slug": "information-semantic"
+        },
+        {
+          "slug": "dynamic-epistemic"
+        },
+        {
+          "slug": "propositions-structured"
+        },
+        {
+          "slug": "nonwellfounded-set-theory"
+        },
+        {
+          "slug": "situations-semantics"
+        },
+        {
+          "slug": "states-of-affairs"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 153,
+      "bibliography": [
+        {
+          "raw": "Abramsky, S., 2008, \"Information, Processes, and Games\", in Adriaans and van Benthem 2008, 483-550."
+        },
+        {
+          "raw": "Abramsky, S. and A. Jung, 1994, \"Domain Theory\", in Handbook of Logic in Computer Science , S. Abramsky, D. Gabbat, and T. S. E. Maibaum (eds.), Oxford: Oxford University Press, 1-168."
+        },
+        {
+          "raw": "Aczel, P., 1988, Non-well-founded Sets , (CSLI Lecture Notes 14), Stanford: CSLI Publications."
+        },
+        {
+          "raw": "Adriaans, P. and J. F. A. K. van Benthem (eds.), 2008, Philosophy of Information (Handbook of the Philosophy of Science: Volume 8), Amsterdam: North Holland."
+        },
+        {
+          "raw": "Allo, P., 2009, \"Reasoning about Data and Information\", Synthese , 167: 231-249."
+        },
+        {
+          "raw": "---, 2017, \"Hard and Soft Logical Information\", Logic and Computation , 27(8): 2505-2524."
+        },
+        {
+          "raw": "Artemov, S., 2008, \"The Logic of Justification\", Review of Symbolic Logic , 1(4): 477-513."
+        },
+        {
+          "raw": "Artemov, S. and M. Fitting, 2012, \"Justification Logic\", The Stanford Encyclopedia of Philosophy (Fall 2012 Edition), Edward N. Zalta (ed.), URL= https://plato.stanford.edu/archives/fall2012/entries/logic-justification/ >"
+        },
+        {
+          "raw": "Aucher, G. 2014, \"Dynamic Epistemic Logic as a Substructural Logic\", in A. Baltag and S. Smets (eds.) 2014: 855-880."
+        },
+        {
+          "raw": "---, 2015, \"When Conditional Logic and Belief Revision meet Substructural Logics\", Proceedings of the International Workshop on Defeasible and Ampliative Reasoning (DARe-15), available online ."
+        },
+        {
+          "raw": "---, 2016, \"Dynamic Epistemic Logic in Update Logic\", Journal of Logic and Computation , 26(6): 1913-1960."
+        },
+        {
+          "raw": "Awodey, S., 2006, Category Theory (Oxford Logic Guides: Volume 49), Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Baltag, A., 2016, \"To Know is to Know the Value of a Variable\", Advances in Modal Logic , 11: 135-155."
+        },
+        {
+          "raw": "Baltag, A., and J. van Benthem, 2021, \"A Simple Logic of Functional Dependence\", Journal of Philosophical Logic , 50: 939-1005."
+        },
+        {
+          "raw": "Baltag, A., B. Coecke, and M. Sadrzadeh, 2007, \"Epistemic Actions as Resources\", Journal of Logic and Computation , 17(3): 555-585."
+        },
+        {
+          "raw": "Baltag A., H. P. van Ditmarsch, and L. S. Moss, 2008, \"Epistemic Logic and Information Update\", in Adriaans and van Benthem, 2008: 361-456."
+        },
+        {
+          "raw": "Baltag, A., and S. Smets, 2008, \"A Qualitative Theory of Dynamic Interactive Belief Revision\", in Logic and the Foundation of Game and Decision Theory (LOFT7), G. Bonanno, W. van der Hoek, and M. Wooldridge (Eds.), Volume 3 of Texts in Logic and Games , 13-60. Amsterdam: Amsterdam University Press."
+        },
+        {
+          "raw": "--- (eds.), 2014, Johan van Benthem on Logic and Information Dynamics (Outstanding Contributions to Logic 5), Cham: Springer."
+        },
+        {
+          "raw": "Bar-Hillel, Y. and R. Carnap, 1952, \"An Outline of a Theory of Semantic Information\", Technical Report No. 247, Research Laboratory of Electronics, Cambridge, MA: MIT. Reprinted in Language and Information: Selected Essays on their Theory and Application , Y. Bar-Hillel, Addison-Wesley Series in Logic , Israel: Jerusalem Academic Press and Addison-Wesley, 1964, 221-74."
+        },
+        {
+          "raw": "Barwise, J., 1988, \"Three Views of Common Knowledge\", TARK '88 Proceedings of the 2nd conference on Theoretical aspects of reasoning about knowledge , San Francisco: Morgan Kaufmann, p. 365-379."
+        },
+        {
+          "raw": "---, 1993, \"Constraints, Channels, and the Flow of Information\", in Situation Theory and its Applications, 3 , (CSLI Lecture Notes 37), Aczel et al. (eds.), Stanford: CSLI Publications."
+        },
+        {
+          "raw": "---, 1997, \"Information and Impossibilities\", Notre Dame Journal of Formal Logic 38(4): 488-515."
+        },
+        {
+          "raw": "Barwise, J. and J. Etchemendy, 1987, The Liar , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Barwise, J. and L. Moss, 1996, Vicious Circles , (CSLI Lecture Notes 60), Stanford: CSLI Publication."
+        },
+        {
+          "raw": "Barwise, J. and J. Perry, 1983, Situations and Attitudes , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 1985, \"Shifting Situations and Shaken Attitudes\", Linguistics and Philosophy , 8: 105-161."
+        },
+        {
+          "raw": "Barwise J. and J. Seligman, 1997, Information Flow: The Logic of Distributed Systems , Cambridge Tracts in Theoretical Computer Science 44, New York: Cambridge University Press."
+        },
+        {
+          "raw": "Beal, J. C. and G. Restall, 2006, Logical Pluralism , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "van Benthem, J., 1995, Language in Action: Categories, Lambdas, and Dynamic Logic , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 2000, \"Information Transfer Across Chu Spaces\", Logic Journal of the IGPL , 8(6): 719-731."
+        },
+        {
+          "raw": "---, 2003, \"Logic and Dynamics of Information\", Minds and Machines , 13(4): 503-519."
+        },
+        {
+          "raw": "---, 2004, \"Dynamic Logic for Belief Revision\", Journal of Applied Non-Classical Logics , 14(2): 129-155."
+        },
+        {
+          "raw": "---, 2006, \"Information as Correlation versus Information as Range\", Technical Report PP-2006-07, Amsterdam: ILLC (University of Amsterdam)."
+        },
+        {
+          "raw": "---, 2009, \"The Information in Intuitionistic Logic\", Synthese , 167: 251-270."
+        },
+        {
+          "raw": "---, 2010, \"Categorial versus Modal Information Theory\", Linguistic Analysis , 36: 533"
+        },
+        {
+          "raw": "---, 2011, Logical Dynamics of Information and Interaction , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 2016, \"Tracking Information\", in K. Bimb&oacute; (ed.) 2016, 363-390."
+        },
+        {
+          "raw": "---, 2019, \"Implicit and Explicit Stances in Logic\", Journal of Philosphical Logic , 48: 571-601."
+        },
+        {
+          "raw": "van Benthem, J., J. van Eijck, and B. Kooi, 2006, \"Logics of Communication and Change\", Information and Computation , 204(11): 1620-1662."
+        },
+        {
+          "raw": "van Benthem, J. and M. Martinez, 2008, \"The Stories of Logic and Information\". in Philosophy of Information , in Adriaans and van Benthem, 2008, p. 217-280."
+        },
+        {
+          "raw": "Berto, F. and Hawke, P., 2021, \"Knowability Relative to Information\", Mind , 130(517): 1-33, doi:10.1093/mind/fzy045"
+        },
+        {
+          "raw": "Berto, F. and Jago M., 2019, Impossible Worlds , Oxford: Oxford University Press. doi:10.1093/oso/9780198812791.001.0001"
+        },
+        {
+          "raw": "Bertomeu, J. and Marinovic, I., 2016, \"A Theory of Hard and Soft Information\", The Accounting Review , 91(1): 1-20."
+        },
+        {
+          "raw": "Beth, E. W., 1955, \"Semantic Entailment and Formal Derivability\", Koninklijke Nederlandse Akademie van Wentenschappen, Proceedings of the Section of Sciences , 18: 309-342)."
+        },
+        {
+          "raw": "---, 1956, \"Semantic Construction of Intuitionistic Logic\", Koninklijke Nederlandse Akademie van Wentenschappen, Proceedings of the Section of Sciences , 19: 357-388."
+        },
+        {
+          "raw": "Bimb&oacute;, K. (ed.), 2016, J. Michael Dunn on Information Based Logics (Outstanding Contributions to Logic 8), Cham: Springer."
+        },
+        {
+          "raw": "Bimb&oacute;, K. (ed.), 2022, Relevance Logics and other Tools for Reasoning. Essays in Honor of J. Michael Dunn (Tributes: Volume 46), London: College Publications."
+        },
+        {
+          "raw": "Blackburn, P., M. de Rijke, and Y. Venema, 2001, Modal Logic , Cambridge tracts in theoretical computer science 53, Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Brady, R. T., 2016, \"Comparing Contents with Information\", in K. Bimbo (ed.) 2016, 147-159."
+        },
+        {
+          "raw": "Buszkowski, W., 1995, \"Categorical Grammars with Negative Information\", in Negation, A Notion in Focus , H. Wansing (ed.), Berlin: Gruyter, 107-126."
+        },
+        {
+          "raw": "Ciardelli, I., Groenendijk, J., Roelofsen, F., 2018, Inquisitive Semantics , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "D'Agostino, M. and L. Floridi, 2009, \"The Enduring Scandal of Deduction\", Synthese 167: 317-315."
+        },
+        {
+          "raw": "Devlin, K., 1991, Logic and Information , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "van Ditmarsh, H., W. van der Hoek, and B. Kooi, 2008, Dynamic Epistemic Logic , Dordrecht: Springer."
+        },
+        {
+          "raw": "Dretske, F., 1981, Knowledge and the Flow of Information , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Dunn, J. M., 1993, \"Partial Gaggles Applied to Logics with Restricted Structural Rules\", in Substructural Logics , P. Schroeder-Heister and K. Dosen (eds.), Oxford: Oxford Science Publications, Clarendon Press, 63-108."
+        },
+        {
+          "raw": "---, 2001, The Concept of Informaiton and the Development of Modern Logic, in W. Stelzner and M. Stoeckler (eds.) Zwischen traditioneller und moderner Logik: Nichtklassiche Ans&auml;tze , Paderborn: Mentis Verlag GmbH, 423-447."
+        },
+        {
+          "raw": "---, 2015, The Relevance of Relevance to Relevance Logic, Logic and its Applications (Lecture Notes in Computer Science: Vol. 8923), Berlin Heidelberg: Springer-Verlag, 11-29."
+        },
+        {
+          "raw": "Duzi, M., 2010, \"The Paradox of Inference and the Non-Triviality of Analytic Information\", Journal of Philosophical Logic , 38(5): 473-510."
+        },
+        {
+          "raw": "Duzi, M., B. Jespersen, and P. Materna, 2010, Procedural Semantics for Hyperintensional Logic: Foundations and Applications of TIL (Logic, Epistemology, and the Unity of Science: Volume 17), Dordrecht, London: Springer."
+        },
+        {
+          "raw": "Dyckhoff, R. and M. Sadrzadeh, 2010, \"A Cut-Free Sequent Calculus for Algebraic Dynamic Epistemic Logic\", Computer Science Research Report, University of Oxford, CS-RR-10-11."
+        },
+        {
+          "raw": "van Eijck, J. and A. Visser, 2012, \"Dynamic Semantics\", The Stanford Encyclopedia of Philosophy (Winter 2012 Edition), Edward N. Zalta (ed.), URL= https://plato.stanford.edu/archives/win2012/entries/dynamic-semantics/ >."
+        },
+        {
+          "raw": "Fagin R., J. Halpern, and M. Vardi, 1995, \"Reasoning about Knowledge\". Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Fine, K., 2017, \"Truthmaker Semantics\", in A Companion to the Philosophy of Language (Volume 2), Bob Hale, Crispin Wright, and Alexander Miller (eds.), 2nd edition, Chichester: Wiley Blackwell, 556-577. doi:10.1002/9781118972090.ch22"
+        },
+        {
+          "raw": "Fine, K. and Jago, M., 2019, \"Logic for Exact Entailment\", Review of Symbolic Logic , 12(3): 536-555. doi:10.1017/S1755020318000151"
+        },
+        {
+          "raw": "Floridi, L., 2004, \"Outline of a Theory of Strongly Semantic Information\", Minds and Machines , 14(2): 197-22."
+        },
+        {
+          "raw": "---, 2006, \"The Logic of Being Informed\", Logique et Analyse , 49(196): 433-460."
+        },
+        {
+          "raw": "---, 2013, \"Semantic Conceptions of Information\", The Stanford Encyclopedia of Philosophy (Spring 2013 Edition), Edward N. Zalta (ed.), URL= https://plato.stanford.edu/archives/spr2013/entries/information-semantic/ >."
+        },
+        {
+          "raw": "Gabbay, D. M., 1993, \"Labelled Deductive Systems: A Position Paper\", in Logic Colloquium '90: ASL Summer Meeting in Helsinki , J. Oikkonen and J. Vaananen (eds.), Berlin: Springer-Verlag, 66-88."
+        },
+        {
+          "raw": "---, 1996, Labelled Deductive Systems: Volume 1 (Oxford Logic Guides 35), New York: Oxford University Press."
+        },
+        {
+          "raw": "Ganter, B. and R. Wille, 1999, Formal Concept Analysis, Foundations and Applications (LNCS 3626), Berlin, Heidelberg: Springer."
+        },
+        {
+          "raw": "Ghidini, C. and F. Giunchiglia, 2001, \"Local Model Semantics, or Contextual Reasoning = Locality + Compatibility\". Artificial Intelligence , 127: 221-259."
+        },
+        {
+          "raw": "Groenendijk, J. and M. Stokoff, 1991, \"Dynamic Predicate Logic\", Linguistics and Philosophy , 14: 33-100."
+        },
+        {
+          "raw": "Gurevich, Y., 1977, \"Intuitionistic Logic with Strong Negation\", Studia Logica , 36: 49-59."
+        },
+        {
+          "raw": "Grzegorczyk, A., 1964, \"A Philosophically Plausible Interpretation of Intuitionistic Logic\", Indagnationes Mathematicae , 26: 596-601."
+        },
+        {
+          "raw": "Harrison-Trainor, M., Holliday, W. H., Icard, T. F., forthcoming, \"Inferring Probability Comparisons\", Mathematical Social Sciences ."
+        },
+        {
+          "raw": "Hintikka, J., 1970, \"Surface Information and Depth Information\", in Information and Inference , J. Hintikka and P. Suppes (eds.), Dordrecht: Reidel, 263-97."
+        },
+        {
+          "raw": "---, 1973, Logic, Language Games, and Information , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "---, 2007, Socratic Epistemology: Explorations of Knowledge--Seeking by Questions , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Hjortland, O., Roy, O., 2016, \"Dynamic consequence for soft information\", Journal of Logic and Computation , 26(6): 1843-1864."
+        },
+        {
+          "raw": "Israel, D. and J. Perry, 1990, \"What is Information?\", in Information, Language and Cognition , P. Hanson, (ed.), Vancouver: University of British Columbia."
+        },
+        {
+          "raw": "---, 1991, \"Information and Architecture\", in Situation Theory and its Applications Vol 2, J. Barwise, J.M. Gawron, G. Plotkin, and S. Tutiya, (eds.), Stanford: CSLI Publications."
+        },
+        {
+          "raw": "Jago, M., 2006, \"Rule-based and Resource-Bounded: A New Look at Epistemic Logic\", in Proceedings on the Workshop on Logics for Resource--Bounded Agents, as part of ESSLLI 2006 , T. Agotnes and N. Alechina (eds.), 63-77, 2006."
+        },
+        {
+          "raw": "---, 2009, \"Logical Information and Epistemic Space\", Synthese , 167: 327-341."
+        },
+        {
+          "raw": "---, 2015, \"Impossible Worlds\", No&ucirc;s , 49(4): 713-728. doi:10.1111/nous.12051"
+        },
+        {
+          "raw": "---, 2020, \"Truthmaker Semantics for Relevant Logic\", Journal of Philosophical Logic , 49: 681-702. doi:10.1007/s10992-019-09533-9"
+        },
+        {
+          "raw": "King, J. C., 2012, \"Structured Propositions\", The Stanford Encyclopedia of Philosophy (Winter 2012 Edition), Edward N. Zalta (ed.), URL= https://plato.stanford.edu/archives/win2012/entries/propositions-structured/ >."
+        },
+        {
+          "raw": "Kratzer, A., 2011, \"Situations in Natural Language Semantics\", The Stanford Encyclopedia of Philosophy (Fall 2011 Edition), Edward N. Zalta (ed.), URL= https://plato.stanford.edu/archives/fall2011/entries/situations-semantics/ >."
+        },
+        {
+          "raw": "Kripke, S. A., 1963, \"Semantical Analysis of Modal Logic\", Zeitschrift fur Mathematichs Logik und Grundlagen der Mathematik , 9: 67-96."
+        },
+        {
+          "raw": "---, 1965, \"Semantical Analysis of Intuitionistic Logic I'\", in Formal Systems and Recursive Functions , J. Crossley and M. Dummett (eds.), Amsterdam: North Holland, 92-129."
+        },
+        {
+          "raw": "Lambek, J., 1958, \"The Mathematics of Sentence Structure\", American Mathematical Monthly , 65: 154-170."
+        },
+        {
+          "raw": "---, 1961, On the Calculus of Syntactic Types, in Structure of Language and its Mathematical Aspects , R. Jakobson (ed.), Providence: American Mathematical Society, 166-178."
+        },
+        {
+          "raw": "Leitgeb, H., 2019, \"HYPE: A System of Hyperintensional Logic\", Journal of Philosophical Logic 48(2): 305-405. doi:10.1007/s10992-018-9467-0"
+        },
+        {
+          "raw": "Lewis, D., 1969, Convention: A Philosophical Study , Cambridge: Harvard University Press."
+        },
+        {
+          "raw": "Liu, F., 2009, \"Diversity of Agents and Their Interaction\", Journal of Logic, Language, and Information , 18(1): 23-53."
+        },
+        {
+          "raw": "Mares, E., 1996, \"Relevant Logic and the Theory of Information\", Synthese 109: 345-370."
+        },
+        {
+          "raw": "---, 2016, \"Manipulating Sources of Information: Towards and Interpretation of Linear Logic and Strong Relevance Logic\", in K. Bimbo (ed.) 2016: 107-132."
+        },
+        {
+          "raw": "---, 2004, Relevant Logic: A Philosophical Interpretation , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 2009, \"General Information in Relevant Logic\", Synthese , 167: 343-362."
+        },
+        {
+          "raw": "McGrath, M., 2012, \"Propositions\", The Stanford Encyclopedia of Philosophy (Summer 2012 Edition), Edward N. Zalta (ed.), URL= https://plato.stanford.edu/archives/sum2012/entries/propositions/ >."
+        },
+        {
+          "raw": "Moss, L. S., 2009, \"Non-wellfounded Set Theory\", The Stanford Encyclopedia of Philosophy (Fall 2009 Edition), Edward N. Zalta (ed.), URL= https://plato.stanford.edu/archives/fall2009/entries/nonwellfounded-set-theory/ >."
+        },
+        {
+          "raw": "Moss, L. and J. Seligman, 1996, \"Situation Theory\", in Handbook of Logic and Language , J. van Benthem and A. ter Meulen, (eds.), Amsterdam: Elsiever."
+        },
+        {
+          "raw": "Negro, Niccol&ograve;, 2022, \"Can the Integrated Information Theory Explain Consciousness from Consciousness Itself?\" Review of Philosophy and Psychology , first online 03 August 2022. doi:10.1007/s13164-022-00653-x"
+        },
+        {
+          "raw": "Nelson, D., 1949, \"Constructible Falsity\", Journal of Philosophical Logic , 14: 16-26."
+        },
+        {
+          "raw": "---, 1959, \"Negation and the Separation of Concepts in Constructive Systems\", in Constructivity in Mathematics , A. Heyting (ed.), Amsterdam: North-Holland, 208-255."
+        },
+        {
+          "raw": "Pacuit, E., 2011, \"Logics of Informational Attitudes and Informative Actions\", Journal of the Council of Indian Philosophy , 27(2): 341-378."
+        },
+        {
+          "raw": "Panahy, S., 2023, \"Synthetic Proofs\", Synthese , 201(38), first online 21 January 2023. doi:10.1007/s11229-022-04026-w"
+        },
+        {
+          "raw": "Paoli, F., 2002, Substructural Logics: A Primer , Dordrecht, Boston: Kluwer."
+        },
+        {
+          "raw": "Pratt, V., 1995, \"Chu Spaces and Their Interpretation as Concurrent Objects\", Computer Science Today (Lecture Notes in Computer Science: Volume 1000), Berlin Heidelberg: Springer-Verlag, 392-405."
+        },
+        {
+          "raw": "Primiero, G., 2006, \"An Epistemic Constructive Definition of Information\", Logique et Analyse , 50(200): 391-416."
+        },
+        {
+          "raw": "---, 2008, Information and Knowledge: A Constructive Type-Theoretical Approach (Logic, Epistemology, and the Unity of Science Series: Volume 10), Dordrecht: Springer."
+        },
+        {
+          "raw": "Pun&#269;och&aacute;&#345;, V., and Sedl&aacute;r, I., 2021, Epistemic Extensions of Substructural Inquisitive Logics, Journal of Logic and Computation , 31(7): 1820-1844."
+        },
+        {
+          "raw": "Ramos Mendon&ccedil;a, Bruno, 2022, \"Game Semantics, Quantifiers and Logical Omniscience\", Logic and Logical Philosophy , 31(4): 557-78. doi:10.12775/LLP.2022.021."
+        },
+        {
+          "raw": "Restall, G., 1994, \"Information Flow and Relevant Logics\", in Logic, Language, and Computation , Jerry Seligman and Dag Wester&aring;hl (eds.), Stanford: CSLI Publications, 1995, 139-160."
+        },
+        {
+          "raw": "---, 1994a, \"A Useful Substructural Logic\", Bulletin of the Interest Group in Pure and Applied Logics , 2: 137-148."
+        },
+        {
+          "raw": "---, 1997, \"Ways Things Can't Be\", Notre Dame Journal of Formal Logic , 38: 583-596."
+        },
+        {
+          "raw": "---, 2000, Substructural Logics, and Introduction , London: Routledge."
+        },
+        {
+          "raw": "---, 2006, \"Logics, Situations, and Channels\", Journal of Cognitive Science , 6: 125-150."
+        },
+        {
+          "raw": "Sadrzadeh, M., 2009, \"Ockham's Razor for Reasoning about Information Flow\", Synthese , 167: 391-408."
+        },
+        {
+          "raw": "Sedlar, I., 2015, \"Substructural Epistemic Logics\", Journal of Applied Non-Classical Logics , 25(3): 256-285."
+        },
+        {
+          "raw": "---, 2019, \"Substructural Propositional Dynamic Logics\", in R. Iemhoff, M. Moortgat, and R. De Queiroz (eds.), Logic, Language, Information, and Computation (WoLLIC 2019), 594-609, Cham: Springer."
+        },
+        {
+          "raw": "---, 2021, \"Hyperintensional logics for Everyone\", Synthese , 198: 933-956."
+        },
+        {
+          "raw": "Sedl&aacute;r, I, Pun&#269;och&aacute;&#345; V., Tedder, A., 2023, \"Relevant Epistemic Logic with Public Announcements and Common Knowledge\", Journal of Logic and Computation , 33(2): 436-461."
+        },
+        {
+          "raw": "Segerberg, K., 1998, \"Irrevocable Belief Revision in Dynamic Doxastic Logic\", Notre Dame Journal of Formal Logic , 39(3): 287-306."
+        },
+        {
+          "raw": "Seligman, J., 1990, \"Perspectives in Situation Theory\", in Situation Theory and its Applications , Vol 1, R. Cooper, K. Mukai, and J. Perry, (eds.), Stanford: CSLI Publications, 147-191."
+        },
+        {
+          "raw": "---, 2009, \"Channels: From Logic to Probability\", in Formal Theories of Information: From Shannon to Semantic Information Theory and General Concepts of Information , G. Sommaruga (ed.), LNCS 5363, Berlin: Springer Verlag, 193-233."
+        },
+        {
+          "raw": "---, 2014, \"Situation Theory Reconsidered\", in A. Baltag and S. Smets (eds.) 2014: 895-932."
+        },
+        {
+          "raw": "Sequoiah-Grayson, S., 2007, \"The Metaphilosophy of Information\", Minds and Machines , 17: 331-44."
+        },
+        {
+          "raw": "---, 2008, \"The Scandal of Deduction: Hintikka on the Information Yield of Deductive Inferences\", Journal of Philosophical Logic , 37: 67-94."
+        },
+        {
+          "raw": "---, 2009, \"Dynamic Negation and Negative Information\", Review of Symbolic Logic 2(1): 233-248."
+        },
+        {
+          "raw": "---, 2010, \"Lambek Calculi with 0 and Test-Failure in DPL\", Linguistic Analysis , 36: 517-532."
+        },
+        {
+          "raw": "---, 2011, \"Non-Symmetric (In)Compatibility Relations and Non-Commuting Types\", The Logica Yearbook 2010 , Michael Peli&scaron; and Vit Pun&#269;och&aacute;&#345; (eds.) London: College Publications."
+        },
+        {
+          "raw": "---, 2013, \"Epistemic Closure and Commuting, Nonassociating Residuated Structures\", Synthese , 190(1): 113-128."
+        },
+        {
+          "raw": "---, 2016, \"Epistemic Relevance and Epistemic Actions\", in K. Bimbo (ed.) 2016, 133-146."
+        },
+        {
+          "raw": "Shannon, C. E., 1948, \"A Mathematical Theory of Communication\", Bell System Technical Journal 27: 379-423 and 623-656."
+        },
+        {
+          "raw": "---, 1953 [1950], \"The Lattice Theory of Information\", in IEEE Transactions on Information Theory , 1 (Proceedings of the Symposium on Information Theory, London, September 1950): 105-107; reprinted in Claude Elwood Shannon Collected Papers , N. J. A. Sloan and A. D. Wyner (eds.), Los Alamos, CA: IEEE Computer Science Press, 1993."
+        },
+        {
+          "raw": "Stefaneas P. and Vandoulakis, I. M., 2014, \"A Proofs as Spatio-temporal Processes\", Philosophia Scientiae , 18(3): 111-125."
+        },
+        {
+          "raw": "Tedder, A., 2017, \"Channel Composition and Ternary Relation Semantics\", in K. Bimb&oacute; and J.M. Dunn (eds.), IFCoLog Journal of Logics and Their Applications (Special Issue: Proceedings of the Third Workshop), 4(3): 731-753."
+        },
+        {
+          "raw": "---, 2021, \"Information Flow in Logics in the Vicinity of BB\", Australasian Journal of Logic , 18(1): 1-24."
+        },
+        {
+          "raw": "Tedder, A., and Bilkov&aacute;, M., forthcoming , \"Relevant Propositional Dynamic Logic\", Synthese ."
+        },
+        {
+          "raw": "Textor, M., 2012, \"States of Affairs\", The Stanford Encyclopedia of Philosophy (Summer 2012 Edition), Edward N. Zalta (ed.), URL= https://plato.stanford.edu/archives/sum2012/entries/states-of-affairs/ >."
+        },
+        {
+          "raw": "Troelstra, A. S., 1992, Lecture Notes on Linear Logic (CSLI Lecture Notes 29), Stanford: CSLI Publications."
+        },
+        {
+          "raw": "Vanderschraaf, P. and G. Sillari, 2009, \"Common Knowledge\", The Stanford Encyclopedia of Philosophy (Spring 2009 Edition), Edward N. Zalta (ed.), URL= http:/plato.stanford.edu/archives/spr2009/entries/common-knowledge/ >."
+        },
+        {
+          "raw": "Vel&aacute;zquez-Quesada, F. R., 2009, \"Dynamic Logics for Explicit and Implicit Information\", in Xiangdong He and John F. Horty and Eric Pacuit (eds.), Logic, Rationality, and Interaction: Second International Workshop, LORI 2009 , Chongqing, China, October 8-11, 2009, Berlin: Springer, 325-326."
+        },
+        {
+          "raw": "Vickers, S., 1996, Topology via Logic , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Wang, Y., and J. Fan, 2014, \"Conditionally Knowing What\", Advances in Modal Logic , 10: 569-587."
+        },
+        {
+          "raw": "Wansing, H., 1993, The Logic of Information Structures , (Lecture Notes in Artificial Intelligence no. 681, Subseries of Lecture Notes in Computer Science), Berlin: Springer-Verlag."
+        },
+        {
+          "raw": "---, 2016, \"On Split Negation, Strong Negation, Information, Falsification, and Verification\", in K. Bimbo (ed.) 2016: 161-190."
+        },
+        {
+          "raw": "Yablo, S., 2014, Aboutness , Princeton, NJ: Princeton University Press."
+        },
+        {
+          "raw": "Yang, S., Taniguchi, M., Tojo, S., 2019, \"4-valued Logic for Agent Communication with Private/Public Information Passing\", Proceedings of the 11th International Conference on Agents and Artificial Intelligence (ICAART 2019) (Volume 1), Set&uacute;bal: Science and Technology Publications, 54-61. doi:10.5220/0007400000540061"
+        },
+        {
+          "raw": "Zalta, Edward N., 1983, Abstract Objects: An Introduction to Axiomatic Metaphysics , Dordrecht: D. Reidel."
+        },
+        {
+          "raw": "---, 1993, \"Twenty-Five Basic Theorems in Situation and World Theory\", Journal of Philosophical Logic , 22(4): 385-428."
+        },
+        {
+          "raw": "Zhou, C., 2016, \"Logical Foundations of Evidential reasoning with Contradictory Information\", in K. Bimbo (ed.) 2016: 213-246."
+        }
+      ],
+      "publishedAt": "2014-02-02T13:00:00.000Z",
+      "revisedAt": "2023-08-02T14:00:00.000Z"
+    }
+  }
+}

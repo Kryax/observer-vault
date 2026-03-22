@@ -1,0 +1,528 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/tongsuo-project--rustyvault",
+  "meta": {
+    "title": "RustyVault",
+    "description": "A rusted vault that can do many awesome secrets management stuff...",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:44:50.551Z",
+    "dateModified": "2026-03-11T04:44:50.551Z",
+    "keywords": [
+      "cloudnative-services",
+      "hashicorp-vault",
+      "key-management",
+      "key-manager-service",
+      "secrets-management",
+      "secrets-manager",
+      "secure-storage"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "RustyVault is a modern secret management system, written in Rust. RustyVault provides various features which support many scenarios including secure storage, cloud identity management, secret management, Kubernetes integration, PKI infrastructure, cryptographic computing, traditional key management, etc.",
+    "context": "![RustVault logo](docs/static/img/RV-logo-gold.png)\n\n[![Crates.io Version](https://img.shields.io/crates/v/rusty_vault)](https://crates.io/crates/rusty_vault)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:rust"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "374 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "34 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:44:50.551Z"
+  },
+  "implementation": {
+    "type": "service",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/Tongsuo-Project/RustyVault",
+        "description": "GitHub repository: Tongsuo-Project/RustyVault"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://rustyvault.net",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Rust"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "anyhow",
+        "version": "^1.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/anyhow"
+      },
+      {
+        "name": "thiserror",
+        "version": "^1.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/thiserror"
+      },
+      {
+        "name": "serde",
+        "version": "^1.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/serde"
+      },
+      {
+        "name": "serde_derive",
+        "version": "^1.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/serde_derive"
+      },
+      {
+        "name": "serde_json",
+        "version": "^1.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/serde_json"
+      },
+      {
+        "name": "serde_bytes",
+        "version": "0.11",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/serde_bytes"
+      },
+      {
+        "name": "serde_yaml",
+        "version": "0.9",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/serde_yaml"
+      },
+      {
+        "name": "go-defer",
+        "version": "^0.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/go-defer"
+      },
+      {
+        "name": "rand",
+        "version": "^0.8",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/rand"
+      },
+      {
+        "name": "derivative",
+        "version": "2.2.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/derivative"
+      },
+      {
+        "name": "enum-map",
+        "version": "2.6.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/enum-map"
+      },
+      {
+        "name": "strum",
+        "version": "0.25",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/strum"
+      },
+      {
+        "name": "strum_macros",
+        "version": "0.25",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/strum_macros"
+      },
+      {
+        "name": "radix_trie",
+        "version": "0.2.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/radix_trie"
+      },
+      {
+        "name": "lazy_static",
+        "version": "1.4.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/lazy_static"
+      },
+      {
+        "name": "regex",
+        "version": "1.11",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/regex"
+      },
+      {
+        "name": "clap",
+        "version": "4.5",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/clap"
+      },
+      {
+        "name": "sysexits",
+        "version": "0.7",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/sysexits"
+      },
+      {
+        "name": "build-time",
+        "version": "0.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/build-time"
+      },
+      {
+        "name": "hcl-rs",
+        "version": "0.18",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/hcl-rs"
+      },
+      {
+        "name": "actix-web",
+        "version": "4.9",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/actix-web"
+      },
+      {
+        "name": "actix-tls",
+        "version": "3.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/actix-tls"
+      },
+      {
+        "name": "actix-rt",
+        "version": "2.9",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/actix-rt"
+      },
+      {
+        "name": "log",
+        "version": "0.4",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/log"
+      },
+      {
+        "name": "env_logger",
+        "version": "0.10",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/env_logger"
+      },
+      {
+        "name": "hex",
+        "version": "0.4",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/hex"
+      },
+      {
+        "name": "humantime",
+        "version": "2.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/humantime"
+      },
+      {
+        "name": "as-any",
+        "version": "0.3.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/as-any"
+      },
+      {
+        "name": "pem",
+        "version": "3.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/pem"
+      },
+      {
+        "name": "chrono",
+        "version": "0.4",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/chrono"
+      },
+      {
+        "name": "zeroize",
+        "version": "1.7.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/zeroize"
+      },
+      {
+        "name": "bcrypt",
+        "version": "0.15",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/bcrypt"
+      },
+      {
+        "name": "url",
+        "version": "2.5",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/url"
+      },
+      {
+        "name": "ureq",
+        "version": "2.10",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/ureq"
+      },
+      {
+        "name": "rustls",
+        "version": "0.23.16",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/rustls"
+      },
+      {
+        "name": "rustls-pemfile",
+        "version": "2.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/rustls-pemfile"
+      },
+      {
+        "name": "webpki-roots",
+        "version": "0.26",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/webpki-roots"
+      },
+      {
+        "name": "glob",
+        "version": "0.3",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/glob"
+      },
+      {
+        "name": "base64",
+        "version": "0.22",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/base64"
+      },
+      {
+        "name": "ipnetwork",
+        "version": "0.20",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/ipnetwork"
+      },
+      {
+        "name": "blake2b_simd",
+        "version": "1.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/blake2b_simd"
+      },
+      {
+        "name": "derive_more",
+        "version": "0.99.17",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/derive_more"
+      },
+      {
+        "name": "dashmap",
+        "version": "6.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/dashmap"
+      },
+      {
+        "name": "tokio",
+        "version": "1.40",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/tokio"
+      },
+      {
+        "name": "ctor",
+        "version": "0.2.8",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/ctor"
+      },
+      {
+        "name": "better_default",
+        "version": "1.0.5",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/better_default"
+      },
+      {
+        "name": "prometheus-client",
+        "version": "0.22.3",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/prometheus-client"
+      },
+      {
+        "name": "sysinfo",
+        "version": "0.31.4",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/sysinfo"
+      },
+      {
+        "name": "prettytable",
+        "version": "0.10",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/prettytable"
+      },
+      {
+        "name": "rpassword",
+        "version": "7.3",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/rpassword"
+      },
+      {
+        "name": "async-trait",
+        "version": "0.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/async-trait"
+      },
+      {
+        "name": "stretto",
+        "version": "0.8",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/stretto"
+      },
+      {
+        "name": "priority-queue",
+        "version": "2.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/priority-queue"
+      },
+      {
+        "name": "crossbeam-channel",
+        "version": "0.5",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/crossbeam-channel"
+      },
+      {
+        "name": "maybe-async",
+        "version": "0.2",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/maybe-async"
+      },
+      {
+        "name": "lockfile",
+        "version": "0.4.0",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/lockfile"
+      },
+      {
+        "name": "arc-swap",
+        "version": "1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/arc-swap"
+      },
+      {
+        "name": "blake3",
+        "version": "1.8",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/blake3"
+      },
+      {
+        "name": "foreign-types",
+        "version": "0.3.1",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/foreign-types"
+      },
+      {
+        "name": "libc",
+        "version": "0.2",
+        "type": "runtime",
+        "uri": "https://crates.io/crates/libc"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Tongsuo-Project",
+        "type": "human",
+        "uri": "https://github.com/Tongsuo-Project"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 442,
+      "validation_diversity": 0.37,
+      "context_breadth": 0.43,
+      "temporal_stability": 0.79,
+      "test_coverage": 0.2,
+      "documentation_quality": 0.48
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.453
+  }
+}

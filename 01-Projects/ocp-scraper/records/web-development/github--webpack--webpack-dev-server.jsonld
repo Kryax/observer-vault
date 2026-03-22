@@ -1,0 +1,328 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/webpack--webpack-dev-server",
+  "meta": {
+    "title": "webpack-dev-server",
+    "description": "Serves a webpack app. Updates the browser on changes. Documentation https://webpack.js.org/configuration/dev-server/.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T09:33:36.057Z",
+    "dateModified": "2026-03-11T09:33:36.057Z",
+    "keywords": [
+      "hot-reload",
+      "server",
+      "webpack"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "Use [webpack](https://webpack.js.org) with a development server that provides\nlive reloading. This should be used for **development only**.",
+    "context": "Use [webpack](https://webpack.js.org) with a development server that provides\nlive reloading. This should be used for **development only**.\n\nIt uses [webpack-dev-middleware][middleware-url] under the hood, which provides\nfast in-memory access to the webpack assets.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "lang:javascript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "7854 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "1489 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T09:33:36.057Z"
+  },
+  "implementation": {
+    "type": "service",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/webpack/webpack-dev-server",
+        "description": "GitHub repository: webpack/webpack-dev-server"
+      }
+    ],
+    "language": "JavaScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "@types/bonjour",
+        "version": "^3.5.13",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@types/bonjour"
+      },
+      {
+        "name": "@types/connect-history-api-fallback",
+        "version": "^1.5.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@types/connect-history-api-fallback"
+      },
+      {
+        "name": "@types/express",
+        "version": "^4.17.25",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@types/express"
+      },
+      {
+        "name": "@types/express-serve-static-core",
+        "version": "^4.17.21",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@types/express-serve-static-core"
+      },
+      {
+        "name": "@types/serve-index",
+        "version": "^1.9.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@types/serve-index"
+      },
+      {
+        "name": "@types/serve-static",
+        "version": "^1.15.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@types/serve-static"
+      },
+      {
+        "name": "@types/sockjs",
+        "version": "^0.3.36",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@types/sockjs"
+      },
+      {
+        "name": "@types/ws",
+        "version": "^8.5.10",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@types/ws"
+      },
+      {
+        "name": "ansi-html-community",
+        "version": "^0.0.8",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/ansi-html-community"
+      },
+      {
+        "name": "bonjour-service",
+        "version": "^1.2.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/bonjour-service"
+      },
+      {
+        "name": "chokidar",
+        "version": "^3.6.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/chokidar"
+      },
+      {
+        "name": "colorette",
+        "version": "^2.0.10",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/colorette"
+      },
+      {
+        "name": "compression",
+        "version": "^1.8.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/compression"
+      },
+      {
+        "name": "connect-history-api-fallback",
+        "version": "^2.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/connect-history-api-fallback"
+      },
+      {
+        "name": "express",
+        "version": "^4.22.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/express"
+      },
+      {
+        "name": "graceful-fs",
+        "version": "^4.2.6",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/graceful-fs"
+      },
+      {
+        "name": "http-proxy-middleware",
+        "version": "^2.0.9",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/http-proxy-middleware"
+      },
+      {
+        "name": "ipaddr.js",
+        "version": "^2.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/ipaddr.js"
+      },
+      {
+        "name": "launch-editor",
+        "version": "^2.6.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/launch-editor"
+      },
+      {
+        "name": "open",
+        "version": "^10.0.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/open"
+      },
+      {
+        "name": "p-retry",
+        "version": "^6.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/p-retry"
+      },
+      {
+        "name": "schema-utils",
+        "version": "^4.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/schema-utils"
+      },
+      {
+        "name": "selfsigned",
+        "version": "^5.5.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/selfsigned"
+      },
+      {
+        "name": "serve-index",
+        "version": "^1.9.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/serve-index"
+      },
+      {
+        "name": "sockjs",
+        "version": "^0.3.24",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/sockjs"
+      },
+      {
+        "name": "spdy",
+        "version": "^4.0.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/spdy"
+      },
+      {
+        "name": "webpack-dev-middleware",
+        "version": "^7.4.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/webpack-dev-middleware"
+      },
+      {
+        "name": "ws",
+        "version": "^8.18.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/ws"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "webpack",
+        "type": "human",
+        "uri": "https://github.com/webpack"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 10832,
+      "validation_diversity": 0.82,
+      "context_breadth": 0.42,
+      "temporal_stability": 1,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.65
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.689
+  }
+}

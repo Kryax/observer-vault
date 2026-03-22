@@ -1,0 +1,478 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/ruvnet--ruview",
+  "meta": {
+    "title": "π RuView",
+    "description": "π RuView: WiFi DensePose turns commodity WiFi signals into real-time human pose estimation, vital sign monitoring, and presence detection — all without a single pixel of video. ",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-13T11:21:14.002Z",
+    "dateModified": "2026-03-13T11:21:14.002Z",
+    "keywords": [
+      "agentic-ai",
+      "densepose",
+      "esp32",
+      "firmware",
+      "mcu",
+      "mincut",
+      "monitoring",
+      "pose-estimation",
+      "rf",
+      "self",
+      "self-learning",
+      "wifi",
+      "wifi-hacking",
+      "wifi-security"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "<p align=\"center\">\n  <a href=\"https://ruvnet.github.io/RuView/\">\n    <img src=\"assets/ruview-small-gemini.jpg\" alt=\"RuView - WiFi DensePose\" width=\"100%\">\n  </a>\n</p>",
+    "context": "<p align=\"center\">\n  <a href=\"https://ruvnet.github.io/RuView/\">\n    <img src=\"assets/ruview-small-gemini.jpg\" alt=\"RuView - WiFi DensePose\" width=\"100%\">\n  </a>\n</p>",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "security",
+    "media",
+    "lang:rust"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "35986 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "4924 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-13T11:21:14.002Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/ruvnet/RuView",
+        "description": "GitHub repository: ruvnet/RuView"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://github.com/ruvnet/ruvector/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Rust"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "fastapi",
+        "version": ">=0.104.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/fastapi/"
+      },
+      {
+        "name": "uvicorn",
+        "version": ">=0.24.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/uvicorn/"
+      },
+      {
+        "name": "pydantic",
+        "version": ">=2.5.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pydantic/"
+      },
+      {
+        "name": "pydantic-settings",
+        "version": ">=2.1.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pydantic-settings/"
+      },
+      {
+        "name": "sqlalchemy",
+        "version": ">=2.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/sqlalchemy/"
+      },
+      {
+        "name": "alembic",
+        "version": ">=1.13.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/alembic/"
+      },
+      {
+        "name": "asyncpg",
+        "version": ">=0.29.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/asyncpg/"
+      },
+      {
+        "name": "psycopg2-binary",
+        "version": ">=2.9.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/psycopg2-binary/"
+      },
+      {
+        "name": "redis",
+        "version": ">=5.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/redis/"
+      },
+      {
+        "name": "aioredis",
+        "version": ">=2.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/aioredis/"
+      },
+      {
+        "name": "torch",
+        "version": ">=2.1.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/torch/"
+      },
+      {
+        "name": "torchvision",
+        "version": ">=0.16.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/torchvision/"
+      },
+      {
+        "name": "numpy",
+        "version": ">=1.24.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numpy/"
+      },
+      {
+        "name": "opencv-python",
+        "version": ">=4.8.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/opencv-python/"
+      },
+      {
+        "name": "pillow",
+        "version": ">=10.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pillow/"
+      },
+      {
+        "name": "scikit-learn",
+        "version": ">=1.3.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scikit-learn/"
+      },
+      {
+        "name": "scipy",
+        "version": ">=1.11.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scipy/"
+      },
+      {
+        "name": "matplotlib",
+        "version": ">=3.7.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/matplotlib/"
+      },
+      {
+        "name": "pandas",
+        "version": ">=2.1.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pandas/"
+      },
+      {
+        "name": "scapy",
+        "version": ">=2.5.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/scapy/"
+      },
+      {
+        "name": "pyserial",
+        "version": ">=3.5",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyserial/"
+      },
+      {
+        "name": "paramiko",
+        "version": ">=3.3.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/paramiko/"
+      },
+      {
+        "name": "click",
+        "version": ">=8.1.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/click/"
+      },
+      {
+        "name": "rich",
+        "version": ">=13.6.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/rich/"
+      },
+      {
+        "name": "typer",
+        "version": ">=0.9.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/typer/"
+      },
+      {
+        "name": "python-multipart",
+        "version": ">=0.0.6",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/python-multipart/"
+      },
+      {
+        "name": "python-jose",
+        "version": ">=3.3.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/python-jose/"
+      },
+      {
+        "name": "passlib",
+        "version": ">=1.7.4",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/passlib/"
+      },
+      {
+        "name": "python-dotenv",
+        "version": ">=1.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/python-dotenv/"
+      },
+      {
+        "name": "pyyaml",
+        "version": ">=6.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pyyaml/"
+      },
+      {
+        "name": "toml",
+        "version": ">=0.10.2",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/toml/"
+      },
+      {
+        "name": "prometheus-client",
+        "version": ">=0.19.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/prometheus-client/"
+      },
+      {
+        "name": "structlog",
+        "version": ">=23.2.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/structlog/"
+      },
+      {
+        "name": "psutil",
+        "version": ">=5.9.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/psutil/"
+      },
+      {
+        "name": "httpx",
+        "version": ">=0.25.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/httpx/"
+      },
+      {
+        "name": "aiofiles",
+        "version": ">=23.2.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/aiofiles/"
+      },
+      {
+        "name": "marshmallow",
+        "version": ">=3.20.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/marshmallow/"
+      },
+      {
+        "name": "jsonschema",
+        "version": ">=4.19.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/jsonschema/"
+      },
+      {
+        "name": "celery",
+        "version": ">=5.3.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/celery/"
+      },
+      {
+        "name": "kombu",
+        "version": ">=5.3.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/kombu/"
+      },
+      {
+        "name": "pytest",
+        "version": ">=7.4.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pytest/"
+      },
+      {
+        "name": "pytest-asyncio",
+        "version": ">=0.21.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pytest-asyncio/"
+      },
+      {
+        "name": "pytest-cov",
+        "version": ">=4.1.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pytest-cov/"
+      },
+      {
+        "name": "pytest-mock",
+        "version": ">=3.12.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pytest-mock/"
+      },
+      {
+        "name": "pytest-xdist",
+        "version": ">=3.3.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pytest-xdist/"
+      },
+      {
+        "name": "pytest-bdd",
+        "version": ">=7.0.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/pytest-bdd/"
+      },
+      {
+        "name": "black",
+        "version": ">=23.9.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/black/"
+      },
+      {
+        "name": "isort",
+        "version": ">=5.12.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/isort/"
+      },
+      {
+        "name": "flake8",
+        "version": ">=6.1.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/flake8/"
+      },
+      {
+        "name": "mypy",
+        "version": ">=1.6.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/mypy/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "ruvnet",
+        "type": "human",
+        "uri": "https://github.com/ruvnet"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 45834,
+      "validation_diversity": 0.3,
+      "context_breadth": 0.7,
+      "temporal_stability": 0.9,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.75
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.614
+  }
+}

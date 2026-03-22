@@ -1,0 +1,194 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:arxiv/2603.09875v1",
+  "meta": {
+    "title": "The Bureaucracy of Speed: Structural Equivalence Between Memory Consistency Models and Multi-Agent Authorization Revocation",
+    "description": "The temporal assumptions underpinning conventional Identity and Access Management collapse under agentic execution regimes. A sixty-second revocation window permits on the order of $6 \\times 10^3$ unauthorized API calls at 100 ops/tick; at AWS Lambda scale, the figure approaches $6 \\times 10^5$. This is a coherence problem, not merely a latency problem. We define a Capability Coherence System (CCS) and construct a state-mapping $\\varphi : Σ_{\\rm MESI} \\to Σ_{\\rm auth}$ preserving transition structure under bounded-staleness semantics. A safety theorem bounds unauthorized operations for the execution-count Release Consistency-directed Coherence (RCC) strategy at $D_{\\rm rcc} \\leq n$, independent of agent velocity $v$ -- a qualitative departure from the $O(v \\cdot \\mathrm{TTL})$ scaling of time-bounded strategies. Tick-based discrete event simulation across three business-contextualised scenarios (four strategies, ten deterministic seeds each) confirms: RCC achieves a $120\\times$ reduction versus TTL-based lease in the high-velocity scenario (50 vs. 6,000 unauthorized operations), and $184\\times$ under anomaly-triggered revocation. Zero bound violations across all 120 runs confirm the per-capability safety guarantee. Simulation code: https://github.com/hipvlady/prizm",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T06:38:25.054Z",
+    "dateModified": "2026-03-11T06:38:25.054Z",
+    "datePublished": "2026-03-10T16:37:02.000Z",
+    "keywords": [
+      "cs.MA",
+      "cs.CR",
+      "cs.DC"
+    ]
+  },
+  "problemSolved": {
+    "statement": "The temporal assumptions underpinning conventional Identity and Access Management collapse under agentic execution regimes. A sixty-second revocation window permits on the order of $6 \\times 10^3$ unauthorized API calls at 100 ops/tick; at AWS Lambda scale, the figure approaches $6 \\times 10^5$. This is a coherence problem, not merely a latency problem. We define a Capability Coherence System (CCS) and construct a state-mapping $\\varphi : Σ_{\\rm MESI} \\to Σ_{\\rm auth}$ preserving transition structure under bounded-staleness semantics. A safety theorem bounds unauthorized operations for the execution-count Release Consistency-directed Coherence (RCC) strategy at $D_{\\rm rcc} \\leq n$, independent of agent velocity $v$ -- a qualitative departure from the $O(v \\cdot \\mathrm{TTL})$ scaling of time-bounded strategies. Tick-based discrete event simulation across three business-contextualised scenarios (four strategies, ten deterministic seeds each) confirms: RCC achieves a $120\\times$ reduction versus TTL-based lease in the high-velocity scenario (50 vs. 6,000 unauthorized operations), and $184\\times$ under anomaly-triggered revocation. Zero bound violations across all 120 runs confirm the per-capability safety guarantee. Simulation code: https://github.com/hipvlady/prizm",
+    "context": "arXiv categories: cs.MA, cs.CR, cs.DC | 18 pages, 3 figures. Simulation code at https://github.com/hipvlady/prizm",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "security",
+    "systems",
+    "software"
+  ],
+  "validation": {
+    "method": "automated-analysis",
+    "evidence": [
+      {
+        "type": "arxiv-record",
+        "description": "Indexed from arXiv paper 2603.09875v1",
+        "uri": "https://arxiv.org/abs/2603.09875v1"
+      },
+      {
+        "type": "category-classification",
+        "description": "Classified in arXiv categories: cs.MA, cs.CR, cs.DC"
+      },
+      {
+        "type": "submission-recency",
+        "description": "Published 2026-03-10T16:37:02.000Z and last updated 2026-03-10T16:37:02.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-10T16:37:02.000Z"
+  },
+  "implementation": {
+    "type": "algorithm",
+    "refs": [
+      {
+        "type": "publication",
+        "uri": "https://arxiv.org/abs/2603.09875v1",
+        "description": "arXiv abstract page for 2603.09875v1"
+      },
+      {
+        "type": "publication",
+        "uri": "https://arxiv.org/pdf/2603.09875v1",
+        "description": "arXiv PDF"
+      }
+    ],
+    "solutionApproach": "18 pages, 3 figures. Simulation code at https://github.com/hipvlady/prizm"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Vladyslav Parakhin",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "arXiv",
+        "type": "system",
+        "uri": "https://arxiv.org"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://arxiv.org/abs/2603.09875v1",
+      "https://arxiv.org/pdf/2603.09875v1"
+    ],
+    "generatedBy": "ocp-scraper/arxiv-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 39,
+      "validation_diversity": 0.37,
+      "context_breadth": 0.93,
+      "temporal_stability": 0.79,
+      "test_coverage": 0.45,
+      "documentation_quality": 1
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.525
+  },
+  "extensions": {
+    "arxiv": {
+      "id": "2603.09875v1",
+      "source": "arXiv",
+      "categories": [
+        "cs.MA",
+        "cs.CR",
+        "cs.DC"
+      ],
+      "comment": "18 pages, 3 figures. Simulation code at https://github.com/hipvlady/prizm",
+      "absUrl": "https://arxiv.org/abs/2603.09875v1",
+      "pdfUrl": "https://arxiv.org/pdf/2603.09875v1"
+    }
+  }
+}

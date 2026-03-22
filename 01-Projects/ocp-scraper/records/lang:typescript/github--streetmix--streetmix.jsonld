@@ -1,0 +1,352 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/streetmix--streetmix",
+  "meta": {
+    "title": "streetmix",
+    "description": "Streetmix makes it easy for people to design public spaces together.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:47:07.496Z",
+    "dateModified": "2026-03-11T04:47:07.496Z",
+    "keywords": [
+      "city-builder",
+      "city-planning",
+      "civic-tech",
+      "hacktoberfest",
+      "streetmix",
+      "urban-planning"
+    ],
+    "license": "NOASSERTION"
+  },
+  "problemSolved": {
+    "statement": "When city planners seek input from community meetings from the public on streetscape improvements, one common engagement activity is to create paper cut-outs depicting different street components (like bike lanes, sidewalks, trees, and so on) and allow attendees to reassemble them into their desired streetscape. Planners and city officials can then take this feedback to determine a course of action for future plans. By creating an web-based version of this activity, planners can reach a wider audience than they could at meetings alone, and allow community members to share and remix each other's creations.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:typescript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "729 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "206 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:47:07.496Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/streetmix/streetmix",
+        "description": "GitHub repository: streetmix/streetmix"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://streetmix.net",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "TypeScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "axios",
+        "version": "1.13.6",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/axios"
+      },
+      {
+        "name": "axios-retry",
+        "version": "4.5.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/axios-retry"
+      },
+      {
+        "name": "cloudinary",
+        "version": "2.9.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/cloudinary"
+      },
+      {
+        "name": "compression",
+        "version": "1.8.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/compression"
+      },
+      {
+        "name": "cookie-parser",
+        "version": "1.4.7",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/cookie-parser"
+      },
+      {
+        "name": "cookie-session",
+        "version": "2.1.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/cookie-session"
+      },
+      {
+        "name": "cors",
+        "version": "2.8.6",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/cors"
+      },
+      {
+        "name": "dotenv",
+        "version": "17.3.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/dotenv"
+      },
+      {
+        "name": "express",
+        "version": "5.2.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/express"
+      },
+      {
+        "name": "express-jwt",
+        "version": "8.5.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/express-jwt"
+      },
+      {
+        "name": "glob",
+        "version": "13.0.6",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/glob"
+      },
+      {
+        "name": "hbs",
+        "version": "4.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/hbs"
+      },
+      {
+        "name": "helmet",
+        "version": "8.1.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/helmet"
+      },
+      {
+        "name": "js-yaml",
+        "version": "4.1.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/js-yaml"
+      },
+      {
+        "name": "jwks-rsa",
+        "version": "4.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/jwks-rsa"
+      },
+      {
+        "name": "nanoid",
+        "version": "5.1.6",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/nanoid"
+      },
+      {
+        "name": "newrelic",
+        "version": "13.14.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/newrelic"
+      },
+      {
+        "name": "nodemon",
+        "version": "3.1.14",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/nodemon"
+      },
+      {
+        "name": "papaparse",
+        "version": "5.5.3",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/papaparse"
+      },
+      {
+        "name": "passport",
+        "version": "0.7.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/passport"
+      },
+      {
+        "name": "passport-oauth",
+        "version": "1.0.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/passport-oauth"
+      },
+      {
+        "name": "passport-patreon",
+        "version": "1.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/passport-patreon"
+      },
+      {
+        "name": "pg",
+        "version": "8.20.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/pg"
+      },
+      {
+        "name": "sequelize",
+        "version": "6.37.7",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/sequelize"
+      },
+      {
+        "name": "sequelize-cli",
+        "version": "6.6.5",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/sequelize-cli"
+      },
+      {
+        "name": "sequelize-mock",
+        "version": "0.10.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/sequelize-mock"
+      },
+      {
+        "name": "svg-sprite",
+        "version": "2.0.4",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/svg-sprite"
+      },
+      {
+        "name": "swagger-jsdoc",
+        "version": "6.2.8",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/swagger-jsdoc"
+      },
+      {
+        "name": "swagger-ui-express",
+        "version": "5.0.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/swagger-ui-express"
+      },
+      {
+        "name": "winston",
+        "version": "3.19.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/winston"
+      },
+      {
+        "name": "zod",
+        "version": "4.3.6",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/zod"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "streetmix",
+        "type": "human",
+        "uri": "https://github.com/streetmix"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 1141,
+      "validation_diversity": 0.62,
+      "context_breadth": 0.47,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.37,
+      "documentation_quality": 0.5
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.601
+  }
+}

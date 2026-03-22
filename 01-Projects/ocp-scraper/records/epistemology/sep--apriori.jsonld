@@ -1,0 +1,702 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/apriori",
+  "meta": {
+    "title": "A Priori Justification and Knowledge",
+    "description": "A priori justification is a type of epistemic justification that is, in some sense, independent of experience. Gettier examples have led most philosophers to think that having a justified true belief is not sufficient for knowledge ( see Section 4.4, below, and the examples there), but many still believe that it is necessary. In this entry, it will be assumed, for the most part, that even though justification is not sufficient for knowledge it is necessary and that a priori knowledge is knowledge based on a priori justification. So much of the discussion will focus on a priori justification. There are a variety of views about whether a priori justification requires some sort of evidence or whether, instead, some propositions can be \"default reasonable\", or that a person can be entitled to accept certain propositions independent of any evidence, perhaps because they are reasonable presuppositions of some area of inquiry. Philosophers who think that a priori justification requires evidence differ about the details. Some think that a priori evidence can be defeated (overridden or undercut) by other evidence, including evidence from sensory observations. There are a variety of views about whether a priori justification, and knowledge, must be only of propositions about what is possible or necessary, and if necessary, only of analytic propositions, that is, propositions that are in some sense \"true in virtue of their meaning\" (as in examples 1a-8a , below). Those who think that a priori justification requires evidence often think that the evidence is provided by rational intuitions or insights, but there is disagreement about the nature of those intuitions or insights, and critics deny that they really do constitute evidence. The following list indicates the topics that will be presented and addressed.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T03:21:40.385Z",
+    "dateModified": "2026-03-22T03:21:40.385Z",
+    "datePublished": "2007-12-08T13:00:00.000Z",
+    "keywords": [
+      "analytic synthetic",
+      "epistemology naturalized",
+      "experimental philosophy",
+      "natural kinds",
+      "rationalism empiricism",
+      "reasoning defeasible",
+      "reliabilism"
+    ]
+  },
+  "problemSolved": {
+    "statement": "A priori justification is a type of epistemic justification that is, in some sense, independent of experience. Gettier examples have led most philosophers to think that having a justified true belief is not sufficient for knowledge ( see Section 4.4, below, and the examples there), but many still believe that it is necessary. In this entry, it will be assumed, for the most part, that even though justification is not sufficient for knowledge it is necessary and that a priori knowledge is knowledge based on a priori justification. So much of the discussion will focus on a priori justification. There are a variety of views about whether a priori justification requires some sort of evidence or whether, instead, some propositions can be \"default reasonable\", or that a person can be entitled to accept certain propositions independent of any evidence, perhaps because they are reasonable presuppositions of some area of inquiry. Philosophers who think that a priori justification requires evidence differ about the details. Some think that a priori evidence can be defeated (overridden or undercut) by other evidence, including evidence from sensory observations. There are a variety of views about whether a priori justification, and knowledge, must be only of propositions about what is possible or necessary, and if necessary, only of analytic propositions, that is, propositions that are in some sense \"true in virtue of their meaning\" (as in examples 1a-8a , below). Those who think that a priori justification requires evidence often think that the evidence is provided by rational intuitions or insights, but there is disagreement about the nature of those intuitions or insights, and critics deny that they really do constitute evidence. The following list indicates the topics that will be presented and addressed.",
+    "context": "Opening section: 1. Examples that illustrate the difference between a priori and a posteriori (empirical) justification | Related entries: analytic-synthetic, epistemology-naturalized, experimental-philosophy, natural-kinds, rationalism-empiricism, reasoning-defeasible, reliabilism",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "epistemology",
+    "logic",
+    "general-philosophy"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry apriori",
+        "uri": "https://plato.stanford.edu/entries/apriori/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 7 related entries, bibliography size 156"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2007-12-08T13:00:00.000Z and revised 2020-05-05T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2020-05-05T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/apriori/",
+        "description": "SEP entry for apriori"
+      }
+    ],
+    "solutionApproach": "1. Examples that illustrate the difference between a priori and a posteriori (empirical) justification"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/analytic-synthetic",
+      "ocp:sep/epistemology-naturalized",
+      "ocp:sep/experimental-philosophy",
+      "ocp:sep/natural-kinds",
+      "ocp:sep/rationalism-empiricism",
+      "ocp:sep/reasoning-defeasible",
+      "ocp:sep/reliabilism"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Russell, Bruce",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/apriori/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 107,
+      "validation_diversity": 0.41,
+      "context_breadth": 0.4,
+      "temporal_stability": 0.84,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.89
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.525
+  },
+  "extensions": {
+    "sep": {
+      "slug": "apriori",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/apriori/",
+      "preamble": "A priori justification is a type of epistemic justification that is, in some sense, independent of experience. Gettier examples have led most philosophers to think that having a justified true belief is not sufficient for knowledge ( see Section 4.4, below, and the examples there), but many still believe that it is necessary. In this entry, it will be assumed, for the most part, that even though justification is not sufficient for knowledge it is necessary and that a priori knowledge is knowledge based on a priori justification. So much of the discussion will focus on a priori justification. There are a variety of views about whether a priori justification requires some sort of evidence or whether, instead, some propositions can be \"default reasonable\", or that a person can be entitled to accept certain propositions independent of any evidence, perhaps because they are reasonable presuppositions of some area of inquiry. Philosophers who think that a priori justification requires evidence differ about the details. Some think that a priori evidence can be defeated (overridden or undercut) by other evidence, including evidence from sensory observations. There are a variety of views about whether a priori justification, and knowledge, must be only of propositions about what is possible or necessary, and if necessary, only of analytic propositions, that is, propositions that are in some sense \"true in virtue of their meaning\" (as in examples 1a-8a , below). Those who think that a priori justification requires evidence often think that the evidence is provided by rational intuitions or insights, but there is disagreement about the nature of those intuitions or insights, and critics deny that they really do constitute evidence. The following list indicates the topics that will be presented and addressed.",
+      "firstSectionTitle": "1. Examples that illustrate the difference between a priori and a posteriori (empirical) justification",
+      "firstSectionText": "A priori justification is a certain kind of justification often contrasted with empirical, or a posteriori , justification. Roughly speaking, a priori justification provides reasons for thinking a proposition is true that comes from merely understanding, or thinking about, that proposition. In contrast, a posteriori justification requires more than merely understanding a proposition. Observations based on our senses, or introspection about our current mental state, are needed for us to be empirically, or a posteriori , justified in believing that some proposition is true. Examples below bring out the contrast. The first proposition in each group is a prime candidate for being a priori justified, if justified at all, while the other propositions are prime candidates for being a posteriori justified, if justified at all. Some of the propositions are false, but that does not mean that we could not be justified in believing them before we had evidence that they are false. In each example, it is possible for someone to be justified in believing the first member in a way that is different from how it is possible for someone to be justified in believing the other members of the example. The way the first members can be justified is called a priori ; the way the other members can be justified is called a posteriori (or empirically). The first question to discuss is what sorts of propositions can be a priori justified and known.",
+      "relatedEntries": [
+        "analytic-synthetic",
+        "epistemology-naturalized",
+        "experimental-philosophy",
+        "natural-kinds",
+        "rationalism-empiricism",
+        "reasoning-defeasible",
+        "reliabilism"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "analytic-synthetic"
+        },
+        {
+          "slug": "epistemology-naturalized"
+        },
+        {
+          "slug": "experimental-philosophy"
+        },
+        {
+          "slug": "natural-kinds"
+        },
+        {
+          "slug": "rationalism-empiricism"
+        },
+        {
+          "slug": "reasoning-defeasible"
+        },
+        {
+          "slug": "reliabilism"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 156,
+      "bibliography": [
+        {
+          "raw": "Audi, Robert, 1997, Moral Knowledge and Ethical Character , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2001, The Architecture of Reason: The Structure and Substance of Rationality , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780195158427.001.0001"
+        },
+        {
+          "raw": "Bealer, George, 1987, \"The Philosophical Limits of Scientific Essentialism\", Philosophical Perspectives , 1: 289-365. doi:10.2307/2214149"
+        },
+        {
+          "raw": "---, 1992, \"The Incoherence of Empiricism\", Aristotelian Society Supplementary Volume , 66: 99-137. doi:10.1093/aristoteliansupp/66.1.99"
+        },
+        {
+          "raw": "---, 1996a, \" A Priori Knowledge and the Scope of Philosophy\" and \" A Priori Knowledge: Replies to William Lycan and Ernest Sosa\", Philosophical Studies , 81)2-3): 121-142 and 163-174, respectively; Bealer's essay is reprinted in 2008, Epistemology: An Anthology , 2 edition, Ernest Sosa, et al. (eds.), Malden, MA: Blackwell Publishing Ltd, pp. 612-624. doi:10.1007/BF00372777 doi:10.1007/BF00372780"
+        },
+        {
+          "raw": "---, 1996b, \"On the Possibility of Philosophical Knowledge\", Philosophical Perspectives , 10: 1-34. doi:10.2307/2216234"
+        },
+        {
+          "raw": "---, 1998, \"Intuition and the Autonomy of Philosophy\", in DePaul and Ramsey 1998: 201-239."
+        },
+        {
+          "raw": "---, 1999, \"The A Priori\", in Greco and Sosa 1999: 243-270."
+        },
+        {
+          "raw": "Beebe, James R., 2011, \" A Priori Skepticism\", Philosophy and Phenomenological Research , 83(3): 583-602. doi:10.1111/j.1933-1592.2010.00488.x"
+        },
+        {
+          "raw": "---, 2012, \"Experimental Epistemology\", in Cullison 2012: 248-269 (Ch. 13)."
+        },
+        {
+          "raw": "Boghossian, Paul, 2001, \"Inference and Insight\", Philosophy and Phenomenological Research , 63(3): 633-640. doi:10.1111/j.1933-1592.2001.tb00130.x"
+        },
+        {
+          "raw": "---, 2020a, \"Do We Have Reason to Doubt the Importance of the Distinction Between A Priori and A Posteriori Knowledge? A Reply to Williamson\", in Boghossian and Williamson 2020."
+        },
+        {
+          "raw": "---, 2020b, \"Intuition, Understanding, and the A Priori\", in Boghossian and Williamson 2020."
+        },
+        {
+          "raw": "Boghossian, Paul and Christopher Peacocke (eds.), 2000, New Essays on the A Priori , Oxford: Clarendon Press. doi:10.1093/0199241279.001.0001"
+        },
+        {
+          "raw": "Boghossian, Paul and Timothy Williamson, 2020, Debating the A Priori , New York: Oxford University Press."
+        },
+        {
+          "raw": "BonJour, Laurence, 1985, The Structure of Empirical Knowledge , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "---, 1998, In Defense of Pure Reason: A Rationalist Account of A Priori Justification , Cambridge: Cambridge University Press. doi:10.1017/CBO9780511625176"
+        },
+        {
+          "raw": "---, 2001a, \"Pr&eacute;cis of In Defense of Pure Reason \" and \"Replies\", Philosophy and Phenomenological Research , 63(3): 625-631, 673-698. Part of a Book Symposium on BonJour's In Defense of Pure Reason . doi:10.1111/j.1933-1592.2001.tb00129.x doi:10.1111/j.1933-1592.2001.tb00135.x"
+        },
+        {
+          "raw": "---, 2001b, \"Review of Rethinking Intuition: The Psychology of Intuition and Its Role in Philosophical Inquiry \" (DePaul and Ramsey 1998), The British Journal for the Philosophy of Science , 52(1): 151-158. doi:10.1093/bjps/52.1.151"
+        },
+        {
+          "raw": "---, 2005a, \"In Defense of the A Priori \", in Steup and Sosa 2005: 98-105."
+        },
+        {
+          "raw": "---, 2005b, \"Reply to Devitt\", in Steup and Sosa 2005: 115-118."
+        },
+        {
+          "raw": "---, 2005c, \"Last Rejoinder\", in Steup and Sosa 2005: 120-121."
+        },
+        {
+          "raw": "Butchvarov, Panyot, 1970, The Concept of Knowledge , Evanston, IL: Northwestern University Press."
+        },
+        {
+          "raw": "Cappelen, Herman, 2012, Philosophy Without Intuitions , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Casullo, Albert, 2001, \"Experience and A Priori Justification\", Philosophy and Phenomenological Research , 63(3): 665-671. doi:10.1111/j.1933-1592.2001.tb00134.x"
+        },
+        {
+          "raw": "---, 2002, \"A Priori Knowledge\", in The Oxford Handbook of Epistemology , Paul Moser (ed.), Oxford: Oxford University Press, 95-143. This is a condensed version of Casullo 2003."
+        },
+        {
+          "raw": "---, 2003, A Priori Justification , Oxford: Oxford University Press. doi:10.1093/0195115058.001.0001"
+        },
+        {
+          "raw": "---, 2009, \"Analyzing a Priori Knowledge\", Philosophical Studies , 142(1): 77-90. doi:10.1007/s11098-008-9302-5"
+        },
+        {
+          "raw": "---, 2012a, Essays on A Priori Knowledge and Justification , New York: Oxford University Press. This is a collection of Casullo's previously published essays, plus four unpublished essays and an annotated bibliography on a priori knowledge. doi:10.1093/acprof:oso/9780199777860.001.0001"
+        },
+        {
+          "raw": "---, 2012b, \"Intuitions, Thought Experiments, and the A Priori\", in Casullo 2012a: 233-250."
+        },
+        {
+          "raw": "---, 2012c, \"Articulating the A Priori-A Posteriori Distinction\", in Casullo 2012a: 289-327."
+        },
+        {
+          "raw": "---, 2013, \"Articulating the A Priori-A Posteriori Distinction\", in Casullo and Thurow 2013: 248-271 (Ch. 11). doi:10.1093/acprof:oso/9780199695331.003.0012"
+        },
+        {
+          "raw": "Casullo, Albert and Joshua C. Thurow (eds.), 2013, The A Priori in Philosophy , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199695331.001.0001"
+        },
+        {
+          "raw": "Chisholm, Roderick, 1989, Theory of Knowledge , 3 edition, Englewood Cliffs, NJ: Prentice Hall, Inc."
+        },
+        {
+          "raw": "Christensen, David and Jennifer Lackey (eds.), 2013, The Epistemology of Disagreement: New Essays , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199698370.001.0001"
+        },
+        {
+          "raw": "Chudnoff, Elijah, 2011a, \"What Intuitions Are Like\", Philosophy and Phenomenological Research , 82(3): 625-654. doi:10.1111/j.1933-1592.2010.00463.x"
+        },
+        {
+          "raw": "---, 2011b, \"The Nature of Intuitive Justification\", Philosophical Studies , 153(2): 313-333. doi:10.1007/s11098-010-9495-2"
+        },
+        {
+          "raw": "---, 2013a, \"Intuitive Knowledge\", Philosophical Studies , 162(2): 359-378. doi:10.1007/s11098-011-9770-x"
+        },
+        {
+          "raw": "---, 2013b, Intuition , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199683000.001.0001"
+        },
+        {
+          "raw": "---, 2014a, \"Intuition in Mathematics\", in Rational Intuition , Lisa M. Osbeck and Barbara S. Held (eds.), New York: Cambridge University Press, 174-191. doi:10.1017/CBO9781139136419.010"
+        },
+        {
+          "raw": "---, 2014b, \"Is Intuition Based On Understanding?\", Philosophy and Phenomenological Research , 89(1): 42-67. doi:10.1111/phpr.12001"
+        },
+        {
+          "raw": "---, 2016, \"Intuition, Presentational Phenomenology, and Awareness of Abstract Objects: Replies to Manning and Witmer\", Florida Philosophical Review , 16(1): 117-127."
+        },
+        {
+          "raw": "---, 2017, \"The Reality of the Intuitive\", Inquiry: An Interdisciplinary Journal of Philosophy , 60(4): 371-385. doi:10.1080/0020174X.2016.1220640"
+        },
+        {
+          "raw": "---, 2018, \"Intuition in Gettier\", in Classical Philosophical Arguments: The Gettier Problem , Stephen Hetherington (ed.), Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 2020, \"In Search of Intuition\", Australasian Journal of Philosophy , 98(3): 465-480. doi:10.1080/00048402.2019.1658121"
+        },
+        {
+          "raw": "Cullison, Andrew (ed.), 2012, The Continuum Companion to Epistemology , London: Continuum Press."
+        },
+        {
+          "raw": "Cummins, Robert, 1998, \"Reflection on Reflective Equilibrium\", in DePaul and Ramsey 1998: 113-127."
+        },
+        {
+          "raw": "DePaul, Michael and William Ramsey (eds.), 1998, Rethinking Intuition: The Psychology of Intuition and Its Role in Philosophical Inquiry , Lanham, MD: Rowman and Littlefield Publishers, Inc."
+        },
+        {
+          "raw": "Devitt, Michael, 2006a, \"There is No a Priori \", in Steup and Sosa 2005: 105-115."
+        },
+        {
+          "raw": "---, 2006b, \"Reply to BonJour\", in Steup and Sosa 2005: 118-120."
+        },
+        {
+          "raw": "Donnellan, Keith S., 1977, \"The Contingent A Priori and Rigid Designators\", in Midwest Studies in Philosophy Volume II: Studies in the Philosophy of Language , Peter A. French, Theodore E. Uehling, Jr., and Howard K. Wettstein (eds.), Morris, MN: University of Minnesota Press, pp. 12-27. doi:10.1111/j.1475-4975.1977.tb00025.x"
+        },
+        {
+          "raw": "Evans, Gareth, 1979, \"Reference and Contingency\":, Monist , 62(2): 161-189. doi:10.5840/monist197962220"
+        },
+        {
+          "raw": "Feldman, Richard, 1999, \"Methodological Naturalism in Epistemology\", in Greco and Sosa 1999: 170-186."
+        },
+        {
+          "raw": "---, 2003, Epistemology , Upper Saddle River, NJ: Prentice Hall"
+        },
+        {
+          "raw": "---, 2006, \"Epistemological Puzzles about Disagreement\", in Hetherington 2006: 216-236."
+        },
+        {
+          "raw": "Feldman, Richard and Ted A. Warfield (eds.), 2010, Disagreement , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199226078.001.0001"
+        },
+        {
+          "raw": "Field, Hartry, 2000, \"Aprioricity as an Evaluative Notion\", in Boghossian and Peacocke 2000: 117-149. doi:10.1093/0199241279.003.0006"
+        },
+        {
+          "raw": "Gendler, Tamar Szab&oacute;, 2000, Thought Experiment: On the Powers and Limits of Imaginary Cases , New York: Routledge."
+        },
+        {
+          "raw": "---, 2001, \"Empiricism, Rationalism and the Limits of Justification\", Philosophy and Phenomenological Research , 63(3): 641-648. doi:10.1111/j.1933-1592.2001.tb00131.x"
+        },
+        {
+          "raw": "Gettier, Edmund L., 1963, \"Is Justified True Belief Knowledge?\", Analysis , 23(6): 121-123. doi:10.1093/analys/23.6.121"
+        },
+        {
+          "raw": "Goldberg, Sanford C., 2009, \"Reliabilism in Philosophy\", Philosophical Studies , 142(1): 105-117. doi:10.1007/s11098-008-9300-7"
+        },
+        {
+          "raw": "---, 2013, \"Defending Philosophy in the Face of Systematic Disagreement\", in Machuca 2013: 277-294."
+        },
+        {
+          "raw": "Goldman, Alvin I., 2007, \"Philosophical Intuitions: Their Target, Their Source, and Their Epistemic Status\", Grazer Philosophische Studien , 74(1): 1-26. doi:10.1163/9789401204651_002"
+        },
+        {
+          "raw": "---, 2012, \"Philosophical Naturalism and Intuitional Methodology\", in his Reliabilism and Contemporary Epistemology: Essays , Oxford: Oxford University Press, pp. 280-316 (Ch. 11)."
+        },
+        {
+          "raw": "---, 2013, \"Philosophical Naturalism and Intuitional Methodology\", in Casullo and Thurow 2013: 11-44 (Ch. 1). doi:10.1093/acprof:oso/9780199695331.003.0002"
+        },
+        {
+          "raw": "Goldman, Alvin and Joel Pust, 1998, \"Philosophical Theory and Intuitional Evidence\", in DePaul and Ramsey 1998: 179-197."
+        },
+        {
+          "raw": "Greco, John and Ernest Sosa (eds.), 1999, The Blackwell Guide to Epistemology , Oxford: Blackwell Publishers Ltd."
+        },
+        {
+          "raw": "Harman, Gilbert, 1994 [1999], \"Doubts About Conceptual Analysis\", in Philosophy in Mind , Michaelis Michael and John O'Leary-Hawthorne (eds.), Dordrecht: Springer Netherlands, 43-48. Reprinted in Harman 1999a: 138-143. doi:10.1007/978-94-011-1008-2_4"
+        },
+        {
+          "raw": "---, 1999, Reasoning, Meaning, and Mind , Oxford: Clarendon Press. A collection of Harman's earlier essays; chpts. 6 and 7 especially relevant to the issue of a priori knowledge. doi:10.1093/0198238029.001.0001"
+        },
+        {
+          "raw": "---, 2001, \"General Foundations versus Rational Insight\", Philosophy and Phenomenological Research , 63(3): 657-663. Discussion of Lawrence BonJour's In Defense of Pure Reason (1998). doi:10.1111/j.1933-1592.2001.tb00133.x"
+        },
+        {
+          "raw": "---, 2003, \"The Future of the A Priori\", Journal of Philosophical Research , 28(supplement): 23-34. doi:10.5840/jpr_2003_1"
+        },
+        {
+          "raw": "Hauser, Marc, 2006, Moral Minds: How Nature Designed Our Universal Sense of Right and Wrong , New York: Harper Collins. Some of the ideas in this book may have been anticipated by John Mikhail (2011), though published after Hauser's book; see Mikhail entry below."
+        },
+        {
+          "raw": "Hawthorne, John, 2013, \"A Priority and Externalism\", in Internalism and Externalism in Semantics and Epistemology , Sanford Goldberg (ed.), New York: Oxford University Press, pp. 201-218."
+        },
+        {
+          "raw": "Hetherington, Stephen (ed.), 2006, Epistemology Futures , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Huston, Mark, 2003, Intuition: A Discussion of Recent Philosophical Views , Ph.D dissertation, Wayne State University."
+        },
+        {
+          "raw": "Ichikawa, Jonathan Jenkins, \"Experimental Philosophy and Apriority\", in Casullo and Thurow 2013: 45-66 (Ch. 2). doi:10.1093/acprof:oso/9780199695331.003.0003"
+        },
+        {
+          "raw": "Jackson, Frank, 1998, From Metaphysics to Ethics: A Defence of Conceptual Analysis , Oxford: Clarendon Press. doi:10.1093/0198250614.001.0001"
+        },
+        {
+          "raw": "---, 2000, \"Representation, Scepticism, and the A Priori\", in Boghossian and Peacock 2000: 320-332. doi:10.1093/0199241279.003.0013"
+        },
+        {
+          "raw": "Jenkins, Carrie S., 2007, \"Entitlement and Rationality\", Synthese , 157(1): 25-45. doi:10.1007/s11229-006-0012-2"
+        },
+        {
+          "raw": "---, 2008a, Grounding Concepts: An Empirical Basis for Arithmetical Knowledge , New York: Oxford University Press. doi:10.1093/acprof:oso/9780199231577.001.0001"
+        },
+        {
+          "raw": "---, 2008b, \"A Priori Knowledge: Debates and Developments\", Philosophy Compass , 3(3): 436-450. doi:10.1111/j.1747-9991.2008.00136.x"
+        },
+        {
+          "raw": "---, 2010a, \"Apriorism About Modality: Reply to Scott Sturgeon\", in Modality: Metaphysics, Logic, and Epistemology , Bob Hale and Aviv Hoffman (eds.), New York: Oxford University Press, pp. 310-317."
+        },
+        {
+          "raw": "---, 2010b, \"Concepts, Experience and Modal Knowledge\", Philosophical Perspectives , 24: 255-279. doi:10.1111/j.1520-8583.2010.00193.x"
+        },
+        {
+          "raw": "---, 2012a, \"A Priori Knowledge: The Conceptual Approach\", in Cullison 2012: 180-198."
+        },
+        {
+          "raw": "---, 2013, \"Naturalistic Challenges to the A Priori\", in Casullo and Thurow 2013: 274-290 (Ch. 12). doi:10.1093/acprof:oso/9780199695331.003.0013"
+        },
+        {
+          "raw": "Kahneman, Daniel, 2011, Thinking, Fast and Slow , London, Penguin Books."
+        },
+        {
+          "raw": "Kant, Immanuel, 1787 [1965], Critique of Pure Reason , Norman Kemp Smith (transl.), New York: St. Martin's Press, 1965."
+        },
+        {
+          "raw": "Kitcher, Philip, 1983, The Nature of Mathematical Knowledge , New York: Oxford University Press. doi:10.1093/0195035410.001.0001"
+        },
+        {
+          "raw": "Kornblith, Hilary, 1998, \"The Role of Intuition in Philosophical Inquiry: An Account with No Unnatural Ingredients\", in DePaul and Ramsey 1998: 129-141."
+        },
+        {
+          "raw": "---, 1999, \"In Defense of Naturalized Epistemology\", in Greco and Sosa 1999: 158-169."
+        },
+        {
+          "raw": "---, 2000, \"The Impurity of Reason\", Pacific Philosophical Quarterly , 81(1): 67-89. doi:10.1111/1468-0114.00095"
+        },
+        {
+          "raw": "---, 2005, \"Pr&eacute;cis of Knowledge and Its Place in Nature \" and \"Replies to Alvin Goldman, Martin Kusch and William Talbott\", Philosophy and Phenomenological Research , 71(2): 399-402 and 427-441. doi:10.1111/j.1933-1592.2005.tb00456.x doi:10.1111/j.1933-1592.2005.tb00460.x"
+        },
+        {
+          "raw": "---, 2006, \"Intuitions and Epistemology\", in Hetherington 2006: 10-25."
+        },
+        {
+          "raw": "---, 2009, \"Review: Timothy Williamson's The Philosophy of Philosophy \", Analysis , 69(1): 109-116. doi:10.1093/analys/ann039"
+        },
+        {
+          "raw": "---, 2010, \"Belief in the Face of Controversy\", in Feldman and Warfield 2010: 29-52."
+        },
+        {
+          "raw": "---, 2013, \"Is Philosophical Knowledge Possible?\" in Machuca 2013: 260-276 (Ch. 13)."
+        },
+        {
+          "raw": "Kripke, Saul, 1972, \"Naming and Necessity\", in Semantics of Natural Language , Donald Davidson and Gilbert Harman (eds.), Dordrecht: D. Reidel, pp. 253-355. doi:10.1007/978-94-010-2557-7_9"
+        },
+        {
+          "raw": "Lehrer, Keith, 1986, \"The Coherence Theory of Knowledge\":, Philosophical Topics , 14(1): 5-25. doi:10.5840/philtopics198614112"
+        },
+        {
+          "raw": "---, 1990, Theory of Knowledge , Boulder, CO: West View Press, Inc."
+        },
+        {
+          "raw": "---, 1996, \"Proper Function versus Systematic Coherence\", in Warrant in Contemporary Epistemology: Essays in Honor of Plantinga's Theory of Knowledge , Jonathan L. Kvanvig (ed.), Lanham, MD: Rowman & Littlefield Publishers, Inc., pp. 25-45."
+        },
+        {
+          "raw": "Lycan, William G., 1996, \"Bealer on the Possibility of Philosophical Knowledge\", Philosophical Studies , 81(2-3): 143-150. doi:10.1007/BF00372778"
+        },
+        {
+          "raw": "---, 2006, \"On the Gettier Problem problem\", in Hetherington 2006: 148-168."
+        },
+        {
+          "raw": "Machuca, Diego E. (ed.), 2013, Disagreement and Skepticism , Hoboken, NJ: Taylor and Francis. doi:10.4324/9780203073346"
+        },
+        {
+          "raw": "Malmgren, Anna-Sara, 2011, \"Rationalism and the Content of Intuitive Judgements\", Mind , 120(478): 263-327. doi:10.1093/mind/fzr039"
+        },
+        {
+          "raw": "---, 2013a, \"Review of Herman Cappelen's Philosophy Without Intuitions (Cappelen 2012)\", Notre Dame Philosophical Review , 2013.04.27."
+        },
+        {
+          "raw": "---, 2013b, \"A Priori Testimony Revisited\", in Casullo and Thurow 2013: 158-185 (Ch. 7). doi:10.1093/acprof:oso/9780199695331.003.0008"
+        },
+        {
+          "raw": "McKinsey, Michael, 1987, \"Apriorism in the Philosophy of Language\", Philosophical Studies , 52(1): 1-32. doi:10.1007/BF00354156"
+        },
+        {
+          "raw": "Mikhail, John, 2011, Elements of Moral Cognition: Rawls' Linguistic Analogy and the Cognitive Science of Moral and Legal Judgment , Cambridge: Cambridge University Press. doi:10.1017/CBO9780511780578"
+        },
+        {
+          "raw": "Parfit, Derek, 1984, Reasons and Persons , New York: Oxford University Press."
+        },
+        {
+          "raw": "---, 2011, On What Matters (Volume 2), New York: Oxford University Press."
+        },
+        {
+          "raw": "Peacocke, Christopher, 2000, \"Explaining the A Priori: The Programme of Moderate Rationalism\", in Boghossian and Peacocke 2000: 255-285. doi:10.1093/0199241279.003.0011"
+        },
+        {
+          "raw": "Philosophical Studies , 1998, 92(1-2), guest editor, John O'Leary-Hawthorne. This entire issue is devoted to the topic of a priori knowledge."
+        },
+        {
+          "raw": "Plantinga, Alvin, 2011, Where the Conflict Really Lies: Science, Religion, and Naturalism , New York: Oxford University Press. doi:10.1093/acprof:oso/9780199812097.001.0001"
+        },
+        {
+          "raw": "Putnam, Hilary, 1983, \"&thinsp;'Two Dogmas' Revisited\", in Realism and Reason: Philosophical Papers , vol. 3, Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Quine, Willard Van Orman, 1963, From A Logical Point of View , New York: Harper & Row, Harper Torchbook."
+        },
+        {
+          "raw": "Railton, Peter, 2017a, \"Two Sides of the Meta-Ethical Mountain\", in Singer 2017: 35-59. doi:10.1093/acprof:oso/9780199653836.003.0002"
+        },
+        {
+          "raw": "---, 2017b, \"Railton's Commentary\", in Derek Parfit, On What Matters , Vol. III, Oxford: Oxford University Press, 113-127."
+        },
+        {
+          "raw": "Rey, Georges, 2001, \"Digging Deeper for the A Priori\", Philosophy and Phenomenological Research , 63(3): 649-656. doi:10.1111/j.1933-1592.2001.tb00132.x"
+        },
+        {
+          "raw": "---, 1998, \"A Naturalistic A Priori\", Philosophical Studies , 92(1/2): 25-43. doi:10.1023/A:1017155400164"
+        },
+        {
+          "raw": "Russell, Bruce, 2010, \"Intuition in Epistemology\", in A Companion to Epistemology , 2 edition, Jonathan Dancy, Ernest Sosa, and Matthias Steup (eds.), Malden, MA: Wiley-Blackwell, pp. 464-68."
+        },
+        {
+          "raw": "---, 2012, \"Rock Bottom: Coherentism's Soft Spot\", The Southern Journal of Philosophy , 50(1): 94-111. doi:10.1111/j.2041-6962.2011.00085.x"
+        },
+        {
+          "raw": "---, 2013, \"Moral Intuitionism\", in the International Encyclopedia of Ethics , Hugh LaFollette (ed.), New York: Routledge."
+        },
+        {
+          "raw": "---, 2017 \"A Defense of Moral Intuitionism\", in Singer 2017: 231-258. doi:10.1093/acprof:oso/9780199653836.003.0011"
+        },
+        {
+          "raw": "---, 2018, \"Philosophical intuition: just what is 'a priori' justification?\" Aeon , 2 March 2018. URL = https://aeon.co/ideas/philosophical-intuition-just-what-is-a-priori-justification >"
+        },
+        {
+          "raw": "Russell, Gillian, 2008, Truth in Virtue of Meaning: A Defence of the Analytic/Synthetic Distinction , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199232192.001.0001"
+        },
+        {
+          "raw": "Schwitzgebel, Eric and Fiery Cushman, 2012, \"Expertise in Moral Reasoning? Order Effects on Moral Judgment in Professional Philosophers and Non-Philosophers\", Mind & Language , 27(2): 135-153. doi:10.1111/j.1468-0017.2012.01438.x"
+        },
+        {
+          "raw": "---, 2015, \"Philosophers' Biased Judgments Persist despite Training, Expertise and Reflection\", Cognition , 141: 127-137. doi:10.1016/j.cognition.2015.04.015"
+        },
+        {
+          "raw": "Singer, Peter (ed.), 2017, Does Anything Really Matter? Essays on Parfit on Objectivity , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199653836.001.0001"
+        },
+        {
+          "raw": "Sosa, Ernest, 1996, \"Rational Intuition: Bealer on Its Nature and Epistemic Status\", Philosophical Studies , 81(2-3): 151-162. doi:10.1007/BF00372779"
+        },
+        {
+          "raw": "---, 1998, \"Minimal Intuition\", in DePaul and Ramsey 1998: 257-269."
+        },
+        {
+          "raw": "---, 2013, \"Intuitions and Foundations: The Relevance of Moore and Wittgenstein\", in Casullo and Thurow 2013: 186-200 (Ch. 8). doi:10.1093/acprof:oso/9780199695331.003.0009"
+        },
+        {
+          "raw": "Sosa, Ernest and Enrique Villanueva (eds.), 2004, Epistemology: Philosophical Issues, Volume 14 , Malden, MA: Blackwell Publishing, Ltd."
+        },
+        {
+          "raw": "Steup, Matthias and Ernest Sosa (eds.), 2005, Contemporary Debates in Epistemology , Malden, MA: Blackwell Publishing Ltd."
+        },
+        {
+          "raw": "Steup, Matthias, John Turri, and Ernest Sosa (eds.), 2014, Contemporary Debates in Epistemology ,2 edition, Malden, MA: Wiley Blackwell."
+        },
+        {
+          "raw": "Stratton-Lake, Philip (ed.), 2002, Ethical Intuitionism: Re-Evaluations , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Thomson, Judith Jarvis, 1990, \"Introduction\" to The Realm of Rights , Cambridge, MA: Harvard University Press, pp. 1-33."
+        },
+        {
+          "raw": "Thurow, Joshua C., 2013, \"The Implicit Conception and Intuition Theory of the A Priori, With Implications for Experimental Philosophy\", in Casullo and Thurow 2013: 67-91 (Ch. 3). doi:10.1093/acprof:oso/9780199695331.003.0004"
+        },
+        {
+          "raw": "Turri, John, 2011, \"Contingent A Priori Knowledge\", Philosophy and Phenomenological Research , 83(2): 327-44."
+        },
+        {
+          "raw": "---, 2018, \"Experimental Epistomology and 'Gettier Cases'&thinsp;\", in S. Hetherington (ed.), The Gettier Problem , Cambridge: Cambridge University Press: 199-217."
+        },
+        {
+          "raw": "Unger, Peter, 1996, Living High and Letting Die: Our Illusion of Innocence , New York: Oxford University Press. doi:10.1093/0195108590.001.0001"
+        },
+        {
+          "raw": "Weatherson, Brian, 2003, \"What Good Are Counterexamples?\", Philosophical Studies , 115(1): 1-31. doi:10.1023/A:1024961917413"
+        },
+        {
+          "raw": "---, 2017, \"Analytic-Synthetic and A Priori-A Posteriori History\", in The Oxford Handbook of Philosophical Methodology , Herman Cappelen, Tamar Szab&oacute; Gendler, and John Hawthorne (eds.), Oxford: Oxford University Press, 231-248. doi:10.1093/oxfordhb/9780199668779.013.24"
+        },
+        {
+          "raw": "---, 2019, \"Normative Externalism\", New York: Oxford University Press."
+        },
+        {
+          "raw": "Weinberg, Jonathan M., 2003, \"Meta-Skepticism in Ethno-Epistemology\", in The Skeptics: Contemporary Essays , Steven Luper (ed.), Aldershot, England: Ashgate Publishing, pp. 227-247."
+        },
+        {
+          "raw": "---, 2006, \"What's Epistemology For? The Case for Neopragmatism in Normative Metaepistemology\" in Hetherington 2006: 26-47."
+        },
+        {
+          "raw": "---, 2013, \"The Prospects for an Experimentalist Rationalism or Why It's OK if the A Priori is only 99.44 Percent Empirically Pure\", in Casullo and Thurow 2013: 92-108 (Ch. 4). doi:10.1093/acprof:oso/9780199695331.003.0005"
+        },
+        {
+          "raw": "---, 2017, \"Intuitions\", in The Oxford Handbook of Philosophical Methodology , Herman Cappelen, Tamar Szab&oacute; Gendler, and John Hawthorne (eds.), Oxford: Oxford University Press, 282-308. doi:10.1093/oxfordhb/9780199668779.013.25"
+        },
+        {
+          "raw": "Weinberg, Jonathan M., Shaun Nichols, and Stephen Stich, 2001, \"Normativity and Epistemic Intuitions\", Philosophical Topics , 29(1): 429-460. doi:10.5840/philtopics2001291/217"
+        },
+        {
+          "raw": "Williamson, Timothy, 2004, \"Philosphical 'Intuitions' and Scepticism about Judgement\", Dialectica , 58(1): 109-153. doi:10.1111/j.1746-8361.2004.tb00294.x"
+        },
+        {
+          "raw": "---, 2005, \"Armchair Philosophy, Metaphysical Modality and Counterfactual Thinking\", Proceedings of the Aristotelian Society , 105(1): 1-23. doi:10.1111/j.0066-7373.2004.00100.x"
+        },
+        {
+          "raw": "---, 2007a, \"Philosophical Knowledge and Knowledge of Counterfactuals\", Grazer Philosophische Studien , 74(1): 89-123. doi:10.1163/9789401204651_006"
+        },
+        {
+          "raw": "---, 2013, \"How Deep is the Distinction between A Priori and A Posteriori Knowledge\", in Casullo and Thurow 2013: 291-312 (Ch. 13). doi:10.1093/acprof:oso/9780199695331.003.0014"
+        },
+        {
+          "raw": "---, 2014, \"Should Knowledge Come First?\" and \"Knowledge Still First\", in Steup, Turri, and Sosa 2014: 1-9 and 22-25."
+        },
+        {
+          "raw": "Wright, Crispin, 2004a, \"Warrant for Nothing (and Foundations for Free)?\", Aristotelian Society Supplementary Volume , 78: 167-212. doi:10.1111/j.0309-7013.2004.00121.x"
+        },
+        {
+          "raw": "---, 2004, \"Intuition, Entitlement and the Epistemology of Logical Laws\", Dialectica , 58(1): 155-175. doi:10.1111/j.1746-8361.2004.tb00295.x"
+        },
+        {
+          "raw": "Wykstra, Stephanie, 2018, \"Out of the Armchair\", Aeon , 1 May 2018. URL = https://aeon.co/essays/beyond-the-armchair-must-philosophy-become-experimental >"
+        }
+      ],
+      "publishedAt": "2007-12-08T13:00:00.000Z",
+      "revisedAt": "2020-05-05T14:00:00.000Z"
+    }
+  }
+}

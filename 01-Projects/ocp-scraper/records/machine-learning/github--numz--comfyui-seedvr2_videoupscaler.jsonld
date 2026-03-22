@@ -1,0 +1,237 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/numz--comfyui-seedvr2_videoupscaler",
+  "meta": {
+    "title": "ComfyUI-SeedVR2_VideoUpscaler",
+    "description": "Official SeedVR2 Video Upscaler for ComfyUI",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T03:10:36.406Z",
+    "dateModified": "2026-03-22T03:10:36.406Z",
+    "keywords": [
+      "ai",
+      "comfyui",
+      "comfyui-nodes",
+      "upscaler",
+      "video-processing"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "[![View Code](https://img.shields.io/badge/📂_View_Code-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler)",
+    "context": "[![View Code](https://img.shields.io/badge/📂_View_Code-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler)\n\nOfficial release of [SeedVR2](https://github.com/ByteDance-Seed/SeedVR) for ComfyUI that enables high-quality video and image upscaling.\n\nCan run as **Multi-GPU standalone CLI** too, see [🖥️ Run as Standalone](#-run-as-standalone-cli) section.\n\n[![SeedVR2 v2.5 Deep Dive Tutorial](https://img.youtube.com/vi/MBtWYXq_r60/maxresdefault.jpg)](https://youtu.be/MBtWYXq_r60)\n\n![Usage Example](docs/usage_01.png)\n\n![Usage Example](docs/usage_02.png)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "media",
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "2239 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "160 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T03:10:36.406Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler",
+        "description": "GitHub repository: numz/ComfyUI-SeedVR2_VideoUpscaler"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "torch",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/torch/"
+      },
+      {
+        "name": "torchvision",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/torchvision/"
+      },
+      {
+        "name": "safetensors",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/safetensors/"
+      },
+      {
+        "name": "numpy",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/numpy/"
+      },
+      {
+        "name": "tqdm",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/tqdm/"
+      },
+      {
+        "name": "psutil",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/psutil/"
+      },
+      {
+        "name": "einops",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/einops/"
+      },
+      {
+        "name": "omegaconf",
+        "version": ">=2.3.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/omegaconf/"
+      },
+      {
+        "name": "diffusers",
+        "version": ">=0.33.1",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/diffusers/"
+      },
+      {
+        "name": "peft",
+        "version": ">=0.17.0",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/peft/"
+      },
+      {
+        "name": "rotary_embedding_torch",
+        "version": ">=0.5.3",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/rotary_embedding_torch/"
+      },
+      {
+        "name": "opencv-python",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/opencv-python/"
+      },
+      {
+        "name": "gguf",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/gguf/"
+      },
+      {
+        "name": "matplotlib",
+        "type": "runtime",
+        "uri": "https://pypi.org/project/matplotlib/"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "numz",
+        "type": "human",
+        "uri": "https://github.com/numz"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 2559,
+      "validation_diversity": 0.36,
+      "context_breadth": 0.42,
+      "temporal_stability": 0.72,
+      "test_coverage": 0.17,
+      "documentation_quality": 0.5
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.465
+  }
+}

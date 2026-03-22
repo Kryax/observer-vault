@@ -1,0 +1,169 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/emilk--egui",
+  "meta": {
+    "title": "🖌 egui: an easy-to-use GUI in pure Rust",
+    "description": "egui: an easy-to-use immediate mode GUI in Rust that runs on both web and native",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:21:24.696Z",
+    "dateModified": "2026-03-11T04:21:24.696Z",
+    "keywords": [
+      "egui",
+      "game-development",
+      "gamedev",
+      "gui",
+      "imgui",
+      "rust",
+      "wasm"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "egui includes optional support for [AccessKit](https://accesskit.dev/), which currently implements the native accessibility APIs on Windows and macOS. This feature is enabled by default in eframe. For platforms that AccessKit doesn't yet support, including web, there is an experimental built-in screen reader; in [the web demo](https://www.egui.rs/#demo) you can enable it in the \"Backend\" tab.",
+    "context": "[<img alt=\"github\" src=\"https://img.shields.io/badge/github-emilk/egui-8da0cb?logo=github\" height=\"20\">](https://github.com/emilk/egui)\n[![Latest version](https://img.shields.io/crates/v/egui.svg)](https://crates.io/crates/egui)\n[![Documentation](https://docs.rs/egui/badge.svg)](https://docs.rs/egui)\n[![unsafe forbidden](https://img.shields.io/badge/unsafe-forbidden-success.svg)](https://github.com/rust-secure-code/safety-dance/)\n[![Build Status](https://github.com/emilk/egui/workflows/Rust/badge.svg)](https://github.com/emilk/egui/actions/workflows/rust.yml)\n[![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/emilk/egui/blob/main/LICENSE-MIT)\n[![Apache](https://img.shields.io/badge/license-Apache-blue.svg)](https://github.com/emilk/egui/blob/main/LICENSE-APACHE)\n[![Discord](https://img.shields.io/discord/900275882684477440?label=egui%20discord)](https://discord.gg/JFcEma9bJq)\n\n\n<div align=\"center\">\n<a href=\"https://www.rerun.io/\"><img src=\"https://github.com/user-attachments/assets/78e79463-4357-461b-bbd1-31aa5ef5e1a2\" width=\"250\"></a>\n\negui development is sponsored by [Rerun](https://www.rerun.io/), a startup building<br>\nan SDK for visualizing streams of multimodal data.\n</div>\n\n---\n\n👉 [Click to run the web demo](https://www.egui.rs/#demo) 👈\n\negui (pronounced \"e-gooey\") is a simple, fast, and highly portable immediate mode GUI library for Rust. egui runs on the web, natively, and [in your favorite game engine](#integrations).\n\negui aims to be the easiest-to-use Rust GUI library, and the simplest way to make a web app in Rust.\n\negui can be used anywhere you can draw textured triangles, which means you can easily integrate it into your game engine of choice.\n\n[`eframe`](https://github.com/emilk/egui/tree/main/crates/eframe) is the official egui framework, which supports writing apps for Web, Linux, Mac, Windows, and Android.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "game-development",
+    "lang:rust"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "28341 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "1975 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:21:24.696Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/emilk/egui",
+        "description": "GitHub repository: emilk/egui"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://www.egui.rs/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Rust"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "emilk",
+        "type": "human",
+        "uri": "https://github.com/emilk"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 32291,
+      "validation_diversity": 0.92,
+      "context_breadth": 0.58,
+      "temporal_stability": 1,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.7
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.826
+  }
+}

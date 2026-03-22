@@ -1,0 +1,237 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/belnadris--angular-electron",
+  "meta": {
+    "title": "Introduction",
+    "description": "Ultra-fast bootstrapping with Angular and Electron :speedboat:",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T09:33:38.660Z",
+    "dateModified": "2026-03-11T09:33:38.660Z",
+    "keywords": [
+      "angular",
+      "angular-routing",
+      "desktop-app",
+      "electron",
+      "hot-reload",
+      "native-libraries",
+      "sass",
+      "typescript",
+      "webpack"
+    ],
+    "license": "MIT"
+  },
+  "problemSolved": {
+    "statement": "Bootstrap and package your project with Angular 21 and Electron 40 (Typescript + SASS + Hot Reload) for creating Desktop applications.",
+    "context": "Bootstrap and package your project with Angular 21 and Electron 40 (Typescript + SASS + Hot Reload) for creating Desktop applications.\n\nCurrently runs with:\n\n- Angular v21.2.0\n- Electron v40.6.1\n\nWith this sample, you can:\n\n- Run your app in a local development environment with Electron & Hot reload\n- Run your app in a production environment\n- Execute your tests with Vitest and Playwright (E2E)\n- Package your app into an executable file for Linux, Windows & Mac\n\n/!\\ Hot reload only pertains to the renderer process. The main electron process is not able to be hot reloaded, only restarted.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "lang:typescript"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "5719 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "1373 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T09:33:38.660Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/belnadris/angular-electron",
+        "description": "GitHub repository: belnadris/angular-electron"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://belnadris.github.io/angular-electron/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "TypeScript"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "@angular/common",
+        "version": "21.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@angular/common"
+      },
+      {
+        "name": "@angular/compiler",
+        "version": "21.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@angular/compiler"
+      },
+      {
+        "name": "@angular/core",
+        "version": "21.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@angular/core"
+      },
+      {
+        "name": "@angular/forms",
+        "version": "21.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@angular/forms"
+      },
+      {
+        "name": "@angular/language-service",
+        "version": "21.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@angular/language-service"
+      },
+      {
+        "name": "@angular/platform-browser",
+        "version": "21.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@angular/platform-browser"
+      },
+      {
+        "name": "@angular/platform-browser-dynamic",
+        "version": "21.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@angular/platform-browser-dynamic"
+      },
+      {
+        "name": "@angular/router",
+        "version": "21.2.0",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/@angular/router"
+      },
+      {
+        "name": "rxjs",
+        "version": "7.8.2",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/rxjs"
+      },
+      {
+        "name": "tslib",
+        "version": "2.8.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/tslib"
+      },
+      {
+        "name": "zone.js",
+        "version": "0.16.1",
+        "type": "runtime",
+        "uri": "https://www.npmjs.com/package/zone.js"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "belnadris",
+        "type": "human",
+        "uri": "https://github.com/belnadris"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 8465,
+      "validation_diversity": 0.63,
+      "context_breadth": 0.66,
+      "temporal_stability": 1,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.75
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.733
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/graphhopper--graphhopper",
+  "meta": {
+    "title": "GraphHopper Routing Engine",
+    "description": "Open source routing engine for OpenStreetMap. Use it as Java library or standalone web server.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:44:57.037Z",
+    "dateModified": "2026-03-11T04:44:57.037Z",
+    "keywords": [
+      "astar",
+      "dijkstra",
+      "directions",
+      "geospatial",
+      "graphhopper",
+      "isochrones",
+      "java",
+      "map-matching",
+      "openstreetmap",
+      "pathfinding",
+      "public-transportation",
+      "routing",
+      "routing-engine"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "GraphHopper supports several routing algorithms, such as \n<a href=\"https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm\">Dijkstra</a> and \n<a href=\"https://en.wikipedia.org/wiki/A*_search_algorithm\">A</a>`*` and its bidirectional variants. \nFurthermore, it allows you to use \n<a href=\"https://en.wikipedia.org/wiki/Contraction_hierarchies\">Contraction Hierarchies</a> (CH) \nvery easily. We call this **speed mode**; without this CH preparation, we call it **flexible mode**.",
+    "context": "![Build Status](https://github.com/graphhopper/graphhopper/actions/workflows/build.yml/badge.svg?branch=master)\n\nGraphHopper is a fast and memory-efficient routing engine released under Apache License 2.0.\nIt can be used as a Java library or standalone web server to calculate the distance, time,\nturn-by-turn instructions and many road attributes for a route between two or more points.\nBeyond this \"A-to-B\" routing it supports [\"snap to road\"](README.md#Map-Matching),\n[Isochrone calculation](README.md#Analysis), [mobile navigation](README.md#mobile-apps) and\n[more](README.md#Features). GraphHopper uses OpenStreetMap and GTFS data by default and it\ncan import [other data sources too](README.md#OpenStreetMap-Support).",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "lang:java"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "6317 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "1889 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:44:57.037Z"
+  },
+  "implementation": {
+    "type": "service",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/graphhopper/graphhopper",
+        "description": "GitHub repository: graphhopper/graphhopper"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://www.graphhopper.com/open-source/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Java"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "graphhopper",
+        "type": "human",
+        "uri": "https://github.com/graphhopper"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 10095,
+      "validation_diversity": 0.71,
+      "context_breadth": 0.7,
+      "temporal_stability": 1,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.85
+    },
+    "confidence": "tested",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.778
+  }
+}

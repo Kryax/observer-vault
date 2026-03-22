@@ -1,0 +1,168 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/cosmian--kms",
+  "meta": {
+    "title": "Cosmian KMS",
+    "description": "A feature-rich, scalable, Key Management System",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:44:57.491Z",
+    "dateModified": "2026-03-11T04:44:57.491Z",
+    "keywords": [
+      "cryptography",
+      "free",
+      "hsm",
+      "key-management",
+      "key-management-service",
+      "key-management-system"
+    ],
+    "license": "NOASSERTION"
+  },
+  "problemSolved": {
+    "statement": "[![CI](https://img.shields.io/github/actions/workflow/status/Cosmian/kms/main.yml?branch=develop&label=CI&logo=github)](https://github.com/Cosmian/kms/actions/workflows/main.yml) [![Tests](https://img.shields.io/github/actions/workflow/status/Cosmian/kms/pr.yml?branch=develop&label=Packaging&logo=github)](https://github.com/Cosmian/kms/actions/workflows/pr.yml) [![Release](https://img.shields.io/github/v/release/Cosmian/kms)](https://github.com/Cosmian/kms/releases) [![Docs](https://img.shields.io/badge/Docs-cosmian.com-0A84FF?logo=readthedocs&logoColor=white)](https://docs.cosmian.com/key_management_system/) [![Container](https://img.shields.io/badge/ghcr.io%2Fcosmian%2Fkms-Image-2496ED?logo=docker&logoColor=white)](https://github.com/Cosmian/kms/pkgs/container/kms) [![Security](https://img.shields.io/badge/Security-Policy-0A84FF?logo=github&logoColor=white)](SECURITY.md) [![License](https://img.shields.io/badge/License-BSL%201.1-blue)](LICENSE) [![FIPS](https://img.shields.io/badge/FIPS%20140--3-Mode-blue)](./documentation/docs/fips.md)",
+    "context": "[![CI](https://img.shields.io/github/actions/workflow/status/Cosmian/kms/main.yml?branch=develop&label=CI&logo=github)](https://github.com/Cosmian/kms/actions/workflows/main.yml) [![Tests](https://img.shields.io/github/actions/workflow/status/Cosmian/kms/pr.yml?branch=develop&label=Packaging&logo=github)](https://github.com/Cosmian/kms/actions/workflows/pr.yml) [![Release](https://img.shields.io/github/v/release/Cosmian/kms)](https://github.com/Cosmian/kms/releases) [![Docs](https://img.shields.io/badge/Docs-cosmian.com-0A84FF?logo=readthedocs&logoColor=white)](https://docs.cosmian.com/key_management_system/) [![Container](https://img.shields.io/badge/ghcr.io%2Fcosmian%2Fkms-Image-2496ED?logo=docker&logoColor=white)](https://github.com/Cosmian/kms/pkgs/container/kms) [![Security](https://img.shields.io/badge/Security-Policy-0A84FF?logo=github&logoColor=white)](SECURITY.md) [![License](https://img.shields.io/badge/License-BSL%201.1-blue)](LICENSE) [![FIPS](https://img.shields.io/badge/FIPS%20140--3-Mode-blue)](./documentation/docs/fips.md)\n\nThe **Cosmian KMS** is a high-performance, source-available [FIPS 140-3 compliant](./documentation/docs/fips.md) server application written in [Rust](https://www.rust-lang.org/).\n\nOnline [documentation](https://docs.cosmian.com/key_management_system/).\n\n![KMS WebUI](./documentation/docs/images/kms-ui.png)\n<p align=\"center\"><em>Built-in Web UI for administration and operations.</em></p>\n\nThe **Cosmian KMS** presents some unique features, such as:\n\n- large-scale encryption and decryption of data [see this documentation](./documentation/docs/encrypting_and_decrypting_at_scale.md)\n- the ability to confidentially run in a public cloud, or any zero-trust environment, using Cosmian VM. See our cloud-ready confidential KMS on the [Azure, GCP, and AWS marketplaces](https://cosmian.com/marketplaces/) our [deployment guide](./documentation/docs/installation/marketplace_guide.md)\n- support of state-of-the-art authentication mechanisms (see [authentication](./documentation/docs/authentication.md))\n- out-of-the-box support of [Google Workspace Client Side Encryption (CSE)](./documentation/docs/google_cse/index.md)\n- out-of-the-box support of [Microsoft Double Key Encryption (DKE)](./documentation/docs/ms_dke/index.md)\n- out-of-the-box support of [AWS External Key Store (XKS) v2](./documentation/docs/aws/xks.md) — Cosmian KMS acts as an XKS proxy; key material never enters AWS\n- out-of-the-box support of [Azure External Key Manager (EKM)](./documentation/docs/azure/ekm/ekm.md) — Cosmian KMS acts as an Azure EKM proxy with mTLS authentication\n- support for the [CardContact SmartCard, Nitrokey HSM 2, Proteccio, Crypt2pay, Utimaco and other HSMs](./documentation/docs/hsms/index.md) with KMS keys wrapped by the HSM\n- [Veracrypt](https://docs.cosmian.com/kms_clients/pkcs11/veracrypt/) and [LUKS](https://docs.cosmian.com/kms_clients/pkcs11/luks/) disk encryption support\n- [FIPS 140-3](./documentation/docs/fips.md) mode gated behind the feature `fips`\n- a [binary and JSON KMIP 1.0-1.4 and 2.0-2.1](./documentation/docs/kmip/index.md) compliant interface\n- [MongoDB](./documentation/docs/mongodb.md)\n- [Mysql Enterprise](./documentation/docs/mysql.md)\n- Oracle DB [TDE support](https://docs.cosmian.com/kms_clients/pkcs11/oracle/tde/)\n- [Percona Postgresql DB](./documentation/docs/percona.md)\n- VMWare [vCenter Trust Key Provider integration](./documentation/docs/vcenter.md)\n- User Defined Functions for [Big Data](./documentation/docs/python_udf/index.md) including [snowflake](./documentation/docs/snowflake/index.md)\n- a full-featured client [command line and graphical interface](https://docs.cosmian.com/kms_clients/)\n- a [high-availability mode](documentation/docs/installation/high_availability_mode.md) with simple horizontal scaling\n- integrated with [OpenTelemetry](https://opentelemetry.io/)\n\nThe **Cosmian KMS** is both a Key Management System and a Public Key Infrastructure. As a KMS, it is designed to manage the lifecycle of keys and provide scalable cryptographic services such as on-the-fly key generation, encryption, and decryption operations.\n\nThe **Cosmian KMS** supports all the standard NIST cryptographic algorithms as well as advanced post-quantum cryptography algorithms such as [Covercrypt](https://github.com/Cosmian/cover_crypt). Please refer to the list of [supported algorithms](./documentation/docs/algorithms.md).\n\nAs a **PKI** it can manage root and intermediate certificates, sign and verify certificates, use their public keys to encrypt and decrypt data. Certificates can be exported under various formats, including _PKCS#12_ modern and legacy flavor, to be used in various applications, such as in _S/MIME_ encrypted emails.\n\nThe **Cosmian KMS** has extensive online [documentation](https://docs.cosmian.com/key_management_system/).",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "security",
+    "cryptography",
+    "lang:html"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "285 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "32 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:44:57.491Z"
+  },
+  "implementation": {
+    "type": "service",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/Cosmian/kms",
+        "description": "GitHub repository: Cosmian/kms"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://docs.cosmian.com/key_management_system/",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "HTML"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Cosmian",
+        "type": "human",
+        "uri": "https://github.com/Cosmian"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 349,
+      "validation_diversity": 0.47,
+      "context_breadth": 0.39,
+      "temporal_stability": 0.85,
+      "test_coverage": 0,
+      "documentation_quality": 0.85
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.288
+  }
+}

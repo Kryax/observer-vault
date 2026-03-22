@@ -1,0 +1,165 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/iclrandd--blackstone",
+  "meta": {
+    "title": "Blackstone [![Built with spaCy](https://img.shields.io/badge/made%20with%20❤%20and-spaCy-09a3d5.svg)](https://spacy.io)",
+    "description": ":black_circle: A spaCy pipeline and model for NLP on unstructured legal text.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:21:28.175Z",
+    "dateModified": "2026-03-11T04:21:28.175Z",
+    "keywords": [
+      "caselaw",
+      "law",
+      "legaltech",
+      "nlp",
+      "spacy-models"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "* So far as we are aware, Blackstone is the first open source model specifically trained for use on long-form texts containing common law entities and concepts.\n* Blackstone is built on [spaCy](https://spacy.io/), which makes it easy to pick up and apply to your own data.\n* Blackstone has been trained on data spanning a considerable temporal period (as early as texts drafted in the 1860s). This is useful because an interesting quirk of the common law is that older writings (particularly, judgments) go on to remain relevant for many, many years. \n* It is free and open source\n* It is imperfect and makes no attempt to hide that fact from you",
+    "context": "Blackstone is a [spaCy](https://spacy.io/) model and library for processing long-form, unstructured legal text. Blackstone is an experimental research project from the [Incorporated Council of Law Reporting for England and Wales'](https://iclr.co.uk/) research lab, [ICLR&D](https://research.iclr.co.uk/). Blackstone was written by [Daniel Hoadley](https://twitter.com/DanHLawReporter).",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "675 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "106 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:21:28.175Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/ICLRandD/Blackstone",
+        "description": "GitHub repository: ICLRandD/Blackstone"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://research.iclr.co.uk",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "ICLRandD",
+        "type": "human",
+        "uri": "https://github.com/ICLRandD"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 887,
+      "validation_diversity": 0.3,
+      "context_breadth": 0.4,
+      "temporal_stability": 0.72,
+      "test_coverage": 0.47,
+      "documentation_quality": 0.6
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.47
+  }
+}

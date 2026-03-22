@@ -1,0 +1,516 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/common-knowledge",
+  "meta": {
+    "title": "Common Knowledge",
+    "description": "A proposition \\(A\\) is mutual knowledge among a set of agents if each agent knows that \\(A\\). Mutual knowledge by itself implies nothing about what, if any, knowledge anyone attributes to anyone else. Suppose each student arrives for a class meeting knowing that the instructor will be late. That the instructor will be late is mutual knowledge, but each student might think only she knows the instructor will be late. However, if one of the students says openly \"Peter told me he will be late again,\" then each student knows that each student knows that the instructor will be late, each student knows that each student knows that each student knows that the instructor will be late, and so on, ad infinitum. The announcement made the mutually known fact common knowledge among the students. Common knowledge is a phenomenon which underwrites much of social life. In order to communicate or otherwise coordinate their behavior successfully, individuals typically require mutual or common understandings or background knowledge. Indeed, if a particular interaction results in \"failure\", the usual explanation for this is that the agents involved did not have the common knowledge that would have resulted in success. If a married couple are separated in a department store, they stand a good chance of finding one another because their common knowledge of each others' tastes and experiences leads them each to look for the other in a part of the store both know that both would tend to frequent. Since the spouses both love cappuccino, each expects the other to go to the coffee bar, and they find one another. But in a less happy case, if a pedestrian causes a minor traffic jam by crossing against a red light, she explains her mistake as the result of her not noticing, and therefore not knowing, the status of the traffic signal that all the motorists knew. The spouses coordinate successfully given their common knowledge, while the pedestrian and the motorists miscoordinate as the result of a breakdown in common knowledge. Given the importance of common knowledge in social interactions, it is remarkable that only quite recently have philosophers and social scientists attempted to analyze the concept. David Hume (1740) was perhaps the first to make explicit reference to the role of mutual knowledge in coordination. In his account of convention in A Treatise of Human Nature , Hume argued that a necessary condition for coordinated activity was that agents all know what behavior to expect from one another. Without the requisite mutual knowledge, Hume maintained, mutually beneficial social conventions would disappear. Much later, J. E. Littlewood (1953) presented some examples of common-knowledge-type reasoning, and Thomas Schelling (1960) and John Harsanyi (1967-1968) argued that something like common knowledge is needed to explain certain inferences people make about each other. The philosopher Robert Nozick describes, but does not develop, the notion in his doctoral dissertation (Nozick 1963), while the first mathematical analysis and application of the notion of common knowledge is found in the technical report by Friedell (1967), then published as (Friedell 1969). The first full-fledged philosophical analysis of common knowledge was offered by David Lewis (1969) in the monograph Convention. Stephen Schiffer (1972), Robert Aumann (1976), and Gilbert Harman (1977) independently gave alternate definitions of common knowledge. Jon Barwise (1988, 1989) gave a precise formulation of Harman's intuitive account. Throughout the 1980s a number of epistemic logicians, both from philosophy and from computer science, studied the logical structure of common knowledge, and the interested reader should consult the relevant portions of the two important monographs (Fagin et al. 1995) and (Meyer and Van der Hoek 1995). Margaret Gilbert (1989) proposed a somewhat different account of common knowledge which she argues is preferable to the standard account. Others have developed accounts of mutual knowledge, approximate common knowledge , and common belief which require less stringent assumptions than the standard account, and which serve as more plausible models of what agents know in cases where strict common knowledge seems impossible (Brandenburger and Dekel 1987, Monderer and Samet 1989, Rubinstein 1992). The analysis and applications of common knowledge and related multi-agent knowledge concepts has become a lively field of research. The purpose of this essay is to overview of some of the most important results stemming from this contemporary research. The topics reviewed in each section of this essay are as follows: Section 1 gives motivating examples which illustrate a variety of ways in which the actions of agents depend crucially upon their having, or lacking, certain common knowledge. Section 2 discusses alternative analyses of common knowledge. Section 3 reviews applications of multi-agent knowledge concepts, particularly to game theory (von Neumann and Morgenstern 1944), in which common knowledge assumptions have been found to have great importance in justifying solution concepts for mathematical games. Section 4 discusses skeptical doubts about the attainability of common knowledge. Finally, Section 5 discusses the common belief concept which result from weakening the assumptions of Lewis' account of common knowledge.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T03:28:14.709Z",
+    "dateModified": "2026-03-22T03:28:14.709Z",
+    "datePublished": "2001-08-27T14:00:00.000Z",
+    "keywords": [
+      "convention",
+      "game theory",
+      "logic epistemic",
+      "prisoner dilemma",
+      "social norms"
+    ]
+  },
+  "problemSolved": {
+    "statement": "A proposition \\(A\\) is mutual knowledge among a set of agents if each agent knows that \\(A\\). Mutual knowledge by itself implies nothing about what, if any, knowledge anyone attributes to anyone else. Suppose each student arrives for a class meeting knowing that the instructor will be late. That the instructor will be late is mutual knowledge, but each student might think only she knows the instructor will be late. However, if one of the students says openly \"Peter told me he will be late again,\" then each student knows that each student knows that the instructor will be late, each student knows that each student knows that each student knows that the instructor will be late, and so on, ad infinitum. The announcement made the mutually known fact common knowledge among the students. Common knowledge is a phenomenon which underwrites much of social life. In order to communicate or otherwise coordinate their behavior successfully, individuals typically require mutual or common understandings or background knowledge. Indeed, if a particular interaction results in \"failure\", the usual explanation for this is that the agents involved did not have the common knowledge that would have resulted in success. If a married couple are separated in a department store, they stand a good chance of finding one another because their common knowledge of each others' tastes and experiences leads them each to look for the other in a part of the store both know that both would tend to frequent. Since the spouses both love cappuccino, each expects the other to go to the coffee bar, and they find one another. But in a less happy case, if a pedestrian causes a minor traffic jam by crossing against a red light, she explains her mistake as the result of her not noticing, and therefore not knowing, the status of the traffic signal that all the motorists knew. The spouses coordinate successfully given their common knowledge, while the pedestrian and the motorists miscoordinate as the result of a breakdown in common knowledge. Given the importance of common knowledge in social interactions, it is remarkable that only quite recently have philosophers and social scientists attempted to analyze the concept. David Hume (1740) was perhaps the first to make explicit reference to the role of mutual knowledge in coordination. In his account of convention in A Treatise of Human Nature , Hume argued that a necessary condition for coordinated activity was that agents all know what behavior to expect from one another. Without the requisite mutual knowledge, Hume maintained, mutually beneficial social conventions would disappear. Much later, J. E. Littlewood (1953) presented some examples of common-knowledge-type reasoning, and Thomas Schelling (1960) and John Harsanyi (1967-1968) argued that something like common knowledge is needed to explain certain inferences people make about each other. The philosopher Robert Nozick describes, but does not develop, the notion in his doctoral dissertation (Nozick 1963), while the first mathematical analysis and application of the notion of common knowledge is found in the technical report by Friedell (1967), then published as (Friedell 1969). The first full-fledged philosophical analysis of common knowledge was offered by David Lewis (1969) in the monograph Convention. Stephen Schiffer (1972), Robert Aumann (1976), and Gilbert Harman (1977) independently gave alternate definitions of common knowledge. Jon Barwise (1988, 1989) gave a precise formulation of Harman's intuitive account. Throughout the 1980s a number of epistemic logicians, both from philosophy and from computer science, studied the logical structure of common knowledge, and the interested reader should consult the relevant portions of the two important monographs (Fagin et al. 1995) and (Meyer and Van der Hoek 1995). Margaret Gilbert (1989) proposed a somewhat different account of common knowledge which she argues is preferable to the standard account. Others have developed accounts of mutual knowledge, approximate common knowledge , and common belief which require less stringent assumptions than the standard account, and which serve as more plausible models of what agents know in cases where strict common knowledge seems impossible (Brandenburger and Dekel 1987, Monderer and Samet 1989, Rubinstein 1992). The analysis and applications of common knowledge and related multi-agent knowledge concepts has become a lively field of research. The purpose of this essay is to overview of some of the most important results stemming from this contemporary research. The topics reviewed in each section of this essay are as follows: Section 1 gives motivating examples which illustrate a variety of ways in which the actions of agents depend crucially upon their having, or lacking, certain common knowledge. Section 2 discusses alternative analyses of common knowledge. Section 3 reviews applications of multi-agent knowledge concepts, particularly to game theory (von Neumann and Morgenstern 1944), in which common knowledge assumptions have been found to have great importance in justifying solution concepts for mathematical games. Section 4 discusses skeptical doubts about the attainability of common knowledge. Finally, Section 5 discusses the common belief concept which result from weakening the assumptions of Lewis' account of common knowledge.",
+    "context": "Opening section: 1. Motivating Examples | Related entries: convention, game-theory, logic-epistemic, prisoner-dilemma, social-norms",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "epistemology",
+    "logic"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry common-knowledge",
+        "uri": "https://plato.stanford.edu/entries/common-knowledge/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "2 author(s), 5 related entries, bibliography size 97"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2001-08-27T14:00:00.000Z and revised 2022-08-04T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2022-08-04T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/common-knowledge/",
+        "description": "SEP entry for common-knowledge"
+      }
+    ],
+    "solutionApproach": "1. Motivating Examples"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/convention",
+      "ocp:sep/game-theory",
+      "ocp:sep/logic-epistemic",
+      "ocp:sep/prisoner-dilemma",
+      "ocp:sep/social-norms"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Vanderschraaf, Peter",
+        "type": "human"
+      },
+      {
+        "name": "Sillari, Giacomo",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/common-knowledge/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 78,
+      "validation_diversity": 0.49,
+      "context_breadth": 0.35,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.88
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.535
+  },
+  "extensions": {
+    "sep": {
+      "slug": "common-knowledge",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/common-knowledge/",
+      "preamble": "A proposition \\(A\\) is mutual knowledge among a set of agents if each agent knows that \\(A\\). Mutual knowledge by itself implies nothing about what, if any, knowledge anyone attributes to anyone else. Suppose each student arrives for a class meeting knowing that the instructor will be late. That the instructor will be late is mutual knowledge, but each student might think only she knows the instructor will be late. However, if one of the students says openly \"Peter told me he will be late again,\" then each student knows that each student knows that the instructor will be late, each student knows that each student knows that each student knows that the instructor will be late, and so on, ad infinitum. The announcement made the mutually known fact common knowledge among the students. Common knowledge is a phenomenon which underwrites much of social life. In order to communicate or otherwise coordinate their behavior successfully, individuals typically require mutual or common understandings or background knowledge. Indeed, if a particular interaction results in \"failure\", the usual explanation for this is that the agents involved did not have the common knowledge that would have resulted in success. If a married couple are separated in a department store, they stand a good chance of finding one another because their common knowledge of each others' tastes and experiences leads them each to look for the other in a part of the store both know that both would tend to frequent. Since the spouses both love cappuccino, each expects the other to go to the coffee bar, and they find one another. But in a less happy case, if a pedestrian causes a minor traffic jam by crossing against a red light, she explains her mistake as the result of her not noticing, and therefore not knowing, the status of the traffic signal that all the motorists knew. The spouses coordinate successfully given their common knowledge, while the pedestrian and the motorists miscoordinate as the result of a breakdown in common knowledge. Given the importance of common knowledge in social interactions, it is remarkable that only quite recently have philosophers and social scientists attempted to analyze the concept. David Hume (1740) was perhaps the first to make explicit reference to the role of mutual knowledge in coordination. In his account of convention in A Treatise of Human Nature , Hume argued that a necessary condition for coordinated activity was that agents all know what behavior to expect from one another. Without the requisite mutual knowledge, Hume maintained, mutually beneficial social conventions would disappear. Much later, J. E. Littlewood (1953) presented some examples of common-knowledge-type reasoning, and Thomas Schelling (1960) and John Harsanyi (1967-1968) argued that something like common knowledge is needed to explain certain inferences people make about each other. The philosopher Robert Nozick describes, but does not develop, the notion in his doctoral dissertation (Nozick 1963), while the first mathematical analysis and application of the notion of common knowledge is found in the technical report by Friedell (1967), then published as (Friedell 1969). The first full-fledged philosophical analysis of common knowledge was offered by David Lewis (1969) in the monograph Convention. Stephen Schiffer (1972), Robert Aumann (1976), and Gilbert Harman (1977) independently gave alternate definitions of common knowledge. Jon Barwise (1988, 1989) gave a precise formulation of Harman's intuitive account. Throughout the 1980s a number of epistemic logicians, both from philosophy and from computer science, studied the logical structure of common knowledge, and the interested reader should consult the relevant portions of the two important monographs (Fagin et al. 1995) and (Meyer and Van der Hoek 1995). Margaret Gilbert (1989) proposed a somewhat different account of common knowledge which she argues is preferable to the standard account. Others have developed accounts of mutual knowledge, approximate common knowledge , and common belief which require less stringent assumptions than the standard account, and which serve as more plausible models of what agents know in cases where strict common knowledge seems impossible (Brandenburger and Dekel 1987, Monderer and Samet 1989, Rubinstein 1992). The analysis and applications of common knowledge and related multi-agent knowledge concepts has become a lively field of research. The purpose of this essay is to overview of some of the most important results stemming from this contemporary research. The topics reviewed in each section of this essay are as follows: Section 1 gives motivating examples which illustrate a variety of ways in which the actions of agents depend crucially upon their having, or lacking, certain common knowledge. Section 2 discusses alternative analyses of common knowledge. Section 3 reviews applications of multi-agent knowledge concepts, particularly to game theory (von Neumann and Morgenstern 1944), in which common knowledge assumptions have been found to have great importance in justifying solution concepts for mathematical games. Section 4 discusses skeptical doubts about the attainability of common knowledge. Finally, Section 5 discusses the common belief concept which result from weakening the assumptions of Lewis' account of common knowledge.",
+      "firstSectionTitle": "1. Motivating Examples",
+      "firstSectionText": "Most of the examples in this section are familiar in the common knowledge literature, although some of the details and interpretations presented here are new. Readers may want to ask themselves what, if any, distinctive aspects of mutual and common knowledge reasoning each example illustrates. A waiter serving dinner slips, and spills gravy on a guest's white silk evening gown. The guest glares at the waiter, and the waiter declares \"I'm sorry. It was my fault.\" Why did the waiter say that he was at fault? He knew that he was at fault, and he knew from the guest's angry expression that she knew he was at fault. However, the sorry waiter wanted assurance that the guest knew that he knew he was at fault. By saying openly that he was at fault, the waiter knew that the guest knew what he wanted her to know, namely, that he knew he was at fault. Note that the waiter's declaration established at least three levels of nested knowledge. Certain assumptions are implicit in the preceding story. In particular, the waiter must know that the guest knows he has spoken the truth, and that she can draw the desired conclusion from what he says in this context. More fundamentally, the waiter must know that if he announces \"It was my fault\" to the guest, she will interpret his intended meaning correctly and will infer what his making this announcement ordinarily implies in this context. This in turn implies that the guest must know that if the waiter announces \"It was my fault\" in this context, then the waiter indeed knows he is at fault. Then on account of his announcement, the waiter knows that the guest knows that he knows he was at fault. The waiter's announcement was meant to generate higher-order levels of knowledge of a fact each already knew. Just a slight strengthening of the stated assumptions results in even higher levels of nested knowledge. Suppose the waiter and the guest each know that the other can infer what he infers from the waiter's announcement. Can the guest now believe that the waiter does not know that she knows that he knows he is at fault? If the guest considers this question, she reasons that if the waiter falsely believes it is possible that she does not know that he knows he is at fault, then the waiter must believe it to be possible that she cannot infer that he knows he is at fault from his own declaration. Since she knows she can infer that the waiter knows he is at fault from his declaration, she knows that the waiter knows she can infer this, as well. Hence the waiter's announcement establishes the fourth-order knowledge claim: The guest knows that the waiter knows that she knows that he knows he is at fault. By similar, albeit lengthier, arguments, the agents can verify that corresponding knowledge claims of even higher-order must also obtain under these assumptions. This is a variation of an example first published by Littlewood (1953), although he notes that his version of the example was already well-known at the time. \\(N\\) individuals enjoy a picnic supper together which includes barbecued spareribs. At the end of the meal, \\(k \\ge 1\\) of these diners have barbecue sauce on their faces. Since no one can see her own face, none of the messy diners knows whether he or she is messy. Then the cook who served the spareribs returns with a carton of ice cream. Amused by what he sees, the cook rings the dinner bell and makes the following announcement: \"At least one of you has barbecue sauce on her face. I will ring the dinner bell over and over, until anyone who is messy has wiped her face. Then I will serve dessert.\" For the first \\(k - 1\\) rings, no one does anything. Then, at the \\(k\\) ring, each of the messy individuals suddenly reaches for a napkin, and soon afterwards, the diners are all enjoying their ice cream. How did the messy diners finally realize that their faces needed cleaning? The \\(k = 1\\) case is easy, since in this case, the lone messy individual will realize he is messy immediately, since he sees that everyone else is clean. Consider the \\(k = 2\\) case next. At the first ring, messy individual \\(i_1\\) knows that one other person, \\(i_2\\), is messy, but does not yet know about himself. At the second ring, \\(i_1\\) realizes that he must be messy, since had \\(i_2\\) been the only messy one, \\(i_2\\) would have known this after the first ring when the cook made his announcement, and would have cleaned her face then. By a symmetric argument, messy diner \\(i_2\\) also concludes that she is messy at the second ring, and both pick up a napkin at that time. The general case follows by induction. Suppose that if \\(k = j\\), then each of the \\(j\\) messy diners can determine that he is messy after \\(j\\) rings. Then if \\(k = j + 1\\), then at the \\(j + 1\\) ring, each of the \\(j + 1\\) individuals will realize that he is messy. For if he were not messy, then the other \\(j\\) messy ones would have all realized their messiness at the \\(j\\) ring and cleaned themselves then. Since no one cleaned herself after the \\(j\\) ring, at the \\(j + 1\\) ring each messy person will conclude that someone besides the other \\(j\\) messy people must also be messy, namely, himself. The \"paradox\" of this argument is that for \\(k \\gt 1\\), like the case of the clumsy waiter of Example 1.1, the cook's announcement told the diners something that each already knew. Yet apparently the cook's announcement also gave the diners useful information. How could this be? By announcing a fact already known to every diner, the cook made this fact common knowledge among them, enabling each of them to eventually deduce the condition of his own face after sufficiently many rings of the bell. Does meeting one's obligations to others serve one's self-interest? Plato and his successors recognized that in certain cases, the answer seems to be \"No.\" Hobbes (1651, pp. 101-102) considers the challenge of a \"Foole\", who claims that it is irrational to honor an agreement made with another who has already fulfilled his part of the agreement. Noting that in this situation one has gained all the benefit of the other's compliance, the Foole contends that it would now be best for him to break the agreement, thereby saving himself the costs of compliance. Of course, if the Foole's analysis of the situation is correct, then would the other party to the agreement not anticipate the Foole's response to agreements honored, and act accordingly? Hume (1740, pp. 520-521) takes up this question, using an example: Two neighboring farmers each expect a bumper crop of corn. Each will require his neighbor's help in harvesting his corn when it ripens, or else a substantial portion will rot in the field. Since their corn will ripen at different times, the two farmers can ensure full harvests for themselves by helping each other when their crops ripen, and both know this. Yet the farmers do not help each other. For the farmer whose corn ripens later reasons that if she were to help the other farmer, then when her corn ripens he would be in the position of Hobbes' Foole, having already benefited from her help. He would no longer have anything to gain from her, so he would not help her, sparing himself the hard labor of a second harvest. Since she cannot expect the other farmer to return her aid when the time comes, she will not help when his corn ripens first, and of course the other farmer does not help her when her corn ripens later. The structure of Hume's Farmers' Dilemma problem can be summarized using the following tree diagram: Figure 1.1a This tree is an example of a game in extensive form. At each stage \\(i\\), the agent who moves can either choose \\(C^i\\), which corresponds to helping or cooperating , or \\(D^i\\), which corresponds to not helping or defecting . The relative preferences of the two agents over the various outcomes are reflected by the ordered pairs of payoffs each receives at any particular outcome. If, for instance, Fiona chooses \\(C^i\\) and Alan chooses \\(D^i\\), then Fiona's payoff is 0, her worst payoff, and Alan's is 4, his best payoff. In a game such as the Figure 1.1.a game, agents are (Bayesian) rational if each chooses an act that maximizes her expected payoff, given what she knows. In the Farmers' Dilemma game, following the \\(C^1,C^2\\)-path is strictly better for both farmers than following the \\(D^1,D^2\\)-path. However, Fiona chooses \\(D^1\\), as the result of the following simple argument: \"If I were to choose \\(C^1\\), then Alan, who is rational and who knows the payoff structure of the game, would choose \\(D^2\\). I am also rational and know the payoff structure of the game. So I should choose \\(D^1\\).\" Since Fiona knows that Alan is rational and knows the game's payoffs, she concludes that she need only analyze the reduced game in the following figure: Figure 1.1b In this reduced game, Fiona is certain to gain a strictly higher payoff by choosing \\(D^1\\) than if she chooses \\(C^1\\), so \\(D^1\\) is her unique best choice. Of course, when Fiona chooses \\(D^1\\), Alan, being rational, responds by choosing \\(D^2\\). If Fiona and Alan know: (i) that they are both rational, (ii) that they both know the payoff structure of the game, and (iii) that they both know (i) and (ii), then they both can predict what the other will do at every node of the Figure 1.1.a game, and conclude that they can rule out the \\(D^1,C^2\\)-branch of the Figure 1.1.b game and analyze just the reduced game of the following figure: Figure 1.1c On account of this mutual knowledge , both know that Fiona will choose \\(D^1\\), and that Alan will respond with \\(D^2\\). Hence, the \\(D^1,D^2\\)-outcome results if the Farmers' Dilemma game is played by agents having this mutual knowledge, though it is suboptimal since both agents would fare better at the \\(C^1,C^2\\)-branch. This argument, which in its essentials is Hume's argument, is an example of a standard technique for solving sequential games known as backwards induction. The basic idea behind backwards induction is that the agents engaged in a sequential game deduce how each will act throughout the entire game by ruling out the acts that are not payoff-maximizing for the agents who would move last, then ruling out the acts that are not payoff-maximizing for the agents who would move next-to-last, and so on. Clearly, backwards induction arguments rely crucially upon what, if any, mutual knowledge the agents have regarding their situation, and they typically require the agents to evaluate the truth values of certain subjunctive conditionals, such as \"If I (Fiona) were to choose \\(C^1\\), then Alan would choose \\(D^2\\)\". The mutual knowledge assumptions required to construct a backwards induction solution to a game become more complex as the number of stages in the game increases. To see this, consider the sequential Centipede game depicted in the following figure: Figure 1.2 At each stage i\\), the agent who moves can either choose \\(R^i\\), which in the first three stages gives the other agent an opportunity to move, or \\(L^i\\), which ends the game. Like the Farmers' Dilemma, this game is a commitment problem for the agents. If each agent could trust the other to choose \\(R^i\\) at each stage, then they would each expect to receive a payoff of 3. However, Alan chooses \\(L^1\\), leaving each with a payoff of only 1, as the result of the following backwards induction argument: \"If node \\(n_4\\) were to be reached, then Fiona, (being rational) would choose \\(L^4\\). I, knowing this, would (being rational) choose \\(L^3\\) if node \\(n_3\\) were to be reached. Fiona, knowing this , would (being rational) choose \\(L^2\\) if node \\(n_2\\) were to be reached. Hence, I (being rational) should choose \\(L^1\\).\" To carry out this backwards induction argument, Alan implicitly assumes that: (i) he knows that Fiona knows he is rational, and (ii) he knows that Fiona knows that he knows she is rational. Put another way, for Alan to carry out the backwards induction argument, at node \\(n_1\\) he must know what Fiona must know at node \\(n_2\\) to make \\(L^2\\) her best response should \\(n_2\\) be reached. While in the Farmer's Dilemma Fiona needed only first-order knowledge of Alan's rationality and second-order knowledge of Alan's knowledge of the game to derive the backwards induction solution, in the Figure 1.2 game, for Alan to be able to derive the backwards induction solution, the agents must have third-order mutual knowledge of the game and second-order mutual knowledge of rationality, and Alan must have fourth-order knowledge of this mutual knowledge of the game and third-order knowledge of their mutual knowledge of rationality. This argument also involves several counterfactuals, since to construct it the agents must be able to evaluate conditionals of the form, \"If node \\(n_i\\) were to be reached, Alan (Fiona) would choose \\(L^i (R^i)\\)\", which for \\(i \\gt 1\\) are counterfactual, since third-order mutual knowledge of rationality implies that nodes \\(n_2,\\) \\(n_3\\), and \\(n_4\\) are never reached. The method of backwards induction can be applied to any sequential game of perfect information , in which the agents can observe each others' moves in turn and can recall the entire history of play. However, as the number of potential stages of play increases, the backwards induction argument evidently becomes harder to construct. This raises certain questions: (1) What precisely are the mutual or common knowledge assumptions that are required to justify the backwards induction argument for a particular sequential game? (2) As a sequential game increases in complexity, would we expect the mutual knowledge that is required for backwards induction to start to fail? Schelling's department store problem is an example of a pure coordination problem , that is, an interaction problem in which the interests of the agents coincide perfectly. Schelling (1960) and Lewis (1969), who were the first to make explicit the role common knowledge plays in social coordination, were also among the first to argue that coordination problems can be modeled using the analytic vocabulary of game theory. A very simple example of such a coordination problem is given in the next figure: \\(s_i =\\) search on floor \\(i\\), \\(1 \\leq i \\leq 4\\) Figure 1.3 The matrix of Figure 1.3 is an example of a game in strategic form. At each outcome of the game, which corresponds to a cell in the matrix, the row (column) agent receives as payoff the first (second) element of the ordered pair in the corresponding cell. However, in strategic form games, each agent chooses without first being able to observe the choices of any other agent, so that all must choose as if they were choosing simultaneously. The Figure 1.3 game is a game of pure coordination (Lewis 1969), that is, a game in which at each outcome, each agent receives exactly the same payoff. One interpretation of this game is that Schelling's spouses, Liz and Robert, are searching for each other in the department store with four floors, and they find each other if they go to the same floor. Four outcomes at which the spouses coordinate correspond to the strategy profiles \\((s_j, s_j), 1 \\le j \\le 4\\), of the Figure 1.3 game. These four profiles are strict Nash equilibria (Nash 1950, 1951) of the game, that is, each agent has a decisive reason to follow her end of one of these strategy profiles provided that the other also follows this profile. The difficulty the agents face is trying to select an equilibrium to follow. For suppose that Robert hopes to coordinate with Liz on a particular equilibrium of the game, say \\((s_2, s_2)\\). Robert reasons as follows: \"Since there are several strict equilibria we might follow, I should follow my end of \\((s_2, s_2)\\) if, and only if, I have sufficiently high expectations that Liz will follow her end of \\((s_2, s_2)\\). But I can only have sufficiently high expectations that Liz will follow \\((s_2, s_2 )\\) if she has sufficiently high expectations that I will follow \\((s_2, s_2)\\). For her to have such expectations, Liz must have sufficiently high (second-order) expectations that I have sufficiently high expectations that she will follow \\((s_2, s_2)\\), for if Liz doesn't have these (second-order) expectations, then she will believe I don't have sufficient reason to follow \\((s_2, s_2)\\) and may therefore deviate from \\((s_2, s_2)\\) herself. So I need to have sufficiently high (third-order) expectations that Liz has sufficiently high (second-order) expectations that I have sufficiently high expectations that she will follow \\((s_2, s_2 )\\), which involves her in fourth-order expectations regarding me, which involves me in fifth-order expectations regarding Liz, and so on.\" What would suffice for Robert, and Liz, to have decisive reason to follow \\((s_2, s_2)\\) is that they each know that the other knows that &hellip; that the other will follow \\((s_2, s_2)\\) for any number of levels of knowledge, which is to say that between Liz and Robert it is common knowledge that they will follow \\((s_2, s_2)\\). If agents follow a strict equilibrium in a pure coordination game as a consequence of their having common knowledge of the game, their rationality and their intentions to follow this equilibrium, and no other, then the agents are said to be following a Lewis-convention (Lewis 1969). Lewis' theory of convention applies to a more general class of games than pure coordination games, but pure coordination games already model a variety of important social interactions. In particular, Lewis models conventions of language as equilibrium points of a pure coordination game. The role common knowledge plays in games of pure coordination sketched above of course raises further questions: (1) Can people ever attain the common knowledge which characterizes a Lewis-convention? (2) Would less stringent epistemic assumptions suffice to justify Nash equilibrium behavior in a coordination problem?",
+      "relatedEntries": [
+        "convention",
+        "game-theory",
+        "logic-epistemic",
+        "prisoner-dilemma",
+        "social-norms"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "convention"
+        },
+        {
+          "slug": "game-theory"
+        },
+        {
+          "slug": "logic-epistemic"
+        },
+        {
+          "slug": "prisoner-dilemma"
+        },
+        {
+          "slug": "social-norms"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 97,
+      "bibliography": [
+        {
+          "raw": "Alberucci, Luca and Jaeger, Gerhard, 2005, \"About cut elimination for logics of common knowledge\", Annals of Pure and Applied Logic , 133(1-3): 73-99."
+        },
+        {
+          "raw": "Aumann, Robert, 1974, \"Subjectivity and Correlation in Randomized Strategies\", Journal of Mathematical Economics , 1: 67-96."
+        },
+        {
+          "raw": "---, 1976, \"Agreeing to Disagree\", Annals of Statistics , 4: 1236-9."
+        },
+        {
+          "raw": "---, 1987, \"Correlated Equilibrium as an Expression of Bayesian Rationality\", Econometrica , 55: 1-18."
+        },
+        {
+          "raw": "---, 1995, \"Backward Induction and Common Knowledge of Rationality\", Games and Economic Behavior 8: 6-19."
+        },
+        {
+          "raw": "Bacharach, Michael, 1985 \"Some Extensions of a Claim of Aumann in an Axiomatic Model of Knowledge\", Journal of Economic Theory , 37(1): 167-190."
+        },
+        {
+          "raw": "---, 1992.\"Backward Induction and Beliefs About Oneself\", Synthese , 91: 247-284."
+        },
+        {
+          "raw": "Barwise, Jon, 1988, \"Three Views of Common Knowledge\", in Proceedings of the Second Conference on Theoretical Aspects of Reasoning About Knowledge , M.Y. Vardi (ed.), San Francisco: Morgan Kaufman, pp. 365-379."
+        },
+        {
+          "raw": "---, 1989, The Situation in Logic , Stanford: Center for the Study of Language and Information."
+        },
+        {
+          "raw": "Bernheim, B. Douglas, 1984, \"Rationalizable Strategic Behavior\", Econometrica , 52: 1007-1028."
+        },
+        {
+          "raw": "Bicchieri, Cristina, 1989, \"Self Refuting Theories of Strategic Interaction: A Paradox of Common Knowledge\", Erkenntnis , 30: 69-85."
+        },
+        {
+          "raw": "---, 1993, Rationality and Coordination , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 2006, The Grammar of Society , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Binmore, Ken, 1987, \"Modelling Rational Players I\", Economics and Philosophy , 3: 179-241."
+        },
+        {
+          "raw": "---, 1992, Fun and Games , Lexington, MA: D. C. Heath."
+        },
+        {
+          "raw": "---, 2008, \"Do Conventions Need to be Common Knowledge?\", Topoi , 27: 17-27."
+        },
+        {
+          "raw": "Binmore, Ken and Brandenburger, Adam, 1988, \"Common knowledge and Game theory\" ST/ICERD Discussion Paper 88/167, London School of Economics."
+        },
+        {
+          "raw": "Binmore, Ken and Samuelson, Larry, 2001, \"Coordinated Action in the Electronic Mail Game\" Games and Economic Behavior , 35(1): 6-30."
+        },
+        {
+          "raw": "Bonanno, Giacomo and Battigalli, Pierpaolo, 1999, \"Recent Results on Belief, Knowledge and the Epistemic Foundations of Game Theory\", Research in Economics , 53(2): 149-225."
+        },
+        {
+          "raw": "Bonnay, D. and Egr&eacute;, Paul, 2009, \"Inexact Knowledge with Introspection\", Journal of Philosophical Logic , 38: 179-227."
+        },
+        {
+          "raw": "Brandenburger, Adam, 1992, \"Knowledge and Equilibrium in Games\", Journal of Economic Perspectives , 6: 83-101."
+        },
+        {
+          "raw": "Brandenburger, Adam, and Dekel, Eddie, 1987, \"Common Knowledge with Probability 1\", Journal of Mathematical Economics , 16: 237-245."
+        },
+        {
+          "raw": "---, 1988, \"The Role of Common Knowledge Assumptions in Game Theory\", in The Economics of Missing Markets, Information and Games , Frank Hahn (ed.), Oxford: Clarendon Press, 46-61."
+        },
+        {
+          "raw": "Bruni, Riccardo and Giacomo Sillari, 2018, \"A Rational Way of Playing: Revision Theory for Strategic Interaction\", Journal of Philosophical Logic , 47(3), 419-448."
+        },
+        {
+          "raw": "Carnap, Rudolf, 1947, Meaning and Necessity: A Study in Semantics and Modal Logic , Chicago, University of Chicago Press."
+        },
+        {
+          "raw": "Cave, Jonathan AK, 1983, \"Learning to Agree\", Economics Letters , 12(2): 147-152."
+        },
+        {
+          "raw": "Chwe, Michael, 1999, \"Structure and Strategy in Collective Action\", American Journal of Sociology 105: 128-56."
+        },
+        {
+          "raw": "---, 2000, \"Communcation and Coordination in Social Networks\", Review of Economic Studies , 67: 1-16."
+        },
+        {
+          "raw": "---, 2001, Rational Ritual , Princeton, NJ: Princeton University Press"
+        },
+        {
+          "raw": "Cubitt, Robin and Sugden, Robert, 2003, \"Common Knowledge, Salience and Convention: A Reconstruction of David Lewis' Game Theory\", Economics and Philosophy , 19: 175-210."
+        },
+        {
+          "raw": "D&eacute;gremont, C&eacute;dric, and Oliver Roy, 2012, \"Agreement Theorems in Dynamic-Epistemic Logic\", Journal of Philosophical Logic , 41(4): 735-764."
+        },
+        {
+          "raw": "Dekel, Eddie and Gul, Faruk, 1997, \"Rationality and Knowledge in Game Theory\", in Advances in Economic Theory: Seventh World Congress of the Econometric Society , D. Kreps and K. Wallace eds., Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Dekel, Eddie, Lipman, Bart and Rustichini, Aldo, 1998, \"Standard State-Space Models Preclude Unawareness,\" Econometrica , 66: 159-173."
+        },
+        {
+          "raw": "Devetag, Giovanna, Hosni, Hykel and Sillari, Giacomo, 2013, \"Play 7: Mutual Versus Common Knowledge of Advice in a Weak-Link Game,\" Synthese , 190(8): 1351-1381"
+        },
+        {
+          "raw": "Fagin, Ronald and Halpern, Joseph Y., 1988, \"Awareness and Limited Reasoning,\" Artificial Intelligence , 34: 39-76."
+        },
+        {
+          "raw": "Fagin, Ronald, Halpern, Joseph Y., Moses, Yoram and Vardi, Moshe Y., 1995, Reasoning About Knowledge , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Friedell, Morris, 1967, \"On the Structure of Shared Awareness,\" Working papers of the Center for Research on Social Organizations (Paper #27), Ann Arbor: University of Michigan."
+        },
+        {
+          "raw": "---, 1969, \"On the Structure of Shared Awareness,\" Behavioral Science , 14(1): 28-39."
+        },
+        {
+          "raw": "Geanakoplos, John, 1989, \"Games Theory without Partitions, and Applications to Speculation and Consensus,\" Cowles Foundation Discussion Paper, No. 914."
+        },
+        {
+          "raw": "---, 1994, \"Common Knowledge\", in Handbook of Game Theory (Volume 2), Robert Aumann and Sergiu Hart (eds.), Amsterdam: Elsevier Science B.V., 1438-1496."
+        },
+        {
+          "raw": "Geanakoplos, John and Heraklis M. Polemarchakis, 1982, \"We Can't Disagree Forever\" Journal of Economic theory 28(1): 192-200."
+        },
+        {
+          "raw": "Gilbert, Margaret, 1989, On Social Facts , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Halpern, Jospeh, 2001, \"Alternative Semantics for Unawareness\", Games and Economic Behavior , 37(2): 321-339"
+        },
+        {
+          "raw": "Halpern, J. Y., & Moses, Y. , 1990, \"Knowledge and common Knowledge in a Distributed Environment\". Journal of the Association for Computing Machinery , 37(3): 549-587."
+        },
+        {
+          "raw": "Halpern, J. Y., & Pass, R., 2017, \"A Knowledge-Based Analysis of the Blockchain Protocol\". arXiv preprint arXiv:1707.08751."
+        },
+        {
+          "raw": "Harman, Gilbert, 1977, \"Review of Linguistic Behavior by Jonathan Bennett\", Language , 53: 417-424."
+        },
+        {
+          "raw": "Harsanyi, J., 1967, \"Games with Incomplete Information Played by \"Bayesian\" Players, I: The basic model\", Management Science , 14: 159-82."
+        },
+        {
+          "raw": "---, 1968a, \"Games with Incomplete Information Played by \"Bayesian\" Players, II: Bayesian Equilibrium Points\", Management Science , 14: 320-324."
+        },
+        {
+          "raw": "---, 1968b, \"Games with Incomplete Information Played by \"Bayesian\" Players, III: The basic probability distribution of the game\", Management Science , 14: 486-502."
+        },
+        {
+          "raw": "Heifetz, Aviad, 1999, \"Iterative and Fixed Point Common Belief\", Journal of Philosophical Logic , 28(1): 61-79."
+        },
+        {
+          "raw": "Heifetz, Aviad, Meier, Martin and Schipper, Burkhard, 2006, \"Interactive Unawareness\", Journal of Economic Theory , 130: 78-94."
+        },
+        {
+          "raw": "Hintikka, Jaakko, 1962, Knowledge and Belief , Ithaca, NY: Cornell University Press."
+        },
+        {
+          "raw": "Hume, David, 1740 [1888, 1976], A Treatise of Human Nature , L. A. Selby-Bigge (ed.), rev. 2nd. edition P. H. Nidditch (ed.), Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Immerman, D., 2021, \"How Common Knowledge Is Possible\". Mind , first online 17 January 2021. doi:10.1093/mind/fzaa090"
+        },
+        {
+          "raw": "J&auml;ger, Gerhard and Michel Marti, 2016, \"Intuitionistic Common Knowledge or Belief\", Journal of Applied Logic , 18: 150-163"
+        },
+        {
+          "raw": "Lederman, Harvey, 2018a, \"Two Paradoxes of Common Knowledge: Coordinated Attack and Electronic Mail\", No&ucirc;s , 52: 921-945."
+        },
+        {
+          "raw": "---, 2018b, \"Uncommon Knowledge\" Mind 127, 1069-1105."
+        },
+        {
+          "raw": "Leitgeb, Hannes, 2014, \"The Stability Theory of Belief\", The Philosophical Review , 123(2): 131-171."
+        },
+        {
+          "raw": "Lewis, C. I., 1943, \"The Modes of Meaning\", Philosophy and Phenomenological Research , 4: 236-250."
+        },
+        {
+          "raw": "Lewis, David, 1969, Convention: A Philosophical Study , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "---, 1978, \"Truth in Fiction\", American Philosophical Quarterly , 15: 37-46."
+        },
+        {
+          "raw": "Littlewood, J. E., 1953, A Mathematical Miscellany , London: Methuen; reprinted as Littlewood's Miscellany , B. Bollobas (ed.), Cambridge: Cambridge University Press, 1986."
+        },
+        {
+          "raw": "McKelvey, Richard and Page, Talbot, 1986, \"Common Knowledge, Consensus and Aggregate Information\", Econometrica , 54: 109-127."
+        },
+        {
+          "raw": "Meyer, J.-J.Ch. and van der Hoek, Wiebe, 1995, Epistemic Logic for Computer Science and Artificial Intelligence (Cambridge Tracts in Theoretical Computer Science 41), Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Milgrom, Paul, 1981, \"An Axiomatic Characterization of Common Knowledge\", Econometrica , 49: 219-222."
+        },
+        {
+          "raw": "Milgrom, Paul, and Nancy Stokey, 1982, \"Information, Trade and Common Knowledge\", Journal of Economic Theory , 26(1): 17-27."
+        },
+        {
+          "raw": "Monderer, Dov and Samet, Dov, 1989, \"Approximating Common Knowledge with Common Beliefs\", Games and Economic Behavior , 1: 170-190."
+        },
+        {
+          "raw": "Nash, John, 1950, \"Equilibrium Points in N-person Games\". Proceedings of the National Academy of Sciences of the United States , 36: 48-49."
+        },
+        {
+          "raw": "---, 1951, \"Non-Cooperative Games\". Annals of Mathematics , 54: 286-295."
+        },
+        {
+          "raw": "Nozick, Robert, 1963, The Normative Theory of Individual Choice , Ph.D. dissertation, Princeton University"
+        },
+        {
+          "raw": "Paternotte, C&eacute;dric, 2011, \"Being Realistic about Common Knowledge: a Lewisian Approach\", Synthese , 183(2): 249-276."
+        },
+        {
+          "raw": "---, 2017, \"The Fragility of Common Knowledge\", Erkenntnis , 82(3): 451-472."
+        },
+        {
+          "raw": "Pearce, David, 1984, \"Rationalizable Strategic Behavior and the Problem of Perfection\", Econometrica , 52: 1029-1050."
+        },
+        {
+          "raw": "Reny, Philip J, 1988, \"Common Knowledge and Games with Perfect Information.\" In PSA: Proceedings of the Biennial Meeting of the Philosophy of Science Association , vol. 1988, no. 2, pp. 363-369. East Lansing: Philosophy of Science Association."
+        },
+        {
+          "raw": "---, 1992, \"Rationality in Extensive Form Games\", Journal of Economic Perspectives , 6: 103-118."
+        },
+        {
+          "raw": "Rubinstein, Ariel, 1987, \"A Game with \"Almost Common Knowledge\": An Example\", in Theoretical Economics , D. P. 87/165. London School of Economics."
+        },
+        {
+          "raw": "Samet, Dov, 1990, \"Ignoring Ignorance and Agreeing to Disagree\", Journal of Economic Theory , 52: 190-207."
+        },
+        {
+          "raw": "Schelling, Thomas, 1960, The Strategy of Conflict , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Schiffer, Stephen, 1972, Meaning , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Sillari, Giacomo, 2005, \"A Logical Framework for Convention\", Synthese , 147(2): 379-400."
+        },
+        {
+          "raw": "---, 2008, \"Common Knowledge and Convention\", Topoi , 27(1): 29-39."
+        },
+        {
+          "raw": "---, 2013, \"Rule-Following as Coordination: a Game-Theoretic Approach\", Synthese , 190(5): 871-890."
+        },
+        {
+          "raw": "---, 2019, \"Logics of Belief\", Rivista di Filosofia , 110(2): 243-262."
+        },
+        {
+          "raw": "Skyrms, Brian, 1984, Pragmatics and Empiricism , New Haven: Yale University Press."
+        },
+        {
+          "raw": "---, 1990, The Dynamics of Rational Deliberation , Cambridge, MA: Harvard University Press"
+        },
+        {
+          "raw": "---, 1991, \"Inductive Deliberation, Admissible Acts, and Perfect Equilibrium\", in Foundations of Decision Theory , Michael Bacharach and Susan Hurley eds., Cambridge, MA: Blackwell, pp. 220-241."
+        },
+        {
+          "raw": "---, 1998, \"The Shadow of the Future\", in Rational Commitment and Social Justice: Essays for Gregory Kavka , Jules Coleman and Christopher Morris eds., Cambridge: Cambridge University Press, pp. 12-22."
+        },
+        {
+          "raw": "Sugden, Robert, 1986, The Economics of Rights, Cooperation and Welfare , New York: Basil Blackwell."
+        },
+        {
+          "raw": "Thomason, R. H., 2021, \"Common Knowledge, Common Attitudes and Social Reasoning\", Bulletin of the Section of Logic , 50(2): 229-247."
+        },
+        {
+          "raw": "Vanderschraaf, Peter, 1995, \"Endogenous Correlated Equilibria in Noncooperative Games\", Theory and Decision , 38: 61-84."
+        },
+        {
+          "raw": "Vanderschraaf, Peter, 1998, \"Knowledge, Equilibrium and Convention\", Erkenntnis , 49: 337-369."
+        },
+        {
+          "raw": "---, 2001. A Study in Inductive Deliberation , New York: Routledge."
+        },
+        {
+          "raw": "von Neumann, John and Morgenstern, Oskar, 1944, Theory of Games and Economic Behavior , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Lewis (1969) is the classic pioneering study of common knowledge and its potential applications to conventions and game theory. As Lewis acknowledges, parts of his work are foreshadowed in Hume (1740) and Schelling (1960)."
+        },
+        {
+          "raw": "Aumann (1976) gives the first mathematically rigorous formulation of common knowledge using set theory. Schiffer (1972) uses the formal vocabulary of epistemic logic (Hintikka 1962) to state his definition of common knowledge. Schiffer's general approach is to augment a system of sentential logic with a set of knowledge operators corresponding to a set of agents, and then to define common knowledge as a hierarchy of propositions in the augmented system. Bacharach (1992), Bicchieri (1993) and Fagin, et al . (1995) adopt this approach, and develop logical theories of common knowledge which include soundness and completeness theorems. Fagin, et al. show that the syntactic and set-theoretic approaches to developing common knowledge are logically equivalent."
+        },
+        {
+          "raw": "Aumann (1995) gives a recent defense of the classical view of backwards induction in games of imperfect information. For criticisms of the classical view, see Binmore (1987), Reny (1992), Bicchieri (1989) and especially Bicchieri (1993). Brandenburger (1992) surveys the known results connecting mutual and common knowledge to solution concepts in game theory. For more in-depth survey articles on common knowledge and its applications to game theory, see Binmore and Brandenburger (1989), Geanakoplos (1994) and Dekel and Gul (1997). For her alternate account of common knowledge along with an account of conventions which opposes Lewis' account, see Gilbert (1989)."
+        },
+        {
+          "raw": "Monderer and Samet (1989) remains one of the best resources for the study of common p-belief."
+        }
+      ],
+      "publishedAt": "2001-08-27T14:00:00.000Z",
+      "revisedAt": "2022-08-04T14:00:00.000Z"
+    }
+  }
+}

@@ -1,0 +1,272 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/aquasecurity--chain-bench",
+  "meta": {
+    "title": "Contents",
+    "description": "An open-source tool for auditing your software supply chain stack for security compliance based on a new CIS Software Supply Chain benchmark.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:50:29.180Z",
+    "dateModified": "2026-03-11T04:50:29.180Z",
+    "keywords": [
+      "cis",
+      "devsecops",
+      "go",
+      "golang",
+      "misconfiguration",
+      "open-policy-agent",
+      "security",
+      "security-tools",
+      "software-supply-chain",
+      "software-supply-chain-security",
+      "vulnera"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "Chain-bench is an open-source tool for auditing your software supply chain stack for security compliance based on a new [CIS Software Supply Chain benchmark](/docs/CIS-Software-Supply-Chain-Security-Guide-v1.0.pdf).\nThe auditing focuses on the entire SDLC process, where it can reveal risks from code time into deploy time.",
+    "context": "- [Contents](#contents)\n- [Introduction](#introduction)\n- [Quick start](#quick-start)\n  - [Installation](#installation)\n  - [Usage](#usage)\n    - [Using docker](#using-docker)\n    - [Using GitHub Actions](#using-github-actions)\n    - [Using Gitlab CI (beta)](#using-gitlab-ci-beta)\n- [Requirements](#requirements)\n- [Supported Providers](#supported-providers)\n- [Please Note](#please-note)\n- [Contributing](#contributing)\n- [Roadmap](#roadmap)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "machine-learning",
+    "security",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "769 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "63 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:50:29.180Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/aquasecurity/chain-bench",
+        "description": "GitHub repository: aquasecurity/chain-bench"
+      }
+    ],
+    "solutionApproach": "See usage section in README",
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "github.com/alexeyco/simpletable",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/alexeyco/simpletable"
+      },
+      {
+        "name": "github.com/argonsecurity/pipeline-parser",
+        "version": "v0.1.12",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/argonsecurity/pipeline-parser"
+      },
+      {
+        "name": "github.com/google/go-github/v41",
+        "version": "v41.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/go-github/v41"
+      },
+      {
+        "name": "github.com/google/uuid",
+        "version": "v1.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/google/uuid"
+      },
+      {
+        "name": "github.com/imdario/mergo",
+        "version": "v0.3.12",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/imdario/mergo"
+      },
+      {
+        "name": "github.com/migueleliasweb/go-github-mock",
+        "version": "v0.0.8",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/migueleliasweb/go-github-mock"
+      },
+      {
+        "name": "github.com/rs/zerolog",
+        "version": "v1.26.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/rs/zerolog"
+      },
+      {
+        "name": "github.com/spf13/cobra",
+        "version": "v1.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/cobra"
+      },
+      {
+        "name": "github.com/spf13/viper",
+        "version": "v1.11.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/spf13/viper"
+      },
+      {
+        "name": "github.com/stretchr/testify",
+        "version": "v1.8.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/stretchr/testify"
+      },
+      {
+        "name": "github.com/thoas/go-funk",
+        "version": "v0.9.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/thoas/go-funk"
+      },
+      {
+        "name": "golang.org/x/oauth2",
+        "version": "v0.0.0-20220722155238-128564f6959c",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/oauth2"
+      },
+      {
+        "name": "github.com/enescakir/emoji",
+        "version": "v1.0.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/enescakir/emoji"
+      },
+      {
+        "name": "github.com/hashicorp/go-version",
+        "version": "v1.4.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/hashicorp/go-version"
+      },
+      {
+        "name": "github.com/mitchellh/mapstructure",
+        "version": "v1.5.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mitchellh/mapstructure"
+      },
+      {
+        "name": "github.com/open-policy-agent/opa",
+        "version": "v0.43.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/open-policy-agent/opa"
+      },
+      {
+        "name": "github.com/xanzy/go-gitlab",
+        "version": "v0.73.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/xanzy/go-gitlab"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "aquasecurity",
+        "type": "human",
+        "uri": "https://github.com/aquasecurity"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 895,
+      "validation_diversity": 0.4,
+      "context_breadth": 0.58,
+      "temporal_stability": 0.71,
+      "test_coverage": 0.67,
+      "documentation_quality": 0.65
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.574
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/uber--h3",
+  "meta": {
+    "title": "H3: A Hexagonal Hierarchical Geospatial Indexing System",
+    "description": "Hexagonal hierarchical geospatial indexing system",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-11T04:45:03.111Z",
+    "dateModified": "2026-03-11T04:45:03.111Z",
+    "keywords": [
+      "geospatial",
+      "h3",
+      "hexagon",
+      "spatial-indexing",
+      "uber"
+    ],
+    "license": "Apache-2.0"
+  },
+  "problemSolved": {
+    "statement": "[![test-linux](https://github.com/uber/h3/workflows/test-linux/badge.svg)](https://github.com/uber/h3/actions)\n[![test-macos](https://github.com/uber/h3/workflows/test-macos/badge.svg)](https://github.com/uber/h3/actions)\n[![test-windows](https://github.com/uber/h3/workflows/test-windows/badge.svg)](https://github.com/uber/h3/actions)\n[![test-website](https://github.com/uber/h3/workflows/test-website/badge.svg)](https://github.com/uber/h3/actions)\n[![Coverage Status](https://coveralls.io/repos/github/uber/h3/badge.svg?branch=master)](https://coveralls.io/github/uber/h3?branch=master)\n[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)",
+    "context": "[![test-linux](https://github.com/uber/h3/workflows/test-linux/badge.svg)](https://github.com/uber/h3/actions)\n[![test-macos](https://github.com/uber/h3/workflows/test-macos/badge.svg)](https://github.com/uber/h3/actions)\n[![test-windows](https://github.com/uber/h3/workflows/test-windows/badge.svg)](https://github.com/uber/h3/actions)\n[![test-website](https://github.com/uber/h3/workflows/test-website/badge.svg)](https://github.com/uber/h3/actions)\n[![Coverage Status](https://coveralls.io/repos/github/uber/h3/badge.svg?branch=master)](https://coveralls.io/github/uber/h3?branch=master)\n[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)\n\nH3 is a geospatial indexing system using a hexagonal grid that can be (approximately) subdivided into finer and finer hexagonal grids, combining the benefits of a hexagonal grid with [S2](https://code.google.com/archive/p/s2-geometry-library/)'s hierarchical subdivisions.\n\nDocumentation is available at [https://h3geo.org/](https://h3geo.org/). Developer documentation in Markdown format is available under the [dev-docs](./dev-docs/) directory.\n\n * Post **bug reports or feature requests** to the [GitHub Issues page](https://github.com/uber/h3/issues)\n * Ask **questions** by posting to the [H3 tag on StackOverflow](https://stackoverflow.com/questions/tagged/h3)\n * There is also an [H3 Slack workspace](https://join.slack.com/t/h3-core/shared_invite/zt-g6u5r1hf-W_~uVJmfeiWtMQuBGc1NNg)",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:c"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "6074 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "559 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-11T04:45:03.111Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/uber/h3",
+        "description": "GitHub repository: uber/h3"
+      },
+      {
+        "type": "documentation",
+        "uri": "https://h3geo.org",
+        "description": "Project homepage"
+      }
+    ],
+    "language": "C"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "uber",
+        "type": "human",
+        "uri": "https://github.com/uber"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 7192,
+      "validation_diversity": 0.67,
+      "context_breadth": 0.47,
+      "temporal_stability": 1,
+      "test_coverage": 0.3,
+      "documentation_quality": 0.75
+    },
+    "confidence": "provisional",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.66
+  }
+}
