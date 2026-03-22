@@ -1,10 +1,10 @@
 ---
 name: "Primitive Self-Reference"
-tier: 0
-status: draft
-confidence: 0.4
+tier: 1
+status: provisional
+confidence: 0.7
 source: triangulated
-domain_count: 4
+domain_count: 7
 derivative_order: 0
 primary_axis: recurse
 created: 2026-03-22
@@ -48,6 +48,24 @@ Recursion at its zeroth order is bare self-reference: a system whose output incl
 - **Expression:** Autopoiesis — minimal self-producing systems. The system's operation produces the components that constitute the system.
 - **Discovery date:** 2026-03-22
 - **Source:** domain knowledge
+
+### Instance 5: Visual Art — Recursive Imagery
+- **Domain:** Visual Art / Aesthetics
+- **Expression:** The Droste effect (image containing a smaller copy of itself), Escher's "Drawing Hands" (two hands drawing each other), and mise en abyme in literature/film. The artwork refers to itself without modifying itself — pure self-reference as aesthetic structure. The recursion is static: the image doesn't change through self-observation, it simply contains itself.
+- **Discovery date:** 2026-03-23
+- **Source:** domain knowledge
+
+### Instance 6: Linguistics — Use-Mention Distinction / Metalanguage
+- **Domain:** Linguistics / Philosophy of Language
+- **Expression:** Natural language's capacity for self-reference: "This sentence has five words." Metalanguage (language about language) is the simplest form of linguistic self-reference. Tarski's hierarchy of metalanguages was built specifically to handle paradoxes from unrestricted self-reference.
+- **Discovery date:** 2026-03-23
+- **Source:** bottom-up (ocp:sep/self-reference, ocp:sep/reference)
+
+### Instance 7: Philosophy of Mind — Pre-Reflective Self-Consciousness
+- **Domain:** Philosophy of Mind / Phenomenology
+- **Expression:** Pre-reflective self-consciousness — the minimal self-awareness accompanying all conscious experience. Not introspection (reflective, higher-order) but the primitive sense of "I am the one experiencing this." Husserl's pre-reflective/reflective distinction maps onto PSR/OFL: pre-reflective = bare self-reference (PSR), reflective = self-modifying observation (OFL). Sartre argued this primitive self-awareness is constitutive of consciousness itself.
+- **Discovery date:** 2026-03-23
+- **Source:** bottom-up (ocp:sep/self-consciousness)
 
 ## Relationships
 

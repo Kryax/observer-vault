@@ -1,0 +1,277 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/dicklesworthstone--beads_viewer",
+  "meta": {
+    "title": "Beads Viewer (bv)",
+    "description": "Graph-aware TUI for the Beads issue tracker: PageRank, critical path, kanban, dependency DAG visualization, and robot-mode JSON API",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T10:54:59.146Z",
+    "dateModified": "2026-03-22T10:54:59.146Z",
+    "keywords": [
+      "developer-tools",
+      "go",
+      "graph-analysis",
+      "issue-tracker",
+      "tui"
+    ],
+    "license": "NOASSERTION"
+  },
+  "problemSolved": {
+    "statement": "The visualization provides a rich, keyboard-driven interface:",
+    "context": "![Release](https://img.shields.io/github/v/release/Dicklesworthstone/beads_viewer?style=for-the-badge&color=bd93f9)\n![Go Version](https://img.shields.io/github/go-mod/go-version/Dicklesworthstone/beads_viewer?style=for-the-badge&color=6272a4)\n![License](https://img.shields.io/badge/License-MIT%2BOpenAI%2FAnthropic%20Rider-blue-the-badge)\n![Build Status](https://img.shields.io/github/actions/workflow/status/Dicklesworthstone/beads_viewer/ci.yml?style=for-the-badge&logo=github)\n[![Coverage](https://codecov.io/gh/Dicklesworthstone/beads_viewer/branch/main/graph/badge.svg)](https://codecov.io/gh/Dicklesworthstone/beads_viewer)\n\n> **The elegant, keyboard-driven terminal interface for the [Beads](https://github.com/steveyegge/beads) issue tracker.**\n\n<div align=\"center\" style=\"margin: 1.2em 0;\">\n  <table>\n    <tr>\n      <td align=\"center\" style=\"padding: 8px;\">\n        <img src=\"screenshots/screenshot_01__main_screen.webp\" alt=\"Main split view\" width=\"420\" />\n        <div><sub>Main split view: fast list + rich details</sub></div>\n      </td>\n      <td align=\"center\" style=\"padding: 8px;\">\n        <img src=\"screenshots/screenshot_03__kanban_view.webp\" alt=\"Kanban board\" width=\"420\" />\n        <div><sub>Kanban board (`b`) for flow at a glance</sub></div>\n      </td>\n    </tr>\n    <tr>\n      <td align=\"center\" style=\"padding: 8px;\">\n        <img src=\"screenshots/screenshot_02__insights_view.webp\" alt=\"Insights view\" width=\"420\" />\n        <div><sub>Insights panel: PageRank, critical path, cycles</sub></div>\n      </td>\n      <td align=\"center\" style=\"padding: 8px;\">\n        <img src=\"screenshots/screenshot_04__graph_view.webp\" alt=\"Graph view\" width=\"420\" />\n        <div><sub>Graph view (`g`): navigate the dependency DAG</sub></div>\n      </td>\n    </tr>\n  </table>\n</div>",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "web-development",
+    "backend",
+    "lang:go"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "1406 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "114 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T10:54:59.146Z"
+  },
+  "implementation": {
+    "type": "tool",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/Dicklesworthstone/beads_viewer",
+        "description": "GitHub repository: Dicklesworthstone/beads_viewer"
+      }
+    ],
+    "language": "Go"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [
+      {
+        "name": "git.sr.ht/~sbinet/gg",
+        "version": "v0.7.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/git.sr.ht/~sbinet/gg"
+      },
+      {
+        "name": "github.com/ajstarks/svgo",
+        "version": "v0.0.0-20211024235047-1546f124cd8b",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/ajstarks/svgo"
+      },
+      {
+        "name": "github.com/atotto/clipboard",
+        "version": "v0.1.4",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/atotto/clipboard"
+      },
+      {
+        "name": "github.com/charmbracelet/bubbles",
+        "version": "v0.21.1-0.20250623103423-23b8fd6302d7",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/charmbracelet/bubbles"
+      },
+      {
+        "name": "github.com/charmbracelet/bubbletea",
+        "version": "v1.3.10",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/charmbracelet/bubbletea"
+      },
+      {
+        "name": "github.com/charmbracelet/glamour",
+        "version": "v0.10.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/charmbracelet/glamour"
+      },
+      {
+        "name": "github.com/charmbracelet/huh",
+        "version": "v0.8.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/charmbracelet/huh"
+      },
+      {
+        "name": "github.com/charmbracelet/lipgloss",
+        "version": "v1.1.1-0.20250404203927-76690c660834",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/charmbracelet/lipgloss"
+      },
+      {
+        "name": "github.com/fsnotify/fsnotify",
+        "version": "v1.9.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/fsnotify/fsnotify"
+      },
+      {
+        "name": "github.com/goccy/go-json",
+        "version": "v0.10.5",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/goccy/go-json"
+      },
+      {
+        "name": "github.com/mattn/go-runewidth",
+        "version": "v0.0.19",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/github.com/mattn/go-runewidth"
+      },
+      {
+        "name": "golang.org/x/image",
+        "version": "v0.35.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/image"
+      },
+      {
+        "name": "golang.org/x/sync",
+        "version": "v0.19.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/sync"
+      },
+      {
+        "name": "golang.org/x/sys",
+        "version": "v0.40.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/sys"
+      },
+      {
+        "name": "golang.org/x/term",
+        "version": "v0.39.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/golang.org/x/term"
+      },
+      {
+        "name": "gonum.org/v1/gonum",
+        "version": "v0.17.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gonum.org/v1/gonum"
+      },
+      {
+        "name": "gopkg.in/yaml.v3",
+        "version": "v3.0.1",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/gopkg.in/yaml.v3"
+      },
+      {
+        "name": "modernc.org/sqlite",
+        "version": "v1.44.2",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/modernc.org/sqlite"
+      },
+      {
+        "name": "pgregory.net/rapid",
+        "version": "v1.2.0",
+        "type": "runtime",
+        "uri": "https://pkg.go.dev/pgregory.net/rapid"
+      }
+    ],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Dicklesworthstone",
+        "type": "human",
+        "uri": "https://github.com/Dicklesworthstone"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 1634,
+      "validation_diversity": 0.1,
+      "context_breadth": 0.41,
+      "temporal_stability": 0.85,
+      "test_coverage": 0.5,
+      "documentation_quality": 0.5
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.352
+  }
+}

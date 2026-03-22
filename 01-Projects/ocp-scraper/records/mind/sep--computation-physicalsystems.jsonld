@@ -1,0 +1,739 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/computation-physicalsystems",
+  "meta": {
+    "title": "Computation in Physical Systems",
+    "description": "In our ordinary discourse, we distinguish between physical systems that perform computations, such as computers and calculators, and physical systems that don't, such as rocks. Among computing devices, we distinguish between more and less powerful ones. These distinctions affect our behavior: if a device is computationally more powerful than another, we pay more money for it. What grounds these distinctions? What is the principled difference, if there is one, between a rock and a calculator, or between a calculator and a computer? Answering these questions is more difficult than it may seem. In addition to our ordinary discourse, computation is central to many sciences. Computer scientists design, build, and program computers. But again, what counts as a computer? If a salesperson sold you an ordinary rock as a computer, you should probably get your money back. Again, what does the rock lack that a genuine computer has? How powerful a computer can you build? Can you build a machine that computes anything you wish? Although it is often said that modern computers can compute anything (i.e., any function defined over a denumerable domain, such as the natural numbers or strings of letters from a finite alphabet), this is incorrect. Ordinary computers can compute only a tiny subset of all functions. Is it physically possible to do better? Which functions are physically computable? These questions are bound up with the foundations of physics. Computation is also central to the mind sciences, and perhaps other areas of biology. According to the computational theory of cognition, cognition is a kind of computation: the behavior of cognitive systems is causally explained by the computations they perform. In order to test a computational theory of something, we need to know what counts as a computation in a physical system. Once again, the nature of physical computation lies at the foundation of empirical science.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T11:08:07.129Z",
+    "dateModified": "2026-03-22T11:08:07.129Z",
+    "datePublished": "2010-07-20T14:00:00.000Z",
+    "keywords": [
+      "church turing",
+      "computability",
+      "computational mind",
+      "computing history",
+      "information entropy",
+      "models science",
+      "philosophy mathematics",
+      "qt entangle",
+      "qt quantcomp",
+      "recursive functions",
+      "turing machine"
+    ]
+  },
+  "problemSolved": {
+    "statement": "In our ordinary discourse, we distinguish between physical systems that perform computations, such as computers and calculators, and physical systems that don't, such as rocks. Among computing devices, we distinguish between more and less powerful ones. These distinctions affect our behavior: if a device is computationally more powerful than another, we pay more money for it. What grounds these distinctions? What is the principled difference, if there is one, between a rock and a calculator, or between a calculator and a computer? Answering these questions is more difficult than it may seem. In addition to our ordinary discourse, computation is central to many sciences. Computer scientists design, build, and program computers. But again, what counts as a computer? If a salesperson sold you an ordinary rock as a computer, you should probably get your money back. Again, what does the rock lack that a genuine computer has? How powerful a computer can you build? Can you build a machine that computes anything you wish? Although it is often said that modern computers can compute anything (i.e., any function defined over a denumerable domain, such as the natural numbers or strings of letters from a finite alphabet), this is incorrect. Ordinary computers can compute only a tiny subset of all functions. Is it physically possible to do better? Which functions are physically computable? These questions are bound up with the foundations of physics. Computation is also central to the mind sciences, and perhaps other areas of biology. According to the computational theory of cognition, cognition is a kind of computation: the behavior of cognitive systems is causally explained by the computations they perform. In order to test a computational theory of something, we need to know what counts as a computation in a physical system. Once again, the nature of physical computation lies at the foundation of empirical science.",
+    "context": "Opening section: 1. Abstract Computation and Concrete Computation | Related entries: church-turing, computability, computing-history, information-entropy, philosophy-mathematics, computational-mind, models-science, qt-quantcomp, qt-entangle, recursive-functions, turing-machine",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "mind",
+    "history-of-philosophy",
+    "philosophy-of-science",
+    "general-philosophy"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry computation-physicalsystems",
+        "uri": "https://plato.stanford.edu/entries/computation-physicalsystems/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 11 related entries, bibliography size 160"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2010-07-20T14:00:00.000Z and revised 2025-08-19T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2025-08-19T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/computation-physicalsystems/",
+        "description": "SEP entry for computation-physicalsystems"
+      }
+    ],
+    "solutionApproach": "1. Abstract Computation and Concrete Computation"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/church-turing",
+      "ocp:sep/computability",
+      "ocp:sep/computing-history",
+      "ocp:sep/information-entropy",
+      "ocp:sep/philosophy-mathematics",
+      "ocp:sep/computational-mind",
+      "ocp:sep/models-science",
+      "ocp:sep/qt-quantcomp",
+      "ocp:sep/qt-entangle",
+      "ocp:sep/recursive-functions",
+      "ocp:sep/turing-machine"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Piccinini, Gualtiero",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/computation-physicalsystems/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 113,
+      "validation_diversity": 0.45,
+      "context_breadth": 0.47,
+      "temporal_stability": 1,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.91
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.569
+  },
+  "extensions": {
+    "sep": {
+      "slug": "computation-physicalsystems",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/computation-physicalsystems/",
+      "preamble": "In our ordinary discourse, we distinguish between physical systems that perform computations, such as computers and calculators, and physical systems that don't, such as rocks. Among computing devices, we distinguish between more and less powerful ones. These distinctions affect our behavior: if a device is computationally more powerful than another, we pay more money for it. What grounds these distinctions? What is the principled difference, if there is one, between a rock and a calculator, or between a calculator and a computer? Answering these questions is more difficult than it may seem. In addition to our ordinary discourse, computation is central to many sciences. Computer scientists design, build, and program computers. But again, what counts as a computer? If a salesperson sold you an ordinary rock as a computer, you should probably get your money back. Again, what does the rock lack that a genuine computer has? How powerful a computer can you build? Can you build a machine that computes anything you wish? Although it is often said that modern computers can compute anything (i.e., any function defined over a denumerable domain, such as the natural numbers or strings of letters from a finite alphabet), this is incorrect. Ordinary computers can compute only a tiny subset of all functions. Is it physically possible to do better? Which functions are physically computable? These questions are bound up with the foundations of physics. Computation is also central to the mind sciences, and perhaps other areas of biology. According to the computational theory of cognition, cognition is a kind of computation: the behavior of cognitive systems is causally explained by the computations they perform. In order to test a computational theory of something, we need to know what counts as a computation in a physical system. Once again, the nature of physical computation lies at the foundation of empirical science.",
+      "firstSectionTitle": "1. Abstract Computation and Concrete Computation",
+      "firstSectionText": "Computation may be studied mathematically by formally defining computational objects, such as algorithms and Turing machines, and proving theorems about their properties. The mathematical theory of computation is a well-established branch of mathematics. It deals with computation in the abstract, without worrying much about physical implementation. By contrast, most uses of computation in science and ordinary practice deal with concrete computation: computation in concrete physical systems such as computers and brains. Concrete computation is closely related to abstract computation: we speak of physical systems as running an algorithm or as implementing a Turing machine, for example. But the relationship between concrete computation and abstract computation is not part of the mathematical theory of computation per se and requires further investigation (cf. Curtis-Trudel 2022 for an argument that abstract and concrete computation cannot be given a unified account). Questions about concrete computation are the main subject of this entry. Nevertheless, it is important to bear in mind some basic mathematical results. An important notion of computation is that of digital computation , which Alan Turing, Kurt G&ouml;del, Alonzo Church, Emil Post, and Stephen Kleene formalized in the 1930s. Their work investigated the foundations of mathematics. One crucial question was whether first order logic is decidable -- whether there is an algorithm that determines whether any given first order logical formula is a theorem. Both Turing (1936-7) and Church (1936) proved that the answer is negative: there is no such algorithm. To show this, they offered precise characterizations of the informal notion of algorithmically computable function (over a denumerable domain). Turing did so in terms of so-called Turing machines (TMs) -- devices that manipulate discrete symbols written on a tape in accordance with finitely many instructions. Other logicians did the same thing -- they formalized the notion of algorithmically computable function -- in terms of other notions, such as general recursive functions and &lambda;-definable functions. To their surprise, all such notions turned out to be extensionally equivalent, that is, any function computable within any of these formalisms is computable within any of the others. This is evidence that their quest for a precise definition of \"algorithm\" or \"algorithmically computable function\" had been successful. The resulting view -- that TMs and other equivalent formalisms capture the informal notion of algorithm for computing functions over a denumerable domain -- is now known as the Church-Turing thesis (more on this in Section 4). The study of computable functions, made possible by the work of Turing et al ., is part of the mathematical theory of computation. The theoretical significance of Turing et al .'s notion of computation can hardly be overstated. As G&ouml;del pointed out (in a lecture following one by Tarski): Turing also showed that there are universal TMs -- machines that can compute any function computable by any other TM. Universal TMs do this by executing instructions that encode the behavior of the machine they simulate. Assuming the Church-Turing thesis, universal TMs can compute any function computable by algorithm. This result is significant for computer science: you don't need to build different computers for different functions; one universal computer will suffice to compute any computable function. Modern digital computers are universal in this sense: they can compute any function computable by algorithm for as long as they have time and memory. (Strictly speaking, a universal machine has an unbounded memory, whereas digital computer memories can be extended but not indefinitely, so they are not unbounded.) The above result should not be confused with the common claim that computers can compute anything . This claim is false: another important result of computability theory is that most functions are not computable by TMs (and hence, by digital computers). TMs compute functions defined over denumerable domains, such as strings of letters from a finite alphabet. There are uncountably many such functions. But there are only countably many TMs; you can enumerate TMs by enumerating all lists of TM instructions. Since an uncountable infinity is much larger than a countable one, it follows that TMs (and hence digital computers) can compute only a tiny portion of all functions (over denumerable domains, such as natural numbers or strings of letters). TMs and most modern computers are known as (classical) digital computers , that is, computers that manipulate strings of discrete, unambiguously distinguishable states by performing discrete operations that are sensitive to the position of a state within the string. Digital computers are sometimes contrasted with analog computers , which manipulate variables that can be continuous via operations such as integration and differentiation. Continuous variables are variables that can change their value continuously over time while taking any value within a certain interval. Analog computers are used primarily to solve certain systems of differential equations (Pour-El 1974, Rubel 1993). Classical digital computers may also be contrasted with quantum computers . Quantum computers manipulate quantum states called qudits (usually binary qudits, known as qubits). Unlike the computational states of digital computers, qubits are not unambiguously distinguishable from one another. This entry will focus primarily on classical computation. For more on quantum computation, see the entry on quantum computing . The same objects studied in the mathematical theory of computation -- TMs, algorithms, and so on -- are typically said to be implemented by concrete physical systems. This poses a problem: how can a concrete, physical system perform a computation when computation is defined by an abstract mathematical formalism? This may be called the problem of computational implementation. The problem of computational implementation may be formulated in a couple of different ways. Platonists interpret the formalisms of computability theory as defining abstract objects . According to platonists, TMs, algorithms, and the like are abstract objects. But how can a concrete physical system implement an abstract object? Non-platonists treat the formalisms of computability theory as abstract computational descriptions . But how can a concrete physical system satisfy an abstract computational description in a way that turns it into a system that performs the computation defined by the computational description? Regardless of how the problem of computational implementation is formulated, solving it requires an account of concrete computation -- an account of what it takes for a physical system to implement a given computation. A closely related problem is that of distinguishing between physical systems such as digital computers, which appear to compute, and physical systems such as rocks, which appear not to compute. Unlike computers, ordinary rocks are not sold in computer stores and are usually not considered computers. Why? What do computers have that rocks lack, such that computers compute and rocks don't? (If indeed they don't?) In other words, what properties must a physical system have to implement computations? Different answers to these questions give rise to different accounts of concrete computation. Questions on the nature of concrete computation should not be confused with questions about computational modeling. The dynamical evolution of many physical systems may be described by computational models -- computer programs that simulate the dynamics of a system. The behavior of rocks -- as well as rivers, ecosystems, and planetary systems, among many others -- may well be modeled computationally. It doesn't follow that the modeled systems are computing devices -- that they themselves perform computations. Prima facie, only relatively few and quite special systems compute. Explaining what makes them special -- or explaining away our feeling that they are special -- is the job of an account of concrete computation.",
+      "relatedEntries": [
+        "church-turing",
+        "computability",
+        "computing-history",
+        "information-entropy",
+        "philosophy-mathematics",
+        "computational-mind",
+        "models-science",
+        "qt-quantcomp",
+        "qt-entangle",
+        "recursive-functions",
+        "turing-machine"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "church-turing"
+        },
+        {
+          "slug": "computability"
+        },
+        {
+          "slug": "computing-history"
+        },
+        {
+          "slug": "information-entropy"
+        },
+        {
+          "slug": "philosophy-mathematics"
+        },
+        {
+          "slug": "computational-mind"
+        },
+        {
+          "slug": "models-science"
+        },
+        {
+          "slug": "qt-quantcomp"
+        },
+        {
+          "slug": "qt-entangle"
+        },
+        {
+          "slug": "recursive-functions"
+        },
+        {
+          "slug": "turing-machine"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 160,
+      "bibliography": [
+        {
+          "raw": "Anderson, N. G., 2017, \"Information as a Physical Quantity,\" Information Sciences , 415-416: 397-413."
+        },
+        {
+          "raw": "---, 2022, \"Generalized Landauer Bound for Information Processing: Proof and Applications,\" Entropy , 24(11): 1568. doi:10.3390/e24111568"
+        },
+        {
+          "raw": "Anderson, N. G., and G. Piccinini, 2024, The Physical Signature of Computation: A Robust Mapping Account , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Andr&eacute;ka, H., N&eacute;meti, I., and P. N&eacute;meti, 2009, \"General Relativistic Hypercomputing and Foundation of Mathematics,\" Natural Computing , 8(3): 499-516."
+        },
+        {
+          "raw": "Andr&eacute;ka, H., Madar&aacute;sz, J. X., N&eacute;meti, I., P. N&eacute;meti, and G. Sz&eacute;kely, 2018, \"Relativistic Computation,\" in Cuffaro and Fletcher 2018, pp. 195-216."
+        },
+        {
+          "raw": "Beggs, E. J., and J.V. Tucker, 2007, \"Can Newtonian Systems, Bounded in Space, Time, Mass and Energy Compute all Functions?\" Theoretical Computer Science , 371(1-2): 4-19."
+        },
+        {
+          "raw": "Block, N., 1978, \"Troubles with Functionalism,\" in Perception and Cognition: Issues in the Foundations of Psychology , C. W. Savage (ed.), Minneapolis, University of Minnesota Press, pp. 261-325."
+        },
+        {
+          "raw": "Blum, L., Cucker F., Shub M., and S. Smale, 1998, Complexity and Real Computation , New York: Springer."
+        },
+        {
+          "raw": "Bontly, T., 1998, \"Individualism and the Nature of Syntactic States,\" British Journal for the Philosophy of Science , 49(4): 557-574."
+        },
+        {
+          "raw": "Bub, J., 2005, \"Quantum Mechanics is About Quantum Information,\" Foundations of Physics , 35(4): 541-560."
+        },
+        {
+          "raw": "Burge, T., 1986, \"Individualism and Psychology,\" Philosophical Review , 45: 3-45."
+        },
+        {
+          "raw": "Button, T., 2009, \"SAD Computers and Two Versions of the Church-Turing Thesis,\" British Journal for the Philosophy of Science , 60(4): 765-792."
+        },
+        {
+          "raw": "Calude, C. S., 2005, \"Algorithmic Randomness, Quantum Physics, and Incompleteness,\" in Proceedings of the Conference \"Machines, Computations and Universality\" (MCU 2004) , M. Margenstern (ed.), Berlin: Springer, pp. 1-17."
+        },
+        {
+          "raw": "Calude, C. S., and B. Pavlov, 2002, \"Coins, Quantum Measurements, and Turing's Barrier,\" Quantum Information Processing , 1(1-2): 107-127."
+        },
+        {
+          "raw": "Calude, C. S., and K. Svozil, 2008, \"Quantum Randomness and Value Indefiniteness,\" Advanced Science Letters , 1(2): 165-168."
+        },
+        {
+          "raw": "Campbell, D. I., and Yang, Y., 2021, \"Does the solar system compute the laws of motion?\" Synthese , 198: 3203-3220."
+        },
+        {
+          "raw": "Chalmers, D. J., 1995, \"On Implementing a Computation,\" Minds and Machines , 4: 391-402."
+        },
+        {
+          "raw": "---, 1996, \"Does a Rock Implement Every Finite-State Automaton?\" Synthese , 108: 310-333."
+        },
+        {
+          "raw": "---, 2011, \"A Computational Foundation for the Study of Cognition,\" Journal of Cognitive Science , 12(4): 323-57."
+        },
+        {
+          "raw": "---, 2022, Reality+, New York: Norton."
+        },
+        {
+          "raw": "Chrisley, R. L., 1995, \"Why Everything Doesn't Realize Every Computation,\" Minds and Machines , 4: 403-430."
+        },
+        {
+          "raw": "Church, A., 1932, \"A Set of Postulates for the Foundation of Logic,\" Annals of Mathematics , 33: 346-366."
+        },
+        {
+          "raw": "---, 1936, \"An Unsolvable Problem in Elementary Number Theory,\" The American Journal of Mathematics , 58: 345-363."
+        },
+        {
+          "raw": "Churchland, P. S., and T. J. Sejnowski, 1992, The Computational Brain , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Coelho Mollo, D., 2018, \"Functional Individuation, Mechanistic Implementation: The Proper Way of Seeing the Mechanistic View of Concrete Computation,\" Synthese, 195(8): 3477-97."
+        },
+        {
+          "raw": "Copeland, B. J., 1996, \"What is Computation?\" Synthese , 108(3): 335-359."
+        },
+        {
+          "raw": "---, 2000, \"Narrow Versus Wide Mechanism: Including a Re-Examination of Turing's Views on the Mind-Machine Issue.\" The Journal of Philosophy , XCVI(1): 5-33."
+        },
+        {
+          "raw": "---, 2002, \"Accelerating Turing Machines,\" Minds and Machines , 12(2): 281-301."
+        },
+        {
+          "raw": "Crane, T., 1990, \"The Language of Thought: No Syntax Without Semantics,\" Mind and Language , 5(3): 187-212."
+        },
+        {
+          "raw": "Craver, C. F., 2012, \"Functions and Mechanisms: A Perspectivalist Account,\" in P. Huneman (ed.), Functions , Dordrecht: Springer."
+        },
+        {
+          "raw": "Cuffaro, M. E., and S. C. Fletcher, 2018, Physical Perspectives on Computation, Computational Perspectives on Physics , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Cummins, R., 1983, The Nature of Psychological Explanation , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Curtis-Trudel, A., 2021, \"Implementation as Resemblance,\" Philosophy of Science 88(5): 1021-1032."
+        },
+        {
+          "raw": "---, 2022, \"Why Do We Need A Theory of Implementation?\" The British Journal for the Philosophy of Science , 73(4): 1067-1091."
+        },
+        {
+          "raw": "---, 2024, \"Computation in Context\" Erkenntnis , doi:10.1007/s10670-024-00851-2"
+        },
+        {
+          "raw": "Davies, E. B., 2001, \"Building Infinite Machines,\" British Journal for the Philosophy of Science , 52(4): 671-682."
+        },
+        {
+          "raw": "Davis, M., 2004a, \"The Myth of Hypercomputation,\" in Alan Turing: Life and Legacy of a Great Thinker , C. Teuscher (ed.), Berlin: Springer, pp. 195-211."
+        },
+        {
+          "raw": "Dennett, D. C., 1987, The Intentional Stance , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Deutsch, D., 1985, \"Quantum Theory, the Church-Turing Principle and the Universal Quantum Computer,\" Proceedings of the Royal Society of London A , 400: 97-117."
+        },
+        {
+          "raw": "Dewhurst, J., 2018, \"Computing Mechanisms Without Proper Functions,\" Minds and Machines 28(3): 569-588."
+        },
+        {
+          "raw": "Drayson, Z., 2024, \"Defending the Medium-independence of Computation,\" Mind & Language , first online 22 June 2025. doi:10.1111/mila.12536"
+        },
+        {
+          "raw": "Dretske, F. I., 1981, Knowledge and the Flow of Information , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Duwell, A., 2017, \"Exploring the Frontiers of Computation: Measurement Based Quantum Computers and the Mechanistic View of Computation,\" in A. Bokulich and J. Floyd (eds.), Turing 100: Philosophical Explorations of the Legacy of Alan Turing (Boston Studies in the Philosophy and History of Science: Volume 324), New York: Springer, 219-32."
+        },
+        {
+          "raw": "Earman, J., 1986, A Primer on Determinism , Dordrecht: D. Reidel."
+        },
+        {
+          "raw": "Earman, J., and J. Norton, 1993, \"Forever is a Day: Supertasks in Pitowsky and Malament-Hogarth Spacetimes,\" Philosophy of Science , 60: 22-42."
+        },
+        {
+          "raw": "Egan, F., 1999, \"In Defence of Narrow Mindedness.\" Mind and Language , 14(2): 177-194."
+        },
+        {
+          "raw": "---, 2010, \"Computational Models: A Modest Role For Content,\" Studies in the History and Philosophy of Science , 41(3): 253-259."
+        },
+        {
+          "raw": "---, 2025, Deflating Mental Representation , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Etesi, G., and I. N&eacute;meti, 2002, \"Non-Turing Computations via Malament-Hogarth Spacetimes,\" International Journal of Theoretical Physics , 41: 342-370."
+        },
+        {
+          "raw": "Feynman, R. P., 1982, \"Simulating Physics with Computers,\" International Journal of Theoretical Physics , 21(6-7): 467-488."
+        },
+        {
+          "raw": "Fletcher, S. C., 2018, \"Computers in Abstraction/Representation Theory,\" Minds and Machines , 28(3): 445-63."
+        },
+        {
+          "raw": "Floridi, L., 2008, \"A Defence of Informational Structural Realism,\" Synthese , 161(2): 219-53."
+        },
+        {
+          "raw": "Fodor, J. A., 1975, The Language of Thought , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "---, 1981, \"The Mind-Body Problem,\" Scientific American , 244: 114-125."
+        },
+        {
+          "raw": "---, 2008, LOT 2: The Language of Thought Revisited , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Fredkin, E., 1990, \"Digital Mechanics: An Information Process Based on Reversible Universal Cellular Automata,\" Physica D , 45: 254-270."
+        },
+        {
+          "raw": "---, 2003, \"An Introduction to Digital Philosophy.\" International Journal of Theoretical Physics , 42(2): 189-247."
+        },
+        {
+          "raw": "Fresco, N., 2010, \"Explaining Computation Without Semantics: Keeping It Simple,\" Minds and Machines , 20: 165-181."
+        },
+        {
+          "raw": "---, 2014, Physical Computation and Cognitive Science , New York: Springer."
+        },
+        {
+          "raw": "Fuentes, J. I., 2024, \"Computational Systems as Higher-order Mechanisms,\" Synthese , 203(2), first online 02 February 2024. doi:10.1007/s11229-023-04482-y"
+        },
+        {
+          "raw": "Fuchs, C. A., 2004, \"Quantum Mechanics as Quantum Information (and only a little more),\" in Quantum Theory: Reconsiderations of Foundations , A. Khrennikov (ed.), V&auml;xj&ouml;, Sweden: V&auml;xj&ouml; University Press, pp. 463-543."
+        },
+        {
+          "raw": "Gandy, R., 1980, \"Church's Thesis and Principles for Mechanism,\" in J. Barwise, H. J. Keisler, K. Kunen (eds.), The Kleene Symposium: Studies in Logic and the Foundations of Mathematics , Amsterdam: North-Holland Publishing."
+        },
+        {
+          "raw": "Garson, J., 2013, \"The Functional Sense of Mechanism,\" Philosophy of Science , 80: 317-333."
+        },
+        {
+          "raw": "Giunti, M., 2017, \"What is a Physical Realization of a Computational System?\" Isonomia , 9: 177-192."
+        },
+        {
+          "raw": "G&ouml;del, K., 1934, \"On Undecidable Propositions of Formal Mathematical Systemsm,\" in The Undecidable , M. Davis (ed.), Ewlett, NY: Raven, pp. 41-71."
+        },
+        {
+          "raw": "---, 1936. \"&Uuml;ber die Lange von Beweisen,\" Ergebnisse eines mathematischen Kolloquiums , 7: 23-24."
+        },
+        {
+          "raw": "---, 1946, \"Remarks Before the Princeton Bicentennial Conference on Problems in Mathematics,\" reprinted in Davis 2004b, pp. 84-88."
+        },
+        {
+          "raw": "Godfrey-Smith, P., 2009, \"Triviality Arguments Against Functionalism,\" Philosophical Studies , 145(2): 273-295."
+        },
+        {
+          "raw": "Grice, H. P., 1957, \"Meaning,\" The Philosophical Review , 66(3): 377-388."
+        },
+        {
+          "raw": "Hagar, A., and A. Korolev, 2007, \"Quantum Hypercomputation--Hyper or Computation?,\" Philosophy of Science , 74(3): 347-363."
+        },
+        {
+          "raw": "Hamkins, J. D., 2002, \"Infinite Time Turing Machines,\" Minds and Machines , 12: 521-539."
+        },
+        {
+          "raw": "Heemskerk, J., 2025, How Informational Teleosemantics Works: Towards a Realist Theory of Content , Ph.D. Dissertation, University of Warwick."
+        },
+        {
+          "raw": "Harman, G., 1987, \"(Nonsolipsistic) Conceptual Role Semantics,\" in New Directions in Semantics , E. Lepore (ed.), London: Academic Press, pp. 55-81."
+        },
+        {
+          "raw": "Hogarth, M. L., 1994, \"Non-Turing Computers and Non-Turing Computability,\" PSA 1994 (1): 126-138."
+        },
+        {
+          "raw": "---, 2004, \"Deciding Arithmetic Using SAD Computers,\" British Journal for the Philosophy of Science , 55: 681-691."
+        },
+        {
+          "raw": "Horsman, D., V. Kendon, and S. Stepney, 2018, \"Abstraction/Representation Theory and the Natural Science of Computation,\" in Physical Perspectives on Computation, Computational Perspectives on Physics , M. E. Cuffaro and S. C. Fletcher (eds.), Cambridge: Cambridge University Press, pp. 127-49."
+        },
+        {
+          "raw": "Horsman, D., S. Stepney, R. C. Wagner, and V. Kendon, 2014, \"When Does a Physical System Compute?\" in Proceedings of the Royal Society of London A , 470(2169). doi:10.1098/rspa.2014.0182"
+        },
+        {
+          "raw": "Isaac, A. M. C., 2019, \"The Semantics Latent in Shannon Information,\" The British Journal for the Philosophy of Science 70(1): 103-125."
+        },
+        {
+          "raw": "Jacquette, D., 1991, \"The Myth of Pure Syntax,\" in Topics in Philosophy and Artificial Intelligence , L. Albertazzi and R. Rolli (eds.), Bozen: Istituto Mitteleuropeo di Cultura, pp. 1-14."
+        },
+        {
+          "raw": "Kantor, F. W., 1982, \"An Informal Partial Overview of Information Mechanics,\" International Journal of Theoretical Physics , 21(6-7): 525-35."
+        },
+        {
+          "raw": "Kaplan, D. M., 2011, \"Explanation and Description in Computational Neuroscience,\" Synthese , 183(3): 339-373."
+        },
+        {
+          "raw": "Kersten, L., 2024, \"An Idealised Account of Mechanistic Computation,\" Synthese , 203(99), first online 14 March 2024. doi:10.1007/s11229-024-04526-x"
+        },
+        {
+          "raw": "Kieu, T. D., 2002, \"Quantum Hypercomputation,\" Minds and Machines , 12(4): 541-561."
+        },
+        {
+          "raw": "---, 2003, \"Computing the Noncomputable,\" Contemporary Physics , 44: 51-71."
+        },
+        {
+          "raw": "---, 2004, \"A Reformulation of Hilbert's Tenth Problem through Quantum Mechanics,\" Proceedings of the Royal Society A , 460(2045): 1535-1545."
+        },
+        {
+          "raw": "---, 2005, \"An Anatomy of a Quantum Adiabatic Algorithm that Transcends the Turing Computability,\" International Journal of Quantum Information , 3(1): 177-183."
+        },
+        {
+          "raw": "Kirkpatrick, K. L., 2022, \"Biological Computation: Hearts and Flytraps,\" Journal of Biological Physics , 48(1): 55-78."
+        },
+        {
+          "raw": "Kleene, S. C., 1935, \"A Theory of Positive Integers in Formal Logic,\" American Journal of Mathematics , 57: 153-173 and 219-244."
+        },
+        {
+          "raw": "---, 1952, Introduction to Metamathematics , Princeton: Van Nostrand."
+        },
+        {
+          "raw": "Klein, C., 2008, \"Dispositional Implementation Solves the Superfluous Structure Problem,\" Synthese , 165: 141-153."
+        },
+        {
+          "raw": "Kuokkanen, J., 2022, \"Vertical-horizontal Distinction in Resolving the Abstraction, Hierarchy, and Generality Problems of the Mechanistic Account of Physical Computation,\" Synthese , 200(3), 247. doi:10.1007/s11229-022-03725-8"
+        },
+        {
+          "raw": "Ladyman, J., S. Presnell, A. J. Short, and B. Groisman, 2007, \"The Connection between Logical and Thermodynamic Irreversibility,\" Studies in History and Philosophy of Science Part B: Studies In History and Philosophy of Modern Physics , 38(1): 58-79."
+        },
+        {
+          "raw": "Lee, J., 2021, \"Mechanisms, Wide Functions, and Content: Towards a Computational Pluralism,\" The British Journal for the Philosophy of Science , 72(1): 221-244."
+        },
+        {
+          "raw": "Leff, H. S. and A.F. Rex, (eds.), 2003, Maxwell's Demon 2: Entropy, Classical and Quantum Information, Computing . Bristol: Institute of Physics Publishing."
+        },
+        {
+          "raw": "Lent, C. S., Orlov, A. O., Porod, W., and G. L. Snider, (eds.), 2019, Energy Limits in Computation: A Review of Landauer's Principle, Theory and Experiments , Berlin: Springer."
+        },
+        {
+          "raw": "Lloyd, S., 2006, Programming the Universe: A Quantum Computer Scientist Takes on the Cosmos . New York: Knopf."
+        },
+        {
+          "raw": "Lycan, W., 1981, \"Form, Function, and Feel,\" Journal of Philosophy , 78(1): 24-50."
+        },
+        {
+          "raw": "Machamer, P. K., Darden, L., and C. Craver, 2000, \"Thinking About Mechanisms,\" Philosophy of Science , 67: 1-25."
+        },
+        {
+          "raw": "Maley, C. J., 2023, \"Analogue Computation and Representation,\" The British Journal for the Philosophy of Science, 74(3): 739-769."
+        },
+        {
+          "raw": "Martin, C. B., 1997, \"On the Need for Properties: The Road to Pythagoreanism and Back,\" Synthese , 112(2): 193-231."
+        },
+        {
+          "raw": "Maudlin, T., 1989, \"Computation and Consciousness,\" Journal of Philosophy , 86(8): 407-432."
+        },
+        {
+          "raw": "Milkowski, M., 2013, Explaining the Computational Mind , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Millhouse, T., 2019, \"A Simplicity Criterion for Physical Computation,\" The British Journal for the Philosophy of Science , 70(1): 153-78."
+        },
+        {
+          "raw": "Mills, J. W., 2008, \"The Nature of the Extended Analog Computer,\" Physica D: Nonlinear Phenomena , 237(9): 1235-1256."
+        },
+        {
+          "raw": "N&eacute;meti, I., and G. D&aacute;vid, 2006, \"Relativistic Computers and the Turing Barrier,\" Journal of Applied Mathematics and Computation , 178(1): 118-142."
+        },
+        {
+          "raw": "Nielsen, M. A., 1997, \"Computable Functions, Quantum Measurements, and Quantum Dynamics,\" Physical Review Letters , 79(15): 2915-2918."
+        },
+        {
+          "raw": "Nielsen, M. A., and I. L. Chuang, 2000, Quantum Computation and Quantum Information . New York: Cambridge University Press."
+        },
+        {
+          "raw": "Norton, J. D., 2003, \"Causation as Folk Science,\" Philosophers' Imprint , 3(4): 1-22."
+        },
+        {
+          "raw": "Ord, T., 2006, \"The Many Forms of Hypercomputation,\" Applied Mathematics and Computation , 178(1): 143-153."
+        },
+        {
+          "raw": "Papayannopoulos, P., 2020, \"Computing and modelling: Analog vs. Analogue,\" Studies in History and Philosophy of Science Part A , 83: 103-120."
+        },
+        {
+          "raw": "Piccinini, G., 2004, \"Functionalism, Computationalism, and Mental Contents,\" Canadian Journal of Philosophy , 34(3): 375-410."
+        },
+        {
+          "raw": "---, 2007, \"Computing Mechanisms,\" Philosophy of Science , 74(4): 501-526."
+        },
+        {
+          "raw": "---, 2015, Physical Computation: A Mechanistic Account , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2020, Neurocognitive Mechanisms: Explaining Biological Cognition , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Piccinini, G. and A. Scarantino, 2011, \"Information Processing, Computation, and Cognition,\" Journal of Biological Physics 37(1): 1-38."
+        },
+        {
+          "raw": "Pitowsky, I., 1990, \"The Physical Church Thesis and Physical Computational Complexity,\" Iyyun , 39: 81-99."
+        },
+        {
+          "raw": "---, 2002, \"Quantum Speed-Up of Computations,\" Philosophy of Science , 69: S168-S177."
+        },
+        {
+          "raw": "Pour-El, M. B., 1974, \"Abstract Computability and Its Relation to the General Purpose Analog Computer (Some Connections Between Logic, Differential Equations and Analog Computers),\" Transactions of the American Mathematical Society , 199: 1-28."
+        },
+        {
+          "raw": "---, 1999, The Structure of Computability in Analysis and Physical Theory: An Extension of Church's Thesis. In Handbooks of Computability Theory , E.R. Griffor (ed.), New York: Elsevier, pp. 449-471."
+        },
+        {
+          "raw": "Pour-El, M. and I. Richards, 1989, Computability in Analysis and Physics, Perspectives in Mathematical Logic , Berlin: Springer-Verlag."
+        },
+        {
+          "raw": "Putnam, H., 1960, \"Minds and Machines,\" in Dimensions of Mind: A Symposium , S. Hook (ed.), New York: Collier, pp. 138-164; Reprinted in Putnam 1975a, pp. 362-386."
+        },
+        {
+          "raw": "---, 1967, \"Psychological Predicates,\" in Art, Mind, and Religion , W.H. Capitan & D.D. Merrill (eds.), Pittsburgh, PA: University of Pittsburgh Press, pp. 37-48. Reprinted in Putnam 1975a as \"The Nature of Mental States,\" pp. 150-161."
+        },
+        {
+          "raw": "---, 1975b, \"The Meaning of 'Meaning',\" in Language, Mind and Knowledge. Minnesota Studies in the Philosophy of Science , vol. 7, K. Gunderson (ed.), Minneapolis: University of Minnesota Press, pp. 131-193. Reprinted in Putnam 1975a, pp. 215-271."
+        },
+        {
+          "raw": "---, 1988, Representation and Reality , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Pylyshyn, Z. W., 1984, Computation and Cognition , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Quine, W. V. O., 1976, \"Whither Physical Objects?\" in Essays in Memory of Imre Lakatos , (Series: Boston Studies in the Philosophy of Science), R.S. Cohen, P.K. Feyerabend, & M.W. Wartofsky (eds.), Dordrecht: Reidel, pp. 497-504."
+        },
+        {
+          "raw": "Rescorla, M., 2014, \"A Theory of Computational Implementation,\" Synthese , 191: 1277-1307."
+        },
+        {
+          "raw": "Rubel, L. A., 1989, \"Digital Simulation of Analog Computation and Church's Thesis,\" Journal of Symbolic Logic , 54(3): 1011-1017."
+        },
+        {
+          "raw": "---, 1993, \"The Extended Analog Computer,\" Advances in Applied Mathematics , 14(1): 39-50."
+        },
+        {
+          "raw": "Scheutz, M., 1999, \"When Physical Systems Realize Functions &hellip;,\" Minds and Machines , 9(2): 161-196."
+        },
+        {
+          "raw": "---, 2001, \"Causal versus Computational Complexity,\" Minds and Machines , 11(4): 534-566."
+        },
+        {
+          "raw": "Schonbein, W., 2005, \"Cognition and the Power of Continuous Dynamical Systems,\" Minds and Machines , 15(1): 57-71."
+        },
+        {
+          "raw": "Searle, J. R., 1992, The Rediscovery of the Mind , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Segal, G., 1991, \"Defence of a Reasonable Individualism,\" Mind , 100(400): 485-493."
+        },
+        {
+          "raw": "Seth, A. K., 2025, \"Conscious Artificial Intelligence and Biological Naturalism,\" Behavioral and Brain Sciences , first online 21 April 2025. doi:10.1017/S0140525X25000032"
+        },
+        {
+          "raw": "Shagrir, O., 2001, \"Content, Computation and Externalism,\" Mind , 110(438): 369-400."
+        },
+        {
+          "raw": "---, 2006, \"Why We View the Brain as a Computer,\" Synthese , 153(3): 393-416."
+        },
+        {
+          "raw": "---, 2022, The Nature of Physical Computation , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Shagrir, O., and I. Pitowsky, 2003, \"Physical Hypercomputation and the Church-Turing Thesis,\" Minds and Machines , 13(1): 87-101."
+        },
+        {
+          "raw": "Shannon, C. E., and W. Weaver, 1949, The Mathematical Theory of Communication , Urbana: University of Illinois Press."
+        },
+        {
+          "raw": "Shapiro, L. A., 1997, \"A Clearer Vision,\" Philosophy of Science , 64(1): 131-153."
+        },
+        {
+          "raw": "Shor, P. W., 1994, \"Algorithms for Quantum Computation: Discrete Logarithms and Factoring,\" in Proceedings of the 357th Annual Symposium on Foundations of Computer Science , Los Alamitos, CA: IEEE Computer Society Press, pp. 124-134."
+        },
+        {
+          "raw": "Sieg, W., 2006, \"On Computability,\" in Philosophy of Mathematics (Handbook of the Philosophy of Science) , A. Irvine (ed.) Amsterdam: Elsevier, pp. 535-630."
+        },
+        {
+          "raw": "Siegelmann, H. T., 1999, Neural Networks and Analog Computation: Beyond the Turing Limit , Boston: Birkh&auml;user."
+        },
+        {
+          "raw": "Smith, B. C., 2002, \"The Foundations of Computing,\" in Computationalism: New Directions , M. Scheutz (ed.), Cambridge, MA: MIT Press, pp. 23-58."
+        },
+        {
+          "raw": "Smith, W. D., 2006a, \"Church's Thesis Meets the N -body Problem,\" Applied Mathematics and Computation , 178(1): 154-183."
+        },
+        {
+          "raw": "---, 2006b, \"Three Counterexamples Refuting Kieu's Plan for Quantum Adiabatic Hypercomputation; and Some Uncomputable Quantum Mechanical Tasks,\" Applied Mathematics and Computation , 178(1): 184-193."
+        },
+        {
+          "raw": "Sprevak, M., 2010, \"Computation, Individuation, and the Received view on Representation,\" Studies in History and Philosophy of Science Part A , 41(3): 260-270."
+        },
+        {
+          "raw": "Stabler, E. P., Jr., 1987, \"Kripke on Functionalism and Automata,\" Synthese , 70: 1-22."
+        },
+        {
+          "raw": "Stannett, M., 1990, \"X-Machines and the Halting Problem: Building a Super-Turing Machine,\" Formal Aspects of Computing , 2(1): 331-341."
+        },
+        {
+          "raw": "Stich, S., 1983, From Folk Psychology to Cognitive Science , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Tegmark, M., 2014, Our Mathematical Universe: My Quest for the Ultimate Nature of Reality , New York: Random House."
+        },
+        {
+          "raw": "Toffoli, T., 1982, \"Physics and Computation,\" International Journal of Theoretical Physics , 21(3-4): 165-175."
+        },
+        {
+          "raw": "Turing, A. M., 1936-7, \"On Computable Numbers, with an Application to the Entscheidungsproblem,\" Proceeding of the London Mathematical Society , 42(1): 230-265, reprinted in Davis 2004b, pp. 116-154."
+        },
+        {
+          "raw": "---, 1950, \"Computing Machinery and Intelligence,\" Mind , LIX(236): 433-460."
+        },
+        {
+          "raw": "Wheeler, J. A., 1982, \"The Computer and the Universe,\" International Journal of Theoretical Physics , 21(6-7): 557-572."
+        },
+        {
+          "raw": "Wiggershaus, N., 2025, \"Physical Programmability,\" Minds and Machines , 35(2): 1-29."
+        },
+        {
+          "raw": "Wolfram, S., 2002, A New Kind of Science , Champaign, IL: Wolfram Media."
+        },
+        {
+          "raw": "Zuse, K., 1970, Calculating Space . Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 1982, \"The Computing Universe,\" International Journal of Theoretical Physics , 21(6-7): 589-600."
+        }
+      ],
+      "publishedAt": "2010-07-20T14:00:00.000Z",
+      "revisedAt": "2025-08-19T14:00:00.000Z"
+    }
+  }
+}

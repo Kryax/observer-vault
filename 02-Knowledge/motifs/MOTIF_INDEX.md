@@ -1,7 +1,7 @@
 ---
 status: canonical
 date: 2026-03-03
-updated: 2026-03-22
+updated: 2026-03-23
 cssclasses:
   - status-canonical
 ---
@@ -16,12 +16,12 @@ cssclasses:
 | Metric | Count |
 |--------|-------|
 | Total motifs | 34 |
-| Tier 0 (Observation) | 16 |
-| Tier 1 (Cross-Domain) | 8 |
+| Tier 0 (Observation) | 14 |
+| Tier 1 (Cross-Domain) | 10 |
 | Tier 2 (Structural Operator) | 8 |
 | Tier 3 (Meta-Structural) | 0 |
 | Tier 3 drafts | 5 |
-| Tier 2 candidates | 2 |
+| Tier 2 candidates | 4 |
 
 ## Motif Registry
 
@@ -38,12 +38,12 @@ cssclasses:
 | Trust-as-Curation | 1 | 0.7 | 8 | triangulated | 0-1 | integrate | [trust-as-curation.md](trust-as-curation.md) |
 | Reflexive Structural Transition | 1 | 0.8 | 10 | triangulated | 2 | recurse | [reflexive-structural-transition.md](reflexive-structural-transition.md) |
 | Reconstruction Burden | 1 | 0.8 | 14 | triangulated | 1 | differentiate | [reconstruction-burden.md](reconstruction-burden.md) |
-| Boundary Drift | 1 | 0.7 | 8 | triangulated | 1 | differentiate | [boundary-drift.md](boundary-drift.md) |
-| Structural Coupling as Ground State | 1 | 0.6 | 6 | triangulated | 0 | integrate | [structural-coupling-ground-state.md](structural-coupling-ground-state.md) |
+| Boundary Drift | 1 | 0.9 | 9 | triangulated | 1 | differentiate | [boundary-drift.md](boundary-drift.md) |
+| Structural Coupling as Ground State | 1 | 0.9 | 10 | triangulated | 0 | integrate | [structural-coupling-ground-state.md](structural-coupling-ground-state.md) |
 | Recursive Generativity | 1 | 0.5 | 5 | triangulated | 3 | recurse | [recursive-generativity.md](recursive-generativity.md) |
 | Template-Driven Classification | 1 | 0.3 | 2 | top-down | 0 | differentiate | [template-driven-classification.md](template-driven-classification.md) |
 | Scaffold-First Architecture | 1 | 0.2 | 2 | top-down | 0 | differentiate | [scaffold-first-architecture.md](scaffold-first-architecture.md) |
-| Primitive Self-Reference | 0 | 0.4 | 4 | triangulated | 0 | recurse | [primitive-self-reference.md](primitive-self-reference.md) |
+| Primitive Self-Reference | 1 | 0.7 | 7 | triangulated | 0 | recurse | [primitive-self-reference.md](primitive-self-reference.md) |
 | Paradigmatic Boundary Revision | 0 | 0.3 | 3 | bottom-up | 3 | differentiate | [paradigmatic-boundary-revision.md](paradigmatic-boundary-revision.md) |
 | Consilient Unification | 0 | 0.3 | 3 | top-down | 3 | integrate | [consilient-unification.md](consilient-unification.md) |
 | Live Event Bus | 0 | 0.1 | 1 | bottom-up | 1 | integrate | [live-event-bus.md](live-event-bus.md) |
@@ -54,7 +54,7 @@ cssclasses:
 | Kill-Ratio as Health Signal | 0 | 0.1 | 1 | bottom-up | 1 | integrate | [kill-ratio-as-health-signal.md](kill-ratio-as-health-signal.md) |
 | Propagated Uncertainty Envelope | 0 | 0.1 | 1 | bottom-up | 1 | integrate | [propagated-uncertainty-envelope.md](propagated-uncertainty-envelope.md) |
 | Estimation-Control Separation | 0 | 0.1 | 1 | bottom-up | 1 | differentiate | [estimation-control-separation.md](estimation-control-separation.md) |
-| Safety-Liveness Duality | 0 | 0.1 | 1 | bottom-up | 2 | differentiate | [safety-liveness-duality.md](safety-liveness-duality.md) |
+| Safety-Liveness Duality | 1 | 0.7 | 7 | triangulated | 2 | differentiate | [safety-liveness-duality.md](safety-liveness-duality.md) |
 | Prediction-Error as Primary Signal | 0 | 0.1 | 1 | top-down | 2 | recurse | [prediction-error-as-primary-signal.md](prediction-error-as-primary-signal.md) |
 | Nested Self-Similar Hierarchy | 0 | 0.1 | 1 | top-down | 2 | recurse | [nested-self-similar-hierarchy.md](nested-self-similar-hierarchy.md) |
 | Two Antagonistic Modes | 0 | 0.1 | 1 | top-down | 1 | integrate | [two-antagonistic-modes.md](two-antagonistic-modes.md) |
@@ -79,8 +79,12 @@ cssclasses:
 
 | Name | Domains | Confidence | Gap | File |
 |------|---------|-----------|-----|------|
+| Reconstruction Burden | 14 | 0.8 | **T2-ready:** All 5 validation protocol conditions pass (batch 4 run 2). Awaiting Adam's approval. | [reconstruction-burden.md](reconstruction-burden.md) |
 | Trust-as-Curation | 8 | 0.7 | Needs 1+ additional strong alien-domain bottom-up instance for T2 promotion | [trust-as-curation.md](trust-as-curation.md) |
 | Reflexive Structural Transition | 10 | 0.8 | Biology-specificity refuted; needs formal T2 validation protocol review | [reflexive-structural-transition.md](reflexive-structural-transition.md) |
+| Boundary Drift | 9 | 0.9 | Needs formal adversarial testing (condition 4) — is this just "things change"? | [boundary-drift.md](boundary-drift.md) |
+| Structural Coupling as Ground State | 10 | 0.9 | Needs formal adversarial testing — is this just "things that interact become dependent"? | [structural-coupling-ground-state.md](structural-coupling-ground-state.md) |
+| Safety-Liveness Duality | 7 | 0.7 | Alpern-Schneider theorem gives mathematical universality; needs formal T2 validation protocol | [safety-liveness-duality.md](safety-liveness-duality.md) |
 
 ## Phase 5: Meta-Analysis Gate
 

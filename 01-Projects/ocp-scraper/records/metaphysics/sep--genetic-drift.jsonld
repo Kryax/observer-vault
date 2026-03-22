@@ -1,0 +1,648 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/genetic-drift",
+  "meta": {
+    "title": "Genetic Drift",
+    "description": "In the 1950s, a lively debate broke out among biologists that continues to this day, over what might seem like the most unlikely of organisms: the land snail, Cepaea nemoralis. Yet, there are in fact some interesting aspects to C. nemoralis . This species of snail is polymorphic; the snail's shell varies in color (pink, brown, and yellow) as well as the number of visible bands (anywhere from 0-5). But the colors and bands are not equally distributed across populations. In some populations, pink predominates, whereas in others, yellow or brown, and similarly, some banding numbers are more prevalent in some populations than in others. Thus, not only are there variations within populations (it is rare to find a population that is all one color or where all the snails have the same number of bands), but there are variations between populations. What is the explanation for this distribution of forms? Those whose knowledge of evolution familiarized them only with the theory of natural selection might assume, for example, that in the populations where yellow snails were the most prevalent, it was because they were fitter than the other colors--that there was some environmental factor that favored yellow over brown and pink. And that in the populations where brown snails were the most prevalent, there was some difference in the environment that led them to be favored over yellow and pink snails. But is there some other explanation? Perhaps the distributions are in some sense due to chance, perhaps even in a way that can be modeled mathematically. What would that mean, and how would you determine which explanation was correct? The attempt to develop \"chancy\" explanations that are alternatives (perhaps complementary alternatives) to those due to natural selection is what led biologists to develop models of genetic drift. Genetic drift (variously called \"random drift\", \"random genetic drift\", or sometimes just \"drift\") has been a source of ongoing controversy within the philosophy of biology and evolutionary biology communities, to the extent that even the question of what drift is has become controversial. There seems to be agreement that drift is a chance (or probabilistic or statistical) element within population genetics (see entry on population genetics ) and within evolutionary biology more generally, and that the term \"random\" isn't invoking indeterminism or any technical mathematical meaning, but that's about where agreement ends. Yet genetic drift models are a staple topic in population genetics textbooks and research, with genetic drift described as one of the main factors of evolution alongside selection, mutation, and migration. Some claim that genetic drift has played a major role in evolution (particularly molecular evolution), while others claim it to be minor. This article will examine these and other controversies. In order to break through the logjam of competing definitions of drift, this entry begins with a brief history of the concept, before examining various philosophical claims about the proper characterization of drift and whether it can be distinguished from natural selection; the relation of drift to debates over statisticalism; whether drift can be detected empirically and if so, how; and the proper understanding of drift as a model and as a (purported) law.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T11:23:08.100Z",
+    "dateModified": "2026-03-22T11:23:08.100Z",
+    "datePublished": "2016-09-14T14:00:00.000Z",
+    "keywords": [
+      "adaptationism",
+      "biology experiment",
+      "biology philosophy",
+      "causation mani",
+      "causation probabilistic",
+      "chance randomness",
+      "darwinism",
+      "ecological genetics",
+      "evolution",
+      "fitness",
+      "gene",
+      "genetics",
+      "genotype phenotype",
+      "heritability",
+      "laws of nature",
+      "levels org biology",
+      "models science",
+      "molecular genetics",
+      "natural selection",
+      "population genetics",
+      "probability interpret",
+      "replication",
+      "selection units",
+      "statistics"
+    ]
+  },
+  "problemSolved": {
+    "statement": "In the 1950s, a lively debate broke out among biologists that continues to this day, over what might seem like the most unlikely of organisms: the land snail, Cepaea nemoralis. Yet, there are in fact some interesting aspects to C. nemoralis . This species of snail is polymorphic; the snail's shell varies in color (pink, brown, and yellow) as well as the number of visible bands (anywhere from 0-5). But the colors and bands are not equally distributed across populations. In some populations, pink predominates, whereas in others, yellow or brown, and similarly, some banding numbers are more prevalent in some populations than in others. Thus, not only are there variations within populations (it is rare to find a population that is all one color or where all the snails have the same number of bands), but there are variations between populations. What is the explanation for this distribution of forms? Those whose knowledge of evolution familiarized them only with the theory of natural selection might assume, for example, that in the populations where yellow snails were the most prevalent, it was because they were fitter than the other colors--that there was some environmental factor that favored yellow over brown and pink. And that in the populations where brown snails were the most prevalent, there was some difference in the environment that led them to be favored over yellow and pink snails. But is there some other explanation? Perhaps the distributions are in some sense due to chance, perhaps even in a way that can be modeled mathematically. What would that mean, and how would you determine which explanation was correct? The attempt to develop \"chancy\" explanations that are alternatives (perhaps complementary alternatives) to those due to natural selection is what led biologists to develop models of genetic drift. Genetic drift (variously called \"random drift\", \"random genetic drift\", or sometimes just \"drift\") has been a source of ongoing controversy within the philosophy of biology and evolutionary biology communities, to the extent that even the question of what drift is has become controversial. There seems to be agreement that drift is a chance (or probabilistic or statistical) element within population genetics (see entry on population genetics ) and within evolutionary biology more generally, and that the term \"random\" isn't invoking indeterminism or any technical mathematical meaning, but that's about where agreement ends. Yet genetic drift models are a staple topic in population genetics textbooks and research, with genetic drift described as one of the main factors of evolution alongside selection, mutation, and migration. Some claim that genetic drift has played a major role in evolution (particularly molecular evolution), while others claim it to be minor. This article will examine these and other controversies. In order to break through the logjam of competing definitions of drift, this entry begins with a brief history of the concept, before examining various philosophical claims about the proper characterization of drift and whether it can be distinguished from natural selection; the relation of drift to debates over statisticalism; whether drift can be detected empirically and if so, how; and the proper understanding of drift as a model and as a (purported) law.",
+    "context": "Opening section: 1. Origins of the Concept of Genetic Drift | Related entries: adaptationism, biology-experiment, biology-philosophy, causation-mani, causation-probabilistic, chance-randomness, darwinism, evolution, fitness, gene, genetics, ecological-genetics, genotype-phenotype, molecular-genetics, population-genetics, heritability, laws-of-nature, levels-org-biology, models-science, natural-selection, selection-units, probability-interpret, replication, statistics",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "metaphysics",
+    "logic",
+    "political-philosophy",
+    "philosophy-of-science",
+    "general-philosophy"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry genetic-drift",
+        "uri": "https://plato.stanford.edu/entries/genetic-drift/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "2 author(s), 24 related entries, bibliography size 102"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2016-09-14T14:00:00.000Z and revised 2026-03-12T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-12T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/genetic-drift/",
+        "description": "SEP entry for genetic-drift"
+      }
+    ],
+    "solutionApproach": "1. Origins of the Concept of Genetic Drift"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/adaptationism",
+      "ocp:sep/biology-experiment",
+      "ocp:sep/biology-philosophy",
+      "ocp:sep/causation-mani",
+      "ocp:sep/causation-probabilistic",
+      "ocp:sep/chance-randomness",
+      "ocp:sep/darwinism",
+      "ocp:sep/evolution",
+      "ocp:sep/fitness",
+      "ocp:sep/gene",
+      "ocp:sep/genetics",
+      "ocp:sep/ecological-genetics",
+      "ocp:sep/genotype-phenotype",
+      "ocp:sep/molecular-genetics",
+      "ocp:sep/population-genetics",
+      "ocp:sep/heritability",
+      "ocp:sep/laws-of-nature",
+      "ocp:sep/levels-org-biology",
+      "ocp:sep/models-science",
+      "ocp:sep/natural-selection",
+      "ocp:sep/selection-units",
+      "ocp:sep/probability-interpret",
+      "ocp:sep/replication",
+      "ocp:sep/statistics"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Millstein",
+        "type": "human"
+      },
+      {
+        "name": "Roberta L.",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/genetic-drift/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 100,
+      "validation_diversity": 0.63,
+      "context_breadth": 0.57,
+      "temporal_stability": 0.95,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.94
+    },
+    "confidence": "proven",
+    "authority": "high",
+    "status": "draft",
+    "trustScore": 0.648
+  },
+  "extensions": {
+    "sep": {
+      "slug": "genetic-drift",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/genetic-drift/",
+      "preamble": "In the 1950s, a lively debate broke out among biologists that continues to this day, over what might seem like the most unlikely of organisms: the land snail, Cepaea nemoralis. Yet, there are in fact some interesting aspects to C. nemoralis . This species of snail is polymorphic; the snail's shell varies in color (pink, brown, and yellow) as well as the number of visible bands (anywhere from 0-5). But the colors and bands are not equally distributed across populations. In some populations, pink predominates, whereas in others, yellow or brown, and similarly, some banding numbers are more prevalent in some populations than in others. Thus, not only are there variations within populations (it is rare to find a population that is all one color or where all the snails have the same number of bands), but there are variations between populations. What is the explanation for this distribution of forms? Those whose knowledge of evolution familiarized them only with the theory of natural selection might assume, for example, that in the populations where yellow snails were the most prevalent, it was because they were fitter than the other colors--that there was some environmental factor that favored yellow over brown and pink. And that in the populations where brown snails were the most prevalent, there was some difference in the environment that led them to be favored over yellow and pink snails. But is there some other explanation? Perhaps the distributions are in some sense due to chance, perhaps even in a way that can be modeled mathematically. What would that mean, and how would you determine which explanation was correct? The attempt to develop \"chancy\" explanations that are alternatives (perhaps complementary alternatives) to those due to natural selection is what led biologists to develop models of genetic drift. Genetic drift (variously called \"random drift\", \"random genetic drift\", or sometimes just \"drift\") has been a source of ongoing controversy within the philosophy of biology and evolutionary biology communities, to the extent that even the question of what drift is has become controversial. There seems to be agreement that drift is a chance (or probabilistic or statistical) element within population genetics (see entry on population genetics ) and within evolutionary biology more generally, and that the term \"random\" isn't invoking indeterminism or any technical mathematical meaning, but that's about where agreement ends. Yet genetic drift models are a staple topic in population genetics textbooks and research, with genetic drift described as one of the main factors of evolution alongside selection, mutation, and migration. Some claim that genetic drift has played a major role in evolution (particularly molecular evolution), while others claim it to be minor. This article will examine these and other controversies. In order to break through the logjam of competing definitions of drift, this entry begins with a brief history of the concept, before examining various philosophical claims about the proper characterization of drift and whether it can be distinguished from natural selection; the relation of drift to debates over statisticalism; whether drift can be detected empirically and if so, how; and the proper understanding of drift as a model and as a (purported) law.",
+      "firstSectionTitle": "1. Origins of the Concept of Genetic Drift",
+      "firstSectionText": "Although Charles Darwin invoked \"chance\" in various ways in the Origin of Species (Beatty 1984), he seems not to have included a concept of drift in his account. He does note in passing that [v]ariations neither useful nor injurious would not be affected by natural selection, and would be left either a fluctuating element, as perhaps we see in certain polymorphic species, or would ultimately become fixed, owing to the nature of the organism and the nature of the conditions. (Darwin 1872: 63; see similar claims on p. 120 and p. 176) As the reader will see, this is tantalizingly similar to contemporary conceptions of drift. But Darwin does not develop the idea further; in particular, he does not tell us why the distributions of such variations would be fluctuating over time or how it is that they would ultimately become fixed. The first serious (and mathematical) treatments of drift are usually traced to two of the founders of population genetics, Sewall Wright and R.A. Fisher, although neither claimed to have developed the ideas behind drift (Beatty 1992). Wright (1951) credits John Gulick (1873) with the genesis of the idea whereas Fisher (1922b) first discussed the idea as derived from the work of A.C. and A.L. Hagedoorn (1921), although Wright (1931a) cites the Hagedoorns too. It is unclear who first uses the term \"drift\" in this context; it appears as early as Wright (1929). So, let us briefly examine Gulick and the Hagedoorns in order to understand the origins of the term \"drift\". Gulick (1873) points out that with natural selection, one can assume that where different forms are found, different external conditions will also be found (with the different forms having adapted over the course of generations to the different external conditions). However, there seem to be cases (e.g., among snails) where the external conditions are very similar, yet the organismic forms are very different. He notes that these species tend to occupy very small areas, even though there is reason to believe it is not because they lack the ability to migrate further. He then postulates a scenario: Suppose some members of a species migrate to a new area where they are free from competition and largely separated from the original population. New variations will arise in the new population, but unless they are \"decidedly malformed\", they will persist. The new population will thus come to differentiate itself from the original population (e.g., with new shades of color or with variations of shape), perhaps rapidly if there is a \"preexisting tendency to rapid variation\". Some points to note here that become relevant in later discussions of drift: 1) Drift is described in contrast to natural selection. 2) The variations increasing in the population are those that are neutral, or at least not severely deleterious. (Note that 1 and 2 are also present in the quote from Darwin above). 3) Drift is associated with small populations (although it is not fully clear why). 4) Drift is associated with the founding of a new population in a new area. 5) Changes in the population are the result of movements of organisms and their tendency to produce new variations, both of which are physical processes and not purely mathematical constructs (something that becomes an issue in later debates). 6) The changes described are of organisms in a population. Hagedoorn and Hagedoorn (1921) similarly point out that some traits of organisms are \"trivial\", i.e., \"cannot possibly be accounted for as useful\", such as \"the shape and arrangement of small hairs on the seeds of some cereals\" (p. 107). They likewise maintain that such traits, which can be stable (\"pure\", i.e., fixed) within a species, cannot be the product of natural selection; instead, the Hagedoorns assert, they must be \"due to some process which accompanies selection\" (p. 108). The Hagedoorns then proceed to describe several ways in which variability in a population can be reduced: a new population is founded which lacks some of the variability of the original population; a population is split in half (with the variability in the daughter populations differing from each other and from the original); and \"random sampling\" where even though the size of the population remains relatively constant from year to year, only a small fraction successfully reproduce. On this last point, they state, The group of organisms chosen by fate to become the parents of the next generation is usually, but always occasionally, considerably smaller than the number of individuals of their species. (1921: 120) Thus, the Hagedoorns endorse points 1-5 above, while describing two additional processes besides #4 (the founding of a new population), namely the splitting of a population and the random sampling of parents. They further explain the relevance of #3 (small populations): \"the smaller the group, the more limited its potential variability, the sooner it will be pure altogether\" (p. 123). And finally, they maintain that drift can produce fixation (\"purity\"), or the complete loss of variation within a population, even in the absence of selection. Fisher (1922b) reads the Hagedoorns as claiming that \"random survival is a more important factor in limiting the variability of species than preferential survival\" (p. 321), a claim that he challenged by attempting to show that such a process would be too slow to overcome the rate of mutation (and thus the introduction of new variability--but he seems to say otherwise in 1922a). An essay published by Wright in 1931 provides what is perhaps one of the earliest explicit characterizations of drift: It has seemed to me that another factor should be much more important in keeping the system of gene frequencies from settling into equilibrium. This is the effect of random sampling in a breeding population of limited size. The gene frequencies of one generation may be expected to differ a little from those of the preceding merely by chance . In the course of generations this may bring about important changes, although the farther the drift from the theoretical equilibrium, the greater will be the pressure toward return. (Wright 1931b: 205; emphasis added) The paper from which this quote is taken was meant to be a summary of a longer paper, also published in 1931 (Wright 1986: 88). In the longer paper (1931a), Wright specifies that the random sampling is of gametes . (Gametes are cells that fuse together during fertilization, such as an egg and a sperm). So, even though Wright (1931a) notes that the Hagedoorns had \"urged the importance of such random fixation as a factor in evolution\", and states that Fisher (1922b) had analyzed the issue, has he changed the subject to be random sampling of gametes rather than of \"parents\" (i.e., organisms)? In short, no: Wright (1932 and elsewhere) makes it clear that he considers drift to encompass both random sampling of gametes and random sampling of organisms. In other words, he has expanded the phenomena that the concept of drift is meant to cover from that discussed by Gulick, the Hagedoorns, and Fisher. But Wright's 1932 paper also emphasized what would become a persistent confusion between drift and inbreeding; both inbreeding and drift are more significant in small populations, so it can become easy to conflate them. But you can have random sampling of parents (say, through a population split) without inbreeding, and inbreeding without random sampling of parents. That alone shows that drift and inbreeding are not the same. So, not all of the expansions of drift were productive ones. It should be noted that while Wright and Fisher had numerous back-and-forth discussions and disagreements about each other's claims concerning the role of drift in evolution (Provine 1986, Skipper 2002), they did not seem to disagree about what drift was . Wright (1948) considered the following to be an \"acceptable statement\" of his view from Fisher and E.B. Ford: Great evolutionary importance has been attached by Sewall Wright (1931, 1932, 1935, 1940) to the fact that small shifts in the gene-ratios of all segregating factors will occur from generation to generation owing to the errors of random sampling in the process by which the gametes available in any one generation are chosen to constitute the next. Such chance deviations will, of course, be greater the smaller the isolated populations concerned. (Fisher and Ford 1947) On the other hand, Wright's later incorporation of fluctuations in mutation rate, fluctuations in migration, and fluctuations in selection (see, e.g., Wright 1949) as types of drift was challenged by Cain and Currey, who asserted that \"the worker on actual examples must classify processes according to their biological significance\" and that such lumping together would produce confusion and prevent proper analysis of actual situations (Cain & Currey 1963: 59). They thus urged the use of the term \"sampling drift\", which Wright adopted in the fourth volume of his 1978 magnum opus, Evolution and the Genetics of Populations . In short, drift's founders exhibit a diversity of views about drift, which John Beatty helpfully describes as follows: drift is a heterogeneous category of evolutionary causes and effects, whose overall significance relative to other modes of evolution (especially evolution by natural selection) has been greatly disputed. (Beatty 1992: 273) Potential causes invoked in the discussion above include sampling of gametes, sampling of parents, founding of new populations, splitting of populations, each of which is intensified when populations are small, while potential effects mentioned include fluctuations of gene frequencies from one generation to the next, loss of variants from a population, and fixation of a (possibly non-adapted) type in a population. Are these causes and effects all drift? With that sort of confusing heterogeneity, there is little surprise that the concept has drawn philosophical attention. But at least we have our starting point for philosophical discussion (see Beatty 1992 and Plutynski 2007 for additional historical overview).",
+      "relatedEntries": [
+        "adaptationism",
+        "biology-experiment",
+        "biology-philosophy",
+        "causation-mani",
+        "causation-probabilistic",
+        "chance-randomness",
+        "darwinism",
+        "evolution",
+        "fitness",
+        "gene",
+        "genetics",
+        "ecological-genetics",
+        "genotype-phenotype",
+        "molecular-genetics",
+        "population-genetics",
+        "heritability",
+        "laws-of-nature",
+        "levels-org-biology",
+        "models-science",
+        "natural-selection",
+        "selection-units",
+        "probability-interpret",
+        "replication",
+        "statistics"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "adaptationism"
+        },
+        {
+          "slug": "biology-experiment"
+        },
+        {
+          "slug": "biology-philosophy"
+        },
+        {
+          "slug": "causation-mani"
+        },
+        {
+          "slug": "causation-probabilistic"
+        },
+        {
+          "slug": "chance-randomness"
+        },
+        {
+          "slug": "darwinism"
+        },
+        {
+          "slug": "evolution"
+        },
+        {
+          "slug": "fitness"
+        },
+        {
+          "slug": "gene"
+        },
+        {
+          "slug": "genetics"
+        },
+        {
+          "slug": "ecological-genetics"
+        },
+        {
+          "slug": "genotype-phenotype"
+        },
+        {
+          "slug": "molecular-genetics"
+        },
+        {
+          "slug": "population-genetics"
+        },
+        {
+          "slug": "heritability"
+        },
+        {
+          "slug": "laws-of-nature"
+        },
+        {
+          "slug": "levels-org-biology"
+        },
+        {
+          "slug": "models-science"
+        },
+        {
+          "slug": "natural-selection"
+        },
+        {
+          "slug": "selection-units"
+        },
+        {
+          "slug": "probability-interpret"
+        },
+        {
+          "slug": "replication"
+        },
+        {
+          "slug": "statistics"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 102,
+      "bibliography": [
+        {
+          "raw": "Abrams, M., 2007, \"How Do Natural Selection and Random Drift Interact?\" Philosophy of Science , 74(5): 666-679."
+        },
+        {
+          "raw": "---, 2023, Evolution and the Machinery of Chance: Philosophy, Probability, and Scientific Practice in Biology , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Beatty, John, 1984, \"Chance and Natural Selection\", Philosophy of Science , 51(2): 183-211."
+        },
+        {
+          "raw": "---, 1992, \"Random Drift\", in Keywords in Evolutionary Biology , edited by Evelyn Fox Keller and Elisabeth A. Lloyd, Cambridge, MA: Harvard University Press, pp. 273-281."
+        },
+        {
+          "raw": "---, 1995, \"The Evolutionary Contingency Thesis\", in Concepts, Theories, and Rationality in the Biological Sciences , edited by G. Wolters and J.G. Lennox, Pittsburgh: University of Pittsburgh Press, pp. 45-81."
+        },
+        {
+          "raw": "---, 1997, \"Why Do Biologists Argue Like They Do?\" Philosophy of Science , 64(4):S432-S443."
+        },
+        {
+          "raw": "Bigelow, John, Brian Ellis, and Robert Pargetter, 1988, \"Forces\", Philosophy of Science , 55: 614-630."
+        },
+        {
+          "raw": "Bouchard, Fr&eacute;d&eacute;ric, and Alex Rosenberg, 2004, \"Fitness, Probability, and the Principles of Natural Selection\", British Journal for the Philosophy of Science , 55: 693-712."
+        },
+        {
+          "raw": "Bourrat, Pierrick, 2018, \"Natural Selection and Drift as Individual-Level Causes of Evolution\", Acta Biotheoretica, 66:159-176."
+        },
+        {
+          "raw": "Brandon, Robert N., 1990, Adaptation and Environment , Princeton, NJ: Princeton University Press."
+        },
+        {
+          "raw": "---, 2005, \"The Difference between Selection and Drift: A Reply to Millstein\", Biology & Philosophy , 20(1): 153-170."
+        },
+        {
+          "raw": "---, 2006, \"The Principle of Drift: Biology's First Law\", The Journal of Philosophy , 103(7): 319-335."
+        },
+        {
+          "raw": "Brandon, Robert N., and Lenore Fleming, 2014, \"Drift Sometimes Dominates Selection, and Vice Versa: A Reply to Clatterbuck, Sober and Lewontin\", Biology and Philosophy , 29: 577-585."
+        },
+        {
+          "raw": "Brandon, Robert N., and Grant Ramsey, 2007, \"What's Wrong with the Emergentist Statistical Interpretation of Natural Selection and Random Drift?\" in The Cambridge Companion to the Philosophy of Biology , edited by David L. Hull and Michael Ruse, Cambridge: Cambridge University Press, pp. 66-84."
+        },
+        {
+          "raw": "Buffalo, Vince, and Graham Coop, 2019, \"The Linked Selection Signature of Rapid Adaptation in Temporal Genomic Data\", Genetics , 213: 1007-1045."
+        },
+        {
+          "raw": "---, 2020, \"Estimating the Genome-wide Contribution of Selection to Temporal Allele Frequency Change\", Proceedings of the National Academy of Sciences , 117: 20672-20680."
+        },
+        {
+          "raw": "Cain, Arthur J. and John D. Currey, 1963, \"Area Effects in Cepaea \", Philosophical Transactions of the Royal Society of London B , 246: 1-81."
+        },
+        {
+          "raw": "Cain, Arthur J. and Philip M. Sheppard, 1950, \"Selection in the Polymorphic Land Snail Cepaea Nemoralis \", Heredity , 4(3): 275-294."
+        },
+        {
+          "raw": "---, 1954, \"Natural Selection in Cepaea \", Genetics , 39: 89-116."
+        },
+        {
+          "raw": "Cain, Joe and Michael Ruse (eds.), 2009, Descended from Darwin: Insights into the History of Evolutionary Studies, 1900-1970 , Philadelphia: American Philosophical Society."
+        },
+        {
+          "raw": "Chiu, M.-C., Nukazawa, K., Resh, V. H., & Watanabe, K., 2023, \"Environmental Effects, Gene Flow and Genetic Drift: Unequal Influences on Genetic Structure Across Landscapes\", Journal of Biogeography , 50: 352-364."
+        },
+        {
+          "raw": "Clatterbuck, Hayley, 2015, \"Drift Beyond Wright-Fisher\", Synthese , 192(11): 3487-3507."
+        },
+        {
+          "raw": "Clatterbuck, Hayley, Elliot Sober, and Richard C. Lewontin, 2013, \"Selection Never Dominates Drift (nor Vice Versa)\", Biology and Philosophy , 20(1): 153-170."
+        },
+        {
+          "raw": "Darwin, Charles, 1872, The Origin of Species by Means of Natural Selection, or the Preservation of Favoured Races in the Struggle for Life , Sixth ed. London: Murray."
+        },
+        {
+          "raw": "Dietrich, Michael R., 1994, \"The Origins of the Neutral Theory of Molecular Evolution\", Journal of the History of Biology , 27(1): 21-59."
+        },
+        {
+          "raw": "---, 2006, \"Three Perspectives on Neutrality and Drift in Molecular Evolution\", Philosophy of Science , 73(5): 666-677."
+        },
+        {
+          "raw": "Dietrich, Michael R. and Roberta L. Millstein, 2008, \"The Role of Causal Processes in the Neutral and Nearly Neutral Theories\", Philosophy of Science , 75(5): 548-559."
+        },
+        {
+          "raw": "Dietrich, Michael R. and Robert A. Skipper Jr., 2007, \"Manipulating Underdetermination in Scientific Controversy: The Case of the Molecular Clock\", Perspectives on Science , 15: 295-326."
+        },
+        {
+          "raw": "Dobzhansky, Theodosius, 1937, Genetics and the Origin of Species , New York: Columbia University Press."
+        },
+        {
+          "raw": "Dobzhansky, Theodosius and Olga Pavlovsky, 1957, \"An Experimental Study of Interaction between Genetic Drift and Natural Selection\", Evolution , 11: 311-319."
+        },
+        {
+          "raw": "Dubinin, N.P. and D.D. Romaschoff, 1932, \"Die Genetische Struktur Der Art Und Ihre Evolution\", Biologichesky Zhurnal , 1: 52-95."
+        },
+        {
+          "raw": "Endler, John A., 1986, Natural Selection in the Wild , Princeton, NJ: Princeton University Press."
+        },
+        {
+          "raw": "Filler, Joshua, 2009, \"Newtonian Forces and Evolutionary Biology: A Problem and Solution for Extending the Force Interpretation\", Philosophy of Science , 76: 774-783."
+        },
+        {
+          "raw": "Fisher, Ronald A., 1922a, \"Darwinian Evolution of Mutations\", Eugenics Review , 14: 31-34."
+        },
+        {
+          "raw": "---, 1922b, \"On the Dominance Ratio\", Proceedings of the Royal Society of Edinburgh , 42: 321-341."
+        },
+        {
+          "raw": "Fisher, Ronald A. and E.B. Ford, 1947, \"The Spread of a Gene in Natural Conditions in a Colony of the Moth Panaxia Dominula L\", Heredity , 1: 143-174."
+        },
+        {
+          "raw": "Forber, Patrick and Kenneth Reisman, 2007, \"Can There Be Stochastic Evolutionary Causes?\", Philosophy of Science , 74(5): 616-627. doi:10.1086/525608"
+        },
+        {
+          "raw": "Giere, Ronald N., 1988, Explaining Science: A Cognitive Approach , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Gildenhuys, Peter, 2009, \"An Explication of the Causal Dimension of Drift\", British Journal for the Philosophy of Science , 60(3): 521-555. doi:10.1093/bjps/axp019"
+        },
+        {
+          "raw": "---, 2014, \"Arbitrariness and Causation in Classical Population Genetics\", British Journal for the Philosophy of Science , 65: 429-444. doi:10.1093/bjps/axs042"
+        },
+        {
+          "raw": "Gillespie, John H., 2000a, \"Genetic Drift in an Infinite Population. The Pseudohitchhiking Model\", Genetics , 155(2): 909-19."
+        },
+        {
+          "raw": "---, 2000b, \"The Neutral Theory in an Infinite Population\", Gene , 261(1): 11-18."
+        },
+        {
+          "raw": "---, 2001, \"Is the Population Size of a Species Relevant to Its Evolution?\" Evolution , 55(11): 2161-2169."
+        },
+        {
+          "raw": "---, 2004, Population Genetics: A Concise Guide , Second ed. Baltimore: Johns Hopkins University Press."
+        },
+        {
+          "raw": "Godfrey-Smith, Peter, 2009, Darwinian Populations and Natural Selection , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Gulick, John T, 1873, \"On Diversity of Evolution under One Set of External Conditions\", Journal of the Linnean Society of London , 11: 496-505."
+        },
+        {
+          "raw": "Hagedoorn, A.L. and A.C. Hagedoorn, 1921, On the Relative Value of the Processes Causing Evolution , The Hague: Nijhoff."
+        },
+        {
+          "raw": "Haufe, Chris, 2013, \"From Necessary Chances to Biological Laws\", The British Journal for the Philosophy of Science , 64(2): 279-295."
+        },
+        {
+          "raw": "Hodge, M.J.S., 1987, \"Natural Selection as a Causal, Empirical, and Probabilistic Theory\", in The Probabilistic Revolution, Volume II , edited by Lorenz Kr&uuml;ger, Gerd Gigerenzer and Mary S. Morgan, Cambridge, MA: MIT Press, pp. 233-270."
+        },
+        {
+          "raw": "---, 2011, \"Darwinism after Mendelism: The Case of Sewall Wright's Intellectual Synthesis in His Shifting Balance Theory of Evolution (1931)\", Studies in the History and Philosophy of the Biological and Biomedical Sciences , 42(1): 30-39."
+        },
+        {
+          "raw": "---, 2016, \"Chance and Chances in Darwin's Early Theorizing and in Darwinian Theory Today\", in Ramsey and Pence 2016: 41-75."
+        },
+        {
+          "raw": "Ishida, Yoichi and Alirio Rosales, 2020, \"The origins of the stochastic theory of population genetics: The Wright- Fisher model\", Studies in History and Philosophy of Biological and Biomedical Sciences , 79(101226): 1-8."
+        },
+        {
+          "raw": "Jeler, Ciprian, 2024, \"Two Kinds of Drift?\", Synthese , 204(99): 1-22."
+        },
+        {
+          "raw": "Lamotte, Maxime, 1959, \"Polymorphism of Natural Populations of Cepaea Nemoralis \", Cold Spring Harbor Symposia on Quantitative Biology , 24: 65-84."
+        },
+        {
+          "raw": "Lange, Marc, 2013, \"Really Statistical Explanations and Genetic Drift\", Philosophy of Science , 80(2): 169-188. doi:10.1086/670323"
+        },
+        {
+          "raw": "Matthen, Mohan, 2010, \"What Is Drift? A Response to Millstein, Skipper, and Dietrich\", Philosophy and Theory in Biology , 2:e102."
+        },
+        {
+          "raw": "Matthen, Mohan and Andr&eacute; Ariew, 2002, \"Two Ways of Thinking About Fitness and Natural Selection\", The Journal of Philosophy , 99: 55-83."
+        },
+        {
+          "raw": "McShea, Daniel W. and Robert N. Brandon, 2010, Biology's First Law: The Tendency for Diversity and Complexity to Increase in Evolutionary Systems , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Mills, Susan K. and John Beatty, 1979, \"The Propensity Interpretation of Fitness\", Philosophy of Science , 46(2): 263-286."
+        },
+        {
+          "raw": "Millstein, Roberta L., 2002, \"Are Random Drift and Natural Selection Conceptually Distinct?\" Biology & Philosophy , 17(1): 33-53."
+        },
+        {
+          "raw": "---, 2005, \"Selection Vs. Drift: A Response to Brandon's Reply\", Biology & Philosophy , 20(1): 171-175."
+        },
+        {
+          "raw": "---, 2006, \"Natural Selection as a Population-Level Causal Process\", British Journal for the Philosophy of Science , 57(4): 627-653."
+        },
+        {
+          "raw": "---, 2008, \"Distinguishing Drift and Selection Empirically: 'The Great Snail Debate' of the 1950s\", Journal of the History of Biology , 41(2): 339-367."
+        },
+        {
+          "raw": "---, 2009, \"Concepts of Drift and Selection in 'the Great Snail Debate' of the 1950s and Early 1960s\", in Cain and Ruse 2009: 271-298."
+        },
+        {
+          "raw": "Millstein, Roberta L., Robert A. Skipper Jr., and Michael R. Dietrich, 2009, \"(Mis)Interpreting Mathematical Models of Drift: Drift as a Physical Process\", Philosophy and Theory in Biology , 1: 1-13."
+        },
+        {
+          "raw": "Northcott, Robert, 2010, \"Walsh on Causes and Evolution\", Philosophy of Science , 77(3): 457-467."
+        },
+        {
+          "raw": "Ohta, Tomoko, 1973, \"Slightly Deleterious Mutant Substitutions in Evolution\", Nature , 246: 96-98."
+        },
+        {
+          "raw": "Pence, Charles H., 2017, \"Is Genetic Drift a Force?\" Synthese , 194: 1967-1988. doi:10.1007/s11229-016-1031-2"
+        },
+        {
+          "raw": "Pigliucci, Massimo and Jonathan Kaplan, 2010, Making Sense of Evolution: The Conceptual Foundations of Evolutionary Biology , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Pfeifer, Jessica, 2005, \"Why Selection and Drift Might Be Distinct\", Philosophy of Science , 72(5): 1135-1145."
+        },
+        {
+          "raw": "Plutynski, Anya, 2005, \"Parsimony and the Fisher-Wright Debate\", Biology & Philosophy , 20(4): 697-713."
+        },
+        {
+          "raw": "---, 2007, \"Drift: A Historical and Conceptual Overview\", Biological Theory , 2(2): 156-167."
+        },
+        {
+          "raw": "Plutynski, Anya, Kenneth Blake Vernon, Lucas John Matthews, and Daniel Molter, 2016, \"Chance in the Modern Synthesis\", in Ramsey and Pence 2016: 76-102."
+        },
+        {
+          "raw": "Provine, William B., 1986, Sewall Wright and Evolutionary Biology , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "---, 2014, The \"Random Genetic Drift\" Fallacy , New York: CreateSpace Independent Publishing Platform."
+        },
+        {
+          "raw": "Ramsey, Grant, 2013, \"Driftability\", Synthese , 190(17): 3909-3928."
+        },
+        {
+          "raw": "Ramsey, Grant and Charles H. Pence (eds.), 2016, Chance in Evolution , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Reisman, Kenneth and Patrick Forber, 2005, \"Manipulation and the Causes of Evolution\", Philosophy of Science , 72(5): 1113-1123. doi:10.1086/508120"
+        },
+        {
+          "raw": "Richardson, Robert C., 2006, \"Chance and the Patterns of Drift: A Natural Experiment\", Philosophy of Science , 73: 642-654."
+        },
+        {
+          "raw": "Rosenberg, Alexander, 1994, Instrumental Biology or the Disunity of Science , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Scriven, Michael, 1959, \"Explanation and Prediction in Evolutionary Theory\", Science , 130(3374): 477-482. doi:10.1126/science.130.3374.477"
+        },
+        {
+          "raw": "Shanahan, Timothy, 1992, \"Selection, Drift, and the Aims of Evolutionary Theory\", in Trees of Life: Essays in Philosophy of Biology , edited by Paul Griffiths, pp. 131-161. Dordrecht: Kluwer."
+        },
+        {
+          "raw": "Shapiro, Larry and Elliott Sober, 2007, \"Epiphenomenalism--the Do's and the Don'ts\", in Studies in Causality: Historical and Contemporary , edited by G. Wolters and Peter Machamer Pittsburgh, PA: University of Pittsburgh Press, pp. 235-264."
+        },
+        {
+          "raw": "Skipper Jr., Robert A., 2002, \"The Persistence of the R.A. Fisher-Sewall Wright Controversy\", Biology & Philosophy , 17(3): 341-367."
+        },
+        {
+          "raw": "---, 2006, \"Stochastic Evolutionary Dynamics: Drift Versus Draft\", Philosophy of Science , 73(5): 655-665."
+        },
+        {
+          "raw": "---, 2009, \"Revisiting the Fisher-Wright Controversy\", in Cain and Ruse 2009: 299-322."
+        },
+        {
+          "raw": "Sober, Elliott, 1984, The Nature of Selection , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Stephens, Christopher, 2004, \"Selection, Drift, and the 'Forces' of Evolution\", Philosophy of Science , 71(4): 550-570."
+        },
+        {
+          "raw": "---, 2010, \"Forces and Causes in Evolutionary Theory\", Philosophy of Science , 77(5): 716-727."
+        },
+        {
+          "raw": "Walsh, Denis M., 2007, \"The Pomp of Superfluous Causes: The Interpretation of Evolutionary Theory\", Philosophy of Science , 74: 281-303."
+        },
+        {
+          "raw": "Walsh, Denis M., Tim Lewens, and Andr&eacute; Ariew, 2002, \"The Trials of Life: Natural Selection and Random Drift\", Philosophy of Science , 69(3): 452-473. doi:10.1086/342454"
+        },
+        {
+          "raw": "Woodward, James, 2003, Making Things Happen: A Theory of Causal Explanation , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Wright, Sewall, 1929, \"The Evolution of Dominance\", American Naturalist , 63(689): 556-561."
+        },
+        {
+          "raw": "---, 1930, \" The Genetical Theory of Natural Selection : A Review\", The Journal of Heredity , 21: 349-356."
+        },
+        {
+          "raw": "---, 1931a, \"Evolution in Mendelian Populations\", Genetics , 16: 97-159."
+        },
+        {
+          "raw": "---, 1931b, \"Statistical Theory of Evolution\", Journal of the American Statistical Association , 26(173, Supplement): 201-208."
+        },
+        {
+          "raw": "---, 1932, \"The Roles of Mutation, Inbreeding, Crossbreeding and Selection in Evolution\", Proceedings of the Sixth International Congress of Genetics , 1: 356-366."
+        },
+        {
+          "raw": "---, 1948, \"On the Roles of Directed and Random Changes in Gene Frequency in the Genetics of Populations\", Evolution , 2(4): 279-294."
+        },
+        {
+          "raw": "---, 1949, \"Population Structure in Evolution\", Proceedings of the American Philosophical Society , 93(6): 471-478."
+        },
+        {
+          "raw": "---, 1951, \"Fisher and Ford on the Sewall Wright Effect\", American Scientist , 39: 452-458."
+        },
+        {
+          "raw": "---, 1978, Evolution and the Genetics of Populations, Volume 4: Variability within and among Natural Populations , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "---, 1986, Evolution: Selected Papers , Chicago: University of Chicago Press."
+        }
+      ],
+      "publishedAt": "2016-09-14T14:00:00.000Z",
+      "revisedAt": "2026-03-12T13:00:00.000Z"
+    }
+  }
+}

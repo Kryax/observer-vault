@@ -1,0 +1,866 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/cancer",
+  "meta": {
+    "title": "Cancer",
+    "description": "Cancer is a major health problem worldwide; it is a leading cause of death, and with few exceptions, there have been steady increases in incidence and mortality (WHO, 2020). Perhaps not surprisingly, then, cancer is a central topic of biomedical research, drawing billions of dollars annually. In 2019, the U.S. National Cancer Institute (NCI) allocated $5.74 billion in federal dollars, a $79 million increase over 2018 (NCI, 2019--see the Other Internet Resources). A search for the term \"cancer\" in PubMed returns over three million hits. Despite this, cancer--and scientific research on cancer--has received relatively little attention from philosophers of science. However, this is starting to change. Recent work by philosophers of science has made substantial contributions to addressing conceptual and methodological issues that arise in cancer science and medicine (Pradeu, et. al., 2023). This entry will focus on four such issues. First, scientific classifications of cancer have as yet failed to yield a unified taxonomy. There is a diversity of classificatory schemes for cancer, and while some are hierarchical or nested, others appear to be \"cross-cutting.\" Initially, researchers turned to genomics in hopes that such issues might be resolved by molecular \"subtyping\". However, genomic sequencing and its sequelae--transcriptomics, proteomics, epigenomics, etc.--have, if anything, complicated cancer classification. This literature thus raises a variety of questions about both the nature of the disease and disease classification: Are there some classifications that are more useful, or better than others? What makes a classification a good one? What does it mean to track more or less \"natural\" distinctions in the context of disease? The problem of cancer classification is complicated by the fact that cancer progression is a process with a complex natural history. Thus, cancer serves as a challenging case not only for disease classification, but also for demarcating disease from health. Second, many assume that the aim of science is to arrive at true theories, from which one may generate predictions and explanations. However, scientists studying cancer seem to have a variety of different practical and scientific aims, and the practical aims seem to receive far more attention than theoretical ones. Perhaps it is not surprising, then, that historians and philosophers of science do not seem to agree on how best to characterize the aims, let alone agree on how best to assess \"progress\" in cancer research. With the rise of \"big data\" science, both philosophers and historians of science are rethinking how best to describe and explain these distinctive kinds of scientific inquiry. Third, cancer is in part a byproduct of our developmental and life history, as well as our evolutionary history. Cancer's emergence and progression has been compared to a reversion of development, and to the evolution of multicellularity. Thus, cancer raises intriguing questions about how we conceive of \"functions,\" \"development,\" and the role of our evolutionary history and particularly, selective trade-offs, in vulnerability to disease. Last but not least, cancer research provides a case study for consideration of the roles of values in science, and at the science-policy interface. Epidemiological and toxicological research on cancer's causes informs law and regulatory policy. Cancer research also provides a test case for debates about the challenges facing precision medicine; in particular, the complexity and heterogeneity of cancer makes translating \"basic\" science into the \"real world\" enormously difficult. This does not exhaust the variety of conceptual and methodological questions that arise in cancer science. Philosophical work on cancer is increasingly brought into conversation with debates of general philosophical interest over causation, risk, chance, choice, and moral responsibility.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T11:29:39.745Z",
+    "dateModified": "2026-03-22T11:29:39.745Z",
+    "datePublished": "2019-05-06T14:00:00.000Z",
+    "keywords": [
+      "genomics",
+      "health disease",
+      "medicine",
+      "science mechanisms",
+      "systems synthetic biology"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Cancer is a major health problem worldwide; it is a leading cause of death, and with few exceptions, there have been steady increases in incidence and mortality (WHO, 2020). Perhaps not surprisingly, then, cancer is a central topic of biomedical research, drawing billions of dollars annually. In 2019, the U.S. National Cancer Institute (NCI) allocated $5.74 billion in federal dollars, a $79 million increase over 2018 (NCI, 2019--see the Other Internet Resources). A search for the term \"cancer\" in PubMed returns over three million hits. Despite this, cancer--and scientific research on cancer--has received relatively little attention from philosophers of science. However, this is starting to change. Recent work by philosophers of science has made substantial contributions to addressing conceptual and methodological issues that arise in cancer science and medicine (Pradeu, et. al., 2023). This entry will focus on four such issues. First, scientific classifications of cancer have as yet failed to yield a unified taxonomy. There is a diversity of classificatory schemes for cancer, and while some are hierarchical or nested, others appear to be \"cross-cutting.\" Initially, researchers turned to genomics in hopes that such issues might be resolved by molecular \"subtyping\". However, genomic sequencing and its sequelae--transcriptomics, proteomics, epigenomics, etc.--have, if anything, complicated cancer classification. This literature thus raises a variety of questions about both the nature of the disease and disease classification: Are there some classifications that are more useful, or better than others? What makes a classification a good one? What does it mean to track more or less \"natural\" distinctions in the context of disease? The problem of cancer classification is complicated by the fact that cancer progression is a process with a complex natural history. Thus, cancer serves as a challenging case not only for disease classification, but also for demarcating disease from health. Second, many assume that the aim of science is to arrive at true theories, from which one may generate predictions and explanations. However, scientists studying cancer seem to have a variety of different practical and scientific aims, and the practical aims seem to receive far more attention than theoretical ones. Perhaps it is not surprising, then, that historians and philosophers of science do not seem to agree on how best to characterize the aims, let alone agree on how best to assess \"progress\" in cancer research. With the rise of \"big data\" science, both philosophers and historians of science are rethinking how best to describe and explain these distinctive kinds of scientific inquiry. Third, cancer is in part a byproduct of our developmental and life history, as well as our evolutionary history. Cancer's emergence and progression has been compared to a reversion of development, and to the evolution of multicellularity. Thus, cancer raises intriguing questions about how we conceive of \"functions,\" \"development,\" and the role of our evolutionary history and particularly, selective trade-offs, in vulnerability to disease. Last but not least, cancer research provides a case study for consideration of the roles of values in science, and at the science-policy interface. Epidemiological and toxicological research on cancer's causes informs law and regulatory policy. Cancer research also provides a test case for debates about the challenges facing precision medicine; in particular, the complexity and heterogeneity of cancer makes translating \"basic\" science into the \"real world\" enormously difficult. This does not exhaust the variety of conceptual and methodological questions that arise in cancer science. Philosophical work on cancer is increasingly brought into conversation with debates of general philosophical interest over causation, risk, chance, choice, and moral responsibility.",
+    "context": "Opening section: 1. Defining and Classifying Cancer | Related entries: genomics, health-disease, science-mechanisms, medicine, systems-synthetic-biology",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "philosophy-of-science"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry cancer",
+        "uri": "https://plato.stanford.edu/entries/cancer/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "2 author(s), 5 related entries, bibliography size 214"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2019-05-06T14:00:00.000Z and revised 2023-10-22T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2023-10-22T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/cancer/",
+        "description": "SEP entry for cancer"
+      }
+    ],
+    "solutionApproach": "1. Defining and Classifying Cancer"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/genomics",
+      "ocp:sep/health-disease",
+      "ocp:sep/science-mechanisms",
+      "ocp:sep/medicine",
+      "ocp:sep/systems-synthetic-biology"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Plutynski, Anya",
+        "type": "human"
+      },
+      {
+        "name": "Laplane, Lucie",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/cancer/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 137,
+      "validation_diversity": 0.49,
+      "context_breadth": 0.35,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.88
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.548
+  },
+  "extensions": {
+    "sep": {
+      "slug": "cancer",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/cancer/",
+      "preamble": "Cancer is a major health problem worldwide; it is a leading cause of death, and with few exceptions, there have been steady increases in incidence and mortality (WHO, 2020). Perhaps not surprisingly, then, cancer is a central topic of biomedical research, drawing billions of dollars annually. In 2019, the U.S. National Cancer Institute (NCI) allocated $5.74 billion in federal dollars, a $79 million increase over 2018 (NCI, 2019--see the Other Internet Resources). A search for the term \"cancer\" in PubMed returns over three million hits. Despite this, cancer--and scientific research on cancer--has received relatively little attention from philosophers of science. However, this is starting to change. Recent work by philosophers of science has made substantial contributions to addressing conceptual and methodological issues that arise in cancer science and medicine (Pradeu, et. al., 2023). This entry will focus on four such issues. First, scientific classifications of cancer have as yet failed to yield a unified taxonomy. There is a diversity of classificatory schemes for cancer, and while some are hierarchical or nested, others appear to be \"cross-cutting.\" Initially, researchers turned to genomics in hopes that such issues might be resolved by molecular \"subtyping\". However, genomic sequencing and its sequelae--transcriptomics, proteomics, epigenomics, etc.--have, if anything, complicated cancer classification. This literature thus raises a variety of questions about both the nature of the disease and disease classification: Are there some classifications that are more useful, or better than others? What makes a classification a good one? What does it mean to track more or less \"natural\" distinctions in the context of disease? The problem of cancer classification is complicated by the fact that cancer progression is a process with a complex natural history. Thus, cancer serves as a challenging case not only for disease classification, but also for demarcating disease from health. Second, many assume that the aim of science is to arrive at true theories, from which one may generate predictions and explanations. However, scientists studying cancer seem to have a variety of different practical and scientific aims, and the practical aims seem to receive far more attention than theoretical ones. Perhaps it is not surprising, then, that historians and philosophers of science do not seem to agree on how best to characterize the aims, let alone agree on how best to assess \"progress\" in cancer research. With the rise of \"big data\" science, both philosophers and historians of science are rethinking how best to describe and explain these distinctive kinds of scientific inquiry. Third, cancer is in part a byproduct of our developmental and life history, as well as our evolutionary history. Cancer's emergence and progression has been compared to a reversion of development, and to the evolution of multicellularity. Thus, cancer raises intriguing questions about how we conceive of \"functions,\" \"development,\" and the role of our evolutionary history and particularly, selective trade-offs, in vulnerability to disease. Last but not least, cancer research provides a case study for consideration of the roles of values in science, and at the science-policy interface. Epidemiological and toxicological research on cancer's causes informs law and regulatory policy. Cancer research also provides a test case for debates about the challenges facing precision medicine; in particular, the complexity and heterogeneity of cancer makes translating \"basic\" science into the \"real world\" enormously difficult. This does not exhaust the variety of conceptual and methodological questions that arise in cancer science. Philosophical work on cancer is increasingly brought into conversation with debates of general philosophical interest over causation, risk, chance, choice, and moral responsibility.",
+      "firstSectionTitle": "1. Defining and Classifying Cancer",
+      "firstSectionText": "What is cancer? Is cancer one disease, or many? If many, how many cancers are there? One might think that such questions are merely empirical. However, it turns out that defining and classifying cancer is contested not merely for empirical reasons. There are at least two broader philosophical issues at stake. First, there is little agreement on how to characterize disease, distinguish disease from health, and thus classify diseases, generally (See the entry on concepts of health and disease ). Second, cancers exhibit features that make generating classifications difficult; they are heterogeneous, and variable in their etiology and course of progression. In section 1.1, we will consider challenges facing cancer classification given its intrinsic heterogeneity, and in section 1.2, we will consider challenges facing cancer classification given its variable natural history. Prima facie , what distinguishes diseases are typical symptoms, disease course, and a common cause. However, cancer can be present without clinically detectable symptoms, has variable disease course, and is a multifactorial disease. It is difficult to pick out a \"causal bottleneck\" uniquely necessary for cancer in general, let alone each cancer type and subtype. While cancers are typically classified by their cell-of-origin--or the tissue, or organ, and cell-type where they originated (e.g., squamous cell carcinoma of the skin or ovaries), it turns out that cancers can contain mixes of different cells of origin, and cancers arising in the same cells or tissues can have very different features, may evolve in different ways, and have different vulnerability to treatment (Marusyk, et al. 2012). How, then, are we to classify such poorly behaving kinds? These puzzles led researchers to wonder whether there are distinctive genetic or molecular \"signatures\" of each cancer that can help us estimate risk of progression, or chances of recurrence, as well as predict responses to treatment. Perhaps these molecular signatures are the key to a natural taxonomy of cancer types and subtypes? The hope that molecular signature will address these classification problems in part inspired international efforts at sequencing cancer genomes - the Sanger Institute's Cancer Genome Project, and the U.S.'s Cancer Genome Atlas project (TCGA). Such projects use high-throughput genome sequencing to identify both inherited and somatically acquired mutations to genes affected in cancer cells, as well as mutational processes and patterns of clonal evolution. The TCGA aimed at generating a catalogue of mutations distinctive to of each cancer type and subtype, resulting in thirty-three \"marker\" papers, and some novel subclassifications. For example, in 2015, a working group affiliated with TCGA published a \"Comprehensive Genomic Characterization of Head and Neck Squamous Cell Carcinomas,\" which identified specific mutations associated with human-papillomavirus-associated versus smoking-related head and neck cancers. While such projects did result in a more comprehensive understanding of cancer biology, they also raised many questions. Cancer genomes have many mutations, so a central puzzle has been determining which among the many changes to cancer genomes are causally relevant to cancer progression, or which mutations are \"drivers\" of cancer. Sorting the \"signal\" from the noise has proven more difficult than anticipated. There are very different rates, numbers and types of mutations across and within different cancer types and subtypes - what is called \"intertumor heterogeneity.\" Which mutations play a more significant causal role, viz. which outcome in different cancers, over the course of cancer progression, is a difficult puzzle to solve. In part as a result of this, the concepts of \"driver mutation\" and \"actionability\" have come to be deployed quite differently in different contexts, leading to problems of slippage between criteria of application in research and clinical contexts (Chin-Yee and Plutynski, forthcoming). Complicating this further, a cancer may contain several subpopulations of cells (or, multiple evolving lineages), with different numbers and types of mutations within each lineage. Or, cancers have varying types and degrees of \"intratumor heterogeneity.\" So, samples of a tumor taken when cancer is first diagnosed may be representative of only one subpopulation of one stage of a dynamic process. Such samples may not be representative of the genomic changes of greatest relevance to late-stage disease. All this would be challenging enough as it is, but there is a yet further challenge facing hierarchical subclassifications of cancer based on molecular information. Cancers arising in the same tissue or organ can be more genetically dissimilar than cancers arising in different tissues or organs (Hoadley, et. al., 2014, 2018). Genomic information, far from providing a way to sort all cancers into a Linnean hierarchy, instead yields what philosophers have called cross-cutting classifications (Khalidi, 1998). Moreover, the effects of mutations are context-dependent, making their causal relevance to any given cancer difficult to discern. Some mutations may provide low or no advantage to the mutated cells, until conditions change, such as the application of chemotherapies, which can lead to proliferation of cells with specific mutations (Hsu et al. 2018). Even the order of acquisition of mutations can change the biology and outcome of the disease. For example, depending on which of two genes was first mutated, patients with myeloproliferative neoplasms (MPN) have different risks of different outcomes (Ortmann et al. NEJM 2015; Kent and Green 2017). Several \"extra-genomic\" factors also play an important role in cancer causation and thus, arguably, ought to play at least a partial role in informing cancer taxonomy. For instance, it turns out changes in microRNA in cancer cells--non-coding RNA, which affects the expression of genes--can affect cancer initiation, progression, and responses to drugs (Hrovatin, et al. 2018). Life history (e.g. parity, or number of children, and age at first birth), environmental exposures, and histories of infection, and immune response, contribute differentially to cancer's age of onset, rate of progression, histopathology, and response to treatment. For instance, infectious agents (e.g., HPV- or HCV-) are associated with cervical and liver cancers, and some proportion of esophageal cancers (Cancer Genome Atlas, 2015; Morgan, 2022). Indeed, for several decades, the primary cause of cancer was thought to be viral, and inquiry into viral origins of cancer in part led to many insights into cancer causation, whether originating in viruses or not (see, e.g., Morgan, 2022). Cancers of the prostate and breast are associated with hormones, which are in turn affected by parity. \"Pregnancy-associated\" breast cancers are cancers that arise during or shortly after pregnancy (see, e.g., Schedin 2006). The \"same\" cancer in the same tissue or organ can be classified as either \"somatic,\" or \"familial\"--due in part to whether the patient possesses inherited mutations that raise a risk of some cancers, such as those with Li Fraumeni syndrome. Smoking associated lung cancers and non-smoking associated lung cancers are distinct genetically, epigenetically, and phenotypically (e.g., in gross pathology, course of progression, as well as response to treatment). Which of these several causal factors ought to figure centrally in classification? Depending upon how fine-grained a characterization of the causal basis of cancer one adopts, there could be hundreds or thousands of cancer types and subtypes. It's far from clear whether there is one obvious choice of causal basis or distinctive properties that best reflects anything like a \"natural\" division of type and subtypes. Indeed, the case of cancer raises the larger question of whether one can or should expect a univocal classification of diseases, more generally. Are diseases, particularly multifactorial ones such as cancer, \"natural\" kinds? Or, are they simply ways of carving up the world that we happen to find useful? Several philosophers have weighed in on these matters (see, e.g., Ereshefsky & Reydon 2015; Lange 2007; Broadbent 2009 and 2014; Williams 2011; Khalidi 2013; Sorenson 2011, Bechtel, 2019). The questions these authors are addressing are both epistemic--what warrants choice of criteria of classification of disease--and metaphysical--given diseases like cancer lack essential properties (or, properties belonging all and only to each type), is it correct to think of diseases as \"natural kinds\"? Such debates turn on more fundamental questions, such as whether there are any general criteria for \"naturalness\" of scientific categories, and if so, whether to take underlying causal or constitutive bases, mechanisms, networks, or mere similarity or \"feature matching\" as sufficient (Slater, 2014; Bechtel, 2019; Boniolo, et. al., 2021; Boniolo et al., 2023). Some philosophers have expressed skepticism about whether cancer, or indeed, diseases, per se, are natural kinds. Lange (2007) for instance, argues that, \"a disease is a natural kind of incapacity that features in interesting function-analytic explanations of other unhealthful incapacities\"(Lange, 2007, 266). Thus, cancer is not a \"natural kind,\" in his view, because the \"typical patterns of disruption of cell birth and death\" characteristic of cancer are multiply realized. Lange claims that insofar as categories like \"breast cancer\" or \"lung cancer\" seem to be increasingly replaced in modern medicine by molecular subtyping, and molecular subtypes are not \"natural kinds of incapacity,\" they are not distinct diseases. Indeed, many \"disease kinds\" lack unifying \"function-analytic\" explanations. Thus, modern medicine has, in a sense, led to the \"end of diseases\" as natural kinds. In a similar vein, but for very different reasons, Sorenson (2011) argues that diseases are \"para-natural\" kinds. Insofar as diseases are \"deficiencies,\" or \"departures from the norm,\" they lack the \"integrity\" or \"internal nature\" characteristic of natural kinds. Sorenson thus suggests that diseases are \"reflections\" of natural kinds of process. They \"inherit the lawfulness and projectability of the natural kinds that shape them.\" In other words, both Lange and Sorenson seem similarly skeptical that diseases like cancer have the integrity or explanatory role of natural kinds. In contrast, while Broadbent (2009, 2014), Williams (2011), and Khalidi (2013) agree that diseases like cancer lack essential properties, disease classifications are natural classifications, insofar as they pick out distinctive \"deviations from normal functional ability,\" or homeostatic property clusters. Broadbent's (2009, 2014) \"contrastive\" model of disease classification takes diseases to be distinct in light of distinctive causes. Where there is a difference in at least one of a set of causes shared by \"controls\" and \"cases\" (where cases have distinct \"parts and processes deviating (negatively) from normal functional ability\"), we have a distinct disease. Broadbent takes this account to explain why, for instance, \"cervical cancer is a disease, but HPV-itis is not.\" Though, this case raises an interesting question as to whether potential, rather than overt, dysfunction is more central to disease classification. In public health contexts, it is often important to control \"asymptomatic,\" or potentially dysfunctional states. Strains of HPV that do not currently cause cancer could well evolve the capacity to do so. So, perhaps from a public health perspective, \"HPV-itis\" is a perfectly legitimate disease category, in service of deploying interventions that limit the spread of HPV more generally. That is, from a preventive medicine perspective, what matters is that a disease category is a good one for predicting and intervening, even where functional disruption does not always (or even most of the time) eventuate. Which choice of classification we ought to make in demarcating disease types might depend not only on which contrast we are interested in explaining retrospectively, but also which kind of intervention we wish to promote prospectively. Khalidi (2013) argues that cancer might be a homeostatic property cluster kind, on the grounds that cancer is driven by \"homeostatic\" mechanisms--namely, mutations to \"caretaker\" genes, or genes that play a \"gatekeeping\" role in preventing or permitting the emergence of a tumor. Acquisition of mutations to specific \"caretaker\" genes, on this view, serve a function akin to Boyd's (1999) \"homeostatic mechanisms,\" in that they permit the further acquisition of \"hallmark\" properties of cancer cells. Khalidi is drawing upon a very common view of cancer, articulated by two famous cancer researchers, Hanahan and Weinberg (2000, 2011). They identify what they take to be the \"hallmarks\" of cancer: \"a small number of molecular, biochemical, and cellular traits--acquired capabilities--shared by most and perhaps all types of human cancer.\" They identified these \"six essential alterations in cell physiology that collectively dictate malignant growth\" as: self-sufficiency in growth signals, insensitivity to antigrowth signals, evasion of apoptosis (cell death), sustained angiogenesis (the ability to develop a blood supply), tissue invasion and metastasis (Hanahan & Weinberg 2000, 57). By way of example of a caretaker, TP53 is called a tumor suppressor, because it carries the function of responding to signals associated with cell damage by typically inducing apoptosis, or cell death. It is one of the only genes mutated in a majority of cancers sequenced (Bailey, et al. 2018). Thus, Weinberg (2013) characterizes it as \"master guardian and executioner,\" in that it prevents further mutations by inducing cell death where there are signs of trouble. On Khalidi's view, one ought to understand disruption of these very capacities as \"homeostatic mechanisms\" for cancer. At first blush, this seems a vivid case of a homeostatic property cluster kind; on Khalidi's view, it is these distinctive \"caretaker\" mutations that permit or promote cancer. However, where we take a mechanism \"for cancer\" to begin and end is in large part a pragmatic matter (Craver 2009); arguably, one might carve up the \"homeostatic mechanisms for\" cancer to yield many or few cancer subtypes (Plutynski, 2018). Hanahan and Weinberg's initial picture has been complicated since 2001. In 2011, Hanahan and Weinberg updated their hallmarks to include four more: \"genome instability, which generates the genetic diversity that expedites their acquisition, and inflammation, which fosters multiple hallmark functions&hellip; reprogramming of energy metabolism, and evading immune destruction.\" And, \"In addition to cancer cells, tumors exhibit another dimension of complexity: they contain a repertoire of recruited, ostensibly normal cells that contribute to the acquisition of hallmark traits by creating the tumor microenvironment\" (2011, 646). In other words, hallmarks of cancer appear to no longer involve all and only intrinsic properties of cancer cells, but also dynamic interactions between cancer cells and the immune system and extra-tumor environment. This may not be such a serious challenge to Khalidi's view that caretaker mutation are mechanisms for cancer. One could, arguably, just expand the mechanisms for homeostasis to the tumor microenvironment. However, such a strategy is complicated by the context-sensitivity of causes of cancer, discussed above. Many cells on the surface of the skin as we age possess as many mutations to \"caretaker\" genes as those in a breast tumor, but most such skin cells are shed and never eventuate in disease (Martincorena, et al. 2015). The \"same\" mechanisms may well lead to harm in one context, and be entirely harmless in another. Several recent efforts at cancer classification use network, \"deep learning\" methods or AI to mine data to identify patterns of association or clusters of common features within and across different cancer types. These methods have been used to address the so-called \"curse of dimensionality\" problem: i.e., sort through enormous amounts of genomic data, and speed development of tools for both diagnosis and treatment. Recent philosophical work explores a variety of methodological and conceptual challenges facing use these methods. While some are optimistic about the use of such tools in classification of cancers and other diseases, others are more skeptical (Boniolo & Nathan, 2016; Boniolo and Campagner, 2019a, 2019b; Bechtel, 2019; Shrager, et. al., 2019; Hey, et. al., 2019; Chin-Yee and Upshur, 2019; Green et al., 2022; Plutynski, 2018; Plutynski, 2022). Skepticism comes from several sources. First, some raise methodological concerns about representativeness of samples, sample quality and purity, batch effects, and the fact that methods of both sequence analysis and data labeling and curation are constantly being updated, such that data gathered even five years past may need revisiting. Others warn that different ways of labeling the same genetic information can lead to contradictory results in clinical trials of novel cancer drugs, or mistaken inferences about likely progression or treatment benefit (Hey, 2015, 2019; Hey, et. al., 2016, 2019). Some worry that genomic data is a static representation of gene expression profile at a single point in time, but cancer is a dynamic process, shaped in part by the \"tumor microenvironment\" (TME) - the environment surrounding a tumor. If we are interested in determining how cancers progress, or are likely to respond to treatment, we arguably need to take multiple samples at several points in time, and even broaden consideration of relevant causal factors outside the (local) tumor environment, to the \"tumor organismal environment\" (TOE) (Laplane, et. al., 2018, 2019b). How best to integrate as wide as possible an array of genomic, extra-genomic, and clinical information is not obvious, as well as how best to take into consideration the dynamic features of cancer progression. The larger issues raised by this case is whether there is one way to privilege choice of causal basis for classifying disease. Different choice of temporal or spatial scale, or more or less fine-grained characterization of causal processes, might yield multiple, overlapping disease classifications. While some may be willing to bite this bullet, and indeed, endorse pluralism and non-hierarchical classifications (see, e.g., Khalidi 1998, 2013), others might be concerned that this would yield too permissive an array of disease types, or inconsistent classifications, thus complicating scientific communication. More generally, this case raises some interesting puzzles about the aims and methods of classification in the biomedical sciences more generally. Given that genomic features of cancer are unlikely to unproblematically yield a single natural taxonomy, we might become skeptical of reductive pictures of disease classification and explanation. It seems that classifications of disease like cancer form a kind of 'hybrid'--they are intended to capture natural regularities and their causes, but also to be of use for a wide array of agents with different purposes. It's unclear whether all these purposes can be served by one method or set of classificatory criteria. A major complication surrounding classification in the case of cancer is that cancers have variable disease course (Foulds 1958; Cairns 1975; Lynch 2007; Bertolaso & Dupr&eacute; 2018; Plutynski, 2018). Not all cancers progress uniformly to metastasis and death; some growths progress slowly or not at all. Some very common cancers (in the prostate and thyroid) are either slow growing, or tend to remain \"indolent\" (Esserman, et al. 2014; Siegel, et al. 2017). There is some disagreement in the medical community about how to characterize such cases; it's unclear whether they are best viewed as very slow growing precancerous lesions, or perhaps ought not be characterized as cancer, at all (Schwartz, 2014). Such cases also raise a host of practical questions about the merits of screening, and the risk of overdiagnosis--the diagnosis of disease that might never have progressed in the lifetime of the patient (see, e.g., Walker & Rogers 2016; Hofman 2017; Esserman, et al. 2014; Welch & Black 2010). They also raise interesting philosophical questions about the nature of disease. Some philosophers (Schwartz 2014), drawing upon the biostatistical theory of disease as departure from age and sex-typical function (Boorse 1977), argue that we ought to classify such early-stage cancers as risk factors, rather than disease. Such growths are not disease, on this view, because they are not atypical and do not yet impair function--in fact as many as one half of men over 60 have some lesions of the prostate (Welch & Black 2010). Reclassification of such cancers as mere risk factors, Schwartz argues, will prevent overdiagnosis and overtreatment. Other philosophers (e.g., Reid 2017) argue that this approach fails to acknowledge how the practice of diagnosis is itself a sort of risk-benefit calculation, informed in part by our knowledge of the prevalence of early-stage or indolent disease, and in part by more or less precautionary values. It seems this debate is not only a scientific one, but also a normative one; much like debates about PTSD or obesity, there are normative dimensions to how we diagnose and classify disease. Labeling can have both positive and negative consequences for patients, clinicians, insurers, not to mention developers and producers of screening, medical device, and pharmaceuticals (Ereshefsky 2009). Overdiagnosis of early-stage disease can lead to serious harms; treating a condition that may or may not progress to invasive disease in the lifetime of a patient is costly and harmful. One hope driving the precision medicine research program is that the identification of biomarkers of aggressive disease will resolve these ambiguities with respect to early stage disease, as well as identify targets of effective treatment (see, e.g., Collins, et al. 2005). However, as we have seen, interpreting genomic data has been far from straightforward, and classifying cancer types and subtypes by appeal to genomic information alone can lead to a loss of important information. While genomic and molecular data is no doubt useful, it is not necessarily decisive. In sum, much like genes and species, diseases like cancer lack essences, are heterogeneous, blur together at the edges, are caused in many different ways, and have variable dynamics. Perhaps inconsistent classifications are simply to be expected in such cases. That this is so does not (necessarily) show that we ought to give up on realism about disease kinds; indeed, perhaps we ought to endorse \"promiscuous realism\" (Dupr&eacute; 1995). As knowledge has grown, and practical interests shift, classifications can multiply and even cross-classify the same kinds. This is nothing to fear, so long as the kinds we countenance do the predictive or explanatory work intended for them, in the context intended. Others have a somewhat less permissive view, however, though there remains a good deal of dispute over how and which empirical constraints should govern classification of \"scientific kinds,\" whether or not these categories count as examples of \"natural\" kinds (Slater 2014; Ereshefsky & Reydon 2015). (See the entry on scientific pluralism .) Given the complex causal pathways and heterogeneity of cancer, perhaps it is not surprising that, as Bertolaso (2016) argues, the history of attempts to define cancer have floundered. Either cancer is defined so vaguely as to include non-pathological states, or so narrowly as to rule out cases that might otherwise be included. Among the many definitions she canvases are: \"abnormal proliferation,\" \"unregulated growth,\" \"a disease of cell differentiation rather than multiplication,\" \"the result of destruction of tissue architecture,\" \"a systems biology disease,\" \"blocked ontogeny,\" a disease of \"suppressed (sic) immune function,\" a \"metabolic\" and \"genomic\" disease. Such a variety of definitions is due to the fact that cancer has many causes, and involves many different types of dysregulation, at a variety of temporal and spatial scales. Suffice it to say, it is no small challenge to identify defining features of cancer, let alone arriving at a unified \"theory\" of disease etiology. One might well ask, however, whether the lack of a unified theory of cancer is a cause for concern. Is this a sign of immature science? Kincaid has argued to the contrary (2008), \"biomedical science can make significant progress without precise definitions of disease, without full-fledged theories of disease and of normal biological functioning, and without disease entities being natural kinds\" (p. 368). Kincaid argues that \"There is no clear definition of what constitutes a cancerous cell in terms of necessary and sufficient conditions. However, no one thinks that cancer research should stop until we get this definition settled, or that creating linguistic uniformity is important for understanding the science. The science certainly makes progress nonetheless&hellip; Likewise, there is no parsimonious theory of the disease and the normal functioning from which it is a deviation. Instead, we have piecemeal causal explanations\" (p. 373). Kincaid is correct. Arguably, given the context-dependence or local constraints on cancer causation, (and perhaps also, diseases more generally) piecemeal reductive explanations are often the best we can do (Schaffner, 2006). The question of what function such a unified theory might serve is a matter of some debate. A particular source of contention surrounds the merits of the research program unified by a search for genetic mechanisms associated with cancer cell behavior (Strauss, et. al., 2021). This research program has received many different names: the \"oncogene paradigm,\" (Bishop 1995; Morange 1997) \"vision,\" (Morange 1997), \"theory,\" or \"paradigm,\" (Sonnenschein & Soto 2008; Soto and Sonnenschein, 2004, 2005), \"model\" (Temin 1974; Vogelstein & Kinzler 1993), \"theory-method package\" (Fujimura 1987, 1992), and \"framework\" (Blasimme, et al. 2013). Some contend that focus on genetic mechanisms is a \"failed\" paradigm, or a \"degenerating\" (as opposed to \"progressive\") research program. Resolving such debates seems to require first that we have some measure of progress - hardly a straightforward matter, given the variety of goals of a scientific research program, and their transformations, over time. While some see the central goal of research as the generation of true theories, others focus on the generation of novel experimental traditions, the generation of fruitful lines of inquiry, the generation of local (as opposed to general) explanations of particular patterns or processes, or useful ways of classifying data. A more modest way of framing the question surrounding the \"oncogene\" paradigm's failure or success might be to focus on how commitment to this \"explanatory framework\" has been useful in some ways, less so in others. For instance, Blasimme, et al. (2013) characterize the search for oncogenes as an \"explanatory framework\": \"causal patterns, schemata (in the sense of Darden 2002), intuitions, hypotheses, evidential standards and various bits of evidence and data coming from different experimental settings and instrumental devices,\" which \"establish selective and local criteria of causal relevance that drive the search for, characterization and use of biological mechanisms.\" Rather than consisting of sets of laws or general principles, such frameworks help generate strategies in the search for causes, and narrow the field of inquiry. Blassime, et al. argue that \"explanatory frameworks allow for changes of scientific perspective on the causal relevance of mechanisms without necessarily fully replacing previous explanatory frameworks\" (p. 375). Explanatory frameworks, in other words, can \"coexist\" or be \"gradually displaced,\" rather than stand in mutually exclusive relations with one another. As new questions arose, and new information was discovered, this explanatory framework became elaborated. Depending upon how permissive or restrictive our characterization of this framework, it need not be viewed as at odds with, for instance, attention to other causal factors in cancer, as discussed below.",
+      "relatedEntries": [
+        "genomics",
+        "health-disease",
+        "science-mechanisms",
+        "medicine",
+        "systems-synthetic-biology"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "genomics"
+        },
+        {
+          "slug": "health-disease"
+        },
+        {
+          "slug": "science-mechanisms"
+        },
+        {
+          "slug": "medicine"
+        },
+        {
+          "slug": "systems-synthetic-biology"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 214,
+      "bibliography": [
+        {
+          "raw": "Ahlgren, M., Melbye M., Wohlfahrt J.,& S&oslash;rensen T.I., 2004, \"Growth patterns and the risk of breast cancer in women\", New England Journal of Medicine , 351: 1619-1626."
+        },
+        {
+          "raw": "Aktipis, A., 2020, The Cheating Cell: How Evolution Helps us Understand and Treat Cancer , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Aktipis, C.A., Boddy, A. M., Jansen, G., Hibner, U., Hochberg, M. E., Maley, C. C., & Wilkinson, G. S. , 2015, \"Cancer across the tree of life: cooperation and cheating in multicellularity\", Philosophical Transactions of the Royal Society B: Biological Sciences , 370 (1673): 20140219."
+        },
+        {
+          "raw": "Al-Hajj, M., & Clarke, M. F., 2004, \"Self-renewal and solid tumor stem cells\", Oncogene , 23(43): 7274."
+        },
+        {
+          "raw": "Alvarado, L.C., 2013, \"Do evolutionary life-history trade-offs influence prostate cancer risk? A review of population variation in testosterone levels and prostate cancer disparities\", Evolutionary Applications , 6: 117-133."
+        },
+        {
+          "raw": "Aronowitz, R. A., 2007, Unnatural history: Breast cancer and American society , New York: Cambridge University Press."
+        },
+        {
+          "raw": "---, 2009, \"The converged experience of risk and disease\", The Milbank Quarterly , 87(2): 417-442."
+        },
+        {
+          "raw": "---, 2015, Risky medicine: our quest to cure fear and uncertainty , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Ashcroft, R., 2002, \"What is clinical effectiveness?\", Studies in History and Philosophy of Science (Part C: Studies in History and Philosophy of Biological and Biomedical Sciences), 33(2): 219-233."
+        },
+        {
+          "raw": "Bailey, Matthew H., Collin Tokheim, Eduard Porta-Pardo, Sohini Sengupta, Denis Bertrand, Amila Weerasinghe, Antonio Colaprico, et al., 2018, \"Comprehensive characterization of cancer driver genes and mutations\", Cell , 173(2): 371-385."
+        },
+        {
+          "raw": "Baxendale, M., 2019, \"Mapping the continuum of research strategies\", Synthese , 196: 4711-4733."
+        },
+        {
+          "raw": "Bechtel, W., 2018, \"The importance of constraints and control in biological mechanisms: Insights from cancer research\", British Journal for the Philosophy of Science , 85(4): 573-593."
+        },
+        {
+          "raw": "---, 2019, \"From parts to mechanisms: research heuristics for addressing heterogeneity in cancer genetics\", History and Philosophy of the Life Sciences , 41(3): 27."
+        },
+        {
+          "raw": "Bedessem, B., & Ruphy, S., 2015, \"SMT or TOFT? How the two main theories of carcinogenesis are made (artificially) incompatible\", Acta Biotheoretica , 63: 257-267."
+        },
+        {
+          "raw": "Beneduce, C., & Bertolasao, M., 2022, Personalized Medicine in the Making , Cham: Springer."
+        },
+        {
+          "raw": "Bertolaso, M., 2011, \"The two sides of the hourglass: Analytic and synthetic approaches in cancer research\", Ludus vitalis: revista de filosof&iacute;a de las ciencias de la vida , 19(35): 73-95."
+        },
+        {
+          "raw": "---, 2011, \"Hierarchies and causal relationships in interpretative models of the neoplastic process\", History and Philosophy of the Life Sciences , 33(4): 515-535."
+        },
+        {
+          "raw": "---, 2016, Philosophy of Cancer , Dordrecht: Springer Science+ Business Media Dordrecht."
+        },
+        {
+          "raw": "Bertolaso, M., and Dupr&eacute;, J. (2018) \"A processual perspective on cancer\", in Everything flows: towards a processual philosophy of biology , D.J. Nicholson & J. Dupr&eacute; (eds.), Oxford: Oxford University Press. pp. 321-336."
+        },
+        {
+          "raw": "Bich, L., & Bechtel, W., 2022, \"Organization needs organization: Understanding integrated control in living organisms\", Studies in History and Philosophy of Science , 93: 96-106."
+        },
+        {
+          "raw": "Bich, L., Mossio, M., Ruiz-Mirazo, K., & Moreno, A., 2016, \"Biological regulation: controlling the system from within\", Biology & Philosophy , 31: 237-265."
+        },
+        {
+          "raw": "Bich, L., Pradeu, T., & Moreau, J.-F., 2019, \"Understanding multicellularity: the functional organization of the intercellular space\", Frontiers in Physiology , 10: 1170."
+        },
+        {
+          "raw": "Birch, J., Creel, K. A., Jha, A. K., & Plutynski, A., 2022, \"Clinical decisions using AI must consider patient values\", Nature Medicine , 28(2): 229-232."
+        },
+        {
+          "raw": "Bishop, J.M., 1995, \"Cancer: the rise of the genetic paradigm\", Genes & Development , 9: 1309-1315."
+        },
+        {
+          "raw": "Bizzarri, M., & Cucina, A., 2016, \"SMT and TOFT: Why and how they are opposite and incompatible paradigms\", Acta Biotheoretica , 64: 221-239."
+        },
+        {
+          "raw": "Blasimme, A., Maugeri, P., & Germain, P. L., 2013, \"What mechanisms can't do: Explanatory frameworks and the function of the p53 gene in molecular oncology\", Studies in History and Philosophy of Science (Part C: Studies in History and Philosophy of Biological and Biomedical Sciences), 44(3): 374-384"
+        },
+        {
+          "raw": "Boddy, A. M., Kokko, H., Breden, F., Wilkinson, G. S., & Aktipis, C. A., 2015, \"Cancer susceptibility and reproductive trade-offs: a model of the evolution of cancer defences\", Philosophical Transactions of the Royal Society B: Biological Sciences , 370(1673): 20140220."
+        },
+        {
+          "raw": "Boniolo, G., 2017, \"Patchwork narratives for tumour heterogeneity\", in Leitgeb, H., Niiniluoto, I., Sepp&auml;l&auml;, P. & Sober, E. (eds), Logic, Methodology and Philosophy of Science - Proceedings of the 15th International Congress , London: College Publications."
+        },
+        {
+          "raw": "Boniolo, G., & Campaner, R., 2019a, \"Complexity and integration. A philosophical analysis of how cancer complexity can be faced in the era of precision medicine\", European Journal for Philosophy of Science , 9: 1-25."
+        },
+        {
+          "raw": "---, 2019b, \"Causal reasoning and clinical practice: Challenges from molecular biology\", Topoi , 38(2): 423-435."
+        },
+        {
+          "raw": "Boniolo, G., Campaner, R., & Carrara, M., 2021, \"Patient Similarity in the Era of Precision Medicine: A Philosophical Analysis\", Erkenntnis , 1-22."
+        },
+        {
+          "raw": "Boniolo, F., Boniolo, G., & Valente, G., 2023, \"Prediction via Similarity: Biomedical Big Data and the Case of Cancer Models\", Philosophy & Technology , 36(1): 8."
+        },
+        {
+          "raw": "Boniolo, G., Nathan, M.J. (eds), 2016, Philosophy of molecular medicine: foundational issues in research and practice , London New York: Routledge, Taylor & Francis Group."
+        },
+        {
+          "raw": "Bonnet, D., & Dick, J. E., 1997, \"Human acute myeloid leukemia is organized as a hierarchy that originates from a primitive hematopoietic cell\", Nature Medicine , 3(7): 730."
+        },
+        {
+          "raw": "Bouchard, F., Huneman, P., 2013, From Groups to Individuals: Perspectives on Biological Associations and Emerging Individuality , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Bourrat, P., & Griffiths, P. E., forthcoming, \"The idea of mismatch in evolutionary medicine\", British Journal for the Philosophy of Science , doi:10.1086/716543"
+        },
+        {
+          "raw": "Boyd, Richard, 1999, \"Homeostasis, Species, and Higher Taxa\", in Species--New Interdisciplinary Essays , R. Wilson (ed.), Cambridge, MA: MIT Press, pp. 141-185."
+        },
+        {
+          "raw": "Broadbent, A., 2009, \"Causation and models of disease in epidemiology\". Studies in History and Philosophy of Science (Part C: Studies in History and Philosophy of Biological and Biomedical Sciences), 40(4): 302-311."
+        },
+        {
+          "raw": "---, 2011, \"Inferring Causation in Epidemiology: Mechanisms, Black Boxes, and Contrasts\", in Causation in the Sciences , P. Illari, F. Russo, & J. Williamson (eds.), Oxford: Oxford University Press, 45-69."
+        },
+        {
+          "raw": "---, 2013, Philosophy of epidemiology , London: Palgrave Macmillan."
+        },
+        {
+          "raw": "---, 2014, \"Disease as a theoretical concept: The case of 'HPV-itis'\", Studies in History and Philosophy of Science (Part C: Studies in History and Philosophy of Biological and Biomedical Sciences), 48(1): 250-257."
+        },
+        {
+          "raw": "Brown, M. J., 2013, \"Values in science beyond underdetermination and inductive risk\", Philosophy of Science , 80(5): 829-839."
+        },
+        {
+          "raw": "Bueno, O., Chen R.-L., & Fagan, M.B. (eds.), 2019, Individuation, Process, and Scientific Practices , Oxford, New York: Oxford University Press."
+        },
+        {
+          "raw": "Cairns, J., 1975, \"Mutation selection and the natural history of cancer\", Nature , 255(5505): 197."
+        },
+        {
+          "raw": "Callahan R, Darzi A., 2015, \"Five policy levers to meet the value challenge in cancer care\", Health Affairs , 34(9): 1563-8."
+        },
+        {
+          "raw": "Cancer Genome Atlas Network, 2015, \"Comprehensive genomic characterization of head and neck squamous cell carcinomas\", Nature , 517(7536): 576."
+        },
+        {
+          "raw": "Cartwright, N., 2011, \"A philosopher's view of the long road from RCTs to effectiveness\", The Lancet , 377(9775): 1400-1401."
+        },
+        {
+          "raw": "Chin-Yee, B., & Upshur, R., 2019, \"Three problems with big data and artificial intelligence in medicine\", Perspectives in Biology and Medicine , 62(2): 237-256."
+        },
+        {
+          "raw": "Chin-Yee, B. & Plutynski, A., forthcoming, \"Concepts of Actionability in Precision Oncology\", Philosophy of Science ."
+        },
+        {
+          "raw": "Clarke E., 2013, \"The Multiple Realizability of Biological Individuals\", Journal of Philosophy , 110(8): 413-435."
+        },
+        {
+          "raw": "---, 2011, \"The Problem of Biological Individuality\", Biological Theory , 5(4): 312-325"
+        },
+        {
+          "raw": "Clarke, A. E., & Fujimura, J. H. (eds.), 2014, The right tools for the job: At work in twentieth-century life sciences , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Clevers, H., 2016, \"Cancer therapy: defining stemness\", Nature , 534(7606): 176."
+        },
+        {
+          "raw": "Collins, F. S., & Barker, A. D., 2007, \"Mapping the cancer genome\", Scientific American , 296(3): 50-57."
+        },
+        {
+          "raw": "Cranor, C. F., 1993, Regulating toxic substances: A philosophy of science and the law , New York, Oxford University Press."
+        },
+        {
+          "raw": "---, 2006, Toxic torts: Science, law, and the possibility of justice , New York: Cambridge University Press; 2nd edition, 2016."
+        },
+        {
+          "raw": "---, 2011, Legally Poisoned: How the Law Puts Us at Risk from Toxicants , Cambridge, MA: Harvard University Press"
+        },
+        {
+          "raw": "---, 2017. Tragic failures: How and why we are harmed by toxic chemicals , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Craver, C. F., 2009, \"Mechanisms and natural kinds\", Philosophical Psychology , 22(5): 575-594."
+        },
+        {
+          "raw": "Crespi, B., & Summers, K., 2005, \"Evolutionary biology of cancer\", Trends in Ecology & Evolution , 20(10): 545-552."
+        },
+        {
+          "raw": "Damuth J., & Heisler, I.L., 1988, \"Alternative formulations of multilevel selection\", Biology and Philosophy , 3: 407-430."
+        },
+        {
+          "raw": "Deaton, A., & Cartwright, N., 2018, \"Understanding and misunderstanding randomized controlled trials\", Social Science & Medicine , 210: 2-21."
+        },
+        {
+          "raw": "DiMarco, M., 2021, \"Wishful intelligibility, black boxes, and epidemiological explanation\", Philosophy of Science , 88(5): 824-834."
+        },
+        {
+          "raw": "DiMarco, M., Zhao, H., Boulicault, M., & Richardson, S. S., 2022, \"Why 'sex as a biological variable' conflicts with precision medicine initiatives\", Cell Reports Medicine , 3(4)."
+        },
+        {
+          "raw": "Dobzhansky, T., 1973, \"Nothing in Biology Makes Sense except in the Light of Evolution\", The American Biology Teacher , 35: 125-129."
+        },
+        {
+          "raw": "Douglas, H., 2000, \"Inductive risk and values in science\", Philosophy of Science , 67(4): 559-579."
+        },
+        {
+          "raw": "Dupr&eacute;, J., 1996, The disorder of things: Metaphysical foundations of the disunity of science , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Elliott, K. C., 2011, Is a little pollution good for you?: Incorporating societal values in environmental research , New York: Oxford University Press USA."
+        },
+        {
+          "raw": "Ereshefsky, M., 2009, \"Defining 'health' and 'disease'\", Studies in History and Philosophy of Science (Part C: Studies in History and Philosophy of Biological and Biomedical Sciences), 40(3): 221-227."
+        },
+        {
+          "raw": "Ereshefsky, M., & Reydon, T. A., 2015, \"Scientific kinds\", Philosophical Studies , 172(4): 969-986."
+        },
+        {
+          "raw": "Esserman, L. J., Thompson, I. M., Reid, B., Nelson, P., Ransohoff, D. F., Welch, H. G., &hellip; & Bissell, M., 2014, \"Addressing overdiagnosis and overtreatment in cancer: a prescription for change\", The Lancet Oncology , 15(6): e234-e242."
+        },
+        {
+          "raw": "Fagan, M., 2013, Philosophy of Stem Cell Biology. Knowledge in Flesh and Blood , London: Palgrave-Macmillan."
+        },
+        {
+          "raw": "---, 2021, Stem Cells , Cambridge, MA: Cambridge University Press."
+        },
+        {
+          "raw": "---, 2016, \"Pathways to the clinic: cancer stem cells and challenges for translational research\", in G. Boniolo & M.J. Nathan (eds.), Philosophy of molecular medicine: Foundational issues in research and practice , New York: Taylor & Francis."
+        },
+        {
+          "raw": "Foulds, L., 1958, \"The natural history of cancer\",, Journal of Chronic Diseases , 8(1): 2-37."
+        },
+        {
+          "raw": "Frank, S. A., 2007, Dynamics of cancer: incidence, inheritance, and evolution , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Frank, S. A. & Nowak, M. A., 2004, \"Problems of somatic mutation and cancer\", BioEssays , 26: 291-299."
+        },
+        {
+          "raw": "Fujimura, J. H., 1987, \"Constructing 'Do-able' Problems in Cancer Research: Articulating Alignment\", Social Studies of Science , 17(2): 257-293."
+        },
+        {
+          "raw": "---, 1992, \"Crafting science: Standardized packages, boundary objects, and 'translation'\", in A. Pickering (ed.), Science as Practice and Culture , Chicago: University of Chicago Press, pp. 168-211"
+        },
+        {
+          "raw": "---, 1996, Crafting science: A sociohistory of the quest for the genetics of cancer , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Gardner, A., 2015, \"The genetical theory of multilevel selection\", Journal of Evolutionary Biology , 28: 305-319."
+        },
+        {
+          "raw": "Germain, P-L., 2012, \"Cancer Cells and Adaptive Explanations\", Biology and Philosophy , 27 (6): 785-810."
+        },
+        {
+          "raw": "---, 2014, \"Living instruments and theoretical terms: Xenografts as measurements in cancer research\", in New Directions in the Philosophy of Science , Cham: Springer, pp. 141-155."
+        },
+        {
+          "raw": "Germain, P. L., & Laplane, L., 2017, \"Metastasis as supra-cellular selection? A reply to Lean and Plutynski\", Biology & Philosophy , 32(2): 281-287."
+        },
+        {
+          "raw": "Giles, G. G., Severi, G., English, D. R., &hellip; Hoper, J. L., 2003, \"Early growth, adult body size and prostate cancer risk\", International Journal of Cancer , 103: 241-245."
+        },
+        {
+          "raw": "Godfrey-Smith, P. 2009, Darwinian populations and natural selection , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Goldwasser, S., 2023, \"Standard aberration: cancer biology and the modeling account of normal function\", Biology & Philosophy , 38(1): 4."
+        },
+        {
+          "raw": "Goldwasser S., forthcoming, \"Finding normality in abnormality: On the ascription of normal functions to cancer\", Philosophy of Science ."
+        },
+        {
+          "raw": "Gonz&aacute;lez-Moreno, M., Saborido, C., & Teira, D. 2015, \"Disease-mongering through clinical trials\", Studies in History and Philosophy of Science (Part C: Studies in History and Philosophy of Biological and Biomedical Sciences), 51: 11-18."
+        },
+        {
+          "raw": "Greaves, M., 2001, Cancer: the evolutionary legacy , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Greaves, M., & Maley, C. C., 2012, \"Clonal evolution in cancer\", Nature , 481(7381): 306."
+        },
+        {
+          "raw": "Green, S., &#350;erban, M., Scholl, R., Jones, N., Brigandt, I., & Bechtel, W., 2018, \"Network analyses in systems biology: new strategies for dealing with biological complexity\", Synthese , 195: 1751-1777."
+        },
+        {
+          "raw": "Green, S., 2021, \"Cancer beyond genetics: on the practical implications of downward causation\", in Biological Levels: Composition, Scale and Evolution in Complex Systems , D. S. Brooks, J. DiFrisco and W. C. Wimsatt (eds.), Cambridge, MA: MIT Press, pp. 195- 213."
+        },
+        {
+          "raw": "Green, S., Dam, M. S., & Svendsen, M. N., 2021, \"Mouse avatars of human cancers: the temporality of translation in precision oncology\", History and Philosophy of the Life Sciences , 43(1): 27."
+        },
+        {
+          "raw": "Green, S., Dam, M. S., & Svendsen, M. N., 2022, \"Patient-Derived Organoids in Precision Oncology Precision oncology-Towards a Science of and for the Individual?\" in Personalized Medicine in the Making: Philosophical Perspectives from Biology to Healthcare Cham: Springer International Publishing, pp. 125-146."
+        },
+        {
+          "raw": "Greaves, M., 2007, \"Darwinian medicine: a case for cancer\", Nature Reviews Cancer , 7: 213-221."
+        },
+        {
+          "raw": "Hanahan, D., & Weinberg, R. A., 2000, \"The hallmarks of cancer\", Cell , 100(1): 57-70."
+        },
+        {
+          "raw": "---, 2011. \"Hallmarks of cancer: the next generation\", Cell , 144(5): 646-674."
+        },
+        {
+          "raw": "Hausman, D. M., 2012, \"Health, naturalism, and functional efficiency\", Philosophy of Science , 79(4): 519-541."
+        },
+        {
+          "raw": "Hey, S. P., 2015, \"Judging quality and coordination in biomarker diagnostic development\", Theoria: An International Journal for Theory, History and Foundations of Science , 30(2): 207-227."
+        },
+        {
+          "raw": "Hey, S. P., 2019, \"Heuristics and Explanation in Translational Medicine\", Perspectives in Biology and Medicine , 62(4): 675-689."
+        },
+        {
+          "raw": "Hey, S. P., & Barsanti-Innes, B., 2016, \"Epistemology, ethics, and progress in precision medicine\", Perspectives in Biology and Medicine , 59(3): 293-310."
+        },
+        {
+          "raw": "Hey, S. P., D'Andrea, E., Jung, E. H., Tessema, F., Luo, J., Gyawali, B., & Kesselheim, A. S., 2019, \"Challenges and opportunities for biomarker validation\", The Journal of Law, Medicine & Ethics , 47(3): 357-361."
+        },
+        {
+          "raw": "Hill, A. B., 1965, \"The Environment and Disease: Association or Causation?\", Proceedings of the Royal Society of Medicine , 58: 295-300."
+        },
+        {
+          "raw": "Hoadley, Katherine A., Christina Yau, Denise M. Wolf, Andrew D. Cherniack, David Tamborero, Sam Ng, Max DM Leiserson, et al., 2014, \"Multiplatform analysis of 12 cancer types reveals molecular classification within and across tissues of origin\", Cell , 158(4): 929-944."
+        },
+        {
+          "raw": "Hoadley, K. A., Yau, C., Hinoue, T., Wolf, D. M., Lazar, A. J., Drill, E., &hellip; & Akbani, R., 2018, \"Cell-of-origin patterns dominate the molecular classification of 10,000 tumors from 33 types of cancer\", Cell , 173(2): 291-304."
+        },
+        {
+          "raw": "Howick, J. H., 2011, The philosophy of evidence-based medicine , Hoboken, NJ: John Wiley & Sons."
+        },
+        {
+          "raw": "Hsu, J.I., Dayaram, T., Tovy, A., &hellip; & Goodell, M.A., 2018, \"PPM1D Mutations Drive Clonal Hematopoiesis in Response to Cytotoxic Chemotherapy\", Cell Stem Cell , 23: 700-713.e6."
+        },
+        {
+          "raw": "John, S. 2018, \"Epistemic trust and the ethics of science communication: against transparency, openness, sincerity and honesty\", Social Epistemology , 32(2): 75-87."
+        },
+        {
+          "raw": "Kent, D. G., & Green, A. R. 2017. \"Order matters: the order of somatic mutations influences cancer evolution\", Cold Spring Harbor Perspectives in Medicine , 7(4)."
+        },
+        {
+          "raw": "Khalidi, M.A.K., 1998, \"Natural kinds and crosscutting categories\", The Journal of Philosophy , 95(1): 33-50."
+        },
+        {
+          "raw": "---, 2013, Natural categories and human kinds: Classification in the natural and social sciences , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Kim, J., 2000, \"Making sense of downward causation\", in P. B. Andersen, C. Emmeche, N. O. Finnemann & P. V. Christiansen (eds.) Downward Causation , Aarhus: University of Aarhus Press, pp 305-321"
+        },
+        {
+          "raw": "Kincaid, H., 2008, \"Do We Need Theory to Study Disease?: lessons from cancer research and their implications for mental illness\", Perspectives in Biology and Medicine , 51(3): 367-378."
+        },
+        {
+          "raw": "Lapidot, T., Sirard, C., Vormoor, J., Murdoch, B., Hoang, T., Caceres-Cortes, J., &hellip; & Dick, J. E., 1994, \"A cell initiating human acute myeloid leukaemia after transplantation into SCID mice\", Nature , 367(6464): 645."
+        },
+        {
+          "raw": "Lange, M., 2007, \"The End of Diseases\", Philosophical Topics , 35: 265-292."
+        },
+        {
+          "raw": "Laplane, L.,2014, \"Identifying theories in developmental biology. The case of the cancer stem cell theory\", in A. Minelli & T. Pradeu (eds.), Toward a theory of development , Oxford: Oxford University Press, pp 246-259."
+        },
+        {
+          "raw": "---, 2016, Cancer Stem Cells , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "---, 2018, \"Cancer stem cells modulate patterns and processes of evolution in cancers\", Biology & Philosophy , 33(3-4): 18."
+        },
+        {
+          "raw": "Laplane, L., Duluc, D., Larmonier, N., Pradeu, T. & Bikfalvi, A., 2018, \"The multiple layers of the tumor environment\", Trends Cancer , 4: 802- 809."
+        },
+        {
+          "raw": "Laplane, L. and Solary, E., 2019a \"Philosophy of Biology: Towards a classification of stem cells\", eLife , 8: e46563."
+        },
+        {
+          "raw": "Laplane, L., Duluc, D., Bikfalvi, A., Larmonier, N. & Pradeu, T., 2019b, \"Beyond the tumour microenvironment\", International Journal of Cancer , 145: 2611- 2618."
+        },
+        {
+          "raw": "Lean, C. and Plutynski, A., 2016, \"The Evolution of Failure: Explaining Cancer as an Evolutionary Process\", Biology and Philosophy , 31(1): 39-57."
+        },
+        {
+          "raw": "Love AC, Brigandt I., 2017, \"Philosophical Dimensions of Individuality\", in S. Lidgard and L.K. Nyhart (eds.), Biological Individuality: Integrating Scientific, Philosophical, and Historical Perspectives , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Lyne, A.-M., Laplane, L. & Peri&eacute;, L., 2021, \"To portray clonal evolution in blood cancer, count your stem cells\", Blood , 137: 1862-1870."
+        },
+        {
+          "raw": "Machamer, P., Darden, L., & Craver, C. F., 2000, \"Thinking about mechanisms\", Philosophy of Science , 67(1): 1-25."
+        },
+        {
+          "raw": "Malaterre, C., 2007, \"Organicism and reductionism in cancer research: Towards a systemic approach\", International Studies in the Philosophy of Science , 21(1): 57-73."
+        },
+        {
+          "raw": "---, 2011, \"Making sense of Downward Causation in Manipulationism (with Illustrations from Cancer Research)\", History and Philosophy of the Life Sciences , (33): 537-562."
+        },
+        {
+          "raw": "Maman, S., & Witz, I. P., 2018, \"A history of exploring cancer in context\", Nature Reviews Cancer , 18(6): 359-376."
+        },
+        {
+          "raw": "Marcum, J. A., 2005, \"Metaphysical presuppositions and scientific practices: Reductionism and organicism in cancer research\", International Studies in the Philosophy of Science , 19(1): 31-45."
+        },
+        {
+          "raw": "Martincorena, I&ntilde;igo, Amit Roshan, Moritz Gerstung, Peter Ellis, Peter Van Loo, Stuart McLaren, David C. Wedge, et al., 2015, \"High burden and pervasive positive selection of somatic mutations in normal human skin\", Science 348(6237): 880-886."
+        },
+        {
+          "raw": "Marusyk, A., Almendro, V. & Polyak, K., 2012, \"Intra-tumour heterogeneity: a looking glass for cancer?\", Nature Reviews Cancer , 12: 323-34."
+        },
+        {
+          "raw": "Mauvais-Jarvis, F., Merz, N. B., Barnes, P. J., Brinton, R. D., Carrero, J. J., DeMeo, D. L., &hellip; & Suzuki, A., 2020, \"Sex and gender: modifiers of health, disease, and medicine\", The Lancet , 396(10250): 565-582."
+        },
+        {
+          "raw": "Mayo, D. G., & Hollander, R. D. (eds.), 1994, Acceptable evidence: Science and values in risk management , Oxford: Oxford University Press on Demand."
+        },
+        {
+          "raw": "Merlo, L. M., Pepper, J. W., Reid, B. J., & Maley, C. C., 2006, \"Cancer as an evolutionary and ecological process\", Nature Reviews Cancer , 6(12): 924-935."
+        },
+        {
+          "raw": "Mitchell, S. D., 2009, Unsimple truths: Science, complexity, and policy , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Mont&eacute;vil M, Mossio M, 2015, \"Biological organisation as closure of constraints\", Journal of Theoretical Biology , 372: 179-191."
+        },
+        {
+          "raw": "Mossio M, Saborido C, Moreno A., 2009, \"An organizational account of biological functions\", British Journal for Philosophy of Science , 60(4): 813-841."
+        },
+        {
+          "raw": "Mossio, M., & Bich, L., 2017, \"What makes biological organisation teleological?\" Synthese , 194(4): 1089-1114."
+        },
+        {
+          "raw": "Morange, M., 1993, \"The Discovery of Cellular Oncogenes\", History and Philosophy of the Life Sciences , 15(1): 45-58"
+        },
+        {
+          "raw": "---, 1997, \"From the regulatory vision of cancer to the oncogene paradigm, 1975-1985\", Journal of the History of Biology , 30(1): 1-29."
+        },
+        {
+          "raw": "---, 2003, \"History of cancer research\", Encyclopedia of Life Sciences , London: Nature Publishing Group"
+        },
+        {
+          "raw": "---, 2015, \"Is There an Explanation for&hellip; the Diversity of Explanations in Biological Studies?\", in P. A. Braillard and C. Malaterre (eds.), Explanation in Biology: An Enquiry into the Diversity of Explanatory Patterns in the Life Sciences , Dordrecht: Springer, pp. 31-46"
+        },
+        {
+          "raw": "Morgan, G., 2022, Cancer Virus Hunters: A History of Tumor Virology , Baltimore: Johns Hopkins University Press."
+        },
+        {
+          "raw": "Okasha, S., 2005, \"Multilevel selection and the major transitions in evolution\", Philosophy of Science , 72(5): 1013-1025."
+        },
+        {
+          "raw": "---, 2006, Evolution and the levels of selection , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, forthcoming, \"Cancer and the levels of selection\", The British Journal for the Philosophy of Science . doi:10.1086/716178"
+        },
+        {
+          "raw": "Oreskes, N., & Conway, E. M., 2011, Merchants of doubt: How a handful of scientists obscured the truth on issues from tobacco smoke to global warming , New York: Bloomsbury Publishing USA."
+        },
+        {
+          "raw": "Ortmann, C.A., Kent, D.G., Nangalia, J., &hellip; & Green, A.R., 2015, \"Effect of mutation order on myeloproliferative neoplasms\", The New England Journal of Medicine , 372: 601-12."
+        },
+        {
+          "raw": "Parke, E. C., & Plutynski, A., 2023, \"Going big by going small: Trade-offs in microbiome explanations of cancer\", Studies in History and Philosophy of Science , 97: 101-110."
+        },
+        {
+          "raw": "Pierce, G. B., & Speers, W. C., 1988, \"Tumors as caricatures of the process of tissue renewal: prospects for therapy by directing differentiation\", Cancer Research , 48(8): 1996-2004."
+        },
+        {
+          "raw": "Plutynski, A., 2017, \"Safe or Sorry? Cancer Screening and Inductive Risk\", in Exploring Inductive Risk: Case Studies of Values in Science , K.C. Elliott & T. Richards (eds.), Oxford: Oxford University Press, pp. 149-171."
+        },
+        {
+          "raw": "---, 2018, Explaining Cancer: Finding Order in Disorder , New York: Oxford University Press."
+        },
+        {
+          "raw": "---, 2018b, \"The origins of 'dynamic reciprocity': Mina Bissell's expansive picture of cancer causation\", in O. Harman and M. Dietrich (eds.), Dreamers, Visionaries, and Revolutionaries in the Life Sciences , Chicago: University of Chicago Press, Chicago, 96- 110."
+        },
+        {
+          "raw": "---, 2021a, \"How is cancer complex?\" European Journal for Philosophy of Science , 11(2): 55."
+        },
+        {
+          "raw": "---, 2021b, \"Is cancer a matter of luck?\" Biology & Philosophy , 36: 3."
+        },
+        {
+          "raw": "---, 2022, \"Why Precision Oncology Precision oncology Is Not Very Precise (and Why This Should Not Surprise Us)\", in Personalized Medicine in the Making: Philosophical Perspectives from Biology to Healthcare , C. Beneduce & M. Bertolaso (eds.), Cham: Springer International Publishing, pp. 3-21."
+        },
+        {
+          "raw": "Pradeu, T., 2012, The Limits of the Self: Immunology and Biological Identity , New York: Oxford University Press."
+        },
+        {
+          "raw": "---, 2013, \"Immunity and the emergence of individuality\", in From Groups to Individuals: Evolution and Emerging Individuality , F. Bouchard and P. Huneman (eds.), Cambridge, MA: MIT Press, pp. 77-96"
+        },
+        {
+          "raw": "---, 2016, \"The many faces of biological individuality\", Biology and Philosophy , 31: 761-773."
+        },
+        {
+          "raw": "---, 2019, Philosophy of Immunology , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Pradeu, T., Daignan&#8208;Fornier, B., Ewald, A., Germain, P. L., Okasha, S., Plutynski, A., &hellip; & Laplane, L., 2023, \"Reuniting philosophy and science to advance cancer research\", Biological Reviews , 98(5): 1668-1686."
+        },
+        {
+          "raw": "Prasad, V. K., 2020, Malignant: how bad policy and bad evidence harm people with Cancer , Baltimore: Johns Hopkins University Press."
+        },
+        {
+          "raw": "Prasad, V., & Gale, R. P., 2016, \"Precision medicine in acute myeloid leukemia: Hope, hype or both?\", Leukemia Research , 48: 73-77."
+        },
+        {
+          "raw": "Prasad, V., Fojo, T., & Brada, M., 2016, \"Precision oncology: origins, optimism, and potential\", The Lancet Oncology , 17(2): e81-e86."
+        },
+        {
+          "raw": "Proctor, R. N., 1996, Cancer Wars: How Politics Shapes What We Know and Don't Know About Cancer , New York: Basic Books."
+        },
+        {
+          "raw": "Reid, L., 2017, \"Truth or Spin? Disease Definition in Cancer Screening\", Journal of Medicine and Philosophy: A Forum for Bioethics and Philosophy of Medicine , 42(4): 385-404."
+        },
+        {
+          "raw": "Reya, T., Morrison, S. J., Clarke, M. F. & Weissman, I. L., 2001, \"Stem cells, cancer, and cancer stem cells\", Nature , 414: 105-11."
+        },
+        {
+          "raw": "Rondeau, E., Larmonier, N., Pradeu, T. & Bikfalvi, A., 2019, \"Philosophy of biology: characterizing causality in cancer\", eLife , 8: e53755."
+        },
+        {
+          "raw": "Russo, F., &Williamson, J., 2007, \"Interpreting Causality in the Health Sciences\", International Studies in the Philosophy of Science , 21(2): 157-70."
+        },
+        {
+          "raw": "Schaffner, K. F., 2006, \"Reduction: the Cheshire cat problem and a return to roots\", Synthese , 151: 377-402."
+        },
+        {
+          "raw": "Schedin, P., 2006, \"Pregnancy-associated breast cancer and metastasis\", Nature Reviews Cancer , 6(4): 281."
+        },
+        {
+          "raw": "Schwartz, P. H., 2014, \"Small tumors as risk factors not disease\", Philosophy of Science , 81(5): 986-998."
+        },
+        {
+          "raw": "Sepich-Poore, G. D., Guccione, C., Laplane, L., Pradeu, T., Curtius, K. & Knight, R., 2022, \"Cancer's second genome: microbial cancer diagnostics and redefining clonal evolution as a multispecies process\", BioEssays , 44: 2100252."
+        },
+        {
+          "raw": "Shipitsin, M., Campbell, L. L., Argani, P., &hellip; & Polyak, K., 2007, \"Molecular definition of breast tumor heterogeneity\", Cancer Cell , 11: 259-273."
+        },
+        {
+          "raw": "Sholl, J., 2022, \"Everything in moderation or moderating everything? Nutrient balancing in the context of evolution and cancer metabolism\", Biology & Philosophy , 37(2): 14."
+        },
+        {
+          "raw": "Sholl, J., Sepich-Poore, G.D., Knight, R. & Pradeu, T., 2022, \"Redrawing therapeutic boundaries: microbiota and cancer\", Trends in Cancer , 8: 87-97."
+        },
+        {
+          "raw": "Shpak, M. & Lu, J., 2016, \"An Evolutionary Genetic Perspective on Cancer Biology\", Annual Review of Ecology, Evolution, and Systematics , 47: 25-49."
+        },
+        {
+          "raw": "Shrader-Frechette, K. S., 1993, Burying uncertainty: Risk and the case against geological disposal of nuclear waste , San Francisco: University of California Press."
+        },
+        {
+          "raw": "---, 2002, Environmental justice: Creating equality, reclaiming democracy , New York: Oxford University Press."
+        },
+        {
+          "raw": "Shrager, J., Shapiro, M., & Hoos, W., 2019, \"Is cancer solvable? Towards efficient and ethical biomedical science\", The Journal of Law, Medicine & Ethics , 47(3): 362-368."
+        },
+        {
+          "raw": "Siegel, R. L., Miller, K. D., & Jemal, A., 2017, \"Cancer statistics, 2017\", CA: A Cancer Journal for Clinicians , 67(1): 7-30"
+        },
+        {
+          "raw": "Slater, M. H., 2014, \"Natural kindness\", The British Journal for the Philosophy of Science , 66(2): 375-411."
+        },
+        {
+          "raw": "Solomon, M., 2015, Making medical knowledge , New York: Oxford University Press, USA."
+        },
+        {
+          "raw": "Sonnenschein, C. & Soto, A.M., 2000, \"Somatic mutation theory of carcinogenesis: why it should be dropped and replaced\", Molecular Carcinogenesis , 29: 205-11"
+        },
+        {
+          "raw": "---, 2008, \"Theories of carcinogenesis: an emerging perspective\", Seminars in Cancer Biology , 18: 372-7."
+        },
+        {
+          "raw": "Sorenson, R., 2011, \"Paranatural Kinds\", in Carving Nature at Its Joints: Natural Kinds in Metaphysics and Science , J. K. Campbell, M. O'Rourke, & M. H. Slater (eds.), Cambridge, MA: MIT Press. 113-128."
+        },
+        {
+          "raw": "Soto, A. M., & Sonnenschein, C., 2004, \"The somatic mutation theory of cancer: growing problems with the paradigm?\", Bioessays , 26(10): 1097-1107."
+        },
+        {
+          "raw": "---, 2005, \"Emergentism as a default: cancer as a problem of tissue organization\", Journal of Biosciences , 30(1): 103-11"
+        },
+        {
+          "raw": "Stearns, S. C. & Koella, J. C., (eds.), 2007, Evolution in Health and Disease , Oxford, New York: Oxford University Press."
+        },
+        {
+          "raw": "Soto, A. M., Sonnenschein, C. & Miquel, P. A., 2008, \"On physicalism and Downward Causation in Developmental and Cancer Biology\", Acta Biotheoretica , 56: 257-274."
+        },
+        {
+          "raw": "Steel, D., 2007, Across the boundaries: Extrapolation in biology and social science , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2010, \"Epistemic values and the argument from inductive risk\", Philosophy of Science , 77(1): 14-34."
+        },
+        {
+          "raw": "---, 2015, Philosophy and the precautionary principle , New York: Cambridge University Press."
+        },
+        {
+          "raw": "Stegenga, J., 2015, \"Measuring effectiveness\", Studies in History and Philosophy of Science (Part C: Studies in History and Philosophy of Biological and Biomedical Sciences), 54: 62-71."
+        },
+        {
+          "raw": "---, 2018, Medical Nihilism , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Strauss, B., M. Bertolaso, I. Ernberg and M. J. Bissell (eds.), 2021, Rethinking Cancer: A New Paradigm for the Postgenomics Era , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Tabery, J., 2023, Tyranny of the Gene: Personalized Medicine and Its Threat to Public Health , New York: Knopf."
+        },
+        {
+          "raw": "Temin, H., 1974, \"Introduction to virus-caused cancers\", Cancer 34 (Supplement): 1347-1352."
+        },
+        {
+          "raw": "Tomasetti, C. & Vogelstein, B. 2015, \"Variation in cancer risk among tissues can be explained by the number of stem cell divisions\", Science , 347: 78- 81."
+        },
+        {
+          "raw": "Tomasetti, C., Li, L., & Vogelstein, B., 2017, \"Stem cell divisions, somatic mutations, cancer etiology, and cancer prevention\", Science , 355: 1330-1334."
+        },
+        {
+          "raw": "Ushijima, T., Clark, S. J. & Tan, P., 2021, \"Mapping genomic and epigenomic evolution in cancer ecosystems\", Science , 373: 1474-1479."
+        },
+        {
+          "raw": "Valles, S. A., 2012, \"Evolutionary medicine at twenty: rethinking adaptationism and disease\", Biology & Philosophy , 27: 241-261."
+        },
+        {
+          "raw": "---, 2018, Philosophy of population health: Philosophy for a new public health era , London: Routledge."
+        },
+        {
+          "raw": "---, 2021, \"A pluralistic and socially responsible philosophy of epidemiology field should actively engage with social determinants of health and health disparities\", Synthese , 198 (Supplement 10): 2589-2611."
+        },
+        {
+          "raw": "Vogelstein, B. & Kinzler, K. W., 1993, \"The multistep nature of cancer\", Trends Genet , 9: 138-141."
+        },
+        {
+          "raw": "Vogt, H., Green, S., Ekstr&oslash;m, C. T., & Brodersen, J., 2019, \"How precision medicine and screening with big data could increase overdiagnosis\", The BMJ , 366: l5270. doi:10.1136/bmj.l5270"
+        },
+        {
+          "raw": "Weinberg, R., 2013, The Biology of Cancer , New York: Garland science."
+        },
+        {
+          "raw": "Weaver, V. M., Petersen, O. W., Wang, F., Larabell, C. A., Briand, P., Damsky, C., & Bissell, M. J., 1997, \"Reversion of the malignant phenotype of human breast cells in three-dimensional culture and in vivo by integrin blocking antibodies\", The Journal of Cell Biology , 137(1): 231-245."
+        },
+        {
+          "raw": "Weaver, V. M., Leli&egrave;vre, S., Lakins, J. N., Chrenek, M. A., Jones, J. C., Giancotti, F., &hellip; & Bissell, M. J., 2002, \"&beta;4 integrin-dependent formation of polarized three-dimensional architecture confers resistance to apoptosis in normal and malignant mammary epithelium\", Cancer Cell , 2(3): 205-216."
+        },
+        {
+          "raw": "Welch, H.G. & Black, W.C., 2010, \"Overdiagnosis in cancer\", Journal of the National Cancer Institute , 102: 605-613."
+        },
+        {
+          "raw": "Wicha, M. S., Liu, S. & Dontu, G., 2006, \"Cancer stem cells: an old idea-a paradigm shift\", Cancer Research , 66: 1883-1886."
+        },
+        {
+          "raw": "Williams, Neil E., 2011, \"Arthritis and nature's joints\", in Carving Nature at Its Joints: Natural Kinds in Metaphysics and Science , Joseph Keim Campbell, Michael O'Rourke, & Matthew H. Slater (eds.), Cambridge, MA: MIT Press, pp. 199-230."
+        },
+        {
+          "raw": "Wodarz, D. & Komarova, N. L., 2014, Dynamics of cancer: mathematical foundations of oncology , New Jersey: World Scientific."
+        }
+      ],
+      "publishedAt": "2019-05-06T14:00:00.000Z",
+      "revisedAt": "2023-10-22T13:00:00.000Z"
+    }
+  }
+}

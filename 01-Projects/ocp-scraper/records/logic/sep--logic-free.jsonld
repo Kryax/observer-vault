@@ -1,0 +1,596 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/logic-free",
+  "meta": {
+    "title": "Free Logic",
+    "description": "In most general terms, free logic is concerned with names that do not denote. Classical logic requires each singular term to denote an object in the domain of quantification -- which is usually understood as the set of \"existing\" objects. Free logic does not. Free logic is therefore useful for analyzing discourse containing singular terms that either are or might be empty. Varying conventions for calculating the truth values of atomic formulas containing empty singular terms yield three distinct forms of free logic: negative, positive and neutral, which is why we commonly refer to them as free logics (in the plural) instead. Most free logics have been first-order, their quantifiers ranging over individuals. Recently, however, some work on higher-order free logics has appeared. Corine Besson (2009) argues that internalist theories of natural kinds require second-order free logics whose quantifiers range over kinds, and she finds precedent for this idea ranging as far back as Cocchiarella (1986). Andrew Bacon, John Hawthorne, and Gabriel Uzquiano (2016) explore the possibility of using a higher-order free logic to resolve certain intensional paradoxes, but they find that this idea faces daunting difficulties. Timothy Williamson (2016) reluctantly concurs. This article, however, focuses mainly on first-order logics. Section 1 lays out a brief history and motivation of free logic, introduces basic definitions and explains how it differs from related logics. The semantics for the variants of free logics are surveyed in Section 2. Section 3 presents the proof systems for the three variants, briefly laying out the axiomatization and then focusing on the currently favored proof-theoretic approaches. Section 4 is critical, examining three anomalies that infect most free logics. Section 5 samples applications of free logic to theories of description, logics of partial or non-strict functions, logics with Kripke semantics, logics of fiction and logics that are in a certain sense Meinongian.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T11:14:16.955Z",
+    "dateModified": "2026-03-22T11:14:16.955Z",
+    "datePublished": "2010-04-04T14:00:00.000Z",
+    "keywords": [
+      "descriptions",
+      "fictional entities",
+      "logic classical",
+      "logic intuitionistic",
+      "logic modal",
+      "logic temporal",
+      "nonexistent objects",
+      "possible objects",
+      "proof theory",
+      "proof theory development"
+    ]
+  },
+  "problemSolved": {
+    "statement": "In most general terms, free logic is concerned with names that do not denote. Classical logic requires each singular term to denote an object in the domain of quantification -- which is usually understood as the set of \"existing\" objects. Free logic does not. Free logic is therefore useful for analyzing discourse containing singular terms that either are or might be empty. Varying conventions for calculating the truth values of atomic formulas containing empty singular terms yield three distinct forms of free logic: negative, positive and neutral, which is why we commonly refer to them as free logics (in the plural) instead. Most free logics have been first-order, their quantifiers ranging over individuals. Recently, however, some work on higher-order free logics has appeared. Corine Besson (2009) argues that internalist theories of natural kinds require second-order free logics whose quantifiers range over kinds, and she finds precedent for this idea ranging as far back as Cocchiarella (1986). Andrew Bacon, John Hawthorne, and Gabriel Uzquiano (2016) explore the possibility of using a higher-order free logic to resolve certain intensional paradoxes, but they find that this idea faces daunting difficulties. Timothy Williamson (2016) reluctantly concurs. This article, however, focuses mainly on first-order logics. Section 1 lays out a brief history and motivation of free logic, introduces basic definitions and explains how it differs from related logics. The semantics for the variants of free logics are surveyed in Section 2. Section 3 presents the proof systems for the three variants, briefly laying out the axiomatization and then focusing on the currently favored proof-theoretic approaches. Section 4 is critical, examining three anomalies that infect most free logics. Section 5 samples applications of free logic to theories of description, logics of partial or non-strict functions, logics with Kripke semantics, logics of fiction and logics that are in a certain sense Meinongian.",
+    "context": "Opening section: 1. Brief History and Motivation | Related entries: descriptions, fictional-entities, logic-classical, logic-intuitionistic, logic-modal, logic-temporal, nonexistent-objects, possible-objects, proof-theory, proof-theory-development",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "logic"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry logic-free",
+        "uri": "https://plato.stanford.edu/entries/logic-free/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "5 author(s), 10 related entries, bibliography size 110"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2010-04-04T14:00:00.000Z and revised 2025-06-18T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2025-06-18T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/logic-free/",
+        "description": "SEP entry for logic-free"
+      }
+    ],
+    "solutionApproach": "1. Brief History and Motivation"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/descriptions",
+      "ocp:sep/fictional-entities",
+      "ocp:sep/logic-classical",
+      "ocp:sep/logic-intuitionistic",
+      "ocp:sep/logic-modal",
+      "ocp:sep/logic-temporal",
+      "ocp:sep/nonexistent-objects",
+      "ocp:sep/possible-objects",
+      "ocp:sep/proof-theory",
+      "ocp:sep/proof-theory-development"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Gratzl, Norbert",
+        "type": "human"
+      },
+      {
+        "name": "Pavlovi",
+        "type": "human"
+      },
+      {
+        "name": "#263",
+        "type": "human"
+      },
+      {
+        "name": ", Edi",
+        "type": "human"
+      },
+      {
+        "name": "Nolt, John",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/logic-free/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 99,
+      "validation_diversity": 0.74,
+      "context_breadth": 0.46,
+      "temporal_stability": 1,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.91
+    },
+    "confidence": "proven",
+    "authority": "high",
+    "status": "draft",
+    "trustScore": 0.653
+  },
+  "extensions": {
+    "sep": {
+      "slug": "logic-free",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/logic-free/",
+      "preamble": "In most general terms, free logic is concerned with names that do not denote. Classical logic requires each singular term to denote an object in the domain of quantification -- which is usually understood as the set of \"existing\" objects. Free logic does not. Free logic is therefore useful for analyzing discourse containing singular terms that either are or might be empty. Varying conventions for calculating the truth values of atomic formulas containing empty singular terms yield three distinct forms of free logic: negative, positive and neutral, which is why we commonly refer to them as free logics (in the plural) instead. Most free logics have been first-order, their quantifiers ranging over individuals. Recently, however, some work on higher-order free logics has appeared. Corine Besson (2009) argues that internalist theories of natural kinds require second-order free logics whose quantifiers range over kinds, and she finds precedent for this idea ranging as far back as Cocchiarella (1986). Andrew Bacon, John Hawthorne, and Gabriel Uzquiano (2016) explore the possibility of using a higher-order free logic to resolve certain intensional paradoxes, but they find that this idea faces daunting difficulties. Timothy Williamson (2016) reluctantly concurs. This article, however, focuses mainly on first-order logics. Section 1 lays out a brief history and motivation of free logic, introduces basic definitions and explains how it differs from related logics. The semantics for the variants of free logics are surveyed in Section 2. Section 3 presents the proof systems for the three variants, briefly laying out the axiomatization and then focusing on the currently favored proof-theoretic approaches. Section 4 is critical, examining three anomalies that infect most free logics. Section 5 samples applications of free logic to theories of description, logics of partial or non-strict functions, logics with Kripke semantics, logics of fiction and logics that are in a certain sense Meinongian.",
+      "firstSectionTitle": "1. Brief History and Motivation",
+      "firstSectionText": "A consideration of one question regarding non-denoting names can be traced back to Aristotle (translation Barnes 1984): It might, indeed, very well seem that the same sort of thing does occur in the case of contraries said with combination, 'Socrates is well' being contrary to 'Socrates is sick'. Yet not even with these is it necessary always for one to be true and the other false. For if Socrates exists one will be true and one false, but if he does not both will be false; neither 'Socrates is sick' nor 'Socrates is well' will be true if Socrates himself does not exist at all. (13b11-20) While this passage possibly anticipates the issues free logics are concerned with, it was in the 20th century that the modern debate begins. In the first part of the 20th century, some inquiries were made into a logic with possibly empty domains, or inclusive logic (called so because it includes this possibility, Quine 1954), and thus inquiry is sometimes considered a precursor to the investigations into free logic. The section 1.2 below discusses the difference between free and inclusive logics, however. Proper modern free logics, as a family of first-order logics, came about as a result of examining the existence assumptions of classical logics in the middle of the 20th century (Hintikka 1959; Lambert 1967, 1997, 2001), with the name due to Karel Lambert, which is short for \"logic free of existence assumptions with respect to its terms, singular and general\" (we'll tighten up the previously loose talk of 'names' and focus on terms instead). But since in modern logic there are hardly any presuppositions with regard to general terms (although there are naturally some exceptions, like Besson 2009), the first point will be the focus of this exposition. Consider then the following two arguments. \\[\\frac{\\text{Bucephalus is a horse.}}{\\because \\text{ There exists something that is a horse.}}\\] This sounds like a perfectly fine piece of elementary reasoning. But this is structurally at least very similar to the next argument: \\[\\frac{\\text{Sleipnir does not exist.}}{ \\because\\text{ There exists something that does not exist.}}\\] A useful, albeit artificial, assumption that pervades the standard approaches to quantified first order logic is that every singular term denotes an object. Obviously, the second inference is blocked by limiting singular terms to the denoting ones. In opposition to this dismissive response \" intuitively, Socrates could have not existed \" (although, see possibilism-actualism debate), free logic chooses to alter the logical rules for Existential Generalization (and related Universal Specification) by explicitly limiting them to the existence predicate \\({E!}\\). The definitional hallmarks of a free logic are: (1) it is free of existential presuppositions with respect to its singular terms, (2) it is free of existential presuppositions with respect to its general terms and finally (3) its quantifiers have existential import, or are more broadly limited to the predicate which delineates the denoting terms, \\({E!}\\) (most commonly read as existence , Leonard 1956; Baaz and Iemhoff 2006; Maffezioli and Orlandelli 2019, and definedness , Feferman 1995; Antonelli 2000). In any case, it is crucial for the understanding of free logic that, in any of its versions, quantification is limited to the \\(E!\\)-predicate; whereas the particular interpretation of this predicate may vary and, as we shall see later, this predicate does not need to even have the time honored status of a logical predicate. As stated previously, point (2) does not have any significant bearing on the discussion, while point (3) represents the limitation of quantification to \\({E!}\\). Focusing now on point (1), the question arises as to the status of atoms containing non-denoting terms, and what truth status is assigned to them determines the major variants of free logic. Positive FL allows for some atoms with terms outside of \\({E!}\\) to remain true (at the very least self-identities). On the other hand negative FL treats all such atoms as uniformly false (as was the suggestion in Aristotle's quote above). Finally neutral FL, assigns a third value to those atoms, and forms a subfamily of its own, depending on the interpretation of that third value and/or the meaning and inferential behavior of logical symbols. Another existence assumption that is frequently employed relates not to terms but to models -- namely that the domain is non-empty. Logics which allow for the rejection of this assumption (i.e., allow us to include the empty domain) are called inclusive . While they bear a close resemblance to free logics, these two issues are orthogonal to one another and can be considered in separation. To see this, it is easy to consider empty logic of Hailperin (1953), which contains no singular terms and no elements of the domain. While obviously inclusive, this logic is not free, since there are no non-denoting terms. The converse case of free non-inclusive logics is easily obtained by additionally specifying this via the addition of the following rule to any of the free logics below: \\[\\frac{{E!} t, \\Gamma \\Rightarrow \\Delta}{\\Gamma \\Rightarrow \\Delta} \\text{NI, t fresh}\\] This is standardly taken to be the case with free logics, so this rule can be assumed to be added to the systems discussed below. While most of the presentation here centers on the free logics arising form the extension of classical propositional base, considerable work has also gone into investigation of those with intuitionistic bases. Considerations discussed below apply, mutatis mutandis also for those bases. In either case the simplest way of obtaining a non-free logic from a free one is simply the addition of the rule \\[\\frac{{E!} t, \\Gamma \\Rightarrow \\Delta}{\\Gamma \\Rightarrow \\Delta}\\text{NI}^+\\] Notice that in contrast to the previous version of the rule which required an arbitrary term be used, any term can be used here. Therefore, in effect this rule eliminates non-denoting terms (it states, read bottom up, that in any proof search we may add the assumption a term denotes). Important to note is that the intuitionistic version of the rule contains at most one formulas in \\(\\Delta\\), but is otherwise of the same form. While the name is recent and due to Indrzejczak (2021a), the logics of these type have been considered for a while, with the most notable example the Logic of Partial Terms (Feferman 1995). This logic lies somewhere between classical ( mutatis mutandis , intuitionistic) and free logics by, in effect, adding the rule NI\\(^+\\) for singular terms, but remaining free for functional expressions. Feferman specifically discusses a negative free extension, but a useful overview of multiple versions (and their uniform cut elimination) is available in (Indrzejczak 2021a). For the formal presentation of free logics we utilize the language \\(\\mathcal{L}\\), a standard first-order language (without functions), adapted from (Gratzl 2010), with the vocabulary defined as Definition 1 (Alphabet \\(\\mathcal{L}\\)). The alphabet of the language \\(\\mathcal{L}\\) consists of: Denumerable list of free individual variables (names): \\(a,b,c,\\ldots\\), Denumerable list of bound individual variables: \\(x,y,z,\\ldots\\), Denumerable list of \\(n\\)-ary predicate variables, including a unary predicate \\({E!}\\) and a binary predicate \\(=\\), \\(\\neg\\), \\(\\wedge\\), \\(\\vee\\), \\(\\to\\), \\(\\forall\\), \\(\\exists\\), \\((\\), \\()\\). A formula of \\(\\mathcal{L}\\) is then defined as Definition 2 (Formula of \\(\\mathcal{L}\\)). where \\(\\circ \\in \\{\\wedge, \\vee, \\to\\}\\).",
+      "relatedEntries": [
+        "descriptions",
+        "fictional-entities",
+        "logic-classical",
+        "logic-intuitionistic",
+        "logic-modal",
+        "logic-temporal",
+        "nonexistent-objects",
+        "possible-objects",
+        "proof-theory",
+        "proof-theory-development"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "descriptions"
+        },
+        {
+          "slug": "fictional-entities"
+        },
+        {
+          "slug": "logic-classical"
+        },
+        {
+          "slug": "logic-intuitionistic"
+        },
+        {
+          "slug": "logic-modal"
+        },
+        {
+          "slug": "logic-temporal"
+        },
+        {
+          "slug": "nonexistent-objects"
+        },
+        {
+          "slug": "possible-objects"
+        },
+        {
+          "slug": "proof-theory"
+        },
+        {
+          "slug": "proof-theory-development"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 110,
+      "bibliography": [
+        {
+          "raw": "Antonelli, Gian Aldo, 2000, \"Proto-Semantics for Positive Free Logic,\" Journal of Philosophical Logic , 29 (3): 277-294."
+        },
+        {
+          "raw": "---, 2007, \"Free Quantification and Logical Invariance,\" Rivista de Estetica (New Series), 33 (1): 61-73."
+        },
+        {
+          "raw": "Baaz, Matthias, and Rosalie Iemhoff, 2006, \"Gentzen Calculi for the Existence Predicate.\" Studia Logica 82: 7-23."
+        },
+        {
+          "raw": "Bacon, Andrew, Hawthorne, John, and Uzquiano, Gabriel, 2016, \"Higher-order free logic and the Prior-Kaplan paradox,\" Canadian Journal of Philosophy 46(4-5): 493-541."
+        },
+        {
+          "raw": "Barnes, J., ed. The Complete Works of Aristotle , Volumes I and II, Princeton: Princeton University Press, 1984."
+        },
+        {
+          "raw": "Bencivenga, Ermanno, 1981, \"Free Semantics\" in Boston Studies in the Philosophy of Science , 47: 38-41; revised version reprinted in Lambert 1991, pp. 98-110."
+        },
+        {
+          "raw": "---, 1986, \"Free Logics,\" in D. Gabbay and F. Guenthner (eds.), Handbook of Philosophical Logic , vol. III: Alternatives to Classical Logic , Dordrecht: D. Reidel, pp. 373-426"
+        },
+        {
+          "raw": "---, 2002, \"Free Logics,\" in D. Gabbay and F. Guenthner (eds.), Handbook of Philosophical Logic , 2 edition, vol. 5, Dordrecht: Kluwer, pp. 147-196. (This is a republication of Bencivenga 1986.)"
+        },
+        {
+          "raw": "---, 2014, \"Ja&#347;kowski's Universally Free Logic,\" Studia Logica 102: 1095-1102."
+        },
+        {
+          "raw": "Besson, Corine, 2009, \"Externalism, Internalism, and Logical Truth,\" Review of Symbolic Logic , 2 (1): 1-29."
+        },
+        {
+          "raw": "Bochman, Alexander, 1998, \"Biconsequence Relations: A Four-Valued Formalism of Reasoning with Inconsistency and Incompleteness,\" Notre Dame Journal of Formal Logic 39 (1): 47-73."
+        },
+        {
+          "raw": "Bochvar, Dmitri, and Merrie Bergmann, 1981, \"On a Three-Valued Logical Calculus and Its Application to the Analysis of the Paradoxes of the Classical Extended Functional Calculus.\" History and Philosophy of Logic 2 (1-2): 87-112."
+        },
+        {
+          "raw": "Burge, Tyler, 1974, \"Truth and Singular Terms,\" No&ucirc;s , 8: 309-25; reprinted in Lambert 1991, pp. 189-204."
+        },
+        {
+          "raw": "Carnap, Rudolf, 1964, Meaning and Necessity: A Study in Semantics and Modal Logic . University of Chicago Press."
+        },
+        {
+          "raw": "Church, Alonzo, 1965, review of Lambert 1963 in Journal of Symbolic Logic , 30: 103-104."
+        },
+        {
+          "raw": "Cobreros, Pablo, Paul Egr&eacute;, David Ripley, and Robert Van Rooij, 2012, \"Tolerant, Classical, Strict.\" Journal of Philosophical Logic 41: 347-85."
+        },
+        {
+          "raw": "Cocchiarella, Nino B., 1966, \"A Logic of Actual and Possible Objects\" (abstract), Journal of Symbolic Logic , 31: 688-689."
+        },
+        {
+          "raw": "---, 1986, Logical Investigations of Predication Theory and the Problem of Universals , Napoli, Italy: Bibliopolis."
+        },
+        {
+          "raw": "---, 1991, \"Quantification, Time and Necessity,\" in Lambert 1991, pp. 242-256."
+        },
+        {
+          "raw": "Czermak, Johannes, 1974, \"A Logical Calculus with Descriptions.\" Journal of Philosophical Logic , 211-28."
+        },
+        {
+          "raw": "Degauquier, Vincent, 2016, \"Partial and Paraconsistent Three-Valued Logics.\" Logic and Logical Philosophy 25 (2): 143-71."
+        },
+        {
+          "raw": "Donald Kalish, Gary Mar, Richard Montague, 1992, Logic: Techniques of Formal Reasoning . Oxford University Press."
+        },
+        {
+          "raw": "Dumitru, Mircea, 2015, \"A Free Logic for Fictionalism\" in Iulian D. Toader, Gabriel Sandu & Ilie P&#515;rvu, eds., Romanian Studies in Philosophy of Science , Springer Verlag, pp. 149-163."
+        },
+        {
+          "raw": "Dumitru, Mircea and Frederick Kroon, 2008, \"What to Say When There Is Nothing to Talk about (Qu&eacute; decir cuando no hay nada de quehablar),\" Cr&iacute;tica: Revista Hispanoamericana de Filosof&iacute;a , 40 (120): 97-109."
+        },
+        {
+          "raw": "Feferman, Solomon, 1995, \"Definedness,\" Erkenntnis , 43 (3): 295-320."
+        },
+        {
+          "raw": "Fine, Kit, 1983, \"The Permutation Principle in Quantificational Logic,\" Journal of Philosophical Logic , 12: 33-7."
+        },
+        {
+          "raw": "Fjellstad, Andreas, 2020, \"Structural Proof Theory for First-Order Weak Kleene Logics.\" Journal of Applied Non-Classical Logics 30 (3): 272-89."
+        },
+        {
+          "raw": "Fodor, Jerry A., and Ernest Lepore, 1996, \"What Cannot be Evaluated Cannot be Evaluated and it Cannot be Supervalued Either,\" Journal of Philosophy , 93 (10): 516-535."
+        },
+        {
+          "raw": "Garson, James W., 1991, \"Applications of Free Logic to Quantified Intensional Logic,\" in Lambert 1991, pp. 111-142."
+        },
+        {
+          "raw": "Grandy, Richard E., 1972, \"A Definition of Truth for Theories with Intensional Definite Description Operators,\" Journal of Philosophical Logic , 1: 137-55; reprinted in Lambert 1991, pp. 171-188."
+        },
+        {
+          "raw": "Gratzl, Norbert, 2010, \"A Sequent Calculus for a Negative Free Logic.\" Studia Logica 96 (3): 331-48. ------, 2015, \"Incomplete Symbols--Definite Descriptions Revisited.\" Journal of Philosophical Logic 44 (5): 489-506."
+        },
+        {
+          "raw": "Gumb, Raymond D., 2001, \"Free Logic in Program Specification and Verification,\" in Morscher and Hieke 2001, pp. 157-93."
+        },
+        {
+          "raw": "Gumb, Raymond D., and Karel Lambert, 1991, \"Definitions in Nonstrict Positive Free Logic,\" Modern Logic , 7: 25-55 and 435-440 (errata)."
+        },
+        {
+          "raw": "Hailperin, Theodore, 1953, \"Quantification Theory and Empty Individual Domains,\" Journal of Symbolic Logic , 18: 197-200."
+        },
+        {
+          "raw": "Hintikka, Jaakko, 1959, \"Towards a Theory of Definite Descriptions,\" Analysis , 19: 79-85."
+        },
+        {
+          "raw": "Indrzejczak, Andrzej, 2019, \"Fregean Description Theory in Proof-Theoretical Setting.\" Logic and Logical Philosophy 28 (1): 137-55. ------, 2021a, \"Free Logics Are Cut-Free.\" Studia Logica 109 (4): 859-86. ------, 2021b, Sequents and Trees . Springer."
+        },
+        {
+          "raw": "Jacquette, Dale, 1996, Meinongian Logic: The Semantics of Existence and Nonexistence , Berlin: Walter de Gruyter."
+        },
+        {
+          "raw": "---, (ed.), 2006, Philosophy of Logic (Series: Volume 5 of the Handbook of the Philosophy of Science ), Amsterdam: Elsevier."
+        },
+        {
+          "raw": "Ja&#347;kowski, Stanis&#322;aw, 1934, \"On the Rules of Supposition in Formal Logic,\" Studia Logica 1: 5-32. Reprinted in Polish Logic 1920-1939 , Storrs McCall (ed.), Oxford, Clarendon Press, 1967, pp. 232-258."
+        },
+        {
+          "raw": "Jeffrey, Richard, 1991, Formal Logic: Its Scope and Limits , 3 edition, New York: McGraw-Hill."
+        },
+        {
+          "raw": "Kleene, Stephen C., 1938, \"On Notation for Ordinal Numbers.\" The Journal of Symbolic Logic 3 (4): 150-55."
+        },
+        {
+          "raw": "Kripke, Saul 1963, \"Semantical Considerations on Modal Logic,\" Acta Philosophical Fennica , 16: 83-94."
+        },
+        {
+          "raw": "K&uuml;rbis, Nils, 2021, \"Definite Descriptions in Intuitionist Positive Free Logic.\" Logic and Logical Philosophy 30: 327-58. ------, 2022, \"A Binary Quantifier for Definite Descriptions for Cut Free Free Logics.\" Studia Logica 110: 219-39."
+        },
+        {
+          "raw": "Lambert, Karel, 1958, \"Notes on E!,\" Philosophical Studies , 9: 60-63."
+        },
+        {
+          "raw": "---, 1960, \"The Definition of E! in Free Logic,\" in Abstracts: The International Congress for Logic, Methodology and Philosophy of Science , Stanford: Stanford University Press."
+        },
+        {
+          "raw": "---, 1962, \"Notes on E! III: A Theory of Descriptions,\" Philosophical Studies , 13(4): 51-59."
+        },
+        {
+          "raw": "---, 1963, \"Existential Import Revisited,\" Notre Dame Journal of Formal Logic , 4: 288-292."
+        },
+        {
+          "raw": "---, 1967, \"Free Logic and the Concept of Existence.\" Notre Dame Journal of Formal Logic 8 (1-2): 133-44."
+        },
+        {
+          "raw": "---, 1974, \"Predication and Extensionality,\" Journal of Philosophical Logic , 3: 255-264."
+        },
+        {
+          "raw": "---, (ed.), 1991, Philosophical Applications of Free Logic , New York: Oxford University Press."
+        },
+        {
+          "raw": "---, 1997, Free Logics: Their Foundations, Character, and Some Applications Thereof . Sankt Augustin: Academia Verlag."
+        },
+        {
+          "raw": "---, 1999, \"Logically Proper Definite Descriptions* an Essay in Honor of Ruth Marcus.\" Dialectica 53 (3-4): 271-82."
+        },
+        {
+          "raw": "---, 2001a, \"Free Logic and Definite Descriptions,\" in Morscher and Hieke 2001, pp. 37-47."
+        },
+        {
+          "raw": "---, 2001b, \"Free Logics,\" in Lou Goble (ed.), The Blackwell Guide to Philosophical Logic , Oxford: Blackwell Publishing, pp. 258-279."
+        },
+        {
+          "raw": "---, 2003b, \"Existential Import, E! and 'The'\" in Lambert 2003a, pp. 16-32."
+        },
+        {
+          "raw": "---, 2003c, \"Foundations of the Hierarchy of Positive Free Definite Description Theories\" in Lambert 2003a, pp. 69-91."
+        },
+        {
+          "raw": "---, 2003d, \"The Hilbert-Bernays Theory of Definite Descriptions\" in Lambert 2003a, pp. 44-68."
+        },
+        {
+          "raw": "---, 2003e, \"Nonextensionality\" in Lambert 2003a, pp. 107-121."
+        },
+        {
+          "raw": "---, 2003f, \"The Philosophical Foundations of Free Logic\" in Lambert 2003a, pp. 122-175."
+        },
+        {
+          "raw": "---, 2003g, \"Predication and Extensionality\" in Lambert 2003a, pp. 92-106."
+        },
+        {
+          "raw": "---, 2003h, \"Russell's Version of the Theory of Definite Descriptions\" in Lambert 2003a, pp. 1-15."
+        },
+        {
+          "raw": "Leblanc, Hughes, 1971, \"Truth Value Semantics for a Logic of Existence,\" Notre Dame Journal of Formal Logic , 12: 153-68."
+        },
+        {
+          "raw": "Leblanc, Hughes and Richmond H. Thomason, 1968, \"Completeness Theorems for Some Presupposition-Free Logics,\" Fundamenta Mathematicae , 62: 125-64; reprinted in Leblanc's Existence, Truth and Provability , Albany: State University of New York Press, 1982, pp. 22-57."
+        },
+        {
+          "raw": "Leeb, Hans-Peter, 2006, \"State-of-Affairs Semantics for Positive Free Logic,\" Journal of Philosophical Logic , 35 (2): 183-208."
+        },
+        {
+          "raw": "Lehmann, Scott, 1980, \"Slightly Non-Standard Logic.\" Logique Et Analyse 23 (92): 379-92."
+        },
+        {
+          "raw": "---, 1994, \"Strict Fregean Free Logic,\" Journal of Philosophical Logic , 23 (3): 307-336."
+        },
+        {
+          "raw": "---, 2001, \"No Input, No Output Logic,\" in Morscher and Hieke 2001, pp. 147-54."
+        },
+        {
+          "raw": "---, 2002, \"More Free Logic,\" in D. Gabbay and F. Guenthner (eds.), Handbook of Philosophical Logic , 2 edition, vol. 5, Dordrecht: Kluwer, pp. 197-259."
+        },
+        {
+          "raw": "Lejewski, Czeslaw, 1954, \"Logic and Existence,\" British Journal for the Philosophy of Science , 5 (18): 104-19; reprinted in Dale Jacquette (ed.), Philosophy of Logic: An Anthology , Oxford: Blackwell, 2002, pp. 147-55."
+        },
+        {
+          "raw": "Leonard, Henry S., 1956, \"The Logic of Existence,\" Philosophical Studies , 7: 49-64."
+        },
+        {
+          "raw": "Maffezioli, Paolo, and Eugenio Orlandelli, 2019, \"Full Cut Elimination and Interpolation for Intuitionistic Logic with Existence Predicate.\" Bulletin of the Section of Logic 48 (2): 137-58."
+        },
+        {
+          "raw": "Mehlberg, Henryk, 1958, The Reach of Science , Toronto: University of Toronto Press."
+        },
+        {
+          "raw": "Meyer, Robert K., Ermanno Bencivenga and Karel Lambert, 1982, \"The Ineliminability of E! in Free Quantification Theory without Identity,\" Journal of Philosophical Logic , 11: 229-231."
+        },
+        {
+          "raw": "Meyer, Robert K. and Karel Lambert, 1968, \"Universally Free Logic and Standard Quantification Theory,\" Journal of Symbolic Logic , 33: 8-26."
+        },
+        {
+          "raw": "Morscher, Edgar and Alexander Hieke (eds.), 2001, New Essays in Free Logic: In Honour of Karel Lambert (Applied Logic Series, vol., 23), Dordrecht: Kluwer."
+        },
+        {
+          "raw": "Morscher, Edgar and Peter Simons, 2001, \"Free Logic: A Fifty-Year Past and an Open Future,\" in Morscher and Hieke 2001, pp. 1-34."
+        },
+        {
+          "raw": "Mostowski, Andrezej, 1951, \"On the Rules of Proof in the Pure Functional Calculus of the First Order,\" Journal of Symbolic Logic , 16: 107-111."
+        },
+        {
+          "raw": "Nolt, John, 2006, \"Free Logics,\" in Jacquette 2006, pp. 1023-1060."
+        },
+        {
+          "raw": "---, 2007, \"Reference and Perspective in Intuitionistic Logic,\" Journal of Logic, Language and Information , 16 (1): 91-115."
+        },
+        {
+          "raw": "Orenstein, Alex, 1990, \"Is Existence What Existential Quantification Expresses?\" in Robert B. Barrett and Roger F. Gibson (eds.), Perspectives on Quine , Cambridge: Blackwell, 1990, pp. 245-270."
+        },
+        {
+          "raw": "Orlando, Eleonora, 2008, \"Names without Fictional Objects (Ficci&oacute;n sin metaf&iacute;sica),\" Cr&iacute;tica: Revista Hispanoamericana de Filosof&iacute;a , 40 (120): 111-127. Parsons, Terence, 1980, Nonexistent Objects , New Haven: Yale University Press."
+        },
+        {
+          "raw": "Pa&#347;niczek, Jacek, 1998, The Logic of Intentional Objects : A Meinongian Version of Classical Logic , Dordrecht: Kluwer."
+        },
+        {
+          "raw": "---, 2001, \"Can Meinongian Logic Be Free?\" in Morscher and Hieke 2001, pp. 227-36."
+        },
+        {
+          "raw": "Pavlovi&#263;, Edi, and Norbert Gratzl, 2021, \"A More Unified Approach to Free Logics.\" Journal of Philosophical Logic 50 (1): 117-48."
+        },
+        {
+          "raw": "---, 2023, \"Neutral Free Logic: Motivation, Proof Theory and Models.\" Journal of Philosophical Logic 52 (2): 519-54."
+        },
+        {
+          "raw": "Posy, Carl J., 1982, \"A Free IPC is a Natural Logic: Strong Completeness for Some Intuitionistic Free Logics,\" Topoi , 1: 30-43; reprinted in Lambert 1991, pp. 49-81."
+        },
+        {
+          "raw": "Priest, Graham, 2005, Towards Non-Being , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2008, An Introduction to Non-Classical Logic: From If to Is , 2 edition, Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Quine, W. V. O., 1948, \"On What There Is,\" Review of Metaphysics , 48: 21-38; reprinted as Chapter 1 of Quine 1963)."
+        },
+        {
+          "raw": "---, 1954, \"Quantification and the Empty Domain,\" Journal of Symbolic Logic , 19: 177-179."
+        },
+        {
+          "raw": "---, 1963, From a Logical Point of View , 2 edition, New York: Harper & Row."
+        },
+        {
+          "raw": "Routley, Richard, 1966, \"Some Things Do Not Exist,\" Notre Dame Journal of Formal Logic , 7: 251-276."
+        },
+        {
+          "raw": "---, 1980, Exploring Meinong's Jungle and Beyond , Canberra: Australian National University."
+        },
+        {
+          "raw": "Russell, Bertrand, 1919, Introduction to Mathematical Philosophy , New York: Simon & Schuster."
+        },
+        {
+          "raw": "Sainsbury, R. M., 2005, Reference without Referents , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Scales, Ronald D., 1969, Attribution and Existence . University of California, Irvine."
+        },
+        {
+          "raw": "Schock, Rolf, 1968, Logics without Existence Assumptions , Stockholm: Almqvist & Wiskell."
+        },
+        {
+          "raw": "Sch&uuml;tte, Kurt, 1971, Proof Theory . Grundlehren Der Mathematischen Wissenschaften. Springer."
+        },
+        {
+          "raw": "Schweitzer, Paul, 2001, \"Free Logic and Quantification in Syntactic Modal Contexts,\" in Morscher and Hieke 2001, pp. 69-85."
+        },
+        {
+          "raw": "Shapiro, Stewart, and Alan Weir, 2000, \"'Neo-Logicist' Logic is Not Epistemically Innocent,\" Philosophia Mathematica , 3 (8): 160-189."
+        },
+        {
+          "raw": "Simons, Peter, 2001, \"Calculi of Names: Free and Modal,\" in Morscher, Edgar and Alexander Hieke 2001, pp. 49-65."
+        },
+        {
+          "raw": "Smiley, Timothy, 1960, \"Sense without Denotation,\" Analysis , 20: 125-135."
+        },
+        {
+          "raw": "van Fraassen, Bas C., 1966, \"Singular Terms, Truth Value Gaps and Free Logic,\" Journal of Philosophy , 63: 481-95; reprinted in Lambert 1991, pp. 82-97."
+        },
+        {
+          "raw": "---, 1991, \"On (the X )( X = Lambert),\", in W. Spohn, et al. (eds.), Existence and Explanation : Essays Presented in Honor of Karel Lambert , Dordrecht: Kluwer, pp. 1-18."
+        },
+        {
+          "raw": "Whitehead, Alfred, and Bertrand Russell, 1910, Principia Mathematica . Vol. 1. Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Williamson, Timothy, 1999, \"A Note on Truth, Satisfaction and the Empty Domain,\" Analysis , 59(1): 3-8."
+        },
+        {
+          "raw": "---, 2016, \"Reply to Bacon, Hawthorne, and Uzquiano,\" Canadian Journal of Philosophy 46(4-5): 542-547."
+        },
+        {
+          "raw": "Woods, John, 2006, \"Fictions and their Logic,\" in Jacquette 2006, pp. 1061-1126."
+        },
+        {
+          "raw": "Woodruff, Peter W., 1984, \"On Supervaluations in Free Logic,\" Journal of Symbolic Logic , 49: 943-950."
+        },
+        {
+          "raw": "Yeakel, Daniel, 2016, \"Existence Hedges and Neutral Free Logic,\" Proceedings of the Aristotelian Society , cxvi (3): 379-386."
+        }
+      ],
+      "publishedAt": "2010-04-04T14:00:00.000Z",
+      "revisedAt": "2025-06-18T14:00:00.000Z"
+    }
+  }
+}
