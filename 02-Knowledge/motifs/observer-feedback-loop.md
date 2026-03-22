@@ -1,7 +1,7 @@
 ---
 name: "Observer-Feedback Loop"
 tier: 2
-status: provisional
+status: validated
 confidence: 0.9
 source: "top-down"
 domain_count: 8

@@ -1,10 +1,10 @@
 ---
 name: "Ratchet with Asymmetric Friction"
-tier: 0
-status: draft
-confidence: 0.1
-source: top-down
-domain_count: 1
+tier: 2
+status: validated
+confidence: 0.9
+source: triangulated
+domain_count: 12
 derivative_order: 1
 primary_axis: recurse
 created: 2026-03-19

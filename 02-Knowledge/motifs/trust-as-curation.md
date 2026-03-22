@@ -2,9 +2,10 @@
 name: "Trust-as-Curation"
 tier: 1
 status: provisional
-confidence: 0.4
-source: "top-down"
-domain_count: 4
+confidence: 0.7
+source: triangulated
+domain_count: 8
+promotion_ready: tier-2-candidate
 derivative_order: "0-1"
 primary_axis: integrate
 created: 2026-03-03

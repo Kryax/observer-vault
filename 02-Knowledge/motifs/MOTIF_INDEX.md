@@ -1,7 +1,7 @@
 ---
 status: canonical
 date: 2026-03-03
-updated: 2026-03-19
+updated: 2026-03-22
 cssclasses:
   - status-canonical
 ---
@@ -15,12 +15,13 @@ cssclasses:
 
 | Metric | Count |
 |--------|-------|
-| Total motifs | 27 |
-| Tier 0 (Observation) | 17 |
-| Tier 1 (Cross-Domain) | 4 |
-| Tier 2 (Structural Operator) | 6 |
+| Total motifs | 34 |
+| Tier 0 (Observation) | 16 |
+| Tier 1 (Cross-Domain) | 8 |
+| Tier 2 (Structural Operator) | 8 |
 | Tier 3 (Meta-Structural) | 0 |
-| Tier 2 candidates (4+ domains) | 0 |
+| Tier 3 drafts | 5 |
+| Tier 2 candidates | 2 |
 
 ## Motif Registry
 
@@ -31,11 +32,20 @@ cssclasses:
 | **Explicit State Machine Backbone** | **2** | **0.9** | **7** | **triangulated** | **2** | **differentiate** | [explicit-state-machine-backbone.md](explicit-state-machine-backbone.md) |
 | **Bounded Buffer With Overflow Policy** | **2** | **0.9** | **7** | **triangulated** | **1.5** | **differentiate** | [bounded-buffer-with-overflow-policy.md](bounded-buffer-with-overflow-policy.md) |
 | **Idempotent State Convergence** | **2** | **1.0** | **10** | **triangulated** | **1** | **integrate** | [idempotent-state-convergence.md](idempotent-state-convergence.md) |
-| **Observer-Feedback Loop** | **2** | **0.9** | **8** | **top-down** | **1-2** | **recurse** | [observer-feedback-loop.md](observer-feedback-loop.md) |
-| Trust-as-Curation | 1 | 0.4 | 4 | top-down | 0-1 | integrate | [trust-as-curation.md](trust-as-curation.md) |
+| **Observer-Feedback Loop** | **2** | **0.9** | **8** | **triangulated** | **1-2** | **recurse** | [observer-feedback-loop.md](observer-feedback-loop.md) |
+| **Ratchet with Asymmetric Friction** | **2** | **0.9** | **12** | **triangulated** | **1** | **recurse** | [ratchet-with-asymmetric-friction.md](ratchet-with-asymmetric-friction.md) |
+| **Progressive Formalization** | **2** | **0.85** | **10** | **triangulated** | **1** | **integrate** | [progressive-formalization.md](progressive-formalization.md) |
+| Trust-as-Curation | 1 | 0.7 | 8 | triangulated | 0-1 | integrate | [trust-as-curation.md](trust-as-curation.md) |
+| Reflexive Structural Transition | 1 | 0.8 | 10 | triangulated | 2 | recurse | [reflexive-structural-transition.md](reflexive-structural-transition.md) |
+| Reconstruction Burden | 1 | 0.8 | 14 | triangulated | 1 | differentiate | [reconstruction-burden.md](reconstruction-burden.md) |
+| Boundary Drift | 1 | 0.7 | 8 | triangulated | 1 | differentiate | [boundary-drift.md](boundary-drift.md) |
+| Structural Coupling as Ground State | 1 | 0.6 | 6 | triangulated | 0 | integrate | [structural-coupling-ground-state.md](structural-coupling-ground-state.md) |
+| Recursive Generativity | 1 | 0.5 | 5 | triangulated | 3 | recurse | [recursive-generativity.md](recursive-generativity.md) |
 | Template-Driven Classification | 1 | 0.3 | 2 | top-down | 0 | differentiate | [template-driven-classification.md](template-driven-classification.md) |
 | Scaffold-First Architecture | 1 | 0.2 | 2 | top-down | 0 | differentiate | [scaffold-first-architecture.md](scaffold-first-architecture.md) |
-| Progressive Formalization | 1 | 0.2 | 2 | top-down | 1 | integrate | [progressive-formalization.md](progressive-formalization.md) |
+| Primitive Self-Reference | 0 | 0.4 | 4 | triangulated | 0 | recurse | [primitive-self-reference.md](primitive-self-reference.md) |
+| Paradigmatic Boundary Revision | 0 | 0.3 | 3 | bottom-up | 3 | differentiate | [paradigmatic-boundary-revision.md](paradigmatic-boundary-revision.md) |
+| Consilient Unification | 0 | 0.3 | 3 | top-down | 3 | integrate | [consilient-unification.md](consilient-unification.md) |
 | Live Event Bus | 0 | 0.1 | 1 | bottom-up | 1 | integrate | [live-event-bus.md](live-event-bus.md) |
 | Metacognitive Steering | 0 | 0.1 | 1 | bottom-up | 2 | recurse | [metacognitive-steering.md](metacognitive-steering.md) |
 | Epistemic Governance | 0 | 0.1 | 1 | bottom-up | 1 | differentiate | [epistemic-governance.md](epistemic-governance.md) |
@@ -45,9 +55,7 @@ cssclasses:
 | Propagated Uncertainty Envelope | 0 | 0.1 | 1 | bottom-up | 1 | integrate | [propagated-uncertainty-envelope.md](propagated-uncertainty-envelope.md) |
 | Estimation-Control Separation | 0 | 0.1 | 1 | bottom-up | 1 | differentiate | [estimation-control-separation.md](estimation-control-separation.md) |
 | Safety-Liveness Duality | 0 | 0.1 | 1 | bottom-up | 2 | differentiate | [safety-liveness-duality.md](safety-liveness-duality.md) |
-| Reflexive Structural Transition | 0 | 0.1 | 1 | bottom-up | 2 | recurse | [reflexive-structural-transition.md](reflexive-structural-transition.md) |
 | Prediction-Error as Primary Signal | 0 | 0.1 | 1 | top-down | 2 | recurse | [prediction-error-as-primary-signal.md](prediction-error-as-primary-signal.md) |
-| Ratchet with Asymmetric Friction | 0 | 0.1 | 1 | top-down | 1 | recurse | [ratchet-with-asymmetric-friction.md](ratchet-with-asymmetric-friction.md) |
 | Nested Self-Similar Hierarchy | 0 | 0.1 | 1 | top-down | 2 | recurse | [nested-self-similar-hierarchy.md](nested-self-similar-hierarchy.md) |
 | Two Antagonistic Modes | 0 | 0.1 | 1 | top-down | 1 | integrate | [two-antagonistic-modes.md](two-antagonistic-modes.md) |
 | Redundancy as Resilience Tax | 0 | 0.1 | 1 | top-down | 1 | integrate | [redundancy-as-resilience-tax.md](redundancy-as-resilience-tax.md) |
@@ -63,17 +71,22 @@ cssclasses:
 | Explicit State Machine Backbone | 7 | 0.9 | 2026-03-04 | Alien-domain triangulation across game engines (Godot, Bevy, libGDX — canonical domain), spaced repetition (FSRS4Anki — problem-shaped), and music production (Zrythm transport). 7 domains, all 5 validation protocol conditions satisfied. |
 | Bounded Buffer With Overflow Policy | 7 | 0.9 | 2026-03-04 | Alien-domain triangulation across music production (Zrythm audio buffers — CANONICAL instance predating software eng), bioinformatics (Nextflow channels, fastp I/O), and game engines (Bevy event TTL). 7 domains, all 5 validation protocol conditions satisfied. |
 | Idempotent State Convergence | 10 | 1.0 | 2026-03-19 | Slow triad alien domain expansion: 5 new alien domains (biology/homeostasis, materials science/crystal annealing, mathematics/proof normalization, economics/arbitrage, governance/regulatory compliance). 10 domains, all 5 validation protocol conditions satisfied. Domain boundary refined from "pipeline/declarative systems" to "active control with declared targets." |
-| Observer-Feedback Loop | 8 | 0.9 | 2026-03-19 | Slow triad alien domain expansion: 4 new alien domains (biology/adaptive immunity, jurisprudence/common law, clinical medicine/psychiatric nosology, anthropology/ethnographic framework evolution). 8 domains, all 5 validation protocol conditions satisfied. **Conditional promotion** — all instances top-down derived; bottom-up corpus confirmation pending. |
+| Observer-Feedback Loop | 8 | 0.9 | 2026-03-19 | Slow triad alien domain expansion: 4 new alien domains (biology/adaptive immunity, jurisprudence/common law, clinical medicine/psychiatric nosology, anthropology/ethnographic framework evolution). 8 domains, all 5 validation protocol conditions satisfied. Triangulation gap closed via batch 1 bottom-up scrape (hermeneutic circle instance). |
+| Ratchet with Asymmetric Friction | 12 | 0.9 | 2026-03-22 | Three-batch alien domain expansion: 10 new domains across neuroscience, chemistry/materials, music/aesthetics, urban planning, game theory, ecology (+ 1 partial: thermodynamics). 12 domains, all 5 validation protocol conditions satisfied. Zero-consumer test passes across all full instances. Strongest alien instances: cross-linking polymerization (chemistry) and ecological succession/niche construction. |
+| Progressive Formalization | 10 | 0.85 | 2026-03-22 | Three-batch alien domain expansion: 8 new external domains (formal logic, scientific method, common law, mathematics, music, linguistics, game theory, ecology). 10 domains, all 5 validation protocol conditions satisfied. Content-preservation test ("crystal remembers the liquid") passes across all instances. Strongest alien instances: formal logic (2,500-year documented trajectory) and ecological succession. |
 
 ## Tier 2 Candidates
 
-No current Tier 2 candidates. Trust-as-Curation (4 domains, 0.4 confidence) is the closest Tier 1 motif but needs additional domain instances and alien domain testing to qualify.
+| Name | Domains | Confidence | Gap | File |
+|------|---------|-----------|-----|------|
+| Trust-as-Curation | 8 | 0.7 | Needs 1+ additional strong alien-domain bottom-up instance for T2 promotion | [trust-as-curation.md](trust-as-curation.md) |
+| Reflexive Structural Transition | 10 | 0.8 | Biology-specificity refuted; needs formal T2 validation protocol review | [reflexive-structural-transition.md](reflexive-structural-transition.md) |
 
 ## Phase 5: Meta-Analysis Gate
 
 **Status: OPEN**
 
-Meta-analysis (Tier 3 motif detection) requires 3+ Tier 2 motifs. Current Tier 2 count: **6**.
+Meta-analysis (Tier 3 motif detection) requires 3+ Tier 2 motifs. Current Tier 2 count: **8**.
 
 | Tier 2 Motif | Domains | Promoted | Status |
 |-------------|---------|----------|--------|
@@ -82,18 +95,23 @@ Meta-analysis (Tier 3 motif detection) requires 3+ Tier 2 motifs. Current Tier 2
 | Explicit State Machine Backbone | 7 | 2026-03-04 | canonical |
 | Bounded Buffer With Overflow Policy | 7 | 2026-03-04 | canonical |
 | Idempotent State Convergence | 10 | 2026-03-19 | canonical |
-| Observer-Feedback Loop | 8 | 2026-03-19 | provisional (triangulation gap) |
+| Observer-Feedback Loop | 8 | 2026-03-19 | validated |
+| Ratchet with Asymmetric Friction | 12 | 2026-03-22 | canonical |
+| Progressive Formalization | 10 | 2026-03-22 | canonical |
 
-**Gate opened 2026-03-04.** With 6 Tier 2 structural operators, motif-of-motif detection (Tier 3) has a richer operator space. The addition of ISC (integrate axis) and OFL (recurse axis) brings all three primary axes into the Tier 2 set, enabling cross-axis meta-structural analysis.
+**Gate opened 2026-03-04.** With 8 Tier 2 structural operators, motif-of-motif detection (Tier 3) has a rich operator space. All three primary axes are represented at Tier 2: integrate (DSG, ISC, PF), differentiate (CPA, ESMB, BBOP), recurse (OFL, Ratchet). Batch 3 relationship mapping (2026-03-22) identified 42 inter-motif relationships and 3 Tier 3 candidates.
 
 ## Meta-Motifs (Tier 3)
 
-**Status: Two DRAFT candidates from slow triad (2026-03-19). No promotions — sovereignty gate applies.**
+**Status: Five DRAFT candidates. No promotions — sovereignty gate applies.**
 
-| Name | Status | Criteria Met | Primary Gap | File |
-|------|--------|-------------|-------------|------|
-| Coordination Type Lattice | draft | geometric ✓, self-referential ✓, falsification ~, load-bearing ~ | post-hoc naming of coordination types | [meta/coordination-type-lattice.md](meta/coordination-type-lattice.md) |
-| Derivative Order Collapse Under Self-Reference | draft | geometric ✓, falsification ✓, self-referential ✓, load-bearing ~ | narrow prediction space, single R-axis data point | [meta/derivative-order-collapse.md](meta/derivative-order-collapse.md) |
+| Name | Status | Constituent Motifs | Primary Shape | File |
+|------|--------|--------------------|---------------|------|
+| Structural Metabolism | draft | ISC + RST | Homeostatic maintenance ↔ phase-transition dissolution | [meta/structural-metabolism-t3-draft.md](meta/structural-metabolism-t3-draft.md) |
+| Irreversible Progressive Ordering | draft | PF + Ratchet + OFL | Directed developmental arrow from operator coupling | [meta/irreversible-progressive-ordering-t3-draft.md](meta/irreversible-progressive-ordering-t3-draft.md) |
+| Governed Architecture | draft | DSG + CPA + ESMB | Structural attractor for well-engineered systems | [meta/governed-architecture-t3-draft.md](meta/governed-architecture-t3-draft.md) |
+| Coordination Type Lattice | draft | (cross-cutting) | Geometric relationship between coordination types | [meta/coordination-type-lattice.md](meta/coordination-type-lattice.md) |
+| Derivative Order Collapse Under Self-Reference | draft | (cross-cutting) | Derivative order boundaries collapse under self-reference | [meta/derivative-order-collapse.md](meta/derivative-order-collapse.md) |
 
 **Killed candidates (2026-03-19):** Three-Layer Self-Amendment Architecture (not geometric), Reentrant Structural Reconfiguration revised (fails tier-independent falsification), Observational Depth Gradient standalone (not generative), Convergence-Recursion Tension (empirically thin), Coordination Pressure Escalation (subsumed by CTL).
 

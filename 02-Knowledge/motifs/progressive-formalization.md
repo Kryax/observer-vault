@@ -1,10 +1,10 @@
 ---
 name: "Progressive Formalization"
-tier: 1
-status: provisional
-confidence: 0.2
-source: "top-down"
-domain_count: 2
+tier: 2
+status: validated
+confidence: 0.85
+source: triangulated
+domain_count: 10
 derivative_order: 1
 primary_axis: integrate
 created: 2026-03-03
