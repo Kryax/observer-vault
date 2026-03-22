@@ -1,0 +1,625 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/religious-language",
+  "meta": {
+    "title": "Religious Language",
+    "description": "The principal aim of research on religious language is to give an account of the meaning of religious sentences and utterances. Religious sentences are generally taken to be have a religious subject matter; a religious utterance is the production in speech or writing of a token religious sentence. In principle, religious subject matters could encompass a variety of agents, states of affairs or properties--such as God, deities, angels, miracles, redemption, grace, holiness, sinfulness. Most attention, however, has been devoted to the meaning of what we say about God. The scope of religious language and discourse could be construed more widely. For instance, while The Song of Songs has little in the way of distinctively religious content, it could be included in the field because of its place within a religious canon. Alternatively, the field could be characterised pragmatically to include utterances which are used for religious purposes or in religious contexts (Alston 2005: 220; Donovan 1976: 1; Soskice 1999: 349; Charlesworth 1974: 3). In practice, however, philosophical treatments have not extended so broadly, instead focusing on sentences and utterances with putatively religious content. This is partly because it is difficult to find a principled characterisation of a religious context that would delineate a philosophically interesting scope for the topic. When a church congregation is told \"Please kneel\", this direction appears to be in a religious context and have a religious purpose but it is difficult to see how the analysis of the meaning of this instruction would informatively contribute to the topic. It is also because the most pressing questions about religious language seem to be those that come into alignment with questions in other areas of philosophy of religion. Is there anything distinctive about the meanings of what we say about God and other religious matters that are also the focus of metaphysical and epistemological discussion? If, in talking about God, speakers are not expressing propositions or not talking literally--to take a couple of the more radical proposals--that would accordingly require dramatic adjustments in approaching questions about knowledge of God or God's existence. Research in the field has a lengthy history, with sustained discussion of the meanings of religious expressions and utterances stretching back at least to the middle of antiquity. Notable treatments of the topic include the work by medieval theologians and philosophers concerned with the meanings of divine predicates, including the debates surrounding analogy and apophaticism (White 2010; Turner 1995; Scott & Citron 2016), and debates about the meaningfulness of religious language that were prompted by Ayer's 1936 popularisation of logical positivism in Language, Truth and Logic and remained a central issue in the philosophy of religion through the mid-twentieth century. Religious language has also become a topic of interest in continental philosophy (Derrida 1989 and 1992; Marion 1994 and 1995). A distinction that guides the selection of material for this article is between revisionary and non-revisionary accounts of religious language. Non-revisionary theories aim to explain what religious sentences and utterances mean. Revisionary theories, in contrast, propose accounts of what religious language should mean or how it should be used. While non-revisionary theories are descriptive of religious language and should do justice to linguistic data, revisionary theories are usually driven by metaphysical or epistemological considerations. This article will mainly be concerned with theories of the former type i.e., what religious utterances mean rather than what they should mean.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T09:09:01.376Z",
+    "dateModified": "2026-03-22T09:09:01.376Z",
+    "datePublished": "2017-08-03T14:00:00.000Z",
+    "keywords": [
+      "ayer",
+      "moral cognitivism",
+      "pseudo dionysius areopagite",
+      "wittgenstein"
+    ]
+  },
+  "problemSolved": {
+    "statement": "The principal aim of research on religious language is to give an account of the meaning of religious sentences and utterances. Religious sentences are generally taken to be have a religious subject matter; a religious utterance is the production in speech or writing of a token religious sentence. In principle, religious subject matters could encompass a variety of agents, states of affairs or properties--such as God, deities, angels, miracles, redemption, grace, holiness, sinfulness. Most attention, however, has been devoted to the meaning of what we say about God. The scope of religious language and discourse could be construed more widely. For instance, while The Song of Songs has little in the way of distinctively religious content, it could be included in the field because of its place within a religious canon. Alternatively, the field could be characterised pragmatically to include utterances which are used for religious purposes or in religious contexts (Alston 2005: 220; Donovan 1976: 1; Soskice 1999: 349; Charlesworth 1974: 3). In practice, however, philosophical treatments have not extended so broadly, instead focusing on sentences and utterances with putatively religious content. This is partly because it is difficult to find a principled characterisation of a religious context that would delineate a philosophically interesting scope for the topic. When a church congregation is told \"Please kneel\", this direction appears to be in a religious context and have a religious purpose but it is difficult to see how the analysis of the meaning of this instruction would informatively contribute to the topic. It is also because the most pressing questions about religious language seem to be those that come into alignment with questions in other areas of philosophy of religion. Is there anything distinctive about the meanings of what we say about God and other religious matters that are also the focus of metaphysical and epistemological discussion? If, in talking about God, speakers are not expressing propositions or not talking literally--to take a couple of the more radical proposals--that would accordingly require dramatic adjustments in approaching questions about knowledge of God or God's existence. Research in the field has a lengthy history, with sustained discussion of the meanings of religious expressions and utterances stretching back at least to the middle of antiquity. Notable treatments of the topic include the work by medieval theologians and philosophers concerned with the meanings of divine predicates, including the debates surrounding analogy and apophaticism (White 2010; Turner 1995; Scott & Citron 2016), and debates about the meaningfulness of religious language that were prompted by Ayer's 1936 popularisation of logical positivism in Language, Truth and Logic and remained a central issue in the philosophy of religion through the mid-twentieth century. Religious language has also become a topic of interest in continental philosophy (Derrida 1989 and 1992; Marion 1994 and 1995). A distinction that guides the selection of material for this article is between revisionary and non-revisionary accounts of religious language. Non-revisionary theories aim to explain what religious sentences and utterances mean. Revisionary theories, in contrast, propose accounts of what religious language should mean or how it should be used. While non-revisionary theories are descriptive of religious language and should do justice to linguistic data, revisionary theories are usually driven by metaphysical or epistemological considerations. This article will mainly be concerned with theories of the former type i.e., what religious utterances mean rather than what they should mean.",
+    "context": "Opening section: 1. Preliminaries: The Face Value Theory | Related entries: ayer, moral-cognitivism, pseudo-dionysius-areopagite, wittgenstein",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "ethics"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry religious-language",
+        "uri": "https://plato.stanford.edu/entries/religious-language/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 4 related entries, bibliography size 137"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2017-08-03T14:00:00.000Z and revised 2022-03-07T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2022-03-07T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/religious-language/",
+        "description": "SEP entry for religious-language"
+      }
+    ],
+    "solutionApproach": "1. Preliminaries: The Face Value Theory"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/ayer",
+      "ocp:sep/moral-cognitivism",
+      "ocp:sep/pseudo-dionysius-areopagite",
+      "ocp:sep/wittgenstein"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Scott, Michael",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/religious-language/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 94,
+      "validation_diversity": 0.35,
+      "context_breadth": 0.31,
+      "temporal_stability": 0.88,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.87
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.474
+  },
+  "extensions": {
+    "sep": {
+      "slug": "religious-language",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/religious-language/",
+      "preamble": "The principal aim of research on religious language is to give an account of the meaning of religious sentences and utterances. Religious sentences are generally taken to be have a religious subject matter; a religious utterance is the production in speech or writing of a token religious sentence. In principle, religious subject matters could encompass a variety of agents, states of affairs or properties--such as God, deities, angels, miracles, redemption, grace, holiness, sinfulness. Most attention, however, has been devoted to the meaning of what we say about God. The scope of religious language and discourse could be construed more widely. For instance, while The Song of Songs has little in the way of distinctively religious content, it could be included in the field because of its place within a religious canon. Alternatively, the field could be characterised pragmatically to include utterances which are used for religious purposes or in religious contexts (Alston 2005: 220; Donovan 1976: 1; Soskice 1999: 349; Charlesworth 1974: 3). In practice, however, philosophical treatments have not extended so broadly, instead focusing on sentences and utterances with putatively religious content. This is partly because it is difficult to find a principled characterisation of a religious context that would delineate a philosophically interesting scope for the topic. When a church congregation is told \"Please kneel\", this direction appears to be in a religious context and have a religious purpose but it is difficult to see how the analysis of the meaning of this instruction would informatively contribute to the topic. It is also because the most pressing questions about religious language seem to be those that come into alignment with questions in other areas of philosophy of religion. Is there anything distinctive about the meanings of what we say about God and other religious matters that are also the focus of metaphysical and epistemological discussion? If, in talking about God, speakers are not expressing propositions or not talking literally--to take a couple of the more radical proposals--that would accordingly require dramatic adjustments in approaching questions about knowledge of God or God's existence. Research in the field has a lengthy history, with sustained discussion of the meanings of religious expressions and utterances stretching back at least to the middle of antiquity. Notable treatments of the topic include the work by medieval theologians and philosophers concerned with the meanings of divine predicates, including the debates surrounding analogy and apophaticism (White 2010; Turner 1995; Scott & Citron 2016), and debates about the meaningfulness of religious language that were prompted by Ayer's 1936 popularisation of logical positivism in Language, Truth and Logic and remained a central issue in the philosophy of religion through the mid-twentieth century. Religious language has also become a topic of interest in continental philosophy (Derrida 1989 and 1992; Marion 1994 and 1995). A distinction that guides the selection of material for this article is between revisionary and non-revisionary accounts of religious language. Non-revisionary theories aim to explain what religious sentences and utterances mean. Revisionary theories, in contrast, propose accounts of what religious language should mean or how it should be used. While non-revisionary theories are descriptive of religious language and should do justice to linguistic data, revisionary theories are usually driven by metaphysical or epistemological considerations. This article will mainly be concerned with theories of the former type i.e., what religious utterances mean rather than what they should mean.",
+      "firstSectionTitle": "1. Preliminaries: The Face Value Theory",
+      "firstSectionText": "A useful starting point for thinking about religious language is a face value theory that promises to give an interpretation of religious sentences and utterances that adheres as closely as possible to what they appear to say. Take, for instance, the affirmation of an indicative religious sentence such as According to the face value theory, (1) has various apparent characteristics: (a) It has the propositional--or \"linguistic\" or \"semantic\"--content that God is omnipotent and is true just in case God is omnipotent; (b) it is an assertion that conventionally expresses the speaker's belief that God is omnipotent; (c) it is a descriptive utterance that represents (truly or falsely) the fact that God is omnipotent, just as other descriptive utterances in other fields of discourse (in science, history, etc.) represent facts. For proponents of face value theory, generalisations of (a), (b) and (c) that extend to indicative religious utterances such as (1)--(a*), (b*) and (c*) respectively--provide the starting point for the interpretation of religious discourse. It should be treated in the same way as the interpretation of other descriptive areas of discourse: there's nothing special about religious discourse other than its distinctive subject matter. The face value theory will, of course, need more development if it is to explain other areas of religious discourse. The approach taken to (1) clearly does not apply to non-literal or non-assertoric religious utterances, such as metaphors, questions, fictional stories, expressions of hope, or devotion. However, these are all forms of expression that occur outside religious discourse; they are not unique to religion. For the face value theory, the treatment of religious cases will fall in line with the treatment of non-literal and non-assertoric communication more generally. So, other than the fact that religious discourse is about God, the afterlife and so on, there is nothing remarkable or distinctive in the interpretation of religious utterances. A large part of research on religious language has been concerned with whether one or more of (a*), (b*) and (c*) ought plausibly to be rejected. Indeed, the attention that some theories of religious language receive is in part due to their divergence from a face value interpretation. Most of the theories that are discussed within the field reject at least one of the components of face value theory. The most radical rejection of face value theory is the denial of (a*), i.e., that religious utterances express religious propositions. These theories will be explored in section 2 . The most famous example of this position is Ayer's version logical positivism ( 2.1 ). Non-cognitive accounts, from which we have selected Braithwaite ( 2.2.1 ) and Berkeley ( 2.2.2 ), are similarly radical but are differently motivated and offer a more positive alternative account of the meaning of religious utterances. The prospects for a more sophisticated non-cognitivism are considered in 2.2.3. A third class of theories ( 2.3 ), propose that religious utterances are paradoxical or fail to express complete propositions. A fourth group, reductionist and subjectivist theories ( 2.4 ), allow that religious utterances express propositions but not the ones that they appear to. Instead, their truth conditions are given by \"reduced\" (typically non-religious) sentences. Section 3 will look at theories that reject (b*), i.e., that indicative statements affirmed about God are not literal assertions. 3.1 will review metaphor theories, encompassing a discussion of analogy. Interpretations of religious discourse as a form of praise or prayer, suggested by Jean-Luc Marion and Jacques Derrida, will be considered in 3.2. These theories propose that despite appearing to literally assert religious sentences, speakers are instead employing a different type of speech act. An alternative approach is to argue that religious utterances are avowed for practical reasons rather than their truth. Ian Ramsey ( 3.3 ) takes this approach, as do hermeneutic fictionalists ( 3.4 ). Minimalists ( 4.1 ) agree that indicative religious utterances are representational and assertoric but deny that they represent religious facts in the way that other areas of descriptive discourse represent facts. That is, they agree with (a*) and (b*) but reject (c*). This view is sometimes associated with Wittgenstein, whose brief remarks and lectures on religion have been highly influential. However, the interpretation of his work is not widely agreed upon and some different possibilities will be considered in 4.2. The face value theory is a widely assumed--if not the default--approach taken to religious discourse in contemporary analytic philosophy of religion. Resistance to it is sometimes presented a brief aberration confined to the middle decades of the twentieth century (Mackie 1982: 2; Swinburne 1993: 88) with questionable if not anti-religious motivations (van Inwagen 2006: 156; Plantinga 2000: ch. 2, particularly in reference to Gordon Kaufman). However, as will become clear in the following sections, the opposition to face value theory is not of recent vintage and although some who disagree with face value theory may be atheists, the position is not tied to atheism.",
+      "relatedEntries": [
+        "ayer",
+        "moral-cognitivism",
+        "pseudo-dionysius-areopagite",
+        "wittgenstein"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "ayer"
+        },
+        {
+          "slug": "moral-cognitivism"
+        },
+        {
+          "slug": "pseudo-dionysius-areopagite"
+        },
+        {
+          "slug": "wittgenstein"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 137,
+      "bibliography": [
+        {
+          "raw": "Alston, William P., 1989, Divine Nature and Human Language , Ithaca, NY: Cornell University Press."
+        },
+        {
+          "raw": "---, 1991, Perceiving God: The Epistemology of Religious Experience , Ithaca, NY: Cornell University Press."
+        },
+        {
+          "raw": "---, 1996, \"Belief, Acceptance, and Religious Faith\", in Jeff Jordan and Daniel Howard-Snyder (eds.), Faith, Freedom, and Rationality , Lanham, MD: Rowman & Littlefield, pp. 3-27."
+        },
+        {
+          "raw": "---, 2005, \"Religious Language\" in William Wainwright (ed.), The Oxford Handbook of Philosophy of Religion , Oxford: Oxford University Press, pp. 220-44. doi:10.1093/0195138090.003.0010"
+        },
+        {
+          "raw": "---, 2007. \"Audi on Nondoxastic Faith\", in Mark Timmons, John Greco, and Alfred Mele (eds.), Rationality and the Good: Critical Essays on the Ethics and Epistemology of Robert Audi , Oxford: Oxford University Press, pp. 123-38."
+        },
+        {
+          "raw": "Anonymous, [14 century], The Cloud of Unknowing , in A. Spearing (trans.), The Cloud of Unknowing , London: Penguin, 2001."
+        },
+        {
+          "raw": "Audi, Robert, 2011, Rationality and Religious Commitment , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199609574.001.0001"
+        },
+        {
+          "raw": "Augustine, [4 century], The City of God , volume 1, M. Dods (trans.), Edinburgh: T & T Clark, 1913."
+        },
+        {
+          "raw": "Austin, J.L., 1955 [1975], How to Do Things with Words , second edition, J.O. Urmson and M. Sbisa (eds.), Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780198245537.001.0001"
+        },
+        {
+          "raw": "Ayer, A.J., 1936, Language, Truth and Logic , London: Victor Gollancz; second edition, 1946."
+        },
+        {
+          "raw": "Berkeley, George, 1732 [1950], Alciphron or the Minute Philosopher , in A.A. Luce and T.E. Jessop (eds.), The Works of George Berkeley , volume 3, London: T. Nelson, 1950."
+        },
+        {
+          "raw": "Bishop, John, 2007, Believing by Faith: An Essay in the Epistemology and Ethics of Religious Belief , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199205547.001.0001"
+        },
+        {
+          "raw": "Blackburn, Simon, 1998, \"Wittgenstein, Wright, Rorty & Minimalism\", Mind , 107(425): 157-81. doi:10.1093/mind/107.425.157"
+        },
+        {
+          "raw": "Bowler, Peter, 2001, Reconciling Science and Religion , Chicago: The University of Chicago Press."
+        },
+        {
+          "raw": "Braithwaite, R.B., 1955, An Empiricist's View of the Nature of Religious Belief , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Brock, Stuart, 2020, \"Religious Fictionalism and Pascal's Wager\", in Bradley Armour-Garb and Frederick Kroon (eds.), Fictionalism in Philosophy , Oxford: Oxford University Press, pp. 207-34. doi:10.1093/oso/9780190689605.003.0011"
+        },
+        {
+          "raw": "Brown, Jessica and Herman Cappelen, (eds.), 2011, Assertion: New Philosophical Essays , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199573004.001.0001"
+        },
+        {
+          "raw": "Buchak, Lara, 2012, \"Can it be Rational to Have Faith?\" in Jake Chandler and Victoria S. Harrison (eds.), Probability in the Philosophy of Religion , Oxford: Oxford University Press, pp. 225-246. doi:10.1093/acprof:oso/9780199604760.003.0012"
+        },
+        {
+          "raw": "Burley, Mikel, 2012, Contemplating Religious Forms of Life: Wittgenstein and D.Z. Phillips , Bloomsbury Academic."
+        },
+        {
+          "raw": "Callahan, Laura Frances and Timothy O'Connor (eds.), 2014, Religious Faith and Intellectual Virtue , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199672158.001.0001"
+        },
+        {
+          "raw": "Carston, Robyn, 2002, Thoughts and Utterances: The Pragmatics of Explicit Communication , Oxford: Blackwell Publishing. doi:10.1002/9780470754603"
+        },
+        {
+          "raw": "Charlesworth, M.J., 1974, The Problem of Religious Language , Englewood Cliffs, NJ: Prentice-Hall."
+        },
+        {
+          "raw": "Cupitt, Don, 1980, Taking Leave of God , London: SCM Press."
+        },
+        {
+          "raw": "Derrida, Jacques, 1989, \"How to Avoid Speaking: Denials\", in S. Budick and W. Iser (eds.), Languages of the Unsayable , New York: Columbia University Press, pp. 3-70."
+        },
+        {
+          "raw": "---, 1992, \"Post-Scriptum: Aporias, Ways and Voices\", in H. Coward and T. Foshay (eds.), Derrida and Negative Theology , Albany, NY: State University of New York Press, pp. 283-323."
+        },
+        {
+          "raw": "Dewey, John, 1938, Logic. The Theory of Inquiry , New York: Henry Holt and Company."
+        },
+        {
+          "raw": "Dionysius, [c. 600], The Mystical Theology , in Paul Rorem (trans.), Pseudo-Dionysius: The Complete Works , New York: Paulist Press, 1987, pp. 133-41."
+        },
+        {
+          "raw": "Donovan, Peter, 1976, Religious Language , New York: Hawthorn Books."
+        },
+        {
+          "raw": "Divers, J. and David Liggins, 2005, \"Fictionalism\", Encyclopaedia of Philosophy , second edition, New York: MacMillan Reference."
+        },
+        {
+          "raw": "Dummett, Michael, 1991, The Logical Basis of Metaphysics , London: Duckworth."
+        },
+        {
+          "raw": "---, 2004, Truth and the Past , New York: Columbia University Press."
+        },
+        {
+          "raw": "Evans, C.S., 1989, \"Is Kierkegaard an Irrationalist? Reason, Paradox, and Faith\", Religious Studies , 25(3): 347-62. doi:10.1017/S0034412500019892"
+        },
+        {
+          "raw": "Ferr&eacute;, Frederick, 1962, Language, Logic and God , London: Eyre & Spottiswoode."
+        },
+        {
+          "raw": "Field, Hartry, 1980, Science without Numbers: a Defence of Nominalism , Oxford: Blackwell."
+        },
+        {
+          "raw": "Flew, Anthony and Alasdair MacIntyre, (eds.), 1955, New Essays in Philosophical Theology , London: SCM Press."
+        },
+        {
+          "raw": "G&auml;b, Sebastian, 2020, \"Languages of Ineffability: The Rediscovery of Apophaticism in Contemporary Analytic Philosophy of Religion\", in Sebastian H&uuml;sch, Isabelle Koch and Philipp Thomas (eds.), Negative Knowledge , T&uuml;bingen: Narr Francks, pp. 191-206."
+        },
+        {
+          "raw": "Gellman, Jerome I., 1997, Experience of God and the Rationality of Theistic Belief , Ithaca, NY: Cornell University Press."
+        },
+        {
+          "raw": "Graham, George, 2017, \"Behaviorism\", The Stanford Encyclopedia of Philosophy (Spring 2017 Edition), Edward N. Zalta (ed.), URL = https://plato.stanford.edu/archives/spr2017/entries/behaviorism/ >."
+        },
+        {
+          "raw": "Gregory of Nyssa, [4 century], Contra Eunomium II , in L. Karf&iacute;kov&aacute;, S. Douglass and J. Zachhuber (eds.), Gregory of Nyssa: Contra Eunomium II , Leiden: Brill, 2007."
+        },
+        {
+          "raw": "Hepburn, Ronald W., 1958, Christianity and Paradox: Critical Studies in Twentieth-Century Theology , London: Watts."
+        },
+        {
+          "raw": "Hewitt, Simon, 2005, Negative Theology and Philosophical Analysis , Cham: Palgrave Macmillan."
+        },
+        {
+          "raw": "---, 1977b, \"Eschatological Verificationism Reconsidered\", Religious Studies , 13(2): 189-202."
+        },
+        {
+          "raw": "---, 1993, The Metaphor of God Incarnate , London: SCM Press."
+        },
+        {
+          "raw": "Howard-Snyder, Daniel, 2013, \"Propositional Faith: What It Is and What It Is Not\", American Philosophical Quarterly , 50(4): 357-72."
+        },
+        {
+          "raw": "---, 2016, \"Does Faith Entail Belief?\" Faith and Philosophy , 33(2): 142-62. doi:10.5840/faithphil201633059"
+        },
+        {
+          "raw": "Huxley, Julian, 1927, Religion Without Revelation , London: E. Benn."
+        },
+        {
+          "raw": "---, 1931, What Dare I think?: The Challenge of Modern Science to Human Action and Belief , London: Chatto and Windus."
+        },
+        {
+          "raw": "Johnston, Mark, 2011, Saving God: Religion After Idolatry , Princeton, NJ: Princeton University Press."
+        },
+        {
+          "raw": "J&uuml;ngel, Eberhard, 1974, \"Metaphorische Wahrheit\", in P. Ricoeur and E. J&uuml;ngel (eds.), Metapher: Zur Hermeneutik Religi&ouml;ser Sprache , Munich: Chr. Kaiser Verlag, pp. 71-122."
+        },
+        {
+          "raw": "Kalderon, Mark Eli (ed.), 2005, Fictionalism in Metaphysics , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Kant, Immanuel, 1781/1787, Critique of Pure Reason , Paul Guyer and Allen Wood (eds.), Cambridge: Cambridge University Press, 1998."
+        },
+        {
+          "raw": "Kaufman, Gordon D., 1981, The Theological Imagination: Constructing the Concept of God , Philadelphia: Westminster Press."
+        },
+        {
+          "raw": "---, 2007, \"Mystery, God and Constructivism\", in Moore and Scott 2007: 11-30."
+        },
+        {
+          "raw": "Kenney, Anthony, 2005, The Unknown God: Agnostic Essays , London: Continuum."
+        },
+        {
+          "raw": "Kierkegaard, S&oslash;ren, 1844, Philosophical Fragments, Johannes Climacus , Howard V. Hong and Edna H. Hong (eds. and trans.), Princeton: Princeton University Press, 1985."
+        },
+        {
+          "raw": "Kripke, Saul A., 1980, Naming and Necessity , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Kvanvig, Jonathan L., 2013, \"Affective Theism and People of Faith\", Midwest Studies in Philosophy , XXXVII: 109-28. doi:10.1111/misp.12003"
+        },
+        {
+          "raw": "Lactantius, [4 century], The Works of Lactantius, Vol II , A. Roberts and J. Donaldson (eds.), (Ante-Nicene Christian Library, vol. XXII), Edinburgh: T & T Clark, 1871."
+        },
+        {
+          "raw": "Le Poidevin, Robin, 2016, \"Playing the God Game: The Perils of Religious Fictionalism\", in Andrei Buckareff and Yujin Nagasawa (Eds.), Alternative Concepts of God: Essays on the Metaphysics of the Divine , Oxford: Oxford University Press, pp. 178-191. doi:10.1093/acprof:oso/9780198722250.003.0011"
+        },
+        {
+          "raw": "---, 2019, Religious Fictionalism , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Lipton, Peter, 2007, \"Science and Religion: The Immersion Solution\", in Moore and Scott 2007: 31-46."
+        },
+        {
+          "raw": "Mackie, J.L., 1982, The Miracle of Theism , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Macquarrie, John, 1967, God-talk: An Examination of the Language and Logic of Theology , London: SCM Press."
+        },
+        {
+          "raw": "Maimonides, Moses, [c. 1190], The Guide of the Perplexed, volume one , Sholome Pines (trans.), Chicago: The University of Chicago Press, 1963."
+        },
+        {
+          "raw": "Malcolm, Finlay, and Michael Scott, 2017, \"Faith, Belief and Fictionalism\" Pacific Philosophical Quarterly , 98: 257-74. doi: 10.1111/papq.12169"
+        },
+        {
+          "raw": "Malcolm, Finlay, 2018, \"Can Fictionalists Have Faith?\" Religious Studies , 54(2): 215-32. doi:10.1017/S0034412517000063"
+        },
+        {
+          "raw": "Malcolm, Norman, 1997, Wittgenstein: A Religious Point of View? , London: Routledge."
+        },
+        {
+          "raw": "Marion, Jean-Luc, 1994, \"Metaphysics and Phenomenology: A Relief for Theology\", Thomas A. Carlson (trans.), Critical Inquiry , 20(4): 572-91."
+        },
+        {
+          "raw": "---, 1982 [1985], God without Being ( Dieu sans l'&ecirc;tre ), Thomas A. Carlson (trans.), Chicago: Chicago University Press, 1995."
+        },
+        {
+          "raw": "Markosian, Ned, 2016, \"Time\", The Stanford Encyclopedia of Philosophy (Fall 2016 Edition), Edward N. Zalta (ed.), URL = https://plato.stanford.edu/archives/fall2016/entries/time/ >."
+        },
+        {
+          "raw": "Martin, Martin, 1990, Atheism: A Philosophical Justification , Philadelphia, PA: Temple University Press."
+        },
+        {
+          "raw": "Mason, Richard, 2007, Spinoza: Logic, Knowledge and Religion , Aldershot: Ashgate."
+        },
+        {
+          "raw": "Maximus the Confessor, [7 century], Chapters on Knowledge , in George C. Berthold (ed.), Maximus Confessor: Selected Writings , New Jersey: Paulist Press, 1985, pp. 127-80."
+        },
+        {
+          "raw": "McFague, Sally, 1983, Metaphorical Theology: Models of God in Religious Language , London: SCM Press."
+        },
+        {
+          "raw": "Macdonald, Graham, 2010, \"Alfred Jules Ayer\", The Stanford Encyclopedia of Philosophy (Winter 2010 Edition), Edward N. Zalta (ed.), URL = https://plato.stanford.edu/archives/win2010/entries/ayer/ >."
+        },
+        {
+          "raw": "MacDonald, Scott, 1993, \"Christian Faith\", in Eleanore Stump (ed.), Reasoned Faith: Essays in Honour of Norman Kretzmann . Vermont: Echo Point Books, pp. 42-69."
+        },
+        {
+          "raw": "McKaughan, Daniel J., 2013, \"Authentic Faith and Acknowledged Risk: Dissolving the Problem of Faith and Reason\", Religious Studies , 49(1): 101-124. doi:10.1017/S0034412512000200"
+        },
+        {
+          "raw": "Meland, Bernard, 1976, Fallible Forms and Symbols: Discourses on Method in a Theology of Culture , Philadelphia: Fortress Press."
+        },
+        {
+          "raw": "Moore, Andrew and Michael Scott (eds.), 2007, Realism and Religion , Aldershot: Ashgate."
+        },
+        {
+          "raw": "Mulhall, Stephen, 2015, The Great Riddle: Wittgenstein and Nonsense, Theology and Philosophy , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780198755326.001.0001"
+        },
+        {
+          "raw": "Nielsen, Kai, 2000, \"Wittgenstein and Wittgensteinians on Religion\", in Robert L. Arrington and Mark Addis (eds.), Wittgenstein and Philosophy of Religion , London: Routledge, pp. 137-66."
+        },
+        {
+          "raw": "Palamas, Gregory, [14 century], The Triads , John Meyendorff (ed.), Nicholas Gendle (trans.), New Jersey: Paulist Press, 1983."
+        },
+        {
+          "raw": "Pedersen, Nikolaj J.L.L. and Cory D. Wright, (eds.), 2013, Truth and Pluralism: Current Debates , New York: Oxford University Press. doi:10.1093/acprof:oso/9780195387469.001.0001"
+        },
+        {
+          "raw": "---, 2016, \"Pluralist Theories of Truth\", The Stanford Encyclopedia of Philosophy (Spring 2016 Edition), Edward N. Zalta (ed.), URL = https://plato.stanford.edu/archives/spr2016/entries/truth-pluralist/ >."
+        },
+        {
+          "raw": "Phillips, D.Z., 1976, Religion Without Explanation , Oxford: Blackwell."
+        },
+        {
+          "raw": "---, 1995, \"Philosophers' Clothes\", in Charles M. Lewis (ed.), Relativism and Religion , London: Macmillan, pp. 135-53."
+        },
+        {
+          "raw": "Plantinga, Alvin, 2000, Warranted Christian Belief , New York: Oxford University Press. doi:10.1093/0195131932.001.0001"
+        },
+        {
+          "raw": "Pojman, Louis P., 1986, \"Faith Without Belief\", Faith and Philosophy , 3(2): 157-76. doi:10.5840/faithphil19863213"
+        },
+        {
+          "raw": "---, 2001, Philosophy of Religion , New York, NY: McGraw-Hill."
+        },
+        {
+          "raw": "Priest, Graham, 2002, Beyond the Limits of Thought , Oxford: Clarendon Press. doi:10.1093/acprof:oso/9780199254057.001.0001"
+        },
+        {
+          "raw": "Putnam, Hilary, 1981, Reason, Truth and History , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 1992, Renewing Philosophy , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Ramsey, Ian T., 1957, Religious Language: An Empirical Placing of Theological Phrases , London: SCM Press."
+        },
+        {
+          "raw": "R&eacute;canati, Fran&ccedil;ois, 2004, Literal Meaning , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Rey, Georges, 2006, \"Does Anyone Really Believe in God?\" in Daniel Kolak and Raymond Martin (eds.), The Experience of Philosophy , sixth edition, New York: Oxford University Press, pp. 336-53."
+        },
+        {
+          "raw": "Rhees, Rush, 1970, Discussions of Wittgenstein , London: Routledge and Kegan Paul."
+        },
+        {
+          "raw": "Sarot, Marcel, 1992, God, Passibility and Corporeality , (Studies in philosophical theology 6), Kampen, The Netherlands: Kok Pharos."
+        },
+        {
+          "raw": "Schellenberg, John L., 2005, Prolegomena to a Philosophy of Religion , Ithaca, NY: Cornell University Press."
+        },
+        {
+          "raw": "---, 2014, \"How to Make Faith a Virtue\", in Callahan and O'Connor 2014: 74-92. doi:10.1093/acprof:oso/9780199672158.003.0004"
+        },
+        {
+          "raw": "Schroeder, Mark, 2010, Noncognitivism in Ethics , London: Routledge."
+        },
+        {
+          "raw": "Scott, Michael, 2013, Religious Language , London: Palgrave Macmillan. doi:10.1057/9781137033208"
+        },
+        {
+          "raw": "---, 2015, \"Realism and Anti-Realism\", in Graham Oppy (ed.) The Routledge Handbook of Contemporary Philosophy of Religion , London: Routledge, pp. 205-18."
+        },
+        {
+          "raw": "---, 2020, \"Faith, Fictionalism and Bullshit\", Thought , 9(2): 94-104. doi.org/10.1002/tht3.448"
+        },
+        {
+          "raw": "Scott, Michael and Gabriel Citron, 2016, \"What is Apophaticism? Ways of Talking About An Ineffable God\", European Journal for Philosophy of Religion , 8(4): 23-49. doi:10.24204/ejpr.v8i4.1716"
+        },
+        {
+          "raw": "Scott, Michael and Finlay Malcolm, 2018, \"Religious Fictionalism\", Philosophy Compass , 13(3): 1-11. doi:10.1111/phc3.12474"
+        },
+        {
+          "raw": "Scott, Michael and Andrew Moore, 1997, \"Can Theological Realism be Refuted?\" Religious Studies , 33(4): 401-18. doi:10.1017/S0034412597004058"
+        },
+        {
+          "raw": "Scott, Michael and Graham Stevens, 2007, \"Is God an Antirealist?\", American Philosophical Quarterly , 44(4): 383-93."
+        },
+        {
+          "raw": "Searle, John R., 1993, \"Metaphor\", in Andrew Ortony (ed.), Metaphor and Thought , second edition, Cambridge: Cambridge University Press, pp. 83-111."
+        },
+        {
+          "raw": "Smith, James K.A., 2002, Speech and Theology: Language and the Logic of Incarnation , London: Routledge."
+        },
+        {
+          "raw": "Soskice, Janet Martin, 1985, Metaphor and Religious Language , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "---, 1999, \"Religious Language\", in Philip L. Quinn and Charles Taliaferro (eds.), A Companion to Philosophy of Religion , Oxford: Blackwell, 2nd edition, pp. 348-56."
+        },
+        {
+          "raw": "Sperber, Dan and Deirdre Wilson, 1986, Relevance: Communication and Cognition , Oxford: Blackwell."
+        },
+        {
+          "raw": "Spinoza, Baruch, 1677 [2002], Theological-Political Treatise , in S. Shirley (trans.) and M. L. Morgan (ed.), Spinoza: Complete Works Indianapolis: Hackett, 2002, pp. 383-583."
+        },
+        {
+          "raw": "Stoljar, Daniel and Nic Damnjanovic, 2014, \"The Deflationary Theory of Truth\", The Stanford Encyclopedia of Philosophy (Fall 2014 Edition), Edward N. Zalta (ed.), URL = https://plato.stanford.edu/archives/fall2014/entries/truth-deflationary/ >."
+        },
+        {
+          "raw": "Sullivan, Meghan, 2012, \"Semantics for Blasphemy\", in Jonathan L. Kvanvig (ed.), Oxford Studies in Philosophy of Religion (Volume 4), Oxford: Oxford University Press, pp. 159-72. doi:10.1093/acprof:oso/9780199656417.003.0009"
+        },
+        {
+          "raw": "Swinburne, Richard, 1991, Revelation: from Metaphor to Analogy , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 1993, The Coherence of Theism , Oxford: Oxford University Press. doi:10.1093/0198240708.001.0001"
+        },
+        {
+          "raw": "---, 1994, The Christian God , Oxford: Clarendon Press. doi:10.1093/0198235127.001.0001"
+        },
+        {
+          "raw": "---, 2005, Faith and Reason , 2 edition, Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199283927.001.0001"
+        },
+        {
+          "raw": "Tappolet, Christine, 1997, \"Mixed Inferences: A Problem for Pluralism about Truth Predicates\", Analysis , 57(3): 209-10."
+        },
+        {
+          "raw": "Tennant, Neil, 1995, \"On Negation, Truth and Warranted Assertibility\", Analysis , 55(2): 98-104. doi:10.1093/analys/55.2.98"
+        },
+        {
+          "raw": "Tilghman, Benjamin R., 1991, Wittgenstein, Ethics, and Aesthetics: The View from Eternity , Albany, NY: State University of New York Press"
+        },
+        {
+          "raw": "Tilley, Terence W., 1978, Talking of God: An Introduction to Philosophical Analysis of Religious Language , New York: Paulist Press."
+        },
+        {
+          "raw": "Tillich, Paul, 1951, Systematic Theology (Volume I), London: SCM Pess."
+        },
+        {
+          "raw": "Turner, Denys, 1995, The Darkness of God: Negativity in Christian Mysticism , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "van Inwagen, Peter, 2006, The Problem of Evil: The Gifford Lectures delivered in the University of St Andrews in 2003 , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199245604.001.0001"
+        },
+        {
+          "raw": "van Roojen, Mark, 2016, \"Moral Cognitivism vs. Non-Cognitivism\", The Stanford Encyclopedia of Philosophy (Winter 2016 Edition), Edward N. Zalta (ed.), URL = https://plato.stanford.edu/archives/win2016/entries/moral-cognitivism/ >."
+        },
+        {
+          "raw": "White, Roger M., 2010, Talking about God: The Concept of Analogy and the Problem of Religious Language , (Transcending boundaries in philosophy and theology), Aldershot: Ashgate."
+        },
+        {
+          "raw": "Wieman, Henry, 1932, Is there a God? , Chicago: Willett, Clark."
+        },
+        {
+          "raw": "Williams, Rowan, 2014, The Edge of Words: God and the Habits of Language , London: Bloomsbury Continuum."
+        },
+        {
+          "raw": "Williamson, Timothy, 1994, \"A Critical Study of Truth and Objectivity\", International Journal of Philosophical Studies , 2(1): 130-44. doi:10.1080/09672559408570786"
+        },
+        {
+          "raw": "Winch, Peter, 1987, Trying to Make Sense , Oxford: Blackwell."
+        },
+        {
+          "raw": "Wittgenstein, Ludwig, 1953, Philosophical Investigations ( Philosophische Untersuchungen ), G.E.M. Anscombe and R. Rhees (eds.), Oxford: Blackwell."
+        },
+        {
+          "raw": "---, 1966, Lectures and Conversations on Aesthetics, Psychology and Religious Belief , Cyril Barrett (ed.), Oxford: Blackwell."
+        },
+        {
+          "raw": "---, [PO], Philosophical Occasions , J. Klagge and A. Nordmann (eds.), Indianapolis: Hackett, 1993."
+        },
+        {
+          "raw": "---, 1970 [1994], Culture and Value , revised edition, G.H. von Wright (ed.), Peter Winch (trans.), Oxford: Blackwell."
+        },
+        {
+          "raw": "Wright, Crispin, 1992, Truth and Objectivity , Cambridge, MA: Harvard University Press."
+        }
+      ],
+      "publishedAt": "2017-08-03T14:00:00.000Z",
+      "revisedAt": "2022-03-07T13:00:00.000Z"
+    }
+  }
+}

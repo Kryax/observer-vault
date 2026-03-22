@@ -1,0 +1,551 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/free-rider",
+  "meta": {
+    "title": "The Free Rider Problem",
+    "description": "In many contexts, the efficient production of a good by a group is jeopardized by the incentive each member of the group has not to contribute towards its production. If then each member may have an incentive not to contribute, leaving the work of producing the good to the others. In situations with this structure, I can reason: if others are producing the good, I will receive it without contributing; if not, I will not receive it if I do contribute; so either way, I am better off not contributing. But if many of us reason in the same way, this can threaten to make each worse off than they would have been if all had contributed. This is the free rider problem, which has two main manifestations. In its non-production manifestation, these incentives prevent us from producing the good at all. In its free riding manifestation, the good is being produced because some group members are contributing, but it is being produced inefficiently because of the non-contribution of others (the free riders). Notice that in the non-production manifestation, there is a free rider problem but no free riding--because there is no good-production on which to free ride. The most familiar free rider problems arise in connection with the production and consumption of public goods. Contribution towards the production of a public good can either take the form of giving up one's own resources in a pooled effort to produce a good that would not exist independently of our actions (for example, volunteering for military service in defence against an external threat) or of constraining one's own actions as part of a joint effort to reduce the bad effects that are produced when many of us act in an unconstrained way (for example, limiting pollution). We can call these resource contribution and constraint cases, respectively. The free rider problem invites three kinds of investigation, which this article discusses. There are analytical investigations that seek to understand the dynamics through which free rider problems can arise. There are remedial investigations that seek to identify the range of available solutions to free rider problems, and explain how it is that uncoerced public goods production does actually occur. And there is also a set of normative questions asked by moral and political philosophy. Does the free rider problem illuminate the function of morality or the value of the state? Under what conditions is free riding wrong, and if so, why? Can a foundation for political obligation be found in an anti-free-riding principle? And under what circumstances can coercion justifiably be used by the state to resource the stable production of public goods, and to punish and deter free riding? These different investigations have been a focus of interest in seven main disciplines. Social psychology asks: To what extent and in what circumstances are people motivated to free ride? and What sorts of countervailing incentives are effective in motivating cooperation when free riding is possible? Game theory asks: Under what circumstances does the rational pursuit of individual self-interest recommend free riding? Informed by those two areas of enquiry, mainstream economics then asks: What real-world mechanisms are the most efficient ways of producing public goods, given the incentives to free ride? Political science asks: What explains the existence of stable public goods production where it does occur, despite the incentives that favor free riding? Evolutionary biology asks: do we need group selection to explain the evolution of the cooperation-securing dispositions that can solve the free rider problem, or is individual selection sufficient? Moral philosophy asks: Under exactly which circumstances is free riding morally wrong, and what explains why it is wrong (when it is)? And relatedly, normative political philosophy asks: Do the moral reasons against free riding supply a grounding for political obligation? This article starts by locating the free rider problem in relation to other kinds of collective action problem ( &sect;1 ), then describes some of the major landmarks in the history of theorizing about it ( &sect;2 ). Analytical investigations of the problem are examined in &sect;3 , remedial investigations in &sect;4 , and then the last two sections turn to normative investigations, discussing the treatment of the free rider problem within moral philosophy ( &sect;5 ) and political philosophy ( &sect;6 ).",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T09:22:04.868Z",
+    "dateModified": "2026-03-22T09:22:04.868Z",
+    "datePublished": "2025-07-03T14:00:00.000Z",
+    "keywords": [
+      "callicles thrasymachus",
+      "game ethics",
+      "game evolutionary",
+      "hobbes moral",
+      "political obligation",
+      "prisoner dilemma",
+      "public goods"
+    ]
+  },
+  "problemSolved": {
+    "statement": "In many contexts, the efficient production of a good by a group is jeopardized by the incentive each member of the group has not to contribute towards its production. If then each member may have an incentive not to contribute, leaving the work of producing the good to the others. In situations with this structure, I can reason: if others are producing the good, I will receive it without contributing; if not, I will not receive it if I do contribute; so either way, I am better off not contributing. But if many of us reason in the same way, this can threaten to make each worse off than they would have been if all had contributed. This is the free rider problem, which has two main manifestations. In its non-production manifestation, these incentives prevent us from producing the good at all. In its free riding manifestation, the good is being produced because some group members are contributing, but it is being produced inefficiently because of the non-contribution of others (the free riders). Notice that in the non-production manifestation, there is a free rider problem but no free riding--because there is no good-production on which to free ride. The most familiar free rider problems arise in connection with the production and consumption of public goods. Contribution towards the production of a public good can either take the form of giving up one's own resources in a pooled effort to produce a good that would not exist independently of our actions (for example, volunteering for military service in defence against an external threat) or of constraining one's own actions as part of a joint effort to reduce the bad effects that are produced when many of us act in an unconstrained way (for example, limiting pollution). We can call these resource contribution and constraint cases, respectively. The free rider problem invites three kinds of investigation, which this article discusses. There are analytical investigations that seek to understand the dynamics through which free rider problems can arise. There are remedial investigations that seek to identify the range of available solutions to free rider problems, and explain how it is that uncoerced public goods production does actually occur. And there is also a set of normative questions asked by moral and political philosophy. Does the free rider problem illuminate the function of morality or the value of the state? Under what conditions is free riding wrong, and if so, why? Can a foundation for political obligation be found in an anti-free-riding principle? And under what circumstances can coercion justifiably be used by the state to resource the stable production of public goods, and to punish and deter free riding? These different investigations have been a focus of interest in seven main disciplines. Social psychology asks: To what extent and in what circumstances are people motivated to free ride? and What sorts of countervailing incentives are effective in motivating cooperation when free riding is possible? Game theory asks: Under what circumstances does the rational pursuit of individual self-interest recommend free riding? Informed by those two areas of enquiry, mainstream economics then asks: What real-world mechanisms are the most efficient ways of producing public goods, given the incentives to free ride? Political science asks: What explains the existence of stable public goods production where it does occur, despite the incentives that favor free riding? Evolutionary biology asks: do we need group selection to explain the evolution of the cooperation-securing dispositions that can solve the free rider problem, or is individual selection sufficient? Moral philosophy asks: Under exactly which circumstances is free riding morally wrong, and what explains why it is wrong (when it is)? And relatedly, normative political philosophy asks: Do the moral reasons against free riding supply a grounding for political obligation? This article starts by locating the free rider problem in relation to other kinds of collective action problem ( &sect;1 ), then describes some of the major landmarks in the history of theorizing about it ( &sect;2 ). Analytical investigations of the problem are examined in &sect;3 , remedial investigations in &sect;4 , and then the last two sections turn to normative investigations, discussing the treatment of the free rider problem within moral philosophy ( &sect;5 ) and political philosophy ( &sect;6 ).",
+    "context": "Opening section: 1. Collective Action Problems | Related entries: game-ethics, game-evolutionary, hobbes-moral, callicles-thrasymachus, political-obligation, prisoner-dilemma, public-goods",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "ethics",
+    "political-philosophy"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry free-rider",
+        "uri": "https://plato.stanford.edu/entries/free-rider/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 7 related entries, bibliography size 106"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2025-07-03T14:00:00.000Z and revised 1998-12-31T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "1998-12-31T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/free-rider/",
+        "description": "SEP entry for free-rider"
+      }
+    ],
+    "solutionApproach": "1. Collective Action Problems"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/game-ethics",
+      "ocp:sep/game-evolutionary",
+      "ocp:sep/hobbes-moral",
+      "ocp:sep/callicles-thrasymachus",
+      "ocp:sep/political-obligation",
+      "ocp:sep/prisoner-dilemma",
+      "ocp:sep/public-goods"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Cullity, Garrett",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/free-rider/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 82,
+      "validation_diversity": 0.41,
+      "context_breadth": 0.4,
+      "temporal_stability": 0.6,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.89
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.5
+  },
+  "extensions": {
+    "sep": {
+      "slug": "free-rider",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/free-rider/",
+      "preamble": "In many contexts, the efficient production of a good by a group is jeopardized by the incentive each member of the group has not to contribute towards its production. If then each member may have an incentive not to contribute, leaving the work of producing the good to the others. In situations with this structure, I can reason: if others are producing the good, I will receive it without contributing; if not, I will not receive it if I do contribute; so either way, I am better off not contributing. But if many of us reason in the same way, this can threaten to make each worse off than they would have been if all had contributed. This is the free rider problem, which has two main manifestations. In its non-production manifestation, these incentives prevent us from producing the good at all. In its free riding manifestation, the good is being produced because some group members are contributing, but it is being produced inefficiently because of the non-contribution of others (the free riders). Notice that in the non-production manifestation, there is a free rider problem but no free riding--because there is no good-production on which to free ride. The most familiar free rider problems arise in connection with the production and consumption of public goods. Contribution towards the production of a public good can either take the form of giving up one's own resources in a pooled effort to produce a good that would not exist independently of our actions (for example, volunteering for military service in defence against an external threat) or of constraining one's own actions as part of a joint effort to reduce the bad effects that are produced when many of us act in an unconstrained way (for example, limiting pollution). We can call these resource contribution and constraint cases, respectively. The free rider problem invites three kinds of investigation, which this article discusses. There are analytical investigations that seek to understand the dynamics through which free rider problems can arise. There are remedial investigations that seek to identify the range of available solutions to free rider problems, and explain how it is that uncoerced public goods production does actually occur. And there is also a set of normative questions asked by moral and political philosophy. Does the free rider problem illuminate the function of morality or the value of the state? Under what conditions is free riding wrong, and if so, why? Can a foundation for political obligation be found in an anti-free-riding principle? And under what circumstances can coercion justifiably be used by the state to resource the stable production of public goods, and to punish and deter free riding? These different investigations have been a focus of interest in seven main disciplines. Social psychology asks: To what extent and in what circumstances are people motivated to free ride? and What sorts of countervailing incentives are effective in motivating cooperation when free riding is possible? Game theory asks: Under what circumstances does the rational pursuit of individual self-interest recommend free riding? Informed by those two areas of enquiry, mainstream economics then asks: What real-world mechanisms are the most efficient ways of producing public goods, given the incentives to free ride? Political science asks: What explains the existence of stable public goods production where it does occur, despite the incentives that favor free riding? Evolutionary biology asks: do we need group selection to explain the evolution of the cooperation-securing dispositions that can solve the free rider problem, or is individual selection sufficient? Moral philosophy asks: Under exactly which circumstances is free riding morally wrong, and what explains why it is wrong (when it is)? And relatedly, normative political philosophy asks: Do the moral reasons against free riding supply a grounding for political obligation? This article starts by locating the free rider problem in relation to other kinds of collective action problem ( &sect;1 ), then describes some of the major landmarks in the history of theorizing about it ( &sect;2 ). Analytical investigations of the problem are examined in &sect;3 , remedial investigations in &sect;4 , and then the last two sections turn to normative investigations, discussing the treatment of the free rider problem within moral philosophy ( &sect;5 ) and political philosophy ( &sect;6 ).",
+      "firstSectionTitle": "1. Collective Action Problems",
+      "firstSectionText": "A collective action problem is a situation in which it is better for every member of a group that everyone does A than that no one does A, but conflicts in what the parties regard as being in their own interest risk producing an outcome that is worse for every member than everyone's doing A would be. Collective action problems contrast with coordination problems. In a coordination problem, producing a mutually advantageous outcome (such as meeting at a rendezvous point) can be obstructed by a lack of information, not by the conflicting interests of the parties (Cronk & Leech 2013: Ch. 1). This description of collective action problems is deliberately broad, covering problems of many different kinds. It allows that collective action problems can arise when, in fact, each person's interests are best served by that person's doing A , but many people instead falsely believe that they are individually better off not doing A . And it allows for various different ways of specifying what it takes for an outcome to be better or worse for an individual. However, notice that the distinction between collective action problems and coordination problems precludes identifying interests with preference-satisfaction. If you and I fail to meet because, having agreed to rendezvous at the cathedral, I proceed to St Patrick's while you go to St Brendan's, then while we are en route we have different preferences (mine being that I arrive at St Patrick's, yours being that you arrive at St Brendan's); so if interests consisted in mere preference-satisfaction, our interests in this case would conflict. On the preference-satisfaction view, whenever a mutually advantageous outcome is obstructed by a failure of information it would also be obstructed by conflicting interests, so the distinction between coordination problems and collective action problems would be lost. The free rider problem can be defined as that particular kind of collective action problem that arises when the efficient collective production of a good is jeopardized by the incentive each agent has not to contribute towards its production. Not all collective action problems are free rider problems--for example, a chicken game has the following strategic structure (where the cells represent the outcomes of the actions available to the two parties, and the numbers represent each party's preference-ranking of the given outcome): Figure 1 [An extended description of figure 1 is in the supplement.] In a chicken game, conflicting interests jeopardize the attainment of a mutually advantageous outcome, so it is a collective action problem; but it is not a free rider problem, since it is not a situation in which the efficient collective production of a good is jeopardized by each agent's incentive not to contribute. One common way in which free rider problems commonly arise is through strategic situations whose underlying structure is that of a multi-party Prisoner's Dilemma. An n -party Prisoner's Dilemma can be defined as a situation in which the possible outcomes of interaction between several agents are ranked by each agent as follows: Figure 2 When everyone has this preference-structure, three significant consequences follow. First, non-cooperation dominates: each agent prefers non-cooperation, whatever the others do. (In each column, the bottom cell is ranked higher than the top.) Second, each prefers everyone's cooperating to everyone's not cooperating. (The top left cell is ranked higher than the bottom right cell.) And third, for each agent the highest-ranked outcome is the one where that agent is the only non-cooperator and the lowest ranked outcome is the one where they are the only cooperator. (These are the bottom left and top right cells.) While sharing these three features in common, different n -party Prisoner's Dilemmas can have different rankings of the other possible outcomes. In some n -party Prisoner's Dilemmas, the outcome in which everyone cooperates (rank r ) is ranked higher than every outcome in which there is an intermediate number m of others who cooperate (rank \\(s_m\\)); in some, r is ranked lower than \\(s_m\\) for every intermediate number m ; and in others, there is some number of cooperators for which \\(r > s_m\\) when m is greater than that number and otherwise \\(r But despite this variety, the category of multi-party Prisoner's Dilemmas is not capacious enough to include all free rider problems. In particular, a free rider problem can fail to have the first of the multi-party Prisoner's Dilemma's three distinguishing features (domination). As we will see, free rider problems can become more acute in very large groups, when the benefit accruing to any agent from their own contribution is small and social monitoring of contributions is weak, than it is in small ones; but when the number of contributors is small and the good to be provided is important, contributing to its provision might then serve one's interests best. For example, if a police service is supported by the resources contributed by millions of people, I may have an incentive to enjoy the service without paying for it; but if there is no public policing it may be in my interests to join a local vigilante group to increase my own security significantly. If so, there can be situations in which, given that the number of contributors is actually large, the efficient provision of a good is jeopardized by the incentive for non-contribution, so we have a free rider problem; but where non-cooperation does not dominate, since it is not true that non-cooperation is preferred whatever the pattern of cooperation or non-cooperation by others is, so we do not have a Prisoner's Dilemma. Finally, specifying further, we come to Tragedy of the Commons cases: those where every member of a group has free access to a common resource, and unrestricted use produces full depletion of that resource (G. Hardin 1968). This is one specific kind of multi-party Prisoner's Dilemma, to be distinguished from other kinds that do not involve resource depletion. It is true that a Tragedy of the Commons need not involve any free riding: if no one constrains their resource use, no one is free riding on the contributions of others towards producing a good. But as we saw, that is not a good test of whether we face a free rider problem. In a Tragedy of the Commons, the good of sustainable ongoing access to the common resource is jeopardized by the incentive each has (through unrestricted use) not to contribute towards producing that good. So a Tragedy of the Commons is one particular way in which a free rider problem can arise. It is a specific (common resource) kind of multi-party Prisoner's Dilemma, which is a specific kind of strategic structure that underlies some but not all free rider problems (those where non-cooperation dominates), which are in turn a specific kind of collective action problem--the kind in which the efficient collective production of a good is jeopardized by each agent's incentive not to contribute. It is worth noting that the classification of some situations as free rider problems or not depends on which agents we are considering. For example, the problem of global climate change, when considered as a problem concerning the actions of cross-temporally persisting nations, is a free rider problem. It is a constraint case in which all nations will ultimately end up worse off than they would have been had they all restricted their net emissions. However, at the level of individuals, it seems not to be a free rider problem. The costs of the resource use of currently living old and rich individuals will primarily be borne by the younger and future poor, and this will continue to be true in the future as one generation passes on the burdens of its resource use to the next (Gardiner 2001). Within any given generation, those who pass on those burdens are not themselves worse off than they would all have been had they restricted their resource use. At the level of individuals, then, the climate change problem is not a free rider problem, or even a collective action problem as defined here: it is worse than that.",
+      "relatedEntries": [
+        "game-ethics",
+        "game-evolutionary",
+        "hobbes-moral",
+        "callicles-thrasymachus",
+        "political-obligation",
+        "prisoner-dilemma",
+        "public-goods"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "game-ethics"
+        },
+        {
+          "slug": "game-evolutionary"
+        },
+        {
+          "slug": "hobbes-moral"
+        },
+        {
+          "slug": "callicles-thrasymachus"
+        },
+        {
+          "slug": "political-obligation"
+        },
+        {
+          "slug": "prisoner-dilemma"
+        },
+        {
+          "slug": "public-goods"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 106,
+      "bibliography": [
+        {
+          "raw": "Andreoni, James, 1988, \"Why Free Ride? Strategies and Learning in Public Goods Experiments\", Journal of Public Economics , 37(3): 291-304. doi:10.1016/0047-2727(88)90043-6"
+        },
+        {
+          "raw": "Arneson, Richard J., 1982, \"The Principle of Fairness and Free-Rider Problems\", Ethics , 92(4): 616-633. doi:10.1086/292379"
+        },
+        {
+          "raw": "Axelrod, Robert M., 1984, The Evolution of Cooperation , New York: Basic Books."
+        },
+        {
+          "raw": "Batina, Raymond G. and Toshihiro Ihori, 2005, Public Goods: Theories and Evidence , Berlin/New York: Springer. doi:10.1007/3-540-27638-6"
+        },
+        {
+          "raw": "Baumol, William J., 1952, Welfare Economics and the Theory of the State (Publications of the London School of Economics), Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Boersema, Jan J., 2011 [2015], Beelden Van Paaseiland , Amsterdam: Uitgeverij Atlas. Translated as The Survival of Easter Island: Dwindling Resources and Cultural Resilience , Diane Webb (trans.), Cambridge: Cambridge University Press. doi:10.1017/CBO9781139226639"
+        },
+        {
+          "raw": "Bowles, Samuel and Herbert Gintis, 2011, A Cooperative Species: Human Reciprocity and Its Evolution , Princeton, NJ/Oxford: Princeton University Press."
+        },
+        {
+          "raw": "Binmore, Ken G., 1998, Game Theory and the Social Contract. II: Just Playing (MIT Press Series on Economic Learning and Social Evolution 2), Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Boorse, Christopher, 1976, \"Wright on Functions\", The Philosophical Review , 85(1): 70-86. doi:10.2307/2184255"
+        },
+        {
+          "raw": "Bougherara, Douadia, Sandrine Costa, Gilles Grolleau, and Lisette Ibanez, 2009, \"Dealing with Aversion to the Sucker's Payoff in Public Goods Games\", Economics Bulletin , 29(4): 3194-3202."
+        },
+        {
+          "raw": "Buchanan, James M., 1965, \"An Economic Theory of Clubs\", Economica , 32(125): 1-14. doi:10.2307/2552442"
+        },
+        {
+          "raw": "---, 1968, The Demand and Supply of Public Goods (Rand McNally Economics Series), Chicago: Rand McNally."
+        },
+        {
+          "raw": "Coase, R. H., 1974, \"The Lighthouse in Economics\", The Journal of Law and Economics , 17(2): 357-376. doi:10.1086/466796"
+        },
+        {
+          "raw": "Cowen, Tyler (ed.), 1988 [1992], The Theory of Market Failure&#8239;: A Critical Examination , Fairfax, VA: George Mason University Press. Reprinted under a new title, Public Goods and Market Failures: A Critical Examination , New Brunswick, NJ: Transaction Publishers, 1992."
+        },
+        {
+          "raw": "Cornes, Richard and Todd Sandler, 1996, The Theory of Externalities, Public Goods, and Club Goods , second edition, Cambridge&#8239;; New York: Cambridge University Press. doi:10.1017/CBO9781139174312"
+        },
+        {
+          "raw": "Cronk, Lee and Beth L. Leech, 2013, Meeting at Grand Central: Understanding the Social and Evolutionary Roots of Cooperation , Princeton, NJ: Princeton University Press. doi:10.23943/princeton/9780691154954.001.0001"
+        },
+        {
+          "raw": "Cullity, Garrett, 1995, \"Moral Free Riding\", Philosophy & Public Affairs , 24(1): 3-34. doi:10.1111/j.1088-4963.1995.tb00020.x"
+        },
+        {
+          "raw": "---, 2008, \"Public Goods and Fairness\", Australasian Journal of Philosophy , 86(1): 1-21. doi:10.1080/00048400701846491"
+        },
+        {
+          "raw": "---, 2018, Concern, Respect, and Cooperation , Oxford: Oxford University Press. doi:10.1093/oso/9780198807841.001.0001"
+        },
+        {
+          "raw": "Dagger, Richard, 2000, \"Membership, Fair Play, and Political Obligation\", Political Studies , 48(1): 104-117. doi:10.1111/1467-9248.00253"
+        },
+        {
+          "raw": "De Jasay, Anthony, 1989, Social Contract, Free Ride: A Study of the Public Goods Problem , Oxford/New York: Clarendon Press."
+        },
+        {
+          "raw": "Delton, Andrew W., Leda Cosmides, Marvin Guemo, Theresa E. Robertson, and John Tooby, 2012, \"The Psychosemantics of Free Riding: Dissecting the Architecture of a Moral Concept.\", Journal of Personality and Social Psychology , 102(6): 1252-1270. doi:10.1037/a0027026"
+        },
+        {
+          "raw": "Egas, Martijn and Arno Riedl, 2008, \"The Economics of Altruistic Punishment and the Maintenance of Cooperation\", Proceedings of the Royal Society B: Biological Sciences , 275(1637): 871-878. doi:10.1098/rspb.2007.1558"
+        },
+        {
+          "raw": "Eriksson, Lina, 2011, Rational Choice Theory: Potential and Limits (Political Analysis), Basingstoke: Palgrave Macmillan."
+        },
+        {
+          "raw": "Ewing, A. C., 1953, \"What Would Happen If Everybody Acted like Me?\", Philosophy , 28(104): 16-29. doi:10.1017/S0031819100026115"
+        },
+        {
+          "raw": "Feiock, Richard C. and John T. Scholz (eds), 2010, Self-Organizing Federalism: Collaborative Mechanisms to Mitigate Institutional Collective Action Dilemmas , Cambridge/New York: Cambridge University Press. doi:10.1017/CBO9780511642319"
+        },
+        {
+          "raw": "Fischbacher, Urs and Simon G&auml;chter, 2010, \"Social Preferences, Beliefs, and the Dynamics of Free Riding in Public Goods Experiments\", American Economic Review , 100(1): 541-556. doi:10.1257/aer.100.1.541"
+        },
+        {
+          "raw": "Flood, Merrill M., 1958, \"Some Experimental Games\", Management Science , 5(1): 5-26. doi:10.1287/mnsc.5.1.5 This was based on Flood, Merrill M., 1952, \"Some Experimental Games\", Research Memorandum RM-789-1, RAND. Flood 1952 available online ]"
+        },
+        {
+          "raw": "Forsyth, Donelson R., 2019, Group Dynamics , seventh edition, Australia/Boston, MA: Cengage."
+        },
+        {
+          "raw": "Frohlich, Norman, Joe A. Oppenheimer, and Oran R. Young, 1971, Political Leadership and Collective Goods , Princeton, NJ: Princeton University Press."
+        },
+        {
+          "raw": "Gardiner, Stephen M., 2001, \"The Real Tragedy of the Commons\", Philosophy & Public Affairs , 30(4): 387-416. doi:10.1111/j.1088-4963.2001.00387.x"
+        },
+        {
+          "raw": "Gauthier, David P., 1986, Morals by Agreement , Oxford: Clarendon Press. doi:10.1093/0198249926.001.0001"
+        },
+        {
+          "raw": "Green, Donald P. and Ian Shapiro, 1994, Pathologies of Rational Choice Theory: A Critique of Applications in Political Science , New Haven, CT: Yale University Press."
+        },
+        {
+          "raw": "Guttman, Joel M., 1982, \"Can Political Entrepreneurs Solve the Free-Rider Problem?\", Journal of Economic Behavior & Organization , 3(4): 357-366. doi:10.1016/0167-2681(82)90010-5"
+        },
+        {
+          "raw": "Hampton, Jean, 1986, Hobbes and the Social Contract Tradition , Cambridge: Cambridge University Press. doi:10.1017/CBO9780511625060"
+        },
+        {
+          "raw": "---, 1987, \"Free-Rider Problems in the Production of Collective Goods\", Economics and Philosophy , 3(2): 245-273. doi:10.1017/S0266267100002911"
+        },
+        {
+          "raw": "Hardin, Garrett, 1968, \"The Tragedy of the Commons: The Population Problem Has No Technical Solution; It Requires a Fundamental Extension in Morality\", Science , 162(3859): 1243-1248. doi:10.1126/science.162.3859.1243"
+        },
+        {
+          "raw": "Hardin, Russell, 1971, \"Collective Action as an Agreeable N-Prisoners' Dilemma\", Behavioral Science , 16(5): 472-481. doi:10.1002/bs.3830160507"
+        },
+        {
+          "raw": "---, 1982, Collective Action , Baltimore, MD: Johns Hopkins University Press."
+        },
+        {
+          "raw": "---, 1995, One for All: The Logic of Group Conflict , Princeton, NJ: Princeton University Press."
+        },
+        {
+          "raw": "---, 1997, \"Economic Theories of the State\", in Perspectives on Public Choice: A Handbook , Dennis C. Mueller (ed.), New York: Cambridge University Press, 21-34 (ch. 2). doi:10.1017/CBO9780511664458.003"
+        },
+        {
+          "raw": "Hart, H. L. A., 1955, \"Are There Any Natural Rights?\", The Philosophical Review , 64(2): 175-191. doi:10.2307/2182586"
+        },
+        {
+          "raw": "Hauser, Oliver P., David G. Rand, Alexander Peysakhovich, and Martin A. Nowak, 2014, \"Cooperating with the Future\", Nature , 511(7508): 220-223. doi:10.1038/nature13530"
+        },
+        {
+          "raw": "Hobbes, Thomas, [1651] 1996, Leviathan, or the Matter, Form, and Power of a Commonwealth Ecclesiastical and Civil , Richard Tuck (ed.), Cambridge: Cambridge University Press. doi:10.1017/CBO9780511808166"
+        },
+        {
+          "raw": "---, 1655 [1839], Elementorum philosophi&aelig; sectio prima De corpore , London: Crook. Translated in The English Works of Thomas Hobbes of Malmesbury, Volume 1: Elements of Philosophy, the First Section Concerning Body , William Molesworth (ed./tran.), London: John Bohn."
+        },
+        {
+          "raw": "Hume, David, 1739-40 [1978], A Treatise of Human Nature , London: John Noon. Reprinted in David Hume: A Treatise of Human Nature , Lewis Amherst Selby-Bigge and P. H. Nidditch (eds), second edition, Oxford: Clarendon Press, 1978. First edition of the reprint was 1888. doi:10.1093/actrade/9780198245872.book.1"
+        },
+        {
+          "raw": "---, 1751 [1975], An Enquiry Concerning the Principles of Morals , London: A. Millar. Reprinted in his Enquiries Concerning Human Understanding and Concerning the Principles of Morals , L. A. Selby-Bigge and P. H. Nidditch (eds), third edition, Oxford: Clarendon Press, 1975."
+        },
+        {
+          "raw": "Isaac, R. Mark and James M. Walker, 1988, \"Group Size Effects in Public Goods Provision: The Voluntary Contributions Mechanism\", The Quarterly Journal of Economics , 103(1): 179-199. doi:10.2307/1882648"
+        },
+        {
+          "raw": "Jin, Shuxian, Giuliana Spadaro, and Daniel Balliet, forthcoming, \"Institutions and Cooperation: A Meta-Analysis of Structural Features in Social Dilemmas\", Journal of Personality and Social Psychology , early online: 24 October 2024. doi:10.1037/pspi0000474"
+        },
+        {
+          "raw": "Joyce, Richard, 2006, The Evolution of Morality (Life and Mind), Cambridge, Mass: MIT Press. doi:10.7551/mitpress/2880.001.0001"
+        },
+        {
+          "raw": "Kameda, Tatsuya, Takafumi Tsukasaki, Reid Hastie, and Nathan Berg, 2011, \"Democracy under Uncertainty: The Wisdom of Crowds and the Free-Rider Problem in Group Decision Making.\", Psychological Review , 118(1): 76-96. doi:10.1037/a0020699"
+        },
+        {
+          "raw": "Kitcher, Philip, 2006, \"Biology and Ethics\", in The Oxford Handbook of Ethical Theory , David Copp (ed.), New York: Oxford University Press, 163-185 (ch. 6)."
+        },
+        {
+          "raw": "Klosko, George, 1991, The Principle of Fairness and Political Obligation , Savage, MD: Rowman & Littlefield."
+        },
+        {
+          "raw": "---, 2005, Political Obligations , Oxford&#8239;; New York: Oxford University Press. doi:10.1093/0199256209.001.0001"
+        },
+        {
+          "raw": "Kollock, Peter, 1998, \"Social Dilemmas: The Anatomy of Cooperation\", Annual Review of Sociology , 24(1): 183-214. doi:10.1146/annurev.soc.24.1.183"
+        },
+        {
+          "raw": "Kurzban, Robert, Maxwell N. Burton-Chellew, and Stuart A. West, 2015, \"The Evolution of Altruism in Humans\", Annual Review of Psychology , 66(1): 575-599. doi:10.1146/annurev-psych-010814-015355"
+        },
+        {
+          "raw": "Laver, Michael, 1980, \"Political Solutions to the Collective Action Problem\", Political Studies , 28(2): 195-209. doi:10.1111/j.1467-9248.1980.tb01245.x"
+        },
+        {
+          "raw": "Marwell, Gerald and Ruth E. Ames, 1979, \"Experiments on the Provision of Public Goods. I. Resources, Interest, Group Size, and the Free-Rider Problem\", American Journal of Sociology , 84(6): 1335-1360. doi:10.1086/226937"
+        },
+        {
+          "raw": "McDermott, Daniel, 2004, \"Fair-Play Obligations\", Political Studies , 52(2): 216-232. doi:10.1111/j.1467-9248.2004.00476.x"
+        },
+        {
+          "raw": "Mill, John Stuart, 1859 [1991], On Liberty , London: John W. Parker and son. Reprinted in On Liberty and Other Essays (The World's Classics), John Gray (ed.), Oxford/New York: Oxford University Press, 1991."
+        },
+        {
+          "raw": "Miller, David, 2004, \"Justice, Democracy and Public Goods\", in Justice and Democracy: Essays for Brian Barry , Keith Dowding, Robert E. Goodin, and Carole Pateman (eds), Cambridge/New York: Cambridge University Press, 127-149 (ch. 8). doi:10.1017/CBO9780511490217.008"
+        },
+        {
+          "raw": "Miller, Frank and Rolf Sartorius, 1979, \"Population Policy and Public Goods\", Philosophy & Public Affairs , 8(2): 148-174."
+        },
+        {
+          "raw": "Nozick, Robert, 1974, Anarchy, State, and Utopia , New York: Basic Books."
+        },
+        {
+          "raw": "Olson, Mancur Jr, 1965, The Logic of Collective Action: Public Goods and the Theory of Groups (Harvard Economic Studies 124), Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Ostrom, Elinor, 1990, Governing the Commons: The Evolution of Institutions for Collective Action , Cambridge: Cambridge University Press. doi:10.1017/CBO9780511807763"
+        },
+        {
+          "raw": "---, 2003, \"How Types of Goods and Property Rights Jointly Affect Collective Action\", Journal of Theoretical Politics , 15(3): 239-270. doi:10.1177/0951692803015003002"
+        },
+        {
+          "raw": "---, 2009, \"A Polycentric Approach for Coping with Climate Change\" (Policy Research Working Paper 5095), World Bank, [ Ostrom 2009 available online ]"
+        },
+        {
+          "raw": "---, 2010, \"A Multi-Scale Approach to Coping with Climate Change and Other Collective Action Problems\", Solutions , 1(2): 27-36. [ Ostrom 2010 available online ]"
+        },
+        {
+          "raw": "Ostrom, Vincent and Elinor Ostrom, 1977, \"A Theory for Institutional Analysis of Common Pool Problems\", in Managing the Commons , Garrett Hardin and John Baden (eds), San Francisco, CA: W.H. Freeman, 157-172."
+        },
+        {
+          "raw": "Pareto, Vilfredo, 1916 [1935], Trattato di sociologia generale , 2 volumes, Firenze: G. Barb&egrave;ra. Translated as The Mind and Society , Arthur Livingston (ed./trans.) and Andrew Bongiorno (trans.), 4 volumes, New York: Harcourt, Brace and Company, 1935."
+        },
+        {
+          "raw": "Pecorino, Paul, 2015, \"Olson's Logic of Collective Action at Fifty\", Public Choice , 162(3-4): 243-262. doi:10.1007/s11127-014-0186-y"
+        },
+        {
+          "raw": "Peterson, Martin, 2015, \"Introduction\", in The Prisoner's Dilemma , Martin Peterson (ed.), 1st ed., Cambridge: Cambridge University Press, 1-15. doi:10.1017/CBO9781107360174.001"
+        },
+        {
+          "raw": "Pettit, Philip, 1986, \"Free Riding and Foul Dealing\", The Journal of Philosophy , 83(7): 361-379. doi:10.2307/2026298"
+        },
+        {
+          "raw": "Piper, Adrian M. S., 2012, \"Kant's Two Solutions to the Free Rider Problem\", Kant Yearbook , 4: 113-142. doi:10.1515/kantyb.2012.113"
+        },
+        {
+          "raw": "Plato, Gorgias (Clarendon Plato Series), Terence Irwin (trans.), Oxford/New York: Clarendon Press, 1979."
+        },
+        {
+          "raw": "---, Republic , C. D. C. Reeve (trans.), Indianapolis, IN: Hackett, 2004."
+        },
+        {
+          "raw": "Prinz, Jesse J., 2007, The Emotional Construction of Morals , Oxford: Oxford University Press. doi:10.1093/acprof:oso/9780199571543.001.0001"
+        },
+        {
+          "raw": "Przeworski, Adam, 1988, \"Democracy as a Contingent Outcome of Conflicts\", in Constitutionalism and Democracy , Jon Elster and Rune Slagstad (eds), Cambridge/New York: Cambridge University Press, 59-80 (ch. 3). doi:10.1017/CBO9781139173629.003"
+        },
+        {
+          "raw": "---, 2010, Democracy and the Limits of Self-Government (Cambridge Studies in the Theory of Democracy), New York: Cambridge University Press. doi:10.1017/CBO9780511778490"
+        },
+        {
+          "raw": "---, 2016, \"Democracy: A Never-Ending Quest\", Annual Review of Political Science , 19(1): 1-12. doi:10.1146/annurev-polisci-021113-122919"
+        },
+        {
+          "raw": "Rawls, John, 1964, \"Legal Obligation and the Duty of Fair Play\", in Law and Philosophy: A Symposium , Sidney Hook (ed.), New York: New York University Press, 3-18."
+        },
+        {
+          "raw": "---, 1971 [1999], A Theory of Justice , Cambridge, MA: Belknap Press of Harvard University Press. Revised edition, 1999."
+        },
+        {
+          "raw": "Richerson, Peter, Ryan Baldini, Adrian V. Bell, Kathryn Demps, Karl Frost, Vicken Hillis, Sarah Mathew, Emily K. Newton, Nicole Naar, Lesley Newson, et al., 2016, \"Cultural Group Selection Plays an Essential Role in Explaining Human Cooperation: A Sketch of the Evidence\", Behavioral and Brain Sciences , 39: article e30. doi:10.1017/S0140525X1400106X"
+        },
+        {
+          "raw": "Ringelmann, Maximilien, 1913, \"Recherches sur les moteurs anim&eacute;s: Travail de l'homme\" (Research on animate sources of power: The work of man), Annales de l'Institut National Agronomique , 2 S&eacute;rie, 12: 1-40."
+        },
+        {
+          "raw": "Samuelson, Paul A., 1954, \"The Pure Theory of Public Expenditure\", The Review of Economics and Statistics , 36(4): 387-389. doi:10.2307/1925895"
+        },
+        {
+          "raw": "Sayre-McCord, Geoffrey, 2016, \"Hume on the Artificial Virtues\", in The Oxford Handbook of Hume , Paul Russell (ed.), New York: Oxford University Press, 435-469 (ch. 22)."
+        },
+        {
+          "raw": "Schmidtz, David, 1991, The Limits of Government: An Essay on the Public Goods Argument , Boulder, CO: Westview Press."
+        },
+        {
+          "raw": "Shepsle, Kenneth A., 2010, Analyzing Politics: Rationality, Behavior, and Institutions (The New Institutionalism in American Politics), Second edition, New York/London: W.W. Norton & Company."
+        },
+        {
+          "raw": "Simmons, A. John, 1979a, \"The Principle of Fair Play\", Philosophy & Public Affairs , 8(4): 307-337."
+        },
+        {
+          "raw": "Sinclair, Neil, 2012, \"Metaethics, Teleosemantics and the Function of Moral Judgements\", Biology & Philosophy , 27(5): 639-662. doi:10.1007/s10539-012-9316-4"
+        },
+        {
+          "raw": "Skyrms, Brian, 2004, The Stag Hunt and the Evolution of Social Structure , Cambridge/New York: Cambridge University Press. doi:10.1017/CBO9781139165228"
+        },
+        {
+          "raw": "Smyth, Nicholas, 2017, \"The Function of Morality\", Philosophical Studies , 174(5): 1127-1144. doi:10.1007/s11098-016-0746-8"
+        },
+        {
+          "raw": "Song, Edward, 2023, \"Fairness, Benefits, and Voluntary Acceptance\", Journal of Moral Philosophy , 20(3-4): 268-289. doi:10.1163/17455243-20223790"
+        },
+        {
+          "raw": "Sterelny, Kim, 2016, \"Cooperation, Culture, and Conflict\", The British Journal for the Philosophy of Science , 67(1): 31-58. doi:10.1093/bjps/axu024"
+        },
+        {
+          "raw": "Sugden, Robert, 1993, \"Thinking as a Team: Towards an Explanation of Nonselfish Behavior\", Social Philosophy and Policy , 10(1): 69-89. doi:10.1017/S0265052500004027"
+        },
+        {
+          "raw": "Taylor, Michael, 1987, The Possibility of Cooperation (Studies in Rationality and Social Change), Cambridge/New York: Cambridge University Press."
+        },
+        {
+          "raw": "Tomasello, Michael, 2016, A Natural History of Human Morality , Cambridge, MA: Harvard University Press. doi:10.4159/9780674915855"
+        },
+        {
+          "raw": "Trifan, Isabella, 2020, \"What Makes Free Riding Wrongful? The Shared Preference View of Fair Play\", Journal of Political Philosophy , 28(2): 158-180. doi:10.1111/jopp.12201"
+        },
+        {
+          "raw": "Tuck, Richard, 1979, \"Is There a Free-Rider Problem, and If so, What Is It?\", in Rational Action: Studies in Philosophy and Social Science , Ross Harrison (ed.), Cambridge/New York: Cambridge University Press, 147-156."
+        },
+        {
+          "raw": "---, 2008, Free Riding , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Tuomela, Raimo, 1988, \"Free Riding and the Prisoner's Dilemma\", The Journal of Philosophy , 85(8): 421-427. doi:10.2307/2027052"
+        },
+        {
+          "raw": "---, 1992, \"On the Structural Aspects of Collective Action and Free-Riding\", Theory and Decision , 32(2): 165-202. doi:10.1007/BF00134050"
+        },
+        {
+          "raw": "Wolff, Jonathan, 1995, \"Political Obligation, Fairness, and Independence\", Ratio , 8(1): 87-99. doi:10.1111/j.1467-9329.1995.tb00071.x"
+        },
+        {
+          "raw": "Wright, Larry, 1973, \"Functions\", The Philosophical Review , 82(2): 139-168. doi:10.2307/2183766"
+        },
+        {
+          "raw": "---, 1976, Teleological Explanations: An Etiological Analysis of Goals and Functions , Berkeley, CA: University of California Press."
+        },
+        {
+          "raw": "Zalta, Edward and Uri Nodelman, 2010, \"Funding Models for Collaborative Information Resources and Repositories: The Stanford Encyclopedia of Philosophy Experience\", Information Standards Quarterly , 22(4): 15-16. doi:10.3789/isqv22n4.2010.04"
+        }
+      ],
+      "publishedAt": "2025-07-03T14:00:00.000Z",
+      "revisedAt": "1998-12-31T13:00:00.000Z"
+    }
+  }
+}

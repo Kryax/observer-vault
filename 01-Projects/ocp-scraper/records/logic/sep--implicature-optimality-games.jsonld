@@ -1,0 +1,419 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/implicature-optimality-games",
+  "meta": {
+    "title": "Optimality-Theoretic and Game-Theoretic Approaches to Implicature",
+    "description": "Linguistic pragmatics studies the context-dependent use and interpretation of expressions. Perhaps the most important notion in pragmatics is Grice's (1967) conversational implicature . It is based on the insight that by means of general principles of rational cooperative behavior we can communicate more with the use of a sentence than the conventional semantic meaning associated with it. Grice has argued, for instance, that the exclusive interpretation of 'or'--according to which we infer from 'John or Mary came' that John and Mary didn't come both--is not due to the semantic meaning of 'or' but should be accounted for by a theory of conversational implicature. In this particular example,--a typical example of a so-called Quantity implicature--the hearer's implication is taken to follow from the fact that the speaker could have used a contrasting, and informatively stronger expression, but chose not to. Other implicatures may follow from what the hearer thinks that the speaker takes to be normal states of affairs, i.e., stereotypical interpretations. For both types of implicatures, the hearer's (pragmatic) interpretation of an expression involves what he takes to be the speaker's reason for using this expression. But obviously, this speaker's reason must involve assumptions about the hearer's reasoning as well. In this entry we will discuss formal accounts of conversational implicatures that explicitly take into account the interactive reasoning of speaker and hearer (e.g., what speaker and hearer believe about each other, the relevant aspects of the context of utterance etc.) and that aim to reductively explain conversational implicature as the result of goal-oriented, economically optimised language use. For this entry, just as in traditional analyses of implicatures, we will assume that sentences have a pre-existing semantic meaning and will mostly focus on generalised conversational implicatures.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T09:43:29.480Z",
+    "dateModified": "2026-03-22T09:43:29.480Z",
+    "datePublished": "2006-11-30T13:00:00.000Z",
+    "keywords": [
+      "defaults semantics pragmatics",
+      "game theory",
+      "grice",
+      "implicature",
+      "logic games",
+      "pragmatics"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Linguistic pragmatics studies the context-dependent use and interpretation of expressions. Perhaps the most important notion in pragmatics is Grice's (1967) conversational implicature . It is based on the insight that by means of general principles of rational cooperative behavior we can communicate more with the use of a sentence than the conventional semantic meaning associated with it. Grice has argued, for instance, that the exclusive interpretation of 'or'--according to which we infer from 'John or Mary came' that John and Mary didn't come both--is not due to the semantic meaning of 'or' but should be accounted for by a theory of conversational implicature. In this particular example,--a typical example of a so-called Quantity implicature--the hearer's implication is taken to follow from the fact that the speaker could have used a contrasting, and informatively stronger expression, but chose not to. Other implicatures may follow from what the hearer thinks that the speaker takes to be normal states of affairs, i.e., stereotypical interpretations. For both types of implicatures, the hearer's (pragmatic) interpretation of an expression involves what he takes to be the speaker's reason for using this expression. But obviously, this speaker's reason must involve assumptions about the hearer's reasoning as well. In this entry we will discuss formal accounts of conversational implicatures that explicitly take into account the interactive reasoning of speaker and hearer (e.g., what speaker and hearer believe about each other, the relevant aspects of the context of utterance etc.) and that aim to reductively explain conversational implicature as the result of goal-oriented, economically optimised language use. For this entry, just as in traditional analyses of implicatures, we will assume that sentences have a pre-existing semantic meaning and will mostly focus on generalised conversational implicatures.",
+    "context": "Opening section: 1. Bidirectional Optimality Theory | Related entries: defaults-semantics-pragmatics, game-theory, grice, implicature, logic-games, pragmatics",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "logic"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry implicature-optimality-games",
+        "uri": "https://plato.stanford.edu/entries/implicature-optimality-games/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "2 author(s), 6 related entries, bibliography size 63"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2006-11-30T13:00:00.000Z and revised 2022-04-06T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2022-04-06T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/implicature-optimality-games/",
+        "description": "SEP entry for implicature-optimality-games"
+      }
+    ],
+    "solutionApproach": "1. Bidirectional Optimality Theory"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/defaults-semantics-pragmatics",
+      "ocp:sep/game-theory",
+      "ocp:sep/grice",
+      "ocp:sep/implicature",
+      "ocp:sep/logic-games",
+      "ocp:sep/pragmatics"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "van Rooij, Robert",
+        "type": "human"
+      },
+      {
+        "name": "Franke, Michael",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/implicature-optimality-games/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 62,
+      "validation_diversity": 0.5,
+      "context_breadth": 0.37,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.86,
+      "documentation_quality": 0.85
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.529
+  },
+  "extensions": {
+    "sep": {
+      "slug": "implicature-optimality-games",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/implicature-optimality-games/",
+      "preamble": "Linguistic pragmatics studies the context-dependent use and interpretation of expressions. Perhaps the most important notion in pragmatics is Grice's (1967) conversational implicature . It is based on the insight that by means of general principles of rational cooperative behavior we can communicate more with the use of a sentence than the conventional semantic meaning associated with it. Grice has argued, for instance, that the exclusive interpretation of 'or'--according to which we infer from 'John or Mary came' that John and Mary didn't come both--is not due to the semantic meaning of 'or' but should be accounted for by a theory of conversational implicature. In this particular example,--a typical example of a so-called Quantity implicature--the hearer's implication is taken to follow from the fact that the speaker could have used a contrasting, and informatively stronger expression, but chose not to. Other implicatures may follow from what the hearer thinks that the speaker takes to be normal states of affairs, i.e., stereotypical interpretations. For both types of implicatures, the hearer's (pragmatic) interpretation of an expression involves what he takes to be the speaker's reason for using this expression. But obviously, this speaker's reason must involve assumptions about the hearer's reasoning as well. In this entry we will discuss formal accounts of conversational implicatures that explicitly take into account the interactive reasoning of speaker and hearer (e.g., what speaker and hearer believe about each other, the relevant aspects of the context of utterance etc.) and that aim to reductively explain conversational implicature as the result of goal-oriented, economically optimised language use. For this entry, just as in traditional analyses of implicatures, we will assume that sentences have a pre-existing semantic meaning and will mostly focus on generalised conversational implicatures.",
+      "firstSectionTitle": "1. Bidirectional Optimality Theory",
+      "firstSectionText": "Optimality Theory (OT) is a linguistic theory which assumes that linguistic choices are governed by competition between a set of candidates, or alternatives. In standard OT (Prince & Smolensky, 1993) the optimal candidate is the one that satisfies best a set of violable constraints. After its success in phonology, OT has also been used in syntax, semantics and pragmatics. The original idea of optimality-theoretic semantics was to model interpretation by taking the candidates to be the alternative interpretations that the hearer could assign to a given expression, with constraints describing general preferences over expression-interpretation pairs. Blutner (1998, 2000) extended this original version by taking also alternative expressions, or forms, into account that the speaker could have used, but did not. The reference to alternative expressions/forms is standard in pragmatics to account for Quantity implicatures. Optimization should thus be thought of from two directions: that of the hearer, and that of the speaker. What is optimal, according to Blutner's Bidirectional-OT (Bi-OT), is not just interpretations with respect to forms, but rather form-interpretation pairs. In terms of a 'better than' relation '\\(\\gt\\)' between form-interpretation pairs, the pair \\(\\langle f,i\\rangle\\) is said to be (strongly) optimal iff it satisfies the following two conditions: The first condition requires that \\(i\\) is an optimal interpretation of form \\(f\\). In Bi-OT this condition is thought of as optimization from the hearer's point of view. Blutner proposed that \\(\\langle f,i'\\rangle \\gt \\langle f,i\\rangle\\) iff \\(i'\\) is a more likely, or stereotypical, interpretation of \\(f\\) than \\(i\\) is: \\(P(i'\\mid \\llbracket f\\rrbracket) \\gt P(i\\mid \\llbracket f \\rrbracket)\\) (where \\(\\llbracket f\\rrbracket\\) denotes the semantic meaning of \\(f\\), and \\(P(B\\mid A)\\) the conditional probability of \\(B\\) given \\(A\\), defined as \\(P(A\\cap B)/P(A))\\). The second condition is taken to involve speaker's optimization: for \\(\\langle f,i\\rangle\\) to be optimal for the speaker, it has to be the case that she cannot use a more optimal form \\(f'\\) to express \\(i. \\langle f',i\\rangle \\gt \\langle f,i\\rangle\\) iff either (i) \\(P(i\\mid \\llbracket f'\\rrbracket) \\gt P(i\\mid \\llbracket f\\rrbracket)\\), or (ii) \\(P(i\\mid\\llbracket f'\\rrbracket = P(i\\mid\\llbracket f\\rrbracket)\\) and \\(f'\\) is a less complex form to express \\(i\\) than \\(f\\) is. Bi-OT accounts for classical Quantity implicatures. A convenient (though controversial) example is the 'exactly'-interpretation of number terms. Let us assume, for the sake of example, that number terms semantically have an 'at least'-meaning. Still, we want to account for the intuition that the sentence \"Three children came to the party\" is normally interpreted as saying that exactly three children came to the party. One way to do this is to assume that the alternative expressions that the speaker could use are of the form \"( At least ) \\(n\\) children came to the party\", while the alternative interpretations for the hearer are of type \\(i_n\\) meaning that \" Exactly \\(n\\) children came to the party\". If we assume, again for the sake of example, that all relevant interpretations are considered equally likely and that it is already commonly assumed that some children came, but not more than four, the strongly optimal form-interpretation pairs can be read off the following table: In this table the entry \\(P(i_3 \\mid \\llbracket\\)'two'\\(\\rrbracket) = &frac13;\\) because \\(P(i_3 \\mid \\{i_2,i_3,i_4\\}) = &frac13;\\). Notice that according to this reasoning 'two' is interpreted as 'exactly 2' (as indicated by an arrow) because (i) \\(P(i_2 \\mid \\llbracket\\)'two'\\(\\rrbracket) = &frac13;\\) is higher than \\(P(i_2 \\mid \\llbracket\\)'\\(n \\textrm{'} \\rrbracket)\\) for any alternative expression '\\(n\\)', and (ii) all other interpretations compatible with the semantic meaning of the numeral expression are blocked : there is, for instance, another expression for which \\(i_4\\) is a better interpretation, i.e., an interpretation with a higher conditional probability. With numeral terms, the semantic meanings of the alternative expressions give rise to a linear order. This turns out to be crucial for the Bi-OT analysis, if we continue to take the interpretations as specific as we have done so far. Consider the following alternative answers to the question \"Who came to the party?\": Suppose that John and Bill are the only relevant persons and that it is presupposed that somebody came to the party. In that case the table that illustrates bidirectional optimality reasoning looks as follows (where \\(i_x\\) is the interpretation that only \\(x\\) came): This table correctly predicts that (1) is interpreted as saying that only John came. But now consider the disjunction (2). Intuitively, this answer should be interpreted as saying that either only John, or only Bill came. It is easy to see, however, that this is predicted only if 'John came' and 'Bill came' are not taken to be alternative forms. Bi-OT predicts that in case also 'John came' and 'Bill came' are taken to be alternatives, the disjunction is uninterpretable, because the specific interpretations \\(i_j, i_b\\), and \\(i_{jb}\\) all can be expressed better by other forms. In general, one can see that in case the semantic meanings of the alternative expressions are not linearly, but only partially ordered, the derivation of Quantity implicatures sketched above gives rise to partially wrong predictions. As it turns out, this problem for Bi-OT seems larger than it really is. Intuitively, an answer like (2) suggests that the speaker has incomplete information (she doesn't know who of John or Bill came). But the interpretations that we considered so far are world states that do not encode different amounts of speaker knowledge. So, to take this into account in Bi-OT (or in any other analysis of Quantity implicatures) we should allow for alternative interpretations that represent different knowledge states of the speaker. Aloni (2007) gives a Bi-OT account of ignorance implicatures (inferences, like the above, that the speaker lacks certain bits of possibly relevant information), alongside indifference implicatures (that the speaker does not consider bits of information relevant enough to convey). Moreover, it can be shown that, as far as ignorance implicatures are concerned, the predictions of Bi-OT line up with the pragmatic interpretation function called ' Grice ' in various (joint) papers of Schulz and Van Rooij (e.g., Schulz & Van Rooij, 2006). In these papers it is claimed that Grice implements the Gricean maxim of Quality and the first maxim of Quantity, and it is shown that in terms of it (together with an additional assumption of competence) we can account for many conversational implicatures, including the ones of (1) and (2). Bi-OT can also account for Horn's division of pragmatic labor or M-implicatures , as they are alternatively sometimes called after Levinson (2000). From this division of pragmatic labor it follows, according to Horn, that while (morphologically) unmarked expressions typically get an unmarked, or stereotypical interpretation via Grice's maxim of Relation, marked expressions--being morphologically complex and less lexicalised--tend to receive a marked, non-stereotypical, interpretation. Horn (1984) claimed that this follows from the interaction between both Gricean submaxims of Quantity, and the maxims of Relation and Manner, and that for the interpretation of marked expressions it is crucial that an alternative unmarked expression is available as well. To illustrate, consider the following well-known example: We typically interpret the unmarked (3) as meaning stereotypical killing (on purpose), while the marked (4) suggests that John killed the sheriff in a more indirect way, maybe unintentionally. Blutner (1998, 2000) shows that this can be accounted for in Bi-OT. Take \\(i_{st}\\) to be the more plausible interpretation where John killed the sheriff in the stereotypical way, while \\(i_{\\neg st}\\) is the interpretation where John caused the sheriff's death in an unusual way. Because (3) is less complex than (4), and \\(i_{st}\\) is the more stereotypical interpretation compatible with the semantic meaning of (3), it is predicted that (3) is interpreted as \\(i_{st}\\). Thus, in terms of his notion of strong optimality, i.e., optimality for both speaker and hearer, Blutner can account for the intuition that sentences typically get the most plausible, or stereotypical, interpretation. In terms of this notion of optimality, however, Blutner is not able yet to explain how the more complex form (4) can have an interpretation at all, in particular, why it will be interpreted as non-stereotypical killing. The reason is that on the assumption that (4) has the same semantic meaning as (3), the stereotypical interpretation would be hearer-optimal not only for (3), but also for (4). To account for the intuition that (4) is interpreted in a non-stereotypical way, Blutner (2000) introduces a weaker notion of optimality that also takes into account a notion of blocking : one form's pragmatically assigned meaning can take away, so to speak, that meaning from another, less favorable form. In the present case, the stereotypical interpretation is intuitively blocked for the cumbersome form (4) by the cheaper alternative expression (3). Formally, a form-interpretation pair \\(\\langle f,i\\rangle\\) is weakly optimal iff there is neither a strongly optimal \\(\\langle f,i'\\rangle\\) such that \\(\\langle f,i'\\rangle \\gt \\langle f,i\\rangle\\) nor a strongly optimal \\(\\langle f',i\\rangle\\) such that \\(\\langle f',i\\rangle \\gt \\langle f,i\\rangle\\). All form-interpretation pairs that are strongly optimal are also weakly optimal. However, a pair that is not strongly optimal like \\(\\langle\\)(4),\\(i_{\\neg st}\\rangle\\) can still be weakly optimal: since neither \\(\\langle\\)(4),\\(i_{st}\\rangle\\) nor \\(\\langle\\)(3),\\(i_{\\neg st}\\rangle\\) is strongly optimal, there is no objection for \\(\\langle\\)(4),\\(i_{\\neg st}\\rangle\\) to be a (weakly) optimal pair. As a result, the marked (4) will get the non-stereotypical interpretation. In general, application of the above definition of weak optimality can be difficult, but J&auml;ger (2002) gives a concise algorithm for computing weakly optimal form-interpretation pairs.",
+      "relatedEntries": [
+        "defaults-semantics-pragmatics",
+        "game-theory",
+        "grice",
+        "implicature",
+        "logic-games",
+        "pragmatics"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "defaults-semantics-pragmatics"
+        },
+        {
+          "slug": "game-theory"
+        },
+        {
+          "slug": "grice"
+        },
+        {
+          "slug": "implicature"
+        },
+        {
+          "slug": "logic-games"
+        },
+        {
+          "slug": "pragmatics"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 63,
+      "bibliography": [
+        {
+          "raw": "Ahern, C. and R. Clark, 2014, 'Diachronic Processes in Language as Signaling Under Conflicting Interests', The Evolution of Language: Proceedings of EVOLANG10 , E. A. Cartmill et al. (eds.), Singapore: World Scientific Press, 25-32."
+        },
+        {
+          "raw": "Andreas, J. and D. Klein, 2016, 'Reasoning about pragmatics with neural listeners and speakers', Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing , pp. 1173-1182."
+        },
+        {
+          "raw": "Aloni, M., 2007, 'Expressing Ignorance or Indifference. Modal Implicatures in Bi-Directional Optimality Theory', in B. ten Cate and Henk Zeevat (eds.), Logic, Language and Computation: Papers from the 6th International Tbilisi Symposium , Berlin, Heidelberg: Springer, 1-20."
+        },
+        {
+          "raw": "Asher, N., I. Sher, and M. Williams, 2001, 'Game Theoretical Foundations for Gricean Constraints', in Proceedings of the 13th Amsterdam Colloquium , R. van Rooy and M. Stokhof (eds.), Amsterdam: Institute for Logic, Language, and Cognition, 31-37."
+        },
+        {
+          "raw": "Benz, A., 2006, 'Utility and relevance of answers', in A. Benz, G. J&auml;ger and R. van Rooij (eds.), Game Theory and Pragmatics , New York: Palgrave McMillan, 195-214."
+        },
+        {
+          "raw": "Benz, A. and R. van Rooij, 2007, 'Optimal Assertions, and what they implicate. A uniform game theoretic approach', Topoi , 26: 63-78."
+        },
+        {
+          "raw": "Bergen, L., R. Levy and N. D. Goodman, 2016, 'Pragmatic Reasoning through Semantic Inference', Semantics and Pragmatics , 9: 1-83."
+        },
+        {
+          "raw": "Bergen, L. and N. D. Goodman, 2015, 'The Strategic Use of Noise in Pragmatic Reasoning', Topics in Cognitive Science , 7: 336-350."
+        },
+        {
+          "raw": "Blutner, R., 1998, 'Lexical Pragmatics', Journal of Semantics , 15: 115-162."
+        },
+        {
+          "raw": "---, 2000, 'Some aspects of optimality in natural language interpretation', Journal of Semantics , 17: 189-216."
+        },
+        {
+          "raw": "Brochhagen, T., 2017, 'Signalling under Uncertainty: Interpretative Alignment without a Common Prior', British Journal for the Philosophy of Science , 71: 471-496."
+        },
+        {
+          "raw": "Brochhagen, T., M. Franke, and R. van Rooij, 2018, 'Co-evolution of lexical meaning and pragmatic use', Cognitive Science , 42(8): 2757-2789."
+        },
+        {
+          "raw": "Burnett, H., 2019, 'Signalling games, sociolinguistics and the construction of style', Linguistics and Philosophy , 42: 419-450."
+        },
+        {
+          "raw": "Carcassi, F., 2020, 'The cultural evolution of scalar categorization', Ph.D. Thesis, University of Edinburgh."
+        },
+        {
+          "raw": "Clark, R., 2012, Meaningful Games , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Cohn-Gordon, R., N. D. Goodman, and C. Potts, 2019, 'An Incremental Iterated Response Model of Pragmatics', Proceedings of the Society for Computation in Linguistics , New York: Linguistic Society of America, 81-90."
+        },
+        {
+          "raw": "Degen, J., M. H. Tessler and N. D. Goodman, 2015, 'Wonky worlds: Listeners revise world knowledge when utterances are odd', in D. C. Noelle et al. (eds.), Proceedings of CogSci 37 , 548-553."
+        },
+        {
+          "raw": "Dekker, P. and R. van Rooij (2000). 'Bi-Directional Optimality Theory: An Application of Game Theory', Journal of Semantics 17, 217-242"
+        },
+        {
+          "raw": "Ebert, C. and G. J&auml;ger, 2009, 'Pragmatic Rationalizability', in A. Riester and T. Solstand (eds.), Proceedings of Sinn und Bedeutung 14 , SFB 732, vol. 5, University of Stuttgart, 1-15."
+        },
+        {
+          "raw": "Frank, M. C. and N. D. Goodman, 2012, 'Predicting Pragmatic Reasoning in Language Games', Science , 336: 998."
+        },
+        {
+          "raw": "Franke, M., 2009, 'Signal to Act', Ph.D. dissertation, University of Amsterdam."
+        },
+        {
+          "raw": "---, 2011, 'Quantity Implicatures, Exhaustive Interpretation, and Rational Conversation', Semantics and Pragmatics , 4(1): 1-81."
+        },
+        {
+          "raw": "---, 2014b, 'On admissibility in game theoretic pragmatics: A reply to Pavan (2013)', Linguistics and Philosophy , 37: 249-256."
+        },
+        {
+          "raw": "Franke, M. and G. J&auml;ger, 2012, 'Bidirectional Optimization from Reasoning and Learning in Games', Journal of Logic, Language and Information , 21(1): 117-139"
+        },
+        {
+          "raw": "---, 2014, 'Pragmatic Back-and-Forth Reasoning', in S. Pistoia Reda (ed.), Semantics, Pragmatics and the Case of Scalar Implicatures , New York: Palgrave MacMillan, 170-200."
+        },
+        {
+          "raw": "---, 2016, 'Probabilistic Pragmatics, or why Bayes' Rule is Probably Important for Pragmatics', Zeitschrift f&uuml;r Sprachwissenschaft , 35:3-44."
+        },
+        {
+          "raw": "Franke, M., S. T. de Jager and R. van Rooij, 2012, 'Relevance in Cooperation and Conflict', Journal of Logic and Computation , 22: 23-54."
+        },
+        {
+          "raw": "Franke, M. and R. van Rooij, 2015, 'Strategies of Persuasion, Manipulation and Propaganda: Psychological and Social Aspects', in J. van Benthem, S. Gosh and R. Verbrugge (eds.), Models of Strategic Reasoning: Logics, Games and Communities , Berlin: Springer, 255-291."
+        },
+        {
+          "raw": "Gazdar, G., 1979, Pragmatics , London: Academic Press."
+        },
+        {
+          "raw": "Grice, H.P., 1967, 'Logic and conversation', William James Lectures , Harvard University, reprinted in Studies in the Way of Words , 1989, Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Goodman, N. D. and A. Stuhlm&uuml;ller, 2013, 'Knowledge and Implicature: Modeling Language Understanding as Social Cognition', Topics in Cognitive Science , 5: 173-184."
+        },
+        {
+          "raw": "Goodman, N. D. and M. C. Frank, 2016, 'Pragmatic Language Interpretation as Probabilistic Inference', Trends in Cognitive Sciences , 20: 818-829."
+        },
+        {
+          "raw": "Horn, L., 1984, 'Towards a new taxonomy of pragmatic inference: Q-based and R-based implicature'. In: D. Schiffrin (ed.), Meaning, Form, and Use in Context: Linguistic Applications , GURT84, 11-42, Washington; Georgetown University Press."
+        },
+        {
+          "raw": "De Jaegher, K., 2008, 'The evolution of Horn's rule', Journal of Economic Methodology , 15: 275-284."
+        },
+        {
+          "raw": "De Jaegher, K. and R. van Rooij, 2014, 'Game-Theoretic Pragmatics Under Conflicting and Common Interests', Erkenntnis , 79: 769-820."
+        },
+        {
+          "raw": "J&auml;ger, G., 2002, 'Some Notes on the Formal Properties of Bidirectional Optimality Theory', Journal of Logic, Language and Information , 11: 427-451."
+        },
+        {
+          "raw": "---, 2014, 'Rationalizable Signaling', Erkenntnis , 79: 673-706."
+        },
+        {
+          "raw": "Kao, J. et al., 2014, 'Nonliteral Understanding of Number Words', Proceedings of the National Academy of Science , 111(33): 12002-12007."
+        },
+        {
+          "raw": "Levinson, S. C., 2000, Presumptive Meanings. The Theory of Generalized Conversational Implicature , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Lewis, D., 1969, Convention , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Monroe, W., R. X. D. Hawkins, N. D. Goodman and C. Potts, 2017, 'Colors in Context: A Pragmatic Neural Model for Grounded Language Understanding', Transactions of the Association for Computational Linguistics , Volume 5, pp. 325-338. doi:10.1162/tacl_a_00064"
+        },
+        {
+          "raw": "Parikh, P., 1988, Language and strategic inference , Ph.D. Thesis, Stanford University."
+        },
+        {
+          "raw": "---, 1991, 'Communication and strategic inference', Linguistics and Philosophy , 14: 473-513."
+        },
+        {
+          "raw": "---, 1992, 'A Game-Theoretic Account of Implicature', Proceedings of the 4th TARK Conference , San Francisco: Morgan Kaufmann, 85-94 [ Parikh 1992 available online ]."
+        },
+        {
+          "raw": "---, 2000, 'Communication, meaning, and interpretation', Linguistics and Philosophy , 23: 185-212."
+        },
+        {
+          "raw": "---, 2001, The use of Language , Stanford, CA: CSLI Publications."
+        },
+        {
+          "raw": "---, 2010, Language and Equilibrium , Cambridge, MA: The MIT Press."
+        },
+        {
+          "raw": "---, 2019, Communication and Content , Berlin: Language Science Press."
+        },
+        {
+          "raw": "Pavan, S., 2013, 'Scalar Implicatures and Philosophy', Linguistics and Philosophy , 36: 261-290."
+        },
+        {
+          "raw": "---, 2014, 'Rationality in game-theoretic pragmatics: A response to Franke (2014)', Linguistics and Philosophy , 37: 257-261."
+        },
+        {
+          "raw": "Perea, A., 2012, Epistemic Game Theory: Reasoning and Choice , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Potts, C., D. Lassiter, R. Levy and M.C. Frank, 2016, 'Embedded implicatures as pragmatic inferences under compositional lexical uncertainty', Journal of Semantics , 33: 755-802."
+        },
+        {
+          "raw": "Prince, A. and P. Smolensky, 1993, Optimality Theory. Constraint interaction in generative grammar , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Qing, C., N. Goodman and D. Lassiter, 2016, 'A Rational Speech-Act Model of Projective Content', in Proceedings of the 38th Annual Conference of the Cognitive Science Society (CogSci 2016). [ Qing, et al. 2016 available online ]"
+        },
+        {
+          "raw": "Rooij, R. van, 2004, 'Signalling games select Horn strategies', Linguistics and Philosophy , 27: 493-527."
+        },
+        {
+          "raw": "---, 2008, 'Game Theory and Quantity Implicatures', Journal of Economic Methodology , 15: 261-274."
+        },
+        {
+          "raw": "Rothschild, D., 2013, 'Game Theory and Scalar Implicatures', Philosophical Review , 27: 438-478."
+        },
+        {
+          "raw": "Sandholm, W. H., 2010, Population Games and Evolutionary Dynamics , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Schulz, K., and R. van Rooij, 2006, 'Pragmatic meaning and non-monotonic reasoning: the case of exhaustive interpretation', Linguistics and Philosophy , 29: 205-250."
+        },
+        {
+          "raw": "Stevens, J., 2016, 'Focus Games', Linguistics and Philosophy , 39: 395-441."
+        },
+        {
+          "raw": "Stevens, J. and A. Benz, 2018, 'Game-theoretic approaches to pragmatics', Annual Review of Linguistics , 4: 173-191."
+        },
+        {
+          "raw": "Yoon, E., M. Tessler, N. Goodman and M. Frank, 2020, 'Polite Speech Emerges From Competing Social Goals', Open Mind , 4: 71-87."
+        },
+        {
+          "raw": "Vogel, A., M.C. Frank, D. Jurafsky, and C. Potts, 2014, 'Learning to Reason Pragmatically with Cognitive Limitations', Proceedings of the 36th Annual Meeting of the Cognitive Science Society , Paul Bello, Marcello Guarini, Marjorie McShane, and Brian Scassellati (eds.), Cognitive Science Society and Curran Associates, Inc., 3055-3060."
+        }
+      ],
+      "publishedAt": "2006-11-30T13:00:00.000Z",
+      "revisedAt": "2022-04-06T14:00:00.000Z"
+    }
+  }
+}

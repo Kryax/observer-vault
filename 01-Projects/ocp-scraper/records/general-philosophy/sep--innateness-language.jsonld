@@ -1,0 +1,985 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/innateness-language",
+  "meta": {
+    "title": "Innateness and Language",
+    "description": "The philosophical debate over innate ideas and their role in the acquisition of knowledge has a venerable history. It is thus surprising that very little attention was paid until early last century to the questions of how linguistic knowledge is acquired and what role, if any, innate ideas might play in that process. To be sure, many theorists have recognized the crucial part played by language in our lives, and have speculated about the (syntactic and/or semantic) properties of language that enable it to play that role. However, few had much to say about the properties of us in virtue of which we can learn and use a natural language. To the extent that philosophers before the 20th century dealt with language acquisition at all, they tended to see it as a product of our general ability to reason -- an ability that makes us special, and that sets us apart from other animals, but that is not tailored for language learning in particular. In Part 5 of the Discourse on the Method , for instance, Descartes identifies the ability to use language as one of two features distinguishing people from \"machines\" or \"beasts\" and speculates that even the stupidest people can learn a language (when not even the smartest beast can do so) because human beings have a \"rational soul\" and beasts \"have no intelligence at all.\" (Descartes 1984: 140-1.) Like other great philosopher-psychologists of the past, Descartes seems to have regarded our acquisition of concepts and knowledge ('ideas') as the main psychological mystery, taking language acquisition to be a relatively trivial matter in comparison; as he puts it, albeit ironically, \"it patently requires very little reason to be able to speak.\" (1984: 140.) All this changed in the early twentieth century, when linguists, psychologists, and philosophers began to look more closely at the phenomena of language learning and mastery. With advances in syntax and semantics came the realization that knowing a language was not merely a matter of associating words with concepts. It also crucially involves knowledge of how to put words together, for it's typically sentences that we use to express our thoughts, not words in isolation. If that's the case, though, language mastery can be no simple matter. Modern linguistic theories have shown that human languages are vastly complex objects. The syntactic rules governing sentence formation and the semantic rules governing the assignment of meanings to sentences and phrases are immensely complicated, yet language users apparently apply them hundreds or thousands of times a day, quite effortlessly and unconsciously. But if knowing a language is a matter of knowing all these obscure rules, then acquiring a language emerges as the monumental task of learning them all. Thus arose the question that has driven much of modern linguistic theory: How could mere children learn the myriad intricate rules that govern linguistic expression and comprehension in their language -- and learn them solely from exposure to the language spoken around them? Clearly, there is something very special about the brains of human beings that enables them to master a natural language -- a feat usually more or less completed by age 8 or so. &sect;2.1 of this article introduces the idea, most closely associated with the work of the MIT linguist Noam Chomsky, that what is special about human brains is that they contain a specialized 'language organ,' an innate mental 'module' or 'faculty,' that is dedicated to the task of mastering a language. On Chomsky's view, the language faculty contains innate knowledge of various linguistic rules, constraints and principles; this innate knowledge constitutes the 'initial state' of the language faculty. In interaction with one's experiences of language during childhood -- that is, with one's exposure to what Chomsky calls the 'primary linguistic data' or ' pld ' (see &sect;2.1) -- it gives rise to a new body of linguistic knowledge, namely, knowledge of a specific language (like Chinese or English). This 'attained' or 'final' state of the language faculty constitutes one's 'linguistic competence' and includes knowledge of the grammar of one's language. This knowledge, according to Chomsky, is essential to our ability to speak and understand a language (although, of course, it is not sufficient for this ability: much additional knowledge is brought to bear in 'linguistic performance,' that is, actual language use). &sect;&sect;2.2-2.5 discuss the main arguments used by Chomsky and others to support this 'nativist' view that what makes language acquisition possible is the fact that much of our linguistic knowledge is unlearned; it is innate or inborn, part of the initial state of the language faculty. Section 3 presents a number of other avenues of research that have been argued to bear on the innateness of language, and shows how recent empirical research about language learning and the brain may challenge the nativist position. Because much of this material is very new, and because my conclusions (many of which are tentative) are highly controversial, more references to the empirical literature than are normal in an encyclopedia article are included. The reader is encouraged to follow up on the research cited and assess the plausibility of linguistic nativism for him or herself: whether language is innate or not is, after all, an empirical issue.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T09:08:57.309Z",
+    "dateModified": "2026-03-22T09:08:57.309Z",
+    "datePublished": "2008-01-15T13:00:00.000Z",
+    "keywords": [
+      "behaviorism",
+      "idiolects",
+      "innateness cognition",
+      "learning formal",
+      "rationalism empiricism"
+    ]
+  },
+  "problemSolved": {
+    "statement": "The philosophical debate over innate ideas and their role in the acquisition of knowledge has a venerable history. It is thus surprising that very little attention was paid until early last century to the questions of how linguistic knowledge is acquired and what role, if any, innate ideas might play in that process. To be sure, many theorists have recognized the crucial part played by language in our lives, and have speculated about the (syntactic and/or semantic) properties of language that enable it to play that role. However, few had much to say about the properties of us in virtue of which we can learn and use a natural language. To the extent that philosophers before the 20th century dealt with language acquisition at all, they tended to see it as a product of our general ability to reason -- an ability that makes us special, and that sets us apart from other animals, but that is not tailored for language learning in particular. In Part 5 of the Discourse on the Method , for instance, Descartes identifies the ability to use language as one of two features distinguishing people from \"machines\" or \"beasts\" and speculates that even the stupidest people can learn a language (when not even the smartest beast can do so) because human beings have a \"rational soul\" and beasts \"have no intelligence at all.\" (Descartes 1984: 140-1.) Like other great philosopher-psychologists of the past, Descartes seems to have regarded our acquisition of concepts and knowledge ('ideas') as the main psychological mystery, taking language acquisition to be a relatively trivial matter in comparison; as he puts it, albeit ironically, \"it patently requires very little reason to be able to speak.\" (1984: 140.) All this changed in the early twentieth century, when linguists, psychologists, and philosophers began to look more closely at the phenomena of language learning and mastery. With advances in syntax and semantics came the realization that knowing a language was not merely a matter of associating words with concepts. It also crucially involves knowledge of how to put words together, for it's typically sentences that we use to express our thoughts, not words in isolation. If that's the case, though, language mastery can be no simple matter. Modern linguistic theories have shown that human languages are vastly complex objects. The syntactic rules governing sentence formation and the semantic rules governing the assignment of meanings to sentences and phrases are immensely complicated, yet language users apparently apply them hundreds or thousands of times a day, quite effortlessly and unconsciously. But if knowing a language is a matter of knowing all these obscure rules, then acquiring a language emerges as the monumental task of learning them all. Thus arose the question that has driven much of modern linguistic theory: How could mere children learn the myriad intricate rules that govern linguistic expression and comprehension in their language -- and learn them solely from exposure to the language spoken around them? Clearly, there is something very special about the brains of human beings that enables them to master a natural language -- a feat usually more or less completed by age 8 or so. &sect;2.1 of this article introduces the idea, most closely associated with the work of the MIT linguist Noam Chomsky, that what is special about human brains is that they contain a specialized 'language organ,' an innate mental 'module' or 'faculty,' that is dedicated to the task of mastering a language. On Chomsky's view, the language faculty contains innate knowledge of various linguistic rules, constraints and principles; this innate knowledge constitutes the 'initial state' of the language faculty. In interaction with one's experiences of language during childhood -- that is, with one's exposure to what Chomsky calls the 'primary linguistic data' or ' pld ' (see &sect;2.1) -- it gives rise to a new body of linguistic knowledge, namely, knowledge of a specific language (like Chinese or English). This 'attained' or 'final' state of the language faculty constitutes one's 'linguistic competence' and includes knowledge of the grammar of one's language. This knowledge, according to Chomsky, is essential to our ability to speak and understand a language (although, of course, it is not sufficient for this ability: much additional knowledge is brought to bear in 'linguistic performance,' that is, actual language use). &sect;&sect;2.2-2.5 discuss the main arguments used by Chomsky and others to support this 'nativist' view that what makes language acquisition possible is the fact that much of our linguistic knowledge is unlearned; it is innate or inborn, part of the initial state of the language faculty. Section 3 presents a number of other avenues of research that have been argued to bear on the innateness of language, and shows how recent empirical research about language learning and the brain may challenge the nativist position. Because much of this material is very new, and because my conclusions (many of which are tentative) are highly controversial, more references to the empirical literature than are normal in an encyclopedia article are included. The reader is encouraged to follow up on the research cited and assess the plausibility of linguistic nativism for him or herself: whether language is innate or not is, after all, an empirical issue.",
+    "context": "Opening section: 1. Chomsky's Case against Skinner | Related entries: behaviorism, idiolects, innateness-cognition, learning-formal, rationalism-empiricism",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "general-philosophy"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry innateness-language",
+        "uri": "https://plato.stanford.edu/entries/innateness-language/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 5 related entries, bibliography size 255"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2008-01-15T13:00:00.000Z and revised 2008-01-15T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2008-01-15T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/innateness-language/",
+        "description": "SEP entry for innateness-language"
+      }
+    ],
+    "solutionApproach": "1. Chomsky's Case against Skinner"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/behaviorism",
+      "ocp:sep/idiolects",
+      "ocp:sep/innateness-cognition",
+      "ocp:sep/learning-formal",
+      "ocp:sep/rationalism-empiricism"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Cowie, Fiona",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/innateness-language/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 146,
+      "validation_diversity": 0.37,
+      "context_breadth": 0.35,
+      "temporal_stability": 0.75,
+      "test_coverage": 0.78,
+      "documentation_quality": 0.88
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.486
+  },
+  "extensions": {
+    "sep": {
+      "slug": "innateness-language",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/innateness-language/",
+      "preamble": "The philosophical debate over innate ideas and their role in the acquisition of knowledge has a venerable history. It is thus surprising that very little attention was paid until early last century to the questions of how linguistic knowledge is acquired and what role, if any, innate ideas might play in that process. To be sure, many theorists have recognized the crucial part played by language in our lives, and have speculated about the (syntactic and/or semantic) properties of language that enable it to play that role. However, few had much to say about the properties of us in virtue of which we can learn and use a natural language. To the extent that philosophers before the 20th century dealt with language acquisition at all, they tended to see it as a product of our general ability to reason -- an ability that makes us special, and that sets us apart from other animals, but that is not tailored for language learning in particular. In Part 5 of the Discourse on the Method , for instance, Descartes identifies the ability to use language as one of two features distinguishing people from \"machines\" or \"beasts\" and speculates that even the stupidest people can learn a language (when not even the smartest beast can do so) because human beings have a \"rational soul\" and beasts \"have no intelligence at all.\" (Descartes 1984: 140-1.) Like other great philosopher-psychologists of the past, Descartes seems to have regarded our acquisition of concepts and knowledge ('ideas') as the main psychological mystery, taking language acquisition to be a relatively trivial matter in comparison; as he puts it, albeit ironically, \"it patently requires very little reason to be able to speak.\" (1984: 140.) All this changed in the early twentieth century, when linguists, psychologists, and philosophers began to look more closely at the phenomena of language learning and mastery. With advances in syntax and semantics came the realization that knowing a language was not merely a matter of associating words with concepts. It also crucially involves knowledge of how to put words together, for it's typically sentences that we use to express our thoughts, not words in isolation. If that's the case, though, language mastery can be no simple matter. Modern linguistic theories have shown that human languages are vastly complex objects. The syntactic rules governing sentence formation and the semantic rules governing the assignment of meanings to sentences and phrases are immensely complicated, yet language users apparently apply them hundreds or thousands of times a day, quite effortlessly and unconsciously. But if knowing a language is a matter of knowing all these obscure rules, then acquiring a language emerges as the monumental task of learning them all. Thus arose the question that has driven much of modern linguistic theory: How could mere children learn the myriad intricate rules that govern linguistic expression and comprehension in their language -- and learn them solely from exposure to the language spoken around them? Clearly, there is something very special about the brains of human beings that enables them to master a natural language -- a feat usually more or less completed by age 8 or so. &sect;2.1 of this article introduces the idea, most closely associated with the work of the MIT linguist Noam Chomsky, that what is special about human brains is that they contain a specialized 'language organ,' an innate mental 'module' or 'faculty,' that is dedicated to the task of mastering a language. On Chomsky's view, the language faculty contains innate knowledge of various linguistic rules, constraints and principles; this innate knowledge constitutes the 'initial state' of the language faculty. In interaction with one's experiences of language during childhood -- that is, with one's exposure to what Chomsky calls the 'primary linguistic data' or ' pld ' (see &sect;2.1) -- it gives rise to a new body of linguistic knowledge, namely, knowledge of a specific language (like Chinese or English). This 'attained' or 'final' state of the language faculty constitutes one's 'linguistic competence' and includes knowledge of the grammar of one's language. This knowledge, according to Chomsky, is essential to our ability to speak and understand a language (although, of course, it is not sufficient for this ability: much additional knowledge is brought to bear in 'linguistic performance,' that is, actual language use). &sect;&sect;2.2-2.5 discuss the main arguments used by Chomsky and others to support this 'nativist' view that what makes language acquisition possible is the fact that much of our linguistic knowledge is unlearned; it is innate or inborn, part of the initial state of the language faculty. Section 3 presents a number of other avenues of research that have been argued to bear on the innateness of language, and shows how recent empirical research about language learning and the brain may challenge the nativist position. Because much of this material is very new, and because my conclusions (many of which are tentative) are highly controversial, more references to the empirical literature than are normal in an encyclopedia article are included. The reader is encouraged to follow up on the research cited and assess the plausibility of linguistic nativism for him or herself: whether language is innate or not is, after all, an empirical issue.",
+      "firstSectionTitle": "1. Chomsky's Case against Skinner",
+      "firstSectionText": "The behaviorist psychologist B.F. Skinner was the first theorist to propose a fully fledged theory of language acquisition in his book, Verbal Behavior (Skinner 1957). His theory of learning was closely related to his theory of linguistic behavior itself. He argued that human linguistic behavior (that is, our own utterances and our responses to the utterances of others) is determined by two factors: (i) the current features of the environment impinging on the speaker, and (ii) the speaker's history of reinforcement (i.e., the giving or withholding of rewards and/or punishments in response to previous linguistic behaviors). Eschewing talk of the mental as unscientific, Skinner argued that 'knowing' a language is really just a matter of having a certain set of behavioral dispositions: dispositions to say (and do) appropriate things in response to the world and the utterances of others. Thus, knowing English is, in small part, a matter of being disposed to utter \"Please close the door!\" when one is cold as a result of a draught from an open door, and of being disposed (other things being equal) to utter \"OK\" and go shut a door in response to someone else's utterance of that formula. Given his view that knowing a language is just a matter of having a certain set of behavioral dispositions, Skinner believed that learning a language just amounts to acquiring that set of dispositions. He argued that this occurs through a process that he called operant conditioning . ('Operants' are behaviors that have no discernible law-like relation to particular environmental conditions or 'eliciting stimuli.' They are to be contrasted with 'respondents,' which are reliable or reflex responses to particular stimuli. Thus, blinking when someone pokes at your eye is a respondent; episodes of infant babbling are operants.) Skinner held that most human verbal behaviors are operants: they start off unconnected with any particular stimuli. However, they can acquire connections to stimuli (or other behaviors) as a result of conditioning. In conditioning, the behavior in question is made more (or in some paradigms less) likely to occur in response to a given environmental cue by the imposition of an appropriate 'schedule of reinforcement': rewards or punishments are given or withheld as the subject's response to the cue varies over time. According to Skinner, language is learned when children's verbal operants are brought under the 'control' of environmental conditions as a result of training by their caregivers. They are rewarded (by, e.g., parental approval) or punished (by, say, a failure of comprehension) for their various linguistic productions and as a result, their dispositions to verbal behavior gradually converge on those of the wider language community. Likewise, Skinner held, 'understanding' the utterances of others is a matter of being trained to perform appropriate behaviors in response to them: one understands 'Shut the door!' to the extent that one responds appropriately to that utterance. In his famous review of Skinner's book, Chomsky (1959) effectively demolishes Skinner's theories of both language mastery and language learning. First, Chomsky argued, mastery of a language is not merely a matter of having one's verbal behaviors 'controlled' by various elements of the environment, including others' utterances. For language use is (i) stimulus independent and (ii) historically unbound. Language use is stimulus independent : virtually any words can be spoken in response to any environmental stimulus, depending on one's state of mind. Language use is also historically unbound : what we say is not determined by our history of reinforcement, as is clear from the fact that we can and do say things that we have not been trained to say. The same points apply to comprehension. We can understand sentences we have never heard before, even when they are spoken in odd or unexpected situations. And how we react to the utterances of others is again dependent largely on our state of mind at the time, rather than any past history of training. There are linguistic conventions in abundance, to be sure, but as Chomsky rightly pointed out, human 'verbal behavior' is quite disanalogous to a pigeon's disk-pecking or a rat's maze-running.. Mastery of language is not a matter of having a bunch of mere behavioral dispositions. Instead, it involves a wealth of pragmatic, semantic and syntactic knowledge. What we say in a given circumstance, and how we respond to what others say, is the result of a complex interaction between our history, our beliefs about our current situation, our desires, and our knowledge of how our language works. Skinner's first big mistake, then, was in failing to recognize that language mastery involves knowledge (or, as Chomsky later called it 'cognizance') of linguistic rules and conventions. His second big mistake was related to this one: he failed to recognize that acquiring mastery of a language is not a matter of being trained what to say. It's simply false, says Chomsky, that \"a careful arrangement of contingencies of reinforcement by the verbal community is a necessary condition of language learning.\" (1959:39) First, children learning language do not appear to be being 'conditioned' at all! Explicit training (such as a dog receives when learning to bark on command) is simply not a feature of language acquisition. It's only comparatively rarely that parents correct (or explicitly reward) their children's linguistic sorties; children learn much of what they know about language from watching TV or passively listening to adults; immigrant children learn a second language to native speaker fluency in the school playground; and even very young children are capable of linguistic innovation, saying things undreamt of by their parents. As Chomsky concludes: \"It is simply not true that children can learn language only through 'meticulous care' on the part of adults who shape their verbal repertoire through careful differential reinforcement.\" (1959:42) Secondly, Chomsky argued -- and here we see his first invocation of the famous 'poverty of the stimulus' argument, to be discussed in more detail in &sect;2.2 below -- it is unclear that conditioning could even in principle give rise to a set of dispositions rich enough to generate the full range of a person's linguistic behavior. In order, for example, to acquire the appropriate set of dispositions concerning the word car , one would have to be trained on vast numbers of sentences containing that word: one would have to hear car in object position and car in subject position; car modified by adjectives and car unmodified; car embedded in opaque contexts (e.g. in propositional attitude ascriptions) and car used transparently; and so on. But the 'primary linguistic data,' usually referred to as the ' pld' and comprising the set of sentences to which a child is exposed during language learning (plus any analysis performed by the child on those sentences; see below), simply cannot be assumed to contain enough of these 'minimally differing sentences' to fully determine a person's dispositions with respect to that word. Instead, Chomsky argued, what determines one's dispositions to use car is one's knowledge of that word's syntactic and semantic properties (e.g., car is a noun referring to cars), together with one's knowledge of how elements with those properties function in the language as a whole. So even if language mastery were (in part) a matter of having dispositions concerning car , the mechanism of conditioning would be unable to give rise to them. The training set to which children have access is simply too limited: it doesn't contain enough of the right sorts of exemplars. In sum: Skinner was mistaken on all counts. Language mastery is not merely a matter of having a set of bare behavioral dispositions. Instead, it involves intricate and detailed knowledge of the properties of one's language. And language learning is not a matter of being trained what to say. Instead, children learn language just from hearing it spoken around them, and they learn it effortlessly, rapidly, and without much in the way of overt instruction. These insights were to drive linguistic theorizing for the next fifty years, and it's worth emphasizing just how radical and exciting they were at the time. First, the idea that explaining language use involves attributing knowledge to speakers flouted the prevailing behaviorist view that talking about mental states was unscientific because mental states are unobservable. It also raised several pressing empirical question that linguists are still debating. For example, what is the content of speakers' knowledge of language? What sorts of facts about language are represented in speakers' heads? And how does this knowledge actually function in the psychological processes of language production and comprehension: what are the mechanisms of language use? Secondly, the idea that children learn language essentially on their own was a radical challenge to the prevailing behaviorist idea that all learning involves reinforcement. In addition, it made clear our need for a more 'cognitive' or 'mentalistic' conception of how language learning occurs, and vividly raised the question -- our focus in this article -- of what might be the preconditions for that process. As we will see in the next section, Chomsky was ready with a theory addressing each of these points.",
+      "relatedEntries": [
+        "behaviorism",
+        "idiolects",
+        "innateness-cognition",
+        "learning-formal",
+        "rationalism-empiricism"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "behaviorism"
+        },
+        {
+          "slug": "idiolects"
+        },
+        {
+          "slug": "innateness-cognition"
+        },
+        {
+          "slug": "learning-formal"
+        },
+        {
+          "slug": "rationalism-empiricism"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 255,
+      "bibliography": [
+        {
+          "raw": "Adolphs, R. (1999). Social Cognition and the Human Brain. Trends in Cognitive Science, 3 (12), 469-479."
+        },
+        {
+          "raw": "Avital, E. and Jablonka, E. (2000). Animal Traditions: Behavioural Inheritance in Evolution, Cambridge: Cambridge University Press,"
+        },
+        {
+          "raw": "Ayoun, D. (2003). Parameter Setting in Language Acquisition , London: Continuum International Publishing Group, Incorporated."
+        },
+        {
+          "raw": "Baker, C.L. (1979). \"Syntactic Theory and the Projection Problem\", Linguistic Inquiry , 10: 533-81."
+        },
+        {
+          "raw": "Bates, E. and Roe, K. (2001). \"Language development in children with unilateral brain injury\", in Handbook of Developmental Cognitive Neuroscience, C.A. Nelson and M. Luciana,(eds.), Cambridge: MIT Press, pp. 281-307."
+        },
+        {
+          "raw": "Beale, J.M. and Keil, F.C. (1995). \"Categorical Effects in the Perception of Faces\", Cognition , 57: 217-239."
+        },
+        {
+          "raw": "Bello, A., Capirci, O., & Volterra, V. (2004). Lexical production in children with Williams syndrome: spontaneous use of gesture in a naming task. Neuropsychologia, 42 (2), 201-213."
+        },
+        {
+          "raw": "Bellugi, U., & Lai, Z. (1998). Neuropathological and cognitive alterations in Williams syndrome and Down syndrome. Faseb Journal, 12 (4), A355-A355."
+        },
+        {
+          "raw": "Bellugi, U., Lichtenberger, L., Mills, D., Galaburda, A., & Korenberg, J. R. (1999). Bridging cognition, the brain and molecular genetics: evidence from Williams syndrome. Trends in Neurosciences, 22 (5), 197-207."
+        },
+        {
+          "raw": "Bellugi, U., L. Lichtenberger, et al . (2000). \"The neurocognitive profile of Williams syndrome: A complex pattern of strengths and weaknesses.\" Journal of Cognitive Neuroscience 12: 7-29."
+        },
+        {
+          "raw": "Belton, E., C. H. Salmond, et al . (2003). \"Bilateral brain abnormalities associated with dominantly inherited verbal and orofacial dyspraxia.\" Human Brain Mapping 18(3): 194-200."
+        },
+        {
+          "raw": "Berwick, R.C. and Weinberg, A.S. (1983). The Grammatical Basis of Linguistic Performance: Language Use and Acquisition , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Berwick, R. C. (1998). Language evolution and the Minimalist Program: the origins of syntax. In J. R. Hurford, M. Studdert-Kennedy & C. Knight (Eds.), Approaches to the Evolution of Language (pp. 320-340). Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Bickerton, D. (1981). Roots of Language : Karomer Publishers, Inc."
+        },
+        {
+          "raw": "--- (1998). Catastrophic evolution: the case for a single step from protolanguage to full human language. In J. R. Hurford, M. Studdert-Kennedy & C. Knight (Eds.), Approaches to the Evolution of Language (pp. 341-358). Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "--- (2000). Language and Species , Chicago : University of Chicago Press."
+        },
+        {
+          "raw": "Birdsong, D. and Molis, M. (2001). \"On the evidence for maturational constraints in second-language acquisition\", Journal of Memory and Language , 44: 235-49."
+        },
+        {
+          "raw": "Bishop, D. V. M. (1994). \"Is Specific Language Impairment A Valid Diagnostic Category - Genetic And Psycholinguistic Evidence.\" Philosophical Transactions Of The Royal Society Of London Series B-Biological Sciences 346(1315): 105-111."
+        },
+        {
+          "raw": "---, P. Bright, et al . (2000). \"Grammatical SLI: A distinct subtype of developmental language impairment?\" Applied Psycholinguistics 21(2): 159-181."
+        },
+        {
+          "raw": "Bohannon, J.N. and Stanowicz, L. (1988). \"The issue of negative evidence: Adult responses to children's language errors\", Developmental Psychology , 24: 684-89."
+        },
+        {
+          "raw": "Bohannon, J.N., MacWhinney, B. and Snow, C. (1990). \"No negative evidence revisited: Beyond learnability or who has to prove what to whom\", Developmental Psychology, 26: 221-26."
+        },
+        {
+          "raw": "Bohannon, J. N., Padgett, R. J., Nelson, K. E., & Mark, M. (1996). Useful evidence on negative evidence. Developmental Psychology, 32 (3), 551-555."
+        },
+        {
+          "raw": "Bosman, C., R. Garcia, et al . (2004). \"FOXP2 and the language working-memory system.\" Trends In Cognitive Sciences 8(6): 251-252."
+        },
+        {
+          "raw": "Botha, R. P. (2003). Unravelling the Evolution of Language . U.S.: Elsevier Science."
+        },
+        {
+          "raw": "Bradlow, A.R., Pisoni, D.B., Akahane-Yamada, R., and Tohkura, Y. (1997). \"Training Japanese listeners to identify English /r/ and /l/: IV. Some effects of perceptual learning on speech production\", Journal of the Acoustical Society of America , 101: 2299-2310."
+        },
+        {
+          "raw": "Brandon, R.N. and Hornstein, N. (1986a). \"From Icons to Symbols: Some Speculations on the Origins of Language\", Biology and Philosophy , 1 :169-89."
+        },
+        {
+          "raw": "Brown, R. (1973). A first language: The early stages , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Brown, R., Cazden, C. and Bellugi, U. (1969). \"The Child's Grammar from I to III\", in Minnesota Symposium on Child Psychology, Vol. II, J. Hill (ed.), Minneapolis: University of Minnesota Press."
+        },
+        {
+          "raw": "Brown, R. and Hanlon, C. (1970). \"Derivational Complexity and Order of Acquisition in Child Speech\", in Cognition and the Development of Language, J. R. Hayes (ed.), New York: John Wiley and Sons."
+        },
+        {
+          "raw": "Buonomano, D.V. and Merzenich, M.M. (1998). \"Cortical plasticity: From synapses to maps\", Annual Review of Neuroscience, 21: 149-186."
+        },
+        {
+          "raw": "Campanella,. S., Chrysochoos, A., Bruyer, R. (2001). \"Categorical perception of facial gender information: Behavioural evidence and the face-space metaphor\", Visual Cognition , 8 (2): 237-262."
+        },
+        {
+          "raw": "Capirci, O., L. Sabbadini, et al . (1996). \"Language development in Williams syndrome: A case study.\" Cognitive Neuropsychology 13(7): 1017-1039."
+        },
+        {
+          "raw": "Catania, A.C. (1990). \"What good is 5 percent of a language competence\", Behavioral and Brain Sciences , 13 : 729-730."
+        },
+        {
+          "raw": "Cavalli-Sforza, L.L. (1997). \"Genes, peoples, and languages\", PNAS: 94: 7719-772"
+        },
+        {
+          "raw": "Chambers, K.E., Onishi, K.H., and Fisher, C. (2003). \"Infants learn phonotactic regularities from brief auditory experience\", Cognition , 87: 69-77."
+        },
+        {
+          "raw": "Chater, N., & Manning, C. D. (2006). Probabilistic models of language processing and acquisition. Trends in Cognitive Sciences, 10 (7), 335-344."
+        },
+        {
+          "raw": "Chaudenson, R. (1992). Des &icirc;les, des hommes, des langues . Paris: L'Harmattan."
+        },
+        {
+          "raw": "Chomsky, N. (1957). Syntactic Structures , The Hague : Mouton."
+        },
+        {
+          "raw": "--- (1959). Review of Skinner's Verbal Behavior , Language , 35: 26-58."
+        },
+        {
+          "raw": "--- (1965). Aspects of the Theory of Syntax , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "--- (1975). Reflections on Language , London : Fontana."
+        },
+        {
+          "raw": "--- (1980). Rules and Representations . New York: Columbia University Press."
+        },
+        {
+          "raw": "--- (1981). Lectures on Government and Binding, Hawthorne, NY: Walter De Gruyter Incorporated."
+        },
+        {
+          "raw": "--- (1982). The Generative Enterprise , Dordrecht: Foris Publications."
+        },
+        {
+          "raw": "--- (1986). Knowledge of Language, Its Nature, Origin and Use , NY: Praeger."
+        },
+        {
+          "raw": "--- (1988). Language and Problems of Knowledge, The Managua Lectures , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "--- (1980). Rules and Representations , NY: Columbia University Press."
+        },
+        {
+          "raw": "--- (1990). \"On the nature, acquisition and use of language\", in Mind and Cognition: A Reader, W.G. Lycan (ed.), Cambridge MA and London UK: Blackwells, pp.627-45."
+        },
+        {
+          "raw": "--- (1995). The Minimalist Program, Cambridge: MIT Press."
+        },
+        {
+          "raw": "Chouinard, M.M. and Clark, E.V. (2003) \"Adult reformulations of child errors as negative evidence,\" Journal of Child Language , 30:637-69."
+        },
+        {
+          "raw": "Clahsen, H. and Muysken, P. (1986). \"The availability of universal grammar to adult and child learners\", Second Language Research , 2: 93-119."
+        },
+        {
+          "raw": "--- and M. Almazan (1998). \"Syntax and morphology in Williams syndrome.\" Cognition 68(3): 167-198."
+        },
+        {
+          "raw": "--- (2001). Compounding and inflection in language impairment: Evidence from Williams Syndrome (and SLI). Lingua, 111 (10), 729-757."
+        },
+        {
+          "raw": "Clark, A. (1997). Being There: Putting Brain, Body, and World Together Again , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Clark, A. (1997). Being There: Putting Brain, Body and World Together Again . Cambridge, Ma: Bradford Books/MIT Press."
+        },
+        {
+          "raw": "Cowen T. and Gavazzi, I. (1998). \"Plasticity in adult and ageing sympathetic neurons\", Progress in Neurobiology , 54:249-88."
+        },
+        {
+          "raw": "Cowie, F. (1997). The Logical Problem of Language Acquisition. Synthese, 111 , 17-51."
+        },
+        {
+          "raw": "--- (1999). What's Within: Nativism Reconsidered , New York: Oxford University Press."
+        },
+        {
+          "raw": "Crain, S. and Pietroski, P.M. (2001). \"Nature, Nurture, and Universal Grammar\", Linguistics and Philosophy, 24: 139-86."
+        },
+        {
+          "raw": "--- (2002). \"Why language acquisition is a snap\", Linguistic Review , 19 (1-2): 163-183."
+        },
+        {
+          "raw": "Crain, S. (1991). \"Language acquisition in the absence of experience\", The Behavioral and Brain Sciences , 4: 597-650."
+        },
+        {
+          "raw": "Curtiss, S. (1977). Genie: a Psycholinguistic Study of a Modern-day \"Wild Child\". New York: Academic Press."
+        },
+        {
+          "raw": "Dawkins, R. and Krebs, J.R. (1979). \"Arms races between and within species\", Proceedings of the Royal Society of London, Series B -- Biological Sciences, 205: 489-511."
+        },
+        {
+          "raw": "DeCaspar, A.J. and Spence, M.J. (1986). \"Prenatal maternal speech influences newborns' perception of speech sounds\", Infant Behavior and Development , 9:133-150."
+        },
+        {
+          "raw": "Demetras, M.J., Post, K.N. and Snow, C.E. (1986). \"Feedback to first language learners: The role of repetitions and clarification questions\", Journal of Child Language, 13: 275-92."
+        },
+        {
+          "raw": "Descartes, R. (1984), \"Discourse on the Method\", in The Philosophical Writings of Descartes , Vol. II, J. Cottingham, R. Stoothoff and D. Murdoch (eds.), and trans. (1984), Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Devitt M. (2006). Ignorance of Language, Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Dick F., Bates E., Wulfeck B., Utman J.A., Dronkers N. and Gernsbacher M.A. (2001). \"Language deficits, localization, and grammar: Evidence for a distributive model of language breakdown in aphasic patients and neurologically intact individuals\", Psychological Review , 108: 759-788."
+        },
+        {
+          "raw": "Dronkers, N.F., Redfern, B.B. and Knight, R.T. (2000). \"The Neural Architecture of Language Disorders\", in The New Cognitive Neurosciences, 2 nd Ed., M.S. Gazzaniga (ed.), Cambridge: MIT Press, pp. 949-58."
+        },
+        {
+          "raw": "Dunbar, R. (1996). Grooming, Gossip and the Evolution of Language, Cambridge, Ma.: Harvard University Press."
+        },
+        {
+          "raw": "Eimas, P.D. (1975). \"Speech perception in early infancy\", in Infant Perception, Vol.2. From sensation to cognition , L. Cohen and P. Aalapatel (Eds.), New York: Academic Press. Pp.193-231."
+        },
+        {
+          "raw": "Elbert, T., Heim, S. and Rockstroh, B. (2001). In Handbook of Developmental Cognitive Neuroscience, C.A. Nelson and M. Luciana, Cambridge: MIT Press, pp. 191-202."
+        },
+        {
+          "raw": "Elman, J.L., Bates, E.A., Johnson, M.H., Karmiloff-Smith, A., Parisi, D. and Plunkett, K. (1996). Rethinking Innateness: A Connectionist Perspective on Development , Cambridge: Bradford Books/MIT Press."
+        },
+        {
+          "raw": "Elman, J.L. (1998). \"Generalization, simple recurrent networks, and the emergence of structure\", in Proceedings of the Twentieth Annual Conference of the Cognitive Science Society, M.A. Gernsbacher and S.J. Derry (eds.), Mahwah, NJ: Lawrence Erlbaum Associates."
+        },
+        {
+          "raw": "Enard, W., Przeworski, M., Fisher, S., Lai, C., Wiebe, V., Kitano, T., et al . (2002). \"Molecular evolution of FOXP2, a gene involved in speech and language\",. Nature, 418 , 869-872."
+        },
+        {
+          "raw": "Epstein, S., Flynn, S., and Martohardjono, G. (1996). \"Second language acquisition: theoretical and experimental issues in contemporary research,\" Brain and Behavioral Sciences, 19:677-758."
+        },
+        {
+          "raw": "--- (1998). \"The strong continuity hypothesis: some evidence concerning functional categories in adult L2 acquisition\". In The generative study of second language acquisition, S. Flynn, G. Martohardjono and W. O'Neil (eds.), Mahwah, NJ: Lawrence Erlbaum, pp.61-77."
+        },
+        {
+          "raw": "Esser, K-H., Condon, C.J., Suga, N., and Kanwal, J.S. (1997). \"Syntax processing by auditory cortical neurons in the FM--FM area of the mustached bat Pteronotus parnellii\", Proc. Natl. Acad. Sci. USA . 94: 14019--14024."
+        },
+        {
+          "raw": "Etcoff, N.L., Magee, J.J. (1992). \"Categorical Perception of Facial Expressions\", Cognition 44: 227-240."
+        },
+        {
+          "raw": "Farrar M.J. (1990). \"Discourse and the acquisition of grammatical morphemes\", Journal of Child Language , 17: 607-24."
+        },
+        {
+          "raw": "--- (1992). \"Negative Evidence and Grammatical Morpheme Acquisition\", Developmental Psychology , 28: 90-98."
+        },
+        {
+          "raw": "Feldman, J. (1972). \"Some decidability results on grammatical inference and complexity\", Information and Control , 20: 244-62."
+        },
+        {
+          "raw": "Ferland, R. J., T. J. Cherry, et al . (2003). \"Characterization of Foxp2 and Foxp1 mRNA and protein in the developing and mature brain.\" Journal Of Comparative Neurology 460(2): 266-279."
+        },
+        {
+          "raw": "Fisher, S. E., F. Vargha-Khadem, et al . (1997). \"Localisation of a gene implicated in a severe speech and language disorder.\" American Journal Of Human Genetics 61(4): A28-A28."
+        },
+        {
+          "raw": "---, F. Vargha-Khadem, et al . (1998). \"Localisation of a gene implicated in a severe speech and language disorder,\" Nature Genetics 18(3): 298-298."
+        },
+        {
+          "raw": "---, C. S. L. Lai, et al . (2003). \"Deciphering the genetic basis of speech and language disorders.\" Annual Review of Neuroscience 26: 57-80."
+        },
+        {
+          "raw": "Flege, J.E., Yeni-Komshian, G.H. and Liu, S. (1999). \"Age constraints on second language acquisition\", Journal of Memory and Language , 41: 78-104."
+        },
+        {
+          "raw": "Fodor, J.A. (1981). \"The Present Status of the Innateness Controversy\", in RePresentations: Philosophical Essays on the Foundations of Cognitive Science , Cambridge: MIT Press/Bradford Books, pp. 257-316."
+        },
+        {
+          "raw": "Fodor, J.A. (1998). Concepts: Where Cognitive Science went Wrong , New York: Oxford University Press."
+        },
+        {
+          "raw": "Gold, E.M. (1967). \"Language Identification in the Limit\", Information and Control , 10: 447-74."
+        },
+        {
+          "raw": "Goldin-Meadow, S., and Mylander, C. (1983). \"Gestural communication in deaf children: noneffect of parental input on language development\", Science , 221: 372-4."
+        },
+        {
+          "raw": "Goldin-Meadow, S., and Mylander, C. (1990). \"The role of parental input in the development of a morphological system\", Journal of Child Language , 17(3): 527-63."
+        },
+        {
+          "raw": "Goldin-Meadow, S., and Mylander, C. (1998). \"Spontaneous sign systems created by deaf children in two cultures\", Nature , 391:279-81."
+        },
+        {
+          "raw": "Gopnik, M. (1997). \"Language deficits and genetic factors\", Trends in Cognitive Science , 1: 5-9"
+        },
+        {
+          "raw": "--- (1990a) \"Feature-blind grammar and dysphasia\", Nature , 344:715."
+        },
+        {
+          "raw": "--- (1990b) \"Genetic basis of a grammar defect\", Nature, 347: 26."
+        },
+        {
+          "raw": "---, and Crago, M. (1991). \"Familial aggregation of a developmental language disorder\", Cognition , 39: 1-50."
+        },
+        {
+          "raw": "Grant, J., V. Valian, et al . (2002). \"A study of relative clauses in Williams syndrome.\" Journal Of Child Language 29(2): 403-416."
+        },
+        {
+          "raw": "Graybiel, A. M. (1995). \"Building action repertoires: Memory and learning functions of the basal ganglia.\" Current Opinion In Neurobiology 5(6): 733-741."
+        },
+        {
+          "raw": "Graybiel, A. M. (1998). \"The basal ganglia and chunking of action repertoires.\" Neurobiology Of Learning And Memory 70(1-2): 119-136."
+        },
+        {
+          "raw": "Griffiths, P. (2002). \"What is innateness?\", Monist , 85: 70-85."
+        },
+        {
+          "raw": "Grimshaw, G.M., Adelstein, A., Bryden, M.P., and MacKinnon, G.E., 1998, \"First language acquisition in adolescence: Evidence for a critical period for verbal language development\", Brain and Language , 63: 237-55."
+        },
+        {
+          "raw": "Haesler, S., K. Wada, et al . (2004). \"FoxP2 expression in avian vocal learners and non-learners.\" Journal of Neuroscience 24(13): 3164-3175."
+        },
+        {
+          "raw": "Hakuta, K., Bialystok, E., and Wiley, E. (2003). \"Critical evidence: a test of the critical-period hypothesis for second-language acquisition\", Psycholigical Science, 141: 31-8."
+        },
+        {
+          "raw": "Hamilton, R.H. and Pascual-Leone, A. (1998). \"Cortical plasticity associated with Braille learning\", Trends in Cognitive Science , 2: 168-174."
+        },
+        {
+          "raw": "Harman, G.H. (1967). \"Psychological Aspects of the Theory of Syntax\", Journal of Philosophy , 64: 75-87."
+        },
+        {
+          "raw": "Harman, G. (1969). Comments on Linguistic Competence and Nativism. Synthese, 19 , 410-424."
+        },
+        {
+          "raw": "Harnad, S.R., ed. (1987). Categorical Perception : The Groundwork of Cognition, Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Harris, Z.S. (1951). Structural Linguistics , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Hauser, M.D., Chomsky, N., and Fitch, W.Y. (2002). \"The Faculty of Language: What Is It, Who Has It, and How Did It Evolve?\", Science, 298: 1569-1579."
+        },
+        {
+          "raw": "Hauser, M. D. and McDermott, J. (2003). \"The evolution of the music faculty: a comparative perspective\", Nature Neuroscience , 6: 663-668."
+        },
+        {
+          "raw": "Hauser, M.D., Weiss, D., and Marcus, G. (2002). \"Rule learning by cotton-top tamarins\", Cognition , 86: 15-22."
+        },
+        {
+          "raw": "Hirsh-Pasek, K., Trieman, R. and Schneidermann, M. (1984). \"Brown and Hanlon Revisited: Mothers' sensitivity to ungrammatical forms\", Journal of Child Language , 11: 81-88."
+        },
+        {
+          "raw": "Holland, A.L., Fromm, D.S., DeRuyter, F. and Stein, M. (1996). \"Treatment efficacy: aphasia\", Journal of Speech and Hearing Research , 39: S27-36."
+        },
+        {
+          "raw": "Hornstein, N. and Lightfoot, D., (eds.) (1981). Explanation in Linguistics: The Logical Problem of Language Acquisition , London: Longman."
+        },
+        {
+          "raw": "Hubel, D.H. and Wiesel, T.N. (1970). \"The period of susceptibility to the physiological effects of unilateral eye closure in kittens\", Journal of Physiology , 206: 419-436."
+        },
+        {
+          "raw": "Jackendoff, R. (1999). \"Possible stages in the evolution of the language capacity,\" Trends in Cognitive Sciences , 3:272-279."
+        },
+        {
+          "raw": "Jain, S., Osherson, D., Royer, J.S. and Sharma, A. (1999). Systems that Learn , 2nd Ed., Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Johnson, J. S., & Newport, E. L. (1989). \"Critical period effects in 2nd language-learning - the influence of maturational state on the acquisition of english as a 2nd language.\" Cognitive Psychology, 21 (1), 60-99."
+        },
+        {
+          "raw": "Johnson, J.S. and Newport, E.L. (1991). \"Critical Period Effects on universal properties of language: the status of subjacency in the acquisition of a second language\", Cognition , 39: 215-58."
+        },
+        {
+          "raw": "Karbe, H., Thiel, A., Weber-Luxemberger, G., Herholz, K., Kessler, J. and Heiss, W. (1998). \"Brain Plasticity in Poststroke Aphasia: What Is the Contribution of the Right Hemisphere?\", Brain and Language , 64: 215-230."
+        },
+        {
+          "raw": "Karmiloff-Smith, A., Grant, J., Berthoud, I., Davies, M., Howlin, P., and Udwin, O. (1997). \"Language and Williams Syndrome: How intact is intact?\", Child Development , 68(2): 246-62."
+        },
+        {
+          "raw": "---, J. H. Brown, et al . (2003). \"Dethroning the myth: Cognitive dissociations and innate modularity in Williams syndrome.\" Developmental Neuropsychology 23(1-2): 227-242."
+        },
+        {
+          "raw": "Katz, L.C., Weliky, M., and Crowley, J.C. (2000). \"Activity and the development of the visual cortex: new perpsectives\", in The New Cognitive Neurosciences, 2 nd Ed., M.S. Gazzaniga (ed.), Cambridge: MIT Press, pp. 199-212."
+        },
+        {
+          "raw": "Kegl J., Senghas A., Coppola M. (1999). \"Creation through contact: Sign language emergence and sign language change in Nicaragua.\" In M. DeGraff (ed), Comparative Grammatical Change: The Intersection of Language Acquisition, Creole Genesis and Diachronic Syntax, Cambridge MA: MIT Press, pp.179-237."
+        },
+        {
+          "raw": "Kellerman, E., van Ijzendorn, J., and Takashima, H. (1999). \"Retesting a universal: the Empty Category Principle and learners of (pseudo)Japanese\", in The acquisition of Japanese as a second language , K. Kanno (ed.), Amsterdam: John Benjamins, pp. 71-87."
+        },
+        {
+          "raw": "Kellerman, E. and Yoshioka, K. (1999). \"Inter- and intra-population consistency: a comment on Kanno (1998)\", Second Language Research , 15: 101-9."
+        },
+        {
+          "raw": "Kotsoni E., de Haan, M. and Johnson, M.H. (2001). \"Categorical perception of facial expressions by 7-month-old infants\", Perception , 30 (9): 1115-1125."
+        },
+        {
+          "raw": "Kuhl, P.K. (1994). \"Learning and Representation in Speech and Language\", Current Opinion in Neurobiology, 4: 812-822."
+        },
+        {
+          "raw": "--- (2000). \"A new view of language acquisition\", PNAS, 97 (22): 11850-11857."
+        },
+        {
+          "raw": "---, and Miller, J.D. (1975). \"Speech Perception by the Chinchilla: Voiced-Voiceless Distinction in Alveolar Plosive Consonants\", Science , 190: 69-72."
+        },
+        {
+          "raw": "---, Andruski, J.E., Chistovich, I.A., Chistovich, L.A., Kozhevnikova, E.V., Ryskina, V.L., Stolyarova, E.I., Sundberg, U., Lacerda, F. (1997a). \"Cross-Language Analysis of Phonetic Units in Language Addressed to Infants\", Science, 277: 684-686."
+        },
+        {
+          "raw": "---, Kiritani, S., Degughi, T., Hayashi, A., Stevens, E.B., Dugger, C.D. and Iverson, P. (1997b). \"Effects of language experience on speech perception: American and Japanese infants' perception of /ra/ and /la/\", Journal of the Acoustical Society of America , 100: 2425-38."
+        },
+        {
+          "raw": "Kujala, T., Alho, K., Huotilainen, M., Ilmoniemi, R.J., Lehtoski, A., Leionen, A., Rinne, T., Salonen, O., Sinkkonen, J., Standertskjold-Nordenstam, C.G., and Naatanen, R. (1997). \"Electrophysiological evidence for cross-modal plasticity in humans with early- and late-onset blindness\", Psychophysiology , 34: 213-6."
+        },
+        {
+          "raw": "Jones, P. (1995). Contradictions and unanswered questions in the Genie case: A fresh look at the linguistic evidence. Language and Communication, 15 (3), 261-280."
+        },
+        {
+          "raw": "Lai CSL, Fisher SE, Hurst JA, Vargha-Khadem F, Monaco AP (2001). \"A forkhead-domain gene is mutated in a severe speech and language disorder\", Nature , 413 (6855): 519-523."
+        },
+        {
+          "raw": "---, D. Gerrelli, et al . (2003). \"FOXP2 expression during brain development coincides with adult sites of pathology in a severe speech and language disorder.\" Brain 126: 2455-2462."
+        },
+        {
+          "raw": "Lasnik, H. (1989). \"On Certain Substitutes for Negative Data\", Demopoulos and Marras (1989:89-105)."
+        },
+        {
+          "raw": "Lasnik, H. and Uriagereka, J. (1986). A Course in GB Syntax: Lectures on Binding and Empty Categories (Current Studies in Linguistics), Cambridge: MIT Press."
+        },
+        {
+          "raw": "Lenneberg, E.H. (1964). \"A biological perspective of language\", in E.H. Lenneberg, ed., New Directions in the Study of Language , Cambridge: MIT Press. Pp.65-88"
+        },
+        {
+          "raw": "--- (1967). Biological Foundations of Language, New York: Wiley."
+        },
+        {
+          "raw": "Levy, Y. and Hermon (2003). \"Morphological abilities of Hebrew-speaking adolescents with Williams syndrome,\" Developmental Neuropsychology , 23(1-2):59-83"
+        },
+        {
+          "raw": "Lewontin, R. (1998). \"The Evolution of Cognition: Questions we will Never Answer,\" In R. Sternberg and D. Scarborough (eds.), An Invitation to Cognitive Science, Vol. 4: Methods, Models and Conceptual Issues , Cambridge, MIT Press, pp.107-32."
+        },
+        {
+          "raw": "Lieberman, P. (2002). \"On the nature and evolution of the neural bases of human language,\" American Journal of Physical Anthropology, 119, pp. 36-62.Liegeois, F., T. Baldeweg, et al . (2003). \"Language fMRI abnormalities associated with FOXP2 gene mutation.\" Nature Neuroscience 6(11): 1230-1237."
+        },
+        {
+          "raw": "Lumsden, J.S. (1999). \"Language acquisition and creolization\", Language Creation and Language Change: Creolization, Diachrony and Development , M. DeGraff (ed.), Cambridge: MIT Press, pp.129-57."
+        },
+        {
+          "raw": "Maratsos, M.P. (1989). \"Innateness and plasticity in language acquisition,\" in M.L. Rice and R.L. Schiefelbusch, eds., The Teachability of Language , Baltimore, Paul H. Brooks, 105-25."
+        },
+        {
+          "raw": "Markson, L. (2006). Core mechanisms of word learning. In Processes of Change in Brain and Cognitive Development: Attention and Performance Xxi (pp. 111-128). New York: Oxford Univ Press."
+        },
+        {
+          "raw": "Martin, R.C. (2003). \"Language Processing: Functional Organization and Neuroanatomical Basis\", Annual Review of Psychology , 54:55-89."
+        },
+        {
+          "raw": "Mayberry R.I., Eichen, E.B. (1991). \"The Long-Lasting Advantage of Learning Sign Language in Childhood - Another Look at the Critical Period for Language-Acquisition\", J Mem Lang, 30 (4): 486-512."
+        },
+        {
+          "raw": "Macdonald, C., (ed) (1995). \"Tacit Knowledge\" in Philosophy of Psychology: Debates on Psychological Explanation, Cambridge: Blackwell."
+        },
+        {
+          "raw": "McGonigle, B., Chalmers, M., and Dickinson, A. (2003). \"Concurrent disjoint and reciprocal classification by Cebus apella in seriation tasks: evidence for hierarchical organization\", Animal Cognition Vol. 6, No. 3: 185-197."
+        },
+        {
+          "raw": "Maess, B., Koelsch, S., Gunter, T. C. & Friederici, A. D., 2001, \"Musical Syntax is processed in Broca's area: an MEG study\", Nature Neuroscience, 4: 540-545."
+        },
+        {
+          "raw": "Marcus, G. F. (1998). \"Can connectionism save constructivism?\" Cognition , 66: 153-182."
+        },
+        {
+          "raw": "--- (2001). The Algebraic Mind: Integrating Connectionism and Cognitive Science , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "--- (2004). The Birth of the Mind: How a Tiny Number of Genes Creates the Complexity of Human Thought, Basic Books, New York."
+        },
+        {
+          "raw": "Margolis, E. (1998). \"How to Acquire a Concept\", Mind and Language, 13(3): 347-369."
+        },
+        {
+          "raw": "Matthews, R.J. (2001). \"Cowie's Anti-Nativism\", Mind and Language , 16: 215-230."
+        },
+        {
+          "raw": "von Melchner, L., Pallas, S.L. and Sur, M. (2000). \"Visual behaviour mediated by retunal projections directed to the auditory pathway\", Nature , 404: 871-76."
+        },
+        {
+          "raw": "Mervis, C. B., B. F. Robinson, et al . (2000). \"The Williams syndrome cognitive profile.\" Brain and Cognition, 44(3): 604-628."
+        },
+        {
+          "raw": "Mintz T.H. (2002). \"Category induction from distributional cues in an artificial language\", Memory and Cognition , 30: 678-686."
+        },
+        {
+          "raw": "Moerk, E. (1991). \"Positive evidence for negative evidence\", First Language , 11: 219-51."
+        },
+        {
+          "raw": "Mohr, J.P., Pessin, M.S., Finkelstein, S., Funkenstein, H.H., Duncan, G.W. and Davis, K.R. (1978). \"Broca aphasia: pathological and clinical\", Neurology , 28: 311-24."
+        },
+        {
+          "raw": "Morgan, J. L., Meier, R. P., & Newport, E. L. (1987). \"Structural packaging in the input to language-learning - contributions of prosodic and morphological marking of phrases to the acquisition of language.\" Cognitive Psychology, 19 (4), 498-550."
+        },
+        {
+          "raw": "Morgan, J.L. and Travis, L.L. (1989). \"Limits on negative information in language input\", Journal of Child Language, 16: 531-552."
+        },
+        {
+          "raw": "Morgan, J.L., Bonamo, K.M. and Travis, L.L. (1995). \"Negative Evidence on Negative Evidence\", Developmental Psychology , 31: 180-197."
+        },
+        {
+          "raw": "Morris, C. A. and C. B. Mervis (2000). \"Williams syndrome and related disorders.\" Annual Review of Genomics and Human Genetics 1: 461-484."
+        },
+        {
+          "raw": "Mufwene, S.S. (1999). \"On the language bioprogram hypothesis: hints from Tarzie\", Language Creation and Language Change: Creolization, Diachrony and Development , M. DeGraff (ed.), Cambridge: MIT Press, pp.95-127."
+        },
+        {
+          "raw": "Muller R.A., Rothermel R.D., Behen M.E., Muzik O., Chakraborty P.K., and Chugani H.T. (1999). \"Language organization in patients with early and late left-hemisphere lesion: a PET study\", Neuropsychologia, 37: 545-557."
+        },
+        {
+          "raw": "Myhill, J. (1991). \"Typological test analysis: tense and aspecte in creoles and second languages\", in Crosscurrents in Second Language Acquisition and Linguistic Theories , T. Huebner and C.A. Ferguson (eds.), Amsterdam: John Benjamins, pp. 93-121."
+        },
+        {
+          "raw": "Nazzi, T. and Ramus, F. (2003). \"Perception and acquisition of linguistic rhythm by infants\", Journal of Speech Communication , 41: 233-43."
+        },
+        {
+          "raw": "Nelson D.A., Marler P. (1989). \"Categorical perception of a natural stimulus continuum: birdsong\", Science , 244: 976-8."
+        },
+        {
+          "raw": "Newell, F.N., Bulthoff, H.H. (2002). \"Categorical perception of familiar objects\", Cognition 85 (2): 113-143"
+        },
+        {
+          "raw": "Newmeyer, F.J. (1986). Linguistic Theory in America , 2nd Ed., New York: Academic Press."
+        },
+        {
+          "raw": "--- (1997). Generative Linguistics: A Historical Perspective , London and New York: Routledge."
+        },
+        {
+          "raw": "Newport, E.L. (1990). \"Maturational constraints on language learning\", Cognitive Science, 14: 11-28."
+        },
+        {
+          "raw": "--- (2001). \"Reduced input in the acquisition of signed languages: contributions to the study of creolization\", Language Creation and Language Change: Creolization, Diachrony and Development , M. DeGraff (ed.), Cambridge: MIT Press, pp.161-78."
+        },
+        {
+          "raw": "Newport, E., Gleitman, H. and Gleitman, L. (1977). \"Mother, please, I'd rather do it myself: some effects and non-effects of maternal speech style\", in Talking to Children: Language Input and Acquisition, Snow, C. and Ferguson, C. (eds.), New York: Cambridge University Press, pp.109-50."
+        },
+        {
+          "raw": "Newport, E. L., & Aslin, R. N. (2004). Learning at a distance I. Statistical learning of non-adjacent dependencies. Cognitive Psychology, 48 (2), 127-162."
+        },
+        {
+          "raw": "Nishimura, H., Hashikawa, K., Doi, K., Iwaki, T., Watanabe, Y., Kusuoka, H., Nishimura, T. and Kubo, T. (1999). Nature, 397: 116."
+        },
+        {
+          "raw": "Norbury, C. F., D. V. M. Bishop, and Briscoe, J. (2002). \"Does impaired grammatical comprehension provide evidence for an innate grammar module?\" Applied Psycholinguistics 23(2): 247-268."
+        },
+        {
+          "raw": "O'Brien E.K., Zhang X.Y., Nishimura C., Tomblin J.B., Murray J.C. (2003). \"Association of specific language impairment (SLI) to the region of 7q31\", American Journal Of Human Genetics 72 (6): 1536-1543"
+        },
+        {
+          "raw": "Odling-Smee, J., Laland, K. and Feldman, M. 1996, \"Niche Construction,\" American Naturalist , 147:641-8."
+        },
+        {
+          "raw": "Pastore, R.E., Li, X.F. and Layer, J.K. (1990). \"Categorical perception of nonspeech chirps and bleats\", Percept Psychophys, 48(2):151-6."
+        },
+        {
+          "raw": "Pena, M., Bonatti, L.L., Nespor, M., and Mehler, J. (2002). \"Signal-driven computations in speech processing\", Science , 298: 604-7."
+        },
+        {
+          "raw": "Pinker, S. (1989). Learnability and Cognition: The Acquisition of Argument Structure , Cambridge, MA: Bradford/MIT Press."
+        },
+        {
+          "raw": "--- (1991). \"Rules of Language.\" Science , 253:530-35."
+        },
+        {
+          "raw": "--- (1994). The Language Instinct , New York: Harper Collins."
+        },
+        {
+          "raw": "--- (1997). How the Mind Works , New York, Norton."
+        },
+        {
+          "raw": "--- and Bloom, P. (1990). \"Natural Language and Natural Selection,\" Behavioral and Brain Sciences , 13, pp.707-84."
+        },
+        {
+          "raw": "Posner, M.I. and Raichle, M.E. (1994). Images of Mind. 2nd Ed., New York: W H Freeman & Co."
+        },
+        {
+          "raw": "Prinz, J.J. (2002). Furnishing the Mind: Concepts and their Perceptual Basis , Bradford Books/MIT Press."
+        },
+        {
+          "raw": "Pullum G.K. and Scholz, B.C. (2002). \"Empirical assessment of stimulus poverty arguments\", The Linguistic Review, 19 9-50.(Special issue, nos. 1-2: 'A Review of \"The Poverty of Stimulus Argument\",' ed. N. Ritter)."
+        },
+        {
+          "raw": "Putnam, H. (1971). \"The 'Innateness Hypothesis' and explanatory models in linguistics\", in The Philosophy of Language, J. Searle (ed.), London: Oxford University Press, pp.130-9."
+        },
+        {
+          "raw": "Quartz, S.R. and Sejnowski, T.J. (1997). \"The Neural Basis of Cognitive Development: A Constructivist Manifesto,\" Brain and Behavioral Sciences , 20:537-596."
+        },
+        {
+          "raw": "Ramus, F., Hauser, M.D., Miller, C., Morris, D., Mehler, J. (2000). \"Language Discrimination by Human Newborns and by Cotton-Top Tamarin Monkeys\", Science, 288: 349-351."
+        },
+        {
+          "raw": "Redington, M. and Chater, N. (1998). \"Connectionist and statistical approaches to language acquisition: A distributional perspective\", Language and Cognitive Processes , 13: 129-191."
+        },
+        {
+          "raw": "Rice, M. L. and K. Wexler (1996). \"Toward tense as a clinical marker of specific language impairment in English-speaking children.\" Journal of Speech and Hearing Research 39(6): 1239-1257."
+        },
+        {
+          "raw": "Ritter, N.A. (2002). 'A Review of \"The Poverty of Stimulus Argument\",' The Linguistic Review (Special Issue), 19:1-2."
+        },
+        {
+          "raw": "Roeper, T. and Williams, E., (eds.) (1987). Parameter Setting: Studies in Theoretical Psycholinguistics , Vol. 4, Dordrecht: Kluwer."
+        },
+        {
+          "raw": "Sadato, N. Pascual-Leone, A., Grafman, J., Ibanez, V., Deiber, M.P., Dold, G. and Hallett, M. (1996). \"Activation of the primary visual cortex by Braille reading in blind subjects\", Nature , 380: 526-8."
+        },
+        {
+          "raw": "Saffran, E.M. (2000). \"Aphasias and the relationship of language and brain\", Seminars in Neurology, 20: 409-418."
+        },
+        {
+          "raw": "Saffran, J.R., Aslin, R.N. and Newport, E.L. (1996). \"Statistical Learning by 8-Month-Old Infants\", Science , 274: 1926-28."
+        },
+        {
+          "raw": "Saffran, J.R. (2002). \"Constraints on statistical language learning\", Journal of Memory and Language , 47: 172-96."
+        },
+        {
+          "raw": "Saffran, J.R. and Thiessen, E.D. (2003). \"Pattern induction by infant language learners\", Developmental Psychology , 40: 484-94."
+        },
+        {
+          "raw": "Saffran, J. R., & Wilson, D. P. (2003). From syllables to syntax: Multilevel statistical learning by 12-month-old infants. Infancy, 4 (2), 273-284."
+        },
+        {
+          "raw": "Samet, J. (1986). \"Troubles with Fodor's Nativism\", Midwest Studies in Philosophy , X. Boston: Blackwells. 575-594."
+        },
+        {
+          "raw": "Sampson, G. (1989). \"Language Acquisition: Growth or Learning?\", Philosophical Papers , XVIII: 203-40."
+        },
+        {
+          "raw": "--- (2002). \"Exploring the richness of the stimulus\", The Linguistic Review , 19: 73-104. (Special issue, nos. 1-2: 'A Review of \"The Poverty of Stimulus Argument\"', N. Ritter (ed.))."
+        },
+        {
+          "raw": "Sapir, E. (1921). Language: An Introduction to the Study of Speech , Hillsdale, NJ: Erlbaum."
+        },
+        {
+          "raw": "Saxton M. (1997). \"The contrast theory of negative input\", Journal of Child Language , 24:139-61."
+        },
+        {
+          "raw": "---, Kulcsar B., Marshall G., and Rupra M.J., 1988, \"Longer-term effects of corrective input: an experimental approach\", Child Language , 25: 701-21."
+        },
+        {
+          "raw": "Scharff, C. and S. A. White (2004). Genetic components of vocal learning. Behavioral Neurobiology of Birdsong . 1016: 325-347."
+        },
+        {
+          "raw": "Scholz, B.C. and Pullum, G.K. (2002). \"Searching for arguments to support linguistic nativism\", The Linguistic Review , 19: 185-224. (Special issue, nos. 1-2: 'A Review of \"The Poverty of Stimulus Argument\",' N. Ritter(ed.))"
+        },
+        {
+          "raw": "Schulte, O. (2006). \"Formal Learning Theory\", The Stanford Encyclopedia of Philosophy (Spring 2006 Edition), Edward N. Zalta (ed.), URL = https://plato.stanford.edu/archives/spr2006/entries/learning-formal/ >."
+        },
+        {
+          "raw": "Sharwood Smith, M. (1994). Second Language Learning: Theoretical Foundations, London and New York: Longman."
+        },
+        {
+          "raw": "Shimojo, S. and Shams, L. (2001). \"Sensory modalities are not separate modalities: plasticity and interactions\", Current Opinion in Neurobiology , 11: 505-9."
+        },
+        {
+          "raw": "Shinohara, T. (1994). \"Rich classes inferable from positive data: length-bounded elementary formal systems\", Information and Computation , 108: 175-186."
+        },
+        {
+          "raw": "Singleton, J. L., & Newport, E. L. (2004). When learners surpass their models: The acquisition of American Sign Language from inconsistent input. Cognitive Psychology, 49 (4), 370-407."
+        },
+        {
+          "raw": "Skinner, B.F. (1957). Verbal Behavior , NY: Prentice Hall."
+        },
+        {
+          "raw": "Skuse, D.H. (1993). \"Extreme deprivation in early childhood\", in Language development in exceptional circumstances, D. Bishop and K. Mogford (eds.), Hillsdale, NJ: Erlbaum, pp. 29-46."
+        },
+        {
+          "raw": "Skyrms, B. (1996). The Evolution of the Social Contract , Cambridge, Cambridge University Press."
+        },
+        {
+          "raw": "--- (2002). The Stag Hunt and the Evolution of Social Structure , Cambridge, Cambridge University Press."
+        },
+        {
+          "raw": "Smith, E.E. and Medin, D.L. (1981). Categories and Concepts , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Smolensky, P. (1991). \"Connectionism, Constituency and the Language of Thought\", in Meaning in Mind: Fodor and His Critics, B. Loewer and G. Rey, (eds.), Cambridge MA: Blackwells, 201-227."
+        },
+        {
+          "raw": "Soames, S. (1984). \"Linguistics and Psychology\", Linguistics and Philosophy , 7: 155-79."
+        },
+        {
+          "raw": "Sokolov, J.L. and Snow, C.E. (1991). \"The Premature Retreat to Nativism,\" Behavioral and Brain Sciences, 14:635-6."
+        },
+        {
+          "raw": "Sterelny, K. (1989). \"Fodor's Nativism\", Philosophical Studies, 55: 119-141."
+        },
+        {
+          "raw": "--- 2003, Thought in a Hostile World: The Evolution of Human Cognition , London, Blackwells."
+        },
+        {
+          "raw": "Stich, S.P. (1971). \"What every speaker knows\", Philosophical Review , 80: 476-96."
+        },
+        {
+          "raw": "--- (1978). \"Beliefs and Subdoxastic States,\" Philosophy of Science , 45, pp.499-518."
+        },
+        {
+          "raw": "Stiles, J. (2000). \"Neural plasticity and cognitive development\", Developmental Neuroscience , 18 (2): 237-272."
+        },
+        {
+          "raw": "Stromswold, K. (2000). \"The cognitive neuroscience of language acquisition\", in The New Cognitive Neurosciences, 2 nd Ed M.S. Gazzaniga (ed.), Cambridge: MIT Press, pp.269-80."
+        },
+        {
+          "raw": "Takahashi K., Liu, F.C., Hirokawa, K., and Takahashi, H. (2003). \"Expression of Foxp2, a gene involved in speech and language, in the developing and adult striatum\", Journal of Neuroscience Research, 73 (1): 61-72."
+        },
+        {
+          "raw": "Tallal, P. (1980). \"Auditory Temporal Perception, Phonics, And Reading Disabilities In Children.\" Brain And Language 9(2): 182-198."
+        },
+        {
+          "raw": "Tallal, P., R. E. Stark, et al . (1985). \"Identification Of Language-Impaired Children On The Basis Of Rapid Perception And Production Skills.\" Brain and Language 25(2): 314-322."
+        },
+        {
+          "raw": "Teramitsu, I., L. C. Kudo, et al . (2004). \"Parallel FoxP1 and FoxP2 expression in songbird and human brain predicts functional interaction.\" Journal of Neuroscience 24(13): 3152-3163."
+        },
+        {
+          "raw": "Thiessen, E.D. and Saffran, J.R. (2003). \"When cues collide: Use of stress and statistical cues to word boundaries by 7-to 9-month-old infants\", Developmental Psychology , 39: 706-16."
+        },
+        {
+          "raw": "Thomas, M. and Karmiloff-Smith, A. (2002): \"Are developmental disorders like cases of adult brain damage? Implications from connectionist modeling.\" Behavioral and Brain Sciences, 25: 727--788"
+        },
+        {
+          "raw": "Tomasello, M. (1999). The Cultural Origins of Human Cognition , Cambridge, MA, Harvard University Press."
+        },
+        {
+          "raw": "--- (2000). \"Two Hypotheses about Primate Cognition,\" in C. Heyes and L. Huber (Eds.), Evolution of Cognition , Cambridge, MIT Press, pp.165-84."
+        },
+        {
+          "raw": "--- (2003). Constructing a Language: A Usage-Based Theory of Language Acquisition . Harvard University Press."
+        },
+        {
+          "raw": "vanderLely, H. K. J. and L. Stollwerck (1997). \"Binding theory and grammatical specific language impairment in children.\" Cognition 62(3): 245-290."
+        },
+        {
+          "raw": "van der Lely, H. K. J. and V. Christian (2000). \"Lexical word formation in children with grammatical SLI: a grammar-specific versus an input-processing deficit?\" Cognition 75(1): 33-63."
+        },
+        {
+          "raw": "van der Lely, H. K. J. and M. T. Ullman (2001). \"Past tense morphology in specifically language impaired and normally developing children.\" Language and Cognitive Processes 16(2-3): 177-217."
+        },
+        {
+          "raw": "Vargha-Khadem, F., Carr, L.J., Isaacs, E., Brett, E., Adams, C. and Mishkin, M. (1997). \"Onset of speech after left hemipsherectomy in a nine-year-old boy\", Brain , 120: 159-82."
+        },
+        {
+          "raw": "---, Watkins, K., Alcock, K., Fletcher, P. and Passingham, R., 1995, \"Praxic and nonverbal cognitive deficits in a large family with a genetically transmitted speech and language disorder,\" Proc. Natl. Acad. Sci. USA , 92:930-33."
+        },
+        {
+          "raw": "Volterra, V., O. Capirci, et al . (1996). \"Linguistic abilities in Italian children with Williams syndrome.\" Cortex 32(4): 663-677."
+        },
+        {
+          "raw": "Watkins, Dronkers & Vargha-Khadem, 'Behavioral analysis of an inherited speech and language disorder: comparison with acquired aphasia.' Brain (2002), 125, 452-464."
+        },
+        {
+          "raw": "White, L. (2003). Second Language Acquisition and Universal Grammar , Cambridge Textbooks in Linguistics, Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Wimsatt, W.C. (1999). \"Generativity, Entrenchment, Evolution and Innateness: Philosophy, evolutionary biology, and conceptual foundations of science\", in Where Biology Meets Psychology: Philosophical Essays, V. Hardcastle (ed.), Cambridge: Bradford Books/MIT Press, pp.139-179."
+        },
+        {
+          "raw": "Wright, A.A, Rivera, J.J., Hulse, S.H., Shyan, M. and Neiworth, J.J. (2000). \"Music perception and octave generalization in rhesus monkeys\", Journal of Experimental Psychology: General , 129 (3): 291-307."
+        },
+        {
+          "raw": "van Gelder, T. (1995). \"What Might Cognition Be, If Not Computation?\", Journal of Philosophy , 92: 345-381."
+        },
+        {
+          "raw": "Vargha-Khadem F., Watkins, K.E., Price, C.J., Ashburner, J., Alcock, K.J., Connelly, A., Frackowiak, R.S., Friston, K.J., Pembrey, M.E., Mishkin, M., Gadian, D.G., and Passingham, R.E. (1998). \"Neural basis of an inherited speech and language disorder\", Proceedings of the National Academy of Sciences, USA , 95 (21): 12695-12700."
+        },
+        {
+          "raw": "Watkins, K.E., Dronkers, N.F., and Vargha-Khadem, F. (2002). \"Behavioural analysis of an inherited speech and language disorder: comparison with acquired aphasia\", Brain , 125: 452-464."
+        },
+        {
+          "raw": "Zhang J.Z., Webb, D.M., and Podlaha, O. (2002). \"Accelerated protein evolution and origins of human-specific features: FOXP2 as an example\", Genetics, 162 (4): 1825-1835."
+        }
+      ],
+      "publishedAt": "2008-01-15T13:00:00.000Z",
+      "revisedAt": "2008-01-15T13:00:00.000Z"
+    }
+  }
+}

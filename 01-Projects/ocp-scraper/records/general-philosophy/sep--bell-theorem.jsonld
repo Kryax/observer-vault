@@ -1,0 +1,861 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/bell-theorem",
+  "meta": {
+    "title": "Bell's Theorem",
+    "description": "Bell's Theorem is the collective name for a family of results, all of which involve the derivation, from a condition on probability distributions inspired by considerations of local causality, together with auxiliary assumptions usually thought of as mild side-assumptions, of probabilistic predictions about the results of spatially separated experiments that conflict, for appropriate choices of quantum states and experiments, with quantum mechanical predictions. These probabilistic predictions take the form of inequalities that must be satisfied by correlations derived from any theory satisfying the conditions of the proof, but which are violated, under certain circumstances, by correlations calculated from quantum mechanics. Inequalities of this type are known as Bell inequalities , or sometimes, Bell-type inequalities . Bell's theorem shows that no theory that satisfies the conditions imposed can reproduce the probabilistic predictions of quantum mechanics under all circumstances. The principal condition used to derive Bell inequalities is a condition that may be called Bell locality , or factorizability . It is, roughly, the condition that any correlations between distant events be explicable in local terms, as due to states of affairs at the common source of the particles upon which the experiments are performed. See section 3.1 for a more careful statement. The incompatibility of theories satisfying the conditions that entail Bell inequalities with the predictions of quantum mechanics permits an experimental adjudication between the class of theories satisfying those conditions and the class, which includes quantum mechanics, of theories that violate those conditions. At the time that Bell formulated his theorem, it was an open question whether, under the circumstances considered, the Bell inequality-violating correlations predicted by quantum mechanics were realized in nature. Beginning in the 1970s, there has been a series of experiments of increasing sophistication to test whether the Bell inequalities are satisfied. With few exceptions, the results of these experiments have confirmed the quantum mechanical predictions, violating the relevant Bell Inequalities. Prior to 2015, however, each of these experiments was vulnerable to at least one of two loopholes, referred to as the communication , or locality loophole , and the detection loophole (see section 5). In 2015, experiments were performed that demonstrated violation of Bell inequalities with these loopholes blocked. Experimental demonstration of violation of the Bell inequalities has consequences for our physical worldview, as the conditions that entail Bell inequalities are, arguably, an integral part of the physical worldview that was accepted prior to the advent of quantum mechanics. If one accepts the lessons of the experimental results, then some one or other of these conditions must be rejected. For much of the interval between the original publication of Bell's theorem and the experiments of Aspect and his collaborators, interest in Bell's theorem was confined to a handful of physicists and philosophers. During that period, much of the discussions on the foundations of physics occurred in a mimeographed publication entitled Epistemological Letters . In the wake of the Aspect experiments (Aspect, Grangier, and Roger, 1982; Aspect, Dalibard, and Roger 1982), there was considerable philosophical discussion of the implications of Bell's theorem; see Cushing and McMullin, eds. (1989), for a snapshot of the philosophical discussions of the time. Interest was also stimulated by the publication of a collection of Bell's papers on the foundations of quantum mechanics (Bell 1987b). The rise of quantum information theory, which, among other things, explores the ways in which quantum entanglement can be used to perform tasks that would not be feasible classically, also contributed to raising awareness of the significance of Bell's theorem, which throws into sharp relief the difference between quantum entanglement-based correlations and classical correlations. The year 2014 was the 50th anniversary of the original publication of Bell's theorem, and was marked by a special issue of Journal of Physics A ( 47 , number 42, 24 October 2014), a collection of essays (Bell and Gao, eds., 2016), and a large conference comprising over 400 attendees (see Bertlmann and Zeilinger, eds., 2017). The interested reader is urged to consult these collections for an overview of current discussions on topics surrounding Bell's theorem. The shift in attitude of the physics community towards the importance of Bell's theorem was dramatically illustrated by the awarding of the Nobel Prize in Physics for 2022 to Alain Aspect, John Clauser, and Anton Zeilinger \"for experiments with entangled photons, establishing the violation of Bell inequalities and pioneering quantum information science.\"",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T09:40:21.227Z",
+    "dateModified": "2026-03-22T09:40:21.227Z",
+    "datePublished": "2004-07-20T14:00:00.000Z",
+    "keywords": [
+      "kochen specker",
+      "qm",
+      "qm bohm",
+      "qt epr",
+      "qt issues"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Bell's Theorem is the collective name for a family of results, all of which involve the derivation, from a condition on probability distributions inspired by considerations of local causality, together with auxiliary assumptions usually thought of as mild side-assumptions, of probabilistic predictions about the results of spatially separated experiments that conflict, for appropriate choices of quantum states and experiments, with quantum mechanical predictions. These probabilistic predictions take the form of inequalities that must be satisfied by correlations derived from any theory satisfying the conditions of the proof, but which are violated, under certain circumstances, by correlations calculated from quantum mechanics. Inequalities of this type are known as Bell inequalities , or sometimes, Bell-type inequalities . Bell's theorem shows that no theory that satisfies the conditions imposed can reproduce the probabilistic predictions of quantum mechanics under all circumstances. The principal condition used to derive Bell inequalities is a condition that may be called Bell locality , or factorizability . It is, roughly, the condition that any correlations between distant events be explicable in local terms, as due to states of affairs at the common source of the particles upon which the experiments are performed. See section 3.1 for a more careful statement. The incompatibility of theories satisfying the conditions that entail Bell inequalities with the predictions of quantum mechanics permits an experimental adjudication between the class of theories satisfying those conditions and the class, which includes quantum mechanics, of theories that violate those conditions. At the time that Bell formulated his theorem, it was an open question whether, under the circumstances considered, the Bell inequality-violating correlations predicted by quantum mechanics were realized in nature. Beginning in the 1970s, there has been a series of experiments of increasing sophistication to test whether the Bell inequalities are satisfied. With few exceptions, the results of these experiments have confirmed the quantum mechanical predictions, violating the relevant Bell Inequalities. Prior to 2015, however, each of these experiments was vulnerable to at least one of two loopholes, referred to as the communication , or locality loophole , and the detection loophole (see section 5). In 2015, experiments were performed that demonstrated violation of Bell inequalities with these loopholes blocked. Experimental demonstration of violation of the Bell inequalities has consequences for our physical worldview, as the conditions that entail Bell inequalities are, arguably, an integral part of the physical worldview that was accepted prior to the advent of quantum mechanics. If one accepts the lessons of the experimental results, then some one or other of these conditions must be rejected. For much of the interval between the original publication of Bell's theorem and the experiments of Aspect and his collaborators, interest in Bell's theorem was confined to a handful of physicists and philosophers. During that period, much of the discussions on the foundations of physics occurred in a mimeographed publication entitled Epistemological Letters . In the wake of the Aspect experiments (Aspect, Grangier, and Roger, 1982; Aspect, Dalibard, and Roger 1982), there was considerable philosophical discussion of the implications of Bell's theorem; see Cushing and McMullin, eds. (1989), for a snapshot of the philosophical discussions of the time. Interest was also stimulated by the publication of a collection of Bell's papers on the foundations of quantum mechanics (Bell 1987b). The rise of quantum information theory, which, among other things, explores the ways in which quantum entanglement can be used to perform tasks that would not be feasible classically, also contributed to raising awareness of the significance of Bell's theorem, which throws into sharp relief the difference between quantum entanglement-based correlations and classical correlations. The year 2014 was the 50th anniversary of the original publication of Bell's theorem, and was marked by a special issue of Journal of Physics A ( 47 , number 42, 24 October 2014), a collection of essays (Bell and Gao, eds., 2016), and a large conference comprising over 400 attendees (see Bertlmann and Zeilinger, eds., 2017). The interested reader is urged to consult these collections for an overview of current discussions on topics surrounding Bell's theorem. The shift in attitude of the physics community towards the importance of Bell's theorem was dramatically illustrated by the awarding of the Nobel Prize in Physics for 2022 to Alain Aspect, John Clauser, and Anton Zeilinger \"for experiments with entangled photons, establishing the violation of Bell inequalities and pioneering quantum information science.\"",
+    "context": "Opening section: 1. Introduction | Related entries: qm, qm-bohm, kochen-specker, qt-issues, qt-epr",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "general-philosophy"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry bell-theorem",
+        "uri": "https://plato.stanford.edu/entries/bell-theorem/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "3 author(s), 5 related entries, bibliography size 211"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2004-07-20T14:00:00.000Z and revised 2024-01-24T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2024-01-24T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/bell-theorem/",
+        "description": "SEP entry for bell-theorem"
+      }
+    ],
+    "solutionApproach": "1. Introduction"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/qm",
+      "ocp:sep/qm-bohm",
+      "ocp:sep/kochen-specker",
+      "ocp:sep/qt-issues",
+      "ocp:sep/qt-epr"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Myrvold, Wayne",
+        "type": "human"
+      },
+      {
+        "name": "Genovese, Marco",
+        "type": "human"
+      },
+      {
+        "name": "Shimony, Abner",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/bell-theorem/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 138,
+      "validation_diversity": 0.58,
+      "context_breadth": 0.35,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.88
+    },
+    "confidence": "tested",
+    "authority": "high",
+    "status": "draft",
+    "trustScore": 0.58
+  },
+  "extensions": {
+    "sep": {
+      "slug": "bell-theorem",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/bell-theorem/",
+      "preamble": "Bell's Theorem is the collective name for a family of results, all of which involve the derivation, from a condition on probability distributions inspired by considerations of local causality, together with auxiliary assumptions usually thought of as mild side-assumptions, of probabilistic predictions about the results of spatially separated experiments that conflict, for appropriate choices of quantum states and experiments, with quantum mechanical predictions. These probabilistic predictions take the form of inequalities that must be satisfied by correlations derived from any theory satisfying the conditions of the proof, but which are violated, under certain circumstances, by correlations calculated from quantum mechanics. Inequalities of this type are known as Bell inequalities , or sometimes, Bell-type inequalities . Bell's theorem shows that no theory that satisfies the conditions imposed can reproduce the probabilistic predictions of quantum mechanics under all circumstances. The principal condition used to derive Bell inequalities is a condition that may be called Bell locality , or factorizability . It is, roughly, the condition that any correlations between distant events be explicable in local terms, as due to states of affairs at the common source of the particles upon which the experiments are performed. See section 3.1 for a more careful statement. The incompatibility of theories satisfying the conditions that entail Bell inequalities with the predictions of quantum mechanics permits an experimental adjudication between the class of theories satisfying those conditions and the class, which includes quantum mechanics, of theories that violate those conditions. At the time that Bell formulated his theorem, it was an open question whether, under the circumstances considered, the Bell inequality-violating correlations predicted by quantum mechanics were realized in nature. Beginning in the 1970s, there has been a series of experiments of increasing sophistication to test whether the Bell inequalities are satisfied. With few exceptions, the results of these experiments have confirmed the quantum mechanical predictions, violating the relevant Bell Inequalities. Prior to 2015, however, each of these experiments was vulnerable to at least one of two loopholes, referred to as the communication , or locality loophole , and the detection loophole (see section 5). In 2015, experiments were performed that demonstrated violation of Bell inequalities with these loopholes blocked. Experimental demonstration of violation of the Bell inequalities has consequences for our physical worldview, as the conditions that entail Bell inequalities are, arguably, an integral part of the physical worldview that was accepted prior to the advent of quantum mechanics. If one accepts the lessons of the experimental results, then some one or other of these conditions must be rejected. For much of the interval between the original publication of Bell's theorem and the experiments of Aspect and his collaborators, interest in Bell's theorem was confined to a handful of physicists and philosophers. During that period, much of the discussions on the foundations of physics occurred in a mimeographed publication entitled Epistemological Letters . In the wake of the Aspect experiments (Aspect, Grangier, and Roger, 1982; Aspect, Dalibard, and Roger 1982), there was considerable philosophical discussion of the implications of Bell's theorem; see Cushing and McMullin, eds. (1989), for a snapshot of the philosophical discussions of the time. Interest was also stimulated by the publication of a collection of Bell's papers on the foundations of quantum mechanics (Bell 1987b). The rise of quantum information theory, which, among other things, explores the ways in which quantum entanglement can be used to perform tasks that would not be feasible classically, also contributed to raising awareness of the significance of Bell's theorem, which throws into sharp relief the difference between quantum entanglement-based correlations and classical correlations. The year 2014 was the 50th anniversary of the original publication of Bell's theorem, and was marked by a special issue of Journal of Physics A ( 47 , number 42, 24 October 2014), a collection of essays (Bell and Gao, eds., 2016), and a large conference comprising over 400 attendees (see Bertlmann and Zeilinger, eds., 2017). The interested reader is urged to consult these collections for an overview of current discussions on topics surrounding Bell's theorem. The shift in attitude of the physics community towards the importance of Bell's theorem was dramatically illustrated by the awarding of the Nobel Prize in Physics for 2022 to Alain Aspect, John Clauser, and Anton Zeilinger \"for experiments with entangled photons, establishing the violation of Bell inequalities and pioneering quantum information science.\"",
+      "firstSectionTitle": "1. Introduction",
+      "firstSectionText": "In 1964 John S. Bell, a native of Northern Ireland and a staff member of CERN (European Organisation for Nuclear Research) whose primary research concerned theoretical high energy physics, published a paper (Bell 1964) in the short-lived journal Physics , which eventually transformed the study of the foundation of quantum mechanics. The paper showed, under conditions that were relaxed in later work by Bell (1971, 1976) himself and by his followers (Clauser, Horne, Shimony, and Holt 1969, Clauser and Horne 1974, Aspect 1983, Mermin 1986), that, on the assumption of certain auxiliary conditions, no physical theory that satisfies a certain locality condition, which may be called Bell locality , can fully reproduce the quantum probabilities for outcomes of experiments. Since that time, variants on the theorem, with family resemblances, have been formulated. \"Bell's Theorem\" is the collective name for the entire family. The theorem has roots in Bell's investigations into the status of the hidden-variables program, and in earlier work concerning quantum entanglement. Bell presented several formulations of the theorem over the years (Bell 1964, 1971, 1976, 1990), and variants of it have been presented by others. The original derivation (1964) relied on a set-up involving perfect anticorrelation of the results of spin experiments on pairs of spin-1/2 particles prepared in the singlet state. Under this condition, the Bell locality condition entails that outcomes of experiments are predetermined by the complete specification of state, a condition which we will call outcome determinism (OD). Clauser, Horne, Shimony and Holt (1969) derived an inequality, the CHSH inequality, that does not require this assumption. Though in their proof they employed the condition OD, this condition is unnecessary for the derivation of the inequality, as shown by Bell (1971), who provided a proof of the CHSH inequality that relies on neither the assumption of perfect anticorrelation nor an assumption of outcome determinism. One line of investigation in the prehistory of Bell's Theorem is Bell's examination of the hidden-variables program. This program involves supplementation of the quantum mechanical state of a system by further \"elements of reality\", or \"hidden variables\", the incompleteness of the quantum state being the explanation for the statistical character of quantum mechanical predictions concerning the system. A pioneering version of a hidden variables theory was proposed by Louis de Broglie in 1926-7 (de Broglie 1927, 1928), and revived by David Bohm in 1952 (Bohm 1952; see also the entry on Bohmian mechanics ). In a paper (Bell 1966) that was written before the one in which Bell's theorem first appeared, but, due to an editorial mishap, was published later, Bell raises the question of the viability of a hidden-variables theory that reproduces the statistical predictions of quantum mechanics via averaging over better defined states that uniquely determine the result of any experiment that could be performed. In this paper he examines several theorems that had been presented as no-go theorems for theories of this sort, and supplements them with one of his own, a theorem that was independently formulated by Specker (1960), and published by Kochen and Specker (1967), and has come to be known as the Kochen-Specker Theorem or Bell-Kochen Specker Theorem (see entry on the Kochen-Specker Theorem for more details). In each case Bell argues that the proof contains premises that are physically unwarranted. The Bell-Kochen-Specker theorem is a corollary of Gleason's theorem (Gleason 1957), though Bell and Kochen-Specker obtain it directly, and not via Gleason's theorem, whose proof is considerably more intricate. The question addressed by Gleason has to do with assignments of probabilities to closed subspaces of a Hilbert space (or, equivalently, to projection operators onto such subspaces), such that the probabilities assigned to orthogonal projections are additive. Gleason proved that, in a Hilbert space of dimension 3 or greater, any such assignment of probabilities can be represented by a density operator. The BKS theorem deals with the special case in which the assignments are confined to the values 1 or 0. The assumption that a definite value (1 or 0) is to be assigned to each projector on the system's Hilbert space, with the condition that values assigned to commuting projectors be additive, is a weakening of the assumption of the von Neumann no-go theorem (von Neumann 1932), which assumes that the quantum mechanical additivity of expectation values of all observables, whether represented by commuting operators or not, extends to the hypothetical dispersion-free states (see section 2 of entry on the Kochen-Specker Theorem ). Despite the prima facie plausibility of this assumption, Bell regards it, too, as physically unmotivated, and therefore, unlike Kochen and Specker, does not regard the Bell-Kochen-Specker theorem as a no-go theorem for hidden-variables theories. The reason for this is that the assumption embodies a condition that was later to be known as noncontextuality . In a Hilbert space of dimension greater than two, any projection operator will be a member of more than one complete set of commuting projections. For each of these complete sets, there will be an experiment whose outcomes correspond to the projections in the set. The assumption of noncontextuality amounts to the assumption that a value can be assigned to a projection operator that is independent of which of these experiments is to be performed, or as Bell puts it, that \"measurement of an observable must yield the same value independently of what other measurements may be made simultaneously.\" The assumption need not hold; \"[t]he result of an observation may reasonably depend not only on the state of the system (including hidden variables) but also on the complete disposition of the apparatus\" (Bell 1966, 451; 1987b and 2004, 9 ). Noncontextual hidden-variables theories that reproduce the predictions of quantum mechanics are ruled out by the Bell-Kochen-Specker theorem. A natural question arises as to the possibility of a contextual hidden-variables theory on which the unavoidable contextuality is restricted to local dependencies. Is it possible to have a theory on which the outcome of an experiment performed in some spatial region \\(A\\) is determined by the complete state of a system in a way that does not depend on the disposition of experimental apparatus at a distance from \\(A\\)? Bell's article ends with a brief exposition of the de Broglie-Bohm theory, noting in particular the feature that \"in this theory an explicit causal mechanism exists whereby the disposition of one piece of apparatus affects the results obtained with a distant piece\" (Bell 1966, 452; 1987b and 2004, 11). The article ends with the remark: To the second of the above-quoted sentences is attached a note: \"Since the completion of this paper such a proof has been found.\" The potential drama of the announcement was spoiled by the fact that the follow-up paper containing the proof (Bell 1964) had already been published (see Jammer 1974, 303, for an account of the circumstances that led to the publication delay). The fact that Bell's theorem has roots into investigations on hidden-variables theories has led to a misconception that the theorem is a no-go theorem for hidden-variables theories tout court . There could be no such theorem, since, as Bell himself repeatedly emphasized, there is a functioning hidden-variables theory, the de Broglie-Bohm theory. Another line of investigation leading to Bell's Theorem was the investigation of quantum mechanical entangled states, that is, quantum states of a composite system that cannot be expressed either as products of quantum states of the individual components, or as mixtures of product states. That quantum mechanics admits of such entangled states was discovered by Erwin Schr&ouml;dinger (1926) in one of his pioneering papers, but the significance of this discovery was not emphasized until the paper of Einstein, Podolsky, and Rosen (1935). They examined correlations between the positions and the linear momenta of two well separated spinless particles and concluded that in order to avoid an appeal to nonlocality these correlations could only be explained by \"elements of physical reality\" in each particle -- specifically, both definite position and definite momentum -- and since this description is richer than permitted by the uncertainty principle of quantum mechanics their conclusion is effectively an argument for a hidden variables interpretation. See also the entry on the Einstein-Podolsky-Rosen paradox .",
+      "relatedEntries": [
+        "qm",
+        "qm-bohm",
+        "kochen-specker",
+        "qt-issues",
+        "qt-epr"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "qm"
+        },
+        {
+          "slug": "qm-bohm"
+        },
+        {
+          "slug": "kochen-specker"
+        },
+        {
+          "slug": "qt-issues"
+        },
+        {
+          "slug": "qt-epr"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 211,
+      "bibliography": [
+        {
+          "raw": "Abell&aacute;n, C., et al ., 2018, \"Challenging local realism with human choices,\" Nature , 577: 212-216."
+        },
+        {
+          "raw": "Aharonov, Y., Albert, D. Z., Vaidman, L., 1988, \"How the result of a measurement of a component of the spin of a spin-1/2 particle can turn out to be 100,\" Physical Review , 60: 1351-1354."
+        },
+        {
+          "raw": "Andreoletti, G., and L. Vervoort, 2022, \"Superdeterminism: a reappraisal,\" Synthese , 200: art. no. 361."
+        },
+        {
+          "raw": "Ansmann, M., et al ., 2009, \"Violation of Bell's inequality in Josephson phase qubits,\" Nature , 461: 504-506."
+        },
+        {
+          "raw": "Arntzenius, F., 1998, \"Curiouser and curiouser: A personal evaluation of modal interpretations,\" in Dieks, D. and Vermass, P. (eds). The Modal Interpretation of Quantum Mechanics , Dordrecht: Kluwer Academic: 337-377."
+        },
+        {
+          "raw": "Aspect, A., 1983, Trois tests exp&eacute;rimentaux des in&eacute;galit&eacute; de Bell par mesure de corr&eacute;lation de polarization de photons , Orsay: Th&egrave;se d'Etat."
+        },
+        {
+          "raw": "---, 1992, \"Bell's theorem: the na&iuml;ve view of an experimentalist,\" in Quantum [Un]speakables , R.A. Bertlmann and A. Zeilinger (eds.), Berlin-Heidelberg-New York: Springer, 119-153."
+        },
+        {
+          "raw": "---, 1999, \"Bell's inequality test: more ideal than ever,\" Nature , 398: 189-190."
+        },
+        {
+          "raw": "Aspect, A., Dalibard, J., and Roger, G., 1982, \"Experimental test of Bell's inequalities using time-varying analyzers,\" Physical Review Letters , 49: 1804-1807."
+        },
+        {
+          "raw": "Aspect, A., Grangier, P., and Roger, G., 1982, \"Experimental realization of Einstein-Podolsky-Rosen-Bohm Gedankenexperiment : a new violation of Bell's inequalities,\" Physical Review Letters , 49: 91-94."
+        },
+        {
+          "raw": "Bacciagaluppi, G., 2002, \"Remarks on space-time and locality in Everett's interpretation,\" in Placzek, T.. and Butterfield, J. (eds.), Non-locality and Modality , Berlin: Springer, 105-124."
+        },
+        {
+          "raw": "Ballentine, L. E, and Jarrett, J., 1987, \"Bell's theorem: Does quantum mechanics contradict relativity?\" American Journal of Physics , 55: 696-701."
+        },
+        {
+          "raw": "Baas, A., and B. Le Bihan, 2023, \"What Does the World Look Like according to Superdeterminism?\" The British Journal for the Philosophy of Science , 74: 555-572."
+        },
+        {
+          "raw": "Bedingham, D., 2011, \"Relativistic state reduction dynamics,\" Foundations of Physics , 41: 686-704."
+        },
+        {
+          "raw": "Bedingham, D., D&uuml;rr, D., Ghirardi, G.C., Goldstein, S., Tumulka, R., and Zangh&igrave;, N., 2014, \"Matter density and relativistic models of wave function collapse,\" Journal of Statistical Physics , 154: 623-631."
+        },
+        {
+          "raw": "Bell, J.S., 1964, \"On the Einstein-Podolsky-Rosen paradox,\" Physics , 1: 195-200; reprinted in Bell 1987b [2004], 14-21."
+        },
+        {
+          "raw": "---, 1966, \"On the problem of hidden variables in quantum mechanics,\" Reviews of Modern Physics , 38: 447-452; reprinted in Bell 1987b [2004], 1-13."
+        },
+        {
+          "raw": "---, 1971, \"Introduction to the hidden-variable question,\" in Foundations of quantum mechanics (Proceedings of the International School of Physics 'Enrico Fermi', course IL), B. d'Espagnat (ed.), New York: Academic, 171-181; reprinted in Bell 1987b [2004], 29-39."
+        },
+        {
+          "raw": "---, 1976, \"The theory of local beables,\" Epistemological Letters , 9: 11-24; reprinted in Bell 1985a, and in Bell 1987b [2004], 52-62."
+        },
+        {
+          "raw": "---, 1977, \"Free variables and local causality,\" Epistemological Letters , 15: 79-84; reprinted in Bell 1985b, and in Bell 1987b [2004], 100-104."
+        },
+        {
+          "raw": "---, 1981, \"Bertlmann's socks and the nature of reality,\" Journal de Physique Colloque C2, suppl&eacute;ment au n 3, Tome 42 : C2-41-46. Reprinted in Bell 1987b [2004], 139-158."
+        },
+        {
+          "raw": "---, 1984, \"Beables for quantum field theory,\" CERN-4035/84."
+        },
+        {
+          "raw": "---, 1985a, \"The theory of local beables,\" Dialectica , 39: 86-96; reprinted in Bell 1987b [2004], 52-62."
+        },
+        {
+          "raw": "---, 1985b, \"Free variables and local causality,\" Dialectica , 39: 103-106; reprinted in Bell 1987b [2004], 100-104."
+        },
+        {
+          "raw": "---, 1987a, \"Are there quantum jumps?\" in Schr&ouml;dinger: Centenary celebration of a polymath , C. Kilmister (ed.), 41-52. Cambridge: Cambridge University Press; reprinted in Bell 1987b [2004], 201-212."
+        },
+        {
+          "raw": "---, 1990, \"La nouvelle cuisine,\" in Between Science and Technology , A. Sarlemijn and P. Kroes (eds.), 97-115. Amsterdam: Elsevier; reprinted in Bell 2004, 232-248."
+        },
+        {
+          "raw": "---, 2004, Speakable and Unspeakable in Quantum Mechanics , 2nd edition, Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 2007, \"The Trieste lecture of John Stewart Bell,\" Journal of Physics A: Mathematical and Theoretical , 40: 2919-2933."
+        },
+        {
+          "raw": "Bell, M. and S. Gao (eds.), 2016, Quantum Nonlocality and Reality: 50 years of Bell's theorem , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Benatti, F., et al. (eds.), 2010, Quantum Information, Computation and Cryptography , Singapore: Springer Verlag."
+        },
+        {
+          "raw": "Berndl, K., D&uuml;rr, D., Goldstein, S., and Zangh&igrave;, N., 1996, \"Nonlocality, Lorentz invariance, and Bohmian quantum theory,\" Physical Review A , 53: 2062-2073."
+        },
+        {
+          "raw": "Bertlmann, R., and Zeilinger, A. (eds.), 2017, Quantum [Un]Speakables II: Half a Century of Bell's Theorem , Berlin: Springer-Verlag."
+        },
+        {
+          "raw": "Bierhorst, P., et al ., 2018, \"Experimentally generated randomness certified by the impossibility of superluminal signals,\" Nature , 556: 223-226"
+        },
+        {
+          "raw": "Bohm, D., 1951, Quantum Theory , Englewood Cliffs, NJ: Prentice-Hall."
+        },
+        {
+          "raw": "---, 1952, \"A suggested interpretation of the quantum theory in terms of 'hidden' variables,\" I. Physical Review , 85: 166-179; II. Physical Review , 85: 180-193."
+        },
+        {
+          "raw": "Bohm, D., and Aharonov, Y., 1957, \"Discussion of experimental proof for the paradox of Einstein, Podolsky, and Rosen,\" Physical Review , 108: 1070-1076."
+        },
+        {
+          "raw": "Branciard, C., Brunner, N., Gisin, N., Kurtsiefer, C., Lamas-Linares, A., Ling, A., and Scarani, V., 2008, \"Testing quantum correlations versus single-particle properties within Leggett's model and beyond,\" Nature Physics , 4: 681-685."
+        },
+        {
+          "raw": "Brown, H. R., and Christopher G. Timpson, C.G., 2016, \"Bell on Bell's theorem: the changing face of nonlocality,\" in Bell and Gao (eds.) 2016: 91-123."
+        },
+        {
+          "raw": "Butterfield, J., 1992, \"Bell's theorem: what it takes,\" The British Journal for the Philosophy of Science , 43: 41-83."
+        },
+        {
+          "raw": "Calder&oacute;n-Losada, O., et al ., 2020, \"A weak values approach for testing simultaneous Einstein-Podolsky-Rosen elements of reality for non-commuting observables\", Communications Physics , 3: 117."
+        },
+        {
+          "raw": "Cavalcanti, E., and Lal, R., 2014, \"On modifications of Reichenbach's principle of common cause in light of Bell's theorem,\" Journal of Physics A: Mathematical and Theoretical , 47: 424018."
+        },
+        {
+          "raw": "Chen, E.K., 2022, \"Bell's Theorem, Quantum Probabilities, and Superdeterminism,\" in The Routledge Companion to the Philosophy of Physics , E. Knox and A. Wilson (eds.), London: Routledge, 184-199."
+        },
+        {
+          "raw": "Christensen, B.G., et al ., 2013, \"Detection-loophole-free test of quantum nonlocality, and applications,\" Physical Review Letters , 111: 130406"
+        },
+        {
+          "raw": "Ciepoelewski, G.S., E. Okon, and D. Sudarsky, 2023, \"On Superdeterministic Rejections of Settings Independence,\" The British Journal for the Philosophy of Science , 74: 435-467."
+        },
+        {
+          "raw": "Cirel'son, B.S., 1980, \"Quantum generalizations of Bell's inequality,\" Letters in Mathematical Physics , 4: 93-100."
+        },
+        {
+          "raw": "Clauser, J.F., 1976, \"Experimental investigation of a polarization correlation anomaly,\" Physical Review Letters , 36: 1223-1226."
+        },
+        {
+          "raw": "---, 2017, \"Bell's theorem, Bell inequalities, and the 'probability normalization loophole',\" in Bertlmann and Zeilinger (eds.), 451-484."
+        },
+        {
+          "raw": "Clauser, J.F. and Horne, M.A., 1974, \"Experimental consequences of objective local theories,\" Physical Review D , 10: 526-535."
+        },
+        {
+          "raw": "Clauser, J.F., Horne, M.A., Shimony, A., and Holt, R.A., 1969, \"Proposed experiment to test local hidden-variable theories,\" Physical Review Letters , 23: 880-884."
+        },
+        {
+          "raw": "Clauser, J.F. and Shimony, A., 1978, \"Bell's theorem: experimental tests and implications,\" Reports on Progress in Physics , 41: 1881-1927."
+        },
+        {
+          "raw": "Colbeck, R., and Renner, R., 2011, \"No extension of quantum theory can have improved predictive power,\" Nature Communications , 2: 411."
+        },
+        {
+          "raw": "---, 2016, \"The completeness of quantum theory for predicting measurement outcomes,\" in Chiribella G. and Spekkens, R. (eds.) Quantum Theory: Informational Foundations and Foils , Dordrecht: Springer, 497-528."
+        },
+        {
+          "raw": "Costa de Beauregard, O., 1976, \"Time symmetry and interpretation of quantum mechanics,\" Foundation of Physics , 6: 539-559."
+        },
+        {
+          "raw": "---, 1977, \"Les duel1istes Bell et Clauser-Horne-Shimony ('C.H.S.') s'aveuglent en refusant la 'causalit&eacute; retrograde' inscrite en clair dans le formalisme,\" Epistemological Letters , 16: 1-8."
+        },
+        {
+          "raw": "Cramer, J., 1986, \"The transactional interpretation of quantum mechanics,\" Reviews of Modern Physics , 58: 647-687."
+        },
+        {
+          "raw": "---, 1988, \"An overview of the transactional interpretation of quantum mechanics,\" International Journal of Theoretical Physics , 27: 227-236."
+        },
+        {
+          "raw": "---, 2016, The Quantum Handshake: Entanglement, Nonlocality and Transactions , Berlin, Springer."
+        },
+        {
+          "raw": "Cushing, J.T., and McMullin, E. (eds.), 1989, Philosophical Consequences of Quantum Theory: Reflections on Bell's Theorem , Notre Dame, IN: University of Notre Dame Press."
+        },
+        {
+          "raw": "Davies, P.C.W., and Brown, J.R. (eds.), 1986, The Ghost in the Atom , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "de Broglie, L., 1927, \"La m&eacute;canique ondulatoire et la structure atomique de la mati&egrave;re et du rayonnement,\" Journal de Physique et du Radium , 8: 225-241."
+        },
+        {
+          "raw": "---, 1928, \"La nouvelle dynamique des quanta,\" in H. Lorentz (ed.), Rapports et Discussions du Cinqui&egrave;me Conseil de Physique Solvay , Paris: Gauthier-Villars, 105-141."
+        },
+        {
+          "raw": "d'Espagnat, B., 1979, \"The quantum theory and reality,\" Scientific American , 241: 158-181."
+        },
+        {
+          "raw": "---, 1984, \"Nonseparability and the tentative descriptions of reality,\" Physics Reports , 110: 201-264."
+        },
+        {
+          "raw": "Dickson, M., and Clifton, R., 1998, \"Lorentz-invariance in modal interpretations,\" in Dieks, D. and Vermass, P. (eds). The Modal Interpretation of Quantum Mechanics , Dordrecht: Kluwer Academic. 9-47."
+        },
+        {
+          "raw": "Di&oacute;si , L., 1987, \"A universal master equation for the gravitational violation of quantum mechanics,\" Physics Letters A , 120: 377-381."
+        },
+        {
+          "raw": "Dove, C., 1996, Explicit Wavefunction Collapse and Quantum Measurement , Ph.D. thesis, Department of Mathematical Sciences, University of Durham."
+        },
+        {
+          "raw": "D&uuml;rr, D., Goldstein, S., M&uuml;nch-Berndl, K., and Zangh&igrave;, N., 1999, \"Hypersurface Bohm-Dirac models,\" Physical Review A , 60: 2729-2736."
+        },
+        {
+          "raw": "D&uuml;rr, D., Goldstein, S., Norsen, T., Struyve, W., and Zangh&igrave;, N., 2014, \"Can Bohmian mechanics be made relativistic?\" Proceedings of the Royal Society A , 470: 20130699"
+        },
+        {
+          "raw": "Eberhard, P., 1978, \"Bell's theorem and the different concepts of locality,\" Nuovo Cimento , 46B: 392-419."
+        },
+        {
+          "raw": "---, 1993, \"Background level and counter efficiencies required for a loophole-free Einstein-Podolsky-Rosen experiment,\" Physical Review A , 47: R747-R750."
+        },
+        {
+          "raw": "Einstein, A., Podolsky, B., and Rosen, N., 1935, \"Can quantum-mechanical description of physical reality be considered complete?\" Physical Review , 47: 770-780."
+        },
+        {
+          "raw": "Elby, A., 1992, \"Should we explain the EPR correlations causally?\" Philosophy of Science , 59: 16-25."
+        },
+        {
+          "raw": "Fine, A., 1982a, \"Some local models for correlation experiments,\" Synthese , 50: 279-294."
+        },
+        {
+          "raw": "---, 1982b, \"Hidden variables, joint probability, and the Bell inequalities,\" Physical Review Letters , 48: 291-295."
+        },
+        {
+          "raw": "---, 1982c, \"Joint distributions, quantum correlations, and commuting observables,\" Journal of Mathematical Physics , 23: 1306-1310."
+        },
+        {
+          "raw": "---, 1989, \"Do correlations need to be explained?\" in Cushing and McMullin (eds.), 175-194."
+        },
+        {
+          "raw": "Foletto, G., et al ., 2020, \"Experimental Certification of Sustained Entanglement and Nonlocality after Sequential Measurements\", Physical Review Applied , 13: 044008."
+        },
+        {
+          "raw": "Freedman, Stuart J., 1972, Experimental Test of Local Hidden-variable Theories , Doctoral dissertation, University of California at Berkeley. ProQuest Dissertations Publishing."
+        },
+        {
+          "raw": "Freedman, S.J. and Clauser, J.F., 1972, \"Experimental test of local hidden-variable theories,\" Physical Review Letters , 28: 938-941."
+        },
+        {
+          "raw": "Fry, E.S. and Thompson, R.C., 1976, \"Experimental test of local hidden-variable theories,\" Physical Review Letters , 37: 465-468."
+        },
+        {
+          "raw": "Genovese, M., 2005, \"Research on hidden variables theory: a review of recent progresses,\" Physics Reports , 413: 319-396."
+        },
+        {
+          "raw": "---, 2016, \"Experimental tests of Bell's inequalities,\" in Bell and Gao (eds.), 124-140."
+        },
+        {
+          "raw": "Genovese, M., Gramegna, M., 2019, \"Quantum Correlations and Quantum Non-Locality: A Review and a Few New Ideas,\" Applied Science , 9: 5406."
+        },
+        {
+          "raw": "Genovese, M., Novero, C., Predazzi, E., 2001, \"Can experimental tests of Bell inequalities performed with pseudoscalar mesons be definitive?\" Physics Letters B , 513: 401-405."
+        },
+        {
+          "raw": "Ghirardi, G.C., Rimini, A., and Weber, T., 1980, \"A general argument against superluminal transmission through the quantum mechanical measurement process,\" Lettere al Nuovo Cimento , 27: 293-298."
+        },
+        {
+          "raw": "---, 1986, \"Unified dynamics for microscopic and macroscopic systems,\" Physical Review D 34: 470-491."
+        },
+        {
+          "raw": "Gisin, N., 1991, \"Bell's inequality holds for all non-product states,\" Physics Letters A , 154(5,6): 201-202. [Note: this paper was published with an erroneous title and ought to have been published under the title \"Bell's inequality is violated by all non-product states.\"]"
+        },
+        {
+          "raw": "Giustina, M., et al ., 2013, \"Bell violation using entangled photons without the fair-sampling assumption,\" Nature , 497: 227-230"
+        },
+        {
+          "raw": "Giustina, M., et al ., 2015, \"Significant loophole-free test of Bell's theorem with entangled photons,\" Physical Review Letters , 115: 250401."
+        },
+        {
+          "raw": "Gleason, A.M., 1957, \"Measures on the closed subspaces of a Hilbert space,\" Journal of Mathematics and Mechanics , 6: 885-893."
+        },
+        {
+          "raw": "Go, A., 2004, \"Observation of Bell inequality violation in B mesons,\" Journal of Modern Optics , 51: 991-998."
+        },
+        {
+          "raw": "Greenberger, D.M., Horne, M.A., and Zeilinger, A., 1989, \"Going beyond Bell's theorem,\" in Bell's Theorem, Quantum Theory and Conceptions of the Universe , Kafatos, M. (ed.), Dordrecht-Boston-London: Kluwer, 69-72."
+        },
+        {
+          "raw": "Greenberger, D.M., Horne, M.A., Shimony, A., Zeilinger, A., 1990, \"Bell's theorem without inequalities,\" American Journal of Physics , 58: 1131-1143."
+        },
+        {
+          "raw": "Hance, J. R., S. Hossenfelder, and T. N. Palmer, 2022, \"Supermeasured: Violating Bell-Statistical Independence Without Violating Physical Statistical Independence\", Foundations of Physics , 52: 81."
+        },
+        {
+          "raw": "Handsteiner, J. et al ., 2017, \"Cosmic Bell Test: measurement settings from Milky Way stars,\" Physical Review Letters , 118: 060401."
+        },
+        {
+          "raw": "Hardy, L., 1993, \"Nonlocality for two particles without inequalities for almost all entangled states,\" Foundations of Physics , 13: 1665-1668."
+        },
+        {
+          "raw": "Hensen, B., et al ., 2015, \"Loophole-free Bell inequality violation using electron spins separated by 1.3 kilometres,\" Nature , 526: 682-686."
+        },
+        {
+          "raw": "Heywood, P. and Redhead, M.L.G., 1983, \"Nonlocality and the Kochen-Specker paradox,\" Foundations of Physics , 13: 481-499."
+        },
+        {
+          "raw": "Hofer-Szab&oacute;, G., R&eacute;dei, M., and Szab&oacute;, L.E., 1999, \"On Reichenbach's common cause principle, and Reichenbach's notion of common cause,\" The British Journal for the Philosophy of Science , 50: 377-399."
+        },
+        {
+          "raw": "---, 2002, \"Common-causes are not common common-causes,\" Philosophy of Science , 69: 623-636."
+        },
+        {
+          "raw": "Holt, R.A., 1973, Atomic Cascade Experiments , Ph.D. Dissertation, Harvard University, ProQuest Dissertations Publishing."
+        },
+        {
+          "raw": "Hossenfelder, S., and T. Palmer, 2020, \"Rethinking Superdeterminism\", Frontiers in Physics , 8. doi:10.3389/fphy.2020.00139"
+        },
+        {
+          "raw": "Jammer, M., 1974, The Philosophy of Quantum Mechanics: The Interpretations of Quantum Mechanics in Historical Perspective , New York: John Wiley & Sons."
+        },
+        {
+          "raw": "Jarrett, J.P., 1983, Bell's Theorem, Quantum Mechanics, and Local Realism , Ph.D. Dissertation, University of Chicago, ProQuest Dissertations Publishing."
+        },
+        {
+          "raw": "---, 1984, \"On the physical significance of the locality conditions in the Bell arguments,\" No&ucirc;s , 18: 569-589."
+        },
+        {
+          "raw": "---, 1989, \"Bell's theorem: a guide to the implications,\" in Cushing and McMullin (eds.), 60-79."
+        },
+        {
+          "raw": "Kastner, R., 2013, The Transactional Interpretation of Quantum Mechanics: The Reality of Possibility , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Kent, A., 2005, \"Causal quantum theory and the collapse locality loophole,\" Physical Review A , 72: 012107."
+        },
+        {
+          "raw": "---, 2018, \"Testing causal quantum theory,\" Proceedings of the Royal Society A , 474: 20180501."
+        },
+        {
+          "raw": "Kochen, S. and Specker, E.P., 1967, \"The problem of hidden variables in quantum mechanics,\" Journal of Mathematics and Mechanics , 17: 59-87."
+        },
+        {
+          "raw": "Kocher, C.A. and Commins, E., 1967, \"Polarization correlation of photons emitted in an atomic cascade,\" Physical Review Letters , 18: 575-577."
+        },
+        {
+          "raw": "Lalo&euml;, F., 2001, \"Do we really understand quantum mechanics? Strange correlations, paradoxes, and theorems,\" American Journal of Physics , 69: 655-701."
+        },
+        {
+          "raw": "Lamehi-Rachti, M. and Mittig, W., 1976, \"Quantum mechanics and hidden variables: a test of Bell's inequality by the measurement of spin correlation in low-energy proton-proton scattering,\" Physical Review D , 14: 2543-2555."
+        },
+        {
+          "raw": "Leegwater, G., 2016, \"An impossibility theorem for parameter independent hidden variable theories,\" Studies in History and Philosophy of Modern Physics , 54: 18-34."
+        },
+        {
+          "raw": "Leifer, M.S., 2006, \"Quantum dynamics as an analog of conditional probability,\" Physical Review A , 74: 042310."
+        },
+        {
+          "raw": "Leifer, M.S., and Spekkens, R., 2011, \"Towards a formulation of quantum theory as a causally neutral theory of Bayesian inference,\" Physical Review A , 88: 052130."
+        },
+        {
+          "raw": "Maldacena, J. & Susskind, L., 2013, \"Cool horizons for entangled black holes,\" Fortschritte der Physik , 61: 781-811. doi:10.1002/prop.201300020"
+        },
+        {
+          "raw": "Matsukevich, D.N., Maunz, P., Moehring, D.L., Olmschenk, S., and Monroe, C., 2008, \"Bell inequality violation with two remote atomic qubits,\" Physical Review Letters , 100: 150404."
+        },
+        {
+          "raw": "Maudlin, T., 1994, Quantum Non-Locality and Relativity , Oxford: Blackwell. 2nd ed., 2002; 3rd ed., 2011."
+        },
+        {
+          "raw": "---, 2014, \"What Bell did,\" Journal of Physics A: Mathematical and Theoretical , 47: 424010."
+        },
+        {
+          "raw": "Mermin, N.D., 1980, \"Quantum mechanics vs local realism near the classical limit: A Bell inequality for spin \\(s\\),\" Physical Review D , 22: 356-361."
+        },
+        {
+          "raw": "---, 1981, \"Quantum mysteries for anyone,\" Philosophical Review , 78: 397-408."
+        },
+        {
+          "raw": "---, 1986, \"Generalizations of Bell's theorem to higher spins and higher correlations,\" in Fundamental Questions in Quantum Mechanics , L.M. Roth and A. Inomato (eds.), New York: Gordon and Breach, 7-20."
+        },
+        {
+          "raw": "---, 1990, \"Quantum mysteries revisited,\" American Journal of Physics , 58: 731-733."
+        },
+        {
+          "raw": "Myrvold, W.C., 2002, \"Modal interpretations and relativity,\" Foundations of Physics , 32: 1774-1784."
+        },
+        {
+          "raw": "---, 2016, \"Lessons of Bell's theorem: nonlocality, yes; action at a distance, not necessarily,\" in Bell and Gao (eds.) 2016: 237-260."
+        },
+        {
+          "raw": "---, 2019, \"Ontology for relativistic collapse theories,\" in Lombardi, O., Fortin, S., L&oacute;pez, C., and Holik, F. (eds.), Quantum Worlds: Perspectives on the Ontology of Quantum Mechanics , Cambridge, Cambridge University Press: 9-31."
+        },
+        {
+          "raw": "---, 2022, \"Relativistic Constraints on Interpretations of Quantum Mechanics,\" in The Routledge Companion to the Philosophy of Physics , E. Knox and A. Wilson (eds.), London: Routledge, 99-121."
+        },
+        {
+          "raw": "Norsen, T., 2007, \"Against 'Realism',\" Foundations of Physics , 37: 311-340."
+        },
+        {
+          "raw": "---, 2011, \"Bell's concept of local causality,\" American Journal of Physics , 79: 1261-1275."
+        },
+        {
+          "raw": "---, 2015, \"Are there really two different Bell's theorems?\" International Journal of Quantum Foundations , 1: 65-84."
+        },
+        {
+          "raw": "Page, D., 1982, \"The Einstein-Podolsky-Rosen physical reality is completely described by quantum mechanics,\" Physics Letters A , 91: 57-60."
+        },
+        {
+          "raw": "Pan, J., et al ., 2000, \"Experimental test of quantum non-locality in three-photon Greenberg-Horne-Zeilinger entanglement,\" Nature , 403: 515-519."
+        },
+        {
+          "raw": "Pearle, P., 1970, \"Hidden-variable example based upon data rejection,\" Physical Review D , 2: 1418-1425."
+        },
+        {
+          "raw": "---, 1997, \"Tales and tails and stuff and nonsense,\" in Cohen, R.S., Horne, M., and Stachel, J. (eds.), Experimental Metaphysics: Quantum Mechanical Studies for Abner Shimony, Volume One , Dordrecht, Kluwer Academic Publishers, 143-156."
+        },
+        {
+          "raw": "---, 2015, \"Relativistic dynamical collapse model,\" Physical Review D , 91: 105012."
+        },
+        {
+          "raw": "Penrose, R., 1989, The Emperor's New Mind , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 1996, \"On gravity's role in quantum state reduction,\" General Relativity and Gravitation , 28: 581-600."
+        },
+        {
+          "raw": "Piacentini, F., et al ., 2016, \"Measuring Incompatible Observables by Exploiting Sequential Weak Values,\" Physical Review Letters , 117: 170402."
+        },
+        {
+          "raw": "Popescu, S., 2014, \"Nonlocality beyond quantum mechanics,\" Nature Physics , 10: 264-270."
+        },
+        {
+          "raw": "Popescu, S. and Rohrlich, D., 1992, \"Generic quantum nonlocality,\" Physics Letters A , 166: 293-297."
+        },
+        {
+          "raw": "Price, H., 1994, \"A neglected route to realism about quantum mechanics,\" Mind , 103: 303-336."
+        },
+        {
+          "raw": "---, 1996, Time's Arrow and Archimedes' Point , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Price, H., and Wharton, K., 2015 , \"Disentangling the quantum world,\" Entropy , 17: 7752-7767."
+        },
+        {
+          "raw": "Rauch, D., 2018, \"Cosmic Bell test using random measurement settings from high-redshift quasars,\" Physical Review Letters , 121: 080403."
+        },
+        {
+          "raw": "Redhead, M., and Brown, H.R., 1991, \"Nonlocality in quantum mechanics,\" Proceedings of the Aristotelian Society, Supplementary Volumes , 65: 119-159."
+        },
+        {
+          "raw": "Reichenbach, H., 1956, The Direction of Time , Berkeley and Los Angeles: University of California Press."
+        },
+        {
+          "raw": "Rosenfeld, W., et al ., 2017, \"Event-ready Bell test using entangled atoms simultaneously closing detection and locality loopholes,\" Physical Review of Letters , 119: 010402."
+        },
+        {
+          "raw": "Rowe M.A., et al ., 2001, \"Experimental violation of a Bell's inequality with efficient detection,\" Nature , 409: 791-794."
+        },
+        {
+          "raw": "Salart, D., Baas, A., van Houwelingen, J. A. W., Gisin, N., and Zbinden, H., 2008, \"Spacelike separation in a Bell test assuming gravitationally induced collapses,\" Physical Review Letters , 100: 220404."
+        },
+        {
+          "raw": "Scardigli, F., 't Hooft, G., Severino, E., and Coda, P., 2019, Determinism and Free Will: New Insights from Physics, Philosophy, and Theology , Cham: Springer"
+        },
+        {
+          "raw": "Scheidl, T., et al ., 2010. \"Violation of local realism with freedom of choice,\" Proceedings of the National Academy of Sciences , 107: 19708-19713."
+        },
+        {
+          "raw": "Schr&ouml;dinger, E., 1926, \"Quantisierung als Eigenwertproblem,\" (4 communication), Annalen der Physik , 81: 109-139."
+        },
+        {
+          "raw": "---, 1935, \"Discussion of probability relations between separated systems,\" Proceedings of the Cambridge Philosophical Society , 31: 555-563."
+        },
+        {
+          "raw": "Selleri, F., 1983, \" Einstein locality and the \\(\\mathrm{K}^0\\) \\(\\bar{\\mathrm{K}}{}^0\\) system,\" Lettere al Nuovo Cimento , 36: 521-530."
+        },
+        {
+          "raw": "Shalm, L.K., et al ., 2015, \"Strong loophole-free test of local realism,\" Physical Review Letters , 115: 250402"
+        },
+        {
+          "raw": "Shimony, A., 1970, \"Scientific Inference,\" in The Nature and Function of Scientific Theories , R. Colodny (ed.), Pittsburgh: University of Pittsburgh Press, 79-172; reprinted in Shimony (1993a), 183-273."
+        },
+        {
+          "raw": "---, 1971, \"Experimental test of local hidden-variable theories,\" in Foundations of quantum mechanics: Proceedings of the International School of Physics 'Enrico Fermi', course IL , B. d'Espagnat (ed.), Academic Press, 182-194"
+        },
+        {
+          "raw": "---, 1978, \"Metaphysical problems in the foundations of quantum mechanics,\" International Philosophical Quarterly , 8: 2-17."
+        },
+        {
+          "raw": "---, 1983, \"Reflections on the philosophy of Bohr, Heisenberg, and Schr&ouml;dinger,\" in Physics, Philosophy, and Psychoanalysis , R. Cohen and L. Laudan (eds.), Dordrecht: D. Reidel, 209-222; reprinted in Shimony (1993b), 310-322."
+        },
+        {
+          "raw": "---, 1984a, \"Contextual hidden variables theories and Bell's inequalities,\" The British Journal for the Philosophy of Science , 35: 25-45."
+        },
+        {
+          "raw": "---, 1984b, \"Controllable and uncontrollable non-locality,\" in Foundations of Quantum Mechanics in the Light of New Technology , S. Kamefuchi (ed.), Tokyo, The Physical Society of Japan, 225-230. Reprinted in Shimony (1993b), 130-139."
+        },
+        {
+          "raw": "---, 1986, \"Events and processes in the quantum world,\" in Quantum Concepts in Space and Time , R. Penrose and C.J. Isham (eds.), Oxford: Oxford University Press, 182-203. Reprinted in Shimony (1993b), 140-162."
+        },
+        {
+          "raw": "---, 1988, \"Physical and philosophical issues in the Bohr-Einstein debate,\" in Niels Bohr: Physics and the World , H. Feschbach (ed.), Chur: Harwood, 285-304; reprinted in Shimony (1993b), 171-187."
+        },
+        {
+          "raw": "---, 1989, \"Search for a worldview which can accommodate our knowledge of microphysics,\" in Cushing and McMullin (eds.), (1989), 25-37."
+        },
+        {
+          "raw": "---, 1990, \"An exposition of Bell's theorem,\" in Sixty-Two Years of Uncertainty , A. Miller (ed.), New York: Plenum, 33-43; reprinted in Shimony (1993b), 90-103."
+        },
+        {
+          "raw": "---, 1991, \"Desiderata for a modified quantum dynamics,\" in PSA 1990 , A. Fine, M. Forbes, and L. Wessels (eds.), East Lansing, MI: Philosophy of Science Association, 49-59; reprinted in Shimony (1993b), 55-67."
+        },
+        {
+          "raw": "---, 2001, \"The logic of EPR,\" Annales de la Fondation Louis de Broglie , 26: 399-410."
+        },
+        {
+          "raw": "---, 2009, \"Unfinished work: a bequest,\", in Quantum Reality, Relativistic Causality, and Closing the Epistemic Circle , W. C. Myrvold and J. Christian (eds.). Berlin, Springer, 479-492."
+        },
+        {
+          "raw": "Shimony, A., Horne, M.A., and Clauser, J., 1976, \"Comment on 'The theory of local beables',\" Epistemological Letters , 13: 1-8. Reprinted in Shimony, Horne, and Clauser (1985), and in Shimony (1993), 163-167."
+        },
+        {
+          "raw": "---, 1985, \"Comment on 'The theory of local beables',\" Dialectica , 39: 97-102. Reprinted in Shimony (1993), 163-167."
+        },
+        {
+          "raw": "Shimony, A. and Stein, H., 2001, \"Comment on 'Nonlocal character of quantum theory',\" American Journal of Physics , 69: 848-853."
+        },
+        {
+          "raw": "---, 2003, \"On quantum non-locality, special relativity, and counterfactual reasoning,\" in Revisiting the Foundations of Relativistic Physics: Festschrift in Honor of John Stachel , A. Ashtekar, R.S. Cohen, D. Howard, J. Renn, S. Sarkar, and A. Shimony (eds.), Dordrecht-Boston-London: Kluwer, 499-521."
+        },
+        {
+          "raw": "Smerlak, M., and Rovelli, C., 2007, \"Relational EPR,\" Foundations of Physics , 37: 427-445."
+        },
+        {
+          "raw": "Specker, E., 1960, \"Die Logik nicht gleichzeitig enstscheidbarer Aussagen,\" Dialectica , 14: 239-246. See Specker (1975) for English translation."
+        },
+        {
+          "raw": "---, 1975, \"The logic of propositions which are not simultaneously decidable,\" in The Logico-Algebraic Approach to Quantum Mechanics, Volume I: Historical Evolution , C.A. Hooker, (ed.), Dordrecht-Boston: D. Reidel, 135-140. Translation of Specker (1960)."
+        },
+        {
+          "raw": "Stairs, A., 1978, Quantum Mechanics, Logic, and Reality , Doctoral Dissertation, The University of Western Ontario, ProQuest Dissertations Publishing."
+        },
+        {
+          "raw": "---, 1983, \"Quantum logic, realism, and value-definiteness,\" Philosophy of Science , 50: 578-602."
+        },
+        {
+          "raw": "Stapp, H.P., 1997, \"Nonlocal character of quantum theory,\" American Journal of Physics , 65: 300-304."
+        },
+        {
+          "raw": "---, 2001, \"Response to 'Comment on 'Nonlocal character of quantum theory' by Abner Shimony and Howard Stein',\" American Journal of Physics , 69: 854-859."
+        },
+        {
+          "raw": "Stein, H., 1991, \"On relativity theory and the openness of the future,\" Philosophy of Science , 58: 147-167."
+        },
+        {
+          "raw": "---, 2009, \"'Definability,''conventionality,' and simultaneity in Einstein-Minkowski space-time,\", in Quantum Reality, Relativistic Causality, and Closing the Epistemic Circle , W. C. Myrvold and J. Christian (eds.). Berlin, Springer, 403-422."
+        },
+        {
+          "raw": "Storz, S., et al ., 2023, \"Loophole-free Bell inequality violation with superconducting circuits,\" Nature , 617: 265-270"
+        },
+        {
+          "raw": "Suppes, P., and Zanotti, M., 1976, \"On the determinism of hidden variable theories with strict correlation and conditional statistical independence of observables,\" in Suppes, P. (ed.). Logic and Probability in Quantum Mechanics , Dordecht: D. Reidel Publishing Company, 445-455."
+        },
+        {
+          "raw": "'t Hooft, G., 2016, The Cellular Automaton Interpretation of Quantum Mechanics , Berlin, Springer."
+        },
+        {
+          "raw": "Thompson, C.H., 1996, \"The Chaotic Ball: an intuitive analogy for EPR experiments,\" Foundations of Physics Letters , 9: 357."
+        },
+        {
+          "raw": "Tipler, F.J., 2014, \"Quantum nonlocality does not exist,\" Proceedings of the National Academy of Sciences , 111: 11281-6."
+        },
+        {
+          "raw": "Tittel, W., Brendel, J., Zbinden, H., and Gisin N., 1998, \"Violation of Bell's inequalities by photons more than 10 km apart,\" Physical Review Letters , 81: 3563-3566."
+        },
+        {
+          "raw": "Tumulka, R., 2006, \"A relativistic version of the Ghirardi-Rimini-Weber model,\" Journal of Statistical Physics , 125: 825-844."
+        },
+        {
+          "raw": "Unruh, W.G., 2002, \"Is quantum mechanics non-local?\" in Non-Locality and Modality , T. Placek and J. Butterfield (eds.), Berlin: Springer: 125-136."
+        },
+        {
+          "raw": "Vaidman, L., 1994, \"On the paradoxical aspects of new quantum experiments,\" in D. Hull, M. Forbes and R.M. Burian (eds.), PSA 1994 , Volume 1, Philosophy of Science Association, 211-17."
+        },
+        {
+          "raw": "---, 2016, \"The Bell inequality and the many-worlds interpretation,\" in Bell and Gao (eds.) 2016: 195-203."
+        },
+        {
+          "raw": "van Fraassen, B., 1982, \"The Charybdis of realism: epistemological implications of Bell's inequality,\" Synthese , 52: 25-38."
+        },
+        {
+          "raw": "von Neumann, J., 1932, Mathematische Grundlagen der Quantenmechanik , Berlin, Springer Verlag; English translation in von Neumann 1955."
+        },
+        {
+          "raw": "---, 1955, Mathematical Foundations of Quantum Mechanics , Robert T. Beyer (trans.), Princeton: Princeton University Press; translation of von Neumann 1932."
+        },
+        {
+          "raw": "Wallace, D., 2012, The Emergent Multiverse: Quantum Theory according to the Everett interpretation , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Weihs, G., Jennewein, T., Simon, C., Weinfurter, H., and Zeilinger, A., 1998, \"Violation of Bell's inequality under strict Einstein locality conditions,\" Physical Review Letters , 81: 5039-5043."
+        },
+        {
+          "raw": "Werner, R., 1989, \"Quantum states with Einstein-Podolsky-Rosen correlations admitting a hidden-variable model,\" Physical Review A , 40: 4277-4281."
+        },
+        {
+          "raw": "---, 2014, \"Comment on 'What Bell did',\" Journal of Physics A: Mathematical and Theoretical , 47: 424011."
+        },
+        {
+          "raw": "Wharton, K. B., and N. Argaman, 2020, \" Colloquium : Bell's theorem and locally mediated reformulation of quantum mechanics,\" Reviews of Modern Physics , 92: 021002."
+        },
+        {
+          "raw": "White T.C., et al ., 2016, \"Preserving entanglement during weak measurement demonstrated with a violation of the Bell-Leggett-Garg inequality,\" npj Quantum Information , 2: 15022."
+        },
+        {
+          "raw": "Wigner, E., 1961, \"Remarks on the mind-body question,\" in Good, I.J., (ed.) The Scientist Speculates , London: Heinemann: 284-302."
+        },
+        {
+          "raw": "Wiseman, H., 2014, \"The two Bell's theorems of John Bell,\" Journal of Physics A: Mathematical and Theoretical , 47: 424001."
+        },
+        {
+          "raw": "Wiseman, H., and Cavalcanti, E., 2017, \" Causarum investigatio and the two Bell's theorems,\" in Bertlmann and Zeilinger (eds.), 119-142."
+        },
+        {
+          "raw": "Wiseman, H., and Rieffel, 2015, \"Reply to Norsen's paper 'Are there really two different Bell's theorems?'\" International Journal of Quantum Foundations , 1: 85-99."
+        },
+        {
+          "raw": "Wu, C.S., and Shaknov, I., 1950, \"The angular correlation of scattered annihilation radiation,\" Physical Review , 77: 136."
+        },
+        {
+          "raw": "Yin, J., et al ., 2017, \"Satellite-based entanglement distribution over 1200 kilometers,\" Science , 356: 1140-1144."
+        },
+        {
+          "raw": "Yin, J., et al ., 2020, \"Entanglement-based secure quantum cryptography over 1,120 kilometres,\" Nature , 582: 501-505."
+        },
+        {
+          "raw": "Zeilinger, A., 1999, \"Experiment and the foundations of quantum physics,\" Reviews of Modern Physics , 71: S288-S297."
+        },
+        {
+          "raw": "&#379;ukowski, M., 2017, \"Bell's theorem tells us not what quantum mechanics is , but what quantum mechanics is not ,\" in Bertlmann and Zelinger (eds.), 175-185."
+        },
+        {
+          "raw": "&#379;ukowski, M., and Brukner, &#268;., 2014, \"Quantum non-locality--it ain't necessarily so&hellip;,\" Journal of Physics A: Mathematical and Theoretical , 47: 424009."
+        }
+      ],
+      "publishedAt": "2004-07-20T14:00:00.000Z",
+      "revisedAt": "2024-01-24T13:00:00.000Z"
+    }
+  }
+}

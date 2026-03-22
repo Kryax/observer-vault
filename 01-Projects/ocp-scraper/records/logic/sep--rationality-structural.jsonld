@@ -1,0 +1,725 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/rationality-structural",
+  "meta": {
+    "title": "Structural Rationality",
+    "description": "Many paradigm instances of irrationality involve one's mental states failing to cohere with one another, in a fairly broad sense of 'cohere'. For example, it's commonly thought to be irrational to hold (obviously) inconsistent beliefs - say, to believe that you are a great cook, to believe that great cooks never overcook eggs, and yet to believe that you have overcooked the eggs. These three beliefs are jointly incoherent. Similarly, many central instances of practical irrationality, such as instrumental irrationality, can be thought of as instances of incoherence: it is incoherent to simultaneously intend to shop for groceries today, believe that to shop for groceries today you must get on your bike now, but yet not intend to get on your bike now. In recent years, many philosophers have come to refer to these incoherence-involving instances of irrationality as forms of 'structural irrationality', and to call the property of having mental states that do cohere with one another properly 'structural rationality'. Structural rationality is often contrasted with 'substantive rationality', which is typically understood in terms of responsiveness to normative reasons. So, for example, when we say that it isn't rational to (intend to) gamble one's life savings on the outcome of a horse race, this seems to reflect the existence of strong normative reasons against gambling (or intending to gamble) one's life savings on the outcome of the race, rather than pinpointing any incoherence that must be present in the mental states of anyone who gambles her life savings on the outcome of the race. Similarly, when we say it isn't rational to believe in astrology, this seems to reflect a judgment that there are strong normative reasons - presumably supplied by the available evidence - against believing in astrology, rather than presuming that anyone who believes in astrology must be incoherent. This entry is composed of three sections. In &sect;1, we survey debates about what structural rationality is, including the emergence of the concept in the contemporary literature, its key characteristics, its relationship to substantive rationality, its paradigm instances, and the questions of whether these instances are unified and, if so, how. In &sect;2, we turn to the debate about structural requirements of rationality - including controversies about whether they are \"wide-scope\" or \"narrow-scope\", synchronic or diachronic, and whether they govern processes or states; as well as examining various forms of skepticism about structural requirements of rationality. In &sect;3, we turn to the debate about the normative significance of structural rationality, surveying central challenges for the view that structural rationality is normatively significant and the theoretical options that arise in light of these challenges.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T09:06:07.200Z",
+    "dateModified": "2026-03-22T09:06:07.200Z",
+    "datePublished": "2023-09-12T14:00:00.000Z",
+    "keywords": [
+      "bounded rationality",
+      "dutch book",
+      "evidence",
+      "intention",
+      "logic normative",
+      "motivation",
+      "practical reason",
+      "rationality",
+      "rationality instrumental",
+      "rationality normative nonutility",
+      "rationality normative utility",
+      "reasons internal external",
+      "reasons just vs expl",
+      "weakness will"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Many paradigm instances of irrationality involve one's mental states failing to cohere with one another, in a fairly broad sense of 'cohere'. For example, it's commonly thought to be irrational to hold (obviously) inconsistent beliefs - say, to believe that you are a great cook, to believe that great cooks never overcook eggs, and yet to believe that you have overcooked the eggs. These three beliefs are jointly incoherent. Similarly, many central instances of practical irrationality, such as instrumental irrationality, can be thought of as instances of incoherence: it is incoherent to simultaneously intend to shop for groceries today, believe that to shop for groceries today you must get on your bike now, but yet not intend to get on your bike now. In recent years, many philosophers have come to refer to these incoherence-involving instances of irrationality as forms of 'structural irrationality', and to call the property of having mental states that do cohere with one another properly 'structural rationality'. Structural rationality is often contrasted with 'substantive rationality', which is typically understood in terms of responsiveness to normative reasons. So, for example, when we say that it isn't rational to (intend to) gamble one's life savings on the outcome of a horse race, this seems to reflect the existence of strong normative reasons against gambling (or intending to gamble) one's life savings on the outcome of the race, rather than pinpointing any incoherence that must be present in the mental states of anyone who gambles her life savings on the outcome of the race. Similarly, when we say it isn't rational to believe in astrology, this seems to reflect a judgment that there are strong normative reasons - presumably supplied by the available evidence - against believing in astrology, rather than presuming that anyone who believes in astrology must be incoherent. This entry is composed of three sections. In &sect;1, we survey debates about what structural rationality is, including the emergence of the concept in the contemporary literature, its key characteristics, its relationship to substantive rationality, its paradigm instances, and the questions of whether these instances are unified and, if so, how. In &sect;2, we turn to the debate about structural requirements of rationality - including controversies about whether they are \"wide-scope\" or \"narrow-scope\", synchronic or diachronic, and whether they govern processes or states; as well as examining various forms of skepticism about structural requirements of rationality. In &sect;3, we turn to the debate about the normative significance of structural rationality, surveying central challenges for the view that structural rationality is normatively significant and the theoretical options that arise in light of these challenges.",
+    "context": "Opening section: 1. What is Structural Rationality? | Related entries: bounded-rationality, dutch-book, evidence, intention, logic-normative, motivation, practical-reason, rationality-normative-utility, rationality-normative-nonutility, rationality, rationality-instrumental, reasons-internal-external, reasons-just-vs-expl, weakness-will",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "logic"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry rationality-structural",
+        "uri": "https://plato.stanford.edu/entries/rationality-structural/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "2 author(s), 14 related entries, bibliography size 149"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2023-09-12T14:00:00.000Z and revised 2023-09-12T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2023-09-12T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/rationality-structural/",
+        "description": "SEP entry for rationality-structural"
+      }
+    ],
+    "solutionApproach": "1. What is Structural Rationality?"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/bounded-rationality",
+      "ocp:sep/dutch-book",
+      "ocp:sep/evidence",
+      "ocp:sep/intention",
+      "ocp:sep/logic-normative",
+      "ocp:sep/motivation",
+      "ocp:sep/practical-reason",
+      "ocp:sep/rationality-normative-utility",
+      "ocp:sep/rationality-normative-nonutility",
+      "ocp:sep/rationality",
+      "ocp:sep/rationality-instrumental",
+      "ocp:sep/reasons-internal-external",
+      "ocp:sep/reasons-just-vs-expl",
+      "ocp:sep/weakness-will"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Kiesewetter, Benjamin",
+        "type": "human"
+      },
+      {
+        "name": "Worsnip, Alex",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/rationality-structural/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 105,
+      "validation_diversity": 0.59,
+      "context_breadth": 0.51,
+      "temporal_stability": 0.62,
+      "test_coverage": 0.78,
+      "documentation_quality": 0.93
+    },
+    "confidence": "tested",
+    "authority": "high",
+    "status": "draft",
+    "trustScore": 0.583
+  },
+  "extensions": {
+    "sep": {
+      "slug": "rationality-structural",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/rationality-structural/",
+      "preamble": "Many paradigm instances of irrationality involve one's mental states failing to cohere with one another, in a fairly broad sense of 'cohere'. For example, it's commonly thought to be irrational to hold (obviously) inconsistent beliefs - say, to believe that you are a great cook, to believe that great cooks never overcook eggs, and yet to believe that you have overcooked the eggs. These three beliefs are jointly incoherent. Similarly, many central instances of practical irrationality, such as instrumental irrationality, can be thought of as instances of incoherence: it is incoherent to simultaneously intend to shop for groceries today, believe that to shop for groceries today you must get on your bike now, but yet not intend to get on your bike now. In recent years, many philosophers have come to refer to these incoherence-involving instances of irrationality as forms of 'structural irrationality', and to call the property of having mental states that do cohere with one another properly 'structural rationality'. Structural rationality is often contrasted with 'substantive rationality', which is typically understood in terms of responsiveness to normative reasons. So, for example, when we say that it isn't rational to (intend to) gamble one's life savings on the outcome of a horse race, this seems to reflect the existence of strong normative reasons against gambling (or intending to gamble) one's life savings on the outcome of the race, rather than pinpointing any incoherence that must be present in the mental states of anyone who gambles her life savings on the outcome of the race. Similarly, when we say it isn't rational to believe in astrology, this seems to reflect a judgment that there are strong normative reasons - presumably supplied by the available evidence - against believing in astrology, rather than presuming that anyone who believes in astrology must be incoherent. This entry is composed of three sections. In &sect;1, we survey debates about what structural rationality is, including the emergence of the concept in the contemporary literature, its key characteristics, its relationship to substantive rationality, its paradigm instances, and the questions of whether these instances are unified and, if so, how. In &sect;2, we turn to the debate about structural requirements of rationality - including controversies about whether they are \"wide-scope\" or \"narrow-scope\", synchronic or diachronic, and whether they govern processes or states; as well as examining various forms of skepticism about structural requirements of rationality. In &sect;3, we turn to the debate about the normative significance of structural rationality, surveying central challenges for the view that structural rationality is normatively significant and the theoretical options that arise in light of these challenges.",
+      "firstSectionTitle": "1. What is Structural Rationality?",
+      "firstSectionText": "The term 'structural (ir)rationality' is relatively recent; to the best of our knowledge, its first use with its current meaning is in Scanlon (2007). However, philosophers have been theorizing about the underlying concept, using different terminology, for significantly longer. Interesting questions can be asked about whether historical figures such as Hume and Kant had theories of structural rationality. However, the contemporary debate about structural rationality can be more directly traced to a number of important articles and books from the 1970s and 80s (Hill 1973; Greenspan 1975; Dancy 1977; Darwall 1983), which largely focus on practical rationality. Darwall's 1983 book Impartial Reason is particularly instructive to focus on. The first half of the book is devoted to arguing against what Darwall calls the \"DBR thesis\", on which an agent's normative reasons are all dependent on her desires or ends - a thesis that was highly popular at the time. One line of support for the DBR thesis to which Darwall responds can be reconstructed roughly as follows: This line of argument, if successful, generates strongly subjectivist (and anti-moralist) results about reasons. For example, to adapt Darwall's memorable example, suppose Jo intends to kill Jay in the most violent way possible, and believes that the most violent way to kill Jay is with a cleaver. But suppose Jo does not intend to kill Jay with a cleaver. Jo is, then, practically irrational. According to the line of thought above, the way to explain this is by holding that Jo's intention to kill Jay in the most violent way possible - perhaps together with her belief that the most violent way to kill Jay is with a cleaver - gives her a strong reason to (intend to) kill Jay with a cleaver. Generalizing, the result is that Jo can give herself strong reasons to perform highly immoral (or, indeed, imprudent) acts merely by adopting ends to which those acts are (believed) necessary means. Not so fast, says Darwall, however. He focuses on critiquing the transition from (a) to (b) - though one could certainly also question the transition from (b) to (c). According to Darwall, the irrationality of failing to (intend to) take the (believed) means to one's ends need not equate to a failure to respond to one's reasons . Rather, it can be understood as a failure to conform to a sui generis rational requirement of coherence, which itself has no consequences for claims about reasons. Darwall calls such requirements principles of \"relative rationality\"; this notion is roughly equivalent to the more contemporary notion of structural rationality. As well as treating the requirement of instrumental rationality this way, Darwall makes a similar move regarding decision-theoretic principles that require us to do what maximizes subjective utility given our credences and preferences. The basic maneuver here recurs in the works of a number of other philosophers (McDowell 1995; Scanlon 1998, 2004; Broome 1999, 2001a, 2004; Dancy 2000). In each case, the aim is to avoid highly subjectivist or anti-moralist results about reasons, or instances of what is often called \"bootstrapping\" (Bratman 1987; Broome 2001a), whereby merely having an attitude that is itself immoral or unreasonable can give one reasons to adopt further immoral or unreasonable attitudes. And in each case, these results are avoided by treating the requirements of structural rationality as autonomous and distinct from requirements that concern responding to reasons. By making space for a distinctively structural or coherence-based notion of rationality, the thought goes, we can accommodate intuitions about the irrationality of incoherence without committing ourselves to potentially problematic subjectivist assumptions about normative reasons. Analogous points can be made in doxastic cases. To adapt an example from Fogal (2020), suppose that Ali believes that he is Superman, and believes that Superman can fly. If we now add that Ali believes that he cannot fly, Ali seems to be subject to a (further) charge of irrationality that he was not otherwise subject to. Should we conclude from this that, merely by believing that he is Superman and that Superman can fly, Ali gives himself a strong reason to believe that he can fly - one that he flouts by believing, instead, that he cannot fly? Many epistemologists would deny this: on most views, you can't make an evidentially unsupported belief reasonable just by adopting other, equally unsupported, beliefs that entail it. Indeed, as Broome (1999) points out, if this were so, then any belief could make itself reasonable, since all propositions entail themselves. Rather, the thought goes, we can account for Ali's irrationality by saying that he violates a requirement of structural rationality forbidding inconsistent beliefs (or, perhaps, particular kinds of inconsistent beliefs). Once reasons and requirements of structural rationality are distinguished in this way, a number of important questions arise. One pressing question is whether there are any reasons to comply with the requirements of structural rationality. We'll return to this question in &sect;3. Before that, there is more to be said about the notion of structural rationality and requirements thereof. As we have already seen, evaluations of structural rationality concern the coherence of one's mental states. However, we can get a sharper focus on the notion of structural rationality by identifying some further often identified features of evaluations of structural rationality or irrationality, which are supposed to distinguish them from evaluations of substantive rationality or irrationality. First, structural rationality typically concerns combinations of attitudes (and absences thereof), rather than individual attitudes (and absences thereof). Consider someone who believes \\(p\\) and believes not-\\(p\\). Either or both beliefs may fail to be substantively rational if they are ill-supported by the agent's epistemic reasons. But the structural irrationality lies in the combination, not in either individual belief. The same is true of, for example, intending to \\(\\Phi\\), believing that in order to \\(\\Phi\\) one must \\(\\Psi\\), but not intending to \\(\\Psi\\). Again, one or more of these states may fail to be individually substantively rational, but the structural irrationality lies in the combination. However, it is controversial whether structural rationality always concerns combinations of attitudes, rather than individual attitudes. Broome (2013: 153), for example, suggests that a belief in a conjunctive proposition of the form \\((p\\) & not-\\(p)\\) is, on its own, structurally irrational. Nor is it distinctive of structural rationality that it concerns combinations of attitudes. There may be failures of substantive rationality that obtain specifically in virtue of a combination of attitudes: for example, it might not be substantively rational to intend to go to a job interview tomorrow and intend to wear swim shorts tomorrow, even if either of these intentions is rationally permitted on its own. Second, and relatedly, evaluations of the structural rationality of some combination of attitudes can be made independently of judgments about which (if any) of the individual attitudes within the combination of attitude is substantively rational, or adequately supported by reasons. For example, suppose that Ravi believes that all taxes are illegitimate, while also believing that income taxes are legitimate. A left-liberal might judge that Ravi has good reasons for the second belief but not the first, while an anarcho-capitalist might judge the reverse, and a political agnostic might have no views about which of Ravi's beliefs, if either, is supported by good reasons. Yet this should be no barrier to all three agreeing that Ravi's combination of beliefs is structurally irrational. Similarly, even when we disagree about whether some end is worth pursuing, we should be able to agree that intending that end while not intending the believed means to it is structurally irrational. Third, evaluations of structural rationality can be made without knowing anything about the situation of the agent being evaluated, or about the agent's information about their situation. In this respect, they again contrast with evaluations of substantive rationality. Whether it is substantively rational for you to intend to go to medical school depends on the information available to you about your likely chances of succeeding in medical school, the costs of going, whether being a doctor would be a career you'd enjoy, and so on. We cannot possibly evaluate the substantive rationality of your intention to go to medical school without knowing what information is available to you about these matters. But if you simultaneously intend to go to medical school, believe that to do so you must take the entrance exam, and yet do not intend to take the entrance exam, then we can tell that you are structurally irrational, without needing to know this sort of information. Finally, evaluations of structural rationality may be called formal in the sense that we can tell whether combinations of attitudes are structurally irrational even when abstracting at least somewhat from their content. So, for example, it's always structurally irrational to believe \\(p\\) and believe not-\\(p\\), for any proposition \\(p\\), regardless of its content. Similarly, the means-end requirement says (or entails) that it is irrational to intend to \\(\\Phi\\), to believe that to \\(\\Phi\\) one must \\(\\Psi\\), and not intend to \\(\\Psi\\), for any actions \\(\\Phi\\) and \\(\\Psi\\), regardless of what they are. The distinction between structural and substantive rationality is not beyond dispute. Some hold that it does not bear scrutiny. Moreover, those who accept the distinction hold competing views on its significance as well as on the relation between substantive and structural rationality. First, there are those who identify rationality simpliciter with structural rationality (Scanlon 1998; Broome 2013, 2020; Ridge 2014: ch. 8). Such philosophers deny that what others call 'substantive rationality' is genuinely a kind of rationality at all: they hold that the requirements of structural rationality exhaust the requirements of rationality simpliciter . It is debatable to what extent this dispute is merely terminological or substantive. These philosophers don't deny that there is an important normative notion - viz. 'ought' or 'most reason' - that can be understood in terms of what one's reasons, on balance, support. But they want to withhold the label 'rationality' from it. One argument for withholding the label 'rationality' from (what we've called) substantive rationality proceeds from the purported conceptual constraint that rationality supervenes on the mind: there can be no change in whether an agent counts as rational without a change in her mental states (Wedgwood 2002; Broome 2013, 2020). It then holds that reasons do not supervene on the mind: one's reasons can change without one's mental states changing. Thus, it is concluded, rationality cannot require us to correctly respond to our reasons. The argument can be supported by intuitions about cases. In a famous case (Broome 2007a), Lois has a piece of fish in front of her, which unbeknownst to her, contains salmonella. The fact that the fish contains salmonella is a decisive reason for Lois not to eat it; yet, since Lois is unaware of this reason, she cannot be irrational for failing to respond to it. Arguably, it is precisely because rationality supervenes on the mind that Lois cannot be irrational for failing to respond to a reason that she is entirely unaware of. Defenders of the notion of substantive rationality reply that the notion of 'reasons' at work in the conception of rationality as reasons-responsiveness is in some important way constrained by the agent's epistemic position (Kiesewetter 2017; Lord 2018). Perhaps, for example, substantive rationality requires us to respond only to the reasons that our evidence makes available to us - often called \"available\" or \"possessed\" reasons. If this is so, then eating the fish may well be substantively rational for Lois. Moreover, while unpossessed reasons do not supervene on the mind, it is less clear that the same is true for possessed reasons. Thus, the rational requirement to correctly respond to these reasons may be compatible with the supervenience of rationality on the mind (Kiesewetter 2020). It is also worth noting that the proposal that rationality simpliciter is just structural rationality is much less popular in epistemology than it is in ethics and the practical rationality literature (Worsnip 2016b). In epistemology, it is orthodoxy that agents who fail to respond to their evidential reasons for belief thereby fail to be rational, and thus that there are rational requirements of reasons-responsiveness - i.e. requirements of substantive rationality. By contrast, purely coherentist theories of epistemic rationality - which effectively identify epistemic rationality with a kind of structural rationality - are now widely rejected. A second view about the relationship between structural and substantive rationality contends that these two notions of rationality ultimately come to the same thing (Wedgwood 2017; Smithies, forthcoming). This position can be motivated in part by taking on board the aforementioned point that substantive rationality requires us only to respond to those reasons that our evidence makes available to us. Putting this together with the claim that our evidence consists in or at least supervenes on our mental states, it can be argued that the rational requirement to respond to our evidentially available reasons is itself a requirement to ensure a kind of coherence between our mental states, in a broad sense of 'coherence'. Thus, it is argued, the distinction between substantive rationality (viz. reasons-responsiveness) and structural rationality (viz. coherence) breaks down. Defenders of the structural-substantive distinction respond that the notion of (in)coherence that we should employ in order to understand structural rationality is narrower than the one needed to break the distinction down (Fogal and Worsnip 2021). Consider someone who has a belief that is insufficiently supported by her (available) evidence: say, she believes that the Orioles will win today's baseball game, when her (available) evidence doesn't, in fact, give her sufficient grounds for thinking this. Suppose, however, that she holds her belief not in knowing defiance of her evidence, but rather because she simply mistakenly overestimates the probative strength of her evidence. In this case, she has a belief that is insufficiently supported by her (available) evidential reasons, and thus fails to be substantively rational. Yet it is only in a very broad sense of 'incoherent' that she is incoherent. In a narrower sense of 'incoherent', she need not be incoherent: as long as she does not recognize what her (available) reasons support believing, there seems to be no internal clash between her attitudes here. This narrow sense of 'incoherent' - it is held - is the one relevant for structural rationality. This position can be bolstered by appeal to the central characteristics of structural rationality identified in &sect;1.2 above. The judgment that there is a rational shortcoming involved in believing that the Orioles will win today depends on substantive judgments about reasons, and the circumstances and evidence of the agent. Moreover, this rational shortcoming isn't an instance of a more general pattern of irrationality that can be identified in abstraction from the content of the attitude involved. Additionally, the narrower sense of (in)coherence relevant for structural (ir)rationality is held to obtain only between what Scanlon (1998, 18ff.) has called \"judgment-sensitive attitudes\", such as beliefs and intentions, and cannot involve other mental states such as perceptions, which are not responsive to judgment or reasoning. Thus, to have beliefs that are out of whack with one's perceptual evidence will not be incoherent in this narrower sense, nor structurally irrational. A third set of views holds that, though substantive and structural rationality can be intelligibly distinguished, one is reducible to the other. Some hold that structural rationality can be reduced to substantive rationality (Kiesewetter 2017; Lord 2018; Henning 2018; Lasonen-Aarnio 2021; see also Singh forthcoming). One way of effecting this reduction is via the claim that what it is to be structurally irrational is to have a combination of attitudinal mental states such that it is guaranteed that, whatever one's situation (and thus, one's reasons) is like, at least one of the mental states fails to be substantively rational (Kiesewetter 2017: 235-39; see also Kolodny 2007a and 2008 and Lord 2018 for related ideas). For example, it seems plausible that whatever one's situation (and thus, one's reasons) is like, one's evidence can never sufficiently support both believing \\(p\\) and believing not-\\(p\\). If this is so, then to believe \\(p\\) and believe not-\\(p\\) is to have a combination of attitudinal mental states such that it is guaranteed that, whatever one's situation is like, at least one of these mental states fails to be substantively rational. Similarly, it might be thought, one's reasons could never support intending an end and believing that a means is necessary for that end, while also supporting not intending the means; and this is what makes the combination structurally irrational. Notice that this view is not one on which structural and substantive irrationality turn out to be the same property: having attitudes that guarantee a failure to respond correctly to one's reasons (structural irrationality) is a stronger property than merely having failed to respond correctly to one's reasons (a failure of substantive rationality). It thus accommodates the natural idea that structural rationality involves a distinct kind of failure. Critics of this view push back in a number of ways, but perhaps the most common response is to point to cases where jointly incoherent attitudes are individually permitted by one's reasons (Broome 2013: 85-6; Way 2013). For example, suppose that your evidence indicates that to go to the supermarket, you must get on your bike (thus permitting, or perhaps even requiring, belief in this proposition). And suppose that your reasons permit, but don't require, you to go to the supermarket. In that case, it seems like your reasons permit, but don't require, you to get on your bike. In that case, neither the intention to go to the supermarket, nor the belief that to do so you must get on your bike, nor the absence of an intention to get on your bike, fails to be substantively rational. Yet it seems that the three are still structurally irrational in combination. If this is right, then the structural irrationality of some combination of attitudes is not a guarantee that at least one of the attitudes fails to be substantively rational. Similarly, perhaps there are permissive cases with respect to one's doxastic attitudes (Ballantyne and Coffman 2011; Schoenfield 2014). For example, perhaps your evidence can permit a credence of 0.6 for \\(p\\), but also permit a credence of 0.61 for \\(p\\). Correspondingly, then, it permits a credence of either 0.39 or 0.4 for not-\\(p\\). In that case, neither a credence of 0.61 for \\(p\\) nor a credence of 0.4 for not-\\(p\\) fails to be substantively rational. Yet the combination of the two is structurally irrational (Staffel 2020). Various strategies have been proposed to deal with this challenge. Kolodny (2011) and Lord (2018: Ch.2) both suggest that the adoption of an intention can alter one's reasons to take the means, rendering a means-intention that was merely permitted prior to the adoption of the end-intention, substantively required (an analogous story about credences is suggested in Lord 2020). Drawing on work by Bratman (1987), Kiesewetter (2017: Ch. 10) argues that in cases of merely permissible ends, means-end incoherent agents will flout economical reasons because maintaining intentions that one will not carry out makes one susceptible to waste resources. With respect to doxastic incoherence, it is also an option to reject the kind of permissivism that is in conflict with explaining structural irrationality in terms of substantive requirements of rationality (e.g., White 2005, Schultheis 2018). On one alternative view, substantive epistemic rationality permits us to have imprecise credences rather than several precise credences that are probabilistically incoherent. Other philosophers can be understood as pursuing a reduction in the opposite direction: that is, a reduction of substantive rationality to structural rationality. For example, some hold that what it is to have a reason to \\(\\Phi\\) is to be such that, were one's mental states to be corrected for structural irrationality, one would be motivated to \\(\\Phi\\) - or desire to \\(\\Phi\\), or intend to \\(\\Phi\\), or similar (Smith 1994; Markovits 2014). Such accounts of reasons are often called \"idealized attitudes\" accounts. If reasons can be reduced to facts about structural rationality, this plausibly provides the materials to reduce substantive rationality (itself understood in terms of reasons-responsiveness) to facts about structural rationality too. However, idealized attitudes accounts of reasons have been subjected to numerous objections (see e.g. Enoch 2005). One important objection in the present context is that it is quite unclear how to generalize this view to reasons for (and thus, the substantive irrationality of) belief (Cuneo 2007: ch. 7). Another is that, since there is typically more than one way to correct for structural irrationality, such views will leave it radically indeterminate what our reasons are, or perhaps generate reasons for almost anything (Sampson 2021). Fourth, and finally, some philosophers hold that substantive and structural rationality are both equally genuine kinds of rationality and that neither is reducible to the other (Worsnip 2021). Such views owe us an account of how, if at all, these two kinds of rationality relate to one another: for example, can they come into conflict with one another? If substantive rationality often recommends one thing and structural rationality recommends another, this may seem dissatisfying, especially if there is nothing to be said about which demand takes rational precedence. Indeed, some may think the prospect of structural and substantive rationality conflicting shows that they can't both be bona fide sources of rational requirements. However, it's worth noting that the extent of any conflicts between structural and substantive rationality depends on the positive theory of structural rationality that we adopt. On a \"wide-scope\" view about structural rationality (see &sect;2.1 below), its requirements are merely negative, prohibiting incoherent combinations of attitudes, and one can come to satisfy the relevant requirement by revising any of the incoherent attitudes. If this is so, it reduces the potential for conflicts between substantive and structural rationality. This is because, on this view, structural rationality simply tells one that one should restore coherence in some way when one is incoherent, and this leaves room for substantive rationality to (sometimes) determine, more specifically, which way to do so. For example, consider again Ali, who believes that he is Superman and that Superman can fly. If Ali's evidence is normal, substantive rationality prohibits Ali from believing he can fly. Does structural rationality require him to believe he can fly? Not obviously: it might permit him instead to revise one of his original beliefs, requiring only that he either believe he can fly or revise one of these original beliefs. Some have argued, however, that conflicts between substantive and structural rationality can arise in subtler ways in special cases (Worsnip 2018a). So far, we've focused mostly on inconsistent beliefs and means-end incoherence as paradigm instances of structural irrationality. But there are many other putative instances. Any particular instance will be controversial, since it is always up for debate whether some combination of mental states really is structurally irrational. And it is not feasible to be completely comprehensive in identifying all the candidate instances. But we will draw attention to some of the (patterns of) combinations of states that are among the most plausible candidates. Let's begin with some combinations of doxastic states that are plausibly structurally irrational. Along with strictly contradictory beliefs - i.e., a belief in \\(p\\) and a belief in not-\\(p\\) - it is often thought that other logically inconsistent sets of beliefs are structurally irrational. For example, as mentioned earlier, it seems structurally irrational for Ali to believe he is Superman, believe that Superman can fly, and yet believe that he cannot fly. More strongly, some have thought that it is structurally irrational to fail to believe the logical entailments of one's beliefs - so that Ali would be irrational were he to believe that he is Superman, believe that Superman can fly, and merely fail to believe that he himself can fly . The requirement that one believes the logical entailments of one's beliefs is often called 'deductive closure'. However, there are thorny issues about whether all instances of inconsistency, or of failing to believe the logical entailments of one's beliefs, involve irrationality. First, it is not clear if this is so when the relevant inconsistency or entailment is extremely subtle and would take a complex logical proof to detect (Broome 2013: 154-5). Second, it is not clear that we are irrational for failing to clutter our minds with the infinite trivial consequences of our existing beliefs (Harman 1986: 12). In response to the first problem, some say that structural irrationality obtains only when one recognizes the relevant inconsistency or entailment (Sainsbury 2002). In response to the second, some say that, where \\(q\\) is some consequence of one's existing beliefs, one needs to care about whether \\(q\\) (Broome 2013) or attend to \\(q\\) to be structurally irrational for failing to believe \\(q\\). However, these restrictions do not deal with all purported cases of rational inconsistency. For example, the preface paradox (Makinson 1965) is a plausible case of rational but inconsistent beliefs (see esp. Christensen 2004). In this case, an author writes a book containing a number of claims, but modestly affirms in the preface that doubtless, the book contains errors - i.e., that at least one of the claims in the book is false. This total set of beliefs - the claims in the book, plus the preface claim - is inconsistent, but arguably, it is not irrational to hold these beliefs - even if one recognizes the inconsistency, and attends to and cares about the relevant beliefs. While some (MacFarlane 2004 - see Other Internet Resources) hold that this is a case where substantive and structural rationality conflict, others (Worsnip 2016a) have argued that the inconsistent beliefs in these cases are not even structurally irrational. It is also widely held that agents can be structurally irrational in virtue of the ways that their first-order beliefs combine with their higher-order beliefs: that is, with beliefs about the normative status of their first-order beliefs, or about their evidence for them. For example, it's often thought to be structurally irrational to believe \\(p\\) while also believing that one's evidence does not adequately support \\(p\\) - or to fail to believe \\(p\\) while also believing that one's evidence decisively supports \\(p\\) (see, among many others, Kolodny 2005; Feldman 2005; Titelbaum 2015). Such combinations of states are sometimes described as \"epistemically akratic\" (Horowitz 2014; Greco 2014). While some deny that such states must be irrational on the grounds that they can be rational in cases of misleading higher-order evidence (Coates 2012; Lasonen-Aarnio 2020), others think that it is at most substantively rational, but not structurally rational, to be epistemically akratic in such cases (Worsnip 2018a). Many of the kinds of irrationality pinpointed by formal epistemologists, which typically pertain to credences rather than to full belief, can also be plausibly regarded as structural. For example, (most) failures to conform one's credences to the axioms of probability - such as the aforementioned case of assigning credence 0.6 to \\(p\\) and credence 0.41 to not -\\(p\\) - are plausibly structurally irrational. Somewhat more controversially, failing to update one's credences via conditionalization might be viewed as a kind of structural irrationality between one's prior and posterior credences. The latter case is more controversial, because this kind of \"incoherence\" is typically understood as diachronic, whereas some think that structural irrationality is a synchronic phenomenon (see &sect;2.3). Consequently, viewing it as a kind of incoherence either requires us to pinpoint some kind of synchronic failure that occurs when one fails to conditionalize properly, or to allow for diachronic instances of structural irrationality. Let's now turn to forms of structural irrationality that (at least partly) involve non-doxastic states. One paradigmatic example of structural irrationality that we've already mentioned is means-end incoherence (also known as 'instrumental irrationality', though this term is sometimes used with other meanings; see also the entry on instrumental rationality ), whereby one intends to \\(\\Phi\\), believes that in order to \\(\\Phi\\) one must \\(\\Psi\\), but does not intend to \\(\\Psi\\). Besides this, perhaps the most common example of structural irrationality involving non-doxastic states is practical akrasia - believing one ought, all things considered, to \\(\\Phi\\) but not intending to \\(\\Phi\\) (see, among many others, Broome 2001b, 2013; Kolodny 2005; for dissent, see Arpaly 2000). Notably, this form of structural irrationality (as well as means-end incoherence) involves incoherence between a belief and an intention (or lack of), thus bridging doxastic and conative states. Another example of a form of incoherence that bridges doxastic and conative states might be intending to do something that one believes one cannot do. There are also plausible examples of structural irrationality that obtain solely between conative states. It's often held that it is structurally irrational to have contradictory intentions - that is, to intend to \\(\\Phi\\) and intend not to \\(\\Phi\\). And as in the doxastic case, there are forms of incoherence studied by formally-inclined philosophers (and economists) that are naturally thought of as instances of structural irrationality - such as having cyclical preferences, whereby one prefers \\(A\\) to \\(B\\), prefers \\(B\\) to \\(C\\), and yet prefers \\(C\\) to \\(A\\) (Davidson, McKinsey and Suppes 1955; Gaus 2008: 36-40). Finally - though this is understudied - there may be forms of structural irrationality that involve affective and emotional states (see also the entry on emotion , section 10). For example, perhaps it is structurally irrational to hope for something that one believes to be bad, or to fear something that one believes to be good. And perhaps it is also irrational to hope for or fear something that one believes to be impossible. As the above list makes clear, the instances of structural irrationality are a diverse bunch. One may reasonably wonder what, if anything, all these instances have in common. Some (e.g. Broome 2013) seem to think that it is enough simply to say that they are all combinations of states that are jointly irrational, but others aspire to identify something deeper in virtue of which they share this property. One way of trying to do this is to embrace the reductivist view mentioned in &sect;1.3 above. On this view, what structurally irrational states have in common is that they are all combinations of attitudes that cannot simultaneously be supported by one's reasons. However, as we saw, this view faces some important challenges, such as accounting for the structural irrationality of sets of individually permissible attitudes. (It's worth noting that there is another family of views that also, in a different way, tries to explain structural rationality in terms of reasons. On these views, what unifies structurally irrational states is that they involve the agent's going against her beliefs about reasons (\"transparency\" accounts), or her apparent reasons (\"apparent reasons accounts\"). We discuss these views, and problems with them, in &sect;3.3.) In a similar but somewhat different vein, some explore the idea that attitudes are structurally irrational just in case they can't all \"succeed\", or fulfil their \"aim\", where this might be truth for beliefs and satisfaction or correctness for intentions or preferences (Fink forthcoming; Fullhart and Martinez forthcoming; see also Gibbard 2003; Brunero 2020: Ch. 7; Rosa 2022; Singh forthcoming). However, this proposal struggles to explain the incoherence of other mental states, such as credences. It is also far from obvious that akratic attitude combinations cannot be jointly successful - after all, the beliefs involved in epistemic akrasia are logically consistent, and it is possible for a belief that one ought to \\(\\Phi\\) to be true even if the corresponding intention is not satisfied. Proponents of this view are thus pressed to either accept certain revisionary implications, to introduce more substantive and hence more controversial success conditions for attitudes, or to give up the ambition to provide a fully unifying account of structural irrationality. Another at least partially unifying proposal is \"cognitivism\", which aspires to reduce certain structural requirements governing intention (such as that of means-end coherence) to certain structural requirements governing belief (such as that of deductive closure) (Harman 1976; Velleman 1989; Wallace 2001; Setiya 2007). This view is premised on a corresponding cognitivism about intention, on which, roughly, intending to \\(\\Phi\\) involves believing one will \\(\\Phi\\). Given this, failures of means-end coherence (for example) arguably result in one's violating closure - specifically, violating a modus ponens requirement by believing one will \\(\\Phi\\), believing that one will \\(\\Phi\\) only if one \\(\\Psi\\)-s, but not believing that one will \\(\\Psi\\). As cognitivists recognize (Setiya 2007), their account must be complicated or supplemented to deliver this result. This is because even if intending to \\(\\Phi\\) involves believing that one will \\(\\Phi\\), it doesn't follow that not intending to \\(\\Psi\\) involves not believing that one will \\(\\Psi\\) (perhaps one believes that one will unintentionally \\(\\Psi)\\). Moreover, the view that an intention to \\(\\Phi\\) involves believing one will \\(\\Phi\\) has been criticized (e.g., Bratman 2009a). Further, even if cognitivists are right to think that means-end incoherence necessarily involves doxastic incoherence, there are reasons to think that the former involves a distinctively practical mistake that cannot be reduced to a mistake in one's cognitive attitudes (e.g., Brunero 2020: Ch. 6). And finally, in our context, it is an open question whether cognitivism can be a fully unifying theory of structural rationality, as it is unclear how, for example, practical akrasia can be understood as a violation of a purely doxastic structural requirements, or how cognitivism delivers unity within the class of doxastic structural requirements. A proposal put forward by some formally-inclined philosophers is that structurally irrational states are those that make one exploitable to loss through devices such as Dutch books or money pumps. However, again, this proposal seems insufficiently general to capture all instances of structural irrationality: for example, there is no obvious way in which someone with (either epistemically or practically) akratic states is vulnerable to such loss. Moreover, even where structural irrationality and exploitability coincide, it is dubious whether it is the latter that explains the former, rather than vice versa. Numerous philosophers have argued that one's susceptibility to Dutch books or money pumps merely reflects or brings out one's irrationality, rather than grounding or explaining it, since it is unclear why vulnerability to purely hypothetical monetary loss (that can only be exacted by someone with full knowledge of one's mental states, and is almost certain not to actually occur) is the right sort of thing to make one irrational (Lewis 1999: 404-5; Christensen 2004: 109-24; Gaus 2008: 39; Levy 2014: 2). Finally, it has recently been proposed that structurally irrational states are unified by the fact that it is in some way difficult to sustain them in full, reflective self-knowledge. On one version of this proposal (Worsnip 2018b), this is because it is constitutive of the mental states involved that to genuinely count as having these states, one must have some disposition to revise them when these conditions of \"full transparency\" are met. For example, if one believes that to go shopping today one must get on one's bike now, and does not intend to get on one's bike now, and one is fully and consciously aware of both of these states and has no disposition to revise them, then one arguably does not count as intending to go shopping today (cf. also Finlay 2009; Lee 2022). Again, though, this proposal faces some challenges. In particular, it seems to force us to choose between denying that completely clear-eyed practical akrasia is possible and denying that practical akrasia is structurally irrational. It may also struggle with examples of individuals who hold logically inconsistent or even contradictory beliefs but are not disposed to revise them because they subscribe to non-classical logics.",
+      "relatedEntries": [
+        "bounded-rationality",
+        "dutch-book",
+        "evidence",
+        "intention",
+        "logic-normative",
+        "motivation",
+        "practical-reason",
+        "rationality-normative-utility",
+        "rationality-normative-nonutility",
+        "rationality",
+        "rationality-instrumental",
+        "reasons-internal-external",
+        "reasons-just-vs-expl",
+        "weakness-will"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "bounded-rationality"
+        },
+        {
+          "slug": "dutch-book"
+        },
+        {
+          "slug": "evidence"
+        },
+        {
+          "slug": "intention"
+        },
+        {
+          "slug": "logic-normative"
+        },
+        {
+          "slug": "motivation"
+        },
+        {
+          "slug": "practical-reason"
+        },
+        {
+          "slug": "rationality-normative-utility"
+        },
+        {
+          "slug": "rationality-normative-nonutility"
+        },
+        {
+          "slug": "rationality"
+        },
+        {
+          "slug": "rationality-instrumental"
+        },
+        {
+          "slug": "reasons-internal-external"
+        },
+        {
+          "slug": "reasons-just-vs-expl"
+        },
+        {
+          "slug": "weakness-will"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 149,
+      "bibliography": [
+        {
+          "raw": "Adler, Jonathan, 2002, Belief's Own Ethics , Cambridge, Mass: MIT Press."
+        },
+        {
+          "raw": "Alvarez, Maria, 2018, \"Reasons for Action, Acting for Reasons, and Rationality\", Synthese , 195(8): 3293-3310."
+        },
+        {
+          "raw": "Arpaly, Nomy, 2000, \"On Acting Rationally Against One's Best Judgment\", Ethics , 110(3): 488-513."
+        },
+        {
+          "raw": "Ballantyne, Nathan and E.J. Coffman, 2011, \"Uniqueness, Evidence, and Rationality\", Philosophers' Imprint , 11(18), 1-13."
+        },
+        {
+          "raw": "Bedke, Matthew S., 2009, \"The Iffiest Oughts: A Guise of Reasons Account of End-Given Conditionals\", Ethics , 119(4): 672-98."
+        },
+        {
+          "raw": "Bratman, Michael E., 1981, \"Intention and Means-End Reasoning\", The Philosophical Review , 90(2): 252-65."
+        },
+        {
+          "raw": "---, 1987, Intention, Plans, and Practical Reason , Stanford: CSLI."
+        },
+        {
+          "raw": "---, 2009a, \"Intention, Belief, Theoretical, Practical\", in Simon Robertson (ed.), Spheres of Reason , Oxford: Oxford University Press, pp. 29-61."
+        },
+        {
+          "raw": "---, 2009b, \"Intention, Practical Rationality, and Self-Governance\", Ethics , 119(3): 411-443."
+        },
+        {
+          "raw": "---, 2018, Planning, Time, and Self-Governance: Essays in Practical Rationality , Oxford University Press."
+        },
+        {
+          "raw": "Bridges, Jason, 2009, \"Rationality, Normativity, and Transparency\", Mind , 118(470): 353-67."
+        },
+        {
+          "raw": "Broome, John, 1999, \"Normative Requirements\", Ratio , 12(4): 398-419."
+        },
+        {
+          "raw": "---, 2001a, \"Are Intentions Reasons? And How Should We Cope with Incommensurable Values?\", in Christopher Morris and Arthur Ripstein (eds.), Practical Rationality and Preference: Essays for David Gauthier , Cambridge, UK: Cambridge University Press, pp. 98-120."
+        },
+        {
+          "raw": "---, 2001b, \"Normative Practical Reasoning\", Proceedings of the Aristotelian Society Supplementary Volume , 75: 175-193."
+        },
+        {
+          "raw": "---, 2004, \"Reasons\", in R. Jay Wallace, Philip Pettit, and Samuel Scheffler (eds.), Reason and Value: Themes from the Moral Philosophy of Joseph Raz , Oxford: Oxford University Press, pp. 28-55."
+        },
+        {
+          "raw": "---, 2005, \"Have We Reason to Do as Rationality Requires? - A Comment on Raz\", Journal of Ethics and Social Philosophy , 1(1): 1-8."
+        },
+        {
+          "raw": "---, 2007a, \"Does Rationality Consist in Responding Correctly to Reasons?\", Journal of Moral Philosophy , 4(3): 349-374."
+        },
+        {
+          "raw": "---, 2007b, \"Is Rationality Normative?\", Disputatio , 2(23): 161-78."
+        },
+        {
+          "raw": "---, 2007c, \"Wide or Narrow Scope?\", Mind , 116(462): 359-70."
+        },
+        {
+          "raw": "---, 2013, Rationality through Reasoning , Chichester: Wiley-Blackwell."
+        },
+        {
+          "raw": "---, 2020, \"Rationality versus Normativity\", Australasian Philosophical Review , 4(4): 293-311."
+        },
+        {
+          "raw": "Brunero, John, 2010a, \"Self-Governance, Means-Ends Coherence, and Unalterable Ends\", Ethics , 120(3): 579-91."
+        },
+        {
+          "raw": "---, 2010b, \"The Scope of Rational Requirements\", The Philosophical Quarterly , 60(238): 28-49."
+        },
+        {
+          "raw": "---, 2012, \"Instrumental Rationality, Symmetry and Scope\", Philosophical Studies , 157(1): 125-40."
+        },
+        {
+          "raw": "---, 2020, Instrumental Rationality: The Normativity of Means-End Coherence , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2022, \"Intention Persistence\", Philosophy and Phenomenological Research , 104(3): 747-763."
+        },
+        {
+          "raw": "Christensen, David, 2004, Putting Logic in its Place , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Coates, Allen, 2012, \"Rational Epistemic Akrasia\", American Philosophical Quarterly , 49(2): 113-124."
+        },
+        {
+          "raw": "Cuneo, Terence, 2007, The Normative Web , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Dancy, Jonathan, 1977, \"The Logical Conscience\", Analysis , 37(2): 81-84."
+        },
+        {
+          "raw": "---, 2000, Practical Reality , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Daoust, MK, 2022, \"Imperfection, Accuracy, and Structural Rationality\". Erkenntnis. , https://doi.org/10.1007/s10670-022-00571-5"
+        },
+        {
+          "raw": "Darwall, Stephen, 1983, Impartial Reason , Ithaca, NY: Cornell University Press."
+        },
+        {
+          "raw": "Davidson, Donald, 1969, \"How Is Weakness of the Will Possible?\", reprinted in Davidson 1980, pp. 21-42."
+        },
+        {
+          "raw": "---, 1980, Essays on Actions and Events , 2nd ed. 2001, Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Davidson, Donald, J.C.C. McKinsey and Patrick Suppes, 1955, \"Outlines of a Formal Theory of Value, I\", Philosophy of Science , 22(2): 140-160."
+        },
+        {
+          "raw": "Dennett, Daniel, 1971, \"Intentional Systems\", Journal of Philosophy 68(4): 87-106."
+        },
+        {
+          "raw": "Dowell, Janice, 2012, \"Contextualist Solutions to Three Puzzles about Practical Conditionals\", in Russ Shafer-Landau (ed.), Oxford Studies in Metaethics , vol. 7, Oxford: Oxford University Press, pp. 271-301."
+        },
+        {
+          "raw": "Dreier, James, 2009, \"Practical Conditionals\", in David Sobel and Steven Wall (eds.), Reasons for Action , Cambridge: Cambridge University Press, pp. 116-33."
+        },
+        {
+          "raw": "Enoch, David, 2005, \"Why Idealize?\", Ethics , 115(4), 759-787."
+        },
+        {
+          "raw": "Feldman, Richard, 2005, \"Respecting the Evidence\", Philosophical Perspectives , 19: 9-119."
+        },
+        {
+          "raw": "de Finetti, Bruno, 1937, \"Foresight: Its Logical Laws, Its Subjective Sources\", reprinted in Henry Kyburg and Howard Smokler (eds.), Studies in Subjective Probability , Huntingdon, NY: Krieger, 1980, pp. 57&shy;&shy;-118."
+        },
+        {
+          "raw": "Fink, Julian, forthcoming, \"The Essence of Attitude-Based Irrationality: The Impossibility of Attitudinal Success\", Journal of Ethics and Social Philosophy ."
+        },
+        {
+          "raw": "Finlay, Stephen, 2009, \"Against All Reason? Skepticism about the Instrumental Norm\", in Charles Pigden (ed.), Hume on Motivation and Virtue , Basingstoke: Palgrave Macmillan."
+        },
+        {
+          "raw": "---, 2010, \"What Ought Probably Means, and Why You Can't Detach It\", Synthese , 177(1): 67-89."
+        },
+        {
+          "raw": "Fogal, Daniel, 2020, \"Rational Requirements and the Primacy of Pressure\", Mind , 129(516): 1033-1070."
+        },
+        {
+          "raw": "Fogal, Daniel and Alex Worsnip, 2021, \"Which Reasons? Which Rationality?\" Ergo , 8(11): 306-343."
+        },
+        {
+          "raw": "van Fraassen, Bas C., 1972, \"The Logic of Conditional Obligation\", Journal of Philosophical Logic , 1(3/4): 417-438."
+        },
+        {
+          "raw": "Fullhart, Samuel, and Camilo Martinez, forthcoming, \"Coherence as Joint Satisfiability\", Australasian Journal of Philosophy ."
+        },
+        {
+          "raw": "Gaus, Gerald F., 2008, On Philosophy, Politics, and Economics , Belmont, CA: Wadsworth Cengage Learning."
+        },
+        {
+          "raw": "Gertken, Jan, and Benjamin Kiesewetter, 2017, \"The Right and the Wrong Kind of Reasons\", Philosophy Compass , 12(5): 1-14."
+        },
+        {
+          "raw": "Gibbard, Allan, 2003, Thinking How to Live , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Gonz&aacute;lez de Prado Salas, Javier, 2018, \"Rationality, Appearances, and Apparent Facts\", Journal of Ethics and Social Philosophy , 14(2): 83-111."
+        },
+        {
+          "raw": "Greco, Daniel, 2014, \"A Puzzle about Epistemic Akrasia\", Philosophical Studies , 167(2): 201-219."
+        },
+        {
+          "raw": "Greenspan, Patricia, 1975, \"Conditional Oughts and Hypothetical Imperatives\", Journal of Philosophy , 72(10): 259-276."
+        },
+        {
+          "raw": "Gustafsson, Johan E., 2022, Money-Pump Arguments , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Harman, Gilbert, 1976, \"Practical Reasoning\", Review of Metaphysics , 29: 431-63."
+        },
+        {
+          "raw": "---, 1986, Change in View: Principles of Reasoning , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Hansson, Bengt, 1969, \"An Analysis of Some Deontic Logics\", No&ucirc;s 3(4): 373-398."
+        },
+        {
+          "raw": "Hedden, Brian, 2015, \"Time-Slice Rationality\", Mind , 124(494): 449-491."
+        },
+        {
+          "raw": "Henning, Tim, 2018, From a Rational Point of View , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Hill, Thomas E., 1973, \"The Hypothetical Imperative\", Philosophical Review , 82(4): 429-450."
+        },
+        {
+          "raw": "Horowitz, Sophie, 2014, \"Epistemic Akrasia\", No&ucirc;s , 48(4): 718-744."
+        },
+        {
+          "raw": "Hurley, Susan L., 1989, Natural Reasons: Personality and Polity , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Kiesewetter, Benjamin, 2012, \"A Dilemma for Parfit's Conception of Normativity\", Analysis , 72(3): 466-74."
+        },
+        {
+          "raw": "---, 2015, \"Instrumental Normativity: In Defense of the Transmission Principle\", Ethics , 125(4): 921-46."
+        },
+        {
+          "raw": "---, 2017, The Normativity of Rationality , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2018, \"Contrary-to-Duty Scenarios, Deontic Dilemmas, and Transmission Principles\", Ethics , 129(1): 98-115."
+        },
+        {
+          "raw": "---, 2020, \"Rationality as Reasons-Responsiveness\", Australasian Philosophical Review , 4(4): 332-42."
+        },
+        {
+          "raw": "---, 2023, Review of Fitting Things Together: Coherence and the Demands of Structural Rationality , Mind . https://doi.org/10.1093/mind/fzad016"
+        },
+        {
+          "raw": "Kiesewetter, Benjamin, and Jan Gertken, 2021, \"How Do Reasons Transmit to Non-Necessary Means?\", Australasian Journal of Philosophy , 99(2): 271-85."
+        },
+        {
+          "raw": "Kolodny, Niko, 2005, \"Why Be Rational?\", Mind , 114(455): 509-63."
+        },
+        {
+          "raw": "---, 2007a, \"How Does Coherence Matter?\", Proceedings of the Aristotelian Society , 107(3): 229-63."
+        },
+        {
+          "raw": "---, 2007b, \"State or Process Requirements?\", Mind , 116(462): 371-85."
+        },
+        {
+          "raw": "---, 2008, \"The Myth of Practical Consistency\", European Journal of Philosophy , 16(3): 366-402."
+        },
+        {
+          "raw": "---, 2011, \"Aims as Reasons\", in Jay Wallace, Rahul Kumar, and Samuel Freeman (eds.), Reasons and Recognition: Essays on the Philosophy of T.M. Scanlon , Oxford: Oxford University Press, pp. 43-78."
+        },
+        {
+          "raw": "---, 2018, \"Instrumental Reasons\", in Daniel Star (ed.), The Oxford Handbook of Reasons and Normativity , Oxford: Oxford University Press, pp. 731-63."
+        },
+        {
+          "raw": "Korsgaard, Christine, 1997, \"The Normativity of Instrumental Reason\", in Garrett Cullity and Berys Gaut (eds.), Ethics and Practical Reason , Oxford: Clarendon Press, pp. 215-54."
+        },
+        {
+          "raw": "---, 2009, \"The Activity of Reason\", Proceedings and Addresses of the APA , 83(2): 23-43."
+        },
+        {
+          "raw": "Kratzer, Angelika, 1981, \"The Notional Category of Modality\", in Hans Eikmeyer and Hannes Rieser (eds.), Words, Worlds, and Contexts , Berlin: de Gruyter, pp. 38-74."
+        },
+        {
+          "raw": "Lasonen-Aarnio, Maria, 2020, \"Enkrasia or Evidentialism? Learning to Love Mismatch\", Philosophical Studies , 117(3): 597731-63, 632."
+        },
+        {
+          "raw": "---, 2021, \"Coherence as Competence\", Episteme , 18(3): 453-76."
+        },
+        {
+          "raw": "Lee, Wooram, 2022, \"The Real Myth of Coherence\", Erkenntnis , 87(3): 1211-1230."
+        },
+        {
+          "raw": "Levy, Yair, 2014, \"Money Pumps, Diachronic and Synchronic\", Journal of Ethics and Social Philosophy , 8(2): 1-6."
+        },
+        {
+          "raw": "Lewis, David, 1973, Counterfactuals , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "---, 1999, \"Why Conditionalize?\", in his Papers in Metaphysics and Epistemology, Vol. II . Cambridge, UK: Cambridge University Press, pp. 403-407."
+        },
+        {
+          "raw": "Lord, Errol, 2011, \"Violating Requirements, Exiting from Requirements, and the Scope of Rationality\", The Philosophical Quarterly , 61(243): 392-399."
+        },
+        {
+          "raw": "---, 2014, \"The Real Symmetry Problem(s) for Wide-Scope Accounts of Rationality\", Philosophical Studies , 170(3): 443-64."
+        },
+        {
+          "raw": "---, 2018, The Importance of Being Rational , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2020, \"Replies to Schafer, Schroeder, and Staffel\", Philosophy and Phenomenological Research , 100(2): 476-87."
+        },
+        {
+          "raw": "Makinson, D. C., 1965, \"The Paradox of the Preface\", Analysis , 25(6): 205-7."
+        },
+        {
+          "raw": "Markovits, Julia, 2014, Moral Reason , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "McDowell, John, 1995, \"Might There Be External Reasons?\", in J. E. J. Altham and Ross Harrison (eds.), World, Mind and Ethics: Essays on the Ethical Philosophy of Bernard Williams , Cambridge, UK: Cambridge University Press, pp. 68-85."
+        },
+        {
+          "raw": "Mildenberger, Carl, 2019, \"A Reason to Be Rational\", Inquiry , 62(9-10): 1008-32."
+        },
+        {
+          "raw": "Moss, Sarah, 2015, \"Time-Slice Epistemology and Action under Indeterminacy\", in Tamar Gendler and John Hawthorne (eds.), Oxford Studies in Epistemology , vol. 5, Oxford: Oxford University Press, pp. 172-194."
+        },
+        {
+          "raw": "Nida-R&uuml;melin, Julian, 2001, \"Structural Rationality\", reprinted in Nida-R&uuml;melin 2019, Structural Rationality and Other Essays on Practical Reason , Berlin/Dordrecht/Heidelberg/New York: Springer, pp. 1-63."
+        },
+        {
+          "raw": "Parfit, Derek, 2001, \"Rationality and Reasons\", in Dan Egonsson, Jonas Josefsson, Bj&ouml;rn Petersson, and Toni R&oslash;nnow-Rasmussen (eds.), Exploring Practical Philosophy: From Action to Values , Aldershot: Ashgate, pp. 17-39."
+        },
+        {
+          "raw": "---, 2011, On What Matters , Vol. 1, Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Podgorski, Abelard, 2017, \"Rational Delay\", Philosophers' Imprint 17(5), 1-19."
+        },
+        {
+          "raw": "Price, A. W., 2008, \"Against Requirements of Rationality\", Proceedings of the Aristotelian Society , 108 (2): 157-76."
+        },
+        {
+          "raw": "Prichard, H.A., 1912, \"Does Moral Philosophy Rest on a Mistake?\", reprinted in H.A. Prichard, 2002, Moral Writings , Oxford: Clarendon Press, pp. 7-20."
+        },
+        {
+          "raw": "Ramsey, F.P., 1926, \"Truth and Probability\", reprinted in Henry Kyburg and Howard Smokler (eds.), Studies in Subjective Probability , Huntingdon, NY: Krieger, 1980, pp. 25-52."
+        },
+        {
+          "raw": "Raz, Joseph, 2005, \"The Myth of Instrumental Rationality\", Journal of Ethics and Social Philosophy , 1(1): 2-28."
+        },
+        {
+          "raw": "Reisner, Andrew, 2009, \"Unifying the Requirements of Rationality\", Philosophical Explorations , 12: 243-60."
+        },
+        {
+          "raw": "Ridge, Michael, 2014, Impassioned Belief , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Rippon, Simon, 2011, \"In Defense of the Wide-Scope Instrumental Principle\", Journal of Ethics and Social Philosophy , 5(2): 1-21."
+        },
+        {
+          "raw": "Rosa, Luis, 2022, \"Coherence and Knowability\", Philosophical Quarterly , 72(4): 960-78."
+        },
+        {
+          "raw": "Sainsbury, R. M., 2002, \"What Logic Should We Think With?\", Royal Institute of Philosophy Supplement , 51: 1-17."
+        },
+        {
+          "raw": "Sampson, Eric, 2021, \"What If Ideal Advice Conflicts? A Dilemma for Idealizing Accounts of Normative Practical Reasons\", Philosophical Studies , 179(4), 1091-1111."
+        },
+        {
+          "raw": "Scanlon, T.M., 1998, What We Owe to Each Other , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "---, 2004, \"Reasons: A Puzzling Duality?\", in R. Jay Wallace, Philip Pettit, Samuel Scheffler, and Michael Smith (eds.), Reason and Value: Themes from the Moral Philosophy of Joseph Raz , Oxford: Oxford University Press, pp. 231-246."
+        },
+        {
+          "raw": "---, 2007, \"Structural Irrationality\", in Geoffrey Brennan, Robert Goodin, Frank Jackson, and Michael Smith (eds.), Common Minds: Themes from the Philosophy of Philip Pettit , Oxford: Oxford University Press, pp. 84-103."
+        },
+        {
+          "raw": "Schoenfield, Miriam, 2014, \"Permission to Believe: Why Permissivism is True and What It Tells Us About Irrelevant Influences on Belief\", No&ucirc;s , 48(2): 193-218."
+        },
+        {
+          "raw": "Schroeder, Mark, 2004, \"The Scope of Instrumental Reason\", Philosophical Perspectives , 18(1): 337-364."
+        },
+        {
+          "raw": "---, 2007, Slaves of the Passions , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2009, \"Means-End Coherence, Stringency, and Subjective Reasons\", Philosophical Studies , 143(2): 223-48."
+        },
+        {
+          "raw": "---, 2011, \" Ought , Agents, and Actions\", The Philosophical Review , 120(1): 1-41."
+        },
+        {
+          "raw": "---, 2012, \"The Ubiquity of State-Given Reasons\", Ethics 122(3): 457-88."
+        },
+        {
+          "raw": "Schultheis, Ginger, 2018, \"Living on the Edge: Against Epistemic Permissivism\", Mind , 127(507): 863-79."
+        },
+        {
+          "raw": "Setiya, Kieran, 2007, \"Cognitivism about Instrumental Reason\", Ethics 117(4): 649-673."
+        },
+        {
+          "raw": "Silk, Alex, 2014, \"Why 'Ought' Detaches: or, Why You Ought to Get With my Friends (If You Want to Be My Lover)\", Philosophers' Imprint , 14(7), pp. 1-16."
+        },
+        {
+          "raw": "Singh, Keshav, forthcoming, \"Rationality Reunified\", in Russ Shafer-Landau (ed.), Oxford Studies in Metaethics , 20."
+        },
+        {
+          "raw": "Smith, Michael, 1994, The Moral Problem , Oxford: Blackwell."
+        },
+        {
+          "raw": "Smithies, Declan, forthcoming, \"The Unity of Evidence and Coherence\", in Nick Hughes (ed.), Epistemic Dilemmas , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Southwood, Nicholas, 2008, \"Vindicating the Normativity of Rationality\", Ethics , 119(1): 9-30."
+        },
+        {
+          "raw": "Staffel, Julia, 2020, \"Reasons Fundamentalism and Rational Uncertainty - Comments on Lord, The Importance of Being Rational \", Philosophy and Phenomenological Research , 100(2): 463-68."
+        },
+        {
+          "raw": "Sylvan, Kurt, 2015, \"What Apparent Reasons Appear to Be\", Philosophical Studies , 172(3): 587-606."
+        },
+        {
+          "raw": "---, 2021a, \"Respect and the Reality of Apparent Reasons\", Philosophical Studies , 178(10): 3129-56."
+        },
+        {
+          "raw": "---, 2021b, \"The Eclipse of Instrumental Rationality\", in Kurt Sylvan and Ruth Chang (eds.), The Routledge Handbook of Practical Reason , Routledge, pp. 482-504."
+        },
+        {
+          "raw": "Titelbaum, Michael, 2015, \"Rationality's Fixed Point\", in Tamar Gendler and John Hawthorne (eds.), Oxford Studies in Epistemology , vol. 5, Oxford: Oxford University Press, pp. 253-292."
+        },
+        {
+          "raw": "Timmermann, Jens, 2022, Kant's Will at the Crossroads: An Essay on the Failings of Practical Rationality , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Velleman, J. David, 1989, Practical Reflection , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Wallace, R. Jay, 2001, \"Normativity, Commitment, and Instrumental Reason\", Philosophers' Imprint , 1(3): 1-26."
+        },
+        {
+          "raw": "Way, Jonathan, 2009, \"Two Accounts of the Normativity of Rationality\", Journal of Ethics and Social Philosophy (Discussion Note): 1-8."
+        },
+        {
+          "raw": "---, 2010, \"Defending the Wide-Scope Approach to Instrumental Reason\", Philosophical Studies , 147(2): 213-33."
+        },
+        {
+          "raw": "---, 2011, \"The Symmetry of Rational Requirements\", Philosophical Studies , 155(2): 227-39."
+        },
+        {
+          "raw": "---, 2012, \"Explaining the Instrumental Principle\", Australasian Journal of Philosophy , 90(3): 487-506."
+        },
+        {
+          "raw": "---, 2013, \"Intentions, Akrasia, and Mere Permissibility\", Organon F , 20(4): 588-611."
+        },
+        {
+          "raw": "---, 2016, \"Two Arguments for Evidentialism\", The Philosophical Quarterly , 66(265): 805-18."
+        },
+        {
+          "raw": "---, 2018, \"Reasons and Rationality\", in Daniel Star (ed.), The Oxford Handbook of Reasons and Normativity , 485-503, Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Wedgwood, Ralph, 2002, \"Internalism Explained\", Philosophy and Phenomenological Research , 65(2): 349-369."
+        },
+        {
+          "raw": "---, 2017, The Value of Rationality , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "White, Roger, 2005, \"Epistemic Permissiveness\", Philosophical Perspectives , 19(1): 445-59."
+        },
+        {
+          "raw": "Whiting, Daniel, 2014, \"Keep Things in Perspective: Reasons, Rationality and the A Priori\", Journal of Ethics and Social Philosophy , 8(1): 1-22."
+        },
+        {
+          "raw": "Worsnip, Alex, 2016a, \"Belief, Credence, and the Preface Paradox\", Australasian Journal of Philosophy , 94(3): 549-562."
+        },
+        {
+          "raw": "---, 2016b, \"Moral Reasons, Epistemic Reasons, and Rationality\", Philosophical Quarterly , 66(263): 341-361."
+        },
+        {
+          "raw": "---, 2018a, \"The Conflict of Evidence and Coherence\", Philosophy and Phenomenological Research , 96(1): 3-44."
+        },
+        {
+          "raw": "---, 2018b, \"What is (In)coherence?\", in Russ Shafer-Landau (ed.), Oxford Studies in Metaethics , vol. 13, Oxford: Oxford University Press, pp. 184-206."
+        },
+        {
+          "raw": "---, 2021, Fitting Things Together: Coherence and the Demands of Structural Rationality , New York: Oxford University Press."
+        }
+      ],
+      "publishedAt": "2023-09-12T14:00:00.000Z",
+      "revisedAt": "2023-09-12T14:00:00.000Z"
+    }
+  }
+}

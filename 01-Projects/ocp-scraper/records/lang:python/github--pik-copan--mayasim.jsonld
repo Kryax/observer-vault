@@ -1,0 +1,154 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:github/pik-copan--mayasim",
+  "meta": {
+    "title": "MayaSim",
+    "description": "An agent-based model of the ancient Maya social-ecological system",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T09:49:06.642Z",
+    "dateModified": "2026-03-22T09:49:06.642Z",
+    "keywords": [],
+    "license": "GPL-3.0"
+  },
+  "problemSolved": {
+    "statement": "[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13734595.svg)](https://doi.org/10.5281/zenodo.13734595)",
+    "context": "[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13734595.svg)](https://doi.org/10.5281/zenodo.13734595)\n\nAn agent-based model of the ancient Maya social-ecological system.\n\nMayaSim is an integrated agent-based, cellular-automaton and network simulation of the Maya civilization on the Yucatan peninsula throughout the Mayan Classic epoch. Agents are settlements situated on a gridded spatial landscape. These settlements grow and interact with their surrounding forest ecosystem through use of ecosystem services, agriculture induced soil erosion and forest succession. The model aims to reproduce interrelations between climate variability, primary production, hydrology, ecosystem services, forest succession, agricultural production, population growth and the stability of trade networks. The project is based on previous work by Scott Heckbert ([2013](https://www.comses.net/codebases/3063/releases/1.3.0/)) published in Netlogo, and is reimplemented and further developed in Python. The focus lies firstly on the implementation of realistic approaches to modeling agents' income from agriculture and trade. The goal is to first test the model's structural stability and parameter sensitivity, and then to test the plausibility of different hypotheses on the causes of the ancient Maya's spectacular rise and subsequent catastrophic reorganization.",
+    "cynefinDomain": "complex"
+  },
+  "domains": [
+    "lang:python"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "github-stars",
+        "description": "12 GitHub stars indicating community adoption"
+      },
+      {
+        "type": "github-forks",
+        "description": "5 forks indicating reuse"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2026-03-22T09:49:06.642Z"
+  },
+  "implementation": {
+    "type": "library",
+    "refs": [
+      {
+        "type": "repository",
+        "uri": "https://github.com/pik-copan/MayaSim",
+        "description": "GitHub repository: pik-copan/MayaSim"
+      }
+    ],
+    "language": "Python"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": []
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "pik-copan",
+        "type": "human",
+        "uri": "https://github.com/pik-copan"
+      }
+    ],
+    "sourceType": "scraped",
+    "generatedBy": "ocp-scraper/0.1.0"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 22,
+      "validation_diversity": 0.16,
+      "context_breadth": 0.07,
+      "temporal_stability": 0.54,
+      "test_coverage": 0.17,
+      "documentation_quality": 0.5
+    },
+    "confidence": "speculative",
+    "authority": "low",
+    "status": "draft",
+    "trustScore": 0.197
+  }
+}

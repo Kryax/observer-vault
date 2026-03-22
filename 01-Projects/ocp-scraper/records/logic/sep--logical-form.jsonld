@@ -1,0 +1,617 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/logical-form",
+  "meta": {
+    "title": "Logical Form",
+    "description": "Some inferences are impeccable. Examples like (1-3) illustrate reasoning that cannot lead from true premises to false conclusions. In such cases, a thinker takes no epistemic risk by endorsing the conditional claim that the conclusion is true if the premises are true. The conclusion follows from the premises, without any further assumptions that might turn out to be false. Any risk of error lies with the premises, as opposed to the reasoning. By contrast, examples like (4-6) illustrate reasoning that involves at least some risk of going wrong--from correct premises to a mistaken conclusion. Inference (4) is not secure. John might dance whenever Mary sings, but also sometimes when Mary doesn't sing. Similarly, with regard to (5), Tweety might be a bird that cannot fly. Even (6) falls short of the demonstrative character exhibited by (1-3). While laws of nature may preclude immortality, the conclusion of (6) goes beyond its premise, even if it is foolish to resist the inference. Appeals to logical form arose in the context of attempts to say more about this intuitive distinction between impeccable inferences, which invite metaphors of security, and inferences that involve some risk of slipping from truth to falsity. The idea is that some inferences, like (1-3), are structured in a way that confines any risk of error to the premises. The motivations for developing this idea were both practical and theoretical. Experience teaches us that an inference can initially seem more secure than it is; and if we knew which forms of inference are risk-free, that might help us avoid errors. As we'll see, claims about inference are also intimately connected with claims about the nature of thought and its relation to language. Many philosophers have been especially interested in the possibility that grammar masks the underlying structure of thought, perhaps in ways that invite mistaken views about how ordinary language is related to cognition and the world we talk about. For example, similarities across sentences like 'Homer talked', 'Nobody talked', and 'The nymph talked' initially suggest that the corresponding thoughts exhibit a common subject-predicate form. But even if 'Homer' indicates an entity that can be the subject of a thought that is true if and only if the entity in question talked, 'Nobody' does not; and as we'll see, 'The' is complicated. Philosophers and linguists have also asked general questions about how logic is related to grammar. Do thoughts and sentences exhibit different kinds of structure? Do sentences exhibit grammatical structures that are not obvious? And if the logical structure of a thought can diverge from the grammatical structure of a sentence that is used to express the thought, how should we construe proposals about the logical forms of inferences like (1)-(6)? Are such proposals normative claims about how we ought to think/talk, or empirical hypotheses about aspects of psychological/linguistic reality? Proposed answers to these questions are usually interwoven with claims about why various inferences seem compelling. So it would be nice to know which inferences really are secure, and in virtue of what these inferences are special. The most common suggestion has been that certain inferences are secure by virtue of their logical form. Though unsurprisingly, conceptions of form have evolved along with conceptions of logic and language.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T08:53:14.347Z",
+    "dateModified": "2026-03-22T08:53:14.347Z",
+    "datePublished": "1999-10-18T14:00:00.000Z",
+    "keywords": [
+      "analysis",
+      "analytic synthetic",
+      "aristotle logic",
+      "behaviorism",
+      "carnap",
+      "davidson",
+      "descriptions",
+      "frege",
+      "frege theorem",
+      "generalized quantifiers",
+      "logic classical",
+      "logic modal",
+      "logical consequence",
+      "medieval syllogism",
+      "medieval terms",
+      "model theory",
+      "names",
+      "prop attitude reports",
+      "propositions",
+      "propositions singular",
+      "propositions structured",
+      "quine",
+      "reference",
+      "relations medieval",
+      "rigid designators",
+      "russell",
+      "russell paradox",
+      "vagueness"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Some inferences are impeccable. Examples like (1-3) illustrate reasoning that cannot lead from true premises to false conclusions. In such cases, a thinker takes no epistemic risk by endorsing the conditional claim that the conclusion is true if the premises are true. The conclusion follows from the premises, without any further assumptions that might turn out to be false. Any risk of error lies with the premises, as opposed to the reasoning. By contrast, examples like (4-6) illustrate reasoning that involves at least some risk of going wrong--from correct premises to a mistaken conclusion. Inference (4) is not secure. John might dance whenever Mary sings, but also sometimes when Mary doesn't sing. Similarly, with regard to (5), Tweety might be a bird that cannot fly. Even (6) falls short of the demonstrative character exhibited by (1-3). While laws of nature may preclude immortality, the conclusion of (6) goes beyond its premise, even if it is foolish to resist the inference. Appeals to logical form arose in the context of attempts to say more about this intuitive distinction between impeccable inferences, which invite metaphors of security, and inferences that involve some risk of slipping from truth to falsity. The idea is that some inferences, like (1-3), are structured in a way that confines any risk of error to the premises. The motivations for developing this idea were both practical and theoretical. Experience teaches us that an inference can initially seem more secure than it is; and if we knew which forms of inference are risk-free, that might help us avoid errors. As we'll see, claims about inference are also intimately connected with claims about the nature of thought and its relation to language. Many philosophers have been especially interested in the possibility that grammar masks the underlying structure of thought, perhaps in ways that invite mistaken views about how ordinary language is related to cognition and the world we talk about. For example, similarities across sentences like 'Homer talked', 'Nobody talked', and 'The nymph talked' initially suggest that the corresponding thoughts exhibit a common subject-predicate form. But even if 'Homer' indicates an entity that can be the subject of a thought that is true if and only if the entity in question talked, 'Nobody' does not; and as we'll see, 'The' is complicated. Philosophers and linguists have also asked general questions about how logic is related to grammar. Do thoughts and sentences exhibit different kinds of structure? Do sentences exhibit grammatical structures that are not obvious? And if the logical structure of a thought can diverge from the grammatical structure of a sentence that is used to express the thought, how should we construe proposals about the logical forms of inferences like (1)-(6)? Are such proposals normative claims about how we ought to think/talk, or empirical hypotheses about aspects of psychological/linguistic reality? Proposed answers to these questions are usually interwoven with claims about why various inferences seem compelling. So it would be nice to know which inferences really are secure, and in virtue of what these inferences are special. The most common suggestion has been that certain inferences are secure by virtue of their logical form. Though unsurprisingly, conceptions of form have evolved along with conceptions of logic and language.",
+    "context": "Opening section: 1. Patterns of Reason | Related entries: analysis, analytic-synthetic, aristotle-logic, behaviorism, carnap, davidson, descriptions, frege, frege-theorem, generalized-quantifiers, logic-classical, logic-modal, logical-consequence, model-theory, names, prop-attitude-reports, propositions, propositions-singular, propositions-structured, quine, reference, relations-medieval, rigid-designators, russell, russell-paradox, medieval-syllogism, medieval-terms, vagueness",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "logic",
+    "history-of-philosophy"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry logical-form",
+        "uri": "https://plato.stanford.edu/entries/logical-form/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 28 related entries, bibliography size 86"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 1999-10-18T14:00:00.000Z and revised 2021-08-31T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2021-08-31T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/logical-form/",
+        "description": "SEP entry for logical-form"
+      }
+    ],
+    "solutionApproach": "1. Patterns of Reason"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/analysis",
+      "ocp:sep/analytic-synthetic",
+      "ocp:sep/aristotle-logic",
+      "ocp:sep/behaviorism",
+      "ocp:sep/carnap",
+      "ocp:sep/davidson",
+      "ocp:sep/descriptions",
+      "ocp:sep/frege",
+      "ocp:sep/frege-theorem",
+      "ocp:sep/generalized-quantifiers",
+      "ocp:sep/logic-classical",
+      "ocp:sep/logic-modal",
+      "ocp:sep/logical-consequence",
+      "ocp:sep/model-theory",
+      "ocp:sep/names",
+      "ocp:sep/prop-attitude-reports",
+      "ocp:sep/propositions",
+      "ocp:sep/propositions-singular",
+      "ocp:sep/propositions-structured",
+      "ocp:sep/quine",
+      "ocp:sep/reference",
+      "ocp:sep/relations-medieval",
+      "ocp:sep/rigid-designators",
+      "ocp:sep/russell",
+      "ocp:sep/russell-paradox",
+      "ocp:sep/medieval-syllogism",
+      "ocp:sep/medieval-terms",
+      "ocp:sep/vagueness"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Pietroski, Paul",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/logical-form/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 93,
+      "validation_diversity": 0.52,
+      "context_breadth": 0.57,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.94
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.608
+  },
+  "extensions": {
+    "sep": {
+      "slug": "logical-form",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/logical-form/",
+      "preamble": "Some inferences are impeccable. Examples like (1-3) illustrate reasoning that cannot lead from true premises to false conclusions. In such cases, a thinker takes no epistemic risk by endorsing the conditional claim that the conclusion is true if the premises are true. The conclusion follows from the premises, without any further assumptions that might turn out to be false. Any risk of error lies with the premises, as opposed to the reasoning. By contrast, examples like (4-6) illustrate reasoning that involves at least some risk of going wrong--from correct premises to a mistaken conclusion. Inference (4) is not secure. John might dance whenever Mary sings, but also sometimes when Mary doesn't sing. Similarly, with regard to (5), Tweety might be a bird that cannot fly. Even (6) falls short of the demonstrative character exhibited by (1-3). While laws of nature may preclude immortality, the conclusion of (6) goes beyond its premise, even if it is foolish to resist the inference. Appeals to logical form arose in the context of attempts to say more about this intuitive distinction between impeccable inferences, which invite metaphors of security, and inferences that involve some risk of slipping from truth to falsity. The idea is that some inferences, like (1-3), are structured in a way that confines any risk of error to the premises. The motivations for developing this idea were both practical and theoretical. Experience teaches us that an inference can initially seem more secure than it is; and if we knew which forms of inference are risk-free, that might help us avoid errors. As we'll see, claims about inference are also intimately connected with claims about the nature of thought and its relation to language. Many philosophers have been especially interested in the possibility that grammar masks the underlying structure of thought, perhaps in ways that invite mistaken views about how ordinary language is related to cognition and the world we talk about. For example, similarities across sentences like 'Homer talked', 'Nobody talked', and 'The nymph talked' initially suggest that the corresponding thoughts exhibit a common subject-predicate form. But even if 'Homer' indicates an entity that can be the subject of a thought that is true if and only if the entity in question talked, 'Nobody' does not; and as we'll see, 'The' is complicated. Philosophers and linguists have also asked general questions about how logic is related to grammar. Do thoughts and sentences exhibit different kinds of structure? Do sentences exhibit grammatical structures that are not obvious? And if the logical structure of a thought can diverge from the grammatical structure of a sentence that is used to express the thought, how should we construe proposals about the logical forms of inferences like (1)-(6)? Are such proposals normative claims about how we ought to think/talk, or empirical hypotheses about aspects of psychological/linguistic reality? Proposed answers to these questions are usually interwoven with claims about why various inferences seem compelling. So it would be nice to know which inferences really are secure, and in virtue of what these inferences are special. The most common suggestion has been that certain inferences are secure by virtue of their logical form. Though unsurprisingly, conceptions of form have evolved along with conceptions of logic and language.",
+      "firstSectionTitle": "1. Patterns of Reason",
+      "firstSectionText": "One ancient idea is that impeccable inferences exhibit patterns that can be characterized schematically by abstracting away from the specific contents of particular premises and conclusions, thereby revealing a general form common to many other impeccable inferences. Such forms, along with the inferences that exemplify them, are said to be valid. Given a valid inference, there is a sense in which the premises contain the conclusion, which is correspondingly extractable from the premises. With regard to (1) and (7), it seems especially clear that the conclusion is part of the first premise, and that the second premise is another part of the first. We can express this point by saying that these inferences are instances of the following form: B if A , and A ; so B . The Stoics discussed several patterns of this kind, using ordinal numbers (instead of letters) to capture abstract forms like the ones shown below. If the first then the second , and the first ; so the second . If the first then the second , but not the second ; so not the first . Either the first or the second , but not the second ; so the first . Not both the first and the second , but the first ; so not the second . These schematic formulations employ variables, indicated in bold. Following a long tradition, let's use the word 'proposition' as a term of art for whatever these variables range over. Propositions are potential premises/conclusions, which can be endorsed or rejected. So they are, presumably, things that can be evaluated for truth or falsity. This leaves room for various proposals about what propositions are: sentences, statements, states of affairs, etc. But let's assume that declarative sentences can be used to express propositions; see, e.g., Cartwright (1962) and the essay on structured propositions . A significant complication is that in ordinary conversation, the context matters with regard to which proposition is expressed with a given sentence. For example, 'Pat is asleep' can be used at one time to express a true premise, and at another time to express a false premise. A certain speaker might use 'I am tired' to express a false proposition, while another speaker uses the same sentence at the same time to express a true proposition. What counts as being tired can also vary across conversations. Context sensitivity, of various kinds, is ubiquitous in typical discourse. Moreover, even given a context, a sentence like 'He is bald' may not express a unique proposition. (There may be no referent for the pronoun; and even if there is, the vagueness of 'bald' may yield a range of candidate propositions, with no fact of the matter as to which one is the proposition expressed.) Still, we can and often do use sentences like 'Every circle is an ellipse' and 'Thirteen is a prime number' to express premises of valid arguments. To be sure, mathematical examples are special cases. But the distinction between impeccable and risky inferences is not limited to atypical contexts in which we try to think especially clearly about especially abstract matters. So when focusing on the phenomenon of valid inference, we can try to simplify the initial discussion by abstracting away from the context sensitivity of language use. Another complication is that in speaking of an inference, one might be talking about (i) a process in which a thinker draws a conclusion from some premises, or (ii) some propositions, one of which is designated as an alleged consequence of the others; see, e.g., Harman (1973). But we can describe a risky thought process as one in which a thinker who accepts certain propositions--perhaps tentatively or hypothetically--comes to accept, on that basis, a proposition that does not follow from the initial premises. And it will be simpler to focus on premises/conclusions, as opposed to episodes of reasoning. With regard to (1), the inference seems secure in part because its first premise has the form ' B if A '. If the first premise didn't have this form, the inference wouldn't be an instance of ' B if A , and A ; so B '. It isn't obvious that all impeccable inferences are instances of a more general valid form, much less inferences whose impeccability is due to the forms of the relevant propositions. But this thought has served as an ideal for the study of valid inference, at least since Aristotle's treatment of examples like (2). Again, the first premise seems to have several parts, each of which is a part of the second premise or the conclusion. (In English, the indefinite article in 'Every senator is a politician' cannot be omitted; likewise for 'Every politician is a liar'. But at least for now, let's assume that in examples like these, 'a' does not itself indicate a propositional constituent.) Aristotle , predating the Stoics, noted that conditional claims like the following are sure to be true: if (the property of) being a politician belongs to every senator, and being deceitful belongs to every politician, then being deceitful belongs to every senator. Correspondingly, the inference pattern below is valid. Every S is P , and every P is D ; so every S is D . And inference (2) seems to be valid because its parts exhibit this pattern. Aristotle discussed many such forms of inference, called syllogisms, involving propositions that can be expressed with quantificational words like 'every' and 'some'. For example, the syllogistic patterns below are also valid. Every S is P , and some S is D ; so some P is D . Some S is P , and every P is D ; so some S is D . Some S is not P , every D is P ; so some S is not D . We can rewrite the last two, so that each of the valid syllogisms above is represented as having a first premise of the form 'Every S is P '. Every S is P , and some D is S ; so some D is P . Every S is P , and some D is not P ; so some D is not S . But however the inferences are represented, the important point is that the variables--represented here in italics--range over certain parts of propositions. Intuitively, common nouns like 'politician' and adjectives like 'deceitful' are general terms, since they can apply to more than one individual. And many propositions apparently contain correspondingly general elements. For example, the proposition that every senator is wealthy contains two such elements, both relevant to the validity of inferences involving this proposition. Propositions thus seem to have structure that bears on the validity of inferences, even ignoring premises/conclusions with propositional parts. In this sense, even atomic propositions have logical form. And as Aristotle noted, pairs of such propositions can be related in interesting ways. If every S is P , then some S is P . (For these purposes, assume there is at least one S .) If no S is P , then some S is not P . It is certain that either every S is P or some S is not P ; and whichever of these propositions is true, the other is false. Similarly, the following propositions cannot both be true: every S is P ; and no S is P . But it isn't certain that either every S is P , or no S is P . Perhaps some S is P , and some S is not P . This network of logical relations strongly suggests that the propositions in question contain a quantificational element and two general elements--and in some cases, an element of negation; see logic: classical . This raises the question of whether other propositions have a similar structure.",
+      "relatedEntries": [
+        "analysis",
+        "analytic-synthetic",
+        "aristotle-logic",
+        "behaviorism",
+        "carnap",
+        "davidson",
+        "descriptions",
+        "frege",
+        "frege-theorem",
+        "generalized-quantifiers",
+        "logic-classical",
+        "logic-modal",
+        "logical-consequence",
+        "model-theory",
+        "names",
+        "prop-attitude-reports",
+        "propositions",
+        "propositions-singular",
+        "propositions-structured",
+        "quine",
+        "reference",
+        "relations-medieval",
+        "rigid-designators",
+        "russell",
+        "russell-paradox",
+        "medieval-syllogism",
+        "medieval-terms",
+        "vagueness"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "analysis"
+        },
+        {
+          "slug": "analytic-synthetic"
+        },
+        {
+          "slug": "aristotle-logic"
+        },
+        {
+          "slug": "behaviorism"
+        },
+        {
+          "slug": "carnap"
+        },
+        {
+          "slug": "davidson"
+        },
+        {
+          "slug": "descriptions"
+        },
+        {
+          "slug": "frege"
+        },
+        {
+          "slug": "frege-theorem"
+        },
+        {
+          "slug": "generalized-quantifiers"
+        },
+        {
+          "slug": "logic-classical"
+        },
+        {
+          "slug": "logic-modal"
+        },
+        {
+          "slug": "logical-consequence"
+        },
+        {
+          "slug": "model-theory"
+        },
+        {
+          "slug": "names"
+        },
+        {
+          "slug": "prop-attitude-reports"
+        },
+        {
+          "slug": "propositions"
+        },
+        {
+          "slug": "propositions-singular"
+        },
+        {
+          "slug": "propositions-structured"
+        },
+        {
+          "slug": "quine"
+        },
+        {
+          "slug": "reference"
+        },
+        {
+          "slug": "relations-medieval"
+        },
+        {
+          "slug": "rigid-designators"
+        },
+        {
+          "slug": "russell"
+        },
+        {
+          "slug": "russell-paradox"
+        },
+        {
+          "slug": "medieval-syllogism"
+        },
+        {
+          "slug": "medieval-terms"
+        },
+        {
+          "slug": "vagueness"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 86,
+      "bibliography": [
+        {
+          "raw": "Barwise, J. & Cooper, R., 1981, \"Generalized Quantifiers and Natural Language\", Linguistics and Philosophy , 4: 159-219."
+        },
+        {
+          "raw": "Beaney, M., ed., 1997, The Frege Reader , Oxford: Blackwell."
+        },
+        {
+          "raw": "Berwick, B. et al., 2011, \"Poverty of the Stimulus Revisited\", Cognitive Science , 35: 1207-42."
+        },
+        {
+          "raw": "Boolos, G., 1998, Logic, Logic, and Logic , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Carnap, R., 1950, \"Empiricism, Semantics, and Ontology\", reprinted in R. Carnap, Meaning and Necessity ; second edition, Chicago: University of Chicago Press, 1956."
+        },
+        {
+          "raw": "Cartwright, R., 1962, \"Propositions\", in R. J. Butler, Analytical Philosophy , 1st series, Oxford: Basil Blackwell 1962; reprinted with addenda in Richard Cartwright, Philosophical Essays , Cambridge, MA: MIT Press 1987."
+        },
+        {
+          "raw": "Chomsky, N., 1957, Syntactic Structures , The Hague: Mouton."
+        },
+        {
+          "raw": "---, 1964, Current Issues in Linguistic Theory , The Hague: Mouton."
+        },
+        {
+          "raw": "---, 1965, Aspects of the Theory of Syntax , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 1981, Lectures on Government and Binding , Dordrecht: Foris."
+        },
+        {
+          "raw": "---, 1986, Knowledge of Language , New York: Praeger."
+        },
+        {
+          "raw": "---, 1995, The Minimalist Program , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Davidson, D., 1967a, \"Truth and Meaning\", Synthese , 17: 304-23."
+        },
+        {
+          "raw": "---, 1967b, \"The Logical Form of Action Sentences\", in N. Rescher (ed.), The Logic of Decision and Action , Pittsburgh: University of Pittsburgh Press."
+        },
+        {
+          "raw": "---, 1968, \"On Saying That\", Synthese , 19: 130-46."
+        },
+        {
+          "raw": "---, 1980, Essays on Actions and Events , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 1984, Inquiries into Truth and Interpretation , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Donnellan, K., 1966, \"Reference and Definite Descriptions\", Philosophical Review , 75: 281-304."
+        },
+        {
+          "raw": "Fodor, J., 1978, \"Propositional Attitudes\", The Monist , 61: 501-23."
+        },
+        {
+          "raw": "Frege, G., 1879, Begriffsschrift , reprinted in Beaney 1997."
+        },
+        {
+          "raw": "---, 1884, Die Grundlagen der Arithmetik , Breslau: Wilhelm Koebner. English translation, The Foundations of Arithmetic , J. L. Austin (trans). Oxford: Basil Blackwell, 1974."
+        },
+        {
+          "raw": "---, 1891, \"Function and Concept\", reprinted in Beaney 1997."
+        },
+        {
+          "raw": "---, 1892, \"On Sinn and Bedeutung\", reprinted in Beaney 1997."
+        },
+        {
+          "raw": "Gillon, B., 2007, \"P&#257;&#7751;ini's A&#7779;&#7789;&#257;dhy&#257;y&#299; and Linguistic Theory\", Journal of Indian Philosophy , 35: 445-468."
+        },
+        {
+          "raw": "Harman, G., 1972, \"Logical Form\", Foundations of Language , 9: 38-65."
+        },
+        {
+          "raw": "---, 1973, Thought , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Higginbotham, J., 1986, \"Linguistic Theory and Davidson's Program in Semantics\", in E. Lepore (ed.), Truth and Interpretation , pp. 29-48, Oxford: Blackwell."
+        },
+        {
+          "raw": "Higginbotham, J. & May, R., 1981, \"Questions, Quantifiers, and Crossing\", Linguistic Review , 1: 47-79."
+        },
+        {
+          "raw": "Hornstein, N., 1995, Logical Form: From GB to Minimalism , Oxford: Blackwell."
+        },
+        {
+          "raw": "Huang, J., 1995, \"Logical Form\", in G. Webelhuth (ed.), Government and Binding Theory and the Minimalist Program: Principles and Parameters in Syntactic Theory , pp. 127-175, Oxford: Blackwell."
+        },
+        {
+          "raw": "Iacona, A., 2018, Logical Form: Between Logic and Natural Language , Berlin: Springer."
+        },
+        {
+          "raw": "Jacobson, P., 1999, \"Variable Free Semantics\", Linguistics and Philosophy , 22: 117-84."
+        },
+        {
+          "raw": "King, J., 2002, \"Two Sorts of Claims about Logical Form \" in Preyer and Peter 2002."
+        },
+        {
+          "raw": "Keenan, E., 1996, \"The Semantics of Determiners\", in S. Lappin (ed.), The Handbook of Contemporary Semantic Theory , Oxford: Blackwell, pp. 41-63."
+        },
+        {
+          "raw": "Kratzer, A., 1986, \"Severing the External Argument from its Verb\", in J. Rooryck and L. Zaring (eds.), Phrase Structure and the Lexicon , Dordrecht: Kluwer, pp. 109-137."
+        },
+        {
+          "raw": "Larson, R. and Ludlow, P., 1993, \"Interpreted Logical Forms\", Synthese , 95: 305-55."
+        },
+        {
+          "raw": "Lepore, E. and Ludwig, K., 2002, \"What is Logical Form?\", in Preyer and Peter 2002, pp. 54-90."
+        },
+        {
+          "raw": "Ludlow, P., 2002, \"LF and Natural Logic\", in Preyer and Peter 2002, pp. 132-168."
+        },
+        {
+          "raw": "May, R., 1985, Logical Form: Its Structure and Derivation , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Montague, R., 1970, \"English as a Formal Language\", in R. Thomason (ed.), Formal Philosophy , New Haven, CT: Yale University Press, 1974, pp. 7-27."
+        },
+        {
+          "raw": "Parsons, T., 2014, Articulating Medieval Logic , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Pietroski, P., 2018, Conjoining Meanings , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Preyer, G. and Peter, G. (eds.), 2002, Logical Form and Language , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Quine, W.V.O., 1950, Methods of Logic , New York: Henry Holt."
+        },
+        {
+          "raw": "---, 1951, \"Two Dogmas of Empiricism\", Philosophical Review , 60: 20-43."
+        },
+        {
+          "raw": "---, 1953, \"On What There Is\", in From a Logical Point of View , Cambridge, MA: Harvard University Press, pp. 1-19."
+        },
+        {
+          "raw": "---, 1960, Word and Object , Cambridge MA: MIT Press."
+        },
+        {
+          "raw": "---, 1970, Philosophy of Logic , Englewood Cliffs, NJ: Prentice Hall."
+        },
+        {
+          "raw": "Ramsey, F., 1927, \"Facts and Propositions\", Proceedings of the Aristotelian Society (Supplementary Volume), 7: 153-170."
+        },
+        {
+          "raw": "S&agrave;nchez, V., 1991, Studies on Natural Logic and Categorial Grammar , Ph.D. Thesis, University of Amsterdam."
+        },
+        {
+          "raw": "--1994, \"Montonicity in Medieval Logic\", Language and Cognition , 4: 161-74."
+        },
+        {
+          "raw": "Schein, B., 1993, Events and Plurals , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "---, 2017, And: Conjunction Reduction Redux , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Segal, G., 1989, \"A Preference for Sense and Reference\", The Journal of Philosophy , 86: 73-89."
+        },
+        {
+          "raw": "Soames, S., 1987, \"Direct Reference, Propositional Attitudes, and Semantic Content\", Philosophical Topics , 15: 47-87."
+        },
+        {
+          "raw": "---, 1995, \"Beyond Singular Propositions\", Canadian Journal of Philosophy , 25: 515-50."
+        },
+        {
+          "raw": "---, 2002, Beyond Rigidity , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Sommers, F., 1984, The Logic of Natural Language , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Stanley, J., 2000, \"Context and Logical Form\", Linguistics and Philosophy , 23: 391-434."
+        },
+        {
+          "raw": "Strawson, P., 1950, \"On Referring\", Mind , 59: 320-44."
+        },
+        {
+          "raw": "Tarski, A., 1933, \"The Concept of Truth in Formalized Languages\", reprinted in Tarski 1983."
+        },
+        {
+          "raw": "---, 1944, \"The Semantic Conception of Truth\", Philosophy and Phenomenological Research , 4: 341-75."
+        },
+        {
+          "raw": "---, 1983, Logic, Semantics, Metamathematics , J. Corcoran (ed.), J.H. Woodger (trans.), 2nd edition, Indianapolis: Hackett."
+        },
+        {
+          "raw": "van Benthem, J., 1986, Essays in Logical Semantics , Dordrecht: D. Reidel."
+        },
+        {
+          "raw": "Wiggins, D., 1980, \"'Most' and 'all': some comments on a familiar programme, and on th clogical form of quantified sentences\", in M. Platts (ed.) Reference, truth and reality: Essays on the philosophy of language , London: Routledge & Kegan Paul, pp. 318-346."
+        },
+        {
+          "raw": "Wittgenstein, L., 1921, Tractatus Logico-Philosophicus , D. Pears and B. McGuinness (trans.), London: Routledge & Kegan Paul."
+        },
+        {
+          "raw": "---, 1953. Philosophical Investigations , New York: Macmillan."
+        },
+        {
+          "raw": "Kneale, W. & Kneale, M., 1962, The Development of Logic , Oxford: Oxford University Press; reprinted 1984."
+        },
+        {
+          "raw": "Sainsbury, M., 1991, Logical Forms , Oxford: Blackwell."
+        },
+        {
+          "raw": "Broadie, A., 1987, Introduction to Medieval Logic , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "For these purposes, Russell's most important books are: Introduction to Mathematical Philosophy , London: George Allen and Unwin, 1919; Our Knowledge of the External World , New York: Norton, 1929; and The Philosophy of Logical Atomism , La Salle, Ill: Open Court, 1985. Stephen Neale's book Descriptions (Cambridge, MA: MIT Press, 1990) is a recent development of Russell's theory."
+        },
+        {
+          "raw": "Radford, A., 1988, Transformational Grammar , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Haegeman, L., 1994, Introduction to Government & Binding Theory , Oxford: Blackwell."
+        },
+        {
+          "raw": "Lasnik, H. (with M. Depiante and A. Stepanov), 2000, Syntactic Structures Revisited , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Higginbotham, J., 1985, \"On Semantics\", Linguistic Inquiry , 16: 547-93."
+        },
+        {
+          "raw": "Larson, R. and Segal, G., 1995, Knowledge of Meaning , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Neale, S., 1993, Grammatical Form, Logical Form, and Incomplete Symbols , in A. Irvine & G. Wedeking (eds.), Russell and Analytic Philosophy , Toronto: University of Toronto, pp. 97-139."
+        },
+        {
+          "raw": "Davidson, D., 1984, Essays on Truth and Interpretation , Oxford: OUP."
+        },
+        {
+          "raw": "---, 1985, \"Adverbs of Action\", in B. Vermazen and M. Hintikka (eds.), Essays on Davidson: Actions and Events , Oxford: Clarendon Press, pp. 230-241."
+        },
+        {
+          "raw": "Evans, G. & McDowell, J. (eds.), 1976, Truth and Meaning , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Higginbotham, J., Pianesi, F. and Varzi, A. (eds.), 2000, Speaking of Events , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Ludwig, K. (ed.), 2003, Contemporary Philosophers in Focus: Donald Davidson , Cambridge: Cambridge University Pres"
+        },
+        {
+          "raw": "Lycan, W., 1984, Logical Form in Natural Language , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Parsons, T., 1990, Events in the Semantics of English Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Pietroski, P., 2005, Events and Semantic Architecture , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Taylor, B., 1985, Modes of Occurrence , Oxford: Blackwell."
+        }
+      ],
+      "publishedAt": "1999-10-18T14:00:00.000Z",
+      "revisedAt": "2021-08-31T14:00:00.000Z"
+    }
+  }
+}

@@ -1,0 +1,867 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/epistemic-game",
+  "meta": {
+    "title": "Epistemic Foundations of Game Theory",
+    "description": "Non-cooperative game theory studies how individual players, or agents, make decisions in situations involving strategic interaction. In these situations, each player's outcome depends not only on their own choices but also on the choices of the other players (see Ross 1997 [2024] for an overview). Epistemic game theory investigates how assumptions about the players' beliefs and rationality influence their choices in strategic situations. This entry begins by discussing the role of uncertainty in strategic situations. It then introduces models of multi-agent knowledge and belief developed in the epistemic game theory and epistemic logic literature. Next, it examines how these models can be used to characterize classical game-theoretic solution concepts, focusing on the relationship between players' rationality and their mutual beliefs about each other's rationality. The entry concludes with a brief overview of other key topics in the epistemic game theory literature and suggestions for further reading.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T09:40:15.741Z",
+    "dateModified": "2026-03-22T09:40:15.741Z",
+    "datePublished": "2015-03-12T13:00:00.000Z",
+    "keywords": [
+      "belief",
+      "common knowledge",
+      "decision causal",
+      "dynamic epistemic",
+      "formal belief",
+      "formal epistemology",
+      "game theory",
+      "logic epistemic",
+      "logics for games",
+      "prisoner dilemma",
+      "rationality normative utility"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Non-cooperative game theory studies how individual players, or agents, make decisions in situations involving strategic interaction. In these situations, each player's outcome depends not only on their own choices but also on the choices of the other players (see Ross 1997 [2024] for an overview). Epistemic game theory investigates how assumptions about the players' beliefs and rationality influence their choices in strategic situations. This entry begins by discussing the role of uncertainty in strategic situations. It then introduces models of multi-agent knowledge and belief developed in the epistemic game theory and epistemic logic literature. Next, it examines how these models can be used to characterize classical game-theoretic solution concepts, focusing on the relationship between players' rationality and their mutual beliefs about each other's rationality. The entry concludes with a brief overview of other key topics in the epistemic game theory literature and suggestions for further reading.",
+    "context": "Opening section: 1. The Epistemic View of Games | Related entries: belief, formal-belief, common-knowledge, decision-causal, formal-epistemology, game-theory, dynamic-epistemic, logic-epistemic, logics-for-games, prisoner-dilemma, rationality-normative-utility",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "epistemology",
+    "logic"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry epistemic-game",
+        "uri": "https://plato.stanford.edu/entries/epistemic-game/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "2 author(s), 11 related entries, bibliography size 202"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2015-03-12T13:00:00.000Z and revised 2025-06-26T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2025-06-26T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/epistemic-game/",
+        "description": "SEP entry for epistemic-game"
+      }
+    ],
+    "solutionApproach": "1. The Epistemic View of Games"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/belief",
+      "ocp:sep/formal-belief",
+      "ocp:sep/common-knowledge",
+      "ocp:sep/decision-causal",
+      "ocp:sep/formal-epistemology",
+      "ocp:sep/game-theory",
+      "ocp:sep/dynamic-epistemic",
+      "ocp:sep/logic-epistemic",
+      "ocp:sep/logics-for-games",
+      "ocp:sep/prisoner-dilemma",
+      "ocp:sep/rationality-normative-utility"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Pacuit, Eric",
+        "type": "human"
+      },
+      {
+        "name": "Roy, Olivier",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/epistemic-game/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 137,
+      "validation_diversity": 0.57,
+      "context_breadth": 0.47,
+      "temporal_stability": 1,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.91
+    },
+    "confidence": "tested",
+    "authority": "high",
+    "status": "draft",
+    "trustScore": 0.617
+  },
+  "extensions": {
+    "sep": {
+      "slug": "epistemic-game",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/epistemic-game/",
+      "preamble": "Non-cooperative game theory studies how individual players, or agents, make decisions in situations involving strategic interaction. In these situations, each player's outcome depends not only on their own choices but also on the choices of the other players (see Ross 1997 [2024] for an overview). Epistemic game theory investigates how assumptions about the players' beliefs and rationality influence their choices in strategic situations. This entry begins by discussing the role of uncertainty in strategic situations. It then introduces models of multi-agent knowledge and belief developed in the epistemic game theory and epistemic logic literature. Next, it examines how these models can be used to characterize classical game-theoretic solution concepts, focusing on the relationship between players' rationality and their mutual beliefs about each other's rationality. The entry concludes with a brief overview of other key topics in the epistemic game theory literature and suggestions for further reading.",
+      "firstSectionTitle": "1. The Epistemic View of Games",
+      "firstSectionText": "This section provides an overview of the key ideas and concepts that are used throughout epistemic game theory. A game refers to an interactive situation involving a group of \"self-interested\" players, or agents. The defining feature of a game is that the players are engaged in an \"interdependent decision problem\" where the outcome of the game depends on all of the player's choices (Schelling 1960). The mathematical description of a game includes at least the following components: the players : in this entry, we only consider games with finitely many players and use \\(N \\) to denote the set of players in a game; for each player \\(i\\in N\\), a finite set of feasible options (typically called actions or strategies ); and for each player \\(i\\in N\\), a utility function that represents \\(i\\)'s preference over the possible outcomes of the game. A standard assumption in game theory is that the outcomes of a game are the sequences of actions, one for each player. A sequence of actions is called a strategy profile . Identifying the outcomes of a game with strategy profiles reflects the key idea that the outcome of a game depends on the choices of all players . Different mathematical representations of a game describe other features of the interactive situation, such as the order in which the players move. Definition 1.1 (Game in Strategic Form) A game in strategic form is a tuple \\(\\langle N , (S_i)_{i\\in N}, (u_i)_{i\\in N }\\rangle\\) where \\(N \\) is a nonempty finite set of players, for each \\(i\\in N\\), \\(S_i\\) is a nonempty set of actions for player \\(i\\), and for each \\(i\\in N\\), \\(u_i:\\times_{i\\in N } S_i\\rightarrow\\mathbb{R}\\) is player \\(i\\)'s utility function, where \\(\\times_{i\\in N} S_i\\) is the set of strategy profiles. A game in strategic form represents a situation in which all the players make a single decision simultaneously without stochastic moves. Figure 1 is an example of a game in strategic form. There are two players, Ann and Bob, and each has two available actions: \\(N = \\{\\Ann, \\Bob\\}\\), \\(S_{\\Ann} = \\{u, d\\}\\) and \\(S_{\\Bob} = \\{l, r\\}\\). The players' utilities \\(u_{\\Ann}\\) and \\(u_{\\Bob}\\) are displayed in the cells of the matrix (the first number in the tuple is Ann's utility and the second number is Bob's utility). If Bob chooses \\(l\\), for instance, Ann prefers the outcome she would get by choosing \\(u\\) to the one she would get by choosing \\(d\\) since \\(u_{\\Ann}(u,l) > u_{\\Ann}(d,l)\\), but this preference is reversed if Bob chooses \\(r\\). In the game in Figure 1 , there are 4 outcomes of the game corresponding to the 4 different strategy profiles \\(\\{(u,l), (u, r), (d, l), (d,r)\\}\\) (represented by each of the 4 cells in the matrix displayed in Figure 1 ). Figure 1: A coordination game The game displayed in Figure 1 is called a pure coordination game : the players have a common interest in coordinating their choices on \\((u, l)\\) or \\((d, r)\\) and they are both indifferent about which way they coordinate their choices. A major focus of classical game theory research is studying and developing solution concepts . A solution concept associates a set of outcomes (i.e., a set of strategy profiles) with each game (from some fixed class of games). The most well-known solution concept is the Nash equilibrium, although we will encounter others in this entry. From a prescriptive point of view, a solution concept is a recommendation about what the players should do in a game, or about what outcomes can be expected assuming that the players choose rationally. From a predictive point of view, solution concepts describe what the players will actually do in a game. Many solution concepts in game theory involve mixed strategies , where a player deliberately randomizes between their available actions rather than choosing one with certainty. The matching pennies game illustrates why mixed strategies are important: two players simultaneously show heads or tails, where one player wins if the coins match and the other wins if they differ. In this game, if your opponent can predict your choice, they will win by choosing accordingly. To prevent your opponent from gaining this advantage, you should make your choice truly unpredictable--even to yourself--by randomizing. A mixed strategy specifies the probability of choosing each action (e.g., 60% heads, 40% tails), selected from the infinitely many possible probability distributions over your available actions. Formally, a mixed strategy for a player \\(i\\) is a probability over \\(i\\)'s available strategies. Let \\(\\Delta(X)\\) denote the set of probability measures over the finite set \\(X\\). Each \\(m\\in \\Delta(S_i)\\) is called a mixed strategy for player \\(i\\). If \\(m\\in\\Delta(S_i)\\) assigns probability 1 to a strategy \\(s\\in S_i\\), then \\(m\\) is called a pure strategy (in this case, we write \\(s\\) for \\(m\\)). i . If \\(s_{-i}\\in S_{-i}\\) is a sequence of strategies for the players other than i , then let \\(U_i(m, s_{-i})=\\sum_{s\\in S_i} m(s) * u_i(s,s_{-i})\\), where \\(u_i(s, s_{-i})\\) is the utility of player i for the strategy profile where i chooses s and the other players choose as in \\(s_{-i}\\).--> Mixed strategies play an important role in game theory, especially when it comes to the existence of Nash equilibria. However, the interpretation of mixed strategies is controversial (see, for instance, Rubinstein 1991: 913). The main issue is whether players should be seen as genuinely randomizing--i.e., as delegating their choices to some randomization device--or whether mixed strategies capture something else, such as the opponents' uncertainty about a player's choice (cf. Zollman 2022 and Icard 2021). We return to the interpretation of mixed strategies in Section 3.3.2 . Epistemic game theory emerged as a well-defined research program in the 1980s as a response to the equilibrium refinement program. The equilibrium refinement program (see van Damme 1983 for an overview) started with the observation that the Nash equilibrium (see Section 3.3 for a definition of Nash equilibrium) does not always provide a unique or compelling solution of a game. The equilibrium refinement program aims to identify more desirable solutions to a game by imposing additional criteria on the set of Nash equilibria. These refined equilibrium concepts were often based on intuitive judgments about what constituted rational plays in games. The development of epistemic game theory was motivated by a desire to formalize these intuitive judgments. Armbruster & B&ouml;ge (1979) is arguably the earliest contribution to this approach, but other notable works include Spohn (1982), Bernheim (1984), Pearce (1984), and Tan & Werlang (1988), all of which present clear statements contrasting the epistemic program with the equilibrium refinement program. Consult Perea (2014b) for a more comprehensive discussion on the history of epistemic game theory. One of the objectives of epistemic game theory is to characterize the behavior of rational players who mutually recognize each other's rationality, where rationality is typically understood as in standard decision theory (see Briggs 2014 [2019]). This approach to the study of games is nicely encapsulated by the following: There is no special concept of rationality for decision making in a situation where the outcomes depend on the actions of more than one agent. The acts of other agents are, like chance events, natural disasters and acts of God, just facts about an uncertain world that agents have beliefs and degrees of belief about. The utilities of other agents are relevant to an agent only as information that, together with beliefs about the rationality of those agents, helps to predict their actions. (Stalnaker 1996: 136) A central component of an epistemic analysis of a game is a description of what the players know and believe about each other. In epistemic game theory, there are two main sources of uncertainty for the players: Strategic uncertainty: What will the other players do? Higher-order information: What are the other players thinking? Of course, game theorists have studied uncertainty in games long before the emergence of epistemic game theory. This work has largely focused on two other sources of uncertainty in game: Information about the structure of the game (called complete/incomplete information ): Who else is involved in the game? What actions are available? What are the payoffs for each player? This type of uncertainty in games is briefly discussed in Section 1.4 Information about the play of the game (called perfect/imperfect information ): Which moves have been played? This type of uncertainty in games is briefly discussed in Section 1.5 . These four sources of uncertainty in games are conceptually important, but not necessarily exhaustive nor mutually exclusive. John Harsanyi, for instance, argued that all uncertainty about the structure of the game--i.e., all possible incompleteness in information--can be reduced to uncertainty about the payoffs (Harsanyi 1967-68, cf. also Hu & Stuart 2002 and Lorini & Schwarzentruber 2010). In a similar vein, Kadane & Larkey argue that for a player in a single-play game, all aspects of his opinion except his [opinion] about his opponent's behavior are irrelevant, and can be ignored in the analysis by integrating them out of the joint opinion. (1982: 116) It is standard in the game theory literature to distinguish three stages of the decision making process: ex ante , ex interim , and ex post . At one extreme is the ex ante stage where no decision has yet been made. The other extreme is the ex post stage where the choices of all players are openly disclosed. In between these two extremes is the ex interim stage where the players have made their decisions, but they are still uninformed about the choices of the other players. These distinctions are not intended to be sharp. Rather, they describe various stages of information disclosure for the players during the decision-making process. At the ex ante stage, little is known except the structure of the game, who is taking part, and possibly (but not necessarily) something about the other players' beliefs. At the ex post stage the game is basically over: all players have made their decision and these are now irrevocably out in the open. This does not mean that all uncertainty is removed as an agent may remain uncertain about what exactly the others were expecting of her. In between these two extremes lies a whole gradation of states of information disclosure that we loosely refer to as \"the\" ex interim stage. Common to these states of information disclosure is the fact that the agents have made a decision, although not necessarily an irrevocable one. In this entry, we focus on the ex interim stage of decision making. This is in line with much of the literature on the epistemic foundations of game theory as it allows for a straightforward assessment of the players' rationality given their expectations about what their opponents will do. Focusing on the ex interim stage does raise some interesting questions about how a player should react to learning that she did not choose \"rationally\" (cf. Stalnaker 1999, Section 4, and Skyrms 1990). Note that this question is different from the one of how players should revise their beliefs upon learning that others did not choose rationally. This second question is very relevant in games in which players choose sequentially, and will be addressed in Section 3.2 . A natural question to ask about any mathematical model of a game situation is how does the analysis change if the players are uncertain about some parameters of the model? This motivated Harsanyi's seminal 1967-68 paper that introduced a model of beliefs for players with incomplete information about some aspect of a game. Building on these ideas, there is an extensive literature that studies Bayesian games , that is, games in which the players are uncertain about some aspect of the game. Consult Leyton-Brown & Shoham (2008: ch. 7) for a concise summary and pointers to the relevant literature. We discuss Harsanyi's approach to modeling higher-order beliefs in Section 2.2 . Following Brandenburger 2010 (Sections 4 and 5), we note two crucial differences between the study of Bayesian games and epistemic game theory. In a Bayesian game, the only source of uncertainty for a player is the payoffs of the game, what the other players believe are the correct payoffs, what other players believe that the other players believe about the payoffs, and so on. The underlying idea is that the players' (higher-order) beliefs about the payoffs in a game completely determine the (higher-order) beliefs about the other aspects of the game. In particular, if a player comes to know the payoffs of the other players, then that player is certain (and correct) about the possible (rational) choices of the other players. As discussed in Section 1.2, in epistemic game theory, the models of beliefs focus on other sources of uncertainty for the players, such as strategic uncertainty. In a Bayesian game, it is assumed that all players choose optimally given their information. That is, all players choose a strategy that maximizes their expected utility given their beliefs about the game, beliefs about what other players believe about the game, and so on. This means, in particular, that players do not entertain the possibility that their opponents may choose \"irrationally\". In contrast, epistemic game theory models allow for the possibility that players may believe that the other players choose irrationally. Note that these assumptions are not inherent in the formalism that Harsanyi used to represent the players' beliefs in a game of incomplete information. Rather, they are conventions followed by Harsanyi and subsequent researchers studying Bayesian games. The defining feature of a game in strategic form is that the players choose their actions simultaneously . This is not an assumption about the precise timing of the players' choices in the game, but rather an assumption about what the players know and believe about the choices of the other players in the game. More generally, a game in strategic form is an example of a game with imperfect information in which the players may not be perfectly informed about the moves of their opponents or the outcome of chance moves by nature. The choices of two players that do not move at the same time, but are not informed about the choice of the other player can be pictured as follows (where, for instance, the first player chooses at \\(d_0\\) and the second player chooses at \\(d_1\\) and \\(d_2\\), and the labels for the available actions are suppressed): Figure 2 [An extended description of figure 2 is in the supplement.] The interpretation is that the decision made at the first node (\\(d_0\\)) is forgotten or not observed, and so the second decision is made under uncertainty about whether the decision maker is at node \\(d_1\\) or \\(d_2\\). See Osborne (2004: ch. 9 & 10) for the general theory of games with imperfect information. Allowing imperfect information in a game raises an interesting question about whether players may be imperfectly informed about their own past decisions. Harold Kuhn (1953) introduced the distinction between perfect and imperfect recall in games with imperfect information. The key idea is that players have perfect recall when they remember all of their own past moves. A standard assumption in game theory is that all players have perfect recall--i.e., they may be uncertain about previous choices of their opponents or nature, but they do remember all of their own moves. The perfect recall assumption has not only played an important role in game theory (Bonanno 2004; Kaneko & Kline 1995; Piccione & Rubinstein 1997a), but also in the study of logics of knowledge and time (Halpern, van der Meyden, & Vardi 2004), and in computational models of poker (Waugh et al. 2009). As we noted in Section 1.3 , there are different stages to the decision making process. Differences between these stages of decision-making are more pronounced in sequential decision problems in which decision makers choose at different moments in time. There are two ways to think about the decision making process in sequential decision problems. The first is to focus on the initial \"planning stage\". Initially (before any moves are made), the decision makers settle on a plan specifying the (possibly random) move they will make at each of their choice nodes. Then, the players start making their respective moves following the plan which they have committed to without reconsidering their options at each choice node. Alternatively, the decision makers can make \"local judgements\" at each of their choice nodes, always choosing the best option given the information that is currently available to them. Kuhn's Theorem (1953) shows that if players have perfect recall, then a plan is optimal if, and only if, it is locally optimal--that is, an optimal plan leads to the same sequence of choices that result from each decision maker choosing optimally at their decision node (see Maschler, Solan, & Zamir 2013: 219-250, for a proof of this classic result). The assumption of perfect recall is crucial for Kuhn's result. This is demonstrated by the so-called absent-minded driver's problem of Piccione & Rubinstein (1997a): An individual is sitting late at night in a bar planning his midnight trip home. In order to get home he has to take the highway and get off at the second exit. Turning at the first exit leads into a disastrous area (payoff 0). Turning at the second exit yields the highest reward (payoff 4). If he continues beyond the second exit, he cannot go back and at the end of the highway he will find a motel where he can spend the night (payoff 1). The driver is absentminded and is aware of this fact. At an intersection, he cannot tell whether it is the first or the second intersection and he cannot remember how many he has passed (one can make the situation more realistic by referring to the 17th intersection). While sitting at the bar, all he can do is to decide whether or not to exit at an intersection. (Piccione & Rubinstein 1997a: 7) The decision tree for the absent-minded driver is depicted below: Figure 3 [An extended description of figure 3 is in the supplement.] This problem shows that there may be a conflict between what the decision maker commits to do while planning at the bar and what he thinks is best at the first intersection: Planning stage: While planning his trip home at the bar, the decision maker is faced with a choice between \"Continue; Continue\" and \"Exit\". Since he cannot distinguish between the two intersections, he cannot plan to \"Exit\" at the second intersection (he must plan the same behavior at both \\(X\\) and \\(Y\\)). Since \"Exit\" will lead to the worst outcome (with a payoff of 0), the optimal strategy is \"Continue; Continue\" with a guaranteed payoff of 1. Action stage: When arriving at an intersection, the decision maker is faced with a local choice of either \"Exit\" or \"Continue\" (possibly followed by another decision). Now the decision maker knows that since he committed to the plan of choosing \"Continue\" at each intersection, it is possible that he is at the second intersection. Indeed, the decision maker concludes that he is at the first intersection with probability 1/2. But then, his expected payoff for \"Exit\" is \\(1/2 * 4 + 1/2 * 0 = 2\\), which is greater than the payoff guaranteed by following the strategy he previously committed to. Thus, he chooses to \"Exit\". This problem has been discussed by a number of different researchers. It is beyond the scope of this article to discuss the details of the different analyses. An entire issue of Games and Economic Behavior (Volume 20, 1997) was devoted to the analysis of this problem. For a representative sampling of the approaches to this problem, see Aumann, Hart, & Perry (1997); Board (2003); Halpern (1997); Piccione & Rubinstein (1997b); Kline (2002); Levati, Uhl & Zultan (2014); Schwarz (2015); and Milano and Perea (2023).",
+      "relatedEntries": [
+        "belief",
+        "formal-belief",
+        "common-knowledge",
+        "decision-causal",
+        "formal-epistemology",
+        "game-theory",
+        "dynamic-epistemic",
+        "logic-epistemic",
+        "logics-for-games",
+        "prisoner-dilemma",
+        "rationality-normative-utility"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "belief"
+        },
+        {
+          "slug": "formal-belief"
+        },
+        {
+          "slug": "common-knowledge"
+        },
+        {
+          "slug": "decision-causal"
+        },
+        {
+          "slug": "formal-epistemology"
+        },
+        {
+          "slug": "game-theory"
+        },
+        {
+          "slug": "dynamic-epistemic"
+        },
+        {
+          "slug": "logic-epistemic"
+        },
+        {
+          "slug": "logics-for-games"
+        },
+        {
+          "slug": "prisoner-dilemma"
+        },
+        {
+          "slug": "rationality-normative-utility"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 202,
+      "bibliography": [
+        {
+          "raw": "Abramsky, Samson and Jonathan Zvesper, 2015, \"From Lawvere to Brandenburger-Keisler: Interactive Forms of Diagonalization and Self-Reference\", Journal of Computer and System Sciences , 81(5): 799-812. doi:10.1016/j.jcss.2014.12.001"
+        },
+        {
+          "raw": "Alchourr&oacute;n, Carlos E., Peter G&auml;rdenfors, and David Makinson, 1985, \"On the logic of theory change: Partial meet contraction and revision functions\", The Journal of Symbolic Logic 50.2: 510-530."
+        },
+        {
+          "raw": "Apt, Krzysztof R., 2007, \"The Many Faces of Rationalizability\", The B.E. Journal of Theoretical Economics , 7(1): 0000102202193517041339. doi:10.2202/1935-1704.1339"
+        },
+        {
+          "raw": "---, 2011, \"Direct Proofs of Order Independence\", Economics Bulletin , 31(1): 106-115."
+        },
+        {
+          "raw": "Apt, Krzysztof R. and Jonathan A. Zvesper, 2010, \"The Role of Monotonicity in the Epistemic Analysis of Strategic Games\", Games , 1(4): 381-394. doi:10.3390/g1040381"
+        },
+        {
+          "raw": "Arieli, Itai and Robert J. Aumann, 2015, \"The Logic of Backward Induction\", Journal of Economic Theory , 159: 443-464. doi:10.1016/j.jet.2015.07.004"
+        },
+        {
+          "raw": "Armbruster, W. and W. B&ouml;ge, 1979, \"Bayesian Game Theory\", in Game Theory and Related Topics: Proceedings of the Seminar on Game Theory and Related Topics, Bonn/Hagen, 26-29 September, 1978 , Diethard Pallaschke and O. Moeschlin (eds.), Amsterdam/New York: North-Holland."
+        },
+        {
+          "raw": "Asheim, Geir B., 2002, \"On the Epistemic Foundation for Backward Induction\", Mathematical Social Sciences , 44(2): 121-144. doi:10.1016/S0165-4896(02)00011-2"
+        },
+        {
+          "raw": "Asheim, Geir B. and Martin Dufwenberg, 2003, \"Admissibility and Common Belief\", Games and Economic Behavior , 42(2): 208-234. doi:10.1016/S0899-8256(02)00551-1"
+        },
+        {
+          "raw": "Asheim, Geir B. and Andr&eacute;s Perea, 2005, \"Sequential and Quasi-Perfect Rationalizability in Extensive Games\", Games and Economic Behavior , 53(1): 15-42. doi:10.1016/j.geb.2004.06.015"
+        },
+        {
+          "raw": "Aumann, Robert J., 1974, \"Subjectivity and Correlation in Randomized Strategies\", Journal of Mathematical Economics , 1(1): 67-96. doi:10.1016/0304-4068(74)90037-8"
+        },
+        {
+          "raw": "---, 1976, \"Agreeing to Disagree\", The Annals of Statistics , 4(6): 1236-1239. doi:10.1214/aos/1176343654"
+        },
+        {
+          "raw": "---, 1987, \"Correlated Equilibrium as an Expression of Bayesian Rationality\", Econometrica , 55(1): 1-18. doi:10.2307/1911154"
+        },
+        {
+          "raw": "---, 1995, \"Backward Induction and Common Knowledge of Rationality\", Games and Economic Behavior , 8(1): 6-19. doi:10.1016/S0899-8256(05)80015-6"
+        },
+        {
+          "raw": "---, 1998, \"On the Centipede Game\", Games and Economic Behavior , 23(1): 97-105. doi:10.1006/game.1997.0605"
+        },
+        {
+          "raw": "---, 1999a, \"Interactive Epistemology I: Knowledge\", International Journal of Game Theory , 28(3): 263-300. doi:10.1007/s001820050111"
+        },
+        {
+          "raw": "---, 1999b, \"Interactive Epistemology II: Probability\", International Journal of Game Theory , 28(3): 301-314. doi:10.1007/s001820050112"
+        },
+        {
+          "raw": "Aumann, Robert and Adam Brandenburger, 1995, \"Epistemic Conditions for Nash Equilibrium\", Econometrica , 63(5): 1161-1180. doi:10.2307/2171725"
+        },
+        {
+          "raw": "Aumann, Robert J., Sergiu Hart, and Motty Perry, 1997, \"The Absent-Minded Driver\", Games and Economic Behavior , 20(1): 102-116. doi:10.1006/game.1997.0577"
+        },
+        {
+          "raw": "Bach, Christian W. and Andr&eacute;s Perea, 2020, \"Generalized Nash Equilibrium without Common Belief in Rationality\", Economics Letters , 186: 108526. doi:10.1016/j.econlet.2019.108526"
+        },
+        {
+          "raw": "Bach, Christian W. and Elias Tsakas, 2014, \"Pairwise Epistemic Conditions for Nash Equilibrium\", Games and Economic Behavior , 85: 48-59. doi:10.1016/j.geb.2014.01.017"
+        },
+        {
+          "raw": "Balkenborg, Dieter and Eyal Winter, 1997, \"A Necessary and Sufficient Epistemic Condition for Playing Backward Induction\", Journal of Mathematical Economics , 27(3): 325-345. doi:10.1016/S0304-4068(96)00776-8"
+        },
+        {
+          "raw": "Baltag, Alexandru and Sonja Smets, 2006, \"Conditional Doxastic Models: A Qualitative Approach to Dynamic Belief Revision\", Electronic Notes in Theoretical Computer Science , 165: 5-21. doi:10.1016/j.entcs.2006.05.034"
+        },
+        {
+          "raw": "Baltag, Alexandru, Sonja Smets, and Jonathan Alexander Zvesper, 2009, \"Keep 'Hoping' for Rationality: A Solution to the Backward Induction Paradox\", Synthese , 169(2): 301-333. doi:10.1007/s11229-009-9559-z"
+        },
+        {
+          "raw": "Baltag, Alexandru and Bryan Renne, 2016, \"Dynamic Epistemic Logic\", in The Stanford Encyclopedia of Philosophy (Winter 2016 edition), Edward N. Zalta (ed.), URL = https://plato.stanford.edu/archives/win2016/entries/dynamic-epistemic >."
+        },
+        {
+          "raw": "Barelli, Paulo, 2009, \"Consistency of Beliefs and Epistemic Conditions for Nash and Correlated Equilibria\", Games and Economic Behavior , 67(2): 363-375. doi:10.1016/j.geb.2009.02.003"
+        },
+        {
+          "raw": "Barwise, Jon, 1988, \"Three views of common knowledge\", in Proceedings of the 2nd Conference on Theoretical Aspects of Reasoning about Knowledge (TARK 1988) , San Francisco: Morgan Kaufmann, California, 365-379. [ Barwise 1988 available online (pdf) ]"
+        },
+        {
+          "raw": "Ba&#351;kent, Can, 2015, \"Some Non-Classical Approaches to the Brandenburger-Keisler Paradox\", Logic Journal of IGPL , 23(4): 533-552. doi:10.1093/jigpal/jzv001"
+        },
+        {
+          "raw": "---, 2018, \"A Yabloesque Paradox in Epistemic Game Theory\", Synthese , 195(1): 441-464. doi:10.1007/s11229-016-1231-9"
+        },
+        {
+          "raw": "Basu, K., 1990, \"On the Non-Existence of a Rationality Definition for Extensive Games\", International Journal of Game Theory , 19(1): 33-44. doi:10.1007/BF01753706"
+        },
+        {
+          "raw": "Battigalli, Pierpaolo, 1997, \"On Rationalizability in Extensive Games\", Journal of Economic Theory , 74(1): 40-61. doi:10.1006/jeth.1996.2252"
+        },
+        {
+          "raw": "---, 2003, \"Rationalizability in Infinite, Dynamic Games with Incomplete Information\", Research in Economics , 57(1): 1-38. doi:10.1016/S1090-9443(02)00054-6"
+        },
+        {
+          "raw": "Battigalli, Pierpaolo and Giacomo Bonanno, 1999, \"Recent Results on Belief, Knowledge and the Epistemic Foundations of Game Theory\", Research in Economics , 53(2): 149-225. doi:10.1006/reec.1999.0187"
+        },
+        {
+          "raw": "Battigalli, Pierpaolo and Marciano Siniscalchi, 2002, \"Strong Belief and Forward Induction Reasoning\", Journal of Economic Theory , 106(2): 356-391. doi:10.1006/jeth.2001.2942"
+        },
+        {
+          "raw": "---, 2003, \"Rationalization and Incomplete Information\", Advances in Theoretical Economics , 3(1). doi:10.2202/1534-5963.1073"
+        },
+        {
+          "raw": "Battigalli, Pierpaolo, Alfredo Di Tillio, and Dov Samet, 2013, \"Strategies and Interactive Beliefs in Dynamic Games\", in Advances in Economics and Econometricsm, Tenth World Congress: Volume 1, Economic Theory , Daron Acemoglu, Manuel Arellano, and Eddie Dekel (eds.), 1st ed., Cambridge University Press, 391-422 (chapter 12). doi:10.1017/CBO9781139060011.013"
+        },
+        {
+          "raw": "van Benthem, Johan, 2003, \"Rational dynamic and epistemic logic in games\", in S. Vannucci (ed.), Logic, Game Theory and Social Choice III , Department of Political Economy, University of Siena, pages 19-23. A version appeared as van Benthem 2007."
+        },
+        {
+          "raw": "---, 2007, \"Rational Dynamics and Epistemic Logic in Games\", International Game Theory Review , 9(1): 13-45. doi:10.1142/S0219198907001254"
+        },
+        {
+          "raw": "---, 2010, Modal Logic for Open Minds , (CSLI Lecture Notes 199), Stanford, CA: CSLI Publications."
+        },
+        {
+          "raw": "---, 2011, Logical Dynamics of Information and Interaction , Cambridge: Cambridge University Press. doi:10.1017/CBO9780511974533"
+        },
+        {
+          "raw": "van Benthem, Johan and Dominik Klein, 2019 [2022], \"Logics for Analyzing Games\", The Stanford Encyclopedia of Philosophy (Winter 2022 edition), Edward N. Zalta and Uri Nodelman (eds), URL = https://plato.stanford.edu/archives/win2022/entries/logics-for-games/ >."
+        },
+        {
+          "raw": "van Benthem, Johan, Eric Pacuit, and Olivier Roy, 2011 \"Toward a theory of play: A logical perspective on games and interaction\", Games 2.1: 52-86."
+        },
+        {
+          "raw": "Bernheim, B. Douglas, 1984, \"Rationalizable Strategic Behavior\", Econometrica , 52(4): 1007-1028. doi:10.2307/1911196"
+        },
+        {
+          "raw": "Bicchieri, Cristina, 1988a, \"Strategic Behavior and Counterfactuals\", Synthese , 76(1): 135-169. doi:10.1007/BF00869644"
+        },
+        {
+          "raw": "---, 1988b, \"Common Knowledge and Backward Induction: A Solution to the Paradox\", in Proceedings of the 2nd Conference on Theoretical Aspects of Reasoning about Knowledge (TARK 1988) , Moshe Y. Vardi (ed.), San Francisco, CA: Morgan Kaufmann, 381-393."
+        },
+        {
+          "raw": "---, 1995, \"The Epistemic Foundations of Nash Equilibrium\", in On the Reliability of Economic Models , Daniel Little (ed.), Dordrecht: Springer Netherlands, 91-146. doi:10.1007/978-94-011-0643-6_4"
+        },
+        {
+          "raw": "Billingsley, Patrick, 1999, Convergence of Probability Measures , second edition, (Wiley Series in Probability and Statistics. Probability and Statistics Section), New York: Wiley. doi:10.1002/9780470316962"
+        },
+        {
+          "raw": "Binmore, Ken, 1987, \"Modeling Rational Players: Part I\", Economics and Philosophy , 3(2): 179-214. doi:10.1017/S0266267100002893"
+        },
+        {
+          "raw": "---, 1988, \"Modeling Rational Players: Part II\", Economics and Philosophy , 4(1): 9-55. doi:10.1017/S0266267100000328"
+        },
+        {
+          "raw": "---, 1996, \"A Note on Backward Induction\", Games and Economic Behavior , 17(1): 135-137. doi:10.1006/game.1996.0098"
+        },
+        {
+          "raw": "---, 1997, \"Rationality and Backward Induction\", Journal of Economic Methodology , 4(1): 23-41. doi:10.1080/13501789700000002"
+        },
+        {
+          "raw": "Bjorndahl, Adam and Joseph Y. Halpern, 2017, \"From Type Spaces to Probability Frames and Back, via Language\", in Proceedings of of the Sixteenth Conference on Theoretical Aspects of Rationality and Knowledge (TARK 2017) (EPTCS 251), 75-87. doi:10.4204/EPTCS.251.6"
+        },
+        {
+          "raw": "Board, Oliver, 2003, \"The Not-so-Absent-Minded Driver\", Research in Economics , 57(3): 189-200. doi:10.1016/S1090-9443(03)00034-6"
+        },
+        {
+          "raw": "Bonanno, Giacomo, 1991, \"The Logic of Rational Play in Games of Perfect Information\", Economics and Philosophy , 7(1): 37-65. doi:10.1017/S0266267100000900"
+        },
+        {
+          "raw": "---, 1996, \"On the Logic of Common Belief\", Mathematical Logic Quarterly , 42(1): 305-311. doi:10.1002/malq.19960420126"
+        },
+        {
+          "raw": "---, 2004, \"Memory and Perfect Recall in Extensive Games\", Games and Economic Behavior , 47(2): 237-256. doi:10.1016/j.geb.2003.06.002"
+        },
+        {
+          "raw": "---, 2014, \"A Doxastic Behavioral Characterization of Generalized Backward Induction\", Games and Economic Behavior , 88: 221-241. doi:10.1016/j.geb.2014.10.004"
+        },
+        {
+          "raw": "---, 2015, \"Epistemic Foundations of Game Theory\", in Handbook of Epistemic Logic , Hans van Ditmarsch, Joseph Y. Halpern, W. van der Hoek, and Barteld Pieter Kooi (eds.), UK: College Publications, 443-488."
+        },
+        {
+          "raw": "Brams, Steven J., 1975, \"Newcomb's Problem and Prisoners' Dilemma\", Journal of Conflict Resolution , 19(4): 596-612. doi:10.1177/002200277501900402"
+        },
+        {
+          "raw": "Brandenburger, Adam, 2003, \"On the Existence of a 'Complete' Possibility Structure\", in Cognitive Processes and Economic Behaviour , Marcello Basili, Nicola Dimitri, and Itzhak Gilboa (eds.), London: Routledge, 30-34."
+        },
+        {
+          "raw": "---, 2010, \"Origins of Epistemic Game Theory\", in Epistemic Logic: 5 Questions , Vincent F. Hendricks and Olivier Roy (eds.), London: Automatic Press, 59-69."
+        },
+        {
+          "raw": "Brandenburger, Adam and Eddie Dekel, 1987, \"Rationalizability and Correlated Equilibria\", Econometrica , 55(6): 1391-1402. doi:10.2307/1913562"
+        },
+        {
+          "raw": "---, 1993, \"Hierarchies of Beliefs and Common Knowledge\", Journal of Economic Theory , 59(1): 189-198. doi:10.1006/jeth.1993.1012"
+        },
+        {
+          "raw": "Brandenburger, Adam, and Amanda Friedenberg, 2008, \"Intrinsic correlation in games\", Journal of Economic Theory 141.1 (2008): 28-67."
+        },
+        {
+          "raw": "Brandenburger, Adam and Amanda Friedenberg, 2010, \"Self-Admissible Sets\", Journal of Economic Theory , 145(2): 785-811. doi:10.1016/j.jet.2009.11.003"
+        },
+        {
+          "raw": "Brandenburger, Adam and H. Jerome Keisler, 2006, \"An Impossibility Theorem on Beliefs in Games\", Studia Logica , 84(2): 211-240. doi:10.1007/s11225-006-9011-z"
+        },
+        {
+          "raw": "Brandenburger, Adam, Alexander Danieli, and Amanda Friedenberg, 2021, \"The Implications of Finite&#8208;order Reasoning\", Theoretical Economics , 16(4): 1605-1654. doi:10.3982/TE2889"
+        },
+        {
+          "raw": "Brandenburger, Adam, Amanda Friedenberg, and H. Jerome Keisler, 2008, \"Admissibility in Games\", Econometrica , 76(2): 307-352. doi:10.1111/j.1468-0262.2008.00835.x"
+        },
+        {
+          "raw": "---, 2023, \"The Relationship between Strong Belief and Assumption\", Synthese , 201(5): 175. doi:10.1007/s11229-023-04167-6"
+        },
+        {
+          "raw": "Briggs, R. A., 2014 [2019], \"Normative Theories of Rational Choice: Expected Utility\", The Stanford Encyclopedia of Philosophy , (Fall 2019 edition), Edward N. Zalta (ed.), URL = https://plato.stanford.edu/archives/fall2019/entries/rationality-normative-utility/ >."
+        },
+        {
+          "raw": "de Bruin, Boudewijn, 2008, \"Common Knowledge of Rationality in Extensive Games\", Notre Dame Journal of Formal Logic , 49(3): 261-280. doi:10.1215/00294527-2008-011"
+        },
+        {
+          "raw": "---, 2010, Explaining Games: The Epistemic Programme in Game Theory , Dordrecht: Springer Netherlands. doi:10.1007/978-1-4020-9906-9"
+        },
+        {
+          "raw": "Catonini, Emiliano, 2019, \"Rationalizability and Epistemic Priority Orderings\", Games and Economic Behavior , 114: 101-117. doi:10.1016/j.geb.2018.12.004"
+        },
+        {
+          "raw": "Capraro, Valerio and Joseph Y. Halpern, 2016, \"Translucent Players: Explaining Cooperative Behavior in Social Dilemmas\", in Proceedings of the Fifteenth Conference on Theoretical Aspects of Rationality and Knowledge (TARK 2015) (EPCTS 215), 114-126. doi:10.4204/EPTCS.215.9"
+        },
+        {
+          "raw": "Clausing, Thorsten, 2003, \"Doxastic Conditions for Backward Induction\", Theory and Decision , 54(4): 315-336. doi:10.1023/B:THEO.0000004258.22525.f4"
+        },
+        {
+          "raw": "---, 2004, \"Belief Revision in Games of Perfect Information\", Economics and Philosophy , 20(1): 89-115. doi:10.1017/S0266267104001269"
+        },
+        {
+          "raw": "Colman, Andrew M., 2003, \"Cooperation, Psychological Game Theory, and Limitations of Rationality in Social Interaction\", Behavioral and Brain Sciences , 26(2): 139-198. doi:10.1017/S0140525X03000050"
+        },
+        {
+          "raw": "Cubitt, Robin P. and Robert Sugden, 1994, \"Rationally Justifiable Play and the Theory of Non-Cooperative Games\", The Economic Journal , 104(425): 798-803. doi:10.2307/2234975"
+        },
+        {
+          "raw": "---, 2011, \"The Reasoning-Based Expected Utility Procedure\", Games and Economic Behavior , 71(2): 328-338. doi:10.1016/j.geb.2010.04.002"
+        },
+        {
+          "raw": "---, 2014, \"Common Reasoning in Games: A Lewisian Analysis of Common Knowledge of Rationality\", Economics and Philosophy , 30(3): 285-329. doi:10.1017/S0266267114000339"
+        },
+        {
+          "raw": "van Damme, Eric, 1983, Refinements of the Nash Equilibrium Concept , (Lecture Notes in Economics and Mathematical Systems 219), Berlin/New York: Springer-Verlag. doi:10.1007/978-3-642-49970-8"
+        },
+        {
+          "raw": "---, 1989, \"Stable Equilibria and Forward Induction\", Journal of Economic Theory , 48(2): 476-496. doi:10.1016/0022-0531(89)90038-0"
+        },
+        {
+          "raw": "Davis, Lawrence H., 1977, \"Prisoners, Paradox, and Rationality\", American Philosophical Quarterly , 14(4): 319-327."
+        },
+        {
+          "raw": "Dekel, Eddie and Faruk Gul, 1997, \"Rationality and Knowledge in Game Theory\", in Advances in Economics and Econometrics: Theory and Applications , David M. Kreps and Kenneth F. Wallis (eds.), Cambridge: Cambridge University Press, 87-172. doi:10.1017/CCOL521580110.005"
+        },
+        {
+          "raw": "Fagin, Ronald, John Geanakoplos, Joseph Y. Halpern, and Moshe Y. Vardi, 1999, \"The Hierarchical Approach to Modeling Knowledge and Common Knowledge\", International Journal of Game Theory , 28(3): 331-365. doi:10.1007/s001820050114"
+        },
+        {
+          "raw": "Fagin, Ronald, Joseph Y. Halpern, and Nimrod Megiddo, 1990, \"A Logic for Reasoning about Probabilities\", Information and Computation , 87(1-2): 78-128. doi:10.1016/0890-5401(90)90060-U"
+        },
+        {
+          "raw": "Fagin, Ronald, Joseph Y. Halpern, Yoram Moses, and Moshe Vardi, 1995, Reasoning about Knowledge , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Feinberg, Yossi, 2005, \"Subjective Reasoning--Dynamic Games\", Games and Economic Behavior , 52(1): 54-93. doi:10.1016/j.geb.2004.06.001"
+        },
+        {
+          "raw": "de Finetti, Bruno, 1974, Theory of Probability: A Critical Introductory Treatment , Antonio Machi and Adrian Smith (trans.), 2 vols., (Wiley Series in Probability and Mathematical Statistics), London/New York: Wiley."
+        },
+        {
+          "raw": "Friedenberg, Amanda and H. Jerome Keisler, 2021, \"Iterated Dominance Revisited\", Economic Theory , 72(2): 377-421. doi:10.1007/s00199-020-01275-z"
+        },
+        {
+          "raw": "Fudenberg, Drew and David K. Levine, 1998, The Theory of Learning in Games , (MIT Press Series on Economic Learning and Social Evolution 2), Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Galeazzi, Paolo and Emiliano Lorini, 2016, \"Epistemic Logic Meets Epistemic Game Theory: A Comparison between Multi-Agent Kripke Models and Type Spaces\", Synthese , 193(7): 2097-2127. doi:10.1007/s11229-015-0834-x"
+        },
+        {
+          "raw": "Galeazzi, Paolo and Johannes Marti, 2023, \"Choice Structures in Games\", Games and Economic Behavior , 140: 431-455. doi:10.1016/j.geb.2023.05.002"
+        },
+        {
+          "raw": "Genin, Konstantin and Franz Huber, 2020 [2022], \"Formal Representations of Belief\", The Stanford Encyclopedia of Philosophy (Spring 2022 edition), Edward N. Zalta and Uri Nodelman (eds), URL = https://plato.stanford.edu/archives/spr2022/entries/formal-belief/ >."
+        },
+        {
+          "raw": "Gintis, Herbert, 2009, \"The Local Best Response Criterion: An Epistemic Approach to Equilibrium Refinement\", Journal of Economic Behavior & Organization , 71(2): 89-97. doi:10.1016/j.jebo.2009.03.008"
+        },
+        {
+          "raw": "Halpern, Joseph Y., 1997, \"On Ambiguities in the Interpretation of Game Trees\", Games and Economic Behavior , 20(1): 66-96. doi:10.1006/game.1997.0557"
+        },
+        {
+          "raw": "---, 2001, \"Substantive Rationality and Backward Induction\", Games and Economic Behavior , 37(2): 425-435. doi:10.1006/game.2000.0838"
+        },
+        {
+          "raw": "Halpern, Joseph Y., Ron Van Der Meyden, and Moshe Y. Vardi, 2004, \"Complete Axiomatizations for Reasoning about Knowledge and Time\", SIAM Journal on Computing , 33(3): 674-703. doi:10.1137/S0097539797320906"
+        },
+        {
+          "raw": "Halpern, Joseph Y. and Yoram Moses, 2017, \"Characterizing Solution Concepts in Terms of Common Knowledge of Rationality\", International Journal of Game Theory , 46(2): 457-473. doi:10.1007/s00182-016-0535-9"
+        },
+        {
+          "raw": "Halpern, Joseph Y. and Rafael Pass, 2012, \"Iterated Regret Minimization: A New Solution Concept\", Games and Economic Behavior , 74(1): 184-207. doi:10.1016/j.geb.2011.05.012"
+        },
+        {
+          "raw": "---, 2018, \"Game Theory with Translucent Players\", International Journal of Game Theory , 47(3): 949-976. doi:10.1007/s00182-018-0626-x"
+        },
+        {
+          "raw": "---, 2019, \"A Conceptually Well-Founded Characterization of Iterated Admissibility Using an 'All I Know' Operator\", in Proceedings of of the Seventeenth Conference on Theoretical Aspects of Rationality and Knowledge (TARK 2019) (EPTCS 297), 221-232. doi:10.4204/EPTCS.297.15"
+        },
+        {
+          "raw": "Harsanyi, John C., 1967-68, \"Games with Incomplete Information Played by 'Bayesian' Players, I-III\", Management Science , 1967, \"Part I. The Basic Model\", 14(3): 159-182."
+        },
+        {
+          "raw": "1968a, \"Part II. Bayesian Equilibrium Points\", 14(5): 320-334."
+        },
+        {
+          "raw": "1968b, \"Part III. The Basic Probability Distribution of the Game\", 14(7): 486-502."
+        },
+        {
+          "raw": "---, 1973, \"Games with Randomly Disturbed Payoffs: A New Rationale for Mixed-Strategy Equilibrium Points\", International Journal of Game Theory , 2(1): 1-23. doi:10.1007/BF01737554"
+        },
+        {
+          "raw": "Heifetz, Aviad, 1999a, \"Iterative and Fixed Point Common Belief\", Journal of Philosophical Logic , 28(1): 61-79. doi:10.1023/A:1004357300525"
+        },
+        {
+          "raw": "---, 1999b, \"How Canonical Is the Canonical Model? A Comment on Aumann's Interactive Epistemology\", International Journal of Game Theory , 28(3): 435-442. doi:10.1007/s001820050118"
+        },
+        {
+          "raw": "Heifetz, Aviad and Philippe Mongin, 2001, \"Probability Logic for Type Spaces\", Games and Economic Behavior , 35(1-2): 31-53. doi:10.1006/game.1999.0788"
+        },
+        {
+          "raw": "Heifetz, Aviad and Andr&eacute;s Perea, 2015, \"On the Outcome Equivalence of Backward Induction and Extensive Form Rationalizability\", International Journal of Game Theory , 44(1): 37-59. doi:10.1007/s00182-014-0418-x"
+        },
+        {
+          "raw": "Heifetz, Aviad and Dov Samet, 1998, \"Knowledge Spaces with Arbitrarily High Rank\", Games and Economic Behavior , 22(2): 260-273. doi:10.1006/game.1997.0591"
+        },
+        {
+          "raw": "Hillas, John and Dov Samet, 2020, \"Dominance Rationality: A Unified Approach\", Games and Economic Behavior , 119: 189-196. doi:10.1016/j.geb.2019.11.001"
+        },
+        {
+          "raw": "Hu, Hong and Harborne W. Stuart Jr., 2002, \"An Epistemic Analysis of the Harsanyi Transformation\", International Journal of Game Theory , 30(4): 517-525. doi:10.1007/s001820200095"
+        },
+        {
+          "raw": "Icard, Thomas, 2021, \"Why Be Random?\", Mind , 130(517): 111-139. doi:10.1093/mind/fzz065"
+        },
+        {
+          "raw": "Joyce, James M., 2012, \"Regret and Instability in Causal Decision Theory\", Synthese , 187(1): 123-145. doi:10.1007/s11229-011-0022-6"
+        },
+        {
+          "raw": "Kadane, Joseph B. and Patrick D. Larkey, 1982, \"Subjective Probability and the Theory of Games\", Management Science , 28(2): 113-120. [ Kadane & Larkey 1982 available online ]"
+        },
+        {
+          "raw": "Kaneko, Mamoru and J. Jude Kline, 1995, \"Behavior Strategies, Mixed Strategies and Perfect Recall\", International Journal of Game Theory , 24(2): 127-145. doi:10.1007/BF01240038"
+        },
+        {
+          "raw": "Kets, Willemien, 2012, \"Bounded Reasoning and Higher-Order Uncertainty\". SSRN Scholarly Paper, Rochester, NY, first online: 24 June 2012. doi:10.2139/ssrn.2116626"
+        },
+        {
+          "raw": "Klein, Dominik and Eric Pacuit, 2014, \"Changing Types: Information Dynamics for Qualitative Type Spaces\", Studia Logica , 102(2): 297-319. doi:10.1007/s11225-014-9545-4"
+        },
+        {
+          "raw": "Kline, J. Jude, 2002, \"Minimum Memory for Equivalence between Ex Ante Optimality and Time-Consistency\", Games and Economic Behavior , 38(2): 278-305. doi:10.1006/game.2001.0888"
+        },
+        {
+          "raw": "Kohlberg, Elon and Jean-Francois Mertens, 1986, \"On the Strategic Stability of Equilibria\", Econometrica , 54(5): 1003-1037. doi:10.2307/1912320"
+        },
+        {
+          "raw": "Kuechle, Graciela, 2009, \"What Happened to the Three-Legged Centipede Game?\", Journal of Economic Surveys , 23(3): 562-585. doi:10.1111/j.1467-6419.2008.00572.x"
+        },
+        {
+          "raw": "Kuhn, Harold William, 1953, \"Extensive Games and the Problem of Information\", in Contributions to the Theory of Games (AM-28), Volume II , Harold William Kuhn and Albert William Tucker (eds.), Princeton, NJ: Princeton University Press, 193-216. doi:10.1515/9781400881970-012"
+        },
+        {
+          "raw": "Kuhn, Steven, 1997 [2019], \"Prisoner's Dilemma\", The Stanford Encyclopedia of Philosophy (Winter 2019 edition), Edward N. Zalta (ed.), URL = https://plato.stanford.edu/archives/win2019/entries/prisoner-dilemma/ >."
+        },
+        {
+          "raw": "La Mura, Pierfrancesco, 2009, \"Game Theory without Decision-Theoretic Paradoxes\", in Algorithmic Decision Theory: First International Conference, ADT 2009, Venice, Italy, October 2009 , Francesca Rossi and Alexis Tsoukias (eds.), (Lecture Notes in Computer Science 5783), Berlin/Heidelberg: Springer, 316-327. doi:10.1007/978-3-642-04428-1_28"
+        },
+        {
+          "raw": "Lederman, Harvey, 2018a, \"Common Knowledge\", in The Routledge Handbook of Collective Intentionality , Marija Jankovic and Kirk Ludwig (eds.), New York: Routledge, 181-195."
+        },
+        {
+          "raw": "---, 2018b, \"Uncommon Knowledge\", Mind , 127(508): 1069-1105. doi:10.1093/mind/fzw072"
+        },
+        {
+          "raw": "Levati, M. Vittoria, Matthias Uhl, and Ro'i Zultan, 2014, \"Imperfect Recall and Time Inconsistencies: An Experimental Test of the Absentminded Driver 'Paradox'\", International Journal of Game Theory , 43(1): 65-88. doi:10.1007/s00182-013-0373-y"
+        },
+        {
+          "raw": "Leyton-Brown, Kevin and Yoav Shoham, 2008, Essentials of Game Theory: A Concise, Multidisciplinary Introduction , (Synthesis Lectures on Artificial Intelligence and Machine Learning), New York: Morgan & Claypool. doi:10.1007/978-3-031-01545-8"
+        },
+        {
+          "raw": "Lismont, Luc and Philippe Mongin, 1994, \"On the Logic of Common Belief and Common Knowledge\", Theory and Decision , 37(1): 75-106. doi:10.1007/BF01079206"
+        },
+        {
+          "raw": "---, 2003, \"Strong Completeness Theorems for Weak Logics of Common Belief\", Journal of Philosophical Logic , 32(2): 115-137. doi:10.1023/A:1023032105687"
+        },
+        {
+          "raw": "Lorini, Emiliano, 2013, \"On the Epistemic Foundation for Iterated Weak Dominance: An Analysis in a Logic of Individual and Collective Attitudes\", Journal of Philosophical Logic , 42(6): 863-904. doi:10.1007/s10992-013-9297-z"
+        },
+        {
+          "raw": "---, 2016, \"A Minimal Logic for Interactive Epistemology\", Synthese , 193(3): 725-755. doi:10.1007/s11229-015-0960-5"
+        },
+        {
+          "raw": "Lorini, Emiliano and Fran&ccedil;ois Schwarzentruber, 2010, \"A Modal Logic of Epistemic Games\", Games , 1(4): 478-526. doi:10.3390/g1040478"
+        },
+        {
+          "raw": "Mariotti, Thomas, Martin Meier, and Michele Piccione, 2005, \"Hierarchies of Beliefs for Compact Possibility Models\", Journal of Mathematical Economics , 41(3): 303-324. doi:10.1016/j.jmateco.2003.11.009"
+        },
+        {
+          "raw": "Maschler, Michael, Eilon Solan, and Shmuel Zamir, 2013, Game Theory , Ziv Hellman (trans.), Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Mas-Colell, Andreu, Michael D. Whinston, and Jerry R. Green, 1995, Microeconomic theory , New York: Oxford University Press."
+        },
+        {
+          "raw": "Meier, Martin, 2005, \"On the Nonexistence of Universal Information Structures\", Journal of Economic Theory , 122(1): 132-139. doi:10.1016/j.jet.2003.07.003"
+        },
+        {
+          "raw": "Mertens, Jean-Fran&ccedil;ois and Shmuel Zamir, 1985, \"Formulation of Bayesian Analysis for Games with Incomplete Information\", International Journal of Game Theory , 14(1): 1-29. doi:10.1007/BF01770224"
+        },
+        {
+          "raw": "Milano, Silvano and Andr&eacute;s Perea, 2023, \"Rational updating at the crossroads\", Economics and Philosophy , 1-22. doi:10.1017/S0266267122000360"
+        },
+        {
+          "raw": "Monderer, Dov and Dov Samet, 1989, \"Approximating Common Knowledge with Common Beliefs\", Games and Economic Behavior , 1(2): 170-190. doi:10.1016/0899-8256(89)90017-1"
+        },
+        {
+          "raw": "Morris, Stephen, 1995, \"The Common Prior Assumption in Economic Theory\", Economics and Philosophy , 11(2): 227-253. doi:10.1017/S0266267100003382"
+        },
+        {
+          "raw": "---, 2006, \"Purification\", in The New Palgrave Dictionary of Economics , Steven N. Durlauf and Lawrence E. Blume (eds.), New York: Palgrave Macmillan, 779-782."
+        },
+        {
+          "raw": "Myerson, Roger B., 1991, Game Theory: Analysis of Conflicts , Harvard University Press."
+        },
+        {
+          "raw": "---, 2004, \"Comments on 'Games with Incomplete Information Played by Bayesian Players, I-III Harsanyi's Games with Incomplete Information'\", Management Science , 50(12_supplement): 1818-1824. doi:10.1287/mnsc.1040.0297"
+        },
+        {
+          "raw": "Nash, John, 1951, \"Non-Cooperative Games\", The Annals of Mathematics , 54(2): 286-295. doi:10.2307/1969529"
+        },
+        {
+          "raw": "Osborne, Martin J., 2004, An Introduction to Game Theory , New York/Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Pacuit, Eric, 2007, \"Understanding the Brandenburger-Keisler Paradox\", Studia Logica , 86(3): 435-454. doi:10.1007/s11225-007-9069-2"
+        },
+        {
+          "raw": "---, 2015, \"Dynamic Models of Rational Deliberation in Games\", in Models of Strategic Reasoning: Logics, Games, and Communities , Johan Van Benthem, Sujata Ghosh, and Rineke Verbrugge (eds.), (Lecture Notes in Computer Science 8972), Berlin/Heidelberg: Springer Berlin Heidelberg, 3-33. doi:10.1007/978-3-662-48540-8_1"
+        },
+        {
+          "raw": "---, 2017, Neighborhood Semantics for Modal Logic , (Short Textbooks in Logic), Cham: Springer International Publishing. doi:10.1007/978-3-319-67149-9"
+        },
+        {
+          "raw": "Pearce, David G., 1984, \"Rationalizable Strategic Behavior and the Problem of Perfection\", Econometrica , 52(4): 1029-1050. doi:10.2307/1911197"
+        },
+        {
+          "raw": "Perea, Andr&eacute;s, 2007a, \"Epistemic Foundations for Backward Induction: An Overview\", in Interactive Logic: Selected Papers from the 7th Augustus de Morgan Workshop, London , Johan van Benthem, Benedikt L&ouml;we, and Dov M. Gabbay (eds.), (Texts in Logic and Games 1), Amsterdam: Amsterdam University Press, 159-193."
+        },
+        {
+          "raw": "---, 2007b, \"A One-Person Doxastic Characterization of Nash Strategies\", Synthese , 158(2): 251-271. doi:10.1007/s11229-007-9217-2"
+        },
+        {
+          "raw": "---, 2012, Epistemic Game Theory: Reasoning and Choice , Cambridge: Cambridge University Press. doi:10.1017/CBO9780511844072"
+        },
+        {
+          "raw": "---, 2014a, \"Belief in the Opponents&#700; Future Rationality\", Games and Economic Behavior , 83: 231-254. doi:10.1016/j.geb.2013.11.008"
+        },
+        {
+          "raw": "---, 2014b, \"From Classical to Epistemic Game Theory\", International Game Theory Review , 16(1): 1440001. doi:10.1142/S0219198914400015"
+        },
+        {
+          "raw": "---, 2018, \"Why Forward Induction Leads to the Backward Induction Outcome: A New Proof for Battigalli's Theorem\", Games and Economic Behavior , 110: 120-138. doi:10.1016/j.geb.2018.04.001"
+        },
+        {
+          "raw": "---, 2022, \"Common Belief in Rationality in Games with Unawareness\", Mathematical Social Sciences , 119: 11-30. doi:10.1016/j.mathsocsci.2022.05.005"
+        },
+        {
+          "raw": "Perea, Andr&eacute;s and Willemien Kets, 2016, \"When Do Types Induce the Same Belief Hierarchy?\", Games , 7(4): article 28. doi:10.3390/g7040028"
+        },
+        {
+          "raw": "Piccione, Michele and Ariel Rubinstein, 1997a, \"On the Interpretation of Decision Problems with Imperfect Recall\", Games and Economic Behavior , 20(1): 3-24. doi:10.1006/game.1997.0536"
+        },
+        {
+          "raw": "---, 1997b, \"The Absent-Minded Driver's Paradox: Synthesis and Responses\", Games and Economic Behavior , 20(1): 121-130. doi:10.1006/game.1997.0579"
+        },
+        {
+          "raw": "Rabinowicz, Wlodzimierz, 1992, \"Tortuous Labyrinth: Noncooperative Normal-Form Games between Hyperrational Players\", in Knowledge, Belief, and Strategic Interaction , Cristina Bicchieri and Maria Luisa Dalla Chiara (eds.), (Cambridge Studies in Probability, Induction, and Decision Theory), Cambridge/New York: Cambridge University Press, 107-125."
+        },
+        {
+          "raw": "R&ecirc;go, Leandro C. and Joseph Y. Halpern, 2012, \"Generalized Solution Concepts in Games with Possibly Unaware Players\", International Journal of Game Theory , 41(1): 131-155. doi:10.1007/s00182-011-0276-8"
+        },
+        {
+          "raw": "Rendsvig, Rasmus and John Symons, 2019 [2021], \"Epistemic Logic\", The Stanford Encyclopedia of Philosophy (Summer 2021 edition), Edward N. Zalta (ed.), URL = https://plato.stanford.edu/archives/sum2021/entries/logic-epistemic/ >."
+        },
+        {
+          "raw": "Reny, Philip J., 1988, \"Common Knowledge and Games with Perfect Information\", in PSA: Proceedings of the Biennial Meeting of the Philosophy of Science Association, 1988 , volume 2, 363-369."
+        },
+        {
+          "raw": "---, 1992, \"Backward Induction, Normal Form Perfection and Explicable Equilibria\", Econometrica , 60(3): 627-649. doi:10.2307/2951586"
+        },
+        {
+          "raw": "---, 1993, \"Common Belief and the Theory of Games with Perfect Information\", Journal of Economic Theory , 59(2): 257-274. doi:10.1006/jeth.1993.1017"
+        },
+        {
+          "raw": "Rich, Patricia, 2015, \"Rethinking Common Belief, Revision, and Backward Induction\", Mathematical Social Sciences , 75: 102-114. doi:10.1016/j.mathsocsci.2015.03.001"
+        },
+        {
+          "raw": "Rosenthal, R.W., 1981, \"Games of perfect information, predatory pricing and the chain-store paradox\", Journal of Economic theory , 25(1), pp.92-100."
+        },
+        {
+          "raw": "Ross, Don, 1997 [2024], \"Game Theory\", The Stanford Encyclopedia of Philosophy (Winter 2024 edition), Edward N. Zalta (ed.), URL = https://plato.stanford.edu/archives/win2024/entries/game-theory/ >."
+        },
+        {
+          "raw": "Roy, Olivier and Eric Pacuit, 2013, \"Substantive Assumptions in Interaction: A Logical Perspective\", Synthese , 190(5): 891-908. doi:10.1007/s11229-012-0191-y"
+        },
+        {
+          "raw": "Rubinstein, Ariel, 1989, \"The Electronic Mail Game: Strategic Behavior Under 'Almost Common Knowledge'\", The American Economic Review , 79(3): 385-391."
+        },
+        {
+          "raw": "---, 1991, \"Comments on the Interpretation of Game Theory\", Econometrica , 59(4): 909-924. doi:10.2307/2938166"
+        },
+        {
+          "raw": "Samet, Dov, 1996, \"Hypothetical Knowledge and Games with Perfect Information\", Games and Economic Behavior , 17(2): 230-251. doi:10.1006/game.1996.0104"
+        },
+        {
+          "raw": "---, 2013, \"Common Belief of Rationality in Games of Perfect Information\", Games and Economic Behavior , 79: 192-200. doi:10.1016/j.geb.2013.01.008"
+        },
+        {
+          "raw": "Samuelson, Larry, 1992, \"Dominated Strategies and Common Knowledge\", Games and Economic Behavior , 4(2): 284-313. doi:10.1016/0899-8256(92)90020-S"
+        },
+        {
+          "raw": "Selten, Reinhard, 1975, \"Reexamination of the Perfectness Concept for Equilibrium Points in Extensive Games\", International Journal of Game Theory , 4(1): 25-55. doi:10.1007/BF01766400"
+        },
+        {
+          "raw": "Schelling, Thomas C., 1960, The Strategy of Conflict , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Schervish, Mark J., Teddy Seidenfeld, and Joseph B. Kadane, 1990, \"State-Dependent Utilities\", Journal of the American Statistical Association , 85(411): 840-847. doi:10.1080/01621459.1990.10474948"
+        },
+        {
+          "raw": "Schwarz, Wolfgang, 2015, \"Lost Memories and Useless Coins: Revisiting the Absentminded Driver\", Synthese , 192(9): 3011-3036. doi:10.1007/s11229-015-0699-z"
+        },
+        {
+          "raw": "Schwitzgebel, Eric, 2006 [2021], \"Belief\", The Stanford Encyclopedia of Philosophy (Winter 2021 edition), Edward N. Zalta and Uri Nodelman (eds), URL = https://plato.stanford.edu/archives/win2021/entries/belief/ >."
+        },
+        {
+          "raw": "Schipper, Burkhard C., 2015, \"Awareness\", in Handbook of Epistemic Logic , Hans van Ditmarsch, Joseph Y. Halpern, W. van der Hoek, and Barteld Pieter Kooi (eds.), UK: College Publications, 77-146."
+        },
+        {
+          "raw": "Siniscalchi, Marciano, 2008, \"Epistemic Game Theory: Beliefs and Types\", in The New Palgrave Dictionary of Economics , Steven N. Durlauf and Lawrence E. Blume (eds.), New York: Palgrave Macmillan."
+        },
+        {
+          "raw": "Skyrms, Brian, 1990, The Dynamics of Rational Deliberation , Cambridge, MA: Harvard University Press."
+        },
+        {
+          "raw": "Stahl, Dale O., 1995, \"Lexicographic Rationalizability and Iterated Admissibility\", Economics Letters , 47(2): 155-159. doi:10.1016/0165-1765(94)00530-F"
+        },
+        {
+          "raw": "Stalnaker, Robert, 1996, \"Knowledge, Belief and Counterfactual Reasoning in Games\", Economics and Philosophy , 12(2): 133-163. doi:10.1017/S0266267100004132"
+        },
+        {
+          "raw": "---, 1998, \"Belief Revision in Games: Forward and Backward Induction\", Mathematical Social Sciences , 36(1): 31-56. doi:10.1016/S0165-4896(98)00007-9"
+        },
+        {
+          "raw": "---, 1999, \"Extensive and Strategic Forms: Games and Models for Games\", Research in Economics , 53(3): 293-319. doi:10.1006/reec.1999.0200"
+        },
+        {
+          "raw": "Spohn, Wolfgang, 1982, \"How to Make Sense of Game Theory\", in Philosophy of Economics , Wolfgang Stegm&uuml;ller, Wolfgang Balzer, and Wolfgang Spohn (eds.), (Studies in Contemporary Economics 2), Berlin/Heidelberg: Springer Berlin Heidelberg, 239-270. doi:10.1007/978-3-642-68820-1_14"
+        },
+        {
+          "raw": "Tan, Tommy Chin-Chiu and S&eacute;rgio Ribeiro da Costa Werlang, 1988, \"The Bayesian Foundations of Solution Concepts of Games\", Journal of Economic Theory , 45(2): 370-391. doi:10.1016/0022-0531(88)90276-1"
+        },
+        {
+          "raw": "Titelbaum, Michael G., 2013, \"Ten Reasons to Care About the Sleeping Beauty Problem\", Philosophy Compass , 8(11): 1003-1017. doi:10.1111/phc3.12080"
+        },
+        {
+          "raw": "Trost, Michael, 2014, \"An Epistemic Rationale for Order Independence\", International Game Theory Review , 16(1): 1440002. doi:10.1142/S0219198914400027"
+        },
+        {
+          "raw": "Ullmann-Margalit, Edna and Sidney Morgenbesser, 1977, \"Picking and Choosing\", Social Research , 44(4): 757-785."
+        },
+        {
+          "raw": "Vanderschraaf, Peter, 2001, Learning and Coordination: Inductive Deliberation, Equilibrium, and Convention , (Studies in Ethics), New York: Routledge. doi:10.4324/9781315054797"
+        },
+        {
+          "raw": "Vanderschraaf, Peter and Giacomo Sillari, 2005 [2022], \"Common Knowledge\", The Stanford Encyclopedia of Philosophy (Fall 2022 edition), Edward N. Zalta and Uri Nodelman (eds), URL = https://plato.stanford.edu/archives/fall2022/entries/common-knowledge/ >."
+        },
+        {
+          "raw": "Waugh, Kevin, Martin Zinkevich, Michael Johanson, Morgan Kan, David Schnizlein, and Michael Bowling, 2009, \"A Practical Use of Imperfect Recall\", in Proceedings of the Eighth Symposium on Abstraction, Reformulation and Approximation (SARA) ."
+        },
+        {
+          "raw": "de Weerd, Harmen, Rineke Verbrugge, and Bart Verheij, 2013, \"How Much Does It Help to Know What She Knows You Know? An Agent-Based Simulation Study\", Artificial Intelligence , 199-200: 67-92. doi:10.1016/j.artint.2013.05.004"
+        },
+        {
+          "raw": "Weibull, J&ouml;rgen W., 1995, Evolutionary Game Theory , Cambridge, MA: MIT Press."
+        },
+        {
+          "raw": "Weirich, Paul, 2008 [2020], \"Causal Decision Theory\", in The Stanford Encyclopedia of Philosophy (Winter 2020 edition), Edward N. Zalta (ed.), URL = https://plato.stanford.edu/archives/win2020/entries/decision-causal/ >."
+        },
+        {
+          "raw": "Weisberg, Jonathan, 2015 [2021], \"Formal Epistemology\", The Stanford Encyclopedia of Philosophy (Spring 2021 edition), Edward N. Zalta (ed.), URL = https://plato.stanford.edu/archives/spr2021/entries/formal-epistemology/ >."
+        },
+        {
+          "raw": "Zhou, Chunlai, 2010, \"Probability Logic of Finitely Additive Beliefs\", Journal of Logic, Language and Information , 19(3): 247-282. doi:10.1007/s10849-009-9100-2"
+        },
+        {
+          "raw": "Zollman, Kevin J. S., 2022, \"On the Normative Status of Mixed Strategies\", in Reflections on the Foundations of Probability and Statistics: Essays in Honor of Teddy Seidenfeld , Thomas Augustin, Fabio Gagliardi Cozman, and Gregory Wheeler (eds), (Theory and Decision Library A 54), Cham: Springer International Publishing, 207-239. doi:10.1007/978-3-031-15436-2_10"
+        }
+      ],
+      "publishedAt": "2015-03-12T13:00:00.000Z",
+      "revisedAt": "2025-06-26T14:00:00.000Z"
+    }
+  }
+}

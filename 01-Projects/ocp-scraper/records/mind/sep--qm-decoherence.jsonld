@@ -1,0 +1,699 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/qm-decoherence",
+  "meta": {
+    "title": "The Role of Decoherence in Quantum Mechanics",
+    "description": "Interference phenomena are a well-known and crucial aspect of quantum mechanics , famously exemplified by the two-slit experiment. There are many situations, however, in which interference effects are artificially or spontaneously suppressed. The theory of decoherence is precisely the study of such situations. It is is relevant (or is claimed to be relevant) to a variety of questions ranging from the measurement problem to the arrow of time, and in particular to the question of whether and how the 'classical world' may emerge from quantum mechanics. (See also the entry on philosophical issues in quantum theory .) In Section 1 we discuss the concept of suppression of interference and give a simplified survey of the theory, emphasising features that will be relevant later. In fact, the term decoherence refers to two largely overlapping areas of research. The characteristic feature of the first (often called 'environmental' or 'dynamical' decoherence) is the study of concrete models of (spontaneous) interactions between a system and its environment that lead to suppression of interference effects. The second (the theory of 'decoherent histories' or 'consistent histories') is an abstract and more general formalism capturing essential features of decoherence. The two are obviously closely related, and will be reviewed in turn. Section 2 then criticises the claim that decoherence solves the measurement problem of quantum mechanics, and discusses the exacerbation of the problem through the inclusion of environmental interactions. It is thus important to consider not decoherence by itself, but the interplay between decoherence and the various approaches to the foundations of quantum mechanics that provide possible solutions to the measurement problem and related puzzles. Section 3 deals with the role of decoherence in relation to a number of such approaches, including mainstream foundational approaches such as Everett, Bohm and GRW, traditional approaches such as those by von Neumann, Heisenberg and Bohr, and a few more. Finally, in Section 4 we describe the overall picture of the emergent structures that result from this use of decoherence, as well as a few more speculative applications. Suppression of interference has featured in many papers since the beginning of quantum mechanics, such as Mott's (1929) analysis of \\(\\alpha\\)-particle tracks. The modern foundation of decoherence as a subject in its own right was laid by H.-D. Zeh in the early 1970s (Zeh 1970, 1973). Equally influential were the papers by W. Zurek from the early 1980s (Zurek 1981, 1982). Some of these earlier examples of decoherence (e.g., suppression of interference between left-handed and right-handed states of a molecule) are mathematically more accessible than more recent ones. A concise and readable introduction to the theory is provided by Zurek in Physics Today (1991). This article was followed by publication of several letters with Zurek's replies (1993), which highlight controversial issues. More recent surveys are given in Zeh (2003a), Zurek (2003), and in the books by Giulini et al. (1996, second edition Joos et al. 2003), and by Schlosshauer (2007).",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-22T08:46:27.244Z",
+    "dateModified": "2026-03-22T08:46:27.244Z",
+    "datePublished": "2003-11-02T13:00:00.000Z",
+    "keywords": [
+      "chaos",
+      "constructive empiricism",
+      "qm",
+      "qm action distance",
+      "qm bohm",
+      "qm collapse",
+      "qm consistent histories",
+      "qm copenhagen",
+      "qm everett",
+      "qm manyworlds",
+      "qm modal",
+      "qm relational",
+      "qm retrocausality",
+      "qt consciousness",
+      "qt entangle",
+      "qt epr",
+      "qt issues",
+      "quantum bayesian",
+      "quantum field theory",
+      "quantum gravity",
+      "statphys statmech",
+      "time thermo"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Interference phenomena are a well-known and crucial aspect of quantum mechanics , famously exemplified by the two-slit experiment. There are many situations, however, in which interference effects are artificially or spontaneously suppressed. The theory of decoherence is precisely the study of such situations. It is is relevant (or is claimed to be relevant) to a variety of questions ranging from the measurement problem to the arrow of time, and in particular to the question of whether and how the 'classical world' may emerge from quantum mechanics. (See also the entry on philosophical issues in quantum theory .) In Section 1 we discuss the concept of suppression of interference and give a simplified survey of the theory, emphasising features that will be relevant later. In fact, the term decoherence refers to two largely overlapping areas of research. The characteristic feature of the first (often called 'environmental' or 'dynamical' decoherence) is the study of concrete models of (spontaneous) interactions between a system and its environment that lead to suppression of interference effects. The second (the theory of 'decoherent histories' or 'consistent histories') is an abstract and more general formalism capturing essential features of decoherence. The two are obviously closely related, and will be reviewed in turn. Section 2 then criticises the claim that decoherence solves the measurement problem of quantum mechanics, and discusses the exacerbation of the problem through the inclusion of environmental interactions. It is thus important to consider not decoherence by itself, but the interplay between decoherence and the various approaches to the foundations of quantum mechanics that provide possible solutions to the measurement problem and related puzzles. Section 3 deals with the role of decoherence in relation to a number of such approaches, including mainstream foundational approaches such as Everett, Bohm and GRW, traditional approaches such as those by von Neumann, Heisenberg and Bohr, and a few more. Finally, in Section 4 we describe the overall picture of the emergent structures that result from this use of decoherence, as well as a few more speculative applications. Suppression of interference has featured in many papers since the beginning of quantum mechanics, such as Mott's (1929) analysis of \\(\\alpha\\)-particle tracks. The modern foundation of decoherence as a subject in its own right was laid by H.-D. Zeh in the early 1970s (Zeh 1970, 1973). Equally influential were the papers by W. Zurek from the early 1980s (Zurek 1981, 1982). Some of these earlier examples of decoherence (e.g., suppression of interference between left-handed and right-handed states of a molecule) are mathematically more accessible than more recent ones. A concise and readable introduction to the theory is provided by Zurek in Physics Today (1991). This article was followed by publication of several letters with Zurek's replies (1993), which highlight controversial issues. More recent surveys are given in Zeh (2003a), Zurek (2003), and in the books by Giulini et al. (1996, second edition Joos et al. 2003), and by Schlosshauer (2007).",
+    "context": "Opening section: 1. Theory of Decoherence | Related entries: chaos, constructive-empiricism, qm, qm-action-distance, qm-bohm, qm-collapse, qm-consistent-histories, qm-copenhagen, qm-everett, qm-manyworlds, qm-modal, qm-relational, qm-retrocausality, qt-consciousness, quantum-bayesian, qt-issues, qt-entangle, quantum-field-theory, quantum-gravity, qt-epr, statphys-statmech, time-thermo",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "mind",
+    "metaphysics",
+    "logic"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry qm-decoherence",
+        "uri": "https://plato.stanford.edu/entries/qm-decoherence/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 22 related entries, bibliography size 125"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2003-11-02T13:00:00.000Z and revised 2025-01-22T13:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2025-01-22T13:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/qm-decoherence/",
+        "description": "SEP entry for qm-decoherence"
+      }
+    ],
+    "solutionApproach": "1. Theory of Decoherence"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/chaos",
+      "ocp:sep/constructive-empiricism",
+      "ocp:sep/qm",
+      "ocp:sep/qm-action-distance",
+      "ocp:sep/qm-bohm",
+      "ocp:sep/qm-collapse",
+      "ocp:sep/qm-consistent-histories",
+      "ocp:sep/qm-copenhagen",
+      "ocp:sep/qm-everett",
+      "ocp:sep/qm-manyworlds",
+      "ocp:sep/qm-modal",
+      "ocp:sep/qm-relational",
+      "ocp:sep/qm-retrocausality",
+      "ocp:sep/qt-consciousness",
+      "ocp:sep/quantum-bayesian",
+      "ocp:sep/qt-issues",
+      "ocp:sep/qt-entangle",
+      "ocp:sep/quantum-field-theory",
+      "ocp:sep/quantum-gravity",
+      "ocp:sep/qt-epr",
+      "ocp:sep/statphys-statmech",
+      "ocp:sep/time-thermo"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Bacciagaluppi, Guido",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/qm-decoherence/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 106,
+      "validation_diversity": 0.52,
+      "context_breadth": 0.57,
+      "temporal_stability": 0.93,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.94
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.612
+  },
+  "extensions": {
+    "sep": {
+      "slug": "qm-decoherence",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/qm-decoherence/",
+      "preamble": "Interference phenomena are a well-known and crucial aspect of quantum mechanics , famously exemplified by the two-slit experiment. There are many situations, however, in which interference effects are artificially or spontaneously suppressed. The theory of decoherence is precisely the study of such situations. It is is relevant (or is claimed to be relevant) to a variety of questions ranging from the measurement problem to the arrow of time, and in particular to the question of whether and how the 'classical world' may emerge from quantum mechanics. (See also the entry on philosophical issues in quantum theory .) In Section 1 we discuss the concept of suppression of interference and give a simplified survey of the theory, emphasising features that will be relevant later. In fact, the term decoherence refers to two largely overlapping areas of research. The characteristic feature of the first (often called 'environmental' or 'dynamical' decoherence) is the study of concrete models of (spontaneous) interactions between a system and its environment that lead to suppression of interference effects. The second (the theory of 'decoherent histories' or 'consistent histories') is an abstract and more general formalism capturing essential features of decoherence. The two are obviously closely related, and will be reviewed in turn. Section 2 then criticises the claim that decoherence solves the measurement problem of quantum mechanics, and discusses the exacerbation of the problem through the inclusion of environmental interactions. It is thus important to consider not decoherence by itself, but the interplay between decoherence and the various approaches to the foundations of quantum mechanics that provide possible solutions to the measurement problem and related puzzles. Section 3 deals with the role of decoherence in relation to a number of such approaches, including mainstream foundational approaches such as Everett, Bohm and GRW, traditional approaches such as those by von Neumann, Heisenberg and Bohr, and a few more. Finally, in Section 4 we describe the overall picture of the emergent structures that result from this use of decoherence, as well as a few more speculative applications. Suppression of interference has featured in many papers since the beginning of quantum mechanics, such as Mott's (1929) analysis of \\(\\alpha\\)-particle tracks. The modern foundation of decoherence as a subject in its own right was laid by H.-D. Zeh in the early 1970s (Zeh 1970, 1973). Equally influential were the papers by W. Zurek from the early 1980s (Zurek 1981, 1982). Some of these earlier examples of decoherence (e.g., suppression of interference between left-handed and right-handed states of a molecule) are mathematically more accessible than more recent ones. A concise and readable introduction to the theory is provided by Zurek in Physics Today (1991). This article was followed by publication of several letters with Zurek's replies (1993), which highlight controversial issues. More recent surveys are given in Zeh (2003a), Zurek (2003), and in the books by Giulini et al. (1996, second edition Joos et al. 2003), and by Schlosshauer (2007).",
+      "firstSectionTitle": "1. Theory of Decoherence",
+      "firstSectionText": "The two-slit experiment is a paradigm example of an interference experiment. One repeatedly sends electrons or other particles through a screen with two narrow slits, the electrons impinge upon a second screen, and we ask for the probability distribution of detections over the surface of the screen. One might naively try to calculate them by summing over the probabilities of detection at the slits multiplied by the probabilities for detection at the screen conditional on detection at the slits. But these are the correct probabilities for a different experiment, with detections at the slits, whether or not we believe that measurements are related to a 'true' collapse of the wave function (i.e. that only one of the components survives the measurement and proceeds to hit the screen ). If there are no such detections, in general there is an additional so-called interference term in the correct expression for the probability, and this term depends on both the wave components that pass through the slits. There are, however, situations in which this interference term does not appear or is negligible, and the naive formula applies. This is the case if some other systems interact with the electron between the slits and the screen, leading to enough entanglement with the components of the wave going through the two slits. Then, the resulting probabilities of detection at the screen are as if we had performed a detection at the slits. It is not difficult to see why this must be so. If Alice and Bob share a pair of systems that are entangled, then the probabilities for the results of any measurements Bob might make do not depend on whether or not Alice also makes any measurements (this is the quantum mechanical no-signalling theorem). In exactly the same way, the pattern of detections at the screen cannot distinguish mere entanglement with some other systems from the actual use of those systems for detection at the slits. So, for example, there could be sufficiently many stray particles that scatter off the electron. The phase relation between the two components of the wave function, which is responsible for interference, is now well-defined only at the level of the larger system composed of electron and stray particles, and can produce interference only in a suitable experiment including the larger system. Such a phenomenon of suppression of interference is what is called decoherence. 'Environmental' decoherence is decoherence that arises through suitable interaction of a system with its environment. The study of environmental decoherence consists to a large extent in the construction and investigation of concrete models of such interactions. We have already mentioned taking an environment of relatively light particles that scatter off a relatively heavy particle. Such a model can be used to study e.g. chiral molecules. Or one can take an atom in interaction with the electromagnetic field, or a harmonic oscillator in a thermal bath of oscillators, and many more. Various features of interest typically arise in such models: some are in common to most models, others are highly model-dependent. One feature of these environmental interactions is that they suppress interference between states from some preferred set ('eigenstates of the decohering variable'). This can be a discrete set of states, e.g. the upper and lower component of the wave function in our simple example of the two-slit experiment, or left- and right-handed states in models of chiral molecules; and when an atom interacts with the electromagnetic field, the preferred states will be the stationary states (which are the states we observe in spectroscopy). Or it could be some continuous set, e.g. the 'coherent states' of a harmonic oscillator (in which case the terminology of 'eigenstates' or 'eigenbasis' of a preferred observable is not quite accurate). The intuitive picture is one in which the environment monitors the system of interest by spontanesouly and continuously 'measuring' some quantity characterised by the set of preferred states (i.e. the environment interacts with the system in such a way that it could in principle be used as a measuring apparatus). Such a 'measurement-like' interaction intuitively does not disturb the eigenstates of the monitored observable. Thus these preferred states can in fact be characterised in terms of their robustness or stability with respect to the interaction with the environment. The system gets entangled with the environment, but the states between which interference is suppressed are the ones that would themselves get least entangled with the environment under this interaction. In this connection, one also says that decoherence induces 'effective superselection rules', meaning the following. A strict superselection rule applies when there are some observables - in technical terminology they are called classical - that commute with all observables (for a review, see Wightman 1995). Intuitively, these observables are infinitely robust, since no possible interaction can disturb them (at least as long as the interaction Hamiltonian is considered to be an observable). By an effective superselection rule one means, analogously, that certain observables (e.g. chirality) will not be disturbed by the interactions that actually take place. In many models of decoherence, the preferred states are robust in an even stronger sense, because information about them is stored in a redundant way in the environment (say, because a Schr&ouml;dinger cat has interacted with so many stray particles: photons, air molecules, dust). This information can later be acquired by an observer without further disturbing the system (we observe - however that may be interpreted - whether the cat is alive or dead by intercepting on our retina a small fraction of the light that has interacted with the cat). What states are preferred will depend on the details of the interaction, but in many cases, interactions are characterised by potentials that are functions of position, so preferred states are often related to position. For the chiral molecule, the left- and right-handed states are indeed characterised by different spatial configurations of the atoms in the molecule. For the harmonic oscillator, one should think of the environment 'measuring' approximate eigenstates of position, or rather approximate joint eigenstates of position and momentum, so-called coherent states (since information about the time of flight is also recorded in the environment). The resulting localisation can be on a very short length scale, i.e. the characteristic length above which coherence is dispersed ('coherence length') can be very short. A speck of dust of radius \\(a = 10^{-5}\\)cm floating in the air will have interference suppressed between spatially localised components with a width of \\(10^{-13}\\)cm. Even more strikingly, the time scales for this process are often minute. This coherence length is reached after a microsecond of exposure to air, and suppression of interference on a length scale of \\(10^{-12}\\)cm is achieved already after a nanosecond. Within the environmental decoherence literature, models tend to be formulated in terms of master equations for the evolution of the density operator describing the system. As a consequence of decoherence this very quickly becomes (at least approximately) diagonal in the basis of preferred states (whether discrete or continuous). Thus, the master equation for the density operator for the system is essentially equivalent to an evolution equation for the probability distribution over the preferred states. In models where coherent states are preferred, one can then compare this to the Liouville evolution of probability distributions over classical phase space, and in fact one obtains extremely good quantitative agreement. These features are not claimed to obtain in all cases of interaction with some environment. It is a matter of detailed physical investigation to assess which systems exhibit which features, and how general the lessons are that we might learn from studying specific models. One should thus beware of common overgeneralisations. For instance, decoherence does not affect only and all 'macroscopic systems'. It is true that middle-sized objects, say, on the Earth's surface will be very effectively decohered by the air in the atmosphere, and this is an excellent example of decoherence at work. On the other hand, there are also very good examples of decoherence-like interactions affecting microscopic systems, such as in the interaction of \\(\\alpha\\)-particles with the gas in a bubble chamber. (Note, however, that this also relies on the \\(\\alpha\\)-particles being emitted in states that are superpositions of strongly outward directed wavepackets.) Further, there are arguably macroscopic systems for which interference effects are not suppressed. For instance, it has been shown to be possible to sufficiently shield SQUIDS (a type of superconducting devices) from decoherence for the purpose of observing superpositions of different macroscopic currents - contrary to what one had expected (see e.g. Leggett 1984, and esp. 2002, Section 5.4). Anglin, Paz and Zurek (1997) examine some less well-behaved models of environmental decoherence and provide useful correctives to a number of naive generalisations. As mentioned above, when interference is suppressed in a two-slit experiment, the naive probability formula applies, and we can calculate the detection probabilities at the screen by adding probabilities for what are formally the 'trajectories' followed by individual electrons. The decoherent histories or consistent histories formalism (originating with Griffiths 1984; Omn&egrave;s 1988, 1989; and Gell-Mann and Hartle 1990) takes this as the defining feature of decoherence. (See also the entry on the consistent histories approach to quantum mechanics . There are some differences between the various authors, but we shall gloss them over. ) In a nutshell, the formalism is as follows. Take a sequence of times \\(t_1 ,\\ldots ,t_n\\), and take orthogonal families of (Heisenberg-picture) projections at those times, with One defines histories as time-ordered sequences of projections at the given times, choosing one projection from each family, respectively. Such histories form a so-called alternative and exhaustive set of histories. Take a state \\(\\varrho\\). We wish to define probabilities for the set of histories. If one takes the usual probability formula based on repeated application of the Born rule, one obtains We shall take (2) as defining 'candidate probabilities'. In general these probabilities exhibit interference, in the sense that summing over them is not equivalent to omitting the intermediate projections in (2) ('coarse-graining' the histories). In the special cases in which the interference terms do vanish for any pair of distinct histories, we say that the set of histories satisfies the consistency or (weak) decoherence condition. It is easy to see that this condition takes the form for any pair of distinct histories (the real part of the 'decoherence functional' vanishes). If this is satisfied, we can view (2) as defining the distribution functions for a stochastic process with the histories as trajectories. Decoherence in the sense of this abstract formalism is thus defined simply by the condition that the quantum probabilities for later events can be calculated as if the state had collapsed at the intermediate times. Qualitatively one recovers classical behaviour, in the sense that the histories are assigned quantum probabilities that nevertheless satisfy the classical formula of total probability. A stronger form of the decoherence condition, namely the vanishing of both the real and imaginary part of the decoherence functional, can be used to prove theorems on the existence of (later) 'permanent records' of (earlier) events in a history, which is a generalisation of the idea of 'environmental monitoring'. For instance, if the state \\(\\varrho\\) is a pure state \\(\\lvert \\psi \\rangle\\langle\\psi\\rvert\\) this (strong) decoherence condition is equivalent, for all \\(n\\), to the orthogonality of the vectors and this in turn is equivalent to the existence of a set of orthogonal projections \\(R_{\\alpha_1 \\ldots\\alpha_i}(t_i)\\) (for any \\(t_i \\le t_n\\)) that extend consistently the given set of histories and are perfectly correlated with the histories of the original set (Gell-Mann and Hartle 1990). Note, however, that these 'generalised records' need not be stored in separate degrees of freedom, such as an environment or measuring apparatus. Various authors have taken the theory of decoherent histories as providing an interpretation of quantum mechanics. For instance, Gell-Mann and Hartle sometimes talk of decoherent histories as a neo-Everettian approach, while Omn&egrave;s appears to think of histories along neo-Copenhagen lines (perhaps as an experimental context creating a 'quantum phenomenon' that can stretch back into the past). Griffiths (2002) has probably developed the most detailed of these interpretational approaches (also addressing various earlier criticisms, e.g. by Dowker and Kent (1995, 1996)). In itself, however, the formalism is interpretationally neutral and has the particular merit of bringing out that when interference is suppressed, one can reidentify different components of the state over time , making this formalism especially appropriate for discussing temporal evolution at the level of the non-interfering components. Work on environmental decoherence and work on decoherent histories tend to be unfortunately rather separate. In comparing the two, we shall need to look both at cases that can be described by both formalisms (and ask whether or not the two descriptions are equivalent), and at cases where only the more abstract formalism of decoherent histories applies. With regard to the latter cases, there are of course situations in which the decoherence functional vanishes just by numerical coincidence. But there are also systematic cases of vanishing of interference even without environmental monitoring, namely in the presence of 'conservation-induced' decoherence (see e.g. Halliwell 2010). As an example, take an isolated system (say, with discrete energy levels), and consider histories composed of projections onto its energy states at arbitrary times. Because energy is conserved, if one considers the energy basis each individual component is following the Schr&ouml;dinger equation without interfering with the other components, and the corresponding histories decohere. While some authors in the decoherent histories literature take conservation-induced decoherence to be a significant novelty of the theory, it should be noted that it lacks the robustness of environment-induced decoherence, since it lacks a mechanism that actively suppresses interference. With regard to the former cases, environmental decoherence can be easily described also in terms of decoherent histories. One needs to take times that are separated by intervals larger than the decoherence time scale, and projections onto the preferred states. Then the environmental monitoring ensures that the resulting histories decohere. (In cases of continuous sets of preferred states, one might need to generalise the histories formalism slightly, using 'effects' rather than projections; see e.g. Kent 1998.) In this sense, environmental decoherence can be seen as a special case of decoherent histories, but the descriptions given by the two formalisms are somewhat different. While decoherent histories define multi-time distributions over the preferred states (at discrete times), models of environmental decoherence essentially describe single-time distributions over the preferred states. While they have the advantage of being well-defined at all times, these single-time distributions do not explicitly describe any temporal evolution at the level of the individual components. In a number of models of environmental decoherence, however, it is obvious what the dynamical behaviour should be even at the level of individual components. Specifically, in models where the preferred states are coherent states, comparison of the master equation for the reduced state of the system with the evolution of a classical Liouville distribution suggests that the trajectories of individual components in fact approximate surprisingly well the corresponding Newtonian trajectories. Intuitively, one can explain this by noting that the preferred states (which are wave packets that are narrow in position and remain so because they are also narrow in momentum) are the states that tend to get least entangled with the environment. Therefore they will tend to follow the Schr&ouml;dinger equation more or less undisturbed. But, as a matter of fact, narrow wave packets follow approximately Newtonian trajectories, at least if the external potentials in which they move are uniform enough across the width of the packets (results of this kind are known as 'Ehrenfest theorems'). Thus, the resulting trajectories will be close to Newtonian ones (on the relevant scales). This picture cannot be exact , because as soon as a localised wave packet has spread enough, it will be decohered itself into new more localised packets, so that intuitively one will get some kind of 'fanning out' of trajectories. In fact, such deviations from Newtonian behaviour are due both to the tendency of the individual components to spread and to the localising effect of the interaction with the environment, which further enhances the collective spreading of the components (because a narrowing in position corresponds to a widening in momentum). See Rosaler (2016) for a very nice treatment (that uses an 'open systems' version of Ehrenfest's theorem). A vivid example are the observed trajectories of \\(\\alpha\\)-particles in a cloud chamber, which are indeed extremely close to Newtonian ones, except for additional tiny 'kinks'. In other models, e.g. when the electromagnetic field privileges the stationary states of an atom, there is no such comparison with classical equations, and the lack of multi-time distributions becomes a limitation of the model. Such limitations might be overcome by combining models of environmental decoherence with more phenomenological models of 'continuous measurement' (as done in a different example by Bhattacharya, Habib and Jacobs 2000). In the decoherent histories formalism, instead, the dynamics of stationary states (quantum jumps!) can be obtained from first principles, as shown by Brun (2002).",
+      "relatedEntries": [
+        "chaos",
+        "constructive-empiricism",
+        "qm",
+        "qm-action-distance",
+        "qm-bohm",
+        "qm-collapse",
+        "qm-consistent-histories",
+        "qm-copenhagen",
+        "qm-everett",
+        "qm-manyworlds",
+        "qm-modal",
+        "qm-relational",
+        "qm-retrocausality",
+        "qt-consciousness",
+        "quantum-bayesian",
+        "qt-issues",
+        "qt-entangle",
+        "quantum-field-theory",
+        "quantum-gravity",
+        "qt-epr",
+        "statphys-statmech",
+        "time-thermo"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "chaos"
+        },
+        {
+          "slug": "constructive-empiricism"
+        },
+        {
+          "slug": "qm"
+        },
+        {
+          "slug": "qm-action-distance"
+        },
+        {
+          "slug": "qm-bohm"
+        },
+        {
+          "slug": "qm-collapse"
+        },
+        {
+          "slug": "qm-consistent-histories"
+        },
+        {
+          "slug": "qm-copenhagen"
+        },
+        {
+          "slug": "qm-everett"
+        },
+        {
+          "slug": "qm-manyworlds"
+        },
+        {
+          "slug": "qm-modal"
+        },
+        {
+          "slug": "qm-relational"
+        },
+        {
+          "slug": "qm-retrocausality"
+        },
+        {
+          "slug": "qt-consciousness"
+        },
+        {
+          "slug": "quantum-bayesian"
+        },
+        {
+          "slug": "qt-issues"
+        },
+        {
+          "slug": "qt-entangle"
+        },
+        {
+          "slug": "quantum-field-theory"
+        },
+        {
+          "slug": "quantum-gravity"
+        },
+        {
+          "slug": "qt-epr"
+        },
+        {
+          "slug": "statphys-statmech"
+        },
+        {
+          "slug": "time-thermo"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 125,
+      "bibliography": [
+        {
+          "raw": "Adler, S. L., 2003, 'Why Decoherence has not Solved the Measurement Problem: A Response to P. W. Anderson', Studies in History and Philosophy of Modern Physics , 34 B: 135-142 [ preprint of Adler 2003 available online ]."
+        },
+        {
+          "raw": "Albert, D., 1992, Quantum Mechanics and Experience , Cambridge, Mass.: Harvard University Press."
+        },
+        {
+          "raw": "Albert, D., and Loewer, B., 1988, 'Interpreting the Many Worlds Interpretation', Synthese , 77: 195-213 [ reprint of Albert & Loewer 1988 available online ]."
+        },
+        {
+          "raw": "Allori, V., 2001, Decoherence and the Classical Limit of Quantum Mechanics , Ph.D. Thesis, Universit&agrave; di Genova."
+        },
+        {
+          "raw": "Allori, V., and Zangh&igrave;, N., 2009, 'On the Classical Limit of Quantum Mechanics', Foundations of Physics , 39(1): 20-32 [ preprint of Allori & Zangh&igrave; 2009 available online ]."
+        },
+        {
+          "raw": "Anglin, J. R., Paz, J. P., and Zurek, W. H., 1997, 'Deconstructing Decoherence', Physical Review A , 55: 4041-4053 [ preprint of Anglin, Paz, & Zurek 1997 available online ]."
+        },
+        {
+          "raw": "Appleby, D. M., 1999, 'Bohmian Trajectories Post-Decoherence', Foundations of Physics , 29: 1885-1916 [ preprint of Appleby 1999 available online ]."
+        },
+        {
+          "raw": "Bacciagaluppi, G., 2000, 'Delocalized Properties in the Modal Interpretation of a Continuous Model of Decoherence', Foundations of Physics , 30: 1431-1444."
+        },
+        {
+          "raw": "---, 2002, 'Remarks on Space-Time and Locality in Everett's Interpretation', in T. Placek and J. Butterfield (eds.), Non-Locality and Modality (NATO Science Series, II. Mathematics, Physics and Chemistry, Volume 64), Dordrecht: Kluwer, pp. 105-122 [ preprint of Bacciagaluppi 2002 available online ]."
+        },
+        {
+          "raw": "---, 2007, 'Probability, Arrow of Time and Decoherence', Studies in History and Philosophy of Modern Physics , 38: 439-456 [ preprint of Bacciagaluppi 2007 available online ]."
+        },
+        {
+          "raw": "Bacciagaluppi, G., and Crull, E., 2024, The Einstein Paradox: The Debate on Nonlocality and Incompleteness in 1935 , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Bacciagaluppi, G., and Valentini, A., 2009, Quantum Theory at the Crossroads: Reconsidering the 1927 Solvay Conference , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Barbour, J., 1999, The End of Time , London: Weidenfeld and Nicolson."
+        },
+        {
+          "raw": "Barrett, J. A., 2015, 'Pure Wave Mechanics and the Very Idea of Empirical Adequacy', Synthese , 192(10): 3071-3104 [ preprint of Barrett 2015 available online ]."
+        },
+        {
+          "raw": "Bassi, A. and Ghirardi, G., 2000, 'A General Argument Against the Universal Validity of the Superposition Principle', Physics Letters A , 275(5-6): 373-381 [ preprint of Bassi & Ghirardi 2000 available online ]."
+        },
+        {
+          "raw": "Bell, J. S., 1987, Speakable and Unspeakable in Quantum Mechanics , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Bene, G., and Dieks, D., 2002, 'A Perspectival Version of the Modal Interpretation of Quantum Mechanics and the Origin of Macroscopic Behavior', Foundations of Physics , 32: 645-672 [ preprint of Bene & Dieks 2002 available online ]."
+        },
+        {
+          "raw": "Ben-Menahem, Y., and Hemmo, M. (eds.), 2012, Probability in Physics , Berlin: Springer."
+        },
+        {
+          "raw": "Berkovitz, J., 2012, 'The World According to de Finetti: On de Finetti's Theory of Probability and its Application to Quantum Mechanics', in Ben-Menahem and Hemmo (2012), pp. 249-280 [ preprint of Berkovitz 2012 available online ]."
+        },
+        {
+          "raw": "Berkovitz, J., and Hemmo, M., 2006, 'Modal Interpretations and Relativity: A Reconsideration', in W. Demopoulos and I. Pitowsky (eds.), Physical Theory and its Interpretation: Essays in Honor of Jeffrey Bub (Western Ontario Series in Philosophy of Science, Vol. 72), New York: Springer, pp. 1-28."
+        },
+        {
+          "raw": "Bhattacharya, T., Habib, S. and Jacobs, K., 2000, 'Continuous Quantum Measurement and the Emergence of Classical Chaos', Physical Review Letters 85(23): 4852-4855 [ preprint of Bhattacharya, Habib, & Jacobs 2000 available online ]."
+        },
+        {
+          "raw": "de Broglie, L., 1928, 'La nouvelle dynamique des quanta', in [H. Lorentz (ed.)], &Eacute;lectrons et photons: rapports et discussions du cinqui&egrave;me conseil de physique [&hellip;] Solvay , Paris: Gauthiers-Villars. Translated as 'The New Dynamics of Quanta' in Bacciagaluppi and Valentini (2009), pp. 374-407."
+        },
+        {
+          "raw": "Bohm, D., 1952, 'A Suggested Interpretation of the Quantum Theory in Terms of \"Hidden\" Variables: I and II', Physical Review , 85: 166-179 and 180-193. Reprinted in Wheeler and Zurek (1983), pp. 369-396."
+        },
+        {
+          "raw": "Bohm, D., and Hiley, B., 1993, The Undivided Universe , London: Routledge."
+        },
+        {
+          "raw": "Brun, T., 2002, 'A Simple Model of Quantum Trajectories', American Journal of Physics 70(7): pp. 719-737 [ preprint of Brun 2002 available online ]."
+        },
+        {
+          "raw": "Bub, J., 1997, Interpreting the Quantum World , Cambridge: Cambridge University Press (2nd corrected edition, 1999)."
+        },
+        {
+          "raw": "Cai, J., Guerreschi, G. G., and Briegel, H. J., 2010, 'Quantum Control and Entanglement in a Chemical Compass', Physical Review Letters , 104(22): 220502/1-4 [ preprint of Cai et al. 2010 available online ]."
+        },
+        {
+          "raw": "Carlesso, M., and Bassi, A., 2019, 'Current Tests of Collapse Models: How Far can we Push the Limits of Quantum Mechanics?' in Quantum Information and Measurement (QIM) V: Quantum Technologies (OSA Technical Digest), Washington DC: Optica Publishing Group, paper S1C.3 [ preprint of Carlesso & Bassi 2019 available online ]."
+        },
+        {
+          "raw": "Cramer, J. G., 1980, 'Generalized Absorber Theory and the Einstein-Podolsky-Rosen Paradox', Physical Review D , 22(2): 362-376."
+        },
+        {
+          "raw": "---, 1986, 'The Transactional Interpretation of Quantum Mechanics', Reviews of Modern Physics , 58(3): 647-687."
+        },
+        {
+          "raw": "Derakhshani, M., 2017, Stochastic Mechanics Without ad hoc Quantization: Theory and Applications to Semiclassical Gravity , PhD Thesis, Universiteit Utrecht [ Derakhshani 2017 available online ]."
+        },
+        {
+          "raw": "Derakhshani, M., and Bacciagaluppi, G., 2024, 'On Multi-time Correlations in Stochastic Mechanics' in P. Castro, J. Bush and J. Croca (eds.), Advances in Pilot-Wave Theory: From Experiments to Foundations (Boston Studies in the Philosophy and History of Science: Volume 344), Cham: Springer, pp. 61-78 [ preprint of Derakhshani & Bacciagaluppi 2024 available online ]."
+        },
+        {
+          "raw": "Di Biagio, A., and Rovelli, C., 2021, 'Stable Facts, Relative Facts', Foundations of Physics , 51: 1-13 [ Di Biagio & Rovelli 2021 available online ]."
+        },
+        {
+          "raw": "Dieks, D., and Vermaas, P. E. (eds.), 1998, The Modal Interpretation of Quantum Mechanics , Dordrecht: Kluwer."
+        },
+        {
+          "raw": "Donald, M., 1998, 'Discontinuity and Continuity of Definite Properties in the Modal Interpretation', in Dieks and Vermaas (1998), pp. 213-222 [ preprint of Donald 1998 available online ]."
+        },
+        {
+          "raw": "Dowker, F., and Kent, A., 1995, 'Properties of Consistent Histories', Physical Review Letters , 75: 3038-3041 [ preprint of Dowker & Kent 1995 available online ]."
+        },
+        {
+          "raw": "Dowker, F., and Kent, A., 1996, 'On the Consistent Histories Approach to Quantum Mechanics', Journal of Statistical Physics , 82: 1575-1646 [ preprint of Dowker & Kent 1996 available online ]."
+        },
+        {
+          "raw": "Epstein, S. T., 1953, 'The Causal Interpretation of Quantum Mechanics', Physical Review , 89: 319."
+        },
+        {
+          "raw": "Everett, H. III, 1957, '\"Relative-State\" Formulation of Quantum Mechanics', Reviews of Modern Physics , 29: 454-462. Reprinted in Everett (2012), pp. 173-196, and in Wheeler and Zurek (1983), pp. 315-323."
+        },
+        {
+          "raw": "---, 2012, The Everett Interpretation of Quantum Mechanics: Collected Works 1955-1980 with Commentary , ed. by J. A. Barrett and P. Byrne, Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Felline, L., and Bacciagaluppi, G., 2013, 'Locality and Mentality in Everett Interpretations: Albert and Loewer's Many Minds', Mind and Matter , 11(2): 223-241 [ preprint of Felline & Bacciagaluppi 2013 available online ]."
+        },
+        {
+          "raw": "van Fraassen, B., 1973, 'Semantic Analysis of Quantum Logic', in C. A. Hooker (ed.), Contemporary Research in the Foundations and Philosophy of Quantum Theory , Dordrecht: Reidel, pp. 180-213."
+        },
+        {
+          "raw": "---, 1991, Quantum Mechanics: An Empiricist View , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "---, 2010, 'Rovelli's World', Foundations of Physics , 40(4): 390-417 [ reprint of van Fraassen 1973 available online ]."
+        },
+        {
+          "raw": "Fuchs, C. A., and Schack, R., 2012, 'Bayesian Conditioning, the Reflection Principle, and Quantum Decoherence', in Ben-Menahem and Hemmo (2012), pp. 233-247 [ preprint of Fuchs & Schack 2012 available online ]."
+        },
+        {
+          "raw": "Gell-Mann, M., and Hartle, J. B., 1990, 'Quantum Mechanics in the Light of Quantum Cosmology', in W. H. Zurek (ed.), Complexity, Entropy, and the Physics of Information , Reading, Mass.: Addison-Wesley, pp. 425-458 [ preprint of Gell-Mann & Hartle 1990 available online ]."
+        },
+        {
+          "raw": "Ghirardi, G.C., Rimini, A., and Weber, T., 1986, 'Unified Dynamics for Microscopic and Macroscopic Systems', Physical Review D , 34: 470-479 [ preprint of Ghirardi et al. 1986 available online ]."
+        },
+        {
+          "raw": "Giulini, D., Kiefer, C. and Zeh, H.-D., 1995, 'Symmetries, Superselection Rules, and Decoherence', Physics Letters A , 199(5-6): 291-298 [ preprint of Giulini et al. 1995 available online ]."
+        },
+        {
+          "raw": "Giulini, D., Joos, E., Kiefer, C., Kupsch, J., Stamatescu, I.-O., and Zeh, H.-D., 1996, Decoherence and the Appearance of a Classical World in Quantum Theory , Berlin: Springer (for the revised edition, see Joos et al. (2003))."
+        },
+        {
+          "raw": "Griffiths, R. B., 1984, 'Consistent Histories and the Interpretation of Quantum Mechanics', Journal of Statistical Physics , 36: 219-272."
+        },
+        {
+          "raw": "---, 2002, Consistent Quantum Theory , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Halliwell, J. J., 1995, 'A Review of the Decoherent Histories Approach to Quantum Mechanics', Annals of the New York Academy of Sciences , 755: 726-740 [ preprint of Halliwell 1995 available online ]."
+        },
+        {
+          "raw": "---, 1999, 'Somewhere in the Universe: Where is the Information Stored when Histories Decohere?', Physical Review D , 60: 105031/1-17 [ preprint of Halliwell 1999 available online ]."
+        },
+        {
+          "raw": "---, 2010, 'Macroscopic Superpositions, Decoherent Histories, and the Emergence of Hydrodynamical Behaviour' in Saunders et al . (2010), pp. 99-118 [ preprint of Halliwell 2010 available online ]."
+        },
+        {
+          "raw": "Halliwell, J. J., and Thorwart, J., 2002, 'Life in an Energy Eigenstate: Decoherent Histories Analysis of a Model Timeless Universe', Physical Review D , 65: 104009/1-19 [ preprint of Halliwell & Thorwart 2002 available online ]."
+        },
+        {
+          "raw": "Hameroff, S. R., and Penrose, R., 1996 'Conscious Events as Orchestrated Spacetime Selections', Journal of Consciousness Studies , 3(1): 36-53."
+        },
+        {
+          "raw": "Hartle, J. B., 1998, 'Quantum Pasts and the Utility of History', Physica Scripta , T 76: 67-77 [ preprint of Hartle 1998 available online ]."
+        },
+        {
+          "raw": "---, 2005, 'The Physics of \"Now\"', American Journal of Physics , 73(2): 101-109 [ preprint of Hartle 2005 available online ]."
+        },
+        {
+          "raw": "---, 2010, 'Quasiclassical Realms', in Saunders et al . (2010), pp. 73-98."
+        },
+        {
+          "raw": "Healey, R., 1989, The Philosophy of Quantum Mechanics: An Interactive Interpretation , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Hemmo, M., 1996, Quantum Mechanics Without Collapse: Modal Interpretations, Histories and Many Worlds , Ph.D. Thesis, University of Cambridge."
+        },
+        {
+          "raw": "Hemmo, M. and Shenker, O., 2001, 'Can we Explain Thermodynamics by Quantum Decoherence?', Studies in History and Philosophy of Modern Physics , 32 B: 555-568. doi:10.1016/S1355-2198(01)00029-6"
+        },
+        {
+          "raw": "Hermann, G., 1935, 'Die naturphilosophischen Grundlagen der Quantenmechanik', Abhandlungen der Fries'schen Schule , 6: 75-152. Translated as 'Natural-Philosophical Foundations of Quantum Mechanics' in E. Crull and G. Bacciagaluppi (eds.), Grete Hermann: Between Physics and Philosophy , Dordrecht: Springer (2017), pp. 239-278."
+        },
+        {
+          "raw": "Holland, P. R., 1996, 'Is Quantum Mechanics Universal?', in J. T. Cushing, A. Fine and S. Goldstein (eds.), Bohmian Mechanics and Quantum Theory: An Appraisal , Dordrecht: Kluwer, pp. 99-110."
+        },
+        {
+          "raw": "Joos, E. and Zeh, H.-D., 1985, 'The Emergence of Classical Properties through Interaction with the Environment', Zeitschrift f&uuml;r Physik B , 59: 223-243 [reprint of Joos & Zeh 1985 available online ]."
+        },
+        {
+          "raw": "Joos, E., Zeh, H.-D., Kiefer, C., Giulini, D., Kupsch, J., and Stamatescu, I.-O., 2003. Decoherence and the Appearance of a Classical World in Quantum Theory , Berlin: Springer (revised edition of Giulini et al. (1996))."
+        },
+        {
+          "raw": "Kastner, R. E., 2020, 'Decoherence and the Transactional Interpretation', International Journal of Quantum Foundations , 6(2): 24-39 [ Kastner 2020 available online ]"
+        },
+        {
+          "raw": "---, 2022, The Transactional Interpretation of Quantum Mechanics: A Relativistic Treatment , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Kastner, R. E., and Cramer, J. G., 2018, 'Quantifying Absorption in the Transactional Interpretation', International Journal of Quantum Foundations , 4(3): 210-222 [ Kastner & Cramer 2018 available online ]."
+        },
+        {
+          "raw": "Kay, B. S., 1998, 'Decoherence of Macroscopic Closed Systems within Newtonian Quantum Gravity', Classical and Quantum Gravity , 15: L89-L98 [ preprint of Kay 1998 available online ]."
+        },
+        {
+          "raw": "Kent, A., 1998, 'Quantum Histories', Physica Scripta , T76: 78-84 [ preprint of Kent 1998 available online ]."
+        },
+        {
+          "raw": "Kiefer, C., 1994, 'The Semiclassical Approximation to Quantum Gravity', in J. Ehlers and H. Friedrich (eds.), Canonical Gravity: From Classical to Quantum , Berlin: Springer, pp. 170-212 [ preprint of Kiefer 1994 available online ]."
+        },
+        {
+          "raw": "Kochen, S., 1985, 'A New Interpretation of Quantum Mechanics', in P. Mittelstaedt and P. Lahti (eds.), Symposium on the Foundations of Modern Physics 1985 , Singapore: World Scientific, pp. 151-169."
+        },
+        {
+          "raw": "Leggett, A. J., 1984, 'Schr&ouml;dinger's Cat and her Laboratory Cousins', Contemporary Physics , 25: 583-594."
+        },
+        {
+          "raw": "---, 2002, 'Testing the Limits of Quantum Mechanics: Motivation, State of Play, Prospects', Journal of Physics C , 14: R415-R451."
+        },
+        {
+          "raw": "Lombardi, O., and Castagnino, M., 2008, 'A Modal-Hamiltonian Interpretation of Quantum Mechanics', Studies in History and Philosophy of Modern Physics , 39(2): 380-443 [ preprint of Lombardi & Castagnino 2008 available online ]."
+        },
+        {
+          "raw": "Maudlin, T., 1995, 'Three Measurement Problems', Topoi , 14(1): 7-15."
+        },
+        {
+          "raw": "Mott, N. F., 1929, 'The Wave Mechanics of \\(\\alpha\\)-ray Tracks', Proceedings of the Royal Society of London A , 126 (1930, No. 800 of 2 December 1929): 79-84."
+        },
+        {
+          "raw": "Nelson, E., 1966, 'Derivation of the Schr&ouml;dinger Equation from Newtonian Mechanics', Physical Review , 150: 1079-1085."
+        },
+        {
+          "raw": "---, 1985, Quantum Fluctuations , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "---, 2006, 'Afterword', in W. G. Faris (ed.), Diffusion, Quantum Theory, and Radically Elementary Mathematics (Mathematical Notes 47), Princeton: Princeton University Press, pp. 227-230."
+        },
+        {
+          "raw": "von Neumann, J., 1932, Mathematische Grundlagen der Quantenmechanik , Berlin: Springer; translated by R. T. Beyer as Mathematical Foundations of Quantum Mechanics , Princeton: Princeton University Press, 1955; new edition edited by N. A. Wheeler, Princeton: Princeton University Press, 2018."
+        },
+        {
+          "raw": "Omn&egrave;s, R., 1988, 'Logical Reformulations of Quantum Mechanics: I. Foundations', Reviews of Modern Physics , 53: 893-932; 'II. Inferences and the Einstein-Podolsky-Rosen Experiment', 933-955; 'III. Classical Limit and Irreversibility', 957-975."
+        },
+        {
+          "raw": "---, 1989, 'Logical Reformulations of Quantum Mechanics: IV. Projectors in Semi-Classical Physics', Reviews of Modern Physics , 57: 357-382."
+        },
+        {
+          "raw": "Osnaghi, S., Freitas, F., and Freire, O. Jr, 2009, 'The Origin of the Everettian Heresy', Studies in History and Philosophy of Modern Physics , 40(2): 97-123."
+        },
+        {
+          "raw": "Pearle, P., 1989, 'Combining Stochastic Dynamical State-Vector Reduction with Spontaneous Localization', Physical Review A , 39: 2277-2289 [ preprint of Pearle 1989 available online ]."
+        },
+        {
+          "raw": "---, 1997, 'True Collapse and False Collapse', in Da Hsuan Feng and Bei Lok Hu (eds.), Quantum Classical Correspondence: Proceedings of the 4th Drexel Symposium on Quantum Nonintegrability, Philadelphia, PA, USA, September 8-11, 1994 , Cambridge, Mass.: International Press, pp. 51-68 [ preprint of Pearle 1997 available online ]."
+        },
+        {
+          "raw": "Pearle, P., and Squires, E., 1994, 'Bound-State Excitation, Nucleon Decay Experiments, and Models of Wave-Function Collapse', Physical Review Letters , 73: 1-5 [ preprint of Pearle & Squires 1994 available online ]."
+        },
+        {
+          "raw": "Ridderbos, K., 1999, 'The Loss of Coherence in Quantum Cosmology', Studies in History and Philosophy of Modern Physics , 30B: 41-60."
+        },
+        {
+          "raw": "Romano, D., 2016, The Emergence of the Classical World from a Bohmian Universe , PhD Thesis, Universit&eacute; de Lausanne."
+        },
+        {
+          "raw": "Rosaler, J., 2015, 'Is de Broglie-Bohm Theory Specially Equipped to Recover Classical Behavior?', Philosophy of Science , 82(5): 1175-1187 [ preprint of Rosaler 2015 available online ]."
+        },
+        {
+          "raw": "---, 2016, 'Interpretation Neutrality in the Classical Domain of Quantum Theory', Studies in History and Philosophy of Modern Physics , 53: 54-72 [ preprint of Rosaler 2015 available online ]."
+        },
+        {
+          "raw": "Sanz, A. S., and Borondo, F., 2009, 'Contextuality, Decoherence and Quantum Trajectories', &#8232;Chemical Physics Letters , 478: 301-306 [ preprint of Sanz & Borondo 2009 available online ]."
+        },
+        {
+          "raw": "Saunders, S., 1993, 'Decoherence, Relative States, and Evolutionary Adaptation', Foundations of Physics , 23: 1553-1585."
+        },
+        {
+          "raw": "---, 1999, 'The \"Beables\" of Relativistic Pilot-Wave Theory', in J. Butterfield and C. Pagonis (eds.), From Physics to Philosophy , Cambridge: Cambridge University Press, pp. 71-89."
+        },
+        {
+          "raw": "Saunders, S., Barrett, J., Kent, A., and Wallace, D. (eds.), 2010, Many Worlds? Everett, Quantum Theory, & Reality , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Schlosshauer, M., 2007, Decoherence and the Quantum-to-Classical Transition , Berlin: Springer."
+        },
+        {
+          "raw": "---, 2008, 'Classicality, the Ensemble Interpretation, and Decoherence: Resolving the Hyperion Dispute', Foundations of Physics , 38(9): 796-803 [ reprint of Schlosshauer 2007 available online ]."
+        },
+        {
+          "raw": "Shimony, A., 1989, 'Search for a Worldview which can Accommodate our Knowledge of Microphysics', in J. T. Cushing and E. McMullin (eds.), Philosophical Consequences of Quantum Theory , Notre Dame, Indiana: University of Notre Dame Press, pp. 25-37. Reprinted in A. Shimony, Search for a Naturalistic Worldview , Vol. 1, Cambridge: Cambridge University Press (1993), pp. 62-76."
+        },
+        {
+          "raw": "Spekkens, R. W., and Sipe, J. E., 2001, 'A Modal Interpretation of Quantum Mechanics based on a Principle of Entropy Minimization', Foundations of Physics , 31: 1431-1464."
+        },
+        {
+          "raw": "Struyve, W., 2011, 'Pilot-wave Approaches to Quantum Field Theory', Journal of Physics: Conference Series , 306: 012047/1-10 [ preprint of Struyve 2011 available online ]."
+        },
+        {
+          "raw": "Struyve, W., and Westman, H., 2007, 'A Minimalist Pilot-wave Model for Quantum Electrodynamics', Proceedings of the Royal Society of London A , 463: 3115-3129 [ preprint of Struyve & Westman 2007 available online ]."
+        },
+        {
+          "raw": "Tegmark, M., 1993, 'Apparent Wave Function Collapse Caused by Scattering', Foundations of Physics Letters , 6: 571-590 [ preprint of Tegmark 1993 available online ]."
+        },
+        {
+          "raw": "Toro&scaron;, M., Donadi, S. and Bassi, A., 2016, 'Bohmian Mechanics, Collapse Models and the Emergence of Classicality', Journal of Physics A: Mathematical and Theoretical , 49(35): 355302 [ preprint of Toro&scaron; et al. 2016 available online ]."
+        },
+        {
+          "raw": "Wallace, D., 2003, 'Everett and Structure', Studies in History and Philosophy of Modern Physics , 34B: 87-105 [ preprint of Wallace 2003 available online ]."
+        },
+        {
+          "raw": "---, 2008, 'Philosophy of Quantum Mechanics', in D. Rickles (ed.), The Ashgate Companion to Contemporary Philosophy of Physics , Aldershot: Ashgate, pp. 16-98 [ preliminary version of Wallace 2008 available online as 'The Quantum Measurement Problem: State of Play', December 2007]."
+        },
+        {
+          "raw": "---, 2012b, 'Decoherence and its Role in the Modern Measurement Problem', Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences , 370(1975): 4576-4593 [ preprint of Wallace 2012b available online ]."
+        },
+        {
+          "raw": "Wallstrom, T. C., 1994, 'Inequivalence between the Schr&ouml;dinger Equation and the Madelung Hydrodynamic Equations', Physical Review A , 49(3): 1613-1617 [ reprint of Wallstrom 1994 available online ]."
+        },
+        {
+          "raw": "Wheeler, J. A., 1978, 'The \"past\" and the \"delayed-choice\" double-slit experiment', in A. R. Marlow (ed.), Mathematical Foundations of Quantum Theory , New York: Academic Press, pp. 9-48."
+        },
+        {
+          "raw": "Wheeler, J. A., and Feynman, R. P., 1945, 'Interaction with the Absorber as the Mechanism of Radiation', Reviews of Modern Physics , 17(2-3): 157-181."
+        },
+        {
+          "raw": "Wheeler, J. A., and Zurek, W. H. (eds.), 1983, Quantum Theory and Measurement , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Wightman, A. S., 1995, 'Superselection Rules: Old and New', Il Nuovo Cimento , 110 B: 751-769."
+        },
+        {
+          "raw": "Zeh, H.-D., 1970, 'On the Interpretation of Measurement in Quantum Theory', Foundations of Physics , 1: 69-76. Reprinted in Wheeler and Zurek (1983), pp. 342-349."
+        },
+        {
+          "raw": "---, 1973, 'Toward a Quantum Theory of Observation', Foundations of Physics , 3: 109-116 [ corrected version of Zeh 1973 available online , June 2003]."
+        },
+        {
+          "raw": "---, 2000, 'The Problem of Conscious Observation in Quantum Mechanical Description', Foundations of Physics Letters , 13: 221-233 [ preprint of Zeh 2000 available online ]."
+        },
+        {
+          "raw": "---, 2001, The Physical Basis of the Direction of Time , Berlin: Springer, 4th edition."
+        },
+        {
+          "raw": "---, 2003a, 'Basic Concepts and Their Interpretation', in Joos et al. (2003), pp. 7-40 [page numbers refer to the preprint of Zeh 2003a available online ]."
+        },
+        {
+          "raw": "---, 2003b, 'There is no \"First\" Quantization', Physics Letters , A 309: 329-334 [ preprint of Zeh 2003b available online ]."
+        },
+        {
+          "raw": "Zurek, W. H., 1981, 'Pointer Basis of Quantum Apparatus: Into what Mixture does the Wave Packet Collapse?', Physical Review D , 24: 1516-1525."
+        },
+        {
+          "raw": "---, 1982, 'Environment-Induced Superselection Rules', Physical Review D , 26: 1862-1880."
+        },
+        {
+          "raw": "---, 1991, 'Decoherence and the Transition from Quantum to Classical', Physics Today , 44 (October): 36-44 [ abstract and updated version of Zurek 1991 available online as 'Decoherence and the Transition from Quantum to Classical - Revisited', June 2003]."
+        },
+        {
+          "raw": "---, 1993, 'Negotiating the Tricky Border Between Quantum and Classical', Physics Today , 46 (April): 84-90."
+        },
+        {
+          "raw": "---, 1998, 'Decoherence, Einselection, and the Existential Interpretation (The Rough Guide)', Philosophical Transactions of the Royal Society of London A , 356: 1793-1820 [ preprint of Zurek 1998 available online ]."
+        },
+        {
+          "raw": "---, 2003, 'Decoherence, Einselection, and the Quantum Origins of the Classical', Reviews of Modern Physics , 75: 715-775 [page numbers refer to the preprint of Zurek 2003 available online ]."
+        },
+        {
+          "raw": "Zurek, W. H., and Paz, J.-P., 1994, 'Decoherence, Chaos, and the Second Law', Physical Review Letters , 72: 2508-2511 [ preprint Zurek & Paz 1994 available online ]."
+        }
+      ],
+      "publishedAt": "2003-11-02T13:00:00.000Z",
+      "revisedAt": "2025-01-22T13:00:00.000Z"
+    }
+  }
+}
