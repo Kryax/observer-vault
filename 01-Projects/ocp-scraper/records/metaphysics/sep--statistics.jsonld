@@ -1,0 +1,993 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "ocp": "https://observercommons.org/ns/v1#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "SolutionRecord": "ocp:SolutionRecord",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+    "datePublished": "schema:datePublished",
+    "license": "schema:license",
+    "keywords": "schema:keywords",
+    "url": "schema:url",
+    "problemSolved": "ocp:problemSolved",
+    "problemStatement": "ocp:problemStatement",
+    "problemContext": "ocp:problemContext",
+    "cynefinDomain": "ocp:cynefinDomain",
+    "solutionApproach": "ocp:solutionApproach",
+    "domains": {
+      "@id": "ocp:domains",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "validation": "ocp:validation",
+    "validationMethod": "ocp:validationMethod",
+    "validationEvidence": "ocp:validationEvidence",
+    "validationDate": "ocp:validationDate",
+    "validatedBy": "ocp:validatedBy",
+    "implementation": "ocp:implementation",
+    "implementationType": "ocp:implementationType",
+    "implementationRefs": "ocp:implementationRefs",
+    "language": "schema:programmingLanguage",
+    "runtime": "ocp:runtime",
+    "composability": "ocp:composability",
+    "inputs": "ocp:inputs",
+    "outputs": "ocp:outputs",
+    "dependencies": "ocp:dependencies",
+    "composableWith": "ocp:composableWith",
+    "interfaceContract": "ocp:interfaceContract",
+    "provenance": "ocp:provenance",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "contributors": {
+      "@id": "schema:contributor",
+      "@container": "@list"
+    },
+    "sourceType": "ocp:sourceType",
+    "derivedFrom": {
+      "@id": "schema:isBasedOn",
+      "@container": "@set"
+    },
+    "generatedBy": "ocp:generatedBy",
+    "trust": "ocp:trust",
+    "confidence": "ocp:confidence",
+    "authority": "ocp:authority",
+    "status": "ocp:status",
+    "endorsements": "ocp:endorsements",
+    "disputes": "ocp:disputes",
+    "trustScore": "ocp:trustScore",
+    "governance": "ocp:governance",
+    "owner": "ocp:owner",
+    "approvedBy": "ocp:approvedBy",
+    "approvalDate": "ocp:approvalDate",
+    "federation": "ocp:federation",
+    "originNode": "ocp:originNode",
+    "mirroredAt": "ocp:mirroredAt",
+    "canonicalUri": "ocp:canonicalUri",
+    "extensions": "ocp:extensions"
+  },
+  "@type": "SolutionRecord",
+  "@id": "ocp:sep/statistics",
+  "meta": {
+    "title": "Philosophy of Statistics",
+    "description": "Statistics investigates and develops specific methods for evaluating hypotheses in the light of empirical facts. A method is called statistical, and thus the subject of study in statistics, if it relates facts and hypotheses of a particular kind: the empirical facts must be codified and structured into data sets, and the hypotheses must be formulated in terms of probability distributions over possible data sets. The philosophy of statistics concerns the foundations and the proper interpretation of statistical methods, their input, and their results. Since statistics is relied upon in almost all empirical scientific research, serving to support and communicate scientific findings, the philosophy of statistics is of key importance to the philosophy of science. It is part of the philosophical appraisal of scientific method, and it impacts the debate over the epistemic and ontological status of scientific theory. The philosophy of statistics harbors a large variety of topics and debates. Central to these is the problem of induction , which concerns the justification of inferences or procedures that extrapolate from data to predictions and general facts. Further debates concern the interpretation of the probabilities that are used in statistics, and the wider theoretical framework that may ground and justify the correctness of statistical methods. A general introduction to these themes is given in Section 1 and Section 2 . Section 3 and Section 4 provide an account of how these themes play out in the two major theories of statistical method, classical and Bayesian statistics respectively. Section 5 directs attention to the notion of a statistical model, covering model selection and simplicity, but also discussing statistical and data-scientific techniques that do not rely on statistical models. Section 6 briefly mentions relations between the philosophy of statistics and several other themes from the philosophy of science, including confirmation theory , evidence , causality, measurement, and scientific methodology in general.",
+    "version": "1.0.0",
+    "dateCreated": "2026-03-23T07:58:16.054Z",
+    "dateModified": "2026-03-23T07:58:16.054Z",
+    "datePublished": "2014-08-18T14:00:00.000Z",
+    "keywords": [
+      "causation probabilistic",
+      "confirmation",
+      "defaults semantics pragmatics",
+      "evidence",
+      "formal belief",
+      "induction problem",
+      "learning formal",
+      "logic inductive",
+      "logic probability",
+      "physics rpcc",
+      "probability interpret",
+      "reasoning defeasible",
+      "scientific method",
+      "simplicity",
+      "skepticism ancient"
+    ]
+  },
+  "problemSolved": {
+    "statement": "Statistics investigates and develops specific methods for evaluating hypotheses in the light of empirical facts. A method is called statistical, and thus the subject of study in statistics, if it relates facts and hypotheses of a particular kind: the empirical facts must be codified and structured into data sets, and the hypotheses must be formulated in terms of probability distributions over possible data sets. The philosophy of statistics concerns the foundations and the proper interpretation of statistical methods, their input, and their results. Since statistics is relied upon in almost all empirical scientific research, serving to support and communicate scientific findings, the philosophy of statistics is of key importance to the philosophy of science. It is part of the philosophical appraisal of scientific method, and it impacts the debate over the epistemic and ontological status of scientific theory. The philosophy of statistics harbors a large variety of topics and debates. Central to these is the problem of induction , which concerns the justification of inferences or procedures that extrapolate from data to predictions and general facts. Further debates concern the interpretation of the probabilities that are used in statistics, and the wider theoretical framework that may ground and justify the correctness of statistical methods. A general introduction to these themes is given in Section 1 and Section 2 . Section 3 and Section 4 provide an account of how these themes play out in the two major theories of statistical method, classical and Bayesian statistics respectively. Section 5 directs attention to the notion of a statistical model, covering model selection and simplicity, but also discussing statistical and data-scientific techniques that do not rely on statistical models. Section 6 briefly mentions relations between the philosophy of statistics and several other themes from the philosophy of science, including confirmation theory , evidence , causality, measurement, and scientific methodology in general.",
+    "context": "Opening section: 1. Statistics and induction | Related entries: formal-belief, causation-probabilistic, confirmation, defaults-semantics-pragmatics, evidence, induction-problem, learning-formal, logic-probability, logic-inductive, probability-interpret, reasoning-defeasible, physics-rpcc, scientific-method, simplicity, skepticism-ancient",
+    "cynefinDomain": "complicated"
+  },
+  "domains": [
+    "metaphysics",
+    "epistemology",
+    "logic",
+    "history-of-philosophy",
+    "philosophy-of-science",
+    "general-philosophy"
+  ],
+  "validation": {
+    "method": "community-consensus",
+    "evidence": [
+      {
+        "type": "sep-entry",
+        "description": "Indexed from Stanford Encyclopedia of Philosophy entry statistics",
+        "uri": "https://plato.stanford.edu/entries/statistics/"
+      },
+      {
+        "type": "editorial-structure",
+        "description": "1 author(s), 15 related entries, bibliography size 236"
+      },
+      {
+        "type": "publication-history",
+        "description": "Published 2014-08-18T14:00:00.000Z and revised 2025-09-30T14:00:00.000Z"
+      }
+    ],
+    "reproducibility": "contextual",
+    "validationDate": "2025-09-30T14:00:00.000Z"
+  },
+  "implementation": {
+    "type": "pattern",
+    "refs": [
+      {
+        "type": "documentation",
+        "uri": "https://plato.stanford.edu/entries/statistics/",
+        "description": "SEP entry for statistics"
+      }
+    ],
+    "solutionApproach": "1. Statistics and induction"
+  },
+  "composability": {
+    "inputs": [],
+    "outputs": [],
+    "dependencies": [],
+    "composableWith": [
+      "ocp:sep/formal-belief",
+      "ocp:sep/causation-probabilistic",
+      "ocp:sep/confirmation",
+      "ocp:sep/defaults-semantics-pragmatics",
+      "ocp:sep/evidence",
+      "ocp:sep/induction-problem",
+      "ocp:sep/learning-formal",
+      "ocp:sep/logic-probability",
+      "ocp:sep/logic-inductive",
+      "ocp:sep/probability-interpret",
+      "ocp:sep/reasoning-defeasible",
+      "ocp:sep/physics-rpcc",
+      "ocp:sep/scientific-method",
+      "ocp:sep/simplicity",
+      "ocp:sep/skepticism-ancient"
+    ]
+  },
+  "provenance": {
+    "authors": [
+      {
+        "name": "Romeijn, Jan-Willem",
+        "type": "human"
+      }
+    ],
+    "contributors": [
+      {
+        "name": "Stanford Encyclopedia of Philosophy",
+        "type": "system",
+        "uri": "https://plato.stanford.edu"
+      }
+    ],
+    "sourceType": "scraped",
+    "derivedFrom": [
+      "https://plato.stanford.edu/entries/statistics/"
+    ],
+    "generatedBy": "ocp-scraper/sep-adapter"
+  },
+  "trust": {
+    "vector": {
+      "validation_count": 155,
+      "validation_diversity": 0.49,
+      "context_breadth": 0.52,
+      "temporal_stability": 1,
+      "test_coverage": 0.98,
+      "documentation_quality": 0.93
+    },
+    "confidence": "tested",
+    "authority": "medium",
+    "status": "draft",
+    "trustScore": 0.606
+  },
+  "extensions": {
+    "sep": {
+      "slug": "statistics",
+      "source": "SEP",
+      "entryUrl": "https://plato.stanford.edu/entries/statistics/",
+      "preamble": "Statistics investigates and develops specific methods for evaluating hypotheses in the light of empirical facts. A method is called statistical, and thus the subject of study in statistics, if it relates facts and hypotheses of a particular kind: the empirical facts must be codified and structured into data sets, and the hypotheses must be formulated in terms of probability distributions over possible data sets. The philosophy of statistics concerns the foundations and the proper interpretation of statistical methods, their input, and their results. Since statistics is relied upon in almost all empirical scientific research, serving to support and communicate scientific findings, the philosophy of statistics is of key importance to the philosophy of science. It is part of the philosophical appraisal of scientific method, and it impacts the debate over the epistemic and ontological status of scientific theory. The philosophy of statistics harbors a large variety of topics and debates. Central to these is the problem of induction , which concerns the justification of inferences or procedures that extrapolate from data to predictions and general facts. Further debates concern the interpretation of the probabilities that are used in statistics, and the wider theoretical framework that may ground and justify the correctness of statistical methods. A general introduction to these themes is given in Section 1 and Section 2 . Section 3 and Section 4 provide an account of how these themes play out in the two major theories of statistical method, classical and Bayesian statistics respectively. Section 5 directs attention to the notion of a statistical model, covering model selection and simplicity, but also discussing statistical and data-scientific techniques that do not rely on statistical models. Section 6 briefly mentions relations between the philosophy of statistics and several other themes from the philosophy of science, including confirmation theory , evidence , causality, measurement, and scientific methodology in general.",
+      "firstSectionTitle": "1. Statistics and induction",
+      "firstSectionText": "Statistics is a mathematical and conceptual discipline that focuses on the relation between data and hypotheses. The data are recordings of observations or events in a scientific study, e.g., a set of measurements of individuals from a population. The data actually obtained are variously called the sample, the sample data, or simply the data, and all possible samples from a study are collected in what is called a sample space. The hypotheses, in turn, are general statements about the target system of the scientific study, e.g., expressing some general fact about all individuals in the population. A statistical hypothesis is a general statement that can be expressed by a probability distribution over sample space, i.e., it determines a probability for each of the possible samples. Statistical methods provide the mathematical and conceptual means to evaluate statistical hypotheses in the light of a sample. To this end the methods employ probability theory, and occasionally generalizations thereof. The evaluations may determine how believable a hypothesis is, whether we may rely on the hypothesis in our decisions, how strong the support is that the sample gives to the hypothesis, and so on. Good introductions to statistics abound (e.g., Mood and Graybill 1974, Barnett 1999, Press 2002, Wasserman 2004, Gelman et al. 2013). We can set the stage with an example, adapted from Fisher (1935) with a nod to Student's t-test. According to the so-called null hypothesis test, such a decision is warranted if the data actually obtained are included in a particular region within sample space, whose total probability does not exceed some specified limit, standardly set at 5%. Now consider what is achieved by the statistical test just outlined. We started with a hypothesis on the actual tea tasting abilities of the student, namely, that she did not have any. On the assumption of this hypothesis, the sample data we obtained appears to be very surprising or, more precisely, highly improbable. This motivated us to reject the hypothesis that the student has no tea tasting abilities whatsoever. The sample thus points us to a negative but general conclusion about what the student can, or cannot, do. Notably, all individual sequences of correct and incorrect guesses are equally improbable according to the null hypothesis: they all have a probability of \\(1/2^5\\). But when we collect the possible samples in sets that have the same total number of correct guesses, the singleton set of five correct guesses presents itself as an outlier. It contains only one sequence and it is therefore less probable than the set containing all five sequences with a total of four correct guesses, and far less probable than the sets containing two or three correct guesses, which each consist of ten sequences. Marking out the one sample of five correct guesses as the improbable event thus hinges on a specific way of labelling the samples. The function on sample space that determines this labelling is usually the so-called sufficient statistic, i.e., the function that groups sequences that are equiprobable according to the statistical hypotheses under scrutiny. The basic pattern of a statistical analysis is familiar from inductive inference: we input the data obtained thus far, and the statistical procedure outputs a verdict or evaluation that transcends the data, i.e, a statement that is not entailed by the data alone. If the data are indeed considered to be the only input, and if the statistical procedure is understood as an inference, then statistics is concerned with ampliative inference: roughly speaking, we get out more than we have put in. And since the ampliative inferences of statistics pertain to future or general states of affairs, they are inductive. However, the association of statistics with ampliative and inductive inference is contested, both because statistics is considered to be non-inferential by some (see Section 3 ) and non-ampliative by others (see Section 4 ). Despite such disagreements, it is insightful to view statistics as a response to the problem of induction (cf. Howson 2000 and the entry on the problem of induction ). This problem, first discussed by Hume in his Treatise of Human Nature (Book I, part 3, section 6) but prefigured already by ancient sceptics like Sextus Empiricus (see the entry on ancient skepticism ), is that there is no proper justification for inferences that run from given experience to expectations about the future. Transposed to the context of statistics, it reads that there is no proper justification for procedures that take data as input and that return a verdict, an evaluation, or some other piece of advice that pertains to the future, or to general states of affairs. Arguably, much of the philosophy of statistics is about coping with this challenge, by providing a foundation of the procedures that statistics offers, or else by reinterpreting what statistics delivers so as to evade the challenge. It is debatable if philosophers of statistics are ultimately concerned with the delicate, somewhat ethereal issue of the justification of induction, and statisticians generally are not. Many philosophers and scientists simply accept the fallibility of statistics, and find it more important that statistical methods are understood and applied correctly. As is so often the case, the fundamental philosophical problem serves as a catalyst: the problem of induction guides our investigations into the workings, the correctness, and the conditions of applicability of statistical methods. The philosophy of statistics, understood as the general header under which these investigations are carried out, is not, or not primarily, concerned with philosophy for its own sake. Rather it presents a concrete contribution to the scientific method, and hence to science itself. Considering the centrality of statistical methods in practically every empirical science and the ongoing debates over their validity, for instance over the reproducibility of experimental findings in social and medical science (Ioannidis 2005), this kind of applied philosophical work is of vital importance.",
+      "relatedEntries": [
+        "formal-belief",
+        "causation-probabilistic",
+        "confirmation",
+        "defaults-semantics-pragmatics",
+        "evidence",
+        "induction-problem",
+        "learning-formal",
+        "logic-probability",
+        "logic-inductive",
+        "probability-interpret",
+        "reasoning-defeasible",
+        "physics-rpcc",
+        "scientific-method",
+        "simplicity",
+        "skepticism-ancient"
+      ],
+      "relatedEntryDetails": [
+        {
+          "slug": "formal-belief"
+        },
+        {
+          "slug": "causation-probabilistic"
+        },
+        {
+          "slug": "confirmation"
+        },
+        {
+          "slug": "defaults-semantics-pragmatics"
+        },
+        {
+          "slug": "evidence"
+        },
+        {
+          "slug": "induction-problem"
+        },
+        {
+          "slug": "learning-formal"
+        },
+        {
+          "slug": "logic-probability"
+        },
+        {
+          "slug": "logic-inductive"
+        },
+        {
+          "slug": "probability-interpret"
+        },
+        {
+          "slug": "reasoning-defeasible"
+        },
+        {
+          "slug": "physics-rpcc"
+        },
+        {
+          "slug": "scientific-method"
+        },
+        {
+          "slug": "simplicity"
+        },
+        {
+          "slug": "skepticism-ancient"
+        }
+      ],
+      "categoryPaths": [],
+      "bibliographyCount": 236,
+      "bibliography": [
+        {
+          "raw": "Aldous, D.J., 1981, \"Representations for Partially Exchangeable Arrays of Random Variables\", Journal of Multivariate Analysis , 11: 581-598."
+        },
+        {
+          "raw": "Armendt, B., 1993, \"Dutch books, Additivity, and Utility Theory\", Philosophical Topics , 21: 1-20."
+        },
+        {
+          "raw": "Auxier, R.E., and L.E. Hahn (eds.), 2006, The Philosophy of Jaakko Hintikka , Chicago: Open Court."
+        },
+        {
+          "raw": "Balasubramanian, V., 2005, \"MDL, Bayesian Inference, and the Geometry of the Space of Probability Distributions\", in: Advances in Minimum Description Length: Theory and Applications, P.J. Grunwald et al (eds.), Boston: MIT Press, 81-99."
+        },
+        {
+          "raw": "Bandyopadhyay, P., and Forster, M. (eds.), 2011, Handbook for the Philosophy of Science: Philosophy of Statistics, Elsevier."
+        },
+        {
+          "raw": "Barnett, V., 1999, Comparative Statistical Inference , Wiley Series in Probability and Statistics, New York: Wiley."
+        },
+        {
+          "raw": "Bartholomew, D.J., F. Steele, J. Galbraith, I. Moustaki, 2008, Analysis of Multivariate Social Science Data , Statistics in the Social and Behavioral Sciences Series, London: Taylor and Francis, 2nd edition."
+        },
+        {
+          "raw": "Bartlett, P. L., A. Montanari, A. Rakhlin, 2021, \"Deep Learning: a Statistical Viewpoint\", Acta Numerica , 30: 87-201."
+        },
+        {
+          "raw": "Belkin, M., 2021, \"Fit without Fear: Remarkable Mathematical Phenomena of Deep Learning through the Prism of Interpolation\", Acta Numerica , 30: 203-248."
+        },
+        {
+          "raw": "Berger, J. 2006, \"The Case for Objective Bayesian Analysis\", Bayesian Analysis , 1(3): 385-402."
+        },
+        {
+          "raw": "Berger, J.O., J.M. Bernardo, and D. Sun, 2009, \"The Formal Definition of Reference Priors\", Annals of Statistics , 37(2): 905-938."
+        },
+        {
+          "raw": "Berger, J.O., and R.L. Wolpert, 1984, The Likelihood Principle . Hayward (CA): Institute of Mathematical Statistics."
+        },
+        {
+          "raw": "Berger, J.O. and T. Sellke, 1987, \"Testing a Point Null Hypothesis: The Irreconciliability of P-values and Evidence\", Journal of the American Statistical Association , 82: 112-139."
+        },
+        {
+          "raw": "Bernardo, J.M. and A.F.M. Smith, 1994, Bayesian Theory , New York: John Wiley."
+        },
+        {
+          "raw": "Bigelow, J. C., 1977, \"Semantics of Probability\", Synthese , 36(4): 459-72."
+        },
+        {
+          "raw": "Billingsley, P., 1995, Probability and Measure , Wiley Series in Probability and Statistics, New York: Wiley, 3rd edition."
+        },
+        {
+          "raw": "Birnbaum, A., 1962, \"On the Foundations of Statistical Inference\", Journal of the American Statistical Association , 57: 269-306."
+        },
+        {
+          "raw": "Blackwell, D. and L. Dubins, 1962, \"Merging of Opinions with Increasing Information\", Annals of Mathematical Statistics , 33(3): 882-886."
+        },
+        {
+          "raw": "Boole, G., 1854, An Investigation of The Laws of Thought on Which are Founded the Mathematical Theories of Logic and Probabilities , London: Macmillan, reprinted 1958, London: Dover."
+        },
+        {
+          "raw": "Burnham, K.P. and D.R. Anderson, 2002, Model Selection and Multimodel Inference: A Practical Information-Theoretic Approach , New York: Springer, 2nd edition."
+        },
+        {
+          "raw": "Carnap, R., 1950, Logical Foundations of Probability , Chicago: The University of Chicago Press."
+        },
+        {
+          "raw": "---, 1952, The Continuum of Inductive Methods , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Carnap, R. and Jeffrey, R.C. (eds.), 1970, Studies in Inductive Logic and Probability , Volume I, Berkeley: University of California Press."
+        },
+        {
+          "raw": "Casella, G., and R. L. Berger, 1987, \"Reconciling Bayesian and Frequentist Evidence in the One-Sided Testing Problem\", Journal of the American Statistical Association , 82: 106-111."
+        },
+        {
+          "raw": "Cesa-Bianchi, N. and G. Lugosi, 2006. Prediction, Learning and Games , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Claeskens, G. and N. L. Hjort, 2008, Model Selection and Model Averaging , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Cohen, J., 1994, \"The Earth is Round (p American Psychologist , 49: 997-1001."
+        },
+        {
+          "raw": "Cox, R.T., 1961, The Algebra of Probable Inference , Baltimore: John Hopkins University Press."
+        },
+        {
+          "raw": "Cumming, G., 2012, Understanding The New Statistics: Effect Sizes, Confidence Intervals, and Meta-Analysis , New York: Routledge."
+        },
+        {
+          "raw": "Dawid, A.P., 1982, \"The Well-Calibrated Bayesian\", Journal of the American Statistical Association , 77(379): 605-610."
+        },
+        {
+          "raw": "---, 2004, \"Probability, Causality and the Empirical World: A Bayes-de Finetti-Popper-Borel Synthesis\", Statistical Science , 19: 44-57."
+        },
+        {
+          "raw": "Dawid, A.P. and P. Grunwald, 2004, \"Game Theory, Maximum Entropy, Minimum Discrepancy, and Robust Bayesian Decision Theory\", Annals of Statistics , 32: 1367-1433."
+        },
+        {
+          "raw": "Dawid, A.P. and M. Stone, 1982, \"The Functional-Model Basis of Fiducial Inference\", Annals of Statistics , 10: 1054-1067."
+        },
+        {
+          "raw": "De Finetti, B., 1937, \"La Pr&eacute;vision: ses Lois Logiques, ses Sources Subjectives\", Annales de l'Institut Henri Poincar&eacute; , reprinted as \"Foresight: its Logical Laws, its Subjective Sources\", in: Kyburg, H. E. and H. E. Smokler (eds.), Studies in Subjective Probability , 1964, New York: Wiley."
+        },
+        {
+          "raw": "---, 1974, Theory of Probability , Volumes I and II, New York: Wiley, translation by A. Machi and A.F.M. Smith."
+        },
+        {
+          "raw": "De Morgan, A., 1847, Formal Logic or The Calculus of Inference , London: Taylor & Walton, reprinted by London: Open Court, 1926."
+        },
+        {
+          "raw": "Dempster, A.P., 1964, \"On the Difficulties Inherent in Fisher's Fiducial Argument\", Journal of the American Statistical Association , 59: 56-66."
+        },
+        {
+          "raw": "---, 1966, \"New Methods for Reasoning Towards Posterior Distributions Based on Sample Data\", Annals of Mathematics and Statistics , 37(2): 355-374."
+        },
+        {
+          "raw": "---, 1967, \"Upper and Lower Probabilities Induced by a Multivalued Mapping\", The Annals of Mathematical Statistics , 38(2): 325-339."
+        },
+        {
+          "raw": "---, 1968, \"A Generalization of Bayesian Inference\", Journal of the Royal Statistical Society , Series B, Vol. 30: 205-247."
+        },
+        {
+          "raw": "Diaconis, P., and D. Freedman, 1980, \"De Finetti's Theorem for Markov Chains\", Annals of Probability , 8: 115-130."
+        },
+        {
+          "raw": "Diaconis, P. and B. Skyrms, 2018, Ten Great Ideas about Chance , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "Eagle, A. (ed.), 2010, Philosophy of Probability: Contemporary Readings , London: Routledge."
+        },
+        {
+          "raw": "Earman, J., 1992, Bayes or Bust? A Critical Examination of Bayesian Confirmation Theory , Cambridge (MA): MIT Press."
+        },
+        {
+          "raw": "Easwaran, K., 2013, \"Expected Accuracy Supports Conditionalization--and Conglomerability and Reflection\", Philosophy of Science , 80(1): 119-142."
+        },
+        {
+          "raw": "Edwards, A.W.F., 1972, Likelihood , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Efron, B. and R. Tibshirani, R., 1993, An Introduction to the Bootstrap , Boca Raton (FL): Chapman & Hall/CRC."
+        },
+        {
+          "raw": "Festa, R., 1993, Optimum Inductive Methods , Dordrecht: Kluwer."
+        },
+        {
+          "raw": "---, 1996, \"Analogy and Exchangeability in Predictive Inferences\", Erkenntnis , 45: 89-112."
+        },
+        {
+          "raw": "Fisher, R.A., 1925, Statistical Methods for Research Workers , Edinburgh: Oliver and Boyd."
+        },
+        {
+          "raw": "---, 1930, \"Inverse Probability\", Proceedings of the Cambridge Philosophical Society , 26: 528-535."
+        },
+        {
+          "raw": "---, 1933, \"The Concepts of Inverse Probability and Fiducial Probability Referring to Unknown Parameters\", Proceedings of the Royal Society , Series A, 139: 343-348."
+        },
+        {
+          "raw": "---, 1935a, \"The logic of Inductive Inference\", Journal of the Royal Statistical Society , 98: 39-82."
+        },
+        {
+          "raw": "---, 1935c, \"The Fiducial Argument in Statistical Inference\", Annals of Eugenics , 6: 317-324."
+        },
+        {
+          "raw": "---, 1955, \"Statistical Methods and Scientific Induction\", Journal of the Royal Statistical Society , B 17: 69-78."
+        },
+        {
+          "raw": "---, 1956, Statistical Methods and Scientific Inference , New York: Hafner, 3rd edition 1973."
+        },
+        {
+          "raw": "Fitelson, B., 2007, \"Likelihoodism, Bayesianism, and Relational Confirmation\", Synthese , 156(3): 473-489."
+        },
+        {
+          "raw": "Fletcher S.C. and C. Mayo-Wilson, 2023, \"Evidence in Classical Statistics\", in M. Lasonen-Aarnio and C. Littlejohn (eds.), The Routledge Handbook of the Philosophy of Evidence , London: Taylor and Francis, p. 515-527."
+        },
+        {
+          "raw": "Forster, M. and E. Sober, 1994, \"How to Tell when Simpler, More Unified, or Less Ad Hoc Theories will Provide More Accurate Predictions\", British Journal for the Philosophy of Science , 45: 1-35."
+        },
+        {
+          "raw": "Fraassen, B. van, 1989, Laws and Symmetry , Oxford: Clarendon Press."
+        },
+        {
+          "raw": "Gaifman, H. and M. Snir, 1982, \"Probabilities over Rich Languages\", Journal of Symbolic Logic , 47: 495-548."
+        },
+        {
+          "raw": "Galavotti, M. C., 2005, Philosophical Introduction to Probability , Stanford: CSLI Publications."
+        },
+        {
+          "raw": "Genin, K., 2017. \"The Topology of Statistical Verifiability\", Proceedings of the 17th Conference on Theoretical Aspects of Rationality and Knowledge (TARK 2017) , Electronic Proceedings in Theoretical Computer Science. [ Genin 2017 available online ]"
+        },
+        {
+          "raw": "Gelman, A., J. Carlin, H. Stern, D. Dunson, A. Vehtari, and D. Rubin, 2013, Bayesian Data Analysis , revised edition, New York: Chapman & Hall/CRC."
+        },
+        {
+          "raw": "Gelman, A., and C. Shalizi, 2013, \"Philosophy and the Practice of Bayesian Statistics (with discussion)\", British Journal of Mathematical and Statistical Psychology , 66: 8-18."
+        },
+        {
+          "raw": "Giere, R. N., 1976, \"A Laplacean Formal Semantics for Single-Case Propensities\", Journal of Philosophical Logic , 5(3): 321-353."
+        },
+        {
+          "raw": "Gillies, D., 1971, \"A Falsifying Rule for Probability Statements\", British Journal for the Philosophy of Science , 22: 231-261."
+        },
+        {
+          "raw": "---, 2000, Philosophical Theories of Probability , London: Routledge."
+        },
+        {
+          "raw": "Gold, E., 1967, \"Language Identification in the Limit\", Information and Control , 10: 447-474."
+        },
+        {
+          "raw": "Goldstein, M., 2006, \"Subjective Bayesian Analysis: Principles and Practice\", Bayesian Analysis , 1(3): 403-420."
+        },
+        {
+          "raw": "Good, I.J., 1983, Good Thinking: The Foundations of Probability and Its Applications , Minneapolis: University of Minnesota Press; reprinted London: Dover, 2009."
+        },
+        {
+          "raw": "---, 1988, \"The Interface Between Statistics and Philosophy of Science\", Statistical Science , 3(4): 386-397."
+        },
+        {
+          "raw": "Goodman, N., 1965, Fact, Fiction and Forecast , Indianapolis: Bobbs-Merrill."
+        },
+        {
+          "raw": "Greaves, H. and D. Wallace, 2006, \"Justifying Conditionalization: Conditionalization Maximizes Expected Epistemic Utility\", Mind , 115(459): 607-632."
+        },
+        {
+          "raw": "Greco, D., 2011, \"Significance Testing in Theory and Practice\", British Journal for the Philosophy of Science , 62: 607-37."
+        },
+        {
+          "raw": "Gr&uuml;nwald, P.D., 2007, The Minimum Description Length Principle , Boston: MIT Press."
+        },
+        {
+          "raw": "Hacking, I., 1965, The Logic of Statistical Inference, Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 2006, The Emergence of Probability , Cambridge: Cambridge University Press, 2nd edition."
+        },
+        {
+          "raw": "Haenni, R., Romeijn, J.-W., Wheeler, G., Andrews, J., 2011, Probabilistic Logics and Probabilistic Networks , Berlin: Springer."
+        },
+        {
+          "raw": "Hailperin, T., 1996, Sentential Probability Logic , Lehigh University Press."
+        },
+        {
+          "raw": "H&aacute;jek, A., 2007, \"The Reference Class Problem is Your Problem Too\", Synthese , 156: 563-585."
+        },
+        {
+          "raw": "H&aacute;jek, A. and C. Hitchcock (eds.), 2013, Oxford Handbook of Probability and Philosophy , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Halpern, J.Y., 2003, Reasoning about Uncertainty , MIT press."
+        },
+        {
+          "raw": "Handfield, T., 2012, A Philosophical Guide to Chance: Physical Probability , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Hannig, J., 2009, \"On Generalized Fiducial Inference\", Statistica Sinica , 19: 491-544."
+        },
+        {
+          "raw": "Harlow, L.L., S.A. Mulaik, and J.H. Steiger, (eds.), 1997, What If There Were No Significance Tests? , Mahwah (NJ): Erlbaum."
+        },
+        {
+          "raw": "Harman, G. and S. Kulkarni, 2007, Reliable Reasoning: Induction and Statistical Learning Theory , Cambridge, MA: The MIT Press."
+        },
+        {
+          "raw": "Hastie, T., R. Tibshirani, and J. Friedman, 2009, The Elements of Statistical Learning: Data Mining, Inference, and Prediction (Springer Series in Statistics), second edition, New York: Springer."
+        },
+        {
+          "raw": "Henderson, L., N.D. Goodman, J.B. Tenenbaum, and J.F. Woodward, 2010, \"The Structure and Dynamics of Scientific Theories: A Hierarchical Bayesian Perspective\", Philosophy of Science , 77(2): 172-200."
+        },
+        {
+          "raw": "Herrmann, D. A., 2020, \"PAC Learning and Occam's Razor: Probably Approximately Incorrect\", Philosophy of Science , 87(4): 685-703."
+        },
+        {
+          "raw": "Hjort, N., C. Holmes, P. Mueller, and S. Walker (eds.), 2010, Bayesian Nonparametrics , Cambridge Series in Statistical and Probabilistic Mathematics, nr. 28, Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Howson, C., 2000, Hume's Problem: Induction and the Justification of Belief , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2003, \"Probability and Logic\", Journal of Applied Logic , 1(3-4): 151-165."
+        },
+        {
+          "raw": "---, 2011, \"Bayesianism as a Pure Logic of Inference\", in: Bandyopadhyay, P and Foster, M, (eds.), Philosophy of statistics, Handbook of the Philosophy of Science , Oxford: North Holland, 441-472."
+        },
+        {
+          "raw": "Howson, C. and P. Urbach, 2006, Scientific Reasoning: The Bayesian Approach , La Salle: Open Court, 3rd edition."
+        },
+        {
+          "raw": "Hintikka, J., 1970, \"Unknown Probabilities, Bayesianism, and de Finetti's Representation Theorem\", in Proceedings of the Biennial Meeting of the Philosophy of Science Association , Vol. 1970, Boston: Springer, 325-341."
+        },
+        {
+          "raw": "Hintikka, J. and I. Niiniluoto, 1980, \"An Axiomatic Foundation for the Logic of Inductive Generalization\", in R.C. Jeffrey (ed.), Studies in Inductive Logic and Probability , volume II, Berkeley: University of California Press, 157-181."
+        },
+        {
+          "raw": "Hintikka, J. and P. Suppes (eds.), 1966, Aspects of Inductive Logic , Amsterdam: North-Holland."
+        },
+        {
+          "raw": "Hitchcock, C. and A. H&aacute;jek (eds.), 2016, The Oxford Handbook of Probability and Philosophy , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Hume, D., 1739, A Treatise of Human Nature , available online ."
+        },
+        {
+          "raw": "Huttegger, S., 2017, The Probabilistic Foundations of Rational Learning , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Huygens, Christiaan, 1657, \"De Ratiociniis in Ale&aelig; Ludo\", in Exercitionum Mathematicarum, libri quinque, Francis van Schooten (ed), Leiden: Johannis Elsevirii: 517-534."
+        },
+        {
+          "raw": "Ioannidis, J.P.A., 2005, \"Why Most Published Research Findings Are False\", PLoS Medicine , 2(8): e124. doi:10.1371/journal.pmed.0020124"
+        },
+        {
+          "raw": "James, G., D. Witten, T. Hastie, R. Tibshirani, 2014, An Introduction to Statistical Learning Theory , New York: Springer."
+        },
+        {
+          "raw": "Jaynes, E.T., 1973, \"The Well-Posed Problem\", Foundations of Physics , 3: 477-493."
+        },
+        {
+          "raw": "---, 2003, Probability Theory: The Logic of Science , Cambridge: Cambridge University Press, first 3 chapters available online ."
+        },
+        {
+          "raw": "Jeffrey, R., 1992, Probability and the Art of Judgment , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Jeffreys, H., 1961, Theory of Probability , Oxford: Clarendon Press, 3rd edition."
+        },
+        {
+          "raw": "Jolliffe, I.T., 2002, Principal Component Analysis , New York: Springer, 2nd edition."
+        },
+        {
+          "raw": "Joyce, J., 1998, \"A Nonpragmatic Vindication of Probabilism\", Philosophy of Science , 65: 575-603."
+        },
+        {
+          "raw": "Kadane, J.B., 2011, Principles of Uncertainty , London: Chapman and Hall."
+        },
+        {
+          "raw": "Kadane, J.B., M.J. Schervish, and T. Seidenfeld, 1996a, \"When Several Bayesians Agree That There Will Be No Reasoning to a Foregone Conclusion\", Philosophy of Science , 63: S281-S289."
+        },
+        {
+          "raw": "---, 1996b, \"Reasoning to a Foregone Conclusion\", Journal of the American Statistical Association , 91(435): 1228-1235."
+        },
+        {
+          "raw": "Kass, R. and A. Raftery, 1995, \"Bayes Factors\", Journal of the American Statistical Association , 90: 773-790."
+        },
+        {
+          "raw": "Kelly, K.T., 1996, The Logic of Reliable Inquiry , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "---, 2007, \"A New Solution to the Puzzle of Simplicity\", Philosophy of Science 74(5): 561-573."
+        },
+        {
+          "raw": "Kelly, K., O. Schulte, and C. Juhl, 1997, \"Learning Theory and the Philosophy of Science\", Philosophy of Science , 64: 245-67."
+        },
+        {
+          "raw": "Keynes, J.M., 1921, A Treatise on Probability , London: Macmillan."
+        },
+        {
+          "raw": "Kiesepp&auml;, I. A., 1997, \"Akaike Information Criterion, Curve-Fitting, and the Philosophical Problem of Simplicity\", British Journal for the Philosophy of Science , 48(1): 21-48."
+        },
+        {
+          "raw": "---, 2001, \"Statistical Model Selection Criteria and the Philosophical Problem of Underdetermination\", British Journal for the Philosophy of Science , 52(4): 761-794."
+        },
+        {
+          "raw": "Kingman, J.F.C., 1975, \"Random Discrete Distributions\", Journal of the Royal Statistical Society , 37: 1-22."
+        },
+        {
+          "raw": "---, 1978, \"Uses of Exchangeability\", Annals of Probability , 6(2): 183-197."
+        },
+        {
+          "raw": "Kolmogorov, A.N., 1933, Grundbegriffe der Wahrscheinlichkeitsrechnung , Berlin: Julius Springer."
+        },
+        {
+          "raw": "Krantz, D. H., R. D. Luce, A. Tversky and P. Suppes, 1971, Foundations of Measurement , Volumes I and II. Mineola: Dover Publications."
+        },
+        {
+          "raw": "Kuipers, T.A.F., 1978, Studies in Inductive Probability and Rational Expectation , Dordrecht: Reidel."
+        },
+        {
+          "raw": "---, 1986, \"Some Estimates of the Optimum Inductive Method\", Erkenntnis , 24: 37-46."
+        },
+        {
+          "raw": "Kyburg, Jr., H.E., 1961, Probability and the Logic of Rational Belief , Middletown (CT): Wesleyan University Press."
+        },
+        {
+          "raw": "Kyburg, H.E. Jr. and C.M. Teng, 2001, Uncertain Inference , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "van Lambalgen, M., 1987, Random Sequences , Ph.D. dissertation, Department of Mathematics and Computer Science, University of Amsterdam, van Lambalgen 1987 available online ."
+        },
+        {
+          "raw": "Leitgeb, H. and Pettigrew, R., 2010a, \"An Objective Justification of Bayesianism I: Measuring Inaccuracy\", Philosophy of Science , 77(2): 201-235."
+        },
+        {
+          "raw": "---, 2010b, \"An Objective Justi&#64257;cation of Bayesianism II: The Consequences of Minimizing Inaccuracy\", Philosophy of Science , 77(2): 236-272."
+        },
+        {
+          "raw": "Levi, I., 1980, The Enterprise of Knowledge: An Essay on Knowledge, Credal Probability, and Chance , Cambridge MA: MIT Press."
+        },
+        {
+          "raw": "Lindley, D.V., 1957, \"A Statistical Paradox\", Biometrika , 44: 187-192."
+        },
+        {
+          "raw": "---, 1965, Introduction to Probability and Statistics from a Bayesian Viewpoint , Vols. I and II, Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 2000, \"The Philosophy of Statistics\", Journal of the Royal Statistical Society , D (The Statistician), Vol. 49(3): 293-337."
+        },
+        {
+          "raw": "Mackay, D.J.C., 2003, Information Theory, Inference, and Learning Algorithms , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Maher, P., 1993, Betting on Theories , Cambridge Studies in Probability, Induction and Decision Theory, Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Mayo, D.G., 1996, Error and the Growth of Experimental Knowledge , Chicago: The University of Chicago Press."
+        },
+        {
+          "raw": "---, 2010, An Error in the Argument from Conditionality and Sufficiency to the Likelihood Principle, in: D. Mayo, A. Spanos (eds.), Error and Inference: Recent Exchanges on Experimental Reasoning, Reliability, and the Objectivity and Rationality of Science, pp. 305-314, Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 2014, \"On the Birnbaum Argument for the Strong Likelihood Principle\", Statistical Science , 29(2): 227-239."
+        },
+        {
+          "raw": "---, 2018, Statistical Inference as Severe Testing , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Mayo, D.G., and A. Spanos, 2006, \"Severe Testing as a Basic Concept in a Neyman-Pearson Philosophy of Induction\", The British Journal for the Philosophy of Science , 57: 323-357."
+        },
+        {
+          "raw": "---, 2011, \"Error Statistics\", in P.S. Bandyopadhyay and M.R. Forster, Philosophy of Statistics, Handbook of the Philosophy of Science , Vol. 7, Elsevier."
+        },
+        {
+          "raw": "Mayo, D.G., and D.R. Cox, 2006, \"Frequentist Statistics as a Theory of Inductive Inference\", in IMS Lecture Notes Monograph Series (Volume 49: 2nd Lehmann Symposium on Optimality), Institute of Mathematical Statistics, 77-97. doi:10.1214/074921706000000400"
+        },
+        {
+          "raw": "Mellor, D. H., 2005, The Matter of Chance , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "---, 2005, Probability: A Philosophical Introduction , London: Routledge."
+        },
+        {
+          "raw": "von Mises, R., 1981, Probability, Statistics and Truth , 2nd revised English edition, New York: Dover."
+        },
+        {
+          "raw": "Mood, A. M., F. A. Graybill, and D. C. Boes, 1974, Introduction to the Theory of Statistics , Boston: McGraw-Hill."
+        },
+        {
+          "raw": "Morey, R., J.W. Romeijn and J. Rouder, 2013, \"The Humble Bayesian\", British Journal of Mathematical and Statistical Psychology , 66(1): 68-75."
+        },
+        {
+          "raw": "Morey R.D., R. Hoekstra, J.N. Rouder, M.D. Lee and E.J. Wagenmakers, 2016, \"The Fallacy of Placing Confidence in Confidence Intervals\", Psychonomic Bulletin and Review , 23(1): 103-23."
+        },
+        {
+          "raw": "Myung, J., V. Balasubramanian, and M.A. Pitt, 2000, \"Counting Probability Distributions: Differential Geometry and Model Selection\", Proceedings of the National Academy of Sciences , 97(21): 11170-11175."
+        },
+        {
+          "raw": "Nagel, T., 1939, Principles of the Theory of Probability , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Neyman, J., 1957, \"Inductive Behavior as a Basic Concept of Philosophy of Science\", Revue Institute Internationale De Statistique , 25: 7-22."
+        },
+        {
+          "raw": "---, 1971, Foundations of Behavioristic Statistics, in: V. Godambe and D. Sprott (eds.), Foundations of Statistical Inference, Toronto: Holt, Rinehart and Winston of Canada, pp. 1-19."
+        },
+        {
+          "raw": "Neyman, J. and K. Pearson, 1928, \"On the Use and Interpretation of Certain Test Criteria for Purposes of Statistical Inference\", Biometrika , A20: 175-240 and 264-294."
+        },
+        {
+          "raw": "Neyman, J. and E. Pearson, 1933, \"On the Problem of the Most Efficient Tests of Statistical Hypotheses\", Philosophical Transactions of the Royal Society , A 231: 289-337"
+        },
+        {
+          "raw": "---, 1967, Joint Statistical Papers , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Nix, C. J. and J. B. Paris, 2006, \"A Continuum of Inductive Methods Arising from a Generalised Principle of Instantial Relevance\", Journal of Philosophical Logic , 35: 83-115."
+        },
+        {
+          "raw": "Osherson, D.N., M. Stob, and S. Weinstein, 1988, \"Mechanical Learners Pay a Price for Bayesianism\", The Journal of Symbolic Logic , 53(4): 1245-1251."
+        },
+        {
+          "raw": "Orbanz, P. and Y.W. Teh, 2010, \"Bayesian Nonparametric Models\", Encyclopedia of Machine Learning , New York: Springer."
+        },
+        {
+          "raw": "Paris, J.B., 1994, The Uncertain Reasoner's Companion , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Paris, J.B. and A. Vencovska, 1989, \"On the Applicability of Maximum Entropy to Inexact Reasoning\", International Journal of Approximate Reasoning , 4(3): 183-224."
+        },
+        {
+          "raw": "Paris, J., and P. Waterhouse, 2009, \"Atom Exchangeability and Instantial Relevance\", Journal of Philosophical Logic , 38(3): 313-332."
+        },
+        {
+          "raw": "Peirce, C. S., 1910, \"Notes on the Doctrine of Chances\", in C. Hartshorne and P. Weiss (eds.), Collected Papers of Charles Sanders Peirce , Vol. 2, Cambridge MA: Harvard University Press, 405-14, reprinted 1931."
+        },
+        {
+          "raw": "Plato, J. von, 1994, Creating Modern Probability , Cambridge: Cambridge University Press."
+        },
+        {
+          "raw": "Popper, K.R., 1934/1959, The Logic of Scientific Discovery , New York: Basic Books."
+        },
+        {
+          "raw": "---, 1959, \"The Propensity Interpretation of Probability\", British Journal of the Philosophy of Science , 10: 25-42."
+        },
+        {
+          "raw": "Predd, J.B., R. Seiringer, E.H. Lieb, D.N. Osherson, H.V. Poor, and S.R. Kulkarni, 2009, \"Probabilistic Coherence and Proper Scoring Rules\", IEEE Transactions on Information Theory , 55(10): 4786-4792."
+        },
+        {
+          "raw": "Press, S. J., 2002, Bayesian Statistics: Principles, Models, and Applications (Wiley Series in Probability and Statistics), New York: Wiley."
+        },
+        {
+          "raw": "Putnam, H., 1963, \"Degree of Confirmation and Inductive Logic\", in The Philosophy of Rudolf Carnap , P.A. Schilpp (ed.), La Salle, Ill: Open Court."
+        },
+        {
+          "raw": "Raftery, A.E., 1995, \"Bayesian Model Selection in Social Research\", Sociological Methodology , 25: 111-163."
+        },
+        {
+          "raw": "Ramsey, F.P., 1926, \"Truth and Probability\", in R.B. Braithwaite (ed.), The Foundations of Mathematics and other Logical Essays , Ch. VII, p.156-198, printed in London: Kegan Paul, 1931."
+        },
+        {
+          "raw": "Reichenbach, H., 1938, Experience and prediction: an analysis of the foundations and the structure of knowledge , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "---, 1949, The theory of probability , Berkeley: University of California Press."
+        },
+        {
+          "raw": "---, 1956, The Direction of Time , Berkeley: University of Los Angeles Press."
+        },
+        {
+          "raw": "Renyi, A., 1970, Probability Theory , Amsterdam: North Holland."
+        },
+        {
+          "raw": "Robbins, H., 1952, \"Some Aspects of the Sequential Design of Experiments\", Bulletin of the American Mathematical Society , 58: 527-535."
+        },
+        {
+          "raw": "Roberts, H.V., 1967, \"Informative Stopping Rules and Inferences about Population Size\", Journal of the American Statistical Association , 62(319): 763-775."
+        },
+        {
+          "raw": "Romeijn, J.W., 2004, \"Hypotheses and Inductive Predictions\", Synthese , 141(3): 333-364."
+        },
+        {
+          "raw": "---, 2005, Bayesian Inductive Logic , PhD dissertation, University of Groningen."
+        },
+        {
+          "raw": "---, 2006, \"Analogical Predictions for Explicit Similarity\", Erkenntnis , 64: 253-280."
+        },
+        {
+          "raw": "---, 2011, \"Statistics as Inductive Logic\", in Bandyopadhyay, P. and M. Forster (eds.), Handbook for the Philosophy of Science , Vol. 7: Philosophy of Statistics, 751-774."
+        },
+        {
+          "raw": "---, 2017, \"Implicit Complexity\", Philosophy of Science , 84(5): 797-809."
+        },
+        {
+          "raw": "Romeijn, J.W. and van de Schoot, R., 2008, \"A Philosophical Analysis of Bayesian model selection\", in Hoijtink, H., I. Klugkist and P. Boelen (eds.), Null, Alternative and Informative Hypotheses , 329-357."
+        },
+        {
+          "raw": "Romeijn, J.W., van de Schoot, R., and Hoijtink, H., 2012, \"One Size Does Not Fit All: Derivation of a Prior-Adapted BIC\", in Dieks, D., W. Gonzales, S. Hartmann, F. Stadler, T. Uebel, and M. Weber (eds.), Probabilities, Laws, and Structures , Berlin: Springer."
+        },
+        {
+          "raw": "Rosenkrantz, R.D., 1977, Inference, Method and Decision: Towards a Bayesian Philosophy of Science , Dordrecht: Reidel."
+        },
+        {
+          "raw": "---, 1981, Foundations and Applications of Inductive Probability , Ridgeview Press."
+        },
+        {
+          "raw": "Royall, R., 1997, Scientific Evidence: A Likelihood Paradigm , London: Chapman and Hall."
+        },
+        {
+          "raw": "Savage, L.J., 1962, The Foundations of Statistical Inference , London: Methuen."
+        },
+        {
+          "raw": "Schervish, M.J., T. Seidenfeld, and J.B. Kadane, 2009, \"Proper Scoring Rules, Dominated Forecasts, and Coherence\", Decision Analysis , 6(4): 202-221."
+        },
+        {
+          "raw": "Schurz, G., 2019, Hume's Problem Solved , Cambridge, MA: MIT press."
+        },
+        {
+          "raw": "Schwarz, G., 1978, \"Estimating the Dimension of a Model\", Annals of Statistics , 6: 461-464."
+        },
+        {
+          "raw": "Seidenfeld, T., 1979, Philosophical Problems of Statistical Inference: Learning from R.A. Fisher , Dordrecht: Reidel."
+        },
+        {
+          "raw": "---, 1986, \"Entropy and Uncertainty\", Philosophy of Science , 53(4): 467-491."
+        },
+        {
+          "raw": "---, 1992, \"R.A. Fisher's Fiducial Argument and Bayes Theorem\", Statistical Science , 7(3): 358-368."
+        },
+        {
+          "raw": "Shafer, G., 1976, A Mathematical Theory of Evidence , Princeton: Princeton University Press."
+        },
+        {
+          "raw": "---, 1982, \"On Lindley's Paradox (with discussion)\", Journal of the American Statistical Association , 378: 325-351."
+        },
+        {
+          "raw": "Shore, J. and Johnson, R., 1980, \"Axiomatic Derivation of the Principle of Maximum Entropy and the Principle of Minimum Cross-Entropy\", IEEE Transactions on Information Theory , 26(1): 26-37."
+        },
+        {
+          "raw": "Skyrms, B., 1991, \"Carnapian Inductive Logic for Markov Chains\", Erkenntnis , 35: 439-460."
+        },
+        {
+          "raw": "---, 1993, \"Analogy by Similarity in Hypercarnapian Inductive Logic\", in Massey, G.J., J. Earman, A.I. Janis and N. Rescher (eds.), Philosophical Problems of the Internal and External Worlds: Essays Concerning the Philosophy of Adolf Gruenbaum , Pittsburgh: Pittsburgh University Press, 273-282."
+        },
+        {
+          "raw": "---, 1996, \"Carnapian Inductive Logic and Bayesian Statistics\", in: Ferguson, T.S., L.S. Shapley, and J.B. MacQueen (eds.), Statistics, Probability, and Game Theory: Papers in Honour of David Blackwell , Hayward: IMS lecture notes, 321-336."
+        },
+        {
+          "raw": "---, 1999, Choice and Chance: An Introduction to Inductive Logic , Wadsworth, 4th edition."
+        },
+        {
+          "raw": "Sober, E., 2004, \"Likelihood, Model Selection, and the Duhem-Quine Problem\", Journal of Philosophy , 101(5): 221-241."
+        },
+        {
+          "raw": "Spanos, A., 2010, \"Is Frequentist Testing Vulnerable to the Base-Rate Fallacy?\", Philosophy of Science , 77: 565-583."
+        },
+        {
+          "raw": "---, 2013a, \"Who Should Be Afraid of the Jeffreys-Lindley Paradox?\", Philosophy of Science , 80: 73-93."
+        },
+        {
+          "raw": "---, 2013b, \"A Frequentist Interpretation of Probability for Model-Based Inductive Inference\", Synthese , 190: 1555-1585."
+        },
+        {
+          "raw": "Spiegelhalter, D.J., N.G. Best, B.P. Carlin, and A. van der Linde, 2002, \"Bayesian Measures of Model Complexity and Fit\", Journal of Royal Statistical Society , B 64: 583-639."
+        },
+        {
+          "raw": "Spielman, S., 1974, \"The Logic of Significance Testing\", Philosophy of Science , 41: 211-225."
+        },
+        {
+          "raw": "---, 1978, \"Statistical Dogma and the Logic of Significance Testing\", Philosophy of Science , 45: 120-135."
+        },
+        {
+          "raw": "Sprenger, J., 2013, \"The Role of Bayesian Philosophy within Bayesian Model Selection\", European Journal for Philosophy of Science , 3(1): 101-114."
+        },
+        {
+          "raw": "---, Sprenger J., 2013, \"Testing a Precise Null Hypothesis: The Case of Lindley's Paradox\", Philosophy of Science , 80(5): 733-744."
+        },
+        {
+          "raw": "---, 2016, \"Bayesianism vs. Frequentism in Statistical Inference\", in Alan H&aacute;jek and Chris Hitchcock (eds.), Handbook of the Philosophy of Probability , Oxford: Oxford University Press, 382-405."
+        },
+        {
+          "raw": "Spirtes, P., Glymour, C. and Scheines, R., 2001, Causation, Prediction, and Search , Boston: MIT press, 2nd edition."
+        },
+        {
+          "raw": "Solomonoff, R.J., 1964, \"A Formal Theory of Inductive Inference\", parts I and II, Information and Control , 7: 1-22 and 224-254."
+        },
+        {
+          "raw": "Stegenga, J., 2011, \"Is Meta-Analysis the Platinum Standard of Evidence?\", Studies in History and Philosophy of Biological and Biomedical Sciences , 42(4): 497-507."
+        },
+        {
+          "raw": "Steele, K., 2013, \"Persistent Experimenters, Stopping Rules, and Statistical Inference\", Erkenntnis , 78(4): 937-961."
+        },
+        {
+          "raw": "Steele, K. and Werndl, C., 2013, \"Climate Models, Calibration, and Confirmation\", British Journal for the Philosophy of Science , 64: 609-635."
+        },
+        {
+          "raw": "Sterkenburg, T., 2018, Universal Prediction: A Philosophical Investigation , Ph.D. thesis, Rijksuniversiteit Groningen."
+        },
+        {
+          "raw": "---, 2020. \"The Meta-Inductive Justification of Induction\", Episteme , 17(4): 519-541."
+        },
+        {
+          "raw": "---, and P.D. Gr&uuml;nwald, 2021. \"The No-Free-Lunch Theorems of Supervised Learning\", Synthese , 199: 9979-10015."
+        },
+        {
+          "raw": "Suppes, P., 2001, Representation and Invariance of Scientific Structures , Chicago: University of Chicago Press."
+        },
+        {
+          "raw": "Uffink, J., 1996, \"The Constraint Rule of the Maximum Entropy Principle\", Studies in History and Philosophy of Modern Physics , 27: 47-79."
+        },
+        {
+          "raw": "Vapnik, V. N., 2000, The Nature of Statistical Learning Theory. Statistics for Engineering and Information Science , 2nd edition, New York: Springer."
+        },
+        {
+          "raw": "Vapnik, V.N. and S. Kotz, 2006, Estimation of Dependences Based on Empirical Data , New York: Springer."
+        },
+        {
+          "raw": "Venn, J., 1888, The Logic of Chance , London: MacMillan, 3rd edition."
+        },
+        {
+          "raw": "Wagenmakers, E.J., 2007, \"A Practical Solution to the Pervasive Problems of p-Values\", Psychonomic Bulletin and Review 14(5), 779-804."
+        },
+        {
+          "raw": "Wagenmakers, E.J., and L.J. Waldorp, (eds.), 2006, Journal of Mathematical Psychology , 50(2). Special issue on Model Selection, 99-214."
+        },
+        {
+          "raw": "Wald, A., 1939, \"Contributions to the Theory of Statistical Estimation and Testing Hypotheses\", Annals of Mathematical Statistics , 10(4): 299-326."
+        },
+        {
+          "raw": "---, 1950, Statistical Decision Functions , New York: John Wiley and Sons."
+        },
+        {
+          "raw": "Walley, P., 1991, Statistical Reasoning with Imprecise Probabilities , New York: Chapman & Hall."
+        },
+        {
+          "raw": "Wasserman, L., 2004, All of Statistics: A Concise Course in Statistical Inference , New York: Springer."
+        },
+        {
+          "raw": "Williams, P.M., 1980, \"Bayesian Conditionalisation and the Principle of Minimum Information\", British Journal for the Philosophy of Science , 31: 131-144."
+        },
+        {
+          "raw": "Williamson, J., 2010, In Defence of Objective Bayesianism , Oxford: Oxford University Press."
+        },
+        {
+          "raw": "Ziliak, S.T. and D.N. McCloskey, 2008, The Cult of Statistical Significance , Ann Arbor: University of Michigan Press."
+        },
+        {
+          "raw": "Zabell, S.L., 1992, \"R. A. Fisher and the Fiducial Argument\", Statistical Science , 7(3): 358-368."
+        },
+        {
+          "raw": "---, 1982, \"W. E. Johnson's 'Sufficientness' Postulate\", Annals of Statistics , 10(4): 1090-1099."
+        }
+      ],
+      "publishedAt": "2014-08-18T14:00:00.000Z",
+      "revisedAt": "2025-09-30T14:00:00.000Z"
+    }
+  }
+}
