@@ -248,6 +248,9 @@ export class Pipeline {
         this.state.stoppedReason = 'max-passes';
       }
 
+      // Flush remaining buffer entries to the store (covers runs without Tier C)
+      this.flushBufferToStore();
+
       // Final export
       await this.exportResults();
 
@@ -428,6 +431,9 @@ export class Pipeline {
       if (this.state.stoppedReason === 'running') {
         this.state.stoppedReason = 'max-passes';
       }
+
+      // Flush remaining buffer entries to the store (covers runs without Tier C)
+      this.flushBufferToStore();
 
       await this.exportResults();
       return this.state;
@@ -924,6 +930,36 @@ export class Pipeline {
     if (!this.db) return 0;
     const row = this.db.prepare('SELECT COUNT(*) as cnt FROM verb_records').get() as { cnt: number };
     return row.cnt;
+  }
+
+  // ── Private: buffer flush ──────────────────────────────────────────
+
+  /**
+   * Flush all remaining buffer entries into the verb-record store.
+   * This ensures records are persisted even when Tier C is disabled.
+   */
+  private flushBufferToStore(): void {
+    if (!this.buffer || !this.store) return;
+
+    const bufferCount = this.buffer.count();
+    if (bufferCount === 0) return;
+
+    let flushed = 0;
+    // Drain the buffer in batches
+    const records = this.buffer.dequeue(bufferCount);
+    for (const record of records) {
+      try {
+        this.store.insert(record);
+        flushed++;
+      } catch {
+        // Skip duplicates (content-addressed IDs)
+      }
+    }
+
+    if (flushed > 0) {
+      console.error(`[pipeline] Flushed ${flushed} buffered records to store`);
+      this.state.totalVerbRecords = this.getVerbRecordCount();
+    }
   }
 
   // ── Private: export ────────────────────────────────────────────────

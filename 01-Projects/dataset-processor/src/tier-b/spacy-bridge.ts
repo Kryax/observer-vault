@@ -125,7 +125,7 @@ export class SpacyBridge {
       // Wait for ready signal with timeout
       const readyMsg = await this.readNextMessage(30_000); // 30s for model load
       if (!readyMsg || !isReadyMessage(readyMsg)) {
-        const errText = isErrorMessage(readyMsg!) ? readyMsg.error : "unknown";
+        const errText = readyMsg && isErrorMessage(readyMsg) ? readyMsg.error : "no ready signal received";
         throw new Error(`spaCy worker failed to start: ${errText}`);
       }
 

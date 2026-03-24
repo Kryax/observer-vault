@@ -25,6 +25,7 @@ export interface CandidatePassage {
   motifScores: MotifScore[];
   topMotifId: string;
   topScore: number;
+  conflict?: boolean;  // true when top two motifs are within 10% (genuine ambiguity)
 }
 
 export interface FilterResult {
@@ -35,6 +36,33 @@ export interface FilterResult {
 
 const MIN_PARAGRAPH_LENGTH = 100;
 const MIN_INDICATOR_MATCHES = 3;
+const CONFLICT_THRESHOLD = 0.10; // top two scores within 10% = genuine ambiguity
+
+/**
+ * Winner-take-all post-processing: assign each passage to its highest-scoring
+ * motif only. Suppress lower-scoring matches unless the top two are within
+ * 10% of each other (genuine conflict / ambiguity).
+ */
+function winnerTakeAll(candidate: CandidatePassage): CandidatePassage {
+  if (candidate.motifScores.length <= 1) return candidate;
+
+  // Sort descending by score
+  const sorted = [...candidate.motifScores].sort((a, b) => b.score - a.score);
+  const best = sorted[0]!;
+  const second = sorted[1]!;
+
+  // Check if top two are within 10% of each other (relative to the best)
+  const gap = best.score > 0 ? (best.score - second.score) / best.score : 1;
+  const isConflict = gap <= CONFLICT_THRESHOLD;
+
+  return {
+    ...candidate,
+    motifScores: isConflict ? [best, second] : [best],
+    topMotifId: best.motifId,
+    topScore: best.score,
+    conflict: isConflict,
+  };
+}
 
 /**
  * Split text into paragraphs on double-newline boundaries.
@@ -180,6 +208,10 @@ export function filterDocument(text: string, minScore: number = 0.3): FilterResu
     }
   }
 
+  // Winner-take-all: assign each passage to its best motif only,
+  // suppressing noise from generic indicator overlap.
+  const wtaCandidates = candidates.map(winnerTakeAll);
+
   // Build document-level motif scores from full text
   const lowerFull = text.toLowerCase();
   const documentMotifScores: MotifScore[] = [];
@@ -191,8 +223,8 @@ export function filterDocument(text: string, minScore: number = 0.3): FilterResu
   }
 
   return {
-    candidates,
+    candidates: wtaCandidates,
     documentMotifScores,
-    rejected: candidates.length === 0,
+    rejected: wtaCandidates.length === 0,
   };
 }

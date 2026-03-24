@@ -96,11 +96,13 @@ program
 program
   .command("orchestrate")
   .description("Run multi-pass extraction pipeline with convergence detection")
-  .requiredOption("--shards <glob>", "Glob pattern for .jsonl.zst shard files")
-  .requiredOption("--db <path>", "Path to SQLite database file")
+  .option("--shard <path>", "Path to a single .jsonl.zst shard file")
+  .option("--shards <glob>", "Glob pattern for .jsonl.zst shard files")
+  .option("--output <path>", "Path to output SQLite database file")
+  .option("--db <path>", "Alias for --output (SQLite database path)")
   .option("--motifs <path>", "Path to motif library directory", resolve("../../02-Knowledge/motifs"))
   .option("--template-cache <path>", "Path to template cache JSON file")
-  .option("--output <dir>", "Output directory for paired JSONL exports", "./output")
+  .option("--output-dir <dir>", "Output directory for paired JSONL exports", "./output")
   .option("--min-score <n>", "Tier A minimum motif score", parseFloat, 0.3)
   .option("--blind-fraction <n>", "Fraction of documents for blind extraction", parseFloat, 0.1)
   .option("--no-tier-b", "Disable Tier B (spaCy structural scoring)")
@@ -114,11 +116,13 @@ program
   .option("--max-passes <n>", "Maximum number of passes", parseInt, 5)
   .option("--resume", "Resume a previously interrupted pipeline")
   .action(async (opts: {
-    shards: string;
-    db: string;
+    shard?: string;
+    shards?: string;
+    output?: string;
+    db?: string;
     motifs: string;
     templateCache?: string;
-    output: string;
+    outputDir: string;
     minScore: number;
     blindFraction: number;
     tierB: boolean;
@@ -132,23 +136,34 @@ program
     maxPasses: number;
     resume?: boolean;
   }) => {
-    // Resolve shard glob to file paths
-    const glob = new Glob(opts.shards);
+    // Resolve shard paths: --shard (single) or --shards (glob)
     const shardPaths: string[] = [];
-    for await (const path of glob.scan({ absolute: true })) {
-      shardPaths.push(path);
+
+    if (opts.shard) {
+      const abs = resolve(opts.shard);
+      shardPaths.push(abs);
+    } else if (opts.shards) {
+      const glob = new Glob(opts.shards);
+      for await (const path of glob.scan({ absolute: true })) {
+        shardPaths.push(path);
+      }
+      shardPaths.sort();
+    } else {
+      console.error('[error] Provide --shard <path> or --shards <glob>');
+      process.exit(1);
     }
-    shardPaths.sort();
 
     if (shardPaths.length === 0) {
-      console.error(`[error] No shard files found matching: ${opts.shards}`);
+      console.error(`[error] No shard files found`);
       process.exit(1);
     }
 
     console.error(`[orchestrate] Found ${shardPaths.length} shard files`);
 
-    const dbPath = resolve(opts.db);
-    const templateCachePath = opts.templateCache ?? dbPath.replace(/\.sqlite3?$/, '') + '.templates.json';
+    // --output or --db for the SQLite path
+    const dbPath = resolve(opts.output ?? opts.db ?? './output/shard.db');
+    const templateCachePath = opts.templateCache ?? dbPath.replace(/\.sqlite3?$|\.db$/, '') + '.templates.json';
+    const outputDir = resolve(opts.outputDir);
 
     const config: PipelineConfig = {
       dbPath,
@@ -174,7 +189,7 @@ program
       bufferExpiryHours: 72,
       convergenceThreshold: opts.convergence,
       maxPasses: opts.maxPasses,
-      outputDir: resolve(opts.output),
+      outputDir,
     };
 
     const pipeline = new Pipeline(config);
