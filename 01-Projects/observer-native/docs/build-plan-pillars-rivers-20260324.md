@@ -231,14 +231,34 @@ The following were open questions across the three documents. All resolved in th
 
 These resolutions added 7 new ISC criteria to the Pillars PRD (ISC-P53 through ISC-P59).
 
-## 8. What This Plan Does NOT Do
+## 8. Known Integration Debt: Governance Unification
+
+**Flagged by Claude (advisory review, 2026-03-24). Not yet addressed in any PRD.**
+
+The dataset processor (built 2026-03-24, PRD-dataset-processor-20260323) has its own governance system with three tiers:
+
+- T0→T1: Auto-promote (domain_count >= 3, source_types >= 2, confidence >= 0.3, no conflicts)
+- T1→T2: Batch review queue (domain_count >= 7, source_types >= 3, confidence >= 0.7, all 5 validation criteria)
+- T2→T3: Full sovereignty gate
+
+This governance system currently operates independently of the runtime spine's governance policy. It has its own thresholds, its own promotion logic, and its own digest system. It does not route through `governance-policy.ts` or produce `TransitionReceipt` records.
+
+**The problem**: Two governance systems operating independently will diverge. The dataset processor's auto-promote decisions should be classifiable as FAST_ALLOWED by the runtime governance policy. Its T1→T2 batch reviews should be SLOW_REQUIRED. Its T2→T3 sovereignty gates should be SLOW_REQUIRED with human approval. But currently there's no wiring between them.
+
+**When this matters**: Wave 5, specifically R8 (Pipeline Integration). When the dataset processor's output feeds into rivers, the governance decisions it makes need to be legible to the runtime spine. A record that was auto-promoted by the dataset processor's T0→T1 gate should carry a `GovernanceDecision` and a `TransitionReceipt` that the runtime spine can audit.
+
+**Recommended resolution**: R8 (Pipeline Integration) should include an adapter that maps dataset processor governance events to runtime governance types. The dataset processor's governance module doesn't need to be rewritten — it needs a translation layer that produces runtime-compatible receipts. This should be specified as an additional ISC criterion on R8 or as a new integration slice.
+
+**Additional observation**: The convergence detection thresholds in Rivers §5.4 include a 90-day evidence decay window. For a system just starting to accumulate data, this may be too aggressive. Consider starting with no decay (or a very long window) and tightening as the corpus grows. This is an empirical calibration question, not a design decision — flag it for review after the first 1,000+ PairedRecords flow through the system.
+
+## 9. What This Plan Does NOT Do
 
 - **Rivers PRD Slice 2 is now marked superseded** in the Rivers PRD itself (resolved during D/I/R review).
 - **Does not schedule calendar dates.** Waves define dependency order, not deadlines.
 - **Does not assign agents.** Which CLI or sub-agent builds which slice is a session-level decision.
 - **Does not specify the dataset processor integration.** R8 (Pipeline Integration) depends on the dataset processor being built. That's tracked in its own PRD.
 
-## 9. Recommendation
+## 10. Recommendation
 
 **Build order: Interleaved, pillar-led.**
 
