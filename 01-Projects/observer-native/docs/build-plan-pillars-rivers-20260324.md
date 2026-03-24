@@ -21,8 +21,8 @@ provenance: >
 
 Two PRDs share the same runtime spine:
 
-- **PRD-20260324-four-pillars** (52 ISC criteria, 7 slices): Builds the runtime spine itself — state machine, governance, buffers, plugins.
-- **PRD-20260324-rivers** (58 ISC criteria, 10 slices): Builds the cognitive circulation layer — three rivers, pairing service, convergence detection.
+- **PRD-20260324-four-pillars** (59 ISC criteria, 7 slices): Builds the runtime spine itself — state machine, governance, buffers, plugins.
+- **PRD-20260324-rivers** (54 active ISC criteria, 9 active slices): Builds the cognitive circulation layer — three rivers, pairing service, convergence detection.
 
 Rivers are clients of the runtime spine. The runtime spine exists to serve clients like rivers (and the existing s0–s9 modules). Building them sequentially wastes time. Building them without coordination creates interface mismatches.
 
@@ -217,14 +217,28 @@ The two PRDs share these interfaces:
 | Processing river record state machine conflicts with runtime state machine | Low | High — if they interfere, fundamental design error | Already addressed in Rivers PRD §2.2 Correction 4: they're orthogonal |
 | Module migration (P7) breaks existing functionality | Medium | High | ISC-P51 requires full test suite pass; migration is wiring-only |
 
-## 7. What This Plan Does NOT Do
+## 7. Design Decisions Resolved During D/I/R Review (2026-03-24)
 
-- **Does not modify either PRD.** The Rivers PRD's Slice 2 should be marked as superseded in a future revision, but this plan doesn't edit canonical documents.
+The following were open questions across the three documents. All resolved in the Pillars PRD §8:
+
+| Question | Resolution | Pillar PRD Section |
+|----------|-----------|-------------------|
+| Policy versioning scheme | Content-hash of active policy rules (deterministic, no manual versioning) | §8.1 |
+| Ledger compaction trigger | Session end (COMPLETE→IDLE transition) | §8.2 |
+| Crash recovery | State machine re-initialises from ledger; crash during SYNTHESIS/REFLECTION → HALTED | §8.3 |
+| Plugin approval UX | Vault gate document in 00-Inbox/, resolved via control plane approval | §8.4 |
+| Algebra review governance | New ALGEBRA_REVIEW action class, classified SLOW_REQUIRED | §8.5 |
+
+These resolutions added 7 new ISC criteria to the Pillars PRD (ISC-P53 through ISC-P59).
+
+## 8. What This Plan Does NOT Do
+
+- **Rivers PRD Slice 2 is now marked superseded** in the Rivers PRD itself (resolved during D/I/R review).
 - **Does not schedule calendar dates.** Waves define dependency order, not deadlines.
 - **Does not assign agents.** Which CLI or sub-agent builds which slice is a session-level decision.
 - **Does not specify the dataset processor integration.** R8 (Pipeline Integration) depends on the dataset processor being built. That's tracked in its own PRD.
 
-## 8. Recommendation
+## 9. Recommendation
 
 **Build order: Interleaved, pillar-led.**
 
@@ -234,6 +248,6 @@ The two PRDs share these interfaces:
 4. The critical path runs through the pillar chain (P1→P2→P3→P5→P6→P7). Keep this chain moving.
 5. Rivers reach full wiring (R6) around the same time pillars reach orchestrator (P6). Integration testing happens naturally.
 
-**Total ISC criteria**: 52 (pillars) + 53 (rivers, after eliminating Slice 2's 4 criteria) = **105 ISC criteria across 16 slices in 5 waves.**
+**Total ISC criteria**: 59 (pillars) + 54 (rivers, after eliminating Slice 2's 4 criteria) = **113 ISC criteria across 16 active slices in 5 waves.**
 
 This is a large build. It is also the smallest build that makes the four motifs operational and gives Observer a circulatory system. Everything smaller would be a partial embodiment — which is what we already have.

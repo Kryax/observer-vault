@@ -5,8 +5,8 @@ status: DRAFT
 mode: design
 effort_level: Advanced
 created: 2026-03-24
-updated: 2026-03-24
-iteration: 1
+updated: 2026-03-24T23:00:00+11:00
+iteration: 2
 maxIterations: 128
 loopStatus: null
 last_phase: PLAN
@@ -382,7 +382,7 @@ The pairing service sits at the boundary between Intake and Processing rivers. I
 
 ## 6. Relationship to Runtime Spine
 
-Rivers are clients of the runtime spine defined in the four pillars design memo. This table maps river operations to runtime components.
+Rivers are clients of the runtime spine defined in the Four Pillars PRD (PRD-20260324-four-pillars), which formalises the four pillars design memo into buildable slices. This table maps river operations to runtime components.
 
 | River Operation | Runtime Component | Relationship |
 |----------------|-------------------|-------------|
@@ -419,23 +419,11 @@ Rivers are clients of the runtime spine defined in the four pillars design memo.
 
 ---
 
-### Slice 2: Runtime Spine Interfaces (River Subset)
+### ~~Slice 2: Runtime Spine Interfaces (River Subset)~~ — SUPERSEDED
 
-**Scope**: Define the minimal runtime spine interfaces that rivers need. This does NOT implement the full runtime spine — it defines the interface contracts that rivers code against, and provides stub/passthrough implementations for initial development.
-
-**Files**:
-- `src/runtime/state-types.ts` — Runtime state enum, river-relevant subset
-- `src/runtime/governance-types.ts` — GovernanceSpeed, GovernanceDecision types
-- `src/runtime/buffer-types.ts` — BoundedBuffer interface, OverflowPolicy types
-- `src/runtime/stubs.ts` — Passthrough implementations for development
-
-**ISC Criteria**:
-- [ ] ISC-R06: Runtime state types compile and cover all river-relevant operational states | Verify: tsc
-- [ ] ISC-R07: Governance types support FAST_ALLOWED, SLOW_REQUIRED, DISALLOWED classification | Verify: type check
-- [ ] ISC-R08: BoundedBuffer interface supports capacity, depth, accept, evict, query operations | Verify: type check
-- [ ] ISC-R09: Stub implementations pass all interface contracts | Verify: unit test | Motif: Explicit State Machine Backbone
-
-**Dependencies**: Slice 1 (PairedRecord types referenced by buffer types).
+> **This slice is eliminated.** Superseded by Four Pillars PRD (PRD-20260324-four-pillars) Slice P1 ("Runtime Type Layer"), which defines the real runtime types that rivers consume directly. ISC-R06 through ISC-R09 are retired. Rivers Slices 3+ depend on Pillars P1 instead.
+>
+> See `build-plan-pillars-rivers-20260324.md` for the unified build schedule.
 
 ---
 
@@ -457,7 +445,7 @@ Rivers are clients of the runtime spine defined in the four pillars design memo.
 - [ ] ISC-R15: Buffer depth and flow rate are queryable at any time | Verify: unit test
 - [ ] ISC-R16: Intake river produces metrics: records accepted, rejected, blind-extracted, overflow-evicted | Verify: unit test | Motif: ESMB
 
-**Dependencies**: Slices 1, 2.
+**Dependencies**: Slice 1 + Pillars PRD Slice P1 (runtime types).
 
 ---
 
@@ -481,7 +469,7 @@ Rivers are clients of the runtime spine defined in the four pillars design memo.
 - [ ] ISC-R23: Records survive session boundaries via SQLite persistence | Verify: integration test (write, close, reopen, read)
 - [ ] ISC-R24: Processing river produces metrics: records per stage, transition count, error count | Verify: unit test
 
-**Dependencies**: Slices 1, 2.
+**Dependencies**: Slice 1 + Pillars PRD Slice P1 (runtime types).
 
 ---
 
@@ -503,7 +491,7 @@ Rivers are clients of the runtime spine defined in the four pillars design memo.
 - [ ] ISC-R30: Bounded recursion: maximum recursion depth per session enforced (default 3) | Verify: unit test exceeding bound | Motif: BBWOP
 - [ ] ISC-R31: Reflection river produces metrics: observations captured, templates updated, recursion depth | Verify: unit test
 
-**Dependencies**: Slices 1, 2.
+**Dependencies**: Slice 1 + Pillars PRD Slice P1 (runtime types).
 
 ---
 
@@ -609,12 +597,13 @@ Rivers are clients of the runtime spine defined in the four pillars design memo.
 ## 8. Dependency Graph
 
 ```
-Slice 1 ──────────────────────────┐
-  (PairedRecord types)            │
-                                  ▼
-Slice 2 ──────────────────────────┤
-  (Runtime spine interfaces)      │
-                                  ▼
+Slice 1 ─────────────────┐
+  (PairedRecord types)   │
+                         │    [Pillars PRD Slice P1]
+                         │    (Runtime type layer)
+                         │           │
+                         ├───────────┘
+                         ▼
                     ┌─────────────┼─────────────┐
                     ▼             ▼             ▼
                 Slice 3       Slice 4       Slice 5
@@ -636,17 +625,21 @@ Slice 2 ────────────────────────
               (Convergence)    (Pipeline)     (Vault/Session)
 ```
 
+Note: Slice 2 is eliminated (superseded by Pillars PRD Slice P1). Slices 3, 4, 5 depend on Slice 1 + Pillars P1.
+
 ## 9. Build Waves
 
 | Wave | Slices | Parallelism | Rationale |
 |------|--------|-------------|-----------|
-| **Wave 1** | 1 → 2 | Sequential | Types first, then interfaces they plug into |
-| **Wave 2** | 3, 4, 5 | Parallel | Three rivers independent once types and interfaces exist |
+| **Wave 1** | 1 (parallel with Pillars P1) | Parallel | PairedRecord types + runtime types built simultaneously |
+| **Wave 2** | 3, 4, 5 | Parallel | Three rivers independent once types exist |
 | **Wave 3** | 6 | Sequential | Pairing service needs Intake and Processing |
 | **Wave 4** | 7 | Sequential | Cross-river wiring needs all rivers + pairing |
 | **Wave 5** | 8, 9, 10 | Parallel | Convergence, pipeline integration, and vault all depend on wired rivers |
 
-**Estimated slice count**: 10 slices, 58 ISC criteria.
+**Estimated slice count**: 9 active slices (Slice 2 superseded), 54 ISC criteria.
+
+See `build-plan-pillars-rivers-20260324.md` for the unified cross-PRD schedule.
 
 ---
 
@@ -690,7 +683,7 @@ This PRD does not commit to:
 - Replacing the dataset processor or governance system (rivers wrap around them)
 - Building the model training convergence layer (downstream of rivers)
 - Implementing real-time stream processing (batch-oriented is sufficient)
-- Building the full runtime spine (rivers need interfaces, not full implementation)
+- Building the full runtime spine (that's the Four Pillars PRD's scope — rivers consume its type layer)
 - Solving noun-type classification (rivers carry PairedRecords; classification feeds into the noun component)
 - Defining the motif algebra integration (the algebra is an ambient service triggered by river events, not a river component)
 
@@ -707,4 +700,4 @@ Rivers are working when:
 5. Cross-stream convergence detection identifies motif instances that single-stream analysis would miss
 6. River state is inspectable at any time — buffer occupancy, state distribution, flow rate, convergence events
 7. The system's cognitive process is legible through river traces, not just its outputs
-8. All 58 ISC criteria pass
+8. All 54 ISC criteria pass (ISC-R01–R05, ISC-R10–R58; ISC-R06–R09 retired with Slice 2)

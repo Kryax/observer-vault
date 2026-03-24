@@ -5,8 +5,8 @@ status: DRAFT
 mode: design
 effort_level: Advanced
 created: 2026-03-24
-updated: 2026-03-24
-iteration: 1
+updated: 2026-03-24T23:00:00+11:00
+iteration: 2
 maxIterations: 128
 loopStatus: null
 last_phase: PLAN
@@ -184,6 +184,9 @@ These reinforcement patterns are tested by cross-pillar ISC criteria in Slice 6.
 - [ ] ISC-P13: Ledger is append-only; no receipt modification or deletion | Verify: unit test attempting mutation
 - [ ] ISC-P14: Ledger writes to `tmp/runtime-ledger.ndjson` in NDJSON format | Verify: integration test reading file after transitions
 - [ ] ISC-P15: State machine exposes current state query (synchronous, no side effects) | Verify: unit test
+- [ ] ISC-P53: State machine can re-initialise from transition ledger on startup — recovers last committed state | Verify: integration test (write receipts, simulate crash, re-init, verify state matches last receipt's nextState)
+- [ ] ISC-P54: Recovery from SYNTHESIS or REFLECTION transitions to HALTED (crash during active work requires human review) | Verify: unit test
+- [ ] ISC-P55: Ledger compaction triggers on COMPLETE→IDLE transition — hot file copied to `03-Daily/{date}/` and truncated | Verify: integration test
 
 **Dependencies**: Slice 1.
 
@@ -197,13 +200,15 @@ These reinforcement patterns are tested by cross-pillar ISC criteria in Slice 6.
 - `src/runtime/governance-policy.ts` — Policy classifier, action class registry, boundary enforcement
 
 **ISC Criteria**:
-- [ ] ISC-P16: All 8 `GovernanceActionClass` values from the design memo are classified | Verify: unit test per action class
+- [ ] ISC-P16: All 9 `GovernanceActionClass` values are classified (8 from design memo + ALGEBRA_REVIEW) | Verify: unit test per action class
 - [ ] ISC-P17: SESSION_OPERATION and TASK_EXECUTION classify as FAST_ALLOWED under default policy | Verify: unit test
-- [ ] ISC-P18: HUMAN_GATE_RESOLUTION and ARCHITECTURAL_CHANGE classify as SLOW_REQUIRED | Verify: unit test
-- [ ] ISC-P19: Every GovernanceDecision includes a `policyVersion` string | Verify: unit test
+- [ ] ISC-P18: HUMAN_GATE_RESOLUTION, ARCHITECTURAL_CHANGE, and ALGEBRA_REVIEW classify as SLOW_REQUIRED | Verify: unit test
+- [ ] ISC-P19: Every GovernanceDecision includes a `policyVersion` string (content-hash, see §8.1) | Verify: unit test
 - [ ] ISC-P20: SLOW_REQUIRED decisions include a `gateType` identifying which gate blocks | Verify: unit test
 - [ ] ISC-P21: DISALLOWED decisions include a `reason` string | Verify: unit test
 - [ ] ISC-P22: Governance policy integrates with state machine as a transition guard: SLOW_REQUIRED triggers HUMAN_REVIEW transition | Verify: integration test with state machine from Slice 2
+- [ ] ISC-P56: `policyVersion` is deterministic content-hash of active rules — same rules always produce same version | Verify: unit test (hash stability)
+- [ ] ISC-P57: ALGEBRA_REVIEW action class with `gateType: "algebra-review"` produces correct SLOW_REQUIRED decision | Verify: unit test
 
 **Dependencies**: Slices 1, 2.
 
@@ -249,6 +254,8 @@ These reinforcement patterns are tested by cross-pillar ISC criteria in Slice 6.
 - [ ] ISC-P36: Plugin removal follows drain lifecycle: DRAINING → stop dispatch → flush → receipt → REMOVED | Verify: unit test through full lifecycle
 - [ ] ISC-P37: Registry exposes list of active plugins with their manifests (for observability) | Verify: unit test
 - [ ] ISC-P38: PluginContext provides: sessionId, workUnitId, state, policyVersion, queue snapshots, receipt emitter, artifact writer | Verify: type check + unit test
+- [ ] ISC-P58: Plugin approval creates a gate document in `00-Inbox/` with manifest and risk assessment | Verify: integration test
+- [ ] ISC-P59: Plugin approval resolution is recorded as TransitionReceipt with gate document as evidence | Verify: integration test
 
 **Dependencies**: Slices 1, 3 (governance classifies registration).
 
@@ -282,13 +289,13 @@ These reinforcement patterns are tested by cross-pillar ISC criteria in Slice 6.
 - `src/s1/adapter.ts` — Emit normalized runtime intake events
 - `src/s8/stop-orchestrator.ts` — Become runtime-managed completion phase
 - `src/s7/sovereignty.ts` — Called by governance guards (no change to logic, wiring only)
-- `src/s7/task-failure.ts`, `src/s7/process-quality.ts` — Become slow-path gate producers
+- `src/s7/task-failure.ts`, `src/s7/process-quality.ts`, `src/s7/algebra-review.ts` — Become slow-path gate producers
 - `src/s4/deliberation.ts` — Run within SYNTHESIS/REFLECTION runtime states
 - `src/s2/session-capture.ts`, `src/s2/tension-tracker.ts` — Become runtime plugins
 
 **ISC Criteria**:
 - [ ] ISC-P46: `s1/adapter.ts` emits events that the runtime orchestrator's INTAKE state processes | Verify: integration test
-- [ ] ISC-P47: `s7/task-failure.ts` and `s7/process-quality.ts` produce SLOW_REQUIRED gates via governance policy | Verify: integration test
+- [ ] ISC-P47: `s7/task-failure.ts`, `s7/process-quality.ts`, and `s7/algebra-review.ts` produce SLOW_REQUIRED gates via governance policy | Verify: integration test
 - [ ] ISC-P48: `s4/deliberation.ts` executes only in SYNTHESIS or REFLECTION runtime states | Verify: integration test — execution rejected in other states
 - [ ] ISC-P49: `s2/session-capture.ts` conforms to plugin contract with `observe_events` + `emit_receipts` capabilities | Verify: unit test
 - [ ] ISC-P50: `s8/stop-orchestrator.ts` triggers COMPLETE transition and receipt flush | Verify: integration test
@@ -313,11 +320,11 @@ Slice 2          Slice 4         [Rivers PRD]
 Slice 3             │
 (Governance)        │
     │               │
-    ├───────────────┤
-    ▼               ▼
-Slice 5
-(Plugin)
-    │
+    ▼               │
+Slice 5             │
+(Plugin)            │
+    │               │
+    ├───────────────┘
     ▼
 Slice 6
 (Orchestrator)
@@ -326,6 +333,8 @@ Slice 6
 Slice 7
 (Migration)
 ```
+
+Note: Slice 5 (Plugin) depends on Slice 1 and Slice 3 (governance classifies registration). It does NOT depend on Slice 4 (Buffer). The CPA×BBWOP cross-pillar reinforcement is tested in Slice 6 (Orchestrator), where all four pillars are wired together.
 
 ---
 
@@ -354,17 +363,77 @@ See the unified build plan for how these waves interleave with Rivers PRD waves.
 
 ---
 
-## 8. Open Questions
+## 8. Resolved Design Decisions
 
-1. **Policy versioning**: How are policy versions generated? Semantic versioning? Content-hash? The design memo specifies that every GovernanceDecision carries a policyVersion but doesn't specify the versioning scheme.
+The following were open questions in the initial draft. Resolved during D/I/R review pass (2026-03-24).
 
-2. **Ledger compaction**: The transition ledger writes to `tmp/runtime-ledger.ndjson` (hot) and compacts daily to `03-Daily/{date}/`. What triggers compaction? Session end? Cron? Timer?
+### 8.1 Policy Versioning Scheme
 
-3. **Plugin approval workflow**: Registration requires SLOW_REQUIRED (human approval). What's the UX? A vault document? A CLI prompt? A control plane API?
+**Decision**: Content-hash of the active policy rule set.
 
-4. **Existing test coverage**: The memo references `src/s4/types.ts`, `s5/types.ts`, `s7/types.ts` as existing local state machines. How extensive is the existing test suite? Slice 7 ISC-P51 requires all existing tests to pass.
+```typescript
+// policyVersion = SHA-256(JSON.stringify(sortedPolicyRules)).slice(0, 12)
+// Example: "a3f7c2b91e04"
+```
 
-5. **Algebra review gate**: `s7/algebra-review.ts` is listed as a slow-path gate producer but its integration with the governance policy isn't specified. What action class does algebra review map to?
+Content-hash is deterministic, requires no manual versioning, and changes if and only if the policy rules change. Every `GovernanceDecision` carries this hash. The transition ledger records it. Auditors can reconstruct which policy was active for any transition by hashing the policy state at that time.
+
+### 8.2 Ledger Compaction Trigger
+
+**Decision**: Session end (the COMPLETE→IDLE transition).
+
+When the runtime transitions COMPLETE→IDLE, the transition ledger:
+1. Copies `tmp/runtime-ledger.ndjson` to `03-Daily/{date}/runtime-ledger/{sessionId}.json`
+2. Truncates the hot file
+
+If Observer crashes before COMPLETE (no clean shutdown), the hot file survives on disk and is available for crash recovery (§8.3). Compaction happens on the next clean session end.
+
+### 8.3 Crash Recovery
+
+**Decision**: The state machine supports re-initialisation from the transition ledger.
+
+Runtime state is session-scoped and lives in memory. If Observer crashes mid-session, the in-memory state is lost. The transition ledger on disk survives. On next startup, the state machine:
+
+1. Checks for a non-empty `tmp/runtime-ledger.ndjson`
+2. If found, reads the last committed `TransitionReceipt`
+3. Re-initialises to that receipt's `nextState`
+4. Emits a `RECOVERY` receipt recording the re-initialisation
+5. If the recovered state is SYNTHESIS or REFLECTION, transitions to HALTED (requires human review before resuming — crash during active work is a sovereignty-relevant event)
+6. If the recovered state is HUMAN_REVIEW or HALTED, stays in that state (already waiting for human)
+7. If the recovered state is COMPLETE, proceeds to IDLE normally
+
+If the ledger is empty or absent, normal IDLE initialisation applies.
+
+### 8.4 Plugin Approval UX
+
+**Decision**: Governance gate document in vault.
+
+When a plugin registration classifies as SLOW_REQUIRED:
+1. A gate document is created in `00-Inbox/` with the plugin manifest, requested capabilities, and risk assessment
+2. The runtime transitions to HUMAN_REVIEW
+3. Adam reviews via CLI (control plane `observer_approval_respond`) or by editing the gate document
+4. Resolution (approve/deny) is recorded as a `TransitionReceipt` with the gate document as evidence
+
+This uses the existing control plane approval infrastructure. No new UX needed.
+
+### 8.5 Algebra Review Gate
+
+**Decision**: Maps to a new `ALGEBRA_REVIEW` governance action class, classified as SLOW_REQUIRED.
+
+`s7/algebra-review.ts` already defines `AlgebraReviewEscalation` with `type: "ALGEBRA_REVIEW"`. This maps directly to a governance action class:
+
+```typescript
+// Added to GovernanceActionClass:
+| "ALGEBRA_REVIEW"    // Tier 2 motif promotion — always SLOW_REQUIRED
+```
+
+Classification: SLOW_REQUIRED with `gateType: "algebra-review"`. Tier 2 promotion is a crystallisation event — it permanently elevates a motif. This is sovereignty-critical and must never be fast-path.
+
+The `GovernanceActionClass` enum grows from 8 to 9 values.
+
+### 8.6 Remaining Open Question
+
+1. **Existing test coverage**: The memo references `src/s4/types.ts`, `s5/types.ts`, `s7/types.ts` as existing local state machines. Slice 7 ISC-P51 requires all existing tests to pass. The extent of the existing test suite needs verification before Slice 7 begins. This is a pre-Slice-7 discovery task, not a design question.
 
 ---
 
@@ -390,4 +459,4 @@ The runtime spine is working when:
 4. Every queue has bounded capacity with explicit, artifact-producing overflow
 5. Existing s0–s9 modules route through the spine without domain logic changes
 6. The Rivers PRD can build Slices 3+ against real runtime types, not stubs
-7. All 52 ISC criteria pass
+7. All 59 ISC criteria pass
