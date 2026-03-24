@@ -251,6 +251,12 @@ export class Pipeline {
       // Flush remaining buffer entries to the store (covers runs without Tier C)
       this.flushBufferToStore();
 
+      // Checkpoint WAL so the pipeline's connection sees all store writes,
+      // then save state with accurate totalVerbRecords
+      this.checkpointWal();
+      this.state.totalVerbRecords = this.getVerbRecordCount();
+      savePipelineState(this.config.dbPath, this.state);
+
       // Final export
       await this.exportResults();
 
@@ -434,6 +440,12 @@ export class Pipeline {
 
       // Flush remaining buffer entries to the store (covers runs without Tier C)
       this.flushBufferToStore();
+
+      // Checkpoint WAL so the pipeline's connection sees all store writes,
+      // then save state with accurate totalVerbRecords
+      this.checkpointWal();
+      this.state.totalVerbRecords = this.getVerbRecordCount();
+      savePipelineState(this.config.dbPath, this.state);
 
       await this.exportResults();
       return this.state;
@@ -930,6 +942,19 @@ export class Pipeline {
     if (!this.db) return 0;
     const row = this.db.prepare('SELECT COUNT(*) as cnt FROM verb_records').get() as { cnt: number };
     return row.cnt;
+  }
+
+  /**
+   * Force a WAL checkpoint so the pipeline's Database connection sees
+   * all writes made by the VerbRecordStore's separate connection.
+   */
+  private checkpointWal(): void {
+    if (!this.db) return;
+    try {
+      this.db.run('PRAGMA wal_checkpoint(PASSIVE)');
+    } catch (err) {
+      console.error(`[pipeline] WAL checkpoint failed: ${err}`);
+    }
   }
 
   // ── Private: buffer flush ──────────────────────────────────────────

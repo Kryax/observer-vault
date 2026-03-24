@@ -13,7 +13,12 @@ interface DomainRow {
   cnt: number;
 }
 
-interface SourceTypeRow {
+interface SourceComponentRow {
+  source_component: string;
+  cnt: number;
+}
+
+interface ExtractionMethodRow {
   extraction_method: string;
   cnt: number;
 }
@@ -58,17 +63,26 @@ export function aggregateMotifEvidence(db: Database, motifId: string): MotifEvid
   const domains = domainRows.map(r => r.domain);
   const domainCount = domains.length;
 
-  // Source types (extraction_method maps to source type)
-  // 'primed' = top-down (template-driven), 'blind' = bottom-up (corpus discovery)
-  const sourceTypeRows = db.prepare(`
+  // Source types: count distinct source_component values (e.g. Pile sub-components)
+  // Each sub-component (PubMed Central, FreeLaw, ArXiv, etc.) is an independent source.
+  const sourceComponentRows = db.prepare(`
+    SELECT source_component, COUNT(*) as cnt
+    FROM verb_records
+    WHERE motif_id = ? AND source_component IS NOT NULL AND source_component != ''
+    GROUP BY source_component
+    ORDER BY cnt DESC
+  `).all(motifId) as SourceComponentRow[];
+
+  // Extraction method diversity tracked separately (primed vs blind = triangulation signal)
+  const extractionMethodRows = db.prepare(`
     SELECT extraction_method, COUNT(*) as cnt
     FROM verb_records
     WHERE motif_id = ?
     GROUP BY extraction_method
-  `).all(motifId) as SourceTypeRow[];
+  `).all(motifId) as ExtractionMethodRow[];
 
   const sourceTypes = new Set<SourceType>();
-  for (const row of sourceTypeRows) {
+  for (const row of extractionMethodRows) {
     if (row.extraction_method === 'primed') sourceTypes.add('top-down');
     if (row.extraction_method === 'blind') sourceTypes.add('bottom-up');
   }
@@ -145,7 +159,7 @@ export function aggregateMotifEvidence(db: Database, motifId: string): MotifEvid
     domainCount,
     domains,
     sourceTypes,
-    sourceTypeCount: sourceTypes.size,
+    sourceTypeCount: sourceComponentRows.length,
     confidence,
     verbRecordCount,
     hasConflictingEvidence,

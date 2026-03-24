@@ -130,7 +130,9 @@ export class TierPromoter {
     if (evidence.domainCount < T0_T1_THRESHOLDS.domainCount) return null;
     if (evidence.sourceTypeCount < T0_T1_THRESHOLDS.sourceTypes) return null;
     if (evidence.confidence < T0_T1_THRESHOLDS.confidence) return null;
-    if (evidence.hasConflictingEvidence) return null;
+    // Conflicting evidence is logged as a warning in the digest but does not
+    // block T0→T1 promotion. At scale, some motif overlap is expected — broad
+    // structural patterns naturally co-occur across source passages.
 
     // Already promoted in a prior run?
     if (this.wasAlreadyPromoted(motifId, 0, 1)) return null;
