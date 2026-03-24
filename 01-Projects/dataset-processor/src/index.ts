@@ -14,6 +14,7 @@ import { streamShard } from "./stream/shard-reader.ts";
 import { filterDocument } from "./filter/lexical-engine.ts";
 import { CandidateEmitter } from "./output/candidate-emitter.ts";
 import { Pipeline, DEFAULT_PIPELINE_CONFIG, type PipelineConfig } from "./orchestrator/pipeline.ts";
+import { runGovernance } from "./governance/index.ts";
 
 const program = new Command();
 
@@ -199,6 +200,45 @@ program
         `${pass.tierCEvaluated} Tier-C, ${pass.verbRecordsCreated} records, ` +
         `yield=${pass.marginalYield.toFixed(1)}/10K`,
       );
+    }
+  });
+
+program
+  .command("governance")
+  .description("Run automated tier promotion governance pass with digest output")
+  .requiredOption("--db <path>", "Path to SQLite database file")
+  .option("--motifs <path>", "Path to motif library directory", resolve("../../02-Knowledge/motifs"))
+  .option("--queue <dir>", "Output directory for T2 review packets", "./output/promotion-queue-t2")
+  .option("--digests <dir>", "Output directory for digest files", "./output/digests")
+  .action((opts: {
+    db: string;
+    motifs: string;
+    queue: string;
+    digests: string;
+  }) => {
+    const result = runGovernance({
+      dbPath: resolve(opts.db),
+      motifLibraryPath: resolve(opts.motifs),
+      promotionQueuePath: resolve(opts.queue),
+      digestOutputPath: resolve(opts.digests),
+    });
+
+    console.error(`\n[governance] Summary:`);
+    console.error(`  Auto-promotions (T0→T1): ${result.promotions.autoPromotions.length}`);
+    for (const p of result.promotions.autoPromotions) {
+      console.error(`    - ${p.motifName}: ${p.evidence.domainCount} domains, confidence ${p.evidence.confidence.toFixed(3)}`);
+    }
+    console.error(`  T2 review packets: ${result.promotions.reviewPackets.length}`);
+    for (const p of result.promotions.reviewPackets) {
+      console.error(`    - ${p.motifName}: ${p.evidence.domainCount} domains, confidence ${p.evidence.confidence.toFixed(3)}`);
+    }
+    console.error(`  T2→T3 flags: ${result.promotions.t2t3Flags.length}`);
+    for (const f of result.promotions.t2t3Flags) {
+      console.error(`    - ${f.motifName}: ${f.preliminaryThresholdsMet.length} thresholds met`);
+    }
+    console.error(`  Anomalies: ${result.digest.anomalies.length}`);
+    for (const a of result.digest.anomalies) {
+      console.error(`    - [${a.severity}] ${a.type}: ${a.description}`);
     }
   });
 
