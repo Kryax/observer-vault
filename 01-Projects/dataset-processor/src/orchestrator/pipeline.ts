@@ -16,7 +16,7 @@
 
 import { Database } from 'bun:sqlite';
 import { basename, join } from 'node:path';
-import { mkdirSync, existsSync, writeFileSync, readFileSync } from 'node:fs';
+import { mkdirSync, existsSync, writeFileSync, readFileSync, renameSync } from 'node:fs';
 
 import { streamShard } from '../stream/shard-reader.ts';
 import { filterDocument } from '../filter/lexical-engine.ts';
@@ -138,7 +138,11 @@ function loadPipelineState(dbPath: string): PipelineState | null {
 
 function savePipelineState(dbPath: string, state: PipelineState): void {
   const path = stateFilePath(dbPath);
-  writeFileSync(path, JSON.stringify(state, null, 2));
+  const tmpPath = path + '.tmp';
+  // Atomic write: write to temp file then rename. rename() is atomic on local
+  // filesystems and per the NFS spec, preventing half-written state files on crash.
+  writeFileSync(tmpPath, JSON.stringify(state, null, 2));
+  renameSync(tmpPath, path);
 }
 
 function shardIdFromPath(shardPath: string): string {
@@ -484,8 +488,18 @@ export class Pipeline {
     this.db.run('PRAGMA foreign_keys=ON');
     runMigrations(this.db);
 
-    // Store (uses its own Database connection)
-    this.store = new VerbRecordStore(this.config.dbPath);
+    // Integrity check: fail fast if the database is corrupt
+    const integrityResult = this.db.prepare('PRAGMA integrity_check').get() as { integrity_check: string };
+    if (integrityResult.integrity_check !== 'ok') {
+      throw new Error(
+        `[pipeline] Database integrity check failed: ${integrityResult.integrity_check}. ` +
+        `Delete the corrupt database and re-run, or use a backup.`,
+      );
+    }
+
+    // Store shares the pipeline's Database connection to avoid the dual-connection
+    // WAL race that caused shard-01 corruption on NFS
+    this.store = new VerbRecordStore(this.db);
 
     // Priority buffer
     this.buffer = new PriorityBuffer(
@@ -539,6 +553,14 @@ export class Pipeline {
       this.store = null;
     }
     if (this.db) {
+      // Fold all WAL data back into the main database and truncate the WAL file.
+      // This leaves the database self-contained (no dangling -wal/-shm files),
+      // which is critical for safe storage on NFS and for database portability.
+      try {
+        this.db.run('PRAGMA wal_checkpoint(TRUNCATE)');
+      } catch (err) {
+        console.error(`[pipeline] WAL checkpoint on shutdown failed: ${err}`);
+      }
       this.db.close();
       this.db = null;
     }

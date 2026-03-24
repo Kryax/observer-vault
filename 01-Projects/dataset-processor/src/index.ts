@@ -10,6 +10,7 @@
 import { Command } from "commander";
 import { Glob } from "bun";
 import { resolve } from "node:path";
+import { existsSync } from "node:fs";
 import { streamShard } from "./stream/shard-reader.ts";
 import { filterDocument } from "./filter/lexical-engine.ts";
 import { CandidateEmitter } from "./output/candidate-emitter.ts";
@@ -160,8 +161,12 @@ program
 
     console.error(`[orchestrate] Found ${shardPaths.length} shard files`);
 
-    // --output or --db for the SQLite path
-    const dbPath = resolve(opts.output ?? opts.db ?? './output/shard.db');
+    // --output or --db for the SQLite path.
+    // Default to local storage to avoid SQLite WAL corruption on NFS.
+    // /mnt/steam2 is local ext4; ./output/ may be on NFS depending on cwd.
+    const LOCAL_DB_DIR = '/mnt/steam2/dataset-processor/output';
+    const defaultDbPath = existsSync('/mnt/steam2') ? `${LOCAL_DB_DIR}/shard.db` : './output/shard.db';
+    const dbPath = resolve(opts.output ?? opts.db ?? defaultDbPath);
     const templateCachePath = opts.templateCache ?? dbPath.replace(/\.sqlite3?$|\.db$/, '') + '.templates.json';
     const outputDir = resolve(opts.outputDir);
 

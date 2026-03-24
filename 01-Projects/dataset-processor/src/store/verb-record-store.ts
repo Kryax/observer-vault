@@ -55,18 +55,29 @@ interface VerbRecordRow {
 /**
  * VerbRecordStore -- SQLite-backed store for verb-records with FTS5 search.
  * Follows the OCP scraper SearchIndex pattern (bun:sqlite, WAL, prepare/run/get/all).
+ *
+ * Accepts either a file path (opens its own connection) or an existing Database
+ * instance (shares the caller's connection — used by the pipeline to avoid the
+ * dual-connection WAL race on NFS).
  */
 export class VerbRecordStore {
   private db: Database;
+  private ownsConnection: boolean;
 
-  constructor(dbPath: string) {
-    const dir = dirname(dbPath);
-    mkdirSync(dir, { recursive: true });
+  constructor(dbPathOrDb: string | Database) {
+    if (typeof dbPathOrDb === 'string') {
+      const dir = dirname(dbPathOrDb);
+      mkdirSync(dir, { recursive: true });
 
-    this.db = new Database(dbPath);
-    this.db.run('PRAGMA journal_mode=WAL');
-    this.db.run('PRAGMA foreign_keys=ON');
-    runMigrations(this.db);
+      this.db = new Database(dbPathOrDb);
+      this.db.run('PRAGMA journal_mode=WAL');
+      this.db.run('PRAGMA foreign_keys=ON');
+      runMigrations(this.db);
+      this.ownsConnection = true;
+    } else {
+      this.db = dbPathOrDb;
+      this.ownsConnection = false;
+    }
   }
 
   /** Insert a verb-record. Updates FTS index. */
@@ -258,9 +269,11 @@ export class VerbRecordStore {
     return { totalRecords, byStage, byMotif, byDataset, byAxis };
   }
 
-  /** Close the database connection. */
+  /** Close the database connection (only if this store owns it). */
   close(): void {
-    this.db.close();
+    if (this.ownsConnection) {
+      this.db.close();
+    }
   }
 
   /** Map a SQLite row to a VerbRecord interface. */
