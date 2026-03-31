@@ -8,6 +8,15 @@
 import { readdirSync, readFileSync } from 'node:fs';
 import { join, basename } from 'node:path';
 import type { MotifFrontmatter } from './types.ts';
+import { INDICATOR_SETS } from '../filter/indicator-sets.ts';
+
+/**
+ * Build a name→abbreviation lookup from INDICATOR_SETS.
+ * Names are normalised to lowercase for case-insensitive matching.
+ */
+const NAME_TO_ABBREVIATION: Map<string, string> = new Map(
+  INDICATOR_SETS.map(s => [s.motifName.toLowerCase(), s.motifId]),
+);
 
 /**
  * Parse YAML frontmatter from a markdown file.
@@ -55,6 +64,8 @@ export function readMotifLibrary(libraryPath: string): MotifFrontmatter[] {
 
     if (!fm['name'] || fm['tier'] === undefined) continue;
 
+    const abbreviation = NAME_TO_ABBREVIATION.get(fm['name'].toLowerCase());
+
     motifs.push({
       name: fm['name'],
       tier: parseInt(fm['tier'], 10),
@@ -69,6 +80,7 @@ export function readMotifLibrary(libraryPath: string): MotifFrontmatter[] {
       derivative_order: fm['derivative_order'] ?? '0',
       primary_axis: (fm['primary_axis'] ?? 'differentiate') as MotifFrontmatter['primary_axis'],
       fileName: entry.name,
+      abbreviation,
     });
   }
 

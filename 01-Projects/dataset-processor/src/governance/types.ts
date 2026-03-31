@@ -21,6 +21,8 @@ export interface MotifFrontmatter {
   derivative_order: number | string;
   primary_axis: 'differentiate' | 'integrate' | 'recurse';
   fileName: string;
+  /** Abbreviated motif ID as stored in the DB (e.g. "TAC" for Trust-as-Curation) */
+  abbreviation?: string;
 }
 
 // ── Source type tracking ─────────────────────────────────────────────
@@ -35,7 +37,16 @@ export interface MotifEvidence {
   domains: string[];
   sourceTypes: Set<SourceType>;
   sourceTypeCount: number;
+  /** @deprecated Use evidenceQuality instead. Flat AVG(motif_confidence). */
   confidence: number;
+  /** D/I/R-derived: mean of per-domain mean evidence scores. Bounded [0,1]. */
+  evidenceQuality: number;
+  /** Per-domain evidence breakdown for inspection. */
+  domainEvidence: Array<{
+    domain: string;
+    meanEvidence: number;
+    recordCount: number;
+  }>;
   verbRecordCount: number;
   hasConflictingEvidence: boolean;
   hasCrossTemporalEvidence: boolean;
@@ -58,6 +69,8 @@ export interface T0T1PromotionResult {
   evidence: MotifEvidence;
   timestamp: string;
   frontmatterUpdates: Record<string, unknown>;
+  /** Original library filename (e.g. "trust-as-curation.md") for frontmatter updates */
+  fileName: string;
 }
 
 // ── T1 → T2 review packet ──────────────────────────────────────────
@@ -90,6 +103,21 @@ export interface T1T2ReviewPacket {
   generatedAt: string;
 }
 
+// ── Demotion (↓ operator) ──────────────────────────────────────────
+
+export interface DemotionResult {
+  motifId: string;
+  motifName: string;
+  previousTier: number;
+  newTier: number;
+  reason: string;
+  failedConditions: string[];
+  evidence: MotifEvidence;
+  timestamp: string;
+  fileName: string;
+  frontmatterUpdates: Record<string, unknown>;
+}
+
 // ── T2 → T3 flag ───────────────────────────────────────────────────
 
 export interface T2T3Flag {
@@ -108,7 +136,7 @@ export interface PromotionLogEntry {
   motifName: string;
   fromTier: number;
   toTier: number;
-  action: 'auto-promoted' | 'queued-for-review' | 'flagged';
+  action: 'auto-promoted' | 'queued-for-review' | 'flagged' | 'demoted';
   evidenceSnapshot: string;
   timestamp: string;
 }
@@ -126,6 +154,7 @@ export interface DigestEntry {
   generatedAt: string;
   shardSummaries: ShardSummary[];
   autoPromotions: T0T1PromotionResult[];
+  demotions: DemotionResult[];
   t2QueueAdditions: T1T2ReviewPacket[];
   t2t3Flags: T2T3Flag[];
   anomalies: AnomalyEntry[];

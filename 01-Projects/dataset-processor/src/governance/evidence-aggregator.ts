@@ -29,6 +29,13 @@ interface ConfidenceRow {
   total: number;
 }
 
+interface DomainEvidenceRow {
+  domain: string;
+  mean_evidence: number;
+  mean_tier_b: number;
+  record_count: number;
+}
+
 interface TopRecordRow {
   id: string;
 }
@@ -90,7 +97,7 @@ export function aggregateMotifEvidence(db: Database, motifId: string): MotifEvid
     sourceTypes.add('triangulated');
   }
 
-  // Confidence and scores
+  // Confidence and scores — flat average (backward compat)
   const confRow = db.prepare(`
     SELECT
       AVG(motif_confidence) as avg_confidence,
@@ -103,6 +110,29 @@ export function aggregateMotifEvidence(db: Database, motifId: string): MotifEvid
   const confidence = confRow?.avg_confidence ?? 0;
   const averageTierBScore = confRow?.avg_tier_b ?? 0;
   const verbRecordCount = confRow?.total ?? 0;
+
+  // Hierarchical aggregation — D/I/R-derived: mean of per-domain means
+  const domainEvidenceRows = db.prepare(`
+    SELECT
+      domain,
+      AVG(motif_confidence) as mean_evidence,
+      AVG(tier_b_score) as mean_tier_b,
+      COUNT(*) as record_count
+    FROM verb_records
+    WHERE motif_id = ? AND domain IS NOT NULL AND domain != ''
+    GROUP BY domain
+    ORDER BY record_count DESC
+  `).all(motifId) as DomainEvidenceRow[];
+
+  const domainEvidence = domainEvidenceRows.map(r => ({
+    domain: r.domain,
+    meanEvidence: r.mean_evidence,
+    recordCount: r.record_count,
+  }));
+
+  const evidenceQuality = domainEvidence.length > 0
+    ? domainEvidence.reduce((sum, d) => sum + d.meanEvidence, 0) / domainEvidence.length
+    : 0;
 
   // Top verb records by score
   const topRecords = db.prepare(`
@@ -131,14 +161,24 @@ export function aggregateMotifEvidence(db: Database, motifId: string): MotifEvid
     strength: r.strength,
   }));
 
-  // Conflicting evidence: records where the same source text matches a different
-  // motif with higher confidence
+  // Conflicting evidence: check if any source_content_hash for this motif also
+  // appears under a different motif with higher confidence. Uses EXISTS + LIMIT 1
+  // to short-circuit instead of a full self-join.
   const conflictRow = db.prepare(`
-    SELECT COUNT(*) as cnt
-    FROM verb_records v1
-    JOIN verb_records v2 ON v1.source_content_hash = v2.source_content_hash
-    WHERE v1.motif_id = ? AND v2.motif_id != ? AND v2.motif_confidence > v1.motif_confidence
-  `).get(motifId, motifId) as ConflictRow;
+    SELECT EXISTS(
+      SELECT 1
+      FROM verb_records v1
+      WHERE v1.motif_id = ?
+        AND EXISTS (
+          SELECT 1 FROM verb_records v2
+          WHERE v2.source_content_hash = v1.source_content_hash
+            AND v2.motif_id != v1.motif_id
+            AND v2.motif_confidence > v1.motif_confidence
+          LIMIT 1
+        )
+      LIMIT 1
+    ) as cnt
+  `).get(motifId) as ConflictRow;
 
   const hasConflictingEvidence = (conflictRow?.cnt ?? 0) > 0;
 
@@ -161,6 +201,8 @@ export function aggregateMotifEvidence(db: Database, motifId: string): MotifEvid
     sourceTypes,
     sourceTypeCount: sourceComponentRows.length,
     confidence,
+    evidenceQuality,
+    domainEvidence,
     verbRecordCount,
     hasConflictingEvidence,
     hasCrossTemporalEvidence,

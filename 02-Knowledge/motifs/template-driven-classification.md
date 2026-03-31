@@ -1,7 +1,7 @@
 ---
 name: "Template-Driven Classification"
-tier: 1
-status: provisional
+tier: 0
+status: draft
 confidence: 0.3
 source: "top-down"
 domain_count: 2

@@ -18,6 +18,7 @@ import type {
   T0T1PromotionResult,
   T1T2ReviewPacket,
   T2T3Flag,
+  DemotionResult,
   ValidationProtocolResult,
   PromotionLogEntry,
 } from './types.ts';
@@ -27,14 +28,50 @@ import type {
 const T0_T1_THRESHOLDS = {
   domainCount: 3,
   sourceTypes: 2,
-  confidence: 0.3,
+  evidenceQuality: 0.3,
 } as const;
 
 const T1_T2_THRESHOLDS = {
-  domainCount: 7,
+  domainCount: 5,
   sourceTypes: 3,
-  confidence: 0.7,
+  evidenceQuality: 0.6,
 } as const;
+
+const T2_T3_THRESHOLDS = {
+  domainCount: 8,
+  relationshipEdges: 3,
+  evidenceQuality: 0.8,
+  preliminaryCount: 2,
+} as const;
+
+const DEMOTION_HYSTERESIS = {
+  domainCount: 1,
+  evidenceQuality: 0.1,
+} as const;
+
+/**
+ * Parse derivative order from frontmatter, handling non-integer values
+ * like "1-2" or "1.5". Returns ceiling for threshold calculation.
+ */
+function parseDerivativeOrder(value: number | string): number {
+  if (typeof value === 'number') return Math.ceil(value);
+  // Handle range notation like "1-2" → take the higher end
+  if (value.includes('-')) {
+    const parts = value.split('-').map(s => parseFloat(s.trim()));
+    return Math.ceil(Math.max(...parts.filter(n => !isNaN(n))));
+  }
+  const parsed = parseFloat(value);
+  return isNaN(parsed) ? 0 : Math.ceil(parsed);
+}
+
+/**
+ * D/I/R-derived: derivative order adjustment for evidence quality thresholds.
+ * Higher-order motifs (d2, d3) make stronger structural claims and require
+ * proportionally more evidence.
+ */
+function adjustedQualityThreshold(baseThreshold: number, derivativeOrder: number): number {
+  return baseThreshold * (1 + 0.1 * derivativeOrder);
+}
 
 // ── Promotion Engine ────────────────────────────────────────────────
 
@@ -42,10 +79,13 @@ export interface TierPromoterConfig {
   db: Database;
   motifLibraryPath: string;
   promotionQueuePath: string;
+  /** When true, no filesystem writes or DB inserts. Evaluations run normally. */
+  dryRun?: boolean;
 }
 
 export interface PromotionRunResult {
   autoPromotions: T0T1PromotionResult[];
+  demotions: DemotionResult[];
   reviewPackets: T1T2ReviewPacket[];
   t2t3Flags: T2T3Flag[];
   logEntries: PromotionLogEntry[];
@@ -55,11 +95,13 @@ export class TierPromoter {
   private db: Database;
   private motifLibraryPath: string;
   private promotionQueuePath: string;
+  private dryRun: boolean;
 
   constructor(config: TierPromoterConfig) {
     this.db = config.db;
     this.motifLibraryPath = config.motifLibraryPath;
     this.promotionQueuePath = config.promotionQueuePath;
+    this.dryRun = config.dryRun ?? false;
     this.ensurePromotionLogTable();
   }
 
@@ -71,15 +113,19 @@ export class TierPromoter {
     const motifs = readMotifLibrary(this.motifLibraryPath);
     const result: PromotionRunResult = {
       autoPromotions: [],
+      demotions: [],
       reviewPackets: [],
       t2t3Flags: [],
       logEntries: [],
     };
 
     for (const motif of motifs) {
-      const motifId = motifIdFromFileName(motif.fileName);
+      // Use the abbreviated ID that the pipeline writes to the DB (e.g. "TAC"),
+      // falling back to filename-derived ID for motifs not in INDICATOR_SETS.
+      const motifId = motif.abbreviation ?? motifIdFromFileName(motif.fileName);
       const evidence = aggregateMotifEvidence(this.db, motifId);
 
+      // --- Promotions ---
       if (motif.tier === 0) {
         const promotion = this.evaluateT0T1(motif, motifId, evidence);
         if (promotion) {
@@ -99,21 +145,41 @@ export class TierPromoter {
           result.logEntries.push(this.buildLogEntryFromFlag(flag));
         }
       }
+
+      // --- Demotions (↓ operator) ---
+      // Only evaluate demotion for motifs that were auto-promoted by the processor.
+      // Manually curated motifs (promoted before processor existed) should not be
+      // demoted based on incomplete processor evidence — their evidence base includes
+      // manually catalogued domains not yet in the verb_record store.
+      if (motif.tier >= 1 && this.wasAutoPromoted(motifId, motif.tier)) {
+        const demotion = this.evaluateDemotion(motif, motifId, evidence);
+        if (demotion) {
+          result.demotions.push(demotion);
+          result.logEntries.push(this.buildDemotionLogEntry(demotion));
+        }
+      }
     }
 
-    // Persist: auto-promotions update frontmatter + MOTIF_INDEX
-    for (const promotion of result.autoPromotions) {
-      this.applyT0T1Promotion(promotion);
-    }
+    if (!this.dryRun) {
+      // Persist: auto-promotions update frontmatter + MOTIF_INDEX
+      for (const promotion of result.autoPromotions) {
+        this.applyT0T1Promotion(promotion);
+      }
 
-    // Persist: T1→T2 review packets to queue directory
-    for (const packet of result.reviewPackets) {
-      this.writeReviewPacket(packet);
-    }
+      // Persist: demotions update frontmatter
+      for (const demotion of result.demotions) {
+        this.applyDemotion(demotion);
+      }
 
-    // Persist: log all entries
-    for (const entry of result.logEntries) {
-      this.insertPromotionLog(entry);
+      // Persist: T1→T2 review packets to queue directory
+      for (const packet of result.reviewPackets) {
+        this.writeReviewPacket(packet);
+      }
+
+      // Persist: log all entries
+      for (const entry of result.logEntries) {
+        this.insertPromotionLog(entry);
+      }
     }
 
     return result;
@@ -126,10 +192,10 @@ export class TierPromoter {
     motifId: string,
     evidence: MotifEvidence,
   ): T0T1PromotionResult | null {
-    // Check all thresholds
+    // Check all thresholds (D/I/R-derived hierarchical evidence quality)
     if (evidence.domainCount < T0_T1_THRESHOLDS.domainCount) return null;
     if (evidence.sourceTypeCount < T0_T1_THRESHOLDS.sourceTypes) return null;
-    if (evidence.confidence < T0_T1_THRESHOLDS.confidence) return null;
+    if (evidence.evidenceQuality < T0_T1_THRESHOLDS.evidenceQuality) return null;
     // Conflicting evidence is logged as a warning in the digest but does not
     // block T0→T1 promotion. At scale, some motif overlap is expected — broad
     // structural patterns naturally co-occur across source passages.
@@ -146,6 +212,7 @@ export class TierPromoter {
       newTier: 1,
       evidence,
       timestamp: now,
+      fileName: motif.fileName,
       frontmatterUpdates: {
         tier: 1,
         status: 'provisional',
@@ -164,10 +231,12 @@ export class TierPromoter {
     motifId: string,
     evidence: MotifEvidence,
   ): T1T2ReviewPacket | null {
-    // Threshold checks
+    // Threshold checks (D/I/R-derived with derivative order adjustment)
     if (evidence.domainCount < T1_T2_THRESHOLDS.domainCount) return null;
     if (evidence.sourceTypeCount < T1_T2_THRESHOLDS.sourceTypes) return null;
-    if (evidence.confidence < T1_T2_THRESHOLDS.confidence) return null;
+    const dOrder = parseDerivativeOrder(motif.derivative_order);
+    const qualityThreshold = adjustedQualityThreshold(T1_T2_THRESHOLDS.evidenceQuality, dOrder);
+    if (evidence.evidenceQuality < qualityThreshold) return null;
     if (!evidence.hasCrossTemporalEvidence) return null;
 
     // Validation protocol assessment
@@ -278,23 +347,24 @@ export class TierPromoter {
     motifId: string,
     evidence: MotifEvidence,
   ): T2T3Flag | null {
+    const dOrder = parseDerivativeOrder(motif.derivative_order);
+    const qualityThreshold = adjustedQualityThreshold(T2_T3_THRESHOLDS.evidenceQuality, dOrder);
     const thresholdsMet: string[] = [];
 
-    // Preliminary thresholds: relationship richness suggests meta-motif potential
-    if (evidence.relationshipEdges.length >= 3) {
-      thresholdsMet.push(`${evidence.relationshipEdges.length} relationship edges (>= 3)`);
+    if (evidence.relationshipEdges.length >= T2_T3_THRESHOLDS.relationshipEdges) {
+      thresholdsMet.push(`${evidence.relationshipEdges.length} relationship edges (>= ${T2_T3_THRESHOLDS.relationshipEdges})`);
     }
 
-    if (evidence.domainCount >= 10) {
-      thresholdsMet.push(`${evidence.domainCount} domains (>= 10)`);
+    if (evidence.domainCount >= T2_T3_THRESHOLDS.domainCount) {
+      thresholdsMet.push(`${evidence.domainCount} domains (>= ${T2_T3_THRESHOLDS.domainCount})`);
     }
 
-    if (evidence.confidence >= 0.9) {
-      thresholdsMet.push(`confidence ${evidence.confidence.toFixed(2)} (>= 0.9)`);
+    if (evidence.evidenceQuality >= qualityThreshold) {
+      thresholdsMet.push(`evidence quality ${evidence.evidenceQuality.toFixed(2)} (>= ${qualityThreshold.toFixed(2)}, d${dOrder})`);
     }
 
     // Only flag if at least 2 preliminary thresholds are met
-    if (thresholdsMet.length < 2) return null;
+    if (thresholdsMet.length < T2_T3_THRESHOLDS.preliminaryCount) return null;
 
     // Already flagged?
     if (this.wasAlreadyPromoted(motifId, 2, 3)) return null;
@@ -308,10 +378,116 @@ export class TierPromoter {
     };
   }
 
+  // ── Demotion Engine (↓ operator with hysteresis) ──────────────────
+
+  private evaluateDemotion(
+    motif: MotifFrontmatter,
+    motifId: string,
+    evidence: MotifEvidence,
+  ): DemotionResult | null {
+    // Already demoted in a prior run?
+    if (this.wasAlreadyDemoted(motifId, motif.tier)) return null;
+
+    const dOrder = parseDerivativeOrder(motif.derivative_order);
+    const failedConditions: string[] = [];
+    const now = new Date().toISOString();
+
+    if (motif.tier === 1) {
+      // T1 → T0 demotion: c_threshold(T1) - Δc = 3 - 1 = 2
+      const domainFloor = T0_T1_THRESHOLDS.domainCount - DEMOTION_HYSTERESIS.domainCount;
+      const qualityFloor = T0_T1_THRESHOLDS.evidenceQuality - DEMOTION_HYSTERESIS.evidenceQuality;
+
+      if (evidence.domainCount < domainFloor) {
+        failedConditions.push(`domain count ${evidence.domainCount} < ${domainFloor} (T1 floor with hysteresis)`);
+      }
+      if (evidence.evidenceQuality < qualityFloor) {
+        failedConditions.push(`evidence quality ${evidence.evidenceQuality.toFixed(3)} < ${qualityFloor} (T1 floor with hysteresis)`);
+      }
+    } else if (motif.tier === 2) {
+      // T2 → T1 demotion
+      const domainFloor = T1_T2_THRESHOLDS.domainCount - DEMOTION_HYSTERESIS.domainCount;
+      const qualityFloor = adjustedQualityThreshold(
+        T1_T2_THRESHOLDS.evidenceQuality - DEMOTION_HYSTERESIS.evidenceQuality, dOrder,
+      );
+
+      if (evidence.domainCount < domainFloor) {
+        failedConditions.push(`domain count ${evidence.domainCount} < ${domainFloor} (T2 floor with hysteresis)`);
+      }
+      if (evidence.evidenceQuality < qualityFloor) {
+        failedConditions.push(`evidence quality ${evidence.evidenceQuality.toFixed(3)} < ${qualityFloor.toFixed(3)} (T2 floor, d${dOrder})`);
+      }
+      // Triangulation loss check
+      if (!evidence.sourceTypes.has('triangulated') && evidence.sourceTypeCount < T1_T2_THRESHOLDS.sourceTypes) {
+        failedConditions.push(`triangulation lost and source types ${evidence.sourceTypeCount} < ${T1_T2_THRESHOLDS.sourceTypes}`);
+      }
+    } else if (motif.tier === 3) {
+      // T3 → T2 demotion
+      const domainFloor = T2_T3_THRESHOLDS.domainCount - DEMOTION_HYSTERESIS.domainCount;
+      const qualityFloor = adjustedQualityThreshold(
+        T2_T3_THRESHOLDS.evidenceQuality - DEMOTION_HYSTERESIS.evidenceQuality, dOrder,
+      );
+      const edgeFloor = T2_T3_THRESHOLDS.relationshipEdges - DEMOTION_HYSTERESIS.domainCount;
+
+      if (evidence.domainCount < domainFloor) {
+        failedConditions.push(`domain count ${evidence.domainCount} < ${domainFloor} (T3 floor with hysteresis)`);
+      }
+      if (evidence.evidenceQuality < qualityFloor) {
+        failedConditions.push(`evidence quality ${evidence.evidenceQuality.toFixed(3)} < ${qualityFloor.toFixed(3)} (T3 floor, d${dOrder})`);
+      }
+      if (evidence.relationshipEdges.length < edgeFloor) {
+        failedConditions.push(`relationship edges ${evidence.relationshipEdges.length} < ${edgeFloor} (T3 floor with hysteresis)`);
+      }
+    }
+
+    if (failedConditions.length === 0) return null;
+
+    const newTier = motif.tier - 1;
+    const statusForTier: Record<number, string> = { 0: 'draft', 1: 'provisional', 2: 'validated' };
+
+    return {
+      motifId,
+      motifName: motif.name,
+      previousTier: motif.tier,
+      newTier,
+      reason: `↓ operator: ${failedConditions.length} stabilisation condition(s) failed below hysteresis margin.`,
+      failedConditions,
+      evidence,
+      timestamp: now,
+      fileName: motif.fileName,
+      frontmatterUpdates: {
+        tier: newTier,
+        status: statusForTier[newTier] ?? 'draft',
+        updated: now.split('T')[0],
+      },
+    };
+  }
+
+  // ── Persistence: apply demotion ──────────────────────────────────
+
+  private applyDemotion(demotion: DemotionResult): void {
+    const filePath = join(this.motifLibraryPath, demotion.fileName);
+
+    try {
+      let content = readFileSync(filePath, 'utf-8');
+
+      for (const [key, value] of Object.entries(demotion.frontmatterUpdates)) {
+        const regex = new RegExp(`^(${key}:\\s*).*$`, 'm');
+        const replacement = `${key}: ${typeof value === 'string' ? `"${value}"` : value}`;
+        if (regex.test(content)) {
+          content = content.replace(regex, replacement);
+        }
+      }
+
+      writeFileSync(filePath, content);
+    } catch (err) {
+      console.error(`[governance] Failed to update motif file for demotion ${filePath}: ${err}`);
+    }
+  }
+
   // ── Persistence: apply T0→T1 promotion ────────────────────────────
 
   private applyT0T1Promotion(promotion: T0T1PromotionResult): void {
-    const filePath = join(this.motifLibraryPath, promotion.motifId + '.md');
+    const filePath = join(this.motifLibraryPath, promotion.fileName);
 
     try {
       let content = readFileSync(filePath, 'utf-8');
@@ -506,6 +682,26 @@ ${packet.evidence.topVerbRecordIds.map(id => `- \`${id}\``).join('\n') || '- Non
     return row.cnt > 0;
   }
 
+  /**
+   * Check if a motif was promoted to its current tier by the processor
+   * (vs. being manually curated at that tier before the processor existed).
+   */
+  private wasAutoPromoted(motifId: string, currentTier: number): boolean {
+    const row = this.db.prepare(`
+      SELECT COUNT(*) as cnt FROM promotion_log
+      WHERE motif_id = ? AND to_tier = ? AND action IN ('auto-promoted', 'queued-for-review')
+    `).get(motifId, currentTier) as { cnt: number };
+    return row.cnt > 0;
+  }
+
+  private wasAlreadyDemoted(motifId: string, fromTier: number): boolean {
+    const row = this.db.prepare(`
+      SELECT COUNT(*) as cnt FROM promotion_log
+      WHERE motif_id = ? AND from_tier = ? AND action = 'demoted'
+    `).get(motifId, fromTier) as { cnt: number };
+    return row.cnt > 0;
+  }
+
   private insertPromotionLog(entry: PromotionLogEntry): void {
     this.db.prepare(`
       INSERT OR IGNORE INTO promotion_log (id, motif_id, motif_name, from_tier, to_tier, action, evidence_snapshot, timestamp)
@@ -576,6 +772,25 @@ ${packet.evidence.topVerbRecordIds.map(id => `- \`${id}\``).join('\n') || '- Non
         thresholdsMet: flag.preliminaryThresholdsMet,
       }),
       timestamp: flag.generatedAt,
+    };
+  }
+
+  private buildDemotionLogEntry(demotion: DemotionResult): PromotionLogEntry {
+    const id = `demo-${demotion.motifId}-t${demotion.previousTier}t${demotion.newTier}-${Date.now()}`;
+    return {
+      id,
+      motifId: demotion.motifId,
+      motifName: demotion.motifName,
+      fromTier: demotion.previousTier,
+      toTier: demotion.newTier,
+      action: 'demoted',
+      evidenceSnapshot: JSON.stringify({
+        reason: demotion.reason,
+        failedConditions: demotion.failedConditions,
+        domainCount: demotion.evidence.domainCount,
+        evidenceQuality: demotion.evidence.evidenceQuality,
+      }),
+      timestamp: demotion.timestamp,
     };
   }
 }

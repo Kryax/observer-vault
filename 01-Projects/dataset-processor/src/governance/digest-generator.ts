@@ -16,6 +16,7 @@ import type {
   ShardSummary,
   AnomalyEntry,
   T0T1PromotionResult,
+  DemotionResult,
   T1T2ReviewPacket,
   T2T3Flag,
 } from './types.ts';
@@ -66,6 +67,7 @@ export class DigestGenerator {
    */
   generate(
     autoPromotions: T0T1PromotionResult[],
+    demotions: DemotionResult[],
     reviewPackets: T1T2ReviewPacket[],
     t2t3Flags: T2T3Flag[],
   ): DigestEntry {
@@ -76,6 +78,7 @@ export class DigestGenerator {
       generatedAt: new Date().toISOString(),
       shardSummaries,
       autoPromotions,
+      demotions,
       t2QueueAdditions: reviewPackets,
       t2t3Flags,
       anomalies,
@@ -287,6 +290,23 @@ export class DigestGenerator {
         sections.push(`- **Source types:** ${p.evidence.sourceTypeCount}`);
         sections.push(`- **Confidence:** ${p.evidence.confidence.toFixed(3)}`);
         sections.push(`- **Verb-records:** ${p.evidence.verbRecordCount}`);
+        sections.push('');
+      }
+    }
+
+    // Demotions
+    sections.push(`## Demotions (↓): ${digest.demotions.length}\n`);
+    if (digest.demotions.length === 0) {
+      sections.push('No demotions this run.\n');
+    } else {
+      for (const d of digest.demotions) {
+        sections.push(`### ${d.motifName} (T${d.previousTier} → T${d.newTier})`);
+        sections.push(`- **Reason:** ${d.reason}`);
+        for (const fc of d.failedConditions) {
+          sections.push(`  - ${fc}`);
+        }
+        sections.push(`- **Evidence quality:** ${d.evidence.evidenceQuality.toFixed(3)}`);
+        sections.push(`- **Domains:** ${d.evidence.domainCount}`);
         sections.push('');
       }
     }

@@ -13,6 +13,7 @@ export type {
   MotifFrontmatter,
   MotifEvidence,
   T0T1PromotionResult,
+  DemotionResult,
   T1T2ReviewPacket,
   T2T3Flag,
   ValidationProtocolResult,
@@ -23,6 +24,7 @@ export type {
 } from './types.ts';
 
 import { Database } from 'bun:sqlite';
+import { join } from 'node:path';
 import { TierPromoter } from './tier-promoter.ts';
 import { DigestGenerator } from './digest-generator.ts';
 import type { PromotionRunResult } from './tier-promoter.ts';
@@ -33,6 +35,8 @@ export interface GovernanceConfig {
   motifLibraryPath: string;
   promotionQueuePath: string;
   digestOutputPath: string;
+  /** When true, no filesystem writes or DB inserts. Evaluations run normally. */
+  dryRun?: boolean;
 }
 
 export interface GovernanceResult {
@@ -56,23 +60,29 @@ export function runGovernance(config: GovernanceConfig): GovernanceResult {
       db,
       motifLibraryPath: config.motifLibraryPath,
       promotionQueuePath: config.promotionQueuePath,
+      dryRun: config.dryRun,
     });
 
     const promotions = promoter.run();
 
     const digestGen = new DigestGenerator({
       db,
-      outputDir: config.digestOutputPath,
+      outputDir: config.dryRun
+        ? join(config.digestOutputPath, 'sandbox')
+        : config.digestOutputPath,
     });
 
     const digest = digestGen.generate(
       promotions.autoPromotions,
+      promotions.demotions,
       promotions.reviewPackets,
       promotions.t2t3Flags,
     );
 
+    const mode = config.dryRun ? '[SANDBOX] ' : '';
     console.error(
-      `[governance] Complete: ${promotions.autoPromotions.length} auto-promotions, ` +
+      `[governance] ${mode}Complete: ${promotions.autoPromotions.length} auto-promotions, ` +
+      `${promotions.demotions.length} demotions, ` +
       `${promotions.reviewPackets.length} T2 review packets, ` +
       `${promotions.t2t3Flags.length} T2→T3 flags, ` +
       `${digest.anomalies.length} anomalies`,
