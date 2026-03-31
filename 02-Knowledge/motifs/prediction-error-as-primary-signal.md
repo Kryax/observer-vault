@@ -1,14 +1,14 @@
 ---
 name: "Prediction-Error as Primary Signal"
-tier: 0
-status: draft
-confidence: 0.1
+tier: 1
+status: provisional
+confidence: 0.6
 source: top-down
-domain_count: 1
+domain_count: 5
 derivative_order: 2
 primary_axis: recurse
 created: 2026-03-19
-updated: 2026-03-19
+updated: 2026-03-31
 cssclasses:
   - status-draft
 ---

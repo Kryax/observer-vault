@@ -1,14 +1,14 @@
 ---
 name: "Two Antagonistic Modes"
-tier: 0
-status: draft
-confidence: 0.1
+tier: 1
+status: provisional
+confidence: 0.5
 source: top-down
-domain_count: 1
+domain_count: 4
 derivative_order: 1
 primary_axis: integrate
 created: 2026-03-19
-updated: 2026-03-19
+updated: 2026-03-31
 cssclasses:
   - status-draft
 ---

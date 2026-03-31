@@ -1,14 +1,14 @@
 ---
 name: "Instrument-Before-Product"
-tier: 0
-status: draft
-confidence: 0.1
+tier: 1
+status: provisional
+confidence: 0.6
 source: bottom-up
-domain_count: 1
+domain_count: 5
 derivative_order: 1
 primary_axis: differentiate
 created: 2026-03-09
-updated: 2026-03-09
+updated: 2026-03-31
 cssclasses:
   - status-draft
 ---

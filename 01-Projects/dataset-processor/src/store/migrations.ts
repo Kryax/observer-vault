@@ -95,6 +95,8 @@ export function runMigrations(db: Database): void {
   db.run(`CREATE INDEX IF NOT EXISTS idx_vr_axis ON verb_records(process_axis)`);
   db.run(`CREATE INDEX IF NOT EXISTS idx_vr_order ON verb_records(process_derivative_order)`);
   db.run(`CREATE INDEX IF NOT EXISTS idx_vr_created ON verb_records(created_at)`);
+  db.run(`CREATE INDEX IF NOT EXISTS idx_vr_content_hash ON verb_records(source_content_hash)`);
+  db.run(`CREATE INDEX IF NOT EXISTS idx_vr_motif_domain ON verb_records(motif_id, domain)`);
   db.run(`CREATE INDEX IF NOT EXISTS idx_mge_source ON motif_graph_edges(source_motif_id)`);
   db.run(`CREATE INDEX IF NOT EXISTS idx_mge_target ON motif_graph_edges(target_motif_id)`);
   db.run(`CREATE INDEX IF NOT EXISTS idx_mge_type ON motif_graph_edges(relationship_type)`);
