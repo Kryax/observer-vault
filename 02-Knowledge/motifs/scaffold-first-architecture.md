@@ -1,14 +1,14 @@
 ---
 name: "Scaffold-First Architecture"
 tier: 1
-status: "provisional"
-confidence: 0.9000000000000001
-source: "top-down"
+status: provisional
+confidence: 0.9
+source: top-down
 domain_count: 7
 derivative_order: 0
 primary_axis: differentiate
 created: 2026-03-03
-updated: "2026-03-31"
+updated: 2026-03-31
 ---
 
 # Scaffold-First Architecture

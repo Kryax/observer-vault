@@ -472,7 +472,8 @@ export class TierPromoter {
 
       for (const [key, value] of Object.entries(demotion.frontmatterUpdates)) {
         const regex = new RegExp(`^(${key}:\\s*).*$`, 'm');
-        const replacement = `${key}: ${typeof value === 'string' ? `"${value}"` : value}`;
+        const formatted = typeof value === 'number' ? parseFloat(value.toFixed(3)) : value;
+        const replacement = `${key}: ${formatted}`;
         if (regex.test(content)) {
           content = content.replace(regex, replacement);
         }
@@ -495,7 +496,8 @@ export class TierPromoter {
       // Update frontmatter fields
       for (const [key, value] of Object.entries(promotion.frontmatterUpdates)) {
         const regex = new RegExp(`^(${key}:\\s*).*$`, 'm');
-        const replacement = `${key}: ${typeof value === 'string' ? `"${value}"` : value}`;
+        const formatted = typeof value === 'number' ? parseFloat(value.toFixed(3)) : value;
+        const replacement = `${key}: ${formatted}`;
         if (regex.test(content)) {
           content = content.replace(regex, replacement);
         }

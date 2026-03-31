@@ -1,14 +1,14 @@
 ---
 name: "Template-Driven Classification"
 tier: 1
-status: "provisional"
+status: provisional
 confidence: 1
-source: "top-down"
+source: top-down
 domain_count: 13
 derivative_order: 0
 primary_axis: differentiate
 created: 2026-03-03
-updated: "2026-03-31"
+updated: 2026-03-31
 ---
 
 # Template-Driven Classification
