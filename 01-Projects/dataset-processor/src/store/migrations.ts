@@ -88,7 +88,22 @@ export function runMigrations(db: Database): void {
     )
   `);
 
+  // Migration: add compositionExpression, space, idealParent columns (idempotent)
+  const vrCols = db.prepare(`PRAGMA table_info(verb_records)`).all() as { name: string }[];
+  const colNames = new Set(vrCols.map((c) => c.name));
+  if (!colNames.has('compositionExpression')) {
+    db.run(`ALTER TABLE verb_records ADD COLUMN compositionExpression TEXT`);
+  }
+  if (!colNames.has('space')) {
+    db.run(`ALTER TABLE verb_records ADD COLUMN space TEXT`);
+  }
+  if (!colNames.has('idealParent')) {
+    db.run(`ALTER TABLE verb_records ADD COLUMN idealParent TEXT`);
+  }
+
   // Indexes
+  db.run(`CREATE INDEX IF NOT EXISTS idx_vr_composition ON verb_records(compositionExpression)`);
+  db.run(`CREATE INDEX IF NOT EXISTS idx_vr_space ON verb_records(space)`);
   db.run(`CREATE INDEX IF NOT EXISTS idx_vr_stage ON verb_records(stage)`);
   db.run(`CREATE INDEX IF NOT EXISTS idx_vr_motif ON verb_records(motif_id)`);
   db.run(`CREATE INDEX IF NOT EXISTS idx_vr_dataset ON verb_records(source_dataset, source_component)`);

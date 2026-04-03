@@ -43,6 +43,11 @@ export interface VerbRecord {
     extractionMethod: 'primed' | 'blind';
   };
 
+  // Composition and classification
+  compositionExpression: string | null;
+  space: string | null;
+  idealParent: string | null;
+
   // Domain context
   domain: string;
 
