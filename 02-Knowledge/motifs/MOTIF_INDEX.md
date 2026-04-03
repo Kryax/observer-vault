@@ -1,7 +1,7 @@
 ---
 status: canonical
 date: 2026-03-03
-updated: 2026-03-23
+updated: 2026-04-03
 cssclasses:
   - status-canonical
 ---
@@ -15,9 +15,9 @@ cssclasses:
 
 | Metric | Count |
 |--------|-------|
-| Total motifs | 34 |
+| Total motifs | 35 |
 | Tier 0 (Observation) | 14 |
-| Tier 1 (Cross-Domain) | 9 |
+| Tier 1 (Cross-Domain) | 10 |
 | Tier 2 (Structural Operator) | 9 |
 | Tier 3 (Meta-Structural) | 0 |
 | Tier 3 drafts | 5 |
@@ -44,6 +44,7 @@ cssclasses:
 | Template-Driven Classification | 1 | 0.3 | 2 | top-down | 0 | differentiate | [template-driven-classification.md](template-driven-classification.md) |
 | Scaffold-First Architecture | 1 | 0.2 | 2 | top-down | 0 | differentiate | [scaffold-first-architecture.md](scaffold-first-architecture.md) |
 | Primitive Self-Reference | 1 | 0.7 | 7 | triangulated | 0 | recurse | [primitive-self-reference.md](primitive-self-reference.md) |
+| Cross-Domain Recursive Integration | 1 | 0.6 | 6 | bottom-up | 2 | integrate | [cross-domain-recursive-integration.md](cross-domain-recursive-integration.md) |
 | Paradigmatic Boundary Revision | 0 | 0.3 | 3 | bottom-up | 3 | differentiate | [paradigmatic-boundary-revision.md](paradigmatic-boundary-revision.md) |
 | Consilient Unification | 0 | 0.3 | 3 | top-down | 3 | integrate | [consilient-unification.md](consilient-unification.md) |
 | Live Event Bus | 0 | 0.1 | 1 | bottom-up | 1 | integrate | [live-event-bus.md](live-event-bus.md) |

@@ -65,6 +65,8 @@ const MOTIF_OPERATORS: Record<string, string[]> = {
   PSR: ["refer", "describe", "fixpoint", "introspect"],
   TDC: ["classify", "template", "label", "categorize"],
   SFA: ["scaffold", "skeleton", "prototype", "bootstrap"],
+  // Tier 1 compositions
+  CDRI: ["integrate", "recurse", "transfer", "borrow"],
 };
 
 // ── Temporal structure detection ────────────────────────────────────────────

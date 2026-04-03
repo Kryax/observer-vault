@@ -419,6 +419,30 @@ export const INDICATOR_SETS: IndicatorSet[] = [
     ],
   },
 
+  {
+    motifId: "CDRI",
+    motifName: "Cross-Domain Recursive Integration",
+    tier: 1,
+    axis: "integrate",
+    derivativeOrder: 2,
+    indicators: [
+      { term: "meta-learning", weight: 0.9 },
+      { term: "learning to learn", weight: 0.9 },
+      { term: "autopoiesis", weight: 0.8 },
+      { term: "cross-domain recursion", weight: 1.0 },
+      { term: "structural borrowing", weight: 0.8 },
+      { term: "recursive across levels", weight: 0.8 },
+      { term: "recursive integration", weight: 0.9 },
+      { term: "predictive coding", weight: 0.7 },
+      { term: "metacognition", weight: 0.7 },
+      { term: "recursive across domains", weight: 1.0 },
+      { term: "self-similar across", weight: 0.8 },
+      { term: "homology", weight: 0.5 },
+      { term: "co-homology", weight: 0.7 },
+      { term: "isomorphism", weight: 0.5 },
+    ],
+  },
+
   // ── TIER 0 (candidates for detection) ──────────────────────────
 
   {
