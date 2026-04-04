@@ -14,13 +14,20 @@
     },
     "ocp-scraper": {
       "type": "stdio",
-      "command": "bun",
+      "command": "/usr/bin/bun",
       "args": [
         "/mnt/zfs-host/backup/projects/observer-vault/01-Projects/ocp-scraper/src/mcp/server.ts"
       ],
       "env": {
         "GITHUB_TOKEN_FILE": "/home/adam/.github_token"
       }
+    },
+    "dir-engine": {
+      "type": "stdio",
+      "command": "/usr/bin/bun",
+      "args": [
+        "/mnt/zfs-host/backup/projects/observer-vault/01-Projects/dir-engine/src/mcp/server.ts"
+      ]
     }
   }
 }

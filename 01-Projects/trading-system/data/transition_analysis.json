@@ -1,0 +1,97 @@
+{
+  "dominant_cyclic_flow": {
+    "description": "Top 3 most frequent composition transitions across all 10 shards",
+    "top_transitions": [
+      {
+        "from": "R(D)",
+        "to": "R(D)",
+        "count": 2211,
+        "probability": 0.2846
+      },
+      {
+        "from": "R(D)",
+        "to": "I(D)",
+        "count": 1719,
+        "probability": 0.2213
+      },
+      {
+        "from": "I(D)",
+        "to": "R(D)",
+        "count": 1672,
+        "probability": 0.2941
+      }
+    ]
+  },
+  "asymmetric_pairs": {
+    "description": "Pairs where A->B count differs from B->A. NOTE: transitions are remarkably symmetric -- max ratio is only 1.22x, indicating near-uniform reversibility across all composition pairs.",
+    "threshold_ratio": 1.1,
+    "max_observed_ratio": 1.22,
+    "observation": "The near-perfect symmetry suggests composition transitions behave like an ergodic random walk with no strong directional bias between any pair.",
+    "pairs": [
+      {
+        "pair": [
+          "D(R)",
+          "I(R)"
+        ],
+        "A_to_B": 241,
+        "B_to_A": 198,
+        "ratio": 1.22,
+        "dominant_direction": "D(R)->I(R)"
+      },
+      {
+        "pair": [
+          "D(I)",
+          "R(I)"
+        ],
+        "A_to_B": 88,
+        "B_to_A": 104,
+        "ratio": 1.18,
+        "dominant_direction": "R(I)->D(I)"
+      },
+      {
+        "pair": [
+          "D(D)",
+          "D(I)"
+        ],
+        "A_to_B": 317,
+        "B_to_A": 276,
+        "ratio": 1.15,
+        "dominant_direction": "D(D)->D(I)"
+      },
+      {
+        "pair": [
+          "R(D)",
+          "R(I)"
+        ],
+        "A_to_B": 139,
+        "B_to_A": 125,
+        "ratio": 1.11,
+        "dominant_direction": "R(D)->R(I)"
+      },
+      {
+        "pair": [
+          "D(R)",
+          "R(I)"
+        ],
+        "A_to_B": 127,
+        "B_to_A": 140,
+        "ratio": 1.1,
+        "dominant_direction": "R(I)->D(R)"
+      }
+    ]
+  },
+  "shared_outer_operator_effect": {
+    "shared_outer_operator": {
+      "total_transitions": 13401,
+      "cell_count": 27,
+      "avg_per_cell": 496.33
+    },
+    "different_outer_operator": {
+      "total_transitions": 21354,
+      "cell_count": 54,
+      "avg_per_cell": 395.44
+    },
+    "ratio_shared_over_different": 1.255,
+    "conclusion": "Transitions between compositions sharing an outer operator are MORE frequent"
+  }
+}

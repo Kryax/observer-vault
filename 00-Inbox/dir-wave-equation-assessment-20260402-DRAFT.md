@@ -1,7 +1,12 @@
 ---
-status: DRAFT
+status: SUPERSEDED
 date: 2026-04-02
 type: research-direction
+superseded_by: 00-Inbox/qho-falsification-langevin-reframing-20260403-DRAFT.md
+superseded_date: 2026-04-03
+superseded_reason: >-
+  QHO falsified (≤2/5 tests). Replaced by Langevin/multi-well dissipative model
+  (5/5 tests under reframed predictions). See superseding document for full results.
 source: Atlas mathematical assessment of Gemini's D/I/R wave equation proposal
 vault_safety: >
   Analysis document. Does not modify code, configuration, or any existing artifact.

@@ -18,11 +18,28 @@ secrets/*.txt
 # Ignore Smart Environment folder
 .smart-env.ocp/
 *.db
+*.db.bak-*
+*.db-shm
+*.db-wal
 bun.lockb
 feed.json
 .smart-env/
 **/node_modules/
 .obsidian/plugins/obsidian-git/.git_credentials_input
+
+# NFS temp files
+.nfs*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Large generated artifacts
+*.jsonl
+01-Projects/trading-system/data/*.csv
+01-Projects/trading-system/data/*.png
 
 # CLI tool local state
 .opencode/

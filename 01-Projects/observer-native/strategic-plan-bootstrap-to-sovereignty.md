@@ -372,6 +372,8 @@ The local model replaces Claude when it meets ALL of these criteria:
 **Hardware:** M5 Max + potentially GPU cluster if needed
 **Goal:** Replace the transformer base with a native D/I/R geometric architecture. Full sovereignty.
 
+> **Update (3 April 2026):** The QHO wave equation (iτ ∂Ψ/∂t = (−d∇² + k|x|²)Ψ) was falsified (≤2/5 tests). The binding potential I→k|x|² was the specific failure point — the empirical data shows a multi-well landscape with the centre as a saddle point, not a minimum. The replacement model is Langevin dynamics on a multi-well energy landscape: ∂x/∂t = −∇E(x) + √(2T)η(t), where E(x) has 9 empirical minima at the K=9 centroid positions. Phase 3 target is now Continuous EBM with Langevin dynamics, not Neural ODE with QHO potential. The gate is effectively cleared — the geometric structure is confirmed (K=9, silhouette 0.71), only the mathematical form changed. See `00-Inbox/qho-falsification-langevin-reframing-20260403-DRAFT.md`.
+
 ### Prerequisites (What Needs to Be True)
 
 Phase 3 is viable ONLY if:

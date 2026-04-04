@@ -1,0 +1,77 @@
+{
+  "data_source": "binance",
+  "n_candles": 8760,
+  "windows": {
+    "24": {
+      "a1_pass": "True",
+      "a2_pass": "True",
+      "a3_pass": "True",
+      "a4_pass": true,
+      "a5_pass": true,
+      "a9_pass": true,
+      "silhouette_scores": {
+        "3": 0.312751588964112,
+        "5": 0.29118614030068324,
+        "7": 0.26878111625799306,
+        "9": 0.2637823182930269,
+        "12": 0.2562972154814934
+      },
+      "correlations": {
+        "D_I": -0.6094586284243952,
+        "D_R": 0.21554516501497262,
+        "I_R": -0.2938852566819236
+      },
+      "n_vectors": 8688
+    },
+    "48": {
+      "a1_pass": "True",
+      "a2_pass": "True",
+      "a3_pass": "True",
+      "a4_pass": true,
+      "a5_pass": true,
+      "a9_pass": true,
+      "silhouette_scores": {
+        "3": 0.3109692922391702,
+        "5": 0.28283361186047296,
+        "7": 0.276103429272612,
+        "9": 0.26736452657871396,
+        "12": 0.25597030189845177
+      },
+      "correlations": {
+        "D_I": -0.5486571615608277,
+        "D_R": 0.17031576027413212,
+        "I_R": -0.3635626981678795
+      },
+      "n_vectors": 8616
+    },
+    "72": {
+      "a1_pass": "True",
+      "a2_pass": "True",
+      "a3_pass": "True",
+      "a4_pass": true,
+      "a5_pass": true,
+      "a9_pass": true,
+      "silhouette_scores": {
+        "3": 0.3258139045644603,
+        "5": 0.29520546660591274,
+        "7": 0.2810553470523248,
+        "9": 0.2824663585025843,
+        "12": 0.2650170827883961
+      },
+      "correlations": {
+        "D_I": -0.5661574700677662,
+        "D_R": 0.10369273061406961,
+        "I_R": -0.36713696018000785
+      },
+      "n_vectors": 8544
+    }
+  },
+  "isc_criteria": {},
+  "gate": {
+    "decision": "CONDITIONAL: Fallback to K=3",
+    "detail": "K=9 (0.2825) did not meet gate (need >= K=3 AND > 0.15). K=3 (0.3258) > 0.1 \u2014 3-regime D/I/R dominant model viable.",
+    "k9_silhouette": 0.2824663585025843,
+    "k3_silhouette": 0.3258139045644603,
+    "best_window": 72
+  }
+}

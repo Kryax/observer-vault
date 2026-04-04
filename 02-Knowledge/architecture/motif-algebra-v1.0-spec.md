@@ -66,6 +66,8 @@ The Platonic Space is the domain of pure structural morphogenesis — the geomet
 
 **I (Integration).** The operator that connects, relates, and produces coherence. I applied to any input discovers or creates relationships between its parts. I is the source of unity, synthesis, and structural invariance.
 
+> **Note (3 April 2026 — Wave Equation Pivot):** The original wave equation proposal mapped I to a quadratic harmonic potential k|x|² (single-well confinement pulling toward balanced centre). This was empirically falsified (≤2/5 tests). The binding potential of the D/I/R space is a non-linear multi-well landscape with 9 asymmetric minima. The centre (perfect D/I/R balance) is a saddle point, not a minimum — stable states require symmetry breaking into axis-dominant compositions. In the replacement Langevin model, I maps to gradient descent toward basin centres (−∇E), not quadratic confinement. See: `00-Inbox/qho-falsification-langevin-reframing-20260403-DRAFT.md`.
+
 - I applied to distinct parts produces a relation or structure
 - I applied to itself (I(I)) discovers patterns across patterns — meta-synthesis
 - I without D or R is unstable: it fuses without differentiation
