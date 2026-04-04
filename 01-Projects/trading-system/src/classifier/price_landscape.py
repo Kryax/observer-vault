@@ -542,6 +542,60 @@ class PriceLandscape:
             "gradient": gradient,
         }
 
+    def compute_mfpt(self, current_energy: float, barrier_height: float,
+                     temperature: float) -> float:
+        """
+        Mean First Passage Time: tau = exp(delta_E / T)
+
+        delta_E = barrier_height (energy needed to cross to next basin)
+        T = temperature (estimated from recent energy variance)
+
+        Returns expected bars until regime transition.
+        Clipped to [1, 10000] to avoid numerical issues.
+        """
+        if temperature <= 1e-10:
+            return 10000.0  # effectively infinite — frozen regime
+        ratio = barrier_height / temperature
+        ratio = min(ratio, 9.2)  # cap exp() at ~10000
+        return max(1.0, math.exp(ratio))
+
+    @staticmethod
+    def estimate_temperature(energy_history: list[float] | np.ndarray,
+                             window: int = 24) -> float:
+        """
+        Estimate system temperature from rolling variance of energy values.
+
+        High variance = high temperature = noisy/fast-switching market.
+        Low variance = low temperature = stable/slow-switching market.
+        """
+        if len(energy_history) < 2:
+            return 0.1  # default moderate temperature
+        arr = np.array(energy_history[-window:])
+        var = float(np.var(arr))
+        return max(var, 1e-10)
+
+    def compute_barrier_to_basin(self, vector: np.ndarray,
+                                  target_label: str) -> float:
+        """Compute energy barrier from current position to a specific basin."""
+        assert self.landscape is not None
+        basins = self.landscape.basins
+        adjacency = self.landscape.adjacency
+
+        er = self._compute_energy(vector)
+        target_basin = next((b for b in basins if b.label == target_label), None)
+        current_basin = next(
+            (b for b in basins if b.label == er["nearest_basin"]), None
+        )
+
+        if target_basin is None or current_basin is None:
+            return float("inf")
+
+        barrier_energy = _estimate_barrier(
+            vector, target_basin.centroid, basins, adjacency,
+            current_basin, target_basin,
+        )
+        return max(0.0, barrier_energy - er["energy"])
+
     def get_regime_for_label(self, label: str) -> str:
         """Map any label to its primary regime (D, I, or R)."""
         if not label:
