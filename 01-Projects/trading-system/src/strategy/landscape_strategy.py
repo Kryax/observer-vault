@@ -78,16 +78,16 @@ class LandscapeStrategy:
         transition_entry_max: float = 0.3,
         momentum_bypass_ts: float = 0.15,
         momentum_bypass_depth: float = 1.5,
-        momentum_size_fraction: float = 0.50,
+        momentum_size_fraction: float = 0.80,
         gradient_trim_threshold: float = 0.25,
         gate1_transition_score: float = 0.9,
         gate1_persistence: int = 3,
         min_hold_bars: int = 6,
-        gate2_scale_out_frac: float = 0.50,
+        gate2_scale_out_frac: float = 0.33,
         pregate_trim_frac: float = 0.25,
         min_order_life: int = 12,
         order_cooldown: int = 6,
-        max_position_frac: float = 0.30,
+        max_position_frac: float = 0.60,
         min_stop_atr_mult: float = 1.0,
         momentum_stop_atr_mult: float = 1.5,
         vpvr_lookback: int = 500,
@@ -426,8 +426,8 @@ class LandscapeStrategy:
         raw = (basin_depth * barrier_height) / distance_to_stop
         # Normalize: typical basin_depth ~ 0.5-2.0, barrier ~ 0-5, dist ~ 1-5 ATR
         # Raw range ~ 0-2. Scale to reasonable position fraction.
-        size = min(raw * 0.15, self.max_position_frac)
-        size = max(size, 0.05)  # minimum 5%
+        size = min(raw * 0.30, self.max_position_frac)
+        size = max(size, 0.20)  # minimum 20% — if formula says less, size up or skip
         size *= cvd_mod
         return min(size, self.max_position_frac)
 

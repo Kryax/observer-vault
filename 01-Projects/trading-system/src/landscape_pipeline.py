@@ -331,11 +331,18 @@ def portfolio_simulation(
                     positions.get(s, 0) * all_data[s].loc[ts, "close"]
                     for s in positions if ts in all_data[s].index
                 )
-                per_token = total_mtm / len(scored) * 0.90  # 90% deployed
+                # Deployment: 80% max, 20% cash reserve always
+                n_qual = len(scored)
+                if n_qual == 1:
+                    per_token_frac = 0.60  # single token: 60%
+                elif n_qual == 2:
+                    per_token_frac = 0.40  # two tokens: 40% each = 80%
+                else:
+                    per_token_frac = 0.80 / n_qual  # 3+: split 80%
 
                 for sym, score in scored:
                     if sym not in positions and ts in all_data[sym].index:
-                        alloc = min(per_token, capital * 0.30)  # 30% cap
+                        alloc = min(total_mtm * per_token_frac, capital * 0.80)
                         if alloc > 100:
                             price = all_data[sym].loc[ts, "close"] * (1 + slippage)
                             qty = (alloc * (1 - commission)) / price
@@ -449,7 +456,7 @@ def main():
     print(f"{'PORTF':<8} {p['total_return']:>11.1%} {'—':>12} {p['sharpe_ratio']:>7.2f} {p['max_drawdown']:>7.1%}")
 
     # Save results
-    output_path = DATA_DIR / "landscape_strategy_tuned_results.json"
+    output_path = DATA_DIR / "landscape_strategy_sized_results.json"
     serializable = {}
     for k, v in all_results.items():
         if isinstance(v, dict):
