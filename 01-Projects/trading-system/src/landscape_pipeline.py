@@ -164,11 +164,14 @@ def walk_forward_landscape(
     data: pd.DataFrame, vectors: pd.DataFrame,
     train_bars: int = 2000, step_bars: int = 500,
     warmup_bars: int = 100,
+    strategy_kwargs: dict = None,
 ) -> dict:
     engine = BacktestEngine(initial_capital=10_000)
     all_trades = []
     equity_pieces = []
     all_trade_logs = []
+    if strategy_kwargs is None:
+        strategy_kwargs = {}
 
     n = len(data)
     if n < train_bars + step_bars:
@@ -206,7 +209,7 @@ def walk_forward_landscape(
         test_enriched = test_enriched.ffill().fillna(0)
 
         # Build and run strategy
-        strat = LandscapeStrategy(warmup_bars=warmup_bars)
+        strat = LandscapeStrategy(warmup_bars=warmup_bars, **strategy_kwargs)
         result = engine.run(strat, test_enriched)
         all_trades.extend(result.trades)
         all_trade_logs.extend(result.trade_log)
@@ -331,18 +334,11 @@ def portfolio_simulation(
                     positions.get(s, 0) * all_data[s].loc[ts, "close"]
                     for s in positions if ts in all_data[s].index
                 )
-                # Deployment: 80% max, 20% cash reserve always
-                n_qual = len(scored)
-                if n_qual == 1:
-                    per_token_frac = 0.60  # single token: 60%
-                elif n_qual == 2:
-                    per_token_frac = 0.40  # two tokens: 40% each = 80%
-                else:
-                    per_token_frac = 0.80 / n_qual  # 3+: split 80%
+                per_token = total_mtm / len(scored) * 0.90  # 90% deployed
 
                 for sym, score in scored:
                     if sym not in positions and ts in all_data[sym].index:
-                        alloc = min(total_mtm * per_token_frac, capital * 0.80)
+                        alloc = min(per_token, capital * 0.30)  # 30% cap
                         if alloc > 100:
                             price = all_data[sym].loc[ts, "close"] * (1 + slippage)
                             qty = (alloc * (1 - commission)) / price
@@ -381,92 +377,114 @@ def portfolio_simulation(
 # Main
 # ============================================================================
 
+def compute_avg_hold(trades: list) -> float:
+    """Compute average hold duration in bars (approximated from timestamps)."""
+    durations = []
+    for t in trades:
+        if t.entry_time is not None and t.exit_time is not None:
+            delta = (t.exit_time - t.entry_time).total_seconds() / 3600.0  # hours = bars
+            durations.append(delta)
+    return float(np.mean(durations)) if durations else 0.0
+
+
+# Window sweep configuration
+WINDOW_CONFIGS = {
+    168: {"min_hold_bars": 12, "gate1_persistence": 6},
+    336: {"min_hold_bars": 24, "gate1_persistence": 12},
+    720: {"min_hold_bars": 48, "gate1_persistence": 24},
+}
+
+
 def main():
     print("=" * 60)
-    print("LANDSCAPE STRATEGY PIPELINE")
+    print("LANDSCAPE STRATEGY — WINDOW WIDTH SWEEP")
     print(f"  Tokens: {list(TOKEN_FILES.keys())}")
-    print(f"  Walk-forward: train=2000, step=500, warmup=100")
+    print(f"  Windows: {list(WINDOW_CONFIGS.keys())}")
+    print(f"  Walk-forward: train=2000, step=500")
     print("=" * 60, flush=True)
 
-    # Load all data
-    all_data = {}
-    all_vectors = {}
-
+    # Load raw OHLCV data once
+    all_raw_data = {}
     for symbol, filepath in TOKEN_FILES.items():
         print(f"\nLoading {symbol}...", end=" ", flush=True)
         df = load_token_data(symbol, filepath)
-        vecs = compute_vectors(df)
-        all_data[symbol] = df
-        all_vectors[symbol] = vecs
-        print(f"{len(df)} bars, {len(vecs)} vectors")
+        all_raw_data[symbol] = df
+        print(f"{len(df)} bars")
 
-    # Per-token backtests
+    # Buy-and-hold baselines (window-independent)
+    baselines = {}
+    for symbol in TOKEN_FILES:
+        bh = run_baseline(all_raw_data[symbol])
+        baselines[symbol] = bh["metrics"]
+
+    # Results keyed by window size
     all_results = {}
 
-    for symbol in TOKEN_FILES:
-        print(f"\n{'=' * 40}")
-        print(f"  {symbol} — Walk-Forward Landscape Backtest")
-        print(f"{'=' * 40}", flush=True)
+    for window, cfg in WINDOW_CONFIGS.items():
+        print(f"\n{'=' * 60}")
+        print(f"  WINDOW = {window} bars ({window // 24} days)")
+        print(f"  min_hold={cfg['min_hold_bars']}, gate1_persist={cfg['gate1_persistence']}")
+        print(f"{'=' * 60}", flush=True)
 
-        data = all_data[symbol]
-        vecs = all_vectors[symbol]
+        # Recompute vectors for this window size
+        all_vectors = {}
+        for symbol in TOKEN_FILES:
+            vecs = compute_vectors(all_raw_data[symbol], window=window)
+            all_vectors[symbol] = vecs
 
-        # Landscape strategy
-        ls_result = walk_forward_landscape(data, vecs)
-        m = ls_result["metrics"]
-        print(f"  Landscape-VPVR: ret={m['total_return']:.2%}, sharpe={m['sharpe_ratio']:.2f}, "
-              f"trades={m['n_trades']}, win_rate={m['win_rate']:.1%}, max_dd={m['max_drawdown']:.2%}")
+        window_results = {}
 
-        # Buy and hold baseline
-        bh = run_baseline(data)
-        print(f"  Buy-and-Hold:   ret={bh['metrics']['total_return']:.2%}")
+        for symbol in TOKEN_FILES:
+            data = all_raw_data[symbol]
+            vecs = all_vectors[symbol]
 
-        # Trade log summary
-        trade_log = ls_result.get("trade_log", [])
-        if trade_log:
-            events = Counter(t["event"] for t in trade_log)
-            print(f"  Trade events: {dict(events)}")
+            ls_result = walk_forward_landscape(
+                data, vecs,
+                strategy_kwargs=cfg,
+            )
+            m = ls_result["metrics"]
+            avg_hold = compute_avg_hold(ls_result.get("trades", []))
 
-        all_results[symbol] = {
-            "landscape": ls_result["metrics"],
-            "buy_hold": bh["metrics"],
-            "n_folds": ls_result.get("n_folds", 0),
-            "n_trade_log_entries": len(trade_log),
-        }
+            trade_log = ls_result.get("trade_log", [])
+            events = Counter(t["event"] for t in trade_log) if trade_log else {}
 
-    # Portfolio simulation
-    portfolio = portfolio_simulation(all_data, all_vectors)
-    all_results["portfolio"] = portfolio
+            print(f"  {symbol}: ret={m['total_return']:.2%}, sharpe={m['sharpe_ratio']:.2f}, "
+                  f"trades={m['n_trades']}, win={m['win_rate']:.1%}, "
+                  f"dd={m['max_drawdown']:.1%}, avg_hold={avg_hold:.0f}h")
 
-    # Summary table
-    print("\n" + "=" * 60)
-    print("SUMMARY")
-    print("=" * 60)
-    print(f"{'Token':<8} {'Landscape':>12} {'Buy&Hold':>12} {'Sharpe':>8} {'MaxDD':>8} {'Trades':>7}")
-    print("-" * 60)
+            window_results[symbol] = {
+                "landscape": m,
+                "buy_hold": baselines[symbol],
+                "avg_hold_bars": avg_hold,
+                "trade_events": dict(events),
+            }
+
+        all_results[str(window)] = window_results
+
+    # Summary comparison table
+    print("\n" + "=" * 80)
+    print("WINDOW SWEEP COMPARISON")
+    print("=" * 80)
+    print(f"{'Window':<8} {'Token':<6} {'Return':>9} {'Sharpe':>8} {'MaxDD':>8} {'Trades':>7} {'WinRate':>8} {'AvgHold':>8}")
+    print("-" * 80)
+
+    for window in WINDOW_CONFIGS:
+        wr = all_results[str(window)]
+        for sym in TOKEN_FILES:
+            r = wr[sym]
+            ls = r["landscape"]
+            print(f"W={window:<5} {sym:<6} {ls['total_return']:>8.1%} {ls['sharpe_ratio']:>7.2f} "
+                  f"{ls['max_drawdown']:>7.1%} {ls['n_trades']:>7} {ls['win_rate']:>7.1%} "
+                  f"{r['avg_hold_bars']:>7.0f}h")
+        print("-" * 80)
+
+    # Buy-and-hold reference
+    print("Buy-and-Hold reference:")
     for sym in TOKEN_FILES:
-        r = all_results[sym]
-        ls = r["landscape"]
-        bh = r["buy_hold"]
-        print(f"{sym:<8} {ls['total_return']:>11.1%} {bh['total_return']:>11.1%} "
-              f"{ls['sharpe_ratio']:>7.2f} {ls['max_drawdown']:>7.1%} {ls['n_trades']:>7}")
-
-    print("-" * 60)
-    p = all_results["portfolio"]
-    print(f"{'PORTF':<8} {p['total_return']:>11.1%} {'—':>12} {p['sharpe_ratio']:>7.2f} {p['max_drawdown']:>7.1%}")
+        print(f"  {sym}: {baselines[sym]['total_return']:.1%}")
 
     # Save results
-    output_path = DATA_DIR / "landscape_strategy_sized_results.json"
-    serializable = {}
-    for k, v in all_results.items():
-        if isinstance(v, dict):
-            serializable[k] = {
-                kk: (float(vv) if isinstance(vv, (np.floating, float)) else
-                     int(vv) if isinstance(vv, (np.integer, int)) else vv)
-                for kk, vv in (v if not any(isinstance(vv, dict) for vv in v.values()) else
-                               {kk: vv for kk, vv in v.items() if not isinstance(vv, dict)}).items()
-            }
-    # Simpler serialization
+    output_path = DATA_DIR / "landscape_strategy_window_results.json"
     with open(output_path, "w") as f:
         json.dump(all_results, f, indent=2, default=str)
     print(f"\nResults saved to {output_path}")
