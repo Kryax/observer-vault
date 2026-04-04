@@ -1,0 +1,345 @@
+{
+  "phase": "C2",
+  "data": {
+    "source": "binance_btc_1h_full",
+    "candles": 75514,
+    "date_range": "2017-08-17 04:00:00+00:00 to 2026-04-03 21:00:00+00:00",
+    "years": 8.6
+  },
+  "phase_a2_revalidation": {
+    "windows": {
+      "24": {
+        "silhouette_scores": {
+          "3": 0.323445310407511,
+          "5": 0.31000016481299963,
+          "7": 0.28662547214080525,
+          "9": 0.26209646000253933,
+          "12": 0.25910934082796394
+        },
+        "best_k": 3,
+        "best_silhouette": 0.323445310407511,
+        "k9_silhouette": 0.26209646000253933,
+        "k9_competitive": false,
+        "n_vectors": 75442,
+        "k3_regime_mapping": {
+          "0": "I",
+          "1": "D",
+          "2": "R"
+        },
+        "k3_centroids": [
+          [
+            0.32460962114134084,
+            0.7892773732316295,
+            0.0548654408697687,
+            0.0875503757627046,
+            0.1783913690056766,
+            0.4371261779960228
+          ],
+          [
+            0.7359823989456395,
+            0.19591435201086116,
+            0.20078120569130703,
+            0.07102602940780048,
+            0.17288517673718382,
+            0.52570065875486
+          ],
+          [
+            0.5227198453114124,
+            0.512301167054231,
+            0.13111780809934082,
+            0.05169348674207647,
+            0.1779924425057629,
+            0.6027349546241217
+          ]
+        ]
+      },
+      "48": {
+        "silhouette_scores": {
+          "3": 0.31909211684482164,
+          "5": 0.27683826977536663,
+          "7": 0.27068118929723667,
+          "9": 0.25585284603838443,
+          "12": 0.25467771161208247
+        },
+        "best_k": 3,
+        "best_silhouette": 0.31909211684482164,
+        "k9_silhouette": 0.25585284603838443,
+        "k9_competitive": false,
+        "n_vectors": 75370,
+        "k3_regime_mapping": {
+          "2": "I",
+          "1": "D",
+          "0": "R"
+        },
+        "k3_centroids": [
+          [
+            0.5082139457299057,
+            0.5109571825002851,
+            0.1266053996671272,
+            0.0521809973643029,
+            0.18430226028577035,
+            0.6197035371389701
+          ],
+          [
+            0.7192230719753142,
+            0.22640875583300424,
+            0.17774937721663706,
+            0.06959742786006629,
+            0.18069989235039235,
+            0.5483870269300783
+          ],
+          [
+            0.3333666445711909,
+            0.7751425714297313,
+            0.05214737272382115,
+            0.08632370162130298,
+            0.1866957713910441,
+            0.4551968623105437
+          ]
+        ]
+      },
+      "72": {
+        "silhouette_scores": {
+          "3": 0.30633485908795827,
+          "5": 0.2707978605638527,
+          "7": 0.2604923557640876,
+          "9": 0.2549689981247367,
+          "12": 0.24883772192120804
+        },
+        "best_k": 3,
+        "best_silhouette": 0.30633485908795827,
+        "k9_silhouette": 0.2549689981247367,
+        "k9_competitive": false,
+        "n_vectors": 75298,
+        "k3_regime_mapping": {
+          "1": "I",
+          "0": "D",
+          "2": "R"
+        },
+        "k3_centroids": [
+          [
+            0.7026929781367484,
+            0.24417650147458292,
+            0.17447157668277968,
+            0.06911538306324069,
+            0.1832849717590934,
+            0.567907740560205
+          ],
+          [
+            0.34447898143799804,
+            0.7584023207708798,
+            0.05265417452229093,
+            0.10040182180963025,
+            0.1888741039405525,
+            0.47114648066716563
+          ],
+          [
+            0.49891059020070344,
+            0.5095415435661292,
+            0.13029183099736685,
+            0.0543887875073399,
+            0.1861295047132401,
+            0.629656620512804
+          ]
+        ]
+      }
+    },
+    "decision": "K3_FALLBACK",
+    "best_window": 24,
+    "detail": "K=9 not competitive. Falling back to K=3."
+  },
+  "k9_confirmed": false,
+  "best_window": 24,
+  "walk_forward_config": {
+    "train_years": 2,
+    "test_months": 6,
+    "step_months": 6
+  },
+  "strategy_results_3r": {
+    "Buy-and-Hold": {
+      "n_windows": 13,
+      "compounded_return": 7.1125089941420185,
+      "mean_return": 0.31590199035419975,
+      "median_return": 0.12614351480019548,
+      "mean_sharpe": 0.8727335587074424,
+      "median_sharpe": 0.8011396850680198,
+      "worst_drawdown": -0.6006143163556339,
+      "mean_drawdown": -0.3659284893687494,
+      "total_trades": 13,
+      "mean_trades_per_window": 1.0,
+      "mean_win_rate": 0.6153846153846154,
+      "mean_profit_factor": 0.0,
+      "mean_time_in_market": 1.0001780626780625
+    },
+    "MA-Cross-50/200": {
+      "n_windows": 13,
+      "compounded_return": 0.605219893087402,
+      "mean_return": 0.04618874480476597,
+      "median_return": 0.06307716215552084,
+      "mean_sharpe": 0.32135787716479913,
+      "median_sharpe": 0.7405153051040735,
+      "worst_drawdown": -0.251683496222413,
+      "mean_drawdown": -0.1586277130561496,
+      "total_trades": 183,
+      "mean_trades_per_window": 14.076923076923077,
+      "mean_win_rate": 0.3729013445076793,
+      "mean_profit_factor": 1.454728281677951,
+      "mean_time_in_market": 0.276264245014245
+    },
+    "Static-Trend-Follow": {
+      "n_windows": 13,
+      "compounded_return": -0.5813350699430857,
+      "mean_return": -0.04316683535053523,
+      "median_return": -0.08275713517874794,
+      "mean_sharpe": -0.3623418109267027,
+      "median_sharpe": -0.2318008273849383,
+      "worst_drawdown": -0.4117277454070171,
+      "mean_drawdown": -0.2570020157899604,
+      "total_trades": 599,
+      "mean_trades_per_window": 46.07692307692308,
+      "mean_win_rate": 0.30411776336401514,
+      "mean_profit_factor": 1.0085257475967857,
+      "mean_time_in_market": 0.43739316239316245
+    },
+    "Static-Mean-Revert": {
+      "n_windows": 13,
+      "compounded_return": -0.9512757886010974,
+      "mean_return": -0.20348737814060047,
+      "median_return": -0.20253494966747965,
+      "mean_sharpe": -3.0778504801108424,
+      "median_sharpe": -3.2919219633001715,
+      "worst_drawdown": -0.4309660609096641,
+      "mean_drawdown": -0.2380739247937716,
+      "total_trades": 1010,
+      "mean_trades_per_window": 77.6923076923077,
+      "mean_win_rate": 0.5131446980438329,
+      "mean_profit_factor": 0.6306657218950549,
+      "mean_time_in_market": 0.1988247863247863
+    },
+    "DIR-Original": {
+      "n_windows": 13,
+      "compounded_return": -0.06043365325576322,
+      "mean_return": 0.004345776852455237,
+      "median_return": 0.012235597316146318,
+      "mean_sharpe": 0.04219274577209728,
+      "median_sharpe": 0.22280471351695294,
+      "worst_drawdown": -0.3109716827596448,
+      "mean_drawdown": -0.15326200138104823,
+      "total_trades": 769,
+      "mean_trades_per_window": 59.15384615384615,
+      "mean_win_rate": 0.5068262021038871,
+      "mean_profit_factor": 1.132465879735469,
+      "mean_time_in_market": 0.7273860398860399
+    },
+    "3R-1-D-Only-Conservative": {
+      "n_windows": 13,
+      "compounded_return": -0.6008827736156915,
+      "mean_return": -0.06494558208575599,
+      "median_return": -0.045816541771141805,
+      "mean_sharpe": -0.9425563076778214,
+      "median_sharpe": -0.507288665840666,
+      "worst_drawdown": -0.25080765466730137,
+      "mean_drawdown": -0.14804114431565374,
+      "total_trades": 816,
+      "mean_trades_per_window": 62.76923076923077,
+      "mean_win_rate": 0.45761888911753024,
+      "mean_profit_factor": 0.8958317530970656,
+      "mean_time_in_market": 0.17925569800569802
+    },
+    "3R-2-D-Scaled-Entry": {
+      "n_windows": 13,
+      "compounded_return": -0.4735702066012739,
+      "mean_return": -0.04624638777227655,
+      "median_return": -0.03220351513946007,
+      "mean_sharpe": -1.0944793040463763,
+      "median_sharpe": -0.8034349060527325,
+      "worst_drawdown": -0.19716684157914377,
+      "mean_drawdown": -0.10030131899416925,
+      "total_trades": 1027,
+      "mean_trades_per_window": 79.0,
+      "mean_win_rate": 0.4469905525348222,
+      "mean_profit_factor": 0.9117519111634345,
+      "mean_time_in_market": 0.21376424501424499
+    },
+    "3R-3-D-MultiTF": {
+      "n_windows": 13,
+      "compounded_return": -0.8757512743264415,
+      "mean_return": -0.13369658993061556,
+      "median_return": -0.10193380876022495,
+      "mean_sharpe": -1.2041138920358718,
+      "median_sharpe": -0.828386816202107,
+      "worst_drawdown": -0.5042048774677136,
+      "mean_drawdown": -0.259411607599144,
+      "total_trades": 984,
+      "mean_trades_per_window": 75.6923076923077,
+      "mean_win_rate": 0.4456213010907456,
+      "mean_profit_factor": 0.8663987040750664,
+      "mean_time_in_market": 0.2079594017094017
+    }
+  },
+  "strategy_results_9c": {},
+  "ranking": [
+    {
+      "rank": 1,
+      "strategy": "Buy-and-Hold",
+      "mean_sharpe": 0.8727335587074424,
+      "compounded_return": 7.1125089941420185,
+      "worst_drawdown": -0.6006143163556339
+    },
+    {
+      "rank": 2,
+      "strategy": "MA-Cross-50/200",
+      "mean_sharpe": 0.32135787716479913,
+      "compounded_return": 0.605219893087402,
+      "worst_drawdown": -0.251683496222413
+    },
+    {
+      "rank": 3,
+      "strategy": "DIR-Original",
+      "mean_sharpe": 0.04219274577209728,
+      "compounded_return": -0.06043365325576322,
+      "worst_drawdown": -0.3109716827596448
+    },
+    {
+      "rank": 4,
+      "strategy": "Static-Trend-Follow",
+      "mean_sharpe": -0.3623418109267027,
+      "compounded_return": -0.5813350699430857,
+      "worst_drawdown": -0.4117277454070171
+    },
+    {
+      "rank": 5,
+      "strategy": "3R-1-D-Only-Conservative",
+      "mean_sharpe": -0.9425563076778214,
+      "compounded_return": -0.6008827736156915,
+      "worst_drawdown": -0.25080765466730137
+    },
+    {
+      "rank": 6,
+      "strategy": "3R-2-D-Scaled-Entry",
+      "mean_sharpe": -1.0944793040463763,
+      "compounded_return": -0.4735702066012739,
+      "worst_drawdown": -0.19716684157914377
+    },
+    {
+      "rank": 7,
+      "strategy": "3R-3-D-MultiTF",
+      "mean_sharpe": -1.2041138920358718,
+      "compounded_return": -0.8757512743264415,
+      "worst_drawdown": -0.5042048774677136
+    },
+    {
+      "rank": 8,
+      "strategy": "Static-Mean-Revert",
+      "mean_sharpe": -3.0778504801108424,
+      "compounded_return": -0.9512757886010974,
+      "worst_drawdown": -0.4309660609096641
+    }
+  ],
+  "recommendation": [
+    "No strategy consistently beats buy-and-hold on Sharpe.",
+    "K=9 not confirmed. 3-regime model is the baseline.",
+    "Proceed to Phase D with: Buy-and-Hold"
+  ],
+  "phase_d_candidate": "Buy-and-Hold"
+}

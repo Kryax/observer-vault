@@ -79,8 +79,10 @@ class LandscapeStrategy:
         momentum_bypass_ts: float = 0.15,
         momentum_bypass_depth: float = 1.5,
         momentum_size_fraction: float = 0.50,
-        gradient_trim_threshold: float = 0.5,
-        gate1_transition_score: float = 0.8,
+        gradient_trim_threshold: float = 0.25,
+        gate1_transition_score: float = 0.9,
+        gate1_persistence: int = 3,
+        min_hold_bars: int = 6,
         gate2_scale_out_frac: float = 0.50,
         pregate_trim_frac: float = 0.25,
         min_order_life: int = 12,
@@ -102,6 +104,8 @@ class LandscapeStrategy:
         self.momentum_size_fraction = momentum_size_fraction
         self.gradient_trim_threshold = gradient_trim_threshold
         self.gate1_transition_score = gate1_transition_score
+        self.gate1_persistence = gate1_persistence
+        self.min_hold_bars = min_hold_bars
         self.gate2_scale_out_frac = gate2_scale_out_frac
         self.pregate_trim_frac = pregate_trim_frac
         self.min_order_life = min_order_life
@@ -125,6 +129,7 @@ class LandscapeStrategy:
         self._stop_price = 0.0
         self._scaled_out = False
         self._pre_gate_fired = False
+        self._consecutive_gate1_bars = 0
 
         self._pending_order: Optional[PendingOrder] = None
         self._last_cancel_bar = -999
@@ -245,7 +250,7 @@ class LandscapeStrategy:
         cvd_state = "rising" if cvd_mod > 1.0 else ("falling" if cvd_mod < 1.0 else "neutral")
 
         # Target price
-        target = price + base_atr * (1.0 + 3.0 * normalised_barrier)
+        target = price + base_atr * (1.0 + 2.0 * normalised_barrier)
 
         ctx = TradeContext(
             regime="D",
@@ -324,7 +329,7 @@ class LandscapeStrategy:
 
         entry_level = hvn_below[0].price
         stop = entry_level - base_atr * self.min_stop_atr_mult
-        target = price + base_atr * (1.0 + 3.0 * normalised_barrier)
+        target = price + base_atr * (1.0 + 2.0 * normalised_barrier)
 
         ctx = TradeContext(
             regime="I",
@@ -357,15 +362,26 @@ class LandscapeStrategy:
         gradient_direction: float, price: float,
         base_atr: float, normalised_barrier: float,
     ) -> Signal:
-        # Gate 1: Structural failure — immediate full exit
-        if transition_score > self.gate1_transition_score:
-            self._log_trade(idx, "gate1_structural_exit", price)
-            return self._exit_all("gate1_structural_exit")
+        bars_held = idx - self._entry_bar
 
-        # Stop loss hit
+        # Stop loss always fires (even during min hold)
         if price <= self._stop_price:
             self._log_trade(idx, "stop_loss", price)
             return self._exit_all("stop_loss")
+
+        # Minimum hold period — no other exits for first N bars
+        if bars_held < self.min_hold_bars:
+            return Signal(action="hold", reason="min_hold_period")
+
+        # Gate 1: Structural failure — requires persistence
+        if transition_score > self.gate1_transition_score:
+            self._consecutive_gate1_bars += 1
+        else:
+            self._consecutive_gate1_bars = 0
+
+        if self._consecutive_gate1_bars >= self.gate1_persistence:
+            self._log_trade(idx, "gate1_structural_exit", price)
+            return self._exit_all("gate1_structural_exit")
 
         # Pre-gate: gradient early warning — trim 25%
         if (not self._pre_gate_fired
@@ -471,6 +487,7 @@ class LandscapeStrategy:
         self._stop_price = stop
         self._scaled_out = False
         self._pre_gate_fired = False
+        self._consecutive_gate1_bars = 0
 
     def _reset_position(self) -> None:
         self._position_size = 0.0
@@ -481,6 +498,7 @@ class LandscapeStrategy:
         self._stop_price = 0.0
         self._scaled_out = False
         self._pre_gate_fired = False
+        self._consecutive_gate1_bars = 0
 
     def _log_trade(self, idx: int, event: str, price: float) -> None:
         ctx = self._entry_context
