@@ -14,11 +14,20 @@ import { vectorize } from "../vectorizer/index.js";
 import { classify, type ClassifyInput } from "../classifier/index.js";
 import { compose } from "../composer/index.js";
 import { evaluate, type EvaluateInput } from "../evaluator/index.js";
+import {
+  buildLandscape,
+  computeEnergy,
+  computeTransition,
+  type EnergyLandscape,
+  type EnergyResult,
+  type TransitionResult,
+} from "../energy.js";
 
 export class Engine {
   private centroids!: CentroidManifest;
   private vocabulary!: IndicatorVocabulary;
   private motifs!: MotifLibrary;
+  private landscape!: EnergyLandscape;
   private startTime: number;
   private loaded = false;
 
@@ -30,6 +39,7 @@ export class Engine {
     this.centroids = await loadCentroids(resolve(dataDir, "centroids.json"));
     this.vocabulary = await loadVocabulary(resolve(dataDir, "vocabulary.json"));
     this.motifs = await loadMotifs(resolve(dataDir, "motifs.json"));
+    this.landscape = buildLandscape(this.centroids, this.motifs);
     this.loaded = true;
   }
 
@@ -46,6 +56,35 @@ export class Engine {
     this.ensureLoaded();
     const vectorizeFn = (text: string): Vector6D => vectorize(text, this.vocabulary);
     return evaluate(input, this.motifs, vectorizeFn);
+  }
+
+  doEnergy(input: { text?: string; vector?: number[]; composition?: string }): EnergyResult {
+    this.ensureLoaded();
+    let vec: number[];
+    if (input.vector) {
+      vec = input.vector;
+    } else if (input.text) {
+      vec = vectorize(input.text, this.vocabulary) as number[];
+    } else if (input.composition) {
+      // Find the centroid for this composition
+      const entry = Object.entries(this.centroids.mapping)
+        .find(([, comp]) => comp === input.composition);
+      if (!entry) throw new Error(`Unknown composition: ${input.composition}`);
+      vec = this.centroids.centroids[parseInt(entry[0])];
+    } else {
+      throw new Error("Provide text, vector, or composition");
+    }
+    return computeEnergy(vec, this.landscape);
+  }
+
+  doTransition(input: { vector: number[]; history?: number[][] }): TransitionResult {
+    this.ensureLoaded();
+    return computeTransition(input.vector, this.landscape, input.history);
+  }
+
+  getLandscape(): EnergyLandscape {
+    this.ensureLoaded();
+    return this.landscape;
   }
 
   getStatus(): EngineStatus {

@@ -120,29 +120,63 @@ server.tool(
   },
 );
 
-// ─── dir_energy (gated stub) ─────────────────────────────────────────
+// ─── dir_energy ─────────────────────────────────────────────────────
+// Ungated 2026-04-04: Langevin multi-well model scored 5/5 under
+// reframed predictions. QHO falsified → replaced by dissipative model.
 
 server.tool(
   "dir_energy",
-  "Compute QHO-derived energy metric for a record or motif. " +
-    "Currently gated — returns stub response until wave equation falsification (Task 5) warrants activation.",
+  "Compute Langevin multi-well energy for a point in D/I/R composition space. " +
+    "Returns energy value, nearest basin, basin depth, barrier to second-nearest, " +
+    "transition score (0=deep in basin, 1=on ridge), and gradient vector. " +
+    "Provide exactly one of: text, vector (6D), or composition.",
   {
-    text: z.string().optional().describe("Text to compute energy for"),
-    composition: z.string().optional().describe("Composition to compute energy for"),
+    text: z.string().optional().describe("Text to compute energy for (vectorized internally)"),
+    vector: z.array(z.number()).length(6).optional().describe("Pre-computed 6D vector [D, I, R, temporal, density, entropy]"),
+    composition: z.string().optional().describe("Composition to compute energy at its centroid (e.g. 'D(I)')"),
   },
-  async () => {
-    return {
-      content: [{
-        type: "text" as const,
-        text: JSON.stringify({
-          gated: true,
-          reason: "Awaiting wave equation falsification (Task 5). " +
-            "Ungating requires >= 3/5 Langevin multi-well tests passing. " +
-            "Test 5 (K=9 clustering) already passed. Need >= 2 more of: " +
-            "ground state, energy-tier correlation, degeneracy, selection rules.",
-        }, null, 2),
-      }],
-    };
+  async (args) => {
+    try {
+      const result = engine.doEnergy({
+        text: args.text,
+        vector: args.vector,
+        composition: args.composition,
+      });
+      return { content: [{ type: "text" as const, text: JSON.stringify(result, null, 2) }] };
+    } catch (e) {
+      return {
+        content: [{ type: "text" as const, text: JSON.stringify({ error: (e as Error).message }) }],
+        isError: true,
+      };
+    }
+  },
+);
+
+// ─── dir_transition ─────────────────────────────────────────────────
+
+server.tool(
+  "dir_transition",
+  "Predict transition likelihood from current position in D/I/R space. " +
+    "Returns current basin, transition score, predicted next basins ranked by barrier height, " +
+    "barrier heights to each adjacent basin, and time in current basin (if history provided). " +
+    "Adjacent basins share at least one operator (e.g. D(I) is adjacent to D(R) and I(I)).",
+  {
+    vector: z.array(z.number()).length(6).describe("Current 6D vector [D, I, R, temporal, density, entropy]"),
+    history: z.array(z.array(z.number()).length(6)).optional().describe("Previous vectors (oldest first) for time-in-basin computation"),
+  },
+  async (args) => {
+    try {
+      const result = engine.doTransition({
+        vector: args.vector,
+        history: args.history,
+      });
+      return { content: [{ type: "text" as const, text: JSON.stringify(result, null, 2) }] };
+    } catch (e) {
+      return {
+        content: [{ type: "text" as const, text: JSON.stringify({ error: (e as Error).message }) }],
+        isError: true,
+      };
+    }
   },
 );
 

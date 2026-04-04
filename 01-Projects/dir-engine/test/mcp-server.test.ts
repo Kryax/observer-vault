@@ -88,11 +88,14 @@ describe("S5 Engine Integration", () => {
     expect(typeof status.uptime_s).toBe("number");
   });
 
-  // ─── ISC-S57: dir_energy returns gated response ───────────────────
-  test("ISC-S57: energy is gated", () => {
-    // Energy is handled at the MCP tool level, not in the engine
-    // Just verify the engine doesn't have an energy method
-    expect((engine as any).doEnergy).toBeUndefined();
+  // ─── ISC-S57: dir_energy returns real values (ungated) ─────────────
+  test("ISC-S57: energy returns real values", () => {
+    const result = engine.doEnergy({ composition: "D(I)" });
+    expect(typeof result.energy).toBe("number");
+    expect(result.energy).not.toBeNaN();
+    expect(result.nearest_basin).toBe("D(I)");
+    expect(result.gradient).toHaveLength(6);
+    expect((result as any).gated).toBeUndefined();
   });
 
   // ─── ISC-S58: Error handling ──────────────────────────────────────
