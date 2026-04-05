@@ -60,6 +60,8 @@ class MarkovVPVRStrategy:
         ratchet_milestones: Optional[list[tuple[float, float]]] = None,
         # Asymmetric destab (v5.2)
         asymmetric_destab: bool = False,  # 2x threshold when in profit
+        # Multi-timeframe (v5.3)
+        use_macro_regime: bool = False,  # gate entries by macro_regime column
         # Transition matrix
         transition_matrix: Optional[dict] = None,
         # General
@@ -87,6 +89,7 @@ class MarkovVPVRStrategy:
             (0.02, 0.01), (0.04, 0.02), (0.06, 0.04),
         ]
         self.asymmetric_destab = asymmetric_destab
+        self.use_macro_regime = use_macro_regime
         self.warmup_bars = warmup_bars
         self.atr_period = atr_period
         self.min_order_life = min_order_life
@@ -103,6 +106,7 @@ class MarkovVPVRStrategy:
         self._phase_filled = 0  # 0=none, 1=probe, 2=conviction
         self._stop_price = 0.0
         self._profit_floor = 0.0  # ratchet floor (fraction of entry price)
+        self._macro_size_mult = 1.0  # macro regime size multiplier
 
         # Pending order
         self._pending: Optional[PendingEntry] = None
@@ -189,6 +193,15 @@ class MarkovVPVRStrategy:
                 and confidence >= self.min_confidence
                 and self._pending is None
                 and idx - self._last_cancel_bar >= self.order_cooldown):
+            # v5.3: macro regime gating
+            if self.use_macro_regime:
+                macro = str(row.get("macro_regime", "I"))
+                if macro == "R":
+                    return Signal(action="hold", reason="macro_R_skip")
+                # Macro I: reduce size by 50%
+                self._macro_size_mult = 0.5 if macro == "I" else 1.0
+            else:
+                self._macro_size_mult = 1.0
             return self._place_entry(idx, history, price, atr, phase=1)
 
         return Signal(action="hold", reason=f"{regime}_no_entry")
@@ -226,7 +239,7 @@ class MarkovVPVRStrategy:
         dE_dt = self._smoothed_dE_dt()
         normalised_dE = max(0.0, -dE_dt / self.dE_dt_norm)
         size_scalar = max(0.3, min(1.0, normalised_dE))
-        sized = size * size_scalar
+        sized = size * size_scalar * self._macro_size_mult
 
         self._pending = PendingEntry(
             price=entry_level,

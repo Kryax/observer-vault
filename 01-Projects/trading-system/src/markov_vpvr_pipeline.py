@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
 """
-Markov+VPVR Strategy Pipeline (v5.2)
+Markov+VPVR Strategy Pipeline (v5.3)
 
 Walk-forward backtest comparing:
   v5.1b — barbell entry, survival_bars=8, dE/dt < 0 gate (baseline)
-  v5.2  — v5.1b + profit ratchet + asymmetric destab exits
+  v5.3  — v5.1b + multi-timeframe macro context (daily D/I/R gates hourly entries)
 
-v5.2 additions:
-  A. Profit ratchet: +2%→lock+1%, +4%→lock+2%, +6%→lock+4%
-  B. Asymmetric destab: 2x threshold when in profit
+v5.3: Daily regime computed from resampled hourly data. Entries gated:
+  macro D → full size, macro I → 50% size, macro R → skip entry.
 """
 
 from __future__ import annotations
@@ -34,6 +33,7 @@ from src.classifier.price_landscape import PriceLandscape, _estimate_barrier
 from src.backtest.engine import BacktestEngine
 from src.backtest.baselines import BuyAndHold, MACrossover
 from src.strategy.markov_vpvr_strategy import MarkovVPVRStrategy
+from src.classifier.multi_timeframe import MultiTimeframeClassifier
 
 DATA_DIR = PROJECT_ROOT / "data"
 WINDOW = 168
@@ -229,6 +229,7 @@ def walk_forward(
     strategy_factory,
     train_bars: int = 2000, step_bars: int = 500,
     warmup_bars: int = 100,
+    macro_classifier=None,
 ) -> dict:
     engine = BacktestEngine(initial_capital=10_000)
     all_trades = []
@@ -265,6 +266,13 @@ def walk_forward(
         for col in clf_df.columns:
             test_enriched[col] = clf_df[col].reindex(test_enriched.index)
         test_enriched = test_enriched.ffill().fillna(0)
+
+        # Inject macro regime if classifier provided
+        if macro_classifier is not None:
+            macro = macro_classifier.compute_macro_regimes(
+                data, start, train_end, test_end)
+            test_enriched["macro_regime"] = macro.reindex(
+                test_enriched.index, method="ffill").fillna("I")
 
         tm = compute_transition_matrix(all_labels) if all_labels else None
         strat = strategy_factory(tm)
@@ -385,12 +393,12 @@ def exit_dist(trade_log: list[dict]) -> dict:
 
 def main():
     print("=" * 120)
-    print("MARKOV+VPVR STRATEGY PIPELINE — v5.1b vs v5.2")
+    print("MARKOV+VPVR STRATEGY PIPELINE — v5.1b vs v5.3 (Multi-Timeframe)")
     print(f"  Window: {WINDOW} bars ({WINDOW // 24} days)")
     print(f"  Tokens: {list(TOKEN_FILES.keys())}")
     print(f"  Walk-forward: train=2000, step=500")
     print(f"  v5.1b: survival_bars=8, dE/dt < 0 gate (baseline)")
-    print(f"  v5.2:  + profit ratchet (+2%→+1%, +4%→+2%, +6%→+4%) + asymmetric destab (2x when in profit)")
+    print(f"  v5.3:  + macro context (daily D/I/R gates hourly entries: D=full, I=50%, R=skip)")
     print("=" * 120, flush=True)
 
     # Load data
@@ -415,16 +423,31 @@ def main():
                 precomputed_tm[sym] = raw_tm[sym].get("transition_matrix", {})
 
     # Define variants to test
+    # v5.3 uses use_macro_regime=True + macro_classifier in walk_forward
     variants = {
-        "v5.1b": dict(survival_bars=8, require_dE_negative=True,
-                       ratchet_milestones=[], asymmetric_destab=False),
-        "v5.2": dict(survival_bars=8, require_dE_negative=True,
-                      ratchet_milestones=[(0.02, 0.01), (0.04, 0.02), (0.06, 0.04)],
-                      asymmetric_destab=True),
+        "v5.1b": dict(
+            strat_params=dict(survival_bars=8, require_dE_negative=True),
+            use_macro=False,
+        ),
+        "v5.3": dict(
+            strat_params=dict(survival_bars=8, require_dE_negative=True,
+                              use_macro_regime=True),
+            use_macro=True,
+        ),
     }
 
     results = {}
     all_regime_labels = {}
+
+    # Precompute macro classifiers per token (expensive — do once)
+    macro_clfs = {}
+    for sym, fp in TOKEN_FILES.items():
+        print(f"Precomputing macro features for {sym}...", end=" ", flush=True)
+        mc = MultiTimeframeClassifier(macro_window=30)
+        mc.precompute(all_data[sym])
+        macro_clfs[sym] = mc
+        n_vecs = len(mc._daily_vecs) if mc._daily_vecs is not None else 0
+        print(f"{n_vecs} daily vectors")
 
     for sym in TOKEN_FILES:
         print(f"\n{'=' * 80}")
@@ -437,16 +460,18 @@ def main():
         results[sym] = {}
 
         for vname, vparams in variants.items():
-            print(f"  {vname}...", flush=True)
+            print(f"  {vname} (macro={vparams['use_macro']})...", flush=True)
 
             # Capture params in closure properly
-            _vp = dict(vparams)
+            _sp = dict(vparams["strat_params"])
+            _mc = macro_clfs[sym] if vparams["use_macro"] else None
             vresult = walk_forward(
                 data, vecs,
-                strategy_factory=lambda tm, vp=_vp: MarkovVPVRStrategy(
+                strategy_factory=lambda tm, sp=_sp: MarkovVPVRStrategy(
                     transition_matrix=tm or pre_tm,
-                    **vp,
+                    **sp,
                 ),
+                macro_classifier=_mc,
             )
             vm = vresult["metrics"]
             vh = avg_hold(vresult["trades"])
@@ -525,7 +550,7 @@ def main():
     # ============================================================================
 
     print("\n" + "=" * 130)
-    print("v5.1b vs v5.2 COMPARISON")
+    print("v5.1b vs v5.3 COMPARISON")
     print("=" * 130)
     print(f"{'Token':<6} {'Version':<8} {'Return':>9} {'Sharpe':>8} {'MaxDD':>8} "
           f"{'Trades':>7} {'WinRate':>8} {'W/L':>6} {'EV/trade':>10} {'AvgHold':>8}")
@@ -579,7 +604,7 @@ def main():
             print(f"    {sym}: win_rate={wr:.1%} [{wr_ok}], W/L={ratio:.2f}x [{ratio_ok}]")
 
     # Save results
-    output = DATA_DIR / "markov_vpvr_v5.2_results.json"
+    output = DATA_DIR / "markov_vpvr_v5.3_results.json"
     with open(output, "w") as f:
         json.dump(results, f, indent=2, default=str)
     print(f"\nResults saved to {output}")
