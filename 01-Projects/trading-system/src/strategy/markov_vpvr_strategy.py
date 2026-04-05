@@ -66,8 +66,9 @@ class MarkovVPVRStrategy:
         min_hvn_depth_pct: float = 0.02,
         # Exits
         spatial_stop_pct: float = 0.02,
-        destab_persistence: int = 2,
-        time_decay_K: float = 2.0,
+        destab_threshold: float = 0.02,
+        destab_persistence: int = 4,
+        time_decay_K: float = 1.0,
         # Transition matrix
         transition_matrix: Optional[dict] = None,
         # General
@@ -84,6 +85,7 @@ class MarkovVPVRStrategy:
         self.scale_tranches = scale_tranches
         self.min_hvn_depth_pct = min_hvn_depth_pct
         self.spatial_stop_pct = spatial_stop_pct
+        self.destab_threshold = destab_threshold
         self.destab_persistence = destab_persistence
         self.time_decay_K = time_decay_K
         self.warmup_bars = warmup_bars
@@ -311,8 +313,8 @@ class MarkovVPVRStrategy:
         if next_tranche > self.scale_tranches:
             return None
 
-        # Abort scaling if dE/dt turned positive
-        if dE_dt > 0:
+        # Abort scaling if dE/dt turned materially positive
+        if dE_dt > self.destab_threshold:
             return None
 
         # Abort if confidence dropped
@@ -344,8 +346,8 @@ class MarkovVPVRStrategy:
         if regime == "R":
             return self._exit_all(idx, price, "R_regime_exit")
 
-        # GATE 2b — Sustained positive dE/dt (energy destabilising)
-        if dE_dt > 0:
+        # GATE 2b — Sustained positive dE/dt above threshold (energy destabilising)
+        if dE_dt > self.destab_threshold:
             self._destab_counter += 1
             if self._destab_counter >= self.destab_persistence:
                 return self._exit_all(idx, price, "destab_exit")
