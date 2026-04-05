@@ -1,22 +1,26 @@
 """
-Markov + VPVR Strategy (v4)
+Markov + VPVR Strategy (v5) — Survival Filter Barbell Entry
 
-Trade energy dynamics with spatial precision.
+BASE: v3.1 parameters (proven best W/L ratio 1.71-2.39x, max DD 2.6-3.9%)
+CHANGE: Replace 3-tranche scale-in with 2-phase barbell gated by D-regime survival.
 
-v4 changes (from triad convergence):
-  1. Immediate entry on first D-bar (no persistence wait)
-  2. Forced scale-in: tranches 2/3 fire if D persists, ignore dE/dt
-  3. Dampened destab: dE/dt > 0.02 for 3 bars (was > 0 for 2)
-  4. Hold through I-regime unless dE/dt > 0.02
-  5. Time-decay exit REMOVED (fired on 1% — dead code)
-  6. Max position 50% (proven 2% DD earns larger sizing)
-  7. 2% spatial stop UNCHANGED (sacred — source of W/L ratio)
+The problem: >50% of D-regimes die within 5 bars. v3.1 enters them all equally.
+The fix: probe with 25% on bar 1, add 75% conviction only if D survives 5 bars.
 
-Exit gates:
+Phase 1 — Probe (bar 1 of D-regime):
+  25% of max position via VPVR limit entry
+  2% stop below entry
+  If D dies before bar 5: small loss (25% * 2% = 0.5% max)
+
+Phase 2 — Conviction (bar 5+ of D-regime):
+  75% of max position via VPVR limit entry
+  Stop remains at 2% below ORIGINAL entry (Phase 1)
+
+Exit gates (v3.1 exact):
   Gate 1 — Spatial stop (2% hard, non-negotiable)
   Gate 2 — R-regime immediate exit
-  Gate 3 — Destab exit (dE/dt > 0.02 for 3 consecutive bars)
-  (I-regime: hold unless dE/dt > threshold)
+  Gate 3 — Destab exit (dE/dt > 0.02 for 4 consecutive bars)
+  Gate 4 — Time decay (K=1.0)
 """
 
 from __future__ import annotations
@@ -37,26 +41,30 @@ class PendingEntry:
     size: float
     placed_bar: int
     stop_price: float
-    tranche: int
+    phase: int  # 1 = probe, 2 = conviction
 
 
 class MarkovVPVRStrategy:
 
     def __init__(
         self,
-        # Entry
-        max_position_frac: float = 0.50,
+        # v3.1 parameters (sacred)
+        max_position_frac: float = 0.35,
         dE_dt_norm: float = 0.05,
         dE_dt_window: int = 6,
         min_confidence: float = 0.4,
         vpvr_lookback: int = 500,
-        scale_tranches: int = 3,
         min_hvn_depth_pct: float = 0.02,
-        # Exits
+        # Exits (v3.1)
         spatial_stop_pct: float = 0.02,
         destab_threshold: float = 0.02,
-        destab_persistence: int = 3,
-        # Transition matrix (kept for future use, not used for time-decay)
+        destab_persistence: int = 4,
+        time_decay_K: float = 1.0,
+        # Barbell parameters (v5)
+        probe_frac: float = 0.25,       # Phase 1: 25% of max position
+        conviction_frac: float = 0.75,   # Phase 2: 75% of max position
+        survival_bars: int = 5,           # D-regime must survive this many bars
+        # Transition matrix
         transition_matrix: Optional[dict] = None,
         # General
         warmup_bars: int = 100,
@@ -69,11 +77,14 @@ class MarkovVPVRStrategy:
         self.dE_dt_window = dE_dt_window
         self.min_confidence = min_confidence
         self.vpvr_lookback = vpvr_lookback
-        self.scale_tranches = scale_tranches
         self.min_hvn_depth_pct = min_hvn_depth_pct
         self.spatial_stop_pct = spatial_stop_pct
         self.destab_threshold = destab_threshold
         self.destab_persistence = destab_persistence
+        self.time_decay_K = time_decay_K
+        self.probe_frac = probe_frac
+        self.conviction_frac = conviction_frac
+        self.survival_bars = survival_bars
         self.warmup_bars = warmup_bars
         self.atr_period = atr_period
         self.min_order_life = min_order_life
@@ -87,7 +98,7 @@ class MarkovVPVRStrategy:
         self._entry_price = 0.0
         self._avg_entry_price = 0.0
         self._entry_bar = 0
-        self._tranches_filled = 0
+        self._phase_filled = 0  # 0=none, 1=probe, 2=conviction
         self._stop_price = 0.0
 
         # Pending order
@@ -108,7 +119,7 @@ class MarkovVPVRStrategy:
         self._exit_reasons: dict[str, int] = {}
 
     def name(self) -> str:
-        return "Markov-VPVR"
+        return "Markov-VPVR-v5"
 
     def precompute(self, data: pd.DataFrame) -> None:
         high, low, close = data["high"], data["low"], data["close"]
@@ -148,31 +159,33 @@ class MarkovVPVRStrategy:
             bars_alive = idx - self._pending.placed_bar
             if regime == "R" or bars_alive >= self.min_order_life:
                 self._cancel(idx)
-            # Keep pending through I-regime (don't cancel on I)
 
         # --- EXIT CHECKS (if in position) ---
         if self._in_position:
+            # If D-regime dies before survival threshold and only probe filled: exit
+            if self._phase_filled == 1 and regime != "D":
+                return self._exit_all(idx, price, "probe_abort")
+
             exit_signal = self._check_exits(idx, regime, dE_dt, price)
             if exit_signal is not None:
                 return exit_signal
 
-            # --- SCALE-IN (tranches 2 and 3) ---
-            # v4: force scale-in as long as D persists, ignore dE/dt
-            if self._tranches_filled < self.scale_tranches and regime == "D":
-                scale_signal = self._try_scale_in(idx, history, price, atr)
-                if scale_signal is not None:
-                    return scale_signal
+            # --- Phase 2: Conviction add-on ---
+            if (self._phase_filled == 1
+                    and regime == "D"
+                    and self._consecutive_d_bars >= self.survival_bars
+                    and self._pending is None):
+                return self._place_entry(idx, history, price, atr, phase=2)
 
             return Signal(action="hold", reason="holding")
 
-        # --- ENTRY TRIGGER ---
-        # v4: enter on first D-bar immediately (no persistence wait)
+        # --- ENTRY TRIGGER: Phase 1 probe on first D-bar ---
         if (regime == "D"
                 and self._consecutive_d_bars == 1
                 and confidence >= self.min_confidence
                 and self._pending is None
                 and idx - self._last_cancel_bar >= self.order_cooldown):
-            return self._place_entry(idx, history, price, atr, tranche=1)
+            return self._place_entry(idx, history, price, atr, phase=1)
 
         return Signal(action="hold", reason=f"{regime}_no_entry")
 
@@ -181,7 +194,7 @@ class MarkovVPVRStrategy:
     # ------------------------------------------------------------------
 
     def _place_entry(self, idx: int, history: pd.DataFrame,
-                     price: float, atr: float, tranche: int) -> Signal:
+                     price: float, atr: float, phase: int) -> Signal:
         if len(history) >= 50:
             self._vpvr.compute(history)
 
@@ -197,33 +210,35 @@ class MarkovVPVRStrategy:
 
         entry_level = min(entry_level, price * 0.999)
 
-        if tranche == 1:
+        if phase == 1:
             stop = entry_level * (1 - self.spatial_stop_pct)
+            size = self.max_position_frac * self.probe_frac
         else:
+            # Phase 2: stop stays at original entry's stop
             stop = self._stop_price
+            size = self.max_position_frac * self.conviction_frac
 
-        # Tranche size: dE/dt modulated
-        base_tranche = self.max_position_frac / self.scale_tranches
+        # dE/dt modulated sizing
         dE_dt = self._smoothed_dE_dt()
         normalised_dE = max(0.0, -dE_dt / self.dE_dt_norm)
         size_scalar = max(0.3, min(1.0, normalised_dE))
-        tranche_size = base_tranche * size_scalar
+        sized = size * size_scalar
 
         self._pending = PendingEntry(
             price=entry_level,
-            size=tranche_size,
+            size=sized,
             placed_bar=idx,
             stop_price=stop,
-            tranche=tranche,
+            phase=phase,
         )
 
         self._trade_log.append({
-            "bar": idx, "event": f"order_placed_t{tranche}",
-            "level": entry_level, "size": tranche_size,
+            "bar": idx, "event": f"order_placed_p{phase}",
+            "level": entry_level, "size": sized,
             "dE_dt": dE_dt, "size_scalar": size_scalar,
         })
 
-        return Signal(action="hold", reason=f"limit_order_t{tranche}")
+        return Signal(action="hold", reason=f"limit_order_p{phase}")
 
     def _check_fill(self, idx: int, row: pd.Series) -> Optional[Signal]:
         order = self._pending
@@ -233,62 +248,47 @@ class MarkovVPVRStrategy:
         if row["low"] <= order.price:
             fill_price = order.price
 
-            if order.tranche == 1:
+            if order.phase == 1:
                 self._in_position = True
                 self._entry_price = fill_price
                 self._avg_entry_price = fill_price
                 self._entry_bar = idx
                 self._position_size = order.size
-                self._tranches_filled = 1
+                self._phase_filled = 1
                 self._stop_price = order.stop_price
                 self._destab_counter = 0
             else:
+                # Phase 2 conviction add-on
                 total_cost = (self._avg_entry_price * self._position_size
                               + fill_price * order.size)
                 self._position_size += order.size
                 self._avg_entry_price = total_cost / self._position_size
-                self._tranches_filled = order.tranche
+                self._phase_filled = 2
 
             self._pending = None
 
             self._trade_log.append({
-                "bar": idx, "event": f"fill_t{order.tranche}",
+                "bar": idx, "event": f"fill_p{order.phase}",
                 "price": fill_price, "size": order.size,
                 "position_total": self._position_size,
-                "tranches": self._tranches_filled,
+                "phase": self._phase_filled,
             })
 
             return Signal(
                 action="buy",
                 size=order.size,
-                reason=f"vpvr_fill_t{order.tranche}",
+                reason=f"vpvr_fill_p{order.phase}",
                 stop_loss=self._stop_price,
             )
 
         return None
-
-    def _try_scale_in(self, idx: int, history: pd.DataFrame,
-                      price: float, atr: float) -> Optional[Signal]:
-        """v4: force scale-in while D persists. No dE/dt or confidence gate."""
-        if self._pending is not None:
-            return None
-
-        next_tranche = self._tranches_filled + 1
-        if next_tranche > self.scale_tranches:
-            return None
-
-        # Min bars between tranches
-        if idx - self._entry_bar < self._tranches_filled * 2:
-            return None
-
-        return self._place_entry(idx, history, price, atr, tranche=next_tranche)
 
     def _cancel(self, idx: int) -> None:
         self._pending = None
         self._last_cancel_bar = idx
 
     # ------------------------------------------------------------------
-    # Exits
+    # Exits (v3.1 exact)
     # ------------------------------------------------------------------
 
     def _check_exits(self, idx: int, regime: str,
@@ -302,7 +302,6 @@ class MarkovVPVRStrategy:
             return self._exit_all(idx, price, "R_regime_exit")
 
         # GATE 3 — Destab: dE/dt > threshold for N consecutive bars
-        # v4: threshold=0.02, persistence=3
         if dE_dt > self.destab_threshold:
             self._destab_counter += 1
             if self._destab_counter >= self.destab_persistence:
@@ -310,11 +309,14 @@ class MarkovVPVRStrategy:
         else:
             self._destab_counter = 0
 
-        # I-regime: HOLD as long as dE/dt is not strongly positive
-        # (destab gate above handles the exit case)
-        # No separate I-regime exit — let destab or spatial stop handle it
-
-        # No time-decay exit (removed in v4 — fired on 1%, dead code)
+        # GATE 4 — Time decay (v3.1): exit if held too long relative to MFPT
+        if self._transition_matrix and self._in_position:
+            bars_held = idx - self._entry_bar
+            d_self = self._transition_matrix.get("D", {}).get("D", 0.5)
+            if d_self < 1.0:
+                mfpt = 1.0 / (1.0 - d_self)
+                if bars_held > self.time_decay_K * mfpt:
+                    return self._exit_all(idx, price, "time_decay")
 
         return None
 
@@ -325,7 +327,7 @@ class MarkovVPVRStrategy:
             "bar": idx, "event": "exit", "reason": reason,
             "price": price, "position": self._position_size,
             "bars_held": idx - self._entry_bar,
-            "tranches_filled": self._tranches_filled,
+            "phase_filled": self._phase_filled,
             "entry_price": self._entry_price,
             "avg_entry": self._avg_entry_price,
         })
@@ -336,7 +338,7 @@ class MarkovVPVRStrategy:
         self._entry_price = 0.0
         self._avg_entry_price = 0.0
         self._entry_bar = 0
-        self._tranches_filled = 0
+        self._phase_filled = 0
         self._stop_price = 0.0
         self._destab_counter = 0
 
