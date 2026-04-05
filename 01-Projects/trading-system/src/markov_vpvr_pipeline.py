@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
 """
-Markov+VPVR Strategy Pipeline (v5)
+Markov+VPVR Strategy Pipeline (v5.1)
 
-Walk-forward backtest: v3.1 (baseline) vs v5 (survival filter barbell entry)
-on all 5 tokens with W=168.
+Walk-forward backtest comparing:
+  v5    — barbell entry, survival_bars=5
+  v5.1a — barbell entry, survival_bars=8 (past high-hazard zone)
+  v5.1b — barbell entry, survival_bars=8 + dE/dt < 0 conviction gate
 
-v5 change: barbell entry — 25% probe on D-bar 1, 75% conviction on D-bar 5+.
 All exit parameters are v3.1 exact.
-
-Also computes empirical D-regime survival curves to validate the 5-bar threshold.
 """
 
 from __future__ import annotations
@@ -385,11 +384,13 @@ def exit_dist(trade_log: list[dict]) -> dict:
 
 def main():
     print("=" * 120)
-    print("MARKOV+VPVR STRATEGY PIPELINE — v3.1 vs v5 (Survival Filter Barbell)")
+    print("MARKOV+VPVR STRATEGY PIPELINE — v5 vs v5.1a vs v5.1b")
     print(f"  Window: {WINDOW} bars ({WINDOW // 24} days)")
     print(f"  Tokens: {list(TOKEN_FILES.keys())}")
     print(f"  Walk-forward: train=2000, step=500")
-    print(f"  v5 change: 25% probe on D-bar 1, 75% conviction on D-bar 5+")
+    print(f"  v5:   survival_bars=5")
+    print(f"  v5.1a: survival_bars=8 (past high-hazard zone)")
+    print(f"  v5.1b: survival_bars=8 + dE/dt < 0 conviction gate")
     print(f"  All exits: v3.1 exact (2% stop, R-exit, destab 0.02/4-bar, time-decay K=1.0)")
     print("=" * 120, flush=True)
 
@@ -414,8 +415,15 @@ def main():
             if sym in raw_tm:
                 precomputed_tm[sym] = raw_tm[sym].get("transition_matrix", {})
 
+    # Define the three variants to test
+    variants = {
+        "v5": dict(survival_bars=5, require_dE_negative=False),
+        "v5.1a": dict(survival_bars=8, require_dE_negative=False),
+        "v5.1b": dict(survival_bars=8, require_dE_negative=True),
+    }
+
     results = {}
-    all_regime_labels = {}  # For survival curves
+    all_regime_labels = {}
 
     for sym in TOKEN_FILES:
         print(f"\n{'=' * 80}")
@@ -425,74 +433,52 @@ def main():
         data = all_data[sym]
         vecs = all_vectors[sym]
         pre_tm = precomputed_tm.get(sym, None)
+        results[sym] = {}
 
-        # --- v3.1 Baseline ---
-        print("  v3.1 (baseline)...", flush=True)
-        v31_result = walk_forward(
-            data, vecs,
-            strategy_factory=lambda tm: MarkovVPVRStrategy(
-                transition_matrix=tm or pre_tm,
-                # v3.1: no barbell, full position on entry
-                probe_frac=1.0,
-                conviction_frac=0.0,
-                survival_bars=999,  # effectively disabled
-            ),
-        )
-        v31_m = v31_result["metrics"]
-        v31_h = avg_hold(v31_result["trades"])
-        v31_aw, v31_al, v31_ratio = win_loss(v31_result["trades"])
-        v31_ev = ev_per_trade(v31_result["trades"])
+        for vname, vparams in variants.items():
+            print(f"  {vname} (survival={vparams['survival_bars']}, "
+                  f"dE_gate={vparams['require_dE_negative']})...", flush=True)
 
-        print(f"    ret={v31_m['total_return']:.2%}, sharpe={v31_m['sharpe_ratio']:.2f}, "
-              f"trades={v31_m['n_trades']}, win={v31_m['win_rate']:.1%}, "
-              f"dd={v31_m['max_drawdown']:.1%}")
-        print(f"    W/L={v31_ratio:.2f}x, EV/trade=${v31_ev:.2f}")
+            # Capture params in closure properly
+            _sb = vparams["survival_bars"]
+            _de = vparams["require_dE_negative"]
+            vresult = walk_forward(
+                data, vecs,
+                strategy_factory=lambda tm, sb=_sb, de=_de: MarkovVPVRStrategy(
+                    transition_matrix=tm or pre_tm,
+                    survival_bars=sb,
+                    require_dE_negative=de,
+                ),
+            )
+            vm = vresult["metrics"]
+            vh = avg_hold(vresult["trades"])
+            vaw, val_, vratio = win_loss(vresult["trades"])
+            vev = ev_per_trade(vresult["trades"])
+            vbb = barbell_stats(vresult["trade_log"])
+            vex = exit_dist(vresult["trade_log"])
 
-        # --- v5 Barbell ---
-        print("  v5 (barbell)...", flush=True)
-        v5_result = walk_forward(
-            data, vecs,
-            strategy_factory=lambda tm: MarkovVPVRStrategy(
-                transition_matrix=tm or pre_tm,
-            ),
-        )
-        v5_m = v5_result["metrics"]
-        v5_h = avg_hold(v5_result["trades"])
-        v5_aw, v5_al, v5_ratio = win_loss(v5_result["trades"])
-        v5_ev = ev_per_trade(v5_result["trades"])
-        v5_bb = barbell_stats(v5_result["trade_log"])
-        v5_exits = exit_dist(v5_result["trade_log"])
+            print(f"    ret={vm['total_return']:.2%}, sharpe={vm['sharpe_ratio']:.2f}, "
+                  f"trades={vm['n_trades']}, win={vm['win_rate']:.1%}, "
+                  f"dd={vm['max_drawdown']:.1%}")
+            print(f"    W/L={vratio:.2f}x, EV/trade=${vev:.2f}")
+            print(f"    barbell: P1={vbb['phase1_fills']}, P2={vbb['phase2_fills']}, "
+                  f"abort={vbb['phase1_abort_rate']:.1%}, P2fill={vbb['phase2_fill_rate']:.1%}")
 
-        print(f"    ret={v5_m['total_return']:.2%}, sharpe={v5_m['sharpe_ratio']:.2f}, "
-              f"trades={v5_m['n_trades']}, win={v5_m['win_rate']:.1%}, "
-              f"dd={v5_m['max_drawdown']:.1%}")
-        print(f"    W/L={v5_ratio:.2f}x, EV/trade=${v5_ev:.2f}")
-        print(f"    barbell: {v5_bb}")
-        print(f"    exits: {v5_exits}")
+            # Collect labels from first variant for survival curves
+            if vname == "v5":
+                all_regime_labels[sym] = vresult.get("labels", [])
 
-        # Collect regime labels for survival curves
-        all_regime_labels[sym] = v5_result.get("labels", [])
+            results[sym][vname] = {
+                "metrics": vm, "avg_hold": vh,
+                "avg_win": vaw, "avg_loss": val_, "wl_ratio": vratio,
+                "ev_per_trade": vev,
+                "barbell": vbb, "exit_dist": vex,
+            }
 
         # --- Buy & Hold ---
         print("  Buy&Hold...", flush=True)
         bh = run_simple(data, BuyAndHold())
-        bh_m = bh["metrics"]
-
-        results[sym] = {
-            "v3.1": {
-                "metrics": v31_m, "avg_hold": v31_h,
-                "avg_win": v31_aw, "avg_loss": v31_al, "wl_ratio": v31_ratio,
-                "ev_per_trade": v31_ev,
-                "exit_dist": exit_dist(v31_result["trade_log"]),
-            },
-            "v5": {
-                "metrics": v5_m, "avg_hold": v5_h,
-                "avg_win": v5_aw, "avg_loss": v5_al, "wl_ratio": v5_ratio,
-                "ev_per_trade": v5_ev,
-                "barbell": v5_bb, "exit_dist": v5_exits,
-            },
-            "buy_hold": {"metrics": bh_m},
-        }
+        results[sym]["buy_hold"] = {"metrics": bh["metrics"]}
 
     # ============================================================================
     # Survival curves
@@ -537,11 +523,11 @@ def main():
     print(f"\nSurvival curves saved to {surv_path}")
 
     # ============================================================================
-    # Summary — v3.1 vs v5 side-by-side
+    # Summary — v5 vs v5.1a vs v5.1b side-by-side
     # ============================================================================
 
     print("\n" + "=" * 130)
-    print("v3.1 vs v5 COMPARISON")
+    print("v5 vs v5.1a vs v5.1b COMPARISON")
     print("=" * 130)
     print(f"{'Token':<6} {'Version':<8} {'Return':>9} {'Sharpe':>8} {'MaxDD':>8} "
           f"{'Trades':>7} {'WinRate':>8} {'W/L':>6} {'EV/trade':>10} {'AvgHold':>8}")
@@ -549,7 +535,8 @@ def main():
 
     for sym in TOKEN_FILES:
         r = results[sym]
-        for ver_key, ver_label in [("v3.1", "v3.1"), ("v5", "v5"), ("buy_hold", "B&H")]:
+        for ver_key in ["v5", "v5.1a", "v5.1b", "buy_hold"]:
+            ver_label = ver_key if ver_key != "buy_hold" else "B&H"
             s = r[ver_key]
             m = s["metrics"]
             h = s.get("avg_hold", 0)
@@ -560,36 +547,41 @@ def main():
                   f"{ratio:>5.2f}x ${ev:>8.2f} {h:>7.0f}h")
         print("-" * 130)
 
-    # v5 barbell stats
-    print("\nv5 BARBELL METRICS:")
-    print(f"{'Token':<6} {'P1 Fills':>9} {'P2 Fills':>9} {'Aborts':>8} "
-          f"{'Abort%':>8} {'P2 Fill%':>9} {'Hold(P1)':>9} {'Hold(Full)':>11}")
-    print("-" * 80)
-    for sym in TOKEN_FILES:
-        bb = results[sym]["v5"]["barbell"]
-        print(f"{sym:<6} {bb['phase1_fills']:>9} {bb['phase2_fills']:>9} "
-              f"{bb['probe_aborts']:>8} {bb['phase1_abort_rate']:>7.1%} "
-              f"{bb['phase2_fill_rate']:>8.1%} {bb['avg_hold_probe_only']:>8.0f}h "
-              f"{bb['avg_hold_full_position']:>10.0f}h")
+    # Barbell stats for all variants
+    for vname in ["v5", "v5.1a", "v5.1b"]:
+        print(f"\n{vname} BARBELL METRICS:")
+        print(f"{'Token':<6} {'P1 Fills':>9} {'P2 Fills':>9} {'Aborts':>8} "
+              f"{'Abort%':>8} {'P2 Fill%':>9} {'Hold(P1)':>9} {'Hold(Full)':>11}")
+        print("-" * 80)
+        for sym in TOKEN_FILES:
+            bb = results[sym][vname]["barbell"]
+            print(f"{sym:<6} {bb['phase1_fills']:>9} {bb['phase2_fills']:>9} "
+                  f"{bb['probe_aborts']:>8} {bb['phase1_abort_rate']:>7.1%} "
+                  f"{bb['phase2_fill_rate']:>8.1%} {bb['avg_hold_probe_only']:>8.0f}h "
+                  f"{bb['avg_hold_full_position']:>10.0f}h")
 
-    # Exit distribution
-    print("\nv5 EXIT DISTRIBUTION:")
-    for sym in TOKEN_FILES:
-        ed = results[sym]["v5"]["exit_dist"]
-        print(f"  {sym}: {ed}")
+    # Exit distribution comparison
+    print("\nEXIT DISTRIBUTIONS:")
+    for vname in ["v5", "v5.1a", "v5.1b"]:
+        print(f"  {vname}:")
+        for sym in TOKEN_FILES:
+            ed = results[sym][vname]["exit_dist"]
+            print(f"    {sym}: {ed}")
 
-    # Targets check
-    print("\nTARGETS CHECK:")
-    for sym in TOKEN_FILES:
-        v5 = results[sym]["v5"]
-        wr = v5["metrics"]["win_rate"]
-        ratio = v5["wl_ratio"]
-        wr_ok = "OK" if wr > 0.45 else "MISS"
-        ratio_ok = "OK" if ratio > 1.5 else "MISS"
-        print(f"  {sym}: win_rate={wr:.1%} [{wr_ok}], W/L={ratio:.2f}x [{ratio_ok}]")
+    # Targets check — all variants
+    print("\nTARGETS CHECK (win_rate > 40%, W/L > 1.5x):")
+    for vname in ["v5", "v5.1a", "v5.1b"]:
+        print(f"  {vname}:")
+        for sym in TOKEN_FILES:
+            v = results[sym][vname]
+            wr = v["metrics"]["win_rate"]
+            ratio = v["wl_ratio"]
+            wr_ok = "OK" if wr > 0.40 else "MISS"
+            ratio_ok = "OK" if ratio > 1.5 else "MISS"
+            print(f"    {sym}: win_rate={wr:.1%} [{wr_ok}], W/L={ratio:.2f}x [{ratio_ok}]")
 
     # Save results
-    output = DATA_DIR / "markov_vpvr_v5_results.json"
+    output = DATA_DIR / "markov_vpvr_v5.1_results.json"
     with open(output, "w") as f:
         json.dump(results, f, indent=2, default=str)
     print(f"\nResults saved to {output}")

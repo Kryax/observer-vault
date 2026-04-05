@@ -64,6 +64,7 @@ class MarkovVPVRStrategy:
         probe_frac: float = 0.25,       # Phase 1: 25% of max position
         conviction_frac: float = 0.75,   # Phase 2: 75% of max position
         survival_bars: int = 5,           # D-regime must survive this many bars
+        require_dE_negative: bool = False,  # v5.1b: require dE/dt < 0 at conviction
         # Transition matrix
         transition_matrix: Optional[dict] = None,
         # General
@@ -85,6 +86,7 @@ class MarkovVPVRStrategy:
         self.probe_frac = probe_frac
         self.conviction_frac = conviction_frac
         self.survival_bars = survival_bars
+        self.require_dE_negative = require_dE_negative
         self.warmup_bars = warmup_bars
         self.atr_period = atr_period
         self.min_order_life = min_order_life
@@ -174,7 +176,8 @@ class MarkovVPVRStrategy:
             if (self._phase_filled == 1
                     and regime == "D"
                     and self._consecutive_d_bars >= self.survival_bars
-                    and self._pending is None):
+                    and self._pending is None
+                    and (not self.require_dE_negative or dE_dt < 0)):
                 return self._place_entry(idx, history, price, atr, phase=2)
 
             return Signal(action="hold", reason="holding")
