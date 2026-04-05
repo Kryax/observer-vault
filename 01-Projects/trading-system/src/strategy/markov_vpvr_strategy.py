@@ -1,26 +1,17 @@
 """
-Markov + VPVR Strategy (v5) — Survival Filter Barbell Entry
+Markov + VPVR Strategy (v5.2) — Survival Filter Barbell + Asymmetric Exits
 
-BASE: v3.1 parameters (proven best W/L ratio 1.71-2.39x, max DD 2.6-3.9%)
-CHANGE: Replace 3-tranche scale-in with 2-phase barbell gated by D-regime survival.
+v5.1b base: barbell entry (25% probe / 75% conviction at bar 8 with dE/dt < 0)
 
-The problem: >50% of D-regimes die within 5 bars. v3.1 enters them all equally.
-The fix: probe with 25% on bar 1, add 75% conviction only if D survives 5 bars.
+v5.2 additions:
+  A. Profit ratchet — one-way floor that locks in gains at milestones
+     +2% unrealised → lock +1%, +4% → lock +2%, +6% → lock +4%
+     If price drops to floor: exit with locked profit
+  B. Asymmetric destab — winners get 2x destab threshold (relaxed exit)
+     Losers keep tight 0.02 threshold, winners need 0.04 to trigger destab
 
-Phase 1 — Probe (bar 1 of D-regime):
-  25% of max position via VPVR limit entry
-  2% stop below entry
-  If D dies before bar 5: small loss (25% * 2% = 0.5% max)
-
-Phase 2 — Conviction (bar 5+ of D-regime):
-  75% of max position via VPVR limit entry
-  Stop remains at 2% below ORIGINAL entry (Phase 1)
-
-Exit gates (v3.1 exact):
-  Gate 1 — Spatial stop (2% hard, non-negotiable)
-  Gate 2 — R-regime immediate exit
-  Gate 3 — Destab exit (dE/dt > 0.02 for 4 consecutive bars)
-  Gate 4 — Time decay (K=1.0)
+Entry unchanged: barbell (25/75), 8-bar survival, dE/dt < 0 gate
+Sacred: 2% spatial stop, R-regime exit
 """
 
 from __future__ import annotations
@@ -65,6 +56,10 @@ class MarkovVPVRStrategy:
         conviction_frac: float = 0.75,   # Phase 2: 75% of max position
         survival_bars: int = 5,           # D-regime must survive this many bars
         require_dE_negative: bool = False,  # v5.1b: require dE/dt < 0 at conviction
+        # Profit ratchet (v5.2)
+        ratchet_milestones: Optional[list[tuple[float, float]]] = None,
+        # Asymmetric destab (v5.2)
+        asymmetric_destab: bool = False,  # 2x threshold when in profit
         # Transition matrix
         transition_matrix: Optional[dict] = None,
         # General
@@ -87,6 +82,11 @@ class MarkovVPVRStrategy:
         self.conviction_frac = conviction_frac
         self.survival_bars = survival_bars
         self.require_dE_negative = require_dE_negative
+        # Default ratchet: +2%→lock+1%, +4%→lock+2%, +6%→lock+4%
+        self.ratchet_milestones = ratchet_milestones or [
+            (0.02, 0.01), (0.04, 0.02), (0.06, 0.04),
+        ]
+        self.asymmetric_destab = asymmetric_destab
         self.warmup_bars = warmup_bars
         self.atr_period = atr_period
         self.min_order_life = min_order_life
@@ -102,6 +102,7 @@ class MarkovVPVRStrategy:
         self._entry_bar = 0
         self._phase_filled = 0  # 0=none, 1=probe, 2=conviction
         self._stop_price = 0.0
+        self._profit_floor = 0.0  # ratchet floor (fraction of entry price)
 
         # Pending order
         self._pending: Optional[PendingEntry] = None
@@ -296,16 +297,35 @@ class MarkovVPVRStrategy:
 
     def _check_exits(self, idx: int, regime: str,
                      dE_dt: float, price: float) -> Optional[Signal]:
+        unrealised_pnl_pct = ((price - self._avg_entry_price) / self._avg_entry_price
+                              if self._avg_entry_price > 0 else 0.0)
+
         # GATE 1 — Spatial stop (2% hard stop, always active)
         if price <= self._stop_price:
             return self._exit_all(idx, price, "spatial_stop")
+
+        # GATE 1.5 — Profit ratchet (v5.2)
+        if self.ratchet_milestones:
+            for threshold, floor in self.ratchet_milestones:
+                if unrealised_pnl_pct >= threshold:
+                    self._profit_floor = max(self._profit_floor, floor)
+            if self._profit_floor > 0:
+                floor_price = self._avg_entry_price * (1 + self._profit_floor)
+                if price <= floor_price:
+                    return self._exit_all(idx, price, "profit_ratchet")
 
         # GATE 2 — R-regime: immediate exit
         if regime == "R":
             return self._exit_all(idx, price, "R_regime_exit")
 
         # GATE 3 — Destab: dE/dt > threshold for N consecutive bars
-        if dE_dt > self.destab_threshold:
+        # v5.2: asymmetric — 2x threshold when in profit
+        if self.asymmetric_destab and unrealised_pnl_pct > 0:
+            effective_threshold = self.destab_threshold * 2
+        else:
+            effective_threshold = self.destab_threshold
+
+        if dE_dt > effective_threshold:
             self._destab_counter += 1
             if self._destab_counter >= self.destab_persistence:
                 return self._exit_all(idx, price, "destab_exit")
@@ -343,6 +363,7 @@ class MarkovVPVRStrategy:
         self._entry_bar = 0
         self._phase_filled = 0
         self._stop_price = 0.0
+        self._profit_floor = 0.0
         self._destab_counter = 0
 
         return Signal(action="sell", size=1.0, reason=reason)

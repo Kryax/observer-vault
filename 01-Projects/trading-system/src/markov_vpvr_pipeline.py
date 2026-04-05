@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """
-Markov+VPVR Strategy Pipeline (v5.1)
+Markov+VPVR Strategy Pipeline (v5.2)
 
 Walk-forward backtest comparing:
-  v5    — barbell entry, survival_bars=5
-  v5.1a — barbell entry, survival_bars=8 (past high-hazard zone)
-  v5.1b — barbell entry, survival_bars=8 + dE/dt < 0 conviction gate
+  v5.1b — barbell entry, survival_bars=8, dE/dt < 0 gate (baseline)
+  v5.2  — v5.1b + profit ratchet + asymmetric destab exits
 
-All exit parameters are v3.1 exact.
+v5.2 additions:
+  A. Profit ratchet: +2%→lock+1%, +4%→lock+2%, +6%→lock+4%
+  B. Asymmetric destab: 2x threshold when in profit
 """
 
 from __future__ import annotations
@@ -384,14 +385,12 @@ def exit_dist(trade_log: list[dict]) -> dict:
 
 def main():
     print("=" * 120)
-    print("MARKOV+VPVR STRATEGY PIPELINE — v5 vs v5.1a vs v5.1b")
+    print("MARKOV+VPVR STRATEGY PIPELINE — v5.1b vs v5.2")
     print(f"  Window: {WINDOW} bars ({WINDOW // 24} days)")
     print(f"  Tokens: {list(TOKEN_FILES.keys())}")
     print(f"  Walk-forward: train=2000, step=500")
-    print(f"  v5:   survival_bars=5")
-    print(f"  v5.1a: survival_bars=8 (past high-hazard zone)")
-    print(f"  v5.1b: survival_bars=8 + dE/dt < 0 conviction gate")
-    print(f"  All exits: v3.1 exact (2% stop, R-exit, destab 0.02/4-bar, time-decay K=1.0)")
+    print(f"  v5.1b: survival_bars=8, dE/dt < 0 gate (baseline)")
+    print(f"  v5.2:  + profit ratchet (+2%→+1%, +4%→+2%, +6%→+4%) + asymmetric destab (2x when in profit)")
     print("=" * 120, flush=True)
 
     # Load data
@@ -415,11 +414,13 @@ def main():
             if sym in raw_tm:
                 precomputed_tm[sym] = raw_tm[sym].get("transition_matrix", {})
 
-    # Define the three variants to test
+    # Define variants to test
     variants = {
-        "v5": dict(survival_bars=5, require_dE_negative=False),
-        "v5.1a": dict(survival_bars=8, require_dE_negative=False),
-        "v5.1b": dict(survival_bars=8, require_dE_negative=True),
+        "v5.1b": dict(survival_bars=8, require_dE_negative=True,
+                       ratchet_milestones=[], asymmetric_destab=False),
+        "v5.2": dict(survival_bars=8, require_dE_negative=True,
+                      ratchet_milestones=[(0.02, 0.01), (0.04, 0.02), (0.06, 0.04)],
+                      asymmetric_destab=True),
     }
 
     results = {}
@@ -436,18 +437,15 @@ def main():
         results[sym] = {}
 
         for vname, vparams in variants.items():
-            print(f"  {vname} (survival={vparams['survival_bars']}, "
-                  f"dE_gate={vparams['require_dE_negative']})...", flush=True)
+            print(f"  {vname}...", flush=True)
 
             # Capture params in closure properly
-            _sb = vparams["survival_bars"]
-            _de = vparams["require_dE_negative"]
+            _vp = dict(vparams)
             vresult = walk_forward(
                 data, vecs,
-                strategy_factory=lambda tm, sb=_sb, de=_de: MarkovVPVRStrategy(
+                strategy_factory=lambda tm, vp=_vp: MarkovVPVRStrategy(
                     transition_matrix=tm or pre_tm,
-                    survival_bars=sb,
-                    require_dE_negative=de,
+                    **vp,
                 ),
             )
             vm = vresult["metrics"]
@@ -465,7 +463,7 @@ def main():
                   f"abort={vbb['phase1_abort_rate']:.1%}, P2fill={vbb['phase2_fill_rate']:.1%}")
 
             # Collect labels from first variant for survival curves
-            if vname == "v5":
+            if vname == list(variants.keys())[0]:
                 all_regime_labels[sym] = vresult.get("labels", [])
 
             results[sym][vname] = {
@@ -527,7 +525,7 @@ def main():
     # ============================================================================
 
     print("\n" + "=" * 130)
-    print("v5 vs v5.1a vs v5.1b COMPARISON")
+    print("v5.1b vs v5.2 COMPARISON")
     print("=" * 130)
     print(f"{'Token':<6} {'Version':<8} {'Return':>9} {'Sharpe':>8} {'MaxDD':>8} "
           f"{'Trades':>7} {'WinRate':>8} {'W/L':>6} {'EV/trade':>10} {'AvgHold':>8}")
@@ -535,7 +533,7 @@ def main():
 
     for sym in TOKEN_FILES:
         r = results[sym]
-        for ver_key in ["v5", "v5.1a", "v5.1b", "buy_hold"]:
+        for ver_key in list(variants.keys()) + ["buy_hold"]:
             ver_label = ver_key if ver_key != "buy_hold" else "B&H"
             s = r[ver_key]
             m = s["metrics"]
@@ -548,7 +546,7 @@ def main():
         print("-" * 130)
 
     # Barbell stats for all variants
-    for vname in ["v5", "v5.1a", "v5.1b"]:
+    for vname in variants:
         print(f"\n{vname} BARBELL METRICS:")
         print(f"{'Token':<6} {'P1 Fills':>9} {'P2 Fills':>9} {'Aborts':>8} "
               f"{'Abort%':>8} {'P2 Fill%':>9} {'Hold(P1)':>9} {'Hold(Full)':>11}")
@@ -562,7 +560,7 @@ def main():
 
     # Exit distribution comparison
     print("\nEXIT DISTRIBUTIONS:")
-    for vname in ["v5", "v5.1a", "v5.1b"]:
+    for vname in variants:
         print(f"  {vname}:")
         for sym in TOKEN_FILES:
             ed = results[sym][vname]["exit_dist"]
@@ -570,7 +568,7 @@ def main():
 
     # Targets check — all variants
     print("\nTARGETS CHECK (win_rate > 40%, W/L > 1.5x):")
-    for vname in ["v5", "v5.1a", "v5.1b"]:
+    for vname in variants:
         print(f"  {vname}:")
         for sym in TOKEN_FILES:
             v = results[sym][vname]
@@ -581,7 +579,7 @@ def main():
             print(f"    {sym}: win_rate={wr:.1%} [{wr_ok}], W/L={ratio:.2f}x [{ratio_ok}]")
 
     # Save results
-    output = DATA_DIR / "markov_vpvr_v5.1_results.json"
+    output = DATA_DIR / "markov_vpvr_v5.2_results.json"
     with open(output, "w") as f:
         json.dump(results, f, indent=2, default=str)
     print(f"\nResults saved to {output}")
