@@ -1,0 +1,15 @@
+version: '3'
+services:
+  freqtrade:
+    image: freqtradeorg/freqtrade:stable
+    restart: unless-stopped
+    container_name: dir-allocator
+    volumes:
+      - ./user_data:/freqtrade/user_data
+    ports:
+      - "8080:8080"
+    command: >
+      trade
+      --config /freqtrade/user_data/config_paper.json
+      --strategy DIRAllocator
+      --db-url sqlite:////freqtrade/user_data/tradesv3.sqlite
