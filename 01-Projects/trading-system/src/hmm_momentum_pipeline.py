@@ -1,8 +1,8 @@
 """
-HMM v6.1 Pipeline — Fluid Dynamic State Machine.
+HMM v6.2 Pipeline — Gatekeeper Update.
 
-K=2 HMM (Kinetic/Quiet) + deadband hysteresis + quiet-trend permeability.
-Three variants tested: quiet_threshold = 5%, 10%, 15%.
+K=2 HMM (Kinetic/Quiet). Gatekeeper uses avg_momentum with hysteresis deadband.
+Quiet = unconditional Hold. Three deadband widths tested.
 """
 
 import json
@@ -22,7 +22,7 @@ from classifier.hmm_regime import HMMRegimeClassifier
 from strategy.dual_momentum import DualMomentumAllocator
 
 DATA_DIR = Path(__file__).parent.parent / "data"
-RESULTS_PATH = DATA_DIR / "hmm_momentum_v6_1_results.json"
+RESULTS_PATH = DATA_DIR / "hmm_momentum_v6_2_results.json"
 
 TOKEN_FILES = {
     "BTC": "btc_ohlcv_1h_extended.csv",
@@ -37,9 +37,9 @@ TEST_BARS = 180 * 24
 PERSISTENCE_THRESHOLDS = {"Kinetic": 3, "Quiet": 24}
 
 VARIANTS = {
-    "v6.1a": {"quiet_threshold": 0.05, "deadband": 0.02},
-    "v6.1b": {"quiet_threshold": 0.10, "deadband": 0.02},
-    "v6.1c": {"quiet_threshold": 0.15, "deadband": 0.02},
+    "v6.2a": 0.005,   # ±0.5%
+    "v6.2b": 0.01,    # ±1.0%
+    "v6.2c": 0.02,    # ±2.0%
 }
 
 
@@ -61,7 +61,7 @@ def walk_forward_classify(features: np.ndarray) -> tuple[list[str], HMMRegimeCla
         fold += 1
         train_end = start + TRAIN_BARS
         test_end = min(train_end + TEST_BARS, n)
-        print(f"    Fold {fold}: [{start}:{train_end}] → [{train_end}:{test_end}]")
+        print(f"    Fold {fold}: [{start}:{train_end}] -> [{train_end}:{test_end}]")
         clf = HMMRegimeClassifier(n_states=2, n_iter=100)
         clf.fit(features[start:train_end])
         for j, label in enumerate(clf.predict(features[train_end:test_end])):
@@ -96,15 +96,14 @@ def apply_persistence_filter(regimes: list[str], thresholds: dict | None = None)
     return confirmed
 
 
-def run_variant(name, params, all_data, all_regimes):
-    """Run one quiet_threshold variant."""
+def run_variant(name, deadband, all_data, all_regimes):
     print(f"\n{'='*60}")
-    print(f"VARIANT {name}: quiet_threshold={params['quiet_threshold']:.0%}, deadband={params['deadband']:.0%}")
+    print(f"VARIANT {name}: deadband = +/-{deadband*100:.1f}% on avg_momentum")
     print(f"{'='*60}")
 
     allocator = DualMomentumAllocator(
-        momentum_window=720, rebalance_bars=168, switch_threshold=0.05,
-        deadband=params["deadband"], quiet_threshold=params["quiet_threshold"],
+        momentum_window=720, rebalance_bars=168,
+        switch_threshold=0.05, deadband=deadband,
     )
     results = allocator.run(all_data, all_regimes, initial_capital=10_000.0)
 
@@ -121,11 +120,12 @@ def run_variant(name, params, all_data, all_regimes):
     for year, ret in sorted(results["annual_returns"].items()):
         print(f"    {year}: {ret*100:+.1f}%")
 
-    print(f"\n  --- State Time by Year ---")
-    print(f"    {'Year':<6s} {'Kin+':<8s} {'Kin-':<8s} {'Q-hold':<8s} {'Q-deploy':<8s}")
+    print(f"\n  --- State/Gate Time + Flips ---")
+    print(f"    {'Year':<6s} {'Kin+ON':<9s} {'Kin+OFF':<9s} {'Quiet':<9s} {'Flips':<6s}")
+    gf = results.get("gate_flips_by_year", {})
     for year, st in sorted(results.get("state_time_by_year", {}).items()):
-        print(f"    {year:<6s} {st.get('kinetic_pos',0):>6.1f}%  {st.get('kinetic_neg',0):>6.1f}%  "
-              f"{st.get('quiet_hold',0):>6.1f}%  {st.get('quiet_deployed',0):>6.1f}%")
+        print(f"    {year:<6s} {st.get('kinetic_on',0):>7.1f}%  {st.get('kinetic_off',0):>7.1f}%  "
+              f"{st.get('quiet',0):>7.1f}%  {gf.get(year,0):>4d}")
 
     print(f"\n  --- Buy-and-Hold ---")
     for token, ret in results["buy_and_hold"].items():
@@ -142,24 +142,20 @@ def run_variant(name, params, all_data, all_regimes):
 
 def main():
     print("=" * 60)
-    print("HMM V6.1 — FLUID DYNAMIC STATE MACHINE")
+    print("HMM V6.2 — GATEKEEPER (avg_momentum deadband)")
     print("=" * 60)
 
-    # Phase 1: Load data + classify (shared across variants)
+    # Phase 1: Load + classify (shared)
     all_data = {}
     all_regimes = {}
-    all_classifiers = {}
 
     for token in TOKEN_FILES:
         print(f"\n>>> Loading {token}...")
         data = load_data(token)
         all_data[token] = data
-        print(f"    {len(data)} bars: {data.index[0]} to {data.index[-1]}")
-
         features = compute_price_native_features(data)
         feat_arr = features[["log_return", "realized_vol"]].values
         raw_regimes, clf = walk_forward_classify(feat_arr)
-        all_classifiers[token] = clf
         regimes = apply_persistence_filter(raw_regimes)
         all_regimes[token] = regimes
 
@@ -169,13 +165,13 @@ def main():
         print(f"    Kinetic: {counts.get('Kinetic',0)/total*100:.1f}%  "
               f"Quiet: {counts.get('Quiet',0)/total*100:.1f}%  transitions={transitions}")
 
-    # Phase 2: Run all three variants
+    # Phase 2: Run variants
     all_results = {}
-    for name, params in VARIANTS.items():
-        results = run_variant(name, params, all_data, all_regimes)
+    for name, deadband in VARIANTS.items():
+        results = run_variant(name, deadband, all_data, all_regimes)
         save = {k: v for k, v in results.items() if k not in ("equity_curve", "timestamps")}
         save["variant"] = name
-        save["params"] = params
+        save["deadband"] = deadband
         all_results[name] = save
 
     # Phase 3: Comparison
@@ -190,17 +186,27 @@ def main():
               f"{r['max_drawdown']*100:>7.1f}% {r['sharpe']:>8.2f} {r['calmar']:>8.2f} "
               f"{ar.get('2021',0)*100:>+7.0f}% {ar.get('2022',0)*100:>+7.1f}% "
               f"{ar.get('2025',0)*100:>+7.1f}% {r['n_token_switches']:>10d}")
-
-    # v6 baseline for reference
     print(f"  {'v6 base':<10s} {'  +1242':>9s}% {'  58.4':>7s}% {' -66.3':>7s}% "
           f"{'    0.62':>8s} {'    0.88':>8s} {'  +491':>7s}% {'  -3.7':>7s}% {' -12.4':>7s}% {'       161':>10s}")
 
-    # Check 2022 constraint
-    print(f"\n  2022 constraint check (must be > -10%):")
+    # 2022 constraint
+    print(f"\n  2022 constraint (must be > -10%):")
     for name, r in all_results.items():
         yr2022 = r.get("annual_returns", {}).get("2022", 0) * 100
         status = "PASS" if yr2022 > -10 else "FAIL"
-        print(f"    {name}: {yr2022:+.1f}% — {status}")
+        print(f"    {name}: {yr2022:+.1f}% -- {status}")
+
+    # Pick winner
+    passing = {n: r for n, r in all_results.items()
+               if r.get("annual_returns", {}).get("2022", -1) > -0.10}
+    if passing:
+        # Among passing: prefer fewest switches, then highest return
+        winner = min(passing, key=lambda n: (passing[n]["n_token_switches"], -passing[n]["total_return"]))
+        print(f"\n  RECOMMENDED: {winner} "
+              f"(switches={passing[winner]['n_token_switches']}, "
+              f"return={passing[winner]['total_return']*100:+.1f}%)")
+    else:
+        print(f"\n  NO VARIANT PASSES 2022 CONSTRAINT")
 
     with open(RESULTS_PATH, "w") as f:
         json.dump(all_results, f, indent=2, default=str)

@@ -1,12 +1,11 @@
 """
-Regime-Gated Dual Momentum Allocator — v6.1 (Fluid Dynamic State Machine).
+Regime-Gated Dual Momentum Allocator — v6.2 (Gatekeeper).
 
-Kinetic + momentum > +deadband  → Risk ON (top momentum token)
-Kinetic + momentum < -deadband  → Risk OFF (cash)
-Kinetic + momentum in deadband  → Hold current allocation
-Quiet + holding token            → Hold position
-Quiet + cash + momentum > quiet_threshold → Deploy (stealth trend)
-Quiet + cash + momentum <= quiet_threshold → Hold cash
+Layer 1 — Gatekeeper: HMM state + avg_momentum of basket → Risk-On/Risk-Off
+Layer 2 — Funnel: IF Risk-On → 100% in top individual momentum token
+
+best_momentum is NEVER used for the Risk-On/Risk-Off decision.
+Quiet state → unconditional Hold (no change to allocation).
 """
 
 import numpy as np
@@ -20,14 +19,12 @@ class DualMomentumAllocator:
         momentum_window: int = 720,
         rebalance_bars: int = 168,
         switch_threshold: float = 0.05,
-        deadband: float = 0.02,
-        quiet_threshold: float = 0.10,
+        deadband: float = 0.01,
     ):
         self.momentum_window = momentum_window
         self.rebalance_bars = rebalance_bars
         self.switch_threshold = switch_threshold
         self.deadband = deadband
-        self.quiet_threshold = quiet_threshold
 
     def run(
         self,
@@ -56,9 +53,10 @@ class DualMomentumAllocator:
         held_token = None
         trades = []
         bars_in_market = 0
+        risk_state = "risk_off"  # stateful gate
 
-        # State time: kinetic_pos, kinetic_neg, quiet_hold, quiet_deployed
         state_time = {}
+        gate_flips_by_year = {}
 
         for i in range(n):
             # Update equity
@@ -72,82 +70,90 @@ class DualMomentumAllocator:
             ts = common_idx[i]
             year = str(ts.year) if hasattr(ts, 'year') else str(pd.Timestamp(ts).year)
             if year not in state_time:
-                state_time[year] = {"kinetic_pos": 0, "kinetic_neg": 0,
-                                    "quiet_hold": 0, "quiet_deployed": 0}
+                state_time[year] = {"kinetic_on": 0, "kinetic_off": 0, "quiet": 0}
+                gate_flips_by_year[year] = 0
 
             # Consensus regime
             kinetic_count = sum(1 for t in tokens if regimes[t][i] == "Kinetic")
             is_kinetic = kinetic_count > len(tokens) // 2
 
-            # Momenta
+            # Compute momenta
             if i >= self.momentum_window:
                 momenta = {t: np.log(prices[t][i] / prices[t][i - self.momentum_window]) for t in tokens}
-                best_token = max(momenta, key=momenta.get)
-                best_momentum = momenta[best_token]
                 avg_momentum = np.mean(list(momenta.values()))
             else:
                 momenta = {t: 0.0 for t in tokens}
-                best_token = tokens[0]
-                best_momentum = 0.0
                 avg_momentum = 0.0
 
-            # === Fluid Dynamic State Machine ===
+            # === Layer 1: Gatekeeper ===
 
-            if is_kinetic:
-                if held_token is None:
-                    # Currently cash: only enter if momentum clears positive deadband
-                    if best_momentum > self.deadband:
-                        state_time[year]["kinetic_pos"] += 1
-                        if i >= self.momentum_window:
-                            self._enter_position(i, common_idx, prices, momenta,
-                                                 best_token, trades, equity, held_token)
-                            held_token = best_token
-                    else:
-                        state_time[year]["kinetic_neg"] += 1
-                else:
-                    # Currently holding: only exit if momentum drops below negative deadband
-                    if best_momentum < -self.deadband:
-                        state_time[year]["kinetic_neg"] += 1
-                        trades.append({
-                            "bar": i, "timestamp": str(common_idx[i]),
-                            "action": "sell", "token": held_token,
-                            "reason": "kinetic_negative", "equity": equity,
-                        })
-                        held_token = None
-                    else:
-                        state_time[year]["kinetic_pos"] += 1
-                        # Rebalance within kinetic+positive
-                        if i >= self.momentum_window and (i % self.rebalance_bars == 0):
-                            if best_token != held_token:
-                                advantage = momenta[best_token] - momenta.get(held_token, 0)
-                                if advantage >= self.switch_threshold:
-                                    trades.append({
-                                        "bar": i, "timestamp": str(common_idx[i]),
-                                        "action": "sell", "token": held_token,
-                                        "reason": "rotation", "equity": equity,
-                                    })
-                                    held_token = best_token
-                                    trades.append({
-                                        "bar": i, "timestamp": str(common_idx[i]),
-                                        "action": "buy", "token": best_token,
-                                        "price": float(prices[best_token][i]),
-                                        "momentum": float(momenta[best_token]),
-                                        "equity": equity,
-                                    })
-            else:
-                # Quiet state
+            if not is_kinetic:
+                # Quiet: unconditional Hold
+                state_time[year]["quiet"] += 1
+                continue
+
+            # Kinetic: apply gatekeeper with hysteresis on avg_momentum
+            prev_risk_state = risk_state
+
+            if risk_state == "risk_off":
+                if avg_momentum > self.deadband:
+                    risk_state = "risk_on"
+            else:  # risk_on
+                if avg_momentum < -self.deadband:
+                    risk_state = "risk_off"
+
+            if risk_state != prev_risk_state:
+                gate_flips_by_year[year] += 1
+
+            if risk_state == "risk_off":
+                state_time[year]["kinetic_off"] += 1
+                # Exit if holding
                 if held_token is not None:
-                    # Holding a token: hold it (original behaviour)
-                    state_time[year]["quiet_hold"] += 1
-                else:
-                    # In cash: check permeability clause
-                    if i >= self.momentum_window and best_momentum > self.quiet_threshold:
-                        state_time[year]["quiet_deployed"] += 1
-                        self._enter_position(i, common_idx, prices, momenta,
-                                             best_token, trades, equity, held_token)
-                        held_token = best_token
-                    else:
-                        state_time[year]["quiet_hold"] += 1
+                    trades.append({
+                        "bar": i, "timestamp": str(common_idx[i]),
+                        "action": "sell", "token": held_token,
+                        "reason": "gate_closed", "equity": equity,
+                    })
+                    held_token = None
+                continue
+
+            # risk_state == "risk_on"
+            state_time[year]["kinetic_on"] += 1
+
+            # === Layer 2: Funnel ===
+            if i < self.momentum_window:
+                continue
+
+            best = max(momenta, key=momenta.get)
+
+            should_rebalance = (i % self.rebalance_bars == 0)
+            if held_token is None:
+                should_rebalance = True
+
+            if not should_rebalance:
+                continue
+
+            should_switch = (best != held_token)
+            if should_switch and held_token is not None and held_token in momenta:
+                advantage = momenta[best] - momenta[held_token]
+                if advantage < self.switch_threshold:
+                    should_switch = False
+
+            if should_switch:
+                if held_token is not None:
+                    trades.append({
+                        "bar": i, "timestamp": str(common_idx[i]),
+                        "action": "sell", "token": held_token,
+                        "reason": "rotation", "equity": equity,
+                    })
+                held_token = best
+                trades.append({
+                    "bar": i, "timestamp": str(common_idx[i]),
+                    "action": "buy", "token": best,
+                    "price": float(prices[best][i]),
+                    "momentum": float(momenta[best]),
+                    "equity": equity,
+                })
 
         # Metrics
         total_return = equity / initial_capital - 1.0
@@ -198,24 +204,8 @@ class DualMomentumAllocator:
             "buy_and_hold": bnh,
             "buy_and_hold_basket": float(basket_ret),
             "state_time_by_year": state_time,
+            "gate_flips_by_year": gate_flips_by_year,
             "trades": trades,
             "equity_curve": equity_curve.tolist(),
             "timestamps": [str(t) for t in common_idx],
         }
-
-    def _enter_position(self, i, common_idx, prices, momenta, best_token, trades, equity, held_token):
-        """Enter a position in best_token."""
-        if held_token is not None and held_token != best_token:
-            trades.append({
-                "bar": i, "timestamp": str(common_idx[i]),
-                "action": "sell", "token": held_token,
-                "reason": "rotation", "equity": equity,
-            })
-        if best_token != held_token:
-            trades.append({
-                "bar": i, "timestamp": str(common_idx[i]),
-                "action": "buy", "token": best_token,
-                "price": float(prices[best_token][i]),
-                "momentum": float(momenta[best_token]),
-                "equity": equity,
-            })
