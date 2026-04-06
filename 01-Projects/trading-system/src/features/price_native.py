@@ -1,64 +1,26 @@
 """
 Price-native D/I/R feature engine.
 
-Four features grounded in financial mathematics:
-  1. Hurst exponent — trend persistence (D-axis)
-  2. Log returns — direction/drift
-  3. Realized volatility — consolidation/expansion (I-axis)
-  4. Serial autocorrelation — reflexivity/feedback (R-axis)
+Three features for HMM regime classification:
+  1. Log returns — direction + magnitude
+  2. Realized volatility — regime energy (I-axis)
+  3. Efficiency ratio — trend cleanness vs chop (D vs I discriminator)
 """
 
 import numpy as np
 import pandas as pd
 
 
-def hurst_exponent(series: np.ndarray, max_lag: int = 50) -> float:
-    """
-    Hurst exponent via R/S analysis (vectorised per lag).
-    Expects LOG RETURNS (not raw prices) so values discriminate regimes.
-    H > 0.5: trending, H = 0.5: random walk, H < 0.5: mean-reverting.
-    """
-    n = len(series)
-    lags = np.arange(2, min(max_lag, n // 2))
-    if len(lags) < 10:
-        return 0.5
-
-    log_tau = np.empty(len(lags))
-    valid = 0
-    for idx, lag in enumerate(lags):
-        n_blocks = n // lag
-        pp = series[:n_blocks * lag].reshape(n_blocks, lag)
-        means = pp.mean(axis=1, keepdims=True)
-        stds = pp.std(axis=1)
-        mask = stds > 0
-        if not mask.any():
-            continue
-        cumdev = np.cumsum(pp[mask] - means[mask], axis=1)
-        rs = (cumdev.max(axis=1) - cumdev.min(axis=1)) / stds[mask]
-        log_tau[valid] = np.log(rs.mean())
-        valid += 1
-
-    if valid < 10:
-        return 0.5
-
-    log_lags = np.log(lags[:valid].astype(float))
-    poly = np.polyfit(log_lags, log_tau[:valid], 1)
-    return float(poly[0])
-
-
 def compute_price_native_features(
     data: pd.DataFrame,
-    hurst_window: int = 168,
     return_window: int = 24,
     vol_window: int = 24,
-    autocorr_window: int = 48,
-    hurst_stride: int = 6,
+    er_window: int = 24,
 ) -> pd.DataFrame:
     """
-    Compute all 4 price-native features for each bar.
+    Compute 3 price-native features for each bar.
 
-    Hurst is computed every `hurst_stride` bars and forward-filled for speed.
-    Other features are fully vectorised.
+    Returns DataFrame with columns: log_return, realized_vol, efficiency_ratio
     """
     prices = data["close"].values.astype(np.float64)
     log_prices = np.log(np.maximum(prices, 1e-12))
@@ -70,10 +32,9 @@ def compute_price_native_features(
     lr_arr = np.zeros(n)
     lr_arr[return_window:] = log_prices[return_window:] - log_prices[:-return_window]
 
-    # --- Realized vol: vectorised rolling std ---
+    # --- Realized vol: rolling std via cumsum ---
     rv_arr = np.zeros(n)
     if n > vol_window + 1:
-        # Compute rolling std of log_rets using cumsum trick
         cs = np.cumsum(log_rets)
         cs2 = np.cumsum(log_rets ** 2)
         for i in range(vol_window, len(log_rets)):
@@ -82,41 +43,24 @@ def compute_price_native_features(
             var = s2 / vol_window - (s / vol_window) ** 2
             rv_arr[i + 1] = np.sqrt(max(var, 0)) * np.sqrt(24 * 365)
 
-    # --- Autocorrelation: vectorised via strided views ---
-    ac_arr = np.zeros(n)
-    if len(log_rets) > autocorr_window:
-        w = autocorr_window - 1  # lag-1 pairs within window
-        for i in range(autocorr_window + 1, len(log_rets)):
-            x = log_rets[i - autocorr_window:i - 1]
-            y = log_rets[i - autocorr_window + 1:i]
-            mx, my = x.mean(), y.mean()
-            dx, dy = x - mx, y - my
-            denom = np.sqrt((dx * dx).sum() * (dy * dy).sum())
-            if denom > 0:
-                ac_arr[i + 1] = (dx * dy).sum() / denom
-
-    # --- Hurst on LOG RETURNS: rolling with stride + forward-fill ---
-    hurst_arr = np.full(n, 0.5)
-    computed = set()
-    for i in range(hurst_window, n, hurst_stride):
-        lr_slice = log_rets[max(0, i - hurst_window):i]
-        if len(lr_slice) >= 50:
-            hurst_arr[i] = hurst_exponent(lr_slice)
-        computed.add(i)
-    # Forward-fill between computed points
-    last_val = 0.5
-    for i in range(hurst_window, n):
-        if i in computed:
-            last_val = hurst_arr[i]
-        else:
-            hurst_arr[i] = last_val
+    # --- Efficiency ratio: vectorised ---
+    er_arr = np.zeros(n)
+    if n > er_window:
+        abs_bar_changes = np.abs(np.diff(prices))
+        # Cumsum for rolling sum of abs changes
+        cs_abs = np.cumsum(abs_bar_changes)
+        for i in range(er_window, n):
+            # i indexes into prices; bar_changes are offset by 1
+            net_change = abs(prices[i] - prices[i - er_window])
+            path_length = cs_abs[i - 1] - (cs_abs[i - er_window - 1] if i - er_window - 1 >= 0 else 0.0)
+            if path_length > 0:
+                er_arr[i] = min(net_change / path_length, 1.0)
 
     return pd.DataFrame(
         {
-            "hurst": hurst_arr,
             "log_return": lr_arr,
             "realized_vol": rv_arr,
-            "autocorrelation": ac_arr,
+            "efficiency_ratio": er_arr,
         },
         index=data.index,
     )
