@@ -26,7 +26,7 @@ from strategy.dual_momentum import DualMomentumAllocator
 
 
 DATA_DIR = Path(__file__).parent.parent / "data"
-RESULTS_PATH = DATA_DIR / "hmm_momentum_v3_results.json"
+RESULTS_PATH = DATA_DIR / "hmm_momentum_v4_results.json"
 
 TOKEN_FILES = {
     "BTC": "btc_ohlcv_1h_extended.csv",
@@ -56,22 +56,28 @@ def load_data(token: str) -> pd.DataFrame:
     return df
 
 
-def walk_forward_classify(features: np.ndarray) -> tuple[list[str], HMMRegimeClassifier]:
-    """Walk-forward HMM classification. Returns full regime sequence + last fitted model."""
+def walk_forward_classify(features: np.ndarray, prices: np.ndarray) -> tuple[list[str], HMMRegimeClassifier]:
+    """Walk-forward HMM classification with forward-return labelling.
+    Returns full regime sequence + last fitted model."""
     n = len(features)
     regimes = ["I"] * n  # default until classified
     last_model = None
 
     start = 0
+    fold = 0
     while start + TRAIN_BARS < n:
+        fold += 1
         train_end = start + TRAIN_BARS
         test_end = min(train_end + TEST_BARS, n)
 
         train_feat = features[start:train_end]
+        train_prices = prices[start:train_end]
         test_feat = features[train_end:test_end]
 
+        print(f"    Fold {fold}: train [{start}:{train_end}] test [{train_end}:{test_end}]")
+
         clf = HMMRegimeClassifier(n_states=3, n_iter=100)
-        clf.fit(train_feat)
+        clf.fit(train_feat, train_prices)  # forward-return labelling
 
         test_labels = clf.predict(test_feat)
         for j, label in enumerate(test_labels):
@@ -145,8 +151,8 @@ def sanity_checks(
         sm = clf.state_means()
         for label in ["D", "I", "R"]:
             m = sm[label]
-            print(f"  {label}: hurst={m['hurst']:.3f}  log_ret={m['log_return']:+.4f}  "
-                  f"vol={m['realized_vol']:.3f}  autocorr={m['autocorrelation']:+.3f}")
+            parts = [f"{k}={v:+.4f}" for k, v in m.items()]
+            print(f"  {label}: {', '.join(parts)}")
 
     # 3. Regime distribution
     from collections import Counter
@@ -192,109 +198,20 @@ def sanity_checks(
     return passed
 
 
-VARIANTS = {
-    "v3a": {"D": 24, "I": 24, "R": 3},
-    "v3b": {"D": 48, "I": 24, "R": 6},
-    "v3c": {"D": 12, "I": 12, "R": 1},
-}
-
-
-def run_variant(
-    variant_name: str,
-    thresholds: dict,
-    all_data: dict,
-    all_raw_regimes: dict,
-    all_classifiers: dict,
-    all_features: dict,
-):
-    """Run a single persistence variant and return results."""
-    print(f"\n{'='*60}")
-    print(f"VARIANT {variant_name}: D={thresholds['D']}, I={thresholds['I']}, R={thresholds['R']}")
-    print(f"{'='*60}")
-
-    all_regimes = {}
-    all_passed = True
-    for token in TOKEN_FILES:
-        regimes = apply_persistence_filter(all_raw_regimes[token], thresholds)
-        all_regimes[token] = regimes
-
-        # Quick sanity: regime distribution + transition frequency + directional check
-        from collections import Counter
-        counts = Counter(regimes)
-        total = len(regimes)
-        transitions = sum(1 for i in range(1, len(regimes)) if regimes[i] != regimes[i-1])
-        avg_run = total / transitions if transitions > 0 else total
-
-        closes = all_data[token]["close"].values
-        d_idx = [i for i in range(len(regimes) - 24) if regimes[i] == "D"]
-        r_idx = [i for i in range(len(regimes) - 24) if regimes[i] == "R"]
-        d_fwd = np.mean([np.log(closes[i+24] / closes[i]) for i in d_idx]) if d_idx else 0
-        r_fwd = np.mean([np.log(closes[i+24] / closes[i]) for i in r_idx]) if r_idx else 0
-        passed = d_fwd > r_fwd
-
-        print(f"  {token}: D={counts.get('D',0)/total*100:.0f}% I={counts.get('I',0)/total*100:.0f}% "
-              f"R={counts.get('R',0)/total*100:.0f}%  "
-              f"transitions={transitions}  avg_run={avg_run/24:.1f}d  "
-              f"D_fwd={d_fwd*100:+.3f}% R_fwd={r_fwd*100:+.3f}% {'OK' if passed else 'WARN'}")
-        if not passed:
-            all_passed = False
-
-    allocator = DualMomentumAllocator(momentum_window=720, rebalance_bars=168, switch_threshold=0.05)
-    results = allocator.run(all_data, all_regimes, initial_capital=10_000.0)
-
-    print(f"\n  Total Return:     {results['total_return']*100:+.1f}%")
-    print(f"  Final Equity:     ${results['final_equity']:,.0f}")
-    print(f"  CAGR:             {results['cagr']*100:.1f}%")
-    print(f"  Max Drawdown:     {results['max_drawdown']*100:.1f}%")
-    print(f"  Sharpe Ratio:     {results['sharpe']:.2f}")
-    print(f"  Calmar Ratio:     {results['calmar']:.2f}")
-    print(f"  Time in Market:   {results['pct_in_market']*100:.1f}%")
-    print(f"  Token Switches:   {results['n_token_switches']}")
-
-    print(f"\n  --- Annual Returns ---")
-    for year, ret in sorted(results["annual_returns"].items()):
-        print(f"    {year}: {ret*100:+.1f}%")
-
-    print(f"\n  --- Buy-and-Hold ---")
-    for token, ret in results["buy_and_hold"].items():
-        print(f"    {token}: {ret*100:+.1f}%")
-    print(f"    Equal-weight basket: {results['buy_and_hold_basket']*100:+.1f}%")
-
-    print(f"\n  --- Last 10 trades ---")
-    for trade in results["trades"][-10:]:
-        print(f"    {trade['timestamp'][:10]} {trade['action']:4s} {trade.get('token',''):4s} "
-              f"eq=${trade['equity']:,.0f}  {trade.get('reason','')}")
-
-    # Build save dict
-    save = {k: v for k, v in results.items() if k not in ("equity_curve", "timestamps")}
-    save["sanity_checks_passed"] = all_passed
-    save["thresholds"] = thresholds
-    save["regime_summary"] = {}
-    for token in TOKEN_FILES:
-        c = Counter(all_regimes[token])
-        total = len(all_regimes[token])
-        save["regime_summary"][token] = {
-            label: {"count": c.get(label, 0), "pct": round(c.get(label, 0) / total * 100, 1)}
-            for label in ["D", "I", "R"]
-        }
-    save["transition_matrices"] = {}
-    for token in TOKEN_FILES:
-        if all_classifiers[token] is not None:
-            save["transition_matrices"][token] = all_classifiers[token].get_transition_matrix()
-
-    return save
-
-
 def main():
     print("=" * 60)
-    print("HMM + DUAL MOMENTUM PIPELINE — V3 ASYMMETRIC PERSISTENCE")
+    print("HMM V4 — 2-FEATURE + FORWARD-RETURN LABELLING")
     print("=" * 60)
 
-    # Phase 1: Load data, compute features, raw HMM classification (shared across variants)
+    # Phase 1: Load data, compute features, walk-forward classify with 2 features + fwd-return labels
     all_data = {}
     all_features = {}
     all_raw_regimes = {}
+    all_regimes = {}
     all_classifiers = {}
+    all_passed = True
+
+    thresholds = PERSISTENCE_THRESHOLDS  # D=24, I=24, R=3
 
     for token in TOKEN_FILES:
         print(f"\n>>> Loading {token}...")
@@ -306,41 +223,87 @@ def main():
         features = compute_price_native_features(data)
         all_features[token] = features
 
-        # Hurst distribution check (once, shared)
-        h = features["hurst"].values
-        print(f"    Hurst: mean={np.mean(h):.3f} std={np.std(h):.3f} "
-              f"min={np.min(h):.3f} max={np.max(h):.3f}")
-
-        print(f"    Walk-forward HMM classification...")
-        feat_arr = features[["hurst", "log_return", "realized_vol", "autocorrelation"]].values
-        raw_regimes, clf = walk_forward_classify(feat_arr)
+        print(f"    Walk-forward HMM (2 features + forward-return labelling)...")
+        feat_arr = features[["log_return", "realized_vol"]].values  # 2 features only
+        prices = data["close"].values.astype(np.float64)
+        raw_regimes, clf = walk_forward_classify(feat_arr, prices)
         all_raw_regimes[token] = raw_regimes
         all_classifiers[token] = clf
 
-    # Phase 2: Run all three variants
-    all_variant_results = {}
-    for name, thresholds in VARIANTS.items():
-        result = run_variant(name, thresholds, all_data, all_raw_regimes, all_classifiers, all_features)
-        all_variant_results[name] = result
+        # Apply asymmetric persistence
+        regimes = apply_persistence_filter(raw_regimes, thresholds)
+        all_regimes[token] = regimes
 
-    # Phase 3: Comparison summary
+        passed = sanity_checks(token, features, regimes, data, clf)
+        if not passed:
+            all_passed = False
+
+    if not all_passed:
+        print("\n*** SANITY CHECK WARNINGS detected. Proceeding with backtest anyway. ***")
+
+    # Phase 2: Run dual momentum backtest
     print(f"\n{'='*60}")
-    print("COMPARISON SUMMARY")
+    print("RUNNING DUAL MOMENTUM BACKTEST")
     print(f"{'='*60}")
-    print(f"  {'Variant':<8s} {'Return':>10s} {'CAGR':>8s} {'MaxDD':>8s} {'Sharpe':>8s} "
-          f"{'Calmar':>8s} {'Switches':>10s} {'2022':>8s}")
-    for name, r in all_variant_results.items():
-        yr2022 = r.get("annual_returns", {}).get("2022", 0)
-        print(f"  {name:<8s} {r['total_return']*100:>+9.0f}% {r['cagr']*100:>7.1f}% "
-              f"{r['max_drawdown']*100:>7.1f}% {r['sharpe']:>8.2f} {r['calmar']:>8.2f} "
-              f"{r['n_token_switches']:>10d} {yr2022*100:>+7.1f}%")
 
-    # Save all results
+    allocator = DualMomentumAllocator(momentum_window=720, rebalance_bars=168, switch_threshold=0.05)
+    results = allocator.run(all_data, all_regimes, initial_capital=10_000.0)
+
+    print(f"\n{'='*60}")
+    print("RESULTS")
+    print(f"{'='*60}")
+    print(f"  Total Return:     {results['total_return']*100:+.1f}%")
+    print(f"  Final Equity:     ${results['final_equity']:,.0f}")
+    print(f"  CAGR:             {results['cagr']*100:.1f}%")
+    print(f"  Max Drawdown:     {results['max_drawdown']*100:.1f}%")
+    print(f"  Sharpe Ratio:     {results['sharpe']:.2f}")
+    print(f"  Calmar Ratio:     {results['calmar']:.2f}")
+    print(f"  Time in Market:   {results['pct_in_market']*100:.1f}%")
+    print(f"  Token Switches:   {results['n_token_switches']}")
+    print(f"  Period:           {results['years']:.1f} years")
+
+    print(f"\n--- Annual Returns ---")
+    for year, ret in sorted(results["annual_returns"].items()):
+        print(f"  {year}: {ret*100:+.1f}%")
+
+    print(f"\n--- Buy-and-Hold Comparison ---")
+    for token, ret in results["buy_and_hold"].items():
+        print(f"  {token}: {ret*100:+.1f}%")
+    print(f"  Equal-weight basket: {results['buy_and_hold_basket']*100:+.1f}%")
+
+    print(f"\n--- Last 20 trades ---")
+    for trade in results["trades"][-20:]:
+        print(f"  {trade['timestamp'][:10]} {trade['action']:4s} {trade.get('token',''):4s} "
+              f"eq=${trade['equity']:,.0f}  {trade.get('reason','')}")
+
+    # Save results
+    from collections import Counter
+    save = {k: v for k, v in results.items() if k not in ("equity_curve", "timestamps")}
+    save["version"] = "v4"
+    save["features_used"] = ["log_return", "realized_vol"]
+    save["labelling"] = "forward_return_24h"
+    save["persistence_thresholds"] = thresholds
+    save["sanity_checks_passed"] = all_passed
+
+    save["regime_summary"] = {}
+    for token in TOKEN_FILES:
+        c = Counter(all_regimes[token])
+        total = len(all_regimes[token])
+        save["regime_summary"][token] = {
+            label: {"count": c.get(label, 0), "pct": round(c.get(label, 0) / total * 100, 1)}
+            for label in ["D", "I", "R"]
+        }
+
+    save["transition_matrices"] = {}
+    for token in TOKEN_FILES:
+        if all_classifiers[token] is not None:
+            save["transition_matrices"][token] = all_classifiers[token].get_transition_matrix()
+
     with open(RESULTS_PATH, "w") as f:
-        json.dump(all_variant_results, f, indent=2, default=str)
-    print(f"\nResults saved to {RESULTS_PATH}")
+        json.dump(save, f, indent=2, default=str)
 
-    return all_variant_results
+    print(f"\nResults saved to {RESULTS_PATH}")
+    return results
 
 
 if __name__ == "__main__":
