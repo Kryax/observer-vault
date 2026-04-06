@@ -174,10 +174,11 @@ describe("energy computation", () => {
 // ─── Barrier heights ────────────────────────────────────────────────
 
 describe("barrier heights", () => {
-  test("barrier heights between shared-operator basins are lower than non-shared", () => {
-    // Compute average barrier for shared vs non-shared transitions
-    const sharedBarriers: number[] = [];
-    const nonSharedBarriers: number[] = [];
+  test("shared-operator midpoint ridges are lower than cross-operator (avg)", () => {
+    // Use consistent metric for all pairs: midpoint ridge height
+    // (energy at midpoint minus average of the two basin energies)
+    const sharedRidges: number[] = [];
+    const nonSharedRidges: number[] = [];
 
     for (let i = 0; i < landscape.basins.length; i++) {
       for (let j = i + 1; j < landscape.basins.length; j++) {
@@ -185,28 +186,26 @@ describe("barrier heights", () => {
         const bj = landscape.basins[j];
         const adjacent = getAdjacentCompositions(bi.composition);
 
-        // Barrier from i toward j
-        const resultI = computeEnergy(bi.centroid, landscape);
-        // We need the barrier to basin j specifically
-        const transI = computeTransition(bi.centroid, landscape);
+        const midpoint = bi.centroid.map((v, k) => (v + bj.centroid[k]) / 2);
+        const midEnergy = computeEnergy(midpoint, landscape).energy;
+        const baseEnergy = (
+          computeEnergy(bi.centroid, landscape).energy +
+          computeEnergy(bj.centroid, landscape).energy
+        ) / 2;
+        const ridgeHeight = midEnergy - baseEnergy;
 
-        // Check if j is adjacent
         if (adjacent.includes(bj.composition)) {
-          const barrier = transI.barrier_heights[bj.composition];
-          if (barrier !== undefined) sharedBarriers.push(barrier);
+          sharedRidges.push(ridgeHeight);
         } else {
-          // Compute non-adjacent barrier manually
-          const midpoint = bi.centroid.map((v, k) => (v + bj.centroid[k]) / 2);
-          const midEnergy = computeEnergy(midpoint, landscape);
-          nonSharedBarriers.push(midEnergy.energy - resultI.energy);
+          nonSharedRidges.push(ridgeHeight);
         }
       }
     }
 
-    const avgShared = sharedBarriers.reduce((a, b) => a + b, 0) / sharedBarriers.length;
-    const avgNonShared = nonSharedBarriers.reduce((a, b) => a + b, 0) / nonSharedBarriers.length;
+    const avgShared = sharedRidges.reduce((a, b) => a + b, 0) / sharedRidges.length;
+    const avgNonShared = nonSharedRidges.reduce((a, b) => a + b, 0) / nonSharedRidges.length;
 
-    // Shared-operator barriers should be lower on average
+    // Shared-operator ridges should be lower on average
     expect(avgShared).toBeLessThan(avgNonShared);
   });
 });

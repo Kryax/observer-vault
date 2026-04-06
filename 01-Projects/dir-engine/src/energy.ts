@@ -97,7 +97,7 @@ export function buildLandscape(
   motifs: MotifLibrary,
 ): DIRLandscape {
   const depths = computeBasinDepths(motifs);
-  const widths = computeBasinWidths(manifest.centroids);
+  const widths = computeBasinWidths(manifest.centroids, manifest.mapping);
 
   const basinConfigs: BasinConfig[] = [];
   const basinParams: BasinParams[] = [];

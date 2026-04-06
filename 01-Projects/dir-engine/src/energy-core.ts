@@ -99,11 +99,21 @@ function vectorNorm(v: number[]): number {
 // ---------------------------------------------------------------------------
 
 /**
- * Compute basin widths from centroid spacing.
- * σᵢ = nearest_neighbour_distance / 6
+ * Compute basin widths.
+ *
+ * If data/basin-widths.json exists (empirical σ from shard data), use those
+ * as relative widths, normalized so their median matches the nn/6 geometric
+ * scale. This preserves which basins are tight vs loose from the data while
+ * keeping wells properly separated.
+ *
+ * Otherwise fall back to nearest_neighbour_distance / 6 heuristic.
  */
-export function computeBasinWidths(centroids: number[][]): number[] {
-  const widths: number[] = [];
+export function computeBasinWidths(
+  centroids: number[][],
+  mapping?: Record<string, string>,
+): number[] {
+  // Compute nn/6 heuristic widths (always needed as fallback or scale anchor)
+  const heuristicWidths: number[] = [];
   for (let i = 0; i < centroids.length; i++) {
     let minDist = Infinity;
     for (let j = 0; j < centroids.length; j++) {
@@ -111,9 +121,40 @@ export function computeBasinWidths(centroids: number[][]): number[] {
       const d = euclideanDistance(centroids[i], centroids[j]);
       if (d < minDist) minDist = d;
     }
-    widths.push(Math.max(minDist / 6, 0.01));
+    heuristicWidths.push(Math.max(minDist / 6, 0.01));
   }
-  return widths;
+
+  // Try empirical widths
+  if (mapping) {
+    try {
+      const jsonPath = import.meta.dir + "/../data/basin-widths.json";
+      const text = require("fs").readFileSync(jsonPath, "utf-8");
+      const data = JSON.parse(text) as { widths: Record<string, number> };
+      if (data.widths) {
+        // Collect empirical values in centroid order
+        const rawEmpirical: number[] = [];
+        for (let i = 0; i < centroids.length; i++) {
+          const comp = mapping[String(i)];
+          const empirical = comp ? data.widths[comp] : undefined;
+          rawEmpirical.push(empirical ?? heuristicWidths[i]);
+        }
+
+        // Normalize: scale empirical values so their median matches heuristic median
+        const sortedEmpirical = [...rawEmpirical].sort((a, b) => a - b);
+        const sortedHeuristic = [...heuristicWidths].sort((a, b) => a - b);
+        const mid = Math.floor(sortedEmpirical.length / 2);
+        const medianEmpirical = sortedEmpirical[mid];
+        const medianHeuristic = sortedHeuristic[mid];
+        const scale = medianEmpirical > 0 ? medianHeuristic / medianEmpirical : 1;
+
+        return rawEmpirical.map(w => Math.max(w * scale, 0.01));
+      }
+    } catch {
+      // basin-widths.json not found — fall through to heuristic
+    }
+  }
+
+  return heuristicWidths;
 }
 
 // ---------------------------------------------------------------------------
@@ -122,12 +163,11 @@ export function computeBasinWidths(centroids: number[][]): number[] {
 
 function effectiveWidth(
   from: BasinConfig, to: BasinConfig,
-  adjacency: Map<string, Set<string>>,
+  _adjacency: Map<string, Set<string>>,
 ): number {
-  const adj = adjacency.get(from.label);
-  const isAdjacent = adj?.has(to.label) ?? false;
-  const baseWidth = (from.width + to.width) / 2;
-  return isAdjacent ? baseWidth * 2.5 : baseWidth * 0.5;
+  // No adjacency scaling — adjacency is encoded in barrier heights, not widths.
+  // Using raw average of basin widths.
+  return (from.width + to.width) / 2;
 }
 
 // ---------------------------------------------------------------------------
