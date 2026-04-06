@@ -1,6 +1,8 @@
 """
-HMM v5 Pipeline — 3-feature (log_return + realized_vol + efficiency_ratio)
-with forward-return labelling and asymmetric persistence.
+HMM v6 Pipeline — K=2 (Kinetic/Quiet) + momentum direction.
+
+Two HMM states (vol-based), momentum handles direction.
+Kinetic+up → risk on, Kinetic+down → cash, Quiet → hold.
 """
 
 import json
@@ -20,7 +22,7 @@ from classifier.hmm_regime import HMMRegimeClassifier
 from strategy.dual_momentum import DualMomentumAllocator
 
 DATA_DIR = Path(__file__).parent.parent / "data"
-RESULTS_PATH = DATA_DIR / "hmm_momentum_v5_results.json"
+RESULTS_PATH = DATA_DIR / "hmm_momentum_v6_results.json"
 
 TOKEN_FILES = {
     "BTC": "btc_ohlcv_1h_extended.csv",
@@ -33,8 +35,8 @@ TOKEN_FILES = {
 TRAIN_BARS = 365 * 24
 TEST_BARS = 180 * 24
 
-PERSISTENCE_THRESHOLDS = {"D": 24, "I": 24, "R": 3}
-FEATURE_COLS = ["log_return", "realized_vol", "efficiency_ratio"]
+# Asymmetric persistence: fast Kinetic detection, stable Quiet hold
+PERSISTENCE_THRESHOLDS = {"Kinetic": 3, "Quiet": 24}
 
 
 def load_data(token: str) -> pd.DataFrame:
@@ -45,9 +47,9 @@ def load_data(token: str) -> pd.DataFrame:
     return df
 
 
-def walk_forward_classify(features: np.ndarray, prices: np.ndarray) -> tuple[list[str], HMMRegimeClassifier]:
+def walk_forward_classify(features: np.ndarray) -> tuple[list[str], HMMRegimeClassifier]:
     n = len(features)
-    regimes = ["I"] * n
+    regimes = ["Quiet"] * n
     last_model = None
 
     start = 0
@@ -57,16 +59,12 @@ def walk_forward_classify(features: np.ndarray, prices: np.ndarray) -> tuple[lis
         train_end = start + TRAIN_BARS
         test_end = min(train_end + TEST_BARS, n)
 
-        train_feat = features[start:train_end]
-        train_prices = prices[start:train_end]
-        test_feat = features[train_end:test_end]
-
         print(f"    Fold {fold}: train [{start}:{train_end}] test [{train_end}:{test_end}]")
 
-        clf = HMMRegimeClassifier(n_states=3, n_iter=100)
-        clf.fit(train_feat, train_prices)
+        clf = HMMRegimeClassifier(n_states=2, n_iter=100)
+        clf.fit(features[start:train_end])
 
-        test_labels = clf.predict(test_feat)
+        test_labels = clf.predict(features[train_end:test_end])
         for j, label in enumerate(test_labels):
             regimes[train_end + j] = label
 
@@ -106,84 +104,56 @@ def apply_persistence_filter(regimes: list[str], thresholds: dict | None = None)
     return confirmed
 
 
-def sanity_checks(token, features, regimes, data, clf):
-    print(f"\n{'='*60}")
-    print(f"SANITY CHECKS: {token}")
-    print(f"{'='*60}")
+def analyze_2022_momentum_lag(token, data, regimes, momentum_window=720):
+    """Analyze how quickly momentum goes negative after Kinetic detection in 2022."""
+    prices = data["close"].values
+    timestamps = data.index
+    log_prices = np.log(np.maximum(prices, 1e-12))
 
-    # Feature distributions
-    print(f"\n--- Feature distributions ---")
-    for col in FEATURE_COLS:
-        vals = features[col].values
-        print(f"  {col:20s}  mean={np.mean(vals):+.4f}  std={np.std(vals):.4f}  "
-              f"min={np.min(vals):+.4f}  max={np.max(vals):+.4f}")
+    # Find 2022 bars
+    mask_2022 = [(hasattr(t, 'year') and t.year == 2022) or
+                 ('2022' in str(t)) for t in timestamps]
 
-    # State means
-    if clf is not None:
-        print(f"\n--- HMM learned state means ---")
-        sm = clf.state_means()
-        for label in ["D", "I", "R"]:
-            m = sm[label]
-            parts = [f"{k}={v:+.4f}" for k, v in m.items()]
-            print(f"  {label}: {', '.join(parts)}")
+    # Find first Kinetic bar in 2022 (or late 2021)
+    first_kinetic_2022 = None
+    first_neg_momentum = None
 
-    # Mean ER by confirmed regime
-    print(f"\n--- Mean ER by confirmed regime ---")
-    er_vals = features["efficiency_ratio"].values
-    for label in ["D", "I", "R"]:
-        idx = [i for i in range(len(regimes)) if regimes[i] == label]
-        if idx:
-            mean_er = np.mean(er_vals[idx])
-            print(f"  {label}: ER={mean_er:.4f}  (n={len(idx)})")
-
-    # Regime distribution
-    counts = Counter(regimes)
-    total = len(regimes)
-    print(f"\n--- Regime distribution ---")
-    for label in ["D", "I", "R"]:
-        pct = counts.get(label, 0) / total * 100
-        print(f"  {label}: {counts.get(label, 0):>6d} bars ({pct:.1f}%)")
-
-    # Transition frequency
-    transitions = sum(1 for i in range(1, len(regimes)) if regimes[i] != regimes[i-1])
-    avg_run = total / transitions if transitions > 0 else total
-    print(f"\n--- Transition frequency ---")
-    print(f"  {transitions} transitions, avg run {avg_run:.0f} bars ({avg_run/24:.1f} days)")
-
-    # Forward returns by regime
-    closes = data["close"].values
-    print(f"\n--- 24h forward returns by regime ---")
-    d_fwd = r_fwd = 0
-    for label in ["D", "I", "R"]:
-        idx = [i for i in range(len(regimes) - 24) if regimes[i] == label]
-        if not idx:
-            print(f"  {label}: no bars")
+    for i in range(len(regimes)):
+        if not mask_2022[i]:
             continue
-        fwd = [np.log(closes[i+24] / closes[i]) for i in idx]
-        mean_fwd = np.mean(fwd)
-        print(f"  {label}: mean={mean_fwd*100:+.3f}%  std={np.std(fwd)*100:.3f}%  n={len(idx)}")
-        if label == "D": d_fwd = mean_fwd
-        if label == "R": r_fwd = mean_fwd
+        if regimes[i] == "Kinetic" and first_kinetic_2022 is None:
+            first_kinetic_2022 = i
 
-    passed = d_fwd > r_fwd
-    if passed:
-        print(f"\n  OK: D ({d_fwd*100:+.3f}%) > R ({r_fwd*100:+.3f}%)")
+        if i >= momentum_window:
+            mom = log_prices[i] - log_prices[i - momentum_window]
+            if mom < 0 and first_neg_momentum is None and mask_2022[i]:
+                first_neg_momentum = i
+
+    if first_kinetic_2022 is not None and first_neg_momentum is not None:
+        lag_bars = first_neg_momentum - first_kinetic_2022
+        # Drawdown in the lag window
+        if lag_bars > 0:
+            peak = np.max(prices[first_kinetic_2022:first_neg_momentum+1])
+            trough = prices[first_neg_momentum]
+            dd = (trough - peak) / peak * 100
+        else:
+            dd = 0
+        print(f"    {token} 2022 lag: Kinetic@{timestamps[first_kinetic_2022]} "
+              f"→ neg_mom@{timestamps[first_neg_momentum]} "
+              f"({lag_bars} bars / {lag_bars/24:.1f} days)  DD in lag: {dd:.1f}%")
     else:
-        print(f"\n  *** WARN: D ({d_fwd*100:+.3f}%) <= R ({r_fwd*100:+.3f}%)")
-
-    return passed
+        print(f"    {token} 2022: no clear Kinetic→neg_momentum sequence found")
 
 
 def main():
     print("=" * 60)
-    print("HMM V5 — 3-FEATURE + EFFICIENCY RATIO + FWD-RETURN LABELS")
+    print("HMM V6 — K=2 (KINETIC/QUIET) + MOMENTUM DIRECTION")
     print("=" * 60)
 
     all_data = {}
     all_features = {}
     all_regimes = {}
     all_classifiers = {}
-    all_passed = True
 
     for token in TOKEN_FILES:
         print(f"\n>>> Loading {token}...")
@@ -195,26 +165,36 @@ def main():
         features = compute_price_native_features(data)
         all_features[token] = features
 
-        # Quick ER distribution check
-        er = features["efficiency_ratio"].values
-        print(f"    ER: mean={np.mean(er):.3f} std={np.std(er):.3f} "
-              f"min={np.min(er):.3f} max={np.max(er):.3f}")
-
-        print(f"    Walk-forward HMM (3 features + fwd-return labelling)...")
-        feat_arr = features[FEATURE_COLS].values
-        prices = data["close"].values.astype(np.float64)
-        raw_regimes, clf = walk_forward_classify(feat_arr, prices)
+        print(f"    Walk-forward HMM (K=2)...")
+        feat_arr = features[["log_return", "realized_vol"]].values
+        raw_regimes, clf = walk_forward_classify(feat_arr)
         all_classifiers[token] = clf
 
         regimes = apply_persistence_filter(raw_regimes)
         all_regimes[token] = regimes
 
-        passed = sanity_checks(token, features, regimes, data, clf)
-        if not passed:
-            all_passed = False
+        # Sanity checks
+        counts = Counter(regimes)
+        total = len(regimes)
+        transitions = sum(1 for i in range(1, len(regimes)) if regimes[i] != regimes[i-1])
+        avg_run = total / transitions if transitions > 0 else total
 
-    if not all_passed:
-        print("\n*** SANITY CHECK WARNINGS detected. Proceeding with backtest. ***")
+        print(f"    Kinetic: {counts.get('Kinetic',0)/total*100:.1f}%  "
+              f"Quiet: {counts.get('Quiet',0)/total*100:.1f}%  "
+              f"transitions={transitions}  avg_run={avg_run/24:.1f}d")
+
+        if clf is not None:
+            sm = clf.state_means()
+            for label in ["Kinetic", "Quiet"]:
+                m = sm[label]
+                print(f"    {label}: log_ret={m['log_return']:+.4f}  vol={m['realized_vol']:.4f}")
+
+    # 2022 momentum lag analysis
+    print(f"\n{'='*60}")
+    print("2022 MOMENTUM LAG ANALYSIS")
+    print(f"{'='*60}")
+    for token in TOKEN_FILES:
+        analyze_2022_momentum_lag(token, all_data[token], all_regimes[token])
 
     # Backtest
     print(f"\n{'='*60}")
@@ -246,25 +226,10 @@ def main():
         print(f"  {token}: {ret*100:+.1f}%")
     print(f"  Equal-weight basket: {results['buy_and_hold_basket']*100:+.1f}%")
 
-    # D>R summary table
-    print(f"\n--- D>R Directional Check ---")
-    d_r_pass = 0
-    for token in TOKEN_FILES:
-        closes = all_data[token]["close"].values
-        regimes = all_regimes[token]
-        d_idx = [i for i in range(len(regimes) - 24) if regimes[i] == "D"]
-        r_idx = [i for i in range(len(regimes) - 24) if regimes[i] == "R"]
-        d_fwd = np.mean([np.log(closes[i+24]/closes[i]) for i in d_idx]) if d_idx else 0
-        r_fwd = np.mean([np.log(closes[i+24]/closes[i]) for i in r_idx]) if r_idx else 0
-        ok = d_fwd > r_fwd
-        if ok: d_r_pass += 1
-
-        er_vals = all_features[token]["efficiency_ratio"].values
-        d_er = np.mean([er_vals[i] for i in range(len(regimes)) if regimes[i] == "D"]) if d_idx else 0
-        i_er = np.mean([er_vals[i] for i in range(len(regimes)) if regimes[i] == "I"]) if any(r == "I" for r in regimes) else 0
-        print(f"  {token}: D_fwd={d_fwd*100:+.3f}% R_fwd={r_fwd*100:+.3f}%  "
-              f"ER(D)={d_er:.3f} ER(I)={i_er:.3f}  {'OK' if ok else 'FAIL'}")
-    print(f"  Result: {d_r_pass}/5 pass")
+    print(f"\n--- State Time by Year ---")
+    print(f"  {'Year':<6s} {'Kinetic+':<10s} {'Kinetic-':<10s} {'Quiet':<10s}")
+    for year, st in sorted(results.get("state_time_by_year", {}).items()):
+        print(f"  {year:<6s} {st['kinetic_pos']:>8.1f}%  {st['kinetic_neg']:>8.1f}%  {st['quiet']:>8.1f}%")
 
     print(f"\n--- Last 20 trades ---")
     for trade in results["trades"][-20:]:
@@ -273,12 +238,11 @@ def main():
 
     # Save
     save = {k: v for k, v in results.items() if k not in ("equity_curve", "timestamps")}
-    save["version"] = "v5"
-    save["features_used"] = FEATURE_COLS
-    save["labelling"] = "forward_return_24h"
+    save["version"] = "v6"
+    save["features_used"] = ["log_return", "realized_vol"]
+    save["hmm_states"] = 2
+    save["labelling"] = "vol_based"
     save["persistence_thresholds"] = PERSISTENCE_THRESHOLDS
-    save["sanity_checks_passed"] = all_passed
-    save["d_r_pass_count"] = d_r_pass
 
     save["regime_summary"] = {}
     for token in TOKEN_FILES:
@@ -286,7 +250,7 @@ def main():
         total = len(all_regimes[token])
         save["regime_summary"][token] = {
             label: {"count": c.get(label, 0), "pct": round(c.get(label, 0) / total * 100, 1)}
-            for label in ["D", "I", "R"]
+            for label in ["Kinetic", "Quiet"]
         }
 
     save["transition_matrices"] = {}
