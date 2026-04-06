@@ -26,7 +26,7 @@ from strategy.dual_momentum import DualMomentumAllocator
 
 
 DATA_DIR = Path(__file__).parent.parent / "data"
-RESULTS_PATH = DATA_DIR / "hmm_momentum_results.json"
+RESULTS_PATH = DATA_DIR / "hmm_momentum_v2_results.json"
 
 TOKEN_FILES = {
     "BTC": "btc_ohlcv_1h_extended.csv",
@@ -39,6 +39,9 @@ TOKEN_FILES = {
 # Walk-forward: 1-year training, 6-month test, rolling
 TRAIN_BARS = 365 * 24   # ~1 year
 TEST_BARS = 180 * 24    # ~6 months
+
+# Persistence filter: regime must hold for N bars before it's confirmed
+PERSISTENCE_BARS = 72   # 3 days
 
 
 def load_data(token: str) -> pd.DataFrame:
@@ -74,6 +77,34 @@ def walk_forward_classify(features: np.ndarray) -> tuple[list[str], HMMRegimeCla
         start += TEST_BARS  # roll forward
 
     return regimes, last_model
+
+
+def apply_persistence_filter(regimes: list[str], min_bars: int = PERSISTENCE_BARS) -> list[str]:
+    """Only confirm a regime change after min_bars consecutive bars in the new regime."""
+    confirmed = list(regimes)
+    current = regimes[0]
+    pending = current
+    pending_count = 0
+
+    for i in range(len(regimes)):
+        raw = regimes[i]
+        if raw == current:
+            confirmed[i] = current
+            pending = current
+            pending_count = 0
+        elif raw == pending:
+            pending_count += 1
+            if pending_count >= min_bars:
+                current = pending
+                confirmed[i] = current
+            else:
+                confirmed[i] = current
+        else:
+            pending = raw
+            pending_count = 1
+            confirmed[i] = current
+
+    return confirmed
 
 
 def sanity_checks(
@@ -173,7 +204,8 @@ def main():
 
         print(f"    Walk-forward HMM classification...")
         feat_arr = features[["hurst", "log_return", "realized_vol", "autocorrelation"]].values
-        regimes, clf = walk_forward_classify(feat_arr)
+        raw_regimes, clf = walk_forward_classify(feat_arr)
+        regimes = apply_persistence_filter(raw_regimes)
         all_regimes[token] = regimes
         all_classifiers[token] = clf
 
@@ -189,7 +221,7 @@ def main():
     print("RUNNING DUAL MOMENTUM BACKTEST")
     print(f"{'='*60}")
 
-    allocator = DualMomentumAllocator(momentum_window=720, rebalance_bars=24)
+    allocator = DualMomentumAllocator(momentum_window=720, rebalance_bars=168, switch_threshold=0.05)
     results = allocator.run(all_data, all_regimes, initial_capital=10_000.0)
 
     # Print results

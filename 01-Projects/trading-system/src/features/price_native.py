@@ -12,12 +12,13 @@ import numpy as np
 import pandas as pd
 
 
-def hurst_exponent(prices: np.ndarray, max_lag: int = 50) -> float:
+def hurst_exponent(series: np.ndarray, max_lag: int = 50) -> float:
     """
     Hurst exponent via R/S analysis (vectorised per lag).
+    Expects LOG RETURNS (not raw prices) so values discriminate regimes.
     H > 0.5: trending, H = 0.5: random walk, H < 0.5: mean-reverting.
     """
-    n = len(prices)
+    n = len(series)
     lags = np.arange(2, min(max_lag, n // 2))
     if len(lags) < 10:
         return 0.5
@@ -26,7 +27,7 @@ def hurst_exponent(prices: np.ndarray, max_lag: int = 50) -> float:
     valid = 0
     for idx, lag in enumerate(lags):
         n_blocks = n // lag
-        pp = prices[:n_blocks * lag].reshape(n_blocks, lag)
+        pp = series[:n_blocks * lag].reshape(n_blocks, lag)
         means = pp.mean(axis=1, keepdims=True)
         stds = pp.std(axis=1)
         mask = stds > 0
@@ -94,11 +95,13 @@ def compute_price_native_features(
             if denom > 0:
                 ac_arr[i + 1] = (dx * dy).sum() / denom
 
-    # --- Hurst: rolling with stride + forward-fill ---
+    # --- Hurst on LOG RETURNS: rolling with stride + forward-fill ---
     hurst_arr = np.full(n, 0.5)
     computed = set()
     for i in range(hurst_window, n, hurst_stride):
-        hurst_arr[i] = hurst_exponent(prices[i - hurst_window:i + 1])
+        lr_slice = log_rets[max(0, i - hurst_window):i]
+        if len(lr_slice) >= 50:
+            hurst_arr[i] = hurst_exponent(lr_slice)
         computed.add(i)
     # Forward-fill between computed points
     last_val = 0.5

@@ -1,0 +1,747 @@
+{
+  "run_date": "2026-04-05T22:36:15.330104+00:00",
+  "window": 168,
+  "architecture": "walk-forward classify \u2192 single continuous backtest",
+  "baselines": {
+    "BTC": {
+      "total_return": 13.749087751736047,
+      "sharpe_ratio": 0.8059633409832245,
+      "max_drawdown": -0.8294869129579501,
+      "n_trades": 1,
+      "win_rate": 1.0,
+      "avg_pnl": 137279.9646965232,
+      "avg_win": 137279.9646965232,
+      "avg_loss": 0.0,
+      "profit_factor": Infinity,
+      "initial_capital": 10000,
+      "final_capital": 147490.87751736047,
+      "cagr": 0.36569882923401775,
+      "calmar_ratio": 0.4408735370277704,
+      "years": 8.634817351598173,
+      "time_in_market": 1.0,
+      "friction_cost_pct": 0.0
+    },
+    "ETH": {
+      "total_return": 5.4770933586324615,
+      "sharpe_ratio": 0.6848002264587209,
+      "max_drawdown": -0.9321717384722403,
+      "n_trades": 1,
+      "win_rate": 1.0,
+      "avg_pnl": 54684.059321411936,
+      "avg_win": 54684.059321411936,
+      "avg_loss": 0.0,
+      "profit_factor": Infinity,
+      "initial_capital": 10000,
+      "final_capital": 64770.933586324616,
+      "cagr": 0.24152344810142523,
+      "calmar_ratio": 0.2590975869932123,
+      "years": 8.635844748858448,
+      "time_in_market": 1.0,
+      "friction_cost_pct": 0.0
+    },
+    "SOL": {
+      "total_return": 25.107917523581488,
+      "sharpe_ratio": 1.0553343131721482,
+      "max_drawdown": -0.9673850123343585,
+      "n_trades": 1,
+      "win_rate": 1.0,
+      "avg_pnl": 250697.9367625488,
+      "avg_win": 250697.9367625488,
+      "avg_loss": 0.0,
+      "profit_factor": Infinity,
+      "initial_capital": 10000,
+      "final_capital": 261079.17523581488,
+      "cagr": 0.7815029642944233,
+      "calmar_ratio": 0.8078510151905387,
+      "years": 5.64931506849315,
+      "time_in_market": 1.0,
+      "friction_cost_pct": 0.0
+    },
+    "BNB": {
+      "total_return": 339.4470188581297,
+      "sharpe_ratio": 1.183909941033004,
+      "max_drawdown": -0.8310638160785674,
+      "n_trades": 1,
+      "win_rate": 1.0,
+      "avg_pnl": 3389375.435283519,
+      "avg_win": 3389375.435283519,
+      "avg_loss": 0.0,
+      "profit_factor": Infinity,
+      "initial_capital": 10000,
+      "final_capital": 3404470.1885812967,
+      "cagr": 0.9995462036202316,
+      "calmar_ratio": 1.2027309868171858,
+      "years": 8.414041095890411,
+      "time_in_market": 1.0,
+      "friction_cost_pct": 0.0
+    },
+    "ADA": {
+      "total_return": -0.062248990008812344,
+      "sharpe_ratio": 0.4592247296604697,
+      "max_drawdown": -0.9195801080681394,
+      "n_trades": 1,
+      "win_rate": 0.0,
+      "avg_pnl": -626.3017264829409,
+      "avg_win": 0.0,
+      "avg_loss": -626.3017264829409,
+      "profit_factor": 0.0,
+      "initial_capital": 10000,
+      "final_capital": 9377.510099911877,
+      "cagr": -0.008031572743916637,
+      "calmar_ratio": 0.00873395658893647,
+      "years": 7.970091324200913,
+      "time_in_market": 1.0,
+      "friction_cost_pct": 0.0
+    }
+  },
+  "variants": {
+    "A_daily": {
+      "config": {
+        "d_allocation": 1.0,
+        "i_allocation": 0.5,
+        "r_allocation": 0.0,
+        "rebalance_mode": "daily",
+        "persistence_bars": 0
+      },
+      "description": "Daily-only, D=100% I=50% R=0%",
+      "results": {
+        "BTC": {
+          "metrics": {
+            "total_return": 2.312815879208807,
+            "sharpe_ratio": 0.5524884520060186,
+            "max_drawdown": -0.7912989011526745,
+            "n_trades": 201,
+            "win_rate": 0.4527363184079602,
+            "avg_pnl": 140.2224445293198,
+            "avg_win": 1174.4225454066793,
+            "avg_loss": -715.3430934692227,
+            "profit_factor": 1.3581842768584214,
+            "initial_capital": 10000,
+            "final_capital": 33128.15879208807,
+            "cagr": 0.15314881769835953,
+            "calmar_ratio": 0.19354104684749301,
+            "years": 8.405821917808218,
+            "time_in_market": 0.6178006910248388,
+            "friction_cost_pct": 0.3015
+          },
+          "transitions": {
+            "total_transitions": 381,
+            "avg_days_between": 7.976535087719299,
+            "longest_D_bars": 1347,
+            "longest_I_bars": 1848,
+            "longest_R_bars": 1002,
+            "longest_D_days": 56.125,
+            "longest_I_days": 77.0,
+            "longest_R_days": 41.75
+          }
+        },
+        "ETH": {
+          "metrics": {
+            "total_return": 0.20073924007081212,
+            "sharpe_ratio": 0.34910246982698456,
+            "max_drawdown": -0.8343954921018146,
+            "n_trades": 206,
+            "win_rate": 0.5533980582524272,
+            "avg_pnl": 64.33072498049265,
+            "avg_win": 716.2557738449528,
+            "avg_loss": -743.4894442645991,
+            "profit_factor": 1.1937416668207426,
+            "initial_capital": 10000,
+            "final_capital": 12007.392400708122,
+            "cagr": 0.02199900536371535,
+            "calmar_ratio": 0.026365201600383272,
+            "years": 8.406849315068493,
+            "time_in_market": 0.6342233042721326,
+            "friction_cost_pct": 0.309
+          },
+          "transitions": {
+            "total_transitions": 383,
+            "avg_days_between": 7.902923211169284,
+            "longest_D_bars": 1223,
+            "longest_I_bars": 2467,
+            "longest_R_bars": 1056,
+            "longest_D_days": 50.958333333333336,
+            "longest_I_days": 102.79166666666667,
+            "longest_R_days": 44.0
+          }
+        },
+        "SOL": {
+          "metrics": {
+            "total_return": 12.33311731184543,
+            "sharpe_ratio": 0.9870817204254505,
+            "max_drawdown": -0.7587998646329879,
+            "n_trades": 145,
+            "win_rate": 0.5310344827586206,
+            "avg_pnl": 1344.6531848500097,
+            "avg_win": 12996.092162876877,
+            "avg_loss": -11848.888010856885,
+            "profit_factor": 1.2419868574122739,
+            "initial_capital": 10000,
+            "final_capital": 133331.1731184543,
+            "cagr": 0.6125511999664235,
+            "calmar_ratio": 0.8072631908845936,
+            "years": 5.421004566210046,
+            "time_in_market": 0.6769259938064842,
+            "friction_cost_pct": 0.2175
+          },
+          "transitions": {
+            "total_transitions": 249,
+            "avg_days_between": 7.949596774193548,
+            "longest_D_bars": 1534,
+            "longest_I_bars": 1320,
+            "longest_R_bars": 768,
+            "longest_D_days": 63.916666666666664,
+            "longest_I_days": 55.0,
+            "longest_R_days": 32.0
+          }
+        },
+        "BNB": {
+          "metrics": {
+            "total_return": 1.9738641098424288,
+            "sharpe_ratio": 0.5120893360371381,
+            "max_drawdown": -0.7600424303836185,
+            "n_trades": 215,
+            "win_rate": 0.5023255813953489,
+            "avg_pnl": 136.39738032740743,
+            "avg_win": 1690.929661087959,
+            "avg_loss": -1432.663239505673,
+            "profit_factor": 1.191300715317857,
+            "initial_capital": 10000,
+            "final_capital": 29738.641098424287,
+            "cagr": 0.14241399721632142,
+            "calmar_ratio": 0.18737637732204027,
+            "years": 8.185616438356165,
+            "time_in_market": 0.6039309362165787,
+            "friction_cost_pct": 0.3225
+          },
+          "transitions": {
+            "total_transitions": 415,
+            "avg_days_between": 7.128925120772947,
+            "longest_D_bars": 1170,
+            "longest_I_bars": 2083,
+            "longest_R_bars": 2670,
+            "longest_D_days": 48.75,
+            "longest_I_days": 86.79166666666667,
+            "longest_R_days": 111.25
+          }
+        },
+        "ADA": {
+          "metrics": {
+            "total_return": 0.025678707694515746,
+            "sharpe_ratio": 0.3759834337351585,
+            "max_drawdown": -0.9025793983004863,
+            "n_trades": 209,
+            "win_rate": 0.4354066985645933,
+            "avg_pnl": 17.700402880604766,
+            "avg_win": 1503.8464662897625,
+            "avg_loss": -1128.395290087475,
+            "profit_factor": 1.0277834495163782,
+            "initial_capital": 10000,
+            "final_capital": 10256.787076945158,
+            "cagr": 0.003281268878719823,
+            "calmar_ratio": 0.003635435159386858,
+            "years": 7.739726027397261,
+            "time_in_market": 0.6171472442456187,
+            "friction_cost_pct": 0.3135
+          },
+          "transitions": {
+            "total_transitions": 385,
+            "avg_days_between": 7.328342013888889,
+            "longest_D_bars": 2105,
+            "longest_I_bars": 1248,
+            "longest_R_bars": 1008,
+            "longest_D_days": 87.70833333333333,
+            "longest_I_days": 52.0,
+            "longest_R_days": 42.0
+          }
+        }
+      }
+    },
+    "B_daily_holdI": {
+      "config": {
+        "d_allocation": 1.0,
+        "i_allocation": 1.0,
+        "r_allocation": 0.0,
+        "rebalance_mode": "daily",
+        "persistence_bars": 0
+      },
+      "description": "Daily-only, D=100% I=100% R=0% (hold through I)",
+      "results": {
+        "BTC": {
+          "metrics": {
+            "total_return": 0.922866080417611,
+            "sharpe_ratio": 0.41080749655778237,
+            "max_drawdown": -0.8572384610021333,
+            "n_trades": 168,
+            "win_rate": 0.44047619047619047,
+            "avg_pnl": 66.77431151983517,
+            "avg_win": 978.7271258097271,
+            "avg_loss": -651.1459890913563,
+            "profit_factor": 1.1832789032192863,
+            "initial_capital": 10000,
+            "final_capital": 19228.66080417611,
+            "cagr": 0.08088638018507943,
+            "calmar_ratio": 0.09435691918269885,
+            "years": 8.405821917808218,
+            "time_in_market": 0.6178006910248388,
+            "friction_cost_pct": 0.252
+          },
+          "transitions": {
+            "total_transitions": 381,
+            "avg_days_between": 7.976535087719299,
+            "longest_D_bars": 1347,
+            "longest_I_bars": 1848,
+            "longest_R_bars": 1002,
+            "longest_D_days": 56.125,
+            "longest_I_days": 77.0,
+            "longest_R_days": 41.75
+          }
+        },
+        "ETH": {
+          "metrics": {
+            "total_return": 1.1409745887169347,
+            "sharpe_ratio": 0.48734642739538053,
+            "max_drawdown": -0.8841815307851817,
+            "n_trades": 132,
+            "win_rate": 0.5681818181818182,
+            "avg_pnl": 103.80745601564549,
+            "avg_win": 1599.6344054154026,
+            "avg_loss": -1864.3858984577193,
+            "profit_factor": 1.1289412316033025,
+            "initial_capital": 10000,
+            "final_capital": 21409.74588716935,
+            "cagr": 0.09477897135747848,
+            "calmar_ratio": 0.10719401848770999,
+            "years": 8.406849315068493,
+            "time_in_market": 0.6342233042721326,
+            "friction_cost_pct": 0.198
+          },
+          "transitions": {
+            "total_transitions": 383,
+            "avg_days_between": 7.902923211169284,
+            "longest_D_bars": 1223,
+            "longest_I_bars": 2467,
+            "longest_R_bars": 1056,
+            "longest_D_days": 50.958333333333336,
+            "longest_I_days": 102.79166666666667,
+            "longest_R_days": 44.0
+          }
+        },
+        "SOL": {
+          "metrics": {
+            "total_return": 22.960238604636178,
+            "sharpe_ratio": 1.0897162754988214,
+            "max_drawdown": -0.7930037097595056,
+            "n_trades": 110,
+            "win_rate": 0.5272727272727272,
+            "avg_pnl": 2318.8059999542365,
+            "avg_win": 25911.52814993006,
+            "avg_loss": -23996.153321172642,
+            "profit_factor": 1.204414702336342,
+            "initial_capital": 10000,
+            "final_capital": 239602.3860463618,
+            "cagr": 0.7966831523713398,
+            "calmar_ratio": 1.0046398807049088,
+            "years": 5.421004566210046,
+            "time_in_market": 0.6769259938064842,
+            "friction_cost_pct": 0.165
+          },
+          "transitions": {
+            "total_transitions": 249,
+            "avg_days_between": 7.949596774193548,
+            "longest_D_bars": 1534,
+            "longest_I_bars": 1320,
+            "longest_R_bars": 768,
+            "longest_D_days": 63.916666666666664,
+            "longest_I_days": 55.0,
+            "longest_R_days": 32.0
+          }
+        },
+        "BNB": {
+          "metrics": {
+            "total_return": 2.6725851425653993,
+            "sharpe_ratio": 0.5598688015786062,
+            "max_drawdown": -0.7603040549939102,
+            "n_trades": 207,
+            "win_rate": 0.4975845410628019,
+            "avg_pnl": 166.69777665676693,
+            "avg_win": 2731.4807739822336,
+            "avg_loss": -2373.4238456944163,
+            "profit_factor": 1.13979495936992,
+            "initial_capital": 10000,
+            "final_capital": 36725.85142565399,
+            "cagr": 0.17224955492913296,
+            "calmar_ratio": 0.22655351342366922,
+            "years": 8.185616438356165,
+            "time_in_market": 0.6039309362165787,
+            "friction_cost_pct": 0.3105
+          },
+          "transitions": {
+            "total_transitions": 415,
+            "avg_days_between": 7.128925120772947,
+            "longest_D_bars": 1170,
+            "longest_I_bars": 2083,
+            "longest_R_bars": 2670,
+            "longest_D_days": 48.75,
+            "longest_I_days": 86.79166666666667,
+            "longest_R_days": 111.25
+          }
+        },
+        "ADA": {
+          "metrics": {
+            "total_return": -0.40667370331248853,
+            "sharpe_ratio": 0.34326630113615003,
+            "max_drawdown": -0.9421076731197744,
+            "n_trades": 136,
+            "win_rate": 0.4411764705882353,
+            "avg_pnl": -13.43820204288398,
+            "avg_win": 2472.8301063403337,
+            "avg_loss": -1976.2816033980562,
+            "profit_factor": 0.987832043329504,
+            "initial_capital": 10000,
+            "final_capital": 5933.262966875115,
+            "cagr": -0.06522146724356392,
+            "calmar_ratio": 0.06922931327751963,
+            "years": 7.739726027397261,
+            "time_in_market": 0.6171472442456187,
+            "friction_cost_pct": 0.20400000000000001
+          },
+          "transitions": {
+            "total_transitions": 385,
+            "avg_days_between": 7.328342013888889,
+            "longest_D_bars": 2105,
+            "longest_I_bars": 1248,
+            "longest_R_bars": 1008,
+            "longest_D_days": 87.70833333333333,
+            "longest_I_days": 52.0,
+            "longest_R_days": 42.0
+          }
+        }
+      }
+    },
+    "C_persist72": {
+      "config": {
+        "d_allocation": 1.0,
+        "i_allocation": 0.5,
+        "r_allocation": 0.0,
+        "rebalance_mode": "hourly",
+        "persistence_bars": 72
+      },
+      "description": "Hourly + 72-bar persistence, D=100% I=50% R=0%",
+      "results": {
+        "BTC": {
+          "metrics": {
+            "total_return": 6.295480490598696,
+            "sharpe_ratio": 0.7622427440988853,
+            "max_drawdown": -0.6358569747624374,
+            "n_trades": 266,
+            "win_rate": 0.5451127819548872,
+            "avg_pnl": 267.45724401713375,
+            "avg_win": 1747.283984906328,
+            "avg_loss": -1505.888850436859,
+            "profit_factor": 1.3904430652885444,
+            "initial_capital": 10000,
+            "final_capital": 72954.80490598697,
+            "cagr": 0.2666987749921943,
+            "calmar_ratio": 0.41943201942832453,
+            "years": 8.405821917808218,
+            "time_in_market": 0.6178006910248388,
+            "friction_cost_pct": 0.399
+          },
+          "transitions": {
+            "total_transitions": 247,
+            "avg_days_between": 12.371781842818429,
+            "longest_D_bars": 1769,
+            "longest_I_bars": 821,
+            "longest_R_bars": 820,
+            "longest_D_days": 73.70833333333333,
+            "longest_I_days": 34.208333333333336,
+            "longest_R_days": 34.166666666666664
+          }
+        },
+        "ETH": {
+          "metrics": {
+            "total_return": 0.6665607756161305,
+            "sharpe_ratio": 0.39570115150689467,
+            "max_drawdown": -0.8495580225833531,
+            "n_trades": 265,
+            "win_rate": 0.49433962264150944,
+            "avg_pnl": -43.15366344194191,
+            "avg_win": 1031.9108031963794,
+            "avg_loss": -1094.1495226182112,
+            "profit_factor": 0.9220022507653312,
+            "initial_capital": 10000,
+            "final_capital": 16665.607756161306,
+            "cagr": 0.06263903601930876,
+            "calmar_ratio": 0.07373132188056411,
+            "years": 8.406849315068493,
+            "time_in_market": 0.6342233042721326,
+            "friction_cost_pct": 0.3975
+          },
+          "transitions": {
+            "total_transitions": 218,
+            "avg_days_between": 14.002496159754225,
+            "longest_D_bars": 1296,
+            "longest_I_bars": 1188,
+            "longest_R_bars": 1088,
+            "longest_D_days": 54.0,
+            "longest_I_days": 49.5,
+            "longest_R_days": 45.333333333333336
+          }
+        },
+        "SOL": {
+          "metrics": {
+            "total_return": 0.007732036794319885,
+            "sharpe_ratio": 0.3886087019467492,
+            "max_drawdown": -0.9142754026226912,
+            "n_trades": 312,
+            "win_rate": 0.5064102564102564,
+            "avg_pnl": 41.16655273154251,
+            "avg_win": 1036.9611780738335,
+            "avg_loss": -980.4928680741846,
+            "profit_factor": 1.0850616759067406,
+            "initial_capital": 10000,
+            "final_capital": 10077.320367943199,
+            "cagr": 0.001421834662007626,
+            "calmar_ratio": 0.0015551492011367143,
+            "years": 5.421004566210046,
+            "time_in_market": 0.6769259938064842,
+            "friction_cost_pct": 0.468
+          },
+          "transitions": {
+            "total_transitions": 146,
+            "avg_days_between": 13.552586206896551,
+            "longest_D_bars": 2115,
+            "longest_I_bars": 1335,
+            "longest_R_bars": 768,
+            "longest_D_days": 88.125,
+            "longest_I_days": 55.625,
+            "longest_R_days": 32.0
+          }
+        },
+        "BNB": {
+          "metrics": {
+            "total_return": 9.012384755712185,
+            "sharpe_ratio": 0.7509784550119352,
+            "max_drawdown": -0.6931829229750602,
+            "n_trades": 228,
+            "win_rate": 0.4692982456140351,
+            "avg_pnl": 225.418588491184,
+            "avg_win": 4697.280050018252,
+            "avg_loss": -3729.0374146773815,
+            "profit_factor": 1.1139049143709445,
+            "initial_capital": 10000,
+            "final_capital": 100123.84755712184,
+            "cagr": 0.3250466755678161,
+            "calmar_ratio": 0.46891904689854974,
+            "years": 8.185616438356165,
+            "time_in_market": 0.6039309362165787,
+            "friction_cost_pct": 0.342
+          },
+          "transitions": {
+            "total_transitions": 210,
+            "avg_days_between": 14.086323763955342,
+            "longest_D_bars": 1086,
+            "longest_I_bars": 1955,
+            "longest_R_bars": 1610,
+            "longest_D_days": 45.25,
+            "longest_I_days": 81.45833333333333,
+            "longest_R_days": 67.08333333333333
+          }
+        },
+        "ADA": {
+          "metrics": {
+            "total_return": 3.450676966560133,
+            "sharpe_ratio": 0.6057313217786366,
+            "max_drawdown": -0.8294224953852374,
+            "n_trades": 218,
+            "win_rate": 0.39908256880733944,
+            "avg_pnl": 104.85211897078428,
+            "avg_win": 2571.039893236762,
+            "avg_loss": -1532.997776915781,
+            "profit_factor": 1.11382060363069,
+            "initial_capital": 10000,
+            "final_capital": 44506.76966560133,
+            "cagr": 0.21277139260415923,
+            "calmar_ratio": 0.2565295657978681,
+            "years": 7.739726027397261,
+            "time_in_market": 0.6171472442456187,
+            "friction_cost_pct": 0.327
+          },
+          "transitions": {
+            "total_transitions": 195,
+            "avg_days_between": 14.481314432989691,
+            "longest_D_bars": 1077,
+            "longest_I_bars": 1691,
+            "longest_R_bars": 999,
+            "longest_D_days": 44.875,
+            "longest_I_days": 70.45833333333333,
+            "longest_R_days": 41.625
+          }
+        }
+      }
+    },
+    "D_persist72_holdI": {
+      "config": {
+        "d_allocation": 1.0,
+        "i_allocation": 1.0,
+        "r_allocation": 0.0,
+        "rebalance_mode": "hourly",
+        "persistence_bars": 72
+      },
+      "description": "Hourly + 72-bar persistence, D=100% I=100% R=0%",
+      "results": {
+        "BTC": {
+          "metrics": {
+            "total_return": 5.0035505589098825,
+            "sharpe_ratio": 0.6677515310223737,
+            "max_drawdown": -0.7425576669169726,
+            "n_trades": 219,
+            "win_rate": 0.5388127853881278,
+            "avg_pnl": 258.69602236284504,
+            "avg_win": 1913.216219052279,
+            "avg_loss": -1674.3077717891667,
+            "profit_factor": 1.335024987060429,
+            "initial_capital": 10000,
+            "final_capital": 60035.50558909883,
+            "cagr": 0.23766599112894804,
+            "calmar_ratio": 0.3200640188871986,
+            "years": 8.405821917808218,
+            "time_in_market": 0.6178006910248388,
+            "friction_cost_pct": 0.3285
+          },
+          "transitions": {
+            "total_transitions": 247,
+            "avg_days_between": 12.371781842818429,
+            "longest_D_bars": 1769,
+            "longest_I_bars": 821,
+            "longest_R_bars": 820,
+            "longest_D_days": 73.70833333333333,
+            "longest_I_days": 34.208333333333336,
+            "longest_R_days": 34.166666666666664
+          }
+        },
+        "ETH": {
+          "metrics": {
+            "total_return": 0.2065453123763119,
+            "sharpe_ratio": 0.39635854142599003,
+            "max_drawdown": -0.9471368802032761,
+            "n_trades": 225,
+            "win_rate": 0.5022222222222222,
+            "avg_pnl": 19.775383468322342,
+            "avg_win": 825.5133849195582,
+            "avg_loss": -793.1567072815853,
+            "profit_factor": 1.0500876213940473,
+            "initial_capital": 10000,
+            "final_capital": 12065.453123763118,
+            "cagr": 0.022585585917896278,
+            "calmar_ratio": 0.02384616879563271,
+            "years": 8.406849315068493,
+            "time_in_market": 0.6342233042721326,
+            "friction_cost_pct": 0.3375
+          },
+          "transitions": {
+            "total_transitions": 218,
+            "avg_days_between": 14.002496159754225,
+            "longest_D_bars": 1296,
+            "longest_I_bars": 1188,
+            "longest_R_bars": 1088,
+            "longest_D_days": 54.0,
+            "longest_I_days": 49.5,
+            "longest_R_days": 45.333333333333336
+          }
+        },
+        "SOL": {
+          "metrics": {
+            "total_return": -0.03419896873497219,
+            "sharpe_ratio": 0.4722150478389228,
+            "max_drawdown": -0.9624069050447982,
+            "n_trades": 281,
+            "win_rate": 0.5088967971530249,
+            "avg_pnl": 21.278308509264978,
+            "avg_win": 1672.3687737004186,
+            "avg_loss": -1689.6342749859164,
+            "profit_factor": 1.0256431648356263,
+            "initial_capital": 10000,
+            "final_capital": 9658.010312650278,
+            "cagr": -0.006398443961777689,
+            "calmar_ratio": 0.006648377030794322,
+            "years": 5.421004566210046,
+            "time_in_market": 0.6769259938064842,
+            "friction_cost_pct": 0.4215
+          },
+          "transitions": {
+            "total_transitions": 146,
+            "avg_days_between": 13.552586206896551,
+            "longest_D_bars": 2115,
+            "longest_I_bars": 1335,
+            "longest_R_bars": 768,
+            "longest_D_days": 88.125,
+            "longest_I_days": 55.625,
+            "longest_R_days": 32.0
+          }
+        },
+        "BNB": {
+          "metrics": {
+            "total_return": 14.067573996355321,
+            "sharpe_ratio": 0.8100246821320195,
+            "max_drawdown": -0.7326364502927765,
+            "n_trades": 190,
+            "win_rate": 0.4789473684210526,
+            "avg_pnl": 849.7119776143766,
+            "avg_win": 9028.780707708433,
+            "avg_loss": -6668.421905603392,
+            "profit_factor": 1.2445496676969083,
+            "initial_capital": 10000,
+            "final_capital": 150675.7399635532,
+            "cagr": 0.39288821396962414,
+            "calmar_ratio": 0.5362662665945954,
+            "years": 8.185616438356165,
+            "time_in_market": 0.6039309362165787,
+            "friction_cost_pct": 0.28500000000000003
+          },
+          "transitions": {
+            "total_transitions": 210,
+            "avg_days_between": 14.086323763955342,
+            "longest_D_bars": 1086,
+            "longest_I_bars": 1955,
+            "longest_R_bars": 1610,
+            "longest_D_days": 45.25,
+            "longest_I_days": 81.45833333333333,
+            "longest_R_days": 67.08333333333333
+          }
+        },
+        "ADA": {
+          "metrics": {
+            "total_return": 0.3535952916904277,
+            "sharpe_ratio": 0.45119504642113106,
+            "max_drawdown": -0.8955499962834287,
+            "n_trades": 183,
+            "win_rate": 0.40437158469945356,
+            "avg_pnl": 34.98467127992785,
+            "avg_win": 1892.4524627075582,
+            "avg_loss": -1226.0485082213988,
+            "profit_factor": 1.0479065323451593,
+            "initial_capital": 10000,
+            "final_capital": 13535.952916904276,
+            "cagr": 0.039893402643556675,
+            "calmar_ratio": 0.044546259627174394,
+            "years": 7.739726027397261,
+            "time_in_market": 0.6171472442456187,
+            "friction_cost_pct": 0.2745
+          },
+          "transitions": {
+            "total_transitions": 195,
+            "avg_days_between": 14.481314432989691,
+            "longest_D_bars": 1077,
+            "longest_I_bars": 1691,
+            "longest_R_bars": 999,
+            "longest_D_days": 44.875,
+            "longest_I_days": 70.45833333333333,
+            "longest_R_days": 41.625
+          }
+        }
+      }
+    }
+  }
+}

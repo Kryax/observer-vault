@@ -5,8 +5,9 @@ Rules:
   1. If ALL tokens are in R-regime: 100% cash
   2. Rank non-R tokens by 30-day log return (720 hourly bars)
   3. Allocate 100% of equity to the strongest token
-  4. Rebalance daily (every 24 bars)
-  5. No stops — regime transition is the only exit
+  4. Rebalance weekly (every 168 bars)
+  5. Only switch tokens if momentum advantage > threshold (reduces churn)
+  6. No stops — regime transition is the only exit
 """
 
 import numpy as np
@@ -15,9 +16,15 @@ import pandas as pd
 
 class DualMomentumAllocator:
 
-    def __init__(self, momentum_window: int = 720, rebalance_bars: int = 24):
+    def __init__(
+        self,
+        momentum_window: int = 720,
+        rebalance_bars: int = 168,
+        switch_threshold: float = 0.05,
+    ):
         self.momentum_window = momentum_window
         self.rebalance_bars = rebalance_bars
+        self.switch_threshold = switch_threshold
 
     def run(
         self,
@@ -105,7 +112,14 @@ class DualMomentumAllocator:
 
             best = max(momenta, key=momenta.get)
 
-            if best != held_token:
+            # Only switch if momentum advantage exceeds threshold
+            should_switch = (best != held_token)
+            if should_switch and held_token is not None and held_token in momenta:
+                advantage = momenta[best] - momenta[held_token]
+                if advantage < self.switch_threshold:
+                    should_switch = False  # not enough edge to justify friction
+
+            if should_switch:
                 if held_token is not None:
                     trades.append({
                         "bar": i,
