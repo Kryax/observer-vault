@@ -35,9 +35,11 @@ logger = logging.getLogger(__name__)
 # Paths
 # =============================================================================
 
-_STRATEGY_DIR = Path(__file__).resolve().parent.parent
-_DATA_DIR = _STRATEGY_DIR / "data"
-_MODELS_DIR = _STRATEGY_DIR / "freqtrade" / "user_data" / "models"
+# When deployed to freqtrade/user_data/strategies/, resolve up to trading-system root
+_STRATEGY_FILE = Path(__file__).resolve()
+_TRADING_ROOT = _STRATEGY_FILE.parent.parent.parent.parent  # strategies -> user_data -> freqtrade -> trading-system
+_DATA_DIR = _TRADING_ROOT / "data"
+_MODELS_DIR = _STRATEGY_FILE.parent.parent / "models"  # freqtrade/user_data/models
 _GATEKEEPER_STATE_PATH = _MODELS_DIR / "gatekeeper_state.json"
 _HMM_STATE_PATH = _MODELS_DIR / "hmm_state.pkl"
 _NORM_PARAMS_PATH = _DATA_DIR / "normalisation_params.json"
@@ -437,7 +439,6 @@ class MarkovRegime9(IStrategy):
         gk = self._compute_gatekeeper_inline(dataframe, pair)
         if gk is None:
             return dataframe
-
         for idx in dataframe.index:
             row_gk = gk.get(idx)
             if not row_gk:
@@ -595,6 +596,7 @@ class MarkovRegime9(IStrategy):
                     else ["Quiet"] * n
                 )
             elif pair in self._cached_momentum:
+                # Use cached arrays from this pair's populate_indicators call
                 cached_mom = self._cached_momentum[pair]
                 cached_reg = self._cached_regimes[pair]
                 other_n = len(cached_mom)
@@ -607,6 +609,7 @@ class MarkovRegime9(IStrategy):
                     all_momentum[pair] = padded
                     all_regimes[pair] = ["Quiet"] * (n - other_n) + cached_reg
             else:
+                # Fallback: try DataProvider (live mode)
                 if hasattr(self, "dp") and self.dp is not None:
                     try:
                         other_df = self.dp.get_pair_dataframe(pair, self.timeframe)

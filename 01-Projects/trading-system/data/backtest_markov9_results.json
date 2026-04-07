@@ -1,0 +1,108 @@
+{
+  "comparison": {
+    "v6.2c_dir_allocator": {
+      "total_return_pct": 1662.34,
+      "max_drawdown_pct": -66.58,
+      "sharpe": 0.68,
+      "win_rate": "N/A (momentum rotation)",
+      "total_trades": 146,
+      "profit_factor": "N/A",
+      "cagr": 66.23,
+      "period": "5.6 years (2020-2026)",
+      "pct_in_market": 49.3,
+      "annual_returns": {
+        "2020": -1.3,
+        "2021": 558.9,
+        "2022": -29.4,
+        "2023": 185.0,
+        "2024": 56.2,
+        "2025": 17.7,
+        "2026": -27.2
+      },
+      "calmar": 0.99
+    },
+    "markov_regime_9": {
+      "total_return_pct": -65.52,
+      "max_drawdown_pct": -72.17,
+      "sharpe": -0.27,
+      "win_rate": 53.4,
+      "total_trades": 459,
+      "profit_factor": 0.87,
+      "cagr": -23.36,
+      "final_balance": 3448.29,
+      "starting_balance": 10000,
+      "best_pair": "ETH/USDT +9.48%",
+      "worst_pair": "SOL/USDT -53.55%",
+      "market_change": -10.64,
+      "period": "2022-04-01 to 2026-04-01",
+      "avg_duration": "1 day, 4:25",
+      "max_balance": 12389.15,
+      "trailing_stop_wins": {
+        "basin_8_bullish": {
+          "trades": 70,
+          "avg_profit": 3.53,
+          "total": 16250
+        },
+        "basin_2_bullish": {
+          "trades": 76,
+          "avg_profit": 3.15,
+          "total": 15100
+        },
+        "basin_0_bullish": {
+          "trades": 40,
+          "avg_profit": 2.72,
+          "total": 6814
+        },
+        "basin_3_bullish": {
+          "trades": 14,
+          "avg_profit": 2.94,
+          "total": 3063
+        },
+        "basin_5_neutral": {
+          "trades": 14,
+          "avg_profit": 2.73,
+          "total": 2302
+        },
+        "bifurcation_c4_c3": {
+          "trades": 9,
+          "avg_profit": 2.23,
+          "total": 1265
+        }
+      },
+      "bearish_exit_losses": {
+        "basin_6_bearish": {
+          "trades": 53,
+          "avg_profit": -3.71,
+          "total": -14137
+        },
+        "basin_4_bearish": {
+          "trades": 42,
+          "avg_profit": -6.72,
+          "total": -19196
+        },
+        "basin_7_bearish": {
+          "trades": 83,
+          "avg_profit": -2.39,
+          "total": -12974
+        },
+        "basin_1_drawdown": {
+          "trades": 8,
+          "avg_profit": -1.95,
+          "total": -1032
+        }
+      }
+    }
+  },
+  "diagnostic": {
+    "primary_issue": "bearish basin exits trigger too aggressively",
+    "trailing_stop_profit": 44794,
+    "bearish_exit_loss": -47339,
+    "trade_churn_ratio": "5x vs v6.2c",
+    "recommended_fixes": [
+      "Remove bearish basin exits \u2014 let trailing stop handle exits",
+      "Add hysteresis: only exit if bearish basin persists N hours",
+      "Use Markov scores for position sizing only, not exit gating",
+      "Tighten trailing stop based on crash_risk instead of hard exits"
+    ]
+  }
+}
