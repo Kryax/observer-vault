@@ -81,6 +81,14 @@ HEAT_PENALTY_FLOOR = 0.3      # minimum heat multiplier
 MOMENTUM_BONUS_RATE = 0.15    # RSI bonus slope
 MOMENTUM_BONUS_CAP = 1.2      # maximum momentum multiplier (was 1.3 — gentler upside leverage)
 
+# ── Smart Leverage (asymmetric conviction amplifier) ───────────────────
+SMART_LEVERAGE_ENABLED = False    # FEATURE FLAG — set True after paper validation
+LEVERAGE_HIGH_THRESHOLD = 0.8     # sizing scalar threshold for high conviction
+LEVERAGE_MED_THRESHOLD = 0.5      # sizing scalar threshold for medium conviction
+LEVERAGE_HIGH_MULT = 2.0          # multiplier for high conviction entries
+LEVERAGE_MED_MULT = 1.5           # multiplier for medium conviction entries
+LEVERAGE_LOW_MULT = 1.0           # multiplier for low conviction (no leverage)
+
 
 def _load_json(path: Path) -> dict:
     with open(path) as f:
@@ -318,7 +326,19 @@ class MarkovRegime9v3(IStrategy):
 
         final = scalar * kinematic_quality
         final = max(SIZING_FLOOR, min(SIZING_CEILING, final))
-        scaled = proposed_stake * final
+
+        # Smart leverage: amplify high-conviction entries only
+        if SMART_LEVERAGE_ENABLED:
+            if final >= LEVERAGE_HIGH_THRESHOLD:
+                leverage_mult = LEVERAGE_HIGH_MULT
+            elif final >= LEVERAGE_MED_THRESHOLD:
+                leverage_mult = LEVERAGE_MED_MULT
+            else:
+                leverage_mult = LEVERAGE_LOW_MULT
+            scaled = proposed_stake * final * leverage_mult
+        else:
+            scaled = proposed_stake * final
+
         return max(scaled, min_stake)
 
     def _compute_sizing_scalars(self, dataframe: pd.DataFrame, pair: str) -> pd.DataFrame:
