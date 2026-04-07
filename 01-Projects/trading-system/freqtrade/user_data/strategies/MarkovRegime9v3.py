@@ -76,10 +76,10 @@ BLACKLIST_BASINS = {3}        # C3: hard entry block, anti-edge
 FORCE_FLAT_BASIN = 1          # C1 Persistent Drawdown
 
 # ── Quiet Grind Filter (v3) ────────────────────────────────────────────
-HEAT_PENALTY_RATE = 0.2       # ATR penalty slope
+HEAT_PENALTY_RATE = 0.3       # ATR penalty slope (was 0.2 — bite harder on volatile entries)
 HEAT_PENALTY_FLOOR = 0.3      # minimum heat multiplier
 MOMENTUM_BONUS_RATE = 0.15    # RSI bonus slope
-MOMENTUM_BONUS_CAP = 1.3      # maximum momentum multiplier
+MOMENTUM_BONUS_CAP = 1.2      # maximum momentum multiplier (was 1.3 — gentler upside leverage)
 
 
 def _load_json(path: Path) -> dict:
