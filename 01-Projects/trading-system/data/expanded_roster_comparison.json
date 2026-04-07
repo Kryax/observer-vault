@@ -1,0 +1,363 @@
+{
+  "metadata": {
+    "analysis": "Expanded Roster Comparison \u2014 v6.2c vs Markov v3",
+    "date": "2026-04-07",
+    "rosters": {
+      "original_5": [
+        "BTC",
+        "ETH",
+        "SOL",
+        "BNB",
+        "ADA"
+      ],
+      "purified_4": [
+        "BTC",
+        "BNB",
+        "DOGE",
+        "XRP"
+      ],
+      "expanded_7": [
+        "BTC",
+        "BNB",
+        "DOGE",
+        "XRP",
+        "LINK",
+        "SOL",
+        "AVAX"
+      ]
+    },
+    "note": "Leverage projections removed \u2014 naive bar-by-bar leverage compounding produces unrealistic numbers over multi-year periods. Leverage analysis requires a proper margin model with borrowing costs and periodic rebalancing."
+  },
+  "configurations": {
+    "original_5_full": {
+      "roster": [
+        "BTC",
+        "ETH",
+        "SOL",
+        "BNB",
+        "ADA"
+      ],
+      "period": "2020-08-11 06:00:00+00:00 to 2026-04-03 21:00:00+00:00",
+      "years": 5.65,
+      "v62c": {
+        "total_return_pct": 1662.3,
+        "max_drawdown_pct": -66.6,
+        "sharpe": 0.678,
+        "calmar": 0.995,
+        "cagr_pct": 66.2,
+        "n_trades": 146,
+        "final_equity": 176234.0,
+        "annual_returns": {
+          "2020": -1.3,
+          "2021": 558.9,
+          "2022": -29.4,
+          "2023": 185.0,
+          "2024": 56.2,
+          "2025": 17.7,
+          "2026": -27.2
+        }
+      },
+      "markov_v3": {
+        "total_return_pct": 390.9,
+        "max_drawdown_pct": -26.3,
+        "sharpe": 0.987,
+        "calmar": 1.24,
+        "cagr_pct": 32.6,
+        "n_trades": 68,
+        "win_rate": 45.6,
+        "final_equity": 49090.0,
+        "token_pnl": {
+          "ADA": -6818.06,
+          "BNB": 8878.51,
+          "BTC": 5430.14,
+          "ETH": 301.2,
+          "SOL": 31298.02
+        },
+        "annual_returns": {
+          "2020": -17.3,
+          "2021": 205.8,
+          "2022": 8.9,
+          "2023": 98.4,
+          "2024": 7.6,
+          "2025": -4.4,
+          "2026": -12.9
+        }
+      },
+      "btc_buy_hold_pct": 1451.9
+    },
+    "original_5_2022-2026": {
+      "roster": [
+        "BTC",
+        "ETH",
+        "SOL",
+        "BNB",
+        "ADA"
+      ],
+      "period": "2022-04-01 00:00:00+00:00 to 2026-04-01 00:00:00+00:00",
+      "years": 4.0,
+      "v62c": {
+        "total_return_pct": 375.5,
+        "max_drawdown_pct": -55.2,
+        "sharpe": 0.678,
+        "calmar": 0.863,
+        "cagr_pct": 47.6,
+        "n_trades": 84,
+        "final_equity": 47550.0,
+        "annual_returns": {
+          "2022": 8.9,
+          "2023": 218.1,
+          "2024": 77.2,
+          "2025": 6.1,
+          "2026": -27.2
+        }
+      },
+      "markov_v3": {
+        "total_return_pct": 64.3,
+        "max_drawdown_pct": -26.5,
+        "sharpe": 0.612,
+        "calmar": 0.498,
+        "cagr_pct": 13.2,
+        "n_trades": 40,
+        "win_rate": 40.0,
+        "final_equity": 16428.0,
+        "token_pnl": {
+          "ADA": -1918.75,
+          "BNB": -123.37,
+          "BTC": 2371.09,
+          "ETH": -1939.56,
+          "SOL": 8038.55
+        },
+        "annual_returns": {
+          "2022": 14.4,
+          "2023": 66.3,
+          "2024": 9.1,
+          "2025": -9.3,
+          "2026": -12.9
+        }
+      },
+      "btc_buy_hold_pct": 50.0
+    },
+    "purified_4_full": {
+      "roster": [
+        "BTC",
+        "BNB",
+        "DOGE",
+        "XRP"
+      ],
+      "period": "2019-07-05 12:00:00+00:00 to 2026-04-03 21:00:00+00:00",
+      "years": 6.75,
+      "v62c": {
+        "total_return_pct": 449.4,
+        "max_drawdown_pct": -80.1,
+        "sharpe": 0.273,
+        "calmar": 0.359,
+        "cagr_pct": 28.7,
+        "n_trades": 127,
+        "final_equity": 54941.0,
+        "annual_returns": {
+          "2019": -15.6,
+          "2020": -18.8,
+          "2021": 1427.3,
+          "2022": -53.5,
+          "2023": 5.5,
+          "2024": 58.2,
+          "2025": 1.0,
+          "2026": -33.2
+        }
+      },
+      "markov_v3": {
+        "total_return_pct": 310.2,
+        "max_drawdown_pct": -49.8,
+        "sharpe": 0.45,
+        "calmar": 0.467,
+        "cagr_pct": 23.3,
+        "n_trades": 64,
+        "win_rate": 39.7,
+        "final_equity": 41021.0,
+        "token_pnl": {
+          "BNB": 8592.64,
+          "BTC": 11412.14,
+          "DOGE": 24422.25,
+          "XRP": -13405.59
+        },
+        "annual_returns": {
+          "2019": -3.6,
+          "2020": 5.9,
+          "2021": 646.3,
+          "2022": -23.1,
+          "2023": -14.1,
+          "2024": -11.8,
+          "2025": 6.8,
+          "2026": -13.8
+        }
+      },
+      "btc_buy_hold_pct": 1451.9
+    },
+    "purified_4_2022-2026": {
+      "roster": [
+        "BTC",
+        "BNB",
+        "DOGE",
+        "XRP"
+      ],
+      "period": "2022-04-01 00:00:00+00:00 to 2026-04-01 00:00:00+00:00",
+      "years": 4.0,
+      "v62c": {
+        "total_return_pct": 139.1,
+        "max_drawdown_pct": -66.3,
+        "sharpe": 0.347,
+        "calmar": 0.367,
+        "cagr_pct": 24.3,
+        "n_trades": 83,
+        "final_equity": 23909.0,
+        "annual_returns": {
+          "2022": -30.3,
+          "2023": -4.7,
+          "2024": 375.2,
+          "2025": 7.5,
+          "2026": -29.7
+        }
+      },
+      "markov_v3": {
+        "total_return_pct": -0.9,
+        "max_drawdown_pct": -32.6,
+        "sharpe": -0.014,
+        "calmar": -0.007,
+        "cagr_pct": -0.2,
+        "n_trades": 41,
+        "win_rate": 42.5,
+        "final_equity": 9909.0,
+        "token_pnl": {
+          "BNB": -219.54,
+          "BTC": 958.9,
+          "DOGE": 476.36,
+          "XRP": -1306.78
+        },
+        "annual_returns": {
+          "2022": -0.3,
+          "2023": -14.6,
+          "2024": 20.9,
+          "2025": 8.2,
+          "2026": -11.3
+        }
+      },
+      "btc_buy_hold_pct": 50.0
+    },
+    "expanded_7_full": {
+      "roster": [
+        "BTC",
+        "BNB",
+        "DOGE",
+        "XRP",
+        "LINK",
+        "SOL",
+        "AVAX"
+      ],
+      "period": "2020-09-22 06:00:00+00:00 to 2026-04-03 21:00:00+00:00",
+      "years": 5.53,
+      "v62c": {
+        "total_return_pct": 231.9,
+        "max_drawdown_pct": -79.9,
+        "sharpe": 0.258,
+        "calmar": 0.303,
+        "cagr_pct": 24.2,
+        "n_trades": 136,
+        "final_equity": 33186.0,
+        "annual_returns": {
+          "2020": -22.1,
+          "2021": 606.7,
+          "2022": -57.7,
+          "2023": 271.8,
+          "2024": 5.3,
+          "2025": -48.6,
+          "2026": -29.7
+        }
+      },
+      "markov_v3": {
+        "total_return_pct": 145.1,
+        "max_drawdown_pct": -40.5,
+        "sharpe": 0.553,
+        "calmar": 0.434,
+        "cagr_pct": 17.6,
+        "n_trades": 68,
+        "win_rate": 32.4,
+        "final_equity": 24507.0,
+        "token_pnl": {
+          "AVAX": -3186.19,
+          "BNB": 964.75,
+          "BTC": -178.25,
+          "DOGE": 5066.75,
+          "LINK": 767.53,
+          "SOL": 3478.43,
+          "XRP": 7593.79
+        },
+        "annual_returns": {
+          "2020": -10.0,
+          "2021": 183.1,
+          "2022": -14.8,
+          "2023": 67.3,
+          "2024": -14.2,
+          "2025": -9.2,
+          "2026": -13.8
+        }
+      },
+      "btc_buy_hold_pct": 1451.9
+    },
+    "expanded_7_2022-2026": {
+      "roster": [
+        "BTC",
+        "BNB",
+        "DOGE",
+        "XRP",
+        "LINK",
+        "SOL",
+        "AVAX"
+      ],
+      "period": "2022-04-01 00:00:00+00:00 to 2026-04-01 00:00:00+00:00",
+      "years": 4.0,
+      "v62c": {
+        "total_return_pct": 81.3,
+        "max_drawdown_pct": -72.9,
+        "sharpe": 0.212,
+        "calmar": 0.22,
+        "cagr_pct": 16.0,
+        "n_trades": 93,
+        "final_equity": 18133.0,
+        "annual_returns": {
+          "2022": -37.4,
+          "2023": 163.6,
+          "2024": 171.6,
+          "2025": -44.8,
+          "2026": -27.4
+        }
+      },
+      "markov_v3": {
+        "total_return_pct": 41.3,
+        "max_drawdown_pct": -24.2,
+        "sharpe": 0.353,
+        "calmar": 0.372,
+        "cagr_pct": 9.0,
+        "n_trades": 46,
+        "win_rate": 31.1,
+        "final_equity": 14126.0,
+        "token_pnl": {
+          "AVAX": -2158.61,
+          "BNB": 99.14,
+          "BTC": -15.72,
+          "DOGE": 1437.54,
+          "LINK": 3158.43,
+          "SOL": 1911.99,
+          "XRP": -306.37
+        },
+        "annual_returns": {
+          "2022": -10.4,
+          "2023": 53.3,
+          "2024": 18.6,
+          "2025": -2.1,
+          "2026": -11.9
+        }
+      },
+      "btc_buy_hold_pct": 50.0
+    }
+  }
+}
