@@ -1,0 +1,698 @@
+{
+  "metadata": {
+    "analysis": "Council of Nine — D/I/R Strategic Analysis of K=9 Topology",
+    "date": "2026-04-07",
+    "baseline": "MarkovRegime9 v3 (v7.0-rc1)",
+    "data_period": "2022-04-01 to 2026-04-01",
+    "total_trades": 105,
+    "total_observations": 175180,
+    "framework": "D/I/R composition mapping onto K=9 market basins"
+  },
+
+  "basin_profiles": {
+    "C0": {
+      "dir_label": "I(R)+",
+      "archetype": "Equilibrium Drift",
+      "sign": "+",
+      "personality": "Mild bullish drift with integration dominant — market consolidating upward around VWAP, moderate momentum confirmation",
+      "centroid": {
+        "atr_z": 0.6381, "bbw_z": -0.0256, "rsi_z": 0.7397,
+        "vwap_dist_z": 0.6999, "adx_z": -0.2643, "obv_z": 0.7106
+      },
+      "axis_magnitudes": {"D": 0.332, "I": 0.720, "R": 0.488},
+      "occupancy_pct": 14.15,
+      "stationary_pct": 14.14,
+      "dwell": {"mean": 5.08, "median": 3.0, "max": 46, "n_visits": 4879},
+      "stickiness": 0.803,
+      "top_3_destinations": [
+        {"to": "C7", "prob": 0.0777, "interpretation": "drift reversal — bullish drift flips to bearish drift"},
+        {"to": "C5", "prob": 0.0629, "interpretation": "cooling into quiet base"},
+        {"to": "C2", "prob": 0.0292, "interpretation": "amplification — drift intensifies into strong I(R)+"}
+      ],
+      "forbidden_destinations": ["C4"],
+      "trading_stats": {
+        "total_trades": 26,
+        "win_rate": 50.0,
+        "total_pnl": 4116.47,
+        "avg_pnl": 158.33,
+        "avg_return_pct": 6.11,
+        "avg_win_pct": 15.96,
+        "avg_loss_pct": -3.74,
+        "avg_duration_hours": 207.3,
+        "best_trade": {"pnl": 1886.92, "pair": "SOL/USDT", "trade_num": 41},
+        "worst_trade": {"pnl": -233.30, "pair": "SOL/USDT", "trade_num": 3},
+        "pair_breakdown": {"SOL/USDT": {"count": 7, "pnl": 1441.17}, "ETH/USDT": {"count": 7, "pnl": 2452.08}, "BNB/USDT": {"count": 7, "pnl": 247.92}, "ADA/USDT": {"count": 4, "pnl": 15.79}, "BTC/USDT": {"count": 1, "pnl": -40.49}}
+      },
+      "edge_assessment": "STRONG EDGE — best PnL basin by far ($4116), asymmetric payoff (avg win 4.3x avg loss), ETH and SOL are the edge carriers"
+    },
+
+    "C1": {
+      "dir_label": "R(D)−",
+      "archetype": "Trending Expansion",
+      "sign": "−",
+      "personality": "Bearish trending — recursive feedback loops dominate, OBV deeply negative, low integration. Self-reinforcing downtrend with structural conviction",
+      "centroid": {
+        "atr_z": -0.6879, "bbw_z": -0.4192, "rsi_z": -0.0372,
+        "vwap_dist_z": -0.0418, "adx_z": -0.522, "obv_z": -1.3225
+      },
+      "axis_magnitudes": {"D": 0.554, "I": 0.040, "R": 0.922},
+      "occupancy_pct": 18.13,
+      "stationary_pct": 18.13,
+      "dwell": {"mean": 13.96, "median": 4.0, "max": 435, "n_visits": 2276},
+      "stickiness": 0.928,
+      "top_3_destinations": [
+        {"to": "C6", "prob": 0.0284, "interpretation": "bearish trend relaxes into bearish equilibrium"},
+        {"to": "C2", "prob": 0.0279, "interpretation": "regime flip — bear trend exhausts into bullish integration"},
+        {"to": "C5", "prob": 0.0066, "interpretation": "trend dies into quiet base"}
+      ],
+      "forbidden_destinations": ["C3"],
+      "trading_stats": {
+        "total_trades": 1,
+        "win_rate": 0.0,
+        "total_pnl": -16.46,
+        "avg_pnl": -16.46,
+        "avg_return_pct": -0.73,
+        "avg_win_pct": 0,
+        "avg_loss_pct": -0.73,
+        "avg_duration_hours": 26.0,
+        "best_trade": {"pnl": -16.46, "pair": "BTC/USDT", "trade_num": 22},
+        "worst_trade": {"pnl": -16.46, "pair": "BTC/USDT", "trade_num": 22},
+        "pair_breakdown": {"BTC/USDT": {"count": 1, "pnl": -16.46}}
+      },
+      "edge_assessment": "NO DATA — stickiest basin (0.928) and longest dwell (13.96h mean, 435h max). Current strategy almost never trades here. This is the 'bearish winter' regime — the market spends 18% of its time here"
+    },
+
+    "C2": {
+      "dir_label": "I(R)+",
+      "archetype": "Equilibrium Drift (Strong)",
+      "sign": "+",
+      "personality": "Strong bullish integration — RSI elevated (1.36z), VWAP positive, ADX confirming trend. The amplified version of C0 — conviction is higher, integration pulling harder",
+      "centroid": {
+        "atr_z": -0.2983, "bbw_z": 0.3833, "rsi_z": 1.3622,
+        "vwap_dist_z": 1.0408, "adx_z": 0.9256, "obv_z": -0.2904
+      },
+      "axis_magnitudes": {"D": 0.341, "I": 1.202, "R": 0.608},
+      "occupancy_pct": 10.65,
+      "stationary_pct": 10.65,
+      "dwell": {"mean": 6.46, "median": 3.0, "max": 65, "n_visits": 2891},
+      "stickiness": 0.845,
+      "top_3_destinations": [
+        {"to": "C1", "prob": 0.0482, "interpretation": "DANGER — strong bullish integration collapses into bearish trend"},
+        {"to": "C0", "prob": 0.0353, "interpretation": "de-escalation — strong drift relaxes to mild drift"},
+        {"to": "C5", "prob": 0.0262, "interpretation": "energy dissipation into quiet base"}
+      ],
+      "forbidden_destinations": ["C4"],
+      "trading_stats": {
+        "total_trades": 5,
+        "win_rate": 80.0,
+        "total_pnl": -71.71,
+        "avg_pnl": -14.34,
+        "avg_return_pct": -1.24,
+        "avg_win_pct": 1.09,
+        "avg_loss_pct": -10.54,
+        "avg_duration_hours": 326.0,
+        "best_trade": {"pnl": 50.90, "pair": "BTC/USDT", "trade_num": 31},
+        "worst_trade": {"pnl": -150.02, "pair": "SOL/USDT", "trade_num": 39},
+        "pair_breakdown": {"SOL/USDT": {"count": 3, "pnl": -124.53}, "BTC/USDT": {"count": 2, "pnl": 52.82}}
+      },
+      "edge_assessment": "PARADOX — 80% win rate but negative PnL. The one loss ($-150) wipes out four wins. High win rate is real but needs tight stop protection. Small sample (n=5)"
+    },
+
+    "C3": {
+      "dir_label": "D(R)+",
+      "archetype": "Breakout Momentum",
+      "sign": "+",
+      "personality": "Volatile breakout — ATR dominant (2.44z), structure dissolving. The market is making violent distinctions. High energy, directional but chaotic",
+      "centroid": {
+        "atr_z": 2.4446, "bbw_z": 0.8898, "rsi_z": -0.492,
+        "vwap_dist_z": -0.5705, "adx_z": 0.4585, "obv_z": 0.7066
+      },
+      "axis_magnitudes": {"D": 1.667, "I": 0.531, "R": 0.583},
+      "occupancy_pct": 4.21,
+      "stationary_pct": 4.21,
+      "dwell": {"mean": 6.35, "median": 3.0, "max": 92, "n_visits": 1161},
+      "stickiness": 0.842,
+      "top_3_destinations": [
+        {"to": "C0", "prob": 0.0692, "interpretation": "breakout resolves into bullish drift — breakout was upside"},
+        {"to": "C4", "prob": 0.0339, "interpretation": "volatility persists, sign flips — breakout whipsaws"},
+        {"to": "C7", "prob": 0.0271, "interpretation": "breakout energy absorbed, settles into bearish drift"}
+      ],
+      "forbidden_destinations": ["C5"],
+      "trading_stats": {
+        "total_trades": 12,
+        "win_rate": 25.0,
+        "total_pnl": -458.61,
+        "avg_pnl": -38.22,
+        "avg_return_pct": -2.69,
+        "avg_win_pct": 1.52,
+        "avg_loss_pct": -4.09,
+        "avg_duration_hours": 59.0,
+        "best_trade": {"pnl": 206.05, "pair": "ETH/USDT", "trade_num": 57},
+        "worst_trade": {"pnl": -283.50, "pair": "SOL/USDT", "trade_num": 67},
+        "pair_breakdown": {"SOL/USDT": {"count": 3, "pnl": -427.45}, "ETH/USDT": {"count": 4, "pnl": 124.57}, "BNB/USDT": {"count": 3, "pnl": -146.70}, "ADA/USDT": {"count": 1, "pnl": -2.80}, "BTC/USDT": {"count": 1, "pnl": -6.22}}
+      },
+      "edge_assessment": "ANTI-EDGE — 25% win rate, worst PnL density. v3 already blacklists this. Correct. Only ETH shows marginal edge here. Structure dissolution is untradeable with current strategy"
+    },
+
+    "C4": {
+      "dir_label": "I(D)−",
+      "archetype": "Mean-Revert Volatile",
+      "sign": "−",
+      "personality": "Extreme bearish volatility with integration — RSI deeply oversold (-1.79z), wide bands, massive VWAP distance. The market is trying to integrate but structure keeps breaking. Capitulation zone",
+      "centroid": {
+        "atr_z": 1.0457, "bbw_z": 2.6217, "rsi_z": -1.7876,
+        "vwap_dist_z": -2.3752, "adx_z": 1.4712, "obv_z": -0.0427
+      },
+      "axis_magnitudes": {"D": 1.834, "I": 2.081, "R": 0.757},
+      "occupancy_pct": 2.96,
+      "stationary_pct": 2.96,
+      "dwell": {"mean": 6.08, "median": 3.0, "max": 43, "n_visits": 852},
+      "stickiness": 0.836,
+      "top_3_destinations": [
+        {"to": "C6", "prob": 0.0709, "interpretation": "volatility subsides, bearish equilibrium takes hold"},
+        {"to": "C3", "prob": 0.0695, "interpretation": "sign flip — bearish vol becomes bullish breakout"},
+        {"to": "C7", "prob": 0.0104, "interpretation": "normalization into mild bearish drift"}
+      ],
+      "forbidden_destinations": ["C5"],
+      "trading_stats": {
+        "total_trades": 0,
+        "win_rate": null,
+        "total_pnl": 0,
+        "avg_pnl": 0,
+        "edge_note": "Zero trades — strategy never fires in capitulation"
+      },
+      "edge_assessment": "UNTESTED — the rarest active basin (2.96%). Deeply oversold with extreme negative VWAP distance. Theoretically prime mean-reversion territory, but current strategy ignores it entirely. The C4→C3 transition (6.95%) is a potential long setup: capitulation → breakout"
+    },
+
+    "C5": {
+      "dir_label": "D(R)−",
+      "archetype": "Quiet Base",
+      "sign": "−",
+      "personality": "Low energy everything — the anti-breakout. Compressed ATR, tight bands, no momentum, no trend. The market is doing nothing. The quiet between storms",
+      "centroid": {
+        "atr_z": -0.5396, "bbw_z": -0.6704, "rsi_z": 0.1147,
+        "vwap_dist_z": 0.0452, "adx_z": -0.6618, "obv_z": 0.365
+      },
+      "axis_magnitudes": {"D": 0.605, "I": 0.080, "R": 0.513},
+      "occupancy_pct": 21.61,
+      "stationary_pct": 21.61,
+      "dwell": {"mean": 7.89, "median": 3.0, "max": 143, "n_visits": 4796},
+      "stickiness": 0.873,
+      "top_3_destinations": [
+        {"to": "C7", "prob": 0.0614, "interpretation": "quiet base breaks into bearish drift"},
+        {"to": "C0", "prob": 0.0414, "interpretation": "quiet base breaks into bullish drift"},
+        {"to": "C2", "prob": 0.0127, "interpretation": "jump to strong bullish integration"}
+      ],
+      "forbidden_destinations": ["C3", "C4", "C8"],
+      "trading_stats": {
+        "total_trades": 0,
+        "win_rate": null,
+        "total_pnl": 0,
+        "avg_pnl": 0,
+        "edge_note": "Zero trades — correctly identified as no-signal environment"
+      },
+      "edge_assessment": "SIT-OUT — largest basin (21.6%), no signal. But the EXIT transitions matter: C5→C7 (6.14%) and C5→C0 (4.14%) are early-warning breakout indicators. The market spends 1/5 of its time here waiting"
+    },
+
+    "C6": {
+      "dir_label": "I(R)−",
+      "archetype": "Equilibrium Drift (Bearish Structured)",
+      "sign": "−",
+      "personality": "Bearish integration with trend confirmation — RSI oversold (-1.15z), below VWAP, strong ADX (1.11z). Structured bearish move with conviction. Not panic — organized selling",
+      "centroid": {
+        "atr_z": -0.3297, "bbw_z": 0.1336, "rsi_z": -1.1523,
+        "vwap_dist_z": -0.7938, "adx_z": 1.1125, "obv_z": -0.3751
+      },
+      "axis_magnitudes": {"D": 0.232, "I": 0.973, "R": 0.744},
+      "occupancy_pct": 11.37,
+      "stationary_pct": 11.38,
+      "dwell": {"mean": 7.30, "median": 3.0, "max": 78, "n_visits": 2730},
+      "stickiness": 0.863,
+      "top_3_destinations": [
+        {"to": "C1", "prob": 0.0474, "interpretation": "structured selling intensifies into full bear trend"},
+        {"to": "C2", "prob": 0.0228, "interpretation": "regime flip — bearish integration reverses to bullish"},
+        {"to": "C5", "prob": 0.0202, "interpretation": "selling exhausts into quiet base"}
+      ],
+      "forbidden_destinations": ["C8"],
+      "trading_stats": {
+        "total_trades": 0,
+        "win_rate": null,
+        "total_pnl": 0,
+        "avg_pnl": 0,
+        "edge_note": "Zero trades — short-side opportunity completely unexploited"
+      },
+      "edge_assessment": "UNTESTED SHORT OPPORTUNITY — 11.37% of market time with high ADX and negative RSI/VWAP. The mirror of C2 (bullish structured). If we could short, this is the structured sell basin. As a long-only filter: strong SIT-OUT signal"
+    },
+
+    "C7": {
+      "dir_label": "I(R)−",
+      "archetype": "Equilibrium Drift (Bearish Mild)",
+      "sign": "−",
+      "personality": "Mild bearish drift — the mirror of C0. Moderate RSI/VWAP negative, short dwell. The market's default 'slightly bearish' mode. Quick transitions in and out",
+      "centroid": {
+        "atr_z": 0.3523, "bbw_z": -0.1501, "rsi_z": -0.7467,
+        "vwap_dist_z": -0.6829, "adx_z": -0.3035, "obv_z": 0.6964
+      },
+      "axis_magnitudes": {"D": 0.251, "I": 0.715, "R": 0.500},
+      "occupancy_pct": 14.26,
+      "stationary_pct": 14.27,
+      "dwell": {"mean": 4.89, "median": 2.0, "max": 59, "n_visits": 5108},
+      "stickiness": 0.796,
+      "top_3_destinations": [
+        {"to": "C5", "prob": 0.0854, "interpretation": "bearish drift dies into quiet base"},
+        {"to": "C0", "prob": 0.0718, "interpretation": "polarity flip — bearish drift becomes bullish drift"},
+        {"to": "C6", "prob": 0.0271, "interpretation": "drift intensifies into structured selling"}
+      ],
+      "forbidden_destinations": ["C2"],
+      "trading_stats": {
+        "total_trades": 35,
+        "win_rate": 45.7,
+        "total_pnl": -1462.81,
+        "avg_pnl": -41.79,
+        "avg_return_pct": -0.30,
+        "avg_win_pct": 4.50,
+        "avg_loss_pct": -4.34,
+        "avg_duration_hours": 109.1,
+        "best_trade": {"pnl": 536.97, "pair": "SOL/USDT", "trade_num": 81},
+        "worst_trade": {"pnl": -1029.28, "pair": "ETH/USDT", "trade_num": 77},
+        "pair_breakdown": {"SOL/USDT": {"count": 13, "pnl": 322.53}, "ETH/USDT": {"count": 11, "pnl": -1817.58}, "BNB/USDT": {"count": 4, "pnl": -126.75}, "ADA/USDT": {"count": 4, "pnl": -218.11}, "BTC/USDT": {"count": 3, "pnl": 377.11}}
+      },
+      "edge_assessment": "ANTI-EDGE — most traded basin (35 trades) but worst absolute PnL ($-1463). Win/loss sizes nearly symmetric = no edge. ETH is the main bleeder ($-1818 from 11 trades). BTC is the exception (3/3 wins). SOL marginal. Trading longs in a bearish drift basin is structural alpha destruction"
+    },
+
+    "C8": {
+      "dir_label": "I(D)+",
+      "archetype": "Mean-Revert Volatile (Bullish)",
+      "sign": "+",
+      "personality": "Extreme bullish volatility with integration — RSI overbought (1.63z), bands wide (2.82z), massive positive VWAP distance. Euphoric breakout with mean-reversion pressure building. The blow-off top zone",
+      "centroid": {
+        "atr_z": 1.349, "bbw_z": 2.8169, "rsi_z": 1.6275,
+        "vwap_dist_z": 2.6277, "adx_z": 1.1487, "obv_z": 0.2258
+      },
+      "axis_magnitudes": {"D": 2.083, "I": 2.128, "R": 0.687},
+      "occupancy_pct": 2.65,
+      "stationary_pct": 2.65,
+      "dwell": {"mean": 6.84, "median": 4.0, "max": 39, "n_visits": 679},
+      "stickiness": 0.854,
+      "top_3_destinations": [
+        {"to": "C2", "prob": 0.0680, "interpretation": "volatility subsides but bullish integration holds"},
+        {"to": "C3", "prob": 0.0383, "interpretation": "euphoria continues as breakout momentum"},
+        {"to": "C0", "prob": 0.0312, "interpretation": "blow-off settles into mild bullish drift"}
+      ],
+      "forbidden_destinations": ["C5", "C7"],
+      "trading_stats": {
+        "total_trades": 26,
+        "win_rate": 42.3,
+        "total_pnl": 906.18,
+        "avg_pnl": 34.85,
+        "avg_return_pct": 2.26,
+        "avg_win_pct": 11.07,
+        "avg_loss_pct": -4.21,
+        "avg_duration_hours": 180.0,
+        "best_trade": {"pnl": 796.04, "pair": "ADA/USDT", "trade_num": 82},
+        "worst_trade": {"pnl": -308.65, "pair": "SOL/USDT", "trade_num": 53},
+        "pair_breakdown": {"ETH/USDT": {"count": 9, "pnl": 301.22}, "SOL/USDT": {"count": 8, "pnl": -100.43}, "BTC/USDT": {"count": 4, "pnl": -32.92}, "ADA/USDT": {"count": 5, "pnl": 738.31}}
+      },
+      "edge_assessment": "MODERATE EDGE — positive PnL ($906) with 2.6:1 win/loss ratio. ADA is the star ($738 from 5 trades). The paradox: sub-50% win rate but big winners dwarf losers. Classic momentum capture in volatile bullish conditions"
+    }
+  },
+
+  "dir_composition_analysis": {
+    "D_dominant_basins": {
+      "basins": ["C3 D(R)+", "C5 D(R)−"],
+      "market_meaning": "The market is making distinctions — structure is breaking or reforming. ATR and BBW dominate.",
+      "C3_interpretation": "Active breakout — ATR at 2.44z means boundaries are literally shattering. High energy state. Short-lived (4.21% occupancy). When D dominates with positive sign, the market is CREATING new price levels, not respecting old ones.",
+      "C5_interpretation": "The inverse — anti-breakout. All features suppressed. D is technically the largest axis but all magnitudes are tiny (0.605, 0.080, 0.513). This is D-dominant by default because I and R are essentially zero. The market has exhausted its ability to make distinctions.",
+      "strategic_principle": "D-dominant states are TRANSITION states. C3 is a breakout you ride or avoid. C5 is a compression you wait through. Neither rewards patient position-holding — they're about timing entries at the boundaries.",
+      "combined_occupancy_pct": 25.82
+    },
+    "I_dominant_basins": {
+      "basins": ["C0 I(R)+", "C2 I(R)+", "C4 I(D)−", "C6 I(R)−", "C7 I(R)−", "C8 I(D)+"],
+      "market_meaning": "The market is integrating — pulling prices toward equilibrium. RSI and VWAP distance dominate the signal.",
+      "positive_sign": "C0, C2, C8 — bullish integration. Price is above VWAP, RSI elevated. The market is integrating UPWARD. These are the long-edge basins.",
+      "negative_sign": "C4, C6, C7 — bearish integration. Price below VWAP, RSI depressed. The market is integrating DOWNWARD. For a long-only strategy, these are danger zones.",
+      "volatile_vs_calm": "C8 and C4 are I(D) — integration competing with distinction (high vol). C0, C2, C6, C7 are I(R) — integration flowing with recursion (trend-aligned).",
+      "strategic_principle": "I-dominant states ARE the tradeable universe for long-only. The sign determines direction: positive = go, negative = wait. The secondary axis (D vs R) determines position sizing: I(R) = trend-aligned, size up; I(D) = volatile, size down.",
+      "combined_occupancy_pct": 53.09
+    },
+    "R_dominant_basins": {
+      "basins": ["C1 R(D)−"],
+      "market_meaning": "Recursive feedback loops dominate — the market is self-reinforcing. OBV deeply negative (-1.32z) = sustained selling pressure. ADX negative = trend weakening. The recursive element is the PERSISTENCE of the bear regime, not directional momentum.",
+      "C1_interpretation": "This is the bear winter. Stickiest basin (0.928 self-transition), longest dwell (mean 13.96h, max 435h = 18 days). The market enters R(D)− and stays. Only 1 trade ever executed here. The recursion is: selling begets selling, but slowly — not panic, just persistent pressure.",
+      "strategic_principle": "R-dominant states are ENDURANCE states. The market is in a feedback loop. For long-only: sit out completely. For hedging: this is where you want short exposure. The long dwell times mean early detection of C1 entry saves significant capital.",
+      "combined_occupancy_pct": 18.13
+    }
+  },
+
+  "strategy_per_basin": {
+    "C0": {
+      "recommended_approach": "TREND-FOLLOWING with wide stops",
+      "position_sizing": "AGGRESSIVE (0.8-1.0x)",
+      "stop_strategy": "Wide stops (allow 3-4% drawdown) — avg win is 16% vs avg loss 3.7%",
+      "exit_strategy": "LET IT RUN — avg duration 207h means winning trades develop over days/weeks",
+      "pair_preference": ["ETH/USDT", "SOL/USDT", "BNB/USDT"],
+      "pair_avoidance": [],
+      "rationale": "Best basin by every metric: $4116 total PnL, 50% WR, 4.3:1 win/loss ratio. Mild bullish drift with moderate conviction. This is where the strategy earns its living. ETH alone contributes $2452. The key insight: C0 is NOT a breakout — it's a drift. Patience is rewarded. Wide stops prevent shakeouts in a basin where the median dwell is only 3h but winning trades run for days.",
+      "transition_triggers": {
+        "C0_to_C7": "EXIT immediately — polarity flip means drift direction reversed",
+        "C0_to_C2": "HOLD and consider adding — drift is amplifying",
+        "C0_to_C5": "EXIT — energy dissipating, edge evaporating"
+      }
+    },
+    "C1": {
+      "recommended_approach": "FULL SIT-OUT (or SHORT if available)",
+      "position_sizing": "ZERO for longs",
+      "stop_strategy": "N/A — no entries",
+      "exit_strategy": "If holding longs from another basin, EXIT on C1 entry",
+      "pair_preference": [],
+      "pair_avoidance": ["ALL"],
+      "rationale": "18% of market time with 0.928 stickiness and mean dwell of 14h. The bear winter. Only 1 trade ever executed (a loss). R(D)− means recursive selling with no integration to provide mean-reversion. The market is NOT trying to find equilibrium — it's in a self-reinforcing downdraft. Any long position is fighting the feedback loop.",
+      "transition_triggers": {
+        "C1_to_C2": "OPPORTUNITY ALERT — bear trend exhausting into bullish integration. This is the bottom-fishing signal. Wait for C2 confirmation before entering.",
+        "C1_to_C6": "NOT YET — still bearish, just less recursive",
+        "C1_to_C5": "NEUTRAL — bear trend dying but no bullish catalyst"
+      }
+    },
+    "C2": {
+      "recommended_approach": "AGGRESSIVE TREND-FOLLOWING with tight stops",
+      "position_sizing": "FULL SIZE (1.0x) — 80% win rate justifies maximum conviction",
+      "stop_strategy": "TIGHT stops (1.5-2%) — the one loss was -10.5%, a blown stop would have saved $150",
+      "exit_strategy": "Quick profit-taking on first sign of C2→C1 transition (4.8% probability)",
+      "pair_preference": ["BTC/USDT"],
+      "pair_avoidance": ["SOL/USDT"],
+      "rationale": "80% win rate (n=5). Strong bullish integration with trend confirmation (ADX 0.93z). The amplified C0. BUT: the risk is catastrophic reversal — C2→C1 at 4.8% is the highest-probability regime disaster. The strategy: go max size with a tight stop. Catch the 80% wins, cut the 20% losses fast before they become -10% blowups. Small sample warning: n=5 is not statistically significant. Treat as hypothesis, not proven edge.",
+      "transition_triggers": {
+        "C2_to_C1": "EMERGENCY EXIT — this is the cliff. Strong bullish integration collapsing into bear trend. Exit ALL positions immediately.",
+        "C2_to_C0": "HOLD — de-escalation but still bullish",
+        "C2_to_C5": "TAKE PROFIT — energy dissipating"
+      }
+    },
+    "C3": {
+      "recommended_approach": "BLACKLISTED — do not trade (confirmed by v3)",
+      "position_sizing": "ZERO or 0.1x maximum",
+      "stop_strategy": "If forced to trade: ultra-tight stops (1%)",
+      "exit_strategy": "Immediate exit on any entry from another basin",
+      "pair_preference": ["ETH/USDT only if forced"],
+      "pair_avoidance": ["SOL/USDT", "BNB/USDT"],
+      "rationale": "25% win rate, $-459 PnL. D(R)+ means structure is dissolving — ATR at 2.44z makes everything a coin flip. SOL loses $-427 here. v3 correctly blacklists this. The ONLY potential play: if you detect C3→C0 transition (6.9%), it means the breakout resolved bullish — but you'd need to be positioned BEFORE the transition, not during C3 residence.",
+      "transition_triggers": {
+        "C3_to_C0": "BUY SIGNAL — breakout resolved upward into bullish drift. Enter C0 position.",
+        "C3_to_C4": "DANGER — breakout flipping to bearish volatility. Full defense.",
+        "C3_to_C7": "WAIT — breakout energy absorbed but direction is mildly bearish"
+      }
+    },
+    "C4": {
+      "recommended_approach": "CONTRARIAN MEAN-REVERSION (experimental)",
+      "position_sizing": "SMALL (0.2-0.3x) — untested territory",
+      "stop_strategy": "Wide stops — this is volatile (ATR 1.05z, BBW 2.62z)",
+      "exit_strategy": "Target C4→C3 transition (6.95%) for breakout capture",
+      "pair_preference": ["Unknown — no trade data. Hypothesis: oversold alts (ADA, SOL)"],
+      "pair_avoidance": [],
+      "rationale": "Zero trades but theoretically the most interesting unexploited basin. I(D)− means integration is FIGHTING distinction — RSI at -1.79z and VWAP at -2.38z are extreme oversold. The market WANTS to mean-revert but volatility keeps pushing lower. The C4→C3 corridor at 6.95% represents the capitulation-to-breakout transition. This is where contrarian fortunes are made — IF you survive the volatility. Small size is mandatory.",
+      "novel_concept": "C4 bottom-fishing: when C4 is detected, open small long positions targeting the C4→C3→C0 two-step transition. Expected holding period: 6-12 hours (C4 dwell mean 6.08h).",
+      "transition_triggers": {
+        "C4_to_C3": "OPPORTUNITY — capitulation flipping to breakout. Consider adding size.",
+        "C4_to_C6": "EXIT — volatility subsiding but direction still bearish",
+        "C4_to_C7": "NEUTRAL — normalization in progress"
+      }
+    },
+    "C5": {
+      "recommended_approach": "FULL SIT-OUT — use as breakout detection trigger",
+      "position_sizing": "ZERO",
+      "stop_strategy": "N/A",
+      "exit_strategy": "N/A",
+      "pair_preference": [],
+      "pair_avoidance": [],
+      "rationale": "21.6% of market time, zero signal. D(R)− with all magnitudes near zero. The market is doing nothing. The value of C5 is not in trading it — it's in detecting EXITS from it. C5→C7 (6.14%) and C5→C0 (4.14%) tell you which direction the next move goes. If you can detect the first candle of a C5 exit, you get an early entry into the next trending basin.",
+      "transition_triggers": {
+        "C5_to_C0": "BUY — quiet base breaking bullish. This is the breakout entry.",
+        "C5_to_C7": "WAIT — base breaking bearish. No longs.",
+        "C5_to_C2": "AGGRESSIVE BUY — base jumping directly to strong bullish integration (rare, 1.27%)"
+      }
+    },
+    "C6": {
+      "recommended_approach": "SIT-OUT for longs (SHORT opportunity if available)",
+      "position_sizing": "ZERO for longs",
+      "stop_strategy": "If holding longs, tighten stops significantly",
+      "exit_strategy": "Exit all longs on C6 entry",
+      "pair_preference": [],
+      "pair_avoidance": ["ALL for longs"],
+      "rationale": "11.4% of market time. I(R)− with high ADX (1.11z) — this is structured selling with conviction. The mirror image of C2. Zero trades in history suggests the strategy correctly avoids this, but it should be ACTIVELY used as a defense signal. C6 entry = reduce all long exposure immediately.",
+      "transition_triggers": {
+        "C6_to_C2": "REVERSAL SIGNAL — structured selling reversing to structured buying. Strong buy signal.",
+        "C6_to_C1": "DANGER ESCALATION — structured selling becoming recursive bear. Maximum defense.",
+        "C6_to_C5": "NEUTRAL — selling exhausting into quiet"
+      }
+    },
+    "C7": {
+      "recommended_approach": "SELECTIVE TREND-FOLLOWING — pairs matter enormously",
+      "position_sizing": "REDUCED (0.3-0.5x) — negative expected value at full size",
+      "stop_strategy": "TIGHT stops (2%) — avg win and avg loss nearly equal, must cut losers fast",
+      "exit_strategy": "Quick exits — median dwell only 2h, fastest-transitioning basin",
+      "pair_preference": ["BTC/USDT", "SOL/USDT"],
+      "pair_avoidance": ["ETH/USDT", "ADA/USDT"],
+      "rationale": "35 trades, $-1463 PnL. Most traded and worst performing basin. BUT: BTC is 3/3 ($+377) and SOL is marginal positive ($+323). ETH alone bleeds $-1818. The basin is mildly bearish (I(R)−) — the current strategy is trading longs into a headwind. The fix isn't to avoid C7 entirely (14.3% of market time) but to be HIGHLY selective on pairs. BTC appears to have unique dynamics in mild bearish drift — perhaps its relative strength provides contrarian alpha.",
+      "transition_triggers": {
+        "C7_to_C0": "FLIP — bearish drift becoming bullish. Enter aggressively.",
+        "C7_to_C5": "EXIT — drift dying into quiet base. No edge.",
+        "C7_to_C6": "DANGER — mild bearish drift intensifying into structured selling"
+      }
+    },
+    "C8": {
+      "recommended_approach": "MOMENTUM CAPTURE with trailing stops",
+      "position_sizing": "MODERATE (0.5-0.7x) — volatile but positive edge",
+      "stop_strategy": "Trailing stops — let winners run, cut at 3-4%",
+      "exit_strategy": "Watch for C8→C2 (6.8%) continuation vs C8→C3 (3.8%) as divergence warning",
+      "pair_preference": ["ADA/USDT", "ETH/USDT"],
+      "pair_avoidance": ["SOL/USDT", "BTC/USDT"],
+      "rationale": "$906 total PnL, 42.3% WR but 2.6:1 win/loss ratio. I(D)+ = bullish euphoria with high volatility. ADA is the star ($738 from 5 trades) — it thrives in euphoric conditions. The mean-reversion pressure is BUILDING but hasn't triggered yet. Trailing stops let you ride the euphoria while protecting against the inevitable snap-back. The C8→C2 transition (6.8%) is continuation — bullish vol subsiding into structured buying. The C8→C3 transition (3.8%) is the warning — euphoria becoming chaotic breakout.",
+      "transition_triggers": {
+        "C8_to_C2": "HOLD — volatility subsiding but bull intact. Consider adding ADA.",
+        "C8_to_C3": "TIGHTEN STOPS — euphoria becoming chaotic. Breakout may fail.",
+        "C8_to_C0": "RELAX — euphoria normalizing into mild drift. Widen stops."
+      }
+    }
+  },
+
+  "transition_strategy": {
+    "high_value_corridors": [
+      {
+        "corridor": "C7→C0",
+        "probability": 0.0718,
+        "count": 1794,
+        "action": "AGGRESSIVE LONG ENTRY",
+        "logic": "Bearish drift flipping to bullish drift. C0 is the best-performing basin. The flip is common (1794 occurrences). Strategy: when C7 dwell time exceeds median (2h) and RSI starts rising, pre-position for C0 entry.",
+        "estimated_value": "HIGH — C0 avg PnL is +$158/trade"
+      },
+      {
+        "corridor": "C5→C0",
+        "probability": 0.0414,
+        "count": 1568,
+        "action": "MODERATE LONG ENTRY",
+        "logic": "Quiet base breaking bullish. Less common than C5→C7 (which is bearish), so the bullish breakout is the minority outcome. Strategy: wait for first C0 classification confirmation before entering.",
+        "estimated_value": "HIGH — early entry into C0"
+      },
+      {
+        "corridor": "C4→C3→C0",
+        "probability": "0.0695 × 0.0692 = 0.0048 (two-step)",
+        "count": "360 × fraction",
+        "action": "CONTRARIAN BOTTOM ENTRY",
+        "logic": "Capitulation → breakout → bullish drift. The full V-recovery pattern. Extremely rare but extremely profitable if caught. Strategy: detect C4, open small long, add on C3 confirmation, ride to C0.",
+        "estimated_value": "VERY HIGH if hit — capturing the full reversal"
+      },
+      {
+        "corridor": "C1→C2",
+        "probability": 0.0279,
+        "count": 887,
+        "action": "TREND REVERSAL ENTRY",
+        "logic": "Bear winter exhausting into bullish integration. This is THE macro reversal signal. C1 is sticky (0.928) so when it finally breaks to C2, it's a structural shift. Strategy: first C2 bar after extended C1 residence = strong long entry.",
+        "estimated_value": "HIGH — C2 has 80% win rate (small sample)"
+      },
+      {
+        "corridor": "C8→C2",
+        "probability": 0.0680,
+        "count": 316,
+        "action": "CONTINUATION HOLD",
+        "logic": "Euphoric volatility subsiding into structured buying. The bullish chain C8→C2 means the move has legs. Strategy: if already long from C8, HOLD through this transition.",
+        "estimated_value": "MODERATE — continuation of existing position"
+      }
+    ],
+    "danger_corridors": [
+      {
+        "corridor": "C2→C1",
+        "probability": 0.0482,
+        "count": 900,
+        "action": "EMERGENCY EXIT",
+        "logic": "Strong bullish integration collapsing into bear trend. This is the cliff edge. C2's positive edge exists ONLY because exits are fast when this transition triggers. Strategy: hard stop-loss, no averaging down.",
+        "risk": "CRITICAL — position could be trapped in C1 for 435 hours"
+      },
+      {
+        "corridor": "C7→C6",
+        "probability": 0.0271,
+        "count": 676,
+        "action": "REDUCE EXPOSURE",
+        "logic": "Mild bearish drift intensifying into structured selling. If holding C7 longs (already questionable), this is the deterioration signal.",
+        "risk": "HIGH — C6 often leads to C1"
+      },
+      {
+        "corridor": "C0→C7",
+        "probability": 0.0777,
+        "count": 1927,
+        "action": "CLOSE LONGS",
+        "logic": "Bullish drift reversing to bearish. Most common non-self transition from C0. This is the normal way winning trades die. Strategy: exit on detection, don't wait for C7 to resolve.",
+        "risk": "MODERATE — C7 is negative expectancy for longs"
+      },
+      {
+        "corridor": "C6→C1",
+        "probability": 0.0474,
+        "count": 943,
+        "action": "MAXIMUM DEFENSE",
+        "logic": "Structured selling becoming recursive bear trend. If you missed the C6 exit signal, this is the last chance. The C1 trap can last 18 days.",
+        "risk": "CRITICAL — deepest bear state"
+      }
+    ],
+    "forbidden_transition_implications": {
+      "C5_cannot_reach_C3_C4_C8": "Quiet base never directly becomes extreme volatility. There is ALWAYS an intermediate step. This means no flash crashes from quiet — you get warning.",
+      "C1_cannot_reach_C3": "Bear trend never directly becomes bullish breakout. Bears don't V-reverse into breakouts — they go through C2 or C6 first.",
+      "C8_cannot_reach_C5_C7": "Euphoria never goes directly quiet or mildly bearish. It always transitions through C2 (bullish continuation) or C3 (chaotic) first. Euphoria has INERTIA."
+    }
+  },
+
+  "novel_strategy_architectures": {
+    "proposal_1": {
+      "name": "Basin-Aware Pair Router",
+      "concept": "Instead of running the same pair universe across all basins, route specific pairs to specific basins where they have empirical edge.",
+      "mechanism": {
+        "C0": {"trade": ["ETH/USDT", "SOL/USDT", "BNB/USDT"], "size": "0.8-1.0x"},
+        "C2": {"trade": ["BTC/USDT"], "size": "1.0x"},
+        "C7_BTC_only": {"trade": ["BTC/USDT"], "size": "0.5x"},
+        "C7_SOL_only": {"trade": ["SOL/USDT"], "size": "0.3x"},
+        "C8": {"trade": ["ADA/USDT", "ETH/USDT"], "size": "0.5-0.7x"},
+        "all_other_basins": {"trade": [], "size": "0x"}
+      },
+      "theoretical_improvement": {
+        "C7_ETH_elimination": "Removing ETH/USDT from C7 saves ~$1818 in losses",
+        "C7_ADA_elimination": "Removing ADA/USDT from C7 saves ~$218",
+        "net_C7_improvement": "$+2036 from pair filtering alone",
+        "total_estimated_improvement": "+$2036 over baseline (from C7 pair filtering), bringing estimated total PnL from ~$3010 to ~$5046",
+        "pct_improvement_over_v3": "~50% improvement from pair routing alone",
+        "caveat": "Based on in-sample data. True OOS improvement likely lower. C2 and C8 improvements speculative due to small n."
+      }
+    },
+    "proposal_2": {
+      "name": "Transition-Triggered Pre-Positioning",
+      "concept": "Don't wait for the destination basin to be classified. Use the SOURCE basin's dwell time and feature trajectory to predict transitions and pre-position.",
+      "mechanism": {
+        "C5_breakout_detector": {
+          "trigger": "C5 residence > median dwell (3h) AND RSI_z delta > +0.3 over last 2 candles",
+          "action": "Open 0.3x long position anticipating C5→C0",
+          "upsize_on": "C0 confirmation → scale to 0.8x",
+          "abort_on": "C5→C7 classification → close immediately"
+        },
+        "C7_flip_detector": {
+          "trigger": "C7 residence > median dwell (2h) AND OBV_z turning positive",
+          "action": "Open 0.3x long anticipating C7→C0",
+          "upsize_on": "C0 confirmation → scale to 0.8x",
+          "abort_on": "C7→C6 classification → close and sit out"
+        },
+        "C4_capitulation_catcher": {
+          "trigger": "C4 entry detected AND RSI_z < -1.5",
+          "action": "Open 0.2x long (contrarian) targeting C4→C3→C0",
+          "upsize_on": "C3 confirmation with positive OBV delta",
+          "abort_on": "C4→C6 or dwell > 12h (stuck in capitulation)"
+        },
+        "C1_thaw_detector": {
+          "trigger": "C1 residence > 2x median dwell (8h) AND OBV_z rising for 3 consecutive candles",
+          "action": "Open 0.2x long anticipating C1→C2 macro reversal",
+          "upsize_on": "C2 confirmation → scale to 1.0x",
+          "abort_on": "OBV_z reversal → close immediately"
+        }
+      },
+      "theoretical_improvement": {
+        "early_entry_advantage": "Getting into C0 even 2 candles early (2 hours) on a 207h average winning trade is small %, but the C5→C0 corridor fires 1568 times in the dataset",
+        "c4_captures": "852 C4 visits × 6.95% C4→C3 × 6.92% C3→C0 = ~4 full V-reversals captured. Even 1-2 of these at 15% return = significant",
+        "c1_thaw": "2276 C1 visits × 2.79% exit to C2 = ~64 macro reversals. Catching even 10% at 1.09% avg C2 win = incremental",
+        "estimated_total": "+5-15% additional return over pair-routing baseline, primarily from C5 breakout detection",
+        "caveat": "Requires feature-trajectory calculation infrastructure not currently in the strategy. Implementation complexity is HIGH."
+      }
+    },
+    "proposal_3": {
+      "name": "Regime Defense Shield",
+      "concept": "Instead of ADDING edge, REMOVE anti-edge. The biggest PnL leak is C7 ($-1463). Rather than optimizing entries, build an active defense system that hard-exits on danger transitions.",
+      "mechanism": {
+        "kill_switches": [
+          {
+            "name": "C7 ETH Firewall",
+            "rule": "If basin == C7 AND pair == ETH/USDT: block entry, force exit any open position",
+            "expected_savings": "$1818"
+          },
+          {
+            "name": "C2→C1 Hard Stop",
+            "rule": "If current basin transitions from C2 to C1: close ALL positions within 1 candle, no exceptions",
+            "expected_savings": "Prevents potential C1 trapping (up to 435h)"
+          },
+          {
+            "name": "C3 Total Blacklist Extension",
+            "rule": "If any OPEN position's current basin becomes C3: close it (not just block new entries)",
+            "expected_savings": "Current v3 blocks entries but doesn't close existing positions that drift into C3"
+          },
+          {
+            "name": "Bearish Chain Alert",
+            "rule": "If transition path shows C0→C7→C6 in sequence (bullish → mild bear → structured bear): halt all new entries for 24h minimum",
+            "expected_savings": "Prevents trading into cascading bear transitions"
+          }
+        ],
+        "theoretical_improvement": {
+          "C7_ETH_firewall": "+$1818 (highest confidence, largest single improvement)",
+          "C3_extension": "+$100-200 (closing positions that ENTER C3 from neighboring basins)",
+          "C2_C1_hard_stop": "Prevents 1-3 catastrophic losses per year",
+          "total_defense_savings": "+$2000-2200 estimated",
+          "pct_improvement_over_v3": "~60% improvement from DEFENSE alone",
+          "implementation_complexity": "LOW — these are simple conditional checks, no new features needed"
+        }
+      }
+    }
+  },
+
+  "combined_architecture_estimate": {
+    "current_v3_baseline": {
+      "total_return_pct": 33.54,
+      "total_pnl_approx": 3354,
+      "sharpe": 0.107,
+      "max_dd": -18.91
+    },
+    "with_pair_routing": {
+      "estimated_pnl": 5400,
+      "improvement": "+$2046 (~60%)",
+      "confidence": "MEDIUM — based on in-sample pair filtering"
+    },
+    "with_defense_shield": {
+      "estimated_pnl": 5500,
+      "improvement": "+$2146 (~64%)",
+      "confidence": "HIGH — removing known losers is more reliable than adding winners"
+    },
+    "with_all_three": {
+      "estimated_pnl": 6500,
+      "improvement": "+$3146 (~94%)",
+      "confidence": "LOW-MEDIUM — compound effects may not be additive, OOS decay expected",
+      "realistic_estimate": "Expect 40-60% of theoretical improvement in live trading"
+    },
+    "priority_order": [
+      "1. Regime Defense Shield (highest confidence, lowest complexity, largest guaranteed improvement)",
+      "2. Basin-Aware Pair Router (medium confidence, medium complexity, large improvement)",
+      "3. Transition-Triggered Pre-Positioning (lowest confidence, highest complexity, speculative improvement)"
+    ]
+  },
+
+  "key_insights": [
+    "The topology has a clear BULLISH CHAIN: C4(capitulation) → C3(breakout) → C0(drift) → C2(strong integration) → C8(euphoria). Trading WITH this chain = edge. Trading AGAINST it = destruction.",
+    "The BEARISH CHAIN runs: C0(drift) → C7(mild bear) → C6(structured sell) → C1(bear winter). Detecting entry into this chain early is worth more than any entry optimization.",
+    "53% of market time is I-dominant (integration). The market WANTS to converge. Mean-reversion pressure is the baseline. Pure trend-following only works in the 26% D-dominant windows.",
+    "C7 is the TRAP BASIN — it looks tradeable (14% occupancy, fast transitions) but bleeds $-1463. The fix isn't better entries, it's pair filtering. BTC works here; ETH doesn't.",
+    "The forbidden transitions reveal PHYSICAL LAWS of this market: euphoria never goes directly to quiet (C8↛C5), bears never V-reverse into breakouts (C1↛C3), quiet never flash-crashes (C5↛C3/C4/C8). These constraints are exploitable.",
+    "Only 4 basins have any trading data: C0, C3, C7, C8 (plus tiny n for C1, C2). Basins C4, C5, C6 are COMPLETELY UNEXPLORED. The largest potential alpha is in the untested territory.",
+    "ADA is a regime-specialist: $738 from 5 trades in C8 (euphoria). It thrives in volatile bullish conditions where other pairs struggle. This is a token-personality finding.",
+    "The win rate is less important than the win/loss RATIO. C0 (50% WR, 4.3:1 ratio) dramatically outperforms C7 (45.7% WR, 1.0:1 ratio). Asymmetric payoff > high win rate.",
+    "D/I/R composition is predictive: I-dominant positive-sign basins (C0, C2, C8) account for ALL positive PnL. I-dominant negative-sign basins (C7) account for the worst losses. The sign of the I-axis IS the edge."
+  ]
+}
