@@ -122,8 +122,16 @@ L_total = α · L_MSE(6D vector) + β · L_CrossEntropy(composition label)
 ```
 
 - α = 1.0, β = 0.5 (initial — regression is primary, classification is auxiliary)
-- Loss weighting may be adjusted based on validation metrics
 - Class weights applied to cross-entropy to compensate for label imbalance (R(D) at 6.06% vs D(D) at 19.11%)
+
+**Monitoring protocol:**
+- Log per-head loss and gradient norms every 100 steps
+- Adjustment protocol:
+  - If classification loss plateaus while regression loss decreases → increase β (try 1.0, then 1.5)
+  - If regression loss plateaus while classification loss decreases → increase α (try 1.5, then 2.0)
+  - If both plateau → learning rate issue, not loss weighting
+- **Decision point:** Step 4 (small validation run) must produce per-head loss curves. Adam reviews curves before full training begins.
+- Do NOT implement homoscedastic uncertainty weighting unless manual adjustment fails during Step 4. Keep it simple until forced otherwise.
 
 ### 3.4 Input/Output Specification
 
@@ -232,6 +240,13 @@ rocm-smi
 python3 -c "import torch; print(torch.cuda.is_available()); print(torch.cuda.get_device_name(0))"
 # Install transformers + ModernBERT dependencies
 pip install transformers accelerate datasets
+
+# HARD GATE: Verify Flash Attention 2 support on ROCm
+python3 -c "from flash_attn import flash_attn_func; print('Flash Attention 2: OK')"
+# If this fails: STOP. Do not proceed to training with 8K sequences.
+# Fallback path: reduce max_seq_length to 2048 and enable gradient checkpointing.
+# Without Flash Attention 2, the quadratic attention matrix at 8K tokens
+# will consume 10-12GB VRAM at micro-batch 2, leaving no room for weights + optimizer.
 ```
 
 ### 5.3 Hyperparameters
@@ -248,7 +263,10 @@ pip install transformers accelerate datasets
 | Epochs | 3–5 | Monitor validation loss for early stopping |
 | Optimizer | AdamW (weight decay 0.01) | Standard |
 | Mixed precision | FP16 (ROCm) | Required for 16GB VRAM |
+| Gradient checkpointing | **Enabled (default)** | Required for 16GB VRAM with 8K sequences |
 | Frozen backbone epochs | 1 | Train heads first, then unfreeze |
+| Per-head loss logging | Every 100 steps | Detect gradient starvation before full training |
+| Confidence weighting | Enabled — scale sample loss by Gen 1 confidence score | Higher-confidence labels contribute more; low-confidence soft-downweighted, not excluded |
 
 ### 5.4 Data Pipeline
 
@@ -258,11 +276,35 @@ class DIRDataset(torch.utils.data.Dataset):
     """Parse JSONL, tokenize to 8K, extract 6D vector + composition label."""
     def __getitem__(self, idx):
         record = self.records[idx]
-        tokens = self.tokenizer(record["text"], max_length=8192,
+        text = record["text"]
+
+        # Dynamic Sequence Truncation — R-axis artifact defense
+        # Randomly truncate 20% of R(I)/R(R) documents to break length→R shortcut
+        text = self.augment_r_axis(text, record["composition"])
+
+        tokens = self.tokenizer(text, max_length=8192,
                                 truncation=True, padding="max_length")
         vector = torch.tensor(record["vector"], dtype=torch.float32)  # 6D
         label = self.label_map[record["composition"]]  # 0-8
-        return tokens, vector, label
+        confidence = record["confidence"]  # for confidence-weighted loss
+        return tokens, vector, label, confidence
+
+    @staticmethod
+    def augment_r_axis(text, composition):
+        """Force model to find R-signatures in semantic content, not sequence length."""
+        if composition in ("R(I)", "R(R)") and random.random() < 0.20:
+            tokens = tokenizer.encode(text)
+            max_trunc = min(len(tokens), 4096)
+            trunc_len = random.randint(512, max_trunc)
+            text = tokenizer.decode(tokens[:trunc_len])
+        return text
+```
+
+**Confidence-weighted loss implementation:**
+```python
+# Per-sample loss weighting by Gen 1 confidence
+sample_weight = record["confidence"]  # 0.10 to 1.0
+loss = sample_weight * (alpha * mse_loss + beta * ce_loss)
 ```
 
 ### 5.5 Validation Strategy
@@ -324,6 +366,8 @@ dir_classify(text) → model.forward(tokenize(text)) → Head 1: 6D vector, Head
 | Zero-vector rate | ~8% (temporal-only + unclassified) | <1% | On same input distribution |
 | Cross-domain consistency | Not measured | Same text, different phrasing → same composition | Manual test battery |
 | Per-class F1 | N/A | ≥0.75 for all 9 classes | Weighted by class frequency |
+
+**Gap protocol (80-85% accuracy):** Model is not failed but not accepted. Review per-class breakdown and per-domain breakdown. If accuracy is ≥85% on 7+ of 9 classes with 1-2 classes dragging the average (likely R(I)/R(R)), proceed with deployment and flag those classes for Gen 3 label correction. If accuracy is uniformly ~82% across all classes, retrain with adjusted hyperparameters (learning rate, loss weighting, epochs) before declaring success.
 
 ### 7.2 Structural Validation
 
@@ -494,14 +538,15 @@ D(D) immediately exits — all barriers zero or negative. The bootstrap loop des
 
 ### 10.1 ROCm Stability
 
-**Risk:** ROCm + PyTorch on RX 6900 XT has known stability issues — kernel crashes, memory leaks, incomplete operator support for some transformer operations.
+**Risk:** ROCm + PyTorch on RX 6900 XT has known stability issues — kernel crashes, memory leaks, incomplete operator support for some transformer operations. Flash Attention 2 may not be available on gfx1030, which makes 8K sequences infeasible.
 
 **Mitigation:**
 - Verify environment before training (rocm-smi, PyTorch CUDA test)
+- **Flash Attention 2 is a hard gate** — if unavailable on ROCm/gfx1030: reduce max sequence length to 2,048 tokens (still covers majority of records) and enable gradient checkpointing. This is the primary fallback, not CPU training.
 - Use conservative settings: FP16 (not BF16, which has spotty gfx1030 support)
 - Small validation run (1K records) before committing to full training
 - Checkpoint every epoch to survive crashes
-- Fallback: CPU training (dramatically slower, ~30 days, but viable)
+- Last-resort fallback: CPU training (dramatically slower, ~30 days, but viable)
 
 ### 10.2 VRAM Constraints
 
@@ -536,11 +581,12 @@ D(D) immediately exits — all barriers zero or negative. The bootstrap loop des
 
 ### 10.5 R(I)/R(R) Temporal Catch-Basin Artefact
 
-**Risk:** Phase 1 basin signatures showed R(I) and R(R) load on temporal axis, not R-axis. The model will learn to classify long/sequential documents as R(I)/R(R) based on temporal features rather than recursive structure.
+**Risk:** Phase 1 basin signatures showed R(I) and R(R) load on temporal axis, not R-axis. ModernBERT with positional embeddings will learn a trivial shortcut: long document → R(I)/R(R). The model will achieve high accuracy on these classes by reading document length, not semantic recursion.
 
 **Mitigation:**
-- Monitor R(I)/R(R) attention patterns — if they attend to sequence position rather than content, the model is learning the artefact
-- Include document-length as a confound in validation: R(I)/R(R) accuracy should not correlate with document length
+- **Active defense:** Dynamic Sequence Truncation during training — randomly truncate 20% of R-classified long documents to force semantic R-signature learning instead of positional shortcut (see Section 5.4).
+- **Validation check:** Pearson correlation between document token count and R(I)/R(R) classification probability. Target: < 0.3 (falsification threshold remains 0.5 per Section 12.4).
+- **Attention analysis:** Post-training, inspect attention weights on R-classified documents. If attention concentrates on positional tokens rather than content tokens, the defense has failed.
 - Gen 3 label correction: use Gen 2 as feature extractor, retrain classification head with corrected R(I)/R(R) labels
 
 ### 10.6 Training Interruption
@@ -559,7 +605,7 @@ D(D) immediately exits — all barriers zero or negative. The bootstrap loop des
 
 | Step | Duration | Description |
 |------|----------|-------------|
-| 1. ROCm validation | 1 hour | Verify GPU visible, PyTorch functional, memory budget |
+| 1. ROCm validation | 1 hour | Verify GPU visible, PyTorch functional, memory budget, **Flash Attention 2 hard gate** (pass/fail) |
 | 2. Dataset class | 2-3 hours | JSONL parser, tokenizer, stratified splits, DataLoader |
 | 3. Model architecture | 2-3 hours | ModernBERT + dual heads, loss function, training loop |
 | 4. Small validation run | 2-4 hours | 1K records, 1 epoch, confirm no OOM, loss decreasing |
