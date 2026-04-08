@@ -1,5 +1,6 @@
 import type { Vector6D, IndicatorVocabulary } from "../types/index.js";
 import { TEMPORAL_MARKERS } from "./temporal.js";
+import { DIR_AXIS_WEIGHT } from "../classifier/distance.js";
 
 const MAX_TEXT_LENGTH = 8000;
 
@@ -70,7 +71,18 @@ export function vectorize(text: string, vocab: IndicatorVocabulary): Vector6D {
     }
   }
 
-  const raw: Vector6D = [scores[0], scores[1], scores[2], temporal, density, entropy];
+  // Apply D/I/R axis boost and log-compress density so that primary axes
+  // dominate classification. Without this, raw density (~7.7) overwhelms
+  // D/I/R scores (~1.2) after L2 normalization, causing the classifier to
+  // sort by indicator density rather than D/I/R composition.
+  const raw: Vector6D = [
+    scores[0] * DIR_AXIS_WEIGHT,
+    scores[1] * DIR_AXIS_WEIGHT,
+    scores[2] * DIR_AXIS_WEIGHT,
+    temporal,
+    Math.log(1 + density),
+    entropy,
+  ];
 
   // L2 normalize
   const mag = Math.sqrt(raw.reduce((sum, x) => sum + x * x, 0));

@@ -40,6 +40,7 @@ function computeContamination(
   let ownContrib = 0;
   let tailContrib = 0;
 
+  // Centroids are pre-weighted at load time, so unweighted distance is correct
   for (const other of landscape.basins) {
     let distSq = 0;
     for (let k = 0; k < basin.centroid.length; k++) {

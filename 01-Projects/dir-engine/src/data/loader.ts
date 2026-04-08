@@ -1,5 +1,6 @@
 import { CentroidManifestSchema, IndicatorVocabularySchema, MotifLibrarySchema } from "./schemas.js";
 import type { CentroidManifest, IndicatorVocabulary, MotifLibrary } from "../types/index.js";
+import { DIR_AXIS_WEIGHT } from "../classifier/distance.js";
 
 const ALL_COMPOSITIONS = ["D(D)", "D(I)", "D(R)", "I(D)", "I(I)", "I(R)", "R(D)", "R(I)", "R(R)"];
 
@@ -30,6 +31,26 @@ export async function loadCentroids(path: string): Promise<CentroidManifest> {
     throw new Error(
       `Expected ${manifest.k} centroids, found ${manifest.centroids.length}`
     );
+  }
+
+  // Re-weight centroids to match the vectorizer's D/I/R axis boost.
+  // The stored centroids were computed from unweighted vectors. The vectorizer
+  // now multiplies D/I/R dims by DIR_AXIS_WEIGHT before L2 normalization.
+  // Apply the same transformation here so centroids and vectors are in the
+  // same space.
+  for (let i = 0; i < manifest.centroids.length; i++) {
+    const c = manifest.centroids[i];
+    // Apply weight to D, I, R (dims 0-2)
+    c[0] *= DIR_AXIS_WEIGHT;
+    c[1] *= DIR_AXIS_WEIGHT;
+    c[2] *= DIR_AXIS_WEIGHT;
+    // Re-L2-normalize
+    let norm = 0;
+    for (let j = 0; j < c.length; j++) norm += c[j] * c[j];
+    norm = Math.sqrt(norm);
+    if (norm > 0) {
+      for (let j = 0; j < c.length; j++) c[j] /= norm;
+    }
   }
 
   // Warn (don't fail) if mapping doesn't cover all 9 compositions

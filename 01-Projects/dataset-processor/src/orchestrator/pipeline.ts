@@ -213,8 +213,8 @@ export class Pipeline {
           `${stats.duration}ms`,
         );
 
-        // Convergence check
-        if (stats.marginalYield < this.config.convergenceThreshold && pass >= 2) {
+        // Convergence check (skip if no docs were processed — avoids false convergence)
+        if (stats.documentsProcessed > 0 && stats.marginalYield < this.config.convergenceThreshold && pass >= 2) {
           this.state.converged = true;
           this.state.stoppedReason = 'converged';
           console.error(`[pipeline] Converged after pass ${pass} (yield ${stats.marginalYield.toFixed(1)} < ${this.config.convergenceThreshold})`);
@@ -314,6 +314,9 @@ export class Pipeline {
 
       const shardStats = await this.processShard(shardPath, passNumber, stats);
 
+      // Propagate shard-level counts into pass-level stats
+      stats.documentsProcessed += shardStats.docsProcessed;
+
       // Mark shard as completed
       this.recordShardState(
         shardId,
@@ -412,8 +415,8 @@ export class Pipeline {
           `${stats.duration}ms`,
         );
 
-        // Convergence check
-        if (stats.marginalYield < this.config.convergenceThreshold && pass >= 2) {
+        // Convergence check (skip if no docs were processed — avoids false convergence)
+        if (stats.documentsProcessed > 0 && stats.marginalYield < this.config.convergenceThreshold && pass >= 2) {
           this.state.converged = true;
           this.state.stoppedReason = 'converged';
           break;
