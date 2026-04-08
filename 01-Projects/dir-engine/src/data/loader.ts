@@ -33,23 +33,22 @@ export async function loadCentroids(path: string): Promise<CentroidManifest> {
     );
   }
 
-  // Re-weight centroids to match the vectorizer's D/I/R axis boost.
-  // The stored centroids were computed from unweighted vectors. The vectorizer
-  // now multiplies D/I/R dims by DIR_AXIS_WEIGHT before L2 normalization.
-  // Apply the same transformation here so centroids and vectors are in the
-  // same space.
-  for (let i = 0; i < manifest.centroids.length; i++) {
-    const c = manifest.centroids[i];
-    // Apply weight to D, I, R (dims 0-2)
-    c[0] *= DIR_AXIS_WEIGHT;
-    c[1] *= DIR_AXIS_WEIGHT;
-    c[2] *= DIR_AXIS_WEIGHT;
-    // Re-L2-normalize
-    let norm = 0;
-    for (let j = 0; j < c.length; j++) norm += c[j] * c[j];
-    norm = Math.sqrt(norm);
-    if (norm > 0) {
-      for (let j = 0; j < c.length; j++) c[j] /= norm;
+  // v2+ centroids are computed in the weighted vector space (DIR_AXIS_WEIGHT
+  // applied before L2 norm in vectorizer). Only re-weight v1 centroids that
+  // were computed in the old unweighted space.
+  const isV2 = manifest.version.includes("v2") || manifest.version.includes("weighted");
+  if (!isV2) {
+    for (let i = 0; i < manifest.centroids.length; i++) {
+      const c = manifest.centroids[i];
+      c[0] *= DIR_AXIS_WEIGHT;
+      c[1] *= DIR_AXIS_WEIGHT;
+      c[2] *= DIR_AXIS_WEIGHT;
+      let norm = 0;
+      for (let j = 0; j < c.length; j++) norm += c[j] * c[j];
+      norm = Math.sqrt(norm);
+      if (norm > 0) {
+        for (let j = 0; j < c.length; j++) c[j] /= norm;
+      }
     }
   }
 
