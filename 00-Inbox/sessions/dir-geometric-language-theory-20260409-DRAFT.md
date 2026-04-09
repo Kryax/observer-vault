@@ -126,15 +126,53 @@ The critical test for whether the geometric language is discovered rather than i
 
 This test cannot be run until Gen 3 exists. Log it as a deferred falsification condition.
 
-## 8. Key References
+## 8. Archaeological Test Case — Tărtăria Tablets (c. 5300 BC)
+
+The Vinča symbols are a set of approximately 210 undeciphered geometric signs found across 150+ Neolithic sites in Southeast Europe, dating to 5500-4000 BC. They are predominantly geometric — crosses, chevrons, circles, spirals, zigzags, meanders — not pictographic. The geometric vocabulary maps directly onto the D/I/R composition alphabet.
+
+**Vinča Symbol → D/I/R Mapping:**
+
+| Vinča Symbol     | D/I/R Composition | Glyph Name            |
+|------------------|-------------------|-----------------------|
+| X / Cross        | D(D)              | The Grid              |
+| V / Chevron      | D(R)              | The Broken Loop       |
+| Circle / Dot     | I(I)              | The Singularity       |
+| Spiral           | R(I)              | The Convergent Spiral |
+| Zigzag / Meander | R(D)              | The Ratchet           |
+| Parallel lines   | I(D)              | The Bridge            |
+
+**The Tărtăria Tablets — D/I/R Structural Reading:**
+
+The Tărtăria tablets (c. 5300 BC, Romania) are three small clay tablets found in a ritual pit beneath a house foundation. Archaeological context: a burned human skeleton (possibly sacrificial), 26 clay figurines, a Spondylus shell bracelet, and an alabaster idol. This was a consecration deposit — something placed to sanctify ground before building on it.
+
+One tablet displays: a cross dividing the surface into quadrants, with a circle enclosed in one section, and branching lines in another. D/I/R structural reading:
+
+1. **D(D)** — The cross/grid quartering the space. Establish sacred boundaries. Absolute separation of profane from sacred.
+1. **D(I)** — Circle enclosed within one quadrant. Within the bounded sacred space, contain a living field — the community, household, or spirit of place. Distinction holding Integration — a wall around something alive.
+1. **I(D)** — Branching lines connecting outward. Link the bounded sacred space to something beyond it — ancestors, gods, the cosmos. The Bridge connecting the consecrated ground to the forces that empower it.
+
+**Structural arc: Distinguish → Contain → Connect.**
+
+This maps onto foundation rituals across cultures: mark the ground (D), dedicate what's inside (D containing I), invoke connection to something greater (I bridging D). The burned skeleton is the offering that makes the boundary real. The figurines are the living field being protected. The tablets encode the structural process of the ritual itself.
+
+**Assessment:**
+
+This is a D/I/R structural reading, not a proven decipherment. The tablets are not recording words — they are recording process-shapes. The geometric language encodes the structural arc of a ritual in the same primitives D/I/R predicts should exist. The convergence between archaeological context (consecration deposit) and the D/I/R composition arc (D(D) → D(I) → I(D)) is consistent but not proof. It is a triangulation point from deep history — 7,000-year-old geometric proto-writing using what appear to be D/I/R primitives and compounds.
+
+**Falsification condition:** If the same D/I/R reading applied to other Vinča multi-symbol inscriptions from non-ritual contexts produces the same "consecration" arc, the reading is over-fitted to one interpretation. The structural reading should produce different arcs for different archaeological contexts. This test requires systematic application across the Vinča corpus.
+
+## 9. Key References
 
 - Dehaene, S. et al. (2022). "Symbols and mental programs: a hypothesis about human singularity." Trends in Cognitive Sciences.
 - Amalric, M. et al. (2017). "The language of geometry: Fast comprehension of geometrical primitives and rules in human adults and preschoolers." PLOS Computational Biology.
 - Sablé-Meyer, M. et al. (2022). "A language of thought for the mental representation of geometric shapes." Cognition.
+- Gimbutas, M. (1974). The Goddesses and Gods of Old Europe: 6500-3500 BC.
+- Winn, S.M.M. (1981). Pre-writing in Southeastern Europe: The Sign System of the Vinča Culture ca. 4000 BC.
+- Tărtăria tablets archaeological context from Vinča culture excavation records.
 - Session handoff 2026-04-08/09 (motif discovery pipeline, Gen 2 PRD)
 - Claude-Adam co-developed insight: feelings as derivatives through semantic space (December 2024)
 
-## 9. Status and Priority
+## 10. Status and Priority
 
 This is a **theoretical investigation thread**, not a build priority. The immediate build path remains:
 
