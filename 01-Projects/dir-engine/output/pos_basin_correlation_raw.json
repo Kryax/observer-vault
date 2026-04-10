@@ -1,0 +1,212 @@
+{
+  "test": "POS Density vs Basin Depth Correlation",
+  "date": "2026-04-10 12:55:54",
+  "config": {
+    "sample_size": 9999,
+    "total_records": 240021,
+    "compositions": 9,
+    "seed": 42,
+    "spacy_model": "en_core_web_sm",
+    "energy_method": "embedded Langevin multi-well (ported from energy-core.ts)"
+  },
+  "quartiles": {
+    "q25": 0.7432432432432432,
+    "q50": 0.8072289156626506,
+    "q75": 0.8693064182194616
+  },
+  "group_sizes": {
+    "noun_heavy": 2500,
+    "verb_heavy": 2484
+  },
+  "results": {
+    "basin_depth": {
+      "noun_mean": 5.986722775828306,
+      "noun_std": 0.8319742968509839,
+      "verb_mean": 5.934568759750264,
+      "verb_std": 0.8087457148701803,
+      "diff": 0.05215401607804182,
+      "mannwhitney_p_greater": 0.0006094016817276734,
+      "mannwhitney_p_twosided": 0.0012188033634553468
+    },
+    "pearson_noun_basin_depth": {
+      "r": 0.018999433362852,
+      "p": 0.05746169691192161
+    },
+    "energy": {
+      "noun_mean": -1.463222522623594,
+      "verb_mean": -1.162278653164793,
+      "diff": -0.3009438694588009,
+      "mannwhitney_p_less": 1.1415976244028353e-07
+    },
+    "pearson_noun_energy": {
+      "r": -0.05946073932569594,
+      "p": 2.67654393544274e-09
+    },
+    "transition_score": {
+      "noun_mean": 0.8103631462482,
+      "verb_mean": 0.8491331558960751,
+      "diff": -0.038770009647875026,
+      "mannwhitney_p_less": 7.261525051045821e-07
+    },
+    "distance_to_centre": {
+      "noun_mean": 0.23308973505790867,
+      "verb_mean": 0.24499912015294928,
+      "diff": -0.011909385095040609,
+      "mannwhitney_p": 7.517814015220347e-05
+    },
+    "confidence": {
+      "noun_mean": 0.54428004,
+      "verb_mean": 0.5140851449275362,
+      "diff": 0.030194895072463757,
+      "mannwhitney_p": 6.637884844418091e-06
+    },
+    "pearson_noun_conf": {
+      "r": 0.04324019070081954,
+      "p": 1.523346542807903e-05
+    },
+    "vector_magnitude": {
+      "noun_mean": 1.0000000039143668,
+      "verb_mean": 0.9999999807701789,
+      "diff": 2.314418789950423e-08,
+      "mannwhitney_p": 0.0009664478846644668
+    },
+    "spearman_noun_basin_depth": {
+      "rho": 0.03137653457533721,
+      "p": 0.00170176359459208
+    },
+    "spearman_noun_energy": {
+      "rho": -0.053078226027606264,
+      "p": 1.0924262132033788e-07
+    }
+  },
+  "comp_stats": {
+    "D(D)": {
+      "n": 1111,
+      "noun_ratio_mean": 0.8015980541114679,
+      "noun_ratio_std": 0.08127916428843471,
+      "confidence_mean": 0.5718630063006301,
+      "energy_mean": -0.09386359436972652,
+      "transition_mean": 0.9883388369238838,
+      "basin_depth": 5.891820298110627,
+      "dist_to_centre_mean": 0.20991444382495048,
+      "pearson_nr_energy": {
+        "r": 0.04629091460859653,
+        "p": 0.12306311838086273
+      }
+    },
+    "D(I)": {
+      "n": 1111,
+      "noun_ratio_mean": 0.8014049709175485,
+      "noun_ratio_std": 0.08163926385317949,
+      "confidence_mean": 0.4122018901890189,
+      "energy_mean": -0.9192714019919315,
+      "transition_mean": 0.8868949553452639,
+      "basin_depth": 5.58351893845611,
+      "dist_to_centre_mean": 0.24726943581801863,
+      "pearson_nr_energy": {
+        "r": 0.002194217184472651,
+        "p": 0.941762610339243
+      }
+    },
+    "D(R)": {
+      "n": 1111,
+      "noun_ratio_mean": 0.8031743515231979,
+      "noun_ratio_std": 0.07943703448605663,
+      "confidence_mean": 0.4050697569756976,
+      "energy_mean": -1.0399926516642348,
+      "transition_mean": 0.8143455259014887,
+      "basin_depth": 5.2188758248682,
+      "dist_to_centre_mean": 0.303517910239037,
+      "pearson_nr_energy": {
+        "r": 0.030502061505608136,
+        "p": 0.30973587019872495
+      }
+    },
+    "I(D)": {
+      "n": 1111,
+      "noun_ratio_mean": 0.8011239804214153,
+      "noun_ratio_std": 0.101945718398613,
+      "confidence_mean": 0.47184518451845187,
+      "energy_mean": -0.865959060409118,
+      "transition_mean": 0.9324759116531569,
+      "basin_depth": 6.969813299576002,
+      "dist_to_centre_mean": 0.22217839690786534,
+      "pearson_nr_energy": {
+        "r": -0.0839726071416593,
+        "p": 0.005098494086143505
+      }
+    },
+    "I(I)": {
+      "n": 1111,
+      "noun_ratio_mean": 0.8018930617588227,
+      "noun_ratio_std": 0.09618679557260919,
+      "confidence_mean": 0.5200671467146715,
+      "energy_mean": -1.6405522022452392,
+      "transition_mean": 0.822141320393033,
+      "basin_depth": 5.891820298110627,
+      "dist_to_centre_mean": 0.22601992318318379,
+      "pearson_nr_energy": {
+        "r": 0.08289301294951194,
+        "p": 0.005699071111015247
+      }
+    },
+    "I(R)": {
+      "n": 1111,
+      "noun_ratio_mean": 0.7885249110590782,
+      "noun_ratio_std": 0.08994119535091417,
+      "confidence_mean": 0.3753854185418542,
+      "energy_mean": -0.027375686766877273,
+      "transition_mean": 0.9966755386236952,
+      "basin_depth": 6.15888308335967,
+      "dist_to_centre_mean": 0.31411408713765515,
+      "pearson_nr_energy": {
+        "r": -0.011811416597706712,
+        "p": 0.6941239591850106
+      }
+    },
+    "R(D)": {
+      "n": 1111,
+      "noun_ratio_mean": 0.8054181881452879,
+      "noun_ratio_std": 0.09617919566559663,
+      "confidence_mean": 0.48636705670567054,
+      "energy_mean": -0.0056325715407195085,
+      "transition_mean": 0.9987885090480534,
+      "basin_depth": 4.197224577336221,
+      "dist_to_centre_mean": 0.35469750582867876,
+      "pearson_nr_energy": {
+        "r": 0.015768520195177015,
+        "p": 0.5995609148390094
+      }
+    },
+    "R(I)": {
+      "n": 1111,
+      "noun_ratio_mean": 0.8151246160095412,
+      "noun_ratio_std": 0.11037334252148356,
+      "confidence_mean": 0.6817218721872188,
+      "energy_mean": -3.7554780334884414,
+      "transition_mean": 0.51915631362807,
+      "basin_depth": 6.795790545596743,
+      "dist_to_centre_mean": 0.15874050750392876,
+      "pearson_nr_energy": {
+        "r": -0.020022346992966834,
+        "p": 0.5049677642981453
+      }
+    },
+    "R(R)": {
+      "n": 1111,
+      "noun_ratio_mean": 0.8263817060247196,
+      "noun_ratio_std": 0.10765002519283032,
+      "confidence_mean": 0.6988493249324933,
+      "energy_mean": -2.1870891360238023,
+      "transition_mean": 0.6600314150922499,
+      "basin_depth": 6.394449154672438,
+      "dist_to_centre_mean": 0.16874111647756634,
+      "pearson_nr_energy": {
+        "r": -0.05283168601458144,
+        "p": 0.0783713260592924
+      }
+    }
+  },
+  "verdict": "SUPPORTS",
+  "verdict_detail": "5/5 tests significant \u2014 strong evidence"
+}
