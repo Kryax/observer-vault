@@ -413,6 +413,24 @@ Gen 4 introduces dual-stream architecture:
 - Corpus callosum: convergence layer that merges noun and verb streams into unified D/I/R representation
 - This mirrors the observer-native two-speed model at the architectural level
 
+**ADDENDUM (2026-04-10): Dual-Stream Architecture Superseded**
+
+Empirical testing on 2026-04-10 confirmed that the D/I/R energy landscape natively encodes the noun/verb distinction. The POS Density vs Basin Depth correlation test (10,000 stratified records, 5/5 significance tests passed, p-values 10⁻⁴ to 10⁻⁷) showed:
+
+- Noun-heavy text clusters in deeper basins with lower transition scores
+- Verb-heavy text clusters in shallower basins with higher transition scores
+- The effect operates at the composition routing level, not within-basin distortion
+- R(I) and R(R) compositions show highest noun ratios and deepest energy positions
+- Even the crude Gen 1 lexical vectoriser captures this signal
+
+**Architectural implication:** The Gen 4 dual-stream noun/verb architecture with corpus callosum convergence layer is no longer necessary. Nouns are not a separate ontological category requiring dedicated processing — they are D/I/R compositions in low-energy, high-stability states. Verbs are the same compositions in high-energy, high-transition states.
+
+**Revised Gen 3/4 architecture:** Single-stream thermodynamic continuum. One D/I/R engine operating across energy regimes. The noun/verb distinction emerges from basin depth and transition score, not from parallel processing streams.
+
+**Impact on Gen 2:** No change to Gen 2 architecture. Gen 2 remains a 6D vector + 9-class composition encoder. The energy regime information is already implicit in the 6D vector coordinates (particularly temporal, density, and entropy dimensions). Gen 2 does not need explicit noun/verb supervision — the signal emerges naturally from the structural representation.
+
+**Evidence:** `01-Projects/dir-engine/output/pos_basin_correlation_test.txt` and `pos_basin_correlation_raw.json`
+
 ### 8.4 Application: Trading System Integration
 
 Gen 2 encoder enables real-time classification of market narrative:
@@ -637,9 +655,11 @@ The model has failed if any of the following are true after training:
 
 7. **Zero-vector persistence.** The model produces zero or near-zero vectors (L2 norm < 0.01) for >1% of inputs. The whole point is eliminating the zero-vector failure mode.
 
+8. **Noun/verb energy regime collapse.** If Gen 2 classifications show NO correlation between noun density and basin depth (contradicting the Gen 1 result), the energy-regime noun derivation fails and dual-stream architecture must be reconsidered. This would indicate the Gen 1 signal was a lexical artefact rather than a structural property.
+
 If conditions 1, 2, or 5 are met: **model has failed, do not deploy.** Diagnose and retrain or reconsider architecture.
 
-If conditions 3, 4, 6, or 7 are met: **model is degraded, investigate before deployment.** May be salvageable with targeted fine-tuning or label correction.
+If conditions 3, 4, 6, 7, or 8 are met: **model is degraded, investigate before deployment.** May be salvageable with targeted fine-tuning or label correction.
 
 ---
 
